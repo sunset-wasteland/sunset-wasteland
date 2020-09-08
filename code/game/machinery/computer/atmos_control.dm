@@ -44,7 +44,7 @@
 /obj/machinery/air_sensor/update_icon_state()
 		icon_state = "gsensor[on]"
 
-/obj/machinery/air_sensor/process_atmos()
+/obj/machinery/air_sensor/process_atmos(delta_time)
 	if(on)
 		var/datum/gas_mixture/air_sample = return_air()
 

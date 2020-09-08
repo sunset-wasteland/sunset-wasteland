@@ -173,7 +173,7 @@
 					EG.recharge_newshot(TRUE)
 				EG.update_icon()
 			else
-				EG.charge_tick = 0
+				EG.charge_timer = 0
 
 	R.toner = R.tonermax
 

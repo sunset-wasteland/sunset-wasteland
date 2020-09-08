@@ -20,7 +20,7 @@
 
 	var/filter_types = list(GAS_CO2, GAS_MIASMA, GAS_GROUP_CHEMICALS)
 	var/list/clean_filter_types = null
-	var/volume_rate = 200
+	var/volume_rate = 400
 	var/widenet = 0 //is this scrubber acting on the 3x3 area around it.
 	var/list/turf/adjacent_turfs = list()
 
@@ -143,20 +143,20 @@
 	check_turfs()
 	..()
 
-/obj/machinery/atmospherics/components/unary/vent_scrubber/process_atmos()
+/obj/machinery/atmospherics/components/unary/vent_scrubber/process_atmos(delta_time)
 	..()
 	if(welded || !is_operational())
 		return FALSE
 	if(!nodes[1] || !on)
 		on = FALSE
 		return FALSE
-	scrub(loc)
+	scrub(loc, delta_time)
 	if(widenet)
 		for(var/turf/tile in adjacent_turfs)
-			scrub(tile)
+			scrub(tile, delta_time)
 	return TRUE
 
-/obj/machinery/atmospherics/components/unary/vent_scrubber/proc/scrub(turf/tile)
+/obj/machinery/atmospherics/components/unary/vent_scrubber/proc/scrub(turf/tile, delta_time = 0.5)
 	if(!istype(tile))
 		return FALSE
 	var/datum/gas_mixture/environment = tile.return_air()
@@ -165,14 +165,16 @@
 	if(air_contents.return_pressure() >= 50*ONE_ATMOSPHERE || !islist(clean_filter_types))
 		return FALSE
 
+	var/transfer_ratio = volume_rate * delta_time / environment.return_volume()
+
 	if(scrubbing & SCRUBBING)
-		environment.scrub_into(air_contents, volume_rate/environment.return_volume(), clean_filter_types)
+		environment.scrub_into(air_contents, transfer_ratio, clean_filter_types)
 
 		tile.air_update_turf()
 
 	else //Just siphoning all air
 
-		environment.transfer_ratio_to(air_contents, volume_rate/environment.return_volume())
+		environment.transfer_ratio_to(air_contents, transfer_ratio)
 		tile.air_update_turf()
 
 	update_parents()

@@ -1,3 +1,6 @@
+#define GRILL_FUELUSAGE_IDLE 0.5
+#define GRILL_FUELUSAGE_ACTIVE 5
+
 /obj/machinery/grill
 	name = "grill"
 	desc = "Just like the old days."
@@ -22,7 +25,7 @@
 /obj/machinery/grill/update_icon_state()
 	if(grilled_item)
 		icon_state = "grill"
-	else if(grill_fuel)
+	else if(grill_fuel > 0)
 		icon_state = "grill_on"
 	else
 		icon_state = "grill_open"
@@ -64,17 +67,21 @@
 				return
 	..()
 
-/obj/machinery/grill/process()
+/obj/machinery/grill/process(delta_time)
 	..()
 	update_icon()
-	if(!grill_fuel)
+	if(grill_fuel <= 0)
 		return
 	else
-		grill_fuel -= 1
+		grill_fuel -= GRILL_FUELUSAGE_IDLE * delta_time
+		if(DT_PROB(0.5, delta_time))
+			var/datum/effect_system/smoke_spread/bad/smoke = new
+			smoke.set_up(1, loc)
+			smoke.start()
 	if(grilled_item)
-		grill_time += 1
-		grilled_item.reagents.add_reagent(/datum/reagent/consumable/char, 1)
-		grill_fuel -= 10
+		grill_time += delta_time
+		grilled_item.reagents.add_reagent(/datum/reagent/consumable/char, 0.5 * delta_time)
+		grill_fuel -= GRILL_FUELUSAGE_ACTIVE * delta_time
 		grilled_item.AddComponent(/datum/component/sizzle)
 
 /obj/machinery/grill/Exited(atom/movable/AM)
@@ -116,19 +123,19 @@
 	return ..()
 
 /obj/machinery/grill/proc/finish_grill()
-	switch(grill_time) //no 0-9 to prevent spam
-		if(10 to 15)
+	switch(grill_time) //no 0-20 to prevent spam
+		if(20 to 30)
 			grilled_item.name = "lightly-grilled [grilled_item.name]"
 			grilled_item.desc = "[grilled_item.desc] It's been lightly grilled."
-		if(16 to 39)
+		if(30 to 80)
 			grilled_item.name = "grilled [grilled_item.name]"
 			grilled_item.desc = "[grilled_item.desc] It's been grilled."
 			grilled_item.foodtype |= FRIED
-		if(40 to 50)
+		if(80 to 100)
 			grilled_item.name = "heavily grilled [grilled_item.name]"
 			grilled_item.desc = "[grilled_item.desc] It's been heavily grilled."
 			grilled_item.foodtype |= FRIED
-		if(51 to INFINITY) //grill marks reach max alpha
+		if(100 to INFINITY) //grill marks reach max alpha
 			grilled_item.name = "Powerfully Grilled [grilled_item.name]"
 			grilled_item.desc = "A [grilled_item.name]. Reminds you of your deepfryer skills, wait, no, it's better!"
 			grilled_item.foodtype |= FRIED
@@ -137,3 +144,6 @@
 
 /obj/machinery/grill/unwrenched
 	anchored = FALSE
+
+#undef GRILL_FUELUSAGE_IDLE
+#undef GRILL_FUELUSAGE_ACTIVE

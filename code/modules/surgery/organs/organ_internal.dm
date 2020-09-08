@@ -87,22 +87,22 @@
 /obj/item/organ/proc/on_find(mob/living/finder)
 	return
 
-/obj/item/organ/process()	//runs decay when outside of a person AND ONLY WHEN OUTSIDE (i.e. long obj).
-	on_death() //Kinda hate doing it like this, but I really don't want to call process directly.
+/obj/item/organ/process(delta_time)	//runs decay when outside of a person AND ONLY WHEN OUTSIDE (i.e. long obj).
+	on_death(delta_time) //Kinda hate doing it like this, but I really don't want to call process directly.
 
 //Sources; life.dm process_organs
-/obj/item/organ/proc/on_death() //Runs when outside AND inside.
-	decay()
+/obj/item/organ/proc/on_death(delta_time = 2) //Runs when outside AND inside.
+	decay(delta_time)
 
 //Applys the slow damage over time decay
-/obj/item/organ/proc/decay()
+/obj/item/organ/proc/decay(delta_time = 2)
 	if(!can_decay())
 		STOP_PROCESSING(SSobj, src)
 		return
 	is_cold()
 	if(organ_flags & ORGAN_FROZEN)
 		return
-	applyOrganDamage(maxHealth * decay_factor)
+	applyOrganDamage(maxHealth * decay_factor * 0.5 * delta_time)
 
 /obj/item/organ/proc/can_decay()
 	if(CHECK_BITFIELD(organ_flags, ORGAN_NO_SPOIL | ORGAN_SYNTHETIC | ORGAN_FAILING))

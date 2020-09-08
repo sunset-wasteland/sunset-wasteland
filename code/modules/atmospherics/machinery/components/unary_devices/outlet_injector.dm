@@ -9,7 +9,7 @@
 
 	var/injecting = 0
 
-	var/volume_rate = 50
+	var/volume_rate = 100
 
 	var/frequency = 0
 	var/id = null
@@ -55,7 +55,7 @@
 		update_icon()
 
 
-/obj/machinery/atmospherics/components/unary/outlet_injector/process_atmos()
+/obj/machinery/atmospherics/components/unary/outlet_injector/process_atmos(delta_time)
 	..()
 
 	injecting = 0
@@ -66,7 +66,7 @@
 	var/datum/gas_mixture/air_contents = airs[1]
 
 	if(air_contents.return_temperature() > 0)
-		loc.assume_air_ratio(air_contents, volume_rate / air_contents.return_volume())
+		loc.assume_air_ratio(air_contents, volume_rate * delta_time / air_contents.return_volume())
 		air_update_turf()
 
 		update_parents()
@@ -208,7 +208,7 @@
 /obj/machinery/atmospherics/components/unary/outlet_injector/atmos
 	frequency = FREQ_ATMOS_STORAGE
 	on = TRUE
-	volume_rate = 200
+	volume_rate = 400
 
 /obj/machinery/atmospherics/components/unary/outlet_injector/atmos/atmos_waste
 	name = "atmos waste outlet injector"

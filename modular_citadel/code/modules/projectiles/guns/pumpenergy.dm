@@ -15,12 +15,12 @@
 	chambered = null //we empty the chamber
 	update_icon()
 
-/obj/item/gun/energy/pumpaction/process()	//makes it not rack itself when self-charging
+/obj/item/gun/energy/pumpaction/process(delta_time)	//makes it not rack itself when self-charging
 	if(selfcharge && cell?.charge < cell.maxcharge)
-		charge_tick++
-		if(charge_tick < charge_delay)
+		charge_timer += delta_time
+		if(charge_timer < charge_delay)
 			return
-		charge_tick = null
+		charge_timer = null
 		if(selfcharge == EGUN_SELFCHARGE_BORG)
 			var/atom/owner = loc
 			if(istype(owner, /obj/item/robot_module))
@@ -28,9 +28,9 @@
 			if(!iscyborg(owner))
 				return
 			var/mob/living/silicon/robot/R = owner
-			if(!R.cell?.use(100))
+			if(!R.cell?.use(50 * delta_time))
 				return
-		cell.give(100)
+		cell.give(50 * delta_time)
 	update_icon()
 
 /obj/item/gun/energy/pumpaction/attack_self(mob/living/user)	//makes clicking on it in hand pump it

@@ -157,7 +157,7 @@
 /obj/machinery/atmospherics/components/unary/cryo_cell/nap_violation(mob/violator)
 	open_machine()
 
-/obj/machinery/atmospherics/components/unary/cryo_cell/process()
+/obj/machinery/atmospherics/components/unary/cryo_cell/process(delta_time)
 	..()
 
 	if(!on)
@@ -203,20 +203,21 @@
 	if(air1.total_moles())
 		if(mob_occupant.bodytemperature < T0C) // Sleepytime. Why? More cryo magic.
 			// temperature factor goes from 1 to about 2.5
-			var/amount = max(1, (4 * log(T0C - mob_occupant.bodytemperature)) - 20) * knockout_factor * base_knockout
+			var/amount = max(1, (4 * log(T0C - mob_occupant.bodytemperature)) - 20) * knockout_factor * base_knockout * delta_time
 			mob_occupant.Sleeping(amount)
 			mob_occupant.Unconscious(amount)
 		if(beaker)
 			if(reagent_transfer == 0) // Magically transfer reagents. Because cryo magic.
-				beaker.reagents.trans_to(occupant, 1, efficiency * 0.25) // Transfer reagents.
+				beaker.reagents.trans_to(occupant, 1, efficiency * 0.25 * delta_time) // Transfer reagents.
 				beaker.reagents.reaction(occupant, VAPOR)
 				air1.adjust_moles(GAS_O2, -max(0,air1.get_moles(GAS_O2) - 2 / efficiency)) //Let's use gas for this
-			if(++reagent_transfer >= 10 * efficiency) // Throttle reagent transfer (higher efficiency will transfer the same amount but consume less from the beaker).
+			reagent_transfer += delta_time
+			if(reagent_transfer >= 10 * efficiency) // Throttle reagent transfer (higher efficiency will transfer the same amount but consume less from the beaker).
 				reagent_transfer = 0
 
 	return 1
 
-/obj/machinery/atmospherics/components/unary/cryo_cell/process_atmos()
+/obj/machinery/atmospherics/components/unary/cryo_cell/process_atmos(delta_time)
 	..()
 
 	if(!on)
@@ -243,8 +244,8 @@
 
 			var/heat = ((1 - cold_protection) * 0.1 + conduction_coefficient) * temperature_delta * (air_heat_capacity * heat_capacity / (air_heat_capacity + heat_capacity))
 
-			air1.set_temperature(max(air1.return_temperature() - heat / air_heat_capacity, TCMB))
-			mob_occupant.adjust_bodytemperature(heat / heat_capacity, TCMB)
+			air1.set_temperature(max(air1.return_temperature() - heat * delta_time / air_heat_capacity, TCMB))
+			mob_occupant.adjust_bodytemperature(heat * delta_time / heat_capacity, TCMB)
 
 		air1.set_temperature(max(air1.return_temperature() - 0.5 / efficiency)) // Magically consume gas? Why not, we run on cryo magic.
 

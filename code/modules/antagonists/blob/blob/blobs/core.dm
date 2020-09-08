@@ -55,7 +55,7 @@
 		if(overmind) //we should have an overmind, but...
 			overmind.update_health_hud()
 
-/obj/structure/blob/core/process()
+/obj/structure/blob/core/process(delta_time)
 	if(QDELETED(src))
 		return
 	if(!overmind)
@@ -65,7 +65,7 @@
 		overmind.update_health_hud()
 	Pulse_Area(overmind, 12, 4, 3)
 	for(var/obj/structure/blob/normal/B in range(1, src))
-		if(prob(5))
+		if(DT_PROB(2.5, delta_time))
 			B.change_to(/obj/structure/blob/shield/core, overmind)
 	..()
 

@@ -150,7 +150,7 @@
 	log_shuttle("[key_name(user)] has authorized early train launch in [COORD(src)]")
 	// Now check if we're on our way
 	. = TRUE
-	process()
+	process(SSMACHINES_DT)
 
 /obj/machinery/computer/emergency_shuttle/process()
 	// Launch check is in process in case auth_need changes for some reason
@@ -267,7 +267,7 @@
 
 		authorized += ID
 
-	process()
+	process(SSMACHINES_DT)
 	return TRUE
 
 /obj/machinery/computer/emergency_shuttle/Destroy()

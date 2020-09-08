@@ -84,7 +84,7 @@
 	else // pump_direction == SIPHONING
 		icon_state = "vent_in"
 
-/obj/machinery/atmospherics/components/unary/vent_pump/process_atmos()
+/obj/machinery/atmospherics/components/unary/vent_pump/process_atmos(delta_time)
 	..()
 	if(!is_operational())
 		return

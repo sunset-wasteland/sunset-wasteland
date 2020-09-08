@@ -10,7 +10,7 @@
 
 		a_boost--
 		to_chat(H, "<span class='notice'>There are <B>[a_boost]</B> adrenaline boosts remaining.</span>")
-		s_coold = 3
+		s_coold = 6
 		addtimer(CALLBACK(src, .proc/ninjaboost_after), 70)
 
 /obj/item/clothing/suit/space/space_ninja/proc/ninjaboost_after()

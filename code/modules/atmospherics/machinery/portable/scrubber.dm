@@ -6,7 +6,7 @@
 	ui_y = 350
 
 	var/on = FALSE
-	var/volume_rate = 1000
+	var/volume_rate = 500
 	var/use_overlays = TRUE
 	volume = 1000
 
@@ -30,7 +30,7 @@
 	if(connected_port)
 		. += "scrubber-connector"
 
-/obj/machinery/portable_atmospherics/scrubber/process_atmos()
+/obj/machinery/portable_atmospherics/scrubber/process_atmos(delta_time)
 	..()
 	if(!on)
 		return
@@ -105,7 +105,7 @@
 /obj/machinery/portable_atmospherics/scrubber/huge/update_icon_state()
 	icon_state = "scrubber:[on]"
 
-/obj/machinery/portable_atmospherics/scrubber/huge/process_atmos()
+/obj/machinery/portable_atmospherics/scrubber/huge/process_atmos(delta_time)
 	if((!anchored && !movable) || !is_operational())
 		on = FALSE
 		update_icon()

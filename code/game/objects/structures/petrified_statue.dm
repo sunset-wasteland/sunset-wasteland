@@ -6,7 +6,7 @@
 	anchored = TRUE
 	flags_1 = PREVENT_CONTENTS_EXPLOSION_1
 	max_integrity = 200
-	var/timer = 8 MINUTES //eventually the person will be freed
+	var/timer = 8 * 60 //eventually the person will be freed
 	var/mob/living/petrified_mob
 
 /obj/structure/statue/petrified/Initialize(mapload, mob/living/L, statue_timer)
@@ -30,7 +30,19 @@
 		L.status_flags |= GODMODE
 		obj_integrity = L.health + 100 //stoning damaged mobs will result in easier to shatter statues
 		max_integrity = obj_integrity
-		QDEL_IN(src, timer)
+		START_PROCESSING(SSobj, src)
+
+/obj/structure/statue/petrified/process(delta_time)
+	if(!petrified_mob)
+		STOP_PROCESSING(SSobj, src)
+	timer -= delta_time
+	petrified_mob.Stun(40) //So they can't do anything while petrified
+	if(timer <= 0)
+		STOP_PROCESSING(SSobj, src)
+		qdel(src)
+
+/obj/structure/statue/petrified/contents_explosion(severity, target)
+	return
 
 /obj/structure/statue/petrified/handle_atom_del(atom/A)
 	if(A == petrified_mob)

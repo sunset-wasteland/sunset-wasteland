@@ -62,7 +62,7 @@
 /obj/machinery/atmospherics/components/binary/pump/update_icon_nopipes()
 	icon_state = (on && is_operational()) ? "pump_on" : "pump_off"
 
-/obj/machinery/atmospherics/components/binary/pump/process_atmos()
+/obj/machinery/atmospherics/components/binary/pump/process_atmos(delta_time)
 //	..()
 	if(!on || !is_operational())
 		return

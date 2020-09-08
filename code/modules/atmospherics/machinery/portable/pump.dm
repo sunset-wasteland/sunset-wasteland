@@ -39,7 +39,7 @@
 	if(connected_port)
 		. += "siphon-connector"
 
-/obj/machinery/portable_atmospherics/pump/process_atmos()
+/obj/machinery/portable_atmospherics/pump/process_atmos(delta_time)
 	..()
 	if(!on)
 		pump.airs[1] = null
@@ -54,7 +54,7 @@
 		pump.airs[1] = holding ? air_contents : T.return_air()
 		pump.airs[2] = holding ? holding.air_contents : air_contents
 
-	pump.process_atmos() // Pump gas.
+	pump.process_atmos(delta_time) // Pump gas.
 	if(!holding)
 		air_update_turf() // Update the environment if needed.
 

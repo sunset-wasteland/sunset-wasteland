@@ -315,7 +315,11 @@ as performing this in action() will cause the upgrade to end up in the borg inst
 	icon_state = "cyborg_upgrade5"
 	require_module = 1
 	var/repair_amount = -1
-	var/repair_tick = 1
+	/// world.time of next repair
+	var/next_repair = 0
+	/// Minimum time between repairs in seconds
+	var/repair_cooldown = 4
+	/// world.time of next message
 	var/msg_cooldown = 0
 	var/on = FALSE
 	var/powercost = 10
@@ -365,8 +369,7 @@ as performing this in action() will cause the upgrade to end up in the borg inst
 	update_icon()
 
 /obj/item/borg/upgrade/selfrepair/process()
-	if(!repair_tick)
-		repair_tick = 1
+	if(world.time < next_repair)
 		return
 
 	var/mob/living/silicon/robot/cyborg = toggle_action.owner
@@ -395,7 +398,7 @@ as performing this in action() will cause the upgrade to end up in the borg inst
 			cyborg.cell.use(powercost)
 		else
 			cyborg.cell.use(5)
-		repair_tick = 0
+		next_repair = world.time + repair_cooldown * 10 // Multiply by 10 since world.time is in deciseconds
 
 		if((world.time - 2000) > msg_cooldown )
 			var/msgmode = "standby"

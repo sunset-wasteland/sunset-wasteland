@@ -345,7 +345,7 @@ GLOBAL_DATUM(main_supermatter_engine, /obj/machinery/power/supermatter_crystal)
 /obj/machinery/power/supermatter_crystal/proc/call_explode()
 	explode()
 
-/obj/machinery/power/supermatter_crystal/process_atmos()
+/obj/machinery/power/supermatter_crystal/process_atmos(delta_time)
 	if(!processes) //Just fuck me up bro
 		return
 	var/turf/T = loc

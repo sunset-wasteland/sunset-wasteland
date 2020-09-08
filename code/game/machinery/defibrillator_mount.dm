@@ -33,10 +33,10 @@
 		else
 			. += "<span class='notice'>Its locking clamps can be [clamps_locked ? "dis" : ""]engaged by swiping an ID with access.</span>"
 
-/obj/machinery/defibrillator_mount/process()
+/obj/machinery/defibrillator_mount/process(delta_time)
 	if(defib && defib.cell && defib.cell.charge < defib.cell.maxcharge && is_operational())
-		use_power(200)
-		defib.cell.give(180) //90% efficiency, slightly better than the cell charger's 87.5%
+		use_power(50 * delta_time)
+		defib.cell.give(40 * delta_time) //90% efficiency, slightly better than the cell charger's 87.5%
 		update_icon()
 
 /obj/machinery/defibrillator_mount/update_overlays()

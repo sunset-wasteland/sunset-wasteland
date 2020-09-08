@@ -107,8 +107,8 @@
 	else
 		adjust_nanites(null, amount) //just add to the nanite volume
 
-/datum/component/nanites/process()
-	adjust_nanites(null, regen_rate)
+/datum/component/nanites/process(delta_time)
+	adjust_nanites(null, regen_rate * delta_time)
 	add_research()
 	for(var/X in programs)
 		var/datum/nanite_program/NP = X

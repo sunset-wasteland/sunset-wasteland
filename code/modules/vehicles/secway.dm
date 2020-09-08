@@ -9,7 +9,6 @@
 	var/charge = 150
 	var/chargespeed = 1
 	var/normalspeed = 2
-	var/last_tick = 0
 	var/list/progressbars_by_rider = list()
 
 /obj/vehicle/ridden/secway/Initialize()
@@ -19,11 +18,9 @@
 	D.set_riding_offsets(RIDING_OFFSET_ALL, list(TEXT_NORTH = list(0, 4), TEXT_SOUTH = list(0, 4), TEXT_EAST = list(0, 4), TEXT_WEST = list( 0, 4)))
 	START_PROCESSING(SSfastprocess, src)
 
-/obj/vehicle/ridden/secway/process()
-	var/diff = world.time - last_tick
-	var/regen = chargerate * diff
+/obj/vehicle/ridden/secway/process(delta_time)
+	var/regen = chargerate * delta_time
 	charge = clamp(charge + regen, 0, chargemax)
-	last_tick = world.time
 
 /obj/vehicle/ridden/secway/relaymove(mob/user, direction)
 	var/new_speed = normalspeed

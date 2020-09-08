@@ -71,10 +71,10 @@ Class Procs:
 
 	Default definition does nothing.
 
-	process()						'game/machinery/machine.dm'
+	process(delta_time)				'game/machinery/machine.dm'
 	Called by the 'machinery subsystem' once per machinery tick for each machine that is listed in its 'machines' list.
 
-	process_atmos()
+	process_atmos(delta_time)
 	Called by the 'air subsystem' once per atmos tick for each machine that is listed in its 'atmos_machines' list.
 
 	is_operational()
@@ -171,10 +171,10 @@ Class Procs:
 /obj/machinery/proc/locate_machinery()
 	return
 
-/obj/machinery/process()//If you dont use process or power why are you here
+/obj/machinery/process(delta_time)//If you dont use process or power why are you here
 	return PROCESS_KILL
 
-/obj/machinery/proc/process_atmos()//If you dont use process why are you here
+/obj/machinery/proc/process_atmos(delta_time)//If you dont use process why are you here
 	return PROCESS_KILL
 
 /obj/machinery/emp_act(severity)

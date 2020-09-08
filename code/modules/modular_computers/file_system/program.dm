@@ -77,8 +77,8 @@
 	return 0
 
 // Called by Process() on device that runs us, once every tick.
-/datum/computer_file/program/proc/process_tick()
-	return 1
+/datum/computer_file/program/proc/process_tick(delta_time)
+	return TRUE
 
 /**
  *Check if the user can run program. Only humans can operate computer. Automatically called in run_program()

@@ -2,7 +2,7 @@ SUBSYSTEM_DEF(air)
 	name = "Atmospherics"
 	init_order = INIT_ORDER_AIR
 	priority = FIRE_PRIORITY_AIR
-	wait = 5
+	wait = 0.5 SECONDS
 	flags = SS_BACKGROUND
 	runlevels = RUNLEVEL_GAME | RUNLEVEL_POSTGAME
 
@@ -74,6 +74,8 @@ SUBSYSTEM_DEF(air)
 	// If this is set to 0, monstermos won't process planet atmos
 	var/planet_equalize_enabled = 0
 
+	var/lasttick = 0
+
 /datum/controller/subsystem/air/stat_entry(msg)
 	msg += "C:{"
 	msg += "HP:[round(cost_highpressure,1)]|"
@@ -143,6 +145,7 @@ SUBSYSTEM_DEF(air)
 
 /datum/controller/subsystem/air/fire(resumed = 0)
 	var/timer = TICK_USAGE_REAL
+	var/delta_time = wait * 0.1
 
 	if(currentpart == SSAIR_REBUILD_PIPENETS)
 		timer = TICK_USAGE_REAL
@@ -161,7 +164,7 @@ SUBSYSTEM_DEF(air)
 
 	if(currentpart == SSAIR_PIPENETS || !resumed)
 		timer = TICK_USAGE_REAL
-		process_pipenets(resumed)
+		process_pipenets(delta_time, resumed)
 		cost_pipenets = MC_AVERAGE(cost_pipenets, TICK_DELTA_TO_MS(TICK_USAGE_REAL - timer))
 		if(state != SS_RUNNING)
 			return
@@ -170,7 +173,7 @@ SUBSYSTEM_DEF(air)
 	// This is only machinery like filters, mixers that don't interact with air
 	if(currentpart == SSAIR_ATMOSMACHINERY)
 		timer = TICK_USAGE_REAL
-		process_atmos_machinery(resumed)
+		process_atmos_machinery(delta_time, resumed)
 		cost_atmos_machinery = MC_AVERAGE(cost_atmos_machinery, TICK_DELTA_TO_MS(TICK_USAGE_REAL - timer))
 		if(state != SS_RUNNING)
 			return
@@ -179,7 +182,7 @@ SUBSYSTEM_DEF(air)
 
 	if(currentpart == SSAIR_HIGHPRESSURE)
 		timer = TICK_USAGE_REAL
-		process_high_pressure_delta(resumed)
+		process_high_pressure_delta(delta_time, resumed)
 		cost_highpressure = MC_AVERAGE(cost_highpressure, TICK_DELTA_TO_MS(TICK_USAGE_REAL - timer))
 		if(state != SS_RUNNING)
 			return
@@ -189,7 +192,7 @@ SUBSYSTEM_DEF(air)
 	// this is necessary cause the next step after this interacts with the air--we get consistency
 	// issues if we don't wait for it, disappearing gases etc.
 	if(currentpart == SSAIR_FINALIZE_TURFS)
-		finish_turf_processing(resumed)
+		finish_turf_processing(delta_time, resumed)
 		if(state != SS_RUNNING)
 			cur_thread_wait_ticks++
 			return
@@ -199,7 +202,7 @@ SUBSYSTEM_DEF(air)
 		currentpart = SSAIR_DEFERRED_AIRS
 	if(currentpart == SSAIR_DEFERRED_AIRS)
 		timer = TICK_USAGE_REAL
-		process_deferred_airs(resumed)
+		process_deferred_airs(delta_time, resumed)
 		cost_deferred_airs = MC_AVERAGE(cost_deferred_airs, TICK_DELTA_TO_MS(TICK_USAGE_REAL - timer))
 		if(state != SS_RUNNING)
 			return
@@ -207,7 +210,7 @@ SUBSYSTEM_DEF(air)
 		currentpart = SSAIR_ATMOSMACHINERY_AIR
 	if(currentpart == SSAIR_ATMOSMACHINERY_AIR)
 		timer = TICK_USAGE_REAL
-		process_atmos_air_machinery(resumed)
+		process_atmos_air_machinery(delta_time, resumed)
 		cost_atmos_machinery = MC_AVERAGE(cost_atmos_machinery, TICK_DELTA_TO_MS(TICK_USAGE_REAL - timer))
 		if(state != SS_RUNNING)
 			return
@@ -216,7 +219,7 @@ SUBSYSTEM_DEF(air)
 
 	if(currentpart == SSAIR_HOTSPOTS)
 		timer = TICK_USAGE_REAL
-		process_hotspots(resumed)
+		process_hotspots(delta_time, resumed)
 		cost_hotspots = MC_AVERAGE(cost_hotspots, TICK_DELTA_TO_MS(TICK_USAGE_REAL - timer))
 		if(state != SS_RUNNING)
 			return
@@ -238,7 +241,7 @@ SUBSYSTEM_DEF(air)
 	if(currentpart == SSAIR_ACTIVETURFS)
 		run_delay_heuristics()
 		timer = TICK_USAGE_REAL
-		process_turfs(resumed)
+		process_turfs(delta_time, resumed)
 		cost_turfs = MC_AVERAGE(cost_turfs, TICK_DELTA_TO_MS(TICK_USAGE_REAL - timer))
 		if(state != SS_RUNNING)
 			return
@@ -247,7 +250,7 @@ SUBSYSTEM_DEF(air)
 	// Monstermos and/or Putnamos--making large pressure deltas move faster
 	if(currentpart == SSAIR_EQUALIZE)
 		timer = TICK_USAGE_REAL
-		process_turf_equalize(resumed)
+		process_turf_equalize(delta_time, resumed)
 		cost_equalize = MC_AVERAGE(cost_equalize, TICK_DELTA_TO_MS(TICK_USAGE_REAL - timer))
 		if(state != SS_RUNNING)
 			return
@@ -256,7 +259,7 @@ SUBSYSTEM_DEF(air)
 	// Making small pressure deltas equalize immediately so they don't process anymore
 	if(currentpart == SSAIR_EXCITEDGROUPS)
 		timer = TICK_USAGE_REAL
-		process_excited_groups(resumed)
+		process_excited_groups(delta_time, resumed)
 		cost_groups = MC_AVERAGE(cost_groups, TICK_DELTA_TO_MS(TICK_USAGE_REAL - timer))
 		if(state != SS_RUNNING)
 			return
@@ -265,7 +268,7 @@ SUBSYSTEM_DEF(air)
 	// Quick multithreaded "should we display/react?" checks followed by finishing those up before the next step
 	if(currentpart == SSAIR_TURF_POST_PROCESS)
 		timer = TICK_USAGE_REAL
-		post_process_turfs(resumed)
+		post_process_turfs(delta_time, resumed)
 		cost_post_process = MC_AVERAGE(cost_post_process, TICK_DELTA_TO_MS(TICK_USAGE_REAL - timer))
 		if(state != SS_RUNNING)
 			return
@@ -274,7 +277,7 @@ SUBSYSTEM_DEF(air)
 	*/
 	currentpart = SSAIR_REBUILD_PIPENETS
 
-/datum/controller/subsystem/air/proc/process_pipenets(resumed = 0)
+/datum/controller/subsystem/air/proc/process_pipenets(delta_time, resumed = FALSE)
 	if (!resumed)
 		src.currentrun = networks.Copy()
 	//cache for sanic speed (lists are references anyways)
@@ -283,7 +286,7 @@ SUBSYSTEM_DEF(air)
 		var/datum/thing = currentrun[currentrun.len]
 		currentrun.len--
 		if(thing)
-			thing.process()
+			thing.process(delta_time)
 		else
 			networks.Remove(thing)
 		if(MC_TICK_CHECK)
@@ -293,7 +296,7 @@ SUBSYSTEM_DEF(air)
 	if(istype(atmos_machine, /obj/machinery/atmospherics))
 		pipenets_needing_rebuilt += atmos_machine
 
-/datum/controller/subsystem/air/proc/process_deferred_airs(resumed = 0)
+/datum/controller/subsystem/air/proc/process_deferred_airs(delta_time, resumed = FALSE)
 	cur_deferred_airs = deferred_airs.len
 	max_deferred_airs = max(cur_deferred_airs,max_deferred_airs)
 	while(deferred_airs.len)
@@ -319,8 +322,7 @@ SUBSYSTEM_DEF(air)
 		if(MC_TICK_CHECK)
 			return
 
-/datum/controller/subsystem/air/proc/process_atmos_machinery(resumed = 0)
-	var/seconds = wait * 0.1
+/datum/controller/subsystem/air/proc/process_atmos_machinery(delta_time, resumed = FALSE)
 	if (!resumed)
 		src.currentrun = atmos_machinery.Copy()
 	//cache for sanic speed (lists are references anyways)
@@ -328,12 +330,12 @@ SUBSYSTEM_DEF(air)
 	while(currentrun.len)
 		var/obj/machinery/M = currentrun[currentrun.len]
 		currentrun.len--
-		if(!M || (M.process_atmos(seconds) == PROCESS_KILL))
+		if(!M || (M.process_atmos(delta_time) == PROCESS_KILL))
 			atmos_machinery.Remove(M)
 		if(MC_TICK_CHECK)
 			return
 
-/datum/controller/subsystem/air/proc/process_atmos_air_machinery(resumed = 0)
+/datum/controller/subsystem/air/proc/process_atmos_air_machinery(delta_time, resumed = FALSE)
 	var/seconds = wait * 0.1
 	if (!resumed)
 		src.currentrun = atmos_air_machinery.Copy()
@@ -349,7 +351,7 @@ SUBSYSTEM_DEF(air)
 
 /datum/controller/subsystem/air/proc/process_turf_heat()
 
-/datum/controller/subsystem/air/proc/process_hotspots(resumed = 0)
+/datum/controller/subsystem/air/proc/process_hotspots(delta_time, resumed = FALSE)
 	if (!resumed)
 		src.currentrun = hotspots.Copy()
 	//cache for sanic speed (lists are references anyways)
@@ -358,14 +360,14 @@ SUBSYSTEM_DEF(air)
 		var/obj/effect/hotspot/H = currentrun[currentrun.len]
 		currentrun.len--
 		if (H)
-			H.process()
+			H.process(delta_time)
 		else
 			hotspots -= H
 		if(MC_TICK_CHECK)
 			return
 
 
-/datum/controller/subsystem/air/proc/process_high_pressure_delta(resumed = 0)
+/datum/controller/subsystem/air/proc/process_high_pressure_delta(delta_time, resumed = FALSE)
 	while (high_pressure_delta.len)
 		var/turf/open/T = high_pressure_delta[high_pressure_delta.len]
 		high_pressure_delta.len--
@@ -375,7 +377,7 @@ SUBSYSTEM_DEF(air)
 		if(MC_TICK_CHECK)
 			return
 
-/datum/controller/subsystem/air/proc/process_turf_equalize(resumed = 0)
+/datum/controller/subsystem/air/proc/process_turf_equalize(delta_time, resumed = FALSE)
 	if(process_turf_equalize_auxtools(resumed,TICK_REMAINING_MS))
 		pause()
 	/*
@@ -416,7 +418,7 @@ SUBSYSTEM_DEF(air)
 		excited_group_pressure_goal = max(0,excited_group_pressure_goal_target * delay_threshold)
 
 
-/datum/controller/subsystem/air/proc/process_turfs(resumed = 0)
+/datum/controller/subsystem/air/proc/process_turfs(delta_time, resumed = FALSE)
 	if(process_turfs_auxtools(resumed,TICK_REMAINING_MS))
 		pause()
 	/*
@@ -435,15 +437,15 @@ SUBSYSTEM_DEF(air)
 			return
 	*/
 
-/datum/controller/subsystem/air/proc/process_excited_groups(resumed = 0)
+/datum/controller/subsystem/air/proc/process_excited_groups(delta_time, resumed = FALSE)
 	if(process_excited_groups_auxtools(resumed,TICK_REMAINING_MS))
 		pause()
 
-/datum/controller/subsystem/air/proc/finish_turf_processing(resumed = 0)
+/datum/controller/subsystem/air/proc/finish_turf_processing(delta_time, resumed = FALSE)
 	if(finish_turf_processing_auxtools(TICK_REMAINING_MS) || thread_running())
 		pause()
 
-/datum/controller/subsystem/air/proc/post_process_turfs(resumed = 0)
+/datum/controller/subsystem/air/proc/post_process_turfs(delta_time, resumed = FALSE)
 	if(post_process_turfs_auxtools(resumed,TICK_REMAINING_MS))
 		pause()
 

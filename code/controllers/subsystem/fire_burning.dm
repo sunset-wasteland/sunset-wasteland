@@ -18,6 +18,7 @@ SUBSYSTEM_DEF(fire_burning)
 
 	//cache for sanic speed (lists are references anyways)
 	var/list/currentrun = src.currentrun
+	var/delta_time = wait * 0.1
 
 	while(currentrun.len)
 		var/obj/O = currentrun[currentrun.len]
@@ -29,7 +30,7 @@ SUBSYSTEM_DEF(fire_burning)
 			continue
 
 		if(O.resistance_flags & ON_FIRE)
-			O.take_damage(20, BURN, "fire", 0)
+			O.take_damage(10 * delta_time, BURN, "fire", 0)
 		else
 			processing -= O
 

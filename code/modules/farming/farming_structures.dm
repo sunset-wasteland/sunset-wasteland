@@ -19,7 +19,6 @@
 	pressure_resistance = 2 * ONE_ATMOSPHERE
 	max_integrity = 300
 	proj_pass_rate = 70
-	pass_flags = LETPASSTHROW
 	pass_flags_self = PASSTABLE | LETPASSTHROW
 	climbable = TRUE
 	var/open = FALSE
@@ -115,7 +114,6 @@
 	density = TRUE
 	anchored = TRUE
 	proj_pass_rate = 90
-	pass_flags = LETPASSTHROW
 	pass_flags_self = PASSTABLE | LETPASSTHROW
 
 /obj/structure/loom/attackby(obj/item/I, mob/user)
@@ -162,7 +160,6 @@
 	reagent_id = /datum/reagent/compost
 	proj_pass_rate = 50
 	obj_integrity = 150
-	pass_flags = LETPASSTHROW
 	pass_flags_self = PASSTABLE | LETPASSTHROW
 	climbable = TRUE
 	var/seed_default_value = 4
@@ -250,7 +247,6 @@
 	density = FALSE
 	anchored = TRUE
 	proj_pass_rate = 95
-	pass_flags = LETPASSTHROW
 	pass_flags_self = PASSTABLE | LETPASSTHROW
 
 /obj/structure/legion_extractor/proc/seedify(obj/item/O, t_max, mob/living/user)

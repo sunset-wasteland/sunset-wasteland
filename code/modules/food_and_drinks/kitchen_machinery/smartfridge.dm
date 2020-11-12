@@ -244,7 +244,6 @@
 	active_power_usage = 600
 	visible_contents = FALSE
 	proj_pass_rate = 30
-	pass_flags = LETPASSTHROW
 	pass_flags_self = PASSTABLE | LETPASSTHROW
 	var/drying = FALSE
 
@@ -640,7 +639,6 @@
 	icon_state = "seedbin"
 	max_n_of_items = 400
 	proj_pass_rate = 70
-	pass_flags = LETPASSTHROW
 	pass_flags_self = PASSTABLE | LETPASSTHROW
 	var/climbable = TRUE
 
@@ -669,7 +667,6 @@
 	icon_state = "grownbin"
 	max_n_of_items = 1000
 	proj_pass_rate = 70
-	pass_flags = LETPASSTHROW
 	pass_flags_self = PASSTABLE | LETPASSTHROW
 
 /obj/machinery/smartfridge/bottlerack/grownbin/accept_check(obj/item/O)

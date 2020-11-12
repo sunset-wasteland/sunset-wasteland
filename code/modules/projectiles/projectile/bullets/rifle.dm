@@ -176,7 +176,7 @@ heavy rifle calibers (12.7, 14mm, 7.62): Uranium, Contaminated, Incin
 /obj/item/projectile/bullet/a50MG/penetrator
 	name = ".50 penetrator round"
 	damage = -10
-	movement_type = FLYING | UNSTOPPABLE
+	movement_type = FLYING | PHASING
 
 /*
 /obj/item/projectile/bullet/a50MG/uraniumtipped
@@ -342,5 +342,5 @@ heavy rifle calibers (12.7, 14mm, 7.62): Uranium, Contaminated, Incin
 	if(isliving(target) && collats)
 		collats--
 		temporary_unstoppable_movement = TRUE
-		ENABLE_BITFIELD(movement_type, UNSTOPPABLE)
+		ENABLE_BITFIELD(movement_type, PHASING)
 	..()

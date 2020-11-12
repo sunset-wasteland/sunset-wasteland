@@ -18,9 +18,9 @@
 			pixel_y = get_standard_pixel_y_offset(lying)
 
 /mob/living/CanAllowThrough(atom/movable/mover, border_dir)
-	..()
-	if((mover.pass_flags & PASSMOB))
-		return TRUE
+	. = ..()
+	if(.)
+		return
 	if(istype(mover, /obj/item/projectile))
 		var/obj/item/projectile/P = mover
 		return !P.can_hit_target(src, P.permutated, src == P.original, TRUE)

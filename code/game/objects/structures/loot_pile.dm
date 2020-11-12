@@ -46,7 +46,7 @@
 	density = TRUE
 	layer = TABLE_LAYER
 	climbable = TRUE
-	pass_flags = LETPASSTHROW
+	pass_flags_self = LETPASSTHROW
 	loot = list(
 		SCAVENGING_FOUND_NOTHING = 50,
 		SCAVENGING_SPAWN_MOUSE = 10,

@@ -4,6 +4,7 @@
 	max_integrity = 300
 	interaction_flags_atom = INTERACT_ATOM_ATTACK_HAND | INTERACT_ATOM_UI_INTERACT
 	drag_delay = 0.15 SECONDS
+	pass_flags_self = PASSSTRUCTURE
 	var/climb_time = 20
 	var/climb_stun = 20
 	var/climbable = FALSE
@@ -103,7 +104,7 @@
 			. += "<span class='notice'>It appears to be broken.</span>"
 		var/examine_status = examine_status(user)
 		if(examine_status)
-			. +=  examine_status
+			. += examine_status
 
 /obj/structure/proc/examine_status(mob/user) //An overridable proc, mostly for falsewalls.
 	var/healthpercent = (obj_integrity/max_integrity) * 100

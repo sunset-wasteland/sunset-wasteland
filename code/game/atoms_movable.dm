@@ -26,7 +26,7 @@
 	var/inertia_move_delay = 5
 	///This is a hack to get around dumb him him me scenarios
 	var/last_pushoff
-	/// These flags mark the ability of this movable to pass through certain blockers.
+	/// Things we can pass through while moving. If any of this matches the thing we're trying to pass's [pass_flags_self], then we can pass through.
 	var/pass_flags = NONE
 	var/moving_diagonally = 0 //0: not doing a diagonal move. 1 and 2: doing the first/second step of the diagonal move
 	var/atom/movable/moving_from_pull		//attempt to resume grab after moving instead of before.

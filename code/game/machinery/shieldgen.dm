@@ -455,11 +455,10 @@
 			gen_secondary.use_stored_power(drain_amount*0.5)
 
 /obj/machinery/shieldwall/CanAllowThrough(atom/movable/mover, border_dir)
-	..()
+	. = ..()
+	if(.)
+		return
 	if(istype(mover) && (mover.pass_flags & PASSGLASS))
 		return prob(20)
-	else
-		if(istype(mover, /obj/item/projectile))
-			return prob(10)
-		else
-			return !density
+	else if(istype(mover, /obj/item/projectile))
+		return prob(10)

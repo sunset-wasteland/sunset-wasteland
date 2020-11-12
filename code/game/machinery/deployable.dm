@@ -100,7 +100,6 @@
 
 
 
-
 /obj/structure/barricade/sandbags
 	name = "sandbags"
 	desc = "Bags of sand. Self explanatory."
@@ -108,7 +107,7 @@
 	icon_state = "sandbags"
 	max_integrity = 300
 	proj_pass_rate = 30
-	pass_flags = LETPASSTHROW
+	pass_flags_self = LETPASSTHROW
 	bar_material = SAND
 	climbable = TRUE
 	smooth = SMOOTH_TRUE

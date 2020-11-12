@@ -334,13 +334,6 @@
 		for(var/obj/item/Item in O)
 			Item.extinguish()
 
-/obj/structure/foamedmetal/resin/CanAllowThrough(atom/movable/mover, border_dir)
-	..()
-	if(istype(mover) && (mover.pass_flags & pass_flags_self))
-		return TRUE
-	. = ..()
-
-
 /obj/structure/foamedmetal/resin/BlockThermalConductivity()
 	return TRUE
 

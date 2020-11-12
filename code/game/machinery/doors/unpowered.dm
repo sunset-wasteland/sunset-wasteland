@@ -130,7 +130,7 @@
 	assemblytype = /obj/item/stack/rods
 	visible = FALSE
 	explosion_block = FALSE
-	pass_flags = LETPASSTHROW  // would be great but the var is not functional for some reason.
+	pass_flags_self = LETPASSTHROW
 	proj_pass_rate = 95
 
 /obj/machinery/door/unpowered/celldoor/update_icon()

@@ -21,6 +21,8 @@
 		else
 			name = pick(pet_monkey_names)
 		gender = pick(MALE, FEMALE)
+	if(name == "Furious George")
+		ai_controller = /datum/ai_controller/monkey/angry //hes always mad
 	. = ..()
 
 	//These have to be after the parent new to ensure that the monkey

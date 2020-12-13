@@ -2,28 +2,6 @@
 
 /mob/living/carbon/monkey
 
-
-/mob/living/carbon/monkey/BiologicalLife(seconds, times_fired)
-	if(!(. = ..()))
-		return
-	if(client)
-		return
-	if(stat == CONSCIOUS)
-		if(on_fire || buckled || restrained() || (!CHECK_MOBILITY(src, MOBILITY_STAND) && CHECK_MOBILITY(src, MOBILITY_MOVE))) //CIT CHANGE - makes it so monkeys attempt to resist if they're resting)
-			if(!resisting && prob(MONKEY_RESIST_PROB))
-				resisting = TRUE
-				walk_to(src,0)
-				resist()
-		else if(resisting)
-			resisting = FALSE
-		else if((mode == MONKEY_IDLE && !pickupTarget && !prob(MONKEY_SHENANIGAN_PROB)) || !handle_combat())
-			if(prob(25) && CHECK_MOBILITY(src, MOBILITY_MOVE) && isturf(loc) && !pulledby)
-				step(src, pick(GLOB.cardinals))
-			else if(prob(1))
-				emote(pick("scratch","jump","roll","tail"))
-	else
-		walk_to(src,0)
-
 /mob/living/carbon/monkey/handle_mutations_and_radiation()
 	if(radiation)
 		if(radiation > RAD_MONKEY_GORILLIZE)

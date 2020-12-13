@@ -1,6 +1,6 @@
 #define TRANSFORMATION_DURATION 22
 
-/mob/living/carbon/proc/monkeyize(tr_flags = (TR_KEEPITEMS | TR_KEEPVIRUS | TR_KEEPSTUNS | TR_KEEPREAGENTS | TR_DEFAULTMSG))
+/mob/living/carbon/proc/monkeyize(tr_flags = (TR_KEEPITEMS | TR_KEEPVIRUS | TR_KEEPSTUNS | TR_KEEPREAGENTS | TR_DEFAULTMSG | TR_KEEPAI))
 	if(mob_transforming || transformation_timer)
 		return
 
@@ -139,6 +139,9 @@
 			changeling.purchasedpowers += HF
 			HF.action.Grant(O)
 
+	if(tr_flags & TR_KEEPAI)
+		ai_controller.PossessPawn(O)
+
 	if (tr_flags & TR_DEFAULTMSG)
 		to_chat(O, "<B>You are now a monkey.</B>")
 
@@ -155,7 +158,7 @@
 //////////////////////////           Humanize               //////////////////////////////
 //Could probably be merged with monkeyize but other transformations got their own procs, too
 
-/mob/living/carbon/proc/humanize(tr_flags = (TR_KEEPITEMS | TR_KEEPVIRUS | TR_KEEPSTUNS | TR_KEEPREAGENTS | TR_DEFAULTMSG))
+/mob/living/carbon/proc/humanize(tr_flags = (TR_KEEPITEMS | TR_KEEPVIRUS | TR_KEEPSTUNS | TR_KEEPREAGENTS | TR_DEFAULTMSG | TR_KEEPAI))
 	if (mob_transforming || transformation_timer)
 		return
 
@@ -297,6 +300,9 @@
 		if(changeling)
 			for(var/obj/effect/proc_holder/changeling/humanform/HF in changeling.purchasedpowers)
 				changeling.purchasedpowers -= HF
+
+	if(tr_flags & TR_KEEPAI)
+		ai_controller.PossessPawn(O)
 
 	O.a_intent = INTENT_HELP
 	if (tr_flags & TR_DEFAULTMSG)

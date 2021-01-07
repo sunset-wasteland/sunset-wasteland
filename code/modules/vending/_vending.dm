@@ -473,7 +473,8 @@ GLOBAL_LIST_EMPTY(vending_products)
 			new dump_path(get_turf(src))
 			break
 
-/obj/machinery/vending/proc/tilt(mob/fatty, crit=FALSE)
+///Tilts ontop of the atom supplied, if crit is true some extra shit can happen. Returns TRUE if it dealt damage to something.
+/obj/machinery/vending/proc/tilt(atom/fatty, crit=FALSE)
 	visible_message("<span class='danger'>[src] tips over!</span>")
 	tilted = TRUE
 	layer = ABOVE_MOB_LAYER
@@ -484,6 +485,8 @@ GLOBAL_LIST_EMPTY(vending_products)
 
 	if(forcecrit)
 		crit_case = forcecrit
+
+	. = FALSE
 
 	if(in_range(fatty, src))
 		for(var/mob/living/L in get_turf(fatty))
@@ -562,6 +565,7 @@ GLOBAL_LIST_EMPTY(vending_products)
 
 			L.Paralyze(60)
 			L.emote("scream")
+			. = TRUE
 			playsound(L, 'sound/effects/blobattack.ogg', 40, TRUE)
 			playsound(L, 'sound/effects/splat.ogg', 50, TRUE)
 
@@ -573,8 +577,9 @@ GLOBAL_LIST_EMPTY(vending_products)
 		throw_at(get_turf(fatty), 1, 1, spin=FALSE)
 
 /obj/machinery/vending/proc/untilt(mob/user)
-	user.visible_message("<span class='notice'>[user] rights [src].", \
-		"<span class='notice'>You right [src].")
+	if(user)
+		user.visible_message("<span class='notice'>[user] rights [src].</span>", \
+			"<span class='notice'>You right [src].</span>")
 
 	unbuckle_all_mobs(TRUE)
 	anchored = FALSE //so you can push it back into position

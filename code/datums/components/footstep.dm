@@ -21,13 +21,16 @@
 	'sound/f13effects/footstep/ArmorPower/FST_ArmorPower_Dirt_WalkUp_3rd_02.ogg',
 	'sound/f13effects/footstep/ArmorPower/FST_ArmorPower_Dirt_WalkUp_3rd_03.ogg',
 	'sound/f13effects/footstep/ArmorPower/FST_ArmorPower_Dirt_WalkUp_3rd_04.ogg')
+	///Whether or not to add variation to the sounds played
+	var/sound_vary = FALSE
 
-/datum/component/footstep/Initialize(footstep_type_ = FOOTSTEP_MOB_BAREFOOT, volume_ = 0.5, e_range_ = -1)
-	if(!isliving(parent))
+/datum/component/footstep/Initialize(footstep_type_ = FOOTSTEP_MOB_BAREFOOT, volume_ = 0.5, e_range_ = -8, vary)
+	if(!ismovable(parent))
 		return COMPONENT_INCOMPATIBLE
 	volume = volume_
 	e_range = e_range_
 	footstep_type = footstep_type_
+	sound_vary = vary
 	switch(footstep_type)
 		if(FOOTSTEP_MOB_HUMAN)
 			if(!ishuman(parent))
@@ -46,7 +49,11 @@
 			footstep_sounds = 'sound/effects/footstep/slime1.ogg'
 		if(FOOTSTEP_MOB_CRAWL)
 			footstep_sounds = 'sound/effects/footstep/crawl1.ogg'
-	RegisterSignal(parent, COMSIG_MOVABLE_MOVED, .proc/play_simplestep) //Note that this doesn't get called for humans.
+		if(FOOTSTEP_OBJ_MACHINE)
+			footstep_sounds = 'sound/effects/bang.ogg'
+			RegisterSignal(parent, list(COMSIG_MOVABLE_MOVED), .proc/play_simplestep_machine) //Note that this doesn't get called for humans.
+			return
+	RegisterSignal(parent, list(COMSIG_MOVABLE_MOVED), .proc/play_simplestep) //Note that this doesn't get called for humans.
 
 ///Prepares a footstep. Determines if it should get played. Returns the turf it should get played on. Note that it is always a /turf/open
 /datum/component/footstep/proc/prepare_step()
@@ -161,3 +168,13 @@
 				return
 		else
 			playsound(T, pick(powerArmorSounds), 50, TRUE)
+
+
+///Prepares a footstep for machine walking
+/datum/component/footstep/proc/play_simplestep_machine()
+	SIGNAL_HANDLER
+
+	var/turf/open/T = get_turf(parent)
+	if(!istype(T))
+		return
+	playsound(T, footstep_sounds, 50, falloff_distance = 1, vary = sound_vary)

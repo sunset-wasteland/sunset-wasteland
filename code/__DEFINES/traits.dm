@@ -296,6 +296,7 @@
 
 // item traits
 #define TRAIT_NODROP            "nodrop"
+#define TRAIT_NEEDS_TWO_HANDS	"needstwohands" //The items needs two hands to be carried
 
 // common trait sources
 #define TRAIT_GENERIC "generic"

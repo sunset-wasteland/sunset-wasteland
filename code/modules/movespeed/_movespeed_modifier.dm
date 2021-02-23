@@ -224,6 +224,7 @@ GLOBAL_LIST_EMPTY(movespeed_modification_cache)
 		. = M.apply_multiplicative(., src)
 	// your delay decreases, "give" the delay back to the client
 	cached_multiplicative_slowdown = .
+	SEND_SIGNAL(src, COMSIG_MOB_MOVESPEED_UPDATED)
 	if(!client)
 		return
 	var/diff = (client.last_move - client.move_delay) - cached_multiplicative_slowdown

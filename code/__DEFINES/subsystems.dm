@@ -84,8 +84,9 @@
 #define INIT_ORDER_EVENTS			70
 #define INIT_ORDER_JOBS				65
 #define INIT_ORDER_QUIRKS			60
-#define INIT_ORDER_AI_MOVEMENT 		56 //We need the movement setup
-#define INIT_ORDER_TICKER			55
+#define INIT_ORDER_AI_MOVEMENT		56 //We need the movement setup
+#define INIT_ORDER_AI_CONTROLLERS	55 //So the controller can get the ref
+#define INIT_ORDER_TICKER			54
 #define INIT_ORDER_INSTRUMENTS		53
 #define INIT_ORDER_MAPPING			50
 #define INIT_ORDER_ECONOMY			45

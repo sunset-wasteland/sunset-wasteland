@@ -404,16 +404,13 @@
 	set name = "Point To"
 	set category = "Object"
 
-	if(!src || !isturf(src.loc) || !(A in view(src.loc)))
+	if(client && !(A in view(client.view, src)))
 		return FALSE
 	if(istype(A, /obj/effect/temp_visual/point))
 		return FALSE
 
-	var/tile = get_turf(A)
-	if (!tile)
-		return FALSE
+	point_at(A)
 
-	new /obj/effect/temp_visual/point(A,invisibility)
 	SEND_SIGNAL(src, COMSIG_MOB_POINTED, A)
 	return TRUE
 

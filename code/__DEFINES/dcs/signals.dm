@@ -21,7 +21,9 @@
 #define COMSIG_GLOB_LIVING_SAY_SPECIAL "!say_special"
 /// called by datum/cinematic/play() : (datum/cinematic/new_cinematic)
 #define COMSIG_GLOB_PLAY_CINEMATIC "!play_cinematic"
-	#define COMPONENT_GLOB_BLOCK_CINEMATIC 1
+	#define COMPONENT_GLOB_BLOCK_CINEMATIC (1<<0)
+/// a person somewhere has thrown something : (mob/living/carbon/carbon_thrower, target)
+#define COMSIG_GLOB_CARBON_THROW_THING	"!throw_thing"
 
 /// called by auxgm add_gas: (gas_id)
 #define COMSIG_GLOB_NEW_GAS "!new_gas"
@@ -187,6 +189,7 @@
 
 #define COMSIG_CLICK_CTRL "ctrl_click"							//from base of atom/CtrlClickOn(): (/mob)
 #define COMSIG_CLICK_ALT "alt_click"							//from base of atom/AltClick(): (/mob)
+	#define COMPONENT_CANCEL_CLICK_ALT (1<<0)
 #define COMSIG_CLICK_CTRL_SHIFT "ctrl_shift_click"				//from base of atom/CtrlShiftClick(/mob)
 #define COMSIG_MOUSEDROP_ONTO "mousedrop_onto"					//from base of atom/MouseDrop(): (/atom/over, /mob/user)
 	#define COMPONENT_NO_MOUSEDROP 1

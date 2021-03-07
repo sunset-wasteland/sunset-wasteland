@@ -186,6 +186,13 @@
 	..()
 	health = clamp(health, 0, maxHealth)
 
+/mob/living/simple_animal/examine(mob/user)
+	. = ..()
+	if(stat == DEAD)
+		. += "<span class='deadsay'>Upon closer examination, [p_they()] appear[p_s()] to be dead.</span>"
+	if(access_card)
+		. += "There appears to be [icon2html(access_card, user)] \a [access_card] pinned to [p_them()]."
+
 /mob/living/simple_animal/update_stat()
 	if(status_flags & GODMODE)
 		return

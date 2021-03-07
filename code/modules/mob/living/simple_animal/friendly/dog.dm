@@ -17,6 +17,8 @@
 	speak_chance = 1
 	turns_per_move = 10
 	var/held_icon = "corgi"
+	ai_controller = /datum/ai_controller/dog
+	stop_automated_movement = TRUE
 
 	footstep_type = FOOTSTEP_MOB_CLAW
 
@@ -113,6 +115,7 @@
 	dat += "<br><B>Head:</B> <A href='?src=[REF(src)];[inventory_head ? "remove_inv=head'>[inventory_head]" : "add_inv=head'>Nothing"]</A>"
 	dat += "<br><B>Back:</B> <A href='?src=[REF(src)];[inventory_back ? "remove_inv=back'>[inventory_back]" : "add_inv=back'>Nothing"]</A>"
 	dat += "<br><B>Collar:</B> <A href='?src=[REF(src)];[pcollar ? "remove_inv=collar'>[pcollar]" : "add_inv=collar'>Nothing"]</A>"
+	dat += "<br><B>ID Card:</B></td><td><A href='?src=[REF(src)];[access_card ? "remove_inv=card'>[access_card]" : "add_inv=card'><font color=grey>Empty</font>"]</A>"
 
 	user << browse(dat, "window=mob[REF(src)];size=325x500")
 	onclose(user, "mob[REF(src)]")
@@ -192,6 +195,10 @@
 					pcollar = null
 					update_corgi_fluff()
 					regenerate_icons()
+			if("card")
+				if(access_card)
+					usr.put_in_hands(access_card)
+					access_card = null
 
 		show_inv(usr)
 
@@ -245,9 +252,22 @@
 						return
 
 					item_to_add.forceMove(src)
-					src.inventory_back = item_to_add
+					inventory_back = item_to_add
 					update_corgi_fluff()
 					regenerate_icons()
+			if("card")
+				if(access_card)
+					to_chat(usr, "<span class='warning'>[src] already has \an [access_card] pinned to [p_them()]!</span>")
+					return
+				var/obj/item/item_to_add = usr.get_active_held_item()
+				if(!usr.temporarilyRemoveItemFromInventory(item_to_add))
+					to_chat(usr, "<span class='warning'>\The [item_to_add] is stuck to your hand, you cannot pin it to [src]!</span>")
+					return
+				if(!istype(item_to_add, /obj/item/card/id))
+					to_chat(usr, "<span class='warning'>You can't pin [item_to_add] to [src]!</span>")
+					return
+				item_to_add.forceMove(src)
+				access_card = item_to_add
 
 		show_inv(usr)
 	else

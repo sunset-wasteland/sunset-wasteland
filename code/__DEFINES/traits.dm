@@ -228,6 +228,8 @@
 #define TRAIT_UNARMED_WEAPON	"unarmed_weapon"
 /// Prevents usage of manipulation appendages (picking, holding or using items, manipulating storage).
 #define TRAIT_HANDS_BLOCKED "handsblocked"
+/// Makes it so the mob can use guns regardless of tool user status
+#define TRAIT_GUN_NATURAL "gunnatural"
 
 /// This atom can ignore the "is on a turf" check for simple AI datum attacks, allowing them to attack from bags or lockers as long as any other conditions are met
 #define TRAIT_AI_BAGATTACK "bagattack"

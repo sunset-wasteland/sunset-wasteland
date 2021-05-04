@@ -58,8 +58,6 @@
 		finish_action(controller, TRUE)
 		return
 
-
-
 	finish_action(controller, FALSE)
 
 /datum/ai_behavior/monkey_equip/ground
@@ -150,7 +148,7 @@
 	if(!target || target.stat != CONSCIOUS)
 		finish_action(controller, TRUE) //Target == owned
 
-	if(living_pawn.Adjacent(target) && isturf(target.loc) && !IS_DEAD_OR_INCAP(living_pawn))	// if right next to perp
+	if(isturf(target.loc) && !IS_DEAD_OR_INCAP(living_pawn)) // Check if they're a valid target
 		// check if target has a weapon
 		var/obj/item/W
 		for(var/obj/item/I in target.held_items)
@@ -178,20 +176,42 @@
 
 	var/mob/living/living_pawn = controller.pawn
 
-	// if(living_pawn.next_move > world.time)
-		// return
+	if(!living_pawn.CheckActionCooldown(CLICK_CD_MELEE))
+		return
 
-	// living_pawn.changeNext_move(CLICK_CD_MELEE) //We play fair
+	living_pawn.DelayNextAction(CLICK_CD_MELEE) //We play fair
 
 	var/obj/item/weapon = locate(/obj/item) in living_pawn.held_items
 
 	living_pawn.face_atom(target)
 
+	if(isnull(controller.blackboard[BB_MONKEY_GUN_WORKED]))
+		controller.blackboard[BB_MONKEY_GUN_WORKED] = TRUE
+
 	// attack with weapon if we have one
-	if(weapon)
-		weapon.melee_attack_chain(living_pawn, target)
-	else
-		living_pawn.UnarmedAttack(target)
+	if(living_pawn.can_reach(target, weapon))
+		if(weapon)
+			weapon.melee_attack_chain(living_pawn, target)
+		else
+			living_pawn.UnarmedAttack(target)
+		controller.blackboard[BB_MONKEY_GUN_WORKED] = TRUE // We reset their memory of the gun being 'broken' if they accomplish some other attack
+	else if(weapon)
+		var/atom/real_target = target
+		if(prob(10)) // Artificial miss
+			real_target = pick(oview(2, target))
+
+		var/obj/item/gun/gun = locate() in living_pawn.held_items
+		var/can_shoot = gun?.can_shoot() || FALSE
+		if(gun && controller.blackboard[BB_MONKEY_GUN_WORKED] && prob(95))
+			// We attempt to attack even if we can't shoot so we get the effects of pulling the trigger
+			gun.afterattack(real_target, living_pawn, FALSE)
+			controller.blackboard[BB_MONKEY_GUN_WORKED] = can_shoot ? TRUE : prob(80) // Only 20% likely to notice it didn't work
+			if(can_shoot)
+				controller.blackboard[BB_MONKEY_GUN_NEURONS_ACTIVATED] = TRUE
+		else
+			living_pawn.throw_item(real_target)
+			controller.blackboard[BB_MONKEY_GUN_WORKED] = TRUE // 'worked'
+
 	// no de-aggro
 	if(controller.blackboard[BB_MONKEY_AGRESSIVE])
 		return

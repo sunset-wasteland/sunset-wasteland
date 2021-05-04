@@ -23,6 +23,8 @@
 	add_verb(src, /mob/living/proc/mob_sleep)
 	add_verb(src, /mob/living/proc/lay_down)
 
+	ADD_TRAIT(src, TRAIT_GUN_NATURAL, SPECIES_TRAIT)
+
 	if(unique_name) //used to exclude pun pun
 		gender = pick(MALE, FEMALE)
 	real_name = name

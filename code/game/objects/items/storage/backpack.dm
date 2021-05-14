@@ -221,8 +221,6 @@
 	icon_state = "viropack"
 	item_state = "viropack"
 
-
-
 /*
  * Satchel Types
  */
@@ -382,8 +380,13 @@
 	item_state = "duffel"
 	slowdown = 1
 
+/obj/item/storage/backpack/duffelbag/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_combined_w_class = 30
+
 /obj/item/storage/backpack/duffelbag/equipment/update_icon_state()
-	if(contents.len == 0)
+	if(length(contents) == 0)
 		qdel(src)
 
 /obj/item/storage/backpack/duffelbag/scavengers
@@ -396,10 +399,21 @@
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_combined_w_class = 40
 
-/obj/item/storage/backpack/duffelbag/ComponentInitialize()
+/obj/item/storage/backpack/duffelbag/cursed
+	name = "living duffel bag"
+	desc = "A cursed clown duffel bag that hungers for food of any kind.\n A warning label suggests that it eats food inside. If that food happens to be a horribly ruined, burned mess the chef scrapped out of the microwave, then it might have negative effects on the bag..."
+	icon_state = "duffel-curse"
+	item_state = "duffel-curse"
+	slowdown = 2
+	item_flags = DROPDEL
+	max_integrity = 100
+	///counts time passed since it ate food
+	var/hunger = 0
+
+/obj/item/storage/backpack/duffelbag/cursed/Initialize()
 	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_combined_w_class = 30
+	var/add_dropdel = TRUE //clarified boolean
+	AddComponent(/datum/component/curse_of_hunger, add_dropdel)
 
 /obj/item/storage/backpack/duffelbag/captain
 	name = "captain's duffel bag"

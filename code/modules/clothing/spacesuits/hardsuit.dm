@@ -22,7 +22,7 @@
 
 /obj/item/clothing/head/helmet/space/hardsuit/Initialize()
 	. = ..()
-	soundloop = new(list(), FALSE, TRUE)
+	soundloop = new(src, FALSE, TRUE)
 	soundloop.volume = 5
 	START_PROCESSING(SSobj, src)
 

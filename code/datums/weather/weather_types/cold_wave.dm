@@ -24,7 +24,5 @@
 
 	barometer_predictable = TRUE
 
-	carbons_only = TRUE
-
 /datum/weather/cold_wave/weather_act(mob/living/L)
 	L.adjust_bodytemperature(-rand(5, 15))

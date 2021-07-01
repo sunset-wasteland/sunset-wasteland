@@ -26,8 +26,6 @@
 
 	barometer_predictable = TRUE
 
-	carbons_only = TRUE
-
 /datum/weather/acid_rain/weather_act(mob/living/L)
 //	var/resist = L.getarmor(null, "acid")
 //	if(prob(max(0,100-resist)))

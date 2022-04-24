@@ -4,9 +4,10 @@
 
 #ifndef LOWMEMORYMODE
 	#ifdef ALL_MAPS
-		#include "map_files\Pahrump\Pahrump-Surface-2.dmm"
-		#include "map_files\Pahrump\Pahrump-Underground-1.dmm"
-		#include "map_files\Pahrump\Dungeons.dmm"
+		#include "map_files\Pahrump-Sunset\Pahrump-Sunset.dmm"
+		#include "map_files\Pahrump-Sunset\Pahrump-Lower.dmm"
+		#include "map_files\Pahrump-Sunset\Pahrump-Upper.dmm"
+		#include "map_files\Pahrump-Sunset\Dungeons.dmm"
 
 		#ifdef TRAVISBUILDING
 			#include "templates.dm"

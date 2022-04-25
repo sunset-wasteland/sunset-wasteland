@@ -846,8 +846,6 @@ Mayor
 		/obj/item/ammo_box/a357=2)
 
 /*--------------------------------------------------------------*/
-
-/*
 /datum/job/oasis/f13banker
 	title = "Banker"
 	flag = F13BANKER

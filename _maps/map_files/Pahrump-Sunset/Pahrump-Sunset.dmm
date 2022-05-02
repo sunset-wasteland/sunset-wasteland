@@ -1676,8 +1676,7 @@
 /area/f13/caves)
 "afo" = (
 /obj/structure/closet/crate/bin{
-	anchorable = 0;
-	storage_capacity = 30
+	anchorable = 0
 	},
 /obj/item/storage/bag/trash,
 /turf/open/indestructible/ground/outside/savannah,
@@ -1778,7 +1777,6 @@
 	dwidth = 1;
 	height = 3;
 	id = "North_Ground";
-	json_key = null;
 	name = "Ground";
 	roundstart_template = /datum/map_template/shuttle/northbunker/elevator;
 	width = 4
@@ -2120,8 +2118,6 @@
 	pixel_y = 2
 	},
 /obj/machinery/door/unpowered/securedoor{
-	max_integrity = 300;
-	obj_integrity = 300;
 	req_access_txt = "125"
 	},
 /turf/open/indestructible/ground/outside/dirt,
@@ -3079,7 +3075,6 @@
 /area/f13/followers)
 "ajv" = (
 /obj/machinery/door/unpowered/securedoor{
-	autoclose = 1;
 	name = "Mayor's Quarters";
 	req_one_access_txt = "62"
 	},
@@ -4738,7 +4733,6 @@
 /area/f13/wasteland)
 "aoA" = (
 /obj/machinery/door/unpowered/securedoor{
-	autoclose = 1;
 	name = "Farm";
 	req_one_access_txt = "25"
 	},
@@ -4861,7 +4855,6 @@
 /area/f13/city)
 "aoW" = (
 /obj/machinery/door/unpowered/securedoor{
-	autoclose = 1;
 	name = "Farm";
 	req_one_access_txt = "25"
 	},
@@ -5079,7 +5072,6 @@
 /area/f13/city)
 "apD" = (
 /obj/machinery/door/unpowered/securedoor{
-	autoclose = 1;
 	req_one_access_txt = "48"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
@@ -5417,7 +5409,6 @@
 "aqz" = (
 /obj/machinery/door/airlock/security/glass{
 	name = "NCR No Mans Land Entrance";
-	req_access = null;
 	req_access_txt = "121"
 	},
 /turf/open/indestructible/ground/outside/sidewalk,
@@ -10160,8 +10151,7 @@
 /area/f13/village)
 "aEq" = (
 /obj/structure/closet/crate/bin{
-	anchorable = 0;
-	storage_capacity = 30
+	anchorable = 0
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/khans)
@@ -15719,9 +15709,7 @@
 /obj/structure/junk/locker{
 	pixel_x = -16
 	},
-/obj/structure/junk/locker{
-	pixel_x = 0
-	},
+/obj/structure/junk/locker,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
 /turf/open/floor/f13{
 	icon_state = "floordirtysolid"
@@ -16430,7 +16418,6 @@
 	dwidth = 1;
 	height = 3;
 	id = "Ground";
-	json_key = null;
 	name = "Ground";
 	roundstart_template = /datum/map_template/shuttle/bunker/elevator;
 	width = 4
@@ -20076,10 +20063,6 @@
 /obj/structure/table/wood/settler,
 /turf/open/floor/wood/f13/stage_br,
 /area/f13/bar/heaven)
-"bgQ" = (
-/obj/structure/stairs/north,
-/turf/open/indestructible/ground/outside/savannah,
-/area/f13/wasteland/khans)
 "bgR" = (
 /obj/structure/flora/ausbushes/fernybush,
 /turf/open/indestructible/ground/outside/savannah/toprightcorner,
@@ -20450,7 +20433,6 @@
 /area/f13/legion)
 "bhO" = (
 /obj/machinery/door/unpowered/securedoor{
-	autoclose = 1;
 	req_one_access_txt = "121"
 	},
 /turf/open/indestructible/ground/outside/sidewalk,
@@ -20690,9 +20672,7 @@
 	},
 /area/f13/building)
 "bis" = (
-/obj/machinery/vending/medical{
-	req_access = null
-	},
+/obj/machinery/vending/medical,
 /turf/closed/wall/f13/supermart,
 /area/f13/followers)
 "bit" = (
@@ -20764,9 +20744,7 @@
 /obj/machinery/light/small/broken{
 	dir = 1
 	},
-/obj/structure/filingcabinet{
-	pixel_x = 0
-	},
+/obj/structure/filingcabinet,
 /obj/structure/filingcabinet{
 	pixel_x = 12
 	},
@@ -20942,8 +20920,7 @@
 /obj/structure/table/glass,
 /obj/structure/fluff/paper/stack{
 	pixel_x = 10;
-	pixel_y = 4;
-	pixel_z = 0
+	pixel_y = 4
 	},
 /obj/item/paper_bin,
 /obj/item/pen,
@@ -21249,7 +21226,6 @@
 /area/f13/building)
 "bjR" = (
 /obj/machinery/door/unpowered/securedoor{
-	autoclose = 1;
 	name = "The Blue Oyster";
 	req_one_access_txt = "28"
 	},
@@ -21264,7 +21240,6 @@
 "bjT" = (
 /obj/structure/decoration/rag,
 /obj/machinery/door/unpowered/securedoor{
-	autoclose = 1;
 	name = "Sheriff's Office";
 	req_one_access_txt = "62"
 	},
@@ -21287,7 +21262,6 @@
 /area/f13/city)
 "bjW" = (
 /obj/machinery/door/unpowered/securedoor{
-	autoclose = 1;
 	name = "Residence";
 	req_one_access_txt = "0"
 	},
@@ -21296,7 +21270,6 @@
 "bjX" = (
 /obj/effect/decal/cleanable/oil,
 /obj/effect/decal/fakelattice{
-	density = 0;
 	pixel_x = 17
 	},
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -21392,7 +21365,6 @@
 /area/f13/wasteland)
 "bkk" = (
 /obj/effect/decal/fakelattice{
-	density = 0;
 	pixel_x = 17
 	},
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -21454,7 +21426,6 @@
 "bkq" = (
 /obj/structure/table/booth,
 /obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
-	pixel_x = 0;
 	pixel_y = 9
 	},
 /obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
@@ -21492,7 +21463,6 @@
 "bks" = (
 /obj/structure/table/booth,
 /obj/item/export/bottle/whiskey{
-	pixel_x = 0;
 	pixel_y = 8
 	},
 /obj/item/export/bottle/patron{
@@ -21513,7 +21483,6 @@
 /area/f13/city)
 "bku" = (
 /obj/machinery/door/unpowered/securedoor{
-	autoclose = 1;
 	name = "First Bank of Oasis";
 	req_one_access_txt = "52"
 	},
@@ -21672,7 +21641,6 @@
 /area/f13/city)
 "bkR" = (
 /obj/machinery/door/unpowered/securedoor{
-	autoclose = 1;
 	name = "First Bank of Oasis";
 	req_one_access_txt = "52"
 	},
@@ -22430,12 +22398,6 @@
 /obj/structure/barricade/bars,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland)
-"bmO" = (
-/obj/structure/stairs/north,
-/turf/open/floor/f13{
-	icon_state = "darkdirtysolid"
-	},
-/area/f13/ncr)
 "bmP" = (
 /obj/structure/table/reinforced,
 /obj/structure/barricade/bars,
@@ -22470,10 +22432,6 @@
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
 /turf/open/floor/carpet/black,
 /area/f13/city)
-"bmT" = (
-/obj/structure/stairs/north,
-/turf/open/indestructible/ground/outside/desert,
-/area/f13/legion)
 "bmU" = (
 /obj/structure/table,
 /obj/item/paper_bin,
@@ -22644,7 +22602,6 @@
 /area/f13/wasteland)
 "bnw" = (
 /obj/machinery/door/unpowered/securedoor{
-	autoclose = 1;
 	name = "Mayor's Office";
 	req_one_access_txt = "62"
 	},
@@ -22681,7 +22638,6 @@
 /area/f13/city)
 "bnC" = (
 /obj/machinery/door/unpowered/securedoor{
-	autoclose = 1;
 	name = "Meeting Chamber";
 	req_one_access_txt = "62"
 	},
@@ -23109,7 +23065,6 @@
 /area/f13/city)
 "boS" = (
 /obj/machinery/door/unpowered/securedoor{
-	autoclose = 1;
 	name = "Gatehouse";
 	req_one_access_txt = "62"
 	},
@@ -23180,7 +23135,6 @@
 /area/f13/city)
 "bpc" = (
 /obj/machinery/door/unpowered/securedoor{
-	autoclose = 1;
 	req_one_access_txt = "121"
 	},
 /obj/structure/decoration/rag,
@@ -23390,7 +23344,6 @@
 "bpD" = (
 /obj/structure/table/booth,
 /obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
-	pixel_x = 0;
 	pixel_y = 9
 	},
 /obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
@@ -23414,7 +23367,6 @@
 "bpF" = (
 /obj/structure/table/booth,
 /obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
-	pixel_x = 0;
 	pixel_y = 9
 	},
 /obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
@@ -23653,7 +23605,6 @@
 "bqM" = (
 /obj/effect/decal/cleanable/generic,
 /obj/effect/decal/fakelattice{
-	density = 0;
 	pixel_x = 17
 	},
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -23920,7 +23871,6 @@
 /area/f13/wasteland)
 "bsi" = (
 /obj/effect/decal/fakelattice{
-	density = 0;
 	pixel_x = 17
 	},
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -23955,7 +23905,6 @@
 "bsB" = (
 /obj/structure/barricade/wooden,
 /obj/effect/decal/fakelattice{
-	density = 0;
 	pixel_x = 17
 	},
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -24314,7 +24263,6 @@
 	pixel_x = -14
 	},
 /obj/effect/decal/fakelattice{
-	density = 0;
 	pixel_x = 17
 	},
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -24485,7 +24433,6 @@
 /area/f13/wasteland)
 "bvD" = (
 /obj/machinery/door/unpowered/securedoor{
-	autoclose = 1;
 	name = "Lookout";
 	req_one_access_txt = "121"
 	},
@@ -25517,7 +25464,6 @@
 /area/f13/village)
 "bAF" = (
 /obj/machinery/door/unpowered/securedoor{
-	autoclose = 1;
 	req_one_access_txt = "121"
 	},
 /turf/open/floor/f13{
@@ -25783,7 +25729,6 @@
 /area/f13/wasteland)
 "bSA" = (
 /obj/machinery/door/unpowered/securedoor{
-	autoclose = 1;
 	name = "Church Backroom";
 	req_one_access_txt = "25"
 	},
@@ -25846,16 +25791,14 @@
 /area/f13/wasteland)
 "bTI" = (
 /obj/structure/musician/piano{
-	desc = "What a wierd piano..";
-	name = "minimoog"
+	desc = "What a wierd piano.."
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/caves)
 "bTL" = (
 /obj/structure/chair/wood/modern{
-	dir = 8;
-	icon_state = "wooden_chair_settler"
+	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/inside/dirt,
@@ -25865,7 +25808,6 @@
 /area/f13/wasteland)
 "bTN" = (
 /obj/effect/decal/fakelattice{
-	density = 0;
 	pixel_x = 17
 	},
 /turf/closed/wall/f13/wood,
@@ -25952,7 +25894,6 @@
 /area/f13/city)
 "bUB" = (
 /obj/machinery/door/unpowered/securedoor{
-	autoclose = 1;
 	name = "Bar";
 	req_one_access_txt = "28"
 	},
@@ -26494,7 +26435,6 @@
 /area/f13/city)
 "bZP" = (
 /obj/machinery/door/unpowered/securedoor{
-	autoclose = 1;
 	name = "Church Backroom";
 	req_one_access_txt = "25"
 	},
@@ -26889,7 +26829,6 @@
 /area/f13/wasteland)
 "cdr" = (
 /obj/machinery/door/unpowered/securedoor{
-	autoclose = 1;
 	name = "Mayor's Office";
 	req_one_access_txt = "0"
 	},
@@ -26944,8 +26883,7 @@
 /area/f13/caves)
 "ceh" = (
 /obj/structure/chair/wood/modern{
-	dir = 8;
-	icon_state = "wooden_chair_old"
+	dir = 8
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
@@ -27152,7 +27090,6 @@
 "ciW" = (
 /obj/structure/girder/reinforced,
 /obj/effect/decal/fakelattice{
-	density = 0;
 	pixel_x = 17
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
@@ -27617,8 +27554,7 @@
 /area/f13/village)
 "cng" = (
 /obj/structure/musician/piano{
-	desc = "What a wierd piano..";
-	name = "minimoog"
+	desc = "What a wierd piano.."
 	},
 /turf/open/floor/wood/f13/carpet,
 /area/f13/village)
@@ -27643,7 +27579,6 @@
 "cnm" = (
 /obj/machinery/door/airlock/security/glass{
 	name = "Gatehouse";
-	req_access = null;
 	req_access_txt = "121"
 	},
 /turf/open/floor/f13{
@@ -28751,7 +28686,6 @@
 /area/f13/ncr)
 "cVl" = (
 /obj/effect/decal/fakelattice{
-	density = 0;
 	pixel_x = 17
 	},
 /turf/closed/wall/r_wall/rust,
@@ -29415,7 +29349,6 @@
 /area/f13/wasteland)
 "fkj" = (
 /obj/machinery/door/unpowered/securedoor{
-	autoclose = 1;
 	name = "Store Backroom";
 	req_one_access_txt = "34"
 	},
@@ -30647,7 +30580,6 @@
 /area/f13/legion)
 "jjK" = (
 /obj/machinery/door/unpowered/securedoor{
-	autoclose = 1;
 	req_one_access_txt = "121"
 	},
 /turf/open/floor/f13{
@@ -30696,8 +30628,6 @@
 /area/f13/village)
 "jnE" = (
 /obj/machinery/door/unpowered/securedoor{
-	max_integrity = 300;
-	obj_integrity = 300;
 	req_access_txt = "132"
 	},
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -32735,7 +32665,6 @@
 /area/f13/wasteland)
 "qpA" = (
 /obj/machinery/door/unpowered/securedoor{
-	autoclose = 1;
 	name = "Bar";
 	req_one_access_txt = "28"
 	},
@@ -32907,7 +32836,7 @@
 /turf/open/floor/carpet/black,
 /area/f13/ncr)
 "qWM" = (
-/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/decal/cleanable/blood/gibs/down,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/building)
 "qZQ" = (
@@ -33514,7 +33443,6 @@
 /area/f13/city)
 "tku" = (
 /obj/machinery/door/unpowered/securedoor{
-	autoclose = 1;
 	req_one_access_txt = "48"
 	},
 /turf/open/floor/f13{
@@ -33654,7 +33582,6 @@
 /area/f13/building)
 "tHb" = (
 /obj/machinery/door/unpowered/securedoor{
-	autoclose = 1;
 	req_one_access_txt = "121"
 	},
 /turf/open/floor/plasteel/floorgrime,
@@ -34947,8 +34874,6 @@
 /area/f13/building)
 "yge" = (
 /obj/machinery/door/unpowered/securedoor{
-	max_integrity = 300;
-	obj_integrity = 300;
 	req_access_txt = "132"
 	},
 /turf/open/floor/f13{
@@ -43530,7 +43455,7 @@ agl
 aft
 aft
 kGV
-bmO
+cld
 bsj
 bsj
 sqg
@@ -84358,7 +84283,7 @@ aaa
 aae
 aaa
 biP
-bgQ
+afr
 adw
 adT
 adV
@@ -88147,7 +88072,7 @@ qlQ
 yif
 yif
 qlQ
-bmT
+vAG
 vAG
 aae
 acl

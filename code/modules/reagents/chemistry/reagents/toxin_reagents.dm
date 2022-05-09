@@ -65,7 +65,7 @@
 	..()
 
 /datum/reagent/toxin/FEV_solution/one/on_mob_life(mob/living/carbon/C)
-	C.apply_effect(40,EFFECT_IRRADIATE,0)
+	C.apply_effect(20,EFFECT_IRRADIATE,0)
 	C.adjustCloneLoss(3,0) // ~15 units will get you near crit condition.
 	return ..()
 
@@ -75,17 +75,21 @@
 	description = "A version of FEV that has been modified by radiation. It is suggested that only radiation-free humans use it."
 	fev_disease = /datum/disease/transformation/mutant/super
 
+/datum/reagent/toxin/FEV_solution/two/on_mob_life(mob/living/carbon/C)
+	if(C.radiation >= RAD_MOB_SAFE) // Uh oh
+		C.adjustFireLoss(5,0)
+	return ..()
+
 /datum/reagent/toxin/FEV_solution/two/overdose_process(mob/living/carbon/C)
 	if(C.radiation < RAD_MOB_SAFE)
-		C.reagents.remove_reagent(src.type,10) // Clean up
+		C.reagents.remove_reagent(src.type,50) // Clean up
 		return ..() // Infect with disease
 	else // You fucked up
-		if(prob(5))
+		if(prob(10))
 			to_chat(C, "<span class='danger'>IT BURNS!</span>")
 			C.emote("scream")
 			C.adjustFireLoss(10,0)
-		C.adjustFireLoss(5,0)
-		C.apply_effect(10,EFFECT_IRRADIATE,0) // Now the only thing you are turning into is a ghoul
+		C.apply_effect(50,EFFECT_IRRADIATE,0) // Now the only thing you are turning into is a ghoul
 		C.Jitter(2)
 	return
 

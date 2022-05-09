@@ -143,9 +143,9 @@
 		H.apply_effect(20, EFFECT_IRRADIATE, 0)
 
 /mob/living/simple_animal/hostile/ghoul/glowing/strong // FEV mutation
-	maxHealth = 320
-	health = 320
-	speed = 1.4 // Nyooom
+	maxHealth = 400
+	health = 400
+	speed = 0.5 // As fast as human speed(not sprinting), in theory
 	melee_damage_lower = 35
 	melee_damage_upper = 35
 	armour_penetration = 0.1

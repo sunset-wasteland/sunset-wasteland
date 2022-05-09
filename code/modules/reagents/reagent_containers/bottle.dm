@@ -458,10 +458,11 @@
 /obj/item/reagent_containers/glass/bottle/curling_vaccine
 	name = "Curling 13 vaccine bottle"
 	desc = "A vial with all reagents needed to cure Curling-13 virus. intended for use by the Enclave personnel to prevent infection."
+	volume = 60
 	list_reagents = list(
-					/datum/reagent/medicine/mutadone = 10,
-					/datum/reagent/medicine/haloperidol = 10,
-					/datum/reagent/medicine/spaceacillin = 10,
+					/datum/reagent/medicine/mutadone = 30, // Mutadone processes faster
+					/datum/reagent/medicine/haloperidol = 15,
+					/datum/reagent/medicine/spaceacillin = 15,
 					)
 
 /obj/item/reagent_containers/glass/bottle/gaia

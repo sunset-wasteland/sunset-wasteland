@@ -2,7 +2,7 @@
 // Main code
 /datum/disease/transformation/mutant
 	name = "Forced Evolutionary Virus"
-	cure_text = "mutadone."
+	cure_text = "Mutadone."
 	cures = list(/datum/reagent/medicine/mutadone)
 	cure_chance = 5 // Good luck
 	stage_prob = 10
@@ -33,7 +33,7 @@
 /datum/disease/transformation/mutant/unstable/stage_act()
 	..()
 
-	affected_mob.adjustCloneLoss(-4,0) // Don't die while you are mutating.
+	affected_mob.adjustCloneLoss(-5,0) // Don't die while you are mutating.
 	switch(stage)
 		if(2)
 			if (prob(8))
@@ -95,15 +95,18 @@
 	spread_text = "Airborne"
 	agent = "Forced Evolutionary Virus"
 	viable_mobtypes = list(/mob/living/carbon/human)
+	bypasses_immunity = TRUE // Works on ghouls and super mutants
 	cure_text = "Mutadone, Haloperidol and Penicillin"
 	cures = list(/datum/reagent/medicine/mutadone, /datum/reagent/medicine/haloperidol, /datum/reagent/medicine/spaceacillin)
-	cure_chance = 8 // If you can gather all three - you deserve a somewhat of a good chance.
+	cure_chance = 7
 	severity = DISEASE_SEVERITY_BIOHAZARD
 
 /datum/disease/curling_thirteen/update_stage(new_stage)
 	if(new_stage > stage)
 		var/radiation_prob = max(round(affected_mob.radiation * 0.05), 1) // 1000 rads will result in 50 chance
 		var/new_stage_prob = min(radiation_prob, 50)
+		if(affected_mob.radiation <= 0) // 100% clean
+			new_stage_prob = 0
 		if(prob(new_stage_prob))
 			return ..()
 		return
@@ -113,64 +116,85 @@
 	..()
 	switch(stage)
 		if(1) // Calm before the storm
-			if(prob(1))
+			if(prob(2))
 				to_chat(affected_mob, "<span class='warning'>You scratch at an itch.")
 				affected_mob.adjustBruteLoss(1,0)
 			if(prob(1))
 				affected_mob.emote("cough")
+				affected_mob.apply_effect(2,EFFECT_IRRADIATE,0) // No longer 100% clean, uh oh
 		if(2)
-			if(prob(2))
+			if(prob(4))
 				to_chat(affected_mob, "<span class='warning'>You scratch at an itch.")
 				affected_mob.adjustBruteLoss(3,0)
-			if(prob(2))
+			if(prob(5))
 				affected_mob.emote("cough")
-				affected_mob.adjustOxyLoss(2)
+				affected_mob.adjustOxyLoss(5)
 				to_chat(affected_mob, "<span class='warning'>Your chest hurts.</span>")
-			if(prob(4))
+			if(prob(6))
 				to_chat(affected_mob, "<span class='warning'>You feel a cold sweat form.</span>")
+				affected_mob.apply_effect(5,EFFECT_IRRADIATE,0) // From now on, stages will process inevitably
 		if(3)
-			if(prob(2))
+			if(prob(3))
 				to_chat(affected_mob, "<span class='danger'>You see four of everything...</span>")
 				affected_mob.Dizzy(5)
-			if(prob(3))
+			if(prob(4))
 				to_chat(affected_mob, "<span class='danger'>You feel a sharp pain from your lower chest!</span>")
 				affected_mob.adjustOxyLoss(6)
 				affected_mob.emote("gasp")
-			if(prob(3))
-				to_chat(affected_mob, "<span class='danger'>It hurts like hell! Make it stop!")
-				affected_mob.adjustBruteLoss(6,0)
-			if(prob(3))
-				affected_mob.vomit(10)
 			if(prob(4))
-				to_chat(affected_mob, "<span class='danger'>Your head feels dizzy...</span>")
-				affected_mob.adjustStaminaLoss(10)
-		if(4) // That's the part where you start dying
-			if(prob(2))
-				to_chat(affected_mob, "<span class='userdanger'>You feel as if your organs just exploded!</span>")
-				affected_mob.playsound_local(affected_mob, 'sound/effects/singlebeat.ogg', 50, 0)
-				affected_mob.blur_eyes(10)
-				affected_mob.vomit(10, 1, 1, 0, 1, 1)
-			if(prob(3))
-				to_chat(affected_mob, "<span class='warning'>You should probably lie down for a moment...</span>")
-				affected_mob.adjustStaminaLoss(30)
-			if(prob(3))
-				to_chat(affected_mob, "<span class='userdanger'>Your skin starts to rip apart!")
+				to_chat(affected_mob, "<span class='danger'>It hurts like hell! Make it stop!")
 				affected_mob.adjustBruteLoss(10,0)
-				affected_mob.emote("scream")
-			if(prob(8))
-				affected_mob.adjustToxLoss(2)
+			if(prob(4))
+				affected_mob.vomit(10)
+			if(prob(5))
+				to_chat(affected_mob, "<span class='danger'>Your head feels dizzy...</span>")
+				affected_mob.adjustStaminaLoss(15)
+			if(prob(6))
+				to_chat(affected_mob, "<span class='warning'>You feel a cold sweat form.</span>")
+				affected_mob.apply_effect(10,EFFECT_IRRADIATE,0)
+		if(4) // That's the part where you start dying
+			if(prob(3))
+				to_chat(affected_mob, "<span class='userdanger'>You feel as if your organs just exploded!</span>")
+				affected_mob.playsound_local(affected_mob, 'sound/effects/singlebeat.ogg', 30, 0)
+				affected_mob.blur_eyes(3)
+				affected_mob.vomit(25, 1, 1, 1, 0, 1)
+				affected_mob.emote("cry")
+			if(prob(4))
+				to_chat(affected_mob, "<span class='warning'>You should probably lie down for a moment...</span>")
+				affected_mob.adjustStaminaLoss(35)
+			if(prob(5))
+				to_chat(affected_mob, "<span class='userdanger'>Your skin starts to rip itself apart!")
+				affected_mob.adjustBruteLoss(15,0)
+				affected_mob.emote("twitch")
+			if(prob(7))
+				to_chat(affected_mob, "<span class='danger'>You feel a sharp pain from your lower chest!</span>")
+				affected_mob.losebreath += 2
+				affected_mob.adjustOxyLoss(7)
+				affected_mob.emote("gasp")
+			if(prob(10))
+				affected_mob.apply_effect(15,EFFECT_IRRADIATE,0)
 		if(5) // That's the part where you die for real
 			var/datum/component/mood/mood = affected_mob.GetComponent(/datum/component/mood)
-			mood.setSanity(SANITY_INSANE) // Who wouldn't be insane when they have 5 seconds left to live?
+			mood.setSanity(SANITY_INSANE) // Who wouldn't be insane when they have ~30 seconds left to live?
 			if(prob(5))
 				to_chat(affected_mob, "<span class='userdanger'>You feel as if all your organs just exploded!</span>")
-				affected_mob.emote("scream")
+				affected_mob.playsound_local(affected_mob, 'sound/effects/singlebeat.ogg', 50, 0)
 				affected_mob.blur_eyes(5)
-				affected_mob.vomit(50, 1, 1, 0, 1, 1)
+				affected_mob.vomit(50, 1, 1, 2, 0, 1)
+				affected_mob.emote("scream")
+			if(prob(6))
+				to_chat(affected_mob, "<span class='userdanger'>You want to rest. Forever...</span>")
+				affected_mob.adjustStaminaLoss(50)
 			if(prob(7))
 				to_chat(affected_mob, "<span class='userdanger'>Your skin keeps ripping itself apart!")
-				affected_mob.adjustBruteLoss(15,0)
-				affected_mob.emote("cry")
+				affected_mob.adjustBruteLoss(25,0)
+				affected_mob.emote("twitch")
 			if(prob(10))
-				affected_mob.adjustToxLoss(5)
+				to_chat(affected_mob, "<span class='userdanger'>You feel a sharp pain from your lower chest!</span>")
+				affected_mob.losebreath += 3
+				affected_mob.adjustOxyLoss(10)
+				affected_mob.emote("gasp")
+			if(prob(15))
+				affected_mob.apply_effect(20,EFFECT_IRRADIATE,0)
+				affected_mob.emote("cry")
 	return

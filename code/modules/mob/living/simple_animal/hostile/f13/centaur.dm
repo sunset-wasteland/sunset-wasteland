@@ -60,6 +60,7 @@
 	melee_damage_lower = 35
 	melee_damage_upper = 35
 	armour_penetration = 0.1
+	speed = 0.5
 
 
 // -----------------------------------
@@ -96,7 +97,7 @@
 	if(. && ishuman(target))
 		var/mob/living/carbon/human/H = target
 		var/choice = pick(1, 1, 2, 2, 3, 4)
-		H.reagents.add_reagent(/datum/reagent/toxin/FEV_solution, choice)
+		H.reagents.add_reagent(/datum/reagent/toxin/FEV_solution/one, choice)
 
 /mob/living/simple_animal/hostile/abomination/Initialize()
 	. = ..()
@@ -124,7 +125,7 @@
 	harm_intent_damage = 8
 	melee_damage_lower = 45
 	melee_damage_upper = 45
-	speed = 2
+	speed = 0.5
 
 
 // ------------------------------------------

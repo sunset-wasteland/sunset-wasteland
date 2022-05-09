@@ -341,3 +341,17 @@
 /obj/item/reagent_containers/food/condiment/pack/soup
 	name = "soup bouillon pack"
 	list_reagents = list(/datum/reagent/consumable/dry_ramen = 10)
+
+/obj/item/reagent_containers/food/condiment/bbqsauce
+	name = "barbecue sauce"
+	desc = "Ahm I gehtin ah moar.. Sweet tangy, Byte?"
+	icon_state = "bbqsauce"
+	list_reagents = list(/datum/reagent/consumable/bbqsauce = 50)
+	possible_states = list()
+
+/obj/item/reagent_containers/food/condiment/mustardbottle
+	name = "Mustard"
+	desc = "A can of yellow condiment commonly called Mustard, used for dressing of meats and sandwiches."
+	icon_state = "mustard"
+	list_reagents = list(/datum/reagent/consumable/mustard = 50)
+	possible_states = list()

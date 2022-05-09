@@ -117,18 +117,18 @@
 
 #define DEP_OASIS (1<<6)
 
-#define F13SHERIFF		(1<<0)
+#define F13POLICECHIEF	(1<<0)
 #define F13DENDOC       (1<<1)
 #define F13SETTLER		(1<<2)
 #define F13FARMER		(1<<3)
 #define F13PROSPECTOR	(1<<4)
-#define F13DEPUTY		(1<<5)
+#define F13POLICEMAN	(1<<5)
 #define F13MAYOR		(1<<6)
 #define F13SECRETARY    (1<<7)
 #define F13PREACHER		(1<<8)
 #define F13SHOPKEEPER	(1<<9)
 #define F13FAITHFUL		(1<<10) // WHAT IS BITFLAG. WHAT DOES IT DO. WHERE IS THIS INFO USED.
-#define F13BANKER		(1<<11)	// IDK MAN BUT IT SEEMS IMPORTANT
+#define F13ASSIST		(1<<11)	// IDK MAN BUT IT SEEMS IMPORTANT
 #define F13BARKEEP		(1<<12)
 
 #define VAULT			(1<<7)

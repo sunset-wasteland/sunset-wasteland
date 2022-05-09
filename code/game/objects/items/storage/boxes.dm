@@ -1162,7 +1162,7 @@ obj/item/storage/box/stingbangs
 	new /obj/item/stock_parts/matter_bin/bluespace(src)
 	new /obj/item/stock_parts/matter_bin/bluespace(src)
 	new /obj/item/stock_parts/matter_bin/bluespace(src)
-	
+
 /obj/item/storage/box/sparelimbs
 	name = "box of prosthethic limbs"
 	desc = "Contains superior prosthethic limbs, one of each type."
@@ -1174,7 +1174,7 @@ obj/item/storage/box/stingbangs
 	new /obj/item/bodypart/r_arm/robot(src)
 	new /obj/item/bodypart/l_leg/robot(src)
 	new /obj/item/bodypart/r_leg/robot(src)
-	
+
 //Colored boxes.
 /obj/item/storage/box/green
 	icon_state = "box_green"
@@ -1433,3 +1433,13 @@ list(/obj/item/stack/sheet/metal = 20,
 	new /obj/item/weldingtool(src)
 	new /obj/item/stack/f13Cash/random/med(src)
 	new /obj/item/stack/f13Cash/random/med(src)
+
+/obj/item/storage/box/shopkeeper
+	name = "Shopkeeper's blueprints"
+	desc = "a box of the shopkeeper's blueprints"
+
+/obj/item/storage/box/shopkeeper/PopulateContents()
+	. = ..()
+	new /obj/effect/spawner/lootdrop/f13/blueprintVHighBallistics
+	new /obj/effect/spawner/lootdrop/f13/blueprintVHigh
+	new /obj/effect/spawner/lootdrop/f13/blueprintHigh

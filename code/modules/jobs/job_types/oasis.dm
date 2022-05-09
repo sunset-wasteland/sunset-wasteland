@@ -215,7 +215,7 @@ Mayor
 
 /datum/job/oasis/f13sheriff
 	title = "Chief of Police"
-	flag = F13SHERIFF
+	flag = F13POLICECHIEF
 	department_flag = DEP_OASIS
 	head_announce = list("Security")
 	total_positions = 1
@@ -316,7 +316,7 @@ Mayor
 
 /datum/job/oasis/f13deputy
 	title = "Officer"
-	flag = F13DEPUTY
+	flag = F13POLICEMAN
 	department_flag = DEP_OASIS
 	total_positions = 5
 	spawn_positions = 5
@@ -421,8 +421,8 @@ Mayor
 	title = "Farmer"
 	flag = F13FARMER
 	department_flag = DEP_OASIS
-	total_positions = 4
-	spawn_positions = 4
+	total_positions = 3
+	spawn_positions = 3
 	supervisors = "Oasis Government & Police Department"
 	description = "Growing up in the Oasis, you have an endless love for the sacred Oak, for nowhere in the valley is the soil as fertile, the bounty as rich. Behind the safety of the walls, you grow crops, medicines, and raise livestock. The community depends on you, you are a manifestation of the Oak’s will."
 	selection_color = "#dcba97"
@@ -855,100 +855,87 @@ Mayor
 
 /*--------------------------------------------------------------*/
 
-/*
-/datum/job/oasis/f13banker
-	title = "Banker"
-	flag = F13BANKER
+/datum/job/oasis/f13assistant
+	title = "shop assistant"
+	flag = F13ASSIST
 	department_flag = DEP_OASIS
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "law and order"
-	description = "No matter where society lurks, profit and fortune are there to be made! It is up to you to distribute caps and earn interest while safekeeping items of value for the wastelands denizens! Ensure you make a profit and make your money back no matter the cost. You are to work alongside the Town, and should not be attempting to harm the residents of Oasis."
+	supervisors = "The Shopkeeper"
+	description = "Sometimes you need a cog in the machine to keep it turning. You are the cog, capitalism is the machine, and the shopkeeper turns the handle. In return for being taught the ways of commerce and crafting, you help keep the shop orderly and customers happy."
 	selection_color = "#dcba97"
-	enforces = "You are in a Job meant for encouraging roleplay with others, do not abandon your post or hoard money unless absolutely necessary. Do not use the caps provided for yourself."
-	outfit = /datum/outfit/job/den/f13banker
+	exp_requirements = 600
+	outfit = /datum/outfit/job/oasis/f13assist
 
-	loadout_options = list(
-	/datum/outfit/loadout/classy,
-	/datum/outfit/loadout/loanshark,
-	/datum/outfit/loadout/investor,
+	access = list(ACCESS_BAR, ACCESS_CARGO_BOT)
+	minimal_access = list(ACCESS_BAR, ACCESS_CARGO_BOT)
+
+	matchmaking_allowed = list(
+		/datum/matchmaking_pref/friend = list(
+			/datum/job/oasis,
+		),
+		/datum/matchmaking_pref/rival = list(
+			/datum/job/oasis,
+		),
 	)
+/datum/outfit/job/oasis/f13assist
+	name = "Shop Assistant"
+	jobtype = /datum/job/oasis/f13assistant
 
-	access = list(ACCESS_BAR, ACCESS_MINT_VAULT)
-	minimal_access = list(ACCESS_BAR, ACCESS_MINT_VAULT)
-
-/datum/outfit/job/den/f13banker
-	name = "Banker"
-	jobtype = /datum/job/oasis/f13banker
-
-	uniform = /obj/item/clothing/under/lawyer/blacksuit
-	id = /obj/item/card/id/silver
+	uniform = /obj/item/clothing/under/f13/mechanic
+	suit = /obj/item/clothing/suit/f13/blacksmith_apron
+	belt = /obj/item/storage/belt/utility
+	gloves = /obj/item/clothing/gloves/f13/blacksmith
+	id = /obj/item/card/id/dogtag/town
 	ears = /obj/item/radio/headset/headset_town
-	shoes = /obj/item/clothing/shoes/f13/fancy
+	shoes = /obj/item/clothing/shoes/f13/cowboy
+	r_pocket = /obj/item/flashlight/flare
 	backpack = /obj/item/storage/backpack/satchel/leather
 	satchel = /obj/item/storage/backpack/satchel/leather
 	backpack_contents = list(
-		/obj/item/storage/bag/money/small/banker)
+		/obj/item/storage/bag/money/small/)
 
-/datum/outfit/loadout/classy
-	name = "Classy"
-	head = /obj/item/clothing/head/collectable/tophat
-	glasses = /obj/item/clothing/glasses/monocle
-	uniform = /obj/item/clothing/under/suit_jacket/charcoal
-	suit = /obj/item/clothing/suit/f13/banker
-	gloves = /obj/item/clothing/gloves/color/white/redcoat
-	shoes = /obj/item/clothing/shoes/laceup
-	backpack_contents = list(
-	/obj/item/cane=1,
-	/obj/item/gun/ballistic/automatic/hobo/zipgun=1
-	/obj/item/storage/fancy/cigarettes/cigpack_bigboss=1,
-	/obj/item/reagent_containers/food/drinks/bottle/whiskey=1,
-	/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass=1
-	)
 
-/datum/outfit/loadout/loanshark
-	name = "Loanshark"
-	glasses = /obj/item/clothing/glasses/orange
-	mask = /obj/item/clothing/mask/cigarette/cigar
-	suit = /obj/item/clothing/suit/f13/vest
-	uniform = /obj/item/clothing/under/f13/sleazeball
-	shoes = /obj/item/clothing/shoes/sandal
-	backpack_contents = list(
-	/obj/item/reagent_containers/food/drinks/bottle/whiskey=1,
-	/obj/item/storage/box/matches=1,
-	/obj/item/gun/ballistic/automatic/smg/mini_uzi=1
-	)
 
-/datum/outfit/loadout/investor
-	name = "Investor"
-	glasses = /obj/item/clothing/glasses/sunglasses
-	suit = /obj/item/clothing/suit/toggle/lawyer/black
-	uniform = /obj/item/clothing/under/f13/bennys
-	gloves = /obj/item/clothing/gloves/fingerless
-	shoes = /obj/item/clothing/shoes/laceup
-	backpack_contents = list(
-		/obj/item/gun/ballistic/revolver/colt357=1,
-		/obj/item/storage/fancy/cigarettes/cigpack_bigboss=1,
-		/obj/item/storage/box/matches=1
-		)
-*/
+/datum/outfit/job/oasis/f13assist/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/policepistol)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/policerifle)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/steelbib/heavy)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/armyhelmetheavy)
+	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
+	ADD_TRAIT(H, TRAIT_GENERIC, src)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/huntingrifle)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/varmintrifle)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/huntingshotgun)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/thatgun)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/frag_shrapnel)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/concussion)
+
+/datum/outfit/job/oasis/f13assist/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+
 
 /*--------------------------------------------------------------*/
-
 /datum/job/oasis/f13shopkeeper
 	title = "Shopkeeper"
 	flag = F13SHOPKEEPER
 	department_flag = DEP_OASIS
-	total_positions = 2
-	spawn_positions = 2
+	total_positions = 1
+	spawn_positions = 1
 	supervisors = "free hand of the market"
 	description = "The greed of the United States survived better than its people. You are an organ of this greed. Ensure its continuation."
 	selection_color = "#dcba97"
-	exp_requirements = 600
+	exp_requirements = 800
 
 	outfit = /datum/outfit/job/den/f13shopkeeper
 	access = list(ACCESS_BAR, ACCESS_CARGO_BOT)
 	minimal_access = list(ACCESS_BAR, ACCESS_CARGO_BOT)
+
 	matchmaking_allowed = list(
 		/datum/matchmaking_pref/friend = list(
 			/datum/job/oasis,

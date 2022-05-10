@@ -13,6 +13,7 @@ here's a tip, go search DEFINES/access.dm
 	exp_type = EXP_TYPE_VAULT
 	faction = FACTION_VAULT
 	maptype = "vault"
+	mapexclude = list("standard")
 
 /datum/outfit/job/vault
 	gloves = /obj/item/pda

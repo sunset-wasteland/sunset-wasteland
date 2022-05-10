@@ -856,7 +856,7 @@ Mayor
 /*--------------------------------------------------------------*/
 
 /datum/job/oasis/f13assistant
-	title = "shop assistant"
+	title = "Shop Assistant"
 	flag = F13ASSIST
 	department_flag = DEP_OASIS
 	total_positions = 2

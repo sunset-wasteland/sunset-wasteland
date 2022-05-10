@@ -779,7 +779,7 @@ obj/effect/landmark/start/f13/ncrlogisticsofficer
 	icon_state = "Shopkeeper"
 
 /obj/effect/landmark/start/f13/assistant
-	name = "F13assistant"
+	name = "Shop Assistant"
 	icon_state = "Janitor"
 
 /obj/effect/landmark/start/f13/barkeep

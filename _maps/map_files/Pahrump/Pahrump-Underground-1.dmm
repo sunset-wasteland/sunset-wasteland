@@ -1704,6 +1704,12 @@
 /obj/item/pickaxe,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/caves)
+"bat" = (
+/mob/living/simple_animal/hostile/giantantqueen,
+/obj/item/disk/plantgene,
+/obj/item/disk/plantgene,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/caves)
 "bau" = (
 /obj/structure/table/wood/settler,
 /obj/item/trash/plate,
@@ -2694,6 +2700,16 @@
 	},
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
+"byp" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "000000"
+	},
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/mob/living/simple_animal/hostile/raider/ranged/biker,
+/turf/open/floor/wood/f13/oak,
+/area/f13/building)
 "byI" = (
 /obj/machinery/light,
 /obj/effect/decal/cleanable/dirt{
@@ -8111,6 +8127,7 @@
 /obj/structure/closet/crate/medical,
 /obj/item/reagent_containers/blood/radaway,
 /obj/item/reagent_containers/blood/radaway,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/high,
 /turf/open/floor/wood/f13/oak,
 /area/f13/building)
 "emK" = (
@@ -9466,7 +9483,7 @@
 /area/f13/den)
 "eVC" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/highmid,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/high,
 /turf/open/floor/f13/wood,
 /area/f13/bunker)
 "eVI" = (
@@ -11044,9 +11061,9 @@
 /turf/open/floor/wood/f13/oak,
 /area/f13/den)
 "fOy" = (
-/obj/structure/window/fulltile/store,
-/turf/open/space/basic,
-/area/f13/brotherhood/armory)
+/mob/living/simple_animal/hostile/raider/ranged/boss,
+/turf/open/floor/wood/f13/oak,
+/area/f13/building)
 "fOZ" = (
 /obj/structure/simple_door/metal/iron,
 /obj/structure/barricade/wooden/planks/pregame,
@@ -20097,7 +20114,7 @@
 "lnk" = (
 /obj/structure/closet/crate/miningcar,
 /obj/effect/spawner/lootdrop/f13/blueprintLowPartsWeighted,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/high,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/mid,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "lnr" = (
@@ -28455,13 +28472,14 @@
 "qCm" = (
 /obj/structure/closet/crate/miningcar,
 /obj/effect/spawner/lootdrop/f13/blueprintLowPartsWeighted,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/high,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/mid,
 /turf/open/floor/wood/f13/stage_bl,
 /area/f13/caves)
 "qCE" = (
 /obj/structure/closet/fridge,
 /obj/item/reagent_containers/food/snacks/soylentgreen,
 /obj/item/reagent_containers/food/snacks/soylentgreen,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/high,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "qDc" = (
@@ -29352,6 +29370,10 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/enclave)
+"rdT" = (
+/obj/structure/simple_door/wood,
+/turf/open/floor/carpet/black,
+/area/f13/building)
 "reg" = (
 /obj/structure/lattice{
 	layer = 3
@@ -35263,6 +35285,13 @@
 /obj/machinery/telecomms/processor/preset_two,
 /turf/open/floor/plasteel/dark/telecomms/mainframe,
 /area/f13/tcoms)
+"uEd" = (
+/obj/effect/decal/remains{
+	icon_state = "remains"
+	},
+/obj/item/circuitboard/machine/plantgenes,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/caves)
 "uEe" = (
 /obj/machinery/atmospherics/pipe/simple{
 	dir = 5
@@ -38010,6 +38039,11 @@
 /obj/structure/timeddoor,
 /turf/open/floor/plating/tunnel,
 /area/f13/bunker)
+"wqt" = (
+/obj/effect/spawner/lootdrop/f13/blueprintLowPartsWeighted,
+/obj/effect/spawner/lootdrop/f13/blueprintLowPartsWeighted,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/caves)
 "wqw" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -61012,8 +61046,8 @@ ajV
 enc
 bxT
 bxT
-rrZ
-npt
+vEd
+byp
 kGo
 mDq
 vPg
@@ -61524,7 +61558,7 @@ vPg
 ydu
 xLj
 ocG
-rrZ
+fOy
 npt
 ydu
 iMA
@@ -62297,7 +62331,7 @@ mWH
 mWH
 bxT
 eaj
-cDP
+rdT
 rUZ
 cDP
 mDq
@@ -80416,7 +80450,7 @@ aoj
 aoj
 tjA
 xNt
-jbG
+bat
 fTe
 aoj
 aoj
@@ -81185,7 +81219,7 @@ aoj
 aoj
 aoj
 aoj
-piQ
+uEd
 hLM
 yfy
 xVz
@@ -81445,7 +81479,7 @@ aoj
 aoj
 aoj
 dfM
-aMr
+wqt
 aoj
 vPg
 aoj
@@ -82464,7 +82498,7 @@ aoj
 aoj
 aoj
 aoj
-xVz
+hLM
 aoj
 aoj
 vPg
@@ -105382,7 +105416,7 @@ kDV
 gak
 tNL
 nDS
-fOy
+dMF
 pNR
 nDS
 nDS

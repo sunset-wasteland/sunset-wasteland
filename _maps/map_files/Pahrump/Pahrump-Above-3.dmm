@@ -3906,7 +3906,7 @@
 	obj_integrity = 400;
 	req_access_txt = "123"
 	},
-/turf/open/space/basic,
+/turf/open/indestructible/ground/outside/woodalt,
 /area/f13/wasteland)
 "oR" = (
 /obj/structure/tires/five,
@@ -3981,7 +3981,7 @@
 	obj_integrity = 400;
 	req_access_txt = "123"
 	},
-/turf/open/space/basic,
+/turf/open/indestructible/ground/outside/woodalt,
 /area/f13/wasteland)
 "pf" = (
 /obj/structure/chair/wood{
@@ -5478,6 +5478,7 @@
 	color = "#363636"
 	},
 /obj/structure/table,
+/obj/item/book/granter/trait/chemistry,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building)
 "uT" = (
@@ -10311,6 +10312,10 @@
 	sunlight_state = 1
 	},
 /area/f13/wasteland)
+"ON" = (
+/obj/machinery/chem_master,
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building)
 "OO" = (
 /obj/structure/barricade/wooden,
 /obj/structure/fence/wooden{
@@ -10475,12 +10480,12 @@
 /turf/open/floor/carpet/red,
 /area/f13/ncr)
 "Pq" = (
-/obj/structure/window/fulltile/wood,
-/obj/structure/curtain{
-	color = "#845f58"
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
 	},
-/turf/open/space/basic,
-/area/f13/raiders)
+/obj/machinery/chem_dispenser,
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building)
 "Pr" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
@@ -11872,6 +11877,11 @@
 /obj/structure/simple_door/bunker,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/building)
+"Vg" = (
+/obj/structure/table/wood,
+/obj/structure/destructible/tribal_torch/wall/lit,
+/turf/open/floor/carpet/black,
+/area/f13/wasteland)
 "Vh" = (
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 8
@@ -12012,7 +12022,7 @@
 	},
 /area/f13/caves)
 "VF" = (
-/obj/machinery/smartfridge/bottlerack/drug_storage,
+/obj/machinery/smartfridge/bottlerack/alchemy_rack,
 /turf/open/floor/carpet/black,
 /area/f13/wasteland)
 "VH" = (
@@ -12021,8 +12031,10 @@
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/ncr)
 "VJ" = (
-/obj/structure/destructible/tribal_torch/wall/lit,
-/obj/structure/table/wood,
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 1;
+	pixel_y = 12
+	},
 /turf/open/floor/carpet/black,
 /area/f13/wasteland)
 "VL" = (
@@ -58536,7 +58548,7 @@ Pb
 XS
 nX
 Pn
-Pq
+nX
 rb
 PL
 PL
@@ -59114,7 +59126,7 @@ Gk
 JA
 Ty
 Yg
-Ty
+Pq
 al
 zx
 Gk
@@ -59371,7 +59383,7 @@ HG
 al
 Ub
 YO
-Ub
+ON
 al
 Dp
 sT
@@ -64643,7 +64655,7 @@ gv
 sU
 qG
 OC
-VJ
+vY
 Jk
 kC
 kC
@@ -64887,20 +64899,20 @@ Xs
 of
 lP
 Ks
-OC
+VJ
 IP
 IP
 vY
-vY
+Vg
 sU
-OC
+VJ
 IP
 vY
-vY
+Vg
 sU
-OC
+VJ
 rz
-vY
+Vg
 Jk
 kC
 kC

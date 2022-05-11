@@ -1275,3 +1275,4 @@
 
 /mob/living/carbon/human/species/smutant
 	race = /datum/species/smutant
+

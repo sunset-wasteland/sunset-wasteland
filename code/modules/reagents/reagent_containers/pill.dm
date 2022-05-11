@@ -290,3 +290,17 @@
 	icon = 'icons/fallout/objects/medicine/drugs.dmi'
 	icon_state = "pill_buff"
 	list_reagents = list(/datum/reagent/drug/buffout = 10)
+
+/obj/item/reagent_containers/pill/penis_enlargement
+	name = "penis enlargement pill"
+	desc = "A metallic tasting pill that greatly increases bloodflow and builds muscle mass in the male reproductive system."
+	list_reagents = list(/datum/reagent/penis_enlarger  = 10)
+	icon = 'icons/fallout/objects/medicine/drugs.dmi'
+	icon_state = "pill_radx"
+
+/obj/item/reagent_containers/pill/breast_enlargement
+	name = "breast enlargement pill"
+	desc = "A metallic tasting pill that greatly increases bloodflow and builds mass in the mamaries."
+	list_reagents = list(/datum/reagent/breast_enlarger = 10)
+	icon = 'icons/fallout/objects/medicine/drugs.dmi'
+	icon_state = "pill_mentat"

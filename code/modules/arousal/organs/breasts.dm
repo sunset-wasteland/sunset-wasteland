@@ -88,6 +88,7 @@
 			to_chat(owner, "<span class='warning'>You feel your breasts shrinking away from your body as your chest flattens out.</span>")
 		QDEL_IN(src, 1)
 		return
+	var/enlargement = FALSE
 	switch(rounded_cached)
 		if(0) //flatchested
 			size = "flat"
@@ -95,8 +96,16 @@
 			size = breast_values[rounded_cached]
 		if(9 to 15) //massive
 			size = breast_values[rounded_cached]
+			enlargement = TRUE
 		if(16 to INFINITY) //rediculous
 			size = "huge"
+			enlargement = TRUE
+	if(owner)
+		var/status_effect = owner.has_status_effect(STATUS_EFFECT_BREASTS_ENLARGEMENT)
+		if(enlargement && !status_effect)
+			owner.apply_status_effect(STATUS_EFFECT_BREASTS_ENLARGEMENT)
+		else if(!enlargement && status_effect)
+			owner.remove_status_effect(STATUS_EFFECT_BREASTS_ENLARGEMENT)
 
 	if(rounded_cached < 16 && owner)//Because byond doesn't count from 0, I have to do this.
 		var/mob/living/carbon/human/H = owner
@@ -114,8 +123,6 @@
 		color = "#[D.features["breasts_color"]]"
 	size = D.features["breasts_size"]
 	shape = D.features["breasts_shape"]
-	if(!D.features["breasts_producing"])
-		DISABLE_BITFIELD(genital_flags, GENITAL_FLUID_PRODUCTION|CAN_CLIMAX_WITH|CAN_MASTURBATE_WITH)
 	if(!isnum(size))
 		cached_size = breast_values[size]
 	else

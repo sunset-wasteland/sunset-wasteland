@@ -888,27 +888,27 @@
 /datum/chemical_reaction/breast_enlarger
 	name = "Succubus Milk"
 	id = "/datum/reagent/breast_enlarger"
-	results = list(/datum/reagent/breast_enlarger = 2)
-	required_reagents = list(/datum/reagent/medicine/salglu_solution = 2, /datum/reagent/consumable/milk = 1, /datum/reagent/medicine/synthflesh = 2, /datum/reagent/silicon = 3, /datum/reagent/drug/aphrodisiac = 3)
-	required_temp = 200
+	results = list(/datum/reagent/breast_enlarger = 3)
+	required_reagents = list(/datum/reagent/consumable/milk = 1, /datum/reagent/silicon = 1, /datum/reagent/drug/aphrodisiac = 1)
+	required_temp = 100
 	
 /datum/chemical_reaction/BEsmaller
 	name = "Modesty Milk"
 	id = "/datum/reagent/BEsmaller"
-	results = list(/datum/reagent/BEsmaller = 2)
-	required_reagents = list(/datum/reagent/medicine/salglu_solution = 2, /datum/reagent/consumable/milk = 1, /datum/reagent/medicine/synthflesh = 2, /datum/reagent/silicon = 3, /datum/reagent/drug/anaphrodisiac = 3)
-	required_temp = 200
+	results = list(/datum/reagent/BEsmaller = 3)
+	required_reagents = list(/datum/reagent/consumable/milk = 1, /datum/reagent/silicon = 1, /datum/reagent/drug/anaphrodisiac = 1)
+	required_temp = 100
 	
 /datum/chemical_reaction/penis_enlarger
 	name = "Incubus Draft"
 	id = "/datum/reagent/penis_enlarger"
-	results = list(/datum/reagent/penis_enlarger = 2)
-	required_reagents = list(/datum/reagent/medicine/salglu_solution = 2, /datum/reagent/blood = 5, /datum/reagent/medicine/synthflesh = 2, /datum/reagent/carbon = 2, /datum/reagent/drug/aphrodisiac = 2)
-	required_temp = 200
+	results = list(/datum/reagent/penis_enlarger = 3)
+	required_reagents = list(/datum/reagent/blood = 1, /datum/reagent/carbon = 1, /datum/reagent/drug/aphrodisiac = 1)
+	required_temp = 100
 	
 /datum/chemical_reaction/PEsmaller
 	name = "Chastity Draft"
 	id = "/datum/reagent/PEsmaller"
-	results = list(/datum/reagent/PEsmaller = 2)
-	required_reagents = list(/datum/reagent/medicine/salglu_solution = 2, /datum/reagent/blood = 5, /datum/reagent/medicine/synthflesh = 2, /datum/reagent/carbon = 2, /datum/reagent/drug/anaphrodisiac = 2)
-	required_temp = 200
+	results = list(/datum/reagent/PEsmaller = 3)
+	required_reagents = list(/datum/reagent/blood = 1, /datum/reagent/carbon = 1, /datum/reagent/drug/anaphrodisiac = 1)
+	required_temp = 100

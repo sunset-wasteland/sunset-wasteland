@@ -70,6 +70,11 @@
 		R.trans_to(target, R.total_volume * (spill ? G.fluid_transfer_factor : 1))
 	G.last_orgasmed = world.time
 	R.clear_reagents()
+	SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "orgasm", /datum/mood_event/orgasm)
+	src.emote(pick("moan","twitch_s"))
+
+
+	
 
 /mob/living/carbon/human/proc/mob_climax_outside(obj/item/organ/genital/G, mb_time = 30) //This is used for forced orgasms and other hands-free climaxes
 	var/datum/reagents/fluid_source = G.climaxable(src, TRUE)
@@ -171,6 +176,47 @@
 	else if(!silent)
 		to_chat(src, "<span class='warning'>You cannot do this without an appropriate container.</span>")
 
+/mob/living/carbon/human/proc/available_rosie_palms(silent = FALSE)
+	if(restrained(TRUE)) //TRUE ignores grabs
+		if(!silent)
+			to_chat(src, "<span class='warning'>You can't do that while restrained!</span>")
+		return FALSE
+	if(!get_num_arms() || !get_empty_held_indexes())
+		if(!silent)
+			to_chat(src, "<span class='warning'>You need at least one free arm.</span>")
+		return FALSE
+	return TRUE
+
+/mob/living/carbon/human/proc/mob_masturbate(obj/item/organ/genital/G, mb_time = 30) //Masturbation, keep it gender-neutral
+	var/total_fluids = 0
+	var/datum/reagents/fluid_source = null
+
+	if(CHECK_BITFIELD(G.genital_flags, GENITAL_FLUID_PRODUCTION))
+		fluid_source = G.reagents
+	else
+		if(!G.linked_organ)
+			to_chat(src, "<span class='warning'>Your [G.name] is unable to produce it's own fluids, it's missing the organs for it.</span>")
+			return
+		fluid_source = G.linked_organ.reagents
+	total_fluids = fluid_source.total_volume
+	if(mb_time)
+		src.visible_message("<span class='danger'>[src] starts to [G.masturbation_verb] [p_their()] [G.name].</span>", \
+							"<span class='green'>You start to [G.masturbation_verb] your [G.name].</span>", \
+							"<span class='green'>You start to [G.masturbation_verb] your [G.name].</span>")
+
+	if(do_after(src, mb_time, target = src))
+		if(total_fluids > 5)
+			fluid_source.reaction(src.loc, TOUCH, 1, 0)
+			fluid_source.clear_reagents()
+		src.visible_message("<span class='danger'>[src] orgasms, cumming[istype(src.loc, /turf/open/floor) ? " onto [src.loc]" : ""]!</span>", \
+							"<span class='green'>You cum[istype(src.loc, /turf/open/floor) ? " onto [src.loc]" : ""].</span>", \
+							"<span class='green'>You have relieved yourself.</span>")
+		do_climax(fluid_source, loc, G)
+		if(CHECK_BITFIELD(G.genital_flags, CAN_CLIMAX_WITH))
+			do_climax(fluid_source, loc, G)
+
+
+
 //Here's the main proc itself
 /mob/living/carbon/human/proc/mob_climax(forced_climax=FALSE) //Forced is instead of the other proc, makes you cum if you have the tools for it, ignoring restraints
 	if(mb_cd_timer > world.time)
@@ -223,8 +269,45 @@
 		return
 
 	//Ok, now we check what they want to do.
-	var/choice = input(src, "Select sexual activity", "Sexual activity:") as null|anything in list("Climax with partner")
+	var/choice = input(src, "Select sexual activity", "Sexual activity:") as null|anything in list("Climax alone","Climax with partner", "Fill container")
 	if(!choice)
 		return
 
+	switch(choice)
+
+		if("Climax alone")
+			if(!available_rosie_palms())
+				return
+			var/obj/item/organ/genital/picked_organ = pick_climax_genitals()
+			if(picked_organ && available_rosie_palms(TRUE))
+				mob_climax_outside(picked_organ)
+		if("Climax with partner")
+			//We need no hands, we can be restrained and so on, so let's pick an organ
+			var/obj/item/organ/genital/picked_organ = pick_climax_genitals()
+			if(picked_organ)
+				var/mob/living/partner = pick_partner() //Get someone
+				if(partner)
+					var/spillage = input(src, "Would your fluids spill outside?", "Choose overflowing option", "Yes") as null|anything in list("Yes", "No")
+					if(spillage && in_range(src, partner))
+						mob_climax_partner(picked_organ, partner, spillage == "Yes" ? TRUE : FALSE)
+		if("Fill container")
+			//We'll need hands and no restraints.
+			if(!available_rosie_palms(FALSE, /obj/item/reagent_containers))
+				return
+			//We got hands, let's pick an organ
+			var/obj/item/organ/genital/picked_organ
+			picked_organ = pick_climax_genitals() //Gotta be climaxable, not just masturbation, to fill with fluids.
+			if(picked_organ)
+				//Good, got an organ, time to pick a container
+				var/obj/item/reagent_containers/fluid_container = pick_climax_container()
+				if(fluid_container && available_rosie_palms(TRUE, /obj/item/reagent_containers))
+					mob_fill_container(picked_organ, fluid_container)
+
 	mb_cd_timer = world.time + mb_cd_length
+
+/mob/living/carbon/human/verb/climax_verb()
+	set category = "IC"
+	set name = "Climax"
+	set desc = "Lets you choose a couple ways to ejaculate."
+	mob_climax()
+

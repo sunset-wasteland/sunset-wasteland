@@ -614,10 +614,10 @@ Raider
 	uniform = /obj/item/clothing/under/f13/vault
 	shoes = /obj/item/clothing/shoes/jackboots
 	gloves = /obj/item/clothing/gloves/fingerless
-	id = /obj/item/card/id/dogtag/vaultiecard
 	suit = /obj/item/clothing/suit/suspenders
 	ears = /obj/item/radio/headset
 	backpack_contents = list(
+		/obj/item/card/id/selfassign=1,
 		/obj/item/gun/ballistic/automatic/pistol/n99=1,
 		/obj/item/ammo_box/magazine/m10mm_adv/simple=2,
 		/obj/item/pda=1,)

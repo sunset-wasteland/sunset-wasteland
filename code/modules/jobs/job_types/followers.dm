@@ -4,8 +4,8 @@
 	exp_type = EXP_TYPE_FOLLOWERS
 	access = list(ACCESS_FOLLOWER)
 	minimal_access = list(ACCESS_FOLLOWER)
-	forbids = "Aligning oneself with a faction exclusively. Acting in an aggressive and violent way on the offensive, not in defense. Abandoning your facility, peers, and community."
-	enforces = "Preaching humanitarianism and valuing human life. Assist and provide medical services to any who require it, regardless of faction. Provide free education for all those who are willing to learn."
+	forbids = "Collaborating, working with, or enabling organizations hostile to human life or society in general, such as the Enclave or Legion. Treating raiders or enabling those who will go on to cause more harm. Producing and selling drugs. Having sex all day while people die in front of you."
+	enforces = "Preaching humanitarianism and valuing human life. Assist and provide medical services to those who value human life. Provide free education for all those who are willing to learn."
 	objectivesList = list("Leadership recommends the following goal for this week: Establish medical outposts throughout the wasteland","Leadership recommends the following goal for this week: Experiment with and improve medical techniques and equipment", "Leadership recommends the following goal for this week: Replenish the operation's funds through donations and sales.")
 
 /datum/outfit/job/followers
@@ -45,9 +45,7 @@ Administrator
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "No one."
-	description = "You are the Follower Administrator. You are the administrator for the on-site followers. While there is no tradtional chain of command that is used, you have been chosen to lead due to your expert knowledge in the field of medicine and other general knowledges. Make sure that the supplies donated are being put to use, help secure more donations, and fill in as needed whenever short staffed or if the clinic is busy."
-	forbids = "Causing harm to others except in times of self-defense."
-	enforces = "Followers are not fond of the NCR due to their corruption, but they will help them. They dislike the Brotherhood for hoarding tech, but will make deals to work with them if it furthers the spreading of knowledge. Legion is our mistake and its our job to correct the mistake by speaking of the truth, but recognize that the best way to fight the legion is to teach them and sometimes that can mean helping them.Preaching humanitarianism and valuing human life. Assist and provide medical services to any who require it, regardless of faction. Provide free education for all those who are willing to learn."
+	description = "You are the Follower Administrator. You are the administrator for the on-site followers. While there is no tradtional chain of command that is used, you have been chosen to lead due to your expert knowledge in the field of medicine and other general knowledges. Make sure that the supplies donated are being put to use, help secure more donations, and fill in as needed whenever short staffed or if the clinic is busy. For the love of god, don't commit war crimes or enable those who do."
 	selection_color = "#FF95FF"
 	exp_requirements = 1500
 
@@ -77,6 +75,7 @@ Administrator
 	suit=	/obj/item/clothing/suit/toggle/labcoat/cmo
 	shoes =	/obj/item/clothing/shoes/f13/brownie
 	belt =	/obj/item/healthanalyzer/advanced
+	gloves =	/obj/item/clothing/gloves/color/latex/nitrile
 	backpack =	/obj/item/storage/backpack/medic
 	satchel =	/obj/item/storage/backpack/satchel/med
 	duffelbag =	/obj/item/storage/backpack/duffelbag/med
@@ -102,8 +101,6 @@ Professor
 	spawn_positions = 3
 	supervisors = "Followers having no strict command structure, don't report to anyone- though they will look to the Administrator for guidance."
 	description = "You are a Follower Scientist. As a Scientist it is your job to teach the wastes- be it teaching them how to make medicine, grow crops or treat toxic water. You are a learned individual in your chosen field, you know how to do research and have all the basic tools to teach others how to handle the technology they will come across.Followers are not fond of the NCR due to their corruption, but they will help them. They dislike the Brotherhood for hoarding tech, but will make deals to work with them if it furthers the spreading of knowledge. Legion is our mistake and its our job to correct the mistake by speaking of the truth, but recognize that the best way to fight the legion is to teach them and sometimes that can mean helping them.Preaching humanitarianism and valuing human life, Provide free education for all those who are willing to learn."
-	forbids = "Causing harm to others except in times of self-defense."
-	enforces = "Followers are not fond of the NCR due to their corruption, but they will help them. They dislike the Brotherhood for hoarding tech, but will make deals to work with them if it furthers the spreading of knowledge. Legion is our mistake and its our job to correct the mistake by speaking of the truth, but recognize that the best way to fight the legion is to teach them and sometimes that can mean helping them.Preaching humanitarianism and valuing human life. Assist and provide medical services to any who require it, regardless of faction. Provide free education for all those who are willing to learn."
 	selection_color = "#FFDDFF"
 	exp_requirements = 1080
 	exp_type = EXP_TYPE_FOLLOWERS
@@ -147,8 +144,6 @@ Practitioner
 	spawn_positions = 3
 	supervisors = "Followers having no strict command structure, don't report to anyone- though they will look to the Administrator for guidance."
 	description ="You are a Followers Doctor. As a Followers Doctor it is your responsibility to maintain working order in the hospital and to manage its staff and to treat patients who come in regardless of whether or not they can afford care. Some Doctors are known for leaving the hospital to look for injured or those who need help who may not come to a health facility, however it is key that those who do travel around to give aid keep in touch with the rest of staff and if there are no other able physicans or chemist that they stay to offer the best aid possible."
-	forbids = "Causing harm to others except in times of self-defense."
-	enforces = "Followers are not fond of the NCR due to their corruption, but they will help them. They dislike the Brotherhood for hoarding tech, but will make deals to work with them if it furthers the spreading of knowledge. Legion is our mistake and its our job to correct the mistake by speaking of the truth, but recognize that the best way to fight the legion is to teach them and sometimes that can mean helping them.Preaching humanitarianism and valuing human life. Assist and provide medical services to any who require it, regardless of faction. Provide free education for all those who are willing to learn."
 	selection_color = "#FFDDFF"
 	exp_requirements = 600
 
@@ -196,6 +191,7 @@ Practitioner
 	satchel =	/obj/item/storage/backpack/satchel/med
 	duffelbag =	/obj/item/storage/backpack/duffelbag/med
 	backpack_contents = list(
+		/obj/item/flashlight/pen = 1,
 		/obj/item/reagent_containers/hypospray/medipen/stimpak = 2,
 		/obj/item/reagent_containers/medspray/synthflesh = 1,
 		/obj/item/storage/firstaid/ancient = 1,
@@ -219,7 +215,6 @@ Practitioner
 	gloves =	/obj/item/clothing/gloves/color/latex
 	glasses =	/obj/item/clothing/glasses/science
 	backpack_contents = list(
-		/obj/item/flashlight/pen = 1,
 		/obj/item/pda/chemist = 1,
 	)
 
@@ -259,8 +254,6 @@ Follower Volunteer
 	spawn_positions = 3
 	supervisors = "Followers having no strict command structure, don't report to anyone- though they will look to the Administrator for guidance and the other Doctors as well."
 	description = "You are a Follower Volunteer. As a Volunteer, you make sure they get connected to the right people to find treatment, assist in the functions of the hospital, learn from senior Followers, and utilize first aid to the best of your capacity when Doctors are not present."
-	forbids = "Causing harm to others except in times of self-defense."
-	enforces = "Followers are not fond of the NCR due to their corruption, but they will help them. They dislike the Brotherhood for hoarding tech, but will make deals to work with them if it furthers the spreading of knowledge. Legion is our mistake and its our job to correct the mistake by speaking of the truth, but recognize that the best way to fight the legion is to teach them and sometimes that can mean helping them. Preaching humanitarianism and valuing human life. Assist and provide medical services to any who require it, regardless of faction. Provide free education for all those who are willing to learn."
 	selection_color = "#FFDDFF"
 	outfit = /datum/outfit/job/followers/f13followervolunteer
 	loadout_options = list(
@@ -349,8 +342,6 @@ Follower Volunteer
 	spawn_positions = 2
 	supervisors = "Followers having no strict command structure, don't report to anyone- though they will look to the Administrator for guidance and the other Doctors as well."
 	description = "You are a Follower Guard. As a Guard for the Followers of Apocalypse, you are responsible for the safety and the maintenance of order in the hospital and among your peers. Your reason for being here is to make sure the other staff can provide education and medical services to those in need, furthering research in non-military matters, as well as helping their communities get access to basic necessities. "
-	forbids = "Causing harm to others except in times of self-defense or in defense of other followers."
-	enforces = "Followers are not fond of the NCR due to their corruption, but they will help them. They dislike the Brotherhood for hoarding tech, but will make deals to work with them if it furthers the spreading of knowledge. Legion is our mistake and its our job to correct the mistake by speaking of the truth, but recognize that the best way to fight the legion is to teach them and sometimes that can mean helping them. Preaching humanitarianism and valuing human life. Assist and provide medical services to any who require it, regardless of faction. Provide free education for all those who are willing to learn."
 	selection_color = "#FFDDFF"
 
 	outfit = /datum/outfit/job/followers/f13followerguard

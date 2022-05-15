@@ -62,6 +62,19 @@
 	category = CAT_CRAFTING
 	subcategory = CAT_FORGING
 
+/datum/crafting_recipe/quenching
+	name = "Quenching trough"
+	result = /obj/structure/blacksmith/quenching
+	time = 200
+	reqs = list(
+		/obj/item/stack/sheet/mineral/wood = 6,
+		/obj/item/stack/sheet/metal = 2,
+		/datum/reagent/water = 300,
+		)
+	tools = list(TOOL_CROWBAR)
+	category = CAT_CRAFTING
+	subcategory = CAT_FORGING
+
 /datum/crafting_recipe/barrelfire
 	name = "Stoke barrel fire"
 	result = /obj/structure/campfire/barrel

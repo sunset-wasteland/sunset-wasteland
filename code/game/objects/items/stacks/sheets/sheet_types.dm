@@ -344,16 +344,16 @@ GLOBAL_LIST_INIT(wood_recipes, list ( \
 /obj/item/stack/sheet/mineral/wood/attackby(obj/item/W, mob/user, params) // NOTE: sheet_types.dm is where the WOOD stack lives. Maybe move this over there.
 	// Taken from /obj/item/stack/rods/attackby in [rods.dm]
 	if(W.get_sharpness())
-		user.visible_message("[user] begins whittling [src] into a rod.", \
-				"<span class='notice'>You begin whittling [src] into a rod, suitable as a weapon shaft.</span>", \
+		user.visible_message("[user] begins whittling [src] into a pointy object.", \
+				"<span class='notice'>You begin whittling [src] into a sharp point at one end.</span>", \
 				"<span class='italics'>You hear wood carving.</span>")
-		// 7 Second Timer
-		if(!do_after(user, 70, TRUE, src))
+		// 8 Second Timer
+		if(!do_after(user, 80, TRUE, src))
 			return
-		// Make stick
-		var/obj/item/blacksmith/woodrod/new_item = new(user.loc)
-		user.visible_message("[user] finishes carving a rod from the [src].", \
-				"<span class='notice'>You finish carving a rod from the [src].</span>")
+		// Make Stake
+		var/obj/item/stake/basic/new_item = new(user.loc)
+		user.visible_message("[user] finishes carving a stake out of [src].", \
+				"<span class='notice'>You finish carving a stake out of [src].</span>")
 		// Prepare to Put in Hands (if holding wood)
 		var/obj/item/stack/sheet/mineral/wood/N = src
 		var/replace = (user.get_inactive_held_item() == N)

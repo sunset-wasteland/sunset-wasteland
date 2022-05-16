@@ -146,7 +146,6 @@
 	new /obj/item/screwdriver/basic(src)
 	new /obj/item/weldingtool/basic(src)
 	new /obj/item/wirecutters/basic(src)
-	new /obj/item/melee/smith/hammer/premade(src)
 	new /obj/item/twohanded/chainsaw(src)
 
 // Gardener belt. Hold farming stuff thats small, also flasks (think hip flasks, not bottles as such)
@@ -913,13 +912,9 @@
 	content_overlays = TRUE
 	onmob_overlays = TRUE
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_NECK
-	fitting_swords = list(/obj/item/melee/smith/machete,
-	/obj/item/melee/smith/machete/reforged,
+	fitting_swords = list(
 	/obj/item/melee/smith/wakizashi,
-	/obj/item/melee/smith/sword,
-	/obj/item/melee/smith/twohand/axe,
 	/obj/item/melee/smith/twohand/katana,
-	/obj/item/melee/smith/sword/sabre,
 	/obj/item/melee/onehanded/machete,
 	/obj/item/melee/onehanded/club,
 	/obj/item/melee/classic_baton,
@@ -954,7 +949,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 	content_overlays = TRUE
 	onmob_overlays = TRUE
-	var/list/fitting_swords = list(/obj/item/melee/smith/sword, /obj/item/melee/baton/stunsword)
+	var/list/fitting_swords = list(/obj/item/melee/smith/sabre, /obj/item/melee/baton/stunsword)
 	var/starting_sword = null
 
 // Instead of half-assed broken weaboo stuff lets have something that works.

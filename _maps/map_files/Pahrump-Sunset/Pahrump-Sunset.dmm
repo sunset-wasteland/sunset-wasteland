@@ -1163,15 +1163,10 @@
 /turf/open/floor/carpet_new/carpet_shaggyviolet,
 /area/f13/bar/heaven)
 "adT" = (
-/obj/effect/decal/cleanable/dirt{
-	color = "#363636"
-	},
-/mob/living/simple_animal/hostile/raider/ranged/boss{
-	name = "Heaven's Angels Boss"
-	},
-/obj/structure/chair/wood/fancy,
-/turf/open/floor/carpet_new/carpet_shaggyviolet,
-/area/f13/bar/heaven)
+/obj/effect/turf_decal/bot_red,
+/mob/living/simple_animal/hostile/securitron/sentrybot,
+/turf/open/indestructible/ground/outside/sidewalk,
+/area/f13/bunker)
 "adU" = (
 /obj/structure/window/fulltile/house{
 	dir = 2;
@@ -3682,6 +3677,11 @@
 /obj/structure/barricade/sandbags,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland/east)
+"aln" = (
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "verticaloutermain2bottom"
+	},
+/area/f13/building/hospital)
 "alo" = (
 /obj/structure/window/fulltile/ruins{
 	icon_state = "ruinswindowbrokenvertical"
@@ -8655,13 +8655,9 @@
 /turf/open/floor/wood/wood_maple,
 /area/f13/village)
 "azL" = (
-/obj/structure/simple_door/metal/store,
-/obj/effect/decal/cleanable/dirt{
-	color = "#363636"
-	},
-/obj/structure/barricade/wooden/planks/pregame,
+/obj/structure/stairs/east,
 /turf/open/floor/plasteel/f13/vault_floor/blue/side{
-	dir = 10
+	dir = 4
 	},
 /area/f13/building/hospital)
 "azM" = (
@@ -16110,6 +16106,13 @@
 	icon_state = "floordirtysolid"
 	},
 /area/f13/building/nanotrasen)
+"aVo" = (
+/obj/structure/simple_door/metal/store,
+/obj/structure/barricade/wooden/planks/pregame,
+/turf/open/floor/plasteel/f13/vault_floor/blue/side{
+	dir = 1
+	},
+/area/f13/building/hospital)
 "aVp" = (
 /obj/structure/closet/cabinet,
 /obj/item/clothing/shoes/sneakers/black,
@@ -16392,6 +16395,13 @@
 	},
 /turf/open/floor/wood/wood_worn,
 /area/f13/building)
+"aWe" = (
+/obj/structure/simple_door/metal/store,
+/obj/structure/barricade/wooden/planks/pregame,
+/turf/open/floor/plasteel/f13/vault_floor/blue/side{
+	dir = 9
+	},
+/area/f13/building/hospital)
 "aWf" = (
 /obj/machinery/shower{
 	dir = 4
@@ -17748,6 +17758,10 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/west)
+"aZI" = (
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/superlow,
+/turf/open/floor/plasteel/f13/vault_floor/floor,
+/area/f13/building/hospital)
 "aZJ" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -17828,6 +17842,18 @@
 	icon_state = "bluerustychess2"
 	},
 /area/f13/building/bighornbunker)
+"aZS" = (
+/obj/effect/decal/remains{
+	icon_state = "remains"
+	},
+/obj/machinery/light/small{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/turf/open/floor/plasteel/f13/vault_floor/floor,
+/area/f13/building/hospital)
 "aZT" = (
 /obj/effect/decal/waste{
 	icon_state = "goo8";
@@ -17927,6 +17953,10 @@
 "bag" = (
 /turf/open/indestructible/ground/outside/savannah/bottomcenter,
 /area/f13/building/nanotrasen)
+"bah" = (
+/obj/machinery/vending/cola,
+/turf/open/floor/plasteel/f13/vault_floor/blue/side,
+/area/f13/building/hospital)
 "bai" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -17950,6 +17980,16 @@
 	color = "#363636"
 	},
 /turf/open/floor/plasteel/f13/tile/navy/broken,
+/area/f13/bar/heaven)
+"bal" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/structure/chair/wood/fancy,
+/mob/living/simple_animal/hostile/raider/ranged/boss{
+	name = "Heaven's Angels Boss"
+	},
+/turf/open/floor/carpet_new/carpet_shaggyviolet,
 /area/f13/bar/heaven)
 "bam" = (
 /obj/structure/window/fulltile/house{
@@ -17999,6 +18039,11 @@
 	icon_state = "rubble"
 	},
 /area/f13/wasteland/nanotrasen)
+"bat" = (
+/obj/item/chair/wood/modern,
+/mob/living/simple_animal/hostile/stalker,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/tunnel)
 "bau" = (
 /obj/structure/decoration/clock/old{
 	pixel_y = 32
@@ -18025,6 +18070,11 @@
 	icon_state = "dirt"
 	},
 /area/f13/wasteland/west)
+"bay" = (
+/obj/structure/flora/ausbushes/brflowers,
+/mob/living/simple_animal/opossum/poppy,
+/turf/open/floor/grass,
+/area/f13/wasteland/bighorn)
 "baA" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -41161,21 +41211,6 @@
 	},
 /turf/open/floor/wood/wood_worn,
 /area/f13/building)
-"lqE" = (
-/obj/effect/decal/remains{
-	icon_state = "remains"
-	},
-/obj/machinery/light/small{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt{
-	color = "#363636"
-	},
-/obj/structure/railing{
-	dir = 1
-	},
-/turf/open/floor/plasteel/f13/vault_floor/floor,
-/area/f13/building/hospital)
 "lqQ" = (
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/bunker)
@@ -47708,11 +47743,6 @@
 	icon_state = "horizontaltopborderbottom2left"
 	},
 /area/f13/wasteland/followers)
-"pTT" = (
-/mob/living/simple_animal/hostile/securitron/sentrybot,
-/obj/effect/turf_decal/bot_red,
-/turf/open/indestructible/ground/outside/sidewalk,
-/area/f13/bunker)
 "pUe" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "verticalleftborderleftbottom"
@@ -50951,10 +50981,6 @@
 	icon_state = "horizontaltopborderbottom2left"
 	},
 /area/f13/wasteland/mall)
-"slG" = (
-/obj/structure/stairs/east,
-/turf/open/floor/plasteel/f13/vault_floor/floor,
-/area/f13/building/hospital)
 "slQ" = (
 /obj/structure/stairs/east{
 	color = "#624b30"
@@ -52253,13 +52279,6 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/east)
-"tht" = (
-/obj/structure/simple_door/metal/store,
-/obj/structure/barricade/wooden/planks/pregame,
-/turf/open/floor/plasteel/f13/vault_floor/blue/side{
-	dir = 6
-	},
-/area/f13/building/hospital)
 "thI" = (
 /obj/structure/nest/molerat,
 /turf/open/indestructible/ground/inside/mountain,
@@ -53015,12 +53034,6 @@
 	icon_state = "verticalinnermain2"
 	},
 /area/f13/wasteland/hospital)
-"tGu" = (
-/obj/machinery/vending/cola,
-/turf/open/floor/plasteel/f13/vault_floor/blue/side{
-	dir = 5
-	},
-/area/f13/building/hospital)
 "tGQ" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_2";
@@ -54634,11 +54647,6 @@
 	icon_state = "wasteland33"
 	},
 /area/f13/wasteland/massfusion)
-"uHp" = (
-/mob/living/simple_animal/opossum/poppy,
-/obj/structure/flora/ausbushes/brflowers,
-/turf/open/floor/grass,
-/area/f13/wasteland/bighorn)
 "uHy" = (
 /obj/item/clothing/head/welding,
 /obj/item/clothing/head/welding,
@@ -57768,10 +57776,6 @@
 	},
 /turf/open/floor/wood/wood_chestnut,
 /area/f13/legion)
-"wVw" = (
-/obj/structure/table/reinforced,
-/turf/open/floor/plasteel/f13/vault_floor/floor,
-/area/f13/building/hospital)
 "wVA" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontalbottomborderbottom2"
@@ -58175,11 +58179,6 @@
 	icon_state = "outerpavement"
 	},
 /area/f13/wasteland/bighorn)
-"xks" = (
-/mob/living/simple_animal/hostile/stalker,
-/obj/item/chair/wood/modern,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/tunnel)
 "xkV" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "verticalrightborderright1"
@@ -75201,7 +75200,7 @@ aae
 aae
 ans
 adB
-adT
+bal
 agw
 alA
 adS
@@ -81467,7 +81466,7 @@ aiO
 xCQ
 xSv
 gEq
-uHp
+bay
 aTw
 ygj
 aae
@@ -82749,7 +82748,7 @@ bCt
 bCt
 bCt
 hmC
-xks
+bat
 tfH
 bCt
 aae
@@ -90507,7 +90506,7 @@ aae
 aaD
 lXh
 lqQ
-pTT
+adT
 lqQ
 lqQ
 aaD
@@ -102902,7 +102901,7 @@ lQv
 hYa
 qxg
 odO
-aFP
+aln
 aFP
 aGy
 aFX
@@ -103160,7 +103159,7 @@ aFP
 aFP
 aFP
 aFP
-tGu
+aFP
 swX
 eRA
 cQC
@@ -103416,8 +103415,8 @@ cQC
 cQC
 aFY
 aFY
-azL
-aEs
+aFY
+aVo
 aMz
 hbh
 aHk
@@ -103426,7 +103425,7 @@ aHS
 aMz
 uZi
 aIZ
-aKA
+bah
 ijr
 eWM
 mXB
@@ -103673,8 +103672,8 @@ aFZ
 aKO
 aNr
 aNr
-tht
-iUE
+aNr
+aWe
 ibk
 aNr
 aFZ
@@ -103930,9 +103929,9 @@ ijr
 kzy
 mEH
 ijr
-ijr
+azL
+aFP
 hey
-wVw
 aOG
 ijr
 cHw
@@ -104445,8 +104444,8 @@ aOA
 aFf
 dTv
 ijr
-slG
-lqE
+aZI
+aZS
 uZi
 aMz
 uZi

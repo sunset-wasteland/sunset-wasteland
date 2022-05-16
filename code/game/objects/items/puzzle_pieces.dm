@@ -27,6 +27,19 @@
 	color = "#3bbbdb"
 	puzzle_id = "swordfish"
 
+/obj/item/keycard/deathclaw
+	name = "titanic keycard"
+	desc = "Smells like it was stuck in the jaw of that plated Deathclaw. Nasty!"
+	color = "#9edb3b"
+	puzzle_id = "deathclaw"
+
+/obj/item/keycard/vault
+	name = "titanic keycard"
+	desc = "It seems a bit burned from the explosion, but otherwise fine!"
+	color = "#e93737"
+	puzzle_id = "vault"
+
+
 //***************
 //*****Doors*****
 //***************

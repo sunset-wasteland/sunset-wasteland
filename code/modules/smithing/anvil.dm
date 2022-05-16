@@ -21,7 +21,6 @@
 
 #define RECIPE_MACE "upu"  //upset punch upset
 #define RECIPE_AXE "udsp" //upset draw shrink punch
-#define RECIPE_CRUSHER "uuppp" //upset draw shrink punch
 
 #define RECIPE_DAGGER "dfs" //draw fold shrink
 #define RECIPE_SPEAR "ddbf" //draw draw bend fold
@@ -82,7 +81,6 @@
 	RECIPE_KATANA = /obj/item/smithing/katanablade,
 	RECIPE_MACE = /obj/item/smithing/macehead,
 	RECIPE_AXE = /obj/item/smithing/axehead,
-	RECIPE_CRUSHER = /obj/item/melee/smith/twohand/crusher,
 	RECIPE_SPEAR = /obj/item/smithing/spearhead,
 	RECIPE_JAVELIN = /obj/item/smithing/javelinhead,
 	RECIPE_THROWING = /obj/item/smithing/throwingknife,
@@ -320,7 +318,6 @@
 	RECIPE_KATANA = /obj/item/smithing/katanablade,
 	RECIPE_MACE = /obj/item/smithing/macehead,
 	RECIPE_WARHONED = /obj/item/smithing/warhonedhead,
-	RECIPE_CRUSHER = /obj/item/smithing/crusherhead,
 	RECIPE_LANCE = /obj/item/smithing/lancehead,
 	RECIPE_JAVELIN = /obj/item/smithing/javelinhead,
 	RECIPE_THROWING = /obj/item/smithing/throwingknife,
@@ -349,7 +346,6 @@
 	RECIPE_WAKI = /obj/item/smithing/wakiblade,
 	RECIPE_KATANA = /obj/item/smithing/katanablade,
 	RECIPE_MACE = /obj/item/smithing/macehead,
-	RECIPE_CRUSHER = /obj/item/melee/smith/twohand/crusher,
 	RECIPE_SPEAR = /obj/item/smithing/spearhead,
 	RECIPE_SCRAP = /obj/item/smithing/scrapblade,
 	RECIPE_JAVELIN = /obj/item/smithing/javelinhead,

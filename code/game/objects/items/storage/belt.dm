@@ -98,7 +98,6 @@
 // --------------------------------------------------------
 // FALLOUT BELTS
 
-
 // Wasteland toolbelt
 /obj/item/storage/belt/utility/waster
 	name = "wastelander toolbelt"
@@ -107,7 +106,6 @@
 /obj/item/storage/belt/utility/waster/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_combined_w_class = WEIGHT_CLASS_SMALL * 9
 	STR.max_w_class = WEIGHT_CLASS_BULKY
 	var/static/list/can_hold = typecacheof(list(
 		/obj/item/crowbar,
@@ -140,6 +138,7 @@
 /obj/item/storage/belt/utility/waster/forgemaster
 	name = "forgemasters toolbelt"
 	desc = "Has a collection of basic tools and a hook rigging to sling a chainsaw from."
+	var/max_combined_w_class = WEIGHT_CLASS_SMALL * 8
 
 /obj/item/storage/belt/utility/waster/forgemaster/PopulateContents()
 	new /obj/item/crowbar(src)
@@ -149,7 +148,6 @@
 	new /obj/item/wirecutters/basic(src)
 	new /obj/item/melee/smith/hammer/premade(src)
 	new /obj/item/twohanded/chainsaw(src)
-
 
 // Gardener belt. Hold farming stuff thats small, also flasks (think hip flasks, not bottles as such)
 /obj/item/storage/belt/utility/gardener

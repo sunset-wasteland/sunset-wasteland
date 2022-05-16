@@ -1,9 +1,3 @@
-//////////////////////////////////////////
-//										//
-//		FINISHED SMITHED ITEMS			//
-//										//
-//////////////////////////////////////////
-
 
 /obj/item/melee/smith
 	name = "base class obj/item/melee/smith" //tin. handles overlay and quality and shit.
@@ -33,6 +27,7 @@
 	add_overlay(overlay)
 	if(force < 0)
 		force = 0
+
 
 /obj/item/melee/smith/twohand
 	icon = 'icons/fallout/objects/crafting/blacksmith.dmi'
@@ -67,14 +62,12 @@
 	AddElement(/datum/element/sword_point)
 
 
+
 //////////////////////
 //					//
 //  SMITHED TOOLS	//
 //					//
 //////////////////////
-
-
-// -------- HAMMER AND SHOVEL -------- //
 
 // Blacksmithing hammer, not useful for anything else.
 /obj/item/melee/smith/hammer
@@ -91,55 +84,6 @@
 	quality = 3
 	qualitymod = 1
 	custom_materials = list(/datum/material/iron = 1000)
-
-/obj/item/shovel/smithed
-	name = "shovel"
-	desc = "A shovel."
-	icon = 'icons/fallout/objects/crafting/blacksmith.dmi'
-	icon_state = "shovel"
-	lefthand_file = 'icons/fallout/onmob/tools/tools_lefthand.dmi'
-	righthand_file = 'icons/fallout/onmob/tools/tools_righthand.dmi'
-	item_state = "shovel"
-	material_flags = MATERIAL_COLOR | MATERIAL_AFFECT_STATISTICS
-	sharpness = SHARP_EDGED //it cuts through the earth
-
-/obj/item/shovel/smithed/Initialize()
-	..()
-	desc = "A handmade [name]."
-	var/mutable_appearance/overlay
-	overlay = mutable_appearance(icon, "shovelhandle")
-	overlay.appearance_flags = RESET_COLOR
-	add_overlay(overlay)
-	if(force < 0)
-		force = 0
-
-
-// -------- PICKAXES -------- //
-
-/obj/item/pickaxe/smithed
-	name = "pickaxe"
-	desc = "A pickaxe."
-	material_flags = MATERIAL_COLOR | MATERIAL_AFFECT_STATISTICS
-	icon = 'icons/fallout/objects/crafting/blacksmith.dmi'
-	icon_state = "pickaxe"
-	lefthand_file = 'icons/fallout/onmob/tools/tools_lefthand.dmi'
-	righthand_file = 'icons/fallout/onmob/tools/tools_righthand.dmi'
-	item_state = "pickaxe"
-	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
-	sharpness = SHARP_POINTY
-
-/obj/item/pickaxe/smithed/Initialize()
-	..()
-	desc = "A handmade [name]."
-	var/mutable_appearance/overlay
-	overlay = mutable_appearance(icon, "woodrod")
-	overlay.appearance_flags = RESET_COLOR
-	add_overlay(overlay)
-	if(force < 0)
-		force = 0
-
-/obj/item/pickaxe/smithed/attack_self(mob/user)
-		to_chat(user, "<span class='notice'>Tool does not have a configureable dig range.</span>")
 
 // The true manual mining scanner, knock it on rock to scan. Could use a cooldown, can't be bothered to sort it. Lowest quality got too short range to test out.
 /obj/item/mining_scanner/prospector
@@ -172,8 +116,51 @@
 /obj/item/mining_scanner/prospector/attack_self(mob/user)
 	return
 
+/obj/item/pickaxe/smithed
+	name = "pickaxe"
+	desc = "A pickaxe."
+	material_flags = MATERIAL_COLOR | MATERIAL_AFFECT_STATISTICS
+	icon = 'icons/fallout/objects/crafting/blacksmith.dmi'
+	icon_state = "pickaxe"
+	lefthand_file = 'icons/fallout/onmob/tools/tools_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/tools/tools_righthand.dmi'
+	item_state = "pickaxe"
+	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
+	sharpness = SHARP_POINTY
 
-// -------- CROWBARS -------- //
+/obj/item/pickaxe/smithed/Initialize()
+	..()
+	desc = "A handmade [name]."
+	var/mutable_appearance/overlay
+	overlay = mutable_appearance(icon, "woodrod")
+	overlay.appearance_flags = RESET_COLOR
+	add_overlay(overlay)
+	if(force < 0)
+		force = 0
+
+/obj/item/pickaxe/smithed/attack_self(mob/user)
+		to_chat(user, "<span class='notice'>Tool does not have a configureable dig range.</span>")
+
+/obj/item/shovel/smithed
+	name = "shovel"
+	desc = "A shovel."
+	icon = 'icons/fallout/objects/crafting/blacksmith.dmi'
+	icon_state = "shovel"
+	lefthand_file = 'icons/fallout/onmob/tools/tools_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/tools/tools_righthand.dmi'
+	item_state = "shovel"
+	material_flags = MATERIAL_COLOR | MATERIAL_AFFECT_STATISTICS
+	sharpness = SHARP_EDGED //it cuts through the earth
+
+/obj/item/shovel/smithed/Initialize()
+	..()
+	desc = "A handmade [name]."
+	var/mutable_appearance/overlay
+	overlay = mutable_appearance(icon, "shovelhandle")
+	overlay.appearance_flags = RESET_COLOR
+	add_overlay(overlay)
+	if(force < 0)
+		force = 0
 
 // Smithed crowbars top out at 0.2 toolspeed max quality. Not bad. Not that useful either, its just a crowbar, still.
 /obj/item/crowbar/smithed
@@ -192,10 +179,9 @@
 	overlay.appearance_flags = RESET_COLOR
 	add_overlay(overlay)
 
-// Crowbar-axe. Just a crowbar with more force, can chop wood, and a homemade vibe.
+// Crowbar-axe. Just a crowbar with more force and a homemade vibe.
 /obj/item/crowbar/smithedunitool
 	name = "universal tool"
-	desc = "A bizarre combination of a crowbar and some sort of knifeblade."
 	icon = 'icons/fallout/objects/crafting/blacksmith.dmi'
 	icon_state = "unitool_smith"
 	lefthand_file = 'icons/fallout/onmob/weapons/melee1h_lefthand.dmi'
@@ -203,36 +189,16 @@
 	item_state = "unitool_smith"
 	sharpness = SHARP_POINTY
 	material_flags = MATERIAL_COLOR | MATERIAL_AFFECT_STATISTICS
-	force = 30
+	force = 28
 
 /obj/item/crowbar/smithedunitool/Initialize()
 	..()
+	desc = "A bizarre combination of a crowbar and some sort of knifeblade."
 	var/mutable_appearance/overlay
 	overlay = mutable_appearance(icon, "handle_unitool")
 	overlay.appearance_flags = RESET_COLOR
 	add_overlay(overlay)
 
-
-// -------- KITCHEN KNIFE -------- //
-
-/obj/item/kitchen/knife/smithed
-	name = "kitchen knife"
-	desc = "A handmade kitchen knife, best suited to cut stuff that doesn't cut back."
-	icon = 'icons/fallout/objects/crafting/blacksmith.dmi'
-	icon_state = "knife_smith"
-	lefthand_file = 'icons/fallout/onmob/weapons/melee1h_lefthand.dmi'
-	righthand_file = 'icons/fallout/onmob/weapons/melee1h_righthand.dmi'
-	item_state = "knife_smith"
-	material_flags = MATERIAL_COLOR | MATERIAL_AFFECT_STATISTICS
-	force = 15
-
-/obj/item/kitchen/knife/smithed/Initialize()
-	. = ..()
-	AddComponent(/datum/component/butchering, 80 - force, 100, force - 10)
-	var/mutable_appearance/overlay
-	overlay = mutable_appearance(icon, "hilt_knife")
-	overlay.appearance_flags = RESET_COLOR
-	add_overlay(overlay)
 
 
 //////////////////////////
@@ -240,31 +206,6 @@
 //  ONEHANDED WEAPONS	//
 //						//
 //////////////////////////
-
-
-// -------- MACHETES -------- //
-
-/obj/item/melee/smith/machete
-	name = "machete"
-	icon_state = "machete_smith"
-	overlay_state = "hilt_machete"
-	force = 24
-	sharpness = SHARP_EDGED
-	wound_bonus = 30
-	block_chance = 20
-
-/obj/item/melee/smith/machete/gladius
-	name = "gladius"
-	icon_state = "gladius_smith"
-	overlay_state = "hilt_gladius"
-
-/obj/item/melee/smith/machete/reforged
-	name = "reforged machete"
-	icon_state = "macheter_smith"
-	overlay_state = "hilt_macheter"
-
-
-// -------- SWORDS -------- //
 
 /obj/item/melee/smith/sword
 	name = "sword"
@@ -298,9 +239,6 @@
 	force = 24
 	block_chance = 55
 
-
-// -------- MISC -------- //
-
 // go for the eyes Boo
 /obj/item/melee/smith/dagger
 	name = "dagger"
@@ -320,6 +258,24 @@
 	else
 		return ..()
 
+/obj/item/melee/smith/machete
+	name = "machete"
+	icon_state = "machete_smith"
+	overlay_state = "hilt_machete"
+	force = 24
+	sharpness = SHARP_EDGED
+	wound_bonus = 30
+	block_chance = 20
+
+/obj/item/melee/smith/machete/gladius
+	name = "gladius"
+	icon_state = "gladius_smith"
+	overlay_state = "hilt_gladius"
+
+/obj/item/melee/smith/machete/reforged
+	name = "reforged machete"
+	icon_state = "macheter_smith"
+	overlay_state = "hilt_macheter"
 
 /obj/item/melee/smith/wakizashi
 	name = "wakizashi"
@@ -346,15 +302,14 @@
 	parry_failed_stagger_duration = 3 SECONDS
 	parry_data = list(PARRY_COUNTERATTACK_MELEE_ATTACK_CHAIN = 1.9)
 
-
 // Mace - low damage, high AP (25, 0,4)
 /obj/item/melee/smith/mace
 	name = "mace"
 	icon_state = "mace_smith"
-	overlay_state = "shaft_mace"
+	overlay_state = "handle_mace"
 	force = 15
 
-/obj/item/melee/smith/mace/afterattack(mob/living/M, mob/living/user)
+/obj/item/melee/smith/mace/attack(mob/living/M, mob/living/user)
 	. = ..()
 	if(!istype(M))
 		return
@@ -367,8 +322,35 @@
 //						//
 //////////////////////////
 
+/obj/item/melee/smith/twohand/katana
+	name = "katana"
+	icon_state = "katana_smith"
+	icon_prefix = "katana_smith"
+	overlay_state = "hilt_katana"
+	force = 22
+	wielded_mult = 1.5
+	item_flags = ITEM_CAN_PARRY | NEEDS_PERMIT
+	block_parry_data = /datum/block_parry_data/smithrapier
+	hitsound = 'sound/weapons/rapierhit.ogg'
+	slot_flags = ITEM_SLOT_BELT
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/belt.dmi'
+	layer = MOB_UPPER_LAYER
+	block_chance = 50
 
-// -------- 2-H AXES -------- //
+/datum/block_parry_data/smithrapier //Old rapier code reused. parry into riposte. i am pretty sure this is going to be nearly fucking impossible to land.
+	parry_stamina_cost = 12 //dont miss
+	parry_time_active = 4
+	parry_time_perfect = 2
+	parry_time_perfect_leeway = 2
+	parry_failed_stagger_duration = 3 SECONDS
+	parry_failed_clickcd_duration = 3 SECONDS
+	parry_time_windup = 0
+	parry_time_spindown = 0
+	parry_imperfect_falloff_percent = 0
+	parry_efficiency_to_counterattack = 100
+	parry_efficiency_considered_successful = 120
+	parry_efficiency_perfect = 120
+	parry_data = list(PARRY_COUNTERATTACK_MELEE_ATTACK_CHAIN = 4)
 
 // Heavy axe, 2H focused chopper 27/54. Can be worn on your back.
 /obj/item/melee/smith/twohand/axe
@@ -435,9 +417,6 @@
 		var/obj/structure/simple_door/M = A
 		M.take_damage(20, BRUTE, "melee", 0)
 
-
-// -------- SPEARS -------- //
-
 /obj/item/melee/smith/twohand/spear
 	name = "spear"
 	icon_state = "spear_smith"
@@ -454,71 +433,6 @@
 	overlay_state = "shaft_lance"
 
 
-// -------- 2-H MISC -------- //
-
-// Ghoul Crusher
-/obj/item/melee/smith/twohand/crusher
-	name = "crusher"
-	icon_state = "crusher_smith"
-	icon_prefix = "crusher_smith"
-	overlay_state = "shaft_crusher"
-	force = 20
-	wound_bonus = 40
-	bare_wound_bonus = 40
-	wielded_mult = 1.5
-	hitsound = 'sound/weapons/rapierhit.ogg'
-	slot_flags = null
-
-/*
-/obj/item/melee/smith/twohand/crusher/afterattack(atom/A, mob/living/user, proximity)
-	. = ..()
-	if(!proximity || !wielded || IS_STAMCRIT(user))
-		return
-	if(istype(A, /mob/living/simple_animal/hostile/ghoul))
-		var/mob/living/simple_animal/hostile/ghoul/D = A
-		D.apply_damage(25, BRUTE)
-
-/obj/item/melee/smith/twohand/crusher/pre_attack(/mob/living/A, mob/user, proximity)
-	if(!proximity || !wielded || IS_STAMCRIT(user))
-		return
-//	else if(istype(A, /datum/species/ghoul))
-//		var/datum/species/ghoul/A = A
-//		set src.wound_bonus = 80
-	else
-		. = ..()
-*/
-
-/obj/item/melee/smith/twohand/katana
-	name = "katana"
-	icon_state = "katana_smith"
-	icon_prefix = "katana_smith"
-	overlay_state = "hilt_katana"
-	force = 22
-	wielded_mult = 1.5
-	item_flags = ITEM_CAN_PARRY | NEEDS_PERMIT
-	block_parry_data = /datum/block_parry_data/smithrapier
-	hitsound = 'sound/weapons/rapierhit.ogg'
-	slot_flags = ITEM_SLOT_BELT
-	mob_overlay_icon = 'icons/fallout/onmob/clothes/belt.dmi'
-	layer = MOB_UPPER_LAYER
-	block_chance = 50
-
-/datum/block_parry_data/smithrapier //Old rapier code reused. parry into riposte. i am pretty sure this is going to be nearly fucking impossible to land.
-	parry_stamina_cost = 12 //dont miss
-	parry_time_active = 4
-	parry_time_perfect = 2
-	parry_time_perfect_leeway = 2
-	parry_failed_stagger_duration = 3 SECONDS
-	parry_failed_clickcd_duration = 3 SECONDS
-	parry_time_windup = 0
-	parry_time_spindown = 0
-	parry_imperfect_falloff_percent = 0
-	parry_efficiency_to_counterattack = 100
-	parry_efficiency_considered_successful = 120
-	parry_efficiency_perfect = 120
-	parry_data = list(PARRY_COUNTERATTACK_MELEE_ATTACK_CHAIN = 4)
-
-
 //////////////////////////
 //						//
 //  THROWING WEAPONS	//
@@ -533,7 +447,7 @@
 	overlay_state = "shaft_javelin"
 	item_state = "javelin_smith"
 	sharpness = SHARP_POINTY
-	embedding = list("pain_mult" = 2, "embed_chance" = 62, "fall_chance" = 20, "ignore_throwspeed_threshold" = TRUE)
+	embedding = list("pain_mult" = 2, "embed_chance" = 60, "fall_chance" = 20, "ignore_throwspeed_threshold" = TRUE)
 	force = 15
 	armour_penetration = 0.10
 
@@ -543,7 +457,7 @@
 	icon_state = "throwing_smith"
 	overlay_state = "handle_throwing"
 	item_state = "dagger_smith"
-	embedding = list("pain_mult" = 2, "embed_chance" = 65, "fall_chance" = 20, "ignore_throwspeed_threshold" = TRUE)
+	embedding = list("pain_mult" = 2, "embed_chance" = 50, "fall_chance" = 20, "ignore_throwspeed_threshold" = TRUE)
 	force = 14
 	w_class = WEIGHT_CLASS_SMALL
 

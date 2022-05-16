@@ -1,17 +1,3 @@
-
-// SMITHED ITEMS NOTES: The base items made from hammering the ingot is here. Code is adapted TG smithing module, some stuff added & changed, some formulas changed, new mechanics such as quenching and various light/sound stuff added.
-// TG remnant stuff like the dwarf smithing thing, diamond sheets and ratvar etc remains but is not really supported. Logic of the code is : hammer on ingot, make base item, dip the base item in coolant, slap on finisher, and there you go, new item.
-// Power level of weapons should be more or less in line with "normal" weapons, but the idea is to push in more amusing gimmicks. Quality should make a big difference but not be necessary to have maxed for the item to be useful.
-// Items such as rings and the ball&chain are pretty basic, but can be expanded, and other suitable items adapted or new ones added. Point is to make smithing viable for not just weapons, at least some nice fluff.
-
-
-//////////////////////////////////////////
-//										//
-//		SMITHED ITEMS BASE CODE			//
-//										//
-//////////////////////////////////////////
-
-
 /obj/item/smithing
 	name = "base class /obj/item/smithing"
 	icon = 'icons/fallout/objects/crafting/blacksmith.dmi'
@@ -21,82 +7,6 @@
 	var/obj/item/finishingitem = /obj/item/blacksmith/woodrod //What this item needs to be hit by to create finalitem
 	var/obj/item/finalitem
 	var/artifact = FALSE
-	var/toohot = TRUE
-
-/obj/item/smithing/Initialize()
-	add_overlay(image(icon= 'icons/fallout/objects/crafting/blacksmith.dmi',icon_state="[icon_state]_hot"))
-	update_icon()
-	return ..()
-
-/obj/item/smithing/proc/istempered()
-	cut_overlay(image(icon= 'icons/fallout/objects/crafting/blacksmith.dmi',icon_state="[icon_state]_hot"))
-	update_icon()
-	return
-
-/obj/item/smithing/attackby(obj/item/I, mob/user)
-	if(toohot == TRUE)
-		to_chat(user, "<span class='warning'>You need to quench the [src] before finishing it!</span>")
-		return
-	else if(istype(I, finishingitem))
-		qdel(I)
-		startfinish()
-	else
-		return ..()
-
-/obj/item/smithing/proc/startfinish()
-	dofinish()
-
-/obj/item/smithing/proc/dofinish()
-	var/qualname
-	switch(quality)
-		if(-1000 to -5)
-			qualname = "awful"
-		if(-1000 to -2)
-			qualname = "shoddy"
-		if(-1000 to -1)
-			qualname =  "poor"
-		if(-1 to 1)
-			qualname = "normal"
-		if(10 to INFINITY)
-			qualname = "legendary"
-		if(7.5 to 10)
-			qualname = "masterwork"
-		if(5.5 to 7.5)
-			qualname = "excellent"
-		if(3.5 to 5.5)
-			qualname = "good"
-		if(0 to 3.5)
-			qualname = "above-average"
-	var/datum/material/mat = custom_materials[1]
-	finalitem.set_custom_materials(custom_materials)
-	mat = mat.name
-	if(artifact)
-		dwarfyartifact(finalitem, mat)
-	else
-		finalitem.name = "[qualname] [mat] [initial(finalitem.name)]"
-		finalitem.desc = "A [qualname] [initial(finalitem.name)]. Its quality is [quality]."
-	finalitem.forceMove(get_turf(src))
-	qdel(src)
-
-
-/obj/item/smithing/proc/dwarfyartifact(obj/item/finalitem, mat)
-	var/finaldesc = "A [initial(finalitem.name)] made of [mat], all craftsmanship is of the highest quality. It "
-	switch(pick(1,2,3,4,5))
-		if(1)
-			finaldesc += "is encrusted with [pick("","synthetic ","multi-faceted ","magical ","sparkling ") + pick("rubies","emeralds","jade","opals","lapiz lazuli")]."
-		if(2)
-			finaldesc += "is laced with studs of [pick("gold","silver","aluminium","titanium")]."
-		if(3)
-			finaldesc += "is encircled with bands of [pick("durasteel","metallic hydrogen","ferritic-alloy","plasteel","duranium")]."
-		if(4)
-			finaldesc += "menaces with spikes of [pick("ytterbium","uranium","white pearl","black steel")]."
-		if(5)
-			finaldesc += "is encrusted with [pick("","synthetic ","multi-faceted ","magical ","sparkling ") + pick("rubies","emeralds","jade","opals","lapis lazuli")],laced with studs of [pick("gold","silver","aluminium","titanium")], encircled with bands of [pick("durasteel","metallic hydrogen","ferritic-alloy","plasteel","duranium")] and menaces with spikes of [pick("ytterbium","uranium","white pearl","black steel")]."
-	finalitem.desc = finaldesc
-	finalitem.name = pick("Delersibnir", "Nekolangrir", "Zanoreshik","Öntakrítin", "Nogzatan", "Vunomam", "Nazushagsaldôbar", "Sergeb", "Zafaldastot", "Vudnis", "Dostust", "Shotom", "Mugshith", "Angzak", "Oltud", "Deleratîs", "Nökornomal") //one of these is literally BLOOD POOL CREATE.iirc its Nazushagsaldôbar.
-
-
-// -------- INGOTS -------- //
 
 /obj/item/ingot
 	name = "ingot"
@@ -175,12 +85,71 @@
 	desc = "On closer inspection, what appears to be wholly-unsuitable-for-smithing brass is actually primarily replicant alloy. Nezbere must have switched it while you weren't looking."
 
 
+/obj/item/smithing/attackby(obj/item/I, mob/user)
+	if(istype(I, finishingitem))
+		qdel(I)
+		startfinish()
+	else
+		return ..()
 
-//////////////////////////////////
-//								//
-//		BLACKSMITH FINISHERS	//
-//								//
-//////////////////////////////////
+/obj/item/smithing/proc/startfinish()
+	dofinish()
+
+/obj/item/smithing/proc/dofinish()
+	var/qualname
+	switch(quality)
+		if(-1000 to -5)
+			qualname = "awful"
+		if(-1000 to -2)
+			qualname = "shoddy"
+		if(-1000 to -1)
+			qualname =  "poor"
+		if(-1 to 1)
+			qualname = "normal"
+		if(10 to INFINITY)
+			qualname = "legendary"
+		if(7.5 to 10)
+			qualname = "masterwork"
+		if(5.5 to 7.5)
+			qualname = "excellent"
+		if(3.5 to 5.5)
+			qualname = "good"
+		if(0 to 3.5)
+			qualname = "above-average"
+	var/datum/material/mat = custom_materials[1]
+	finalitem.set_custom_materials(custom_materials)
+	mat = mat.name
+	if(artifact)
+		dwarfyartifact(finalitem, mat)
+	else
+		finalitem.name = "[qualname] [mat] [initial(finalitem.name)]"
+		finalitem.desc = "A [qualname] [initial(finalitem.name)]. Its quality is [quality]."
+	finalitem.forceMove(get_turf(src))
+	qdel(src)
+
+
+/obj/item/smithing/proc/dwarfyartifact(obj/item/finalitem, mat)
+	var/finaldesc = "A [initial(finalitem.name)] made of [mat], all craftsmanship is of the highest quality. It "
+	switch(pick(1,2,3,4,5))
+		if(1)
+			finaldesc += "is encrusted with [pick("","synthetic ","multi-faceted ","magical ","sparkling ") + pick("rubies","emeralds","jade","opals","lapiz lazuli")]."
+		if(2)
+			finaldesc += "is laced with studs of [pick("gold","silver","aluminium","titanium")]."
+		if(3)
+			finaldesc += "is encircled with bands of [pick("durasteel","metallic hydrogen","ferritic-alloy","plasteel","duranium")]."
+		if(4)
+			finaldesc += "menaces with spikes of [pick("ytterbium","uranium","white pearl","black steel")]."
+		if(5)
+			finaldesc += "is encrusted with [pick("","synthetic ","multi-faceted ","magical ","sparkling ") + pick("rubies","emeralds","jade","opals","lapis lazuli")],laced with studs of [pick("gold","silver","aluminium","titanium")], encircled with bands of [pick("durasteel","metallic hydrogen","ferritic-alloy","plasteel","duranium")] and menaces with spikes of [pick("ytterbium","uranium","white pearl","black steel")]."
+	finalitem.desc = finaldesc
+	finalitem.name = pick("Delersibnir", "Nekolangrir", "Zanoreshik","Öntakrítin", "Nogzatan", "Vunomam", "Nazushagsaldôbar", "Sergeb", "Zafaldastot", "Vudnis", "Dostust", "Shotom", "Mugshith", "Angzak", "Oltud", "Deleratîs", "Nökornomal") //one of these is literally BLOOD POOL CREATE.iirc its Nazushagsaldôbar.
+
+
+//////////////////////////
+//						//
+//  BLACKSMITH PARTS	//
+//						//
+//////////////////////////
 
 // Root item code
 /obj/item/blacksmith
@@ -233,15 +202,12 @@
 	desc = "It rattles and is pretty useless when not attached to stuff"
 	icon_state = "chain"
 
-
-//////////////////////////////
-//							//
-//  	SMITHED TOOLS		//
-//							//
-//////////////////////////////
-
-
-// -------- HAMMER AND SHOVEL -------- //
+//////////////////////
+//					//
+//  SMITHED TOOLS	//
+//	METAL PARTS		//
+//					//
+//////////////////////
 
 /obj/item/smithing/hammerhead
 	name = "smithed hammer head"
@@ -268,9 +234,6 @@
 	else
 		finalitem.toolspeed *= max(1, (quality * -1))
 	..()
-
-
-// -------- PICKAXES -------- //
 
 /obj/item/smithing/pickaxehead
 	name = "smithed pickaxe head"
@@ -303,6 +266,7 @@
 	var/cooldown = null
 	var/range = null
 
+
 /obj/item/smithing/prospectingpickhead/startfinish()
 	var/obj/item/mining_scanner/prospector/finalforreal = new /obj/item/mining_scanner/prospector(src)
 	finalforreal.range = 2 + quality
@@ -312,8 +276,6 @@
 	finalitem = finalforreal
 	..()
 
-
-// -------- CROWBARS -------- //
 
 /obj/item/smithing/crowbar
 	name = "unwrapped crowbar"
@@ -332,7 +294,7 @@
 	finalitem = finalforreal
 	..()
 
-
+// Does not produce the expected result with force dependent on quality, instead just uses the base one. The finished item is a placeholder, it works though.
 /obj/item/smithing/unitool
 	name = "unwrapped universal tool"
 	desc = "Add leather strips."
@@ -347,8 +309,6 @@
 	..()
 
 
-// -------- KITCHEN KNIFE -------- //
-
 /obj/item/smithing/knifeblade
 	name = "smithed knife blade"
 	icon_state = "knife_smith"
@@ -356,17 +316,28 @@
 	finalitem = /obj/item/kitchen/knife
 
 /obj/item/smithing/knifeblade/startfinish()
-	var/obj/item/kitchen/knife/smithed/finalforreal = new /obj/item/kitchen/knife/smithed(src)
-	finalforreal.force += quality*2
+	var/obj/item/smithing/knifeblade/finalforreal = new /obj/item/smithing/knifeblade(src)
+	finalitem = new /obj/item/kitchen/knife(src)
+	finalforreal.force += quality*3
 	finalitem = finalforreal
+	finalitem.icon = 'icons/fallout/objects/crafting/blacksmith.dmi'
+	finalitem.icon_state = "knife_smith"
+	finalitem.name = "kitchen knife"
+	finalitem.desc = "A handmade kitchen knife."
+	var/mutable_appearance/overlay = mutable_appearance('icons/fallout/objects/crafting/blacksmith.dmi', "hilt_knife")
+	overlay.appearance_flags = RESET_COLOR
+	finalitem.add_overlay(overlay)
+	if(finalitem.force < 0)
+		finalitem.force = 0
+	finalitem.material_flags = MATERIAL_COLOR | MATERIAL_AFFECT_STATISTICS
 	..()
 
 
-//////////////////////////////////////////////////
-//												//
-//  	BLING - smithed and finished both		//
-//												//
-//////////////////////////////////////////////////
+//////////////////////
+//					//
+//  	BLING		//
+//					//
+//////////////////////
 
 /obj/item/smithing/special
 	mob_overlay_icon = 'icons/fallout/onmob/items/miscellaneous.dmi'
@@ -442,53 +413,9 @@
 	..()
 
 
-// -------- 1-H WEAPONS -------- //
-
-/obj/item/smithing/daggerblade
-	name = "smithed dagger blade"
-	icon_state = "dagger_smith"
-	finishingitem = /obj/item/blacksmith/swordhandle
-	finalitem = /obj/item/melee/smith/dagger
-
-/obj/item/smithing/daggerblade/startfinish()
-	finalitem = new /obj/item/melee/smith/dagger(src)
-	finalitem.force += quality*1.5
-	finalitem.armour_penetration += quality*0.0375
-	..()
-
-/obj/item/smithing/macheteblade
-	name = "smithed machete blade"
-	icon_state = "machete_smith"
-	finishingitem = /obj/item/blacksmith/swordhandle
-	finalitem = /obj/item/melee/smith/machete
-
-/obj/item/smithing/macheteblade/startfinish()
-	finalitem = new /obj/item/melee/smith/machete(src)
-	finalitem.force += quality*1.5
-	..()
-
-/obj/item/smithing/gladiusblade
-	name = "smithed gladius blade"
-	icon_state = "gladius_smith"
-	finishingitem = /obj/item/blacksmith/swordhandle
-	finalitem = /obj/item/melee/smith/machete/gladius
-
-/obj/item/smithing/gladiusblade/startfinish()
-	finalitem = new /obj/item/melee/smith/machete/gladius(src)
-	finalitem.force += quality*1.5
-	..()
-
-/obj/item/smithing/macheterblade
-	name = "reforged machete blade"
-	icon_state = "macheter_smith"
-	finishingitem = /obj/item/blacksmith/swordhandle
-	finalitem = /obj/item/melee/smith/machete/reforged
-
-/obj/item/smithing/macheterblade/startfinish()
-	finalitem = new /obj/item/melee/smith/machete/reforged(src)
-	finalitem.force += quality*1.5
-	..()
-
+///////////////
+// NEW STUFF //
+///////////////
 
 /obj/item/smithing/swordblade
 	name = "smithed swordblade"
@@ -523,33 +450,6 @@
 	finalitem.force += quality*1.5
 	..()
 
-
-/obj/item/smithing/macehead
-	name = "smithed macehead"
-	icon_state = "mace_smith"
-	finishingitem = /obj/item/blacksmith/swordhandle
-	finalitem = /obj/item/melee/smith/mace
-
-/obj/item/smithing/macehead/startfinish()
-	finalitem = new /obj/item/melee/smith/mace(src)
-	finalitem.force += quality*1.5
-	finalitem.armour_penetration += quality*0.05
-	..()
-
-
-/obj/item/smithing/wakiblade
-	name = "smithed wakizashi blade"
-	icon_state = "waki_smith"
-	finishingitem = /obj/item/blacksmith/swordhandle
-	finalitem = /obj/item/melee/smith/wakizashi
-
-/obj/item/smithing/wakiblade/startfinish()
-	finalitem = new /obj/item/melee/smith/wakizashi(src)
-	finalitem.force += quality*1.5
-	..()
-
-// -------- POLEARMS -------- //
-
 /obj/item/smithing/spearhead
 	name = "smithed spearhead"
 	finalitem = /obj/item/melee/smith/twohand/spear
@@ -563,6 +463,7 @@
 	finalforreal.throwforce = finalforreal.force/10
 	finalitem = finalforreal
 	..()
+
 
 /obj/item/smithing/lancehead
 	name = "smithed lancehead"
@@ -578,8 +479,7 @@
 	finalitem = finalforreal
 	..()
 
-// -------- 2-H WEAPONS --------- //
-
+// Axes & Choppers //
 /obj/item/smithing/axehead
 	name = "smithed axehead"
 	icon_state = "axe_smith"
@@ -621,6 +521,80 @@
 	..()
 
 
+/obj/item/smithing/daggerblade
+	name = "smithed dagger blade"
+	icon_state = "dagger_smith"
+	finishingitem = /obj/item/blacksmith/swordhandle
+	finalitem = /obj/item/melee/smith/dagger
+
+/obj/item/smithing/daggerblade/startfinish()
+	finalitem = new /obj/item/melee/smith/dagger(src)
+	finalitem.force += quality*1.5
+	finalitem.armour_penetration += quality*0.0375
+	..()
+
+
+/obj/item/smithing/macheteblade
+	name = "smithed machete blade"
+	icon_state = "machete_smith"
+	finishingitem = /obj/item/blacksmith/swordhandle
+	finalitem = /obj/item/melee/smith/machete
+
+/obj/item/smithing/macheteblade/startfinish()
+	finalitem = new /obj/item/melee/smith/machete(src)
+	finalitem.force += quality*1.5
+	..()
+
+
+/obj/item/smithing/gladiusblade
+	name = "smithed gladius blade"
+	icon_state = "gladius_smith"
+	finishingitem = /obj/item/blacksmith/swordhandle
+	finalitem = /obj/item/melee/smith/machete/gladius
+
+/obj/item/smithing/gladiusblade/startfinish()
+	finalitem = new /obj/item/melee/smith/machete/gladius(src)
+	finalitem.force += quality*1.5
+	..()
+
+
+/obj/item/smithing/macheterblade
+	name = "reforged machete blade"
+	icon_state = "macheter_smith"
+	finishingitem = /obj/item/blacksmith/swordhandle
+	finalitem = /obj/item/melee/smith/machete/reforged
+
+/obj/item/smithing/macheterblade/startfinish()
+	finalitem = new /obj/item/melee/smith/machete/reforged(src)
+	finalitem.force += quality*1.5
+	..()
+
+/obj/item/smithing/macehead
+	name = "smithed macehead"
+	icon_state = "mace_smith"
+	finishingitem = /obj/item/blacksmith/swordhandle
+	finalitem = /obj/item/melee/smith/mace
+
+/obj/item/smithing/macehead/startfinish()
+	finalitem = new /obj/item/melee/smith/mace(src)
+	finalitem.force += quality*1.5
+	finalitem.armour_penetration += quality*0.05
+	..()
+
+
+
+/obj/item/smithing/wakiblade
+	name = "smithed wakizashi blade"
+	icon_state = "waki_smith"
+	finishingitem = /obj/item/blacksmith/swordhandle
+	finalitem = /obj/item/melee/smith/wakizashi
+
+/obj/item/smithing/wakiblade/startfinish()
+	finalitem = new /obj/item/melee/smith/wakizashi(src)
+	finalitem.force += quality*1.5
+	..()
+
+
 /obj/item/smithing/katanablade
 	name = "smithed katana blade"
 	icon_state = "katana_smith"
@@ -635,25 +609,6 @@
 	finalitem = finalforreal
 	..()
 
-
-// GHOUL CRUSHER - for those dry twig like limbs, snap snap.
-/obj/item/smithing/crusherhead
-	name = "smithed crusher head"
-	finalitem = /obj/item/melee/smith/twohand/crusher
-	icon_state = "crusher_smith"
-
-/obj/item/smithing/crusherhead/startfinish()
-	var/obj/item/melee/smith/twohand/crusher/finalforreal = new /obj/item/melee/smith/twohand/crusher(src)
-	finalforreal.force += quality*1.5
-	finalforreal.wield_force = finalforreal.force*finalforreal.wielded_mult
-	finalforreal.AddComponent(/datum/component/two_handed, force_unwielded=finalforreal.force, force_wielded=finalforreal.wield_force, icon_wielded="[icon_state]2")
-	finalforreal.AddComponent(/datum/component/bane, speciestype = /datum/species/ghoul, mobtype = /mob/living/simple_animal/hostile/ghoul, damage_multiplier = 1.5)
-	finalitem = finalforreal
-	..()
-
-
-
-// -------- THROWING WEAPONS --------- //
 
 /obj/item/smithing/javelinhead
 	name = "smithed javelin head"
@@ -683,77 +638,3 @@
 	..()
 
 
-//////////////////////////////////////
-//									//
-//		QUENCHING TROUGH			//
-//									//
-//////////////////////////////////////
-
-/obj/structure/blacksmith/quenching
-	name = "quenching trough"
-	desc = "Water in a open box, for tempering hot metal in."
-	icon = 'icons/fallout/objects/crafting/blacksmith.dmi'
-	icon_state = "quench"
-	density = TRUE
-	anchored = TRUE
-	var/toohot
-
-/obj/structure/blacksmith/quenching/attackby(obj/item/I, mob/user)
-	if(istype(I, /obj/item/smithing))
-		var/obj/item/smithing/untempered = I
-		if(untempered.toohot == FALSE)
-			playsound(src, 'sound/effects/water_wade4.ogg',50, 1)
-			return
-		to_chat(user, "You temper the [untempered] by quenching it in the water. There is a loud hiss and a puff of steam.")
-		playsound(src, 'sound/f13effects/steam_long.ogg',80, 1)
-		flick("quench_boil",src)
-		var/datum/effect_system/steam_spread/puff = new /datum/effect_system/steam_spread/()
-		puff.effect_type = /obj/effect/particle_effect/steam
-		puff.set_up(2, 0, src)
-		puff.start()
-		if(!do_after(user, 20, TRUE, src))
-			return
-		untempered.toohot = FALSE
-		untempered.istempered()
-		I.on_attack_hand(user)
-	else
-		. = ..()
-
-
-/obj/structure/blacksmith/quenching/attackby(obj/item/I, mob/user)
-	if(istype(I, /obj/item/ingot))
-		var/obj/item/ingot/notsword = I
-		if(notsword.workability == FALSE)
-			playsound(src, 'sound/effects/water_wade4.ogg',50, 1)
-			return
-		to_chat(user, "You cool the [notsword] in the water.")
-		playsound(src, 'sound/f13effects/steam_short.ogg',80, 1)
-		flick("quench_boil",src)
-		var/datum/effect_system/steam_spread/puff = new /datum/effect_system/steam_spread/()
-		puff.effect_type = /obj/effect/particle_effect/steam
-		puff.set_up(1, 0, src)
-		puff.start()
-		notsword.workability = FALSE
-		notsword.icon_state = "ingot"
-		notsword.set_light_on(FALSE)
-		I.on_attack_hand(user)
-	else
-		. = ..()
-
-
-/*
-
-// -------- ARMOR STUFF CONCEPT --------- //
-
-/obj/item/smithing/helmet
-	name = "smithed unpadded helmet"
-	finalitem = /obj/item/clothing/head/helmet/f13/smithed
-	icon_state = "helmet_smith"
-
-/obj/item/smithing/helmet/startfinish()
-	var/obj/item/clothing/head/helmet/f13/smithed/finalforreal = new /obj/item/clothing/head/helmet/f13/smithed(src)
-	finalforreal.armor += quality*1
-	finalforreal.AddComponent(/datum/component/two_handed, force_unwielded=finalforreal.force, force_wielded=finalforreal.wield_force, icon_wielded="[icon_state]2")
-	finalitem = finalforreal
-	..()
-*/

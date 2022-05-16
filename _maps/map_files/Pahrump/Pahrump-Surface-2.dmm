@@ -2202,7 +2202,7 @@
 /area/f13/village)
 "aVn" = (
 /obj/structure/furnace,
-/turf/open/indestructible/ground/outside/dirt,
+/turf/open/indestructible/ground/outside/wood,
 /area/f13/wasteland)
 "aVq" = (
 /obj/structure/billboard/ritas,
@@ -6950,9 +6950,9 @@
 /turf/open/floor/carpet,
 /area/f13/building)
 "cTp" = (
-/mob/living/simple_animal/hostile/ghoul/legendary,
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/caves)
+/obj/effect/landmark/start/f13/pusher,
+/turf/open/indestructible/ground/outside/wood,
+/area/f13/wasteland)
 "cTy" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -7014,6 +7014,12 @@
 	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
+"cVv" = (
+/obj/structure/chair/comfy/brown{
+	dir = 8
+	},
+/turf/open/floor/f13/wood,
+/area/f13/raiders)
 "cVx" = (
 /obj/effect/landmark/start/f13/ncrmedofficer,
 /turf/open/floor/f13{
@@ -7671,8 +7677,15 @@
 /turf/open/floor/f13/wood,
 /area/f13/raiders)
 "dhK" = (
-/obj/structure/campfire/stove,
-/turf/open/floor/f13/wood,
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/turf/open/floor/f13{
+	icon_state = "floordirty"
+	},
 /area/f13/raiders)
 "dhQ" = (
 /obj/structure/displaycase,
@@ -7709,13 +7722,11 @@
 /turf/open/floor/plasteel/f13/vault_floor/white/whitesolid,
 /area/f13/building)
 "diK" = (
-/obj/structure/closet,
-/obj/item/clothing/under/f13/rag,
-/obj/machinery/light/small{
-	dir = 1
+/obj/structure/chair/comfy/purple{
+	dir = 8
 	},
-/turf/open/floor/f13/wood,
-/area/f13/raiders)
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "diS" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/f13/oak,
@@ -10029,6 +10040,7 @@
 	color = "#363636"
 	},
 /obj/machinery/light/small,
+/obj/item/reagent_containers/food/drinks/bottle/rum/empty,
 /turf/open/floor/f13/wood,
 /area/f13/raiders)
 "edI" = (
@@ -10784,10 +10796,10 @@
 /turf/open/floor/wood/f13/oak,
 /area/f13/building)
 "erY" = (
-/obj/structure/chair/bench,
-/obj/effect/landmark/start/f13/pusher,
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
+/turf/open/floor/f13{
+	icon_state = "floordirty"
+	},
+/area/f13/raiders)
 "esc" = (
 /obj/structure/bonfire,
 /turf/open/indestructible/ground/inside/mountain,
@@ -11524,6 +11536,10 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/ncr)
+"eGB" = (
+/obj/effect/landmark/start/f13/pusher,
+/turf/open/indestructible/ground/outside/savannah/leftcenter,
+/area/f13/wasteland)
 "eGD" = (
 /obj/structure/sign/poster/prewar/poster69,
 /turf/closed/wall/f13/wood/house,
@@ -17468,6 +17484,10 @@
 	icon_state = "plating"
 	},
 /area/f13/ncr)
+"gSc" = (
+/obj/structure/blacksmith/quenching,
+/turf/open/indestructible/ground/outside/wood,
+/area/f13/wasteland)
 "gSf" = (
 /obj/structure/fence/corner{
 	dir = 8
@@ -18244,7 +18264,6 @@
 /obj/structure/chair/f13chair1{
 	dir = 8
 	},
-/obj/effect/landmark/start/f13/pusher,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "hgJ" = (
@@ -21006,7 +21025,6 @@
 /area/f13/wasteland)
 "ifc" = (
 /obj/structure/chair/sofa/left,
-/obj/effect/landmark/start/f13/pusher,
 /turf/open/indestructible/ground/outside/savannah/topleft,
 /area/f13/wasteland)
 "ifq" = (
@@ -21851,7 +21869,8 @@
 /obj/structure/anvil/obtainable/sandstone,
 /obj/item/twohanded/sledgehammer/simple,
 /obj/item/book/manual/advice_blacksmith,
-/turf/open/indestructible/ground/outside/dirt,
+/obj/item/clothing/gloves/f13/blacksmith,
+/turf/open/indestructible/ground/outside/wood,
 /area/f13/wasteland)
 "iyD" = (
 /obj/structure/window/fulltile/house{
@@ -24141,7 +24160,6 @@
 /area/f13/wasteland)
 "jnN" = (
 /obj/structure/chair/sofa/right,
-/obj/effect/landmark/start/f13/pusher,
 /turf/open/indestructible/ground/outside/savannah/topcenter,
 /area/f13/wasteland)
 "jnW" = (
@@ -24487,6 +24505,18 @@
 /obj/structure/decoration/rag,
 /turf/closed/wall/f13/wood,
 /area/f13/caves)
+"juD" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/vehicle/ridden/wheelchair{
+	name = "hawtrod bitch magnet";
+	desc = "A wheelchair, that seems to be wheels, it seems to be moveable by person on the wheelchair and it picks up bitches."
+	},
+/turf/open/floor/f13{
+	icon_state = "floordirty"
+	},
+/area/f13/raiders)
 "juF" = (
 /obj/structure/table/wood,
 /obj/item/paper_bin,
@@ -26163,11 +26193,10 @@
 /obj/structure/chair/f13foldupchair{
 	dir = 4
 	},
-/obj/effect/landmark/start/f13/pusher,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "keR" = (
-/obj/structure/chair/stool/retro/black,
+/obj/effect/landmark/start/f13/pusher,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "keT" = (
@@ -41937,6 +41966,17 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/building)
+"qxH" = (
+/obj/structure/closet,
+/obj/item/clothing/under/f13/rag,
+/obj/machinery/light/small{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/turf/open/floor/f13/wood,
+/area/f13/raiders)
 "qxO" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontaltopbordertop2right"
@@ -45430,6 +45470,12 @@
 	icon_state = "outerbordercorner"
 	},
 /area/f13/wasteland)
+"rZg" = (
+/obj/item/storage/fancy/rollingpapers,
+/obj/item/storage/fancy/rollingpapers,
+/obj/structure/table/wood/junk,
+/turf/open/floor/f13/wood,
+/area/f13/raiders)
 "rZk" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small,
@@ -57032,7 +57078,10 @@
 	},
 /area/f13/wasteland)
 "wMF" = (
-/obj/item/reagent_containers/hypospray/medipen/stimpak,
+/obj/structure/campfire/stove,
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
 /turf/open/floor/f13/wood,
 /area/f13/raiders)
 "wMU" = (
@@ -109424,10 +109473,10 @@ gcK
 gcK
 ktB
 gcK
-gcK
 cQs
-dhK
 hMz
+gSx
+gSx
 ebx
 eBu
 eUi
@@ -109681,10 +109730,10 @@ gcK
 gcK
 gcK
 gcK
-gcK
 taV
-diK
-wMF
+gSx
+hMz
+gSx
 edF
 qdS
 eUD
@@ -109693,14 +109742,14 @@ jIz
 gVp
 ofL
 mvv
-mvv
+odZ
 bir
 inr
 iJo
 aLd
 mvv
 mvv
-stD
+cTp
 mvv
 stD
 bir
@@ -109938,10 +109987,10 @@ gcK
 gcK
 gcK
 gcK
-gcK
-hzm
-hzm
 iHR
+qxH
+gSx
+gSx
 iHR
 gQy
 eXn
@@ -109949,7 +109998,7 @@ rXN
 fCM
 iyy
 aVn
-odZ
+gSc
 mvv
 mvv
 vDb
@@ -110195,10 +110244,10 @@ gcK
 gcK
 gcK
 ktB
-gcK
-gcK
-gcK
-gcK
+iHR
+wMF
+gSx
+hMz
 egy
 hzm
 eYn
@@ -110452,10 +110501,10 @@ gcK
 gcK
 gcK
 gcK
-ktB
-gcK
-gcK
-gcK
+iHR
+rZg
+cVv
+gSx
 kUU
 ewK
 mxr
@@ -110468,13 +110517,13 @@ qdS
 hVd
 rXN
 rXN
-fdV
+jSu
 jnN
 dCL
 mfD
 xGH
-erY
-stD
+hxO
+cTp
 clL
 aLd
 lXB
@@ -110709,10 +110758,10 @@ ggK
 gcK
 gcK
 gcK
-gcK
-ktB
-ktB
-gcK
+hzm
+iHR
+hzm
+iHR
 gQy
 haB
 hMI
@@ -110730,8 +110779,8 @@ xay
 bpD
 vhB
 tBN
-erY
-mvv
+hxO
+keR
 vDb
 jIz
 lYH
@@ -110982,13 +111031,13 @@ tzz
 hZD
 iqZ
 iqZ
-mAi
+eGB
 ifc
 wjO
 cWG
 ltK
-erY
-mvv
+hxO
+keR
 cdL
 fLf
 lWP
@@ -111231,7 +111280,7 @@ iCH
 dEc
 hMD
 fhq
-fJl
+erY
 poJ
 mxr
 poJ
@@ -111242,8 +111291,8 @@ mvv
 stD
 pye
 hgE
-keR
 mvv
+diK
 pSC
 clL
 lsb
@@ -111486,9 +111535,9 @@ gcK
 gcK
 ktB
 gcK
-gcK
 fiA
 ghD
+gyi
 gez
 xyT
 gYA
@@ -111498,7 +111547,7 @@ iwR
 mvv
 mvv
 mvv
-mvv
+keR
 mvv
 mvv
 stD
@@ -111743,9 +111792,9 @@ gcK
 gcK
 ktB
 gcK
-gcK
 fmY
-fKe
+juD
+gyi
 mxr
 gyi
 hft
@@ -112000,11 +112049,11 @@ ayd
 gcK
 ktB
 ktB
-ktB
 cQs
-fKU
+dhK
+gyi
 gez
-gzq
+gyi
 hhG
 hrU
 iaB
@@ -112257,12 +112306,12 @@ mTd
 gcK
 gcK
 gcK
-ktB
-fiK
-iHR
-dEc
-gAt
-joi
+gQy
+fJl
+fKe
+fKU
+erY
+gzq
 iEp
 icu
 jft
@@ -112514,12 +112563,12 @@ ggK
 gcK
 gcK
 gcK
-gcK
-gcK
-ktB
-mvv
-mvv
-mvv
+fiK
+iHR
+iHR
+dEc
+gAt
+joi
 iCH
 igs
 rxE
@@ -115079,7 +115128,7 @@ bqa
 ggK
 bFV
 ggK
-cTp
+ggK
 ggK
 gcK
 gcK

@@ -131,11 +131,7 @@
 	ckeywhitelist = list("silveredsoul")
 
 /obj/item/storage/box/large/custom_kit/evosolus/PopulateContents()
-	new /obj/item/gun/ballistic/automatic/assault_rifle/infiltrator(src)
-	new /obj/item/ammo_box/magazine/m556/rifle(src)
-	new /obj/item/gun/ballistic/automatic/pistol/m1911/custom(src)
-	new /obj/item/ammo_box/magazine/m45(src)
-	new /obj/item/storage/belt/holster(src)
+	new /obj/item/melee/powered/ripper(src)
 	new /obj/item/clothing/suit/armor/f13/ncrarmor/mantle/reinforced(src)
 	new /obj/item/clothing/head/beret/ncr/ncr_recon(src)
 	new /obj/item/clothing/mask/gas/sechailer(src)

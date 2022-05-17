@@ -667,6 +667,13 @@
 	armor = list("melee" = 85, "bullet" = 85, "laser" = 85, "energy" = 65, "bomb" = 70, "bio" = 100, "rad" = 100, "fire" = 90, "acid" = 50, "wound" = 75)
 	salvaged_type = /obj/item/clothing/suit/armored/heavy/salvaged_pa/x02 // Oh the misery
 
+/obj/item/clothing/suit/armor/f13/power_armor/advanced/hellfire
+	name = "hellfire power armor"
+	desc = "A deep black suit of Enclave-manufactured heavy power armor, based on pre-war designs such as the T-51 and improving off of data gathered by post-war designs such as the X-01. Most commonly fielded on the East Coast, no suit rivals it's strength."
+	icon_state = "hellfire"
+	item_state = "hellfire"
+	armor = list("melee" = 90, "bullet" = 90, "laser" = 90, "energy" = 70, "bomb" = 80, "bio" = 100, "rad" = 100, "fire" = 90, "acid" = 50, "wound" = 90)
+
 /obj/item/clothing/suit/armor/f13/enclave/armorvest
 	name = "armored vest"
 	desc = "Efficient prewar design issued to Enclave personell."

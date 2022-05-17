@@ -92,8 +92,8 @@
 	name = "FEB-[rand(1,99)]"
 
 /mob/living/simple_animal/pet/dog/eyebot //It's a propaganda eyebot, not a dog, but...
-	name = "propaganda eyebot"
-	desc = "This eyebot's weapons module has been removed and replaced with a loudspeaker. It appears to be shouting Pre-War propaganda."
+	name = "enclave eyebot"
+	desc = "This eyebot's weapons module has been removed and replaced with a loudspeaker. It appears to be shouting Enclave propaganda."
 	icon = 'icons/fallout/mobs/robots/eyebots.dmi'
 	icon_state = "eyebot"
 	icon_living = "eyebot"
@@ -101,11 +101,21 @@
 	icon_gib = "eyebot_d"
 	maxHealth = 60
 	health = 60
-	speak_chance = 8
+	speak_chance = 5
 	gender = NEUTER
 	mob_biotypes = MOB_ROBOTIC
-	faction = list("hostile", "enclave", "wastebot", "ghoul", "cazador", "supermutant", "bighorner")
-	speak = list()
+	faction = list("enclave")
+	speak = list(
+		"We've got to part now, but don't be sad, America. The Enclave is working tirelessly to rebuild this great nation, so you don't have to.",
+		"Reflect upon all we have said, America. Reflect and wait. For soon this great nation will be reborn, and the Enclave will be its salvation.",
+		"So remember, America. The Enclave is working around the clock to return this country to greatness. All you need is a little patience, a little faith.",
+		"May our country be always successful, but whether successful or otherwise, always right.",
+		"America will never be destroyed from the outside. If we falter and lose our freedoms, it will be because we destroyed ourselves.",
+		"Freedom is always worth fighting for!",
+		"But for now, America, we must part. We shall restore the greatest country in the world to its former glory, but... That will take time, even for the Enclave.",
+		"Cultural database accessed. Quoting New England poet Robert Frost: 'Freedom lies in being bold.'",
+		"The Enclave are here to defend YOUR Liberty, YOUR Life and YOUR pursuit of Happiness.",
+		)
 	speak_emote = list("states")
 	emote_hear = list()
 	emote_see = list("buzzes.","pings.","floats in place")

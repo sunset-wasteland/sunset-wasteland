@@ -11,6 +11,7 @@
 	time = 40
 	category = CAT_CRAFTING
 	subcategory = CAT_ROBOT
+	always_available = FALSE
 
 /datum/crafting_recipe/trading_machine
 	name = "Vending machine"

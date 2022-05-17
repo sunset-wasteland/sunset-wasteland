@@ -108,6 +108,7 @@ GLOBAL_LIST_INIT(faction_whitelist_positions, list(
 "Detective",
 "Shop Assistant",
 
+"Enclave Captain",
 "Enclave Lieutenant",
 "Enclave Gunnery Sergeant",
 "Enclave Sergeant",
@@ -240,6 +241,7 @@ GLOBAL_LIST_INIT(wasteland_positions, list(
 ))
 
 GLOBAL_LIST_INIT(enclave_positions, list(
+	"Enclave Captain",
 	"Enclave Lieutenant",
 	"Enclave Gunnery Sergeant",
 	"Enclave Sergeant",

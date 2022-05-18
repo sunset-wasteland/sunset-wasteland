@@ -747,9 +747,13 @@
 	desc = "A refurbished and personalized set of pre-unification desert ranger gear."
 	icon_state = "desert_ranger"
 	item_state = "desert_ranger"
-	armor = list("melee" = 30, "bullet" = 30, "laser" = 30, "energy" = 15, "bomb" = 55, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20, "wound" = 40)
+	armor = list("melee" = 40, "bullet" = 40, "laser" = 30, "energy" = 15, "bomb" = 55, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20, "wound" = 40)
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEHAIR|HIDEFACIALHAIR|HIDEFACE
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
+
+/obj/item/clothing/suit/armor/f13/rangercombat/eliteriot/reclaimed/Initialize()
+	. = ..()
+	AddComponent(/datum/component/armor_plate)
 
 //Brotherhood of Steel (PA in f13head.dm)
 

@@ -965,7 +965,11 @@ obj/item/clothing/suit/armor/f13/exile/cust0m
 	desc = "A customized and well-worn suit of riot gear with parts of the suit reinforced with leather armor and slain Centurion armor pieces by the wearer. A sniper's veil is wrapped around the neck."
 	icon_state = "elite_riot"
 	item_state = "elite_riot"
-	armor = list("melee" = 30, "bullet" = 25, "laser" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
+	armor = list("melee" = 40, "bullet" = 40, "laser" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
+
+/obj/item/clothing/suit/armor/f13/rangercombat/degancustom/Initialize()
+	. = ..()
+	AddComponent(/datum/component/armor_plate)
 
 /obj/item/clothing/suit/armor/f13/rangercombat/rigscustom
 	name = "11th armored calvary armor"

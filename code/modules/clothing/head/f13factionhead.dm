@@ -899,6 +899,16 @@
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
 
+/obj/item/clothing/head/helmet/f13/khan/mangudai
+	name = "Khanate Mangudai helmet"
+	desc = "A handmade studded leather helm based on armor based on those worn by ancient - even by pre-war standards - soldiers who share the Mangudai name-sake. Its leather covering protects the ears and neck, and features a stylish fur trim."
+	icon_state = "mangudai_helm"
+	item_state = "mangudai_helm"
+	armor = list("melee" = 45, "bullet" = 45, "laser" = 35, "energy" = 30, "bomb" = 40, "bio" = 40, "rad" = 60, "fire" = 50, "acid" = 25, "wound" = 50)
+
+/obj/item/clothing/head/helmet/f13/khan/mangudai/Initialize()
+	. = ..()
+	AddComponent(/datum/component/armor_plate)
 
 /obj/item/clothing/head/helmet/f13/khan/bandana
 	name = "Great Khan bandana"

@@ -705,16 +705,39 @@
 	strip_delay = 5
 
 //Great Khan
-/obj/item/clothing/suit/armor/khan_jacket
-	name = "khan armored jacket"
-	desc = "The symbol of the greatest pushers."
-	icon_state = "khan_jacket"
-	item_state = "khan_jacket"
-	armor = list("melee" = 30, "bullet" = 25, "laser" = 25,  "energy" = 25, "bomb" = 30, "bio" = 40, "rad" = 40, "fire" = 50, "acid" = 10, "wound" = 37)
-	slowdown = 0.05
+/obj/item/clothing/suit/armor/khan/prospect
+	name = "Khanate prospect armor"
+	desc = "A comfortable cut-off jacket upgraded with gambeson lining, leather padding, and a steel pauldron. This one lacks the patch and gear harness worn by Khanate citizens, marking the wearer as a Prospect yet to earn it. Like all Khanate armor, it can be upgraded."
+	icon = 'icons/fallout/clothing/khans.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/khaans.dmi'
+	icon_state = "prospect"
+	item_state = "prospect"
+	body_parts_covered = CHEST|GROIN|LEGS|ARMS
+	armor = list("melee" = 30, "bullet" = 30, "laser" = 30,  "energy" = 30, "bomb" = 30, "bio" = 40, "rad" = 40, "fire" = 50, "acid" = 10, "wound" = 35)
+	slowdown = 0
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets
 
-/obj/item/clothing/suit/armor/khan_jacket/Initialize()
+/obj/item/clothing/suit/armor/khan/prospect/Initialize()
+	. = ..()
+	AddComponent(/datum/component/armor_plate)
+
+/obj/item/clothing/suit/armor/khan/prospect/citizen
+	name = "Khanate citizen armor"
+	desc = "A comfortable cut-off jacket upgraded with gambeson lining, leather padding, a gear harness for extra storage, and a steel pauldron. Worn by citizens of Bighorn who have earned their place among the Khans, as well as members of its Warrior caste who are off-duty. Like all Khanate armor, it can be upgraded."
+	armor = list("melee" = 35, "bullet" = 35, "laser" = 30, "energy" = 30, "bomb" = 30, "bio" = 40, "rad" = 40, "fire" = 50, "acid" = 15, "wound" = 40)
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/huge //This is to encourage khan citizens to embrace their versatility and get creative.
+
+/obj/item/clothing/suit/armor/f13/khan/mangudai
+	name = "Khanate Mangudai armor"
+	desc = "A thick suit of gambeson-lined, studded leather armor hand-made for each Mangudai. It also features lamellar chausses to protect the legs. Like all Khanate armor, it can be upgraded."
+	icon = 'icons/fallout/clothing/khans.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/khaans.dmi'
+	icon_state = "mangudai"
+	item_state = "mangudai"
+	body_parts_covered = CHEST|GROIN|LEGS|ARMS
+	armor = list("melee" = 45, "bullet" = 45, "laser" = 35, "energy" = 30, "bomb" = 40, "bio" = 40, "rad" = 60, "fire" = 50, "acid" = 25, "wound" = 50)
+
+/obj/item/clothing/suit/armor/f13/khan/mangudai/Initialize()
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
 

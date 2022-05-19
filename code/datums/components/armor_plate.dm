@@ -1,8 +1,8 @@
 /datum/component/armor_plate
 	var/amount = 0
-	var/maxamount = 5
+	var/maxamount = 5 // With my buff, this is a max of 25 additional armor in the listed types, except for bomb which only gets 10. Few armors will have enough base to start competing with PA, but there will be a few.
 	var/upgrade_item = /obj/item/stack/crafting/armor_plate
-	var/datum/armor/added_armor = list("melee" = 2, "bullet" = 2, "laser" = 2)
+	var/datum/armor/added_armor = list("melee" = 5, "bullet" = 5, "laser" = 5, "bomb" = 2, "fire" = 5) // Let's face it, few people think it's worth to mine for plasteel, and 10 points of armor is a shit reward for killing five deathclaws.
 	var/upgrade_name
 
 /datum/component/armor_plate/Initialize(_maxamount,obj/item/_upgrade_item,datum/armor/_added_armor)
@@ -69,7 +69,7 @@
 	if(ismecha(O))
 		var/obj/mecha/R = O
 		R.update_icon()
-		to_chat(user, "<span class='info'>You strengthen [R], improving its resistance against melee, bullet and laser damage.</span>")
+		to_chat(user, "<span class='info'>You strengthen [R], improving its resistance against melee, bullet, explosive, fire, and laser damage.</span>")
 	else
 		to_chat(user, "<span class='info'>You strengthen [O], improving its resistance against attacks.</span>")
 

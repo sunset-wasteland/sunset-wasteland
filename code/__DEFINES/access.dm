@@ -127,4 +127,5 @@ also be like that but I can't be arsed to go back and change them all*/
 
 #define ACCESS_NCR_COMMAND 253
 #define ACCESS_LEGION_COMMAND 254
-#define ACCESS_BROTHERHOOD_COMMAND 255 
+#define ACCESS_BROTHERHOOD_COMMAND 255
+#define ACCESS_ENCLAVE_COMMAND  266

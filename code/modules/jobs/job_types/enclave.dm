@@ -93,7 +93,7 @@
 	flag = F13USLT
 	total_positions = 1
 	spawn_positions = 1
-	access = list(ACCESS_ENCLAVE, ACCESS_CHANGE_IDS)
+	access = list(ACCESS_ENCLAVE, ACCESS_CHANGE_IDS, ACCESS_ENCLAVE_COMMAND)
 	description = "You are probably the last operating cell of the Enclave in the US, as far as you know. Now that the lore is out of the way, just make the round fun. You set the policies and the attitude of the Enclave this week."
 	supervisors = "Enclave Department of the Army."
 	outfit = /datum/outfit/job/enclave/peacekeeper/enclavelt
@@ -160,7 +160,7 @@
 	flag = F13USGYSGT
 	total_positions = 1
 	spawn_positions = 1
-	access = list(ACCESS_ENCLAVE, ACCESS_CHANGE_IDS)
+	access = list(ACCESS_ENCLAVE, ACCESS_CHANGE_IDS, ACCESS_ENCLAVE_COMMAND)
 	description = "Second in command after Lieutenant, your role is to direct their orders directly to the sergeants and regular troops."
 	supervisors = "The Lieutenant."
 	outfit = /datum/outfit/job/enclave/peacekeeper/f13gysergeant
@@ -364,6 +364,7 @@
 /datum/job/enclave/enclavesci
 	title = "Enclave Scientist"
 	flag = F13USSCIENTIST
+	access = list(ACCESS_ENCLAVE, ACCESS_ENCLAVE_COMMAND)
 	total_positions = 2
 	spawn_positions = 2
 	description = "You're responsible for the maintenance of the base, the knowledge you've accumulated over the years is the only thing keeping the remnants alive. You've dabbled in enough to be considered a Professor in your field of research, but they call you Doctor. Support your dwindling forces and listen to the Lieutenant."

@@ -1289,3 +1289,12 @@ obj/item/clothing/suit/armor/f13/exile/cust0m
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS|HANDS
 	slowdown = 0.05
+
+/// Daughters of Hecate
+/obj/item/clothing/suit/armor/f13/legion/vet/daughters
+	name = "daughters armor"
+	desc = "Armor worn by once worned by legion veterans now it seems to be daughters of hecate, salvaged bits of enemy armor and scrap metal often reinforcing the armor." //Legion stats as it is basically an female legion, Rigbe said we can use the legion scout sprite as it isnt too legion like.
+	icon_state = "legscout"
+	item_state = "legscout"
+	slowdown = 0.05
+	salvage_loot = list(/obj/item/stack/crafting/armor_plate = 4) // Slightly better armor

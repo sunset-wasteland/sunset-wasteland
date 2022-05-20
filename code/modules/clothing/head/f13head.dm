@@ -877,3 +877,13 @@
 	icon_state = "bone_dancer_helmet"
 	item_state = "bone_dancer_helmet"
 	strip_delay = 100
+
+/// Midwestern Event stuff
+
+/obj/item/clothing/head/helmet/midwesternhelmet
+	name = "tactical combat helmet"
+	desc = "A tactical black helmet, sealed from outside hazards with a plate of glass and not much else."
+	icon_state = "marine_security"
+	item_state = "marine_security"
+	armor = list("melee" = 50, "bullet" = 50, "laser" = 40, "energy" = 22, "bomb" = 55, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20)
+	can_flashlight = TRUE

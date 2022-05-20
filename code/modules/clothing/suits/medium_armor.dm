@@ -425,6 +425,16 @@
 	item_state = "motorball"
 	armor = list("melee" = 40, "bullet" = 25, "laser" = 15, "energy" = 15, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 40, "acid" = 10)
 
+/// Midwestern Event stuff
+
+/obj/item/clothing/suit/armored/medium/midwesternarmor
+	name = "midwestern combat armor"
+	desc = "A reinforced set of bracers, greaves, and torso plating of prewar design This one is kitted with additional plates."
+	icon_state = "marine_security"
+	item_state = "marine_security"
+	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
+	armor = list("melee" = 40, "bullet" = 40, "laser" = 40, "energy" = 30, "bomb" = 30, "bio" = 15, "rad" = 25, "fire" = 30, "acid" = 15)
+
 //THE GRAVEYARD
 //IF PUT BACK INTO USE, PLEASE FILE IT BACK SOMEWHERE ABOVE
 

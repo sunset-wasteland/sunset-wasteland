@@ -38,6 +38,15 @@
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 40)
 	alt_covers_chest = TRUE
 
+/obj/item/clothing/under/syndicate/midwestern
+	name = "midwestern fatigues"
+	desc = "A non-descript and slightly suspicious looking turtleneck with digital camouflage cargo pants."
+	icon_state = "newsyndicate"
+	item_state = "bl_suit"
+	has_sensor = NO_SENSORS
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 40)
+	alt_covers_chest = TRUE
+
 /obj/item/clothing/under/syndicate/bloodred/sleepytime
 	name = "blood-red pajamas"
 	desc = "Do operatives dream of nuclear sheep?"

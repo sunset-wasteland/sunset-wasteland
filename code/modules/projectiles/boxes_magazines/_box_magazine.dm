@@ -132,6 +132,11 @@
 			icon_state = "[initial(icon_state)]-[stored_ammo.len]"
 		if(2)
 			icon_state = "[initial(icon_state)]-[stored_ammo.len ? "[max_ammo]" : "0"]"
+		if(3)
+			if(stored_ammo.len >= 8)
+				icon_state = "[initial(icon_state)]-8"
+			else
+				icon_state = "[initial(icon_state)]-[stored_ammo.len]"
 
 //Behavior for magazines
 /obj/item/ammo_box/magazine/proc/ammo_count()

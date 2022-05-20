@@ -87,7 +87,7 @@ GLOBAL_LIST_INIT(faction_whitelist_positions, list(
 "BoS Off-Duty",
 
 "Legion Centurion",
-"Legion Venator",
+"Legion Explorer",
 "Legion Slavemaster",
 "Legion Veteran Decanus",
 "Veteran Legionnaire",
@@ -95,7 +95,6 @@ GLOBAL_LIST_INIT(faction_whitelist_positions, list(
 "Prime Legionnaire",
 "Legion Recruit Decanus",
 "Legion Scout",
-"Legion Explorer",
 "Legion Auxilia",
 "Legion Slave",
 
@@ -180,6 +179,7 @@ GLOBAL_LIST_INIT(legion_positions, list(
 	"Legion Recruit Decanus",
 	"Legion Vexillarius",
 	"Legion Explorer",
+	"Legion Scout",
 	"Veteran Legionnaire",
 	"Prime Legionnaire",
 	"Recruit Legionnaire",
@@ -187,7 +187,6 @@ GLOBAL_LIST_INIT(legion_positions, list(
 	"Legion Immune",
 	"Legion Auxilia",
 	"Legion Slave",
-	"Legion Venator",
 	"Legion Slavemaster"
 ))
 

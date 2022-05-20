@@ -9477,6 +9477,9 @@
 /area/f13/wasteland)
 "dRj" = (
 /obj/structure/table/optable,
+/obj/machinery/defibrillator_mount/loaded{
+	pixel_y = 25
+	},
 /turf/open/floor/f13{
 	icon_state = "freezerfloor"
 	},
@@ -47974,10 +47977,7 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
 	},
-/obj/structure/table/reinforced,
-/obj/machinery/chem_dispenser/drinks{
-	dir = 4
-	},
+/obj/structure/reagent_dispensers/water_cooler,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -55543,34 +55543,7 @@
 	dir = 1
 	},
 /obj/structure/table/reinforced,
-/obj/item/reagent_containers/food/drinks/drinkingglass{
-	pixel_x = -4;
-	pixel_y = 8
-	},
-/obj/item/reagent_containers/food/drinks/drinkingglass{
-	pixel_y = 5
-	},
-/obj/item/reagent_containers/food/drinks/drinkingglass{
-	pixel_y = 5
-	},
-/obj/item/reagent_containers/food/drinks/drinkingglass{
-	pixel_y = 5
-	},
-/obj/item/reagent_containers/food/drinks/drinkingglass{
-	pixel_y = 5
-	},
-/obj/item/reagent_containers/food/drinks/drinkingglass{
-	pixel_x = -4;
-	pixel_y = 8
-	},
-/obj/item/reagent_containers/food/drinks/drinkingglass{
-	pixel_x = -4;
-	pixel_y = 8
-	},
-/obj/item/reagent_containers/food/drinks/drinkingglass{
-	pixel_x = -4;
-	pixel_y = 8
-	},
+/obj/item/storage/box/drinkingglasses,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -56213,6 +56186,15 @@
 /obj/structure/barricade/wooden/strong,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
+"wnf" = (
+/obj/structure/table/optable,
+/obj/machinery/defibrillator_mount/loaded{
+	pixel_y = -31
+	},
+/turf/open/floor/f13{
+	icon_state = "freezerfloor"
+	},
+/area/f13/followers)
 "wnh" = (
 /turf/open/floor/wood/f13/old{
 	icon_state = "housebase"
@@ -99468,7 +99450,7 @@ dRj
 mwd
 mwd
 mwd
-dRj
+wnf
 oJc
 dCV
 gts

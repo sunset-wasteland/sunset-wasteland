@@ -14,14 +14,27 @@
 	var/expected_price = 0
 	var/list/prize_list = list()  //if you add something to this, please, for the love of god, sort it by price/type. use tabs and not spaces.
 
-	var/list/goods_list = list( /obj/item/stack/ore/diamond = 25,
-								/obj/item/stack/ore/gold = 7,
-								/obj/item/stack/ore/silver = 2,
-								/obj/item/stack/ore/iron = 1,
-								/obj/item/reagent_containers/food/snacks/grown = 0.5,
-								/obj/item/reagent_containers/pill/patch/jet = 5,
-								/obj/item/reagent_containers/hypospray/medipen/psycho = 15,
-								/obj/item/reagent_containers/hypospray/medipen/medx = 15
+	var/list/goods_list = list( /obj/item/stack/sheet/mineral/diamond = 200,
+								/obj/item/stack/sheet/mineral/gold = 100,
+								/obj/item/stack/sheet/mineral/silver = 50,
+								/obj/item/stack/sheet/metal = 1.5,
+								/obj/item/reagent_containers/food/snacks/grown/wheat = 1,
+								/obj/item/reagent_containers/food/snacks/grown/rice = 1,
+								/obj/item/reagent_containers/food/snacks/grown/oat = 1,
+								/obj/item/stack/sheet/hay = 1,
+								/obj/item/reagent_containers/food/snacks/grown/broc = 5,
+								/obj/item/reagent_containers/food/snacks/grown/xander = 5,
+								/obj/item/reagent_containers/food/snacks/grown/pungafruit = 5,
+								/obj/item/reagent_containers/food/snacks/grown/feracactus = 5,
+								/obj/item/reagent_containers/food/snacks/grown/fungus = 5,
+								/obj/item/reagent_containers/food/snacks/grown/agave = 5,
+								/obj/item/reagent_containers/pill/patch/jet = 10,
+								/obj/item/reagent_containers/pill/patch/healingpowder = 30,
+								/obj/item/reagent_containers/hypospray/medipen/psycho = 20,
+								/obj/item/reagent_containers/hypospray/medipen/medx = 75,
+								/obj/item/reagent_containers/pill/patch/healpoultice = 50,
+								/obj/item/reagent_containers/hypospray/medipen/stimpak = 50,
+								/obj/item/reagent_containers/hypospray/medipen/stimpak/super = 100,
 								)
 
 /obj/machinery/mineral/wasteland_trader/general
@@ -49,12 +62,15 @@
 	dat += "<br>"
 	dat +="<div class='statusDisplay'>"
 	dat += "<b>Accepted goods and prices:</b><br>"
-	dat += "Fruits/Vegetables : 1 caps<br>"
-	dat += "Iron ore : 1.5 caps<br>"
-	dat += "Silver : 5 caps<br>"
-	dat += "Gold : 15 caps<br>"
-	dat += "Diamond : 50 caps<br>"
-	dat += "Jet/Psycho/MedX : 5-15 caps<br>"
+	dat += "Wheat/Oats/Rice/Hay : 1 caps<br>"
+	dat += "Broc/Xander/Punga Fruit/Barrel Cactus Fruit/Cave Fungus/Agave : 5 caps<br>"
+	dat += "Iron Sheets : 1.5 caps<br>"
+	dat += "Silver Bars: 50 caps<br>"
+	dat += "Gold Bars: 100 caps<br>"
+	dat += "Cut Diamonds : 200 caps<br>"
+	dat += "Jet/Psycho/MedX : 10/20/100 caps<br>"
+	dat += "Healing Powder/Healing Paultice : 30/50 caps<br>"
+	dat += "Stimpak/Super Stimpak : 50/100 caps<br>"
 	dat += ""
 	dat += "</div>"
 

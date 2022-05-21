@@ -1850,3 +1850,11 @@
 	alt_covers_chest = TRUE
 	fitted = FEMALE_UNIFORM_TOP
 	can_adjust = TRUE
+
+/// Item Update
+
+/obj/item/clothing/under/f13/Drill_sarge
+	name = "NCO officer uniform"
+	desc = "Best god dam uniform you have ever seen! so god dam good, uncle sam would cry."
+	icon_state = "Drill_sarge"
+	item_state = "Drill_sarge"

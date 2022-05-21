@@ -887,3 +887,25 @@
 	item_state = "marine_security"
 	armor = list("melee" = 50, "bullet" = 50, "laser" = 40, "energy" = 22, "bomb" = 55, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20)
 	can_flashlight = TRUE
+
+/// Item Update
+
+/obj/item/clothing/head/helmet/f13/power_armor/AltumHelm
+	name = "Hellfire x2 power helmet"
+	desc = "Advanded Hellfire Mark 2 helmet, just looking at it gives you PTSD flashbacks."
+	icon_state = "AltumHelm"
+	item_state = "AltumHelm"
+	armor = list("melee" = 85, "bullet" = 85, "laser" = 90, "energy" = 40, "bomb" = 75, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 50, "wound" = 90)
+	
+/obj/item/clothing/head/helmet/Enclave_combat_helmet_raider 
+	name = "Enclave Combat Armor Helmet"
+	desc = "Standard issue combat helmets used by the Enclave."
+	icon_state = "Enclave_combat_helmet_raider"
+	item_state = "Enclave_combat_helmet_raider"
+	armor = list("melee" = 45, "bullet" = 45, "laser" = 45, "energy" = 20, "bomb" = 50, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20)
+	strip_delay = 50
+	flags_inv = HIDEEARS|HIDEHAIR
+	resistance_flags = LAVA_PROOF | FIRE_PROOF
+	dynamic_hair_suffix = ""
+	dynamic_fhair_suffix = ""
+	salvage_loot = list(/obj/item/stack/crafting/armor_plate = 3)

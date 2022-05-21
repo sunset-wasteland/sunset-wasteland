@@ -1363,9 +1363,6 @@
 "aQX" = (
 /obj/structure/table,
 /obj/item/cultivator,
-/obj/machinery/hydroponics/soil/pot{
-	pixel_y = 10
-	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -2734,6 +2731,17 @@
 "bAI" = (
 /obj/structure/bed/mattress{
 	icon_state = "mattress5"
+	},
+/turf/open/indestructible/ground/inside/subway,
+/area/f13/tunnel)
+"bBc" = (
+/obj/effect/turf_decal/climb{
+	dir = 4
+	},
+/obj/structure/fence{
+	climbable = 1;
+	dir = 1;
+	resistance_flags = 64
 	},
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
@@ -5869,9 +5877,6 @@
 /obj/structure/table,
 /obj/machinery/light/small{
 	dir = 1
-	},
-/obj/machinery/hydroponics/soil/pot{
-	pixel_y = 10
 	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
@@ -14076,6 +14081,11 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/enclave)
+"hPT" = (
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/high,
+/obj/structure/closet/crate/miningcar,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/tunnel)
 "hQd" = (
 /obj/effect/turf_decal/caution{
 	dir = 4
@@ -14272,9 +14282,6 @@
 /obj/structure/table,
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
-	},
-/obj/machinery/hydroponics/soil/pot{
-	pixel_y = 10
 	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
@@ -21847,9 +21854,8 @@
 	},
 /area/f13/brotherhood/offices1st)
 "mNY" = (
-/obj/structure/barricade/sandbags,
 /turf/open/indestructible/ground/inside/subway,
-/area/f13/tunnel)
+/area/f13/caves)
 "mOe" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/fo13colored/Aqua{
@@ -24986,7 +24992,7 @@
 	max_mobs = 1;
 	radius = 3
 	},
-/turf/open/floor/wood/f13/old,
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/building)
 "oHZ" = (
 /obj/effect/decal/cleanable/dirt,
@@ -27812,6 +27818,12 @@
 /obj/structure/spider/stickyweb,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/bunker)
+"qzu" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/turf/open/indestructible/ground/inside/subway,
+/area/f13/tunnel)
 "qzG" = (
 /obj/structure/mopbucket,
 /obj/item/mop,
@@ -28494,7 +28506,7 @@
 	},
 /obj/structure/closet/crate,
 /obj/effect/spawner/lootdrop/f13/medical/wasteland/meds,
-/turf/open/floor/wood/f13/old,
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/building)
 "qUq" = (
 /obj/machinery/shower{
@@ -36972,9 +36984,6 @@
 /area/f13/brotherhood/operations)
 "waS" = (
 /obj/structure/table,
-/obj/machinery/hydroponics/soil/pot{
-	pixel_y = 10
-	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -38564,7 +38573,7 @@
 /area/f13/brotherhood/offices2nd)
 "wZU" = (
 /obj/item/reagent_containers/pill/patch/turbo,
-/turf/open/indestructible/ground/inside/mountain,
+/turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
 "xac" = (
 /obj/effect/decal/cleanable/dirt,
@@ -39450,13 +39459,9 @@
 	},
 /area/f13/brotherhood/operations)
 "xxS" = (
-/obj/structure/wreck/car/bike{
-	dir = 4;
-	pixel_x = 3;
-	pixel_y = -13
-	},
-/turf/open/indestructible/ground/inside/subway,
-/area/f13/sewer)
+/obj/structure/closet/crate/miningcar,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/tunnel)
 "xyk" = (
 /turf/closed/wall/f13/wood,
 /area/f13/building)
@@ -60987,7 +60992,7 @@ aoj
 aoj
 aoj
 ygo
-jvG
+hPT
 aoj
 eLE
 vPg
@@ -64837,7 +64842,7 @@ lnr
 aoj
 aoj
 aoj
-lnr
+xxS
 lnr
 tML
 lnr
@@ -65048,10 +65053,10 @@ vPg
 vPg
 vPg
 vPg
-lnr
-lnr
-lnr
-lnr
+nBk
+nBk
+nBk
+nBk
 lnr
 lnr
 lnr
@@ -65308,8 +65313,8 @@ xyk
 xyk
 xyk
 xyk
-lnr
-lnr
+nBk
+nBk
 cWe
 lnr
 lnr
@@ -65565,13 +65570,13 @@ pYF
 wAO
 lMM
 xyk
-xzp
-xzp
-xzp
-lnr
-lnr
-lnr
-lnr
+qzu
+qzu
+qzu
+nBk
+nBk
+nBk
+nBk
 vPg
 vPg
 aoj
@@ -65824,9 +65829,9 @@ fTh
 xyk
 wAO
 wAO
-xzp
-xzp
-xzp
+qzu
+qzu
+qzu
 vPg
 vPg
 vPg
@@ -66082,7 +66087,7 @@ xyk
 xyk
 bUW
 bUW
-xzp
+qzu
 vPg
 vPg
 vPg
@@ -66332,14 +66337,14 @@ vPg
 vPg
 vPg
 vPg
-wAO
+jSy
 bUW
 wAO
 xyk
 wAO
 cRh
 pIF
-xzp
+qzu
 vPg
 vPg
 vPg
@@ -66589,7 +66594,7 @@ vPg
 vPg
 vPg
 vPg
-vPg
+mNY
 oHz
 ger
 xyk
@@ -66843,12 +66848,12 @@ vPg
 vPg
 vPg
 vPg
-vPg
-vPg
-vPg
-wAO
-vPg
-bUW
+mNY
+mNY
+mNY
+jSy
+mNY
+cRh
 wAO
 bZj
 ihu
@@ -67098,9 +67103,9 @@ vPg
 vPg
 vPg
 vPg
-vPg
-vPg
-vPg
+mNY
+mNY
+mNY
 vPg
 xyk
 qUd
@@ -67354,9 +67359,9 @@ aoj
 aoj
 lnr
 vPg
-vPg
-vPg
-vPg
+mNY
+mNY
+mNY
 vPg
 vPg
 xyk
@@ -67612,7 +67617,7 @@ qGl
 lnr
 lnr
 wZU
-aoj
+mNY
 aoj
 aoj
 vPg
@@ -68155,9 +68160,9 @@ vPg
 vPg
 vPg
 vPg
-lnr
-lnr
-lnr
+nBk
+nBk
+nBk
 rzg
 lnr
 lnr
@@ -68412,9 +68417,9 @@ aoj
 vPg
 vPg
 vPg
-lnr
-lnr
-rzg
+nBk
+nBk
+wRf
 lnr
 aGc
 eWg
@@ -68668,8 +68673,8 @@ vPg
 vPg
 vPg
 vPg
-lnr
-lnr
+nBk
+nBk
 vPg
 vPg
 eLE
@@ -68925,8 +68930,8 @@ vPg
 vPg
 vPg
 vPg
-lnr
-lnr
+nBk
+nBk
 vPg
 vPg
 eLE
@@ -69182,8 +69187,8 @@ vPg
 vPg
 vPg
 vPg
-rzg
-rzg
+wRf
+wRf
 vPg
 vPg
 eLE
@@ -69439,8 +69444,8 @@ dXE
 dXE
 dXE
 dXE
-lnr
-rzg
+nBk
+wRf
 dXE
 dXE
 dXE
@@ -75349,7 +75354,7 @@ vxs
 oLX
 wFD
 dXE
-xxS
+myy
 myy
 mjG
 dXE
@@ -75605,7 +75610,7 @@ nDj
 vxs
 oLX
 wFD
-dXE
+wDw
 myy
 myy
 mjG
@@ -89239,7 +89244,7 @@ vPg
 vPg
 kxd
 dyQ
-oGS
+bfu
 hOP
 kxd
 vPg
@@ -89495,8 +89500,8 @@ vPg
 vPg
 kxd
 kxd
-mNY
-mNY
+voT
+voT
 pQq
 kxd
 kxd
@@ -89752,9 +89757,9 @@ eLE
 vPg
 vPg
 scS
-nBk
-nBk
-fMj
+lnr
+lnr
+iGN
 vPg
 vPg
 vPg
@@ -90010,8 +90015,8 @@ eLE
 vPg
 tjI
 nBk
-nBk
-nBk
+lnr
+lnr
 mPr
 xyk
 xyk
@@ -90268,7 +90273,7 @@ vPg
 rZZ
 fMj
 nBk
-nBk
+lnr
 mPr
 pYA
 hkn
@@ -90525,7 +90530,7 @@ vPg
 vPg
 sMQ
 nBk
-nBk
+lnr
 uhE
 rsB
 uHt
@@ -96692,7 +96697,7 @@ aoj
 aoj
 aoj
 vPg
-nBk
+bBc
 vPg
 vPg
 vPg

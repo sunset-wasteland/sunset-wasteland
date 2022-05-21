@@ -150,3 +150,6 @@
 
 /obj/effect/turf_decal/plaque
 	icon_state = "plaque"
+
+/obj/effect/turf_decal/climb
+	icon_state = "climb"

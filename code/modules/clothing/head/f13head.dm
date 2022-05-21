@@ -891,11 +891,11 @@
 /// Item Update
 
 /obj/item/clothing/head/helmet/f13/power_armor/AltumHelm
-	name = "Hellfire x2 power helmet"
-	desc = "Advanded Hellfire Mark 2 helmet, just looking at it gives you PTSD flashbacks."
+	name = "hellfire X02 power helmet"
+	desc = "The advanced MKII power armor helmet. Just looking at this makes you feel self conscious about your DNA."
 	icon_state = "AltumHelm"
 	item_state = "AltumHelm"
-	armor = list("melee" = 85, "bullet" = 85, "laser" = 90, "energy" = 40, "bomb" = 75, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 50, "wound" = 90)
+	armor = list("melee" = 80, "bullet" = 80, "laser" = 85, "energy" = 35, "bomb" = 72, "bio" = 100, "rad" = 100, "fire" = 90, "acid" = 50, "wound" = 75)
 	
 /obj/item/clothing/head/helmet/Enclave_combat_helmet_raider 
 	name = "Enclave Combat Armor Helmet"

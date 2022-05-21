@@ -1315,12 +1315,12 @@ obj/item/clothing/suit/armor/f13/exile/cust0m
 	salvage_loot = list(/obj/item/stack/crafting/armor_plate = 5)
 
 /obj/item/clothing/suit/armor/f13/power_armor/AltumFire 
-	name = "Enclave Hellfire Enhanced"
-	desc = "A set of power armor design used by the Enclave. The armor looks brand new and has a werid effect around it."
+	name = "enhanced hellfire power armor"
+	desc = "An advanced set of power armor utilized by Enclave forces. There is an odd visual distortion around it."
 	icon_state = "AltumFire"
 	item_state = "AltumFire"
 	slowdown = 0.25 //+0.1 from helmet = total 0.3
-	armor = list("melee" = 90, "bullet" = 90, "laser" = 90, "energy" = 70, "bomb" = 70, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 50, "wound" = 75)
+	armor = list("melee" = 80, "bullet" = 80, "laser" = 85, "energy" = 35, "bomb" = 72, "bio" = 100, "rad" = 100, "fire" = 90, "acid" = 50, "wound" = 90)
 
 /obj/item/clothing/suit/armor/f13/Scav_combatarmor
 	name = "Russian combat armor"

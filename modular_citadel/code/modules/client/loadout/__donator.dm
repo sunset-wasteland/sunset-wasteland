@@ -149,7 +149,7 @@
 	name = "Good boy kit"
 	path = /obj/item/storage/box/large/custom_kit/snugglytrap
 	ckeywhitelist = list("snugglytrap")	
-
+	
 /obj/item/storage/box/large/custom_kit/erabite/PopulateContents()
 	new /obj/item/clothing/head/helmet/f13/rangercombat/eliteriot/reclaimed(src)
 	new /obj/item/clothing/suit/armor/f13/rangercombat/degancustom(src)
@@ -159,11 +159,24 @@
 	new /obj/item/ammo_box/m44(src)
 	new /obj/item/ammo_box/m44(src)
 
-
 /datum/gear/donator/kits/erabite
 	name = "Era stuff"
 	path = /obj/item/storage/box/large/custom_kit/erabite
-	ckeywhitelist = list("erabite")		
+	ckeywhitelist = list("erabite")	
+
+/obj/item/storage/box/large/custom_kit/flaka/PopulateContents()
+	new /obj/item/clothing/head/helmet/f13/rangercombat/eliteriot/reclaimed(src)
+	new /obj/item/clothing/suit/armor/f13/rangercombat/degancustom(src)
+	new /obj/item/storage/belt/holster(src)
+	new /obj/item/gun/ballistic/revolver/m29(src)
+	new /obj/item/ammo_box/m44(src)
+	new /obj/item/ammo_box/m44(src)
+	new /obj/item/melee/onehanded/knife/bowie(src)
+
+/datum/gear/donator/kits/flaka
+	name = "Flaka stuff"
+	path = /obj/item/storage/box/large/custom_kit/flaka
+	ckeywhitelist = list("flaka")			
 
 /obj/item/storage/box/large/custom_kit/pug/PopulateContents()
 	new /obj/item/melee/transforming/cleaving_saw/old_rusty(src)

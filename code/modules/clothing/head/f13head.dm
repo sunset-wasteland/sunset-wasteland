@@ -895,14 +895,15 @@
 	desc = "The advanced MKII power armor helmet. Just looking at this makes you feel self conscious about your DNA."
 	icon_state = "AltumHelm"
 	item_state = "AltumHelm"
-	armor = list("melee" = 80, "bullet" = 80, "laser" = 85, "energy" = 35, "bomb" = 72, "bio" = 100, "rad" = 100, "fire" = 90, "acid" = 50, "wound" = 75)
+	armor = list("melee" = 85, "bullet" = 85, "laser" = 85, "energy" = 65, "bomb" = 70, "bio" = 100, "rad" = 100, "fire" = 90, "acid" = 50, "wound" = 75)
+	actions_types = list(/datum/action/item_action/toggle_helmet_light)
 	
-/obj/item/clothing/head/helmet/Enclave_combat_helmet_raider 
+/obj/item/clothing/head/helmet/Enclave_combathelmetraider 
 	name = "Enclave Combat Armor Helmet"
 	desc = "Standard issue combat helmets used by the Enclave."
-	icon_state = "Enclave_combat_helmet_raider"
-	item_state = "Enclave_combat_helmet_raider"
-	armor = list("melee" = 45, "bullet" = 45, "laser" = 45, "energy" = 20, "bomb" = 50, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20)
+	icon_state = "Enclave_combathelmetraider"
+	item_state = "Enclave_combathelmetraider"
+	armor = list("melee" = 30, "bullet" = 50, "laser" = 30, "energy" = 20, "bomb" = 55, "bio" = 60, "rad" = 15, "fire" = 60, "acid" = 30)
 	strip_delay = 50
 	flags_inv = HIDEEARS|HIDEHAIR
 	resistance_flags = LAVA_PROOF | FIRE_PROOF

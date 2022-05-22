@@ -707,3 +707,76 @@ obj/item/storage/backpack/duffelbag/syndie/shredderbundle
 	desc = "Legion cape made from what looks like black piece of cloth, with a golden bull on the back. With a lot of pockets underneath"
 	icon_state = "legioncapeb"
 	item_state = "legioncapeb"
+
+/obj/item/storage/backpack/NCR_BackPack
+	name = "NCR backpack"
+	desc = "A small NCR backpack, standard issue to most troops."
+	icon_state = "NCR_BackPack"
+	item_state = "NCR_BackPack"
+
+/obj/item/storage/backpack/Legion_backpack
+	name = "Legion backpack"
+	desc = "Stolen NCR backpack, with a Legion flag."
+	icon_state = "Legion_backpack"
+	item_state = "Legion_backpack"
+
+/obj/item/storage/backpack/Ncrbannerpack
+	name = "Ncr Banner Backpack"
+	desc = "A backpack NCR with a big banner. Meant to be used in frontal assualts for moral."
+	icon_state = "Ncrbannerpack"
+	item_state = "Ncrbannerpack"
+
+/obj/item/storage/backpack/Enclave_bannerPack
+	name = "A Enclave Banner Backpack"
+	desc = "A backpack Enclave with a big banner. Meant to be used in frontal assualts for moral."
+	icon_state = "Enclave_bannerPack"
+	item_state = "Enclave_bannerPack"
+
+/obj/item/storage/backpack/LegionBannerPack
+	name = "A Legion Banner Backpack"
+	desc = "A backpack Legion with a big banner. Meant to be used in frontal assualts for moral."
+	icon_state = "LegionBannerPack"
+	item_state = "LegionBannerPack"
+
+/obj/item/storage/backpack/BosBannerPack
+	name = "A BOS Banner Backpack"
+	desc = "A backpack Brotherhood with a big banner. Meant to be used in frontal assualts for moral."
+	icon_state = "BosBannerPack"
+	item_state = "BosBannerPack"
+
+/obj/item/storage/backpack/TrashPack
+	name = "trashcan"
+	desc = "Someone stole a trashcan and tapped some rope onto it."
+	icon_state = "TrashPack"
+	item_state = "TrashPack"
+
+/obj/item/storage/backpack/EnclavePack
+	name = "Encalve Radio Pack"
+	desc = "Come in HC! Come in HC! We need to kill the LT."
+	icon_state = "EnclavePack"
+	item_state = "EnclavePack"
+
+/obj/item/storage/backpack/OrangePack
+	name = "Fire backpack"
+	desc = "Burn baby burn!!."
+	icon_state = "OrangePack"
+	item_state = "OrangePack"
+
+/obj/item/storage/backpack/duffelSlav
+	name = "Slav duffel bag"
+	desc = "A large duffel bag for holding Vodka and Sunflower seeds."
+	icon_state = "duffelSlav"
+	item_state = "duffelSlav"
+
+/obj/item/storage/backpack/duffelbag/scavengers/Attackpack
+	name = "Assault Pack"
+	desc = "A massive assault back, looks really heavy though."
+	icon_state = "Attackpack"
+	item_state = "Attackpack"
+	slowdown = 1
+
+/obj/item/storage/backpack/ScavPack
+	name = "Scav Backpack"
+	desc = "Not be used outside of Russia"
+	icon_state = "ScavPack"
+	item_state = "ScavPack" 

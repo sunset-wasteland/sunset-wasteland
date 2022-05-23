@@ -151,7 +151,7 @@
 	ckeywhitelist = list("snugglytrap")	
 	
 /obj/item/storage/box/large/custom_kit/erabite/PopulateContents()
-	new /obj/item/clothing/head/helmet/f13/rangercombat/eliteriot/reclaimed(src)
+	new /obj/item/clothing/head/helmet/f13/rangercombat/rangertrauma(src)
 	new /obj/item/clothing/suit/armor/f13/rangercombat/degancustom(src)
 	new /obj/item/storage/belt/holster(src)
 	new /obj/item/gun/ballistic/revolver/m29(src)
@@ -165,7 +165,7 @@
 	ckeywhitelist = list("erabite")	
 
 /obj/item/storage/box/large/custom_kit/flaka/PopulateContents()
-	new /obj/item/clothing/head/helmet/f13/rangercombat/eliteriot/reclaimed(src)
+	new /obj/item/clothing/head/helmet/f13/rangercombat/rangertrauma(src)
 	new /obj/item/clothing/suit/armor/f13/rangercombat/degancustom(src)
 	new /obj/item/storage/belt/holster(src)
 	new /obj/item/gun/ballistic/revolver/m29(src)
@@ -176,7 +176,15 @@
 /datum/gear/donator/kits/flaka
 	name = "Flaka stuff"
 	path = /obj/item/storage/box/large/custom_kit/flaka
-	ckeywhitelist = list("flaka")			
+	ckeywhitelist = list("flaka")
+
+/obj/item/storage/box/large/custom_kit/rix/PopulateContents()
+	new /obj/item/gun/ballistic/revolver/ballisticfist(src)
+	
+/datum/gear/donator/kits/rix
+	name = "Dark stuff"
+	path = /obj/item/storage/box/large/custom_kit/rix
+	ckeywhitelist = list("darkrixd")					
 
 /obj/item/storage/box/large/custom_kit/pug/PopulateContents()
 	new /obj/item/melee/transforming/cleaving_saw/old_rusty(src)

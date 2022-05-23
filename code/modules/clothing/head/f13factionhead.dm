@@ -770,6 +770,7 @@
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEHAIR|HIDEFACIALHAIR|HIDEFACE
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
 	unique_reskin = list("M1" = "trauma_patrol" ,"M2" = "ranger_trauma")
+	always_reskinnable = "True"
 
 /obj/item/clothing/suit/armor/f13/rangercombat/eliteriot/reclaimed/Initialize()
 	. = ..()

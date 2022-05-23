@@ -368,7 +368,7 @@
 	
 /datum/outfit/loadout/pvtguard
 	backpack_contents = list(
-		/obj/item/gun/ballistic/automatic/smg/smg10mm = 1,
+		/obj/item/gun/ballistic/automatic/smg/smg10mm/worn = 1,
 		/obj/item/gun/ballistic/automatic/pistol/n99 = 1,
 		/obj/item/ammo_box/magazine/m10mm_adv/ext = 3,
 		)

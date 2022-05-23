@@ -881,7 +881,7 @@
 /// Midwestern Event stuff
 
 /obj/item/clothing/head/helmet/midwesternhelmet
-	name = "tactical combat helmet"
+	name = "midwestern combat helmet"
 	desc = "A tactical black helmet, sealed from outside hazards with a plate of glass and not much else."
 	icon_state = "marine_security"
 	item_state = "marine_security"

@@ -340,23 +340,38 @@
 	exp_type = EXP_TYPE_FALLOUT
 	exp_requirements = 1200
 
+	loadout_options = list(
+		/datum/outfit/loadout/pvtfrontline, 
+		/datum/outfit/loadout/pvtguard,
+		)
+
 /datum/outfit/job/enclave/peacekeeper/enclavespy
 	name = "Enclave Private"
 	jobtype = /datum/job/enclave/enclavespy
 	head = /obj/item/clothing/head/helmet/f13/combat/swat
 	suit = /obj/item/clothing/suit/armor/f13/combat/swat
-	suit_store =  /obj/item/gun/ballistic/automatic/assault_carbine/worn
 	accessory = /obj/item/clothing/accessory/enclave
 
 	backpack_contents = list(
 		/obj/item/reagent_containers/hypospray/medipen/stimpak = 2,
 		/obj/item/grenade/smokebomb = 1,
 		/obj/item/pda = 1,
-		/obj/item/ammo_box/magazine/m5mm = 2,
 		/obj/item/storage/bag/money/small/wastelander = 1,
 		/obj/item/melee/onehanded/knife/survival = 1,
 		)
 
+/datum/outfit/loadout/pvtfrontline
+	backpack_contents = list(
+		/obj/item/gun/ballistic/automatic/assault_carbine/worn = 1,
+		/obj/item/ammo_box/magazine/m5mm = 2,
+		)
+	
+/datum/outfit/loadout/pvtguard
+	backpack_contents = list(
+		/obj/item/gun/ballistic/automatic/smg/smg10mm = 1,
+		/obj/item/gun/ballistic/automatic/pistol/n99 = 1,
+		/obj/item/ammo_box/magazine/m10mm_adv/ext = 3,
+		)
 
 //NON-COMBATANTS
 

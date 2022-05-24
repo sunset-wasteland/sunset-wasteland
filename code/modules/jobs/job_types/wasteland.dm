@@ -17,7 +17,7 @@
 	supervisors = "your gang leadership"
 	selection_color = "#ff915e"
 	exp_requirements = 1000
-	exp_type = EXP_TYPE_WASTELAND
+	exp_type = EXP_TYPE_FALLOUT
 
 	outfit = /datum/outfit/job/wasteland/f13pusher
 
@@ -120,10 +120,10 @@ Raider
 	total_positions = 16
 	spawn_positions = 16
 	description = "You are an undesirable figure of some kind- perhaps a corrupt official, or a cannibalistic bartender, or a devious conman, to name a few examples. You have more freedom than anyone else in the wastes, and are not bound by the same moral code as others, but though you may only be interested in self-gain, you still have a responsibility to make your time here interesting, fun, and engaging for others- this means that whatever path you pursue should be more nuanced and flavorful than simple highway robbery or slavery. (Adminhelp if you require help setting up your character for the round.)"
-	supervisors = "Your desire to make things interesting and fun"
+	supervisors = "Your desire to make things interesting and fun. Don't play this as wastelander+."
 	selection_color = "#ff4747"
-	exp_requirements = 600
-	exp_type = EXP_TYPE_WASTELAND
+	exp_requirements = 0
+	exp_type = EXP_TYPE_FALLOUT
 
 	outfit = /datum/outfit/job/wasteland/f13raider
 

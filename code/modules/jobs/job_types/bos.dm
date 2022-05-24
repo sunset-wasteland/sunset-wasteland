@@ -11,7 +11,7 @@ Main doors: ACCESS_CAPTAIN 20
 	access = list(ACCESS_ROBOTICS, ACCESS_BOS, ACCESS_ENGINE_EQUIP, ACCESS_ENGINE, ACCESS_HYDROPONICS, ACCESS_KITCHEN, ACCESS_BAR, ACCESS_SEC_DOORS)
 	minimal_access = list(ACCESS_ROBOTICS, ACCESS_BOS, ACCESS_ENGINE_EQUIP, ACCESS_ENGINE, ACCESS_HYDROPONICS, ACCESS_KITCHEN, ACCESS_BAR, ACCESS_SEC_DOORS)
 	outfit = /datum/outfit/job/bos/
-	exp_type = EXP_TYPE_BROTHERHOOD
+	exp_type = EXP_TYPE_FALLOUT
 
 	objectivesList = list("Leadership recommends the following goal for this week: Establish an outpost at the radio tower","Leadership recommends the following goal for this week: Acquire blueprints for research and preservation", "Leadership recommends the following goal for this week: Acquire or confiscate dangerous tech by any means necessary.")
 
@@ -104,8 +104,9 @@ Head Paladin
 	enforces = "The Brotherhood of Steel Expects: Obeying the Chain That - Binds your direct superior. Collection and safeguarding of technology from the wasteland. Experimentation and research."
 	supervisors = "the elder"
 	selection_color = "#7f8c8d"
+	exp_type = EXP_TYPE_BROTHERHOOD
 
-	exp_requirements = 4800
+	exp_requirements = 1500
 
 	loadout_options = list(
 	/datum/outfit/loadout/sentstand, //Tribeam laser + Hardened T-51
@@ -210,7 +211,7 @@ Head Scribe
 	supervisors = "the elder"
 	selection_color = "#7f8c8d"
 
-	exp_requirements = 3000
+	exp_requirements = 1500
 
 	loadout_options = list(
 	/datum/outfit/loadout/hsstand,
@@ -278,7 +279,8 @@ Head Knight
 	supervisors = "the elder"
 	selection_color = "#7f8c8d"
 
-	exp_requirements = 3000
+	exp_requirements = 1500
+	exp_type = EXP_TYPE_BROTHERHOOD
 
 	loadout_options = list(
 	/datum/outfit/loadout/capstand, //Wattz 2k
@@ -364,9 +366,9 @@ Star Paladin
 	enforces = "The Brotherhood of Steel Expects: Obeying the Chain That - Binds your direct superior. Collection and safeguarding of technology from the wasteland. Experimentation and research."
 	supervisors = "the Head Paladin"
 	selection_color = "#95a5a6"
-
-	exp_requirements = 3000 //Not used right now anyways. Slot disabled.
 	exp_type = EXP_TYPE_BROTHERHOOD
+
+	exp_requirements = 1000 
 
 	loadout_options = list(
 		/datum/outfit/loadout/spaladina, //5mm minigun
@@ -463,7 +465,8 @@ Paladin
 	enforces = "The Brotherhood of Steel Expects: Obeying the Chain That - Binds your direct superior. Collection and safeguarding of technology from the wasteland. Experimentation and research."
 	supervisors = "the Head Paladin"
 	selection_color = "#95a5a6"
-	exp_requirements = 2400
+	exp_requirements = 1000
+	exp_type = EXP_TYPE_BROTHERHOOD
 
 	loadout_options = list(
 	/datum/outfit/loadout/paladina, //Minigun
@@ -565,7 +568,7 @@ Senior Scribe
 	supervisors = "the Head Scribe"
 	selection_color = "#95a5a6"
 
-	exp_requirements = 1800
+	exp_requirements = 800
 
 	outfit = /datum/outfit/job/bos/f13seniorscribe
 
@@ -703,7 +706,7 @@ Senior Knight
 	enforces = "The Brotherhood of Steel Expects: Obeying the Chain That - Binds your direct superior. Collection and safeguarding of technology from the wasteland. Experimentation and research."
 	supervisors = "the Head Knight"
 	selection_color = "#95a5a6"
-	exp_requirements = 1800
+	exp_requirements = 800
 
 	loadout_options = list(
 	/datum/outfit/loadout/sknighta, //AER9

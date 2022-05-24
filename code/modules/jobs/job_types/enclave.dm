@@ -3,7 +3,7 @@
 	department_flag = ENCLAVE
 	selection_color = "#323232"
 	faction = FACTION_ENCLAVE
-	exp_type = EXP_TYPE_ENCLAVE
+	exp_type = EXP_TYPE_FALLOUT
 
 	access = list(ACCESS_ENCLAVE)
 	minimal_access = list(ACCESS_ENCLAVE)
@@ -97,6 +97,7 @@
 	description = "You are probably the last operating cell of the Enclave in the US, as far as you know. Now that the lore is out of the way, just make the round fun. You set the policies and the attitude of the Enclave this week."
 	supervisors = "Enclave Department of the Army."
 	outfit = /datum/outfit/job/enclave/peacekeeper/enclavelt
+	exp_type = EXP_TYPE_ENCLAVE
 	exp_requirements = 3000
 
 	loadout_options = list(
@@ -164,7 +165,8 @@
 	description = "Second in command after Lieutenant, your role is to direct their orders directly to the sergeants and regular troops."
 	supervisors = "The Lieutenant."
 	outfit = /datum/outfit/job/enclave/peacekeeper/f13gysergeant
-	exp_requirements = 2800
+	exp_type = EXP_TYPE_ENCLAVE
+	exp_requirements = 2000
 
 	loadout_options = list(
 		/datum/outfit/loadout/gysgt_ballistics, // LSW and MK23
@@ -228,7 +230,7 @@
 	description = "Entrusted with the command of the squads assigned to the bunker, your job is to assist the Lieutenant alongside the scientists."
 	supervisors = "The Lieutenant and the Gunnery Sergeant."
 	outfit = /datum/outfit/job/enclave/peacekeeper/enclavesgt
-	exp_requirements = 2400
+	exp_requirements = 1500
 
 	loadout_options = list(
 		/datum/outfit/loadout/sgt_ballistics,	// R91 Rifle
@@ -281,7 +283,7 @@
 	description = "You are an operative for the remnants of the Enclave. You, unlike the normal privates, have recieved specialist training in either engineering or medicine."
 	supervisors = "The Lieutenant and the Sergeants."
 	outfit = /datum/outfit/job/enclave/peacekeeper/f13specialist
-	exp_requirements = 1400
+	exp_requirements = 800
 
 	loadout_options = list(
 		/datum/outfit/loadout/combatmedic, // Medical Equipment
@@ -338,7 +340,7 @@
 	supervisors = "The Lieutenant and the Sergeants"
 	outfit = /datum/outfit/job/enclave/peacekeeper/enclavespy
 	exp_type = EXP_TYPE_FALLOUT
-	exp_requirements = 1200
+	exp_requirements = 600
 
 	loadout_options = list(
 		/datum/outfit/loadout/pvtfrontline, 

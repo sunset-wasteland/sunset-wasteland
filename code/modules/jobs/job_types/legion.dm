@@ -21,8 +21,7 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 	forbids = "The Legion forbids: Using drugs such as stimpacks and alcohol. Ghouls joining. Women fighting (self defense and suicide allowed). Slaves carrying weapons. Using robots and advanced machines. Killing Legion members in secret, only if according to law and in public is it acceptable."
 	enforces = "The Legion demands: Obeying orders of superiors. A roman style name. Wearing the uniform, unless acting as a NON-COMBAT infiltrator. Expect death as punishment for failing to obey."
 	objectivesList = list("Focus on the tribals, win them over or intimidate them.", "Focus on Oasis, display dominance.", "Send out patrols and establish checkpoints to curb use of digusting drugs and degenerate behaviour.", "Flagstaff requests more worker: acquire slaves, train them if possible, send them east for breaking if not.", "Make sure no other faction gains dominance over Oasis, if they remain neutral it can be used to the Legions advantage.")
-
-	exp_type = EXP_TYPE_LEGION
+	exp_type = EXP_TYPE_FALLOUT
 
 	access = list(ACCESS_LEGION)
 	minimal_access = list(ACCESS_LEGION)
@@ -148,6 +147,7 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 	display_order = JOB_DISPLAY_ORDER_ORATOR
 	access = list(ACCESS_LEGION, ACCESS_CHANGE_IDS, ACCESS_LEGION_COMMAND)
 	minimal_access = list(ACCESS_LEGION, ACCESS_CHANGE_IDS, ACCESS_LEGION_COMMAND)
+	exp_type = EXP_TYPE_LEGION
 	exp_requirements = 1500
 
 
@@ -198,6 +198,7 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 	req_admin_notify = 1
 	display_order = JOB_DISPLAY_ORDER_CENTURION
 	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13centurion
+	exp_type = EXP_TYPE_LEGION
 	exp_requirements = 1500
 
 	access = list(ACCESS_LEGION, ACCESS_CHANGE_IDS, ACCESS_LEGION_COMMAND)
@@ -300,6 +301,7 @@ commented out pending rework*/
 	supervisors = "the Centurion"
 	display_order = JOB_DISPLAY_ORDER_DECANVET
 	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13decanvet
+	exp_type = EXP_TYPE_LEGION
 	exp_requirements = 900
 
 	access = list(ACCESS_LEGION, ACCESS_CHANGE_IDS, ACCESS_LEGION_COMMAND)
@@ -574,6 +576,7 @@ commented out pending rework*/
 	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13vexillarius
 	access = list(ACCESS_LEGION, ACCESS_LEGION_COMMAND)
 	minimal_access = list(ACCESS_LEGION,  ACCESS_LEGION_COMMAND)
+	exp_type = EXP_TYPE_LEGION
 	exp_requirements = 720
 
 	loadout_options = list(
@@ -1273,6 +1276,7 @@ Venator  - Zero slots, role built on cloning vet ranger, linear just vastly bett
 	selection_color = "#ffdddd"
 	display_order = JOB_DISPLAY_ORDER_VENATOR
 	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13venator
+	exp_type = EXP_TYPE_LEGION
 	exp_requirements = 1500
 
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13venator/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)

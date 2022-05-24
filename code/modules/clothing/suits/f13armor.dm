@@ -208,7 +208,7 @@
 
 /obj/item/clothing/suit/armor/f13/combat/chinese
 	name = "chinese combat armor"
-	desc = "(An uncommon suit of pre-war Chinese combat armor. It's a very basic and straightforward piece of armor that covers the front of the user."
+	desc = "An uncommon suit of pre-war Chinese combat armor. It's a very basic and straightforward piece of armor that covers the front of the user."
 	icon_state = "chicom_armor"
 	item_state = "chicom_armor"
 
@@ -244,6 +244,12 @@
 	armor = list("melee" = 35, "bullet" = 40, "laser" = 40, "energy" = 35, "bomb" = 50, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20, "wound" = 45)
 	slowdown = 0.05
 	item_state = "combat_armor_raider"
+
+/obj/item/clothing/suit/armor/f13/combat/scav
+	name = "russian combat armor"
+	desc = "An old military grade pre war combat armor, painted in black with white strips."
+	icon_state = "Scav_combatarmor"
+	item_state = "Scav_combatarmor"
 
 /////////////////
 // Power armor //
@@ -666,6 +672,12 @@
 	slowdown = 0.25 //+0.1 from helmet = total 0.35
 	armor = list("melee" = 85, "bullet" = 85, "laser" = 85, "energy" = 65, "bomb" = 70, "bio" = 100, "rad" = 100, "fire" = 90, "acid" = 50, "wound" = 75)
 	salvaged_type = /obj/item/clothing/suit/armored/heavy/salvaged_pa/x02 // Oh the misery
+
+/obj/item/clothing/suit/armor/f13/power_armor/x02/altumfire
+	name = "enhanced hellfire power armor"
+	desc = "An advanced set of power armor utilized by Enclave forces. There is an odd visual distortion around it."
+	icon_state = "AltumFire"
+	item_state = "AltumFire"
 
 /obj/item/clothing/suit/armor/f13/power_armor/advanced/hellfire
 	name = "hellfire power armor"
@@ -1298,35 +1310,3 @@ obj/item/clothing/suit/armor/f13/exile/cust0m
 	item_state = "legscout"
 	slowdown = 0.05
 	salvage_loot = list(/obj/item/stack/crafting/armor_plate = 4) // Slightly better armor
-
-/// Item Update
-/obj/item/clothing/suit/armor/enclave_combatarmor
-	name = "Enclave Combat Armor"
-	desc = "A set of standard issue combat armor used by the Enclave. Looks Cheaply made."
-	icon_state = "Enclave_combatarmor"
-	item_state = "Enclave_combatarmor"
-	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
-	cold_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
-	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
-	armor = list("melee" = 30, "bullet" = 50, "laser" = 30, "energy" = 20, "bomb" = 55, "bio" = 60, "rad" = 15, "fire" = 60, "acid" = 30, "wound" = 55)
-	blocks_shove_knockdown = TRUE
-	strip_delay = 80
-	equip_delay_other = 60
-	salvage_loot = list(/obj/item/stack/crafting/armor_plate = 5)
-
-/obj/item/clothing/suit/armor/f13/power_armor/AltumFire 
-	name = "enhanced hellfire power armor"
-	desc = "An advanced set of power armor utilized by Enclave forces. There is an odd visual distortion around it."
-	icon_state = "AltumFire"
-	item_state = "AltumFire"
-	slowdown = 0.25 //+0.1 from helmet = total 0.3
-	armor = list("melee" = 85, "bullet" = 85, "laser" = 85, "energy" = 65, "bomb" = 70, "bio" = 100, "rad" = 100, "fire" = 90, "acid" = 50, "wound" = 75)
-
-/obj/item/clothing/suit/armor/f13/Scav_combatarmor
-	name = "Russian combat armor"
-	desc = "An old military grade pre war combat armor, painted in black with white strips."
-	icon_state = "Scav_combatarmor"
-	item_state = "Scav_combatarmor"
-	armor = list("melee" = 45, "bullet" = 45, "laser" = 45, "energy" = 20, "bomb" = 50, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20, "wound" = 50)
-	slowdown = 0.12
-	salvage_loot = list(/obj/item/stack/crafting/armor_plate = 5) 

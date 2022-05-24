@@ -871,6 +871,16 @@
 	flags_inv = HIDEJUMPSUIT
 	rad_flags = RAD_PROTECT_CONTENTS | RAD_NO_CONTAMINATE
 
+/obj/item/clothing/suit/armor/f13/combat/swat/enclave
+	name = "Enclave Combat Armor"
+	desc = "A set of standard issue combat armor used by the Enclave. Looks Cheaply made."
+	icon_state = "Enclave_combatarmor"
+	item_state = "Enclave_combatarmor"
+	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
+	blocks_shove_knockdown = TRUE
+	strip_delay = 80
+	equip_delay_other = 60
+
 /obj/item/clothing/suit/armor/f13/combat/mk2/remnant
 	name = "remnant combat armor"
 	desc = "A dark armor, used commonly in espionage or shadow ops."

@@ -348,8 +348,8 @@
 /datum/outfit/job/enclave/peacekeeper/enclavespy
 	name = "Enclave Private"
 	jobtype = /datum/job/enclave/enclavespy
-	head = /obj/item/clothing/head/helmet/f13/combat/swat
-	suit = /obj/item/clothing/suit/armor/f13/combat/swat
+	head = /obj/item/clothing/head/helmet/f13/combat/swat/enclave
+	suit = /obj/item/clothing/suit/armor/f13/combat/swat/enclave
 	accessory = /obj/item/clothing/accessory/enclave
 
 	backpack_contents = list(
@@ -361,12 +361,14 @@
 		)
 
 /datum/outfit/loadout/pvtfrontline
+	name = "Frontliner"
 	backpack_contents = list(
 		/obj/item/gun/ballistic/automatic/assault_carbine/worn = 1,
 		/obj/item/ammo_box/magazine/m5mm = 2,
 		)
 	
 /datum/outfit/loadout/pvtguard
+	name = "Hit And Run"
 	backpack_contents = list(
 		/obj/item/gun/ballistic/automatic/smg/smg10mm/worn = 1,
 		/obj/item/gun/ballistic/automatic/pistol/n99 = 1,

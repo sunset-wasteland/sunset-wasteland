@@ -256,6 +256,12 @@
 	icon_state = "remnant_helmet"
 	item_state = "remnant_helmet"
 
+/obj/item/clothing/head/helmet/f13/combat/swat/enclave
+	name = "enclave combat armor helmet"
+	desc = "Standard issue combat helmets used by the Enclave."
+	icon_state = "Enclave_combathelmetraider"
+	item_state = "Enclave_combathelmetraider"
+
 // Lieutenant's hat
 /obj/item/clothing/head/helmet/f13/enclave/officer
 	name = "enclave officer hat"

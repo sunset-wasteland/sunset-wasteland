@@ -440,15 +440,6 @@
 	item_state = "advhelmet1"
 	armor = list("melee" = 80, "bullet" = 80, "laser" = 85, "energy" = 35, "bomb" = 72, "bio" = 100, "rad" = 100, "fire" = 90, "acid" = 50, "wound" = 90)
 
-/obj/item/clothing/head/helmet/f13/power_armor/advanced/hellfire
-	name = "hellfire power armor"
-	desc = "A deep black helmet of Enclave-manufactured heavy power armor with yellow ballistic glass, based on pre-war designs such as the T-51 and improving off of data gathered by post-war designs such as the X-01. Most commonly fielded on the East Coast, no other helmet rivals it's strength."
-	icon_state = "hellfirehelm"
-	item_state = "hellfirehelm"
-	armor = list("melee" = 85, "bullet" = 85, "laser" = 87, "energy" = 37, "bomb" = 72, "bio" = 100, "rad" = 100, "fire" = 90, "acid" = 50, "wound" = 100)
-
-
-//Part of the peacekeeper enclave stuff, adjust values as needed.
 /obj/item/clothing/head/helmet/f13/power_armor/x02helmet
 	name = "Enclave power armor helmet"
 	desc = "The Enclave Mark II Powered Combat Armor helmet."
@@ -459,6 +450,18 @@
 	actions_types = list(/datum/action/item_action/toggle_helmet_light)
 	salvaged_type = /obj/item/clothing/head/helmet/f13/heavy/salvaged_pa/x02
 
+/obj/item/clothing/head/helmet/f13/power_armor/x02helmet/altumHelm
+	name = "hellfire power helmet"
+	desc = "The advanced MKII power armor helmet. Just looking at this makes you feel self conscious about your DNA."
+	icon_state = "AltumHelm"
+	item_state = "AltumHelm"
+
+/obj/item/clothing/head/helmet/f13/power_armor/advanced/hellfire
+	name = "hellfire power armor helmet"
+	desc = "A deep black helmet of Enclave-manufactured heavy power armor with yellow ballistic glass, based on pre-war designs such as the T-51 and improving off of data gathered by post-war designs such as the X-01. Most commonly fielded on the East Coast, no other helmet rivals it's strength."
+	icon_state = "hellfirehelm"
+	item_state = "hellfirehelm"
+	armor = list("melee" = 90, "bullet" = 90, "laser" = 90, "energy" = 70, "bomb" = 80, "bio" = 100, "rad" = 100, "fire" = 90, "acid" = 50, "wound" = 90)
 
 //Generic Tribal - For Wayfarer specific, see f13factionhead.dm
 
@@ -887,16 +890,6 @@
 	item_state = "marine_security"
 	armor = list("melee" = 50, "bullet" = 50, "laser" = 40, "energy" = 22, "bomb" = 55, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20)
 	can_flashlight = TRUE
-
-/// Item Update
-
-/obj/item/clothing/head/helmet/f13/power_armor/AltumHelm
-	name = "hellfire X02 power helmet"
-	desc = "The advanced MKII power armor helmet. Just looking at this makes you feel self conscious about your DNA."
-	icon_state = "AltumHelm"
-	item_state = "AltumHelm"
-	armor = list("melee" = 85, "bullet" = 85, "laser" = 85, "energy" = 65, "bomb" = 70, "bio" = 100, "rad" = 100, "fire" = 90, "acid" = 50, "wound" = 75)
-	actions_types = list(/datum/action/item_action/toggle_helmet_light)
 	
 /obj/item/clothing/head/helmet/Enclave_combathelmetraider 
 	name = "Enclave Combat Armor Helmet"

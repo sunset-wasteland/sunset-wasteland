@@ -1048,7 +1048,11 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 
 ///Adjust the nutrition of a mob
 /mob/proc/adjust_nutrition(change, max = INFINITY) //Honestly FUCK the oldcoders for putting nutrition on /mob someone else can move it up because holy hell I'd have to fix SO many typechecks
-	nutrition = clamp(nutrition + change, 0, max)
+	var/min = 0
+	if(!client || (client && (client.inactivity / 600 > 5))) // Fuck oldcoders and all that, but let's not kill AFK people
+		if(nutrition >= NUTRITION_LEVEL_STARVING) // So you can't game the system by going AFK and regaining all nutrition
+			min = NUTRITION_LEVEL_STARVING
+	nutrition = clamp(nutrition + change, min, max)
 
 ///Force set the mob nutrition
 /mob/proc/set_nutrition(change) //Seriously fuck you oldcoders.

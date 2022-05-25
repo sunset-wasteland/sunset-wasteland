@@ -165,6 +165,7 @@
 #define NUTRITION_LEVEL_FED 350
 #define NUTRITION_LEVEL_HUNGRY 250
 #define NUTRITION_LEVEL_STARVING 150
+#define NUTRITION_LEVEL_DEADLY_STARVING 50
 
 #define NUTRITION_LEVEL_START_MIN 250
 #define NUTRITION_LEVEL_START_MAX 400
@@ -174,6 +175,14 @@
 #define DISGUST_LEVEL_DISGUSTED 75
 #define DISGUST_LEVEL_VERYGROSS 50
 #define DISGUST_LEVEL_GROSS 25
+
+//Thirst levels for humans
+#define THIRST_LEVEL_FULL 600
+#define THIRST_LEVEL_NORMAL 400
+#define THIRST_LEVEL_THIRSTY 200
+#define THIRST_LEVEL_DEADLY_THIRSTY 50
+
+#define THIRST_LEVEL_START 500
 
 //Charge levels for Ethereals
 #define ETHEREAL_CHARGE_NONE 0
@@ -291,9 +300,10 @@
 #define POCKET_STRIP_DELAY			40	//time taken (in deciseconds) to search somebody's pockets
 #define DOOR_CRUSH_DAMAGE	15	//the amount of damage that airlocks deal when they crush you
 
-#define	HUNGER_FACTOR		0.1	//factor at which mob nutrition decreases
-#define	ETHEREAL_CHARGE_FACTOR	0.08 //factor at which ethereal's charge decreases
-#define	REAGENTS_METABOLISM 0.4	//How many units of reagent are consumed per tick, by default.
+#define HUNGER_FACTOR		0.2	//factor at which mob nutrition decreases
+#define THIRST_FACTOR		0.3	//slightly faster than hunger. REALISTIC!
+#define ETHEREAL_CHARGE_FACTOR	0.08 //factor at which ethereal's charge decreases
+#define REAGENTS_METABOLISM 0.4	//How many units of reagent are consumed per tick, by default.
 #define REAGENTS_EFFECT_MULTIPLIER (REAGENTS_METABOLISM / 0.4)	// By defining the effect multiplier this way, it'll exactly adjust all effects according to how they originally were with the 0.4 metabolism
 
 // Roundstart trait system

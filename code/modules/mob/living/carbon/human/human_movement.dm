@@ -101,3 +101,14 @@
 	if(dna.species.space_move(src))
 		return TRUE
 	return ..()
+
+/mob/living/carbon/human/Moved()
+	. = ..()
+	if(.)
+		if(HAS_TRAIT(src, TRAIT_NOHUNGER)) // Let's pretend this trait responds for everything
+			set_thirst(THIRST_LEVEL_FULL)
+		else if(thirst && stat != DEAD)
+			var/loss = THIRST_FACTOR/10
+			if(m_intent == MOVE_INTENT_RUN)
+				loss *= 2
+			adjust_thirst(-loss)

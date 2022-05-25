@@ -243,11 +243,13 @@
 
 /datum/reagent/water
 	name = "Water"
-	description = "An ubiquitous chemical substance that is composed of hydrogen and oxygen."
-	color = "#AAAAAA77" // rgb: 170, 170, 170, 77 (alpha)
+	description = "An ubiquitous chemical substance that is composed of hydrogen and oxygen. This one isn't purified..."
+	color = "#AAAB4A88" // rgb: 170, 190, 170, 88 (alpha)
 	taste_description = "water"
 	overdose_threshold = 150 //Imagine drinking a gallon of water
 	var/cooling_temperature = 2
+	var/radiation_amount = 0.5
+	var/thirst_factor = THIRST_FACTOR * 3
 	glass_icon_state = "glass_clear"
 	glass_name = "glass of water"
 	glass_desc = "The father of all refreshments."
@@ -256,8 +258,21 @@
 
 /datum/reagent/water/on_mob_life(mob/living/carbon/M)
 	. = ..()
+	if(radiation_amount > 0)
+		M.radiation += radiation_amount // This water isn't pure!
 	if(M.blood_volume)
 		M.blood_volume += 0.1 // water is good for you!
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+		H.adjust_thirst(thirst_factor)
+
+/datum/reagent/water/purified
+	name = "Purified Water"
+	description = "An ubiquitous chemical substance that is composed of hydrogen and oxygen. This one has been purified from radiation."
+	color = "#C3DBDA66" // It's cleaner, kek
+	taste_description = "clean water"
+	radiation_amount = 0
+	thirst_factor = THIRST_FACTOR * 5 // Ultra healthy
 
 /*
  *	Water reaction to turf
@@ -345,6 +360,8 @@
 	glass_name = "glass of holy water"
 	glass_desc = "A glass of holy water."
 	pH = 7.5 //God is alkaline
+	radiation_amount = 0.1 // Less radioactive
+	thirst_factor = THIRST_FACTOR * 4 // Cool water
 
 	// Holy water. Mostly the same as water, it also heals the plant a little with the power of the spirits. Also ALSO increases instability.
 /datum/reagent/water/holywater/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray)

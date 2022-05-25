@@ -1086,6 +1086,18 @@
 		return FALSE
 	return ..()
 
+///Adjust the thirst level of a mob
+/mob/living/carbon/human/proc/adjust_thirst(change, max = THIRST_LEVEL_FULL)
+	var/min = 0
+	if(!client || (client && (client.inactivity / 600 > 5))) // AFK people don't drop thirst below critical point.
+		if(thirst >= THIRST_LEVEL_THIRSTY) // No gaming
+			min = THIRST_LEVEL_THIRSTY
+	thirst = clamp(thirst + change, min, max)
+
+///Force set the mob thirst level
+/mob/living/carbon/human/proc/set_thirst(change)
+	thirst = max(0, change)
+
 /mob/living/carbon/human/species
 	var/race = null
 

@@ -4895,6 +4895,12 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
+"bUu" = (
+/obj/machinery/vending/hydroseeds,
+/turf/closed/wall/mineral/concrete{
+	slicing_duration = 150
+	},
+/area/f13/followers)
 "bUF" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/rack,
@@ -5158,6 +5164,7 @@
 	},
 /obj/structure/fence{
 	climbable = 1;
+	cuttable = 0;
 	dir = 1;
 	resistance_flags = 64
 	},
@@ -10746,8 +10753,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/structure/chair/f13chair2,
-/obj/effect/decal/cleanable/dirt,
+/obj/item/kirbyplants/random,
 /turf/open/floor/plasteel/f13/vault_floor/neutral/corner,
 /area/f13/followers)
 "eoc" = (
@@ -12200,6 +12206,12 @@
 	icon_state = "darkredfull"
 	},
 /area/f13/bunker)
+"eQt" = (
+/obj/machinery/vending/hydronutrients,
+/turf/closed/wall/mineral/concrete{
+	slicing_duration = 150
+	},
+/area/f13/followers)
 "eQA" = (
 /obj/structure/dresser{
 	pixel_y = 10
@@ -13539,6 +13551,7 @@
 	},
 /obj/structure/fence{
 	climbable = 1;
+	cuttable = 0;
 	dir = 1;
 	resistance_flags = 64
 	},
@@ -14241,11 +14254,17 @@
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
 "fFB" = (
-/obj/machinery/vending/hydronutrients{
-	pixel_y = -31
+/obj/structure/window/reinforced{
+	dir = 8;
+	pixel_x = -6
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/f13/vault_floor/blue/bluechess,
+/obj/machinery/iv_drip,
+/obj/machinery/iv_drip,
+/obj/structure/closet/crate/freezer/blood/anchored,
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
 /area/f13/followers)
 "fFF" = (
 /obj/structure/rack,
@@ -20084,8 +20103,7 @@
 /area/f13/wasteland)
 "hHK" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/iv_drip,
-/obj/machinery/iv_drip,
+/obj/structure/table/reinforced,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -22641,6 +22659,15 @@
 	icon_state = "horizontaloutermain1"
 	},
 /area/f13/wasteland)
+"iIM" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/sink/greyscale{
+	dir = 8;
+	pixel_x = -14;
+	pixel_y = 2
+	},
+/turf/open/floor/plasteel/f13/vault_floor/blue/bluechess,
+/area/f13/followers)
 "iIY" = (
 /obj/structure/decoration/hatch{
 	dir = 8
@@ -35216,10 +35243,10 @@
 	},
 /area/f13/wasteland)
 "nyV" = (
-/obj/item/kirbyplants/random,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/kirbyplants/random,
 /turf/open/floor/plasteel/f13/vault_floor/neutral/side{
-	dir = 4
+	dir = 1
 	},
 /area/f13/followers)
 "nza" = (
@@ -37112,11 +37139,9 @@
 /turf/open/floor/wood/f13/oak,
 /area/f13/legion)
 "ooE" = (
-/obj/machinery/vending/hydroseeds{
-	pixel_y = -31
+/turf/open/floor/f13{
+	icon_state = "bluerustysolid"
 	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/f13/vault_floor/blue/bluechess,
 /area/f13/followers)
 "opl" = (
 /obj/effect/decal/cleanable/dirt,
@@ -40291,6 +40316,7 @@
 "pFv" = (
 /obj/structure/fence{
 	climbable = 1;
+	cuttable = 0;
 	dir = 1;
 	resistance_flags = 64
 	},
@@ -44109,7 +44135,9 @@
 	id = "followerladder"
 	},
 /obj/effect/turf_decal/stripes/line,
-/turf/open/floor/plasteel/elevatorshaft,
+/turf/open/floor/f13{
+	icon_state = "bluerustysolid"
+	},
 /area/f13/followers)
 "rhT" = (
 /obj/structure/simple_door/interior,
@@ -95333,7 +95361,7 @@ mfn
 enS
 sVc
 sVc
-nyV
+sVc
 sVc
 uxe
 mfn
@@ -96106,10 +96134,10 @@ xWX
 xWX
 xWX
 xWX
-wLL
+nyV
 mfn
 hiB
-omU
+iIM
 med
 omU
 hiB
@@ -96883,8 +96911,8 @@ iNL
 omU
 omU
 omU
-ooE
-mfn
+omU
+bUu
 dCV
 gts
 fyf
@@ -97140,8 +97168,8 @@ nnl
 omU
 omU
 omU
-fFB
-mfn
+omU
+eQt
 dCV
 gts
 nxY
@@ -97644,7 +97672,7 @@ nWl
 qUC
 mfn
 mfn
-rJp
+fFB
 rJp
 qyo
 qyo
@@ -98421,7 +98449,7 @@ vKZ
 vKZ
 mfn
 rhM
-nTm
+ooE
 nTm
 nTm
 jkw

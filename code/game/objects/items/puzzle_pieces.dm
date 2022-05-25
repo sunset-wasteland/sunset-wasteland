@@ -39,6 +39,17 @@
 	color = "#e93737"
 	puzzle_id = "vault"
 
+/obj/item/keycard/nml1
+	name = "titanic keycard"
+	desc = "There is a fat wad of glowing radioactive goo sticking to this card."
+	color = "#1cff42"
+	puzzle_id = "nmlmutant"
+
+/obj/item/keycard/nml2
+	name = "titanic keycard"
+	desc = "Smells like it was stuck in the jaw of that plated Deathclaw. Nasty!"
+	color = "#07a569"
+	puzzle_id = "nmldeathclaw"
 
 //***************
 //*****Doors*****

@@ -2341,8 +2341,10 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "aXu" = (
-/turf/open/indestructible/ground/outside/dirt{
-	color = "#9c9c9c"
+/turf/open/indestructible/ground/inside/dirt{
+	barefootstep = "sand";
+	clawfootstep = "sand";
+	footstep = "sand"
 	},
 /area/f13/village)
 "aXA" = (
@@ -3870,10 +3872,10 @@
 /area/f13/building)
 "bzH" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/junk/small/bed,
 /obj/item/blanket{
 	pixel_x = 7
 	},
+/obj/structure/bed/old,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood1-broken"
 	},
@@ -5355,6 +5357,7 @@
 /obj/structure/window/fulltile/ruins{
 	icon_state = "ruinswindowvertical"
 	},
+/obj/structure/fence,
 /turf/open/floor/f13/wood,
 /area/f13/village)
 "cfe" = (
@@ -5438,7 +5441,7 @@
 /area/f13/village)
 "chv" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/smartfridge/bottlerack/gardentool,
+/obj/machinery/vending/hydronutrients,
 /turf/open/floor/f13/wood,
 /area/f13/village)
 "chT" = (
@@ -10436,10 +10439,7 @@
 /area/f13/wasteland)
 "ehW" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/overlay/junk/sink{
-	dir = 4;
-	pixel_x = 12
-	},
+/obj/structure/closet/crate/bin/trashbin,
 /turf/open/floor/f13{
 	icon_state = "whitegreenrustychess"
 	},
@@ -14327,7 +14327,7 @@
 /area/f13/wasteland)
 "fGh" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/junk/small/table,
+/obj/structure/table/wood,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood1-broken"
 	},
@@ -17813,9 +17813,9 @@
 	},
 /area/f13/followers)
 "gRL" = (
-/obj/structure/barricade/wooden/planks/pregame,
-/obj/structure/window/fulltile/house{
-	icon_state = "housewindowvertical"
+/obj/structure/window/fulltile/ruins,
+/obj/structure/fence{
+	dir = 8
 	},
 /turf/open/floor/f13/wood,
 /area/f13/village)
@@ -19028,7 +19028,10 @@
 /area/f13/wasteland)
 "hnq" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/closet/crate/bin/trashbin,
+/obj/structure/sink/kitchen{
+	dir = 4;
+	pixel_x = -12
+	},
 /turf/open/floor/f13{
 	icon_state = "whitegreenrustychess"
 	},
@@ -23878,10 +23881,10 @@
 /turf/open/floor/wood/f13/oak,
 /area/f13/ncr)
 "jec" = (
-/obj/structure/barricade/sandbags,
-/obj/structure/barricade/sandbags,
-/turf/open/indestructible/ground/outside/desert,
-/area/f13/wasteland)
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/raider/junker/creator,
+/turf/open/floor/f13/wood,
+/area/f13/building)
 "jeh" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/smartfridge/bottlerack/lootshelf/diy,
@@ -31741,12 +31744,6 @@
 	icon_state = "dirt"
 	},
 /area/f13/wasteland)
-"mjd" = (
-/mob/living/simple_animal/hostile/raider/legendary,
-/turf/open/floor/f13{
-	icon_state = "floordirty"
-	},
-/area/f13/bunker)
 "mji" = (
 /turf/open/indestructible/ground/outside/ruins{
 	dir = 9;
@@ -39496,7 +39493,9 @@
 /obj/structure/chair/wood/fancy{
 	dir = 8
 	},
-/mob/living/simple_animal/hostile/raider/junker/creator,
+/mob/living/simple_animal/hostile/securitron/sentrybot{
+	faction = list("wastebot","raider")
+	},
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
@@ -42607,7 +42606,7 @@
 /turf/open/floor/wood/f13/oak,
 /area/f13/building)
 "qBK" = (
-/mob/living/simple_animal/hostile/securitron/sentrybot,
+/mob/living/simple_animal/hostile/raider/junker/boss,
 /turf/open/floor/f13{
 	icon_state = "darkrusty"
 	},
@@ -53420,13 +53419,6 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/building)
-"uVc" = (
-/obj/structure/rack,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/high,
-/turf/open/floor/f13{
-	icon_state = "darkrusty"
-	},
-/area/f13/bunker)
 "uVo" = (
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "horizontalbottombordertop3"
@@ -56600,12 +56592,6 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/ncr)
-"wpB" = (
-/mob/living/simple_animal/hostile/raider/baseball,
-/turf/open/floor/f13/wood{
-	icon_state = "housewood2-broken"
-	},
-/area/f13/building)
 "wpL" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/f13/resourcespawner,
@@ -65374,7 +65360,7 @@ sHp
 xGi
 kmT
 sHp
-wpB
+ezo
 uqa
 rpu
 sHQ
@@ -66144,7 +66130,7 @@ gGJ
 xaZ
 uqa
 yiG
-sHp
+jec
 urA
 uqa
 uqa
@@ -68450,7 +68436,7 @@ dCV
 ktB
 qbD
 qSC
-gfF
+dZy
 vKL
 gfF
 kek
@@ -68964,7 +68950,7 @@ dCV
 ktB
 qbD
 gfF
-mjd
+gfF
 pmn
 dZy
 gfF
@@ -70513,7 +70499,7 @@ mLu
 vhE
 xUW
 oaP
-uVc
+oaP
 qbD
 ktB
 uqa
@@ -82227,7 +82213,7 @@ qTY
 fyf
 fyf
 tBN
-ueA
+gRL
 aXu
 aXu
 aXu
@@ -82484,7 +82470,7 @@ uey
 fyf
 fyf
 tBN
-ueA
+gRL
 aXu
 aXu
 aXu
@@ -82741,7 +82727,7 @@ fyf
 fyf
 fyf
 cbc
-ueA
+gRL
 sXq
 dmZ
 sXq
@@ -82998,7 +82984,7 @@ fyf
 fyf
 fyf
 tBN
-ueA
+gRL
 chv
 dEk
 dHl
@@ -83263,8 +83249,8 @@ bfV
 gjP
 gjP
 gjP
-ijg
-ijg
+gjP
+gjP
 gjP
 xTK
 fyf
@@ -84550,7 +84536,7 @@ cbk
 vix
 uJd
 bzH
-ijg
+gjP
 fyf
 hAC
 hAC
@@ -84807,7 +84793,7 @@ jnX
 sXq
 uJd
 iam
-ijg
+gjP
 fyf
 uey
 hAC
@@ -85318,8 +85304,8 @@ gjP
 fVt
 gjP
 gjP
-ijg
-gRL
+gjP
+gjP
 gjP
 gjP
 fyf
@@ -116234,7 +116220,7 @@ fsm
 ubd
 fyf
 fyf
-jec
+jxH
 fyf
 fyf
 fyf

@@ -287,6 +287,12 @@
 	icon_state = "freezerfloor"
 	},
 /area/f13/followers)
+"ase" = (
+/obj/machinery/door/keycard{
+	puzzle_id = "nmlmutant"
+	},
+/turf/open/floor/wood/f13/old,
+/area/f13/city)
 "ast" = (
 /obj/structure/table/reinforced/brass,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/unique,
@@ -328,6 +334,7 @@
 /area/f13/bunker)
 "auu" = (
 /obj/item/reagent_containers/food/snacks/salad/ricepudding,
+/obj/structure/table/booth,
 /turf/open/floor/wood/f13/old,
 /area/f13/city)
 "auD" = (
@@ -383,6 +390,7 @@
 "axt" = (
 /obj/item/reagent_containers/food/snacks/salad/desertsalad,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
+/obj/structure/table/booth,
 /turf/open/floor/wood/f13/old,
 /area/f13/city)
 "axU" = (
@@ -705,6 +713,7 @@
 "aTJ" = (
 /obj/item/reagent_containers/food/snacks/salad/herbsalad,
 /mob/living/simple_animal/hostile/supermutant/nightkin,
+/obj/structure/table/booth,
 /turf/open/floor/wood/f13/old,
 /area/f13/city)
 "aUu" = (
@@ -1671,6 +1680,7 @@
 /area/f13/city)
 "cce" = (
 /obj/item/reagent_containers/food/snacks/burger/superbite,
+/obj/structure/table/booth,
 /turf/open/floor/wood/f13/old,
 /area/f13/city)
 "ccn" = (
@@ -2522,6 +2532,13 @@
 /obj/machinery/light,
 /turf/open/floor/wood/f13/old,
 /area/f13/city)
+"dhS" = (
+/mob/living/simple_animal/hostile/supermutant/nightkin/elitemutant{
+	health = 900;
+	loot = list(/obj/item/keycard/nml1)
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "dhV" = (
 /obj/structure/timeddoor/sixtyminute,
 /obj/structure/timeddoor/sixtyminute,
@@ -3641,15 +3658,6 @@
 	icon_state = "verticalinnermain2bottom"
 	},
 /area/f13/wasteland)
-"egS" = (
-/obj/structure/fence{
-	climbable = 1;
-	cuttable = 0;
-	dir = 1;
-	resistance_flags = 64
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/city)
 "eil" = (
 /obj/structure/table/abductor{
 	desc = "After YEARS of research, prototyping, and testing, the brotherhood created the sequel to the table. Advanced flat surface technology at work!";
@@ -4611,7 +4619,6 @@
 /obj/effect/spawner/lootdrop/f13/medical/vault/meds,
 /obj/effect/spawner/lootdrop/f13/medical/vault/meds,
 /obj/effect/spawner/lootdrop/f13/medical/vault/meds,
-/obj/effect/spawner/lootdrop/weapons/experimental,
 /obj/structure/closet,
 /turf/open/floor/f13{
 	icon_state = "freezerfloor"
@@ -4936,6 +4943,12 @@
 	icon_state = "rubble"
 	},
 /area/f13/legion)
+"fQt" = (
+/mob/living/simple_animal/hostile/supermutant/nightkin/elitemutant{
+	health = 900
+	},
+/turf/open/floor/wood/f13/old,
+/area/f13/city)
 "fQz" = (
 /obj/structure/window/reinforced/spawner,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
@@ -6340,6 +6353,11 @@
 	icon_state = "dirt"
 	},
 /area/f13/wasteland)
+"hGk" = (
+/mob/living/simple_animal/hostile/supermutant/nightkin/rangedmutant,
+/obj/structure/table/booth,
+/turf/open/floor/wood/f13/old,
+/area/f13/city)
 "hGQ" = (
 /obj/machinery/power/rtg,
 /turf/open/floor/plasteel/f13/vault_floor/red{
@@ -6443,6 +6461,7 @@
 /area/f13/legion)
 "hMY" = (
 /obj/item/reagent_containers/food/snacks/salad/jungle,
+/obj/structure/table/booth,
 /turf/open/floor/wood/f13/old,
 /area/f13/city)
 "hNJ" = (
@@ -6726,6 +6745,7 @@
 "iko" = (
 /obj/machinery/light,
 /obj/item/reagent_containers/food/snacks/salad/desertsalad,
+/obj/structure/table/booth,
 /turf/open/floor/wood/f13/old,
 /area/f13/city)
 "ilr" = (
@@ -7366,6 +7386,12 @@
 /obj/structure/fence,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
+"jfi" = (
+/obj/structure/simple_door/metal/fence{
+	dir = 8
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/city)
 "jfH" = (
 /obj/effect/decal/waste{
 	icon_state = "goo10"
@@ -8699,6 +8725,18 @@
 	icon_state = "dark"
 	},
 /area/f13/ncr)
+"kMp" = (
+/obj/machinery/light{
+	dir = 8;
+	light_color = "#e8eaff"
+	},
+/mob/living/simple_animal/hostile/deathclaw/power_armor{
+	faction = list("deathclaw","supermutant")
+	},
+/turf/open/floor/f13{
+	icon_state = "freezerfloor"
+	},
+/area/f13/city)
 "kMS" = (
 /turf/open/floor/plating/f13/inside/mountain{
 	icon_state = "mountain2"
@@ -9140,15 +9178,6 @@
 	},
 /area/f13/wasteland)
 "lnQ" = (
-/obj/effect/turf_decal/climb{
-	dir = 4
-	},
-/obj/structure/fence{
-	climbable = 1;
-	cuttable = 0;
-	dir = 1;
-	resistance_flags = 64
-	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/city)
 "lnY" = (
@@ -11226,6 +11255,7 @@
 /area/f13/bunker)
 "nwg" = (
 /obj/effect/spawner/lootdrop/f13/foodspawner,
+/obj/structure/table/booth,
 /turf/open/floor/wood/f13/old,
 /area/f13/city)
 "nwi" = (
@@ -11828,6 +11858,7 @@
 /area/f13/ncr)
 "oiE" = (
 /obj/item/reagent_containers/food/snacks/salad/ricepork,
+/obj/structure/table/booth,
 /turf/open/floor/wood/f13/old,
 /area/f13/city)
 "oiL" = (
@@ -12333,6 +12364,16 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/bunker)
+"oKb" = (
+/mob/living/simple_animal/hostile/deathclaw/power_armor{
+	faction = list("deathclaw","supermutant");
+	health = 5000;
+	loot = list(/obj/item/keycard/nml2)
+	},
+/turf/open/floor/f13{
+	icon_state = "freezerfloor"
+	},
+/area/f13/city)
 "oKy" = (
 /mob/living/simple_animal/hostile/handy/nsb,
 /turf/open/floor/plasteel/f13{
@@ -13313,6 +13354,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/ncr)
 "pNP" = (
+/obj/structure/fence,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/city)
 "pOm" = (
@@ -14734,6 +14776,7 @@
 /area/f13/bunker)
 "roA" = (
 /obj/item/reagent_containers/food/snacks/burger/fish,
+/obj/structure/table/booth,
 /turf/open/floor/wood/f13/old,
 /area/f13/city)
 "roC" = (
@@ -15201,6 +15244,7 @@
 "rMr" = (
 /obj/machinery/light,
 /obj/item/reagent_containers/food/snacks/salad/oatmeal,
+/obj/structure/table/booth,
 /turf/open/floor/wood/f13/old,
 /area/f13/city)
 "rMG" = (
@@ -15214,6 +15258,13 @@
 /obj/structure/decoration/clock/old/active,
 /turf/closed/wall/f13/supermart,
 /area/f13/ncr)
+"rNu" = (
+/mob/living/simple_animal/hostile/supermutant/nightkin/elitemutant{
+	health = 900;
+	loot = list(/obj/item/keycard/nml1)
+	},
+/turf/open/floor/wood/f13/old,
+/area/f13/city)
 "rNv" = (
 /obj/structure/legion_extractor,
 /turf/open/indestructible/ground/outside/desert,
@@ -15802,6 +15853,7 @@
 "svy" = (
 /obj/item/reagent_containers/food/snacks/salad/desertsalad,
 /obj/item/reagent_containers/food/drinks/bottle/brown/green,
+/obj/structure/table/booth,
 /turf/open/floor/wood/f13/old,
 /area/f13/city)
 "svO" = (
@@ -15826,6 +15878,7 @@
 /obj/structure/closet,
 /obj/item/clothing/glasses/hud/health/night,
 /obj/item/clothing/glasses/hud/health/night,
+/obj/effect/spawner/lootdrop/weapons/experimental,
 /turf/open/floor/f13{
 	icon_state = "freezerfloor"
 	},
@@ -17184,8 +17237,12 @@
 	pixel_x = 1
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/item/clothing/head/helmet/f13/ncr/rangercombat/desert/whiskey,
-/obj/item/clothing/suit/armor/f13/rangercombat/desert/whiskey,
+/obj/item/clothing/suit/armor/f13/rangercombat/desert/whiskey{
+	armor = list("melee" = 60, "bullet" = 60, "laser" = 60, "energy" = 40, "bomb" = 55, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20, "wound" = 55)
+	},
+/obj/item/clothing/head/helmet/f13/ncr/rangercombat/desert/whiskey{
+	armor = list("melee" = 60, "bullet" = 60, "laser" = 60, "energy" = 40, "bomb" = 55, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20, "wound" = 55)
+	},
 /turf/open/floor/pod/light,
 /area/f13/underground/cave)
 "ujj" = (
@@ -17478,10 +17535,8 @@
 	},
 /area/f13/wasteland)
 "uDi" = (
-/obj/machinery/door/airlock/medical/glass{
-	id_tag = "MedbayFoyer";
-	name = "Clinic Storage";
-	req_access_txt = "68"
+/obj/machinery/door/keycard{
+	puzzle_id = "nmldeathclaw"
 	},
 /turf/open/floor/f13{
 	icon_state = "freezerfloor"
@@ -27728,8 +27783,8 @@ vKV
 vKV
 vKV
 lnQ
-egS
-egS
+lnQ
+lnQ
 lnQ
 vKV
 vKV
@@ -27986,7 +28041,7 @@ vOG
 vOG
 pNP
 pNP
-pNP
+jfi
 pNP
 vOG
 vOG
@@ -28249,7 +28304,7 @@ fMG
 nFt
 qDz
 qDz
-qDz
+euN
 qDz
 gOB
 vOG
@@ -28509,7 +28564,7 @@ dXd
 pKe
 qDz
 qDz
-wus
+ase
 qDz
 vUl
 qDz
@@ -28765,7 +28820,7 @@ qDz
 ako
 pKe
 qDz
-euN
+qDz
 vOG
 qis
 vUl
@@ -29022,7 +29077,7 @@ qDz
 qDz
 uel
 aJw
-qDz
+ako
 vOG
 qis
 vUl
@@ -29267,7 +29322,7 @@ ksx
 ksx
 ksx
 ksx
-npq
+dhS
 oQq
 ksx
 ksx
@@ -29533,7 +29588,7 @@ ksx
 fMG
 sHw
 qDz
-qDz
+fQt
 uel
 vUl
 qDz
@@ -30822,7 +30877,7 @@ fMG
 blT
 qDz
 cct
-ako
+fQt
 cct
 qDz
 edV
@@ -31336,7 +31391,7 @@ fMG
 nmQ
 nmQ
 nmQ
-qDz
+rNu
 nmQ
 nmQ
 nmQ
@@ -31581,7 +31636,7 @@ wef
 obN
 qDz
 svy
-vUl
+hGk
 lWf
 ksx
 ksx
@@ -32352,7 +32407,7 @@ pFg
 aph
 qDz
 aTJ
-vUl
+hGk
 lWf
 ksx
 ksx
@@ -38532,7 +38587,7 @@ xtU
 xdM
 xdM
 xdM
-xtU
+kMp
 xdM
 kmo
 xdM
@@ -40075,7 +40130,7 @@ kPn
 xdM
 xWq
 kPn
-qhW
+oKb
 fMG
 xdM
 npi
@@ -40579,7 +40634,7 @@ vOG
 vOG
 pNP
 pNP
-pNP
+jfi
 pNP
 vOG
 vOG
@@ -40835,8 +40890,8 @@ vKV
 vKV
 vKV
 lnQ
-egS
-egS
+lnQ
+lnQ
 lnQ
 vKV
 vKV

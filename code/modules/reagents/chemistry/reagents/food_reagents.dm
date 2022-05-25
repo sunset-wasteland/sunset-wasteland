@@ -13,7 +13,6 @@
 	taste_mult = 4
 	value = REAGENT_VALUE_VERY_COMMON
 	var/nutriment_factor = 1 * REAGENTS_METABOLISM
-	var/thirst_factor = 0
 	var/max_nutrition = INFINITY
 	var/quality = 0	//affects mood, typically higher for mixed drinks with more complex recipes
 	ghoulfriendly = TRUE
@@ -22,9 +21,6 @@
 	if(!HAS_TRAIT(M, TRAIT_NO_PROCESS_FOOD))
 		current_cycle++
 		M.adjust_nutrition(nutriment_factor, max_nutrition)
-		if(ishuman(M) && thirst_factor > 0)
-			var/mob/living/carbon/human/H = M
-			H.adjust_thirst(thirst_factor)
 	M.CheckBloodsuckerEatFood(nutriment_factor)
 	holder?.remove_reagent(type, metabolization_rate)
 

@@ -23,8 +23,12 @@ SUBSYSTEM_DEF(npcpool)
 	while(currentrun.len)
 		var/mob/living/simple_animal/SA = currentrun[currentrun.len]
 		--currentrun.len
-		if(!SA) //sanity
-			break
+
+		if (QDELETED(SA)) // Some issue causes nulls to get into this list some times. This keeps it running, but the bug is still there.
+			GLOB.simple_animals[AI_ON] -= SA
+			stack_trace("Found a null in simple_animals active list [SA.type]!")
+			continue
+
 		if(!SA.ckey && !SA.mob_transforming)
 			if(SA.stat != DEAD)
 				SA.handle_automated_movement()

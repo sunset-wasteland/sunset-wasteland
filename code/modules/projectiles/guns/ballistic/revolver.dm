@@ -193,6 +193,16 @@
 	fire_delay = 3
 	block_chance = 20
 
+//Brass Revolver							Keywords: DEN, .357, Double action, 6 rounds cylinder, Fire delay -1
+/obj/item/gun/ballistic/revolver/colt357/brassgun
+	name = "Brass Gun"
+	desc = "The revolver here appears to be made out of number of Sequoia's once held by a Vet Ranger. It doesn't have the punch as it once did."
+	icon_state = "lucky"
+	item_state = "lucky"
+	w_class = WEIGHT_CLASS_SMALL
+	extra_damage = 30
+	fire_delay = 3
+
 //Police revolver					Keywords: .357, Double action, 6 rounds cylinder, Pocket Pistol
 /obj/item/gun/ballistic/revolver/police
 	name = "police revolver"

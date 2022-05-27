@@ -137,7 +137,7 @@
 /datum/gang_item/weapon/shuriken
 	name = "Shuriken"
 	id = "shuriken"
-	cost = 30
+	cost = 100
 	item_path = /obj/item/throwing_star
 
 /datum/gang_item/weapon/switchblade

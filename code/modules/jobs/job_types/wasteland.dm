@@ -163,7 +163,7 @@ Raider
 	/datum/outfit/loadout/raider_legion,
 	/datum/outfit/loadout/raider_bos,
 	/datum/outfit/loadout/quack_doctor,
-	/datum/outfit/loadout/raider_mobster,
+	/* /datum/outfit/loadout/raider_mobster, */
 	/datum/outfit/loadout/raider_tribal
 	)
 
@@ -426,7 +426,7 @@ Raider
 		/obj/item/radio/tribal = 1,
 		/obj/item/book/granter/trait/bigleagues = 1,
 		)
-
+/*
 /datum/outfit/loadout/raider_mobster
 	name = "Den Mob Enforcer"
 	belt = /obj/item/storage/belt/military/assault
@@ -444,7 +444,7 @@ Raider
 		/obj/item/ammo_box/magazine/greasegun = 2,
 		/obj/item/card/id/dogtag/town/mafia=1,
 		)
-
+*/
 /datum/job/wasteland/f13wastelander
 	title = "Wastelander"
 	flag = F13WASTELANDER
@@ -936,7 +936,7 @@ Raider
 	total_positions = 1
 	spawn_positions = 1
 	description = "The mob rules in Yuma, and you're on top. Keeping the loose association of Khans, outlaws, and other no-goods together you maintain order in The Den by force. Ensure that all inhabitants of the Den obey their rules, and spread your influence over the wasteland. Be careful though - even your own men can't be trusted."
-	supervisors = "Whatever god you pray to. Sky's the limit!"
+	supervisors = "The Overboss, God."
 	selection_color = "#ff4747"
 	exp_requirements = 1000
 	exp_type = EXP_TYPE_OUTLAW
@@ -956,6 +956,10 @@ Raider
 		),
 	)
 
+	loadout_options = list(
+		/datum/outfit/loadout/ncrrdenboss,
+		/datum/outfit/loadout/truedenmob
+		)
 
 /datum/outfit/job/wasteland/f13mobboss
 	name = "Den Mob Boss"
@@ -974,19 +978,11 @@ Raider
 	gloves = /obj/item/clothing/gloves/color/white
 	head = /obj/item/clothing/head/caphat/beret/white
 	mask = /obj/item/clothing/mask/bandana/durathread
-	suit_store = /obj/item/gun/ballistic/automatic/smg/p90
 	backpack_contents = list(
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
 		/obj/item/restraints/handcuffs=1, \
-		/obj/item/ammo_box/magazine/m10mm_p90=2, \
 		/obj/item/storage/bag/money/small/raider/mobboss, \
 		/obj/item/book/granter/crafting_recipe/manual/denvr)
-
-/datum/outfit/job/wasteland/f13mobboss/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	..()
-	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
-	ADD_TRAIT(H, TRAIT_LIFEGIVER, src)
-
 
 /datum/outfit/job/wasteland/f13mobboss/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
@@ -998,6 +994,22 @@ Raider
 		GLOB.all_gangs |= DM
 		DM.add_member(H)
 		H.gang = DM
+
+/datum/outfit/loadout/ncrrdenboss
+	name = "Central Cali Den Boss"
+	backpack_contents = list(
+							/obj/item/ammo_box/tube/a357=4, \
+							/obj/item/book/granter/trait/trekking=1, \
+							/obj/item/gun/ballistic/revolver/colt357/brassgun=2, \
+							/obj/item/book/granter/trait/gunslinger=1, \
+							)
+
+/datum/outfit/loadout/truedenmob
+	name = "True Den Boss"
+	r_hand = /obj/item/gun/ballistic/automatic/smg/tommygun
+	backpack_contents = list(
+							/obj/item/ammo_box/magazine/tommygunm45/stick=3, \
+							)
 
 datum/job/wasteland/f13dendoctor
 	title = "Den Doctor"
@@ -1018,7 +1030,7 @@ datum/job/wasteland/f13dendoctor
 	minimal_access = list(ACCESS_DEN)
 
 	loadout_options = list(
-		/datum/outfit/loadout/dencombatmedic,
+		/* /datum/outfit/loadout/dencombatmedic, */
 		/datum/outfit/loadout/denchemist,
 		)
 
@@ -1067,16 +1079,16 @@ datum/job/wasteland/f13dendoctor
 		GLOB.all_gangs |= DM
 		DM.add_member(H)
 		H.gang = DM
-
+/*
 /datum/outfit/loadout/dencombatmedic
 	name = "Combat medic"
-	r_hand = /obj/item/gun/ballistic/automatic/smg/american180
+	r_hand = /obj/item/gun/ballistic/automatic/smg/tommygun
 	suit = /obj/item/clothing/suit/toggle/labcoat/chemist
 	backpack_contents = list(
 							/obj/item/clothing/glasses/hud/health/f13=1, \
-							/obj/item/ammo_box/magazine/m22smg=1, \
+							/obj/item/ammo_box/magazine/tommygunm45/stick=2, \
 							)
-
+*/
 /datum/outfit/loadout/denchemist
 	name = "Chemist"
 	r_hand = /obj/item/gun/ballistic/automatic/pistol/type17

@@ -338,6 +338,8 @@
 	desc = "Worn leather strips, used as makeshift protection from chafing and sharp stones by labor slaves."
 	icon_state = "legion_slaveleather"
 	item_state = "legion_slaveleather"
+	icon = 'icons/fallout/clothing/suits_utility.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/suit_utility.dmi'
 	allowed = list(/obj/item/hatchet, /obj/item/scythe, /obj/item/cultivator, /obj/item/shovel)
 	armor = list("melee" = 20, "bullet" = 5, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 20, "fire" = 20, "acid" = 0)
 
@@ -363,6 +365,8 @@
 	desc = "A practical vest with pockets for tools and such."
 	icon_state = "vest_utility"
 	item_state = "vest_utility"
+	icon = 'icons/fallout/clothing/suits_utility.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/suit_utility.dmi'
 	armor = list("melee" = 20, "bullet" = 20, "laser" = 20, "energy" = 10, "bomb" = 15, "bio" = 10, "rad" = 20, "fire" = 30, "acid" = 0, "wound" = 30)
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/utility
 	slowdown = 0.02

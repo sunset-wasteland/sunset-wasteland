@@ -541,6 +541,7 @@
 
 	loot = list(/obj/item/reagent_containers/pill/patch/healingpowder,
 				/obj/item/storage/pill_bottle/chem_tin/radx,
+				/obj/item/reagent_containers/pill/water_purifier,
 				/obj/item/reagent_containers/blood/radaway,
 				/obj/item/storage/pill_bottle/chem_tin/mentats,
 				/obj/item/reagent_containers/hypospray/medipen/stimpak,

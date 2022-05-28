@@ -8,6 +8,7 @@
 	glass_desc = "Don't cry, Don't raise your eye, It's only nuclear wasteland."
 	overdose_threshold = 100
 	ghoulfriendly = TRUE
+	thirst_factor = THIRST_FACTOR * 15
 
 /datum/reagent/consumable/nuka_cola/on_mob_life(mob/living/carbon/M)
 	M.drowsyness = 0
@@ -32,6 +33,7 @@
 	glass_name = "glass of Sunset Sarsaparilla"
 	glass_desc = "Beverage of the West Coast."
 	ghoulfriendly = TRUE
+	thirst_factor = THIRST_FACTOR * 20
 
 /datum/reagent/consumable/sunset/on_mob_life(mob/living/carbon/M)
 	M.drowsyness = 0
@@ -49,6 +51,7 @@
 	glass_name = "glass of Vim"
 	glass_desc = "Unrelated to Nuka-Cola, Vim trademark Circa 2077."
 	ghoulfriendly = TRUE
+	thirst_factor = THIRST_FACTOR * 10
 
 /datum/reagent/consumable/vim/on_mob_life(mob/living/carbon/M)
 	M.adjustToxLoss(-0.5, 0)
@@ -69,6 +72,7 @@
 	glass_icon_state = "vimquartzglass"
 	glass_name = "Vim Quartz"
 	glass_desc = "You've Got Vim! Quartz edition, worse than the Imitation."
+	thirst_factor = THIRST_FACTOR * 12
 
 /datum/reagent/consumable/vimquartz/on_mob_life(mob/living/carbon/M)
 	M.vomit(10)
@@ -91,6 +95,7 @@
 	glass_icon_state = "grasshopper"
 	glass_name = "Vim Refresh"
 	glass_desc = "You've Got Vim Refresh! Ooooh!"
+	thirst_factor = THIRST_FACTOR * 15
 
 /datum/reagent/consumable/vimrefresh/on_mob_life(mob/living/carbon/M)
 	M.adjustFireLoss(-0.1*REAGENTS_EFFECT_MULTIPLIER, 0)
@@ -114,6 +119,7 @@
 	glass_icon_state = "vimiceglass"
 	glass_name = "Iced Vim"
 	glass_desc = "You've Got Vim! Cold as the East."
+	thirst_factor = THIRST_FACTOR * 14
 
 /datum/reagent/consumable/vimice/on_mob_life(mob/living/carbon/M)
 	M.adjust_bodytemperature(-40 * TEMPERATURE_DAMAGE_COEFFICIENT, T0C)
@@ -135,6 +141,7 @@
 	glass_icon_state = "nukacherryglass"
 	glass_name = "Nuka Cherry"
 	glass_desc = "Nuka-Cola with a Cherry Aftertaste."
+	thirst_factor = THIRST_FACTOR * 18
 
 /datum/reagent/consumable/nukacherry/on_mob_life(mob/living/carbon/M)
 	M.adjustFireLoss(-0.1*REAGENTS_EFFECT_MULTIPLIER, 0)
@@ -152,6 +159,7 @@
 	glass_icon_state = "nukagrapeglass"
 	glass_name = "Nuka Grape"
 	glass_desc = "Nuka-Cola with a Grape Aftertaste."
+	thirst_factor = THIRST_FACTOR * 18
 
 /datum/reagent/consumable/nukagrape/on_mob_life(mob/living/carbon/M)
 	M.adjustBruteLoss(-0.1*REAGENTS_EFFECT_MULTIPLIER, 0)
@@ -169,6 +177,7 @@
 	glass_icon_state = "nukaorangeglass"
 	glass_name = "Nuka Orange"
 	glass_desc = "Nuka-Cola with a Orange Aftertaste."
+	thirst_factor = THIRST_FACTOR * 18
 
 /datum/reagent/consumable/nukaorange/on_mob_life(mob/living/carbon/M)
 	M.adjustToxLoss(-0.1*REAGENTS_EFFECT_MULTIPLIER, 0)
@@ -185,6 +194,7 @@
 	glass_icon_state = "nukaquartzglass"
 	glass_name = "Nuka Quartz"
 	glass_desc = "An abomination of Americas favourite soda."
+	thirst_factor = THIRST_FACTOR * 20
 
 /datum/reagent/consumable/nukaquartz/on_mob_life(mob/living/carbon/M)
 	M.adjustOxyLoss(-1*REAGENTS_EFFECT_MULTIPLIER, 0)
@@ -202,7 +212,8 @@
 	glass_icon_state = "nukaiceglass"
 	glass_name = "Iced Nuka"
 	glass_desc = "Nuka. Stay frosty."
-	
+	thirst_factor = THIRST_FACTOR * 15
+
 /datum/reagent/consumable/nukaice/on_mob_life(mob/living/carbon/M)
 	M.adjust_bodytemperature(-20 * TEMPERATURE_DAMAGE_COEFFICIENT, T0C) //310.15 is the normal bodytemp.
 	M.drowsyness = 0
@@ -226,6 +237,7 @@
 	glass_icon_state = "nukawildglass"
 	glass_name = "Nuka Wild"
 	glass_desc = "A totally original concept of Nuka-Cola!"
+	thirst_factor = THIRST_FACTOR * 14
 
 /datum/reagent/consumable/nukawild/on_mob_life(mob/living/carbon/M)
 	M.AdjustStun(-2, 0)
@@ -246,6 +258,7 @@
 	glass_icon_state = "nukanewglass"
 	glass_name = "Newka Cola"
 	glass_desc = "The tastiest Hybridisation of Nuka-Colas."
+	thirst_factor = THIRST_FACTOR * 10
 
 /datum/reagent/consumable/nukanew/on_mob_life(mob/living/carbon/M)
 	M.adjustFireLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, 0)
@@ -265,6 +278,7 @@
 	glass_icon_state = "nukaberryglass"
 	glass_name = "Nuka Berry"
 	glass_desc = "Nuka-Cola with a Berry Aftertaste."
+	thirst_factor = THIRST_FACTOR * 15
 
 /datum/reagent/consumable/nukacooler
 	name = "Nuka Cooler"
@@ -274,6 +288,7 @@
 	glass_icon_state = "nukacoolerglass"
 	glass_name = "Nuka Cooler"
 	glass_desc = "Insanely cold Nuka-Cola, Freezing the air that surrounds it."
+	thirst_factor = THIRST_FACTOR * 10
 
 /datum/reagent/consumable/nukacooler/on_mob_life(mob/living/carbon/M)
 	M.adjust_bodytemperature(-60 * TEMPERATURE_DAMAGE_COEFFICIENT, T0C) //310.15 is the normal bodytemp.
@@ -289,6 +304,7 @@
 	glass_icon_state = "nukafreeglass"
 	glass_name = "Diet Nuka"
 	glass_desc = "Nuka-Cola with no added sugars!"
+	thirst_factor = THIRST_FACTOR * 14
 
 /datum/reagent/consumable/nukafree/on_mob_life(mob/living/carbon/M)
 	if(M.nutrition <= NUTRITION_LEVEL_STARVING)
@@ -307,6 +323,7 @@
 	glass_icon_state = "nukafruttiglass"
 	glass_name = "Nuka Frutti"
 	glass_desc = "The frutiest of Nukas."
+	thirst_factor = THIRST_FACTOR * 14
 
 /datum/reagent/consumable/nukafrutti/on_mob_life(mob/living/carbon/M)
 	M.adjustToxLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, 0)
@@ -327,6 +344,7 @@
 	glass_icon_state = "nukafloatglass"
 	glass_name = "Nuka Float"
 	glass_desc = "A delicious blend of ice-cream and classic Nuka-Cola!"
+	thirst_factor = THIRST_FACTOR * 14
 
 /datum/reagent/consumable/sunsetfloat
 	name = "Sunset Float"
@@ -337,6 +355,7 @@
 	glass_icon_state = "sunsetfloatglass"
 	glass_name = "Sunset Float"
 	glass_desc = "A delicious blend of ice-cream and classic Sunset Sass!"
+	thirst_factor = THIRST_FACTOR * 14
 
 /datum/reagent/consumable/bawlsshake
 	name = "Bawls Shake"
@@ -347,6 +366,7 @@
 	glass_icon_state = "bawlsshakeglass"
 	glass_name = "Bawls Shake"
 	glass_desc = "A blended shake consumed by those on high energy blitz-lifestyles."
+	thirst_factor = THIRST_FACTOR * 14
 
 /datum/reagent/consumable/jakeshake
 	name = "Jake Shake"
@@ -357,6 +377,7 @@
 	glass_icon_state = "jakeshakeglass"
 	glass_name = "Jake Shake"
 	glass_desc ="Jakes patented shake of Jake."
+	thirst_factor = THIRST_FACTOR * 10
 
 /datum/reagent/consumable/jakeshake/on_mob_life(mob/living/carbon/M)
 	M.adjustOxyLoss(-1*REAGENTS_EFFECT_MULTIPLIER, 0)
@@ -375,6 +396,7 @@
 	glass_icon_state = "sweetwaterfloatglass"
 	glass_name = "Sweetwater Float"
 	glass_desc = "The sweetest water."
+	thirst_factor = THIRST_FACTOR * 10
 
 /datum/reagent/consumable/sweetwaterfloat/on_mob_life(mob/living/carbon/M)
 	M.adjustOxyLoss(-0.2*REAGENTS_EFFECT_MULTIPLIER, 0)
@@ -393,6 +415,7 @@
 	glass_icon_state = "sunsetterglass"
 	glass_name = "Sunsetter"
 	glass_desc = "For when the days dawn, lest brings a brighter tommorrow."
+	thirst_factor = THIRST_FACTOR * 10
 
 /datum/reagent/consumable/sunsetter/on_mob_life(mob/living/carbon/M)
 	M.adjustOxyLoss(-1*REAGENTS_EFFECT_MULTIPLIER, 0)
@@ -411,6 +434,7 @@
 	glass_icon_state = "yuccashakeglass"
 	glass_name = "Yucca Shake"
 	glass_desc = "A blended shake consisting of yucca and creamy goodness."
+	thirst_factor = THIRST_FACTOR * 10
 
 /datum/reagent/consumable/yuccashake/on_mob_life(mob/living/carbon/M)
 	M.adjustOxyLoss(-1*REAGENTS_EFFECT_MULTIPLIER, 0)
@@ -428,6 +452,7 @@
 	glass_icon_state = "bawlsglass"
 	glass_name = "glass of Balls Guarana"
 	glass_desc = "Beverage of the Balls Guarana Company."
+	thirst_factor = THIRST_FACTOR * 10
 
 /datum/reagent/consumable/bawls/on_mob_life(mob/living/carbon/M)
 	M.dizziness = max(0,M.dizziness-2)

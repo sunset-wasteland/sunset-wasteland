@@ -15,6 +15,7 @@
 	var/boozepwr = 65 //Higher numbers equal higher hardness, higher hardness equals more intense alcohol poisoning
 	pH = 7.33
 	value = REAGENT_VALUE_VERY_COMMON //don't bother tweaking all drinks values, way too many can easily be done roundstart or with an upgraded dispenser.
+	thirst_factor = THIRST_FACTOR * 6 // Less than water
 
 /*
 Boozepwr Chart
@@ -2215,7 +2216,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	M.set_drugginess(50)
 	M.adjustStaminaLoss(-2)
 	return ..()
-	
+
 /datum/reagent/consumable/ethanol/rotgut
 	name = "Rotgut"
 	description = "The folks out west started outfitting their vehicles with rot gut engines to get around. A waste of a tasty drink if you ask me"

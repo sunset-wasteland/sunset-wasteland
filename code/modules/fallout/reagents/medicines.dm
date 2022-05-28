@@ -246,6 +246,7 @@
 	var/heal_factor = -3 //Subtractive multiplier if you do not have the perk.
 	var/heal_factor_perk = -5.2 //Multiplier if you have the right perk.
 	ghoulfriendly = TRUE
+	thirst_factor = THIRST_FACTOR * 8 // It's a drink, after all
 
 /datum/reagent/medicine/bitter_drink/on_mob_life(mob/living/carbon/M)
 	var/is_tribal = FALSE
@@ -668,6 +669,7 @@
 	overdose_threshold = 30
 	color = "##DBCE18"
 	ghoulfriendly = TRUE
+	thirst_factor = THIRST_FACTOR * 6 // Tasty
 
 /datum/reagent/medicine/gaia/on_mob_life(mob/living/carbon/M)
 	M.adjustToxLoss(-0.75*REAGENTS_EFFECT_MULTIPLIER, 0)

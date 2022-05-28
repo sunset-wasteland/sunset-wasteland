@@ -411,6 +411,7 @@ GLOBAL_LIST_INIT(loot_medical_tool, list(
 GLOBAL_LIST_INIT(loot_medical_medicine, list(
 	/obj/item/reagent_containers/pill/patch/healingpowder,
 	/obj/item/storage/pill_bottle/chem_tin/radx,
+	/obj/item/reagent_containers/pill/water_purifier,
 	/obj/item/reagent_containers/blood/radaway,
 	/obj/item/reagent_containers/hypospray/medipen/stimpak,
 	/obj/item/reagent_containers/medspray/styptic,

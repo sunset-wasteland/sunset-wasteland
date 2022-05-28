@@ -283,6 +283,13 @@
 	icon_state = "pill_radx"
 	list_reagents = list(/datum/reagent/medicine/radx = 20)
 
+/obj/item/reagent_containers/pill/water_purifier
+	name = "water purifier pill"
+	desc = "A pill with exactly 20 units of water purification chemical. Put one in the glass of water and it's now safe to drink!"
+	icon = 'icons/fallout/objects/medicine/drugs.dmi'
+	icon_state = "pill_pure"
+	list_reagents = list(/datum/reagent/water_purifier = 20) // Enough to restore 60 thirst
+
 /obj/item/reagent_containers/pill/buffout
 	name = "Buffout pill"
 	desc = "A metallic tasting pill that greatly increases bloodflow and builds muscle mass. \
@@ -290,4 +297,4 @@
 	icon = 'icons/fallout/objects/medicine/drugs.dmi'
 	icon_state = "pill_buff"
 	list_reagents = list(/datum/reagent/drug/buffout = 10)
-	
+

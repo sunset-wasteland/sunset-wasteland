@@ -111,7 +111,7 @@
 	desc = "A prewar combat helmet issued to S.W.A.T. personnel."
 	icon_state = "swatsyndie"
 	item_state = "swatsyndie"
-	armor = list("melee" = 30, "bullet" = 50, "laser" = 30, "energy" = 20, "bomb" = 55, "bio" = 60, "rad" = 15, "fire" = 60, "acid" = 30)
+	armor = list("melee" = 35, "bullet" = 50, "laser" = 40, "energy" = 25, "bomb" = 55, "bio" = 60, "rad" = 15, "fire" = 60, "acid" = 30)
 
 
 /obj/item/clothing/head/helmet/f13/combat/environmental
@@ -890,8 +890,8 @@
 	item_state = "marine_security"
 	armor = list("melee" = 50, "bullet" = 50, "laser" = 40, "energy" = 22, "bomb" = 55, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20)
 	can_flashlight = TRUE
-	
-/obj/item/clothing/head/helmet/Enclave_combathelmetraider 
+
+/obj/item/clothing/head/helmet/Enclave_combathelmetraider
 	name = "Enclave Combat Armor Helmet"
 	desc = "Standard issue combat helmets used by the Enclave."
 	icon_state = "Enclave_combathelmetraider"

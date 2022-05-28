@@ -169,19 +169,20 @@
 	exp_requirements = 2000
 
 	loadout_options = list(
-		/datum/outfit/loadout/gysgt_ballistics, // LSW and MK23
-		/datum/outfit/loadout/gysgt_laser, // AER12
-		/datum/outfit/loadout/gysgt_minigun, // Laser gatling
+		/datum/outfit/loadout/gysgt_ballistics, // Assault carbine
+		/datum/outfit/loadout/gysgt_melee, // Prewar ripper
 		)
 
 /datum/outfit/job/enclave/peacekeeper/f13gysergeant
 	name = "Enclave Gunnery Sergeant"
 	jobtype = /datum/job/enclave/f13gysergeant
-	head = /obj/item/clothing/head/helmet/f13/power_armor/x02helmet
-	suit = /obj/item/clothing/suit/armor/f13/power_armor/x02
+	head = /obj/item/clothing/head/helmet/f13/enclave/marine
+	suit = /obj/item/clothing/suit/armor/f13/enclave/marine
 	accessory = /obj/item/clothing/accessory/enclave/master_sergeant
 
 	backpack_contents = list(
+		/obj/item/ammo_box/magazine/m45exp = 2,
+		/obj/item/gun/ballistic/automatic/pistol/mk23 = 1,
 		/obj/item/reagent_containers/hypospray/medipen/stimpak = 2,
 		/obj/item/grenade/flashbang = 1,
 		/obj/item/pda = 1,
@@ -191,28 +192,74 @@
 
 /datum/outfit/loadout/gysgt_ballistics
 	name = "Assault Kit"
-	suit_store = /obj/item/gun/ballistic/automatic/lsw
+	suit_store = /obj/item/gun/ballistic/automatic/assault_carbine
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/m556/rifle = 3,
-		/obj/item/ammo_box/magazine/m45exp = 2,
-		/obj/item/gun/ballistic/automatic/pistol/mk23 = 1,
+		/obj/item/ammo_box/magazine/m5mm = 2,
 		)
 
-/datum/outfit/loadout/gysgt_laser
-	name = "Laser Weaponry"
-	suit_store = /obj/item/gun/energy/laser/aer12
+/datum/outfit/loadout/gysgt_melee
+	name = "Mameluke"
+	suit_store = /obj/item/melee/powered/ripper/prewar
 	backpack_contents = list(
-		/obj/item/stock_parts/cell/ammo/mfc = 4,
+		/obj/item/book/granter/trait/bigleagues = 1,
 		)
 
-/datum/outfit/loadout/gysgt_minigun
-	name = "Armored Infantry"
+/datum/outfit/job/enclave/peacekeeper/f13gysergeant/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
+	ADD_TRAIT(H, TRAIT_LIFEGIVER, src)
+
+
+//Armored Infantry
+
+
+/datum/job/enclave/Armoredinfantry
+	title = "Enclave Armored Infantry"
+	flag = F13USAI
+	total_positions = 1
+	spawn_positions = 1
+	description = "You are a specialist trained in the use of heavy equipment and X0-2 Power armor. Your job is to be he anchor of your unit."
+	supervisors = "The Lieutenant and the Sergeants"
+	outfit = /datum/outfit/job/enclave/peacekeeper/Armoredinfantry
+	exp_type = EXP_TYPE_ENCLAVE
+	exp_requirements = 2000
+
+	loadout_options = list(
+		/datum/outfit/loadout/inf_minigun, // minigun
+		/datum/outfit/loadout/inf_gatling, // Laser gatling
+		)
+
+/datum/outfit/job/enclave/peacekeeper/Armoredinfantry
+	name = "Enclave Armored Infantry"
+	jobtype = /datum/job/enclave/Armoredinfantry
+	head = /obj/item/clothing/head/helmet/f13/power_armor/x02helmet
+	suit = /obj/item/clothing/suit/armor/f13/power_armor/x02
+	accessory = /obj/item/clothing/accessory/enclave/specialist
+
+	backpack_contents = list(
+		/obj/item/reagent_containers/hypospray/medipen/stimpak = 2,
+		/obj/item/grenade/flashbang = 1,
+		/obj/item/pda = 1,
+		/obj/item/storage/bag/money/small/wastelander = 1,
+		/obj/item/melee/onehanded/knife/survival = 1,
+		)
+
+/datum/outfit/loadout/inf_minigun
+	name = "CZ53 personal minigun"
+	backpack_contents = list(
+		/obj/item/minigunpackbal5mm = 1,
+		)
+
+/datum/outfit/loadout/inf_gatling
+	name = "Laser Gatling"
 	suit_store = 	/obj/item/minigunpack
 	backpack_contents = list(
 		/obj/item/stock_parts/cell/ammo/ecp = 2,
 		)
 
-/datum/outfit/job/enclave/peacekeeper/f13gysergeant/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+/datum/outfit/job/enclave/peacekeeper/Armoredinfantry/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
 		return
@@ -343,7 +390,7 @@
 	exp_requirements = 600
 
 	loadout_options = list(
-		/datum/outfit/loadout/pvtfrontline, 
+		/datum/outfit/loadout/pvtfrontline,
 		/datum/outfit/loadout/pvtguard,
 		)
 
@@ -368,7 +415,7 @@
 		/obj/item/gun/ballistic/automatic/assault_carbine/worn = 1,
 		/obj/item/ammo_box/magazine/m5mm = 2,
 		)
-	
+
 /datum/outfit/loadout/pvtguard
 	name = "Hit And Run"
 	backpack_contents = list(

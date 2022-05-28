@@ -700,9 +700,22 @@
 					to_send += "<span class='info'>You could use a bite to eat.</span>\n"
 				if(NUTRITION_LEVEL_STARVING to NUTRITION_LEVEL_HUNGRY)
 					to_send += "<span class='info'>You feel quite hungry.</span>\n"
-				if(0 to NUTRITION_LEVEL_STARVING)
-					to_send += "<span class='danger'>You're starving!</span>\n"
+				if(NUTRITION_LEVEL_DEADLY_STARVING to NUTRITION_LEVEL_STARVING)
+					to_send += "<span class='warning'>You're starving!</span>\n"
+				if(0 to NUTRITION_LEVEL_DEADLY_STARVING)
+					to_send += "<span class='danger'>You're starving to death!</span>\n"
 
+			switch(thirst)
+				if((THIRST_LEVEL_FULL - 50) to INFINITY)
+					to_send += "<span class='info'>You're not thirsty at all!</span>\n"
+				if(THIRST_LEVEL_NORMAL to (THIRST_LEVEL_FULL - 50))
+					to_send += "<span class='info'>You could use a drink.</span>\n"
+				if(THIRST_LEVEL_THIRSTY to THIRST_LEVEL_NORMAL)
+					to_send += "<span class='info'>You are slightly thirsty.</span>\n"
+				if(THIRST_LEVEL_DEADLY_THIRSTY to THIRST_LEVEL_THIRSTY)
+					to_send += "<span class='warning'>You need water!</span>\n"
+				if(0 to THIRST_LEVEL_DEADLY_THIRSTY)
+					to_send += "<span class='danger'>You really need some water!</span>\n"
 
 			//TODO: Convert these messages into vague messages, thereby encouraging actual dignosis.
 			//Compiles then shows the list of damaged organs and broken organs

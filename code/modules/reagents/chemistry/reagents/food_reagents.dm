@@ -299,7 +299,7 @@
 	color = "#B31008" // rgb: 179, 16, 8
 	taste_description = "scorching agony"
 	pH = 7.4
-	thirst_factor = -THIRST_FACTOR * 4 // Why would you drink this...
+	thirst_factor = -THIRST_FACTOR * 5 // Why would you drink this...
 
 /datum/reagent/consumable/condensedcapsaicin/reaction_mob(mob/living/M, method=TOUCH, reac_volume)
 	if(!ishuman(M) && !ismonkey(M))
@@ -361,6 +361,8 @@
 			victim.damageoverlaytemp = 75
 			victim.DefaultCombatKnockdown(80, override_hardstun = 0.1, override_stamdmg = min(reac_volume * 5, 25))
 		victim.update_damage_hud()
+		return
+	..()
 
 /datum/reagent/consumable/condensedcapsaicin/on_mob_life(mob/living/carbon/M)
 	if(prob(5))
@@ -373,7 +375,7 @@
 	reagent_state = SOLID
 	color = "#FFFFFF" // rgb: 255,255,255
 	taste_description = "salt"
-	thirst_factor = -THIRST_FACTOR * 3 // Yuck, salt
+	thirst_factor = -THIRST_FACTOR * 5 // Yuck, salt
 
 /datum/reagent/consumable/sodiumchloride/reaction_mob(mob/living/M, method=TOUCH, reac_volume)
 	if(!istype(M))
@@ -652,7 +654,7 @@
 	reagent_state = SOLID
 	color = "#302000" // rgb: 48, 32, 0
 	taste_description = "dry and cheap noodles"
-	thirst_factor = -THIRST_FACTOR * 2 // Consider not eating dry ramen
+	thirst_factor = -THIRST_FACTOR * 3 // Consider not eating dry ramen
 
 /datum/reagent/consumable/hot_ramen
 	name = "Hot Ramen"
@@ -684,7 +686,7 @@
 	reagent_state = SOLID
 	color = "#FFFFFF" // rgb: 0, 0, 0
 	taste_description = "chalky wheat"
-	thirst_factor = -THIRST_FACTOR * 2 // You'd certainly want to water your mouth after trying to eat that
+	thirst_factor = -THIRST_FACTOR * 4 // You'd certainly want to water your mouth after trying to eat that
 
 /datum/reagent/consumable/flour/reaction_turf(turf/T, reac_volume)
 	if(!isspaceturf(T))
@@ -979,7 +981,7 @@
 	taste_description = "smoke"
 	overdose_threshold = 25
 	value = REAGENT_VALUE_COMMON
-	thirst_factor = -THIRST_FACTOR * 2
+	thirst_factor = -THIRST_FACTOR * 5
 
 /datum/reagent/consumable/char/overdose_process(mob/living/carbon/M)
 	if(prob(10))

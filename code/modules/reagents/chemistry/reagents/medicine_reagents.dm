@@ -608,7 +608,7 @@
 
 /datum/reagent/medicine/potass_iodide/on_mob_life(mob/living/carbon/M)
 	if(M.radiation > 0)
-		M.radiation -= min(M.radiation, 8)
+		M.radiation -= min(M.radiation, 2)
 	..()
 
 /datum/reagent/medicine/prussian_blue

@@ -252,7 +252,7 @@
 	taste_description = "water"
 	overdose_threshold = 150 //Imagine drinking a gallon of water
 	var/cooling_temperature = 2
-	var/radiation_amount = 2			// 10 per 5 units; 100 per 50; 500 per 250
+	var/radiation_amount = 3			// 15 per 5 units; 150 per 50; 750 per 250
 	thirst_factor = THIRST_FACTOR * 15	// 11.25 per 5 units; 112.5 per 50; 562.5 per 250
 	glass_icon_state = "glass_clear"
 	glass_name = "glass of water"
@@ -343,14 +343,17 @@
 	description = "An industrical reagent used to purify irradiated or otherwise contaminated water. Just use it in proportions 1:1 with any container of water."
 	color = "#5E6566AA" // Charcoal is in it, so kinda looking weird?
 	taste_description = "purity" // Why did you eat it anyway?
-	value = REAGENT_VALUE_RARE // Difficult to make
+	value = REAGENT_VALUE_RARE // Only found in loot
 	thirst_factor = THIRST_FACTOR * 3 // Let's pretend you didn't have ANY source of water nearby
+	can_synth = FALSE
 
 /datum/reagent/water/purified
 	name = "Purified Water"
 	description = "An ubiquitous chemical substance that is composed of hydrogen and oxygen. This one has been purified from radiation."
 	color = "#C3DBDA66" // It's cleaner, kek
 	taste_description = "clean water"
+	glass_name = "glass of purified water"
+	glass_desc = "A glass of water clean of radiation or any contamination."
 	value = REAGENT_VALUE_AMAZING
 	radiation_amount = 0
 	thirst_factor = THIRST_FACTOR * 30 // 22.5 per 5 units; 225 per 50; 1125 per 250
@@ -364,7 +367,7 @@
 	M.adjustToxLoss(-1, 0, TRUE)
 	M.adjustStaminaLoss(-0.5, FALSE)
 	if(M.radiation > 0)
-		M.radiation -= min(M.radiation, 2)
+		M.radiation -= min(M.radiation, 1)
 	..()
 
 /datum/reagent/water/hollowwater
@@ -381,8 +384,8 @@
 	glass_name = "glass of holy water"
 	glass_desc = "A glass of holy water."
 	pH = 7.5 //God is alkaline
-	radiation_amount = 1.5 // Less radioactive
-	thirst_factor = THIRST_FACTOR * 20 // Cool water
+	radiation_amount = 2 // Less radioactive
+	thirst_factor = THIRST_FACTOR * 18 // Cool water
 
 	// Holy water. Mostly the same as water, it also heals the plant a little with the power of the spirits. Also ALSO increases instability.
 /datum/reagent/water/holywater/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray)

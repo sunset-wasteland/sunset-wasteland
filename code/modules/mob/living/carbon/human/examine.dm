@@ -254,6 +254,9 @@
 		if(DISGUST_LEVEL_DISGUSTED to INFINITY)
 			msg += "[t_He] look[p_s()] extremely disgusted.\n"
 
+	if(thirst < THIRST_LEVEL_THIRSTY - 50)
+		msg += "[t_He] [t_is] severely dehydrated.\n"
+
 	var/apparent_blood_volume = blood_volume
 	if(dna.species.use_skintones && skin_tone == "albino")
 		apparent_blood_volume -= 150 // enough to knock you down one tier

@@ -73,13 +73,19 @@
 		GK.add_member(H)
 		H.gang = GK
 
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/set_vrboard/den)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/trail_carbine)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/varmintrifle)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/combatrifle)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/uzi)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/smg10mm)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/gate_khanate)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/set_vrboard/den,)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/trail_carbine,)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/varmintrifle,)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/combatrifle,)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/uzi,)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/smg10mm,)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/gate_khanate,)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/USAeyebot,)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/jet,)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/turbo,)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/psycho,)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/medx,)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/buffout)
 
 /datum/outfit/loadout/enforcer
 	name = "Enforcer"
@@ -94,9 +100,10 @@
 	name = "Skirmisher"
 	r_hand = /obj/item/gun/ballistic/automatic/smg/mini_uzi
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/uzim9mm=3,
+		/obj/item/ammo_box/magazine/uzim9mm = 3,
 		/obj/item/reagent_containers/hypospray/medipen/stimpak = 1,
-		/obj/item/storage/belt/holster=1)
+		/obj/item/storage/belt/holster = 1,
+		/obj/item/book/granter/trait/trekking = 1)
 
 /datum/outfit/loadout/khandrug
 	name = "Drug Pusher"

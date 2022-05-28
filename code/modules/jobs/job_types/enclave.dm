@@ -422,7 +422,12 @@
 	ADD_TRAIT(H, TRAIT_SURGERY_HIGH, src)
 	ADD_TRAIT(H, TRAIT_CHEMWHIZ, src)
 	ADD_TRAIT(H, TRAIT_UNETHICAL_PRACTITIONER, src) // Brainwashing
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/USAeyebot)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/USAeyebot,)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/jet,)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/turbo,)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/psycho,)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/medx,)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/buffout)
 
 //Bunker Duty
 /datum/job/enclave/f13BDUTY

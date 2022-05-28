@@ -585,3 +585,9 @@
 /turf/open/floor/circuit/f13_red/off
 	icon_state = "rcircuitoff1"
 	on = FALSE
+
+/turf/open/water/ice //ice is water, ok?
+	name = "ice floor"
+	icon = 'icons/turf/ice.dmi'
+	icon_state = "ice_floor"
+	

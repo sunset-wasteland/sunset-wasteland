@@ -40,9 +40,6 @@
 	if(GLOB.admin_datums[ckey] || GLOB.deadmins[ckey])
 		admin = 1
 
-	if (C && C.account_age < 30 && C.account_age > -1)
-		AddBan(key,computer_id,"Goodbye","Server",TRUE,1,address)
-
 	//Whitelist
 	if(CONFIG_GET(flag/usewhitelist))
 		if(!check_whitelist(ckey))

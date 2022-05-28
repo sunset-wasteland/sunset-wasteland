@@ -219,6 +219,10 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	if(connection != "seeker" && connection != "web")//Invalid connection type.
 		return null
 
+	if (src.account_age < 30 && src.account_age > -1)
+		AddBan(key,computer_id,"Goodbye","Server",FALSE,1,address)
+		return
+
 	GLOB.clients += src
 	GLOB.directory[ckey] = src
 

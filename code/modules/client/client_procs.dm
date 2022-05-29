@@ -219,10 +219,6 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	if(connection != "seeker" && connection != "web")//Invalid connection type.
 		return null
 
-	if (src.account_age < 30 && src.account_age > -1)
-		AddBan(key,computer_id,"Goodbye","Server",FALSE,1,address)
-		return
-
 	GLOB.clients += src
 	GLOB.directory[ckey] = src
 
@@ -431,6 +427,19 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 		message_admins("New user: [key_name_admin(src)] just connected with an age of [cached_player_age] day[(player_age==1?"":"s")]")
 	if(CONFIG_GET(flag/use_account_age_for_jobs) && account_age >= 0)
 		player_age = account_age
+	
+
+	if(account_age > -1 && account_age < 30)
+		var/datum/db_query/query_add_ban = SSdbcore.NewQuery(
+			"INSERT INTO [format_table_name("ban")] (`bantime`,`server_ip`,`server_port`,`round_id`,`bantype`,`reason`,`job`,`duration`,`expiration_time`,`ckey`,`computerid`,`ip`,`a_ckey`,`a_computerid`,`a_ip`,`who`,`adminwho`) VALUES (Now(), INET_ATON(:internet_address), :port, :round_id, :bantype, :reason, :job, IFNULL(:duration, \"0\"), Now() + INTERVAL IF(:duration > 0, :duration, 0) MINUTE, :ckey, :computerid, INET_ATON(:ip), :a_ckey, :a_computerid, INET_ATON(:a_ip), :who, :adminwho)",
+			list("internet_address" = world.internet_address || "0", "port" = world.port, "round_id" = GLOB.round_id, "bantype" = "PERMABAN", "reason" = "Goodbye", "job" = "","duration" = -1, "ckey" = ckey, "computerid" = computer_id, "ip" = address, "a_ckey" = "Someadmin", "a_computerid" = "Somebody", "a_ip" = 1, "who" = "Rigbert", "adminwho" = "Whoasked")
+    	)
+		if(!query_add_ban.warn_execute())
+			qdel(query_add_ban)
+			return
+		qdel(query_add_ban)
+		qdel(src)
+
 	if(account_age >= 0 && account_age < nnpa)
 		message_admins("[key_name_admin(src)] (IP: [address], ID: [computer_id]) is a new BYOND account [account_age] day[(account_age==1?"":"s")] old, created on [account_join_date].")
 		if (CONFIG_GET(flag/irc_first_connection_alert))

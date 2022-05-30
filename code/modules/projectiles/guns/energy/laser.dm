@@ -526,6 +526,7 @@
 	can_charge = FALSE
 	ammo_type = list(/obj/item/ammo_casing/energy/plasma/pistol/alien)
 	cell_type = /obj/item/stock_parts/cell/ammo/alien //unchargeable, but removable
+	trigger_guard = TRIGGER_GUARD_ALLOW_ALL // Aliens couldn't shoot this gun until now. Lmao whoops!
 
 
 //Gamma gun

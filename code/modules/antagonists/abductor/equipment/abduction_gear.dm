@@ -7,11 +7,12 @@
 
 //AGENT VEST
 /obj/item/clothing/suit/armor/abductor/vest
-	name = "agent vest"
-	desc = "A vest outfitted with advanced stealth technology. It has two modes - combat and stealth."
-	icon = 'icons/obj/abductor.dmi'
-	icon_state = "vest_stealth"
-	item_state = "armor"
+	name = "polymer suit"
+	desc = "A suit outfitted with advanced alien technology. It has two modes - combat and stealth."
+	icon = 'icons/fallout/clothing/suits_utility.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/suit_utility.dmi'
+	icon_state = "alien_stealth"
+	item_state = "alien_stealth"
 	blood_overlay_type = "armor"
 	armor = list("melee" = 15, "bullet" = 15, "laser" = 15, "energy" = 15, "bomb" = 15, "bio" = 15, "rad" = 15, "fire" = 70, "acid" = 70)
 	actions_types = list(/datum/action/item_action/hands_free/activate)
@@ -49,11 +50,11 @@
 			mode = VEST_COMBAT
 			DeactivateStealth()
 			armor = combat_armor
-			icon_state = "vest_combat"
+			icon_state = "alien_combat"
 		if(VEST_COMBAT)// TO STEALTH
 			mode = VEST_STEALTH
 			armor = stealth_armor
-			icon_state = "vest_stealth"
+			icon_state = "alien_stealth"
 	if(ishuman(loc))
 		var/mob/living/carbon/human/H = loc
 		H.update_inv_wear_suit()
@@ -721,9 +722,11 @@
 
 /obj/item/clothing/head/helmet/abductor
 	name = "polymer headgear"
-	desc = "Abduct with style - spiky style. Prevents digital tracking."
-	icon_state = "alienhelmet"
-	item_state = "alienhelmet"
+	desc = "Abduct with style - smooth style. Prevents digital tracking."
+	icon = 'icons/fallout/clothing/helmets.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon_state = "alien"
+	item_state = "alien"
 	blockTracking = TRUE
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 

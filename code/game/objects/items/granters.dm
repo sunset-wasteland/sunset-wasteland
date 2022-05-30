@@ -128,7 +128,7 @@
 /obj/item/book/granter/trait/onlearned(mob/living/user)
 	..()
 	if(oneuse)
-		user.visible_message("<span class='caution'>[src] is useless to you now. You throw the book away.</span>")
+		to_chat(user, "<span class='caution'>[src] is useless to you now. You throw the book away.</span>")
 		qdel(src)
 
 /obj/item/book/granter/action/drink_fling
@@ -545,7 +545,7 @@
 /obj/item/book/granter/crafting_recipe/onlearned(mob/living/user)
 	..()
 	if(oneuse)
-		user.visible_message("<span class='caution'>[src] is useless to you now. You throw it away.</span>")
+		to_chat(user, "<span class='caution'>[src] is useless to you now. You throw it away.</span>")
 		qdel(src)
 
 
@@ -1135,8 +1135,3 @@
 	name = "Bone Dancer traditions"
 	crafting_recipe_types = list(/datum/crafting_recipe/tribalwar/bone/lightarmour,/datum/crafting_recipe/tribalwar/bone/armour, /datum/crafting_recipe/tribalwar/bone/heavyarmour,
 								/datum/crafting_recipe/tribalwar/bone/garb,/datum/crafting_recipe/tribalwar/bone/helmet)
-								
-								
-								
-								
-								

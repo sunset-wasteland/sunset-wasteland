@@ -7,7 +7,7 @@
 
 /datum/job/wasteland/f13pusher
 	title = "Great Khan"
-	flag = F13USPRIVATE
+	flag = F13PUSHER
 	department_head = list("Captain")
 	head_announce = list("Security")
 	faction = FACTION_WASTELAND
@@ -74,17 +74,16 @@
 		H.gang = GK
 
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/set_vrboard/den,)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/trail_carbine,)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/varmintrifle,)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/combatrifle,)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/uzi,)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/smg10mm,)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/gate_khanate,)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/USAeyebot,)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/jet,)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/turbo,)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/psycho,)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/medx,)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/trail_carbine)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/varmintrifle)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/combatrifle)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/uzi)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/smg10mm)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/gate_khanate)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/jet)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/turbo)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/psycho)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/medx)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/buffout)
 
 /datum/outfit/loadout/enforcer
@@ -94,7 +93,8 @@
 	backpack_contents = list(
 		/obj/item/restraints/legcuffs/bola/tactical=1,
 		/obj/item/book/granter/trait/bigleagues = 1,
-		/obj/item/reagent_containers/hypospray/medipen/stimpak = 3)
+		/obj/item/reagent_containers/hypospray/medipen/stimpak = 3
+		)
 
 /datum/outfit/loadout/khanskirmisher
 	name = "Skirmisher"
@@ -103,7 +103,8 @@
 		/obj/item/ammo_box/magazine/uzim9mm = 3,
 		/obj/item/reagent_containers/hypospray/medipen/stimpak = 1,
 		/obj/item/storage/belt/holster = 1,
-		/obj/item/book/granter/trait/trekking = 1)
+		/obj/item/book/granter/trait/trekking = 1
+		)
 
 /datum/outfit/loadout/khandrug
 	name = "Drug Pusher"
@@ -111,7 +112,8 @@
 	backpack_contents = list(
 		/obj/item/book/granter/trait/midsurgery = 1,
 		/obj/item/book/granter/trait/chemistry = 1,
-		/obj/item/reagent_containers/pill/patch/turbo=2)
+		/obj/item/reagent_containers/pill/patch/turbo = 2
+		)
 
 /*
 Raider
@@ -170,7 +172,7 @@ Raider
 	/datum/outfit/loadout/raider_legion,
 	/datum/outfit/loadout/raider_bos,
 	/datum/outfit/loadout/quack_doctor,
-	/* /datum/outfit/loadout/raider_mobster, */
+	/datum/outfit/loadout/raider_powder, 
 	/datum/outfit/loadout/raider_tribal
 	)
 
@@ -182,7 +184,7 @@ Raider
 	id = null
 	ears = null
 	belt = null
-	backpack = /obj/item/storage/backpack/satchel/explorer
+	backpack = /obj/item/storage/backpack/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
 	gloves = /obj/item/clothing/gloves/f13/handwraps
 	r_pocket = /obj/item/flashlight/flare
@@ -190,7 +192,7 @@ Raider
 		/obj/item/restraints/handcuffs = 2,
 		/obj/item/melee/onehanded/club = 1,
 		/obj/item/reagent_containers/hypospray/medipen/stimpak = 1,
-		/obj/item/storage/bag/money/small/raider = 1,
+		/obj/item/storage/bag/money/small/raider = 1
 		)
 
 
@@ -204,40 +206,19 @@ Raider
 		/obj/item/clothing/under/f13/raider_leather, \
 		/obj/item/clothing/under/f13/raiderrags, \
 		/obj/item/clothing/under/pants/f13/ghoul, \
-		/obj/item/clothing/under/jabroni)
-	suit = pick(
-		/obj/item/clothing/suit/armor/f13/raider/supafly,\
-		/obj/item/clothing/suit/armor/f13/raider/yankee, \
-		/obj/item/clothing/suit/armor/f13/raider/sadist, \
-		/obj/item/clothing/suit/armor/f13/raider/blastmaster, \
-		/obj/item/clothing/suit/armor/f13/raider/badlands, \
-		/obj/item/clothing/suit/armor/f13/raider/painspike)
-	if(prob(10))
-		mask = pick(
-			/obj/item/clothing/mask/bandana/red,\
-			/obj/item/clothing/mask/bandana/blue,\
-			/obj/item/clothing/mask/bandana/green,\
-			/obj/item/clothing/mask/bandana/gold,\
-			/obj/item/clothing/mask/bandana/black,\
-			/obj/item/clothing/mask/bandana/skull)
-	head = pick(
-		/obj/item/clothing/head/sombrero,\
-		/obj/item/clothing/head/helmet/f13/raider,\
-		/obj/item/clothing/head/helmet/f13/raider/eyebot,\
-		/obj/item/clothing/head/helmet/f13/raider/arclight,\
-		/obj/item/clothing/head/helmet/f13/raider/blastmaster,\
-		/obj/item/clothing/head/helmet/f13/raider/yankee,\
-		/obj/item/clothing/head/helmet/f13/raider/psychotic,\
-		/obj/item/clothing/head/helmet/f13/fiend)
+		/obj/item/clothing/under/jabroni \
+		)
+	
 	shoes = pick(
 			/obj/item/clothing/shoes/jackboots,\
-			/obj/item/clothing/shoes/f13/raidertreads)
+			/obj/item/clothing/shoes/f13/raidertreads \
+			)
 
 	suit_store = pick(
 		/obj/item/gun/ballistic/revolver/detective, \
 		/obj/item/gun/ballistic/automatic/pistol/ninemil,\
 		/obj/item/gun/ballistic/automatic/pistol/m1911, \
-		/obj/item/gun/ballistic/automatic/pistol/type17, \
+		/obj/item/gun/ballistic/automatic/pistol/type17 \
 		)
 
 
@@ -271,9 +252,10 @@ Raider
 	head = /obj/item/clothing/head/helmet/f13/raider/yankee
 	backpack_contents = list(
 		/obj/item/shishkebabpack = 1,
-		/obj/item/storage/fancy/cigarettes/cigpack_cannabis=1,
-		/obj/item/megaphone=1,
-		/obj/item/storage/pill_bottle/chem_tin/buffout = 1)
+		/obj/item/storage/fancy/cigarettes/cigpack_cannabis = 1,
+		/obj/item/megaphone = 1,
+		/obj/item/storage/pill_bottle/chem_tin/buffout = 1
+		)
 
 /datum/outfit/loadout/raider_blast
 	name = "Blastmaster"
@@ -299,7 +281,8 @@ Raider
 		/obj/item/restraints/legcuffs/beartrap = 2,
 		/obj/item/reverse_bear_trap = 1,
 		/obj/item/melee/unarmed/lacerator = 1,
-		/obj/item/book/granter/trait/trekking = 1)
+		/obj/item/book/granter/trait/trekking = 1
+		)
 
 /datum/outfit/loadout/raider_badlands
 	name = "Fiend"
@@ -312,7 +295,8 @@ Raider
 		/obj/item/reagent_containers/hypospray/medipen/psycho = 3,
 		/obj/item/reagent_containers/pill/patch/turbo = 2,
 		/obj/item/reagent_containers/hypospray/medipen/medx = 1,
-		/obj/item/book/granter/trait/bigleagues = 1)
+		/obj/item/book/granter/trait/bigleagues = 1
+		)
 
 
 /datum/outfit/loadout/raider_painspike
@@ -324,7 +308,7 @@ Raider
 		/obj/item/ammo_box/shotgun/buck = 1,
 		/obj/item/ammo_box/shotgun/bean = 1,
 		/obj/item/melee/onehanded/club/fryingpan = 1,
-		/obj/item/grenade/chem_grenade/cleaner = 1,
+		/obj/item/grenade/chem_grenade/cleaner = 1
 		)
 
 /datum/outfit/loadout/quack_doctor
@@ -334,14 +318,14 @@ Raider
 	r_hand = /obj/item/book/granter/trait/midsurgery
 	suit_store = /obj/item/gun/energy/laser/wattz
 	backpack_contents = list(
-		/obj/item/stock_parts/cell/ammo/ec=1,
+		/obj/item/stock_parts/cell/ammo/ec = 1,
 		/obj/item/reagent_containers/pill/patch/jet = 3,
 		/obj/item/storage/firstaid/ancient = 1,
 		/obj/item/storage/pill_bottle/aranesp = 1,
 		/obj/item/storage/pill_bottle/happy = 1,
 		/obj/item/book/granter/trait/chemistry = 1,
-		/obj/item/stack/sheet/mineral/silver=2,
-		/obj/item/defibrillator/primitive=1,
+		/obj/item/stack/sheet/mineral/silver = 2,
+		/obj/item/defibrillator/primitive = 1
 		)
 
 /datum/outfit/loadout/raider_ncr
@@ -354,7 +338,8 @@ Raider
 		/obj/item/ammo_box/magazine/m556/rifle=2,
 		/obj/item/melee/onehanded/knife/bayonet = 1,
 		/obj/item/storage/box/ration/ranger_breakfast = 1,
-		/obj/item/book/granter/crafting_recipe/blueprint/r82 = 1)
+		/obj/item/book/granter/crafting_recipe/blueprint/r82 = 1
+		)
 
 /datum/outfit/loadout/raider_legion
 	name = "Disgraced Legionnaire"
@@ -374,10 +359,10 @@ Raider
 	suit = /obj/item/clothing/suit/armor/f13/exile/bosexile
 	id = /obj/item/card/id/rusted/brokenholodog
 	backpack_contents = list(
-		/obj/item/gun/energy/laser/pistol=1,
+		/obj/item/gun/energy/laser/pistol = 1,
 		/obj/item/stock_parts/cell/ammo/ec = 2,
 		/obj/item/book/granter/crafting_recipe/blueprint/aep7 = 1,
-		/obj/item/grenade/f13/frag = 2,
+		/obj/item/grenade/f13/frag = 2
 		)
 
 /datum/outfit/loadout/raider_sheriff
@@ -386,10 +371,11 @@ Raider
 	uniform = /obj/item/clothing/under/syndicate/tacticool
 	head = /obj/item/clothing/head/f13/town/big
 	backpack_contents = list(
-		/obj/item/gun/ballistic/revolver/m29/snub=2,
-		/obj/item/storage/belt/holster=1,
-		/obj/item/ammo_box/m44=3,
-		/obj/item/book/granter/trait/gunslinger = 1)
+		/obj/item/gun/ballistic/revolver/m29/snub = 2,
+		/obj/item/storage/belt/holster = 1,
+		/obj/item/ammo_box/m44 = 3,
+		/obj/item/book/granter/trait/gunslinger = 1
+		)
 
 /datum/outfit/loadout/raider_smith
 	name = "Raider Smith"
@@ -404,7 +390,7 @@ Raider
 		/obj/item/melee/smith/hammer = 1,
 		/obj/item/stack/sheet/mineral/sandstone = 50,
 		/obj/item/book/granter/trait/techno = 1,
-		/obj/item/book/granter/crafting_recipe/scav_one = 1,
+		/obj/item/book/granter/crafting_recipe/scav_one = 1
 		)
 
 /datum/outfit/loadout/raider_vault
@@ -415,7 +401,7 @@ Raider
 	backpack_contents = list(
 		/obj/item/gun/ballistic/automatic/smg/smg10mm = 1,
 		/obj/item/ammo_box/magazine/m10mm_adv/ext = 1,
-		/obj/item/reagent_containers/hypospray/medipen/stimpak/imitation = 2,
+		/obj/item/reagent_containers/hypospray/medipen/stimpak/imitation = 2
 		)
 
 /datum/outfit/loadout/raider_tribal
@@ -431,27 +417,21 @@ Raider
 		/obj/item/clothing/mask/cigarette/pipe = 1,
 		/obj/item/melee/onehanded/knife/bone = 1,
 		/obj/item/radio/tribal = 1,
-		/obj/item/book/granter/trait/bigleagues = 1,
+		/obj/item/book/granter/trait/bigleagues = 1
 		)
-/*
-/datum/outfit/loadout/raider_mobster
-	name = "Den Mob Enforcer"
-	belt = /obj/item/storage/belt/military/assault
-	shoes = /obj/item/clothing/shoes/laceup
-	uniform = /obj/item/clothing/under/f13/densuit
-	suit = /obj/item/clothing/suit/armor/vest
-	gloves =  /obj/item/clothing/gloves/color/white
-	head = /obj/item/clothing/head/fedora
-	mask =  /obj/item/clothing/mask/bandana/durathread
+
+/datum/outfit/loadout/raider_powder
+	name = "Powder Ganger"
+	belt = /obj/item/storage/belt/bandolier
+	uniform = /obj/item/clothing/under/f13/ncrcf
+	suit = /obj/item/clothing/suit/armor/vest/big
 	backpack_contents = list(
-		/obj/item/gun/ballistic/shotgun/police = 1,
 		/obj/item/melee/onehanded/knife/hunting = 1,
 		/obj/item/gun/ballistic/automatic/smg/greasegun = 1,
-		/obj/item/melee/onehanded/knife/switchblade = 1,
 		/obj/item/ammo_box/magazine/greasegun = 2,
-		/obj/item/card/id/dogtag/town/mafia=1,
+		/obj/item/grenade/f13/dynamite = 2
 		)
-*/
+
 /datum/job/wasteland/f13wastelander
 	title = "Wastelander"
 	flag = F13WASTELANDER
@@ -499,7 +479,8 @@ Raider
 	/datum/outfit/loadout/warrior,
 	/datum/outfit/loadout/ncrcitizen,
 	/datum/outfit/loadout/legioncivilian,
-	/datum/outfit/loadout/wastelander_desert_ranger)
+	/datum/outfit/loadout/wastelander_desert_ranger
+	)
 
 /datum/outfit/job/wasteland/f13wastelander
 	name = "Wastelander"
@@ -512,7 +493,7 @@ Raider
 	l_pocket = /obj/item/storage/bag/money/small/wastelander
 	r_pocket = /obj/item/flashlight/flare
 	belt = /obj/item/melee/onehanded/knife/survival
-	backpack = /obj/item/storage/backpack/satchel/explorer
+	backpack = /obj/item/storage/backpack/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
 	backpack_contents = list(
 		/obj/item/reagent_containers/hypospray/medipen/stimpak,
@@ -522,15 +503,11 @@ Raider
 
 /datum/outfit/job/wasteland/f13wastelander/pre_equip(mob/living/carbon/human/H)
 	..()
-	uniform = pick(
-		/obj/item/clothing/under/f13/settler, \
-		/obj/item/clothing/under/f13/brahminm, \
-		/obj/item/clothing/under/f13/lumberjack, \
-		/obj/item/clothing/under/f13/roving)
 	suit = pick(
 		/obj/item/clothing/suit/armor/f13/kit, \
 		/obj/item/clothing/suit/f13/veteran, \
-		/obj/item/clothing/suit/toggle/labcoat/f13/wanderer)
+		/obj/item/clothing/suit/toggle/labcoat/f13/wanderer \
+		)
 
 /datum/outfit/loadout/salvager
 	name = "Salvager"
@@ -539,18 +516,21 @@ Raider
 	gloves = /obj/item/clothing/gloves/f13/blacksmith
 	head = /obj/item/clothing/head/welding
 	r_hand = /obj/item/weldingtool/largetank
-	backpack_contents = list(/obj/item/gun/ballistic/automatic/pistol/m1911=1)
+	backpack_contents = list(/obj/item/gun/ballistic/automatic/pistol/m1911 = 1
+							)
 
 /datum/outfit/loadout/scavenger
 	name = "Scavenger"
+	uniform = /obj/item/clothing/under/f13/lumberjack
 	shoes = /obj/item/clothing/shoes/f13/explorer
 	r_hand = /obj/item/storage/backpack/duffelbag/scavengers
 	l_hand = /obj/item/pickaxe/drill
 	belt = /obj/item/storage/belt
-	backpack_contents = list(/obj/item/mining_scanner=1,
-							/obj/item/metaldetector=1,
-							/obj/item/shovel=1,
-							/obj/item/gun/ballistic/automatic/pistol/m1911=1)
+	backpack_contents = list(/obj/item/mining_scanner = 1,
+							/obj/item/metaldetector = 1,
+							/obj/item/shovel = 1,
+							/obj/item/gun/ballistic/automatic/pistol/m1911 = 1
+							)
 
 /datum/outfit/loadout/settler
 	name = "Settler"
@@ -566,7 +546,7 @@ Raider
 		/obj/item/toy/crayon/spraycan = 1,
 		/obj/item/cultivator = 1,
 		/obj/item/reagent_containers/glass/bucket = 1,
-		/obj/item/storage/bag/plants/portaseeder = 1,
+		/obj/item/storage/bag/plants/portaseeder = 1
 		)
 
 /datum/outfit/loadout/medic
@@ -577,17 +557,17 @@ Raider
 	gloves = /obj/item/clothing/gloves/color/latex
 	neck = /obj/item/clothing/neck/stethoscope
 	belt = /obj/item/storage/belt/medical
-	backpack_contents =  list(/obj/item/reagent_containers/medspray/synthflesh=2,
-							/obj/item/smelling_salts=1,
-							/obj/item/healthanalyzer=1,
-							/obj/item/gun/ballistic/automatic/pistol/m1911=1,
-							/obj/item/reagent_containers/glass/bottle/epinephrine=2,
-							/obj/item/storage/backpack/duffelbag/med/surgery=1,
-							/obj/item/paper_bin=1,
-							/obj/item/folder=1,
-							/obj/item/pen/fountain=1,
-							/obj/item/storage/firstaid/ancient=1,
-		)
+	backpack_contents =  list(/obj/item/reagent_containers/medspray/synthflesh = 2,
+							/obj/item/smelling_salts = 1,
+							/obj/item/healthanalyzer = 1,
+							/obj/item/gun/ballistic/automatic/pistol/m1911 = 1,
+							/obj/item/reagent_containers/glass/bottle/epinephrine = 2,
+							/obj/item/storage/backpack/duffelbag/med/surgery = 1,
+							/obj/item/paper_bin = 1,
+							/obj/item/folder = 1,
+							/obj/item/pen/fountain = 1,
+							/obj/item/storage/firstaid/ancient = 1
+							)
 
 /datum/outfit/loadout/merchant
 	name = "Roving Trader"
@@ -598,8 +578,9 @@ Raider
 	gloves = /obj/item/clothing/gloves/color/brown
 	glasses = /obj/item/clothing/glasses/f13/biker
 	l_hand = /obj/item/gun/ballistic/revolver/caravan_shotgun
-	backpack_contents =  list(/obj/item/storage/box/vendingmachine=1,
-							/obj/item/gun/ballistic/automatic/pistol/m1911=1)
+	backpack_contents =  list(/obj/item/storage/box/vendingmachine = 1,
+							/obj/item/gun/ballistic/automatic/pistol/m1911 = 1
+							)
 
 //end new
 
@@ -611,10 +592,11 @@ Raider
 	suit = /obj/item/clothing/suit/suspenders
 	ears = /obj/item/radio/headset
 	backpack_contents = list(
-		/obj/item/card/id/selfassign=1,
-		/obj/item/gun/ballistic/automatic/pistol/n99=1,
-		/obj/item/ammo_box/magazine/m10mm_adv/simple=2,
-		/obj/item/pda=1,)
+		/obj/item/card/id/selfassign = 1,
+		/obj/item/gun/ballistic/automatic/pistol/n99 = 1,
+		/obj/item/ammo_box/magazine/m10mm_adv/simple = 2,
+		/obj/item/pda = 1
+		)
 
 /datum/outfit/loadout/warrior
 	name = "Wasteland Warrior"
@@ -625,7 +607,7 @@ Raider
 	glasses = /obj/item/clothing/glasses/welding
 	l_hand = /obj/item/shield/riot/buckler/stop
 	backpack_contents = list(
-		/obj/item/melee/onehanded/machete/scrapsabre = 1,
+		/obj/item/melee/onehanded/machete/scrapsabre = 1
 		)
 
 /datum/outfit/loadout/legioncivilian
@@ -639,7 +621,7 @@ Raider
 	id = /obj/item/card/id/dogtag/town/legion
 	l_hand = /obj/item/shield/riot/buckler
 	backpack_contents = list(
-		/obj/item/melee/onehanded/machete = 1,
+		/obj/item/melee/onehanded/machete = 1
 		)
 
 /datum/outfit/loadout/ncrcitizen
@@ -651,7 +633,8 @@ Raider
 	id = /obj/item/card/id/dogtag/town/ncr
 	l_hand = /obj/item/gun/ballistic/automatic/varmint
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/m556/rifle=2)
+		/obj/item/ammo_box/magazine/m556/rifle = 2
+		)
 
 /datum/outfit/loadout/wastelander_desert_ranger
 	name = "Desert Ranger Scout"
@@ -661,32 +644,11 @@ Raider
 	gloves = /obj/item/clothing/gloves/color/brown
 	l_hand = /obj/item/gun/ballistic/revolver/colt357
 	backpack_contents = list(
-		/obj/item/ammo_box/a357=2,
-		/obj/item/binoculars=1,
-		/obj/item/radio=1)
-
-/datum/job/wasteland/f13enforcer
-	title = "Den Mob Enforcer"
-	flag = F13ENFORCER
-	faction = FACTION_WASTELAND
-	social_faction = FACTION_RAIDERS
-	total_positions = 4
-	spawn_positions = 4
-	description = "The mob rules in Yuma. A hitman for the Den's Boss, you are a highly loyal enforcer charged with keeping order among the outlaw groups inhabiting the Den."
-	supervisors = "The Boss."
-	selection_color = "#ff4747"
-	exp_requirements = 600
-	exp_type = EXP_TYPE_WASTELAND
-
-	outfit = /datum/outfit/job/wasteland/f13enforcer
-
-	access = list(ACCESS_DEN)
-	minimal_access = list(ACCESS_DEN)
-
-	loadout_options = list(
-		/datum/outfit/loadout/hitman,
-		/datum/outfit/loadout/bodyguard,
+		/obj/item/ammo_box/a357 = 2,
+		/obj/item/binoculars = 1,
+		/obj/item/radio = 1
 		)
+
 
 //Wasteland Preacher
 /datum/job/wasteland/f13preacher
@@ -869,12 +831,35 @@ Raider
 	backpack =		/obj/item/storage/backpack/cultpack
 	satchel = 		/obj/item/storage/backpack/cultpack
 	backpack_contents = list(
-		/obj/item/camera/spooky = 1, \
-		/obj/item/reagent_containers/food/drinks/flask=1, \
-		/obj/item/reagent_containers/hypospray/medipen/stimpak=2, \
-		/obj/item/storage/fancy/candle_box, \
-		/obj/item/storage/bag/money/small/settler)
-//end preacher
+		/obj/item/camera/spooky = 1, 
+		/obj/item/reagent_containers/food/drinks/flask = 1, 
+		/obj/item/reagent_containers/hypospray/medipen/stimpak = 2, 
+		/obj/item/storage/fancy/candle_box = 1,
+		/obj/item/storage/bag/money/small/settler
+		)
+
+/datum/job/wasteland/f13enforcer
+	title = "Den Mob Enforcer"
+	flag = F13ENFORCER
+	faction = FACTION_WASTELAND
+	social_faction = FACTION_RAIDERS
+	total_positions = 4
+	spawn_positions = 4
+	description = "The mob rules in Yuma. A hitman for the Den's Boss, you are a highly loyal enforcer charged with keeping order among the outlaw groups inhabiting the Den."
+	supervisors = "The Boss."
+	selection_color = "#ff4747"
+	exp_requirements = 600
+	exp_type = EXP_TYPE_WASTELAND
+
+	outfit = /datum/outfit/job/wasteland/f13enforcer
+
+	access = list(ACCESS_DEN)
+	minimal_access = list(ACCESS_DEN)
+
+	loadout_options = list(
+		/datum/outfit/loadout/hitman,
+		/datum/outfit/loadout/bodyguard,
+		)
 
 /datum/outfit/job/wasteland/f13enforcer
 	name = "Den Mob Enforcer"
@@ -893,24 +878,14 @@ Raider
 	head = /obj/item/clothing/head/beret/durathread
 	mask =  /obj/item/clothing/mask/bandana/durathread
 	backpack_contents = list(
-		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
-		/obj/item/restraints/handcuffs=1, \
-		/obj/item/storage/bag/money/small/wastelander)
+		/obj/item/reagent_containers/hypospray/medipen/stimpak = 1, 
+		/obj/item/restraints/handcuffs = 1, 
+		/obj/item/storage/bag/money/small/wastelander
+		)
 
 /datum/outfit/job/wasteland/f13enforcer/pre_equip(mob/living/carbon/human/H)
 	..()
 	r_hand = /obj/item/book/granter/trait/selection
-
-/datum/outfit/job/wasteland/f13enforcer/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	..()
-	if(visualsOnly)
-		return
-
-	if(!H.gang)
-		var/datum/gang/denmob/DM = GLOB.denmob
-		GLOB.all_gangs |= DM
-		DM.add_member(H)
-		H.gang = DM
 
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/set_vrboard/den)
 
@@ -919,8 +894,8 @@ Raider
 	r_hand = /obj/item/gun/ballistic/automatic/smg/mini_uzi
 	suit = /obj/item/clothing/suit/armor/vest
 	backpack_contents = list(
-						/obj/item/ammo_box/magazine/uzim9mm=3, \
-						/obj/item/suppressor=1
+						/obj/item/ammo_box/magazine/uzim9mm = 3,
+						/obj/item/suppressor = 1
 						)
 
 /datum/outfit/loadout/bodyguard
@@ -929,7 +904,7 @@ Raider
 	suit = /obj/item/clothing/suit/armor/vest
 	backpack_contents = list(
 		/obj/item/ammo_box/shotgun/buck = 2,
-		/obj/item/melee/onehanded/knife/hunting = 1,
+		/obj/item/melee/onehanded/knife/hunting = 1
 		)
 
 
@@ -986,36 +961,27 @@ Raider
 	head = /obj/item/clothing/head/caphat/beret/white
 	mask = /obj/item/clothing/mask/bandana/durathread
 	backpack_contents = list(
-		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
-		/obj/item/restraints/handcuffs=1, \
-		/obj/item/storage/bag/money/small/raider/mobboss, \
-		/obj/item/book/granter/crafting_recipe/manual/denvr)
+		/obj/item/reagent_containers/hypospray/medipen/stimpak = 1,
+		/obj/item/restraints/handcuffs = 1,
+		/obj/item/storage/bag/money/small/raider/mobboss, 
+		/obj/item/book/granter/crafting_recipe/manual/denvr
+		)
 
-/datum/outfit/job/wasteland/f13mobboss/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	..()
-	if(visualsOnly)
-		return
-
-	if(!H.gang)
-		var/datum/gang/denmob/DM = GLOB.denmob
-		GLOB.all_gangs |= DM
-		DM.add_member(H)
-		H.gang = DM
 
 /datum/outfit/loadout/ncrrdenboss
 	name = "Central Cali Den Boss"
 	backpack_contents = list(
-							/obj/item/ammo_box/tube/a357=4, \
-							/obj/item/book/granter/trait/trekking=1, \
-							/obj/item/gun/ballistic/revolver/colt357/brassgun=2, \
-							/obj/item/book/granter/trait/gunslinger=1, \
+							/obj/item/ammo_box/tube/a357 = 4, 
+							/obj/item/book/granter/trait/trekking = 1, 
+							/obj/item/gun/ballistic/revolver/colt357/brassgun = 2, 
+							/obj/item/book/granter/trait/gunslinger = 1
 							)
 
 /datum/outfit/loadout/truedenmob
 	name = "True Den Boss"
 	r_hand = /obj/item/gun/ballistic/automatic/smg/tommygun
 	backpack_contents = list(
-							/obj/item/ammo_box/magazine/tommygunm45/stick=3, \
+							/obj/item/ammo_box/magazine/tommygunm45/stick = 3 
 							)
 
 datum/job/wasteland/f13dendoctor
@@ -1076,24 +1042,14 @@ datum/job/wasteland/f13dendoctor
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/set_vrboard/den)
 
 
-/datum/outfit/job/wasteland/f13dendoctor/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	..()
-	if(visualsOnly)
-		return
-
-	if(!H.gang)
-		var/datum/gang/denmob/DM = GLOB.denmob
-		GLOB.all_gangs |= DM
-		DM.add_member(H)
-		H.gang = DM
 /*
 /datum/outfit/loadout/dencombatmedic
 	name = "Combat medic"
 	r_hand = /obj/item/gun/ballistic/automatic/smg/tommygun
 	suit = /obj/item/clothing/suit/toggle/labcoat/chemist
 	backpack_contents = list(
-							/obj/item/clothing/glasses/hud/health/f13=1, \
-							/obj/item/ammo_box/magazine/tommygunm45/stick=2, \
+							/obj/item/clothing/glasses/hud/health/f13 = 1,
+							/obj/item/ammo_box/magazine/tommygunm45/stick = 2
 							)
 */
 /datum/outfit/loadout/denchemist
@@ -1101,10 +1057,10 @@ datum/job/wasteland/f13dendoctor
 	r_hand = /obj/item/gun/ballistic/automatic/pistol/type17
 	suit = /obj/item/clothing/suit/toggle/labcoat/chemist
 	backpack_contents = list(
-						/obj/item/ammo_box/magazine/m10mm_adv/simple=1, \
-						/obj/item/grenade/chem_grenade=1, \
-						/obj/item/clothing/mask/gas=1, \
-						/obj/item/reagent_containers/glass/beaker/large=2 \
+						/obj/item/ammo_box/magazine/m10mm_adv/simple = 1, 
+						/obj/item/grenade/chem_grenade = 1,
+						/obj/item/clothing/mask/gas = 1, 
+						/obj/item/reagent_containers/glass/beaker/large = 2 
 						)
 
 
@@ -1327,7 +1283,7 @@ datum/job/wasteland/f13dendoctor
 	satchel = /obj/item/storage/backpack/satchel/explorer
 	backpack_contents = list(
 		/obj/item/reagent_containers/pill/patch/healingpowder = 2,
-		/obj/item/flashlight/lantern = 1,
+		/obj/item/flashlight/lantern = 1
 		)
 
 //Generic Tribals
@@ -1339,7 +1295,7 @@ datum/job/wasteland/f13dendoctor
 		/obj/item/twohanded/fireaxe/bmprsword = 1,
 		/obj/item/restraints/legcuffs/bola = 2,
 		/obj/item/reagent_containers/pill/patch/healpoultice = 2,
-		/obj/item/stack/medical/gauze = 1,
+		/obj/item/stack/medical/gauze = 1
 		)
 
 /datum/outfit/loadout/spearman
@@ -1357,14 +1313,14 @@ datum/job/wasteland/f13dendoctor
 	name = "Tribal Shaman"
 	suit = /obj/item/clothing/suit/hooded/cloak/desert
 	backpack_contents = list(
-		/obj/item/storage/bag/plants=1,
-		/obj/item/cultivator=1,
-		/obj/item/reagent_containers/glass/bucket/wood=1,
+		/obj/item/storage/bag/plants = 1,
+		/obj/item/cultivator = 1,
+		/obj/item/reagent_containers/glass/bucket/wood = 1,
 		/obj/item/twohanded/sledgehammer/warmace = 1,
 		/obj/item/melee/onehanded/knife/ritualdagger = 1,
 		/obj/item/stack/medical/gauze/improvised = 1,
 		/obj/item/reagent_containers/pill/patch/healingpowder = 1,
-		/obj/item/book/granter/crafting_recipe/tribal = 1,
+		/obj/item/book/granter/crafting_recipe/tribal = 1
 	)
 
 //White Legs
@@ -1376,7 +1332,7 @@ datum/job/wasteland/f13dendoctor
 		/obj/item/clothing/under/f13/female/whitelegs = 1,
 		/obj/item/melee/unarmed/maceglove = 1,
 		/obj/item/gun/ballistic/automatic/pistol/ninemil = 1,
-		/obj/item/reagent_containers/pill/patch/healpoultice = 1,
+		/obj/item/reagent_containers/pill/patch/healpoultice = 1
 	)
 
 /datum/outfit/loadout/whitelegsranged
@@ -1419,9 +1375,9 @@ datum/job/wasteland/f13dendoctor
 	backpack_contents = list(
 		/obj/item/clothing/under/f13/deadhorses = 1,
 		/obj/item/clothing/under/f13/female/deadhorses = 1,
-		/obj/item/gun/ballistic/automatic/pistol/m1911=1,
+		/obj/item/gun/ballistic/automatic/pistol/m1911 = 1,
 		/obj/item/ammo_box/magazine/m45 = 2,
-		/obj/item/reagent_containers/pill/patch/healpoultice =2
+		/obj/item/reagent_containers/pill/patch/healpoultice = 2
 	)
 
 /datum/outfit/loadout/deadhorsesshaman
@@ -1429,9 +1385,9 @@ datum/job/wasteland/f13dendoctor
 	backpack_contents = list(
 		/obj/item/clothing/under/f13/deadhorses = 1,
 		/obj/item/clothing/under/f13/female/deadhorses = 1,
-		/obj/item/storage/bag/plants=1,
-		/obj/item/cultivator=1,
-		/obj/item/reagent_containers/glass/bucket/wood=1,
+		/obj/item/storage/bag/plants = 1,
+		/obj/item/cultivator = 1,
+		/obj/item/reagent_containers/glass/bucket/wood = 1,
 		/obj/item/reagent_containers/pill/patch/healingpowder = 2,
 		/obj/item/book/granter/crafting_recipe/tribal/deadhorses = 1
 	)
@@ -1515,7 +1471,7 @@ datum/job/wasteland/f13dendoctor
 		/obj/item/clothing/under/f13/wayfarer = 1,
 		/obj/item/clothing/head/helmet/f13/wayfarer/hunter = 1,
 		/obj/item/twohanded/spear/bonespear = 1,
-		/obj/item/reagent_containers/pill/patch/bitterdrink = 1,
+		/obj/item/reagent_containers/pill/patch/bitterdrink = 1
 	)
 
 /datum/outfit/loadout/wayfarerranged
@@ -1528,17 +1484,17 @@ datum/job/wasteland/f13dendoctor
 		/obj/item/storage/belt/tribe_quiver/bone = 1,
 		/obj/item/storage/belt/tribe_quiver = 1,
 		/obj/item/binoculars = 1,
-		/obj/item/melee/onehanded/club/warclub = 1,
+		/obj/item/melee/onehanded/club/warclub = 1
 		)
 
 /datum/outfit/loadout/wayfarershaman
 	name = "Wayfarer Shaman"
 	suit = /obj/item/clothing/suit/armor/f13/lightcloak
 	backpack_contents = list(
-		/obj/item/storage/bag/plants=1,
-		/obj/item/cultivator=1,
-		/obj/item/reagent_containers/glass/bucket/wood=1,
-		/obj/item/warpaint_bowl=1,
+		/obj/item/storage/bag/plants = 1,
+		/obj/item/cultivator = 1,
+		/obj/item/reagent_containers/glass/bucket/wood = 1,
+		/obj/item/warpaint_bowl = 1,
 		/obj/item/melee/onehanded/knife/ritualdagger = 1,
 		/obj/item/stack/medical/gauze/improvised = 1,
 		/obj/item/reagent_containers/pill/patch/healingpowder = 1,
@@ -1568,7 +1524,7 @@ datum/job/wasteland/f13dendoctor
 		/obj/item/ammo_box/c10mm = 1,
 		/obj/item/circular_saw = 1,
 		/obj/item/storage/belt/utility/full = 1,
-		/obj/item/reagent_containers/pill/patch/healpoultice = 1,
+		/obj/item/reagent_containers/pill/patch/healpoultice = 1
 	)
 
 /datum/outfit/loadout/rustwalkersshaman
@@ -1582,8 +1538,8 @@ datum/job/wasteland/f13dendoctor
 		/obj/item/reagent_containers/pill/patch/healpoultice = 2,
 		/obj/item/storage/belt/utility/full = 1,
 		/obj/item/book/granter/crafting_recipe/tribal/rustwalkers = 1
-
 	)
+
 //Bone Dancer
 /datum/outfit/loadout/bonedancerexile
 	name = "Bone Dancer Exile"
@@ -1592,7 +1548,6 @@ datum/job/wasteland/f13dendoctor
 		/obj/item/clothing/head/helmet/skull/bone = 1,
 		/obj/item/book/granter/crafting_recipe/tribal/bone = 1,
 		/obj/item/twohanded/spear/bonespear = 1,
-		/obj/item/warpaint_bowl=1,
+		/obj/item/warpaint_bowl = 1,
 		/obj/item/reagent_containers/pill/patch/healpoultice = 2
-
 	)

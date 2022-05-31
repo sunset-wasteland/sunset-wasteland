@@ -1,3 +1,4 @@
+/* The Wasteland edit
 /obj/item/integrated_circuit/weaponized
 	category_text = "Weaponized"
 
@@ -349,3 +350,4 @@
 		H.forcesay(GLOB.hit_appends)
 
 	return 1
+ */

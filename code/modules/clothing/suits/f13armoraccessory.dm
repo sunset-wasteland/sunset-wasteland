@@ -82,4 +82,4 @@
 /obj/item/clothing/armoraccessory/kevlar
 	name = "kevlar plating"
 	desc = "Light-weight kevlar plates that slide in underneath your armor, increasing your protection against projectiles."
-	armor = list("linemelee" = 20)
+	armor = list("bullet" = 20)

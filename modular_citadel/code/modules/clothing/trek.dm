@@ -35,7 +35,7 @@
 	icon_state = "trek_ds9_coat_adm"
 	item_state = "trek_ds9_coat_adm"
 	permeability_coefficient = 0.01
-	armor = list("linemelee" = 100, "linebullet" = 100, "linelaser" = 100,"energy" = 50, "bomb" = 50, "bio" = 50, "rad" = 50, "fire" = 50, "acid" = 50)
+	armor = list("melee" = 100, "bullet" = 100, "laser" = 100,"energy" = 100, "bomb" = 100, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100, "wound" = 1000)
 
 //MODERN ish Joan sqrl sprites. I think
 

@@ -244,11 +244,6 @@
 	},
 /obj/item/reagent_containers/blood/OMinus,
 /obj/item/clothing/gloves/color/latex/nitrile,
-/obj/item/surgical_drapes,
-/obj/item/stack/sticky_tape/surgical{
-	pixel_x = -11;
-	pixel_y = 8
-	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
 	icon_state = "whitedirtysolid"
 	},
@@ -1125,11 +1120,6 @@
 /obj/structure/closet/cabinet{
 	anchored = 1;
 	name = "formal attire cabinet"
-	},
-/obj/item/clothing/accessory/bos/elder,
-/obj/item/clothing/suit/f13/elder,
-/obj/item/pda/heads/hop{
-	name = "Elder's PDA"
 	},
 /turf/open/floor/carpet/black,
 /area/f13/brotherhood/offices2nd)
@@ -7173,9 +7163,12 @@
 /obj/item/stock_parts/cell/ammo/ecp,
 /obj/item/stock_parts/cell/ammo/ecp,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/small,
 /obj/effect/turf_decal/stripes/red/line{
 	dir = 8
+	},
+/obj/machinery/light/small{
+	dir = 8;
+	light_color = "red"
 	},
 /turf/open/floor/f13{
 	icon_state = "reddirtyfull"
@@ -17838,16 +17831,10 @@
 /obj/structure/table{
 	layer = 2.9
 	},
-/obj/item/hemostat,
-/obj/item/retractor,
-/obj/item/scalpel,
-/obj/item/circular_saw,
-/obj/item/surgicaldrill,
-/obj/item/cautery,
-/obj/item/bonesetter,
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/item/storage/backpack/duffelbag/med/surgery,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
 	icon_state = "whitedirtysolid"
 	},
@@ -19560,6 +19547,10 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/stripes/red/line{
 	dir = 8
+	},
+/obj/machinery/light/small{
+	dir = 8;
+	light_color = "red"
 	},
 /turf/open/floor/f13{
 	icon_state = "reddirtyfull"
@@ -23168,6 +23159,7 @@
 /obj/item/storage/belt/utility/full,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/bot_red,
+/obj/machinery/light/small,
 /turf/open/floor/f13{
 	icon_state = "reddirtyfull"
 	},

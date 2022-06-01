@@ -74,8 +74,6 @@ GLOBAL_DATUM_INIT(greatkhans, /datum/gang/greatkhans, new)
 		/datum/gang_item/weapon/brass,
 
 		/datum/gang_item/equipment/emp,
-		/datum/gang_item/equipment/stinger,
-		/datum/gang_item/equipment/he,
 
 		/datum/gang_item/weapon/shuriken,
 		/datum/gang_item/equipment/necklace,

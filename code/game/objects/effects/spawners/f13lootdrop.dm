@@ -2031,9 +2031,9 @@ obj/effect/spawner/bundle/f13/combat_rifle
 				/obj/item/book/granter/trait/explosives = 10,
 				/obj/item/book/granter/trait/explosives_advanced = 5,
 				/obj/item/book/granter/trait/rifleman = 5,
-				/obj/item/book/granter/crafting_recipe/gunsmith_two = 20,
-				/obj/item/book/granter/crafting_recipe/gunsmith_three = 10,
-				/obj/item/book/granter/crafting_recipe/gunsmith_four = 10
+				/obj/item/book/granter/crafting_recipe/gunsmithing/gunsmith_two = 20,
+				/obj/item/book/granter/crafting_recipe/gunsmithing/gunsmith_three = 10,
+				/obj/item/book/granter/crafting_recipe/gunsmithing/gunsmith_four = 10
 				)
 
 /obj/effect/spawner/lootdrop/f13/traitbooks/low
@@ -2047,7 +2047,7 @@ obj/effect/spawner/bundle/f13/combat_rifle
 				/obj/item/book/granter/trait/explosives = 10,
 				/obj/item/book/granter/crafting_recipe/ODF = 10,
 				/obj/item/book/granter/action/drink_fling = 10,
-				/obj/item/book/granter/crafting_recipe/gunsmith_one = 10,
+				/obj/item/book/granter/crafting_recipe/gunsmithing/gunsmith_one = 10,
 				)
 /obj/effect/spawner/lootdrop/f13/blueprintLow
 	name = "gun comps spawner"

@@ -868,10 +868,10 @@ GLOBAL_LIST_INIT(loot_skillbook, list(
 	/obj/item/book/granter/trait/chemistry,
 	/obj/item/book/granter/trait/trekking,
 	/obj/item/book/granter/trait/pa_wear,
-	/obj/item/book/granter/crafting_recipe/gunsmith_one,
-	/obj/item/book/granter/crafting_recipe/gunsmith_two,
-	/obj/item/book/granter/crafting_recipe/gunsmith_three,
-	/obj/item/book/granter/crafting_recipe/gunsmith_four
+	/obj/item/book/granter/crafting_recipe/gunsmithing/gunsmith_one,
+	/obj/item/book/granter/crafting_recipe/gunsmithing/gunsmith_two,
+	/obj/item/book/granter/crafting_recipe/gunsmithing/gunsmith_three,
+	/obj/item/book/granter/crafting_recipe/gunsmithing/gunsmith_four
 ))
 
 GLOBAL_LIST_INIT(loot_craft_advanced, list(

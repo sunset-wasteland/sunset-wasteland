@@ -103,19 +103,19 @@
 	var/datum/component/material_container/materials = GetComponent(/datum/component/material_container)
 	materials.retrieve_all()
 
-/obj/machinery/autolathe/attackby(obj/item/O, mob/user, params)
+/obj/machinery/autolathe/attackby(obj/item/I, mob/user, params)
 	if(busy)
 		to_chat(user, "<span class=\"alert\">The autolathe is busy. Please wait for completion of previous operation.</span>")
 		return TRUE
 
-	if(default_deconstruction_screwdriver(user, "autolathe_t", "autolathe", O))
+	if(default_deconstruction_screwdriver(user, "autolathe_t", "autolathe", I))
 		updateUsrDialog()
 		return TRUE
 
-	if(default_deconstruction_crowbar(O))
+	if(default_deconstruction_crowbar(I))
 		return TRUE
 
-	if(panel_open && is_wire_tool(O))
+	if(panel_open && is_wire_tool(I))
 		wires.interact(user)
 		return TRUE
 
@@ -125,12 +125,12 @@
 	if(stat)
 		return TRUE
 
-	if(istype(O, /obj/item/disk/design_disk))
-		user.visible_message("[user] begins to load \the [O] in \the [src]...",
-			"You begin to load a design from \the [O]...",
+	if(istype(I, /obj/item/disk/design_disk))
+		user.visible_message("[user] begins to load \the [I] in \the [src]...",
+			"You begin to load a design from \the [I]...",
 			"You hear the chatter of a floppy drive.")
 		busy = TRUE
-		var/obj/item/disk/design_disk/D = O
+		var/obj/item/disk/design_disk/D = I
 		if(do_after(user, 14.4, target = src))
 			for(var/B in D.blueprints)
 				if(B)
@@ -494,71 +494,6 @@
 							"Dinnerware",
 							)
 
-/*
-/obj/machinery/autolathe/constructionlathe/attackby(obj/item/O, mob/user, params)
-	..()
-	if(DRM && panel_open)
-		if(constage == 0)
-			if(istype(O, /obj/item/book/granter/crafting_recipe/gunsmith_four))
-				to_chat(user, "<span class='notice'>You upgrade [src] with ammunition schematics. You'll still need to bypass the DRM with some high-quality metal parts.</span>")
-				constage = 1
-				qdel(O)
-		if(constage == 1)
-			if(istype(O, /obj/item/stack/crafting/goodparts))
-				var/obj/item/stack/crafting/goodparts/S = O
-				if(S.get_amount() < 5)
-					to_chat(user, "<span class='warning'>You need at least 5 high-quality metal parts to upgrade [src].</span>")
-					return
-				S.use(5)
-				to_chat(user, "<span class='notice'>You upgrade [src] to bypass the DRM. You'll still need to install a makeshift reloader to finish the process.</span>")
-				constage = 2
-		if(constage == 2)
-			if(istype(O, /obj/item/crafting/reloader))
-				to_chat(user, "<span class='notice'>You upgrade [src] with a makeshift reloader, allowing it to finally produce ammunition again.</span>")
-				constage = 3
-				DRM = 0
-				categories = list(
-							"Tools",
-							"Electronics",
-							"Construction",
-							"T-Comm",
-							"Security",
-							"Machinery",
-							"Medical",
-							"Misc",
-							"Dinnerware",
-							)
-				hacked = TRUE
-				name = "Workshop"
-				desc = "Contains an array of custom made and skilled tools for professional craftsmen."
-				qdel(O)
-	if(panel_open)
-		default_deconstruction_crowbar(O)
-		return TRUE
-	else
-		attack_hand(user)
-		return TRUE
-
-
-/obj/machinery/autolathe/constructionlathe/can_build(datum/design/D, amount = 1)
-	if("Security" in D.category)
-		if(DRM == 1)
-			return FALSE
-		else
-			. = ..()
-	else
-		. = ..()
-
-/obj/machinery/autolathe/ui_interact(mob/user)
-	if(isliving(user))
-		var/mob/living/L = user
-		if(L.has_trait(TRAIT_TECHNOPHOBE, TRAIT_GENERIC))
-			to_chat(user, "<span class='warning'>The array of simplistic button pressing confuses you. Besides, did you really want to spend all day staring at a screen?</span>")
-			return FALSE
-		else
-			. = ..()
-*/
-
 /obj/machinery/autolathe/ammo
 	name = "reloading bench"
 	icon = 'icons/obj/machines/reloadingbench.dmi'
@@ -581,114 +516,82 @@
 		/datum/material/titanium,
 		/datum/material/blackpowder,
 		/datum/material/uranium)
-	var/simple = 0
-	var/basic = 0
-	var/intermediate = 0
-	var/advanced = 0
+	var/simple = FALSE
+	var/basic = FALSE
+	var/intermediate = FALSE
+	var/advanced = FALSE
 	tooadvanced = TRUE //technophobes will still need to be able to make ammo	//not anymore they wont
-/obj/machinery/autolathe/ammo/attackby(obj/item/O, mob/user, params)
-	..()
-	if(!simple && panel_open)
-		if(istype(O, /obj/item/book/granter/crafting_recipe/gunsmith_one))
-			to_chat(user, "<span class='notice'>You upgrade [src] with simple ammunition schematics.</span>")
-			simple = 1
-			qdel(O)
-	if(!basic && panel_open)
-		if(istype(O, /obj/item/book/granter/crafting_recipe/gunsmith_two))
-			to_chat(user, "<span class='notice'>You upgrade [src] with basic ammunition schematics.</span>")
-			basic = 1
-			qdel(O)
-	if(!intermediate && panel_open)
-		if(istype(O, /obj/item/book/granter/crafting_recipe/gunsmith_three))
-			to_chat(user, "<span class='notice'>You upgrade [src] with intermediate ammunition schematics.</span>")
-			intermediate = 1
-			qdel(O)
-	if(!advanced && panel_open)
-		if(istype(O, /obj/item/book/granter/crafting_recipe/gunsmith_four))
-			to_chat(user, "<span class='notice'>You upgrade [src] with advanced ammunition schematics.</span>")
-			advanced = 1
-			qdel(O)
-	else
-		attack_hand(user)
-		return TRUE
+
+/obj/machinery/autolathe/ammo/examine(mob/user)
+	. = ..()
+
+	if(simple)
+		. += "<span class='notice'>It is upgraded with simple ammuniton schematics."
+	if(basic)
+		. += "<span class='notice'>It is upgraded with basic ammuniton schematics."
+	if(intermediate)
+		. += "<span class='notice'>It is upgraded with intermediate ammuniton schematics."
+	if(advanced)
+		. += "<span class='notice'>It is upgraded with advanced ammuniton schematics."
+
+/obj/machinery/autolathe/ammo/attackby(obj/item/I, mob/user, params)
+	. = ..()
+	if(!panel_open)
+		return
+
+	if(I.type in typesof(/obj/item/book/granter/crafting_recipe/gunsmithing))
+		var/obj/item/book/granter/crafting_recipe/gunsmithing/inserted_book = I
+		to_chat(user, "<span class='notice'>You upgrade [src] with [inserted_book.autolathe_level] ammunition schematics.</span>")
+		switch(inserted_book.autolathe_level)
+			if("simple")
+				simple = TRUE
+				qdel(I)
+			if("basic")
+				basic = TRUE
+				qdel(I)
+			if("intermediate")
+				intermediate = TRUE
+				qdel(I)
+			if("advanced")
+				advanced = TRUE
+				qdel(I)
 
 /obj/machinery/autolathe/ammo/can_build(datum/design/D, amount = 1)
-	if("Simple Ammo" in D.category)
-		if(simple == 0)
+	if(("Simple Ammo" || "Simple Magazines") in D.category)
+		if(!simple)
 			return FALSE
-		else
-			. = ..()
-	else
-		. = ..()
-	if("Simple Magazines" in D.category)
-		if(simple == 0)
+
+	if(("Basic Ammo" || "Basic Magazines") in D.category)
+		if(!basic)
 			return FALSE
-		else
-			. = ..()
-	else
-		. = ..()
-	if("Basic Ammo" in D.category)
-		if(basic == 0)
+
+	if(("Intermediate Ammo" || "Intermediate Magazines") in D.category)
+		if(!intermediate)
 			return FALSE
-		else
-			. = ..()
-	else
-		. = ..()
-	if("Basic Magazines" in D.category)
-		if(basic == 0)
+
+	if(("Advanced Ammo" || "Advanced Magazines") in D.category)
+		if(!advanced)
 			return FALSE
-		else
-			. = ..()
-	else
-		. = ..()
-	if("Intermediate Ammo" in D.category)
-		if(intermediate == 0)
-			return FALSE
-		else
-			. = ..()
-	else
-		. = ..()
-	if("Intermediate Magazines" in D.category)
-		if(intermediate == 0)
-			return FALSE
-		else
-			. = ..()
-	else
-		. = ..()
-	if("Advanced Ammo" in D.category)
-		if(advanced == 0)
-			return FALSE
-		else
-			. = ..()
-	else
-		. = ..()
-	if("Advanced Magazines" in D.category)
-		if(advanced == 0)
-			return FALSE
-		else
-			. = ..()
-	else
-		. = ..()
+	return ..()
 
 /obj/machinery/autolathe/ammo/on_deconstruction()
-	..()
+	. = ..()
 	if(simple)
-		new /obj/item/book/granter/crafting_recipe/gunsmith_one(src)
+		new /obj/item/book/granter/crafting_recipe/gunsmithing/gunsmith_one(src.loc)
 	if(basic)
-		new /obj/item/book/granter/crafting_recipe/gunsmith_two(src)
+		new /obj/item/book/granter/crafting_recipe/gunsmithing/gunsmith_two(src.loc)
 	if(intermediate)
-		new /obj/item/book/granter/crafting_recipe/gunsmith_three(src)
+		new /obj/item/book/granter/crafting_recipe/gunsmithing/gunsmith_three(src.loc)
 	if(advanced)
-		new /obj/item/book/granter/crafting_recipe/gunsmith_four(src)
-	return
+		new /obj/item/book/granter/crafting_recipe/gunsmithing/gunsmith_four(src.loc)
 
 /obj/machinery/autolathe/ammo/unlocked_basic
 	desc = "A ammo bench where you can make ammo and magazines. Copies of Guns and Ammo, parts one and two, can be found in a drawer."
-	simple = 1
-	basic = 1
+	simple = TRUE
+	basic = TRUE
 
 /obj/machinery/autolathe/ammo/unlocked
-	simple = 1
-	basic = 1
-	intermediate = 1
-	advanced = 1
+	simple = TRUE
+	basic = TRUE
+	intermediate = TRUE
+	advanced = TRUE

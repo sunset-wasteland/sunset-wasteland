@@ -34,6 +34,8 @@
 	log_combat(user, M, "attempted to inject", src, "([contained])")
 
 	if(reagents.total_volume && (ignore_flags || M.can_inject(user, 1))) // Ignore flag should be checked first or there will be an error message.
+		if(!(user == M) && !do_mob(user, M))
+			return
 		to_chat(M, "<span class='warning'>You feel a tiny prick!</span>")
 		to_chat(user, "<span class='notice'>You inject [M] with [src].</span>")
 
@@ -47,7 +49,6 @@
 				trans = reagents.copy_to(M, amount_per_transfer_from_this)
 
 			to_chat(user, "<span class='notice'>[trans] unit\s injected.  [reagents.total_volume] unit\s remaining in [src].</span>")
-
 
 			log_combat(user, M, "injected", src, "([contained])")
 

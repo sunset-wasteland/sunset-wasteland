@@ -331,7 +331,8 @@
 	var/static/list/med_icons
 	if(!med_icons)
 		med_icons = list(
-		"Default" = image(icon = 'icons/mob/robots.dmi', icon_state = "medical")
+		"Default" = image(icon = 'icons/mob/robots.dmi', icon_state = "medical"
+		"Medical Assaultron" = image(icon = 'icons/mob/robots.dmi', icon_state = "assaultron_sase")
 		)
 		med_icons = sortList(med_icons)
 	var/med_borg_icon = show_radial_menu(R, R , med_icons, custom_check = CALLBACK(src, .proc/check_menu, R), radius = 42, require_near = TRUE)

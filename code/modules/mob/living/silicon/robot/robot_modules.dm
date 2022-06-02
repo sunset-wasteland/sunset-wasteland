@@ -331,7 +331,7 @@
 	var/static/list/med_icons
 	if(!med_icons)
 		med_icons = list(
-		"Default" = image(icon = 'icons/mob/robots.dmi', icon_state = "medical"
+		"Default" = image(icon = 'icons/mob/robots.dmi', icon_state = "medical")
 		"Medical Assaultron" = image(icon = 'icons/mob/robots.dmi', icon_state = "assaultron_sase")
 		)
 		med_icons = sortList(med_icons)

@@ -35,10 +35,12 @@
 
 /obj/machinery/computer/slot_machine/Initialize()
 	. = ..()
+	var/obj/item/circuitboard/computer/slot_machine/crct = circuit
 	jackpots = rand(1, 4) //false hope
 	plays = rand(75, 200)
-	if(prob(25))
-		give_money(rand(5, 100))
+	if(prob(25) && crct.start_cash)
+		give_money(rand(1, 125))
+		crct.start_cash = FALSE
 
 	INVOKE_ASYNC(src, .proc/toggle_reel_spin, TRUE)//The reels won't spin unless we activate them
 
@@ -103,7 +105,7 @@
 		dat = reeltext
 
 	else
-		dat = {"Five credits to play!<BR>
+		dat = {"[SPIN_PRICE] caps to play!<BR>
 		<B>Prize Money Available:</B> [money] (jackpot payout is ALWAYS 100%!)<BR>
 		<B>Caps Remaining:</B> [balance]<BR>
 		[plays] players have tried their luck today, and [jackpots] have won a jackpot!<BR>

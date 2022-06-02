@@ -652,8 +652,8 @@
 			return FALSE
 	return ..()
 
-/obj/item/robot_module/gutsy
-	name = "Gutsy"
+	/obj/item/robot_module/gutsy
+	name = "Military"
 	basic_modules = list( //Security borg
 		/obj/item/assembly/flash/cyborg,
 		/obj/item/extinguisher/mini,
@@ -670,8 +670,17 @@
 		/obj/item/clockwork/weapon/ratvarian_spear)
 	borghealth = 300
 	cyborg_base_icon = "gutsy"
-	moduleselect_icon = "standard"
+	moduleselect_icon = "gutsy"
 	hat_offset = -2
+
+/obj/item/robot_module/gutsy/be_transformed_to(obj/item/robot_module/old_module)
+	var/mob/living/silicon/robot/R = loc
+	var/static/list/gutsy_icons
+	if(!gutsy_icons)
+		gutsy_icons = list(
+		"Gutsy" = image(icon = 'icons/mob/robots.dmi', icon_state = "gutsy"),
+		"Assaultron" = image(icon = 'icons/mob/robots.dmi', icon_state = "assaultron"),
+		)
 
 /obj/item/robot_module/assaultron
 	name = "Assaultron"

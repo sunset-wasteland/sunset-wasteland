@@ -699,6 +699,7 @@
 	metabolization_rate = 0.5 * REM //So it instantly removes all of itself
 	taste_description = "slime"
 	value = REAGENT_VALUE_RARE
+	can_synth = FALSE
 	var/datum/species/race = /datum/species/human
 	var/list/mutationtexts =   list("You don't feel very well." = MUT_MSG_IMMEDIATE,
 									"Your skin feels a bit abnormal." = MUT_MSG_IMMEDIATE,

@@ -632,6 +632,9 @@
 /obj/item/reagent_containers/hypospray/medipen/stimpak,
 /obj/item/stack/medical/suture,
 /obj/item/stack/medical/mesh,
+/obj/structure/sign/warning{
+	pixel_x = -32
+	},
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
@@ -651,8 +654,13 @@
 	},
 /area/f13/bunker)
 "ml" = (
-/obj/structure/sign/poster/contraband/pinup_ride,
-/turf/closed/wall/r_wall/rust,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/sign/poster/contraband/pinup_bed{
+	pixel_y = -32
+	},
+/turf/open/floor/plating/tunnel{
+	icon_state = "tunnelrusty"
+	},
 /area/f13/bunker)
 "mo" = (
 /obj/effect/decal/cleanable/blood/splatter/xeno,
@@ -1184,12 +1192,24 @@
 /turf/open/floor/plasteel/f13/vault_floor/red,
 /area/f13/bunker)
 "ww" = (
-/obj/structure/sign/poster/contraband/pinup_shower,
-/turf/closed/wall/r_wall/rust,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/sign/warning/biohazard{
+	pixel_x = -32
+	},
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
 /area/f13/bunker)
 "wy" = (
-/obj/structure/sign/poster/contraband/pinup_funk,
-/turf/closed/wall/r_wall/rust,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/sign/warning{
+	pixel_x = 32
+	},
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
 /area/f13/bunker)
 "wR" = (
 /obj/structure/timeddoor,
@@ -1357,6 +1377,9 @@
 /area/f13/bunker)
 "zK" = (
 /obj/structure/wreck/trash/machinepiletwo,
+/obj/structure/sign/poster/contraband/pinup_pink{
+	pixel_x = -32
+	},
 /turf/open/floor/plasteel/f13/vault_floor/red,
 /area/f13/bunker)
 "zV" = (
@@ -1661,8 +1684,10 @@
 /turf/open/floor/plasteel/f13/vault_floor/red,
 /area/f13/bunker)
 "Ek" = (
-/obj/structure/sign/poster/contraband/pinup_pink,
-/turf/closed/wall/r_wall/rust,
+/obj/structure/sign/poster/contraband/pinup_shower{
+	pixel_y = -32
+	},
+/turf/open/floor/plasteel/f13/vault_floor/red,
 /area/f13/bunker)
 "En" = (
 /obj/structure/table,
@@ -1816,8 +1841,11 @@
 /turf/open/floor/plating/tunnel,
 /area/f13/bunker)
 "GL" = (
-/obj/structure/sign/poster/contraband/pinup_bed,
-/turf/closed/wall/r_wall/rust,
+/obj/structure/wreck/trash/three_barrels,
+/obj/structure/sign/poster/contraband/pinup_funk{
+	pixel_x = -32
+	},
+/turf/open/floor/plasteel/f13/vault_floor/red,
 /area/f13/bunker)
 "GR" = (
 /obj/structure/camera_assembly,
@@ -2004,8 +2032,11 @@
 /turf/open/floor/plating/tunnel,
 /area/f13/bunker)
 "KZ" = (
-/obj/structure/sign/poster/contraband/pinup_couch,
-/turf/closed/wall/r_wall/rust,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/sign/poster/contraband/pinup_ride{
+	pixel_y = -32
+	},
+/turf/open/floor/plating/tunnel,
 /area/f13/bunker)
 "Lk" = (
 /obj/effect/decal/cleanable/blood/gibs/slime,
@@ -2205,6 +2236,9 @@
 "OB" = (
 /obj/structure/closet/anchored,
 /obj/effect/spawner/lootdrop/f13/blueprintVHigh,
+/obj/structure/sign/poster/contraband/pinup_couch{
+	pixel_y = -32
+	},
 /turf/open/floor/plasteel/f13/vault_floor/red,
 /area/f13/bunker)
 "OE" = (
@@ -2658,10 +2692,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/red,
 /area/f13/bunker)
-"Wd" = (
-/obj/structure/sign/warning,
-/turf/closed/wall/r_wall/rust,
-/area/f13/bunker)
 "Wr" = (
 /obj/item/circuitboard/machine/smartfridge,
 /obj/structure/wreck/trash/machinepile,
@@ -2865,10 +2895,6 @@
 "ZN" = (
 /turf/closed/indestructible/fakeglass,
 /area/f13/bunker)
-"ZS" = (
-/obj/structure/sign/warning/biohazard,
-/turf/closed/wall/r_wall/rust,
-/area/f13/bunker)
 "ZU" = (
 /obj/structure/wreck/trash/one_barrel,
 /obj/effect/decal/cleanable/dirt,
@@ -3068,10 +3094,10 @@ VU
 xR
 Tg
 rW
-wy
 rW
 rW
-Ek
+rW
+rW
 rW
 rW
 Zs
@@ -3110,7 +3136,7 @@ Ev
 uf
 uf
 rW
-MO
+GL
 uf
 yx
 zK
@@ -3156,8 +3182,8 @@ ty
 GW
 CX
 Pg
-yq
-ml
+KZ
+rW
 Zs
 Zs
 Zs
@@ -3218,8 +3244,8 @@ Zs
 (9,1,1) = {"
 rW
 Ec
-SD
-GL
+ml
+rW
 Zs
 Zs
 rW
@@ -3360,8 +3386,8 @@ Ev
 yq
 Yk
 je
-Ev
-ww
+Ek
+rW
 Ev
 jZ
 uf
@@ -3451,7 +3477,7 @@ eZ
 Ok
 Ev
 OB
-KZ
+rW
 rW
 rW
 rW
@@ -3903,9 +3929,9 @@ rW
 rW
 rW
 rW
-ZS
+rW
 FT
-ZS
+rW
 rW
 rW
 rW
@@ -3945,9 +3971,9 @@ BD
 SG
 BD
 BD
+ww
 lp
-lp
-lp
+ww
 vU
 GA
 rW
@@ -4030,10 +4056,10 @@ Wy
 KN
 lp
 yq
+wy
 lp
 lp
-lp
-lp
+wy
 rW
 Ua
 An
@@ -4072,10 +4098,10 @@ rW
 rW
 Xq
 rW
-Wd
+rW
 Xq
 Xq
-Wd
+rW
 rW
 Ua
 An
@@ -4240,7 +4266,7 @@ rW
 rW
 rW
 rW
-Wd
+rW
 Xq
 Xq
 rW

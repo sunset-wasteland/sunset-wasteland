@@ -479,7 +479,6 @@
 /obj/structure/sign/poster/official/cleanliness{
 	pixel_y = 32
 	},
-/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
 	icon_state = "bluerustysolid"
 	},
@@ -536,7 +535,7 @@
 /obj/structure/toilet{
 	dir = 8
 	},
-/obj/machinery/light{
+/obj/machinery/light/small{
 	dir = 4
 	},
 /turf/open/floor/f13{
@@ -589,8 +588,14 @@
 /turf/closed/wall/f13/tentwall,
 /area/f13/bunker)
 "aKU" = (
-/obj/structure/sign/poster/prewar/poster94,
-/turf/closed/wall/f13/tentwall,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/structure/sign/poster/prewar/vault_tec{
+	pixel_y = 32
+	},
+/turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/bunker)
 "aLq" = (
 /obj/structure/table/abductor{
@@ -749,6 +754,9 @@
 /obj/item/book/granter/crafting_recipe/gunsmithing/gunsmith_one,
 /obj/item/book/granter/crafting_recipe/gunsmithing/gunsmith_two,
 /obj/item/book/granter/crafting_recipe/gunsmithing/gunsmith_three,
+/obj/structure/sign/poster/prewar/poster94{
+	pixel_y = 32
+	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/bunker)
 "aVw" = (
@@ -1469,11 +1477,18 @@
 	color = "000000"
 	},
 /obj/item/trash/f13/tin,
+/obj/structure/sign/poster/prewar/poster61{
+	pixel_x = 32
+	},
 /turf/open/floor/f13/wood,
 /area/f13/bunker)
 "bPT" = (
-/obj/structure/sign/poster/prewar/poster61,
-/turf/closed/wall/f13/supermart,
+/obj/structure/sign/departments/security{
+	pixel_x = 32
+	},
+/turf/open/floor/plasteel/f13{
+	icon_state = "redrustyfull"
+	},
 /area/f13/bunker)
 "bRa" = (
 /obj/machinery/light{
@@ -2311,6 +2326,9 @@
 	color = "000000"
 	},
 /obj/structure/wreck/trash/two_tire,
+/obj/structure/sign/poster/prewar/poster75{
+	pixel_x = 32
+	},
 /turf/open/floor/f13/wood,
 /area/f13/bunker)
 "cTQ" = (
@@ -2333,8 +2351,10 @@
 /turf/open/floor/f13/wood,
 /area/f13/ncr)
 "cUq" = (
-/obj/structure/sign/poster/prewar/poster75,
-/turf/closed/wall/f13/supermart,
+/obj/structure/sign/poster/prewar/vault_tec{
+	pixel_y = 32
+	},
+/turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/bunker)
 "cUD" = (
 /obj/structure/sign/poster/contraband/pinup_vixen,
@@ -3024,8 +3044,13 @@
 /turf/open/floor/mineral/plastitanium,
 /area/f13/bunker)
 "dHs" = (
-/obj/structure/sign/poster/prewar/poster61,
-/turf/closed/wall/f13/tentwall,
+/obj/structure/sign/poster/prewar/vault_tec{
+	pixel_y = -32
+	},
+/obj/structure/sign/departments/security{
+	pixel_x = -32
+	},
+/turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/bunker)
 "dHD" = (
 /obj/structure/destructible/tribal_torch/wall/lit,
@@ -3044,6 +3069,9 @@
 /obj/item/shovel,
 /obj/item/shovel/spade,
 /obj/item/reagent_containers/glass/bucket/wood,
+/obj/structure/sign/poster/prewar/poster61{
+	pixel_x = -32
+	},
 /turf/open/indestructible/ground/outside/dirt{
 	dir = 10;
 	icon_state = "dirt"
@@ -5312,8 +5340,11 @@
 	},
 /area/f13/wasteland)
 "goV" = (
-/obj/structure/sign/departments/security,
-/turf/closed/indestructible/vaultdoor,
+/obj/machinery/vending/nukacolavend,
+/obj/structure/sign/poster/prewar/vault_tec{
+	pixel_y = -32
+	},
+/turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/bunker)
 "gpY" = (
 /obj/structure/chair/right{
@@ -5327,6 +5358,12 @@
 /area/f13/wasteland)
 "gqm" = (
 /obj/machinery/vending/nukacolavend,
+/obj/structure/sign/departments/security{
+	pixel_x = -32
+	},
+/obj/structure/sign/poster/prewar/vault_tec{
+	pixel_y = 32
+	},
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/bunker)
 "gqp" = (
@@ -9692,12 +9729,14 @@
 	},
 /area/f13/wasteland)
 "lOU" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/small,
-/turf/open/floor/f13{
-	icon_state = "yellowdirtyfull"
+/obj/machinery/porta_turret/syndicate/vehicle_turret{
+	faction = list("wastebot")
 	},
-/area/f13/followers)
+/obj/structure/sign/poster/prewar/vault_tec{
+	pixel_y = 32
+	},
+/turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
+/area/f13/bunker)
 "lPk" = (
 /obj/structure/mirror,
 /turf/closed/wall/f13/wood,
@@ -10788,8 +10827,13 @@
 	},
 /area/f13/bunker)
 "mSy" = (
-/obj/effect/landmark/poster_spawner/prewar,
-/turf/closed/wall/r_wall/rust,
+/obj/structure/destructible/tribal_torch/lit,
+/obj/effect/landmark/poster_spawner/prewar{
+	pixel_y = -32
+	},
+/turf/open/floor/plasteel/f13{
+	icon_state = "redrustyfull"
+	},
 /area/f13/bunker)
 "mSC" = (
 /obj/machinery/light{
@@ -12760,8 +12804,11 @@
 	},
 /area/f13/bunker)
 "pfx" = (
-/obj/structure/sign/poster/contraband/have_a_puff,
-/turf/closed/wall/r_wall/rust,
+/obj/structure/destructible/tribal_torch/lit,
+/obj/structure/sign/poster/contraband/have_a_puff{
+	pixel_x = -32
+	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
 "pfQ" = (
 /obj/effect/landmark/poster_spawner/ncr,
@@ -23795,12 +23842,12 @@ aJk
 aJk
 aJk
 aJk
-bPT
 aJk
 aJk
 aJk
 aJk
-cUq
+aJk
+aJk
 aJk
 aJk
 aJk
@@ -25549,11 +25596,11 @@ heT
 heT
 heT
 vHC
-ghW
+bPT
 gnh
 gnh
 gnh
-ghW
+bPT
 vHC
 vHC
 vHC
@@ -25806,11 +25853,11 @@ heT
 heT
 heT
 vHC
-goV
+vHC
 gUA
 vHC
 iUC
-goV
+vHC
 vHC
 vHC
 acN
@@ -26577,11 +26624,11 @@ vHC
 vHC
 vHC
 vHC
-goV
+vHC
 gUA
 vHC
 gUA
-goV
+vHC
 vHC
 vHC
 kWp
@@ -26593,8 +26640,8 @@ vHC
 vHC
 vHC
 vHC
-azm
-idu
+vHC
+lOU
 tHQ
 tHQ
 tHQ
@@ -26631,7 +26678,7 @@ aKD
 aKD
 dtT
 aKD
-dHs
+aKD
 aKD
 aIO
 aIO
@@ -26833,13 +26880,13 @@ wuw
 acN
 acN
 vHC
-azm
+vHC
 gqm
 wuw
 idu
 wuw
-wuw
-azm
+dHs
+vHC
 vHC
 vHC
 mcE
@@ -26874,7 +26921,7 @@ heT
 heT
 heT
 aIO
-aKU
+aKD
 aUN
 box
 bxq
@@ -27852,8 +27899,8 @@ heT
 heT
 heT
 heT
-azm
-ben
+vHC
+aKU
 fyx
 fyx
 duV
@@ -28257,7 +28304,7 @@ qDz
 gOB
 vOG
 qDz
-qVK
+qDz
 qVK
 ujl
 vOG
@@ -28889,13 +28936,13 @@ fyx
 vHC
 vHC
 vHC
-azm
-wuw
+vHC
+cUq
 wuw
 fyx
 fyx
-gqm
-azm
+goV
+vHC
 vHC
 vHC
 vHC
@@ -29163,8 +29210,8 @@ vHC
 vHC
 vHC
 vHC
-azm
-idu
+vHC
+lOU
 qOX
 oAl
 oAl
@@ -29542,7 +29589,7 @@ vUl
 qDz
 vOG
 baM
-qZC
+qDz
 qZC
 baM
 vOG
@@ -31685,8 +31732,8 @@ aGV
 oaH
 aGV
 anh
-xXL
 aDh
+uiq
 uiq
 ahl
 rrA
@@ -32205,7 +32252,7 @@ imR
 anh
 aAz
 nwp
-lOU
+nwp
 anh
 bYA
 bYA
@@ -74784,7 +74831,7 @@ wZU
 heT
 wZU
 irr
-pfx
+wZU
 wZU
 wZU
 heT
@@ -75041,7 +75088,7 @@ wZU
 wZU
 wZU
 oVP
-oDM
+pfx
 nrB
 wZU
 wZU
@@ -78887,8 +78934,8 @@ lcX
 gnh
 gnh
 gnh
-kwp
 mSy
+wZU
 wZU
 wZU
 wZU

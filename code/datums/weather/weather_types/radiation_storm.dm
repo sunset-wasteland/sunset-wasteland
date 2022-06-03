@@ -1,7 +1,6 @@
 /datum/weather/rad_storm
 	name = "radiation storm"
 	desc = "A cloud of intense radiation passes through the area dealing rad damage to those who are unprotected."
-	probability = 6
 
 	telegraph_duration = 400
 	telegraph_message = "<span class='notice'>The skies slowly turn into a glowing green.</span>"

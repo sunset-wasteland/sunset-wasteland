@@ -4,22 +4,21 @@
 	probability = 2
 
 	telegraph_duration = 400
-	telegraph_overlay = "acid_rain"
-	telegraph_message = "<span class='notice'>Thunder rumbles far above. You hear droplets drumming against the canopy. Seek shelter.</span>"
+	telegraph_message = "<span class='userdanger'>Thunder rumbles far above. You hear droplets drumming against the canopy. Seek shelter.</span>"
 	telegraph_sound = 'sound/ambience/acidrain_start.ogg'
 
-	weather_message = "<span class='notice'><i>Acidic rain pours down around you! Get inside!</i></span>"
+	weather_message = "<span class='boldannounce'><i>Acidic rain pours down around you! Get inside!</i></span>"
 	weather_overlay = "acid_rain"
 	weather_duration_lower = 1200
 	weather_duration_upper = 2400
 	weather_sound = 'sound/ambience/acidrain_mid.ogg'
 
 	end_duration = 100
-	end_message = "<span class='notice'>The downpour gradually slows to a light shower. It should be safe outside now.</span>"
+	end_message = "<span class='boldannounce'>The downpour gradually slows to a light shower. It should be safe outside now.</span>"
 	end_sound = 'sound/ambience/acidrain_end.ogg'
 
 	area_types = list(/area/f13/wasteland, /area/f13/desert, /area/f13/farm, /area/f13/forest, /area/f13/ruins)
-	protect_indoors = list(/area/shuttle)
+	protected_areas = list(/area/shuttle)
 	target_trait = ZTRAIT_STATION
 	protect_indoors = TRUE
 

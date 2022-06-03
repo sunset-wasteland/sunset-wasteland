@@ -12,10 +12,12 @@
 	weather_overlay = "thunderstorm"
 	weather_duration_lower = 1200
 	weather_duration_upper = 2400
-	end_sound = 'sound/weather/thunder.ogg' //credit: boomlibrary
+	
 	end_duration = 250
-	end_message = "<span class='notice'><font size=2>You start to hear the last of the rain as the sky begins to clear up.</font></span>"
 	end_overlay = "rain_gathering"
+	end_message = "<span class='notice'><font size=2>You start to hear the last of the rain as the sky begins to clear up.</font></span>"
+	end_sound = 'sound/weather/thunder.ogg' //credit: boomlibrary
+	
 	area_types = list(/area/f13/wasteland, /area/f13/desert, /area/f13/farm, /area/f13/forest, /area/f13/ruins)
 	protected_areas = list(/area/shuttle)
 	target_trait = ZTRAIT_STATION

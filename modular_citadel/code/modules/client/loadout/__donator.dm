@@ -85,7 +85,7 @@
 	name = "Canadian"
 	path = /obj/item/storage/box/large/custom_kit/canadian
 	ckeywhitelist = list("comradesocks")
-
+/*
 /obj/item/storage/box/large/custom_kit/vaktus/PopulateContents()
 	new /obj/item/clothing/suit/armor/f13/combat/riotpolice(src)
 	new /obj/item/clothing/head/helmet/f13/ncr/rangercombat/desert(src)
@@ -97,7 +97,7 @@
 	name = "Vaks goods"
 	path = /obj/item/storage/box/large/custom_kit/vaktus
 	ckeywhitelist = list("vaktus4")
-
+*/
 /obj/item/storage/box/large/custom_kit/burningcold/PopulateContents()
 	new /obj/item/clothing/gloves/f13/leather/fingerless(src)
 	new /obj/item/clothing/mask/bandana/blue(src)
@@ -132,7 +132,7 @@
 
 /obj/item/storage/box/large/custom_kit/evosolus/PopulateContents()
 	new /obj/item/melee/powered/ripper(src)
-	new /obj/item/clothing/suit/armor/f13/ncrarmor/mantle/reinforced(src)
+	new /obj/item/clothing/suit/armor/f13/harbingermantle(src)
 	new /obj/item/clothing/head/beret/ncr/ncr_recon(src)
 	new /obj/item/clothing/mask/gas/sechailer(src)
 

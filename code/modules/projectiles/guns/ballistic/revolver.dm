@@ -252,7 +252,7 @@
 	icon_state = "m29peace"
 	extra_damage = 45
 	automatic = 1
-	autofire_shot_delay = 1
+	autofire_shot_delay = 2.5
 	actions_types = list(/datum/action/item_action/toggle_firemode)
 	can_scope = FALSE
 

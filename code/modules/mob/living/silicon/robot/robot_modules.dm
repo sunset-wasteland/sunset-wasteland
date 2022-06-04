@@ -653,7 +653,7 @@
 			return FALSE
 	return ..()
 
-	/obj/item/robot_module/gutsy
+/obj/item/robot_module/gutsy
 	name = "Military"
 	basic_modules = list( //Security borg
 		/obj/item/assembly/flash/cyborg,

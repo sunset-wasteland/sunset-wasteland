@@ -434,6 +434,17 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	pH = 4.5
 	value = REAGENT_VALUE_COMMON
 
+/datum/reagent/consumable/ethanol/amaretto
+	name = "Amaretto"
+	description = "A gentle drink that carries a sweet aroma."
+	color = "#E17600"
+	boozepwr = 25
+	taste_description = "fruity and nutty sweetness"
+	glass_icon_state = "amarettoglass"
+	glass_name = "glass of amaretto"
+	glass_desc = "A sweet and syrupy looking drink."
+	shot_glass_icon_state = "shotglassgold"
+
 /datum/reagent/consumable/ethanol/gintonic
 	name = "Gin and Tonic"
 	description = "An all time classic, mild cocktail."
@@ -2228,23 +2239,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	glass_desc = "cleaning fluid or tasty drink, you decide."
 	value = REAGENT_VALUE_UNCOMMON
 
-////////////////////
-//Race-Base-Drinks//
-////////////////////
-/datum/reagent/consumable/ethanol/species_drink
-	name = "Species Drink Template"
-	var/species_required
-	var/disgust = 25
-	boozepwr = 50
-
-/datum/reagent/consumable/ethanol/species_drink/on_mob_life(mob/living/carbon/C)
-	if(C.dna.species && C.dna.species.species_type == species_required) //species have a species_type variable that refers to one of the drinks
-		quality = RACE_DRINK
-	else
-		C.adjust_disgust(disgust)
-	return ..()
-
-/datum/reagent/consumable/ethanol/species_drink/coldscales
+/datum/reagent/consumable/ethanol/coldscales
 	name = "Coldscales"
 	color = "#5AEB52" //(90, 235, 82)
 	description = "A cold looking drink made for people with scales."
@@ -2252,9 +2247,8 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	glass_icon_state = "coldscales"
 	glass_name = "glass of Coldscales"
 	glass_desc = "A soft green drink that looks inviting!"
-	species_required = "lizard"
 
-/datum/reagent/consumable/ethanol/species_drink/oil_drum
+/datum/reagent/consumable/ethanol/oil_drum
 	name = "Oil Drum"
 	color = "#000000" //(0, 0, 0)
 	description = "Industrial grade oil mixed with some ethanol to make it a drink. Somehow not known to be toxic."
@@ -2263,9 +2257,8 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	glass_icon_state = "oil_drum"
 	glass_name = "Drum of oil"
 	glass_desc = "A gray can of booze and oil..."
-	species_required = "robot"
 
-/datum/reagent/consumable/ethanol/species_drink/nord_king
+/datum/reagent/consumable/ethanol/nord_king
 	name = "Nord King"
 	color = "#EB1010" //(235, 16, 16)
 	description = "Strong mead mixed with more honey and ethanol. Beloved by its human patrons."
@@ -2273,9 +2266,8 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	glass_icon_state = "nord_king"
 	glass_name = "Keg of Nord King"
 	glass_desc = "A dripping keg of red mead."
-	species_required = "basic"
 
-/datum/reagent/consumable/ethanol/species_drink/velvet_kiss
+/datum/reagent/consumable/ethanol/velvet_kiss
 	name = "Velvet Kiss"
 	color = "#EB1010" //(235, 16, 16)
 	description = "A bloody drink mixed with wine."
@@ -2284,9 +2276,8 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	glass_icon_state = "velvet_kiss"
 	glass_name = "glass of Velvet Kiss"
 	glass_desc = "Red and white drink for the upper classes or undead."
-	species_required = "undead"
 
-/datum/reagent/consumable/ethanol/species_drink/abduction_fruit
+/datum/reagent/consumable/ethanol/abduction_fruit
 	name = "Abduction Fruit"
 	color = "#DEFACD" //(222, 250, 205)
 	description = "Mixing of juices to make an alien taste."
@@ -2295,9 +2286,8 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	glass_icon_state = "abduction_fruit"
 	glass_name = "glass of Abduction Fruit"
 	glass_desc = "Mixed fruits that were never meant to be mixed..."
-	species_required = "alien"
 
-/datum/reagent/consumable/ethanol/species_drink/bug_zapper
+/datum/reagent/consumable/ethanol/bug_zapper
 	name = "Bug Zapper"
 	color = "#F5882A" //(222, 250, 205)
 	description = "Copper and lemon juice. Hardly even a drink."
@@ -2306,9 +2296,8 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	glass_icon_state = "bug_zapper"
 	glass_name = "glass of Bug Zapper"
 	glass_desc = "An odd mix of copper, lemon juice and power meant for non-human consumption."
-	species_required = "bug"
 
-/datum/reagent/consumable/ethanol/species_drink/mush_crush
+/datum/reagent/consumable/ethanol/mush_crush
 	name = "Mush Crush"
 	color = "#F5882A" //(222, 250, 205)
 	description = "Soil in a glass."
@@ -2317,9 +2306,8 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	glass_icon_state = "mush_crush"
 	glass_name = "glass of Mush Crush"
 	glass_desc = "Popular among people that want to grow their own food rather than drink the soil."
-	species_required = "plant"
 
-/datum/reagent/consumable/ethanol/species_drink/darkbrew
+/datum/reagent/consumable/ethanol/darkbrew
 	name = "Darkbrew"
 	color = "#000000" //(0, 0, 0)
 	description = "Contained dark matter mixed with coffee."
@@ -2328,9 +2316,8 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	glass_icon_state = "darkbrew"
 	glass_name = "glass of Darkbrew"
 	glass_desc = "A pitch black drink that's commonly confused with a type of coffee."
-	species_required = "shadow"
 
-/datum/reagent/consumable/ethanol/species_drink/hollow_bone
+/datum/reagent/consumable/ethanol/hollow_bone
 	name = "Hollow Bone"
 	color = "#FCF7D4" //(252, 247, 212)
 	description = "Shockingly non-harmful mix of toxins and milk."
@@ -2339,9 +2326,8 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	glass_icon_state = "hollow_bone"
 	glass_name = "skull of Hollow Bone"
 	glass_desc = "Mixing of milk and bone hurting juice for the enjoyment of rather skinny people."
-	species_required = "skeleton"
 
-/datum/reagent/consumable/ethanol/species_drink/frisky_kitty
+/datum/reagent/consumable/ethanol/frisky_kitty
 	name = "Frisky Kitty"
 	color = "#FCF7D4" //(252, 247, 212)
 	description = "Warm milk mixed with a catnip."
@@ -2350,9 +2336,8 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	glass_icon_state = "frisky_kitty"
 	glass_name = "cup of Drisky Kitty"
 	glass_desc = "Warm milk and some catnip."
-	species_required = "furry"
 
-/datum/reagent/consumable/ethanol/species_drink/jell_wyrm
+/datum/reagent/consumable/ethanol/jell_wyrm
 	name = "Jell Wyrm"
 	color = "#FF6200" //(255, 98, 0)
 	description = "Horrible mix of Co2, toxins and heat. Meant for slime based life."
@@ -2361,9 +2346,8 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	glass_icon_state = "jell_wyrm"
 	glass_name = "glass of Jell Wyrm"
 	glass_desc = "A bubbly drink that is rather inviting to those that don't know who it's meant for."
-	species_required = "jelly"
 
-/datum/reagent/consumable/ethanol/species_drink/laval_spit //Yes Laval
+/datum/reagent/consumable/ethanol/laval_spit //Yes Laval
 	name = "Laval Spit"
 	color = "#DE3009" //(222, 48, 9)
 	description = "Heat minerals and some mauna loa. Meant for rock based life."
@@ -2372,7 +2356,29 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	glass_icon_state = "laval_spit"
 	glass_name = "glass of Laval Spit"
 	glass_desc = "Piping hot drink for those who can stomach the heat of lava."
-	species_required = "golem"
+
+
+/datum/reagent/consumable/ethanol/amaretto_alexander
+	name = "Amaretto Alexander"
+	description = "A weaker version of the Alexander, what it lacks in strength it makes up for in flavor."
+	color = "#DBD5AE"
+	boozepwr = 35
+	quality = DRINK_VERYGOOD
+	taste_description = "sweet, creamy cacao"
+	glass_icon_state = "alexanderam"
+	glass_name = "Amaretto Alexander"
+	glass_desc = "A creamy, indulgent delight that is in fact as gentle as it seems."
+	
+/datum/reagent/consumable/ethanol/ginger_amaretto
+	name = "Ginger Amaretto"
+	description = "A delightfully simple cocktail that pleases the senses."
+	boozepwr = 30
+	color = "#EFB42A"
+	quality = DRINK_GOOD
+	taste_description = "sweetness followed by a soft sourness and warmth"
+	glass_icon_state = "gingeramaretto"
+	glass_name = "Ginger Amaretto"
+	glass_desc = "The sprig of rosemary adds a nice aroma to the drink, and isn't just to be pretentious afterall!"
 
 ///////////////
 //Barrel Wine//
@@ -2482,3 +2488,19 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	taste_description = flavor
 	if(holder.my_atom)
 		holder.my_atom.on_reagent_change()
+
+/////////////////////////////////////////
+//Race-Base-Drinks (Not used currently)//
+/////////////////////////////////////////
+/datum/reagent/consumable/ethanol/species_drink
+	name = "Species Drink Template"
+	var/species_required
+	var/disgust = 25
+	boozepwr = 50
+
+/datum/reagent/consumable/ethanol/species_drink/on_mob_life(mob/living/carbon/C)
+	if(C.dna.species && C.dna.species.species_type == species_required) //species have a species_type variable that refers to one of the drinks
+		quality = RACE_DRINK
+	else
+		C.adjust_disgust(disgust)
+	return ..()

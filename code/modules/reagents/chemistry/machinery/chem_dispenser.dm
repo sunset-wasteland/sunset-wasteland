@@ -529,29 +529,32 @@
 		/datum/reagent/consumable/grey_bull,
 		/datum/reagent/consumable/sol_dry,
 		/datum/reagent/consumable/cream_soda
-
 	)
 	upgrade_reagents = list(
 		/datum/reagent/consumable/banana,
 		/datum/reagent/consumable/berryjuice,
 		/datum/reagent/consumable/strawberryjuice,
-		/datum/reagent/consumable/cherryjelly,
-		/datum/reagent/consumable/vanilla,
-		/datum/reagent/consumable/coco,
-		/datum/reagent/consumable/lemonade
-	)
-	upgrade_reagents2 = list(
 		/datum/reagent/consumable/applejuice,
 		/datum/reagent/consumable/carrotjuice,
 		/datum/reagent/consumable/pumpkinjuice,
 		/datum/reagent/consumable/watermelonjuice,
-		/datum/reagent/consumable/parsnipjuice
+		/datum/reagent/consumable/parsnipjuice,
+		/datum/reagent/consumable/bungojuice,
+		/datum/reagent/consumable/aloejuice,
+		/datum/reagent/consumable/peachjuice,
+		/datum/reagent/consumable/blumpkinjuice
+	)
+	upgrade_reagents2 = list(
+		/datum/reagent/consumable/vanilla,
+		/datum/reagent/consumable/coco,
+		/datum/reagent/consumable/lemonade,
+		/datum/reagent/consumable/buzz_fuzz,
+		/datum/reagent/consumable/menthol
 	)
 	upgrade_reagents3 = list(
 		/datum/reagent/drug/mushroomhallucinogen,
 		/datum/reagent/consumable/laughter,
-		/datum/reagent/consumable/peachjuice,
-		/datum/reagent/consumable/menthol
+		/datum/reagent/consumable/monkey_energy
 	)
 	emagged_reagents = list(
 		/datum/reagent/medicine/cryoxadone,

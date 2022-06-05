@@ -1028,7 +1028,7 @@ Nothing else in the console has ID requirements.
 			return
 		var/slot = text2num(ls["copy_design"])
 		var/datum/design/D = SSresearch.techweb_design_by_id(ls["copy_design_ID"])
-		if(D)
+		if(D && (D.id in stored_research.researched_designs))
 			var/autolathe_friendly = TRUE
 			if(D.reagents_list.len)
 				autolathe_friendly = FALSE

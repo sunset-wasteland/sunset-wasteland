@@ -876,6 +876,18 @@
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
 
+/obj/item/clothing/suit/armor/f13/gunnytrench
+	name = "enclave officer trenchcoat"
+	desc = "Premium prewar military armor worn under a coat for Enclave officers."
+	icon_state = "gunny_coat"
+	item_state = "gunny_coat"
+	body_parts_covered = CHEST|GROIN|ARMS|LEGS
+	armor = list("melee" = 50, "bullet" = 50, "laser" = 50, "energy" = 22, "bomb" = 55, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20, "wound" = 55)
+
+/obj/item/clothing/suit/armor/f13/gunnytrench/Initialize() //HQ parts reinforcement
+	. = ..()
+	AddComponent(/datum/component/armor_plate)
+
 /obj/item/clothing/suit/armor/f13/environmentalsuit
 	name = "enclave envirosuit"
 	desc = "An advanced white and airtight environmental suit. It seems to be equipped with a fire-resistant seal and a refitted internals system. This one looks to have been developed by the Enclave sometime after the Great War. You'd usually exclusively see this on scientists of the Enclave."

@@ -201,6 +201,17 @@
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
 
+/obj/item/clothing/head/f13/enclave_hood
+	name = "officer hat"
+	desc = "A standard-issue Enclave officer's cap."
+	icon_state = "enclave_hood"
+	item_color = "enclave_hood"
+	armor = list("melee" = 25, "bullet" = 25, "laser" = 25, "energy" = 10, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 20, "acid" = 90)
+
+/obj/item/clothing/head/helmet/soft/f13/enclave_hood/Initialize()
+	. = ..()
+	AddComponent(/datum/component/armor_plate)	
+
 /obj/item/clothing/head/f13/enclave/peacekeeper
 	name = "peacekeeper cap"
 	desc = "Reinforced field cap issued to the soldiers of the Enclave."

@@ -1369,3 +1369,12 @@ obj/item/clothing/head/f13/army/beret
 	icon_state = "enclave_new"
 	item_state = "enclave_new"
 	armor = list("melee" = 45, "bullet" = 45, "laser" = 45, "energy" = 20, "bomb" = 50, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20, "wound" = 50)
+
+
+//Wasteland update
+
+/obj/item/clothing/head/helmet/f13/helmet/enclave/forgecap/drillhat
+	name = "enclave Drill hat"
+	desc = "A standard issue drill hat."
+	icon_state = "drillhat"
+	item_state = "drillhat"

@@ -1310,3 +1310,33 @@ obj/item/clothing/suit/armor/f13/exile/cust0m
 	item_state = "legscout"
 	slowdown = 0.05
 	salvage_loot = list(/obj/item/stack/crafting/armor_plate = 4) // Slightly better armor
+
+/// wasteland update
+
+/obj/item/clothing/suit/armor/f13/combat/enclave_seva
+	name = "Enclave Seva Suit"
+	desc = "This bodysuit, intended for conducting research in the Zone, combines a closed-cycle respiratory module and an external isolation coating, resulting in excellent protection from anomalies."
+	icon_state = "enclave_seva"
+	item_state = "enclave_seva"
+	w_class = WEIGHT_CLASS_BULKY
+	gas_transfer_coefficient = 0.9
+	permeability_coefficient = 0.5
+	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
+	armor = list("melee" = 35, "bullet" = 40, "laser" = 40,"energy" = 20, "bomb" = 55, "bio" = 100, "rad" = 100, "fire" = 80, "acid" = 50)
+	strip_delay = 60
+	equip_delay_other = 60
+	flags_inv = HIDEJUMPSUIT
+
+/obj/item/clothing/suit/armor/f13/combat/mk2/Bandit_duster 
+	name = "reinforced duster armor"
+	desc = "A reinforced set of combat armor covered by a black duster."
+	icon_state = "Bandit_duster"
+	item_state = "Bandit_duster"
+	slowdown = 0
+	salvage_loot = list(/obj/item/stack/crafting/armor_plate = 8)
+
+/obj/item/clothing/suit/armor/f13/power_armor/t51b/altumt51
+	name = "Painted T-51b power armor"
+	desc = "A painted set of T51b power armor."
+	icon_state = "altumt51"
+	item_state = "altumt51"

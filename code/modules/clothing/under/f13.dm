@@ -1858,3 +1858,17 @@
 	desc = "Best god dam uniform you have ever seen! so god dam good, uncle sam would cry."
 	icon_state = "Drill_sarge"
 	item_state = "Drill_sarge"
+
+/// wasteland update
+
+/obj/item/clothing/under/f13/tracksuit
+	name = "black tracksuit"
+	desc = "Funny little tracksuit for a funny little man."
+	icon_state = "tracksuit"
+	item_state = "tracksuit"
+
+/obj/item/clothing/under/f13/enclave_exile
+	name = "disheveled and ripped enclave uniform"
+	desc = "A enclave navarro survivors uniform."
+	icon_state = "enclave_exile"
+	item_state = "enclave_exile"

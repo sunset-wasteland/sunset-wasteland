@@ -462,6 +462,12 @@
 	icon_state = "AltumHelm"
 	item_state = "AltumHelm"
 
+/obj/item/clothing/head/helmet/f13/power_armor/x02helmet/sokkxxhelm
+	name =  "experimental X02 power armor helmet"
+	desc = "A modified X02 helmet that has had it's circuitry replaced with parts from an old functional tesla coil. This one seemingly doesn't discharge in the immediate area."
+	icon_state = "pinkhelmet"
+	item_state = "pinkhelmet"
+
 /obj/item/clothing/head/helmet/f13/power_armor/advanced/hellfire
 	name = "hellfire power armor helmet"
 	desc = "A deep black helmet of Enclave-manufactured heavy power armor with yellow ballistic glass, based on pre-war designs such as the T-51 and improving off of data gathered by post-war designs such as the X-01. Most commonly fielded on the East Coast, no other helmet rivals it's strength."
@@ -894,5 +900,5 @@
 	desc = "A tactical black helmet, sealed from outside hazards with a plate of glass and not much else."
 	icon_state = "marine_security"
 	item_state = "marine_security"
-	armor = list("melee" = 50, "bullet" = 50, "laser" = 40, "energy" = 22, "bomb" = 55, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20)
+	armor = list("melee" = 45, "bullet" = 45, "laser" = 45, "energy" = 20, "bomb" = 50, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20)
 	can_flashlight = TRUE

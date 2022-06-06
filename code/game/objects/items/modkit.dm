@@ -111,3 +111,12 @@
 	target_items = list(/obj/item/clothing/suit/armor/f13/combat/ncr_patrol)
 	result_item = /obj/item/clothing/suit/armor/f13/modif_r_vest
 
+/obj/item/modkit/sokkxxhelm
+	name = "experimental x02 power armor helmet conversion kit"
+	target_items = list(/obj/item/clothing/head/helmet/f13/power_armor/x02helmet)
+	result_item = /obj/item/clothing/head/helmet/f13/power_armor/x02helmet/sokkxxhelm
+
+/obj/item/modkit/sokkxxarmor
+	name = "experimental x02 power armor suit conversion kit"
+	target_items = list(/obj/item/clothing/suit/armor/f13/power_armor/x02)
+	result_item = /obj/item/clothing/suit/armor/f13/power_armor/x02/sokkxx

@@ -685,6 +685,12 @@
 	icon_state = "AltumFire"
 	item_state = "AltumFire"
 
+/obj/item/clothing/suit/armor/f13/power_armor/x02/sokkxx
+	name =  "experimental X02 power armor"
+	desc = "A modified X02 suit that has had it's circuitry replaced with parts from an old functional tesla coil. This one seemingly doesn't discharge in the immediate area."
+	icon_state = "pinktesla"
+	item_state = "pinktesla"
+
 /obj/item/clothing/suit/armor/f13/power_armor/advanced/hellfire
 	name = "hellfire power armor"
 	desc = "A deep black suit of Enclave-manufactured heavy power armor, based on pre-war designs such as the T-51 and improving off of data gathered by post-war designs such as the X-01. Most commonly fielded on the East Coast, no suit rivals it's strength."

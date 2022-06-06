@@ -745,6 +745,18 @@
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
 
+/obj/item/clothing/suit/armor/f13/combat/khan
+	name = "khanbat armor"
+	desc = "An old set of combat armor, repainted in the blue color of the Khans."
+	icon_state = "combat_armor_khan"
+	item_state = "combat_armor_khan"
+
+/obj/item/clothing/suit/armor/f13/combat/mk2/khan
+	name = "reinforced khanbat armor"
+	desc = "An old set of combat armor, repainted in the colors of the Khans, with a big mongol on the back."
+	icon_state = "combat_armor_khan_mk2"
+	item_state = "combat_armor_khan_mk2"
+
 //Wayfarer
 /obj/item/clothing/suit/armor/f13/lightcloak
 	name = "light tribal cloak"

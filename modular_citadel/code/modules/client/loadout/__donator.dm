@@ -190,11 +190,22 @@
 	new /obj/item/gun/energy/laser/plasma/glock(src)
 	new /obj/item/clothing/shoes/kindleKicks(src)
 	new /obj/item/storage/belt/military/assault(src)
+	new /obj/item/clothing/suit/armor/f13/combat/khan(src)
 	
 /datum/gear/donator/kits/sunny
 	name = "Sunnys stuff"
 	path = /obj/item/storage/box/large/custom_kit/sunny
 	ckeywhitelist = list("nirzak")						
+
+/obj/item/storage/box/large/custom_kit/sokkxx/PopulateContents()
+	new /obj/item/modkit/sokkxxarmor(src)
+	new /obj/item/modkit/sokkxxhelm(src)
+	new /obj/item/gun/energy/laser/plasma(src)
+
+/datum/gear/donator/kits/sokkxx
+	name = "Sokkxx's belongings"
+	path = /obj/item/storage/box/large/custom_kit/sokkxx
+	ckeywhitelist = list("sokkxx")
 
 /obj/item/storage/box/large/custom_kit/pug/PopulateContents()
 	new /obj/item/melee/transforming/cleaving_saw/old_rusty(src)

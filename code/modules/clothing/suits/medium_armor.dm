@@ -433,7 +433,9 @@
 	icon_state = "marine_security"
 	item_state = "marine_security"
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
-	armor = list("melee" = 40, "bullet" = 40, "laser" = 40, "energy" = 30, "bomb" = 30, "bio" = 15, "rad" = 25, "fire" = 30, "acid" = 15)
+	armor = list("melee" = 45, "bullet" = 45, "laser" = 45, "energy" = 20, "bomb" = 50, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20, "wound" = 50)
+	slowdown = 0.12
+	salvage_loot = list(/obj/item/stack/crafting/armor_plate = 5)
 
 //THE GRAVEYARD
 //IF PUT BACK INTO USE, PLEASE FILE IT BACK SOMEWHERE ABOVE

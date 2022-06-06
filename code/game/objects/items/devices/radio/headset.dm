@@ -381,7 +381,7 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 /obj/item/radio/headset/headset_khans
 	name = "khan radio headset"
 	desc = "This is used by the Khans.\nTo access the Khan channel, use :h."
-	icon_state = "syndie_headset" 
+	icon_state = "syndie_headset"
 	item_state = "headset_alt"
 	keyslot = new /obj/item/encryptionkey/headset_khans
 
@@ -396,7 +396,6 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	desc = "This is used by the followers.\nTo access the town channel, use :f. \nTo access the medical channel, use :m"
 	icon_state = "med_headset"
 	keyslot = new /obj/item/encryptionkey/headset_med
-	keyslot2 = new /obj/item/encryptionkey/headset_town
 
 /obj/item/radio/headset/headset_den
 	name = "den radio headset"

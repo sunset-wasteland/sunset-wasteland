@@ -244,7 +244,7 @@
 	desc = "A stone grave marker, the name of the person buried here has long been lost to time."
 	icon = 'icons/obj/graveyard.dmi'
 	icon_state = "stone-1"
-
+	anchored = TRUE
 
 /obj/structure/statue/sandstone/venus //call me when we add marble i guess
 	name = "statue of a pure maiden"

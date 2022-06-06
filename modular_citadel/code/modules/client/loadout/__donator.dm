@@ -194,7 +194,7 @@
 /datum/gear/donator/kits/sunny
 	name = "Sunnys stuff"
 	path = /obj/item/storage/box/large/custom_kit/sunny
-	ckeywhitelist = list("nirzrak")						
+	ckeywhitelist = list("nirzak")						
 
 /obj/item/storage/box/large/custom_kit/pug/PopulateContents()
 	new /obj/item/melee/transforming/cleaving_saw/old_rusty(src)

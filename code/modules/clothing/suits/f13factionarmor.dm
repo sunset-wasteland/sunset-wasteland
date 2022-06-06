@@ -851,19 +851,6 @@
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
 
-
-/obj/item/clothing/suit/armor/f13/usmcriot
-	name = "old United States Marine Corp riot suit"
-	desc = "A pre-war riot suit helmet used by the USCM For various tasks and operations, it's handled the nuclear wasteland somewhat better than the rest of the armors you've seen."
-	icon_state = "usmc_riot_gear"
-	item_state = "usmc_riot_gear"
-	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
-	armor = list("melee" = 50, "bullet" = 50, "laser" = 40, "energy" = 22, "bomb" = 55, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20, "wound" = 50)
-
-/obj/item/clothing/suit/armor/f13/usmcriot/Initialize() //HQ parts reinforcement
-	. = ..()
-	AddComponent(/datum/component/armor_plate)
-
 /obj/item/clothing/suit/armor/f13/enclavetrenchcoat
 	name = "enclave officer trenchcoat"
 	desc = "Premium prewar military armor worn under a coat for Enclave officers."
@@ -876,17 +863,11 @@
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
 
-/obj/item/clothing/suit/armor/f13/gunnytrench
-	name = "enclave officer trenchcoat"
-	desc = "Premium prewar military armor worn under a coat for Enclave officers."
+/obj/item/clothing/suit/armor/f13/enclavetrenchcoat/gunny
+	name = "enclave nco trenchcoat"
+	desc = "Premium prewar military armor worn under a coat for Enclave NCOs."
 	icon_state = "gunny_coat"
 	item_state = "gunny_coat"
-	body_parts_covered = CHEST|GROIN|ARMS|LEGS
-	armor = list("melee" = 50, "bullet" = 50, "laser" = 50, "energy" = 22, "bomb" = 55, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20, "wound" = 55)
-
-/obj/item/clothing/suit/armor/f13/gunnytrench/Initialize() //HQ parts reinforcement
-	. = ..()
-	AddComponent(/datum/component/armor_plate)
 
 /obj/item/clothing/suit/armor/f13/environmentalsuit
 	name = "enclave envirosuit"
@@ -904,6 +885,12 @@
 	flags_inv = HIDEJUMPSUIT
 	rad_flags = RAD_PROTECT_CONTENTS | RAD_NO_CONTAMINATE
 
+/obj/item/clothing/suit/armor/f13/environmentalsuit/seva
+	name = "enclave seva suit"
+	desc = "This bodysuit, intended for conducting research in the Zone, combines a closed-cycle respiratory module and an external isolation coating, resulting in excellent protection from anomalies."
+	icon_state = "enclave_seva"
+	item_state = "enclave_seva"
+
 /obj/item/clothing/suit/armor/f13/combat/swat/enclave
 	name = "enclave combat armor"
 	desc = "A set of standard issue combat armor used by the Enclave. Looks Cheaply made."
@@ -919,8 +906,6 @@
 	desc = "A dark armor, used commonly in espionage or shadow ops."
 	icon_state = "remnant"
 	item_state = "remnant"
-	armor = list("melee" = 50, "bullet" = 50, "laser" = 50, "energy" = 22, "bomb" = 55, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20, "wound" = 55)
-
 
 //THE GRAVEYARD
 //UNUSED or LEGACY - RETAINED IN CASE DESIRED FOR ADMIN SPAWN OR REIMPLEMENATION. MAY NOT BE EVERYTHING THAT'S UNUSED. TEST BEFORE USING

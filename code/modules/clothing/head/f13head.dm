@@ -399,6 +399,12 @@
 	icon_state = "t51bhelmet[light_on]"
 	item_state = "t51bhelmet[light_on]"
 
+/obj/item/clothing/head/helmet/f13/power_armor/t51b/altum
+	name = "Painted T-51b power helmet"
+	desc = "It's a T-51b power helmet, typically used by the Brotherhood, looks a little Russian."
+	icon_state = "altumt51helm"
+	item_state = "altumt51helm"
+
 /obj/item/clothing/head/helmet/f13/power_armor/t51b/bos
 	name = "T-51b power helmet"
 	desc = "It's a T-51b power helmet, typically used by the Brotherhood. It looks somewhat charming."
@@ -452,7 +458,7 @@
 
 /obj/item/clothing/head/helmet/f13/power_armor/x02helmet/altumHelm
 	name = "hellfire power helmet"
-	desc = "The advanced MKIII power armor helmet. Just looking at this makes you feel self conscious about your DNA."
+	desc = "The advanced MKII power armor helmet. Just looking at this makes you feel self conscious about your DNA."
 	icon_state = "AltumHelm"
 	item_state = "AltumHelm"
 
@@ -890,37 +896,3 @@
 	item_state = "marine_security"
 	armor = list("melee" = 50, "bullet" = 50, "laser" = 40, "energy" = 22, "bomb" = 55, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20)
 	can_flashlight = TRUE
-
-/obj/item/clothing/head/helmet/Enclave_combathelmetraider
-	name = "Enclave Combat Armor Helmet"
-	desc = "Standard issue combat helmets used by the Enclave."
-	icon_state = "Enclave_combathelmetraider"
-	item_state = "Enclave_combathelmetraider"
-	armor = list("melee" = 30, "bullet" = 50, "laser" = 30, "energy" = 20, "bomb" = 55, "bio" = 60, "rad" = 15, "fire" = 60, "acid" = 30)
-	strip_delay = 50
-	flags_inv = HIDEEARS|HIDEHAIR
-	resistance_flags = LAVA_PROOF | FIRE_PROOF
-	dynamic_hair_suffix = ""
-	dynamic_fhair_suffix = ""
-	salvage_loot = list(/obj/item/stack/crafting/armor_plate = 3)
-
-/// Wasteland Update
-
-/obj/item/clothing/head/helmet/f13/power_armor/altumt51helm
-	name = "Painted T-51b power helmet"
-	desc = "It's a T-51b power helmet, typically used by the Brotherhood, looks a little Russian."
-	icon_state = "altumt51helm"
-	item_state = "altumt51helm"
-	actions_types = list(/datum/action/item_action/toggle_helmet_light)
-	armor = list("melee" = 70, "bullet" = 70, "laser" = 70, "energy" = 27, "bomb" = 62, "bio" = 100, "rad" = 99, "fire" = 90, "acid" = 40, "wound" = 70)
-	actions_types = list(/datum/action/item_action/toggle_helmet_light)
-
-/obj/item/clothing/head/helmet/f13/combat/enclave_sevahead
-	name = "Enclave screen helmet"
-	desc = "A light helmet with an airtight visor intended for protection from anomalies."
-	icon_state = "enclave_sevahead"
-	item_state = "enclave_sevahead"
-	armor = list("melee" = 35, "bullet" = 40, "laser" = 40,"energy" = 20, "bomb" = 60, "bio" = 100, "rad" = 100, "fire" = 80, "acid" = 50)
-	strip_delay = 60
-	equip_delay_other = 60
-	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH

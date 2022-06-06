@@ -197,20 +197,21 @@
 	item_color = "enclave"
 	armor = list("melee" = 25, "bullet" = 25, "laser" = 25, "energy" = 10, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 20, "acid" = 90)
 
-/obj/item/clothing/head/helmet/soft/f13/enclave/Initialize()
+/obj/item/clothing/head/f13/enclave/Initialize()
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
 
-/obj/item/clothing/head/f13/enclave_hood
-	name = "officer hat"
-	desc = "A standard-issue Enclave officer's cap."
+/obj/item/clothing/head/f13/enclave/hood
+	name = "enclave hood"
+	desc = "A hood with an Enclave marking inside it."
 	icon_state = "enclave_hood"
 	item_color = "enclave_hood"
-	armor = list("melee" = 25, "bullet" = 25, "laser" = 25, "energy" = 10, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 20, "acid" = 90)
 
-/obj/item/clothing/head/helmet/soft/f13/enclave_hood/Initialize()
-	. = ..()
-	AddComponent(/datum/component/armor_plate)	
+/obj/item/clothing/head/f13/enclave/drillhat
+	name = "enclave drill hat"
+	desc = "A standard issue drill hat."
+	icon_state = "drillhat"
+	item_state = "drillhat"
 
 /obj/item/clothing/head/f13/enclave/peacekeeper
 	name = "peacekeeper cap"
@@ -241,9 +242,9 @@
 
 /obj/item/clothing/head/helmet/f13/envirosuit
 	name = "enclave envirosuit hood"
+	desc = "A white hazmat helmet with a coupling system, the visor looks to be made out of orange plexiglas."
 	icon_state = "envirohead"
 	item_state = "envirohead"
-	desc = "A white hazmat helmet with a coupling system, the visor looks to be made out of orange plexiglas."
 	clothing_flags = THICKMATERIAL
 	flags_inv = HIDEMASK|HIDEEARS|HIDEFACE|HIDEEYES|HIDEHAIR|HIDEFACIALHAIR
 	armor = list("melee" = 29, "bullet" = 10, "laser" = 30, "energy" = 25, "bomb" = 16, "bio" = 100, "rad" = 100, "fire" = 0, "acid" = 0, "wound" = 20)
@@ -251,6 +252,12 @@
 	equip_delay_other = 60
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
 	rad_flags = RAD_PROTECT_CONTENTS | RAD_NO_CONTAMINATE
+
+/obj/item/clothing/head/helmet/f13/envirosuit/seva
+	name = "enclave screen helmet"
+	desc = "A light helmet with an airtight visor intended for protection from anomalies."
+	icon_state = "enclave_sevahead"
+	item_state = "enclave_sevahead"
 
 /obj/item/clothing/head/helmet/f13/enclave/marine
 	name = "old United States Marine Corp helmet"
@@ -260,19 +267,6 @@
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEHAIR|HIDEFACIALHAIR|HIDEFACE
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
 	armor = list("melee" = 50, "bullet" = 50, "laser" = 40, "energy" = 25, "bomb" = 55, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20, "wound" = 50)
-
-/obj/item/clothing/head/helmet/f13/enclave/marine/Initialize()
-	. = ..()
-	AddComponent(/datum/component/armor_plate)
-
-obj/item/clothing/head/helmet/f13/enclave/usmcriot
-	name = "old United States Marine Corp riot helmet"
-	desc = "A pre-war riot armor helmet used by the USCM For various tasks and operations, it's handled the nuclear wasteland somewhat better than the rest of the armors you've seen."
-	icon_state = "modified_usmc_riot"
-	item_state = "modified_usmc_riot"
-	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEHAIR|HIDEFACIALHAIR|HIDEFACE
-	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
-	armor = list("melee" = 50, "bullet" = 50, "laser" = 40, "energy" = 22, "bomb" = 55, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20, "wound" = 40)
 
 /obj/item/clothing/head/helmet/f13/combat/mk2/remnant
 	name = "remnant combat helmet"
@@ -1380,12 +1374,3 @@ obj/item/clothing/head/f13/army/beret
 	icon_state = "enclave_new"
 	item_state = "enclave_new"
 	armor = list("melee" = 45, "bullet" = 45, "laser" = 45, "energy" = 20, "bomb" = 50, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20, "wound" = 50)
-
-
-//Wasteland update
-
-/obj/item/clothing/head/helmet/f13/helmet/enclave/forgecap/drillhat
-	name = "enclave Drill hat"
-	desc = "A standard issue drill hat."
-	icon_state = "drillhat"
-	item_state = "drillhat"

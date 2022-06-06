@@ -828,8 +828,8 @@
 /obj/item/clothing/under/f13/exile/enclave
 	name = "disheveled peacekeeper uniform"
 	desc = "Khaki standard issue uniform over a black turtleneck. This one seems to be damaged."
-	icon_state = "enclave_uniformexile"
-	item_state = "enclave_uniformexile"
+	icon_state = "enclave_exile"
+	item_state = "enclave_exile"
 
 //stuff ported from WW2
 /obj/item/clothing/under/f13/ncr_formal_uniform
@@ -1853,22 +1853,14 @@
 
 /// Item Update
 
-/obj/item/clothing/under/f13/Drill_sarge
-	name = "NCO officer uniform"
+/obj/item/clothing/under/f13/drill_sarge
+	name = "drill sergeant uniform"
 	desc = "Best god dam uniform you have ever seen! so god dam good, uncle sam would cry."
 	icon_state = "Drill_sarge"
 	item_state = "Drill_sarge"
-
-/// wasteland update
 
 /obj/item/clothing/under/f13/tracksuit
 	name = "black tracksuit"
 	desc = "Funny little tracksuit for a funny little man."
 	icon_state = "tracksuit"
 	item_state = "tracksuit"
-
-/obj/item/clothing/under/f13/enclave_exile
-	name = "disheveled and ripped enclave uniform"
-	desc = "A enclave navarro survivors uniform."
-	icon_state = "enclave_exile"
-	item_state = "enclave_exile"

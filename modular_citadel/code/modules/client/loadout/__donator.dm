@@ -168,8 +168,8 @@
 	ckeywhitelist = list("erabite")	
 
 /obj/item/storage/box/large/custom_kit/flaka/PopulateContents()
-	new /obj/item/clothing/head/f13/enclave_hood(src)
-	new /obj/item/clothing/suit/armor/f13/gunnytrench(src)
+	new /obj/item/clothing/head/f13/enclave/hood(src)
+	new /obj/item/clothing/suit/armor/f13/enclavetrenchcoat/gunny(src)
 	new /obj/item/melee/powered/ripper(src)
 
 /datum/gear/donator/kits/flaka

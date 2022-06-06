@@ -48,6 +48,26 @@
 			playsound(src,'sound/machines/door_close.ogg',40,1)
 			flick("secure_closing", src)
 
+//Oasis doors
+/obj/machinery/door/unpowered/securedoor/town_clinic
+	name = "\improper Town Clinic"
+	req_access_txt = "133"
+
+/obj/machinery/door/unpowered/securedoor/police
+	name = "\improper Armory"
+	req_access_txt = "62"
+
+/obj/machinery/door/unpowered/securedoor/church
+	name = "\improper Church"
+	req_access_txt = "22"
+
+/obj/machinery/door/unpowered/securedoor/farm
+	name = "\improper Farm"
+	req_access_txt = "28"
+
+/obj/machinery/door/unpowered/securedoor/mayor
+	name = "\improper Mayor's Office"
+	req_access_txt = "130"
 
 // SECURE DOOR - LEGION
 
@@ -124,7 +144,7 @@
 /obj/machinery/door/unpowered/celldoor
 	name = "cell door"
 	desc = "Celldoor with a built-in lock. Can't be padlocked."
-	icon_state = "cell" 
+	icon_state = "cell"
 	max_integrity = 600
 	obj_integrity = 600
 	assemblytype = /obj/item/stack/rods
@@ -162,7 +182,7 @@
 /obj/machinery/door/unpowered/secure_legion
 	name = "iron gate"
 	desc = "Thick iron rods with sharp tips make for a fitting gate for the Legion castrum."
-	icon_state = "secure_legion" 
+	icon_state = "secure_legion"
 	max_integrity = 700
 	obj_integrity = 700
 	assemblytype = /obj/item/stack/rods
@@ -193,7 +213,7 @@
 /obj/machinery/door/unpowered/secure_bos
 	name = "steel security door"
 	desc = "Hard steel makes a statement. The statement in this case is stay out."
-	icon_state = "secure_bos" 
+	icon_state = "secure_bos"
 	max_integrity = 800
 	obj_integrity = 800
 	assemblytype = /obj/item/stack/sheet/metal/ten

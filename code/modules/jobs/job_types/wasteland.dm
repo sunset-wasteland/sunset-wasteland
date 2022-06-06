@@ -172,7 +172,7 @@ Raider
 	/datum/outfit/loadout/raider_legion,
 	/datum/outfit/loadout/raider_bos,
 	/datum/outfit/loadout/quack_doctor,
-	/datum/outfit/loadout/raider_powder, 
+	/datum/outfit/loadout/raider_powder,
 	/datum/outfit/loadout/raider_tribal
 	)
 
@@ -208,7 +208,7 @@ Raider
 		/obj/item/clothing/under/pants/f13/ghoul, \
 		/obj/item/clothing/under/jabroni \
 		)
-	
+
 	shoes = pick(
 			/obj/item/clothing/shoes/jackboots,\
 			/obj/item/clothing/shoes/f13/raidertreads \
@@ -649,195 +649,6 @@ Raider
 		/obj/item/radio = 1
 		)
 
-
-//Wasteland Preacher
-/datum/job/wasteland/f13preacher
-	title = "Preacher"
-	flag = F13PREACHER
-	faction = FACTION_WASTELAND
-	total_positions = 1
-	spawn_positions = 1
-	supervisors = "God"
-	description = "You are the last bastion of faith in this God-forsaken Wasteland. Spread your word and preach to the faithless."
-	selection_color = "#dcba97"
-
-	outfit = /datum/outfit/job/wasteland/f13preacher
-
-	loadout_options = list(
-	/datum/outfit/loadout/crusader, 	//This is kinda a given. You bet.
-	/datum/outfit/loadout/samaritan, 	//Water and food to share with the wastes.
-	/datum/outfit/loadout/cleanser		//Just some bombs.
-	)
-
-	access = list()		//we can expand on this and make alterations as people suggest different loadouts
-	minimal_access = list()
-	matchmaking_allowed = list(
-		/datum/matchmaking_pref/friend = list(
-			/datum/job/wasteland/f13wastelander,
-			/datum/job/oasis/f13detective,
-		),
-		/datum/matchmaking_pref/rival = list(
-			/datum/job/wasteland/f13wastelander,
-			/datum/job/oasis/f13detective,
-		),
-		/datum/matchmaking_pref/mentor = list(
-			/datum/job/wasteland/f13wastelander,
-		),
-		/datum/matchmaking_pref/disciple = list(
-			/datum/job/wasteland/f13wastelander,
-			/datum/job/oasis/f13detective,
-		),
-		/datum/matchmaking_pref/patron = list(
-			/datum/job/wasteland/f13wastelander,
-		),
-		/datum/matchmaking_pref/protegee = list(
-			/datum/job/wasteland/f13wastelander,
-		),
-	)
-
-
-
-/datum/outfit/loadout/crusader
-	name = "Crusader"
-	backpack_contents = list(
-		/obj/item/clothing/suit/armor/knight = 1,
-		/obj/item/clothing/head/helmet/knight/red = 1,
-		/obj/item/melee/onehanded/machete = 1,
-	)
-
-/datum/outfit/loadout/samaritan
-	name = "Samaritan"
-	backpack_contents = list(
-		/obj/item/reagent_containers/food/snacks/store/bread/plain = 5,
-		/obj/item/reagent_containers/food/snacks/fishmeat/salmon = 2,
-		/obj/item/reagent_containers/glass/beaker/waterbottle = 2,
-		/obj/item/nullrod = 1,
-	)	//Matthew 14:17 RSVCE and KJV - Kitsunemitsu
-
-/datum/outfit/loadout/cleanser
-	name = "Cleanser"
-	backpack_contents = list(
-		/obj/item/grenade/homemade/coffeepotbomb = 2,	//This is funny. I swear guys.
-		/obj/item/gun/ballistic/revolver/m29 = 1,		//Moved here for more *variety*
-		/obj/item/ammo_box/m44 = 2
-	)
-
-
-/datum/job/wasteland/f13preacher/after_spawn(mob/living/H, mob/M)
-	. = ..()
-	if(H.mind)
-		H.mind.isholy = TRUE
-
-	var/obj/item/storage/book/bible/booze/B = new
-
-	if(GLOB.religion)
-		B.deity_name = GLOB.deity
-		B.name = GLOB.bible_name
-		B.icon_state = GLOB.bible_icon_state
-		B.item_state = GLOB.bible_item_state
-		to_chat(H, "There is already an established religion onboard the station. You are an acolyte of [GLOB.deity]. Defer to the Chaplain.")
-		H.equip_to_slot_or_del(B, SLOT_IN_BACKPACK)
-		var/nrt = GLOB.holy_weapon_type || /obj/item/nullrod
-		var/obj/item/nullrod/N = new nrt(H)
-		H.put_in_hands(N)
-		return
-
-	var/new_religion = DEFAULT_RELIGION
-	if(M.client && M.client.prefs.custom_names["religion"])
-		new_religion = M.client.prefs.custom_names["religion"]
-
-	var/new_deity = DEFAULT_DEITY
-	if(M.client && M.client.prefs.custom_names["deity"])
-		new_deity = M.client.prefs.custom_names["deity"]
-
-	B.deity_name = new_deity
-
-
-	switch(lowertext(new_religion))
-		if("christianity") // DEFAULT_RELIGION
-			B.name = pick("The Holy Bible","The Dead Sea Scrolls")
-		if("buddhism")
-			B.name = "The Sutras"
-		if("clownism","honkmother","honk","honkism","comedy")
-			B.name = pick("The Holy Joke Book", "Just a Prank", "Hymns to the Honkmother")
-		if("chaos")
-			B.name = "The Book of Lorgar"
-		if("cthulhu")
-			B.name = "The Necronomicon"
-		if("hinduism")
-			B.name = "The Vedas"
-		if("homosexuality")
-			B.name = pick("Guys Gone Wild","Coming Out of The Closet")
-		if("imperium")
-			B.name = "Uplifting Primer"
-		if("islam")
-			B.name = "Quran"
-		if("judaism")
-			B.name = "The Torah"
-		if("lampism")
-			B.name = "Fluorescent Incandescence"
-		if("lol", "wtf", "gay", "penis", "ass", "poo", "badmin", "shitmin", "deadmin", "cock", "cocks", "meme", "memes")
-			B.name = pick("Woodys Got Wood: The Aftermath", "War of the Cocks", "Sweet Bro and Hella Jef: Expanded Edition", "F.A.T.A.L. Rulebook")
-			H.adjustOrganLoss(ORGAN_SLOT_BRAIN, 100) // starts off dumb as fuck
-		if("monkeyism","apism","gorillism","primatism")
-			B.name = pick("Going Bananas", "Bananas Out For Harambe")
-		if("mormonism")
-			B.name = "The Book of Mormon"
-		if("pastafarianism")
-			B.name = "The Gospel of the Flying Spaghetti Monster"
-		if("rastafarianism","rasta")
-			B.name = "The Holy Piby"
-		if("satanism")
-			B.name = "The Unholy Bible"
-		if("science")
-			B.name = pick("Principle of Relativity", "Quantum Enigma: Physics Encounters Consciousness", "Programming the Universe", "Quantum Physics and Theology", "String Theory for Dummies", "How To: Build Your Own Warp Drive", "The Mysteries of Bluespace", "Playing God: Collector's Edition")
-		if("scientology")
-			B.name = pick("The Biography of L. Ron Hubbard","Dianetics")
-		if("servicianism", "partying")
-			B.name = "The Tenets of Servicia"
-			B.deity_name = pick("Servicia", "Space Bacchus", "Space Dionysus")
-			B.desc = "Happy, Full, Clean. Live it and give it."
-		if("subgenius")
-			B.name = "Book of the SubGenius"
-		if("toolboxia","greytide")
-			B.name = pick("Toolbox Manifesto","iGlove Assistants")
-		if("weeaboo","kawaii")
-			B.name = pick("Fanfiction Compendium","Japanese for Dummies","The Manganomicon","Establishing Your O.T.P")
-		else
-			B.name = "The Holy Book of [new_religion]"
-
-	GLOB.religion = new_religion
-	GLOB.bible_name = B.name
-	GLOB.deity = B.deity_name
-
-	H.equip_to_slot_or_del(B, SLOT_IN_BACKPACK)
-
-	SSblackbox.record_feedback("text", "religion_name", 1, "[new_religion]", 1)
-	SSblackbox.record_feedback("text", "religion_deity", 1, "[new_deity]", 1)
-
-
-/datum/outfit/job/wasteland/f13preacher
-	name = "Preacher"
-	jobtype = /datum/job/wasteland/f13preacher
-
-	id = null
-	ears = 			/obj/item/radio/headset
-	belt = null
-	uniform = 		/obj/item/clothing/under/f13/chaplain
-	gloves =		/obj/item/clothing/gloves/fingerless
-	shoes = 		/obj/item/clothing/shoes/jackboots
-	r_pocket = 		/obj/item/flashlight/flare
-
-	backpack =		/obj/item/storage/backpack/cultpack
-	satchel = 		/obj/item/storage/backpack/cultpack
-	backpack_contents = list(
-		/obj/item/camera/spooky = 1, 
-		/obj/item/reagent_containers/food/drinks/flask = 1, 
-		/obj/item/reagent_containers/hypospray/medipen/stimpak = 2, 
-		/obj/item/storage/fancy/candle_box = 1,
-		/obj/item/storage/bag/money/small/settler
-		)
-
 /datum/job/wasteland/f13enforcer
 	title = "Den Mob Enforcer"
 	flag = F13ENFORCER
@@ -878,8 +689,8 @@ Raider
 	head = /obj/item/clothing/head/beret/durathread
 	mask =  /obj/item/clothing/mask/bandana/durathread
 	backpack_contents = list(
-		/obj/item/reagent_containers/hypospray/medipen/stimpak = 1, 
-		/obj/item/restraints/handcuffs = 1, 
+		/obj/item/reagent_containers/hypospray/medipen/stimpak = 1,
+		/obj/item/restraints/handcuffs = 1,
 		/obj/item/storage/bag/money/small/wastelander
 		)
 
@@ -963,7 +774,7 @@ Raider
 	backpack_contents = list(
 		/obj/item/reagent_containers/hypospray/medipen/stimpak = 1,
 		/obj/item/restraints/handcuffs = 1,
-		/obj/item/storage/bag/money/small/raider/mobboss, 
+		/obj/item/storage/bag/money/small/raider/mobboss,
 		/obj/item/book/granter/crafting_recipe/manual/denvr
 		)
 
@@ -971,9 +782,9 @@ Raider
 /datum/outfit/loadout/ncrrdenboss
 	name = "Central Cali Den Boss"
 	backpack_contents = list(
-							/obj/item/ammo_box/tube/a357 = 4, 
-							/obj/item/book/granter/trait/trekking = 1, 
-							/obj/item/gun/ballistic/revolver/colt357/brassgun = 2, 
+							/obj/item/ammo_box/tube/a357 = 4,
+							/obj/item/book/granter/trait/trekking = 1,
+							/obj/item/gun/ballistic/revolver/colt357/brassgun = 2,
 							/obj/item/book/granter/trait/gunslinger = 1
 							)
 
@@ -981,7 +792,7 @@ Raider
 	name = "True Den Boss"
 	r_hand = /obj/item/gun/ballistic/automatic/smg/tommygun
 	backpack_contents = list(
-							/obj/item/ammo_box/magazine/tommygunm45/stick = 3 
+							/obj/item/ammo_box/magazine/tommygunm45/stick = 3
 							)
 
 datum/job/wasteland/f13dendoctor
@@ -1057,10 +868,10 @@ datum/job/wasteland/f13dendoctor
 	r_hand = /obj/item/gun/ballistic/automatic/pistol/type17
 	suit = /obj/item/clothing/suit/toggle/labcoat/chemist
 	backpack_contents = list(
-						/obj/item/ammo_box/magazine/m10mm_adv/simple = 1, 
+						/obj/item/ammo_box/magazine/m10mm_adv/simple = 1,
 						/obj/item/grenade/chem_grenade = 1,
-						/obj/item/clothing/mask/gas = 1, 
-						/obj/item/reagent_containers/glass/beaker/large = 2 
+						/obj/item/clothing/mask/gas = 1,
+						/obj/item/reagent_containers/glass/beaker/large = 2
 						)
 
 

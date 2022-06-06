@@ -375,6 +375,17 @@
 /obj/machinery/door/airlock/grunge/abandoned
 	abandoned = TRUE
 
+//Oasis doors
+/obj/machinery/door/airlock/grunge/store
+	name = "\improper Store"
+	req_access_txt = "34"
+	max_integrity = 500
+	normal_integrity = 500
+
+/obj/machinery/door/airlock/grunge/store/prospector
+	name = "\improper Prospector"
+	req_access_txt = "48"
+
 //////////////////////////////////
 /*
 	Vault Airlocks

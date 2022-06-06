@@ -77,3 +77,35 @@
 /obj/machinery/door/poddoor/shutters/window/preopen
 	icon_state = "open"
 	density = FALSE
+
+//Oasis
+/obj/machinery/door/poddoor/shutters/gatehouse
+	name = "\improper Gatehouse Shutters"
+	id = "gatehouse_shutters"
+
+/obj/machinery/door/poddoor/shutters/gatehouse/two
+	id = "gatehouse_shutters2"
+
+/obj/machinery/door/poddoor/shutters/store
+	name = "\improper Store Shutters"
+	id = "store_shutters"
+
+/obj/machinery/door/poddoor/shutters/store_counter
+	name = "\improper Store Counter Shutters"
+	id = "store_counter_shutters"
+
+/obj/machinery/door/poddoor/shutters/prospector
+	name = "\improper Prospector Counter Shutters"
+	id = "prospector_counter_shutters"
+
+/obj/machinery/door/poddoor/shutters/bar
+	name = "\improper Bar Shutters"
+	id = "bar_counter_shutters"
+
+/obj/machinery/door/poddoor/shutters/clinic
+	name = "\improper Clinic Shutters"
+	id = "clinic_shutters"
+
+/obj/machinery/door/poddoor/shutters/clinic_counter
+	name = "\improper Clinic Counter Shutters"
+	id = "clinic_counter_shutters"

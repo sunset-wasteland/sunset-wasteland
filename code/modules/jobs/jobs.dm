@@ -163,6 +163,8 @@ GLOBAL_LIST_INIT(oasis_positions, list(
 	"Prospector",
 	"Detective",
 	"Barkeep",
+	"Town Doctor",
+	"Preacher"
 ))
 
 GLOBAL_LIST_INIT(legion_command_positions, list(
@@ -235,7 +237,6 @@ GLOBAL_LIST_INIT(wasteland_positions, list(
 	"Great Khan",
 	"Faithful",
 	"Vigilante",
-	"Preacher",
 	"Tribal",
 	"Wastelander",
 ))

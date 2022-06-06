@@ -285,3 +285,52 @@
 	icon_state = "button"
 	result_path = /obj/machinery/button
 	custom_materials = list(/datum/material/iron = MINERAL_MATERIAL_AMOUNT)
+
+//Oasis buttons
+/obj/machinery/button/door/gatehouse_shutters
+	name = "\improper Gatehouse Shutters Button"
+	id = "gatehouse_shutters"
+
+/obj/machinery/button/door/gatehouse_shutters/two
+	id = "gatehouse_shutters2"
+
+/obj/machinery/button/door/interior_gate/two
+	id = "interior_gate2"
+
+/obj/machinery/button/door/exterior_gate
+	name = "\improper Exterior Gate Button"
+	id = "exterior_gate"
+
+/obj/machinery/button/door/exterior_gate/two
+	id = "exterior_gate2"
+
+/obj/machinery/button/door/interior_gate
+	name = "\improper Interior Gate Button"
+	id = "interior_gate"
+
+/obj/machinery/button/door/interior_gate/two
+	id = "interior_gate2"
+
+/obj/machinery/button/door/store
+	name = "\improper Store Shutters Button"
+	id = "store_shutters"
+
+/obj/machinery/button/door/store_counter
+	name = "\improper Counter Shutters Button"
+	id = "store_counter_shutters"
+
+/obj/machinery/button/door/prospector
+	name = "\improper Counter Shutters Button"
+	id = "prospector_counter_shutters"
+
+/obj/machinery/button/door/bar
+	name = "\improper Counter Shutters Button"
+	id = "bar_counter_shutters"
+
+/obj/machinery/button/door/clinic
+	name = "\improper Clinic Shutters Button"
+	id = "clinic_shutters"
+
+/obj/machinery/button/door/clinic_counter
+	name = "\improper Counter Shutters Button"
+	id = "clinic_counter_shutters"

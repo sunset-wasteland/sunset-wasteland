@@ -37,3 +37,20 @@
 	icon_state = "Brotherhood_gate_open"
 	density = FALSE
 	opacity = FALSE
+
+//Oasis
+/obj/machinery/door/poddoor/gate/preopen/north
+	name = "\improper North Interior Gate"
+	id = "interior_gate"
+
+/obj/machinery/door/poddoor/gate/preopen/north/two
+	name = "\improper North Exterior Gate"
+	id = "exterior_gate"
+
+/obj/machinery/door/poddoor/gate/preopen/south
+	name = "\improper South Interior Gate"
+	id = "interior_gate2"
+
+/obj/machinery/door/poddoor/gate/preopen/south/exterior
+	name = "\improper South Exterior Gate"
+	id = "exterior_gate2"

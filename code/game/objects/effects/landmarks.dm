@@ -771,8 +771,9 @@ obj/effect/landmark/start/f13/ncrlogisticsofficer
 	name = "Citizen"
 	icon_state = "Settler"
 
-/obj/effect/landmark/start/f13/dendoc
-	name = "Doctor"
+/obj/effect/landmark/start/f13/towndoctor
+	name = "Town Doctor"
+	icon_state = "Medical Doctor"
 
 /obj/effect/landmark/start/f13/shopkeeper
 	name = "Shopkeeper"

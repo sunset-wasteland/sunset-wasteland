@@ -118,7 +118,7 @@
 #define DEP_OASIS (1<<6)
 
 #define F13POLICECHIEF	(1<<0)
-#define F13DENDOC       (1<<1)
+#define F13TOWNDOCTOR	(1<<1)
 #define F13SETTLER		(1<<2)
 #define F13FARMER		(1<<3)
 #define F13PROSPECTOR	(1<<4)

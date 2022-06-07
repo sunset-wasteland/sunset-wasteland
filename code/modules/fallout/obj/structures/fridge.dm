@@ -4,6 +4,7 @@
 	name = "fridge"
 	desc = "An old, pre-War refrigerator.<br>Despite being covered in rust and making noises straight out of a horror film, it still keeps your Nuka-Cola cold."
 	icon_state = "fridge"
+	anchored = TRUE
 
 /obj/structure/closet/fridge/standard/New()
 	..()
@@ -30,4 +31,3 @@
 	desc = "An old, rusted freezer.<br>Despite going through a nuclear holocaust, it's somehow still good at keeping things cold."
 	name = "freezer"
 	icon_state = "freezer"
-

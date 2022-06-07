@@ -254,7 +254,10 @@ Raider
 		/obj/item/shishkebabpack = 1,
 		/obj/item/storage/fancy/cigarettes/cigpack_cannabis = 1,
 		/obj/item/megaphone = 1,
-		/obj/item/storage/pill_bottle/chem_tin/buffout = 1
+		/obj/item/radio/headset = 1,
+		/obj/item/book/granter/trait/bigleagues = 1,	
+		/obj/item/storage/pill_bottle/chem_tin/buffout = 1,
+		/obj/item/book/granter/trait/trekking = 1
 		)
 
 /datum/outfit/loadout/raider_blast
@@ -263,10 +266,8 @@ Raider
 	head = /obj/item/clothing/head/helmet/f13/raider/blastmaster
 	backpack_contents = list(
 		/obj/item/kitchen/knife/butcher = 1,
-		/obj/item/grenade/homemade/firebomb = 4,
-		/obj/item/bottlecap_mine = 1,
-		/obj/item/grenade/homemade/coffeepotbomb = 4,
 		/obj/item/book/granter/crafting_recipe/blueprint/trapper = 1,
+		/obj/item/radio/headset = 1,	
 		/obj/item/book/granter/trait/explosives = 1
 		)
 
@@ -281,6 +282,7 @@ Raider
 		/obj/item/restraints/legcuffs/beartrap = 2,
 		/obj/item/reverse_bear_trap = 1,
 		/obj/item/melee/unarmed/lacerator = 1,
+		/obj/item/radio/headset = 1,
 		/obj/item/book/granter/trait/trekking = 1
 		)
 
@@ -289,13 +291,14 @@ Raider
 	suit = /obj/item/clothing/suit/armor/f13/raider/badlands
 	head = /obj/item/clothing/head/helmet/f13/fiend
 	backpack_contents = list(
-		/obj/item/gun/energy/laser/wattz/magneto = 1,
-		/obj/item/gun/energy/laser/wattz = 1,
+		/obj/item/gun/energy/laser/wattz/magneto = 2,
 		/obj/item/stock_parts/cell/ammo/ec = 2,
 		/obj/item/reagent_containers/hypospray/medipen/psycho = 3,
 		/obj/item/reagent_containers/pill/patch/turbo = 2,
 		/obj/item/reagent_containers/hypospray/medipen/medx = 1,
-		/obj/item/book/granter/trait/bigleagues = 1
+		/obj/item/book/granter/trait/bigleagues = 1,
+		/obj/item/book/granter/trait/trekking = 1,
+		/obj/item/radio/headset = 1
 		)
 
 
@@ -308,7 +311,10 @@ Raider
 		/obj/item/ammo_box/shotgun/buck = 1,
 		/obj/item/ammo_box/shotgun/bean = 1,
 		/obj/item/melee/onehanded/club/fryingpan = 1,
-		/obj/item/grenade/chem_grenade/cleaner = 1
+		/obj/item/radio/headset = 1,	
+		/obj/item/book/granter/trait/bigleagues = 1,
+		/obj/item/book/granter/trait/trekking = 1,
+		/obj/item/grenade/chem_grenade/cleaner = 2
 		)
 
 /datum/outfit/loadout/quack_doctor
@@ -338,6 +344,7 @@ Raider
 		/obj/item/ammo_box/magazine/m556/rifle=2,
 		/obj/item/melee/onehanded/knife/bayonet = 1,
 		/obj/item/storage/box/ration/ranger_breakfast = 1,
+		/obj/item/radio/headset = 1,
 		/obj/item/book/granter/crafting_recipe/blueprint/r82 = 1
 		)
 
@@ -351,6 +358,7 @@ Raider
 		/obj/item/storage/backpack/spearquiver = 1,
 		/obj/item/gun/ballistic/automatic/smg/greasegun = 1,
 		/obj/item/ammo_box/magazine/greasegun = 1,
+		/obj/item/book/granter/trait/bigleagues = 1,
 		/obj/item/book/granter/trait/trekking = 1
 		)
 
@@ -362,7 +370,10 @@ Raider
 		/obj/item/gun/energy/laser/pistol = 1,
 		/obj/item/stock_parts/cell/ammo/ec = 2,
 		/obj/item/book/granter/crafting_recipe/blueprint/aep7 = 1,
-		/obj/item/grenade/f13/frag = 2
+		/obj/item/storage/belt/holster/legholster = 1,
+		/obj/item/pda = 1,
+		/obj/item/radio/headset = 1,
+		/obj/item/grenade/empgrenade = 2
 		)
 
 /datum/outfit/loadout/raider_sheriff
@@ -374,6 +385,7 @@ Raider
 		/obj/item/gun/ballistic/revolver/m29/snub = 2,
 		/obj/item/storage/belt/holster = 1,
 		/obj/item/ammo_box/m44 = 3,
+		/obj/item/radio/headset = 1,
 		/obj/item/book/granter/trait/gunslinger = 1
 		)
 
@@ -390,6 +402,7 @@ Raider
 		/obj/item/melee/smith/hammer = 1,
 		/obj/item/stack/sheet/mineral/sandstone = 50,
 		/obj/item/book/granter/trait/techno = 1,
+		/obj/item/radio/headset = 1,
 		/obj/item/book/granter/crafting_recipe/scav_one = 1
 		)
 
@@ -401,7 +414,8 @@ Raider
 	backpack_contents = list(
 		/obj/item/gun/ballistic/automatic/smg/smg10mm = 1,
 		/obj/item/ammo_box/magazine/m10mm_adv/ext = 1,
-		/obj/item/reagent_containers/hypospray/medipen/stimpak/imitation = 2
+		/obj/item/reagent_containers/hypospray/medipen/stimpak/super = 2,
+		/obj/item/radio/headset = 1
 		)
 
 /datum/outfit/loadout/raider_tribal
@@ -417,7 +431,8 @@ Raider
 		/obj/item/clothing/mask/cigarette/pipe = 1,
 		/obj/item/melee/onehanded/knife/bone = 1,
 		/obj/item/radio/tribal = 1,
-		/obj/item/book/granter/trait/bigleagues = 1
+		/obj/item/book/granter/trait/bigleagues = 1,
+		/obj/item/book/granter/trait/trekking = 1
 		)
 
 /datum/outfit/loadout/raider_powder
@@ -429,7 +444,8 @@ Raider
 		/obj/item/melee/onehanded/knife/hunting = 1,
 		/obj/item/gun/ballistic/automatic/smg/greasegun = 1,
 		/obj/item/ammo_box/magazine/greasegun = 2,
-		/obj/item/grenade/f13/dynamite = 2
+		/obj/item/grenade/f13/dynamite = 2,
+		/obj/item/book/granter/trait/explosives = 1
 		)
 
 /datum/job/wasteland/f13wastelander

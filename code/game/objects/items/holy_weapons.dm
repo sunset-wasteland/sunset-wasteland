@@ -1,4 +1,4 @@
-/obj/item/claymore 
+/obj/item/claymore
 	name = "claymore"
 	desc = "What are you standing around staring at this for? Get to killing!"
 	icon_state = "claymore"
@@ -782,7 +782,7 @@
 	if(user.a_intent == INTENT_HARM)
 		return ..()
 
-	if(!user.mind || user.mind.assigned_role != "Chaplain")
+	if(!user.mind || user.mind.assigned_role != "Preacher")
 		to_chat(user, "<span class='notice'>You are not close enough with [deity_name] to use [src].</span>")
 		return
 

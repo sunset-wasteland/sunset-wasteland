@@ -52,7 +52,7 @@ GLOBAL_LIST_INIT(bibleitemstates, list("bible", "koran", "scrapbook", "bible",  
 		return
 	if(GLOB.bible_icon_state) // if there is already a bible icon return FALSE
 		return FALSE
-	if(user.job != "Chaplain") // if the user is not the chaplain, return FALSE
+	if(user.job != "Preacher") // if the user is not the chaplain, return FALSE
 		return FALSE
 
 	var/list/skins = list()
@@ -90,7 +90,7 @@ GLOBAL_LIST_INIT(bibleitemstates, list("bible", "koran", "scrapbook", "bible",  
 		return FALSE
 	if(user.incapacitated())
 		return FALSE
-	if(user.job != "Chaplain")
+	if(user.job != "Preacher")
 		return FALSE
 	return TRUE
 

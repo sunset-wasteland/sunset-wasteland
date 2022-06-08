@@ -159,7 +159,7 @@
 
 	if(user.mind)
 		//Chaplains are very good at speaking with the voice of god
-		if(user.mind.assigned_role == "Chaplain")
+		if(user.mind.assigned_role == "Preacher")
 			power_multiplier *= 2
 		//Command staff has authority
 		if(user.mind.assigned_role in GLOB.command_positions)
@@ -619,7 +619,7 @@
 	// Not sure I want to give extra power to anyone at the moment...? We'll see how it turns out
 	if(user.mind)
 		//Chaplains are very good at indoctrinating
-		if(user.mind.assigned_role == "Chaplain")
+		if(user.mind.assigned_role == "Preacher")
 			power_multiplier *= 1.2
 		//Command staff has authority
 		if(user.mind.assigned_role in GLOB.command_positions)

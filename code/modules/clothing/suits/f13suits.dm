@@ -376,14 +376,14 @@
 	hoodtype = /obj/item/clothing/head/hooded/cloakhood/goliath
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 	slowdown = 0.07
-	armor = list("melee" = 40, "bullet" = 20, "laser" = 40, "energy" = 25, "bomb" = 16, "bio" = 10, "rad" = 10, "fire" = 0, "acid" = 0)
+	armor = list("melee" = 40, "bullet" = 20, "laser" = 40, "energy" = 25, "bomb" = 16, "bio" = 10, "rad" = 10, "fire" = 0, "acid" = 0, "wound" = 25)
 
 /obj/item/clothing/head/hooded/cloakhood/goliath
 	name = "deathclaw cloak hood"
 	desc = "A protective & concealing hood."
 	icon_state = "clawheadcloak"
 	flags_inv = HIDEEARS|HIDEEYES|HIDEHAIR|HIDEFACIALHAIR
-	armor = list("melee" = 40, "bullet" = 20, "laser" = 40, "energy" = 25, "bomb" = 16, "bio" = 10, "rad" = 10, "fire" = 0, "acid" = 0)
+	armor = list("melee" = 40, "bullet" = 20, "laser" = 40, "energy" = 25, "bomb" = 16, "bio" = 10, "rad" = 10, "fire" = 0, "acid" = 0, "wound" = 25)
 
 /obj/item/clothing/suit/hooded/parka/medical
 	name = "armored medical parka"
@@ -458,7 +458,7 @@
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS|HANDS
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	slowdown = 0.05
-	armor = list("melee" = 40, "bullet" = 60, "laser" = 40, "energy" = 25, "bomb" = 16, "bio" = 10, "rad" = 10, "fire" = 0, "acid" = 0)
+	armor = list("melee" = 40, "bullet" = 60, "laser" = 40, "energy" = 25, "bomb" = 16, "bio" = 10, "rad" = 10, "fire" = 0, "acid" = 0, "wound" = 35)
 
 /obj/item/clothing/head/hooded/cloakhood/hhunter
 	name = "Razorclaw helm"
@@ -466,7 +466,7 @@
 	icon_state = "rchelmet"
 	heat_protection = HEAD
 	resistance_flags = FIRE_PROOF | ACID_PROOF
-	armor = list("melee" = 40, "bullet" = 60, "laser" = 40, "energy" = 25, "bomb" = 16, "bio" = 10, "rad" = 10, "fire" = 0, "acid" = 0)
+	armor = list("melee" = 40, "bullet" = 60, "laser" = 40, "energy" = 25, "bomb" = 16, "bio" = 10, "rad" = 10, "fire" = 0, "acid" = 0, "wound" = 35)
 
 /obj/item/clothing/suit/f13/jamrock
 	name = "disco-ass blazer"

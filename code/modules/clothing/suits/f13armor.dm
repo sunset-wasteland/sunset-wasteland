@@ -931,7 +931,7 @@ obj/item/clothing/suit/armor/f13/exile/cust0m
 	name = "outlaw coat"
 	desc = "An ugly looking combat duster"
 	icon_state = "harperduster"
-	armor = list("melee" = 25, "bullet" = 50, "laser" = 25, "bio" = 0, "rad" = 0, "fire" = 25, "acid" = 25)
+	armor = list("melee" = 25, "bullet" = 50, "laser" = 25, "bio" = 0, "rad" = 0, "fire" = 25, "acid" = 25, "wound" = 25)
 	slowdown = 0.07
 
 /obj/item/clothing/suit/armor/f13/raider/reptiliatenebris
@@ -1323,7 +1323,7 @@ obj/item/clothing/suit/armor/f13/exile/cust0m
 	slowdown = 0.05
 	salvage_loot = list(/obj/item/stack/crafting/armor_plate = 4) // Slightly better armor
 
-/obj/item/clothing/suit/armor/f13/combat/mk2/bandit_duster 
+/obj/item/clothing/suit/armor/f13/combat/mk2/bandit_duster
 	name = "reinforced duster armor"
 	desc = "A reinforced set of combat armor covered by a black duster."
 	icon_state = "Bandit_duster"

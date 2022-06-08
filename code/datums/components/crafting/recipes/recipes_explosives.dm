@@ -316,12 +316,12 @@
 	result = /obj/item/ammo_casing/caseless/rocket/big
 	reqs = list(
 		/obj/item/rocketshell = 1,
-		/obj/item/stack/crafting/electronicparts = 5,
-		/obj/item/stack/sheet/prewar = 5,
-		/obj/item/stack/ore/blackpowder = 15,
+		/obj/item/stack/crafting/electronicparts = 45,
+		/obj/item/stack/sheet/prewar = 20,
+		/obj/item/stack/ore/blackpowder = 45,
 	)
 	tools = list(TOOL_AWORKBENCH)
-	time = 5
+	time = 150
 	always_available = FALSE
 
 /datum/crafting_recipe/incendiaryrocket

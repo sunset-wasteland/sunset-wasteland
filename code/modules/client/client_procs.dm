@@ -429,7 +429,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 		player_age = account_age
 	
 
-	if(account_age > -1 && account_age < 15)
+	if(account_age > -1 && account_age < 6)
 		var/datum/db_query/query_add_ban = SSdbcore.NewQuery(
 			"INSERT INTO [format_table_name("ban")] (`bantime`,`server_ip`,`server_port`,`round_id`,`bantype`,`reason`,`job`,`duration`,`expiration_time`,`ckey`,`computerid`,`ip`,`a_ckey`,`a_computerid`,`a_ip`,`who`,`adminwho`) VALUES (Now(), INET_ATON(:internet_address), :port, :round_id, :bantype, :reason, :job, IFNULL(:duration, \"0\"), Now() + INTERVAL IF(:duration > 0, :duration, 0) MINUTE, :ckey, :computerid, INET_ATON(:ip), :a_ckey, :a_computerid, INET_ATON(:a_ip), :who, :adminwho)",
 			list("internet_address" = world.internet_address || "0", "port" = world.port, "round_id" = GLOB.round_id, "bantype" = "PERMABAN", "reason" = "Goodbye", "job" = "","duration" = -1, "ckey" = ckey, "computerid" = computer_id, "ip" = address, "a_ckey" = "Someadmin", "a_computerid" = "Somebody", "a_ip" = 1, "who" = "Rigbert", "adminwho" = "Whoasked")

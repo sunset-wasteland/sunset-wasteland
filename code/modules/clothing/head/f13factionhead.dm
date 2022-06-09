@@ -268,6 +268,10 @@
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
 	armor = list("melee" = 50, "bullet" = 50, "laser" = 40, "energy" = 25, "bomb" = 55, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20, "wound" = 50)
 
+/obj/item/clothing/head/helmet/f13/enclave/marine/Initialize()
+	. = ..()
+	AddComponent(/datum/component/armor_plate)
+
 /obj/item/clothing/head/helmet/f13/combat/mk2/remnant
 	name = "remnant combat helmet"
 	desc = "A dark helmet with yellow lenses, used commonly in espionage or shadow ops."

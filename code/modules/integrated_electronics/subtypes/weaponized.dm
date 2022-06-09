@@ -140,6 +140,7 @@
 	A.fire()
 	log_attack("[assembly] [REF(assembly)] has fired [installed_gun].")
 	return A
+ */
 
 /obj/item/integrated_circuit/weaponized/grenade
 	name = "grenade primer"
@@ -350,4 +351,3 @@
 		H.forcesay(GLOB.hit_appends)
 
 	return 1
- */

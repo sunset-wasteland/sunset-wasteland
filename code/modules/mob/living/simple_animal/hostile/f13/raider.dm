@@ -106,7 +106,7 @@
 	health = 600
 	retreat_distance = 1
 	minimum_distance = 2
-	projectiletype = /obj/item/projectile/bullet/m44
+	projectiletype = /obj/item/projectile/bullet/m44/simple
 	projectilesound = 'sound/f13weapons/44mag.ogg'
 	extra_projectiles = 1
 	aggro_vision_range = 15
@@ -158,7 +158,7 @@
 	melee_damage_upper = 20
 	maxHealth = 200
 	health = 200
-	projectiletype = /obj/item/projectile/bullet/a556/match
+	projectiletype = /obj/item/projectile/bullet/c45/op
 	projectilesound = 'sound/f13weapons/magnum_fire.ogg'
 	casingtype = /obj/item/ammo_casing/a556
 	loot = list(/obj/item/gun/ballistic/revolver/thatgun, /obj/item/clothing/suit/armor/f13/combatrusted, /obj/item/clothing/head/helmet/f13/raidercombathelmet)

@@ -311,6 +311,7 @@ Uranium, Contaminated
 /obj/item/projectile/bullet/m44/simple //for simple mobs, separate to allow balancing
 	name = ".44 bullet"
 	damage = 40
+	armour_penetration = 0.1
 
 /obj/item/projectile/bullet/m44/incendiary
 	name = ".44 incendiary bullet"

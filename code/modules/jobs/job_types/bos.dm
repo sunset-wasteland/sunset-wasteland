@@ -108,10 +108,10 @@ Head Paladin
 	exp_requirements = 2400
 
 	loadout_options = list(
-	/datum/outfit/loadout/sentstand, //Tribeam laser + Hardened T-51
-	/datum/outfit/loadout/sentheavy, //Gauss + Glock + Hardened T-51
-	/datum/outfit/loadout/sentgat, // Gatling + Hardened T-51
-	/datum/outfit/loadout/sentmini, // Minigun + Hardened T-51
+	/datum/outfit/loadout/sentstand, //Tribeam laser + Hardened Midwest T-51
+	/datum/outfit/loadout/sentheavy, //Gauss + Glock + Hardened Midwest T-51
+	/datum/outfit/loadout/sentgat, // Gatling + Hardened Midwest T-51
+	/datum/outfit/loadout/sentmini, // Minigun + Hardened Midwest T-51
 	)
 
 	outfit = /datum/outfit/job/bos/f13sentinel
@@ -157,8 +157,8 @@ Head Paladin
 
 /datum/outfit/loadout/sentstand
 	name = "Shock Head Paladin"
-	suit = /obj/item/clothing/suit/armor/f13/power_armor/t51green
-	head = /obj/item/clothing/head/helmet/f13/power_armor/t51b/bos
+	suit = /obj/item/clothing/suit/armor/f13/power_armor/hmidwest
+	head = /obj/item/clothing/head/helmet/f13/power_armor/midwest/hardened
 	l_hand = /obj/item/gun/energy/laser/scatter
 	backpack_contents = list(
 		/obj/item/stock_parts/cell/ammo/mfc = 3,
@@ -166,8 +166,8 @@ Head Paladin
 
 /datum/outfit/loadout/sentheavy
 	name = "Heavy Head Paladin"
-	suit = /obj/item/clothing/suit/armor/f13/power_armor/t51green
-	head = /obj/item/clothing/head/helmet/f13/power_armor/t51b/bos
+	suit = /obj/item/clothing/suit/armor/f13/power_armor/hmidwest
+	head = /obj/item/clothing/head/helmet/f13/power_armor/midwest/hardened
 	backpack_contents = list(
 		/obj/item/gun/ballistic/automatic/m72 = 1,
 		/obj/item/ammo_box/magazine/m2mm = 3,
@@ -177,16 +177,16 @@ Head Paladin
 
 /datum/outfit/loadout/sentgat
 	name = "Gatling Head Paladin"
-	suit = /obj/item/clothing/suit/armor/f13/power_armor/t51green
-	head = /obj/item/clothing/head/helmet/f13/power_armor/t51b/bos
+	suit = /obj/item/clothing/suit/armor/f13/power_armor/hmidwest
+	head = /obj/item/clothing/head/helmet/f13/power_armor/midwest/hardened
 	backpack_contents = list(
 		/obj/item/minigunpack=1,
 	)
 
 /datum/outfit/loadout/sentmini
 	name = "Minigun Head Paladin"
-	suit = /obj/item/clothing/suit/armor/f13/power_armor/t51green
-	head = /obj/item/clothing/head/helmet/f13/power_armor/t51b/bos
+	suit = /obj/item/clothing/suit/armor/f13/power_armor/hmidwest
+	head = /obj/item/clothing/head/helmet/f13/power_armor/midwest/hardened
 	backpack_contents = list(
 		/obj/item/minigunpackbal5mm=1,
 		/obj/item/gun/energy/laser/pistol=1,

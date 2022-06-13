@@ -10,6 +10,9 @@
 	w_class = WEIGHT_CLASS_HUGE
 	var/obj/item/gun/ballistic/minigunbal5mm/gun
 	var/armed = 0 //whether the gun is attached, 0 is attached, 1 is the gun is wielded.
+	var/overheat = 0
+	var/overheat_max = 30
+	var/heat_diffusion = 3.5 //How much heat is lost per tick
 
 /obj/item/minigunpackbal5mm/Initialize()
 	. = ..()
@@ -19,6 +22,9 @@
 /obj/item/minigunpackbal5mm/Destroy()
 	STOP_PROCESSING(SSobj, src)
 	return ..()
+
+/obj/item/minigunpackbal5mm/process()
+	overheat = max(0, overheat - heat_diffusion)
 
 //ATTACK HAND IGNORING PARENT RETURN VALUE
 /obj/item/minigunpackbal5mm/attack_hand(mob/living/carbon/user)
@@ -127,6 +133,14 @@
 		ammo_pack.attach_gun(user)
 	else
 		qdel(src)
+
+/obj/item/gun/ballistic/minigunbal5mm/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0, stam_cost = 0)
+	if(ammo_pack)
+		if(ammo_pack.overheat < ammo_pack.overheat_max)
+			ammo_pack.overheat += burst_size
+			..()
+		else
+			to_chat(user, "The gun's heat sensor locked the trigger to prevent barrel damage.")
 
 /obj/item/gun/ballistic/minigunbal5mm/afterattack(atom/target, mob/living/user, flag, params)
 	if(!ammo_pack || ammo_pack.loc != user)

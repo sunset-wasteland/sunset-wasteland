@@ -11,8 +11,8 @@
 	var/obj/item/gun/ballistic/minigunbal5mm/gun
 	var/armed = 0 //whether the gun is attached, 0 is attached, 1 is the gun is wielded.
 	var/overheat = 0
-	var/overheat_max = 30
-	var/heat_diffusion = 3.5 //How much heat is lost per tick
+	var/overheat_max = 80
+	var/heat_diffusion = 2.5 //How much heat is lost per tick
 
 /obj/item/minigunpackbal5mm/Initialize()
 	. = ..()

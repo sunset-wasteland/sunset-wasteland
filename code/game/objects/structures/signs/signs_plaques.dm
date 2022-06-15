@@ -62,6 +62,16 @@
 /obj/structure/sign/plaques/long/paradise
 	icon_state = "treebanner"
 
+/obj/structure/sign/plaques/long/northriver1
+	name = "North River Apartments"
+	desc = "Looks like an apartment complex."
+	icon_state = "northriver1"
+
+/obj/structure/sign/plaques/long/northriver2
+	name = "North River Apartments"
+	desc = "Looks like an apartment complex. With angry residents."
+	icon_state = "northriver2"
+
 /obj/structure/sign/plaques/ncr_lt
 	name = "lieutenant"
 	desc = "An NCR office plaque."

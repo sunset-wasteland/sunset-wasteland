@@ -62,9 +62,21 @@
 	name = "Bat"
 	icon_state = "bat"
 
+/datum/sprite_accessory/deco_wings/batmini
+	name = "Bat Mini"
+	icon_state = "minibat"
+
+/datum/sprite_accessory/deco_wings/battiny
+	name = "Bat Tiny"
+	icon_state = "tinybat"
+
 /datum/sprite_accessory/deco_wings/bee
 	name = "Bee"
 	icon_state = "bee2"
+
+/datum/sprite_accessory/deco_wings/beetle
+	name = "Beetle"
+	icon_state = "beetle"
 
 /datum/sprite_accessory/deco_wings/butterfly
 	name = "Butterfly"
@@ -81,6 +93,10 @@
 /datum/sprite_accessory/deco_wings/demon
 	name = "Demon"
 	icon_state = "demon"
+
+/datum/sprite_accessory/deco_wings/dragon
+	name = "Dragon"
+	icon_state = "dragon"
 
 /datum/sprite_accessory/deco_wings/dragonfly
 	name = "Dragonfly"
@@ -110,9 +126,21 @@
 	name = "Feathered Large"
 	icon_state = "featheryl"
 
+/datum/sprite_accessory/deco_wings/feathermini
+	name = "Feathered Mini"
+	icon_state = "minifeather"
+
+/datum/sprite_accessory/deco_wings/feathertiny
+	name = "Feathered Tiny"
+	icon_state = "tinyfeather"
+
 /datum/sprite_accessory/deco_wings/harpy
 	name = "Harpy"
 	icon_state = "harpy"
+
+/datum/sprite_accessory/deco_wings/insect
+	name = "Insect"
+	icon_state = "insect"
 
 /datum/sprite_accessory/deco_wings/mantis
 	name = "Mantis Arms"
@@ -433,3 +461,19 @@
 /datum/sprite_accessory/insect_markings/witchwing
 	name = "Witch Wing"
 	icon_state = "witchwing"
+
+/datum/sprite_accessory/insect_markings/bee
+	name = "Bee"
+	icon_state = "bee2"
+
+/datum/sprite_accessory/insect_markings/beetle
+	name = "Beetle"
+	icon_state = "beetle"
+
+/datum/sprite_accessory/insect_markings/dragonfly
+	name = "Dragonfly"
+	icon_state = "dragonfly"
+
+/datum/sprite_accessory/insect_markings/insect
+	name = "Insect"
+	icon_state = "insect"

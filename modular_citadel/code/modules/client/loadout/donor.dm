@@ -23,10 +23,10 @@
 
 // SUNSET EDIT
 
-/datum/gear/donator/exoticjazz
+/datum/gear/donator/mrsanderp
 	name = "Happy Sharky Company Cuisine Book"
 	slot = SLOT_IN_BACKPACK
 	path = /obj/item/book/granter/crafting_recipe/happysharky
 	category = LOADOUT_CATEGORY_BACKPACK
-	ckeywhitelist = list ("ExoticJazz")
+	ckeywhitelist = list ("mr.sanderp")
 	cost = 0

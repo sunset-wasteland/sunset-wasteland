@@ -158,8 +158,8 @@
 
 /datum/gear/donator/kits/mrsanderp
 	name = "Happy Sharky Co. Business Bundle"
-	path = /obj/item/storage/box/large/custom_kit/exoticjazz
+	path = /obj/item/storage/box/large/custom_kit/mrsanderp
 	ckeywhitelist = list("mr.sanderp")
 
-/obj/item/storage/box/large/custom_kit/exoticjazz/PopulateContents()
+/obj/item/storage/box/large/custom_kit/mrsanderp/PopulateContents()
 	new /obj/item/book/granter/crafting_recipe/happysharky(src)

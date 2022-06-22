@@ -174,7 +174,7 @@
 	name = "Moth - Gothic"
 	icon_state = "gothic"
 
-/datum/sprite_accessory/insect_wings/moth_jungle
+/datum/sprite_accessory/deco_wings/moth_jungle
 	name = "Moth - Jungle"
 	icon_state = "jungle"
 
@@ -202,7 +202,7 @@
 	name = "Moth - Plain"
 	icon_state = "plain"
 
-/datum/sprite_accessory/insect_wings/moth_plasmafire
+/datum/sprite_accessory/deco_wings/moth_plasmafire
 	name = "Moth - Plasmafire"
 	icon_state = "plasmafire"
 
@@ -234,7 +234,7 @@
 	name = "Moth - Whitefly"
 	icon_state = "whitefly"
 
-/datum/sprite_accessory/insect_wings/moth_witchwing
+/datum/sprite_accessory/deco_wings/moth_witchwing
 	name = "Moth - Witch Wing"
 	icon_state = "witchwing"
 
@@ -395,6 +395,22 @@
 	name = "Witch Wing"
 	icon_state = "witchwing"
 
+/datum/sprite_accessory/insect_wings/bee
+	name = "Bee"
+	icon_state = "bee2"
+
+/datum/sprite_accessory/insect_wings/beetle
+	name = "Beetle"
+	icon_state = "beetle"
+
+/datum/sprite_accessory/insect_wings/dragonfly
+	name = "Dragonfly"
+	icon_state = "dragonfly"
+
+/datum/sprite_accessory/insect_wings/insect
+	name = "Insect"
+	icon_state = "insect"
+
 //insect markings
 /datum/sprite_accessory/insect_markings // Extra markings for insects ported from tg.
 	icon = 'icons/mob/insect_markings.dmi'
@@ -461,19 +477,3 @@
 /datum/sprite_accessory/insect_markings/witchwing
 	name = "Witch Wing"
 	icon_state = "witchwing"
-
-/datum/sprite_accessory/insect_markings/bee
-	name = "Bee"
-	icon_state = "bee2"
-
-/datum/sprite_accessory/insect_markings/beetle
-	name = "Beetle"
-	icon_state = "beetle"
-
-/datum/sprite_accessory/insect_markings/dragonfly
-	name = "Dragonfly"
-	icon_state = "dragonfly"
-
-/datum/sprite_accessory/insect_markings/insect
-	name = "Insect"
-	icon_state = "insect"

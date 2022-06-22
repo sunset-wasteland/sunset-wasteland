@@ -125,7 +125,6 @@
 	automatic_burst_overlay = TRUE
 	can_attachments = FALSE
 	semi_auto = FALSE
-	actions_types = list(/datum/action/item_action/toggle_firemode)
 
 /obj/item/gun/ballistic/automatic/pistol/type17/strelle/burst_select()
 	var/mob/living/carbon/human/user = usr
@@ -145,7 +144,6 @@
 	playsound(user, 'sound/weapons/empty.ogg', 100, 1)
 	update_icon()
 	return
-
 
 //Browning Hi-power						Keywords: 9mm, Semi-auto
 /obj/item/gun/ballistic/automatic/pistol/ninemil

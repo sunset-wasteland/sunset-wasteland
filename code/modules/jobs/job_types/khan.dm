@@ -63,10 +63,10 @@
 	jobtype = /datum/job/khan/kheshig
 
 /datum/outfit/job/khanleader/steward
-	jobtype = /datum/job/khan/steward
+	jobtype = /datum/job/khanleader/steward
 
 /datum/outfit/job/khanleader/noyan
-	jobtype = /datum/job/khan/noyan
+	jobtype = /datum/job/khanleader/noyan
 
 /datum/outfit/job/khanleader
 	name = "Khan"
@@ -391,7 +391,7 @@
 		)
 
 
-/datum/job/khan/steward
+/datum/job/khanleader/steward
 	title = "Steward"
 	flag = F13STEWARD
 	head_announce = list("Security")
@@ -412,7 +412,7 @@
 		)
 
 
-/datum/job/khan/noyan
+/datum/job/khanleader/noyan
 	title = "Noyan"
 	flag = F13NOYAN
 	head_announce = list("Security")

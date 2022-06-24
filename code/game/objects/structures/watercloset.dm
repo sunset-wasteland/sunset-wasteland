@@ -745,7 +745,7 @@
 	if(!open)
 		icon_state = "closed"
 		layer = WALL_OBJ_LAYER
-		density = TRUE
+		density = FALSE
 		open = FALSE
 		set_opacity(TRUE)
 

@@ -1914,6 +1914,12 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	if(!forced && hit_percent <= 0)
 		return 0
 
+	var/defenseThreshold = H.getArmorDefenseThreshold(def_zone, damagetype)
+	damage = max(0, damage-defenseThreshold)
+
+	if(damage == 0)
+		return 0
+
 	var/sharp_mod = 1 //this line of code here is meant for species to have various damage modifiers to their brute intake based on the flag of the weapon.
 	switch(sharpness)
 		if(SHARP_NONE)
@@ -1922,6 +1928,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 			sharp_mod = sharp_edged_mod
 		if(SHARP_POINTY)
 			sharp_mod = sharp_pointy_mod 
+
 	var/obj/item/bodypart/BP = null
 	if(!spread_damage)
 		if(isbodypart(def_zone))

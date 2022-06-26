@@ -86,8 +86,6 @@ proc/BC_WhitelistKey(var/key)
 			BC_SaveWhitelist()
 			return 1
 
-	return
-
 
 //////////////////////////////////////////////////////////////////////////////////
 //ADMIN_VERB_ADD(/client/proc/BC_RemoveKeyVerb, R_ADMIN, FALSE)

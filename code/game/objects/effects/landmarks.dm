@@ -1,4 +1,4 @@
-/obj/effect/landmark
+obj/effect/landmark
 	name = "landmark"
 	icon = 'icons/effects/landmarks_static.dmi'
 	icon_state = "x2"

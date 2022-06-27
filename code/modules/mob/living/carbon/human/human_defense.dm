@@ -34,6 +34,60 @@
 	protection += physiology.armor.getRating(d_type)
 	return protection
 
+
+
+// Is this effectively a copy of above?  Yes
+// Is there a better way to do it?  Probably.
+// I'm tired right now.
+/mob/living/carbon/human/proc/getArmorDefenseThreshold(def_zone, type)
+	var/armorval = 0
+	var/organnum = 0
+
+	if(def_zone)
+		if(isbodypart(def_zone))
+			var/obj/item/bodypart/bp = def_zone
+			if(bp.body_part)
+				return checkDefenseThreshold(def_zone, type)
+		var/obj/item/bodypart/affecting = get_bodypart(ran_zone(def_zone))
+		return checkDefenseThreshold(affecting, type)
+		//If a specific bodypart is targetted, check how that bodypart is protected and return the value.
+
+	//If you don't specify a bodypart, it checks ALL your bodyparts for protection, and averages out the values
+	for(var/X in bodyparts)
+		var/obj/item/bodypart/BP = X
+		armorval += checkDefenseThreshold(BP, type)
+		organnum++
+	return (armorval/max(organnum, 1))
+
+
+/mob/living/carbon/human/proc/checkDefenseThreshold(obj/item/bodypart/def_zone, d_type)
+	if(!d_type || !def_zone)
+		return 0
+	var/protection = 0
+	var/list/body_parts = list(head, wear_mask, wear_suit, w_uniform, back, gloves, shoes, belt, s_store, glasses, ears, wear_id, wear_neck) //Everything but pockets. Pockets are l_store and r_store. (if pockets were allowed, putting something armored, gloves or hats for example, would double up on the armor)
+	for(var/bp in body_parts)
+		if(!bp)
+			continue
+		if(istype(bp, /obj/item/clothing))
+			var/obj/item/clothing/C = bp
+			if(C.body_parts_covered & def_zone.body_part)
+				protection += C.damage_threshold;
+	//No inherient defense thresholds.
+	//protection += physiology.armor.getRating(d_type)
+	return protection
+
+
+
+
+
+
+
+
+
+
+
+
+
 ///Get all the clothing on a specific body part
 /mob/living/carbon/human/proc/clothingonpart(obj/item/bodypart/def_zone)
 	var/list/covering_part = list()

@@ -37,3 +37,39 @@ obj/item/trade_sign
 	weather_message = "<span class='boldannounce'>The sand wafts down around you like grotesque, thick snow. The sandstorm is here...</span>"
 
 	end_message = "<span class='boldannounce'>The sandstorm slows before stopping. Adding another layer of sand to the ground beneath your feet.</span>"
+
+obj/item/highway_sign
+	name = "highway sign"
+	desc = "A metal highway sign. This one is blank."
+	icon = 'modular_sunset/icons/structures/sunset_signs_small.dmi'
+	icon_state = "sign_template"
+	item_state = "sign_template"
+	density = 1
+	anchored = 1
+	w_class = 4
+	layer = 5
+
+obj/item/highway_sign/bighorn
+	desc = "A metal highway sign. This one shows the way to Bighorn."
+	icon_state = "sign_bighorn"
+	item_state = "sign_bighorn"
+
+obj/item/highway_sign/casper
+	desc = "A metal highway sign. This one shows the way to Casper."
+	icon_state = "sign_casper"
+	item_state = "sign_casper"
+
+obj/item/highway_sign/gillette
+	desc = "A metal highway sign. This one shows the way to Gillette."
+	icon_state = "sign_gillette"
+	item_state = "sign_gillette"
+
+obj/item/highway_sign/rocksprings
+	desc = "A metal highway sign. This one shows the way to Rock Springs."
+	icon_state = "sign_rocksprings"
+	item_state = "sign_rocksprings"
+
+obj/item/highway_sign/warren
+	desc = "A metal highway sign. This one shows the way to Warren AFB."
+	icon_state = "sign_warren"
+	item_state = "sign_warren"

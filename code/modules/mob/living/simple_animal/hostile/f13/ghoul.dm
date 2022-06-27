@@ -159,8 +159,8 @@
 		H.apply_effect(20, EFFECT_IRRADIATE, 0)
 
 /mob/living/simple_animal/hostile/ghoul/glowing/strong // FEV mutation
-	maxHealth = 200 //reduced. 20hp/healthtick heal
-	health = 200 //reduced further. 20hp/healthtick heal
+	maxHealth = 200 //reduced. 20hp per healthtick heal
+	health = 200 //reduced further. 20hp per healthtick heal
 	speed = 1.4 // Nyooom
 	melee_damage_lower = 35
 	melee_damage_upper = 35

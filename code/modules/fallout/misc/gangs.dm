@@ -63,6 +63,7 @@ GLOBAL_DATUM_INIT(denmob, /datum/gang/denmob, new)
 		/datum/gang_item/equipment/bundleanarchist,
 		/datum/gang_item/equipment/bundlegunner,
 		/datum/gang_item/equipment/bundledenboss,
+		/datum/gang_item/equipment/bundleboss,
 	)
 
 //Round-start gangs

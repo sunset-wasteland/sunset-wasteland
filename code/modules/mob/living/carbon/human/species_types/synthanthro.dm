@@ -1,14 +1,20 @@
-/datum/species/synthliz
-	name = "Synthetic Lizardperson"
-	id = "synthliz"
-	say_mod = "beeps"
+/datum/species/synthanthro
+	name = "Synthetic Anthromorph"
+	id = "synthanthro"
 	default_color = "00FF00"
-	species_traits = list(MUTCOLORS,NOTRANSSTING,EYECOLOR,LIPS,HAIR,HAS_FLESH,HAS_BONE)
+	species_traits = list(MUTCOLORS,NOTRANSSTING,EYECOLOR,LIPS,HAIR,HORNCOLOR,WINGCOLOR,HAS_FLESH,HAS_BONE)
 	inherent_traits = list(TRAIT_EASYDISMEMBER,TRAIT_LIMBATTACHMENT,TRAIT_NO_PROCESS_FOOD)
-	inherent_biotypes = MOB_ROBOTIC|MOB_HUMANOID
-	mutant_bodyparts = list("ipc_antenna" = "Synthetic Lizard - Antennae","mam_tail" = "Synthetic Lizard", "mam_snouts" = "Synthetic Lizard - Snout", "legs" = "Digitigrade", "mam_body_markings" = "Synthetic Lizard - Plates", "taur" = "None")
+	inherent_biotypes = MOB_ROBOTIC|MOB_HUMANOID|MOB_BEAST
+	mutant_bodyparts = list("mcolor" = "FFFFFF","mcolor2" = "FFFFFF","mcolor3" = "FFFFFF", "mam_snouts" = "Husky", "mam_tail" = "Husky", "mam_ears" = "Husky", "deco_wings" = "None",
+						"mam_body_markings" = "Husky", "taur" = "None", "horns" = "None", "legs" = "Plantigrade", "meat_type" = "Mammalian")
+	attack_verb = "claw"
+	attack_sound = 'sound/weapons/slash.ogg'
+	miss_sound = 'sound/weapons/slashmiss.ogg'
 	meat = /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/ipc
 	gib_types = list(/obj/effect/gibspawner/ipc, /obj/effect/gibspawner/ipc/bodypartless)
+	liked_food = MEAT | FRIED
+	disliked_food = TOXIC
+
 	//Just robo looking parts.
 	mutant_heart = /obj/item/organ/heart/ipc
 	mutantlungs = /obj/item/organ/lungs/ipc
@@ -29,7 +35,11 @@
 	wagging_type = "mam_waggingtail"
 	species_type = "robotic"
 
-/datum/species/synthliz/spec_life(mob/living/carbon/human/H)
+	allowed_limb_ids = list("mammal","aquatic","avian")
+
+
+
+/datum/species/synthanthro/spec_life(mob/living/carbon/human/H)
 	if(H.nutrition < NUTRITION_LEVEL_FED)
 		H.nutrition = NUTRITION_LEVEL_FED
 	if(H.nutrition > NUTRITION_LEVEL_FED)

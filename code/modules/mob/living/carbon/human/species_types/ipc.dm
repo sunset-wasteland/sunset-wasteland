@@ -58,3 +58,9 @@
 		return
 	H.dna.features["ipc_screen"] = new_ipc_screen
 	H.update_body()
+
+/datum/species/ipc/spec_life(mob/living/carbon/human/H)
+	if(H.nutrition < NUTRITION_LEVEL_FED)
+		H.nutrition = NUTRITION_LEVEL_FED
+	if(H.nutrition > NUTRITION_LEVEL_FED)
+		H.nutrition = NUTRITION_LEVEL_FED

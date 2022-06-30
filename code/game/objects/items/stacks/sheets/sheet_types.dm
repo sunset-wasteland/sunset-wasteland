@@ -278,7 +278,21 @@ GLOBAL_LIST_INIT(wood_recipes, list ( \
 	new/datum/stack_recipe("wooden barricade", /obj/structure/barricade/wooden, 5, time = 50, one_per_turf = TRUE, on_floor = TRUE), \
 	null, \
 	new/datum/stack_recipe_list("floor tiles", list( \
-	new/datum/stack_recipe("wooden floor tile", /obj/item/stack/tile/wood, 1, 4, 20), \
+	new/datum/stack_recipe("common floor tile", /obj/item/stack/tile/wood/common, 1, 4, 20), \
+	new/datum/stack_recipe("common light floor tile", /obj/item/stack/tile/wood/common/light, 1, 4, 20), \
+	new/datum/stack_recipe("common dark floor tile", /obj/item/stack/tile/wood/common/dark, 1, 4, 20), \
+	new/datum/stack_recipe("fancy floor tile", /obj/item/stack/tile/wood/fancy, 1, 4, 20), \
+	new/datum/stack_recipe("fancy light floor tile", /obj/item/stack/tile/wood/fancy/light, 1, 4, 20), \
+	new/datum/stack_recipe("fancy dark floor tile", /obj/item/stack/tile/wood/fancy/dark, 1, 4, 20), \
+	new/datum/stack_recipe("mosaic floor tile", /obj/item/stack/tile/wood/mosaic, 1, 4, 20), \
+	new/datum/stack_recipe("mosaic light floor tile", /obj/item/stack/tile/wood/mosaic/light, 1, 4, 20), \
+	new/datum/stack_recipe("mosaic dark floor tile", /obj/item/stack/tile/wood/mosaic/dark, 1, 4, 20), \
+	new/datum/stack_recipe("wide floor tile", /obj/item/stack/tile/wood/wide, 1, 4, 20), \
+	new/datum/stack_recipe("wide light floor tile", /obj/item/stack/tile/wood/wide/light, 1, 4, 20), \
+	new/datum/stack_recipe("wide dark floor tile", /obj/item/stack/tile/wood/wide/dark, 1, 4, 20), \
+	new/datum/stack_recipe("worn floor tile", /obj/item/stack/tile/wood/worn, 1, 4, 20), \
+	new/datum/stack_recipe("worn light floor tile", /obj/item/stack/tile/wood/worn/light, 1, 4, 20), \
+	new/datum/stack_recipe("worn dark floor tile", /obj/item/stack/tile/wood/worn/dark, 1, 4, 20), \
 		)), \
 	null, \
 	new/datum/stack_recipe_list("pews", list( \
@@ -325,6 +339,9 @@ GLOBAL_LIST_INIT(wood_recipes, list ( \
 	new/datum/stack_recipe("book case", /obj/structure/bookcase, 4, time = 15, one_per_turf = TRUE, on_floor = TRUE), \
 	new/datum/stack_recipe("dresser", /obj/structure/dresser, 10, time = 15, one_per_turf = TRUE, on_floor = TRUE), \
 	new/datum/stack_recipe("display case chassis", /obj/structure/displaycase_chassis, 5, one_per_turf = TRUE, on_floor = TRUE), \
+	null, \
+	new/datum/stack_recipe("apiary", /obj/structure/beebox, 40, time = 50, one_per_turf = TRUE, on_floor = TRUE),\
+	new/datum/stack_recipe("honey frame", /obj/item/honey_frame, 5, time = 10, one_per_turf = TRUE, on_floor = TRUE),\
 	))
 
 /obj/item/stack/sheet/mineral/wood

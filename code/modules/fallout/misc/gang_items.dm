@@ -276,7 +276,7 @@
 	new /obj/item/reagent_containers/hypospray/medipen/psycho(src)
 	new /obj/item/reagent_containers/hypospray/medipen/psycho(src)
 	new /obj/item/clothing/under/f13/densuit(src)
----
+
 /datum/gang_item/equipment/bundleanarchist
 	name = "Mad Bomber Bundle"
 	id = "bundleanarchist"
@@ -297,15 +297,14 @@
 	new /obj/item/clothing/suit/bomb_suit(src)
 
 /datum/gang_item/equipment/bundleboss
-
-name = "Big Boss"
+	name = "Big Boss"
 	id = "bundleboss"
 	cost = 1200
 	item_path = /obj/item/storage/box/bundleboss
 
 /obj/item/storage/box/bundleboss
 	name = "Big Boss"
-	desc = "For the Outlaw that can mug!"
+	desc = "For the Biggest Outlaw around"
 	
 /obj/item/storage/box/bundleanarchist/PopulateContents()
 	new /obj/item/reagent_containers/hypospray/medipen/medx(src)
@@ -314,7 +313,6 @@ name = "Big Boss"
 	new /obj/item/gun/ballistic/shotgun/automatic/combat/citykiller(src)
 	new /obj/item/clothing/head/helmet/f13/heavy/salvaged_pa/t45b/raider(src)
 	new /obj/item/ammo_box/shotgun/slug(src)
-
 
 
 /datum/gang_item/equipment/bundlegunner

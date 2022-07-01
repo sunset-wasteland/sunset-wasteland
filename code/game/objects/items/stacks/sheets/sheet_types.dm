@@ -462,6 +462,9 @@ GLOBAL_LIST_INIT(cloth_recipes, list ( \
 	new/datum/stack_recipe("padded floor tile", /obj/item/stack/tile/padded, 1, 4, 20), \
 	new/datum/stack_recipe("mattress", /obj/structure/bed/mattress, 2, one_per_turf = TRUE, on_floor = TRUE), \
 	null, \
+	new/datum/stack_recipe("tent wall", /obj/structure/barricade/tent, 3, time = 30, one_per_turf = TRUE, on_floor = TRUE), \
+	new/datum/stack_recipe("tent flap", /obj/structure/simple_door/tentflap_cloth, 3, time = 30, one_per_turf = TRUE, on_floor = TRUE), \
+	null, \
 	new/datum/stack_recipe("blindfold", /obj/item/clothing/glasses/sunglasses/blindfold, 2), \
 	new/datum/stack_recipe("money pouch", /obj/item/storage/bag/money/small, 5), \
 	null, \

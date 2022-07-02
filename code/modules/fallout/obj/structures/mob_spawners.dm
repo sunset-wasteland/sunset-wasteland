@@ -182,7 +182,6 @@
 	name = "deathclaw nest"
 	max_mobs = 1
 	spawn_once = TRUE
-	spawn_time = 60 SECONDS
 	mob_types = list(/mob/living/simple_animal/hostile/deathclaw = 5)
 
 /obj/structure/nest/deathclaw/mother
@@ -193,10 +192,14 @@
 
 /obj/structure/nest/scorpion
 	name = "scorpion nest"
-	spawn_time = 40 SECONDS
 	max_mobs = 2
 	mob_types = list(/mob/living/simple_animal/hostile/radscorpion = 1,
 					/mob/living/simple_animal/hostile/radscorpion/black = 1)
+
+/obj/structure/nest/ant
+	name = "ant tunnel"
+	max_mobs = 5
+	mob_types = list(/mob/living/simple_animal/hostile/giantant = 5)
 
 /obj/structure/nest/radroach
 	name = "radroach nest"
@@ -204,14 +207,13 @@
 	mob_types = list(/mob/living/simple_animal/hostile/radroach = 1)
 
 /obj/structure/nest/fireant
-	name = "fireant nest"
+	name = "fireant tunnel"
 	max_mobs = 5
 	mob_types = list(/mob/living/simple_animal/hostile/fireant = 1,
 					/mob/living/simple_animal/hostile/giantant = 1)
 
 /obj/structure/nest/wanamingo
 	name = "wanamingo nest"
-	spawn_time = 40 SECONDS
 	max_mobs = 2
 	mob_types = list(/mob/living/simple_animal/hostile/alien = 1)
 
@@ -281,7 +283,6 @@
 /obj/structure/nest/assaultron
 	name = "assaultron pod"
 	desc = "An old assaultron containment pod system. This one looks like it is connected to a storage system underground."
-	spawn_time = 40 SECONDS
 	max_mobs = 2
 	icon_state = "scanner_modified"
 	mob_types = list(/mob/living/simple_animal/hostile/handy/assaultron = 5)
@@ -290,12 +291,20 @@
 	name = "cazador nest"
 	max_mobs = 4
 	mob_types = list(/mob/living/simple_animal/hostile/cazador = 5,
-					/mob/living/simple_animal/hostile/cazador/young = 3,)
+					/mob/living/simple_animal/hostile/cazador/young = 3)
 
 /obj/structure/nest/gecko
 	name = "gecko nest"
 	max_mobs = 5
 	mob_types = list(/mob/living/simple_animal/hostile/gecko = 5)
+
+/obj/structure/nest/spider
+	name = "spider mound"
+	max_mobs = 5
+	mob_types = list(/mob/living/simple_animal/hostile/poison/giant_spider = 5,
+					/mob/living/simple_animal/hostile/poison/giant_spider/hunter = 2,
+					/mob/living/simple_animal/hostile/poison/giant_spider/nurse = 2)
+
 
 /obj/structure/nest/wolf
 	name = "wolf den"
@@ -304,10 +313,14 @@
 
 /obj/structure/nest/supermutant
 	name = "supermutant den"
-	spawn_time = 30 SECONDS
 	max_mobs = 2
 	mob_types = list(/mob/living/simple_animal/hostile/supermutant/meleemutant = 5,
 					/mob/living/simple_animal/hostile/supermutant/rangedmutant = 2)
+
+/obj/structure/nest/centaur
+	name = "centaur den"
+	max_mobs = 5
+	mob_types = list(/mob/living/simple_animal/hostile/centaur = 5)
 
 /obj/structure/nest/supermutant/melee
 	mob_types = list(/mob/living/simple_animal/hostile/supermutant/meleemutant = 5)
@@ -339,4 +352,3 @@
 	desc = "A tunnel which leads to an underground network of even more tunnels, made by the dangerous tunnelers."
 	max_mobs = 5
 	mob_types = list(/mob/living/simple_animal/hostile/trog/tunneler = 1)
-	spawn_time = 20 SECONDS

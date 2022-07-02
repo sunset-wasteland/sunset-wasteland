@@ -91,7 +91,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/bunker)
 "adW" = (
-/mob/living/simple_animal/hostile/giantant,
+/obj/structure/nest/scorpion,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/ruins)
 "aey" = (
@@ -3262,12 +3262,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/green/white/whitegreenchess,
 /area/f13/bunker)
-"dtf" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/turf/closed/mineral/random/low_chance,
-/area/f13/caves)
 "dty" = (
 /obj/machinery/light,
 /turf/open/floor/carpet/black,
@@ -5837,7 +5831,9 @@
 /turf/open/floor/plating/f13,
 /area/f13/vault)
 "fWq" = (
-/mob/living/simple_animal/hostile/cazador,
+/obj/structure/nest/cazador{
+	max_mobs = 1
+	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/ruins)
 "fWy" = (
@@ -8375,9 +8371,9 @@
 /turf/open/floor/carpet/black,
 /area/f13/vault)
 "iux" = (
-/obj/structure/chair/stool,
-/turf/closed/mineral/random/low_chance,
-/area/f13/caves)
+/obj/structure/nest/molerat,
+/turf/open/floor/f13/wood,
+/area/f13/tunnel)
 "ivf" = (
 /obj/item/radio/intercom{
 	frequency = 1361;
@@ -9069,11 +9065,11 @@
 	},
 /area/f13/bunker/bighornbunker)
 "jez" = (
-/mob/living/simple_animal/hostile/supermutant,
-/turf/open/floor/plating/tunnel{
-	icon_state = "tunnelchess"
+/obj/structure/nest/ant{
+	max_mobs = 1
 	},
-/area/f13/bunker/bighornbunker)
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/ruins)
 "jeC" = (
 /obj/structure/table/wood,
 /obj/item/paper_bin,
@@ -10321,7 +10317,9 @@
 	},
 /area/f13/underground/cave)
 "kxw" = (
-/mob/living/simple_animal/hostile/radroach,
+/obj/structure/nest/radroach{
+	max_mobs = 3
+	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "kxI" = (
@@ -10488,8 +10486,8 @@
 	},
 /area/f13/city)
 "kFS" = (
-/mob/living/simple_animal/hostile/giantant{
-	resize = 3
+/obj/structure/nest/ant{
+	max_mobs = 2
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/ruins)
@@ -14550,10 +14548,6 @@
 /obj/structure/reagent_dispensers/fueltank,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/vault)
-"oEO" = (
-/mob/living/simple_animal/hostile/molerat,
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/tunnel)
 "oEV" = (
 /obj/structure/frame/machine,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
@@ -14638,10 +14632,6 @@
 	dir = 4
 	},
 /area/f13/vault)
-"oHk" = (
-/mob/living/simple_animal/hostile/molerat,
-/turf/open/floor/f13/wood,
-/area/f13/tunnel)
 "oHB" = (
 /obj/machinery/vending/dinnerware,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
@@ -17356,6 +17346,12 @@
 /obj/item/clothing/gloves/f13/baseball,
 /turf/open/floor/f13/wood,
 /area/f13/bunker)
+"rvl" = (
+/obj/structure/nest/radroach{
+	max_mobs = 2
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/tunnel)
 "rvr" = (
 /obj/machinery/door/window{
 	dir = 1
@@ -18514,6 +18510,12 @@
 /obj/effect/landmark/start/f13/vaultdweller,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/vault)
+"sGx" = (
+/obj/structure/nest/scorpion{
+	max_mobs = 3
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/ruins)
 "sGC" = (
 /obj/machinery/processor,
 /turf/open/floor/plasteel/f13{
@@ -18526,7 +18528,7 @@
 /turf/open/floor/f13,
 /area/f13/city)
 "sHt" = (
-/mob/living/simple_animal/hostile/radscorpion/black,
+/obj/structure/nest/scorpion,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "sHN" = (
@@ -19896,7 +19898,8 @@
 "uhq" = (
 /mob/living/simple_animal/hostile/deathclaw{
 	mob_size = 5;
-	resize = 1.5
+	resize = 1.5;
+	name = "Test of Champions"
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/ruins)
@@ -21190,6 +21193,7 @@
 /area/f13/underground/cave)
 "vpy" = (
 /obj/effect/spawner/lootdrop/f13/armor/random,
+/obj/structure/nest/supermutant,
 /turf/open/floor/plating/tunnel{
 	icon_state = "tunnelrusty"
 	},
@@ -23025,7 +23029,9 @@
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/bunker)
 "xmZ" = (
-/mob/living/simple_animal/hostile/radscorpion/black,
+/obj/structure/nest/scorpion{
+	max_mobs = 1
+	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/ruins)
 "xnD" = (
@@ -24785,15 +24791,15 @@ ecW
 vBd
 ecW
 ecW
-adW
-cDq
-ecW
-ecW
 ecW
 cDq
 ecW
 ecW
-adW
+ecW
+cDq
+ecW
+ecW
+ecW
 cDq
 fAj
 fWq
@@ -25049,7 +25055,7 @@ fWq
 xqn
 cDq
 ecW
-adW
+ecW
 ecW
 cDq
 xqn
@@ -25293,8 +25299,8 @@ ecW
 ecW
 vkd
 cDq
-kFS
 ecW
+kFS
 aET
 cDq
 ecW
@@ -25306,7 +25312,7 @@ ecW
 img
 cDq
 ecW
-ecW
+kFS
 ecW
 cDq
 cDq
@@ -25555,7 +25561,7 @@ ecW
 ecW
 cDq
 ecW
-ecW
+jez
 ecW
 vBd
 ecW
@@ -25811,7 +25817,7 @@ cDq
 cDq
 vBd
 cDq
-adW
+ecW
 img
 xqn
 cDq
@@ -25978,7 +25984,7 @@ hrZ
 hrZ
 hrZ
 hrZ
-dtf
+hrZ
 hrZ
 hrZ
 hrZ
@@ -25992,19 +25998,19 @@ hrZ
 hrZ
 hrZ
 hrZ
-uQS
-uQS
-uQS
-uQS
-uQS
-uQS
-uQS
-uQS
-uQS
-uQS
-uQS
-uQS
-uQS
+vaD
+vaD
+vaD
+vaD
+vaD
+vaD
+vaD
+vaD
+vaD
+vaD
+vaD
+vaD
+vaD
 hrZ
 hrZ
 hrZ
@@ -26085,7 +26091,7 @@ cDq
 cDq
 cDq
 aET
-ecW
+jez
 ecW
 cDq
 cDq
@@ -26235,7 +26241,7 @@ hrZ
 hrZ
 hrZ
 hrZ
-dtf
+hrZ
 hrZ
 hrZ
 iba
@@ -26247,6 +26253,9 @@ hrZ
 hrZ
 hrZ
 hrZ
+vaD
+vaD
+vaD
 uQS
 uQS
 uQS
@@ -26258,11 +26267,8 @@ uQS
 uQS
 uQS
 uQS
-uQS
-uQS
-uQS
-uQS
-uQS
+vaD
+vaD
 hrZ
 hrZ
 hrZ
@@ -26338,12 +26344,12 @@ cDq
 sqz
 ecW
 ecW
-adW
+ecW
 cDq
 ecW
 ecW
 ecW
-adW
+ecW
 cDq
 shC
 shC
@@ -26492,7 +26498,7 @@ hrZ
 hrZ
 hrZ
 hrZ
-dtf
+hrZ
 hrZ
 hrZ
 iba
@@ -26504,6 +26510,7 @@ hrZ
 hrZ
 hrZ
 hrZ
+vaD
 uQS
 uQS
 uQS
@@ -26518,8 +26525,7 @@ uQS
 uQS
 uQS
 uQS
-uQS
-uQS
+vaD
 hrZ
 hrZ
 hrZ
@@ -26594,7 +26600,7 @@ ecW
 cDq
 xqn
 ecW
-ecW
+kFS
 ecW
 vBd
 ecW
@@ -26748,8 +26754,8 @@ hrZ
 hrZ
 hrZ
 hrZ
-iux
-dtf
+hrZ
+hrZ
 hrZ
 hrZ
 iba
@@ -26760,9 +26766,9 @@ hrZ
 hrZ
 hrZ
 hrZ
+vaD
+vaD
 uQS
-uQS
-uQS
 doB
 doB
 doB
@@ -26776,8 +26782,8 @@ doB
 doB
 doB
 uQS
-uQS
-uQS
+vaD
+vaD
 hrZ
 hrZ
 hrZ
@@ -26838,7 +26844,7 @@ cDq
 cDq
 vBd
 cDq
-xmZ
+ecW
 ecW
 ecW
 hBx
@@ -26846,13 +26852,13 @@ aET
 cDq
 ecW
 ecW
-ecW
+jez
 ecW
 vBd
 ecW
 ecW
 ecW
-adW
+ecW
 vBd
 ecW
 cDq
@@ -27006,7 +27012,7 @@ hrZ
 hrZ
 hrZ
 hrZ
-dtf
+hrZ
 hrZ
 hrZ
 iba
@@ -27017,9 +27023,9 @@ hrZ
 hrZ
 hrZ
 hrZ
+vaD
 uQS
 uQS
-uQS
 doB
 doB
 doB
@@ -27034,7 +27040,7 @@ doB
 doB
 uQS
 uQS
-uQS
+vaD
 hrZ
 hrZ
 hrZ
@@ -27098,13 +27104,13 @@ cDq
 ecW
 ecW
 cDq
-ecW
-ecW
-cDq
-ecW
-xqn
-ecW
 adW
+ecW
+cDq
+ecW
+xqn
+ecW
+ecW
 cDq
 cDq
 cDq
@@ -27274,9 +27280,9 @@ hrZ
 hrZ
 hrZ
 hrZ
+vaD
 uQS
 uQS
-uQS
 doB
 doB
 doB
@@ -27291,7 +27297,7 @@ doB
 doB
 uQS
 uQS
-uQS
+vaD
 hrZ
 hrZ
 hrZ
@@ -27342,7 +27348,7 @@ hrZ
 shC
 shC
 cDq
-kFS
+ecW
 ecW
 ecW
 cDq
@@ -27530,10 +27536,10 @@ hrZ
 hrZ
 hrZ
 hrZ
+vaD
+vaD
 uQS
 uQS
-uQS
-uQS
 doB
 doB
 doB
@@ -27548,11 +27554,11 @@ doB
 doB
 uQS
 uQS
-uQS
-uQS
-uQS
-uQS
-uQS
+vaD
+vaD
+vaD
+vaD
+vaD
 hrZ
 hrZ
 hrZ
@@ -27600,19 +27606,19 @@ shC
 shC
 cDq
 ecW
-ecW
+kFS
 ecW
 cDq
 ecW
 fAj
 cDq
-ecW
+xmZ
 ecW
 cDq
 xqn
 ecW
 cDq
-xmZ
+ecW
 ecW
 ecW
 ecW
@@ -27786,8 +27792,8 @@ hrZ
 hrZ
 hrZ
 hrZ
-uQS
-uQS
+vaD
+vaD
 uQS
 uQS
 uQS
@@ -27809,8 +27815,8 @@ uQS
 uQS
 uQS
 uQS
-uQS
-uQS
+vaD
+vaD
 hrZ
 hrZ
 hrZ
@@ -27829,7 +27835,7 @@ iba
 hrZ
 hrZ
 hrZ
-sHt
+pif
 pif
 hrZ
 hrZ
@@ -27858,12 +27864,12 @@ shC
 cDq
 ecW
 ecW
-kFS
+ecW
 cDq
 ecW
 ecW
 cDq
-xmZ
+ecW
 ecW
 cDq
 cDq
@@ -28042,8 +28048,8 @@ hrZ
 hrZ
 hrZ
 hrZ
-uQS
-uQS
+vaD
+vaD
 uQS
 uQS
 uQS
@@ -28067,8 +28073,8 @@ uQS
 uQS
 uQS
 uQS
-uQS
-uQS
+vaD
+vaD
 hrZ
 hrZ
 hrZ
@@ -28298,8 +28304,8 @@ hrZ
 hrZ
 hrZ
 hrZ
-uQS
-uQS
+vaD
+vaD
 uQS
 fFb
 kmr
@@ -28325,7 +28331,7 @@ sCn
 oBy
 uQS
 uQS
-uQS
+vaD
 hrZ
 hrZ
 hrZ
@@ -28554,8 +28560,8 @@ hrZ
 hrZ
 hrZ
 hrZ
-uQS
-uQS
+vaD
+vaD
 uQS
 uQS
 iQY
@@ -28582,7 +28588,7 @@ sCn
 mFe
 uQS
 uQS
-uQS
+vaD
 hrZ
 hrZ
 hrZ
@@ -28808,10 +28814,10 @@ hrZ
 hrZ
 hrZ
 hrZ
-uQS
-uQS
-uQS
-uQS
+vaD
+vaD
+vaD
+vaD
 uQS
 uQS
 uQS
@@ -28839,7 +28845,7 @@ sCn
 dDG
 uQS
 uQS
-uQS
+vaD
 hrZ
 hrZ
 hrZ
@@ -28885,7 +28891,7 @@ shC
 shC
 cDq
 ecW
-xmZ
+ecW
 cDq
 ecW
 ecW
@@ -29065,7 +29071,7 @@ hrZ
 hrZ
 hrZ
 hrZ
-uQS
+vaD
 uQS
 uQS
 uQS
@@ -29096,7 +29102,7 @@ sCn
 sAM
 uQS
 uQS
-uQS
+vaD
 hrZ
 hrZ
 hrZ
@@ -29321,8 +29327,8 @@ hrZ
 hrZ
 hrZ
 hrZ
-uQS
-uQS
+vaD
+vaD
 uQS
 uQS
 uQS
@@ -29353,8 +29359,8 @@ dSf
 sCn
 uQS
 uQS
-uQS
-uQS
+vaD
+vaD
 hrZ
 hrZ
 hrZ
@@ -29401,7 +29407,7 @@ cDq
 ecW
 ecW
 ecW
-ecW
+sGx
 ecW
 ecW
 ecW
@@ -29578,7 +29584,7 @@ hrZ
 hrZ
 hrZ
 hrZ
-uQS
+vaD
 uQS
 uQS
 vjU
@@ -29611,9 +29617,9 @@ sCn
 uQS
 uQS
 uQS
-uQS
-uQS
-uQS
+vaD
+vaD
+vaD
 hrZ
 hrZ
 hrZ
@@ -29655,11 +29661,11 @@ hrZ
 shC
 shC
 cDq
-xmZ
+ecW
 ecW
 sqz
 ecW
-xmZ
+ecW
 ecW
 ecW
 cDq
@@ -29835,7 +29841,7 @@ hrZ
 hrZ
 hrZ
 hrZ
-uQS
+vaD
 uQS
 uQS
 sCn
@@ -29870,8 +29876,8 @@ uQS
 uQS
 uQS
 uQS
-uQS
-uQS
+vaD
+vaD
 hrZ
 hrZ
 hrZ
@@ -30091,8 +30097,8 @@ hrZ
 hrZ
 hrZ
 hrZ
-uQS
-uQS
+vaD
+vaD
 uQS
 sCn
 sCn
@@ -30128,8 +30134,8 @@ nbm
 fSa
 uQS
 uQS
-uQS
-uQS
+vaD
+vaD
 hrZ
 hrZ
 hrZ
@@ -30345,10 +30351,10 @@ hrZ
 hrZ
 hrZ
 hrZ
-uQS
-uQS
-uQS
-uQS
+vaD
+vaD
+vaD
+vaD
 uQS
 uQS
 qMQ
@@ -30386,8 +30392,8 @@ yhW
 uQS
 uQS
 uQS
-uQS
-uQS
+vaD
+vaD
 hrZ
 hrZ
 hrZ
@@ -30600,9 +30606,9 @@ hrZ
 hrZ
 hrZ
 hrZ
-uQS
-uQS
-uQS
+vaD
+vaD
+vaD
 uQS
 uQS
 uQS
@@ -30644,8 +30650,8 @@ uQS
 pMy
 tto
 uQS
-uQS
-uQS
+vaD
+vaD
 hrZ
 hrZ
 hrZ
@@ -30856,8 +30862,8 @@ hrZ
 hrZ
 hrZ
 hrZ
-uQS
-uQS
+vaD
+vaD
 uQS
 uQS
 uQS
@@ -30902,7 +30908,7 @@ vMI
 lcN
 qXZ
 uQS
-uQS
+vaD
 hrZ
 hrZ
 hrZ
@@ -31113,7 +31119,7 @@ hrZ
 hrZ
 hrZ
 hrZ
-uQS
+vaD
 uQS
 uQS
 jfd
@@ -31159,9 +31165,9 @@ tit
 etO
 wBf
 uQS
-uQS
-uQS
-uQS
+vaD
+vaD
+vaD
 hrZ
 hrZ
 hrZ
@@ -31370,7 +31376,7 @@ hrZ
 hrZ
 hrZ
 hrZ
-uQS
+vaD
 uQS
 hrN
 jfd
@@ -31418,8 +31424,8 @@ oEu
 uQS
 uQS
 uQS
-uQS
-uQS
+vaD
+vaD
 hrZ
 hrZ
 hrZ
@@ -31626,8 +31632,8 @@ hrZ
 hrZ
 hrZ
 hrZ
-uQS
-uQS
+vaD
+vaD
 uQS
 jfd
 jfd
@@ -31676,9 +31682,9 @@ uQS
 uQS
 uQS
 uQS
-uQS
-uQS
-uQS
+vaD
+vaD
+vaD
 hrZ
 hrZ
 hrZ
@@ -31883,7 +31889,7 @@ hrZ
 hrZ
 hrZ
 hrZ
-uQS
+vaD
 uQS
 jfd
 jfd
@@ -31935,9 +31941,9 @@ uQS
 uQS
 uQS
 uQS
-uQS
-uQS
-uQS
+vaD
+vaD
+vaD
 hrZ
 hrZ
 hrZ
@@ -32139,8 +32145,8 @@ hrZ
 hrZ
 hrZ
 hrZ
-uQS
-uQS
+vaD
+vaD
 uQS
 jfd
 jfd
@@ -32194,8 +32200,8 @@ uQS
 uQS
 uQS
 uQS
-uQS
-uQS
+vaD
+vaD
 hrZ
 hrZ
 hrZ
@@ -32396,7 +32402,7 @@ hrZ
 hrZ
 hrZ
 hrZ
-uQS
+vaD
 uQS
 mLq
 eMF
@@ -32452,8 +32458,8 @@ uQS
 uQS
 uQS
 uQS
-uQS
-uQS
+vaD
+vaD
 hrZ
 hrZ
 iba
@@ -32652,8 +32658,8 @@ hrZ
 hrZ
 hrZ
 hrZ
-uQS
-uQS
+vaD
+vaD
 uQS
 sxf
 bjR
@@ -32710,7 +32716,7 @@ eqZ
 uQS
 uQS
 uQS
-uQS
+vaD
 hrZ
 hrZ
 hrZ
@@ -32908,8 +32914,8 @@ hrZ
 hrZ
 hrZ
 hrZ
-uQS
-uQS
+vaD
+vaD
 uQS
 uQS
 jfd
@@ -32967,8 +32973,8 @@ dWx
 uQS
 uQS
 uQS
-uQS
-uQS
+vaD
+vaD
 hrZ
 hrZ
 hrZ
@@ -33165,7 +33171,7 @@ hrZ
 hrZ
 hrZ
 hrZ
-uQS
+vaD
 uQS
 uQS
 jfd
@@ -33225,7 +33231,7 @@ uQS
 uQS
 uQS
 uQS
-uQS
+vaD
 hrZ
 hrZ
 hrZ
@@ -33422,7 +33428,7 @@ hrZ
 hrZ
 hrZ
 hrZ
-uQS
+vaD
 uQS
 uQS
 jfd
@@ -33679,7 +33685,7 @@ hrZ
 hrZ
 hrZ
 hrZ
-uQS
+vaD
 uQS
 uQS
 szk
@@ -33936,7 +33942,7 @@ hrZ
 hrZ
 hrZ
 hrZ
-uQS
+vaD
 uQS
 uQS
 jfd
@@ -34193,7 +34199,7 @@ hrZ
 hrZ
 hrZ
 hrZ
-uQS
+vaD
 uQS
 uQS
 jfd
@@ -34450,7 +34456,7 @@ hrZ
 hrZ
 hrZ
 hrZ
-uQS
+vaD
 uQS
 uQS
 fIX
@@ -34706,8 +34712,8 @@ hrZ
 hrZ
 hrZ
 hrZ
-uQS
-uQS
+vaD
+vaD
 uQS
 uQS
 uQS
@@ -34963,7 +34969,7 @@ hrZ
 hrZ
 hrZ
 hrZ
-uQS
+vaD
 uQS
 uQS
 vwH
@@ -35220,7 +35226,7 @@ hrZ
 hrZ
 hrZ
 hrZ
-uQS
+vaD
 uQS
 uQS
 cYd
@@ -35477,7 +35483,7 @@ hrZ
 hrZ
 hrZ
 hrZ
-uQS
+vaD
 uQS
 uQS
 btK
@@ -35734,7 +35740,7 @@ hrZ
 hrZ
 hrZ
 hrZ
-uQS
+vaD
 uQS
 uQS
 qiw
@@ -35991,7 +35997,7 @@ hrZ
 hrZ
 hrZ
 hrZ
-uQS
+vaD
 uQS
 uQS
 qiw
@@ -36248,7 +36254,7 @@ hrZ
 hrZ
 hrZ
 hrZ
-uQS
+vaD
 uQS
 uQS
 bgE
@@ -36505,7 +36511,7 @@ hrZ
 hrZ
 hrZ
 hrZ
-uQS
+vaD
 uQS
 uQS
 qiw
@@ -36762,7 +36768,7 @@ hrZ
 hrZ
 hrZ
 hrZ
-uQS
+vaD
 uQS
 uQS
 qiw
@@ -37019,7 +37025,7 @@ hrZ
 hrZ
 hrZ
 hrZ
-uQS
+vaD
 uQS
 uQS
 qiw
@@ -37276,7 +37282,7 @@ hrZ
 hrZ
 hrZ
 hrZ
-uQS
+vaD
 uQS
 uQS
 btw
@@ -37533,7 +37539,7 @@ hrZ
 hrZ
 hrZ
 hrZ
-uQS
+vaD
 uQS
 uQS
 qiw
@@ -37790,7 +37796,7 @@ hrZ
 hrZ
 hrZ
 hrZ
-uQS
+vaD
 uQS
 uQS
 btK
@@ -38047,7 +38053,7 @@ hrZ
 hrZ
 hrZ
 hrZ
-uQS
+vaD
 uQS
 uQS
 uQS
@@ -38304,7 +38310,7 @@ hrZ
 hrZ
 hrZ
 hrZ
-uQS
+vaD
 uQS
 uQS
 pmZ
@@ -38561,7 +38567,7 @@ hrZ
 hrZ
 hrZ
 hrZ
-uQS
+vaD
 uQS
 uQS
 knn
@@ -38818,8 +38824,8 @@ hrZ
 hrZ
 hrZ
 hrZ
-uQS
-uQS
+vaD
+vaD
 uQS
 uQS
 uQS
@@ -39076,7 +39082,7 @@ hrZ
 hrZ
 hrZ
 hrZ
-uQS
+vaD
 uQS
 uQS
 nHv
@@ -39333,7 +39339,7 @@ hrZ
 hrZ
 hrZ
 hrZ
-uQS
+vaD
 uQS
 uQS
 jHI
@@ -40687,8 +40693,8 @@ hrZ
 hrZ
 hrZ
 hrZ
-kxw
-kxw
+pif
+pif
 pif
 hrZ
 hrZ
@@ -42209,7 +42215,7 @@ uQS
 uQS
 uQS
 uQS
-uQS
+vaD
 hrZ
 hrZ
 hrZ
@@ -42466,7 +42472,7 @@ iRc
 iRc
 uQS
 uQS
-uQS
+vaD
 hrZ
 hrZ
 hrZ
@@ -42723,7 +42729,7 @@ xIt
 mbD
 uQS
 uQS
-uQS
+vaD
 hrZ
 hrZ
 hrZ
@@ -42980,7 +42986,7 @@ iRc
 iRc
 uQS
 uQS
-uQS
+vaD
 hrZ
 hrZ
 hrZ
@@ -43002,7 +43008,7 @@ hrZ
 hrZ
 pif
 pif
-kxw
+pif
 hrZ
 hrZ
 iba
@@ -43237,7 +43243,7 @@ xIt
 xIt
 uQS
 uQS
-uQS
+vaD
 hrZ
 hrZ
 hrZ
@@ -43494,7 +43500,7 @@ uQS
 uQS
 uQS
 uQS
-uQS
+vaD
 hrZ
 hrZ
 hrZ
@@ -43513,7 +43519,7 @@ hrZ
 hrZ
 hrZ
 duA
-pif
+rvl
 pif
 pif
 hrZ
@@ -43751,7 +43757,7 @@ iDC
 dUK
 uQS
 uQS
-uQS
+vaD
 hrZ
 hrZ
 hrZ
@@ -43770,7 +43776,7 @@ hrZ
 hrZ
 hrZ
 pif
-kxw
+pif
 pyd
 hrZ
 hrZ
@@ -44008,7 +44014,7 @@ iDC
 vil
 uQS
 uQS
-uQS
+vaD
 hrZ
 hrZ
 hrZ
@@ -44264,8 +44270,8 @@ iDC
 iDC
 iDC
 uQS
-uQS
-uQS
+vaD
+vaD
 hrZ
 hrZ
 hrZ
@@ -44521,7 +44527,7 @@ uQS
 uQS
 uQS
 uQS
-uQS
+vaD
 hrZ
 hrZ
 hrZ
@@ -44777,8 +44783,8 @@ uQS
 uQS
 uQS
 uQS
-uQS
-uQS
+vaD
+vaD
 hrZ
 hrZ
 hrZ
@@ -45030,11 +45036,11 @@ sCn
 sCn
 uQS
 uQS
-uQS
-uQS
-uQS
-uQS
-uQS
+vaD
+vaD
+vaD
+vaD
+vaD
 hrZ
 hrZ
 hrZ
@@ -45286,8 +45292,8 @@ uQS
 sCn
 uQS
 uQS
-uQS
-uQS
+vaD
+vaD
 hrZ
 hrZ
 hrZ
@@ -45543,7 +45549,7 @@ uQS
 fiq
 uQS
 uQS
-uQS
+vaD
 hrZ
 hrZ
 hrZ
@@ -45800,7 +45806,7 @@ uQS
 fiq
 uQS
 uQS
-uQS
+vaD
 hrZ
 hrZ
 hrZ
@@ -46057,7 +46063,7 @@ sCn
 sCn
 uQS
 uQS
-uQS
+vaD
 hrZ
 hrZ
 hrZ
@@ -46314,7 +46320,7 @@ uQS
 uQS
 uQS
 vaD
-uQS
+vaD
 hrZ
 hrZ
 hrZ
@@ -74737,7 +74743,7 @@ bJJ
 uBU
 iBM
 hKu
-oHk
+rpA
 bJJ
 rpA
 bJJ
@@ -75249,9 +75255,9 @@ hKu
 rpA
 qgx
 ayd
-oHk
 rpA
-oHk
+iux
+rpA
 bJJ
 rpA
 hKu
@@ -76276,7 +76282,7 @@ aTA
 pif
 pif
 pif
-oEO
+pif
 pif
 gMw
 pif
@@ -81980,7 +81986,7 @@ kqZ
 shC
 ekT
 aVQ
-uok
+jHa
 juH
 ekT
 ekT
@@ -82238,7 +82244,7 @@ shC
 ekT
 qfY
 vpy
-jez
+urK
 ekT
 wbP
 tNV

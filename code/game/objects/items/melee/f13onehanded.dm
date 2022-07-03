@@ -816,6 +816,20 @@ obj/item/melee/unarmed/punchdagger/cyborg
 	attack_verb = list("slashed", "sliced", "torn", "ripped", "diced", "cut")
 	hitsound = 'sound/weapons/bladeslice.ogg'
 
+// Sentient Deathclaw Gauntlet	Keywords: Damage 30, AP 1
+/obj/item/melee/unarmed/sentientdeathclawgauntlet
+	name = "sentient deathclaw gauntlet"
+	desc = "This is an item created for the sentient deathclaws and is unique, DO NOT USE."
+	icon_state = "sentientdeathclaw_g"
+	item_state = "sentientdeathclaw_g"
+	slot_flags = ITEM_SLOT_GLOVES
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 30
+	armour_penetration = 1
+	sharpness = SHARP_EDGED
+	attack_verb = list("slashed", "sliced", "torn", "ripped", "diced", "mauled")
+	hitsound = 'sound/f13npc/deathclaw/aggro2.ogg'
+
 //Yao Guai Gauntlet	Keywords: Damage 30, Fast, "Saw Bleed" Effect
 /obj/item/melee/unarmed/yaoguaigauntlet
 	name = "yao guai gauntlet"

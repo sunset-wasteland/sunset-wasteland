@@ -56,7 +56,7 @@
 	for(var/obj/item/garbage in target.contents)
 		if(!garbage.anchored)
 			step(garbage, sweep_dir)
-		if(++i > 20)
+		if(++i > 40)
 			break
 	if(i)
 		playsound(loc, 'sound/weapons/thudswoosh.ogg', 30, TRUE, -1)

@@ -816,6 +816,11 @@
 /obj/structure/window/fulltile/house{
 	icon_state = "housewindowbrokenvertical"
 	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "supplymall";
+	layer = 11;
+	name = "The Supply Hut"
+	},
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/building/mall)
 "asW" = (
@@ -1555,6 +1560,11 @@
 /obj/structure/simple_door/house{
 	name = "The Urbanist"
 	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "urbanistmall";
+	layer = 11;
+	name = "The Urbanist"
+	},
 /turf/open/floor/carpet/black,
 /area/f13/building/mall)
 "cqu" = (
@@ -1603,6 +1613,11 @@
 /area/f13/city/bighorn)
 "cuC" = (
 /obj/structure/simple_door/house{
+	name = "Sparky Appliances"
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "sparkymall";
+	layer = 11;
 	name = "Sparky Appliances"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
@@ -2076,7 +2091,10 @@
 "dOw" = (
 /obj/item/trash/candy,
 /obj/structure/lattice/catwalk,
-/turf/open/indestructible/ground/outside/ruins,
+/turf/open/transparent/openspace{
+	name = "air";
+	sunlight_state = 1
+	},
 /area/f13/building/hospital)
 "dPd" = (
 /obj/structure/chair/wood,
@@ -2195,10 +2213,16 @@
 	},
 /area/f13/ncr)
 "egq" = (
-/turf/open/indestructible/ground/outside/ruins{
-	icon_state = "rubbleplate"
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
 	},
-/area/f13/building/hospital)
+/obj/machinery/button/door{
+	id = "urbanistmall";
+	name = "The Urbanist shutters";
+	pixel_y = -32
+	},
+/turf/open/floor/f13/wood,
+/area/f13/building/mall)
 "eiE" = (
 /obj/structure/lattice/catwalk,
 /obj/structure/fence/handrail{
@@ -2433,6 +2457,11 @@
 	icon_state = "housewindowvertical"
 	},
 /obj/structure/barricade/wooden/planks/pregame,
+/obj/machinery/door/poddoor/shutters{
+	id = "knowledgeking";
+	layer = 11;
+	name = "Knowledge King"
+	},
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/building/mall)
 "ePI" = (
@@ -2656,6 +2685,24 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/village)
+"fuN" = (
+/obj/structure/table,
+/obj/item/clothing/under/f13/police,
+/obj/item/clothing/head/f13/police/officer,
+/turf/open/floor/f13{
+	icon_state = "darkrusty"
+	},
+/area/f13/building/mall)
+"fxO" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/button/door{
+	id = "katsuroarcade";
+	name = "Katsuro Entertainment shutters";
+	pixel_y = 32
+	},
+/turf/open/indestructible/ground/outside/ruins,
+/area/f13/building/mall)
 "fym" = (
 /obj/structure/closet/cabinet,
 /obj/effect/spawner/lootdrop/f13/armor/clothes,
@@ -2911,7 +2958,10 @@
 /area/f13/wasteland/ncr)
 "gcQ" = (
 /obj/structure/lattice/catwalk,
-/turf/open/indestructible/ground/outside/ruins,
+/turf/open/transparent/openspace{
+	name = "air";
+	sunlight_state = 1
+	},
 /area/f13/building/hospital)
 "gde" = (
 /obj/structure/sink{
@@ -3027,6 +3077,11 @@
 	name = "Knowledge King"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/poddoor/shutters{
+	id = "knowledgeking";
+	layer = 11;
+	name = "Knowledge King"
+	},
 /turf/open/floor/f13/wood,
 /area/f13/building/mall)
 "grC" = (
@@ -3111,6 +3166,15 @@
 /turf/open/floor/f13/wood{
 	icon_state = "housebase"
 	},
+/area/f13/building/mall)
+"gAr" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/button/door{
+	id = "supplymall";
+	name = "The Supply Hut shutters";
+	pixel_y = 32
+	},
+/turf/open/indestructible/ground/outside/ruins,
 /area/f13/building/mall)
 "gAD" = (
 /obj/structure/toilet{
@@ -3301,7 +3365,10 @@
 /area/f13/building/hospital)
 "hdk" = (
 /obj/item/trash/sosjerky,
-/turf/open/indestructible/ground/outside/ruins,
+/turf/open/transparent/openspace{
+	name = "air";
+	sunlight_state = 1
+	},
 /area/f13/building/hospital)
 "hdB" = (
 /obj/effect/decal/cleanable/dirt,
@@ -3886,7 +3953,9 @@
 	},
 /area/f13/building/mall)
 "iFg" = (
-/obj/structure/simple_door/house,
+/obj/structure/simple_door/house{
+	name = "Sheridan County Hospital"
+	},
 /obj/structure/barricade/wooden/planks/pregame,
 /turf/open/floor/plasteel/f13{
 	icon_state = "plating"
@@ -4103,6 +4172,7 @@
 "jka" = (
 /obj/structure/table,
 /obj/machinery/light/small,
+/obj/item/melee/classic_baton/police,
 /turf/open/floor/f13{
 	icon_state = "darkrusty"
 	},
@@ -4300,6 +4370,11 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
+/obj/machinery/door/poddoor/shutters{
+	id = "newagegarden";
+	layer = 11;
+	name = "New Age Gardening"
+	},
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/building/mall)
 "jMw" = (
@@ -4421,6 +4496,17 @@
 	dir = 4
 	},
 /turf/open/floor/f13/wood,
+/area/f13/building/mall)
+"jXT" = (
+/obj/structure/window/fulltile/house{
+	icon_state = "housewindowbrokenvertical"
+	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "urbanistmall";
+	layer = 11;
+	name = "The Urbanist"
+	},
+/turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/building/mall)
 "kaE" = (
 /turf/open/transparent/openspace,
@@ -4765,6 +4851,11 @@
 /area/f13/wasteland/ncr)
 "kNk" = (
 /obj/structure/barricade/wooden,
+/obj/machinery/door/poddoor/shutters{
+	id = "sparkymall";
+	layer = 11;
+	name = "Sparky Appliances"
+	},
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/building/mall)
 "kNp" = (
@@ -4772,7 +4863,10 @@
 	color = "#363636"
 	},
 /obj/structure/lattice/catwalk,
-/turf/open/indestructible/ground/outside/ruins,
+/turf/open/transparent/openspace{
+	name = "air";
+	sunlight_state = 1
+	},
 /area/f13/building/hospital)
 "kOc" = (
 /obj/effect/decal/cleanable/dirt,
@@ -4811,6 +4905,11 @@
 	icon_state = "housewindowbrokenvertical"
 	},
 /obj/structure/barricade/wooden/planks/pregame,
+/obj/machinery/door/poddoor/shutters{
+	id = "sparkymall";
+	layer = 11;
+	name = "Sparky Appliances"
+	},
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/building/mall)
 "kUW" = (
@@ -5150,6 +5249,11 @@
 /obj/structure/simple_door/house{
 	name = "The Supply Hut"
 	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "supplymall";
+	layer = 11;
+	name = "The Supply Hut"
+	},
 /turf/open/floor/plasteel/f13/vault_floor/blue,
 /area/f13/building/mall)
 "lFY" = (
@@ -5427,6 +5531,18 @@
 	icon_state = "whitedirtysolid"
 	},
 /area/f13/building/hospital)
+"mwD" = (
+/obj/structure/window/fulltile/house{
+	icon_state = "housewindowbrokenvertical"
+	},
+/obj/structure/barricade/wooden/planks/pregame,
+/obj/machinery/door/poddoor/shutters{
+	id = "knowledgeking";
+	layer = 11;
+	name = "Knowledge King"
+	},
+/turf/open/floor/plasteel/f13/vault_floor/plating,
+/area/f13/building/mall)
 "mwT" = (
 /obj/structure/chair/booth{
 	icon_state = "booth_west_south"
@@ -5475,6 +5591,14 @@
 	icon_state = "greenrustychess"
 	},
 /area/f13/building/massfusion)
+"mzW" = (
+/obj/machinery/button/door{
+	id = "knowledgeking";
+	name = "Knowledge King shutters";
+	pixel_y = -32
+	},
+/turf/open/floor/f13/wood,
+/area/f13/building/mall)
 "mAn" = (
 /obj/structure/junk/locker,
 /turf/open/floor/plasteel/f13/vault_floor/purple,
@@ -5487,14 +5611,17 @@
 	},
 /area/f13/building/massfusion)
 "mBg" = (
-/obj/effect/decal/cleanable/dirt{
-	color = "#363636"
+/obj/structure/window/fulltile/house{
+	icon_state = "housewindowbrokenvertical"
 	},
-/obj/structure/lattice/catwalk,
-/turf/open/indestructible/ground/outside/ruins{
-	icon_state = "rubblepillar"
+/obj/structure/barricade/wooden/planks/pregame,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "supplymall";
+	layer = 11;
+	name = "The Supply Hut"
 	},
-/area/f13/building/hospital)
+/turf/open/floor/plasteel/f13/vault_floor/plating,
+/area/f13/building/mall)
 "mBR" = (
 /obj/structure/rack/shelf_metal,
 /obj/item/ammo_box/shotgun/slug,
@@ -6074,7 +6201,10 @@
 /obj/item/trash/candy,
 /obj/item/trash/sosjerky,
 /obj/structure/lattice/catwalk,
-/turf/open/indestructible/ground/outside/ruins,
+/turf/open/transparent/openspace{
+	name = "air";
+	sunlight_state = 1
+	},
 /area/f13/building/hospital)
 "ocx" = (
 /turf/open/floor/plasteel/f13{
@@ -6108,6 +6238,18 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/ncr)
+"ofi" = (
+/obj/structure/window/fulltile/house{
+	icon_state = "housewindowbrokenvertical"
+	},
+/obj/structure/barricade/wooden/planks/pregame,
+/obj/machinery/door/poddoor/shutters{
+	id = "newagegarden";
+	layer = 11;
+	name = "New Age Gardening"
+	},
+/turf/open/floor/plasteel/f13/vault_floor/plating,
+/area/f13/building/mall)
 "ofv" = (
 /obj/structure/table,
 /obj/machinery/computer/terminal,
@@ -6209,6 +6351,11 @@
 /area/f13/ncr)
 "orp" = (
 /obj/structure/simple_door/house{
+	name = "New Age Gardening"
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "newagegarden";
+	layer = 11;
 	name = "New Age Gardening"
 	},
 /turf/open/floor/f13{
@@ -6617,6 +6764,11 @@
 /obj/structure/window/fulltile/house{
 	icon_state = "housewindowvertical"
 	},
+/obj/machinery/door/poddoor/shutters{
+	id = "knowledgeking";
+	layer = 11;
+	name = "Knowledge King"
+	},
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/building/mall)
 "pFi" = (
@@ -7001,7 +7153,9 @@
 	},
 /area/f13/ncr)
 "qOL" = (
-/obj/structure/simple_door/metal/store,
+/obj/structure/simple_door/metal/store{
+	name = "Sheridan County Hospital"
+	},
 /obj/structure/barricade/wooden/planks/pregame,
 /turf/open/floor/plasteel/f13/vault_floor/blue/side{
 	dir = 6
@@ -7028,6 +7182,19 @@
 	icon_state = "darkdirtysolid"
 	},
 /area/f13/ncr)
+"qSr" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/machinery/button/door{
+	id = "newagegarden";
+	name = "New Age Gardening shutters";
+	pixel_x = -32
+	},
+/turf/open/floor/f13{
+	icon_state = "whitegreenrustychess"
+	},
+/area/f13/building/mall)
 "qUQ" = (
 /obj/machinery/hydroponics/soil/pot{
 	pixel_y = 10
@@ -7102,6 +7269,11 @@
 	},
 /area/f13/building/mall)
 "rcA" = (
+/obj/machinery/button/door{
+	id = "sparkymall";
+	name = "Sparky Appliances shutters";
+	pixel_x = -32
+	},
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building/mall)
 "rei" = (
@@ -7172,7 +7344,9 @@
 	},
 /area/f13/ncr)
 "roa" = (
-/obj/structure/simple_door/house,
+/obj/structure/simple_door/house{
+	name = "Sheridan County Hospital"
+	},
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
 "rpk" = (
@@ -7313,7 +7487,9 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/obj/structure/simple_door/bunker,
+/obj/structure/simple_door/bunker{
+	name = "Sheridan County Hospital"
+	},
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/building/hospital)
 "rDK" = (
@@ -7757,6 +7933,17 @@
 "sGc" = (
 /turf/open/transparent/openspace,
 /area/f13/ncr)
+"sGJ" = (
+/obj/structure/window/fulltile/house{
+	icon_state = "housewindowbrokenvertical"
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "katsuroarcade";
+	layer = 11;
+	name = "Katsuro Entertainment"
+	},
+/turf/open/floor/plasteel/f13/vault_floor/plating,
+/area/f13/building/mall)
 "sHx" = (
 /obj/machinery/light{
 	dir = 4;
@@ -8053,7 +8240,9 @@
 /turf/open/floor/f13/wood,
 /area/f13/city/bighorn)
 "tog" = (
-/obj/structure/simple_door/house,
+/obj/structure/simple_door/house{
+	name = "Sheridan County Hospital"
+	},
 /obj/structure/barricade/wooden/planks/pregame,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
@@ -8103,7 +8292,9 @@
 	},
 /area/f13/ncr)
 "tvg" = (
-/obj/structure/simple_door/metal/store,
+/obj/structure/simple_door/metal/store{
+	name = "Sheridan County Hospital"
+	},
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
@@ -8268,7 +8459,10 @@
 	},
 /obj/item/trash/candy,
 /obj/structure/lattice/catwalk,
-/turf/open/indestructible/ground/outside/ruins,
+/turf/open/transparent/openspace{
+	name = "air";
+	sunlight_state = 1
+	},
 /area/f13/building/hospital)
 "tWD" = (
 /obj/machinery/door/unpowered/securedoor{
@@ -8376,7 +8570,9 @@
 	},
 /area/f13/building/hospital)
 "uez" = (
-/obj/structure/simple_door/house,
+/obj/structure/simple_door/house{
+	name = "Sheridan County Hospital"
+	},
 /turf/open/floor/plasteel/f13/vault_floor/purple,
 /area/f13/building/hospital)
 "ueV" = (
@@ -8452,6 +8648,11 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
+/obj/machinery/door/poddoor/shutters{
+	id = "newagegarden";
+	layer = 11;
+	name = "New Age Gardening"
+	},
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/building/mall)
 "ulW" = (
@@ -8488,7 +8689,10 @@
 	},
 /obj/item/trash/candy,
 /obj/structure/lattice/catwalk,
-/turf/open/indestructible/ground/outside/ruins,
+/turf/open/transparent/openspace{
+	name = "air";
+	sunlight_state = 1
+	},
 /area/f13/building/hospital)
 "uoi" = (
 /obj/effect/decal/cleanable/generic,
@@ -8550,7 +8754,9 @@
 	},
 /area/f13/building/mall)
 "urR" = (
-/obj/structure/simple_door/bunker,
+/obj/structure/simple_door/bunker{
+	name = "Sheridan County Hospital"
+	},
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/building/hospital)
 "usA" = (
@@ -8617,7 +8823,9 @@
 /turf/open/floor/plasteel/f13/vault_floor/blue/whitebluefull,
 /area/f13/building/hospital)
 "uxS" = (
-/obj/structure/simple_door/house,
+/obj/structure/simple_door/house{
+	name = "Sheridan County Hospital"
+	},
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
@@ -8752,7 +8960,9 @@
 /turf/open/floor/wood/wood_common,
 /area/f13/city/bighorn)
 "uTv" = (
-/obj/structure/simple_door/house,
+/obj/structure/simple_door/house{
+	name = "Sheridan County Hospital"
+	},
 /obj/effect/decal/cleanable/blood/tracks,
 /turf/open/floor/plasteel/f13/vault_floor/white/whitesolid{
 	icon_state = "whitedirtysolid"
@@ -8919,6 +9129,18 @@
 /obj/structure/flora/ausbushes/grassybush,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/bighorn)
+"vEF" = (
+/obj/structure/window/fulltile/house{
+	icon_state = "housewindowbrokenvertical"
+	},
+/obj/structure/barricade/wooden/planks/pregame,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "urbanistmall";
+	layer = 11;
+	name = "The Urbanist"
+	},
+/turf/open/floor/plasteel/f13/vault_floor/plating,
+/area/f13/building/mall)
 "vFm" = (
 /obj/structure/sign/poster/prewar/poster79{
 	pixel_y = -32
@@ -8950,6 +9172,17 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/ncr)
+"vIv" = (
+/obj/structure/window/fulltile/house{
+	icon_state = "housewindowbrokenvertical"
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "newagegarden";
+	layer = 11;
+	name = "New Age Gardening"
+	},
+/turf/open/floor/plasteel/f13/vault_floor/plating,
+/area/f13/building/mall)
 "vKF" = (
 /obj/structure/simple_door/metal,
 /turf/open/floor/f13{
@@ -8975,6 +9208,11 @@
 "vLC" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/barricade/wooden,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "supplymall";
+	layer = 11;
+	name = "The Supply Hut"
+	},
 /turf/open/indestructible/ground/outside/ruins,
 /area/f13/building/mall)
 "vLR" = (
@@ -9572,6 +9810,11 @@
 	color = "#363636"
 	},
 /obj/structure/simple_door/house{
+	name = "Katsuro Entertainment"
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "katsuroarcade";
+	layer = 11;
 	name = "Katsuro Entertainment"
 	},
 /turf/open/floor/carpet/arcade,
@@ -54382,7 +54625,7 @@ kJl
 lqO
 obr
 kNp
-mBg
+kNp
 gcQ
 lqO
 lqO
@@ -54638,7 +54881,7 @@ gLr
 gnV
 lqO
 kNp
-egq
+iQu
 hdk
 kNp
 lqO
@@ -61311,7 +61554,7 @@ urv
 hRa
 bpx
 cwA
-gYZ
+egq
 hRa
 wGu
 rcA
@@ -61325,7 +61568,7 @@ vUH
 ofv
 hRa
 aFw
-aFw
+qSr
 oEw
 cKx
 jaW
@@ -62111,7 +62354,7 @@ hRa
 onn
 rZx
 rZx
-sAt
+fuN
 kne
 vqz
 vqz
@@ -62851,9 +63094,9 @@ kne
 urv
 kDx
 lii
-arM
+jXT
 cps
-kUk
+vEF
 hRa
 hRa
 hRa
@@ -62868,8 +63111,8 @@ cuC
 hRa
 hRa
 hRa
-kUk
-arM
+ofi
+vIv
 hRa
 hRa
 pFi
@@ -65678,17 +65921,17 @@ vqz
 vqz
 vqz
 hRa
-arM
+sGJ
 xzr
-arM
+sGJ
 kne
 hRa
 hRa
 hRa
-kUk
-kUk
+mBg
+mBg
 arM
-kUk
+mBg
 hRa
 vLC
 lFU
@@ -65697,7 +65940,7 @@ hRa
 hRa
 gqA
 hRa
-kUk
+mwD
 pEM
 hRa
 hRa
@@ -66710,7 +66953,7 @@ lmx
 kDx
 pfg
 kne
-lmx
+gAr
 lmx
 qYu
 qYu
@@ -66960,7 +67203,7 @@ oez
 oez
 vqz
 kne
-dub
+fxO
 kDx
 jqB
 kDx
@@ -66989,7 +67232,7 @@ amu
 tdK
 lSV
 qED
-lKX
+mzW
 kne
 vqz
 vqz

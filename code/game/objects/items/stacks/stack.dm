@@ -218,8 +218,8 @@
 			var/datum/stack_recipe_list/srl = recipes_list[text2num(href_list["sublist"])]
 			recipes_list = srl.recipes
 		var/datum/stack_recipe/R = recipes_list[text2num(href_list["make"])]
-		var/multiplier = text2num(href_list["multiplier"])
-		if (!multiplier ||(multiplier <= 0)) //href protection
+		var/multiplier = round(text2num(href_list["multiplier"]))
+		if (multiplier < 1) //href protection
 			return
 		if(!building_checks(R, multiplier))
 			return

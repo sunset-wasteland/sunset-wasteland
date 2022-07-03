@@ -17,7 +17,7 @@
 
 /obj/structure/janitorialcart/Initialize()
 	. = ..()
-	create_reagents(100, OPENCONTAINER)
+	create_reagents(500, OPENCONTAINER)
 
 /obj/structure/janitorialcart/proc/wet_mop(obj/item/mop, mob/user)
 	if(reagents.total_volume < 1)
@@ -185,4 +185,3 @@
 		. += "cart_sign[signs]"
 	if(reagents.total_volume > 0)
 		. += "cart_water"
-

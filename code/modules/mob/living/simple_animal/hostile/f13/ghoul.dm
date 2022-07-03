@@ -35,7 +35,17 @@
 							/obj/item/stack/sheet/bone = 1)
 
 	emote_taunt_sound = list('sound/f13npc/ghoul/taunt.ogg')
-	emote_taunt = list("gurgles", "stares")
+	emote_taunt = list(
+		"gurgles", 
+		"stares",
+		"foams at the mouth",
+		"groans",
+		"growls",
+		"jibbers",
+		"howls madly",
+		"screeches",
+		"charges")
+
 	taunt_chance = 30
 	aggrosound = list('sound/f13npc/ghoul/aggro1.ogg', 'sound/f13npc/ghoul/aggro2.ogg')
 	idlesound = list('sound/f13npc/ghoul/idle.ogg')

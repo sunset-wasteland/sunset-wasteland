@@ -51,7 +51,7 @@
 	icon_state = "massfusionout"
 
 /area/f13/wasteland/mall
-	name = "Mall of Wyoming"
+	name = "Mall of Wyoming Exterior"
 	icon_state = "mallex"
 
 /area/f13/wasteland/hospital

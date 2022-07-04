@@ -125,6 +125,14 @@
 	lighting_alpha = LIGHTING_PLANE_ALPHA_NV_TRAIT
 	glass_colour_type = /datum/client_colour/glass_colour/green
 
+/obj/item/clothing/glasses/night/deathclaweyes
+	name = "deathclaw eyes"
+	desc = "An item made for the sentient deathclaws, do not use if found."
+	icon_state = "deathclaweyes"
+	item_state = "deathclaweyes"
+	darkness_view = 24
+	lighting_alpha = LIGHTING_PLANE_ALPHA_NV_TRAIT
+
 /obj/item/clothing/glasses/night/prescription
 	name = "prescription night vision goggles"
 	desc = "NVGs but for those with nearsightedness."
@@ -145,7 +153,7 @@
 	desc = "Avast ye wasteys!"
 	icon_state = "eyepatch"
 	item_state = "eyepatch"
-	
+
 /obj/item/clothing/glasses/eyepatch/goji
 	name = "emblazoned eyepatch"
 	desc = "You have the eye of a mad dog!"

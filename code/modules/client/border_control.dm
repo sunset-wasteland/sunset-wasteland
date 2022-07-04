@@ -175,7 +175,7 @@ proc/BC_RemoveKey(var/key)
 	if(!GLOB.borderControlFile)
 		return 0
 
-	GLOB.borderControlFile["whitelistedCkeys"] >> GLOB.whitelistedCkeys
+	GLOB.borderControlFile["WhitelistedCkeys"] >> GLOB.whitelistedCkeys
 
 	GLOB.whitelistLoaded = 1
 
@@ -188,4 +188,4 @@ proc/BC_SaveWhitelist()
 	if(!GLOB.borderControlFile)
 		return 0
 
-	GLOB.borderControlFile["whitelistedCkeys"] << GLOB.whitelistedCkeys
+	GLOB.borderControlFile["WhitelistedCkeys"] << GLOB.whitelistedCkeys

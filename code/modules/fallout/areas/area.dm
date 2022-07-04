@@ -51,11 +51,11 @@
 	icon_state = "massfusionout"
 
 /area/f13/wasteland/mall
-	name = "Yuma Mall Exterior"
+	name = "Mall of Wyoming Exterior"
 	icon_state = "mallex"
 
 /area/f13/wasteland/hospital
-	name = "Yuma General Exterior"
+	name = "Sheridan County Hospital Exterior"
 	icon_state = "hospitalex"
 
 /area/f13/wasteland/museum
@@ -153,11 +153,11 @@
 	icon_state = "massfusionin"
 
 /area/f13/building/hospital
-	name = "Yuma General"
+	name = "Sheridan County Hospital"
 	icon_state = "hospital"
 
 /area/f13/building/mall
-	name = "Yuma Mall"
+	name = "Mall of Wyoming"
 	icon_state = "mall"
 
 /area/f13/building/museum

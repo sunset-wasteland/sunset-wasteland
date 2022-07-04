@@ -870,6 +870,13 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
+"axe" = (
+/obj/structure/window/reinforced/spawner/east,
+/obj/structure/window/reinforced/spawner/north,
+/turf/open/floor/plasteel/vault/side{
+	dir = 6
+	},
+/area/f13/brotherhood)
 "axw" = (
 /obj/structure/simple_door/bunker,
 /obj/structure/timeddoor,
@@ -1243,6 +1250,10 @@
 	},
 /turf/open/floor/wood/wood_common,
 /area/f13/tunnel)
+"boo" = (
+/obj/structure/window/reinforced/spawner/north,
+/turf/open/floor/plasteel/vault/side,
+/area/f13/brotherhood)
 "bot" = (
 /obj/structure/bed,
 /obj/item/bedsheet{
@@ -1478,7 +1489,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/ncr)
 "bzF" = (
-/obj/structure/closet/crate/bin,
+/obj/machinery/jukebox,
 /turf/open/floor/plasteel/darkblue/side{
 	dir = 10
 	},
@@ -1655,6 +1666,18 @@
 "bEi" = (
 /turf/closed/wall/mineral/concrete,
 /area/f13/building/museum)
+"bEk" = (
+/obj/machinery/porta_turret{
+	req_access_txt = "255";
+	turret_flags = TURRET_FLAG_SHOOT_ALL
+	},
+/obj/structure/window/reinforced/spawner,
+/obj/structure/window/reinforced/spawner/north,
+/obj/structure/window/reinforced/spawner/west,
+/turf/open/floor/plasteel/vault/side{
+	dir = 8
+	},
+/area/f13/brotherhood)
 "bEo" = (
 /obj/structure/decoration/vent{
 	pixel_x = 16;
@@ -4973,7 +4996,8 @@
 /area/f13/sewer)
 "bWq" = (
 /mob/living/simple_animal/hostile/ghoul/legendary{
-	resize = 1.2
+	resize = 1.2;
+	desc = "The intense radiation deep inside Mass Fusion has morphed this ghoul into something far stronger."
 	},
 /turf/open/water,
 /area/f13/radiation)
@@ -6113,6 +6137,13 @@
 	},
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
+"czQ" = (
+/obj/structure/window/reinforced/spawner,
+/obj/structure/window/reinforced/spawner/west,
+/turf/open/floor/plasteel/vault/side{
+	dir = 1
+	},
+/area/f13/brotherhood)
 "cAf" = (
 /obj/structure/chair/wood{
 	dir = 1
@@ -6782,6 +6813,12 @@
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
+"dFt" = (
+/obj/structure/window/reinforced/spawner,
+/turf/open/floor/plasteel/vault/side{
+	dir = 1
+	},
+/area/f13/brotherhood)
 "dFK" = (
 /obj/structure/sink{
 	dir = 8;
@@ -7079,6 +7116,17 @@
 	icon_state = "greenrustyfull"
 	},
 /area/f13/tunnel)
+"edQ" = (
+/obj/machinery/porta_turret{
+	req_access_txt = "255";
+	turret_flags = TURRET_FLAG_SHOOT_ALL
+	},
+/obj/structure/window/reinforced/spawner,
+/obj/structure/window/reinforced/spawner/west,
+/turf/open/floor/plasteel/vault/side{
+	dir = 8
+	},
+/area/f13/brotherhood)
 "eed" = (
 /obj/structure/table/wood/settler{
 	name = "stage"
@@ -8450,6 +8498,12 @@
 	name = "stone floor"
 	},
 /area/f13/caves)
+"gCu" = (
+/obj/structure/closet/crate/bin,
+/turf/open/floor/plasteel/darkblue/side{
+	dir = 5
+	},
+/area/f13/brotherhood)
 "gCF" = (
 /obj/structure/sign/poster/contraband/smoke{
 	pixel_y = -32
@@ -8561,6 +8615,13 @@
 "gMI" = (
 /obj/structure/table/reinforced,
 /turf/open/floor/carpet/black,
+/area/f13/brotherhood)
+"gNw" = (
+/obj/structure/window/reinforced/spawner/west,
+/obj/structure/window/reinforced/spawner/north,
+/turf/open/floor/plasteel/vault/side{
+	dir = 4
+	},
 /area/f13/brotherhood)
 "gNN" = (
 /obj/machinery/chem_dispenser,
@@ -9099,6 +9160,15 @@
 	},
 /turf/open/floor/plasteel/f13,
 /area/f13/tunnel)
+"hFx" = (
+/obj/machinery/porta_turret{
+	req_access_txt = "255";
+	turret_flags = TURRET_FLAG_SHOOT_ALL
+	},
+/obj/structure/window/reinforced/spawner,
+/obj/structure/window/reinforced/spawner/west,
+/turf/open/floor/plasteel/vault/side,
+/area/f13/brotherhood)
 "hFB" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/remains{
@@ -9322,6 +9392,16 @@
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
+"ibq" = (
+/obj/machinery/porta_turret{
+	turret_flags = TURRET_FLAG_SHOOT_ALL
+	},
+/obj/structure/window/reinforced/spawner,
+/obj/structure/window/reinforced/spawner/east,
+/turf/open/floor/plasteel/vault/side{
+	dir = 4
+	},
+/area/f13/brotherhood)
 "ibr" = (
 /obj/structure/closet/fridge,
 /obj/effect/spawner/lootdrop/f13/foodspawner,
@@ -9544,9 +9624,6 @@
 /obj/effect/turf_decal/stripes/asteroid/line{
 	dir = 1
 	},
-/obj/effect/turf_decal/vg_decals/numbers/one{
-	pixel_x = -17
-	},
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrustysolid"
 	},
@@ -9664,6 +9741,12 @@
 	icon_state = "reddirtyfull"
 	},
 /area/f13/bunker)
+"iEt" = (
+/obj/item/kirbyplants/random,
+/turf/open/floor/plasteel/vault/side{
+	dir = 4
+	},
+/area/f13/brotherhood)
 "iFc" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "gibbearcore"
@@ -9888,8 +9971,8 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "jag" = (
-/obj/item/chair/stool/retro/black,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/chair/stool/retro/black,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
 	icon_state = "darkdirtysolid"
 	},
@@ -10174,6 +10257,15 @@
 /obj/effect/spawner/lootdrop/f13/cash_random_low,
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
+"jxG" = (
+/obj/machinery/porta_turret{
+	req_access_txt = "255";
+	turret_flags = TURRET_FLAG_SHOOT_ALL
+	},
+/obj/structure/window/reinforced/spawner,
+/obj/structure/window/reinforced/spawner/east,
+/turf/open/floor/plasteel/vault/side,
+/area/f13/brotherhood)
 "jxX" = (
 /obj/structure/chair{
 	dir = 1
@@ -10899,6 +10991,14 @@
 	icon_state = "darkrustysolid"
 	},
 /area/f13/building/massfusion)
+"kVP" = (
+/obj/structure/sign/warning{
+	desc = "A warning sign that reads, "AREAAHEADPROTECTEDBYTURRETS;
+	 = WILLFIREUPONALLPERSONNEL.BROTHERHOODCOMMANDMEMBERREQUIREDTODEACTIVATETURRETSBEFOREPASSING."";
+	name = "\improper WARNING: LIVE FIRE ZONE AHEAD"
+	},
+/turf/closed/wall/r_wall/f13/vault,
+/area/f13/brotherhood)
 "kVU" = (
 /obj/effect/decal/cleanable/greenglow,
 /obj/item/stack/sheet/mineral/uranium,
@@ -10959,6 +11059,10 @@
 /obj/structure/nest/deathclaw,
 /turf/open/water,
 /area/f13/tunnel)
+"lcf" = (
+/obj/machinery/door/airlock/hatch,
+/turf/open/floor/plasteel/vault,
+/area/f13/brotherhood)
 "lcF" = (
 /obj/effect/decal/waste{
 	icon_state = "goo8"
@@ -11078,6 +11182,11 @@
 	icon_state = "darkdirtysolid"
 	},
 /area/f13/tunnel)
+"llc" = (
+/obj/effect/spawner/structure/window/reinforced/tinted,
+/obj/structure/grille,
+/turf/open/floor/plasteel/vault,
+/area/f13/brotherhood)
 "llt" = (
 /obj/effect/turf_decal/caution{
 	dir = 4
@@ -11692,6 +11801,9 @@
 /obj/effect/turf_decal/stripes/asteroid/line{
 	dir = 1
 	},
+/obj/effect/turf_decal/vg_decals/numbers/one{
+	pixel_x = 15
+	},
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrustysolid"
 	},
@@ -12173,6 +12285,14 @@
 	},
 /turf/open/floor/plasteel/floorgrime,
 /area/f13/tunnel)
+"mNH" = (
+/obj/machinery/button/door{
+	name = "Power Armor Storage Button";
+	req_access_txt = "255";
+	id = "BOSPAS"
+	},
+/turf/closed/wall/r_wall/f13/vault,
+/area/f13/brotherhood)
 "mPA" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -12470,6 +12590,18 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
+"nxn" = (
+/obj/item/clothing/suit/armor/f13/power_armor/excavator,
+/obj/structure/window/reinforced/spawner/north,
+/obj/structure/window/reinforced/spawner/west,
+/obj/structure/window/reinforced/spawner/east,
+/obj/structure/table/reinforced,
+/obj/machinery/door/window/brigdoor{
+	req_access_txt = "255"
+	},
+/obj/item/clothing/head/helmet/f13/power_armor/excavator,
+/turf/open/floor/plasteel/vault,
+/area/f13/brotherhood)
 "nyY" = (
 /obj/machinery/light/broken,
 /turf/open/floor/plasteel/f13/vault_floor/yellow{
@@ -13682,6 +13814,20 @@
 	icon_state = "darkrusty"
 	},
 /area/f13/tunnel)
+"pvC" = (
+/obj/item/clothing/suit/armor/f13/power_armor/midwest,
+/obj/structure/window/reinforced/spawner/north,
+/obj/structure/window/reinforced/spawner/east,
+/obj/structure/window/reinforced/spawner,
+/obj/structure/table/reinforced,
+/obj/machinery/door/window/brigdoor/westleft{
+	req_access_txt = "255"
+	},
+/obj/item/clothing/head/helmet/f13/power_armor/midwest,
+/turf/open/floor/plasteel/vault/side{
+	dir = 8
+	},
+/area/f13/brotherhood)
 "pvU" = (
 /obj/structure/rack,
 /obj/effect/decal/cleanable/dirt,
@@ -14159,6 +14305,14 @@
 	icon_state = "redrustyfull"
 	},
 /area/f13/bunker)
+"qiz" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/plasteel/vault/side{
+	dir = 4
+	},
+/area/f13/brotherhood)
 "qiB" = (
 /obj/machinery/light/small{
 	dir = 8
@@ -14386,6 +14540,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
 /area/f13/building/museum)
+"qwy" = (
+/obj/structure/window/reinforced/spawner,
+/obj/structure/window/reinforced/spawner/east,
+/turf/open/floor/plasteel/vault/side{
+	dir = 1
+	},
+/area/f13/brotherhood)
 "qwU" = (
 /obj/structure/noticeboard,
 /turf/closed/wall/rust,
@@ -14784,6 +14945,20 @@
 	dir = 4
 	},
 /area/f13/brotherhood)
+"rgG" = (
+/obj/item/clothing/suit/armor/f13/power_armor/midwest,
+/obj/structure/window/reinforced/spawner/north,
+/obj/structure/window/reinforced/spawner,
+/obj/structure/window/reinforced/spawner/west,
+/obj/structure/table/reinforced,
+/obj/machinery/door/window/brigdoor/eastright{
+	req_access_txt = "255"
+	},
+/obj/item/clothing/head/helmet/f13/power_armor/midwest,
+/turf/open/floor/plasteel/vault/side{
+	dir = 4
+	},
+/area/f13/brotherhood)
 "rhV" = (
 /obj/item/storage/trash_stack{
 	layer = 2
@@ -14996,6 +15171,12 @@
 	icon_state = "darkrustysolid"
 	},
 /area/f13/building/massfusion)
+"rEc" = (
+/obj/machinery/door/airlock/hatch,
+/turf/open/floor/plasteel/vault/side{
+	dir = 8
+	},
+/area/f13/brotherhood)
 "rEX" = (
 /obj/machinery/light{
 	dir = 4;
@@ -15480,6 +15661,15 @@
 	icon_state = "yellowdirtyfull"
 	},
 /area/f13/tunnel)
+"soO" = (
+/obj/machinery/door/poddoor/ert{
+	id = "BOSPAS"
+	},
+/obj/machinery/door/airlock/vault{
+	req_access_txt = "255"
+	},
+/turf/open/floor/plasteel/vault,
+/area/f13/brotherhood)
 "spx" = (
 /obj/machinery/door/airlock/medical{
 	name = "Clinic Morgue";
@@ -15586,6 +15776,12 @@
 	icon_state = "whiterustysolid"
 	},
 /area/f13/tunnel)
+"szm" = (
+/obj/item/kirbyplants/random,
+/turf/open/floor/plasteel/vault/side{
+	dir = 8
+	},
+/area/f13/brotherhood)
 "szv" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -15632,7 +15828,9 @@
 	req_access_txt = "120"
 	},
 /obj/machinery/door/firedoor/heavy,
-/turf/open/floor/f13/wood,
+/turf/open/floor/plasteel/vault/side{
+	dir = 4
+	},
 /area/f13/brotherhood)
 "sEK" = (
 /obj/machinery/light{
@@ -15769,6 +15967,18 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/ncr)
+"sNC" = (
+/obj/machinery/porta_turret{
+	req_access_txt = "255";
+	turret_flags = TURRET_FLAG_SHOOT_ALL
+	},
+/obj/structure/window/reinforced/spawner,
+/obj/structure/window/reinforced/spawner/east,
+/obj/structure/window/reinforced/spawner/north,
+/turf/open/floor/plasteel/vault/side{
+	dir = 4
+	},
+/area/f13/brotherhood)
 "sOr" = (
 /obj/item/storage/trash_stack,
 /obj/item/mine/explosive,
@@ -16105,6 +16315,12 @@
 	},
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/sewer)
+"tpb" = (
+/obj/structure/sign/warning/securearea{
+	desc = "A warning sign which reads 'SECURE AREA: POWER ARMOR STORAGE'."
+	},
+/turf/closed/wall/r_wall/f13/vault,
+/area/f13/brotherhood)
 "tpj" = (
 /obj/structure/ladder/unbreakable{
 	height = 1;
@@ -16495,6 +16711,18 @@
 	icon_state = "darkdirtysolid"
 	},
 /area/f13/tunnel)
+"ubO" = (
+/obj/machinery/porta_turret{
+	req_access_txt = "255";
+	turret_flags = TURRET_FLAG_SHOOT_ALL
+	},
+/obj/structure/window/reinforced/spawner,
+/obj/structure/window/reinforced/spawner/west,
+/obj/structure/window/reinforced/spawner/north,
+/turf/open/floor/plasteel/vault/side{
+	dir = 8
+	},
+/area/f13/brotherhood)
 "udp" = (
 /obj/structure/table/reinforced,
 /obj/item/toy/plush/bubbleplush{
@@ -16561,9 +16789,10 @@
 	},
 /area/f13/tunnel)
 "uhB" = (
-/obj/effect/spawner/structure/window/reinforced/tinted,
-/obj/structure/grille,
-/turf/open/floor/f13/wood,
+/obj/machinery/turretid{
+	req_access = ACCESS_BROTHERHOOD_COMMAND
+	},
+/turf/closed/wall/r_wall/f13/vault,
 /area/f13/brotherhood)
 "ujm" = (
 /obj/structure/table,
@@ -16713,6 +16942,10 @@
 /obj/structure/chair/comfy/brown,
 /obj/effect/landmark/start/f13/seniorscribe,
 /turf/open/floor/carpet/black,
+/area/f13/brotherhood)
+"uyj" = (
+/obj/item/kirbyplants/random,
+/turf/open/floor/plasteel/vault,
 /area/f13/brotherhood)
 "uyq" = (
 /obj/item/reagent_containers/glass/bucket{
@@ -16941,13 +17174,13 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "uNI" = (
-/obj/item/chair/stool/retro/black,
 /obj/effect/spawner/lootdrop/trash,
 /obj/structure/sign/poster/contraband/syndicate_pistol{
 	desc = "A poster advertising silenced pistols as being 'classy as fuck'. It is covered in faded gang tags.";
 	name = "Silenced Pistol";
 	pixel_x = 32
 	},
+/obj/structure/chair/stool/retro/black,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
 	icon_state = "darkrustysolid"
 	},
@@ -17449,9 +17682,13 @@
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
+"vGf" = (
+/obj/item/flag/bos,
+/turf/open/floor/plasteel/vault/side,
+/area/f13/brotherhood)
 "vGl" = (
-/obj/item/chair/stool/retro/black,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/chair/stool/retro/black,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
 	icon_state = "darkrustysolid"
 	},
@@ -17937,6 +18174,13 @@
 /obj/machinery/seed_extractor,
 /turf/open/floor/plasteel/darkgreen/side{
 	dir = 8
+	},
+/area/f13/brotherhood)
+"wwj" = (
+/obj/structure/window/reinforced/spawner/west,
+/obj/structure/window/reinforced/spawner/east,
+/turf/open/floor/plasteel/vault/side{
+	dir = 1
 	},
 /area/f13/brotherhood)
 "wwt" = (
@@ -19017,6 +19261,18 @@
 	icon_state = "2-i"
 	},
 /area/f13/followers)
+"yke" = (
+/obj/item/clothing/suit/armor/f13/power_armor/midwest,
+/obj/structure/window/reinforced/spawner/north,
+/obj/structure/window/reinforced/spawner/east,
+/obj/structure/window/reinforced/spawner/west,
+/obj/structure/table/reinforced,
+/obj/machinery/door/window/brigdoor{
+	req_access_txt = "255"
+	},
+/obj/item/clothing/head/helmet/f13/power_armor/midwest,
+/turf/open/floor/plasteel/vault/side,
+/area/f13/brotherhood)
 "ykl" = (
 /obj/structure/chair/booth{
 	icon_state = "booth_north_middle"
@@ -67654,11 +67910,11 @@ aak
 aak
 aak
 aaa
-gYI
-xwF
-xwF
-xwF
-xwF
+oVq
+oVq
+oVq
+oVq
+oVq
 oVq
 oVq
 oVq
@@ -67911,11 +68167,11 @@ aae
 aae
 aaa
 aaa
-xwF
-xwF
-gYI
-gYI
-xwF
+oVq
+oVq
+oVq
+oVq
+oVq
 oVq
 oVq
 oVq
@@ -68168,11 +68424,11 @@ aae
 aae
 aaa
 aaa
-xwF
-xwF
-gYI
-gYI
-xwF
+oVq
+oVq
+sLR
+uUY
+uUY
 oVq
 oVq
 onr
@@ -68425,11 +68681,11 @@ aae
 aak
 aak
 aak
-xwF
-xwF
-gYI
-gYI
-xwF
+oVq
+oVq
+uUY
+aDe
+uUY
 oVq
 oVq
 toa
@@ -68682,11 +68938,11 @@ aae
 aak
 aak
 aak
-xwF
-xwF
-xwF
-xwF
-xwF
+oVq
+oVq
+rWu
+mEL
+xkz
 oVq
 oVq
 dWz
@@ -68939,11 +69195,11 @@ aae
 aae
 aae
 aak
-xwF
-xwF
-xwF
-cBX
-cBX
+oVq
+oVq
+npF
+rWu
+qks
 oVq
 oVq
 thB
@@ -69196,11 +69452,11 @@ aae
 aaa
 aae
 aak
-xwF
-xwF
-xwF
-xwF
-xwF
+oVq
+oVq
+rWu
+lIt
+xkz
 oVq
 oVq
 dWz
@@ -69446,18 +69702,18 @@ aae
 aae
 aae
 aae
-aae
-aae
-aae
-aaa
-aaa
-aae
-aae
-xwF
-xwF
-xwF
-xwF
-xwF
+oVq
+oVq
+oVq
+oVq
+oVq
+oVq
+oVq
+oVq
+oVq
+uUY
+uHk
+uUY
 oVq
 oVq
 toa
@@ -69703,18 +69959,18 @@ aae
 aak
 aae
 aae
-aae
-aae
-aae
-aaa
-aaa
-aaa
-aae
-xwF
-xwF
-xwF
-xwF
-xwF
+oVq
+oVq
+oVq
+oVq
+oVq
+oVq
+oVq
+oVq
+oVq
+sLR
+uUY
+uUY
 oVq
 oVq
 ilA
@@ -69960,18 +70216,18 @@ aae
 aae
 aae
 aae
-aae
-aae
-aae
-aae
-aaa
-aaa
-aae
-xwF
-xwF
-xwF
-xwF
-xwF
+oVq
+oVq
+ibq
+qiz
+rgG
+qiz
+sNC
+oVq
+oVq
+lcf
+llc
+lcf
 oVq
 oVq
 oVq
@@ -70217,25 +70473,25 @@ aak
 aae
 aae
 aae
-aae
-aae
-aae
-aae
-aaa
-aaa
-aae
-xwF
-xwF
-xwF
-xwF
-cBX
 oVq
 oVq
-sLR
-uUY
-uUY
-sDS
+vGf
+gNw
 vuj
+czQ
+vaL
+oVq
+jxG
+gFh
+iEt
+gFh
+qiz
+sNC
+gFh
+qiz
+gFh
+sDS
+mKl
 fhh
 oVq
 oVq
@@ -70474,24 +70730,24 @@ aak
 aak
 aae
 aae
-aae
-aae
-aae
-aae
-aaa
-aaa
-aae
-xwF
-xwF
-xwF
-cBX
-xwF
 oVq
 oVq
-uUY
-aDe
-uUY
-uhB
+sEK
+boo
+vuj
+dFt
+tnm
+tpb
+mKl
+vuj
+vuj
+vuj
+vuj
+vuj
+vuj
+vuj
+vuj
+llc
 mKl
 vaL
 oVq
@@ -70731,29 +70987,29 @@ aae
 aak
 aae
 aae
-aae
-aae
-aae
-aae
-aaa
-aae
-aaa
-xwF
-xwF
-xwF
-xwF
-xwF
 oVq
 oVq
-rWu
-mEL
-xkz
+yke
+vuj
+nxn
+vuj
+wwj
+soO
+vuj
+vuj
+vuj
+vuj
+vuj
+vuj
+vuj
+vuj
+uyj
 uhB
 mKl
 vaL
 oVq
 oVq
-erk
+gCu
 jnv
 jnv
 jnv
@@ -70988,24 +71244,24 @@ aae
 aae
 aae
 aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-xwF
-xwF
-xwF
-xwF
-cBX
 oVq
 oVq
-npF
-rWu
-qks
-uhB
+sEK
+boo
+vuj
+dFt
+tnm
+mNH
+mKl
+vuj
+vuj
+vuj
+vuj
+vuj
+vuj
+vuj
+vuj
+llc
 eYn
 vaL
 oVq
@@ -71245,24 +71501,24 @@ aae
 aae
 aae
 aae
-aae
-aae
-aae
-aae
-aae
-aak
-aae
-cBX
-xwF
-xwF
-cBX
-cBX
 oVq
 oVq
-rWu
-lIt
-xkz
-uhB
+vGf
+axe
+vuj
+qwy
+vaL
+oVq
+hFx
+dWc
+szm
+dWc
+oDv
+bEk
+dWc
+oDv
+dWc
+rEc
 mKl
 qmp
 gFh
@@ -71502,24 +71758,24 @@ aae
 aae
 aae
 aae
-aae
-aae
-aae
-aae
-aae
-aak
-aae
-cBX
-xwF
-xwF
-xwF
-xwF
 oVq
 oVq
-uUY
-uHk
-uUY
-uhB
+edQ
+oDv
+pvC
+oDv
+ubO
+oVq
+oVq
+oVq
+oVq
+oVq
+oVq
+oVq
+oVq
+oVq
+oVq
+kVP
 mKl
 jak
 dWc
@@ -71759,25 +72015,25 @@ aae
 aae
 aae
 aae
-aae
-aae
-aaa
-aaa
-aak
-aae
-aae
-xwF
-xwF
-xwF
-xwF
-cBX
 oVq
 oVq
-sLR
-uUY
-uUY
-sDS
-vuj
+oVq
+oVq
+oVq
+oVq
+oVq
+oVq
+oVq
+oVq
+oVq
+oVq
+oVq
+oVq
+oVq
+oVq
+oVq
+oVq
+mKl
 vaL
 fKd
 oVq
@@ -72016,13 +72272,13 @@ aae
 aae
 aae
 aae
-aae
-aaa
-aaa
-aaa
-aae
-aae
-aak
+oVq
+oVq
+oVq
+oVq
+oVq
+oVq
+oVq
 cBX
 xwF
 xwF

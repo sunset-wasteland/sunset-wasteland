@@ -84,7 +84,7 @@
 	icon_state = "brutepack"
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
-	heal_brute = 40
+	heal_brute = 20
 	self_delay = 40
 	other_delay = 20
 	grind_results = list(/datum/reagent/medicine/styptic_powder = 10)
@@ -241,7 +241,7 @@
 	amount = 15
 	max_amount = 15
 	repeating = TRUE
-	heal_brute = 10
+	heal_brute = 5
 	stop_bleeding = 2
 	grind_results = list(/datum/reagent/medicine/spaceacillin = 2)
 	merge_type = /obj/item/stack/medical/suture
@@ -275,7 +275,7 @@
 	name = "medicated suture"
 	icon_state = "suture_purp"
 	desc = "A suture infused with drugs that speed up wound healing of the treated laceration."
-	heal_brute = 15
+	heal_brute = 10
 	stop_bleeding = 8
 	grind_results = list(/datum/reagent/medicine/polypyr = 2)
 	merge_type = /obj/item/stack/medical/suture/medicated

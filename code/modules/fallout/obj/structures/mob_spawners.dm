@@ -352,3 +352,4 @@
 	desc = "A tunnel which leads to an underground network of even more tunnels, made by the dangerous tunnelers."
 	max_mobs = 5
 	mob_types = list(/mob/living/simple_animal/hostile/trog/tunneler = 1)
+

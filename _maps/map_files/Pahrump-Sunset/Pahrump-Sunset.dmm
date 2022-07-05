@@ -349,13 +349,10 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "abl" = (
-/obj/structure/fence/handrail{
-	pixel_y = -8
+/obj/structure/railing{
+	dir = 1
 	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/f13{
-	icon_state = "darkrustysolid"
-	},
+/turf/open/transparent/openspace,
 /area/f13/radiation)
 "abm" = (
 /obj/structure/flora/ausbushes/fullgrass,
@@ -1072,9 +1069,6 @@
 /obj/structure/fence,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland/ncr)
-"adz" = (
-/turf/closed/mineral/random/low_chance,
-/area/f13/city/bighorn)
 "adA" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "gibbear1"
@@ -1591,22 +1585,6 @@
 	icon_state = "dirtcorner"
 	},
 /area/f13/wasteland/ncr)
-"afk" = (
-/obj/structure/fence/handrail_end{
-	dir = 1;
-	pixel_x = -14;
-	pixel_y = 18
-	},
-/obj/structure/fence/handrail{
-	dir = 8;
-	pixel_x = -14;
-	pixel_y = -9
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/f13{
-	icon_state = "darkrustysolid"
-	},
-/area/f13/radiation)
 "afl" = (
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "verticalleftborderright2"
@@ -8297,7 +8275,9 @@
 /turf/open/floor/f13/wood,
 /area/f13/village)
 "azL" = (
-/obj/structure/simple_door/metal/store,
+/obj/structure/simple_door/metal/store{
+	name = "Sheridan County Hospital"
+	},
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
@@ -9081,11 +9061,13 @@
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
 "aCg" = (
-/obj/structure/simple_door/metal/dirtystore,
+/obj/structure/simple_door/metal/dirtystore{
+	name = "Mall of Wyoming"
+	},
 /obj/machinery/door/poddoor/shutters{
 	id = "mallfrontshutter";
 	layer = 11;
-	name = "Yuma mall"
+	name = "Mall of Wyoming"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/building/mall)
@@ -10561,7 +10543,7 @@
 /obj/machinery/door/poddoor/shutters{
 	id = "mallfrontshutter";
 	layer = 11;
-	name = "Yuma mall"
+	name = "Mall of Wyoming"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
 	icon_state = "floorrustysolid"
@@ -11304,7 +11286,9 @@
 /turf/open/floor/carpet,
 /area/f13/building/mall)
 "aIH" = (
-/obj/structure/simple_door/house,
+/obj/structure/simple_door/house{
+	name = "Female Restroom"
+	},
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
@@ -11497,7 +11481,9 @@
 /turf/open/floor/f13/wood,
 /area/f13/village)
 "aJo" = (
-/obj/structure/simple_door/house,
+/obj/structure/simple_door/house{
+	name = "Sheridan County Hospital"
+	},
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
 "aJp" = (
@@ -11762,7 +11748,9 @@
 	},
 /area/f13/wasteland/ncr)
 "aKe" = (
-/obj/structure/simple_door/house,
+/obj/structure/simple_door/house{
+	name = "Sheridan County Hospital"
+	},
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
@@ -12374,14 +12362,10 @@
 /turf/open/floor/f13/wood,
 /area/f13/village)
 "aLM" = (
-/obj/structure/fence/handrail{
-	dir = 8;
-	pixel_x = 14;
-	pixel_y = -9
+/obj/structure/railing{
+	dir = 6
 	},
-/turf/open/floor/plasteel/f13{
-	icon_state = "darkrustysolid"
-	},
+/turf/open/transparent/openspace,
 /area/f13/radiation)
 "aLN" = (
 /obj/structure/fence,
@@ -12434,17 +12418,10 @@
 /turf/open/floor/plasteel/f13/vault_floor/blue,
 /area/f13/village)
 "aLW" = (
-/obj/structure/fence/handrail{
-	pixel_y = 18
+/obj/structure/railing/corner{
+	dir = 8
 	},
-/obj/structure/fence/handrail_corner{
-	pixel_x = 18;
-	pixel_y = 18
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/f13{
-	icon_state = "darkrustysolid"
-	},
+/turf/open/transparent/openspace,
 /area/f13/radiation)
 "aLX" = (
 /obj/effect/decal/cleanable/dirt{
@@ -12657,7 +12634,9 @@
 	},
 /area/f13/building/mall)
 "aMy" = (
-/obj/structure/simple_door/house,
+/obj/structure/simple_door/house{
+	name = "Sheridan County Hospital"
+	},
 /obj/structure/barricade/wooden/planks/pregame,
 /turf/open/floor/plasteel/f13/vault_floor/blue/side{
 	dir = 9
@@ -12694,7 +12673,9 @@
 	},
 /area/f13/building/firestation)
 "aMD" = (
-/obj/structure/simple_door/house,
+/obj/structure/simple_door/house{
+	name = "Prestige Jewellers"
+	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -13223,7 +13204,9 @@
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/village)
 "aOa" = (
-/obj/structure/simple_door/metal/dirtystore,
+/obj/structure/simple_door/metal/dirtystore{
+	name = "Sullivans Suits"
+	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "sullivanssuitsshutters";
@@ -13322,7 +13305,7 @@
 "aOm" = (
 /obj/machinery/door/poddoor/shutters{
 	id = "hospitalgarage2";
-	name = "Garage"
+	name = "Ambulance Bay 2"
 	},
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "verticalrightborderleft2"
@@ -15187,8 +15170,6 @@
 /turf/open/floor/f13/wood,
 /area/f13/village)
 "aUe" = (
-/obj/item/paper_bin,
-/obj/item/pen,
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/stripes/asteroid/line{
 	dir = 8
@@ -23840,7 +23821,9 @@
 /turf/open/floor/f13/wood,
 /area/f13/ncr)
 "bzi" = (
-/obj/structure/simple_door/house,
+/obj/structure/simple_door/house{
+	name = "General Atomics"
+	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
@@ -24595,12 +24578,6 @@
 /mob/living/simple_animal/hostile/renegade/engie,
 /turf/open/floor/f13/wood,
 /area/f13/building/museum)
-"bNp" = (
-/obj/structure/barricade/tentclothcorner{
-	dir = 8
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/building)
 "bNs" = (
 /obj/structure/chair/f13foldupchair{
 	dir = 8
@@ -25076,12 +25053,6 @@
 	icon_state = "verticalleftborderleft1"
 	},
 /area/f13/wasteland/bighorn)
-"bWm" = (
-/obj/structure/barricade/tentclothcorner{
-	dir = 1
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/building)
 "bWp" = (
 /obj/structure/decoration/hatch{
 	dir = 8
@@ -25847,11 +25818,13 @@
 	},
 /area/f13/building/mall)
 "chc" = (
-/obj/structure/simple_door/metal/dirtystore,
+/obj/structure/simple_door/metal/dirtystore{
+	name = "Quick Fix Pharmacy"
+	},
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "pharmacyshutters";
 	layer = 11;
-	name = "Friendly Pharm"
+	name = "Quick Fix Pharmacy"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/white/whitesolid,
 /area/f13/building/mall)
@@ -25913,12 +25886,6 @@
 	icon_state = "horizontalinnermain1"
 	},
 /area/f13/wasteland/ncr)
-"ciO" = (
-/obj/structure/barricade/tentclothedge{
-	dir = 8
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/building)
 "ciR" = (
 /obj/structure/nest/mirelurk{
 	max_mobs = 2;
@@ -26686,13 +26653,6 @@
 /obj/machinery/biogenerator,
 /turf/open/floor/f13/wood,
 /area/f13/village)
-"cnY" = (
-/obj/structure/barricade/tentclothedge{
-	dir = 1;
-	pixel_y = -3
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/building)
 "cnZ" = (
 /obj/structure/bed/mattress,
 /turf/open/floor/f13/wood,
@@ -26880,12 +26840,6 @@
 /obj/item/clothing/suit/hooded/wintercoat,
 /turf/open/floor/f13/wood,
 /area/f13/building)
-"cqh" = (
-/obj/structure/barricade/tentclothcorner{
-	dir = 4
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/building)
 "cqj" = (
 /obj/structure/chair/comfy{
 	dir = 1
@@ -26974,16 +26928,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
 /area/f13/building/museum)
-"cqS" = (
-/obj/effect/decal/cleanable/blood/gibs/down{
-	icon_state = "gibleg"
-	},
-/obj/structure/barricade/tentclothedge{
-	dir = 1;
-	pixel_y = -3
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/building)
 "cqT" = (
 /obj/structure/chair/wood{
 	dir = 4
@@ -27036,20 +26980,10 @@
 /turf/open/floor/carpet/black,
 /area/f13/legion)
 "crl" = (
-/obj/structure/fence/handrail_end{
-	dir = 1;
-	pixel_x = -14;
-	pixel_y = 18
+/obj/structure/railing{
+	dir = 8
 	},
-/obj/structure/fence/handrail{
-	dir = 8;
-	pixel_x = -14;
-	pixel_y = -14
-	},
-/obj/effect/spawner/lootdrop/f13/medical/rnd/mid,
-/turf/open/floor/plasteel/f13{
-	icon_state = "darkrustysolid"
-	},
+/turf/open/transparent/openspace,
 /area/f13/radiation)
 "crm" = (
 /turf/open/indestructible/ground/outside/dirt{
@@ -27167,12 +27101,6 @@
 /obj/effect/spawner/lootdrop/f13/weapon/melee/random,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/building)
-"csk" = (
-/obj/structure/barricade/tentclothedge{
-	dir = 4
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/building)
 "csn" = (
 /obj/effect/decal/cleanable/blood/tracks,
 /obj/effect/decal/cleanable/blood/drip,
@@ -27232,14 +27160,6 @@
 	},
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland/east)
-"csO" = (
-/obj/structure/barricade/tentclothedge,
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/building)
-"csQ" = (
-/obj/structure/barricade/tentclothcorner,
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/building)
 "csR" = (
 /turf/open/indestructible/ground/outside/road{
 	dir = 8;
@@ -28660,7 +28580,9 @@
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland/bighorn)
 "dgi" = (
-/obj/structure/simple_door/metal/dirtystore,
+/obj/structure/simple_door/metal/dirtystore{
+	name = "Barbarians Dungeon Comics"
+	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "barbariancomicshutters";
@@ -29150,7 +29072,7 @@
 /obj/machinery/door/poddoor/shutters{
 	id = "mallfrontshutter";
 	layer = 11;
-	name = "Yuma mall"
+	name = "Mall of Wyoming"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/building/mall)
@@ -30958,15 +30880,11 @@
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/village)
 "eHx" = (
-/obj/structure/chair/wood{
-	dir = 4;
-	icon_state = "wooden_chair_old"
+/obj/structure/railing{
+	dir = 10
 	},
-/obj/effect/decal/remains{
-	icon_state = "remains"
-	},
-/turf/open/floor/f13/wood,
-/area/f13/village)
+/turf/open/transparent/openspace,
+/area/f13/radiation)
 "eHz" = (
 /obj/structure/campfire,
 /turf/open/indestructible/ground/outside/road{
@@ -31092,19 +31010,6 @@
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
-"eMj" = (
-/obj/structure/railing{
-	dir = 4
-	},
-/obj/structure/fence/handrail_end{
-	dir = 1;
-	pixel_x = -14;
-	pixel_y = -14
-	},
-/turf/open/floor/plasteel/f13{
-	icon_state = "darkrustysolid"
-	},
-/area/f13/radiation)
 "eMl" = (
 /obj/structure/table/wood/settler,
 /obj/effect/decal/cleanable/dirt,
@@ -31214,16 +31119,9 @@
 /area/f13/wasteland/bighorn)
 "ePK" = (
 /obj/structure/railing{
-	dir = 8
+	dir = 5
 	},
-/obj/structure/fence/handrail_end{
-	dir = 1;
-	pixel_x = 14;
-	pixel_y = -14
-	},
-/turf/open/floor/plasteel/f13{
-	icon_state = "darkrustysolid"
-	},
+/turf/open/transparent/openspace,
 /area/f13/radiation)
 "ePL" = (
 /obj/effect/decal/cleanable/dirt,
@@ -31359,7 +31257,7 @@
 "eTH" = (
 /obj/machinery/door/poddoor/shutters{
 	id = "hospitalgarage2";
-	name = "Garage"
+	name = "Ambulance Bay 2"
 	},
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "verticalleftborderright2top"
@@ -33846,7 +33744,9 @@
 	},
 /area/f13/building)
 "gza" = (
-/obj/structure/simple_door/house,
+/obj/structure/simple_door/house{
+	name = "Sheridan County Hospital"
+	},
 /obj/structure/barricade/wooden/planks/pregame,
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -33879,7 +33779,9 @@
 /turf/open/floor/f13/wood,
 /area/f13/building/museum)
 "gAj" = (
-/obj/structure/simple_door/house,
+/obj/structure/simple_door/house{
+	name = "Female Restroom"
+	},
 /turf/open/floor/plasteel/f13/vault_floor/neutral/white,
 /area/f13/building/mall)
 "gAn" = (
@@ -34462,7 +34364,9 @@
 	},
 /area/f13/village)
 "gTA" = (
-/obj/structure/simple_door/metal/dirtystore,
+/obj/structure/simple_door/metal/dirtystore{
+	name = "Mall of Wyoming"
+	},
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
@@ -35175,7 +35079,7 @@
 /obj/machinery/door/poddoor/shutters{
 	id = "mallfrontshutter";
 	layer = 11;
-	name = "Yuma mall"
+	name = "Mall of Wyoming"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
 	icon_state = "floorrustysolid"
@@ -35447,7 +35351,9 @@
 	},
 /area/f13/wasteland/bighorn)
 "hDd" = (
-/obj/structure/simple_door/house,
+/obj/structure/simple_door/house{
+	name = "Sheridan County Hospital"
+	},
 /obj/structure/barricade/wooden/planks/pregame,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
@@ -35898,7 +35804,7 @@
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "pharmacyshutters";
 	layer = 11;
-	name = "Friendly Pharm"
+	name = "Quick Fix Pharmacy"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/white/whitesolid,
 /area/f13/building/mall)
@@ -36628,7 +36534,7 @@
 "ipi" = (
 /obj/machinery/door/poddoor/shutters{
 	id = "hospitalgarage1";
-	name = "Garage"
+	name = "Ambulance Bay 1"
 	},
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "verticalleftborderright2top"
@@ -37113,12 +37019,10 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/legion)
 "iEr" = (
-/obj/structure/barricade/tentclothedge{
-	dir = 4
-	},
 /obj/effect/turf_decal/weather/dirt{
 	dir = 4
 	},
+/obj/structure/barricade/tent,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/building)
 "iEs" = (
@@ -37324,7 +37228,9 @@
 /turf/open/indestructible/ground/outside/road,
 /area/f13/building)
 "iJX" = (
-/obj/structure/simple_door/house,
+/obj/structure/simple_door/house{
+	name = "Sullivans Suits"
+	},
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
 	},
@@ -37576,7 +37482,9 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "iQD" = (
-/obj/structure/simple_door/house,
+/obj/structure/simple_door/house{
+	name = "Ricks Outdoor Goods"
+	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -38172,13 +38080,6 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/village)
-"jhG" = (
-/obj/structure/barricade/tentclothcorner,
-/obj/effect/turf_decal/weather/dirt{
-	dir = 4
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/building)
 "jhJ" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	dir = 4;
@@ -38643,7 +38544,7 @@
 /turf/open/indestructible/ground/outside/savannah/topright,
 /area/f13/wasteland/legion)
 "jyU" = (
-/obj/structure/barricade/tentclothcorner,
+/obj/structure/barricade/tent,
 /turf/open/indestructible/ground/outside/dirt{
 	dir = 8;
 	icon_state = "dirtcorner"
@@ -38989,7 +38890,9 @@
 	},
 /area/f13/wasteland/east)
 "jMw" = (
-/obj/structure/simple_door/metal/dirtystore,
+/obj/structure/simple_door/metal/dirtystore{
+	name = "Prestige Jewellers"
+	},
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
@@ -39157,17 +39060,10 @@
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland/bighorn)
 "jQx" = (
-/obj/structure/fence/handrail{
-	pixel_y = 18
+/obj/structure/railing{
+	dir = 9
 	},
-/obj/structure/fence/handrail_corner{
-	dir = 1;
-	pixel_x = -18;
-	pixel_y = 18
-	},
-/turf/open/floor/plasteel/f13{
-	icon_state = "darkrustysolid"
-	},
+/turf/open/transparent/openspace,
 /area/f13/radiation)
 "jQQ" = (
 /turf/open/indestructible/ground/outside/road{
@@ -39230,21 +39126,6 @@
 	},
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland/legion)
-"jTh" = (
-/obj/structure/fence/handrail_end{
-	dir = 1;
-	pixel_x = 14;
-	pixel_y = 18
-	},
-/obj/structure/fence/handrail{
-	dir = 8;
-	pixel_x = 14;
-	pixel_y = -14
-	},
-/turf/open/floor/plasteel/f13{
-	icon_state = "darkrustysolid"
-	},
-/area/f13/radiation)
 "jTl" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_4"
@@ -39664,14 +39545,10 @@
 /turf/open/floor/f13,
 /area/f13/building)
 "kjS" = (
-/obj/structure/fence/handrail_end{
-	pixel_x = 14;
-	pixel_y = -8
+/obj/structure/railing{
+	dir = 4
 	},
-/obj/effect/spawner/lootdrop/f13/medical/rnd/mid,
-/turf/open/floor/plasteel/f13{
-	icon_state = "darkrustysolid"
-	},
+/turf/open/transparent/openspace,
 /area/f13/radiation)
 "kjU" = (
 /obj/structure/sign/poster/official/cohiba_robusto_ad{
@@ -40003,15 +39880,6 @@
 	icon_state = "verticalrightborderright3"
 	},
 /area/f13/wasteland/hospital)
-"kvT" = (
-/obj/structure/barricade/tentclothcorner{
-	dir = 8
-	},
-/obj/effect/turf_decal/weather/dirt{
-	dir = 4
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/building)
 "kwf" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light{
@@ -40095,13 +39963,7 @@
 	},
 /area/f13/wasteland/massfusion)
 "kyH" = (
-/obj/effect/decal/cleanable/blood/gibs/down{
-	icon_state = "gibtorso"
-	},
-/obj/structure/barricade/tentclothedge{
-	dir = 1;
-	pixel_y = -3
-	},
+/obj/structure/barricade/tent,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/building)
 "kyL" = (
@@ -40869,6 +40731,19 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"kXr" = (
+/obj/structure/simple_door/metal/dirtystore{
+	name = "General Atomics"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/door/poddoor/shutters{
+	id = "genatomicsshutters";
+	layer = 11;
+	max_integrity = 1500;
+	name = "General Atomics"
+	},
+/turf/open/floor/plasteel/f13/vault_floor/red/white,
+/area/f13/building/mall)
 "kXs" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	dir = 4;
@@ -41050,7 +40925,9 @@
 /turf/open/water,
 /area/f13/building/mall)
 "lbX" = (
-/obj/structure/simple_door/metal/store,
+/obj/structure/simple_door/metal/store{
+	name = "Sheridan County Hospital"
+	},
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
@@ -41564,9 +41441,6 @@
 /turf/open/floor/wood/wood_worn,
 /area/f13/building/khanfort)
 "lts" = (
-/obj/structure/fence/handrail{
-	pixel_y = 18
-	},
 /obj/effect/spawner/lootdrop/f13/medical/rnd/mid,
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrustysolid"
@@ -41859,6 +41733,15 @@
 	icon_state = "verticalrightborderright2"
 	},
 /area/f13/wasteland/massfusion)
+"lDa" = (
+/obj/structure/simple_door/house{
+	name = "Male Restroom"
+	},
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building/mall)
 "lDv" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_2";
@@ -42387,15 +42270,6 @@
 	icon_state = "dirt"
 	},
 /area/f13/wasteland/west)
-"lRc" = (
-/obj/structure/barricade/tentclothcorner{
-	dir = 8
-	},
-/turf/open/indestructible/ground/outside/sidewalk{
-	dir = 4;
-	icon_state = "outerpavement"
-	},
-/area/f13/building)
 "lRe" = (
 /turf/closed/wall/f13/store,
 /area/f13/building/trainstation)
@@ -42778,7 +42652,7 @@
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "pharmacyshutters";
 	layer = 11;
-	name = "Friendly Pharm"
+	name = "Quick Fix Pharmacy"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/white/whitesolid,
 /area/f13/building/mall)
@@ -43191,7 +43065,9 @@
 	},
 /area/f13/wasteland/east)
 "mox" = (
-/obj/structure/simple_door/house,
+/obj/structure/simple_door/house{
+	name = "Sheridan County Hospital"
+	},
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
@@ -44929,12 +44805,8 @@
 	},
 /area/f13/wasteland/west)
 "nvc" = (
-/obj/structure/fence/handrail{
-	pixel_y = -8
-	},
-/turf/open/floor/plasteel/f13{
-	icon_state = "darkrustysolid"
-	},
+/obj/structure/railing,
+/turf/open/transparent/openspace,
 /area/f13/radiation)
 "nvd" = (
 /obj/structure/destructible/tribal_torch/wall/lit{
@@ -45288,7 +45160,9 @@
 	},
 /area/f13/building)
 "nEV" = (
-/obj/structure/simple_door/metal/dirtystore,
+/obj/structure/simple_door/metal/dirtystore{
+	name = "General Atomics"
+	},
 /obj/item/storage/toolbox/mechanical,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/f13/vault_floor/white,
@@ -45907,12 +45781,6 @@
 /obj/structure/barricade/sandbags,
 /turf/open/indestructible/ground/outside/savannah/topcenter,
 /area/f13/wasteland/khanfort)
-"nZZ" = (
-/obj/structure/barricade/tentclothedge{
-	dir = 8
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/building/khanfort)
 "oaa" = (
 /obj/structure/rack/shelf_metal,
 /obj/effect/spawner/lootdrop/f13/weapon/melee/tier1,
@@ -46236,12 +46104,11 @@
 	},
 /area/f13/building/massfusion)
 "oiJ" = (
-/obj/structure/chair/wood{
-	dir = 8;
-	icon_state = "wooden_chair_old"
+/obj/structure/railing/corner{
+	dir = 4
 	},
-/turf/open/floor/f13/wood,
-/area/f13/village)
+/turf/open/transparent/openspace,
+/area/f13/radiation)
 "oiW" = (
 /obj/structure/closet,
 /obj/effect/spawner/lootdrop/f13/armor/random,
@@ -46421,7 +46288,9 @@
 /turf/open/floor/plasteel/vault,
 /area/f13/ncr)
 "opv" = (
-/obj/structure/simple_door/house,
+/obj/structure/simple_door/house{
+	name = "Quick Fix Pharmacy"
+	},
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
@@ -46906,12 +46775,10 @@
 /turf/closed/wall/f13/store,
 /area/f13/building/museum)
 "oFJ" = (
-/obj/structure/fence/handrail{
-	pixel_y = 18
+/obj/structure/railing/corner{
+	dir = 1
 	},
-/turf/open/floor/plasteel/f13{
-	icon_state = "darkrustysolid"
-	},
+/turf/open/transparent/openspace,
 /area/f13/radiation)
 "oGh" = (
 /obj/machinery/light/small{
@@ -47408,6 +47275,12 @@
 	icon_state = "whitegreenrustychess"
 	},
 /area/f13/building/massfusion)
+"oTD" = (
+/obj/structure/simple_door/house{
+	name = "Male Restroom"
+	},
+/turf/open/floor/plasteel/f13/vault_floor/neutral/white,
+/area/f13/building/mall)
 "oTE" = (
 /mob/living/simple_animal/hostile/ghoul/reaver,
 /turf/open/indestructible/ground/outside/ruins,
@@ -49721,9 +49594,7 @@
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland/legion)
 "qst" = (
-/obj/structure/barricade/tentclothedge{
-	dir = 4
-	},
+/obj/structure/barricade/tent,
 /turf/open/indestructible/ground/outside/sidewalk{
 	dir = 4;
 	icon_state = "outerpavementcorner"
@@ -49801,7 +49672,9 @@
 	},
 /area/f13/building)
 "quc" = (
-/obj/structure/simple_door/metal/store,
+/obj/structure/simple_door/metal/store{
+	name = "Sheridan County Hospital"
+	},
 /obj/structure/barricade/wooden/planks/pregame,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/building/hospital)
@@ -50107,7 +49980,7 @@
 "qGs" = (
 /obj/machinery/door/poddoor/shutters{
 	id = "hospitalgarage1";
-	name = "Garage"
+	name = "Ambulance Bay 1"
 	},
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "verticalinnermain0"
@@ -50153,10 +50026,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building/hospital)
 "qGZ" = (
-/obj/structure/barricade/tentclothedge{
-	dir = 1;
-	pixel_y = -3
-	},
+/obj/structure/barricade/tent,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/building/khanfort)
 "qHb" = (
@@ -50527,12 +50397,6 @@
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/hobo,
 /turf/open/floor/f13,
 /area/f13/building)
-"qTv" = (
-/obj/structure/barricade/tentclothedge{
-	dir = 4
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/building/khanfort)
 "qTy" = (
 /obj/structure/fence{
 	dir = 1
@@ -51386,12 +51250,6 @@
 	icon_state = "outerpavementcorner"
 	},
 /area/f13/wasteland/museum)
-"rwy" = (
-/obj/structure/barricade/tentclothcorner{
-	dir = 4
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/building/khanfort)
 "rwJ" = (
 /obj/structure/barricade/wooden,
 /obj/structure/barricade/wooden/planks/pregame,
@@ -51601,7 +51459,9 @@
 	},
 /area/f13/wasteland/bighorn)
 "rFm" = (
-/obj/structure/simple_door/metal/dirtystore,
+/obj/structure/simple_door/metal/dirtystore{
+	name = "Ricks Outdoor Goods"
+	},
 /obj/structure/barricade/wooden/planks/pregame,
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "ricksoutdoorshutters";
@@ -51890,7 +51750,9 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "rOC" = (
-/obj/structure/simple_door/house,
+/obj/structure/simple_door/house{
+	name = "Sheridan County Hospital"
+	},
 /turf/open/floor/f13{
 	icon_state = "whitegreenrustychess"
 	},
@@ -52017,7 +51879,9 @@
 	},
 /area/f13/wasteland/hospital)
 "rSO" = (
-/obj/structure/simple_door/house,
+/obj/structure/simple_door/house{
+	name = "Female Restroom"
+	},
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/mall)
 "rSW" = (
@@ -53679,16 +53543,10 @@
 	icon_state = "dirt"
 	},
 /area/f13/wasteland/east)
-"sWA" = (
-/obj/structure/barricade/tentclothcorner{
-	dir = 8
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/building/khanfort)
 "sWV" = (
 /obj/machinery/door/poddoor/shutters{
 	id = "hospitalgarage2";
-	name = "Garage"
+	name = "Ambulance Bay 2"
 	},
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "verticalinnermain0"
@@ -54001,7 +53859,7 @@
 /obj/machinery/door/poddoor/shutters{
 	id = "mallfrontshutter";
 	layer = 11;
-	name = "Yuma mall"
+	name = "Mall of Wyoming"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/building/mall)
@@ -54018,7 +53876,9 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/east)
 "tht" = (
-/obj/structure/simple_door/metal/store,
+/obj/structure/simple_door/metal/store{
+	name = "Sheridan County Hospital"
+	},
 /obj/structure/barricade/wooden/planks/pregame,
 /turf/open/floor/plasteel/f13/vault_floor/blue/side{
 	dir = 6
@@ -54248,13 +54108,8 @@
 	},
 /area/f13/legion)
 "tpH" = (
-/obj/structure/fence/handrail_end{
-	pixel_x = -14;
-	pixel_y = -8
-	},
-/turf/open/floor/plasteel/f13{
-	icon_state = "darkrustysolid"
-	},
+/obj/structure/railing/corner,
+/turf/open/transparent/openspace,
 /area/f13/radiation)
 "tpP" = (
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -55473,9 +55328,7 @@
 	},
 /area/f13/wasteland/bighorn)
 "tXu" = (
-/obj/structure/barricade/tentclothedge{
-	dir = 4
-	},
+/obj/structure/barricade/tent,
 /turf/open/indestructible/ground/outside/sidewalk{
 	dir = 4;
 	icon_state = "outerpavement"
@@ -55562,6 +55415,14 @@
 	icon_state = "bluerustysolid"
 	},
 /area/f13/followers)
+"ubQ" = (
+/obj/structure/simple_door/house{
+	name = "Ricks Outdoor Goods"
+	},
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
+/area/f13/building/mall)
 "ubS" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontalbottomborderbottom2"
@@ -57212,7 +57073,9 @@
 	},
 /area/f13/wasteland/bighorn)
 "uXt" = (
-/obj/structure/simple_door/metal/store,
+/obj/structure/simple_door/metal/store{
+	name = "Sheridan County Hospital"
+	},
 /obj/structure/barricade/wooden/planks/pregame,
 /obj/structure/barricade/wooden,
 /turf/open/floor/plasteel/f13/vault_floor/blue,
@@ -57479,7 +57342,9 @@
 	},
 /area/f13/building/mall)
 "viG" = (
-/obj/structure/simple_door/house,
+/obj/structure/simple_door/house{
+	name = "Prestige Jewellers"
+	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/building/mall)
@@ -57624,7 +57489,9 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/building)
 "vmG" = (
-/obj/structure/simple_door/house,
+/obj/structure/simple_door/house{
+	name = "Sheridan County Hospital"
+	},
 /obj/structure/barricade/wooden/planks/pregame,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/building/hospital)
@@ -57940,7 +57807,8 @@
 /area/f13/wasteland/bighornbunker)
 "vyk" = (
 /obj/structure/simple_door/metal/store{
-	icon_state = "brokenstore"
+	icon_state = "brokenstore";
+	name = "Mall of Wyoming"
 	},
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -58991,7 +58859,7 @@
 "wiS" = (
 /obj/machinery/door/poddoor/shutters{
 	id = "hospitalgarage1";
-	name = "Garage"
+	name = "Ambulance Bay 1"
 	},
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "verticalrightborderleft2"
@@ -60651,13 +60519,6 @@
 /mob/living/simple_animal/hostile/handy,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/ruins)
-"xoR" = (
-/obj/structure/chair/wood{
-	dir = 4;
-	icon_state = "wooden_chair_old"
-	},
-/turf/open/floor/f13/wood,
-/area/f13/village)
 "xoV" = (
 /turf/open/transparent/openspace,
 /area/f13/wasteland/bighorn)
@@ -60915,10 +60776,6 @@
 	icon_state = "horizontaloutermain0"
 	},
 /area/f13/wasteland/ncr)
-"xxV" = (
-/obj/structure/barricade/tentclothcorner,
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/building/khanfort)
 "xyc" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -61051,7 +60908,9 @@
 	},
 /area/f13/wasteland/hospital)
 "xBG" = (
-/obj/structure/simple_door/house,
+/obj/structure/simple_door/house{
+	name = "Sheridan County Hospital"
+	},
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
@@ -61740,7 +61599,9 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/east)
 "xXG" = (
-/obj/structure/simple_door/house,
+/obj/structure/simple_door/house{
+	name = "Sheridan County Hospital"
+	},
 /obj/structure/barricade/wooden/planks/pregame,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building/hospital)
@@ -61950,6 +61811,14 @@
 	icon_state = "dirt"
 	},
 /area/f13/wasteland/legion)
+"ydq" = (
+/obj/structure/simple_door/house{
+	name = "Barbarians Dungeon Comics"
+	},
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
+/area/f13/building/mall)
 "ydu" = (
 /obj/structure/simple_door/room{
 	name = "Examination Room"
@@ -63492,10 +63361,10 @@ nUK
 nUK
 nUK
 ftF
-nZZ
-nZZ
-nZZ
-rwy
+qGZ
+qGZ
+qGZ
+qGZ
 fje
 diz
 fej
@@ -64767,7 +64636,7 @@ bqp
 bqp
 bqp
 nUK
-sWA
+qGZ
 ftF
 aKg
 aKg
@@ -64775,7 +64644,7 @@ kkw
 vMO
 ccp
 tSx
-sWA
+qGZ
 ftF
 aXB
 kkw
@@ -69393,7 +69262,7 @@ bqp
 bqp
 bqp
 nUK
-sWA
+qGZ
 ftF
 aVF
 kkw
@@ -69652,10 +69521,10 @@ bqp
 aaa
 aaa
 nAb
-qTv
-qTv
-qTv
-xxV
+qGZ
+qGZ
+qGZ
+qGZ
 iLR
 diz
 xyt
@@ -81603,9 +81472,9 @@ oNP
 aaQ
 aCL
 oUj
-xoR
 oUj
-eHx
+oUj
+oNP
 oUj
 aCL
 aaQ
@@ -82117,9 +81986,9 @@ aaQ
 aaQ
 cmY
 oUj
-xoR
+oUj
 aAt
-xoR
+oUj
 oUj
 cmY
 aaQ
@@ -83146,7 +83015,7 @@ baT
 oUj
 oUj
 cro
-oiJ
+oUj
 oNP
 oUj
 oUj
@@ -84825,9 +84694,9 @@ cei
 bCt
 bCt
 bCt
-adz
-adz
-adz
+aae
+aae
+aae
 aae
 aae
 aaa
@@ -85082,9 +84951,9 @@ sDH
 cei
 cei
 bCt
-adz
-adz
-adz
+aae
+aae
+aae
 aae
 aaa
 aaa
@@ -102211,11 +102080,11 @@ rHX
 sWj
 vtf
 lFh
-bWm
-ciO
-ciO
-ciO
-cqh
+kyH
+kyH
+kyH
+kyH
+kyH
 rHX
 pSC
 rHX
@@ -102468,11 +102337,11 @@ rHX
 iud
 iXx
 btD
-cnY
+kyH
 rWW
 gar
 aPp
-csO
+kyH
 rHX
 xmU
 rHX
@@ -102982,11 +102851,11 @@ rHX
 eBH
 aPB
 kpu
-cnY
+kyH
 dAK
 ljy
 onf
-csO
+kyH
 rHX
 eKF
 fhy
@@ -103239,11 +103108,11 @@ rGQ
 eBH
 pdm
 kpu
-bNp
-csk
-csk
-csk
-csQ
+kyH
+kyH
+kyH
+kyH
+kyH
 rHX
 fhy
 nTQ
@@ -103761,10 +103630,10 @@ eBH
 cpx
 cpx
 kpu
-bWm
-ciO
-ciO
-cqh
+kyH
+kyH
+kyH
+kyH
 eBH
 kpu
 cvq
@@ -104018,7 +103887,7 @@ eBH
 oYP
 pdm
 kpu
-csO
+kyH
 vRu
 vRu
 cty
@@ -104275,10 +104144,10 @@ eBH
 qRe
 cpx
 kpu
-csO
+kyH
 crB
 crz
-csO
+kyH
 eBH
 kpu
 cvr
@@ -104532,10 +104401,10 @@ eBH
 cpx
 kbA
 vSP
-csO
+kyH
 crO
 csj
-csO
+kyH
 eBH
 kpu
 cvs
@@ -104774,10 +104643,10 @@ hyV
 xDz
 rHX
 rHX
-bWm
-ciO
-ciO
-cqh
+kyH
+kyH
+kyH
+kyH
 eBH
 aVx
 xFh
@@ -104789,10 +104658,10 @@ eBH
 cpx
 cpx
 kpu
-bNp
-csk
-csk
-csQ
+kyH
+kyH
+kyH
+kyH
 eBH
 kpu
 cvu
@@ -105031,10 +104900,10 @@ bRL
 vmx
 rHX
 rHX
-csO
+kyH
 spC
 eZH
-csO
+kyH
 sWj
 qzO
 qzO
@@ -105288,7 +105157,7 @@ rHX
 rHX
 rHX
 rHX
-csO
+kyH
 crz
 ehU
 cty
@@ -105545,10 +105414,10 @@ dMH
 pGE
 uQt
 rHX
-csO
+kyH
 aaT
 svj
-csO
+kyH
 fhy
 iEh
 iEh
@@ -105802,10 +105671,10 @@ ths
 cvT
 mrf
 cvq
-bNp
-csk
-csk
-csQ
+kyH
+kyH
+kyH
+kyH
 eBH
 cpx
 kbA
@@ -107098,11 +106967,11 @@ aaU
 cjg
 coX
 sWy
-bWm
-ciO
-ciO
-ciO
-cqh
+kyH
+kyH
+kyH
+kyH
+kyH
 dFR
 csg
 rHX
@@ -107355,17 +107224,17 @@ coX
 coX
 cpo
 kpu
-cnY
+kyH
 uZR
 crx
 aaT
-csO
+kyH
 eBH
 kpu
-bWm
-ciO
-ciO
-cqh
+kyH
+kyH
+kyH
+kyH
 eBH
 kpu
 rHX
@@ -107612,23 +107481,23 @@ sTP
 abP
 abP
 kpu
-cqq
+cty
 aaT
 aaT
 dgk
-csO
+cty
 eBH
 kpu
-csO
+kyH
 bQV
 cpG
-csO
+kyH
 eBH
 icb
-bWm
-ciO
-ciO
-cqh
+kyH
+kyH
+kyH
+kyH
 fhv
 rHX
 lLH
@@ -107869,23 +107738,23 @@ xyU
 cvV
 bcW
 kpu
-cnY
+kyH
 aaT
 crz
 crE
-csO
+kyH
 eBH
 kpu
-csO
+kyH
 crz
 aaT
 cty
 eBH
 kpu
-csO
+kyH
 das
 aaT
-csO
+kyH
 rwK
 rHX
 rHX
@@ -108126,23 +107995,23 @@ xyU
 grw
 abP
 kpu
-cqS
+kyH
 svj
 crB
 cpG
-csO
+kyH
 eBH
 cpM
-csO
+kyH
 edj
 mGQ
-csO
+kyH
 eBH
 kpu
-csO
+kyH
 crz
 aaT
-csO
+cty
 rHX
 xta
 hhs
@@ -108383,23 +108252,23 @@ xyU
 cju
 bcE
 kpu
-cnY
+kyH
 aaT
 gcQ
 aaT
-cty
+kyH
 eBH
 kpu
-bNp
-csk
-csk
-csQ
+kyH
+kyH
+kyH
+kyH
 eUN
 kpu
-csO
+kyH
 rhb
 svj
-csO
+kyH
 rHX
 rHX
 rHX
@@ -108644,7 +108513,7 @@ kyH
 cjY
 svj
 bQV
-csO
+kyH
 eBH
 xFh
 iEh
@@ -108653,10 +108522,10 @@ iEh
 iEh
 jpT
 nBP
-kvT
 iEr
 iEr
-jhG
+iEr
+iEr
 aXf
 aXf
 aXf
@@ -108897,7 +108766,7 @@ hop
 hop
 hop
 hop
-lRc
+tXu
 tXu
 tXu
 qst
@@ -111836,13 +111705,13 @@ aae
 aby
 adu
 aWP
-ePK
-aLM
-kjS
+dBY
+dBY
+lts
 yfo
 pZn
 pZn
-jTh
+dBY
 dBY
 eYK
 aXT
@@ -112094,14 +111963,14 @@ aby
 adG
 lwr
 pZn
-aeP
-aeP
-aeP
-aeP
-aeP
-aeP
-aeP
 jQx
+crl
+oFJ
+aeP
+aLW
+crl
+eHx
+dBY
 ese
 adG
 vVo
@@ -112350,14 +112219,14 @@ cUS
 fNr
 aik
 aXT
+mia
 abl
 aeP
 aeP
 aeP
 aeP
 aeP
-aeP
-aeP
+nvc
 lts
 ese
 agR
@@ -112607,15 +112476,15 @@ aaO
 aXT
 afr
 jEC
-nvc
-aeP
-aeP
-aeP
-aeP
-aeP
-aeP
-aeP
+dBY
 oFJ
+aeP
+aeP
+aeP
+aeP
+aeP
+aLW
+dBY
 ese
 agR
 tEm
@@ -112864,7 +112733,7 @@ adm
 cVW
 aik
 ese
-nvc
+dBY
 aeP
 aeP
 aeP
@@ -112872,7 +112741,7 @@ aeP
 aeP
 aeP
 aeP
-oFJ
+dBY
 ese
 agR
 xBl
@@ -113121,15 +112990,15 @@ fCH
 aXT
 acQ
 aXT
-nvc
+dBY
+oiJ
 aeP
 aeP
 aeP
 aeP
 aeP
-aeP
-aeP
-oFJ
+tpH
+dBY
 bOE
 agR
 bxG
@@ -113378,15 +113247,15 @@ cUS
 abx
 aik
 ese
+dBY
+abl
+aeP
+aeP
+aeP
+aeP
+aeP
 nvc
-aeP
-aeP
-aeP
-aeP
-aeP
-aeP
-aeP
-oFJ
+dBY
 aXT
 agR
 wSN
@@ -113636,14 +113505,14 @@ aby
 adG
 ese
 dBY
+ePK
+kjS
+oiJ
 aeP
-aeP
-aeP
-aeP
-aeP
-aeP
-aeP
-aLW
+tpH
+kjS
+aLM
+mia
 ese
 adG
 vVo
@@ -113892,13 +113761,13 @@ aae
 aby
 bmz
 afH
-eMj
-afk
-tpH
+dBY
+mia
 dBY
 dBY
 dBY
-crl
+dBY
+lts
 dBY
 mia
 usn
@@ -115769,7 +115638,7 @@ uSc
 qlO
 icq
 ybZ
-ybZ
+kXr
 xDJ
 xDJ
 xDJ
@@ -117556,7 +117425,7 @@ pRm
 wDH
 wDH
 wDH
-gAj
+oTD
 uSc
 uSc
 aDO
@@ -119097,7 +118966,7 @@ fnj
 fnj
 wDH
 iNT
-aIH
+lDa
 aOt
 uSc
 iTH
@@ -119611,7 +119480,7 @@ wpL
 aAG
 wDH
 aGK
-aIH
+lDa
 aOt
 uSc
 aDr
@@ -119881,14 +119750,14 @@ uSc
 uSc
 uSc
 uSc
-aMD
+ubQ
 uSc
 wDH
 wDH
 wDH
 wDH
 wDH
-aMD
+ydq
 wDH
 wDH
 wDH

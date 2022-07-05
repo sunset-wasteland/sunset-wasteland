@@ -306,7 +306,7 @@
 	name = "Big Boss"
 	desc = "For the Biggest Outlaw around"
 	
-/obj/item/storage/box/bundleanarchist/PopulateContents()
+/obj/item/storage/box/bundleboss/PopulateContents()
 	new /obj/item/reagent_containers/hypospray/medipen/medx(src)
 	new /obj/item/reagent_containers/hypospray/medipen/psycho(src)
 	new /obj/item/clothing/suit/armored/heavy/salvaged_pa/t45b/raider(src)

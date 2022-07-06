@@ -267,7 +267,7 @@
 	projectiletype = /obj/item/projectile/bullet/c45/op
 	projectilesound = 'sound/weapons/gunshot.ogg'
 	var/list/spawned_mobs = list()
-	var/max_mobs = 3
+	var/max_mobs = 2
 	var/mob_types = list(/mob/living/simple_animal/hostile/eyebot/reinforced)
 	var/spawn_delay = 0
 	var/spawn_time = 15 SECONDS

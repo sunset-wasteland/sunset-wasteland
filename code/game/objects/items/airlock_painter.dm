@@ -280,9 +280,9 @@
 			list("Teal-White Checkers","whiteneutralchess"),
 			list("Bar","bar"),
 			list("Cafeteria","cafeteria"),
-			list("Freezer","freezer"),
-			list("Hydroponics","hydro"),
-			list("Showroom","showroom"),
+			list("Freezer","freezerfloor"),
+			list("Hydroponics","hydrofloor"),
+			list("Showroom","showroomfloor"),
 			list("Vault","vault"))
 
 /obj/item/airlock_painter/tile/proc/isValidSurface(surface)

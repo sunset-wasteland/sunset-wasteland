@@ -189,7 +189,7 @@
 	icon_state = "legrecruit"
 	item_state = "legarmor"
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS
-	allowed = list(/obj/item/gun, /obj/item/melee/onehanded, /obj/item/throwing_star/spear, /obj/item/restraints/legcuffs/bola, /obj/item/twohanded, /obj/item/melee/powered, /obj/item/melee/smith, /obj/item/melee/smith/twohand)
+	allowed = list(/obj/item/gun, /obj/item/melee/onehanded, /obj/item/throwing_star/spear, /obj/item/restraints/legcuffs/bola, /obj/item/twohanded, /obj/item/melee/powered, /obj/item/melee/smith, /obj/item/melee/smith/twohand, /obj/item/shield)
 	armor = list("melee" = 30, "bullet" = 30, "laser" = 10, "energy" = 10, "bomb" = 15, "bio" = 20, "rad" = 20, "fire" = 25, "acid" = 0, "wound" = 40)
 	slowdown = 0.05
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/tiny/legion

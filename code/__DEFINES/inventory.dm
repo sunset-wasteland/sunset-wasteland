@@ -208,6 +208,7 @@ GLOBAL_LIST_INIT(f13_coat_allowed, typecacheof(list(
 	/obj/item/twohanded/spear,
 	/obj/item/reagent_containers/food/drinks/flask,
 	/obj/item/melee,
+	/obj/item/shield,
 	/obj/item/flashlight,
 	/obj/item/tank/internals,
 	/obj/item/storage/fancy/cigarettes,
@@ -243,6 +244,7 @@ GLOBAL_LIST_INIT(security_vest_allowed, typecacheof(list(
 	/obj/item/reagent_containers/spray/pepper,
 	/obj/item/restraints/handcuffs,
 	/obj/item/tank/internals/emergency_oxygen,
+	/obj/item/shield,
 	/obj/item/tank/internals/plasmaman)))
 
 GLOBAL_LIST_INIT(security_wintercoat_allowed, typecacheof(list(

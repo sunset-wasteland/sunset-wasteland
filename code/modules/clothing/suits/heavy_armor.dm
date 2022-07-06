@@ -61,7 +61,7 @@
 	icon_state = "tribal_heavy"
 	item_state = "tribal_heavy"
 	armor = list("melee" = 55, "bullet" = 20, "laser" = 25, "energy" = 20, "bomb" = 45, "bio" = 5, "rad" = 10, "fire" = 30, "acid" = 10)
-	allowed = list(/obj/item/twohanded, /obj/item/melee/onehanded, /obj/item/melee/smith, /obj/item/melee/smith/twohand)
+	allowed = list(/obj/item/twohanded, /obj/item/melee/onehanded, /obj/item/melee/smith, /obj/item/melee/smith/twohand, /obj/item/shield)
 
 //////////////////////////
 // Salvaged Power Armor //

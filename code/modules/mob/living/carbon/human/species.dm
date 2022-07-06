@@ -524,6 +524,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 
 	if(!hair_hidden || dynamic_hair_suffix)
 		var/mutable_appearance/hair_overlay = mutable_appearance(layer = -HAIR_LAYER)
+		var/mutable_appearance/gradient_overlay = mutable_appearance(layer = -HAIR_LAYER) // Sunset ADD: Gradient hairs!
 		if(!hair_hidden && !H.getorgan(/obj/item/organ/brain)) //Applies the debrained overlay if there is no brain
 			if(!(NOBLOOD in species_traits))
 				hair_overlay.icon = 'icons/mob/hair.dmi'
@@ -567,8 +568,22 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 					hair_overlay.pixel_x += H.dna.species.offset_features[OFFSET_HAIR][1]
 					hair_overlay.pixel_y += H.dna.species.offset_features[OFFSET_HAIR][2]
 
+// Sunset ADD: Gradient hair rendering!
+				var/icon/grad_s = null // temporary icon to apply to the MA
+				var/grad_style_ref = GLOB.hair_gradients[H.dna.features["grad_style"]]
+				if(grad_style_ref)
+					grad_s = new/icon("icon" = 'modular_citadel/icons/mob/hair_gradients.dmi', "icon_state" = grad_style_ref)
+					var/icon/hair_sprite = new/icon("icon" = hair_file, "icon_state" = hair_state)
+					grad_s.Blend(hair_sprite, ICON_AND)
+					grad_s.Blend("#[H.dna.features["grad_color"]]", ICON_MULTIPLY)
+
+				if(!isnull(grad_s))
+					gradient_overlay.icon = grad_s
+				// Sunset ADD: End
+
 		if(hair_overlay.icon)
 			standing += hair_overlay
+			standing += gradient_overlay // Sunset Add: Actual MA which renders onto the sprite!
 
 	if(standing.len)
 		H.overlays_standing[HAIR_LAYER] = standing
@@ -1927,7 +1942,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		if(SHARP_EDGED)
 			sharp_mod = sharp_edged_mod
 		if(SHARP_POINTY)
-			sharp_mod = sharp_pointy_mod 
+			sharp_mod = sharp_pointy_mod
 
 	var/obj/item/bodypart/BP = null
 	if(!spread_damage)

@@ -2912,6 +2912,7 @@ Records disabled until a use for them is found
 		character.dna.features["body_size"] = RESIZE_DEFAULT_SIZE
 		character.dna.update_body_size(initial_old_size)
 
+	character.real_name = real_name
 	character.name = character.real_name
 	character.custom_species = custom_species
 

@@ -376,24 +376,24 @@
 /obj/effect/spawner/lootdrop/f13/armor/tier4 //TIER 4 ARMOR
 	name = "tier 4 armor"
 	loot = list(
-				/obj/effect/spawner/bundle/f13/armor/t45b,
+				/obj/effect/spawner/bundle/f13/armor/t45b_salvaged,
 				/obj/effect/spawner/bundle/f13/armor/riot,
 				/obj/effect/spawner/bundle/f13/armor/combat/mk2,
 				/obj/effect/spawner/bundle/f13/armor/combat/mk2/dark
 				)
 
-/obj/effect/spawner/bundle/f13/armor/t45b
-	name = "t45b power armor spawner"
+/obj/effect/spawner/bundle/f13/armor/t45b_salvaged
+	name = "salvaged t45b power armor spawner"
 	items = list(
-				/obj/item/clothing/head/helmet/f13/power_armor/t45b,
-				/obj/item/clothing/suit/armor/f13/power_armor/t45b
+				/obj/item/clothing/suit/armored/heavy/salvaged_pa/t45b,
+				/obj/item/clothing/head/helmet/f13/heavy/salvaged_pa/t45b
 				)
 
 /obj/effect/spawner/bundle/f13/armor/riot
 	name = "riot armor spawner"
 	items = list(
-				/obj/item/clothing/suit/armor/f13/leather_jacket/combat/riotpolice,
-				/obj/item/clothing/head/helmet/f13/rangerbroken
+				/obj/item/clothing/suit/armor/f13/combat/riotpolice,
+				/obj/item/clothing/head/helmet/f13/combat/rangerbroken
 				)
 
 /obj/effect/spawner/bundle/f13/armor/vault
@@ -420,15 +420,15 @@
 /obj/effect/spawner/bundle/f13/armor/raiderpa
 	name = "raider power armor spawner"
 	items = list(
-				/obj/item/clothing/suit/armor/f13/power_armor/raiderpa,
-				/obj/item/clothing/head/helmet/f13/power_armor/raiderpa_helm
+				/obj/item/clothing/suit/armored/heavy/salvaged_pa/t45b/raider,
+				/obj/item/clothing/head/helmet/f13/heavy/salvaged_pa/t45b/raider
 				)
 
 /obj/effect/spawner/bundle/f13/armor/hotrodpa
 	name = "hotrod power armor spawner"
 	items = list(
-				/obj/item/clothing/suit/armor/f13/power_armor/hotrod,
-				/obj/item/clothing/head/helmet/f13/power_armor/hotrod
+				/obj/item/clothing/suit/armored/heavy/salvaged_pa/t45b/hotrod,
+				/obj/item/clothing/head/helmet/f13/heavy/salvaged_pa/t45b/hotrod
 				)
 
 
@@ -563,7 +563,7 @@
 				)
 
 
-obj/effect/spawner/lootdrop/f13/medical/rnd/mid
+/obj/effect/spawner/lootdrop/f13/medical/rnd/mid
 	name = "mid dungeon science loot"	//to replace guns as treasure in slightly protected areas
 	lootcount = 1
 
@@ -578,7 +578,7 @@ obj/effect/spawner/lootdrop/f13/medical/rnd/mid
 		)
 
 
-obj/effect/spawner/lootdrop/f13/medical/rnd/good
+/obj/effect/spawner/lootdrop/f13/medical/rnd/good
 	name = "good dungeon science loot"	//to replace guns as treasure in heavily guarded areas
 	lootcount = 1
 
@@ -596,7 +596,18 @@ obj/effect/spawner/lootdrop/f13/medical/rnd/good
 		/obj/item/reagent_containers/glass/bottle/fentanyl = 5,
 		/obj/item/reagent_containers/glass/bottle/frostoil = 5,
 		/obj/item/book/granter/trait/midsurgery = 5,
+		/obj/item/reagent_containers/glass/bottle/FEV_solution = 2,
+		/obj/item/reagent_containers/glass/bottle/FEV_solution/two = 2,
+		)
+
+/obj/effect/spawner/lootdrop/f13/medical/random_fev
+	name = "random FEV bottle"	//for when you can't decide what is worse
+	lootcount = 1
+
+	loot = list(
 		/obj/item/reagent_containers/glass/bottle/FEV_solution = 1,
+		/obj/item/reagent_containers/glass/bottle/FEV_solution/two = 1,
+		/obj/item/reagent_containers/glass/bottle/FEV_solution/curling = 1,
 		)
 
 /*	------------------------------------------------
@@ -805,7 +816,6 @@ obj/effect/spawner/lootdrop/f13/medical/rnd/good
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/superlow
 	name = "very low tier non-hobo ballistic gun"
 	loot = list(/obj/effect/spawner/bundle/f13/ninemil,
-				/obj/effect/spawner/bundle/f13/sig,
 				/obj/effect/spawner/bundle/f13/caravan_shotgun,
 				/obj/effect/spawner/bundle/f13/mosin,
 				/obj/effect/spawner/bundle/f13/remington,
@@ -997,7 +1007,7 @@ obj/effect/spawner/lootdrop/f13/medical/rnd/good
 				)
 
 /obj/effect/spawner/bundle/f13/sig
-	name = "sig p220 pistol and ammo spawner"
+	name = " p220 pistol and ammo spawner"
 	items = list(
 				/obj/item/gun/ballistic/automatic/pistol/sig,
 				/obj/item/ammo_box/magazine/m9mm/
@@ -1481,6 +1491,13 @@ obj/effect/spawner/bundle/f13/combat_rifle
 				/obj/item/ammo_box/magazine/m762/ext
 	)
 
+/obj/effect/spawner/bundle/f13/bar
+	name = "automatic rifle and ammo spawner"
+	items = list(
+			/obj/item/gun/ballistic/automatic/bar,
+			/obj/item/ammo_box/magazine/m762/ext,
+	)
+
 /obj/effect/spawner/bundle/f13/rocketlauncher
 	name = "rocket launcher and ammo spawner"
 	items = list(
@@ -1824,10 +1841,7 @@ obj/effect/spawner/bundle/f13/combat_rifle
 				/obj/item/stack/crafting/goodparts/five,
 				/obj/item/stack/crafting/electronicparts/three,
 				/obj/item/stack/crafting/electronicparts/five,
-				/obj/item/reagent_containers/glass/bottle/blackpowder,
-				/obj/item/assembly/timer,
-				/obj/item/crafting/wonderglue,
-				/obj/item/crafting/duct_tape)
+				/obj/item/reagent_containers/glass/bottle/blackpowder)
 
 /obj/effect/spawner/lootdrop/f13/crafting/Initialize(mapload) //on mapload, pick how many shit to spawn
 	lootcount = pick(1, 2)
@@ -2160,6 +2174,7 @@ obj/effect/spawner/bundle/f13/combat_rifle
 		/obj/item/advanced_crafting_components/receiver,
 		/obj/item/advanced_crafting_components/assembly,
 		/obj/item/advanced_crafting_components/alloys,
+		/obj/item/ingot/adamantine, // Valuable for smithing
 	)
 
 /obj/effect/spawner/lootdrop/f13/attachments
@@ -2178,7 +2193,6 @@ obj/effect/spawner/bundle/f13/combat_rifle
 	lootcount = 1
 	lootdoubles = FALSE
 	loot = list(
-		/obj/effect/spawner/bundle/f13/sig,
 		/obj/effect/spawner/bundle/f13/beretta,
 		/obj/effect/spawner/bundle/f13/ninemil
 	)
@@ -2211,23 +2225,4 @@ obj/effect/spawner/bundle/f13/combat_rifle
 			/obj/item/storage/box/ration/ranger_breakfast,
 			/obj/item/storage/box/ration/ranger_lunch,
 			/obj/item/storage/box/ration/ranger_dinner,
-			)
-
-// Beta // Obsolete
-/obj/effect/spawner/lootdrop/f13/betatesting
-	name = "betatesting"
-	icon = 'icons/obj/janitor.dmi'
-	icon_state = "cheesie_honkers"
-	lootcount = 1
-	loot = list(
-			/obj/effect/spawner/bundle/testa = 10,
-			/obj/effect/spawner/bundle/testb = 10,
-			/obj/effect/spawner/bundle/testc = 10,
-			/obj/effect/spawner/bundle/testd = 10,
-			/obj/effect/spawner/bundle/teste = 10,
-			/obj/effect/spawner/bundle/testf = 10,
-			/obj/effect/spawner/bundle/testg = 10,
-			/obj/effect/spawner/bundle/testh = 10,
-			/obj/effect/spawner/bundle/testi = 10,
-			/obj/effect/spawner/bundle/testj = 10,
 			)

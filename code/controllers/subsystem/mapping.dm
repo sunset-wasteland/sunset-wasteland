@@ -100,7 +100,7 @@ SUBSYSTEM_DEF(mapping)
 	if(CONFIG_GET(flag/roundstart_away))
 		createRandomZlevel()
 	// Pick a random VR level.
-	if(CONFIG_GET(flag/roundstart_vr))
+//	if(CONFIG_GET(flag/roundstart_vr))
 		createRandomZlevel(VIRT_REALITY_NAME, list(ZTRAIT_AWAY = TRUE, ZTRAIT_VR = TRUE), GLOB.potential_vr_levels)
 
 	// Generate mining ruins

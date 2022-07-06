@@ -21,16 +21,16 @@ $include policy.txt
 # There are various options which are hard-locked for security reasons.
 
 ## Server name: This appears at the top of the screen in-game and in the BYOND hub. Uncomment and replace 'tgstation' with the name of your choice.
-# SERVERNAME Unnamed F13 Server
+# SERVERNAME Sunset Wasteland
 
 ## Server tagline: This will appear right below the server's title.
-SERVERTAGLINE [18+] A relaxed HRP Fallout style server.
+SERVERTAGLINE [18+] The first furry-friendly Fallout server!
 
 ## Server SQL name: This is the name used to identify the server to the SQL DB, distinct from SERVERNAME as it must be at most 32 characters.
 # SERVERSQLNAME fo13sql
 
 ## Station name: The name of the station as it is referred to in-game. If commented out, the game will generate a random name instead.
-STATIONNAME The Wasteland - A HRP fallout themed roleplay server.
+STATIONNAME Sunset Wasteland
 
 ## Put on byond hub: Uncomment this to put your server on the byond hub.
 HUB
@@ -299,7 +299,7 @@ RULESURL https://discord.gg/xCgEwJTppx
 ## from https://github.com/rg3/youtube-dl/releases
 ## or your package manager
 ## The default value assumes youtube-dl is in your system PATH
-# INVOKE_YOUTUBEDL youtube-dl
+INVOKE_YOUTUBEDL youtube-dl
 
 ## In-game features
 ##Toggle for having jobs load up from the .txt
@@ -545,3 +545,10 @@ FAIL2TOPIC_RULE_NAME _dd_fail2topic
 ## Uncomment to enable global ban DB using the provided URL. The API should expect to receive a ckey at the end of the URL.
 ## More API details can be found here: https://centcom.melonmesa.com
 CENTCOM_BAN_DB https://centcom.melonmesa.com/ban/search
+
+
+## If the server only accepts whitelisted connections
+## 0 Disables Border Control
+## 1 Puts Border Control into 'learning mode' and will have it automatically whitelist new connections
+## 2 Puts Border Control into 'enforcing mode' and will have it deny connections that are not already whitelisted.
+BORDER_CONTROL 0

@@ -78,12 +78,13 @@ GLOBAL_LIST_INIT(turfs_without_ground, typecacheof(list(
 #define ismush(A) (is_species(A, /datum/species/mush))
 #define isshadow(A) (is_species(A, /datum/species/shadow))	
 #define isskeleton(A) (is_species(A, /datum/species/skeleton))
-#define isrobotic(A) (is_species(A, /datum/species/ipc) || is_species(A, /datum/species/synthliz))
+#define isrobotic(A) (is_species(A, /datum/species/ipc) || is_species(A, /datum/species/synthliz) || is_species(A, /datum/species/synthanthro))
 #define isethereal(A) (is_species(A, /datum/species/ethereal))
 
 // Citadel specific species
 #define isipcperson(A) (is_species(A, /datum/species/ipc))
 #define issynthliz(A) (is_species(A, /datum/species/synthliz))
+#define issynthanthro(A) (is_species(A, /datum/species/synthanthro)) //really not sure if this is going to be useful for anything but why not
 #define ismammal(A) (is_species(A, /datum/species/mammal))
 #define isinsect(A) (is_species(A, /datum/species/insect))
 #define isxenoperson(A) (is_species(A, /datum/species/xeno))

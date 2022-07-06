@@ -20,6 +20,16 @@
 	path = /obj/item/clothing/accessory/cia_badge
 	ckeywhitelist = list("monke1818")
 
+// SUNSET FLUFF ITEMS
+
+/datum/gear/donator/mrsanderp
+	name = "Happy Sharky Company Cuisine Book"
+	slot = SLOT_IN_BACKPACK
+	path = /obj/item/book/granter/crafting_recipe/happysharky
+	category = LOADOUT_CATEGORY_BACKPACK
+	ckeywhitelist = list("mrsanderp")
+	cost = 0
+
 /////////////////////
 ///Loadout Boxes///// See kits.dm, use this model for loadouts that have more than one item per character.
 /////////////////////
@@ -60,8 +70,8 @@
 
 /obj/item/storage/box/large/custom_kit/klatue/PopulateContents()
 	new /obj/item/storage/belt/holster(src)
-	new /obj/item/gun/ballistic/revolver/hunting(src)
-	new /obj/item/gun/ballistic/revolver/hunting(src)
+	new /obj/item/gun/ballistic/revolver/hunting/klatue(src)
+	new /obj/item/gun/ballistic/revolver/hunting/klatue(src)
 	new /obj/item/ammo_box/c4570(src)
 	new /obj/item/ammo_box/c4570(src)
 	new /obj/item/clothing/suit/armor/hos/trenchcoat(src)
@@ -87,7 +97,7 @@
 	ckeywhitelist = list("comradesocks")
 
 /obj/item/storage/box/large/custom_kit/vaktus/PopulateContents()
-	new /obj/item/clothing/suit/armor/f13/leather_jacket/combat/riotpolice(src)
+	new /obj/item/clothing/suit/armor/f13/combat/riotpolice(src)
 	new /obj/item/clothing/head/helmet/f13/ncr/rangercombat/desert(src)
 	new /obj/item/storage/belt/military(src)
 	new /obj/item/melee/onehanded/knife/survival(src)
@@ -108,12 +118,18 @@
 	name = "Burnings Goods"
 	path = /obj/item/storage/box/large/custom_kit/burningcold
 	ckeywhitelist = list("myguy49")
-	
+
 /obj/item/storage/box/large/custom_kit/pug/PopulateContents()
 	new /obj/item/melee/transforming/cleaving_saw/old_rusty(src)
 
 /obj/item/storage/box/large/custom_kit/pug2/PopulateContents()
 	new /obj/item/melee/onehanded/dragonfire(src)
+
+/obj/item/storage/box/large/custom_kit/mutie/PopulateContents()
+	new /obj/item/clothing/shoes/f13/mutie/boots(src)
+	new /obj/item/clothing/gloves/f13/mutant/mk2(src)
+	new /obj/item/clothing/under/f13/vaultmutie(src)
+	new /obj/item/clothing/suit/armor/f13/mutant/metal(src)
 
 /datum/gear/donator/kits/pug
 	name = "I die to mobs"
@@ -124,3 +140,34 @@
 	name = "I die to mobsx2"
 	path = /obj/item/storage/box/large/custom_kit/pug2
 	ckeywhitelist = list("puglord777")
+
+/datum/gear/donator/kits/mutie
+	name = "I die to mobsx2"
+	path = /obj/item/storage/box/large/custom_kit/mutie
+	ckeywhitelist = list("puglord777")
+
+/datum/gear/donator/kits/kemble
+	name = "Trinity Kemble's belongings"
+	path = /obj/item/storage/box/large/custom_kit/kemble
+	ckeywhitelist = list("yeehawguvnah")
+
+/obj/item/storage/box/large/custom_kit/kemble/PopulateContents()
+	new /obj/item/modkit/kemblevest(src)
+	new /obj/item/modkit/kemblehat(src)
+	new /obj/item/storage/belt/holster/kemble(src)
+
+/datum/gear/donator/kits/mrsanderp
+	name = "Happy Sharky Co. Business Bundle"
+	path = /obj/item/storage/box/large/custom_kit/mrsanderp
+	ckeywhitelist = list("mr.sanderp")
+
+/obj/item/storage/box/large/custom_kit/mrsanderp/PopulateContents()
+	new /obj/item/book/granter/crafting_recipe/happysharky(src)
+
+/datum/gear/donator/kits/developerabuse
+	name ="Type 17 Strelle"
+	path = /obj/item/storage/box/large/custom_kit/developerabuse
+	ckeywhitelist = list ("apwill")
+
+/obj/item/storage/box/large/custom_kit/developerabuse/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/pistol/type17/strelle(src)

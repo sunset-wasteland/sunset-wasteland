@@ -76,6 +76,9 @@ GLOBAL_PROTECT(admin_verbs_admin)
 	/client/proc/adminChangeMoney,
 	/client/proc/adminCheckMoney,
 	/client/proc/panicbunker,
+	/datum/admins/proc/BC_WhitelistKeyVerb,
+	/datum/admins/proc/BC_RemoveKeyVerb,
+	/datum/admins/proc/BC_ToggleState,
 	/client/proc/stop_sounds,
 	/client/proc/mark_datum_mapview,
 	/client/proc/hide_verbs,			/*hides all our adminverbs*/
@@ -179,8 +182,8 @@ GLOBAL_LIST_INIT(admin_verbs_debug, world.AVerbsDebug())
 	/datum/admins/proc/create_or_modify_area,
 	/datum/admins/proc/fixcorruption,
 #ifdef REFERENCE_TRACKING
-	/datum/admins/proc/view_refs,
-	/datum/admins/proc/view_del_failures,
+	///datum/admins/proc/view_refs,
+	///datum/admins/proc/view_del_failures,
 #endif
 	/client/proc/generate_wikichem_list, //DO NOT PRESS UNLESS YOU WANT SUPERLAG
 	)

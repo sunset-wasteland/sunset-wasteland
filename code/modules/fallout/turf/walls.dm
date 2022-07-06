@@ -131,6 +131,40 @@ turf/closed/wall/f13/wood/house/update_damage_overlay()
 	sheet_type = null
 	canSmoothWith = list(/turf/closed/wall/f13/tentwall, /turf/closed/wall)
 
+/turf/closed/wall/f13/scrap
+	name = "scrap wall"
+	desc = "A wall held together by corrugated metal and prayers."
+	icon = 'icons/fallout/turfs/walls/scrap.dmi'
+	icon_state = "scrap0"
+	icon_type_smooth = "scrap"
+	hardness = 80
+	smooth = SMOOTH_OLD
+	girder_type = 0
+	sheet_type = null
+	canSmoothWith = list(/turf/closed/wall)
+
+/turf/closed/wall/f13/scrap/red
+	icon = 'icons/fallout/turfs/walls/scrap_red.dmi'
+	icon_state = "scrapr0"
+	icon_type_smooth = "scrapr"
+
+/turf/closed/wall/f13/scrap/blue
+	icon = 'icons/fallout/turfs/walls/scrap_blue.dmi'
+	icon_state = "scrapb0"
+	icon_type_smooth = "scrapb"
+
+/turf/closed/wall/f13/scrap/white
+	icon = 'icons/fallout/turfs/walls/scrap_white.dmi'
+	icon_state = "scrapw0"
+	icon_type_smooth = "scrapw"
+
+/turf/closed/wall/f13/scrap/junk
+	name = "junk wall"
+	desc = "More a pile of debris and rust than a wall, but it'll hold for now."
+	icon = 'icons/fallout/turfs/walls/scrap_rough.dmi'
+	icon_state = "scrapro0"
+	icon_type_smooth = "scrapro"
+
 /turf/closed/wall/f13/supermart
 	name = "supermart wall"
 	desc = "A pre-War supermart wall made of reinforced concrete."
@@ -186,6 +220,44 @@ turf/closed/wall/f13/wood/house/update_damage_overlay()
 	explosion_block = 5
 	smooth = SMOOTH_OLD
 	canSmoothWith = list(/turf/closed/wall/f13/vault, /turf/closed/wall/r_wall/f13/vault, /turf/closed/wall)
+
+//Sunset custom walls
+
+/turf/closed/wall/f13/sunset/brick_small
+	name = "brick wall"
+	desc = "A wall made out of solid brick."
+	icon = 'modular_sunset/icons/turfs/walls/brick_small.dmi'
+	icon_state = "brick0"
+	icon_type_smooth = "brick"
+	hardness = 80
+	smooth = SMOOTH_OLD
+	girder_type = 0
+	sheet_type = null
+	canSmoothWith = list(/turf/closed/wall)
+
+/turf/closed/wall/f13/sunset/brick_small_dark
+	name = "brick wall"
+	desc = "A wall made out of solid brick."
+	icon = 'modular_sunset/icons/turfs/walls/brick_small_dark.dmi'
+	icon_state = "brick0"
+	icon_type_smooth = "brick"
+	hardness = 80
+	smooth = SMOOTH_OLD
+	girder_type = 0
+	sheet_type = null
+	canSmoothWith = list(/turf/closed/wall)
+
+/turf/closed/wall/f13/sunset/brick_small_light
+	name = "brick wall"
+	desc = "A wall made out of solid brick."
+	icon = 'modular_sunset/icons/turfs/walls/brick_small_light.dmi'
+	icon_state = "brick0"
+	icon_type_smooth = "brick"
+	hardness = 80
+	smooth = SMOOTH_OLD
+	girder_type = 0
+	sheet_type = null
+	canSmoothWith = list(/turf/closed/wall)
 
 //Fallout 13 indestructible walls
 

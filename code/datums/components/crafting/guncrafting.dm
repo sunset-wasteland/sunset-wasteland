@@ -101,26 +101,30 @@
 	if(istype(W,/obj/item/storage))
 		var/obj/item/storage/baggy = W
 		var/obj/item/salvage/checkitem
-		for(var/thingy in baggy.contents)
-			if(!istype(thingy, /obj/item/salvage))//how did we get here
-				break
-			checkitem = thingy
-			if(!user.transferItemToLoc(checkitem, drop_location()))
-				break
-			if(do_after(user,5,target = src))
-				if(HAS_TRAIT(user, TRAIT_TECHNOPHREAK))
+		if(!baggy.in_use)
+			baggy.in_use = TRUE
+			for(var/thingy in baggy.contents)
+				if(!istype(thingy, /obj/item/salvage))//how did we get here
+					baggy.in_use = FALSE
+					break
+				checkitem = thingy
+				if(!user.transferItemToLoc(checkitem, drop_location()))
+					break
+				if(do_after(user,5,target = src))
+					if(HAS_TRAIT(user, TRAIT_TECHNOPHREAK))
+						var/obj/I = pick(checkitem.Loot)
+						new I (src.loc)
 					var/obj/I = pick(checkitem.Loot)
 					new I (src.loc)
-				var/obj/I = pick(checkitem.Loot)
-				new I (src.loc)
-				if(prob(50))
-					var/obj/J = pick(checkitem.Loot)
-					new J (src.loc)
-				if(prob(25))
-					var/obj/K = pick(checkitem.Loot)
-					new K (src.loc)
-				stoplag(1)
-				qdel(checkitem)
+					if(prob(50))
+						var/obj/J = pick(checkitem.Loot)
+						new J (src.loc)
+					if(prob(25))
+						var/obj/K = pick(checkitem.Loot)
+						new K (src.loc)
+					stoplag(1)
+					qdel(checkitem)
+			baggy.in_use = FALSE
 	if(user.transferItemToLoc(W, drop_location()))
 		return 1
 

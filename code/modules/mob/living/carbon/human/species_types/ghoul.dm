@@ -15,10 +15,12 @@
 	use_skintones = 0
 	speedmod = 0.3 //slightly slower than humans
 	sexes = 1
+	sharp_blunt_mod = 2
+	sharp_edged_mod = 2
 	disliked_food = NONE
 	liked_food = NONE
 	var/info_text = "You are a <span class='danger'>Ghoul.</span>. As pre-war zombified relic, or an unluckily recently made post-necrotic, you cannot bleed, cannot breathe, and heal from radiation. On surface examination, you are indistinguishable from a corpse. \
-					Your <span class='warning'>fragile limbs</span> are a source of vulnerability for you-they are easily dismembered and easily detached, though you can stick them on just as easily. \
+					Your <span class='warning'>fragile limbs</span> are a source of vulnerability for you-they are easily dismembered and easily detached, though you can stick them on just as easily. You are incredibly fragile in melee. \
 					<span class='boldwarning'>Stimpaks and powder</span> will have reduced effect on your bizzare biology. Sutures, radiation, and other, non-chemical sources of healing are more effective. All chemicals that do not heal brute or burn work as normal. \
 					<span class='nicegreen'>Radiation heals you slowly.</span> \
 					<span class='warning'>You are terrible at melee</span> and innately slower than humans. You also cannot go into critical condition-ever. You will keep shambling forward until you are <span class='danger'>dead.</span>"
@@ -28,17 +30,20 @@
 	..()
 	to_chat(C, "[info_text]")
 	for(var/obj/item/bodypart/r_arm/b in C.bodyparts)
-		b.max_damage -= 10
-		b.wound_resistance = -20
+		b.max_damage -= 20
+		b.wound_resistance = -35
 	for(var/obj/item/bodypart/l_arm/b in C.bodyparts)
-		b.max_damage -= 10
-		b.wound_resistance = -20
+		b.max_damage -= 20
+		b.wound_resistance = -35
 	for(var/obj/item/bodypart/r_leg/b in C.bodyparts)
-		b.max_damage -= 10
-		b.wound_resistance = -20
+		b.max_damage -= 20
+		b.wound_resistance = -35
 	for(var/obj/item/bodypart/l_leg/b in C.bodyparts)
-		b.max_damage -= 10
-		b.wound_resistance = -20
+		b.max_damage -= 20
+		b.wound_resistance = -35
+	for(var/obj/item/bodypart/head/b in C.bodyparts)
+		b.max_damage -= 20
+		b.wound_resistance = -35
 	C.faction |= "ghoul"
 /datum/species/ghoul/on_species_loss(mob/living/carbon/C)
 	..()
@@ -58,8 +63,6 @@
 
 /datum/species/ghoul/qualifies_for_rank(rank, list/features)
 	if(rank in GLOB.legion_positions) /* legion HATES these ghoul */
-		return 0
-	if(rank in GLOB.brotherhood_positions) //don't hate them, just tolorate. 
 		return 0
 	if(rank in GLOB.vault_positions) //purest humans left in america. supposedly.
 		return 0

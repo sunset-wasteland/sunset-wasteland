@@ -14,7 +14,7 @@
 /turf/open/floor/f13/wood
 	icon_state = "housewood1"
 	icon = 'icons/fallout/turfs/ground.dmi'
-	floor_tile = /obj/item/stack/tile/wood
+	floor_tile = null
 	icon_plating = "housebase"
 //	step_sounds = list("human" = "woodfootsteps")
 	broken_states = list("housewood1-broken", "housewood2-broken", "housewood3-broken", "housewood4-broken")

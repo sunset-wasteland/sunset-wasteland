@@ -1,125 +1,6 @@
 /datum/job/wasteland
 	department_flag = WASTELAND
 
-////////////////
-// GREAT KHAN //
-////////////////
-
-/datum/job/wasteland/f13pusher
-	title = "Great Khan"
-	flag = F13USPRIVATE
-	department_head = list("Captain")
-	head_announce = list("Security")
-	faction = FACTION_WASTELAND
-	total_positions = 8
-	spawn_positions = 8
-	description = "You are no common raider or tribal settler, for you are a Great Khan. Your ancestry is that of fierce warriors and noble chieftans, whose rites and sagas tell of blood soaked battlefields and great sacrifice for your tribe. At least, this was once the case: after the massacre at Bitter Springs by the NCR, your people have lost much of their strength - now you and many other Khans travel west of Vegas through Red Rock Canyon in the hopes of settling in the region of Yuma."
-	supervisors = "your gang leadership"
-	selection_color = "#ff915e"
-	exp_requirements = 500
-	exp_type = EXP_TYPE_WASTELAND
-
-	outfit = /datum/outfit/job/wasteland/f13pusher
-
-	access = list(ACCESS_KHAN)
-	minimal_access = list(ACCESS_KHAN)
-
-	loadout_options = list(
-		/datum/outfit/loadout/enforcer,
-		/datum/outfit/loadout/khanskirmisher,
-		/datum/outfit/loadout/khandrug,
-		)
-	matchmaking_allowed = list(
-		/datum/matchmaking_pref/friend = list(
-			/datum/job/wasteland/f13raider,
-			/datum/job/wasteland/f13pusher,
-		),
-		/datum/matchmaking_pref/rival = list(
-			/datum/job/wasteland/f13raider,
-			/datum/job/wasteland/f13pusher,
-		),
-	)
-
-/datum/outfit/job/wasteland/f13pusher
-	name = "Great Khan"
-	jobtype = /datum/job/wasteland/f13pusher
-	suit = /obj/item/clothing/suit/toggle/labcoat/f13/khan_jacket
-	id = /obj/item/card/id/khantattoo
-	ears = /obj/item/radio/headset/headset_khans
-	head = /obj/item/clothing/head/helmet/f13/khan
-	shoes = /obj/item/clothing/shoes/f13/military/khan
-	backpack =	/obj/item/storage/backpack/satchel/explorer
-	satchel = 	/obj/item/storage/backpack/satchel/old
-	uniform = /obj/item/clothing/under/f13/khan
-	r_hand = /obj/item/book/granter/trait/selection
-	r_pocket = /obj/item/flashlight/flare
-	l_pocket = /obj/item/storage/survivalkit_khan
-	gloves = /obj/item/melee/unarmed/brass/spiked
-	box = null
-	backpack_contents = list(
-		/obj/item/reagent_containers/pill/patch/jet = 2,
-		/obj/item/storage/bag/money/small/khan = 1
-		)
-
-
-/datum/outfit/job/wasteland/f13pusher/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	..()
-	if(visualsOnly)
-		return
-
-	if(!H.gang)
-		var/datum/gang/greatkhans/GK = GLOB.greatkhans
-		GLOB.all_gangs |= GK
-		GK.add_member(H)
-		H.gang = GK
-
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/set_vrboard/den)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/legioncombatarmor)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/legioncombathelmet)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/legioncombatarmormk2)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/legioncombathelmetmk2)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/legionsalvaged)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/legionsalvaged_ncr)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/legionsalvaged_salvaged)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/legionsalvagedhelmet)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/legionriot_broken)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/legionriothelmet_broken)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/legionriot_ncr)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/legionriothelmet_ncr)
-
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/trail_carbine)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/varmintrifle)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/combatrifle)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/uzi)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/smg10mm)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/gate_khanate)
-
-/datum/outfit/loadout/enforcer
-	name = "Enforcer"
-	r_hand = /obj/item/twohanded/baseball/spiked
-	belt = /obj/item/storage/belt/bandolier
-	backpack_contents = list(
-		/obj/item/restraints/legcuffs/bola/tactical=1,
-		/obj/item/book/granter/trait/bigleagues = 1,
-		/obj/item/reagent_containers/hypospray/medipen/stimpak = 3)
-
-/datum/outfit/loadout/khanskirmisher
-	name = "Skirmisher"
-	r_hand = /obj/item/gun/ballistic/automatic/smg/mini_uzi
-	backpack_contents = list(
-		/obj/item/ammo_box/magazine/uzim9mm=3,
-		/obj/item/reagent_containers/hypospray/medipen/stimpak = 1,
-		/obj/item/storage/belt/holster=1)
-
-/datum/outfit/loadout/khandrug
-	name = "Drug Pusher"
-	belt = /obj/item/storage/belt/bandolier
-	backpack_contents = list(,
-		/obj/item/book/granter/trait/midsurgery = 1,
-		/obj/item/book/granter/trait/chemistry = 1,
-		/obj/item/reagent_containers/pill/patch/turbo = 2,
-		)
-
 /*
 Raider
 */
@@ -144,12 +25,6 @@ Raider
 	access = list()
 	minimal_access = list()
 	matchmaking_allowed = list(
-		/datum/matchmaking_pref/friend = list(
-			/datum/job/wasteland/f13pusher,
-		),
-		/datum/matchmaking_pref/rival = list(
-			/datum/job/wasteland/f13pusher,
-		),
 		/datum/matchmaking_pref/patron = list(
 			/datum/job/wasteland/f13raider,
 		),
@@ -465,7 +340,7 @@ Raider
 	faction = FACTION_WASTELAND
 	total_positions = -1
 	spawn_positions = -1
-	description = "The most broad and open role, you have arrived in the region for purposes known only to you. If you're new, the settlement of Oasis to the southwest may prove a valuable first stop. Try to make a living for yourself - or simply survive - and craft your own unique story."
+	description = "The most broad and open role, you have arrived in the region for purposes known only to you. If you're new, the settlement of Bighorn to the southwest may prove a valuable first stop. Try to make a living for yourself - or simply survive - and craft your own unique story."
 	supervisors = "fate"
 	selection_color = "#dddddd"
 
@@ -476,18 +351,15 @@ Raider
 	matchmaking_allowed = list(
 		/datum/matchmaking_pref/friend = list(
 			/datum/job/wasteland/f13wastelander,
-			/datum/job/oasis/f13detective,
 		),
 		/datum/matchmaking_pref/rival = list(
 			/datum/job/wasteland/f13wastelander,
-			/datum/job/oasis/f13detective,
 		),
 		/datum/matchmaking_pref/mentor = list(
 			/datum/job/wasteland/f13wastelander,
 		),
 		/datum/matchmaking_pref/disciple = list(
 			/datum/job/wasteland/f13wastelander,
-			/datum/job/oasis/f13detective,
 		),
 		/datum/matchmaking_pref/patron = list(
 			/datum/job/wasteland/f13wastelander,
@@ -582,18 +454,18 @@ Raider
 	suit = /obj/item/clothing/suit/toggle/labcoat/f13/followers
 	shoes = /obj/item/clothing/shoes/f13/explorer
 	gloves = /obj/item/clothing/gloves/color/latex
-	neck = /obj/item/bedsheet/medical
+	neck = /obj/item/clothing/neck/stethoscope
+	belt = /obj/item/storage/belt/medical
 	backpack_contents =  list(/obj/item/reagent_containers/medspray/synthflesh=2,
-							/obj/item/stack/medical/suture/emergency/fifteen=1,
-							/obj/item/stack/medical/ointment/twelve=1,
 							/obj/item/smelling_salts=1,
 							/obj/item/healthanalyzer=1,
-							/obj/item/stack/sheet/mineral/silver=1,
 							/obj/item/gun/ballistic/automatic/pistol/m1911=1,
-							/obj/item/lighter=1,
-							/obj/item/screwdriver=1,
-							/obj/item/wirecutters=1,
-							/obj/item/hatchet=1
+							/obj/item/reagent_containers/glass/bottle/epinephrine=2,
+							/obj/item/storage/backpack/duffelbag/med/surgery=1,
+							/obj/item/paper_bin=1,
+							/obj/item/folder=1,
+							/obj/item/pen/fountain=1,
+							/obj/item/storage/firstaid/ancient=1,
 		)
 
 /datum/outfit/loadout/merchant
@@ -708,23 +580,26 @@ Raider
 
 	outfit = /datum/outfit/job/wasteland/f13preacher
 
+	loadout_options = list(
+	/datum/outfit/loadout/crusader, 	//This is kinda a given. You bet.
+	/datum/outfit/loadout/samaritan, 	//Water and food to share with the wastes.
+	/datum/outfit/loadout/cleanser		//Just some bombs.
+	)
+
 	access = list()		//we can expand on this and make alterations as people suggest different loadouts
 	minimal_access = list()
 	matchmaking_allowed = list(
 		/datum/matchmaking_pref/friend = list(
 			/datum/job/wasteland/f13wastelander,
-			/datum/job/oasis/f13detective,
 		),
 		/datum/matchmaking_pref/rival = list(
 			/datum/job/wasteland/f13wastelander,
-			/datum/job/oasis/f13detective,
 		),
 		/datum/matchmaking_pref/mentor = list(
 			/datum/job/wasteland/f13wastelander,
 		),
 		/datum/matchmaking_pref/disciple = list(
 			/datum/job/wasteland/f13wastelander,
-			/datum/job/oasis/f13detective,
 		),
 		/datum/matchmaking_pref/patron = list(
 			/datum/job/wasteland/f13wastelander,
@@ -733,6 +608,34 @@ Raider
 			/datum/job/wasteland/f13wastelander,
 		),
 	)
+
+
+
+/datum/outfit/loadout/crusader
+	name = "Crusader"
+	backpack_contents = list(
+		/obj/item/clothing/suit/armor/knight = 1,
+		/obj/item/clothing/head/helmet/knight/red = 1,
+		/obj/item/melee/onehanded/machete = 1,
+	)
+
+/datum/outfit/loadout/samaritan
+	name = "Samaritan"
+	backpack_contents = list(
+		/obj/item/reagent_containers/food/snacks/store/bread/plain = 5,
+		/obj/item/reagent_containers/food/snacks/fishmeat/salmon = 2,
+		/obj/item/reagent_containers/glass/beaker/waterbottle = 2,
+		/obj/item/nullrod = 1,
+	)	//Matthew 14:17 RSVCE and KJV - Kitsunemitsu
+
+/datum/outfit/loadout/cleanser
+	name = "Cleanser"
+	backpack_contents = list(
+		/obj/item/grenade/homemade/coffeepotbomb = 2,	//This is funny. I swear guys.
+		/obj/item/gun/ballistic/revolver/m29 = 1,		//Moved here for more *variety*
+		/obj/item/ammo_box/m44 = 2
+	)
+
 
 /datum/job/wasteland/f13preacher/after_spawn(mob/living/H, mob/M)
 	. = ..()
@@ -788,7 +691,7 @@ Raider
 		if("lampism")
 			B.name = "Fluorescent Incandescence"
 		if("lol", "wtf", "gay", "penis", "ass", "poo", "badmin", "shitmin", "deadmin", "cock", "cocks", "meme", "memes")
-			B.name = pick("Woodys Got Wood: The Aftermath", "War of the Cocks", "Sweet Bro and Hella Jef: Expanded Edition","F.A.T.A.L. Rulebook")
+			B.name = pick("Woodys Got Wood: The Aftermath", "War of the Cocks", "Sweet Bro and Hella Jef: Expanded Edition", "F.A.T.A.L. Rulebook")
 			H.adjustOrganLoss(ORGAN_SLOT_BRAIN, 100) // starts off dumb as fuck
 		if("monkeyism","apism","gorillism","primatism")
 			B.name = pick("Going Bananas", "Bananas Out For Harambe")
@@ -833,20 +736,17 @@ Raider
 
 	id = /obj/item/card/id/dogtag/town
 	ears = /obj/item/radio/headset
+	ears = 			/obj/item/radio/headset
 	belt = null
-	uniform = /obj/item/clothing/under/f13/chaplain
-	backpack_contents = list(/obj/item/camera/spooky = 1)
-	backpack =		/obj/item/storage/backpack/cultpack
-	satchel = 		/obj/item/storage/backpack/cultpack
-	l_hand = 		/obj/item/nullrod
+	uniform = 		/obj/item/clothing/under/f13/chaplain
 	gloves =		/obj/item/clothing/gloves/fingerless
 	shoes = 		/obj/item/clothing/shoes/jackboots
-	backpack = 		/obj/item/storage/backpack/cultpack
+	r_pocket = 		/obj/item/flashlight/flare
+
+	backpack =		/obj/item/storage/backpack/cultpack
 	satchel = 		/obj/item/storage/backpack/cultpack
-	r_hand = 		/obj/item/gun/ballistic/revolver/m29
-	r_pocket = /obj/item/flashlight/flare
 	backpack_contents = list(
-		/obj/item/ammo_box/m44=2, \
+		/obj/item/camera/spooky = 1, \
 		/obj/item/reagent_containers/food/drinks/flask=1, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=2, \
 		/obj/item/storage/fancy/candle_box, \
@@ -1249,7 +1149,7 @@ datum/job/wasteland/f13dendoctor
 		/datum/crafting_recipe/tribal_r_combat_armor,
 		/datum/crafting_recipe/tribal_r_combat_armor_helmet,
 		/datum/crafting_recipe/tribalwar/chitinarmor,
-		/datum/crafting_recipe/tribalwar/deathclawspear,
+//		/datum/crafting_recipe/tribalwar/deathclawspear,
 		/datum/crafting_recipe/tribalwar/lightcloak,
 		/datum/crafting_recipe/tribalwar/legendaryclawcloak,
 		/datum/crafting_recipe/warpaint,
@@ -1265,8 +1165,7 @@ datum/job/wasteland/f13dendoctor
 		/datum/crafting_recipe/tribalwar/bonecodpiece,
 		/datum/crafting_recipe/tribalwar/bracers,
 		/datum/crafting_recipe/tribal/bonetalisman,
-		/datum/crafting_recipe/tribal/bonebag,
-		/datum/crafting_recipe/tribalwar/spearquiver
+		/datum/crafting_recipe/tribal/bonebag
 	)
 	for(var/datum/crafting_recipe/recipe as() in recipes)
 		H.mind.teach_crafting_recipe(recipe)

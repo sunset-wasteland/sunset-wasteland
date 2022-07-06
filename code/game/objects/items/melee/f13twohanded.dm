@@ -33,7 +33,7 @@
 // AXES //
 //////////			-bonus damage to all doors, windows
 
-// Legion Axe		Keywords: Damage 30/60
+// Legion Axe		Keywords: Damage 30/60 do not change these numbers
 /obj/item/twohanded/legionaxe
 	name = "War Honed Axe"
 	desc = "Heavy fireman axe from the old world, Restored to working order by legion craftsmen. Excellent for smashing doors or heads."
@@ -423,8 +423,6 @@
 /obj/item/twohanded/sledgehammer
 	name = "sledgehammer"
 	desc = "A heavy sledgehammer that lost most of its use besides caving in heads and barricades."
-	icon_state = "hammer-sledge"
-	icon_prefix = "hammer-sledge"
 	attack_speed = CLICK_CD_MELEE * 1.2
 	force = 25
 	throwforce = 20 // Huge hammers aren't that great for throwing
@@ -434,6 +432,8 @@
 
 // Sledgehammer			Keywords: Damage 25/45, Blacksmithing
 /obj/item/twohanded/sledgehammer/simple
+	icon_state = "hammer-sledge"
+	icon_prefix = "hammer-sledge"
 	var/qualitymod = 0
 
 /obj/item/twohanded/sledgehammer/simple/ComponentInitialize()

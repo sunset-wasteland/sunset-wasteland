@@ -157,8 +157,8 @@ Head Paladin
 
 /datum/outfit/loadout/sentstand
 	name = "Shock Head Paladin"
-	suit = /obj/item/clothing/suit/armor/f13/power_armor/t51green
-	head = /obj/item/clothing/head/helmet/f13/power_armor/t51b/bos
+	suit = /obj/item/clothing/suit/armor/f13/power_armor/midwest/hardened
+	head = /obj/item/clothing/head/helmet/f13/power_armor/midwest/hardened
 	l_hand = /obj/item/gun/energy/laser/scatter
 	backpack_contents = list(
 		/obj/item/stock_parts/cell/ammo/mfc = 3,
@@ -166,8 +166,8 @@ Head Paladin
 
 /datum/outfit/loadout/sentheavy
 	name = "Heavy Head Paladin"
-	suit = /obj/item/clothing/suit/armor/f13/power_armor/t51green
-	head = /obj/item/clothing/head/helmet/f13/power_armor/t51b/bos
+	suit = /obj/item/clothing/suit/armor/f13/power_armor/midwest/hardened
+	head = /obj/item/clothing/head/helmet/f13/power_armor/midwest/hardened
 	backpack_contents = list(
 		/obj/item/gun/ballistic/automatic/m72 = 1,
 		/obj/item/ammo_box/magazine/m2mm = 3,
@@ -177,16 +177,16 @@ Head Paladin
 
 /datum/outfit/loadout/sentgat
 	name = "Gatling Head Paladin"
-	suit = /obj/item/clothing/suit/armor/f13/power_armor/t51green
-	head = /obj/item/clothing/head/helmet/f13/power_armor/t51b/bos
+	suit = /obj/item/clothing/suit/armor/f13/power_armor/midwest/hardened
+	head = /obj/item/clothing/head/helmet/f13/power_armor/midwest/hardened
 	backpack_contents = list(
 		/obj/item/minigunpack=1,
 	)
 
 /datum/outfit/loadout/sentmini
 	name = "Minigun Head Paladin"
-	suit = /obj/item/clothing/suit/armor/f13/power_armor/t51green
-	head = /obj/item/clothing/head/helmet/f13/power_armor/t51b/bos
+	suit = /obj/item/clothing/suit/armor/f13/power_armor/midwest/hardened
+	head = /obj/item/clothing/head/helmet/f13/power_armor/midwest/hardened
 	backpack_contents = list(
 		/obj/item/minigunpackbal5mm=1,
 		/obj/item/gun/energy/laser/pistol=1,
@@ -232,6 +232,7 @@ Head Scribe
 	ADD_TRAIT(H, TRAIT_GENERIC, src)
 	ADD_TRAIT(H, TRAIT_CHEMWHIZ, src)
 	ADD_TRAIT(H, TRAIT_SURGERY_HIGH, src)
+	ADD_TRAIT(H, TRAIT_PA_WEAR, src)
 
 /datum/outfit/job/bos/f13headscribe
 	name = "Head Scribe"
@@ -339,7 +340,7 @@ Head Knight
 /datum/outfit/loadout/capsap
 	name = "Close Support"
 	backpack_contents = list(
-		/obj/effect/spawner/bundle/f13/rcw = 1,
+		/obj/item/gun/energy/laser/rcw = 1,
 		/obj/item/stock_parts/cell/ammo/ecp = 2,
 	)
 
@@ -400,8 +401,8 @@ Star Paladin
 /datum/outfit/job/bos/f13seniorpaladin
 	name =	"Senior Paladin"
 	jobtype =	/datum/job/bos/f13seniorpaladin
-	suit =	/obj/item/clothing/suit/armor/f13/power_armor/t51b/bos
-	head =	/obj/item/clothing/head/helmet/f13/power_armor/t51b/bos
+	suit =	/obj/item/clothing/suit/armor/f13/power_armor/midwest
+	head =	/obj/item/clothing/head/helmet/f13/power_armor/midwest
 	accessory =	/obj/item/clothing/accessory/bos/seniorpaladin
 	uniform =	/obj/item/clothing/under/f13/recon
 	mask =	/obj/item/clothing/mask/gas/sechailer
@@ -410,6 +411,7 @@ Star Paladin
 
 	backpack_contents = list(
 		/obj/item/reagent_containers/hypospray/medipen/stimpak = 2,
+		/obj/item/melee/onehanded/knife/hunting = 1,
 	)
 
 /datum/outfit/loadout/spaladina
@@ -500,15 +502,15 @@ Paladin
 /datum/outfit/job/bos/f13paladin
 	name =	"Paladin"
 	jobtype =	/datum/job/bos/f13paladin
-	suit =	/obj/item/clothing/suit/armor/f13/power_armor/t51b/bos
-	head =	/obj/item/clothing/head/helmet/f13/power_armor/t51b/bos
+	suit =	/obj/item/clothing/suit/armor/f13/power_armor/midwest
+	head =	/obj/item/clothing/head/helmet/f13/power_armor/midwest
 	uniform =	/obj/item/clothing/under/f13/recon
 	mask =	/obj/item/clothing/mask/gas/sechailer
 	belt =	/obj/item/storage/belt/military/assault
 	neck =	/obj/item/clothing/neck/mantle/bos/paladin
 	backpack_contents = list(
 		/obj/item/reagent_containers/hypospray/medipen/stimpak= 1,
-
+		/obj/item/melee/onehanded/knife/hunting = 1,
 	)
 
 /datum/outfit/loadout/paladina

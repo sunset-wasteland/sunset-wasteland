@@ -29,8 +29,11 @@ GLOBAL_LIST_INIT(metal_recipes, list ( \
 	new/datum/stack_recipe("metal rod", /obj/item/stack/rods, 1, 2, 60), \
 	new/datum/stack_recipe("iron ingot", /obj/item/ingot/iron, 6, time = 100), \
 	new/datum/stack_recipe("metal parts", /obj/item/stack/crafting/metalparts, 5), \
+	new/datum/stack_recipe("length of chain", /obj/item/blacksmith/chain, 1, time = 50), \
 	null, \
 	new/datum/stack_recipe("lock", /obj/item/lock_construct, 1), \
+	new/datum/stack_recipe("coffee pot", /obj/item/crafting/coffee_pot, 1), \
+	new/datum/stack_recipe("lunchbox", /obj/item/crafting/lunchbox, 1), \
 	new/datum/stack_recipe("key", /obj/item/key, 1), \
 	new/datum/stack_recipe("key chain", /obj/item/storage/keys_set, 1), \
 	null, \
@@ -53,6 +56,12 @@ GLOBAL_LIST_INIT(metal_recipes, list ( \
 		new /datum/stack_recipe("sofa (right)", /obj/structure/chair/sofa/corp/right, one_per_turf = TRUE, on_floor = TRUE), \
 		new /datum/stack_recipe("sofa (corner)", /obj/structure/chair/sofa/corp/corner, one_per_turf = TRUE, on_floor = TRUE), \
 		)), \
+	new/datum/stack_recipe_list("diner booths", list( \
+		new /datum/stack_recipe("diner booth (middle)", /obj/structure/chair/middle, one_per_turf = TRUE, on_floor = TRUE), \
+		new /datum/stack_recipe("diner booth (left)", /obj/structure/chair/left, one_per_turf = TRUE, on_floor = TRUE), \
+		new /datum/stack_recipe("diner booth (right)", /obj/structure/chair/right, one_per_turf = TRUE, on_floor = TRUE), \
+		new /datum/stack_recipe("diner booth (single)", /obj/structure/chair/booth, one_per_turf = TRUE, on_floor = TRUE), \
+		)),\
 	null, \
 	new/datum/stack_recipe_list("office chairs", list( \
 		new/datum/stack_recipe("dark office chair", /obj/structure/chair/office/dark, 5, one_per_turf = TRUE, on_floor = TRUE), \
@@ -266,24 +275,41 @@ GLOBAL_LIST_INIT(plasteel_recipes, list ( \
 //  Wood
 
 GLOBAL_LIST_INIT(wood_recipes, list ( \
-	new/datum/stack_recipe("wood table frame", /obj/structure/table_frame/wood, 2, time = 10), \
 	new/datum/stack_recipe("wooden barricade", /obj/structure/barricade/wooden, 5, time = 50, one_per_turf = TRUE, on_floor = TRUE), \
 	null, \
-	new/datum/stack_recipe("wooden floor tile", /obj/item/stack/tile/wood, 1, 4, 20), \
-	new/datum/stack_recipe("large wooden floor tile", /obj/item/stack/tile/wood/wood_large, 1, 4, 20), \
-	new/datum/stack_recipe("tiled wooden floor tile", /obj/item/stack/tile/wood/wood_tiled, 1, 4, 20), \
-	new/datum/stack_recipe("diagonal wooden floor tile", /obj/item/stack/tile/wood/wood_diagonal, 1, 4, 20), \
-	null, \
-	new/datum/stack_recipe_list("pews", list( \
-		new /datum/stack_recipe("pew (middle)", /obj/structure/chair/pew, 3, one_per_turf = TRUE, on_floor = TRUE),\
-		new /datum/stack_recipe("pew (left)", /obj/structure/chair/pew/left, 3, one_per_turf = TRUE, on_floor = TRUE),\
-		new /datum/stack_recipe("pew (right)", /obj/structure/chair/pew/right, 3, one_per_turf = TRUE, on_floor = TRUE),\
+	new/datum/stack_recipe_list("floor tiles", list( \
+	new/datum/stack_recipe("common floor tile", /obj/item/stack/tile/wood/common, 1, 4, 20), \
+	new/datum/stack_recipe("common light floor tile", /obj/item/stack/tile/wood/common/light, 1, 4, 20), \
+	new/datum/stack_recipe("common dark floor tile", /obj/item/stack/tile/wood/common/dark, 1, 4, 20), \
+	new/datum/stack_recipe("fancy floor tile", /obj/item/stack/tile/wood/fancy, 1, 4, 20), \
+	new/datum/stack_recipe("fancy light floor tile", /obj/item/stack/tile/wood/fancy/light, 1, 4, 20), \
+	new/datum/stack_recipe("fancy dark floor tile", /obj/item/stack/tile/wood/fancy/dark, 1, 4, 20), \
+	new/datum/stack_recipe("mosaic floor tile", /obj/item/stack/tile/wood/mosaic, 1, 4, 20), \
+	new/datum/stack_recipe("mosaic light floor tile", /obj/item/stack/tile/wood/mosaic/light, 1, 4, 20), \
+	new/datum/stack_recipe("mosaic dark floor tile", /obj/item/stack/tile/wood/mosaic/dark, 1, 4, 20), \
+	new/datum/stack_recipe("wide floor tile", /obj/item/stack/tile/wood/wide, 1, 4, 20), \
+	new/datum/stack_recipe("wide light floor tile", /obj/item/stack/tile/wood/wide/light, 1, 4, 20), \
+	new/datum/stack_recipe("wide dark floor tile", /obj/item/stack/tile/wood/wide/dark, 1, 4, 20), \
+	new/datum/stack_recipe("worn floor tile", /obj/item/stack/tile/wood/worn, 1, 4, 20), \
+	new/datum/stack_recipe("worn light floor tile", /obj/item/stack/tile/wood/worn/light, 1, 4, 20), \
+	new/datum/stack_recipe("worn dark floor tile", /obj/item/stack/tile/wood/worn/dark, 1, 4, 20), \
 		)), \
 	null, \
-	new/datum/stack_recipe("wooden chair", /obj/structure/chair/wood/, 3, time = 10, one_per_turf = TRUE, on_floor = TRUE), \
-	new/datum/stack_recipe("winged wooden chair", /obj/structure/chair/wood/wings, 3, time = 10, one_per_turf = TRUE, on_floor = TRUE), \
-	new/datum/stack_recipe("plywood chair", /obj/structure/chair/comfy/plywood, 4, time = 10, one_per_turf = TRUE, on_floor = TRUE), \
-	new/datum/stack_recipe("bed", /obj/structure/bed/wooden, 2, one_per_turf = TRUE, on_floor = TRUE), \
+	new/datum/stack_recipe_list("pews", list( \
+		new /datum/stack_recipe("pew (middle)", /obj/structure/chair/pew, 3, time = 10, one_per_turf = TRUE, on_floor = TRUE),\
+		new /datum/stack_recipe("pew (left)", /obj/structure/chair/pew/left, 3, time = 10, one_per_turf = TRUE, on_floor = TRUE),\
+		new /datum/stack_recipe("pew (right)", /obj/structure/chair/pew/right, 3, time = 10, one_per_turf = TRUE, on_floor = TRUE),\
+		)), \
+	null, \
+	new/datum/stack_recipe_list("furniture", list( \
+	new/datum/stack_recipe("chair", /obj/structure/chair/wood/, 3, time = 10, one_per_turf = TRUE, on_floor = TRUE), \
+	new/datum/stack_recipe("dining chair", /obj/structure/chair/wood/dining, 3, time = 10, one_per_turf = TRUE, on_floor = TRUE), \
+	new/datum/stack_recipe("fancy chair", /obj/structure/chair/wood/fancy, 3, time = 10, one_per_turf = TRUE, on_floor = TRUE), \
+	new/datum/stack_recipe("antique chair", /obj/structure/chair/wood/wings, 3, time = 10, one_per_turf = TRUE, on_floor = TRUE), \
+	new/datum/stack_recipe("deckchair", /obj/structure/chair/comfy/plywood, 4, time = 10, one_per_turf = TRUE, on_floor = TRUE), \
+	new/datum/stack_recipe("table frame", /obj/structure/table_frame/wood, 2, time = 10), \
+	new/datum/stack_recipe("bed", /obj/structure/bed/wooden, 2, time = 20, one_per_turf = TRUE, on_floor = TRUE), \
+		)), \
 	null, \
 	new/datum/stack_recipe_list("primitive industry & agriculture", list( \
 		new /datum/stack_recipe("wooden bucket", /obj/item/reagent_containers/glass/bucket/wood, 2, time = 30), \
@@ -313,6 +339,9 @@ GLOBAL_LIST_INIT(wood_recipes, list ( \
 	new/datum/stack_recipe("book case", /obj/structure/bookcase, 4, time = 15, one_per_turf = TRUE, on_floor = TRUE), \
 	new/datum/stack_recipe("dresser", /obj/structure/dresser, 10, time = 15, one_per_turf = TRUE, on_floor = TRUE), \
 	new/datum/stack_recipe("display case chassis", /obj/structure/displaycase_chassis, 5, one_per_turf = TRUE, on_floor = TRUE), \
+	null, \
+	new/datum/stack_recipe("apiary", /obj/structure/beebox, 40, time = 50, one_per_turf = TRUE, on_floor = TRUE),\
+	new/datum/stack_recipe("honey frame", /obj/item/honey_frame, 5, time = 10, one_per_turf = TRUE, on_floor = TRUE),\
 	))
 
 /obj/item/stack/sheet/mineral/wood
@@ -342,7 +371,7 @@ GLOBAL_LIST_INIT(wood_recipes, list ( \
 		if(!do_after(user, 70, TRUE, src))
 			return
 		// Make stick
-		var/obj/item/stick/new_item = new(user.loc)
+		var/obj/item/blacksmith/woodrod/new_item = new(user.loc)
 		user.visible_message("[user] finishes carving a rod from the [src].", \
 				"<span class='notice'>You finish carving a rod from the [src].</span>")
 		// Prepare to Put in Hands (if holding wood)
@@ -421,6 +450,7 @@ GLOBAL_LIST_INIT(cloth_recipes, list ( \
 	new/datum/stack_recipe("medical bag", /obj/item/storage/bag/chemistry, 4), \
 	new/datum/stack_recipe("bio bag", /obj/item/storage/bag/bio, 4), \
 	new/datum/stack_recipe("casings bag", /obj/item/storage/bag/casings, 4), \
+	new/datum/stack_recipe("salvage storage bag", /obj/item/storage/bag/salvagestorage, 4), \
 	new/datum/stack_recipe("salvage bag", /obj/item/storage/bag/salvage, 4), \
 	null, \
 	new/datum/stack_recipe("string", /obj/item/weaponcrafting/string, 1, time = 10), \
@@ -428,13 +458,31 @@ GLOBAL_LIST_INIT(cloth_recipes, list ( \
 	new/datum/stack_recipe("improvised suture", /obj/item/stack/medical/suture/emergency, 3), \
 	new/datum/stack_recipe("rag", /obj/item/reagent_containers/rag, 1), \
 	new/datum/stack_recipe("towel", /obj/item/reagent_containers/rag/towel, 3), \
-	new/datum/stack_recipe("bedsheet", /obj/item/bedsheet, 3), \
 	new/datum/stack_recipe("empty sandbag", /obj/item/emptysandbag, 4), \
 	new/datum/stack_recipe("padded floor tile", /obj/item/stack/tile/padded, 1, 4, 20), \
 	new/datum/stack_recipe("mattress", /obj/structure/bed/mattress, 2, one_per_turf = TRUE, on_floor = TRUE), \
 	null, \
+	new/datum/stack_recipe("tent wall", /obj/structure/barricade/tent, 3, time = 30, one_per_turf = TRUE, on_floor = TRUE), \
+	new/datum/stack_recipe("tent flap", /obj/structure/simple_door/tentflap_cloth, 3, time = 30, one_per_turf = TRUE, on_floor = TRUE), \
+	null, \
 	new/datum/stack_recipe("blindfold", /obj/item/clothing/glasses/sunglasses/blindfold, 2), \
 	new/datum/stack_recipe("money pouch", /obj/item/storage/bag/money/small, 5), \
+	null, \
+	new/datum/stack_recipe_list("bedsheet", list( \
+			new/datum/stack_recipe("bedsheet", /obj/item/bedsheet, 3), \
+			new/datum/stack_recipe("enclave bedsheet", /obj/item/bedsheet/enclave, 3), \
+			new/datum/stack_recipe("enclave luxury bedsheet", /obj/item/bedsheet/sneedclave, 3), \
+			new/datum/stack_recipe("medical bedsheet", /obj/item/bedsheet/medical, 3), \
+			new/datum/stack_recipe("blue bedsheet", /obj/item/bedsheet/blue, 3), \
+			new/datum/stack_recipe("green bedsheet", /obj/item/bedsheet/green, 3), \
+			new/datum/stack_recipe("grey bedsheet", /obj/item/bedsheet/grey, 3), \
+			new/datum/stack_recipe("orange bedsheet", /obj/item/bedsheet/orange, 3), \
+			new/datum/stack_recipe("purple bedsheet", /obj/item/bedsheet/purple, 3), \
+			new/datum/stack_recipe("red bedsheet", /obj/item/bedsheet/red, 3), \
+			new/datum/stack_recipe("yellow bedsheet", /obj/item/bedsheet/yellow, 3), \
+			new/datum/stack_recipe("brown bedsheet", /obj/item/bedsheet/brown, 3), \
+			new/datum/stack_recipe("black bedsheet", /obj/item/bedsheet/black, 3), \
+		)), \
 	))
 
 /obj/item/stack/sheet/cloth
@@ -980,13 +1028,19 @@ GLOBAL_LIST_INIT(hay_recipes, list ( \
 /*
 prewar alloys
 */
+GLOBAL_LIST_INIT(prewar_recipes, list ( \
+	new/datum/stack_recipe("modern chair", /obj/structure/chair/comfy/modern, 2, time = 5, one_per_turf = TRUE, on_floor = TRUE), \
+	new/datum/stack_recipe("gun locker", /obj/structure/guncase, 4, time = 10, one_per_turf = TRUE, on_floor = TRUE), \
+
+))
+
 /obj/item/stack/sheet/prewar
 	name = "pre-war alloys"
 	singular_name = "pre war alloy"
 	desc = "This sheet was manufactured by using advanced smelting techniques before the war."
 	icon_state = "sheet-prewar"
 	item_state = "sheet-metal"
-	custom_materials = list(/datum/material/iron = 10000)
+	custom_materials = list()
 	throwforce = 10
 	flags_1 = CONDUCT_1
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 80)
@@ -994,11 +1048,16 @@ prewar alloys
 	merge_type = /obj/item/stack/sheet/prewar
 	grind_results = list(/datum/reagent/iron = 20, /datum/reagent/toxin/plasma = 20)
 
-/obj/item/stack/sheet/prewar/twenty
-	amount = 20
+/obj/item/stack/sheet/prewar/get_main_recipes()
+	. = ..()
+	. += GLOB.prewar_recipes
 
 /obj/item/stack/sheet/prewar/five
 	amount = 5
 
+/obj/item/stack/sheet/prewar/twenty
+	amount = 20
+
 /obj/item/stack/sheet/prewar/fifty
 	amount = 50
+

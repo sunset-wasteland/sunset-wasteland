@@ -20,3 +20,13 @@
 	category = LOADOUT_CATEGORY_UNIFORM
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_GENERAL
 	ckeywhitelist = list("midgetdragon")
+
+// SUNSET EDIT
+
+/datum/gear/donator/mrsanderp
+	name = "Happy Sharky Company Cuisine Book"
+	slot = SLOT_IN_BACKPACK
+	path = /obj/item/book/granter/crafting_recipe/happysharky
+	category = LOADOUT_CATEGORY_BACKPACK
+	ckeywhitelist = list ("mrsanderp")
+	cost = 0

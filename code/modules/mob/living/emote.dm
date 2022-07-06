@@ -2,6 +2,7 @@
 	key = "blush"
 	key_third_person = "blushes"
 	message = "blushes."
+	sound = 'sound/f13effects/sunsetsounds/blush.ogg' //Sunset Edit - TK
 
 /datum/emote/living/blush/run_emote(mob/user, params)
 	. = ..()
@@ -20,12 +21,14 @@
 	key_third_person = "burps"
 	message = "burps."
 	emote_type = EMOTE_AUDIBLE
+	sound = 'sound/f13effects/sunsetsounds/lilburp.ogg' //Sunset Edit - TK
 
 /datum/emote/living/choke
 	key = "choke"
 	key_third_person = "chokes"
 	message = "chokes!"
 	emote_type = EMOTE_AUDIBLE
+	sound = 'sound/f13effects/sunsetsounds/choke.ogg' //Sunset Edit - TK
 
 /datum/emote/living/cross
 	key = "cross"
@@ -38,6 +41,17 @@
 	key_third_person = "chuckles"
 	message = "chuckles."
 	emote_type = EMOTE_AUDIBLE
+
+/* Sunset Attempt - I tried bro ~TK  This lets females have a chuckle, but males don't.  idk man, I'm dumb.
+/datum/emote/living/chuckle/get_sound(mob/living/user) //Sunset Edit -TK
+	. = ..()
+	if(ishuman(user))
+		if(user.gender == FEMALE)
+			sound = 'sound/f13effects/sunsetsounds/femalechuckle.ogg'
+		else
+			sound = 'sound/f13effects/sunsetsounds/malechuckle.ogg'
+		return sound
+*/
 
 /datum/emote/living/collapse
 	key = "collapse"
@@ -568,3 +582,191 @@
 	if(. && isliving(user))
 		var/mob/living/L = user
 		L.Knockdown(200)
+
+
+
+
+		///////////////////////////////////////
+		//Sunset Emotes                      //
+		//Started by TK420634, June 4th, 2022//
+		///////////////////////////////////////
+		//I've included some notes on the first two for those who want to go about adding more emotes in the future, there's also some useful stuff in the code up above that we may should consider bringing down to them
+		//but for now these are servicable.  The only conern I'd have with what is here is that some of these sounds are semi-spammable, but if someone starts bleating at you like a braindead idiot and won't stop
+		//then maybe just CI them down with your uzi?
+
+	//This is a good starting point for adding a simple emote with a sound, consider using this in the future for other sounds.
+/datum/emote/cackle
+	key = "cackle" // What the *emote will be
+	key_third_person = "cackles worryingly" // What someone else will see.
+	message = "cackles worryingly." // What you'll see.
+	sound = 'sound/f13effects/sunsetsounds/YeenCackle.ogg' //Sound played.
+
+	//I don't like how this looks, if someone knows a better way please do so or tell me.
+/datum/emote/coyawoo
+	key = "coyawoo"
+	key_third_person = "howls like a coyote"
+	message = "howls like a coyote!"
+
+/datum/emote/coyawoo/run_emote(mob/user, params) //Player triggers the emote
+	. = ..() // Hell if I know
+	if(. && iscarbon(user)) // Are they a carbon mob?
+		var/mob/living/carbon/C = user
+		if(. && isliving(user)) //Are they alive?  The stuff below is the sounds being listed, with percent (the 20s) and then number of times played (1)
+			pick(playsound(C, 'sound/f13effects/sunsetsounds/coyoteawoo.ogg', 20, 1),playsound(C, 'sound/f13effects/sunsetsounds/coyoteawoo2.ogg', 20, 1),playsound(C, 'sound/f13effects/sunsetsounds/coyoteawoo3.ogg', 20, 1),playsound(C, 'sound/f13effects/sunsetsounds/coyoteawoo4.ogg', 20, 1),playsound(C, 'sound/f13effects/sunsetsounds/coyoteawoo5.ogg', 20, 1))
+
+/datum/emote/baa //Little Bo Peep Can Eat my...
+	key = "baa"
+	key_third_person = "baas"
+	message = "baas."
+
+/datum/emote/baa/run_emote(mob/user, params)
+	. = ..() //
+	if(. && iscarbon(user))
+		var/mob/living/carbon/C = user
+		if(. && isliving(user))
+			pick(playsound(C, 'sound/f13effects/sunsetsounds/baa.ogg', 50, 1),playsound(C, 'sound/f13effects/sunsetsounds/baa2.ogg', 50, 1))
+
+/datum/emote/purr
+	key = "purr"
+	key_third_person = "purrs contentedly"
+	message = "purrs contentedly."
+	sound = 'sound/f13effects/sunsetsounds/cat_purr.ogg'
+
+
+/datum/emote/purrlong
+	key = "purrlong"
+	key_third_person = "purrs contentedly"
+	message = "purrs contentedly."
+	sound = 'sound/f13effects/sunsetsounds/cat_purr_long.ogg'
+
+
+/datum/emote/geckers
+	key = "geck"
+	key_third_person = "geckers loudly"
+	message = "geckers loudly."
+	sound = 'sound/f13effects/sunsetsounds/geck.ogg'
+
+
+/datum/emote/growl
+	key = "growl"
+	key_third_person = "growls viciously"
+	message = "growls viciously."
+	sound = 'sound/f13effects/sunsetsounds/growl.ogg'
+
+
+/datum/emote/moo
+	key = "moo"
+	key_third_person = "moos"
+	message = "moos."
+	sound = 'sound/f13effects/sunsetsounds/moo.ogg'
+
+
+/datum/emote/mrowl
+	key = "mrowl"
+	key_third_person = "mrowls"
+	message = "mrowls."
+	sound = 'sound/f13effects/sunsetsounds/mrowl.ogg'
+
+
+/datum/emote/nya //Kitten Must Die.ogg
+	key = "nya"
+	key_third_person = "nyas"
+	message = "nyas."
+	sound = 'sound/f13effects/sunsetsounds/nya.ogg'
+
+
+/datum/emote/wolfwhistle //Yeah baby that's what I like!
+	key = "wolfwhistle"
+	key_third_person = "wolf whistles"
+	message = "wolf whistles!"
+	sound = 'sound/f13effects/sunsetsounds/wolfwhistle.ogg'
+
+/datum/emote/kyaa
+	key = "kyaa"
+	key_third_person = "kyaas"
+	message = "kyaas loudly!"
+	sound = 'sound/f13effects/sunsetsounds/birdkyaa.ogg'
+
+/datum/emote/bork
+	key = "bork"
+	key_third_person = "borks"
+	message = "borks!"
+	sound = 'sound/f13effects/sunsetsounds/bork.ogg'
+
+/datum/emote/bark
+	key = "bark"
+	key_third_person = "barks"
+	message = "barks!"
+	sound = 'sound/f13effects/sunsetsounds/bark.ogg'
+
+/datum/emote/yap
+	key = "yap"
+	key_third_person = "yaps"
+	message = "yaps!"
+	sound = 'sound/f13effects/sunsetsounds/yap.ogg'
+
+/datum/emote/barkmisery
+	key = "mbark"
+	key_third_person = "barks miserably"
+	message = "barks miserably!"
+	sound = 'sound/f13effects/sunsetsounds/dog-miserable.ogg'
+
+/datum/emote/cougar
+	key = "cougar"
+	key_third_person = "growls like a cougar"
+	message = "growls like a cougar!"
+	sound = 'sound/f13effects/sunsetsounds/cougar.ogg'
+
+/datum/emote/trumpet
+	key = "trumpet"
+	key_third_person = "trumpets"
+	message = "trumpets!"
+	sound = 'sound/f13effects/sunsetsounds/trumpet.ogg'
+
+/datum/emote/fenbark
+	key = "fenbark"
+	key_third_person = "makes a fennec-y bark"
+	message = "makes a fennec-y bark!"
+	sound = 'sound/f13effects/sunsetsounds/fenbark.ogg'
+
+/datum/emote/foxbark
+	key = "foxbark"
+	key_third_person = "makes a foxy bark"
+	message = "makes a foxy bark!"
+	sound = 'sound/f13effects/sunsetsounds/foxbark.ogg'
+
+/datum/emote/lynx
+	key = "lynx"
+	key_third_person = "growls like a bobcat"
+	message = "growls like a bobcat!"
+	sound = 'sound/f13effects/sunsetsounds/lynx.ogg'
+
+/datum/emote/panda //yee
+	key = "panda"
+	key_third_person = "makes a panda like... noise"
+	message = "makes a panda like... noise?"
+	sound = 'sound/f13effects/sunsetsounds/panda.ogg'
+
+/datum/emote/lynx
+	key = "lynx"
+	key_third_person = "growls like a bobcat"
+	message = "growls like a bobcat!"
+	sound = 'sound/f13effects/sunsetsounds/lynx.ogg'
+
+/datum/emote/bun
+	key = "bun"
+	key_third_person = "squeals like a rabbit"
+	message = "squeals like a rabbit!"
+	sound = 'sound/f13effects/sunsetsounds/rabbit.ogg'
+
+/datum/emote/wolfhowl
+	key = "wolfhowl"
+	key_third_person = "howls like a wolf"
+	message = "howls like a wolf!"
+	sound = 'sound/f13effects/sunsetsounds/wolfhowl.ogg'
+
+/datum/emote/whistlecome
+	key = "come"
+	key_third_person = "whistles to get someones attention"
+	message = "whistles to get someones attention!"
+	sound = 'sound/f13effects/sunsetsounds/whistle-overhere.ogg'

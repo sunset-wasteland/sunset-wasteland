@@ -121,6 +121,12 @@
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
 	cost = 1
 
+/datum/gear/suit/samurai  //added by TK420634 ~ 5/29/2022 "Samurai Wasteland WeebShit Edition (tm)
+	name = "Rusted Samurai Armor"
+	path = /obj/item/clothing/suit/samurai
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+	cost = 4
+
 /datum/gear/suit/NCRutilityvest
 	name = "Utility Vest"
 	path = /obj/item/clothing/suit/armor/f13/utilityvest
@@ -143,6 +149,7 @@
 							"NCR Off-Duty",
 							"NCR Ranger"
 						)
+
 
 
 /datum/gear/suit/fieldscribe
@@ -175,10 +182,10 @@
 	restricted_desc = "Oasis"
 	restricted_roles = list("Mayor",
 							"Secretary",
-							"Chief of Police",
+							"Sheriff",
 							"Doctor",
 							"Citizen",
-							"Officer",
+							"Deputy",
 							"Shopkeeper",
 							"Farmer",
 							"Prospector",
@@ -191,11 +198,14 @@
 	path = /obj/item/clothing/suit/armor/vest/oasis
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_FACTIONS
 	cost = 4
-	restricted_desc = "Oasis Police"
+	restricted_desc = "Oasis Police, Oasis Officials"
 	restricted_roles = list("Chief of Police",
-								"Officer",
-								"Detective",
-								)
+							"Officer",
+							"Mayor",
+							"Detective",
+							"Secretary",
+							"Shopkeeper",
+						)
 
 /datum/gear/suit/hazardvest
 	name = "Hazard Vest"
@@ -205,7 +215,6 @@
 	restricted_roles = list("Citizen",
 							"Prospector",
 							)
-
 
 //These should be left commented out until the holidays or special events.
 /*

@@ -545,15 +545,27 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 
 /obj/machinery/mineral/wasteland_vendor/khanchem
 	name = "P.A.P.A"
-	icon_state = "med_idle"
+	icon_state = "khan_idle"
 	prize_list = list(
 		new /datum/data/wasteland_equipment("Jet",							/obj/item/reagent_containers/pill/patch/jet,						30),
 		new /datum/data/wasteland_equipment("Psycho",						/obj/item/reagent_containers/hypospray/medipen/psycho,				30),
 		new /datum/data/wasteland_equipment("Turbo",						/obj/item/reagent_containers/pill/patch/turbo,						30),
 		new /datum/data/wasteland_equipment("Mentats",						/obj/item/storage/pill_bottle/chem_tin/mentats,						30),
 		new /datum/data/wasteland_equipment("Buffout",						/obj/item/storage/pill_bottle/chem_tin/buffout,						30),
-		new /datum/data/wasteland_equipment("Med-X",						/obj/item/reagent_containers/hypospray/medipen/medx,							30),
-		new /datum/data/wasteland_equipment("Fixer",						/obj/item/storage/pill_bottle/chem_tin/fixer,						200)
+		new /datum/data/wasteland_equipment("Med-X",						/obj/item/reagent_containers/hypospray/medipen/medx,				80),
+		new /datum/data/wasteland_equipment("Fixer",						/obj/item/storage/pill_bottle/chem_tin/fixer,						90),
+		new /datum/data/wasteland_equipment("Great Khan helmet",			/obj/item/clothing/head/helmet/f13/khan,							20),
+		new /datum/data/wasteland_equipment("Great Khan bandana",			/obj/item/clothing/head/helmet/f13/khan/bandana,					20),
+		new /datum/data/wasteland_equipment("Great Khan fur-trimmed helmet",	/obj/item/clothing/head/helmet/f13/khan/pelt,					20),
+		new /datum/data/wasteland_equipment("Great Khan full helmet",		/obj/item/clothing/head/helmet/f13/khan/fullhelm,					100),
+		new /datum/data/wasteland_equipment("Great Khan battlecoat",		/obj/item/clothing/suit/toggle/labcoat/f13/khan_jacket/coat,		300),
+		new /datum/data/wasteland_equipment("Great Khan armored jacket",	/obj/item/clothing/suit/toggle/labcoat/f13/khan_jacket/armored,		100),
+		new /datum/data/wasteland_equipment("Great Khan jacket",			/obj/item/clothing/suit/toggle/labcoat/f13/khan_jacket,				50),
+		new /datum/data/wasteland_equipment("Great Khan uniform",			/obj/item/clothing/under/f13/khan,									10),
+		new /datum/data/wasteland_equipment("Great Khan Jorts",				/obj/item/clothing/under/f13/khan/shorts,							10),
+		new /datum/data/wasteland_equipment("Great Khan Booty Shorts",		/obj/item/clothing/under/f13/khan/booty,							10),
+		new /datum/data/wasteland_equipment("Great Khan boots",				/obj/item/clothing/shoes/f13/military/khan,							15),
+		new /datum/data/wasteland_equipment("Great Khan pelt boots",		/obj/item/clothing/shoes/f13/military/khan_pelt,					15)
 		)
 	highpop_list = list(
 		new /datum/data/wasteland_equipment("Jet",							/obj/item/reagent_containers/pill/patch/jet,						30),
@@ -561,8 +573,20 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		new /datum/data/wasteland_equipment("Turbo",						/obj/item/reagent_containers/pill/patch/turbo,						30),
 		new /datum/data/wasteland_equipment("Mentats",						/obj/item/storage/pill_bottle/chem_tin/mentats,						30),
 		new /datum/data/wasteland_equipment("Buffout",						/obj/item/storage/pill_bottle/chem_tin/buffout,						30),
-		new /datum/data/wasteland_equipment("Med-X",						/obj/item/reagent_containers/hypospray/medipen/medx,							30),
-		new /datum/data/wasteland_equipment("Fixer",						/obj/item/storage/pill_bottle/chem_tin/fixer,						200)
+		new /datum/data/wasteland_equipment("Med-X",						/obj/item/reagent_containers/hypospray/medipen/medx,				80),
+		new /datum/data/wasteland_equipment("Fixer",						/obj/item/storage/pill_bottle/chem_tin/fixer,						90),
+		new /datum/data/wasteland_equipment("Great Khan helmet",			/obj/item/clothing/head/helmet/f13/khan,							20),
+		new /datum/data/wasteland_equipment("Great Khan bandana",			/obj/item/clothing/head/helmet/f13/khan/bandana,					20),
+		new /datum/data/wasteland_equipment("Great Khan fur-trimmed helmet",	/obj/item/clothing/head/helmet/f13/khan/pelt,					20),
+		new /datum/data/wasteland_equipment("Great Khan full helmet",		/obj/item/clothing/head/helmet/f13/khan/fullhelm,					100),
+		new /datum/data/wasteland_equipment("Great Khan battlecoat",		/obj/item/clothing/suit/toggle/labcoat/f13/khan_jacket/coat,		300),
+		new /datum/data/wasteland_equipment("Great Khan armored jacket",	/obj/item/clothing/suit/toggle/labcoat/f13/khan_jacket/armored,		100),
+		new /datum/data/wasteland_equipment("Great Khan jacket",			/obj/item/clothing/suit/toggle/labcoat/f13/khan_jacket,				50),
+		new /datum/data/wasteland_equipment("Great Khan uniform",			/obj/item/clothing/under/f13/khan,									10),
+		new /datum/data/wasteland_equipment("Great Khan Jorts",				/obj/item/clothing/under/f13/khan/shorts,							10),
+		new /datum/data/wasteland_equipment("Great Khan Booty Shorts",		/obj/item/clothing/under/f13/khan/booty,							10),
+		new /datum/data/wasteland_equipment("Great Khan boots",				/obj/item/clothing/shoes/f13/military/khan,							15),
+		new /datum/data/wasteland_equipment("Great Khan pelt boots",		/obj/item/clothing/shoes/f13/military/khan_pelt,					15)
 		)
 
 /obj/machinery/mineral/wasteland_vendor/denchem
@@ -608,7 +632,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		new /datum/data/wasteland_equipment("Upgraded Prosthetic Limbs",	/obj/item/storage/box/sparelimbs,									2000),
 		new /datum/data/wasteland_equipment("Cat",							/mob/living/simple_animal/pet/cat/Runtime,							10000),
 		)
-		
+
 	highpop_list = list(
 		new /datum/data/wasteland_equipment("Medicated Suture",				/obj/item/stack/medical/suture/medicated,							45),
 		new /datum/data/wasteland_equipment("Advanced Regen. Mesh",			/obj/item/stack/medical/mesh/advanced,								45),
@@ -628,14 +652,19 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		new /datum/data/wasteland_equipment("Upgraded Prosthetic Limbs",	/obj/item/storage/box/sparelimbs,									2000),
 		new /datum/data/wasteland_equipment("Cat",							/mob/living/simple_animal/pet/cat/Runtime,							10000),
 		)
-		
+
 /obj/machinery/mineral/wasteland_vendor/weapons
 	name = "Wasteland Vending Machine - Weapons"
 	icon_state = "weapon_idle"
 	prize_list = list(
 		new /datum/data/wasteland_equipment("survival knife",				/obj/item/melee/onehanded/knife/survival, 							70),
+		new /datum/data/wasteland_equipment(".22 Pistol",					/obj/item/gun/ballistic/automatic/pistol/pistol22,					110),
 		new /datum/data/wasteland_equipment("9mm pistol",					/obj/item/gun/ballistic/automatic/pistol/ninemil,					150),
-		new /datum/data/wasteland_equipment("M1911",						/obj/item/gun/ballistic/automatic/pistol/m1911,						170),
+		new /datum/data/wasteland_equipment("10mm pistol",					/obj/item/gun/ballistic/automatic/pistol/n99,						150),
+		new /datum/data/wasteland_equipment("Colt Revolver",				/obj/item/gun/ballistic/revolver/colt357,							160),
+		new /datum/data/wasteland_equipment("M1911",						/obj/item/gun/ballistic/automatic/pistol/m1911,						160),
+		new /datum/data/wasteland_equipment("Cowboy Repeater",				/obj/item/gun/ballistic/rifle/repeater/cowboy,						160),
+		new /datum/data/wasteland_equipment("M1 Carbine",					/obj/item/gun/ballistic/automatic/m1carbine,						170),
 		new /datum/data/wasteland_equipment("Guns and Bullets, Part 1",		/obj/item/book/granter/crafting_recipe/gunsmith_one, 				100),
 		new /datum/data/wasteland_equipment("Guns and Bullets, Part 2",		/obj/item/book/granter/crafting_recipe/gunsmith_two,				200),
 		new /datum/data/wasteland_equipment("Guns and Bullets, Part 3",		/obj/item/book/granter/crafting_recipe/gunsmith_three, 				300),
@@ -643,13 +672,19 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		)
 	highpop_list = list(
 		new /datum/data/wasteland_equipment("survival knife",				/obj/item/melee/onehanded/knife/survival, 							40),
+		new /datum/data/wasteland_equipment(".22 Pistol",					/obj/item/gun/ballistic/automatic/pistol/pistol22,					50),
 		new /datum/data/wasteland_equipment("9mm pistol",					/obj/item/gun/ballistic/automatic/pistol/beretta,					60),
+		new /datum/data/wasteland_equipment("10mm pistol",					/obj/item/gun/ballistic/automatic/pistol/n99,						60),
+		new /datum/data/wasteland_equipment("Colt Revolver",				/obj/item/gun/ballistic/revolver/colt357,							70),
 		new /datum/data/wasteland_equipment("M1911",						/obj/item/gun/ballistic/automatic/pistol/m1911,						70),
+		new /datum/data/wasteland_equipment("Cowboy Repeater",				/obj/item/gun/ballistic/rifle/repeater/cowboy,						80),
+		new /datum/data/wasteland_equipment("M1 Carbine",					/obj/item/gun/ballistic/automatic/m1carbine,						90),
 		new /datum/data/wasteland_equipment("Guns and Bullets, Part 1",		/obj/item/book/granter/crafting_recipe/gunsmith_one, 				100),
 		new /datum/data/wasteland_equipment("Guns and Bullets, Part 2",		/obj/item/book/granter/crafting_recipe/gunsmith_two,				200),
 		new /datum/data/wasteland_equipment("Guns and Bullets, Part 3",		/obj/item/book/granter/crafting_recipe/gunsmith_three, 				300),
 		new /datum/data/wasteland_equipment("Guns and Bullets, Part 4",		/obj/item/book/granter/crafting_recipe/gunsmith_four, 				400),
 		)
+
 
 /obj/machinery/mineral/wasteland_vendor/ammo
 	name = "Wasteland Vending Machine - Ammo n Bombs"
@@ -829,12 +864,14 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		new /datum/data/wasteland_equipment("Metal Sheets x 20",				/obj/item/stack/sheet/metal/twenty,									50),
 		new /datum/data/wasteland_equipment("Metal Sheets x 50",				/obj/item/stack/sheet/metal/fifty,									115),
 		new /datum/data/wasteland_equipment("Glass Sheets x 10",				/obj/item/stack/sheet/glass/ten,									30),
-		new /datum/data/wasteland_equipment("Glass Sheets x 50",				/obj/item/stack/sheet/glass/fifty,									90)
+		new /datum/data/wasteland_equipment("Glass Sheets x 50",				/obj/item/stack/sheet/glass/fifty,									90),
+		new /datum/data/wasteland_equipment("Sacks of Concrete x 10",			/obj/item/stack/sheet/mineral/concrete/ten,							25),
 		)
 	highpop_list = list(
 		new /datum/data/wasteland_equipment("High Quality Parts",				/obj/item/stack/crafting/goodparts,									25),
 		new /datum/data/wasteland_equipment("Metal Parts",						/obj/item/stack/crafting/metalparts,								10),
 		new /datum/data/wasteland_equipment("Electronic Parts",					/obj/item/stack/crafting/electronicparts,							5),
+		new /datum/data/wasteland_equipment("Sacks of Concrete x 10",			/obj/item/stack/sheet/mineral/concrete/ten,							25),
 		new /datum/data/wasteland_equipment("Metal Sheets x 20",				/obj/item/stack/sheet/metal/twenty,									50),
 		new /datum/data/wasteland_equipment("Metal Sheets x 50",				/obj/item/stack/sheet/metal/fifty,									115),
 		new /datum/data/wasteland_equipment("Glass Sheets x 10",				/obj/item/stack/sheet/glass/ten,									30),
@@ -844,7 +881,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		new /datum/data/wasteland_equipment("Art Canvas 19x19",					/obj/item/canvas/nineteenXnineteen,									20),
 		new /datum/data/wasteland_equipment("Art Canvas 23x19",					/obj/item/canvas/twentythreeXnineteen,								20),
 		new /datum/data/wasteland_equipment("Art Canvas 23x23",					/obj/item/canvas/twentythreeXtwentythree,							20),
-		new /datum/data/wasteland_equipment("Spray Can",						/obj/item/toy/crayon/spraycan,										75)
+		new /datum/data/wasteland_equipment("Spray Can",						/obj/item/toy/crayon/spraycan,										75),
 		)
 
 /obj/machinery/mineral/wasteland_vendor/mining

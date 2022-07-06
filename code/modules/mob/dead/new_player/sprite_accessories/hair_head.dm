@@ -23,6 +23,7 @@
 
 /datum/sprite_accessory/hair/amazon
 	name = "Amazon"
+	icon = 'icons/mob/human_face.dmi'
 	icon_state = "amazon"
 
 /datum/sprite_accessory/hair/anita
@@ -35,10 +36,12 @@
 
 /datum/sprite_accessory/hair/beachwave
 	name = "Beachwave"
+	icon = 'icons/mob/human_face.dmi'
 	icon_state = "beachwave"
 
 /datum/sprite_accessory/hair/bedhead
 	name = "Bedhead wild"
+	icon = 'icons/mob/human_face.dmi'
 	icon_state = "hair_bedhead"
 
 /datum/sprite_accessory/hair/bedhead_long
@@ -67,6 +70,7 @@
 
 /datum/sprite_accessory/hair/punk
 	name = "Big Mohawk"
+	icon = 'icons/mob/human_face.dmi'
 	icon_state = "hair_punk_s"
 
 /datum/sprite_accessory/hair/bob
@@ -147,6 +151,7 @@
 
 /datum/sprite_accessory/hair/lowbun
 	name = "Bun Low"
+	icon = 'icons/mob/human_face.dmi'
 	icon_state = "hair_bun_s"
 
 /datum/sprite_accessory/hair/tightbun
@@ -223,6 +228,7 @@
 
 /datum/sprite_accessory/hair/leftsidecut
 	name = "Side Cut"
+	icon = 'icons/mob/human_face.dmi'
 	icon_state = "hair_leftside"
 
 /datum/sprite_accessory/hair/dave
@@ -255,6 +261,7 @@
 
 /datum/sprite_accessory/hair/halfshavedemo
 	name = "Emo Half Shave"
+	icon = 'icons/mob/human_face.dmi'
 	icon_state = "hair_halfshavedemo"
 
 /datum/sprite_accessory/hair/emo_fringe
@@ -267,10 +274,12 @@
 
 /datum/sprite_accessory/hair/longsideemo
 	name = "Emo Long Side"
+	icon = 'icons/mob/human_face.dmi'
 	icon_state = "hair_longsideemo"
 
 /datum/sprite_accessory/hair/european
 	name = "European cut"
+	icon = 'icons/mob/human_face.dmi'
 	icon_state = "hair_european"
 
 /datum/sprite_accessory/hair/lowfade
@@ -331,6 +340,7 @@
 
 /datum/sprite_accessory/hair/gentle
 	name = "Gentle (Alt)"
+	icon = 'icons/mob/human_face.dmi'
 	icon_state = "gentle21"
 
 /datum/sprite_accessory/hair/halfbang
@@ -348,6 +358,10 @@
 /datum/sprite_accessory/hair/halfshaved
 	name = "Half-shaved"
 	icon_state = "hair_halfshaved"
+	
+/datum/sprite_accessory/hair/halfshaved2
+	name = "Half-shaved 2"
+	icon_state = "hair_halfshave2"
 
 /datum/sprite_accessory/hair/hedgehog
 	name = "Hedgehog Hair"
@@ -391,6 +405,7 @@
 
 /datum/sprite_accessory/hair/jessica
 	name = "Jessica"
+	icon = 'icons/mob/human_face.dmi'
 	icon_state = "jessica"
 
 /datum/sprite_accessory/hair/keanu
@@ -407,6 +422,7 @@
 
 /datum/sprite_accessory/hair/legion
 	name = "Legion shave"
+	icon = 'icons/mob/human_face.dmi'
 	icon_state = "hair_legion"
 
 /datum/sprite_accessory/hair/long
@@ -535,6 +551,7 @@
 
 /datum/sprite_accessory/hair/pigtail3
 	name = "Pigtails 4"
+	icon = 'icons/mob/human_face.dmi'
 	icon_state = "hair_pigtails3"
 
 /datum/sprite_accessory/hair/pixie
@@ -575,6 +592,7 @@
 
 /datum/sprite_accessory/hair/ponytail8
 	name = "Ponytail 8"
+	icon = 'icons/mob/human_face.dmi'
 	icon_state = "hair_ponytail8"
 
 /datum/sprite_accessory/hair/highponytail
@@ -627,6 +645,7 @@
 
 /datum/sprite_accessory/hair/sabitsuki
 	name = "Sabitsuki"
+	icon = 'icons/mob/human_face.dmi'
 	icon_state = "sabitsuki"
 
 /datum/sprite_accessory/hair/scully
@@ -743,6 +762,7 @@
 
 /datum/sprite_accessory/hair/tribalbraid
 	name = "Tribal Braid"
+	icon = 'icons/mob/human_face.dmi'
 	icon_state = "hair_tribalbraid"
 
 /datum/sprite_accessory/hair/trimmed

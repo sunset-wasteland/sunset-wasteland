@@ -12,8 +12,7 @@
 /datum/crafting_recipe/melee/scrapspear
 	name = "Scrap Spear"
 	result = /obj/item/twohanded/spear/scrapspear
-	reqs = list(/obj/item/crafting/duct_tape = 1,
-				/obj/item/stack/rods = 2,
+	reqs = list(/obj/item/stack/rods = 2,
 				/obj/item/shard = 1)
 	time = 40
 	category = CAT_WEAPONRY
@@ -23,8 +22,7 @@
 	name = "Scrap Shield"
 	result = /obj/item/shield/riot/scrapshield
 	reqs = list(/obj/item/stack/cable_coil = 30,
-				/obj/item/stack/sheet/metal = 10,
-				/obj/item/crafting/wonderglue = 1)
+				/obj/item/stack/sheet/metal = 10)
 	tools = list(TOOL_WELDER)
 	time = 100
 	category = CAT_WEAPONRY
@@ -34,9 +32,7 @@
 	name = "Scrap Towershield"
 	result = /obj/item/shield/riot/tower/scrap
 	reqs = list(/obj/item/stack/cable_coil = 30,
-				/obj/item/stack/sheet/metal = 35,
-				/obj/item/crafting/duct_tape = 1,
-				/obj/item/crafting/wonderglue = 1)
+				/obj/item/stack/sheet/metal = 35)
 	tools = list(TOOL_WELDER)
 	time = 100
 	category = CAT_WEAPONRY
@@ -68,8 +64,7 @@
 	name = "Improvised bayonet"
 	result = /obj/item/melee/onehanded/knife/bayonet
 	time = 300
-	reqs = list(/obj/item/melee/onehanded/knife/hunting = 1,
-				/obj/item/crafting/duct_tape = 1)
+	reqs = list(/obj/item/melee/onehanded/knife/hunting = 1)
 	category = CAT_WEAPONRY
 	subcategory = CAT_MELEE
 
@@ -186,7 +181,7 @@
 	reqs = list(/datum/reagent/napalm = 50,
 				/obj/item/reagent_containers/glass/beaker/large)
 	tools = list(TOOL_WORKBENCH)
-	time = 30
+	time = 5
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
@@ -197,7 +192,7 @@
 	/obj/item/stack/ore/blackpowder = 1
 	)
 	tools = list(TOOL_MSRELOADER)
-	time = 75
+	time = 5
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
@@ -210,7 +205,7 @@
 	/obj/item/stack/ore/blackpowder = 1
 	)
 	tools = list(TOOL_AWORKBENCH)
-	time = 75
+	time = 5
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
@@ -223,7 +218,7 @@
 	/obj/item/stack/ore/blackpowder = 1
 	)
 	tools = list(TOOL_MSRELOADER)
-	time = 75
+	time = 5
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
@@ -237,7 +232,7 @@
 	/obj/item/stack/ore/blackpowder = 1
 	)
 	tools = list(TOOL_MSRELOADER)
-	time = 75
+	time = 5
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
@@ -248,7 +243,7 @@
 	/obj/item/stack/ore/blackpowder = 1
 	)
 	tools = list(TOOL_MSRELOADER)
-	time = 75
+	time = 5
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
@@ -262,7 +257,7 @@
 	/obj/item/stack/ore/blackpowder = 1
 	)
 	tools = list(TOOL_AWORKBENCH)
-	time = 75
+	time = 5
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
@@ -277,7 +272,7 @@
 	/obj/item/stack/ore/blackpowder = 1
 	)
 	tools = list(TOOL_AWORKBENCH)
-	time = 75
+	time = 5
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
@@ -288,7 +283,7 @@
 	/obj/item/stack/ore/blackpowder = 1
 	)
 	tools = list(TOOL_MSRELOADER)
-	time = 75
+	time = 5
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
@@ -301,7 +296,7 @@
 	/obj/item/stack/ore/blackpowder = 1
 	)
 	tools = list(TOOL_AWORKBENCH)
-	time = 75
+	time = 5
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
@@ -312,7 +307,7 @@
 	/datum/reagent/blackpowder = 25
 	)
 	tools = list(TOOL_MSRELOADER)
-	time = 75
+	time = 5
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
@@ -326,7 +321,7 @@
 	/obj/item/stack/ore/blackpowder = 1
 	)
 	tools = list(TOOL_AWORKBENCH)
-	time = 75
+	time = 5
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
@@ -337,7 +332,7 @@
 	/obj/item/stack/ore/blackpowder = 1
 	)
 	tools = list(TOOL_MSRELOADER)
-	time = 75
+	time = 5
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
@@ -345,13 +340,12 @@
 	name = ".44 incendiary-tipped ammo box"
 	result = /obj/item/ammo_box/m44box/incendiary
 	reqs = list(/obj/item/stack/crafting/metalparts = 1,
-	/obj/item/crafting/abraxo = 1,
 	/obj/item/stack/sheet/metal = 5,
 	/datum/reagent/fuel = 10,
 	/obj/item/stack/ore/blackpowder = 1
 	)
 	tools = list(TOOL_AWORKBENCH)
-	time = 75
+	time = 5
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
@@ -362,7 +356,7 @@
 	/obj/item/stack/ore/blackpowder = 1
 	)
 	tools = list(TOOL_MSRELOADER)
-	time = 75
+	time = 5
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
@@ -370,13 +364,12 @@
 	name = ".45 ACP incendiary-tipped ammo box"
 	result = /obj/item/ammo_box/c45/incendiary
 	reqs = list(/obj/item/stack/crafting/metalparts = 1,
-	/obj/item/crafting/abraxo = 1,
 	/obj/item/stack/sheet/metal = 5,
 	/datum/reagent/fuel = 10,
 	/obj/item/stack/ore/blackpowder = 1
 	)
 	tools = list(TOOL_AWORKBENCH)
-	time = 75
+	time = 5
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
@@ -387,7 +380,7 @@
 	/obj/item/stack/ore/blackpowder = 1
 	)
 	tools = list(TOOL_MSRELOADER)
-	time = 75
+	time = 5
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
@@ -400,7 +393,7 @@
 	/obj/item/stack/ore/blackpowder = 1
 	)
 	tools = list(TOOL_AWORKBENCH)
-	time = 75
+	time = 5
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
@@ -413,7 +406,7 @@
 	/obj/item/stack/ore/blackpowder = 1
 	)
 	tools = list(TOOL_AWORKBENCH)
-	time = 75
+	time = 5
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
@@ -428,7 +421,7 @@
 	/obj/item/stack/ore/blackpowder = 1
 	)
 	tools = list(TOOL_AWORKBENCH)
-	time = 100
+	time = 5
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
@@ -441,12 +434,12 @@
 	/obj/item/stack/ore/blackpowder = 1
 	)
 	tools = list(TOOL_AWORKBENCH)
-	time = 100
+	time = 5
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
-
-/datum/crafting_recipe/a556shrap
-	name = "5.56mm micro-shrapnel ammo box"
+/*
+/datum/crafting_recipe/a556uranium
+	name = "5.56mm uranium-tipped ammo box"
 	result = /obj/item/ammo_box/a556/uraniumtipped
 	reqs = list(/obj/item/stack/crafting/metalparts = 1,
 	/obj/item/stack/sheet/mineral/titanium = 2,
@@ -455,9 +448,10 @@
 	/obj/item/stack/ore/blackpowder = 1
 	)
 	tools = list(TOOL_AWORKBENCH)
-	time = 100
+	time = 5
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
+*/
 
 /datum/crafting_recipe/a556
 	name = ".223  handloaded ammo bag"
@@ -466,10 +460,11 @@
 	/obj/item/stack/ore/blackpowder = 1
 	)
 	tools = list(TOOL_MSRELOADER)
-	time = 75
+	time = 5
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
+/*
 /datum/crafting_recipe/a762boxirr
 	name = "7.62 U-235 ammo box"
 	result = /obj/item/ammo_box/a762box/uraniumtipped
@@ -480,10 +475,10 @@
 	/obj/item/stack/ore/blackpowder = 1
 	)
 	tools = list(TOOL_AWORKBENCH)
-	time = 100
+	time = 5
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
-
+*/
 
 /datum/crafting_recipe/a762boxshrap
 	name = "7.62mm micro-shrapnel ammo box"
@@ -494,10 +489,12 @@
 	/obj/item/stack/ore/blackpowder = 1
 	)
 	tools = list(TOOL_AWORKBENCH)
-	time = 100
+	time = 5
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
+
+/*
 /datum/crafting_recipe/a50MGboxuranium
 	name = "12.7mm U-235 ammo box"
 	result = /obj/item/ammo_box/a50MGbox/uraniumtipped
@@ -508,9 +505,10 @@
 	/obj/item/stack/ore/blackpowder = 1
 	)
 	tools = list(TOOL_AWORKBENCH)
-	time = 100
+	time = 5
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
+*/
 
 /datum/crafting_recipe/a50MGboxcontaminated
 	name = "12.7mm contaminated ammo box"
@@ -522,7 +520,7 @@
 	/obj/item/stack/ore/blackpowder = 1
 	)
 	tools = list(TOOL_AWORKBENCH)
-	time = 100
+	time = 5
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
@@ -537,7 +535,7 @@
 	/obj/item/stack/ore/blackpowder = 1
 	)
 	tools = list(TOOL_AWORKBENCH)
-	time = 100
+	time = 5
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
@@ -552,7 +550,7 @@
 	/obj/item/stack/sheet/mineral/titanium = 1,
 	)
 	tools = list(TOOL_AWORKBENCH)
-	time = 100
+	time = 5
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
@@ -581,7 +579,6 @@
 	name = "Zip gun (9mm)"
 	result = /obj/item/gun/ballistic/automatic/hobo/zipgun
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 1,
-				/obj/item/crafting/wonderglue = 1,
 				/obj/item/stack/rods = 1,
 				/obj/item/ammo_casing/c9mm = 5,
 				/obj/item/stack/crafting/metalparts = 1)
@@ -618,7 +615,6 @@
 	result = /obj/item/gun/ballistic/automatic/autopipe
 	reqs = list(/obj/item/ammo_casing/a357 = 30,
 	/obj/item/stack/crafting/metalparts = 2,
-	/obj/item/crafting/duct_tape = 1,
 	/obj/item/stack/sheet/cloth = 1,
 	/obj/item/stack/sheet/mineral/wood = 2)
 	tools = list(TOOL_WORKBENCH)
@@ -786,8 +782,7 @@
 	result = /obj/item/gun/ballistic/automatic/assault_carbine/policerifle
 	reqs = list(/obj/item/stack/sheet/metal = 5,
 				/obj/item/advanced_crafting_components/receiver = 1,
-				/obj/item/stack/crafting/metalparts = 2,
-				/obj/item/crafting/duct_tape =1)
+				/obj/item/stack/crafting/metalparts = 2)
 	time = 120
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
@@ -1037,6 +1032,25 @@
 				/obj/item/advanced_crafting_components/lenses = 1,
 				/obj/item/stack/crafting/metalparts = 3,
 				/obj/item/stack/crafting/electronicparts = 3
+				)
+	tools = list(TOOL_WORKBENCH)
+	time = 120
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+	always_available = FALSE
+
+
+//recharger pistol, followers of the apocalypse
+/datum/crafting_recipe/rechargerpistol
+	name = "recharger pistol"
+	result = /obj/item/gun/energy/laser/wattz/recharger
+	reqs = list(/obj/item/stack/sheet/metal = 5,
+				/obj/item/advanced_crafting_components/lenses = 1,
+				/obj/item/advanced_crafting_components/flux = 1,
+				/obj/item/stack/crafting/metalparts = 1,
+				/obj/item/stack/crafting/electronicparts = 2,
+				/obj/item/stack/sheet/mineral/gold = 5,
+				/obj/item/stack/sheet/mineral/uranium = 8,
 				)
 	tools = list(TOOL_WORKBENCH)
 	time = 120
@@ -1336,7 +1350,6 @@
 				/obj/item/advanced_crafting_components/assembly = 1,
 				/obj/item/advanced_crafting_components/alloys = 1,
 				/obj/item/advanced_crafting_components/receiver = 1,
-				/datum/reagent/blackpowder = 30,
 				/obj/item/stack/crafting/goodparts = 5
 				)
 	tools = list(TOOL_AWORKBENCH)
@@ -1559,7 +1572,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_PARTS
 	always_available = FALSE
-/*
+
 /datum/crafting_recipe/flux
 	name = "Flux capacitor"
 	result = /obj/item/advanced_crafting_components/flux
@@ -1645,7 +1658,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_PARTS
 	always_available = FALSE
-
+/*
 Not implemented due to balance at the moment
 /datum/crafting_recipe/caws
 	name = "h&k caws"

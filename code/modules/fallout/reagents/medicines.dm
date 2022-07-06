@@ -21,6 +21,15 @@
 				to_chat(M, "<span class='warning'>You don't feel so good...</span>")
 	..()
 
+/datum/reagent/medicine/stimpak/on_mob_add(mob/living/M)
+	. = ..()
+	if(M.mind)
+		var/datum/job/job = SSjob.GetJob(M.mind.assigned_role)
+		if(istype(job))
+			switch(job.faction)
+				if(FACTION_LEGION)
+					SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "betrayed caesar", /datum/mood_event/betrayed_caesar, name)
+
 /datum/reagent/medicine/stimpak/on_mob_life(mob/living/carbon/M)
 	if(M.health < 0)					//Functions as epinephrine.
 		M.adjustToxLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, 0)
@@ -38,33 +47,24 @@
 		M.AdjustAllImmobility(-20, 0)
 		M.AdjustUnconscious(-20, 0)
 	if(!M.reagents.has_reagent(/datum/reagent/medicine/healing_powder)) // We don't want these healing items to stack, so we only apply the healing if these chems aren't found.We only check for the less powerful chems, so the least powerful one always heals.
-		M.adjustBruteLoss(-4*REAGENTS_EFFECT_MULTIPLIER)
-		M.adjustFireLoss(-4*REAGENTS_EFFECT_MULTIPLIER)
-		M.AdjustStun(-5*REAGENTS_EFFECT_MULTIPLIER, 0)
-		M.AdjustKnockdown(-5*REAGENTS_EFFECT_MULTIPLIER, 0)
+		M.adjustBruteLoss(-3*REAGENTS_EFFECT_MULTIPLIER)
+		M.adjustFireLoss(-3*REAGENTS_EFFECT_MULTIPLIER)
+		M.AdjustStun(-2*REAGENTS_EFFECT_MULTIPLIER, 0)
+		M.AdjustKnockdown(-2*REAGENTS_EFFECT_MULTIPLIER, 0)
 		M.adjustStaminaLoss(-2*REAGENTS_EFFECT_MULTIPLIER)
 		. = TRUE
-	if(M.nutrition <= NUTRITION_LEVEL_STARVING - 50)
-		M.adjustToxLoss(2*REAGENTS_EFFECT_MULTIPLIER, 0)
-		M.overeatduration = 0
-	if(M.mind)
-		var/datum/job/job = SSjob.GetJob(M.mind.assigned_role)
-		if(istype(job))
-			switch(job.faction)
-				if(FACTION_LEGION)
-					SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "betrayed caesar", /datum/mood_event/betrayed_caesar, name)
 	..()
 
 /datum/reagent/medicine/stimpak/overdose_process(mob/living/M)
 	M.adjustToxLoss(5*REAGENTS_EFFECT_MULTIPLIER)
-	M.adjustOxyLoss(8*REAGENTS_EFFECT_MULTIPLIER)
+	M.adjustOxyLoss(7*REAGENTS_EFFECT_MULTIPLIER)
 	M.drowsyness += 2*REAGENTS_EFFECT_MULTIPLIER
 	M.jitteriness += 3
 	..()
 	. = TRUE
 
 // ---------------------------
-// SUPER STIMPAK FLUID REAGENT
+// IMITATION STIMPAK FLUID REAGENT
 
 /datum/reagent/medicine/stimpakimitation
 	name = "Imitation Stimpak Fluid"
@@ -74,11 +74,14 @@
 	ghoulfriendly = TRUE
 
 /datum/reagent/medicine/stimpakimitation/on_mob_life(mob/living/carbon/M)
-	M.adjustBruteLoss(-2.5*REAGENTS_EFFECT_MULTIPLIER)
-	M.adjustFireLoss(-2.5*REAGENTS_EFFECT_MULTIPLIER)
-	M.AdjustKnockdown(-5*REAGENTS_EFFECT_MULTIPLIER, 0)
-	M.adjustStaminaLoss(-2*REAGENTS_EFFECT_MULTIPLIER)
+	M.adjustBruteLoss(-2*REAGENTS_EFFECT_MULTIPLIER)
+	M.adjustFireLoss(-1.5*REAGENTS_EFFECT_MULTIPLIER)
+	M.AdjustKnockdown(-2*REAGENTS_EFFECT_MULTIPLIER, 0)
+	M.adjustStaminaLoss(-1.7*REAGENTS_EFFECT_MULTIPLIER)
 	..()
+
+// ---------------------------
+// SUPER STIMPAK FLUID REAGENT
 
 /datum/reagent/medicine/super_stimpak
 	name = "super stim chemicals"
@@ -91,8 +94,16 @@
 	addiction_threshold = 16
 	ghoulfriendly = TRUE
 
-datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
-	M.adjust_nutrition(-3)
+/datum/reagent/medicine/super_stimpak/on_mob_add(mob/living/M)
+	. = ..()
+	if(M.mind)
+		var/datum/job/job = SSjob.GetJob(M.mind.assigned_role)
+		if(istype(job))
+			switch(job.faction)
+				if(FACTION_LEGION)
+					SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "betrayed caesar", /datum/mood_event/betrayed_caesar, name)
+
+/datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 	if(M.health < 0)					//Functions as epinephrine.
 		M.adjustToxLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, 0)
 		M.adjustBruteLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, 0)
@@ -109,26 +120,17 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 		M.AdjustAllImmobility(-20, 0)
 		M.AdjustUnconscious(-20, 0)
 	if(!M.reagents.has_reagent(/datum/reagent/medicine/healing_powder/poultice) && !M.reagents.has_reagent(/datum/reagent/medicine/stimpak) && !M.reagents.has_reagent(/datum/reagent/medicine/healing_powder)) // We don't want these healing items to stack, so we only apply the healing if these chems aren't found. We only check for the less powerful chems, so the least powerful one always heals.
-		M.adjustBruteLoss(-8*REAGENTS_EFFECT_MULTIPLIER)
-		M.adjustFireLoss(-8*REAGENTS_EFFECT_MULTIPLIER)
-		M.AdjustStun(-10*REAGENTS_EFFECT_MULTIPLIER, 0)
-		M.AdjustKnockdown(-10*REAGENTS_EFFECT_MULTIPLIER, 0)
-		M.adjustStaminaLoss(-4*REAGENTS_EFFECT_MULTIPLIER)
+		M.adjustBruteLoss(-7*REAGENTS_EFFECT_MULTIPLIER)
+		M.adjustFireLoss(-5*REAGENTS_EFFECT_MULTIPLIER)
+		M.AdjustStun(-5*REAGENTS_EFFECT_MULTIPLIER, 0)
+		M.AdjustKnockdown(-5*REAGENTS_EFFECT_MULTIPLIER, 0)
+		M.adjustStaminaLoss(-3*REAGENTS_EFFECT_MULTIPLIER)
 		. = TRUE
-	if(M.nutrition <= NUTRITION_LEVEL_STARVING - 50)
-		M.adjustToxLoss(3*REAGENTS_EFFECT_MULTIPLIER, 0)
-		M.overeatduration = 0
-	if(M.mind)
-		var/datum/job/job = SSjob.GetJob(M.mind.assigned_role)
-		if(istype(job))
-			switch(job.faction)
-				if(FACTION_LEGION)
-					SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "betrayed caesar", /datum/mood_event/betrayed_caesar, name)
 	..()
 
 /datum/reagent/medicine/super_stimpak/overdose_process(mob/living/M)
 	M.adjustToxLoss(10*REAGENTS_EFFECT_MULTIPLIER)
-	M.adjustOxyLoss(12*REAGENTS_EFFECT_MULTIPLIER)
+	M.adjustOxyLoss(10*REAGENTS_EFFECT_MULTIPLIER)
 	..()
 	. = TRUE
 
@@ -173,7 +175,7 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 	reagent_state = SOLID
 	color =  "#7f7add"
 	taste_description = "heaven."
-	metabolization_rate = 0.7 * REAGENTS_METABOLISM
+	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	overdose_threshold = 30 //hard to OD on, besides if you use too much it kills you when it wears off
 
 /datum/reagent/medicine/berserker_powder/on_mob_life(mob/living/carbon/M)
@@ -192,15 +194,15 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 	..()
 	if(isliving(M))
 		to_chat(M, "<span class='notice'>The veil breaks, and the heavens spill out! The spirits of Mars float down from the heavens, and the deafining beat of the holy legion's wardrums fills your ears. Their ethereal forms are guiding you in battle!</span>")
-		M.maxHealth += 20
-		M.health += 20
+		M.maxHealth += 25
+		M.health += 25
 		ADD_TRAIT(M, TRAIT_IGNOREDAMAGESLOWDOWN, "[type]")
 
 /datum/reagent/medicine/berserker_powder/on_mob_delete(mob/living/carbon/human/M)
 	if(isliving(M))
 		to_chat(M, "<span class='notice'>The veil comes back, blocking out the heavenly visions. You breathe a sigh of relief...</span>")
-		M.maxHealth -= 20
-		M.health -= 20
+		M.maxHealth -= 25
+		M.health -= 25
 		REMOVE_TRAIT(M, TRAIT_IGNOREDAMAGESLOWDOWN, "[type]")
 
 	switch(current_cycle)
@@ -244,8 +246,8 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 	taste_description = "bitterness"
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM //in between powder/stimpaks and poultice/superstims?
 	overdose_threshold = 31
-	var/heal_factor = -3 //Subtractive multiplier if you do not have the perk.
-	var/heal_factor_perk = -5.2 //Multiplier if you have the right perk.
+	var/heal_factor = -5 //Subtractive multiplier if you do not have the perk.
+	var/heal_factor_perk = -5.5 //Multiplier if you have the right perk.
 	ghoulfriendly = TRUE
 
 /datum/reagent/medicine/bitter_drink/on_mob_life(mob/living/carbon/M)
@@ -253,7 +255,7 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 	if(HAS_TRAIT(M, TRAIT_TRIBAL))
 		is_tribal = TRUE
 	var/heal_rate = (is_tribal ? heal_factor_perk : heal_factor) * REAGENTS_EFFECT_MULTIPLIER
-	if(!M.reagents.has_reagent(/datum/reagent/medicine/stimpak) && !M.reagents.has_reagent(/datum/reagent/medicine/healing_powder)&& !M.reagents.has_reagent(/datum/reagent/medicine/super_stimpak))
+	if(!M.reagents.has_reagent(/datum/reagent/medicine/stimpak) && !M.reagents.has_reagent(/datum/reagent/medicine/healing_powder/poultice) && !M.reagents.has_reagent(/datum/reagent/medicine/healing_powder) && !M.reagents.has_reagent(/datum/reagent/medicine/super_stimpak))
 		M.adjustFireLoss(heal_rate)
 		M.adjustBruteLoss(heal_rate)
 		M.adjustToxLoss(heal_rate)
@@ -281,7 +283,7 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	overdose_threshold = 30
 	var/heal_factor = -1.5 //Subtractive multiplier if you do not have the perk.
-	var/heal_factor_perk = -2.9 //Multiplier if you have the right perk.
+	var/heal_factor_perk = -2.2 //Multiplier if you have the right perk.
 	ghoulfriendly = TRUE
 
 /datum/reagent/medicine/healing_powder/on_mob_life(mob/living/carbon/M)
@@ -318,8 +320,8 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 	description = "Restores limb condition and heals rapidly."
 	color = "#C8A5DC"
 	overdose_threshold = 20
-	heal_factor = -2
-	heal_factor_perk = -4 //same as stimpak
+	heal_factor = -3.0
+	heal_factor_perk = -3.5
 
 // ---------------------------
 // RAD-X REAGENT
@@ -379,14 +381,14 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 	..()
 	if(isliving(M))
 		to_chat(M, "<span class='notice'>You feel tougher, able to shrug off pain more easily.</span>")
-		M.maxHealth += 70
-		M.health += 70
+		M.maxHealth += 50
+		M.health += 50
 
 /datum/reagent/medicine/medx/on_mob_delete(mob/living/carbon/human/M)
 	if(isliving(M))
 		to_chat(M, "<span class='notice'>You feel as vulnerable to pain as a normal person.</span>")
-		M.maxHealth -= 70
-		M.health -= 70
+		M.maxHealth -= 50
+		M.health -= 50
 	switch(current_cycle)
 		if(1 to 40)
 			M.confused += 10

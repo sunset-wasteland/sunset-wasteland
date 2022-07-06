@@ -49,18 +49,13 @@ Uranium, Contaminated
 
 /obj/item/projectile/bullet/c22/shock
 	name = ".22lr shock bullet"
-	damage = -8 //about -50% damage
+	damage = -4 //about -25% damage
 	wound_bonus = 0
 	sharpness = SHARP_NONE
-	var/energy_damage = 5
 
 /obj/item/projectile/bullet/c22/shock/on_hit(atom/target, blocked = FALSE)
 	..()
-	target.emp_act(5)//5 severity is very, very low
-	if(blocked != 100 && isliving(target))
-		var/mob/living/L = target
-		L.electrocute_act(energy_damage, "shock bullet", 1, SHOCK_NOGLOVES | SHOCK_NOSTUN) //this might be spammy todo: check
-		//if it is, use O.take_damage(energy_damage, BURN, "energy", FALSE)
+	target.emp_act(15)//5 severity is very, very low
 
 /////////////////
 // .38 SPECIAL //
@@ -206,8 +201,9 @@ Uranium, Contaminated
 	. = ..()
 	if(iscarbon(target))
 		var/mob/living/carbon/M = target
-		M.adjust_fire_stacks(fire_stacks)
-		M.IgniteMob()
+		if(M.fire_stacks < 1)
+			M.adjust_fire_stacks(fire_stacks - M.fire_stacks)
+			M.IgniteMob()
 
 
 /////////////
@@ -245,8 +241,9 @@ Uranium, Contaminated
 	. = ..()
 	if(iscarbon(target))
 		var/mob/living/carbon/M = target
-		M.adjust_fire_stacks(fire_stacks)
-		M.IgniteMob()
+		if(M.fire_stacks < 1)
+			M.adjust_fire_stacks(fire_stacks - M.fire_stacks)
+			M.IgniteMob()
 
 /////////////////
 // .357 MAGNUM //
@@ -296,8 +293,9 @@ Uranium, Contaminated
 	. = ..()
 	if(iscarbon(target))
 		var/mob/living/carbon/M = target
-		M.adjust_fire_stacks(fire_stacks)
-		M.IgniteMob()
+		if(M.fire_stacks < 2)
+			M.adjust_fire_stacks(fire_stacks - M.fire_stacks)
+			M.IgniteMob()
 
 /obj/item/projectile/bullet/a357/improv
 	name = "poor .357 bullet"
@@ -412,13 +410,13 @@ Uranium, Contaminated
 		S.set_up(src.reagents, smoke_radius, location, 0)
 		S.start()
 
-
+/*
 /obj/item/projectile/bullet/mm14/uraniumtipped
 	name = "14mm uranium-tipped bullet"
 	damage = -5
 	armour_penetration = 0.1
 	irradiate = 300
-
+*/
 
 
 

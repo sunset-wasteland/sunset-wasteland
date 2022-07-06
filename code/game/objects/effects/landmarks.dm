@@ -1,4 +1,4 @@
-/obj/effect/landmark
+obj/effect/landmark
 	name = "landmark"
 	icon = 'icons/effects/landmarks_static.dmi'
 	icon_state = "x2"
@@ -644,11 +644,11 @@ obj/effect/landmark/start/f13/ncrlogisticsofficer
 	name = "Legion Slavemaster"
 
 /obj/effect/landmark/start/f13/explorer
-	name = "Legion Explorer"
+	name = "Legion Scout"
 	icon_state = "Legionary"
 
 /obj/effect/landmark/start/f13/venator
-	name = "Legion Venator"
+	name = "Legion Explorer"
 	icon_state = "Legionary"
 
 /obj/effect/landmark/start/f13/auxilia
@@ -747,7 +747,7 @@ obj/effect/landmark/start/f13/ncrlogisticsofficer
 
 /obj/effect/landmark/start/f13/mayor
 	name = "Mayor"
-	icon_state = "banker"
+	icon_state = "Banker"
 
 /obj/effect/landmark/start/f13/secretary
 	name = "Secretary"
@@ -803,10 +803,6 @@ obj/effect/landmark/start/f13/ncrlogisticsofficer
 	name = "Outlaw"
 	icon_state = "Raider"
 
-/obj/effect/landmark/start/f13/pusher
-	name = "Great Khan"
-	icon_state = "Pusher"
-
 /obj/effect/landmark/start/f13/enforcer
 	name = "Den Mob Enforcer"
 	icon_state = "Enforcer"
@@ -843,6 +839,10 @@ obj/effect/landmark/start/f13/ncrlogisticsofficer
 	name = "Enclave Sergeant"
 	icon_state = "ussgt"
 
+/obj/effect/landmark/start/f13/usai
+	name = "Enclave Armored Infantry"
+	icon_state = "ussgt"
+
 /obj/effect/landmark/start/f13/usspecialist
 	name = "Enclave Specialist"
 	icon_state = "usoffduty"
@@ -853,11 +853,12 @@ obj/effect/landmark/start/f13/ncrlogisticsofficer
 
 /obj/effect/landmark/start/f13/usgysgt
 	name = "Enclave Gunnery Sergeant"
+	icon_state = "usgunnery"
 
 
 /obj/effect/landmark/start/f13/uslightduty
-    name = "Enclave Bunker Duty"
-    icon_state = "usoffduty"
+	name = "Enclave Bunker Duty"
+	icon_state = "usoffduty"
 //Tribal
 
 /obj/effect/landmark/start/f13/tribal
@@ -912,3 +913,47 @@ obj/effect/landmark/start/f13/ncrlogisticsofficer
 
 /obj/effect/landmark/start/f13/followersscientist
 	name = "Followers Scientist"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/obj/effect/landmark/start/f13/noyan
+	name = "Noyan"
+	icon_state = "Pusher"
+
+/obj/effect/landmark/start/f13/steward
+	name = "Steward"
+	icon_state = "Pusher"
+
+/obj/effect/landmark/start/f13/kheshig
+	name = "Kheshig"
+	icon_state = "Pusher"
+
+/obj/effect/landmark/start/f13/khorchin
+	name = "Khorchin"
+	icon_state = "Pusher"
+
+/obj/effect/landmark/start/f13/kipchak
+	name = "Kipchak"
+	icon_state = "Pusher"
+
+/obj/effect/landmark/start/f13/mangudai
+	name = "Mangudai"
+	icon_state = "Pusher"

@@ -314,6 +314,7 @@
 /obj/item/gun/energy/laser/auto
 	name = "compact autolaser"
 	desc = "A beefed-up laser pistol manufactured by West Tek, reinforced to allow it to withstand the thermal load of sustained fire."
+	icon = 'icons/fallout/objects/guns/energy.dmi'
 	icon_state = "protolaser"
 	item_state = "laser"
 	w_class = WEIGHT_CLASS_NORMAL
@@ -330,7 +331,7 @@
 /obj/item/gun/energy/laser/auto/oasis
 	name = "autoshock tesla pistol"
 	desc = "This pistol has been unwisely modified by the OPD to fire bolts of electricty. And they beheld Satan as he fell from heaven like lightning."
-	ammo_type =  list(/obj/item/ammo_casing/energy/laser/autolaser/shock) //8dmg + 5 Stamina, flagged as "energy" so very few armors can reduce it below 5-6 dmg, has a very high bare wound bonus, so anyone with no armor on will be crippled
+	ammo_type =  list(/obj/item/ammo_casing/energy/laser/autolaser/shock) //8dmg + 10 Stamina, flagged as "energy" so very few armors can reduce it below 5-6 dmg, has a very high bare wound bonus, so anyone with no armor on will be crippled
 	slowdown = 0.35
 	weapon_weight = WEAPON_MEDIUM //DO NOT DUAL WIELD
 
@@ -408,7 +409,7 @@
 	scope_y_offset = 20
 	equipsound = 'sound/f13weapons/equipsounds/aer9equip.ogg'
 
-/obj/item/gun/energy/laser/aer9/oasis
+/obj/item/gun/energy/laser/aer9/focused
 	name = "\improper Hot-wired AER9 laser rifle"
 	desc = "A sturdy pre-war laser rifle. Emits beams of concentrated light to kill targets. This one has been jury-rigged against common sense to dump more power into its shots."
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/lasgun/hitscan/focused)
@@ -557,6 +558,9 @@
 	w_class = WEIGHT_CLASS_HUGE
 	var/obj/item/gun/energy/minigun/gun
 	var/armed = 0 //whether the gun is attached, 0 is attached, 1 is the gun is wielded.
+	var/overheat = 0
+	var/overheat_max = 70
+	var/heat_diffusion = 1.5 //How much heat is lost per tick
 
 /obj/item/minigunpack/Initialize()
 	. = ..()
@@ -566,6 +570,9 @@
 /obj/item/minigunpack/Destroy()
 	STOP_PROCESSING(SSobj, src)
 	return ..()
+
+/obj/item/minigunpack/process()
+	overheat = max(0, overheat - heat_diffusion)
 
 /obj/item/minigunpack/on_attack_hand(mob/living/carbon/user)
 	if(src.loc == user)
@@ -670,6 +677,14 @@
 		ammo_pack.attach_gun(user)
 	else
 		qdel(src)
+
+/obj/item/gun/energy/minigun/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0, stam_cost = 0)
+	if(ammo_pack)
+		if(ammo_pack.overheat < ammo_pack.overheat_max)
+			ammo_pack.overheat += burst_size
+			..()
+		else
+			to_chat(user, "The gun's heat sensor locked the trigger to prevent barrel damage.")
 
 /obj/item/gun/energy/minigun/afterattack(atom/target, mob/living/user, flag, params)
 	if(!ammo_pack || ammo_pack.loc != user)

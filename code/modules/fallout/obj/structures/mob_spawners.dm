@@ -25,9 +25,10 @@
 /obj/structure/nest/Initialize()
 	. = ..()
 	GLOB.mob_nests += src
-	
+
 /obj/structure/nest/Destroy()
 	GLOB.mob_nests -= src
+	playsound(src, 'sound/effects/break_stone.ogg', 100, 1)
 	visible_message("[src] collapses!")
 	. = ..()
 
@@ -41,7 +42,8 @@
 	if(spawned_mobs.len >= max_mobs)
 		return FALSE
 	var/mob/living/carbon/human/H = locate(/mob/living/carbon/human) in range(radius, get_turf(src))
-	if(!H?.client)
+	var/obj/mecha/M = locate(/obj/mecha) in range(radius, get_turf(src))
+	if(!H?.client && !M?.occupant)
 		return FALSE
 	toggle_fire(FALSE)
 	addtimer(CALLBACK(src, .proc/toggle_fire), spawn_time)
@@ -57,7 +59,7 @@
 		if(spawned_mobs.len >= max_mobs)
 			Destroy()
 	if(spawn_once) //if the subtype has TRUE, call destroy() after we spawn our first mob
-		Destroy()
+		qdel(src)
 		return
 
 
@@ -65,7 +67,7 @@
 	can_fire = fire
 
 /obj/structure/nest/attackby(obj/item/I, mob/living/user, params)
-	if(user.a_intent == INTENT_HARM)	
+	if(user.a_intent == INTENT_HARM)
 		to_chat(user, "<span class='warning'>You feel it is impossible to destroy this. Best to cover it up with something.</span>")
 		return
 
@@ -83,7 +85,7 @@
 		if(!do_after(user, 5 SECONDS, FALSE, src))
 			to_chat(user, "<span class='warning'>You must stand still to build the cover!</span>")
 			return
-		R.use(4)		
+		R.use(4)
 
 		if(!covered)
 			new /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low(src.loc)
@@ -95,6 +97,7 @@
 
 		var/image/rod_image = image(icon, icon_state = "rods")
 		add_overlay(rod_image)
+		QDEL_IN(src, 2 MINUTES)
 		return
 
 	if(istype(I, /obj/item/stack/sheet/mineral/wood))
@@ -111,7 +114,7 @@
 		if(!do_after(user, 5 SECONDS, FALSE, src))
 			to_chat(user, "<span class='warning'>You must stand still to build the cover!</span>")
 			return
-		W.use(4)		
+		W.use(4)
 
 		if(!covered)
 			new /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low(src.loc)
@@ -121,35 +124,19 @@
 		covertype = /obj/item/stack/sheet/mineral/wood
 		var/image/plank_image = image(icon, icon_state = "planks")
 		add_overlay(plank_image)
-
-		
+		QDEL_IN(src, 2 MINUTES)
 		return
-
-	/*if(istype(I, /obj/item/crowbar))
-		var/turf/T = get_turf(src)
-		if(!covered)
-			to_chat(user, "<span class='warning'>The hole is not covered!</span>")
-			return
-		if(!do_after(user, 10 SECONDS, FALSE, src))
-			to_chat(user, "<span class='warning'>You must stand still to remove the cover!</span>")
-			return
-		for(var/i in 1 to 4)
-			new covertype(T)
-		to_chat(user, "<span class='notice'>You cover the hole!</span>")
-		covertype = null
-		covered = FALSE
-		cut_overlays()*/
 
 //the nests themselves
 /*
 	var/list/cazadors 	= list(/mob/living/simple_animal/hostile/cazador = 5,
 					/mob/living/simple_animal/hostile/cazador/young = 3,)
 
-	var/list/ghouls 	= list(/mob/living/simple_animal/hostile/ghoul = 5, 
-					/mob/living/simple_animal/hostile/ghoul/reaver = 3, 
+	var/list/ghouls 	= list(/mob/living/simple_animal/hostile/ghoul = 5,
+					/mob/living/simple_animal/hostile/ghoul/reaver = 3,
 					/mob/living/simple_animal/hostile/ghoul/glowing = 1)
 
-	var/list/deathclaw 	= list(/mob/living/simple_animal/hostile/deathclaw = 19, 
+	var/list/deathclaw 	= list(/mob/living/simple_animal/hostile/deathclaw = 19,
 					/mob/living/simple_animal/hostile/deathclaw/mother = 1)
 
 	var/list/scorpion	= list(/mob/living/simple_animal/hostile/radscorpion = 1,
@@ -167,7 +154,7 @@
 	var/list/mirelurk	= list(/mob/living/simple_animal/hostile/mirelurk = 2,
 					/mob/living/simple_animal/hostile/mirelurk/hunter = 1,
 					/mob/living/simple_animal/hostile/mirelurk/baby = 5)
-	
+
 	var/list/raider		= list(/mob/living/simple_animal/hostile/raider = 5,
 					/mob/living/simple_animal/hostile/raider/firefighter = 2,
 					/mob/living/simple_animal/hostile/raider/baseball = 2,
@@ -187,15 +174,14 @@
 /obj/structure/nest/ghoul
 	name = "ghoul nest"
 	max_mobs = 5
-	mob_types = list(/mob/living/simple_animal/hostile/ghoul = 5, 
-					/mob/living/simple_animal/hostile/ghoul/reaver = 3, 
+	mob_types = list(/mob/living/simple_animal/hostile/ghoul = 5,
+					/mob/living/simple_animal/hostile/ghoul/reaver = 3,
 					/mob/living/simple_animal/hostile/ghoul/glowing = 1)
 
 /obj/structure/nest/deathclaw
 	name = "deathclaw nest"
 	max_mobs = 1
 	spawn_once = TRUE
-	spawn_time = 60 SECONDS
 	mob_types = list(/mob/living/simple_animal/hostile/deathclaw = 5)
 
 /obj/structure/nest/deathclaw/mother
@@ -206,10 +192,14 @@
 
 /obj/structure/nest/scorpion
 	name = "scorpion nest"
-	spawn_time = 40 SECONDS
 	max_mobs = 2
 	mob_types = list(/mob/living/simple_animal/hostile/radscorpion = 1,
 					/mob/living/simple_animal/hostile/radscorpion/black = 1)
+
+/obj/structure/nest/ant
+	name = "ant tunnel"
+	max_mobs = 5
+	mob_types = list(/mob/living/simple_animal/hostile/giantant = 5)
 
 /obj/structure/nest/radroach
 	name = "radroach nest"
@@ -217,14 +207,13 @@
 	mob_types = list(/mob/living/simple_animal/hostile/radroach = 1)
 
 /obj/structure/nest/fireant
-	name = "fireant nest"
+	name = "fireant tunnel"
 	max_mobs = 5
 	mob_types = list(/mob/living/simple_animal/hostile/fireant = 1,
 					/mob/living/simple_animal/hostile/giantant = 1)
 
 /obj/structure/nest/wanamingo
 	name = "wanamingo nest"
-	spawn_time = 40 SECONDS
 	max_mobs = 2
 	mob_types = list(/mob/living/simple_animal/hostile/alien = 1)
 
@@ -290,11 +279,10 @@
 	max_mobs = 3
 	icon_state = "scanner_modified"
 	mob_types = list(/mob/living/simple_animal/hostile/securitron = 5)
-					
+
 /obj/structure/nest/assaultron
 	name = "assaultron pod"
 	desc = "An old assaultron containment pod system. This one looks like it is connected to a storage system underground."
-	spawn_time = 40 SECONDS
 	max_mobs = 2
 	icon_state = "scanner_modified"
 	mob_types = list(/mob/living/simple_animal/hostile/handy/assaultron = 5)
@@ -303,12 +291,20 @@
 	name = "cazador nest"
 	max_mobs = 4
 	mob_types = list(/mob/living/simple_animal/hostile/cazador = 5,
-					/mob/living/simple_animal/hostile/cazador/young = 3,)
+					/mob/living/simple_animal/hostile/cazador/young = 3)
 
 /obj/structure/nest/gecko
 	name = "gecko nest"
 	max_mobs = 5
 	mob_types = list(/mob/living/simple_animal/hostile/gecko = 5)
+
+/obj/structure/nest/spider
+	name = "spider mound"
+	max_mobs = 5
+	mob_types = list(/mob/living/simple_animal/hostile/poison/giant_spider = 5,
+					/mob/living/simple_animal/hostile/poison/giant_spider/hunter = 2,
+					/mob/living/simple_animal/hostile/poison/giant_spider/nurse = 2)
+
 
 /obj/structure/nest/wolf
 	name = "wolf den"
@@ -317,10 +313,14 @@
 
 /obj/structure/nest/supermutant
 	name = "supermutant den"
-	spawn_time = 30 SECONDS
 	max_mobs = 2
 	mob_types = list(/mob/living/simple_animal/hostile/supermutant/meleemutant = 5,
 					/mob/living/simple_animal/hostile/supermutant/rangedmutant = 2)
+
+/obj/structure/nest/centaur
+	name = "centaur den"
+	max_mobs = 5
+	mob_types = list(/mob/living/simple_animal/hostile/centaur = 5)
 
 /obj/structure/nest/supermutant/melee
 	mob_types = list(/mob/living/simple_animal/hostile/supermutant/meleemutant = 5)
@@ -343,8 +343,8 @@
 /obj/structure/nest/zombieghoul
 	name = "ravenous ghoul nest"
 	max_mobs = 5
-	mob_types = list(/mob/living/simple_animal/hostile/ghoul/zombie = 5, 
-					/mob/living/simple_animal/hostile/ghoul/zombie/reaver = 3, 
+	mob_types = list(/mob/living/simple_animal/hostile/ghoul/zombie = 5,
+					/mob/living/simple_animal/hostile/ghoul/zombie/reaver = 3,
 					/mob/living/simple_animal/hostile/ghoul/zombie/glowing = 1)
 
 /obj/structure/nest/tunneler
@@ -352,4 +352,4 @@
 	desc = "A tunnel which leads to an underground network of even more tunnels, made by the dangerous tunnelers."
 	max_mobs = 5
 	mob_types = list(/mob/living/simple_animal/hostile/trog/tunneler = 1)
-	spawn_time = 20 SECONDS
+

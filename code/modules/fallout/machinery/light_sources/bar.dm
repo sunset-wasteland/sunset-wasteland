@@ -92,8 +92,27 @@
 	light_color = LIGHT_COLOR_PINK
 
 /obj/machinery/light/sign/heaven
-	name = "Heaven's Night sign"
+	name = "Heaven's Night"
 	icon_state = "heaven"
 	base_state = "heaven"
-	desc = "A neon sign cast in relaxing vibes."
+	desc = "A neon sign advertising Heaven's Night in a relaxing hue."
+	icon = 'icons/fallout/objects/structures/heaven.dmi'
 	light_color = LIGHT_COLOR_PINK
+
+/obj/machinery/light/sign/crimson
+	name = "Crimson Caravan"
+	icon_state = "crimson"
+	base_state = "crimson"
+	desc = "A lit sign advertising Crimson Caravan - the wasteland trading conglomerate."
+	icon = 'icons/fallout/objects/structures/crimson.dmi'
+	brightness = 3
+	light_color = LIGHT_COLOR_RED
+
+/obj/machinery/light/sign/shed
+	name = "Trading Shed"
+	icon_state = "shed"
+	base_state = "shed"
+	desc = "A crude plate sign advertising Trading Shed - a shack of automated vendors."
+	icon = 'icons/fallout/objects/structures/shed.dmi'
+	brightness = 3
+	light_color = LIGHT_COLOR_YELLOW

@@ -128,7 +128,7 @@
 /obj/item/book/granter/trait/onlearned(mob/living/user)
 	..()
 	if(oneuse)
-		user.visible_message("<span class='caution'>[src] is useless to you now. You throw the book away.</span>")
+		to_chat(user, "<span class='caution'>[src] is useless to you now. You throw the book away.</span>")
 		qdel(src)
 
 /obj/item/book/granter/action/drink_fling
@@ -545,7 +545,7 @@
 /obj/item/book/granter/crafting_recipe/onlearned(mob/living/user)
 	..()
 	if(oneuse)
-		user.visible_message("<span class='caution'>[src] is useless to you now. You throw it away.</span>")
+		to_chat(user, "<span class='caution'>[src] is useless to you now. You throw it away.</span>")
 		qdel(src)
 
 
@@ -619,7 +619,7 @@
 	icon_state = "gab4"
 	oneuse = TRUE
 	remarks = list("Always keep your gun well lubricated...", "Keep your barrel free of grime...", "Perfect fitment is the key to a good firearm...", "Maintain a proper trigger pull length...", "Keep your sights zeroed to proper range...")
-	//crafting_recipe_types = list(/datum/crafting_recipe/flux, /datum/crafting_recipe/lenses, /datum/crafting_recipe/conductors, /datum/crafting_recipe/receiver, /datum/crafting_recipe/assembly, /datum/crafting_recipe/alloys)
+	crafting_recipe_types = list(/datum/crafting_recipe/flux, /datum/crafting_recipe/lenses, /datum/crafting_recipe/conductors, /datum/crafting_recipe/receiver, /datum/crafting_recipe/assembly, /datum/crafting_recipe/alloys)
 
 /obj/item/book/granter/crafting_recipe/scav_one
 	name = "SCAV! Issue 1"
@@ -1135,8 +1135,3 @@
 	name = "Bone Dancer traditions"
 	crafting_recipe_types = list(/datum/crafting_recipe/tribalwar/bone/lightarmour,/datum/crafting_recipe/tribalwar/bone/armour, /datum/crafting_recipe/tribalwar/bone/heavyarmour,
 								/datum/crafting_recipe/tribalwar/bone/garb,/datum/crafting_recipe/tribalwar/bone/helmet)
-								
-								
-								
-								
-								

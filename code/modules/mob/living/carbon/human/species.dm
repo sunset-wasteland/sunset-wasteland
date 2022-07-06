@@ -69,6 +69,10 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	var/damage_overlay_type = "human" //what kind of damage overlays (if any) appear on our species when wounded?
 	var/fixed_mut_color = "" //to use MUTCOLOR with a fixed color that's independent of dna.feature["mcolor"]
 	var/inert_mutation = DWARFISM
+
+	var/sharp_blunt_mod = 1 //the damage modifier something does when blunt, which is everything not a projectile or a knife
+	var/sharp_edged_mod = 1 //the damage modifier something does when edged, typically used by knives and the like
+	var/sharp_pointy_mod = 1 //the damage modifier something does when pointy, typically used by bullets
 	var/list/special_step_sounds //Sounds to override barefeet walkng
 	var/grab_sound //Special sound for grabbing
 	var/datum/outfit/outfit_important_for_life // A path to an outfit that is important for species life e.g. plasmaman outfit
@@ -116,7 +120,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 
 	//the ids you can use for your species, if empty, it means default only and not changeable
 	var/list/allowed_limb_ids
-	
+
 	// simple laugh sound overrides
 	/// This is used for every gender other than female
 	var/laugh_male = list('sound/voice/human/manlaugh1.ogg', 'sound/voice/human/manlaugh2.ogg')
@@ -520,6 +524,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 
 	if(!hair_hidden || dynamic_hair_suffix)
 		var/mutable_appearance/hair_overlay = mutable_appearance(layer = -HAIR_LAYER)
+		var/mutable_appearance/gradient_overlay = mutable_appearance(layer = -HAIR_LAYER) // Sunset ADD: Gradient hairs!
 		if(!hair_hidden && !H.getorgan(/obj/item/organ/brain)) //Applies the debrained overlay if there is no brain
 			if(!(NOBLOOD in species_traits))
 				hair_overlay.icon = 'icons/mob/hair.dmi'
@@ -563,8 +568,22 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 					hair_overlay.pixel_x += H.dna.species.offset_features[OFFSET_HAIR][1]
 					hair_overlay.pixel_y += H.dna.species.offset_features[OFFSET_HAIR][2]
 
+// Sunset ADD: Gradient hair rendering!
+				var/icon/grad_s = null // temporary icon to apply to the MA
+				var/grad_style_ref = GLOB.hair_gradients[H.dna.features["grad_style"]]
+				if(grad_style_ref)
+					grad_s = new/icon("icon" = 'modular_citadel/icons/mob/hair_gradients.dmi', "icon_state" = grad_style_ref)
+					var/icon/hair_sprite = new/icon("icon" = hair_file, "icon_state" = hair_state)
+					grad_s.Blend(hair_sprite, ICON_AND)
+					grad_s.Blend("#[H.dna.features["grad_color"]]", ICON_MULTIPLY)
+
+				if(!isnull(grad_s))
+					gradient_overlay.icon = grad_s
+				// Sunset ADD: End
+
 		if(hair_overlay.icon)
 			standing += hair_overlay
+			standing += gradient_overlay // Sunset Add: Actual MA which renders onto the sprite!
 
 	if(standing.len)
 		H.overlays_standing[HAIR_LAYER] = standing
@@ -1910,6 +1929,21 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	if(!forced && hit_percent <= 0)
 		return 0
 
+	var/defenseThreshold = H.getArmorDefenseThreshold(def_zone, damagetype)
+	damage = max(0, damage-defenseThreshold)
+
+	if(damage == 0)
+		return 0
+
+	var/sharp_mod = 1 //this line of code here is meant for species to have various damage modifiers to their brute intake based on the flag of the weapon.
+	switch(sharpness)
+		if(SHARP_NONE)
+			sharp_mod = sharp_blunt_mod
+		if(SHARP_EDGED)
+			sharp_mod = sharp_edged_mod
+		if(SHARP_POINTY)
+			sharp_mod = sharp_pointy_mod
+
 	var/obj/item/bodypart/BP = null
 	if(!spread_damage)
 		if(isbodypart(def_zone))
@@ -1929,7 +1963,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	switch(damagetype)
 		if(BRUTE)
 			H.damageoverlaytemp = 20
-			var/damage_amount = forced ? damage : damage * hit_percent * brutemod * H.physiology.brute_mod
+			var/damage_amount = forced ? damage : damage * hit_percent * brutemod * H.physiology.brute_mod * sharp_mod
 			if(BP)
 				if(BP.receive_damage(damage_amount, 0, wound_bonus = wound_bonus, bare_wound_bonus = bare_wound_bonus, sharpness = sharpness))
 					H.update_damage_overlays()

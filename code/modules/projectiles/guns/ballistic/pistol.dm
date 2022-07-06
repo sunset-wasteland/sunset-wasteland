@@ -9,7 +9,7 @@
 
 
 /obj/item/gun/ballistic/automatic/pistol
-	slowdown = 0.1
+	slowdown = 0
 	name = "pistol template"
 	desc = "should not be here. Bugreport."
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
@@ -23,7 +23,7 @@
 	mag_type = /obj/item/ammo_box/magazine/m10mm_adv/simple
 	spread = 2
 	burst_size = 1
-	fire_delay = 4
+	fire_delay = 0
 	select = FALSE
 	automatic_burst_overlay = FALSE
 	can_automatic = FALSE
@@ -72,7 +72,7 @@
 	icon_state = "n99"
 	mag_type = /obj/item/ammo_box/magazine/m10mm_adv/simple
 	extra_damage = 22
-	fire_delay = 4
+	fire_delay = 1
 	recoil = 0.05
 	can_attachments = TRUE
 	can_automatic = TRUE
@@ -110,13 +110,40 @@
 	desc = "Chinese military sidearm at the time of the Great War. The ones around are old and worn, but somewhat popular due to the long barrel and rechambered in 10mm after the original ammo ran dry decades ago."
 	icon_state = "chinapistol"
 	mag_type = /obj/item/ammo_box/magazine/m10mm_adv/simple
-	fire_delay = 5
+	fire_delay = 1
 	extra_damage = 24
 	recoil = 0.1
 	spread = 3
 	can_suppress = FALSE
 	fire_sound = 'sound/f13weapons/10mm_fire_02.ogg'
 
+/obj/item/gun/ballistic/automatic/pistol/type17/strelle
+	name = "Type 17 Strelle"
+	desc = "Modification of the classic Chinese military sidearm with select fire mechanism and pearl finishing. <span class='warning'>'Zhizn' korotká.'</span>"
+	icon_state = "chinapistols"
+	actions_types = list(/datum/action/item_action/toggle_firemode)
+	automatic_burst_overlay = TRUE
+	can_attachments = FALSE
+	semi_auto = FALSE
+
+/obj/item/gun/ballistic/automatic/pistol/type17/strelle/burst_select()
+	var/mob/living/carbon/human/user = usr
+	switch(select)
+		if(0)
+			select += 1
+			burst_size = 2
+			spread = 9
+			recoil = 0.1
+			to_chat(user, "<span class='notice'>You switch to automatic fire.</span>")
+		if(1)
+			select = 0
+			burst_size = 1
+			spread = 1
+			recoil = 0
+			to_chat(user, "<span class='notice'>You switch to semi-auto.</span>")
+	playsound(user, 'sound/weapons/empty.ogg', 100, 1)
+	update_icon()
+	return
 
 //Browning Hi-power						Keywords: 9mm, Semi-auto
 /obj/item/gun/ballistic/automatic/pistol/ninemil
@@ -127,7 +154,6 @@
 	weapon_weight = WEAPON_LIGHT
 	w_class = WEIGHT_CLASS_SMALL
 	extra_damage = 20
-	fire_delay = 2.5
 	can_attachments = TRUE
 	suppressor_state = "pistol_suppressor"
 	suppressor_x_offset = 30
@@ -153,7 +179,6 @@
 	weapon_weight = WEAPON_LIGHT
 	mag_type = /obj/item/ammo_box/magazine/m9mm
 	extra_damage = 19
-	fire_delay = 3.25
 	can_attachments = TRUE
 	suppressor_state = "pistol_suppressor"
 	suppressor_x_offset = 30
@@ -167,7 +192,6 @@
 	desc = "One of the more common 9mm pistols, the Beretta is popular due to its reliability, 15 round magazine and good looks."
 	icon_state = "beretta"
 	mag_type = /obj/item/ammo_box/magazine/m9mmds
-	fire_delay = 3.5
 	weapon_weight = WEAPON_LIGHT
 	extra_damage = 20
 	spread = 1
@@ -182,6 +206,7 @@
 	name = "Beretta M93R"
 	desc = "A rare select fire variant of the M93R."
 	icon_state = "m93r"
+	fire_delay = 2
 	burst_size = 2
 	burst_shot_delay = 2.5
 	spread = 9
@@ -221,6 +246,8 @@
 	icon_state = "m1911"
 	item_state = "pistolchrome"
 	w_class = WEIGHT_CLASS_NORMAL
+	fire_delay = 2
+	slowdown = 0.05
 	mag_type = /obj/item/ammo_box/magazine/m45
 	extra_damage = 30
 	recoil = 0.15
@@ -236,7 +263,7 @@
 	desc = "A well-maintained stainless-steel frame 1911, with genuine wooden grips."
 	icon_state = "m1911_custom"
 	recoil = 0.05
-	fire_delay = 4
+	fire_delay = 2
 
 
 //Mk. 23								Keywords: .45 ACP, Semi-auto, Long barrel (lasersight), 12 round magazine, Flashlight
@@ -245,7 +272,8 @@
 	desc = "A very tactical pistol chambered in .45 ACP with a built in laser sight and attachment point for a seclite."
 	icon_state = "mk23"
 	mag_type = /obj/item/ammo_box/magazine/m45exp
-	fire_delay = 3.5
+	fire_delay = 2
+	slowdown = 0.07
 	extra_damage = 34
 	spread = 1
 	can_flashlight = TRUE
@@ -271,7 +299,7 @@
 	icon_state = "deagle"
 	item_state = "deagle"
 	mag_type = /obj/item/ammo_box/magazine/m44
-	fire_delay = 4
+	fire_delay = 3
 	force = 15
 	extra_damage = 38
 	extra_penetration = 0.05
@@ -288,6 +316,7 @@
 	icon_state = "elcapitan"
 	item_state = "deagle"
 	mag_type = /obj/item/ammo_box/magazine/m14mm
+	fire_delay = 0
 	extra_damage = 45
 	extra_penetration = 0.15
 	fire_sound = 'sound/f13weapons/magnum_fire.ogg'
@@ -299,6 +328,7 @@
 	icon_state = "automag"
 	item_state = "deagle"
 	mag_type = /obj/item/ammo_box/magazine/automag
+	fire_delay = 4
 	extra_damage = 41
 	extra_speed = 300
 	recoil = 0.2

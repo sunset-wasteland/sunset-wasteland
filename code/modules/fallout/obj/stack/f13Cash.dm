@@ -74,6 +74,10 @@
 /obj/item/stack/f13Cash/caps
 	merge_type = /obj/item/stack/f13Cash/caps
 
+/obj/item/stack/f13Cash/caps/onezerozero
+	amount = 100
+	merge_type = /obj/item/stack/f13Cash/caps
+
 /obj/item/stack/f13Cash/caps/fivezerozero
 	amount = 500
 	merge_type = /obj/item/stack/f13Cash/caps
@@ -276,6 +280,10 @@
 /obj/item/stack/f13Cash/random/ncr/ncrpay_officer
 	min_qty = HIGH_MIN / CASH_NCR
 	max_qty = HIGH_MAX / CASH_NCR
+
+/obj/item/stack/f13Cash/onezerozerozero
+	amount = 1000
+	merge_type = /obj/item/stack/f13Cash/ncr
 
 #undef maxCoinIcon
 #undef CASH_CAP

@@ -12,6 +12,7 @@
 	var/armed = 0 //whether the gun is attached, 0 is attached, 1 is the gun is wielded.
 	var/overheat = 0
 	var/overheat_max = 80
+	var/heat_stage = 0
 	var/heat_diffusion = 2.5 //How much heat is lost per tick
 
 /obj/item/minigunpackbal5mm/Initialize()
@@ -25,6 +26,8 @@
 
 /obj/item/minigunpackbal5mm/process()
 	overheat = max(0, overheat - heat_diffusion)
+	if(overheat == 0 && heat_stage > 0)
+		heat_stage = 0
 
 //ATTACK HAND IGNORING PARENT RETURN VALUE
 /obj/item/minigunpackbal5mm/attack_hand(mob/living/carbon/user)
@@ -48,6 +51,10 @@
 		user.dropItemToGround(gun, TRUE)
 	else
 		..()
+
+/obj/item/minigunpackbal5mm/examine(mob/user)
+	. = ..()
+	. += "<span class='notice'>Current heat level: [overheat] / [overheat_max]"
 
 /obj/item/minigunpackbal5mm/dropped(mob/user)
 	. = ..()
@@ -136,11 +143,25 @@
 
 /obj/item/gun/ballistic/minigunbal5mm/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0, stam_cost = 0)
 	if(ammo_pack)
+		if(ammo_pack.overheat > ammo_pack.overheat_max * (1 / 3) && ammo_pack.heat_stage < 1)
+			to_chat(user, "You feel warmth from the handle of the gun.")
+			ammo_pack.heat_stage += 1
+			..()
+
+		if(ammo_pack.overheat > ammo_pack.overheat_max * (2 / 3) && ammo_pack.heat_stage < 2)
+			to_chat(user, "The gun's heat sensor beeps rapidly as it reaches its limit!")
+			ammo_pack.heat_stage += 1
+			..()
+
+		if(ammo_pack.overheat < ammo_pack.overheat_max)
+			ammo_pack.overheat += burst_size
+			..()
+
 		if(ammo_pack.overheat < ammo_pack.overheat_max)
 			ammo_pack.overheat += burst_size
 			..()
 		else
-			to_chat(user, "The gun's heat sensor locked the trigger to prevent barrel damage.")
+			to_chat(user, "The gun's heat sensor locked the trigger to prevent lens damage.")
 
 /obj/item/gun/ballistic/minigunbal5mm/afterattack(atom/target, mob/living/user, flag, params)
 	if(!ammo_pack || ammo_pack.loc != user)

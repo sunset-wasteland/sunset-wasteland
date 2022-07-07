@@ -4,7 +4,7 @@
 // To continue my coding standard.
 
 /turf/closed/indestructible/f13/matrix/transition
-	color = COLOR_BLUE
+	icon_state = "matrixblue"
 	var/destination_z
 	var/destination_x
 	var/destination_y

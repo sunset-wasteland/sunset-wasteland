@@ -313,6 +313,11 @@
 	icon_state = "hhorse"
 	matrixed_sections = MATRIX_RED_GREEN
 
+/datum/sprite_accessory/snouts/mam_snouts/stubby
+	name = "Stubby"
+	icon_state = "stubby"
+	color_src = MUTCOLORS
+
 /******************************************
 **************** Snouts *******************
 *************but higher up*****************/

@@ -359,6 +359,117 @@
 	desc = "A warning to NCR troopers about eating irradiated food."
 	icon_state = "poster48"
 
+
+/obj/structure/sign/poster/contraband/pinup_assaultron
+	name = "Pin-Up - Assaultron"
+	desc = "This poster definitely puts the 'ass' in assaultron."
+	icon_state = "pinup_assaultron"
+
+/obj/structure/sign/poster/contraband/pinup_assaultron2
+	name = "Pin-Up - Assaultron II"
+	desc = "This poster definitely puts the 'ass' in assaultron."
+	icon_state = "pinup_assaultron2"
+
+/obj/structure/sign/poster/contraband/pinup_claw1
+	name = "Pin-Up - Funclaw"
+	desc = "Funclaws aren't real, but this poster is."
+	icon_state = "pinup_claw1"
+
+/obj/structure/sign/poster/contraband/pinup_claw2
+	name = "Pin-Up - Funclaw II"
+	desc = "Funclaws aren't real, but this poster is."
+	icon_state = "pinup_claw2"
+
+/obj/structure/sign/poster/contraband/pinup_claw3
+	name = "Pin-Up - Funclaw III"
+	desc = "Funclaws aren't real, but this poster is."
+	icon_state = "pinup_claw3"
+
+/obj/structure/sign/poster/contraband/pinup_claw4
+	name = "Pin-Up - Funclaw IV"
+	desc = "Funclaws aren't real, but this poster is."
+	icon_state = "pinup_claw4"
+
+/obj/structure/sign/poster/contraband/pinup_anthro1
+	name = "Pin-Up - Anthro"
+	desc = "A poster of a suggestive furry in an even more suggestive pose."
+	icon_state = "pinup_anthro1"
+
+/obj/structure/sign/poster/contraband/pinup_anthro2
+	name = "Pin-Up - Anthro II"
+	desc = "A poster of a suggestive furry in an even more suggestive pose."
+	icon_state = "pinup_anthro2"
+
+/obj/structure/sign/poster/contraband/pinup_anthro3
+	name = "Pin-Up - Anthro III"
+	desc = "A poster of a suggestive furry in an even more suggestive pose."
+	icon_state = "pinup_anthro3"
+
+/obj/structure/sign/poster/contraband/pinup_anthro4
+	name = "Pin-Up - Anthro IV"
+	desc = "A poster of a suggestive furry in an even more suggestive pose."
+	icon_state = "pinup_anthro4"
+
+/obj/structure/sign/poster/contraband/pinup_anthro5
+	name = "Pin-Up - Anthro V"
+	desc = "A poster of a suggestive furry in an even more suggestive pose."
+	icon_state = "pinup_anthro5"
+
+/obj/structure/sign/poster/contraband/pinup_anthro6
+	name = "Pin-Up - Anthro VI"
+	desc = "A poster of a suggestive furry in an even more suggestive pose."
+	icon_state = "pinup_anthro6"
+
+/obj/structure/sign/poster/contraband/pinup_anthro7
+	name = "Pin-Up - Anthro VII"
+	desc = "A poster of a suggestive furry in an even more suggestive pose."
+	icon_state = "pinup_anthro7"
+
+/obj/structure/sign/poster/contraband/pinup_anthro8
+	name = "Pin-Up - Anthro VIII"
+	desc = "A poster of a suggestive furry in an even more suggestive pose."
+	icon_state = "pinup_anthro8"
+
+/obj/structure/sign/poster/contraband/pinup_anthro9
+	name = "Pin-Up - Anthro IX"
+	desc = "A poster of a suggestive furry in an even more suggestive pose."
+	icon_state = "pinup_anthro9"
+
+/obj/structure/sign/poster/contraband/pinup_anthro10
+	name = "Pin-Up - Anthro X"
+	desc = "A poster of a suggestive furry in an even more suggestive pose."
+	icon_state = "pinup_anthro10"
+
+/obj/structure/sign/poster/contraband/pinup_anthro11
+	name = "Pin-Up - Anthro XI"
+	desc = "A poster of a suggestive furry in an even more suggestive pose."
+	icon_state = "pinup_anthro11"
+
+/obj/structure/sign/poster/contraband/pinup_anthro12
+	name = "Pin-Up - Anthro XII"
+	desc = "A poster of a suggestive furry in an even more suggestive pose."
+	icon_state = "pinup_anthro12"
+
+/obj/structure/sign/poster/contraband/pinup_anthro13
+	name = "Pin-Up - Anthro XIII"
+	desc = "A poster of a suggestive furry in an even more suggestive pose."
+	icon_state = "pinup_anthro13"
+
+/obj/structure/sign/poster/contraband/pinup_anthro14
+	name = "Pin-Up - Anthro XIV"
+	desc = "A poster of a suggestive furry in an even more suggestive pose."
+	icon_state = "pinup_anthro14"
+
+/obj/structure/sign/poster/contraband/pinup_anthro15
+	name = "Pin-Up - Anthro XV"
+	desc = "A poster of a suggestive furry in an even more suggestive pose."
+	icon_state = "pinup_anthro15"
+
+/obj/structure/sign/poster/contraband/pinup_anthro16
+	name = "Pin-Up - Anthro XVI"
+	desc = "A poster of a suggestive furry in an even more suggestive pose."
+	icon_state = "pinup_anthro16"
+
 /obj/structure/sign/poster/official
 	poster_item_name = "motivational poster"
 	poster_item_desc = "An official government-issued poster to foster a compliant and obedient workforce. It comes with state-of-the-art adhesive backing, for easy pinning to any vertical surface."

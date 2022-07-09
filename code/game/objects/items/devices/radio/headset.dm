@@ -382,6 +382,7 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	icon_state = "syndie_headset" 
 	item_state = "headset_alt"
 	keyslot = new /obj/item/encryptionkey/headset_khans
+	keyslot2 = new /obj/item/encryptionkey/headset_town
 
 /obj/item/radio/headset/headset_town
 	name = "town radio headset"

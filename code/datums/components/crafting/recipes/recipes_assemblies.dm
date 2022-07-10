@@ -8,7 +8,7 @@
 				/obj/item/stack/crafting/metalparts = 3,
 				/obj/item/stack/crafting/goodparts = 2)
 	tools = list(TOOL_WORKBENCH)
-	time = 40
+	time = 60
 	category = CAT_CRAFTING
 	subcategory = CAT_ROBOT
 
@@ -21,14 +21,14 @@
 				/obj/item/stack/crafting/goodparts = 10,
 				/obj/item/stack/cable_coil = 10)
 	tools = list(TOOL_WELDER, TOOL_SCREWDRIVER)
-	time = 80
+	time = 120
 	category = CAT_CRAFTING
 	subcategory = CAT_ROBOT
 
 /datum/crafting_recipe/pressureplate
 	name = "Pressure Plate"
 	result = /obj/item/pressure_plate
-	time = 5
+	time = 20
 	reqs = list(/obj/item/stack/sheet/metal = 1,
 				  /obj/item/stack/tile/plasteel = 1,
 				  /obj/item/stack/cable_coil = 2,
@@ -62,7 +62,7 @@
 	reqs = list(/obj/item/stack/sheet/glass = 1,
 				/obj/item/stack/sheet/metal = 1,
 				/obj/item/stack/rods = 1)
-	time = 10
+	time = 20
 	category = CAT_CRAFTING
 	subcategory = CAT_ROBOT
 
@@ -83,7 +83,7 @@
 				/obj/item/stack/sheet/metal = 1,
 				/obj/item/stack/rods = 1,
 				/obj/item/stack/cable_coil = 2)
-	time = 10
+	time = 20
 	category = CAT_CRAFTING
 	subcategory = CAT_ROBOT
 
@@ -110,7 +110,7 @@
 /datum/crafting_recipe/pressureplate
 	name = "Pressure Plate"
 	result = /obj/item/pressure_plate
-	time = 5
+	time = 10
 	reqs = list(/obj/item/stack/sheet/metal = 1,
 				  /obj/item/stack/tile/plasteel = 1,
 				  /obj/item/stack/cable_coil = 2,

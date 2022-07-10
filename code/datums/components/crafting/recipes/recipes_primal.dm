@@ -105,7 +105,7 @@
 
 /datum/crafting_recipe/punji_sticks
 	name = "Punji stick Trap"
-	time = 30
+	time = 180
 	reqs = list(
 			/obj/item/stack/sheet/mineral/bamboo = 5)
 	result = /obj/structure/punji_sticks

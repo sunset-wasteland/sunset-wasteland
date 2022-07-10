@@ -20,7 +20,7 @@
 // Metal
 
 GLOBAL_LIST_INIT(metal_recipes, list ( \
-	new/datum/stack_recipe("wall girders", /obj/structure/girder, 2, time = 40, one_per_turf = TRUE, on_floor = TRUE, trait_booster = TRAIT_QUICK_BUILD, trait_modifier = 0.75), \
+	new/datum/stack_recipe("wall girders", /obj/structure/girder, 2, time = 60, one_per_turf = TRUE, on_floor = TRUE, trait_booster = TRAIT_QUICK_BUILD, trait_modifier = 0.75), \
 	new/datum/stack_recipe("floor tile", /obj/item/stack/tile/plasteel, 1, 4, 20), \
 	null, \
 	new/datum/stack_recipe("heavy iron door", /obj/structure/simple_door/metal/iron, 20, one_per_turf = TRUE, on_floor = TRUE), \
@@ -275,7 +275,7 @@ GLOBAL_LIST_INIT(plasteel_recipes, list ( \
 //  Wood
 
 GLOBAL_LIST_INIT(wood_recipes, list ( \
-	new/datum/stack_recipe("wooden barricade", /obj/structure/barricade/wooden, 5, time = 50, one_per_turf = TRUE, on_floor = TRUE), \
+	new/datum/stack_recipe("wooden barricade", /obj/structure/barricade/wooden, 5, time = 120, one_per_turf = TRUE, on_floor = TRUE), \
 	null, \
 	new/datum/stack_recipe_list("floor tiles", list( \
 	new/datum/stack_recipe("common floor tile", /obj/item/stack/tile/wood/common, 1, 4, 20), \
@@ -325,23 +325,23 @@ GLOBAL_LIST_INIT(wood_recipes, list ( \
 		new /datum/stack_recipe("loom", /obj/structure/loom, 10, time = 15, one_per_turf = TRUE, on_floor = TRUE),\
 		)), \
 	new/datum/stack_recipe_list("cooking", list( \
-		new /datum/stack_recipe("rolling pin", /obj/item/kitchen/rollingpin, 2, time = 30, one_per_turf = TRUE, on_floor = TRUE),\
+		new /datum/stack_recipe("rolling pin", /obj/item/kitchen/rollingpin, 2, time = 25, one_per_turf = TRUE, on_floor = TRUE),\
 		new /datum/stack_recipe("chopping block", /obj/item/chopping_block, 2, time = 30, one_per_turf = TRUE, on_floor = TRUE), \
 		)), \
 	null, \
-	new/datum/stack_recipe("wooden door", /obj/structure/simple_door/room, 10, time = 20, one_per_turf = TRUE, on_floor = TRUE), \
-	new/datum/stack_recipe("interior wooden door", /obj/structure/simple_door/interior, 10, time = 20, one_per_turf = TRUE, on_floor = TRUE), \
-	new/datum/stack_recipe("wooden house door", /obj/structure/simple_door/house, 10, time = 20, one_per_turf = TRUE, on_floor = TRUE), \
+	new/datum/stack_recipe("wooden door", /obj/structure/simple_door/room, 10, time = 100, one_per_turf = TRUE, on_floor = TRUE), \
+	new/datum/stack_recipe("interior wooden door", /obj/structure/simple_door/interior, 10, time = 100, one_per_turf = TRUE, on_floor = TRUE), \
+	new/datum/stack_recipe("wooden house door", /obj/structure/simple_door/house, 10, time = 100, one_per_turf = TRUE, on_floor = TRUE), \
 	null, \
 	new/datum/stack_recipe("ore box", /obj/structure/ore_box, 4, time = 50, one_per_turf = TRUE, on_floor = TRUE),\
 	new/datum/stack_recipe("wooden crate", /obj/structure/closet/crate/wooden, 6, time = 50, one_per_turf = TRUE, on_floor = TRUE),\
 	null, \
-	new/datum/stack_recipe("book case", /obj/structure/bookcase, 4, time = 15, one_per_turf = TRUE, on_floor = TRUE), \
-	new/datum/stack_recipe("dresser", /obj/structure/dresser, 10, time = 15, one_per_turf = TRUE, on_floor = TRUE), \
-	new/datum/stack_recipe("display case chassis", /obj/structure/displaycase_chassis, 5, one_per_turf = TRUE, on_floor = TRUE), \
+	new/datum/stack_recipe("book case", /obj/structure/bookcase, 4, time = 50, one_per_turf = TRUE, on_floor = TRUE), \
+	new/datum/stack_recipe("dresser", /obj/structure/dresser, 10, time = 40, one_per_turf = TRUE, on_floor = TRUE), \
+	new/datum/stack_recipe("display case chassis", /obj/structure/displaycase_chassis, 10, one_per_turf = TRUE, on_floor = TRUE), \
 	null, \
-	new/datum/stack_recipe("apiary", /obj/structure/beebox, 40, time = 50, one_per_turf = TRUE, on_floor = TRUE),\
-	new/datum/stack_recipe("honey frame", /obj/item/honey_frame, 5, time = 10, one_per_turf = TRUE, on_floor = TRUE),\
+	new/datum/stack_recipe("apiary", /obj/structure/beebox, 40, time = 60, one_per_turf = TRUE, on_floor = TRUE),\
+	new/datum/stack_recipe("honey frame", /obj/item/honey_frame, 5, time = 15, one_per_turf = TRUE, on_floor = TRUE),\
 	))
 
 /obj/item/stack/sheet/mineral/wood

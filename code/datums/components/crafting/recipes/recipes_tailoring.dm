@@ -9,7 +9,7 @@
 				/obj/item/weaponcrafting/string = 1,
 				/obj/item/stack/crafting/metalparts = 1)
 	tools = list(TOOL_WORKBENCH)
-	time = 60
+	time = 80
 	category = CAT_CLOTHING
 	subcategory = CAT_ARMOR
 
@@ -42,7 +42,7 @@
 				/obj/item/stack/crafting/goodparts = 1,
 				/obj/item/stack/crafting/metalparts = 2)
 	tools = list(TOOL_WORKBENCH)
-	time = 10
+	time = 30
 	category = CAT_CLOTHING
 	subcategory = CAT_ARMOR
 
@@ -53,7 +53,7 @@
 				/obj/item/stack/crafting/goodparts = 1,
 				/obj/item/stack/crafting/metalparts = 2)
 	tools = list(TOOL_WORKBENCH)
-	time = 10
+	time = 30
 	category = CAT_CLOTHING
 	subcategory = CAT_ARMOR
 

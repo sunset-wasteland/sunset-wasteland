@@ -199,7 +199,7 @@ GLOBAL_LIST_INIT(concrete_recipes, list ( \
 			qdel(src)
 			return
 	return ..()
-	
+
 /obj/structure/barricade/concrete
 	name = "concrete barricade"
 	desc = "A small concrete barricade. Could be turned into a concrete wall with some more concrete."
@@ -207,7 +207,7 @@ GLOBAL_LIST_INIT(concrete_recipes, list ( \
 	icon_state = "concrete_barricade"
 	obj_integrity = 450
 	max_integrity = 450 //170 integ stronger than sandbags.
-	proj_pass_rate = 20
+	proj_pass_rate = 30
 	pass_flags = LETPASSTHROW
 	climbable = TRUE
 	smooth = SMOOTH_TRUE

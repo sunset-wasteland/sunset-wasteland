@@ -138,7 +138,7 @@
 
 /obj/structure/punji_sticks/Initialize(mapload)
 	. = ..()
-	AddComponent(/datum/component/caltrop, 20, 30, 100, CALTROP_BYPASS_SHOES)
+	AddComponent(/datum/component/caltrop, 5, 20, 75, CALTROP_BYPASS_SHOES)
 
 /////////BONFIRES//////////
 

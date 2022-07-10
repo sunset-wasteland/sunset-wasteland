@@ -106,8 +106,8 @@
 	desc = "Bags of sand. Self explanatory."
 	icon = 'icons/obj/smooth_structures/sandbags.dmi'
 	icon_state = "sandbags"
-	max_integrity = 280
-	proj_pass_rate = 20
+	max_integrity = 300
+	proj_pass_rate = 30
 	pass_flags = LETPASSTHROW
 	bar_material = SAND
 	climbable = TRUE
@@ -181,8 +181,8 @@
 	icon_state = "barrier0"
 	density = FALSE
 	anchored = FALSE
-	max_integrity = 180
-	proj_pass_rate = 20
+	max_integrity = 200
+	proj_pass_rate = 30
 	armor = list("melee" = 10, "bullet" = 50, "laser" = 50, "energy" = 50, "bomb" = 10, "bio" = 100, "rad" = 100, "fire" = 10, "acid" = 0)
 
 	var/deploy_time = 40

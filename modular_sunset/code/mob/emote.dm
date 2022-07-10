@@ -21,6 +21,22 @@
 	message = "let out a weh!"
 	sound = 'sound/f13effects/sunsetsounds/weh.ogg'
 
+/datum/emote/weh/alt1
+	key = "weh2"
+	key_third_person = "wehs2"
+	sound = 'sound/f13effects/sunsetsounds/weh2.ogg'
+
+/datum/emote/weh/alt2
+	key = "weh3"
+	key_third_person = "wehs3"
+	sound = 'sound/f13effects/sunsetsounds/weh3.ogg'
+
+/datum/emote/weh/surprised
+	key = "weh-s"
+	key_third_person = "wehs-s"
+	message = "let out a surprised weh!"
+	sound = 'sound/f13effects/sunsetsounds/weh_s.ogg'
+
 /datum/emote/merp
 	key = "merp"
 	key_third_person = "merps"

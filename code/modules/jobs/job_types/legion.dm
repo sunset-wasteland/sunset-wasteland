@@ -250,7 +250,7 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 	suit_store = /obj/item/gun/ballistic/automatic/m1919
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/mm762 = 1,
-		/obj/item/book/granter/martial/cqc = 1,
+		/obj/item/melee/powerfist/f13 = 1,
 		)
 
 /datum/outfit/loadout/rangerhunter
@@ -261,7 +261,7 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/amr = 2,
 		/obj/item/ammo_box/c4570 = 3,
-		/obj/item/gun/ballistic/revolver/hunting = 1,
+		/obj/item/gun/ballistic/revolver/sequoia = 1,
 		/obj/item/melee/onehanded/machete/spatha = 1,
 		)
 
@@ -269,10 +269,10 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 	name = "Warlord Centurion"
 	suit = /obj/item/clothing/suit/armor/f13/legion/centurion
 	head = /obj/item/clothing/head/helmet/f13/legion/centurion
-	suit_store = /obj/item/gun/ballistic/automatic/pistol/pistol14
 	backpack_contents = list(
 		/obj/item/melee/powerfist/f13/goliath = 1,
-		/obj/item/ammo_box/magazine/m14mm = 3,
+		/obj/item/book/granter/martial/cqc = 1,
+		/obj/item/throwing_star/ninja = 3
 		)
 
 /* /datum/outfit/loadout/berserkercenturion

@@ -16,6 +16,7 @@ Just leaving this here for quick copy-pasting, for future contributors.
 	anthro_mob_worn_overlay = 'modular_sunset/icons/mob/clothing/uniform_digi.dmi'
 	icon_state = "goner_uniform"
 	mutantrace_variation = STYLE_DIGITIGRADE
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 30, "fire" = 20, "acid" = 50)
 
 /obj/item/clothing/under/f13/goner/red
 	name = "red-collared utility uniform"

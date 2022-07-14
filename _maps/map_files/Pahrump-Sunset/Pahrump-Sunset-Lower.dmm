@@ -526,14 +526,12 @@
 /turf/open/floor/plasteel/f13,
 /area/f13/tunnel)
 "afH" = (
+/obj/structure/lattice,
 /obj/structure/fence/handrail_corner{
 	density = 0;
 	layer = 3.1;
 	pixel_x = 20;
 	pixel_y = -9
-	},
-/obj/structure/lattice{
-	density = 1
 	},
 /turf/open/floor/plating/tunnel,
 /area/f13/brotherhood)
@@ -904,9 +902,8 @@
 "axe" = (
 /obj/structure/window/reinforced/spawner/east,
 /obj/structure/window/reinforced/spawner/north,
-/turf/open/floor/clockwork/reebe{
-	desc = "Cool coloured plating. You can feel it gently vibrating, as if machinery is on the other side.";
-	name = "cool metal floor"
+/turf/open/floor/plasteel/vault/side{
+	dir = 6
 	},
 /area/f13/brotherhood)
 "axw" = (
@@ -960,10 +957,16 @@
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
 "aDe" = (
-/obj/structure/bookcase/manuals/research_and_development{
-	name = "Brotherhood Archives"
+/obj/structure/chair/comfy/black{
+	dir = 4
 	},
-/turf/open/floor/wood/wood_fancy,
+/turf/open/floor/f13/wood,
+/area/f13/brotherhood)
+"aDw" = (
+/obj/machinery/light/small,
+/turf/open/floor/plasteel/f13/vault_floor/yellow{
+	icon_state = "yellowrustyfull"
+	},
 /area/f13/brotherhood)
 "aDA" = (
 /obj/structure/fence/handrail{
@@ -1165,6 +1168,7 @@
 /turf/open/floor/plasteel/darkgreen/side,
 /area/f13/brotherhood)
 "aVb" = (
+/obj/structure/lattice,
 /obj/structure/fence/handrail_corner{
 	density = 0;
 	dir = 8;
@@ -1179,13 +1183,15 @@
 /obj/machinery/button/door{
 	id = "bosairlock2";
 	name = "Bunker Gate Control";
-	pixel_y = -26;
-	req_access_txt = "120"
-	},
-/obj/structure/lattice{
-	density = 1
+	pixel_y = -26
 	},
 /turf/open/floor/plating/tunnel,
+/area/f13/brotherhood)
+"aVj" = (
+/obj/machinery/door/airlock/hatch{
+	req_access_txt = "120"
+	},
+/turf/open/floor/plasteel/darkblue,
 /area/f13/brotherhood)
 "aXt" = (
 /obj/structure/reagent_dispensers/barrel/explosive,
@@ -1322,10 +1328,7 @@
 /area/f13/tunnel)
 "boo" = (
 /obj/structure/window/reinforced/spawner/north,
-/turf/open/floor/clockwork/reebe{
-	desc = "Cool coloured plating. You can feel it gently vibrating, as if machinery is on the other side.";
-	name = "cool metal floor"
-	},
+/turf/open/floor/plasteel/vault/side,
 /area/f13/brotherhood)
 "bot" = (
 /obj/structure/bed,
@@ -5899,6 +5902,7 @@
 	},
 /area/f13/bunker)
 "cnT" = (
+/obj/structure/lattice,
 /obj/structure/fence/handrail{
 	density = 0;
 	dir = 4;
@@ -5910,9 +5914,6 @@
 	layer = 4.2;
 	pixel_x = 13;
 	pixel_y = 18
-	},
-/obj/structure/lattice{
-	density = 1
 	},
 /turf/open/floor/plating/tunnel,
 /area/f13/brotherhood)
@@ -6207,6 +6208,10 @@
 	},
 /turf/open/floor/plasteel/floorgrime,
 /area/f13/tunnel)
+"cxT" = (
+/obj/structure/urinal,
+/turf/closed/wall/r_wall,
+/area/f13/brotherhood)
 "cyp" = (
 /obj/machinery/vending/coffee,
 /turf/open/floor/f13{
@@ -6246,9 +6251,8 @@
 "czQ" = (
 /obj/structure/window/reinforced/spawner,
 /obj/structure/window/reinforced/spawner/west,
-/turf/open/floor/clockwork/reebe{
-	desc = "Cool coloured plating. You can feel it gently vibrating, as if machinery is on the other side.";
-	name = "cool metal floor"
+/turf/open/floor/plasteel/vault/side{
+	dir = 1
 	},
 /area/f13/brotherhood)
 "cAf" = (
@@ -6820,10 +6824,14 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "dzS" = (
-/obj/machinery/light{
-	dir = 8
+/obj/structure/curtain,
+/obj/structure/decoration/vent,
+/obj/machinery/shower{
+	dir = 1
 	},
-/turf/open/floor/carpet/black,
+/turf/open/floor/plasteel/f13{
+	icon_state = "whitebluechess"
+	},
 /area/f13/brotherhood)
 "dAo" = (
 /obj/item/clothing/under/f13/bosformsilver_m,
@@ -6897,6 +6905,16 @@
 	icon_state = "darkrustysolid"
 	},
 /area/f13/building/massfusion)
+"dEl" = (
+/obj/machinery/shower{
+	pixel_y = 27
+	},
+/obj/structure/curtain,
+/obj/structure/decoration/vent,
+/turf/open/floor/plasteel/f13{
+	icon_state = "whitebluechess"
+	},
+/area/f13/brotherhood)
 "dEo" = (
 /obj/machinery/shower{
 	dir = 8
@@ -6919,9 +6937,8 @@
 /area/f13/tunnel)
 "dFt" = (
 /obj/structure/window/reinforced/spawner,
-/turf/open/floor/clockwork/reebe{
-	desc = "Cool coloured plating. You can feel it gently vibrating, as if machinery is on the other side.";
-	name = "cool metal floor"
+/turf/open/floor/plasteel/vault/side{
+	dir = 1
 	},
 /area/f13/brotherhood)
 "dFK" = (
@@ -7040,7 +7057,6 @@
 /area/f13/brotherhood)
 "dNX" = (
 /obj/effect/turf_decal/stripes/asteroid/line,
-/obj/effect/turf_decal/long/brotherhood,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid{
 	icon_state = "floordirtysolid"
 	},
@@ -7210,7 +7226,8 @@
 /obj/structure/fence/handrail{
 	density = 0;
 	layer = 4.1;
-	pixel_y = -14
+	pixel_y = -14;
+	pixel_x = -5
 	},
 /turf/open/floor/plasteel/f13/vault_floor/yellow/corner{
 	dir = 1
@@ -7223,13 +7240,14 @@
 	},
 /area/f13/tunnel)
 "eaY" = (
+/obj/structure/lattice,
+/obj/machinery/light/small{
+	dir = 8
+	},
 /obj/structure/fence/handrail{
 	density = 0;
 	dir = 4;
 	pixel_x = 13
-	},
-/obj/structure/lattice{
-	density = 1
 	},
 /turf/open/floor/plating/tunnel,
 /area/f13/brotherhood)
@@ -7266,15 +7284,8 @@
 	},
 /obj/structure/window/reinforced/spawner,
 /obj/structure/window/reinforced/spawner/west,
-/obj/structure/destructible/clockwork/wall_gear{
-	pixel_y = 32
-	},
-/obj/item/projectile/magic/animate{
-	pixel_y = 32
-	},
-/turf/open/floor/clockwork/reebe{
-	desc = "Cool coloured plating. You can feel it gently vibrating, as if machinery is on the other side.";
-	name = "cool metal floor"
+/turf/open/floor/plasteel/vault/side{
+	dir = 8
 	},
 /area/f13/brotherhood)
 "eed" = (
@@ -7455,10 +7466,8 @@
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
 "epQ" = (
-/obj/structure/chair/pew/left{
-	dir = 1
-	},
-/turf/open/floor/carpet/black,
+/obj/structure/chalkboard,
+/turf/open/floor/f13/wood,
 /area/f13/brotherhood)
 "eqq" = (
 /obj/effect/decal/cleanable/generic,
@@ -7818,16 +7827,7 @@
 /turf/open/floor/plasteel/f13/stone/rugged,
 /area/f13/building/khanfort)
 "eRL" = (
-/obj/structure/fence/handrail{
-	dir = 4;
-	pixel_x = -15
-	},
-/obj/structure/lattice{
-	density = 1
-	},
-/obj/machinery/light/small{
-	dir = 4
-	},
+/obj/structure/lattice,
 /turf/open/floor/plating/tunnel,
 /area/f13/brotherhood)
 "eSw" = (
@@ -8200,6 +8200,14 @@
 	name = "prewar lounge chair"
 	},
 /turf/open/floor/carpet/black,
+/area/f13/brotherhood)
+"fIn" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/open/floor/plasteel/f13{
+	icon_state = "whitebluechess"
+	},
 /area/f13/brotherhood)
 "fII" = (
 /obj/effect/turf_decal/weather/dirt{
@@ -8610,11 +8618,9 @@
 /turf/open/floor/plasteel/f13/vault_floor/yellow,
 /area/f13/tunnel)
 "gyo" = (
+/obj/structure/lattice,
 /obj/machinery/light{
 	dir = 1
-	},
-/obj/structure/lattice{
-	density = 1
 	},
 /turf/open/floor/plating/tunnel,
 /area/f13/brotherhood)
@@ -8752,6 +8758,7 @@
 /turf/closed/wall/r_wall,
 /area/f13/brotherhood)
 "gGe" = (
+/obj/structure/lattice,
 /obj/structure/fence/handrail_corner{
 	density = 0;
 	dir = 4;
@@ -8763,9 +8770,6 @@
 	density = 0;
 	dir = 4;
 	pixel_x = 13
-	},
-/obj/structure/lattice{
-	density = 1
 	},
 /turf/open/floor/plating/tunnel,
 /area/f13/brotherhood)
@@ -8819,9 +8823,8 @@
 "gNw" = (
 /obj/structure/window/reinforced/spawner/west,
 /obj/structure/window/reinforced/spawner/north,
-/turf/open/floor/clockwork/reebe{
-	desc = "Cool coloured plating. You can feel it gently vibrating, as if machinery is on the other side.";
-	name = "cool metal floor"
+/turf/open/floor/plasteel/vault/side{
+	dir = 4
 	},
 /area/f13/brotherhood)
 "gNN" = (
@@ -8983,10 +8986,15 @@
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
 "hav" = (
-/obj/machinery/light{
-	dir = 8
+/obj/structure/fence/handrail{
+	density = 0;
+	layer = 4.1;
+	pixel_y = -14
 	},
-/turf/open/floor/wood/wood_fancy,
+/obj/machinery/ore_silo,
+/turf/open/floor/plasteel/f13/vault_floor/neutral/side{
+	dir = 1
+	},
 /area/f13/brotherhood)
 "hbv" = (
 /obj/item/clothing/under/f13/bosformsilver_f,
@@ -9048,12 +9056,13 @@
 	},
 /area/f13/tunnel)
 "hgD" = (
+/obj/structure/lattice,
+/obj/machinery/light/small{
+	dir = 4
+	},
 /obj/structure/fence/handrail{
 	dir = 4;
 	pixel_x = -15
-	},
-/obj/structure/lattice{
-	density = 1
 	},
 /turf/open/floor/plating/tunnel,
 /area/f13/brotherhood)
@@ -9063,6 +9072,10 @@
 	light_color = "#e8eaff"
 	},
 /turf/open/floor/plasteel/dark,
+/area/f13/brotherhood)
+"hhc" = (
+/obj/item/twohanded/required/kirbyplants/photosynthetic,
+/turf/open/floor/f13/wood,
 /area/f13/brotherhood)
 "hho" = (
 /obj/machinery/light{
@@ -9185,8 +9198,7 @@
 /obj/machinery/button/door{
 	id = "bosairlock1";
 	name = "Bunker Gate Control";
-	pixel_y = -26;
-	req_access_txt = "120"
+	pixel_y = -26
 	},
 /turf/open/floor/plating/tunnel,
 /area/f13/brotherhood)
@@ -9651,15 +9663,8 @@
 	},
 /obj/structure/window/reinforced/spawner,
 /obj/structure/window/reinforced/spawner/east,
-/obj/structure/destructible/clockwork/wall_gear{
-	pixel_y = 32
-	},
-/obj/item/projectile/magic/animate{
-	pixel_y = 32
-	},
-/turf/open/floor/clockwork/reebe{
-	desc = "Cool coloured plating. You can feel it gently vibrating, as if machinery is on the other side.";
-	name = "cool metal floor"
+/turf/open/floor/plasteel/vault/side{
+	dir = 4
 	},
 /area/f13/brotherhood)
 "ibr" = (
@@ -10324,8 +10329,10 @@
 /turf/closed/wall/rust,
 /area/f13/tunnel)
 "jjo" = (
-/obj/structure/chair/wood/fancy,
-/turf/open/floor/wood/wood_fancy,
+/obj/effect/spawner/lootdrop/toolsbasic,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
+	icon_state = "neutralrustyfull"
+	},
 /area/f13/brotherhood)
 "jju" = (
 /turf/open/floor/plasteel/f13/vault_floor/neutral,
@@ -10682,12 +10689,16 @@
 /turf/closed/mineral/random/low_chance,
 /area/f13/caves)
 "jNL" = (
-/obj/structure/table/wood,
-/obj/machinery/bookbinder{
-	icon_state = "bigscanner";
-	pixel_y = 7
+/obj/machinery/light{
+	dir = 8;
+	light_color = "#e8eaff"
 	},
-/turf/open/floor/wood/wood_fancy,
+/obj/structure/table/reinforced,
+/obj/machinery/computer/terminal{
+	dir = 4;
+	termtag = "Secret"
+	},
+/turf/open/floor/f13/wood,
 /area/f13/brotherhood)
 "jOv" = (
 /turf/open/floor/f13{
@@ -10884,10 +10895,12 @@
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
 "kkW" = (
-/obj/structure/railing{
-	dir = 1
+/obj/machinery/button/door{
+	name = "Power Armor Storage Button";
+	req_access_txt = "255";
+	id = "BOSPAS"
 	},
-/turf/open/floor/carpet/black,
+/turf/closed/wall/r_wall,
 /area/f13/brotherhood)
 "kkX" = (
 /obj/effect/decal/cleanable/robot_debris/limb{
@@ -10988,12 +11001,10 @@
 	},
 /area/f13/brotherhood)
 "kvP" = (
-/obj/structure/fence/handrail{
-	density = 0;
-	pixel_y = 23
+/obj/structure/chair/comfy/black{
+	dir = 8
 	},
-/obj/structure/lattice/catwalk,
-/turf/open/floor/plating/tunnel,
+/turf/open/floor/carpet/black,
 /area/f13/brotherhood)
 "kwF" = (
 /obj/effect/turf_decal/stripes/asteroid/line,
@@ -11067,8 +11078,7 @@
 /obj/machinery/button/door{
 	id = "bosairlock2";
 	name = "Bunker Gate Control";
-	pixel_y = 26;
-	req_access_txt = "120"
+	pixel_y = 26
 	},
 /turf/open/floor/plating/tunnel,
 /area/f13/brotherhood)
@@ -11141,6 +11151,16 @@
 	icon_state = "darkrustysolid"
 	},
 /area/f13/tunnel)
+"kKT" = (
+/obj/machinery/shower{
+	dir = 1
+	},
+/obj/structure/curtain,
+/obj/structure/decoration/vent,
+/turf/open/floor/plasteel/f13{
+	icon_state = "whitebluechess"
+	},
+/area/f13/brotherhood)
 "kMc" = (
 /obj/item/kirbyplants{
 	icon_state = "plant-06"
@@ -11435,13 +11455,19 @@
 /turf/open/floor/plasteel/dark,
 /area/f13/brotherhood)
 "liV" = (
+/obj/machinery/porta_turret{
+	req_access_txt = "255";
+	turret_flags = TURRET_FLAG_SHOOT_ALL
+	},
+/obj/structure/window/reinforced/spawner,
+/obj/structure/window/reinforced/spawner/east,
+/obj/structure/window/reinforced/spawner/north,
+/obj/structure/lattice,
 /obj/structure/fence/handrail{
 	density = 0;
-	layer = 4.1;
-	pixel_y = -14;
-	pixel_x = -1
+	dir = 4;
+	pixel_x = 13
 	},
-/obj/structure/lattice/catwalk,
 /turf/open/floor/plating/tunnel,
 /area/f13/brotherhood)
 "ljp" = (
@@ -11679,10 +11705,12 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "lwL" = (
-/obj/structure/chair/pew/right{
-	dir = 1
+/obj/structure/table/reinforced,
+/obj/machinery/computer/terminal{
+	dir = 4;
+	termtag = "Secret"
 	},
-/turf/open/floor/carpet/black,
+/turf/open/floor/f13/wood,
 /area/f13/brotherhood)
 "lym" = (
 /obj/effect/decal/cleanable/dirt,
@@ -11701,7 +11729,8 @@
 	},
 /area/f13/tunnel)
 "lBb" = (
-/obj/effect/spawner/structure/window/reinforced/tinted,
+/obj/structure/window/fulltile/store,
+/obj/structure/grille,
 /obj/structure/grille,
 /turf/open/floor/plating/tunnel,
 /area/f13/brotherhood)
@@ -11803,11 +11832,9 @@
 	},
 /area/f13/tunnel)
 "lIt" = (
-/obj/structure/bookcase/manuals/engineering{
-	desc = "A collection of scrolls, archives and relics.";
-	name = "Brotherhood Archives"
-	},
-/turf/open/floor/wood/wood_fancy,
+/obj/structure/table/wood/settler,
+/obj/item/reagent_containers/food/drinks/coffee,
+/turf/open/floor/carpet,
 /area/f13/brotherhood)
 "lIv" = (
 /obj/structure/sign/poster/official/soft_cap_pop_art{
@@ -12371,9 +12398,6 @@
 /area/f13/brotherhood)
 "mqM" = (
 /obj/machinery/suit_storage_unit/mining,
-/obj/machinery/light/small{
-	dir = 4
-	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
 	icon_state = "neutralrustyfull"
 	},
@@ -12536,8 +12560,10 @@
 	},
 /area/f13/tunnel)
 "mEL" = (
-/obj/structure/simple_door/metal/ventilation,
-/turf/open/floor/plating/tunnel,
+/obj/structure/table/wood/settler,
+/obj/item/reagent_containers/food/drinks/mug/coco,
+/obj/item/reagent_containers/food/drinks/mug/coco,
+/turf/open/floor/carpet,
 /area/f13/brotherhood)
 "mER" = (
 /obj/structure/closet/secure_closet/personal,
@@ -12546,8 +12572,9 @@
 	},
 /area/f13/followers)
 "mHa" = (
-/obj/item/flag/bos,
-/turf/open/floor/wood/wood_fancy,
+/obj/structure/table/reinforced,
+/obj/item/toy/prize/mauler,
+/turf/open/floor/carpet/black,
 /area/f13/brotherhood)
 "mIf" = (
 /turf/open/floor/plasteel/darkred/side{
@@ -12612,6 +12639,7 @@
 /turf/open/floor/plasteel/floorgrime,
 /area/f13/tunnel)
 "mNH" = (
+/obj/structure/lattice,
 /obj/structure/fence/handrail{
 	dir = 4;
 	pixel_x = -15
@@ -12622,9 +12650,6 @@
 	layer = 4.2;
 	pixel_x = -15;
 	pixel_y = 18
-	},
-/obj/structure/lattice{
-	density = 1
 	},
 /turf/open/floor/plating/tunnel,
 /area/f13/brotherhood)
@@ -12891,10 +12916,8 @@
 	},
 /area/f13/tunnel)
 "npF" = (
-/obj/structure/bookcase/manuals/medical{
-	name = "Brotherhood Archives"
-	},
-/turf/open/floor/wood/wood_fancy,
+/obj/structure/fireplace,
+/turf/open/floor/carpet,
 /area/f13/brotherhood)
 "nqd" = (
 /obj/structure/handrail/g_central{
@@ -12948,38 +12971,16 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "nxn" = (
-/obj/machinery/computer/terminal{
-	density = 0;
-	desc = "A pre-war high security terminal. There's virtually no way to hack into this thing; it holds the most secure information the Brotherhood has to offer.";
-	doc_content_1 = "The preservation of technology is our primary goal, all others are secondary. <br> <br>  Shield yourself from those not bound to you by steel, for they are the blind. Aid them when you can, but lose not sight of yourself.";
-	doc_content_2 = "Give way your suspicions to the wisdom of thine Elder. Where he shows trust, so shall you. <br> <br> Fear those who do not pledge to the Brotherhood for though their eyes may be opened through service, they are now blind. ";
-	doc_content_3 = "Through discourse, we gain the strength of our Brothers' minds. Deceit and lies of all ilk serve only to harm that strength. <br> <br> Your caste and duties mean everything, you will follow your leader and your leader will lead you. <br> <br> You may only follow the orders of another if it will save the life of a brother. ";
-	doc_content_4 = "Theft is for lesser men, the Brotherhood provides for you and you provide for the Brotherhood. <br> <br>  What lesser men see as fashionable shall be shunned. Foreign garment and practice will do nothing but shame your fellow brothers.  ";
-	doc_content_5 = "The Blind can not read, only those who have taken the Oath of Fraternity may read this text.";
-	doc_title_1 = "Doctrine pt. 1";
-	doc_title_2 = "Doctrine pt. 2";
-	doc_title_3 = "Doctrine pt. 3";
-	doc_title_4 = "Doctrine pt. 4";
-	doc_title_5 = "Doctrine pt. 5";
-	icon_screen = null;
-	icon_state = "ratvarcomputer1";
-	idle_power_usage = 1;
-	light_color = "#6e1722";
-	light_power = 2;
-	light_range = 3;
-	max_integrity = 1000;
-	name = "The Codex";
-	note = "Scribe Note of the Week:";
-	termtag = "Codex"
+/obj/item/clothing/suit/armor/f13/power_armor/excavator,
+/obj/structure/window/reinforced/spawner/north,
+/obj/structure/window/reinforced/spawner/west,
+/obj/structure/window/reinforced/spawner/east,
+/obj/structure/table/reinforced,
+/obj/machinery/door/window/brigdoor{
+	req_access_txt = "255"
 	},
-/obj/item/projectile/magic/animate{
-	layer = 2.5;
-	name = "weird light"
-	},
-/turf/open/floor/clockwork/reebe{
-	desc = "Cool coloured plating. You can feel it gently vibrating, as if machinery is on the other side.";
-	name = "cool metal floor"
-	},
+/obj/item/clothing/head/helmet/f13/power_armor/excavator,
+/turf/open/floor/plasteel/vault,
 /area/f13/brotherhood)
 "nyY" = (
 /obj/machinery/light/broken,
@@ -13561,16 +13562,7 @@
 	},
 /area/f13/tunnel)
 "owp" = (
-/obj/structure/fence/handrail_corner{
-	density = 0;
-	dir = 1;
-	layer = 3.1;
-	pixel_x = -15;
-	pixel_y = -9
-	},
-/obj/structure/lattice{
-	density = 1
-	},
+/obj/structure/lattice,
 /obj/structure/fence/handrail{
 	dir = 4;
 	pixel_x = -15
@@ -14129,10 +14121,15 @@
 	},
 /area/f13/tunnel)
 "pmF" = (
-/obj/machinery/light{
-	dir = 4
+/obj/structure/lattice{
+	density = 1
 	},
-/turf/open/floor/wood/wood_fancy,
+/obj/item/trash/sosjerky{
+	anchored = 1;
+	color = "#808080";
+	pixel_x = 8
+	},
+/turf/open/floor/plating/tunnel,
 /area/f13/brotherhood)
 "pna" = (
 /obj/effect/turf_decal/stripes/asteroid/line,
@@ -14262,9 +14259,8 @@
 	req_access_txt = "255"
 	},
 /obj/item/clothing/head/helmet/f13/power_armor/midwest,
-/turf/open/floor/clockwork/reebe{
-	desc = "Cool coloured plating. You can feel it gently vibrating, as if machinery is on the other side.";
-	name = "cool metal floor"
+/turf/open/floor/plasteel/vault/side{
+	dir = 8
 	},
 /area/f13/brotherhood)
 "pvU" = (
@@ -14378,12 +14374,18 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "pCz" = (
-/obj/structure/fence/handrail{
-	density = 0;
-	layer = 4.1;
-	pixel_y = -14
+/obj/machinery/porta_turret{
+	req_access_txt = "255";
+	turret_flags = TURRET_FLAG_SHOOT_ALL
 	},
-/obj/structure/lattice/catwalk,
+/obj/structure/window/reinforced/spawner,
+/obj/structure/window/reinforced/spawner/north,
+/obj/structure/window/reinforced/spawner/west,
+/obj/structure/lattice,
+/obj/structure/fence/handrail{
+	dir = 4;
+	pixel_x = -15
+	},
 /turf/open/floor/plating/tunnel,
 /area/f13/brotherhood)
 "pCC" = (
@@ -14659,10 +14661,6 @@
 /area/f13/tunnel)
 "pYG" = (
 /obj/structure/closet/firecloset/full,
-/obj/machinery/light/small{
-	dir = 8;
-	light_color = "#d8b1b1"
-	},
 /turf/open/floor/plasteel/f13/vault_floor/yellow,
 /area/f13/brotherhood)
 "pYY" = (
@@ -14764,17 +14762,12 @@
 	},
 /area/f13/bunker)
 "qiz" = (
-/obj/machinery/light/small{
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/plasteel/vault/side{
 	dir = 4
 	},
-/obj/structure/fence/handrail{
-	dir = 4;
-	pixel_x = -15
-	},
-/obj/structure/lattice{
-	density = 1
-	},
-/turf/open/floor/plating/tunnel,
 /area/f13/brotherhood)
 "qiB" = (
 /obj/machinery/light/small{
@@ -15006,9 +14999,8 @@
 "qwy" = (
 /obj/structure/window/reinforced/spawner,
 /obj/structure/window/reinforced/spawner/east,
-/turf/open/floor/clockwork/reebe{
-	desc = "Cool coloured plating. You can feel it gently vibrating, as if machinery is on the other side.";
-	name = "cool metal floor"
+/turf/open/floor/plasteel/vault/side{
+	dir = 1
 	},
 /area/f13/brotherhood)
 "qwU" = (
@@ -15019,6 +15011,14 @@
 /obj/effect/spawner/lootdrop/f13/crafting,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
+"qyx" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/plasteel/f13{
+	icon_state = "whitebluechess"
+	},
+/area/f13/brotherhood)
 "qyz" = (
 /obj/structure/fence/handrail{
 	density = 0;
@@ -15425,19 +15425,11 @@
 /turf/open/floor/plating,
 /area/f13/brotherhood)
 "rgz" = (
+/obj/structure/lattice,
 /obj/structure/fence/handrail{
 	density = 0;
 	dir = 4;
 	pixel_x = 13
-	},
-/obj/structure/lattice{
-	density = 1
-	},
-/obj/structure/fence/handrail_corner{
-	density = 0;
-	layer = 3.1;
-	pixel_x = 13;
-	pixel_y = -9
 	},
 /turf/open/floor/plating/tunnel,
 /area/f13/brotherhood)
@@ -15457,9 +15449,8 @@
 	req_access_txt = "255"
 	},
 /obj/item/clothing/head/helmet/f13/power_armor/midwest,
-/turf/open/floor/clockwork/reebe{
-	desc = "Cool coloured plating. You can feel it gently vibrating, as if machinery is on the other side.";
-	name = "cool metal floor"
+/turf/open/floor/plasteel/vault/side{
+	dir = 4
 	},
 /area/f13/brotherhood)
 "rhV" = (
@@ -15723,8 +15714,7 @@
 /obj/machinery/button/door{
 	id = "bosairlock1";
 	name = "Bunker Gate Control";
-	pixel_y = 26;
-	req_access_txt = "120"
+	pixel_y = 26
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/brotherhood)
@@ -15939,8 +15929,11 @@
 	},
 /obj/structure/window/reinforced/spawner,
 /obj/structure/window/reinforced/spawner/east,
-/obj/structure/lattice{
-	density = 1
+/obj/structure/lattice,
+/obj/structure/fence/handrail{
+	density = 0;
+	dir = 4;
+	pixel_x = 13
 	},
 /turf/open/floor/plating/tunnel,
 /area/f13/brotherhood)
@@ -15955,10 +15948,7 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "rWu" = (
-/obj/structure/table/wood,
-/obj/item/paper_bin,
-/obj/item/pen,
-/turf/open/floor/f13/wood,
+/turf/open/floor/carpet,
 /area/f13/brotherhood)
 "rWC" = (
 /obj/structure/closet,
@@ -16157,6 +16147,7 @@
 "skf" = (
 /obj/machinery/door/airlock/hatch{
 	req_access_txt = "120";
+	locked = 1;
 	name = "Engineering"
 	},
 /obj/machinery/door/firedoor/heavy,
@@ -16222,16 +16213,13 @@
 	},
 /area/f13/tunnel)
 "soO" = (
+/obj/machinery/door/poddoor/ert{
+	id = "BOSPAS"
+	},
 /obj/machinery/door/airlock/vault{
-	desc = "A massive gear set into two heavy slabs of brass.";
-	icon = 'icons/obj/doors/airlocks/clockwork/pinion_airlock.dmi';
-	name = "Codex";
-	req_access_txt = "120"
+	req_access_txt = "255"
 	},
-/turf/open/floor/clockwork/reebe{
-	desc = "Cool coloured plating. You can feel it gently vibrating, as if machinery is on the other side.";
-	name = "cool metal floor"
-	},
+/turf/open/floor/plasteel/vault,
 /area/f13/brotherhood)
 "spx" = (
 /obj/machinery/door/airlock/medical{
@@ -16243,6 +16231,7 @@
 	},
 /area/f13/followers)
 "sqX" = (
+/obj/structure/lattice,
 /obj/structure/fence/handrail_corner{
 	density = 0;
 	dir = 8;
@@ -16253,9 +16242,6 @@
 /obj/structure/fence/handrail{
 	dir = 4;
 	pixel_x = -15
-	},
-/obj/structure/lattice{
-	density = 1
 	},
 /turf/open/floor/plating/tunnel,
 /area/f13/brotherhood)
@@ -16356,10 +16342,8 @@
 	},
 /area/f13/tunnel)
 "szm" = (
+/obj/structure/lattice,
 /obj/machinery/light,
-/obj/structure/lattice{
-	density = 1
-	},
 /turf/open/floor/plating/tunnel,
 /area/f13/brotherhood)
 "szv" = (
@@ -16502,8 +16486,8 @@
 /turf/open/floor/plasteel/freezer,
 /area/f13/brotherhood)
 "sLR" = (
-/obj/structure/table/wood,
-/turf/open/floor/wood/wood_fancy,
+/obj/item/flag/bos,
+/turf/open/floor/f13/wood,
 /area/f13/brotherhood)
 "sLZ" = (
 /turf/open/floor/plasteel/f13/vault_floor/neutral/side{
@@ -16542,15 +16526,13 @@
 /turf/open/floor/carpet/black,
 /area/f13/brotherhood)
 "sMN" = (
+/obj/structure/lattice,
 /obj/structure/fence/handrail_corner{
 	density = 0;
 	dir = 1;
 	layer = 3.1;
 	pixel_x = -16;
 	pixel_y = -9
-	},
-/obj/structure/lattice{
-	density = 1
 	},
 /turf/open/floor/plating/tunnel,
 /area/f13/brotherhood)
@@ -16568,15 +16550,8 @@
 /obj/structure/window/reinforced/spawner,
 /obj/structure/window/reinforced/spawner/east,
 /obj/structure/window/reinforced/spawner/north,
-/obj/structure/destructible/clockwork/wall_gear{
-	pixel_y = -32
-	},
-/obj/item/projectile/magic/animate{
-	pixel_y = -32
-	},
-/turf/open/floor/clockwork/reebe{
-	desc = "Cool coloured plating. You can feel it gently vibrating, as if machinery is on the other side.";
-	name = "cool metal floor"
+/turf/open/floor/plasteel/vault/side{
+	dir = 4
 	},
 /area/f13/brotherhood)
 "sOr" = (
@@ -16867,8 +16842,9 @@
 /turf/open/indestructible/ground/outside/ruins,
 /area/f13/tunnel)
 "tkn" = (
-/obj/machinery/door/airlock/hatch,
-/turf/open/floor/f13/wood,
+/obj/structure/table/reinforced,
+/obj/item/pizzabox/meat,
+/turf/open/floor/carpet/black,
 /area/f13/brotherhood)
 "tln" = (
 /obj/structure/table,
@@ -17369,15 +17345,8 @@
 /obj/structure/window/reinforced/spawner,
 /obj/structure/window/reinforced/spawner/west,
 /obj/structure/window/reinforced/spawner/north,
-/obj/structure/destructible/clockwork/wall_gear{
-	pixel_y = -32
-	},
-/obj/item/projectile/magic/animate{
-	pixel_y = -32
-	},
-/turf/open/floor/clockwork/reebe{
-	desc = "Cool coloured plating. You can feel it gently vibrating, as if machinery is on the other side.";
-	name = "cool metal floor"
+/turf/open/floor/plasteel/vault/side{
+	dir = 8
 	},
 /area/f13/brotherhood)
 "udp" = (
@@ -17446,13 +17415,10 @@
 	},
 /area/f13/tunnel)
 "uhB" = (
-/obj/structure/table/wood,
-/obj/machinery/libraryscanner{
-	desc = "This device scans books and other documents for entry into the Archives.";
-	name = "archive scanner";
-	pixel_y = 7
+/obj/machinery/light/small,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
+	icon_state = "neutralrustyfull"
 	},
-/turf/open/floor/wood/wood_fancy,
 /area/f13/brotherhood)
 "ujm" = (
 /obj/structure/table,
@@ -17472,10 +17438,15 @@
 /turf/open/floor/plasteel/f13/vault_floor/blue/whitebluefull,
 /area/f13/building/museum)
 "uku" = (
-/turf/open/floor/clockwork/reebe{
-	desc = "Cool coloured plating. You can feel it gently vibrating, as if machinery is on the other side.";
-	name = "cool metal floor"
+/obj/machinery/light{
+	dir = 4
 	},
+/obj/structure/table/reinforced,
+/obj/machinery/computer/terminal{
+	dir = 8;
+	termtag = "Private"
+	},
+/turf/open/floor/f13/wood,
 /area/f13/brotherhood)
 "uln" = (
 /obj/machinery/light/fo13colored/Red{
@@ -17733,12 +17704,10 @@
 	},
 /area/f13/tunnel)
 "uHk" = (
-/obj/structure/table/wood,
-/obj/machinery/computer/libraryconsole/bookmanagement{
-	desc = "A console that is capable of accessing the whole of the Brotherhood of Steel's archives. A very important aspect of their organization, this machine is not to be tampered with. Unless sabotage is your goal.";
-	name = "archive database"
+/obj/structure/chair/comfy/black{
+	dir = 8
 	},
-/turf/open/floor/wood/wood_fancy,
+/turf/open/floor/f13/wood,
 /area/f13/brotherhood)
 "uHK" = (
 /turf/closed/mineral/random/low_chance,
@@ -18156,8 +18125,10 @@
 	},
 /obj/structure/window/reinforced/spawner,
 /obj/structure/window/reinforced/spawner/west,
-/obj/structure/lattice{
-	density = 1
+/obj/structure/lattice,
+/obj/structure/fence/handrail{
+	dir = 4;
+	pixel_x = -15
 	},
 /turf/open/floor/plating/tunnel,
 /area/f13/brotherhood)
@@ -18369,9 +18340,8 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "vGf" = (
-/turf/open/floor/circuit/red/anim{
-	light_range = 2.5
-	},
+/obj/item/flag/bos,
+/turf/open/floor/plasteel/vault/side,
 /area/f13/brotherhood)
 "vGl" = (
 /obj/effect/decal/cleanable/dirt,
@@ -18663,18 +18633,12 @@
 /turf/open/floor/carpet/black,
 /area/f13/brotherhood)
 "wdl" = (
-/obj/machinery/light/small{
-	dir = 8
+/obj/structure/table/reinforced,
+/obj/machinery/computer/terminal{
+	dir = 8;
+	termtag = "Private"
 	},
-/obj/structure/fence/handrail{
-	density = 0;
-	dir = 4;
-	pixel_x = 13
-	},
-/obj/structure/lattice{
-	density = 1
-	},
-/turf/open/floor/plating/tunnel,
+/turf/open/floor/f13/wood,
 /area/f13/brotherhood)
 "wdq" = (
 /obj/effect/decal/cleanable/dirt,
@@ -18888,9 +18852,8 @@
 "wwj" = (
 /obj/structure/window/reinforced/spawner/west,
 /obj/structure/window/reinforced/spawner/east,
-/turf/open/floor/clockwork/reebe{
-	desc = "Cool coloured plating. You can feel it gently vibrating, as if machinery is on the other side.";
-	name = "cool metal floor"
+/turf/open/floor/plasteel/vault/side{
+	dir = 1
 	},
 /area/f13/brotherhood)
 "wwt" = (
@@ -19108,6 +19071,9 @@
 /turf/open/floor/plasteel/darkpurple/side,
 /area/f13/brotherhood)
 "wLC" = (
+/obj/effect/turf_decal/big/brotherhood{
+	pixel_y = -16
+	},
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/brotherhood)
 "wLH" = (
@@ -19364,7 +19330,10 @@
 /turf/closed/wall/f13/supermart,
 /area/f13/followers)
 "xkz" = (
-/turf/open/floor/wood/wood_fancy,
+/obj/structure/chair/comfy/black{
+	dir = 1
+	},
+/turf/open/floor/f13/wood,
 /area/f13/brotherhood)
 "xkB" = (
 /obj/effect/turf_decal/weather/dirt{
@@ -19620,18 +19589,10 @@
 	},
 /area/f13/brotherhood)
 "xGY" = (
-/obj/structure/fence/handrail{
-	density = 0;
-	dir = 4;
-	pixel_x = 13
+/obj/structure/chair/comfy/black{
+	dir = 4
 	},
-/obj/structure/lattice{
-	density = 1
-	},
-/obj/machinery/light/small{
-	dir = 8
-	},
-/turf/open/floor/plating/tunnel,
+/turf/open/floor/carpet/black,
 /area/f13/brotherhood)
 "xHi" = (
 /obj/effect/decal/cleanable/greenglow,
@@ -19882,7 +19843,6 @@
 	pixel_x = 16;
 	pixel_y = 21
 	},
-/obj/machinery/ore_silo,
 /turf/open/floor/plasteel/f13/vault_floor/neutral/corner{
 	dir = 8
 	},
@@ -20068,19 +20028,16 @@
 	},
 /area/f13/followers)
 "yke" = (
-/obj/item/clothing/suit/armor/f13/power_armor/excavator,
+/obj/item/clothing/suit/armor/f13/power_armor/midwest,
 /obj/structure/window/reinforced/spawner/north,
-/obj/structure/window/reinforced/spawner/west,
 /obj/structure/window/reinforced/spawner/east,
+/obj/structure/window/reinforced/spawner/west,
 /obj/structure/table/reinforced,
 /obj/machinery/door/window/brigdoor{
 	req_access_txt = "255"
 	},
-/obj/item/clothing/head/helmet/f13/power_armor/excavator,
-/turf/open/floor/clockwork/reebe{
-	desc = "Cool coloured plating. You can feel it gently vibrating, as if machinery is on the other side.";
-	name = "cool metal floor"
-	},
+/obj/item/clothing/head/helmet/f13/power_armor/midwest,
+/turf/open/floor/plasteel/vault/side,
 /area/f13/brotherhood)
 "ykl" = (
 /obj/structure/chair/booth{
@@ -64866,7 +64823,7 @@ aae
 aae
 aae
 aae
-aae
+kVP
 kVP
 kVP
 kVP
@@ -65123,8 +65080,8 @@ aae
 aak
 aak
 aak
-aae
-eFw
+kVP
+lsS
 lsS
 lsS
 lsS
@@ -65380,9 +65337,9 @@ aak
 aae
 aae
 aaa
-aae
-eFw
+kVP
 lsS
+eFw
 eFw
 eFw
 eFw
@@ -65637,18 +65594,18 @@ aak
 aae
 aae
 aaa
-aae
-eFw
+kVP
 lsS
 eFw
-aDe
-hav
-xkz
-npF
+sLR
+uUY
+uUY
+eFw
 eFw
 onr
 wvk
 aRI
+kvI
 kvI
 kvI
 nEP
@@ -65894,16 +65851,16 @@ aak
 aae
 aak
 aak
-aae
-eFw
+kVP
 lsS
 eFw
+uUY
 aDe
-xkz
-xkz
-npF
+uUY
+eFw
 eFw
 toa
+onW
 onW
 onW
 onW
@@ -66151,19 +66108,19 @@ aae
 aae
 aak
 aak
-aae
-eFw
+kVP
 lsS
 eFw
-aDe
+rWu
+mEL
 xkz
-xkz
-npF
+eFw
 eFw
 dWz
 onW
 onW
 sSo
+onW
 onW
 kUl
 eFw
@@ -66408,16 +66365,16 @@ aae
 aae
 aae
 aae
-aae
-eFw
+kVP
 lsS
 eFw
+npF
 rWu
-xkz
-xkz
+qks
 eFw
 eFw
 thB
+onW
 onW
 onW
 onW
@@ -66666,18 +66623,18 @@ kVP
 kVP
 kVP
 kVP
-eFw
 lsS
 eFw
+rWu
 lIt
 xkz
-xkz
-jNL
+eFw
 eFw
 dWz
 onW
 onW
 sSo
+onW
 onW
 qNh
 pGS
@@ -66924,14 +66881,14 @@ lsS
 lsS
 lsS
 lsS
-lsS
 eFw
-lIt
-xkz
-xkz
+uUY
 uHk
+uUY
+eFw
 eFw
 toa
+onW
 onW
 onW
 onW
@@ -67181,16 +67138,16 @@ eFw
 eFw
 eFw
 eFw
-lsS
 eFw
-lIt
-pmF
-xkz
-uhB
+sLR
+uUY
+uUY
+eFw
 eFw
 ilA
 nfu
 wDn
+gRh
 gRh
 gRh
 bTX
@@ -67433,17 +67390,17 @@ kVP
 lsS
 eFw
 ibq
-vGf
+qiz
 rgG
-vGf
+qiz
 sNC
 eFw
 eFw
-eFw
-eFw
-eFw
-tkn
+lcf
 llc
+lcf
+eFw
+eFw
 eFw
 eFw
 eFw
@@ -67691,19 +67648,19 @@ lsS
 eFw
 vGf
 gNw
-uku
+vuj
 czQ
-vGf
+vaL
 eFw
 rVS
-xGY
+rgz
 eaY
 rgz
-kvP
+rgz
 liV
+rgz
 eaY
-wdl
-eaY
+rgz
 llc
 mKl
 fhh
@@ -67946,11 +67903,11 @@ aae
 kVP
 lsS
 eFw
-vGf
+sEK
 boo
-uku
+vuj
 dFt
-vGf
+tnm
 lDc
 iEt
 iEt
@@ -67962,7 +67919,7 @@ iEt
 iEt
 iEt
 sDS
-vuj
+mKl
 vaL
 eFw
 eFw
@@ -68204,9 +68161,9 @@ kVP
 lsS
 eFw
 yke
-uku
+vuj
 nxn
-uku
+vuj
 wwj
 soO
 iEt
@@ -68460,12 +68417,12 @@ aae
 kVP
 lsS
 eFw
-vGf
+sEK
 boo
-uku
+vuj
 dFt
-vGf
-eFw
+tnm
+kkW
 iEt
 iEt
 iEt
@@ -68476,7 +68433,7 @@ iEt
 iEt
 iEt
 rEc
-vuj
+mKl
 vaL
 eFw
 eFw
@@ -68719,23 +68676,23 @@ lsS
 eFw
 vGf
 axe
-uku
+vuj
 qwy
-vGf
+vaL
 eFw
 vjg
-eRL
+owp
 hgD
 owp
-kvP
+owp
 pCz
+owp
 hgD
-qiz
-hgD
+owp
 llc
 mKl
 qmp
-eix
+gFh
 mTy
 gFh
 vuj
@@ -68975,24 +68932,24 @@ kVP
 lsS
 eFw
 edQ
-vGf
+oDv
 pvC
-vGf
+oDv
 ubO
 eFw
 eFw
 eFw
 eFw
 eFw
-lcf
-llc
+eFw
+eFw
 eFw
 eFw
 eFw
 cir
 eYn
 jak
-eix
+dWc
 nVS
 dWc
 dWc
@@ -69238,15 +69195,15 @@ eFw
 eFw
 eFw
 eFw
-mHa
-hav
-eix
-fAE
-fAE
-fAE
-dzS
-fAE
-llc
+lsS
+lsS
+eFw
+eFw
+eFw
+eFw
+eFw
+eFw
+eFw
 mKl
 vaL
 rvZ
@@ -69494,16 +69451,16 @@ lsS
 lsS
 lsS
 lsS
+lsS
+lsS
+lsS
 eFw
-jjo
-xkz
-kkW
-fAE
-epQ
-epQ
-epQ
-fAE
-llc
+eFw
+eFw
+eFw
+eFw
+eFw
+eFw
 wwI
 oRj
 eFw
@@ -69750,16 +69707,16 @@ kVP
 kVP
 kVP
 kVP
+eFw
+eFw
+eFw
 lsS
 eFw
-xkz
-xkz
-kkW
-fAE
+hhc
 lwL
+jNL
 lwL
-lwL
-fAE
+hhc
 eFw
 mKl
 vaL
@@ -70006,19 +69963,19 @@ aaa
 aaa
 aae
 aak
-kVP
+aak
+xwF
+xwF
+eFw
 lsS
 eFw
-xkz
-sLR
-kkW
-fAE
-fAE
-fAE
-fAE
-fAE
-rEc
-vuj
+uUY
+uHk
+uHk
+uHk
+uUY
+eFw
+mKl
 vaL
 eFw
 eFw
@@ -70263,20 +70220,20 @@ aae
 aae
 aae
 aae
-kVP
+aae
+xwF
+xwF
+eFw
 lsS
 eFw
-xkz
-sLR
-kkW
-fAE
-fAE
-fAE
-fAE
-fAE
-rEc
-vuj
-vaL
+uUY
+xGY
+xGY
+xGY
+uUY
+eFw
+sEK
+tnm
 eFw
 gra
 tOy
@@ -70520,20 +70477,20 @@ aak
 aak
 aak
 aae
-kVP
+aak
+xwF
+xwF
+eFw
 lsS
 eFw
-xkz
-xkz
-kkW
-fAE
 epQ
-epQ
-epQ
-fAE
+oJw
+gMI
+gMI
+uUY
 eFw
-sEK
-tnm
+mKl
+vaL
 eFw
 lqS
 sxz
@@ -70777,18 +70734,18 @@ aae
 aae
 aae
 aae
-kVP
+aae
+xwF
+xwF
+eFw
 lsS
 eFw
-jjo
-xkz
-kkW
-fAE
-lwL
-lwL
-lwL
-fAE
-llc
+uUY
+tkn
+mHa
+oJw
+uUY
+eFw
 mKl
 vaL
 gFX
@@ -71034,18 +70991,18 @@ aae
 aae
 aae
 aae
-kVP
+aae
+xwF
+xwF
+eFw
 lsS
 eFw
-mHa
-pmF
-eix
-fAE
-fAE
-fAE
-rdL
-fAE
-llc
+uUY
+kvP
+kvP
+kvP
+uUY
+eFw
 mKl
 vuj
 ajc
@@ -71291,18 +71248,18 @@ aae
 aae
 aae
 aae
-kVP
+aae
+xwF
+xwF
+eFw
 lsS
 eFw
-eFw
-eFw
-eFw
-eFw
-eFw
-eFw
-eFw
-eFw
-eFw
+uUY
+aDe
+aDe
+aDe
+uUY
+ajc
 mKl
 vaL
 rvZ
@@ -71548,18 +71505,18 @@ aae
 aae
 aaa
 aaa
-kVP
+aae
+xwF
+xwF
+eFw
 lsS
-lsS
-lsS
-lsS
-lsS
-lsS
-lsS
-lsS
-lsS
-lsS
-mEL
+eFw
+bTO
+wdl
+uku
+wdl
+hhc
+eFw
 mKl
 vuj
 ajc
@@ -71805,9 +71762,9 @@ aae
 aae
 aaa
 aaa
-kVP
-eFw
-eFw
+aae
+xwF
+xwF
 eFw
 lsS
 eFw
@@ -75439,13 +75396,13 @@ eFw
 tHm
 bot
 eFw
-aEY
+eRL
 lPd
 tRg
 tRg
 tRg
 hFx
-aEY
+eRL
 eFw
 lsS
 lsS
@@ -75953,7 +75910,7 @@ sWt
 gQu
 bSL
 eFw
-aEY
+eRL
 kaX
 jxG
 jxG
@@ -76210,7 +76167,7 @@ sWt
 sWt
 sWt
 eFw
-aEY
+eRL
 ydh
 sXj
 sXj
@@ -76467,7 +76424,7 @@ fse
 fse
 sWt
 eFw
-aEY
+eRL
 dQF
 jju
 gSg
@@ -76724,9 +76681,9 @@ okT
 fse
 sWt
 eFw
-aEY
+eRL
 dQF
-djF
+jjo
 jju
 jju
 wNi
@@ -76981,13 +76938,13 @@ fAE
 fse
 tfh
 eFw
-aEY
+eRL
 rvc
 jju
 djF
 djF
-wNi
-aEY
+hav
+eRL
 eFw
 eFw
 eFw
@@ -77238,7 +77195,7 @@ fse
 fse
 sWt
 eFw
-aEY
+eRL
 dQF
 wBk
 jju
@@ -77504,8 +77461,8 @@ hQb
 dbO
 yhd
 jju
-djF
-mEL
+uhB
+eFw
 lsS
 eFw
 aaB
@@ -77752,13 +77709,13 @@ sWt
 sWt
 sWt
 eFw
-aEY
+eRL
 sMN
 jZy
 cLS
 aew
 mNH
-hgD
+owp
 lBb
 mqM
 hjY
@@ -78270,7 +78227,7 @@ nks
 xuo
 qfa
 wzQ
-aEY
+pmF
 eFw
 lsS
 lsS
@@ -79284,8 +79241,8 @@ qju
 eFw
 lii
 vuj
-vuj
 rvZ
+eFw
 eFw
 eFw
 eFw
@@ -79541,15 +79498,15 @@ ajc
 eFw
 wFW
 vuj
-vuj
 eFw
-xwF
-xwF
-xwF
-xwF
-xwF
-xwF
-xwF
+cAT
+qyx
+pKe
+eFw
+rvZ
+ddN
+vzK
+vzK
 eFw
 vIh
 xuo
@@ -79798,15 +79755,15 @@ vuj
 ibY
 vuj
 vuj
-vuj
 tNq
-xwF
-xwF
-xwF
-xwF
-xwF
-xwF
-xwF
+pKe
+pKe
+pKe
+aVj
+pKe
+pKe
+pKe
+pKe
 eFw
 eFw
 eFw
@@ -80055,23 +80012,23 @@ vuj
 vuj
 vuj
 vuj
-vuj
 eFw
-xwF
-xwF
-xwF
-xwF
-xwF
-xwF
-xwF
+dEl
+pKe
+kKT
 eFw
-aEY
+cxT
+pKe
+pKe
+pKe
+eFw
+eRL
 afH
 jZy
 cLS
 aew
 gGe
-eaY
+rgz
 lBb
 pYG
 dRR
@@ -80313,14 +80270,14 @@ eFw
 eFw
 tNq
 eFw
+dEl
+pKe
+dzS
 eFw
-eFw
-xwF
-xwF
-xwF
-xwF
-xwF
-xwF
+cxT
+pKe
+pKe
+pKe
 eFw
 gyo
 agl
@@ -80331,8 +80288,8 @@ vqh
 dbO
 dxA
 stF
-aqQ
-mEL
+aDw
+eFw
 lsS
 eFw
 aae
@@ -80567,19 +80524,19 @@ eFw
 msW
 qju
 eFw
-cAT
-pKe
-pKe
-ddN
+msW
+onW
 eFw
-xwF
-xwF
-xwF
-xwF
-xwF
-xwF
+dEl
+pKe
+kKT
 eFw
-aEY
+eFw
+pPC
+eFw
+pPC
+eFw
+eRL
 pII
 aqQ
 stF
@@ -80824,25 +80781,25 @@ eFw
 aAX
 seX
 eFw
-pKe
-pKe
-pKe
-vzK
+aAX
+seX
 eFw
-xwF
-xwF
-xwF
-xwF
-xwF
-xwF
+dEl
+fIn
+kKT
 eFw
-aEY
+eFw
+mVc
+eFw
+mVc
+eFw
+eRL
 pII
 tbI
 tbI
 tbI
 hOV
-aEY
+eRL
 eFw
 eFw
 eFw
@@ -81081,25 +81038,25 @@ eFw
 dKt
 qju
 eFw
-pKe
-pKe
-pKe
-vzK
+dKt
+onW
 eFw
-xwF
-xwF
-xwF
-xwF
-xwF
-xwF
 eFw
-aEY
+eFw
+eFw
+eFw
+eFw
+eFw
+eFw
+eFw
+eFw
+eRL
 pII
 tgR
 xKq
 tbI
 hOV
-aEY
+eRL
 eFw
 lsS
 lsS
@@ -81338,25 +81295,25 @@ eFw
 eFw
 eFw
 eFw
-pPC
-eFw
-pPC
 eFw
 eFw
-xwF
-xwF
-xwF
-xwF
-xwF
-xwF
 eFw
-aEY
+lsS
+lsS
+lsS
+lsS
+lsS
+lsS
+lsS
+lsS
+eFw
+eRL
 pII
 cZy
 rSP
 tbI
 hOV
-aEY
+eRL
 eFw
 lsS
 eFw
@@ -81584,6 +81541,11 @@ eFw
 eFw
 eFw
 eFw
+eFw
+lsS
+lsS
+lsS
+lsS
 lsS
 lsS
 lsS
@@ -81595,25 +81557,20 @@ lsS
 lsS
 lsS
 eFw
-mVc
 eFw
-mVc
 eFw
-xwF
-xwF
-xwF
-xwF
-xwF
-xwF
-xwF
 eFw
-aEY
+eFw
+eFw
+lsS
+eFw
+eRL
 pII
 cZy
 rSP
 tbI
 hOV
-aEY
+eRL
 eFw
 lsS
 eFw
@@ -81840,6 +81797,8 @@ xwF
 xwF
 xwF
 xwF
+xwF
+xwF
 eFw
 eFw
 eFw
@@ -81849,28 +81808,26 @@ eFw
 eFw
 eFw
 eFw
+eFw
+eFw
+eFw
+eFw
+eFw
+eFw
+xwF
+xwF
+xwF
+xwF
 eFw
 lsS
 eFw
-eFw
-eFw
-eFw
-eFw
-eFw
-eFw
-eFw
-eFw
-eFw
-eFw
-lsS
-eFw
-aEY
+eRL
 pII
 mKs
 nDp
 xPK
 hOV
-aEY
+eRL
 eFw
 lsS
 eFw
@@ -82106,19 +82063,19 @@ xwF
 xwF
 xwF
 xwF
+xwF
+xwF
+xwF
+xwF
+xwF
+xwF
+xwF
+xwF
+xwF
+xwF
+xwF
+xwF
 eFw
-lsS
-lsS
-lsS
-lsS
-lsS
-lsS
-lsS
-lsS
-lsS
-lsS
-lsS
-lsS
 lsS
 eFw
 gyo
@@ -82363,28 +82320,28 @@ xwF
 xwF
 xwF
 xwF
-eFw
-eFw
-eFw
-eFw
-eFw
-eFw
-eFw
-eFw
-eFw
-eFw
-eFw
-eFw
+xwF
+xwF
+xwF
+xwF
+xwF
+xwF
+xwF
+xwF
+xwF
+xwF
+xwF
+xwF
 eFw
 lsS
 eFw
-aEY
+eRL
 qyz
 nhQ
 xBq
 xBq
 dZN
-aEY
+eRL
 eFw
 lsS
 eFw

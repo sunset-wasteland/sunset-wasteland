@@ -174,3 +174,7 @@
 /obj/effect/turf_decal/big/brotherhood
 	icon = 'icons/turf/decalsbig.dmi'
 	icon_state = "brotherhood"
+
+/obj/effect/turf_decal/long/brotherhood
+	icon = 'icons/turf/decalslong.dmi'
+	icon_state = "brotherhood"

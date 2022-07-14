@@ -171,6 +171,3 @@
 	icon = 'icons/turf/decalsbig.dmi'
 	icon_state = "energy"
 
-/obj/effect/turf_decal/big/brotherhood
-	icon = 'icons/turf/decalsbig.dmi'
-	icon_state = "brotherhood"

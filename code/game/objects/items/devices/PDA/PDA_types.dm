@@ -95,7 +95,7 @@
 	ttone = "bwoink"
 	detonatable = FALSE
 	hidden = TRUE
-	note = "Congratulations, you have chosen the RobCo Pip-Boy 3000 Personal Information Prestige Edition! To help with navigation, we have provided the following definitions. North, South, West, East."
+	note = "Congratulations, you have chosen the RobCo Pip-Boy 3000 Personal Information Processor Prestige Edition! To help with navigation, we have provided the following definitions. North, South, West, East."
 
 /obj/item/pda/cargo
 	name = "cargo technician PDA"

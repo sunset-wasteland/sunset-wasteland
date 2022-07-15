@@ -69,7 +69,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 	var/last_everyone //No text for everyone spamming
 	var/last_noise //Also no honk spamming that's bad too
 	var/ttone = "beep" //The ringtone!
-	var/note = "Congratulations, your has chosen the RobCo Pip-Boy 3000 Personal Information Processor! To help with navigation, we have provided the following definitions. North, South, West, East." //Current note in the notepad function
+	var/note = "Congratulations, your Vault has chosen the RobCo Pip-Boy 3000 Personal Information Processor! To help with navigation, we have provided the following definitions. North, South, West, East." //Current note in the notepad function
 	var/notehtml = ""
 	var/notescanned = FALSE // True if what is in the notekeeper was from a paper.
 	var/detonatable = TRUE // Can the PDA be blown up?

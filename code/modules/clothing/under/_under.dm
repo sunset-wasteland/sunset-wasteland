@@ -114,6 +114,8 @@
 				return TRUE
 
 			accessory_overlay = mutable_appearance('icons/mob/clothing/accessories.dmi', attached_accessory.icon_state)
+			if(A.mob_overlay_icon) // Sunset Wasteland changes: should make modularized accessories work on-mob.
+				accessory_overlay = mutable_appearance(A.mob_overlay_icon, attached_accessory.icon_state) // Ditto
 			accessory_overlay.alpha = attached_accessory.alpha
 			accessory_overlay.color = attached_accessory.color
 

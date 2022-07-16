@@ -115,7 +115,7 @@ GLOBAL_VAR_INIT(observer_default_invisibility, INVISIBILITY_OBSERVER)
 		else
 			T = SSmapping.get_station_center()
 
-		abstract_move(T)
+		forceMove(T)
 
 	if(!name)							//To prevent nameless ghosts
 		name = random_unique_name(gender)
@@ -170,8 +170,7 @@ GLOBAL_VAR_INIT(observer_default_invisibility, INVISIBILITY_OBSERVER)
 	QDEL_NULL(spawners_menu)
 	return ..()
 
-/mob/dead/CanAllowThrough(atom/movable/mover, border_dir)
-	..()
+/mob/dead/CanPass(atom/movable/mover, border_dir)
 	return 1
 
 /*
@@ -491,7 +490,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 		to_chat(usr, "No area available.")
 		return
 
-	usr.abstract_move(pick(L))
+	usr.forceMove(pick(L))
 	update_parallax_contents()
 
 /mob/dead/observer/proc/view_gas()
@@ -570,7 +569,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 			var/turf/T = get_turf(M) //Turf of the destination mob
 
 			if(T && isturf(T))	//Make sure the turf exists, then move the source to that destination.
-				A.abstract_move(T)
+				A.forceMove(T)
 				A.update_parallax_contents()
 			else
 				to_chat(A, "This mob is not located in the game world.")
@@ -654,17 +653,9 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	else
 		see_invisible = SEE_INVISIBLE_OBSERVER
 
-	HandlePlanes()
 
 	updateghostimages()
 	..()
-
-/mob/dead/observer/proc/HandlePlanes()
-	if(check_rights(R_ADMIN))
-		return
-	hud_used.plane_masters["[OBJITEM_PLANE]"].Hide()
-	if(client)
-		client.show_popup_menus = 0
 
 /proc/updateallghostimages()
 	listclearnulls(GLOB.ghost_images_default)
@@ -914,8 +905,6 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 			mob_eye.observers |= src
 			mob_eye.hud_used.show_hud(mob_eye.hud_used.hud_version, src)
 			observetarget = mob_eye
-			HandlePlanes()
-
 
 /mob/dead/observer/verb/register_pai_candidate()
 	set category = "Ghost"
@@ -963,7 +952,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 		set_light_on(FALSE)
 
 // Ghosts have no momentum, being massless ectoplasm
-/mob/dead/observer/Process_Spacemove(movement_dir, continuous_move)
+/mob/dead/observer/Process_Spacemove(movement_dir)
 	return 1
 
 /mob/dead/observer/vv_edit_var(var_name, var_value)

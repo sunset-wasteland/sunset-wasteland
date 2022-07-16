@@ -222,20 +222,12 @@
 	pass_flags = PASSTABLE|PASSGLASS|PASSGRILLE|LETPASSTHROW
 	var/obj/item/assembly/infra/master
 
-/obj/effect/beam/i_beam/Initialize()
+/obj/effect/beam/i_beam/Crossed(atom/movable/AM as mob|obj)
 	. = ..()
-	var/static/list/loc_connections = list(
-		COMSIG_ATOM_ENTERED = .proc/on_entered,
-	)
-	AddElement(/datum/element/connect_loc, loc_connections)
-
-
-/obj/effect/beam/i_beam/proc/on_entered(atom/movable/AM as mob|obj)
-	SIGNAL_HANDLER
 	if(istype(AM, /obj/effect/beam))
 		return
 	if (isitem(AM))
 		var/obj/item/I = AM
 		if (I.item_flags & ABSTRACT)
 			return
-	INVOKE_ASYNC(master, /obj/item/assembly/infra/.proc/trigger_beam, AM, get_turf(src))
+	master.trigger_beam(AM, get_turf(src))

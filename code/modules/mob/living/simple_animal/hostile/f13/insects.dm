@@ -263,7 +263,6 @@
 	melee_damage_lower = 10
 	melee_damage_upper = 30
 	move_to_delay = 4
-	footstep_type = FOOTSTEP_MOB_CLAW
 
 
 // BLUE RADSCORPION - a little weaker and faster
@@ -278,7 +277,7 @@
 	maxHealth = 140
 	health = 140
 	move_to_delay = 4
-	footstep_type = FOOTSTEP_MOB_CLAW
+
 
 /////////////
 // CAZADOR //

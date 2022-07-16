@@ -367,7 +367,6 @@
 				/obj/item/stack/sheet/leather = 1)
 	category = CAT_TRIBAL
 	tools = list(TOOL_WORKBENCH)
-	always_available = TRUE
 
 /datum/crafting_recipe/tribalwar/spearquiver
 	name = "Spear Quiver"
@@ -376,7 +375,6 @@
 	reqs = list(/obj/item/stack/sheet/leather = 3,
 				/obj/item/stack/sheet/metal = 1)
 	category = CAT_TRIBAL
-	always_available = TRUE
 
 /datum/crafting_recipe/tribalwar/lighttribe
 	name = "Light Tribal Plates"

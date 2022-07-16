@@ -82,10 +82,6 @@
 /obj/effect/cross_action/spacetime_dist/Initialize(mapload)
 	. = ..()
 	setDir(pick(GLOB.cardinals))
-	var/static/list/loc_connections = list(
-		COMSIG_ATOM_ENTERED = .proc/on_entered,
-	)
-	AddElement(/datum/element/connect_loc, loc_connections)
 
 /obj/effect/cross_action/spacetime_dist/proc/walk_link(atom/movable/AM)
 	if(ismob(AM))
@@ -104,8 +100,7 @@
 	playsound(get_turf(src),sound,70,0)
 	busy = FALSE
 
-/obj/effect/cross_action/spacetime_dist/proc/on_entered(atom/movable/AM)
-	SIGNAL_HANDLER
+/obj/effect/cross_action/spacetime_dist/Crossed(atom/movable/AM)
 	if(!busy)
 		walk_link(AM)
 

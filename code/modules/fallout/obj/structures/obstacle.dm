@@ -99,7 +99,6 @@
 	name = "razorwire"
 	icon = 'icons/fallout/structures/barricades.dmi'
 	icon_state = "barbed_single"
-	plane = MOB_PLANE
 	layer = ABOVE_ALL_MOB_LAYER
 
 /////////

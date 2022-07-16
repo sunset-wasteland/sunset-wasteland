@@ -9,7 +9,7 @@
 	spawn(300)
 		qdel(src)
 
-	if(!GLOB.vertibird)
+	if(!vertibird)
 		return
 
 	if(src.z != 1)
@@ -26,7 +26,7 @@
 		src.visible_message("Unable to land, find a clear LZ!")
 		return
 
-	GLOB.vertibird:fly(src.x, src.y)
+	vertibird:fly(src.x, src.y)
 
 /obj/item/vertibird_flare/attack_self(mob/user)
 	icon_state = "[icon_state]-on"

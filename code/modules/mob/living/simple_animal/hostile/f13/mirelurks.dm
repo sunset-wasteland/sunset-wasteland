@@ -21,7 +21,6 @@
 	melee_damage_upper = 20
 	gold_core_spawnable = HOSTILE_SPAWN
 	blood_volume = 0
-	footstep_type = FOOTSTEP_MOB_CLAW
 
 // MIRELURK HUNTER MALES
 /mob/living/simple_animal/hostile/mirelurk/hunter
@@ -38,7 +37,6 @@
 	melee_damage_lower = 30
 	melee_damage_upper = 45
 	gold_core_spawnable = HOSTILE_SPAWN
-	footstep_type = FOOTSTEP_MOB_CLAW
 
 // MIRELURK BABY
 /mob/living/simple_animal/hostile/mirelurk/baby
@@ -55,9 +53,6 @@
 	melee_damage_lower = 5
 	melee_damage_upper = 10
 	gold_core_spawnable = HOSTILE_SPAWN
-	footstep_type = FOOTSTEP_MOB_CLAW
-
-
 
 /mob/living/simple_animal/hostile/mirelurk/baby/Initialize()
 	. = ..()

@@ -301,6 +301,8 @@ field_generator power level display
 			CF.setDir(field_dir)
 			fields += CF
 			G.fields += CF
+			for(var/mob/living/L in T)
+				CF.Crossed(L)
 
 	connected_gens |= G
 	G.connected_gens |= src

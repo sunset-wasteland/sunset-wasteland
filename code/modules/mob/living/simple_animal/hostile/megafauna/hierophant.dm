@@ -488,8 +488,7 @@ Difficulty: Normal
 	queue_smooth_neighbors(src)
 	return ..()
 
-/obj/effect/temp_visual/hierophant/wall/CanAllowThrough(atom/movable/mover, border_dir)
-	..()
+/obj/effect/temp_visual/hierophant/wall/CanPass(atom/movable/mover, border_dir)
 	if(QDELETED(caster))
 		return FALSE
 	if(mover == caster.pulledby)
@@ -614,13 +613,6 @@ Difficulty: Normal
 		M.gets_drilled(caster)
 	INVOKE_ASYNC(src, .proc/blast)
 
-	var/static/list/loc_connections = list(
-		COMSIG_ATOM_ENTERED = .proc/on_entered,
-	)
-	AddElement(/datum/element/connect_loc, loc_connections)
-
-
-
 /obj/effect/temp_visual/hierophant/blast/proc/blast()
 	var/turf/T = get_turf(src)
 	if(!T)
@@ -632,10 +624,10 @@ Difficulty: Normal
 	sleep(1.3) //slightly forgiving; the burst animation is 1.5 deciseconds
 	bursting = FALSE //we no longer damage crossers
 
-/obj/effect/temp_visual/hierophant/blast/proc/on_entered(atom/movable/AM)
-	SIGNAL_HANDLER
+/obj/effect/temp_visual/hierophant/blast/Crossed(atom/movable/AM)
+	..()
 	if(bursting)
-		INVOKE_ASYNC(src, .proc/do_damage, get_turf(src))
+		do_damage(get_turf(src))
 
 /obj/effect/temp_visual/hierophant/blast/proc/do_damage(turf/T)
 	if(!damage)

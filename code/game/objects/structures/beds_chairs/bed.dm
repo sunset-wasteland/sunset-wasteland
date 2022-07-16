@@ -240,7 +240,7 @@
 	desc = "This is used to lie in, sleep in or strap on."
 	icon_state = "mattress0"
 	buildstacktype = /obj/item/stack/sheet/cloth
-	buildstackamount = 1
+	buildstackamount = 3
 //	decontool = /obj/item/wirecutters
 
 /obj/structure/bed/mattress/pregame/New()

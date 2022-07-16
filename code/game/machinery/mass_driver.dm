@@ -43,18 +43,9 @@
 	name = "pressure plated mass driver"
 	var/drive_delay = 10
 
-/obj/machinery/mass_driver/pressure_plate/Initialize()
+/obj/machinery/mass_driver/pressure_plate/Crossed(atom/movable/O)
 	. = ..()
-
-	var/static/list/loc_connections = list(
-		COMSIG_ATOM_ENTERED = .proc/on_entered,
-	)
-	AddElement(/datum/element/connect_loc, loc_connections)
-
-/obj/machinery/mass_driver/pressure_plate/proc/on_entered(datum/source, atom/movable/AM)
-	SIGNAL_HANDLER
-
-	if(isliving(AM))
-		var/mob/living/L = AM
+	if(isliving(O))
+		var/mob/living/L = O
 		to_chat(L, "<span class='warning'>You feel something click beneath you!</span>")
 	addtimer(CALLBACK(src, .proc/drive), drive_delay)

@@ -578,7 +578,6 @@
 	return FALSE
 
 /obj/item/electronic_assembly/Moved(oldLoc, dir)
-	..()
 	for(var/I in assembly_components)
 		var/obj/item/integrated_circuit/IC = I
 		IC.ext_moved(oldLoc, dir)

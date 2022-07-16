@@ -128,10 +128,7 @@
 /obj/item/book/granter/trait/onlearned(mob/living/user)
 	..()
 	if(oneuse)
-		user.visible_message(
-		message = "<span class='notice'>Just as [user] finishes reading [p_their(user)] copy of [src], the ancient book crumbles to dust!</span>",
-		self_message = "<span class='caution'>The ancient copy of [src] crumbles to dust as you finish reading it.</span>",
-		blind_message = "<span class='notice'>You hear something crumble.</span>")
+		to_chat(user, "<span class='caution'>[src] is useless to you now. You throw the book away.</span>")
 		qdel(src)
 
 /obj/item/book/granter/action/drink_fling
@@ -548,10 +545,7 @@
 /obj/item/book/granter/crafting_recipe/onlearned(mob/living/user)
 	..()
 	if(oneuse)
-		user.visible_message(
-		message = "<span class='notice'>Just as [user] finishes reading [p_their(user)] copy of [src], the ancient document crumbles to dust!</span>",
-		self_message = "<span class='caution'>The ancient copy of [src] crumbles to dust as you finish reading it.</span>",
-		blind_message = "<span class='notice'>You hear something crumble.</span>")
+		to_chat(user, "<span class='caution'>[src] is useless to you now. You throw it away.</span>")
 		qdel(src)
 
 

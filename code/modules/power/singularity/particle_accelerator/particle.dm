@@ -43,10 +43,9 @@
 			B.take_damage(energy*0.6)
 			movement_range = 0
 
-/obj/effect/accelerated_particle/proc/on_entered(atom/A)
-	SIGNAL_HANDLER
+/obj/effect/accelerated_particle/Crossed(atom/A)
 	if(isliving(A))
-		INVOKE_ASYNC(src, .proc/toxmob, A)
+		toxmob(A)
 
 
 /obj/effect/accelerated_particle/ex_act(severity, target)

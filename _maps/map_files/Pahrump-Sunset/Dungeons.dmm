@@ -1,32 +1,4 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
-"aaa" = (
-/obj/machinery/shower{
-	dir = 8
-	},
-/obj/effect/turf_decal/bot,
-/mob/living/simple_animal/hostile/eyebot,
-/turf/open/floor/plasteel/floorgrime,
-/area/f13/bunker)
-"aab" = (
-/obj/effect/decal/cleanable/oil/slippery,
-/obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/securitron{
-	health = 250;
-	name = "securitron mk.2"
-	},
-/turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
-/area/f13/bunker)
-"aac" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/handy,
-/turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
-/area/f13/bunker)
-"aad" = (
-/obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/handy/gutsy,
-/turf/open/floor/plasteel/f13/vault_floor/floor,
-/area/f13/bunker)
 "aaj" = (
 /obj/structure/filingcabinet/chestdrawer,
 /turf/open/floor/f13/wood,
@@ -178,7 +150,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/machinery/airalarm/directional/north,
+/obj/machinery/door/window/northleft,
 /turf/open/floor/plasteel/f13{
 	icon_state = "plating"
 	},
@@ -583,7 +555,7 @@
 	},
 /area/f13/bunker)
 "aBy" = (
-/obj/effect/spawner/lootdrop/f13/junkspawners,
+/obj/effect/spawner/lootdrop/trash,
 /obj/structure/nest/supermutant,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
@@ -827,7 +799,7 @@
 /turf/open/indestructible/ground/outside/water,
 /area/f13/underground/cave)
 "aRv" = (
-/obj/effect/spawner/lootdrop/f13/junkspawners,
+/obj/effect/spawner/lootdrop/trash,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
@@ -1553,7 +1525,7 @@
 "bKF" = (
 /obj/structure/table,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/f13/foodspawner,
+/obj/effect/spawner/lootdrop/food,
 /turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
 /area/f13/bunker)
 "bLZ" = (
@@ -1905,7 +1877,7 @@
 	dir = 8;
 	icon_state = "bench"
 	},
-/obj/effect/spawner/lootdrop/f13/junkspawners,
+/obj/effect/spawner/lootdrop/trash,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
@@ -1913,7 +1885,7 @@
 /area/f13/bunker)
 "cdT" = (
 /obj/machinery/light/small,
-/obj/effect/spawner/lootdrop/f13/junkspawners,
+/obj/effect/spawner/lootdrop/trash,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
@@ -1949,7 +1921,7 @@
 "cfX" = (
 /obj/structure/bed/roller,
 /obj/machinery/iv_drip,
-/obj/effect/spawner/lootdrop/f13/junkspawners,
+/obj/effect/spawner/lootdrop/trash,
 /turf/open/floor/f13{
 	icon_state = "freezerfloor"
 	},
@@ -2516,6 +2488,10 @@
 	},
 /turf/open/floor/carpet/black,
 /area/f13/vault)
+"cMv" = (
+/obj/structure/table,
+/turf/open/floor/plasteel/f13/vault_floor/plating,
+/area/f13/vault)
 "cNE" = (
 /obj/structure/chair/f13chair2{
 	dir = 4
@@ -3028,7 +3004,7 @@
 	},
 /area/f13/underground/cave)
 "djt" = (
-/obj/effect/spawner/lootdrop/f13/junkspawners,
+/obj/effect/spawner/lootdrop/trash,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
@@ -3115,7 +3091,7 @@
 /area/f13/bunker)
 "dmB" = (
 /obj/structure/chair/f13foldupchair,
-/obj/effect/spawner/lootdrop/f13/junkspawners,
+/obj/effect/spawner/lootdrop/trash,
 /obj/machinery/light{
 	dir = 4;
 	light_color = "#c1caff"
@@ -3168,7 +3144,7 @@
 /turf/open/floor/plasteel/elevatorshaft,
 /area/f13/vault)
 "dpk" = (
-/obj/effect/spawner/lootdrop/f13/junkspawners,
+/obj/effect/spawner/lootdrop/trash,
 /obj/machinery/light/small{
 	dir = 8
 	},
@@ -3381,9 +3357,9 @@
 	},
 /area/f13/vault)
 "dyE" = (
-/obj/machinery/airalarm/directional/north{
+/obj/machinery/door/window/brigdoor/security/cell/northleft{
 	dir = 2;
-	!INVALID_VAR! = "vaultc1";
+	id = "vaultc1";
 	name = "Cell 1"
 	},
 /obj/structure/cable{
@@ -3435,6 +3411,7 @@
 /area/f13/underground/cave)
 "dDG" = (
 /obj/structure/table,
+/obj/effect/spawner/lootdrop/clothing_middle,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/vault)
 "dEa" = (
@@ -3453,7 +3430,7 @@
 /area/f13/vault)
 "dED" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/f13/junkspawners,
+/obj/effect/spawner/lootdrop/trash,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
@@ -3613,7 +3590,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/bunker)
 "dJM" = (
-/obj/effect/spawner/lootdrop/f13/junkspawners,
+/obj/effect/spawner/lootdrop/trash,
 /turf/open/floor/plating/tunnel,
 /area/f13/bunker/bighornbunker)
 "dJU" = (
@@ -6268,7 +6245,7 @@
 /obj/machinery/shower{
 	dir = 8
 	},
-/obj/machinery/airalarm/directional/west,
+/obj/machinery/door/window/westleft,
 /turf/open/floor/plasteel/showroomfloor,
 /area/f13/bunker)
 "gru" = (
@@ -6359,7 +6336,7 @@
 	},
 /area/f13/bunker)
 "gyj" = (
-/obj/effect/spawner/lootdrop/f13/junkspawners,
+/obj/effect/spawner/lootdrop/trash,
 /obj/machinery/light/small{
 	dir = 1
 	},
@@ -6558,7 +6535,7 @@
 /area/f13/bunker)
 "gHp" = (
 /obj/structure/table,
-/obj/effect/spawner/lootdrop/f13/junkspawners,
+/obj/effect/spawner/lootdrop/trash,
 /turf/open/floor/f13{
 	icon_state = "freezerfloor"
 	},
@@ -6694,7 +6671,7 @@
 /turf/open/floor/f13,
 /area/f13/city)
 "gMw" = (
-/obj/effect/spawner/lootdrop/f13/junkspawners,
+/obj/effect/spawner/lootdrop/trash,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "gMA" = (
@@ -7487,7 +7464,7 @@
 /area/f13/vault)
 "hBc" = (
 /obj/effect/decal/waste,
-/obj/effect/spawner/lootdrop/f13/junkspawners,
+/obj/effect/spawner/lootdrop/trash,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
@@ -7654,7 +7631,7 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/bunker/bighornbunker)
 "hKu" = (
-/obj/effect/spawner/lootdrop/f13/junkspawners,
+/obj/effect/spawner/lootdrop/trash,
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
 "hKJ" = (
@@ -7709,9 +7686,9 @@
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/bunker)
 "hNV" = (
-/obj/machinery/airalarm/directional/north{
+/obj/machinery/door/window/brigdoor/security/cell/northleft{
 	dir = 2;
-	!INVALID_VAR! = "vaultc2";
+	id = "vaultc2";
 	name = "Cell 2"
 	},
 /obj/structure/cable{
@@ -7911,6 +7888,10 @@
 	icon_state = "showroomfloor"
 	},
 /area/f13/bunker)
+"hYX" = (
+/obj/effect/spawner/lootdrop/trash,
+/turf/open/floor/f13/wood,
+/area/f13/city)
 "hZe" = (
 /obj/structure/table/optable{
 	name = "Robotics Operating Table"
@@ -9364,7 +9345,7 @@
 	},
 /area/f13/bunker/bighornbunker)
 "jwj" = (
-/obj/effect/spawner/lootdrop/f13/junkspawners,
+/obj/effect/spawner/lootdrop/trash,
 /turf/open/floor/plasteel/barber{
 	icon_state = "platingdmg2"
 	},
@@ -10018,6 +9999,10 @@
 	icon_state = "floorgrime"
 	},
 /area/f13/bunker)
+"khx" = (
+/obj/effect/spawner/lootdrop/f13/junkspawners,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "khK" = (
 /obj/structure/timeddoor/sixtyminute,
 /turf/open/indestructible/ground/outside/dirt{
@@ -10362,7 +10347,7 @@
 /area/f13/bunker)
 "kyE" = (
 /obj/structure/table/booth,
-/obj/effect/spawner/lootdrop/f13/foodspawner,
+/obj/effect/spawner/lootdrop/food,
 /turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
 /area/f13/bunker)
 "kzg" = (
@@ -10386,6 +10371,7 @@
 /obj/structure/chair/office/dark{
 	dir = 8
 	},
+/obj/effect/spawner/lootdrop/f13/deadrodent_or_brainwashdisk,
 /obj/item/target/alien,
 /turf/open/floor/f13{
 	icon_state = "freezerfloor"
@@ -11558,7 +11544,7 @@
 /turf/open/floor/plasteel,
 /area/f13/vault)
 "lJs" = (
-/obj/machinery/door/window/brigdoor/security/cell/right/directional/east,
+/obj/machinery/door/window/eastright,
 /turf/open/floor/plasteel/f13{
 	icon_state = "floorgrime"
 	},
@@ -12504,7 +12490,7 @@
 	dir = 4
 	},
 /obj/machinery/light/small,
-/obj/effect/spawner/lootdrop/f13/junkspawners,
+/obj/effect/spawner/lootdrop/trash,
 /turf/open/floor/f13/wood,
 /area/f13/city)
 "mHA" = (
@@ -12563,8 +12549,8 @@
 /area/f13/vault)
 "mLt" = (
 /obj/structure/table,
-/obj/effect/spawner/lootdrop/f13/foodspawner,
-/obj/effect/spawner/lootdrop/f13/foodspawner,
+/obj/effect/spawner/lootdrop/food,
+/obj/effect/spawner/lootdrop/food,
 /turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
 /area/f13/bunker)
 "mMa" = (
@@ -12578,7 +12564,7 @@
 /area/f13/bunker)
 "mMz" = (
 /obj/effect/decal/remains/human,
-/obj/effect/spawner/lootdrop/f13/junkspawners,
+/obj/effect/spawner/lootdrop/trash,
 /turf/open/floor/plating/tunnel,
 /area/f13/bunker/bighornbunker)
 "mMM" = (
@@ -14555,7 +14541,7 @@
 /area/f13/bunker)
 "oEm" = (
 /obj/structure/table,
-/obj/effect/spawner/lootdrop/f13/junkspawners,
+/obj/effect/spawner/lootdrop/trash,
 /turf/open/floor/f13/wood,
 /area/f13/city)
 "oEu" = (
@@ -15083,6 +15069,12 @@
 	},
 /turf/closed/wall/f13/tentwall,
 /area/f13/underground/cave)
+"pdJ" = (
+/obj/effect/spawner/lootdrop/trash,
+/turf/open/floor/plasteel/barber{
+	icon_state = "plating"
+	},
+/area/f13/bunker)
 "pdN" = (
 /obj/effect/turf_decal/bot,
 /obj/structure/rack,
@@ -15677,6 +15669,11 @@
 	icon_state = "darkdirty"
 	},
 /area/f13/bunker)
+"pGI" = (
+/mob/living/simple_animal/hostile/handy/gutsy,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/f13/vault_floor/floor,
+/area/f13/bunker)
 "pGU" = (
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/mid,
 /turf/open/indestructible/ground/inside/mountain,
@@ -15798,6 +15795,12 @@
 /turf/open/floor/f13{
 	icon_state = "whitegreenrustychess"
 	},
+/area/f13/bunker)
+"pOg" = (
+/mob/living/simple_animal/hostile/handy,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
 /area/f13/bunker)
 "pOj" = (
 /obj/machinery/chem_heater,
@@ -16182,7 +16185,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/machinery/door/window/brigdoor/left/directional/south,
+/obj/machinery/door/window/southleft,
 /turf/open/floor/plasteel/f13{
 	icon_state = "plating"
 	},
@@ -17620,7 +17623,7 @@
 /turf/open/floor/plasteel/dark,
 /area/f13/vault)
 "rLF" = (
-/obj/effect/spawner/lootdrop/f13/junkspawners,
+/obj/effect/spawner/lootdrop/trash,
 /obj/machinery/light/small{
 	dir = 1
 	},
@@ -17973,6 +17976,14 @@
 	icon_state = "platingdmg3"
 	},
 /area/f13/bunker)
+"sfL" = (
+/mob/living/simple_animal/hostile/eyebot,
+/obj/machinery/shower{
+	dir = 8
+	},
+/obj/effect/turf_decal/bot,
+/turf/open/floor/plasteel/floorgrime,
+/area/f13/bunker)
 "sfO" = (
 /obj/machinery/light/small,
 /mob/living/simple_animal/hostile/ghoul,
@@ -18065,7 +18076,7 @@
 /area/f13/bunker)
 "skh" = (
 /obj/structure/bed/mattress/pregame,
-/obj/effect/spawner/lootdrop/f13/junkspawners,
+/obj/effect/spawner/lootdrop/trash,
 /turf/open/floor/f13/wood,
 /area/f13/city)
 "skm" = (
@@ -18603,7 +18614,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/city)
 "sPv" = (
-/obj/effect/spawner/lootdrop/f13/junkspawners,
+/obj/effect/spawner/lootdrop/trash,
 /obj/effect/decal/remains/human,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/bunker/bighornbunker)
@@ -18639,7 +18650,7 @@
 /obj/machinery/shower{
 	dir = 4
 	},
-/obj/machinery/door/window/brigdoor/security/cell/right/directional/east,
+/obj/machinery/door/window/eastright,
 /obj/item/soap/deluxe,
 /turf/open/floor/plasteel/showroomfloor,
 /area/f13/bunker)
@@ -18694,7 +18705,7 @@
 /area/f13/bunker)
 "sVs" = (
 /obj/structure/chair/f13foldupchair,
-/obj/effect/spawner/lootdrop/f13/junkspawners,
+/obj/effect/spawner/lootdrop/trash,
 /turf/open/floor/f13/wood,
 /area/f13/city)
 "sVv" = (
@@ -18734,6 +18745,15 @@
 "sXN" = (
 /obj/item/crafting/abraxo,
 /turf/open/floor/plasteel/f13/vault_floor/green/greenchess/greenchess2,
+/area/f13/bunker)
+"sXQ" = (
+/mob/living/simple_animal/hostile/securitron{
+	health = 250;
+	name = "securitron mk.2"
+	},
+/obj/effect/decal/cleanable/oil/slippery,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/bunker)
 "sYc" = (
 /obj/item/radio/intercom{
@@ -19081,7 +19101,7 @@
 	},
 /area/f13/bunker)
 "tqm" = (
-/obj/machinery/airalarm/directional/north{
+/obj/machinery/door/window/brigdoor/security/cell/northleft{
 	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium,
@@ -20645,7 +20665,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/city)
 "uRJ" = (
-/obj/effect/spawner/lootdrop/f13/junkspawners,
+/obj/effect/spawner/lootdrop/trash,
 /turf/open/floor/plating/tunnel{
 	icon_state = "tunnelrusty"
 	},
@@ -21127,7 +21147,7 @@
 /area/f13/mountain_bunker)
 "vmk" = (
 /obj/effect/decal/remains/human,
-/obj/effect/spawner/lootdrop/f13/junkspawners,
+/obj/effect/spawner/lootdrop/trash,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/bunker/bighornbunker)
 "vmL" = (
@@ -21876,7 +21896,7 @@
 	},
 /area/f13/bunker)
 "wbP" = (
-/obj/effect/spawner/lootdrop/f13/junkspawners,
+/obj/effect/spawner/lootdrop/trash,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/bunker/bighornbunker)
 "wbU" = (
@@ -22010,7 +22030,7 @@
 	},
 /area/f13/radiation)
 "wlO" = (
-/obj/effect/spawner/lootdrop/f13/junkspawners,
+/obj/effect/spawner/lootdrop/trash,
 /turf/open/floor/plating/tunnel{
 	icon_state = "tunnelchess"
 	},
@@ -22034,7 +22054,7 @@
 	},
 /area/f13/bunker)
 "wmW" = (
-/obj/effect/spawner/lootdrop/f13/junkspawners,
+/obj/effect/spawner/lootdrop/trash,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "wnj" = (
@@ -22992,7 +23012,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/green/greenchess/greenchess2,
 /area/f13/bunker)
 "xmb" = (
-/obj/effect/spawner/lootdrop/f13/junkspawners,
+/obj/effect/spawner/lootdrop/trash,
 /mob/living/simple_animal/hostile/radscorpion,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/bunker/bighornbunker)
@@ -23790,7 +23810,7 @@
 	},
 /area/f13/bunker)
 "yjB" = (
-/obj/machinery/door/window/brigdoor/security/cell/right/directional/east,
+/obj/machinery/door/window/eastright,
 /turf/open/floor/plasteel/f13{
 	icon_state = "whitebluerustychess"
 	},
@@ -35684,7 +35704,7 @@ cYf
 lMn
 rBB
 qer
-tSV
+pdJ
 xjm
 qer
 oqm
@@ -36713,7 +36733,7 @@ oqm
 xjm
 wQv
 qer
-tSV
+pdJ
 efq
 oqm
 oqm
@@ -39629,7 +39649,7 @@ fVP
 fVP
 uQS
 uQS
-dDG
+cMv
 sCn
 sCn
 sjg
@@ -40069,7 +40089,7 @@ oqm
 shC
 lMn
 kSq
-tSV
+pdJ
 lMn
 gcp
 oMd
@@ -40587,7 +40607,7 @@ etj
 eca
 iyh
 nFX
-tSV
+pdJ
 oDV
 shC
 oqm
@@ -47946,7 +47966,7 @@ akh
 oPX
 akh
 akh
-wmW
+khx
 akh
 mxj
 sfc
@@ -48972,7 +48992,7 @@ akh
 akh
 akh
 oPX
-wmW
+khx
 akh
 akh
 akh
@@ -50870,7 +50890,7 @@ oqm
 hNT
 fFC
 uEh
-aad
+pGI
 koI
 mys
 toH
@@ -51805,7 +51825,7 @@ akh
 akh
 dNq
 sfc
-wnE
+hYX
 ixc
 uLm
 sfc
@@ -52828,7 +52848,7 @@ sfc
 qlG
 ati
 uLm
-wmW
+khx
 akh
 akh
 dNq
@@ -53093,7 +53113,7 @@ sfc
 sfc
 sfc
 uLm
-wnE
+hYX
 tJs
 tJs
 sfc
@@ -55141,7 +55161,7 @@ sfc
 wBH
 fCK
 uLm
-wmW
+khx
 akh
 akh
 nph
@@ -55738,7 +55758,7 @@ dvm
 oqm
 myz
 snd
-aaa
+sfL
 oqm
 oqm
 oqm
@@ -57711,7 +57731,7 @@ uLm
 uLm
 cxK
 akh
-wmW
+khx
 akh
 akh
 hiB
@@ -58227,7 +58247,7 @@ uRL
 akh
 akh
 akh
-wmW
+khx
 nph
 lOD
 pYx
@@ -58738,7 +58758,7 @@ bVH
 crO
 bVH
 uRL
-wmW
+khx
 akh
 akh
 akh
@@ -59084,18 +59104,18 @@ shC
 shC
 pIE
 vYb
-aab
+sXQ
 bEj
 hZK
 hCD
 uzw
 oqm
 mLt
-aac
+pOg
 fIa
 oJP
 oWI
-aac
+pOg
 obW
 sxc
 oqm
@@ -59767,7 +59787,7 @@ crO
 bVH
 uRL
 iEs
-wmW
+khx
 iEs
 akh
 hiB

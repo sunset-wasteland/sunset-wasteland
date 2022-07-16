@@ -6,7 +6,6 @@
 	icon = 'icons/obj/recycling.dmi'
 	icon_state = "separator-AO1"
 	layer = ABOVE_ALL_MOB_LAYER // Overhead
-	plane = MOB_PLANE
 	density = FALSE
 	var/transform_dead = 0
 	var/transform_standing = 0
@@ -58,8 +57,7 @@
 			AM.forceMove(drop_location())
 			do_transform(AM)
 
-/obj/machinery/transformer/CanAllowThrough(atom/movable/mover, border_dir)
-	..()
+/obj/machinery/transformer/CanPass(atom/movable/mover, border_dir)
 	// Allows items to go through,
 	// to stop them from blocking the conveyor belt.
 	if(!ishuman(mover))

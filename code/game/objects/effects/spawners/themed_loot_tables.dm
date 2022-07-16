@@ -6,7 +6,6 @@
 	name = "wasteloot poor"
 	loot = list(
 		/obj/effect/spawner/lootdrop/f13/junkspawners = 60,
-		/obj/effect/spawner/lootdrop/f13/deadrodent_or_brainwashdisk = 10,
 		/obj/effect/spawner/lootdrop/toolsbasic = 9,
 		/obj/effect/spawner/lootdrop/weapons/waster = 5,
 		/obj/effect/spawner/lootdrop/ammo/civilian = 5,
@@ -45,7 +44,6 @@
 		/obj/effect/spawner/lootdrop/bombparts = 10,
 		/obj/effect/spawner/lootdrop/f13/alcoholspawner = 6,
 		/obj/effect/spawner/lootdrop/f13/medical/wasteland/meds/drug = 6,
-		/obj/effect/spawner/lootdrop/f13/deadrodent_or_brainwashdisk = 5,
 		/obj/effect/spawner/lootdrop/f13/cash_random_low = 5,
 		/obj/effect/spawner/lootdrop/toolsbasic = 4,
 		/obj/effect/spawner/lootdrop/weapons/waster = 4,
@@ -62,7 +60,6 @@
 		/obj/effect/spawner/lootdrop/ammo/civilian = 35,
 		/obj/effect/spawner/lootdrop/f13/junkspawners = 24,
 		/obj/effect/spawner/lootdrop/weapons/security = 10,
-		/obj/effect/spawner/lootdrop/f13/deadrodent_or_brainwashdisk = 5,
 		/obj/effect/spawner/lootdrop/f13/cash_random_low = 5,
 		/obj/effect/spawner/lootdrop/toolsgood = 5,
 		/obj/effect/spawner/lootdrop/weapons/selfdefence = 5,
@@ -78,7 +75,6 @@
 		/obj/effect/spawner/lootdrop/ammo/military = 28,
 		/obj/effect/spawner/lootdrop/weapons/oldarmy = 20,
 		/obj/effect/spawner/lootdrop/toolsgood = 10,
-		/obj/effect/spawner/lootdrop/f13/deadrodent_or_brainwashdisk = 7,
 		/obj/effect/spawner/lootdrop/f13/junkspawners = 5,
 		/obj/effect/spawner/lootdrop/f13/cash_random_low = 5,
 		/obj/effect/spawner/lootdrop/f13/resourcespawner = 5,
@@ -103,7 +99,6 @@
 		/obj/effect/spawner/lootdrop/f13/blueprintLow = 5,
 		/obj/effect/spawner/lootdrop/f13/traitbooks = 5,
 		/obj/effect/spawner/lootdrop/weapons/experimental = 5,
-		/obj/effect/spawner/lootdrop/f13/deadrodent_or_brainwashdisk = 3,
 		)
 
 /obj/effect/spawner/lootdrop/rareloot

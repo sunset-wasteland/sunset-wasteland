@@ -248,7 +248,8 @@
 
 	return FALSE
 
-/turf/CanPass(atom/movable/mover)
+/turf/CanAllowThrough(atom/movable/mover)
+	..()
 	if(istype(mover)) // turf/Enter(...) will perform more advanced checks
 		return !density
 
@@ -282,22 +283,6 @@
 			mover.Bump(firstbump)
 		return CHECK_BITFIELD(mover.movement_type, UNSTOPPABLE)
 	return TRUE
-
-/turf/Exit(atom/movable/mover, atom/newloc)
-	. = ..()
-	if(!.)
-		return FALSE
-	for(var/i in contents)
-		if(QDELETED(mover))
-			break
-		if(i == mover)
-			continue
-		var/atom/movable/thing = i
-		if(!thing.Uncross(mover, newloc))
-			if(thing.flags_1 & ON_BORDER_1)
-				mover.Bump(thing)
-			if(!CHECK_BITFIELD(mover.movement_type, UNSTOPPABLE))
-				return FALSE
 
 /turf/Entered(atom/movable/AM)
 	..()

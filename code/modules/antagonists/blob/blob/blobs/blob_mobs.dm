@@ -46,12 +46,13 @@
 	else
 		adjustFireLoss(5)
 
-/mob/living/simple_animal/hostile/blob/CanPass(atom/movable/mover, border_dir)
+/mob/living/simple_animal/hostile/blob/CanAllowThrough(atom/movable/mover, border_dir)
+	..()
 	if(istype(mover, /obj/structure/blob))
 		return 1
 	return ..()
 
-/mob/living/simple_animal/hostile/blob/Process_Spacemove(movement_dir = 0)
+/mob/living/simple_animal/hostile/blob/Process_Spacemove(movement_dir = 0, continuous_move)
 	for(var/obj/structure/blob/B in range(1, src))
 		return 1
 	return ..()

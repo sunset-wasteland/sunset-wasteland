@@ -26,6 +26,7 @@
 	status_flags = CANPUSH
 	del_on_death = FALSE
 	loot = list(/obj/item/melee/onehanded/knife/survival)
+	footstep_type = FOOTSTEP_MOB_SHOE
 
 /obj/effect/mob_spawn/human/corpse/raider
 	name = "Raider"
@@ -84,6 +85,7 @@
 	projectiletype = /obj/item/projectile/bullet/c9mm/op
 	projectilesound = 'sound/f13weapons/ninemil.ogg'
 	loot = list(/obj/effect/spawner/lootdrop/f13/npc_raider)
+	footstep_type = FOOTSTEP_MOB_SHOE
 
 // LEGENDARY MELEE RAIDER
 /mob/living/simple_animal/hostile/raider/legendary
@@ -96,6 +98,7 @@
 	obj_damage = 300
 	aggro_vision_range = 15
 	loot = list(/obj/item/melee/onehanded/knife/survival, /obj/item/reagent_containers/food/snacks/kebab/human)
+	footstep_type = FOOTSTEP_MOB_SHOE
 
 // LEGENDARY RANGED RAIDER
 /mob/living/simple_animal/hostile/raider/ranged/legendary
@@ -112,6 +115,7 @@
 	aggro_vision_range = 15
 	obj_damage = 300
 	loot = list(/obj/item/gun/ballistic/revolver/m29)
+	footstep_type = FOOTSTEP_MOB_SHOE
 
 // RAIDER BOSS
 /mob/living/simple_animal/hostile/raider/ranged/boss
@@ -148,6 +152,7 @@
 	icon_living = "firefighter_raider"
 	icon_dead = "firefighter_raider_dead"
 	loot = list(/obj/item/twohanded/fireaxe)
+	footstep_type = FOOTSTEP_MOB_SHOE
 
 // BIKER RAIDER
 /mob/living/simple_animal/hostile/raider/ranged/biker
@@ -162,6 +167,7 @@
 	projectilesound = 'sound/f13weapons/magnum_fire.ogg'
 	casingtype = /obj/item/ammo_casing/a556
 	loot = list(/obj/item/gun/ballistic/revolver/thatgun, /obj/item/clothing/suit/armor/f13/combatrusted, /obj/item/clothing/head/helmet/f13/raidercombathelmet)
+	footstep_type = FOOTSTEP_MOB_SHOE
 
 /obj/effect/mob_spawn/human/corpse/raider/ranged/biker
 	uniform = /obj/item/clothing/under/f13/ncrcf
@@ -171,7 +177,9 @@
 	head = /obj/item/clothing/head/helmet/f13/raidercombathelmet
 	neck = /obj/item/clothing/neck/mantle/brown
 
+
 // YANKEE RAIDER
+
 /mob/living/simple_animal/hostile/raider/baseball
 	icon_state = "baseball_raider"
 	icon_living = "baseball_raider"
@@ -183,6 +191,8 @@
 	maxHealth = 200
 	health = 200
 	loot = list(/obj/item/twohanded/baseball)
+	footstep_type = FOOTSTEP_MOB_SHOE
+
 
 /obj/effect/mob_spawn/human/corpse/raider/baseball
 	uniform = /obj/item/clothing/under/f13/mechanic
@@ -191,7 +201,9 @@
 	gloves = /obj/item/clothing/gloves/f13/leather/fingerless
 	head = /obj/item/clothing/head/helmet/f13/raider/yankee
 
+
 // TRIBAL RAIDER
+
 /mob/living/simple_animal/hostile/raider/tribal
 	icon_state = "tribal_raider"
 	icon_living = "tribal_raider"
@@ -199,6 +211,7 @@
 	melee_damage_lower = 40
 	melee_damage_upper = 40
 	loot = list(/obj/item/twohanded/spear)
+	footstep_type = FOOTSTEP_MOB_SHOE
 
 /obj/effect/mob_spawn/human/corpse/raider/tribal
 	uniform = /obj/item/clothing/under/f13/raiderrags
@@ -206,6 +219,7 @@
 	shoes = /obj/item/clothing/shoes/f13/rag
 	mask = /obj/item/clothing/mask/facewrap
 	head = /obj/item/clothing/head/helmet/f13/fiend
+
 
 //////////////
 // SULPHITE //
@@ -222,6 +236,7 @@
 	melee_damage_lower = 40
 	melee_damage_upper = 55
 	loot = list(/obj/item/locked_box/misc/money/all/low)
+	footstep_type = FOOTSTEP_MOB_SHOE
 
 /////////////
 // JUNKERS //
@@ -239,6 +254,7 @@
 	melee_damage_lower = 40
 	melee_damage_upper = 55
 	loot = null
+	footstep_type = FOOTSTEP_MOB_SHOE
 
 /mob/living/simple_animal/hostile/raider/ranged/boss/junker
 	name = "Junker Footman"
@@ -252,6 +268,7 @@
 	damage_coeff = list(BRUTE = 1, BURN = 0.75, TOX = 0, CLONE = 0, STAMINA = 0, OXY = 0)
 	melee_damage_lower = 25
 	melee_damage_upper = 50
+	footstep_type = FOOTSTEP_MOB_SHOE
 
 /mob/living/simple_animal/hostile/raider/junker/creator
 	name = "Junker Field Creator"
@@ -272,6 +289,8 @@
 	var/spawn_delay = 0
 	var/spawn_time = 15 SECONDS
 	var/spawn_text = "flies from"
+	footstep_type = FOOTSTEP_MOB_SHOE
+
 
 /mob/living/simple_animal/hostile/raider/junker/creator/Initialize()
 	. = ..()
@@ -317,3 +336,5 @@
 	ranged_cooldown_time = 15
 	projectiletype = /obj/item/projectile/bullet/shrapnel
 	projectilesound = 'sound/f13weapons/auto5.ogg'
+	footstep_type = FOOTSTEP_MOB_SHOE
+

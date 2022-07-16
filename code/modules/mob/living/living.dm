@@ -1,5 +1,10 @@
 /mob/living/Initialize()
 	. = ..()
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_ENTERED = .proc/on_entered,
+	)
+	AddElement(/datum/element/connect_loc, loc_connections)
+
 	register_init_signals()
 	if(unique_name)
 		name = "[name] ([rand(1, 1000)])"
@@ -622,6 +627,7 @@
 	fire_stacks = 0
 	confused = 0
 	update_mobility()
+	update_movespeed()
 	//Heal all organs
 	if(iscarbon(src))
 		var/mob/living/carbon/C = src
@@ -639,8 +645,8 @@
 /mob/living/proc/update_damage_overlays()
 	return
 
-/mob/living/Crossed(atom/movable/AM)
-	. = ..()
+/mob/living/proc/on_entered(atom/movable/AM)
+	SIGNAL_HANDLER
 	for(var/i in get_equipped_items())
 		var/obj/item/item = i
 		SEND_SIGNAL(item, COMSIG_ITEM_WEARERCROSSED, AM)

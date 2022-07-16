@@ -6,7 +6,8 @@
 		"Pahrump-Sunset-Lower.dmm",
 		"Pahrump-Sunset.dmm",
 		"Pahrump-Sunset-Upper.dmm",
-		"Pahrump-Sunset-Upper-2.dmm"
+		"Pahrump-Sunset-Upper-2.dmm",
+		"RockSprings.dmm"
 	],
 	"station_ruin_budget":0,
 	"space_ruin_levels":0,
@@ -21,7 +22,9 @@
 			"Gravity": true,
 			"Baseturf": "/turf/open/indestructible/ground/inside/mountain",
 			"Up": 1,
-			"Linkage" : "Cross"
+			"No Parallax": true,
+			"Linkage" : null,
+			"Name": "Dungeons"
 		},
 		{
 			"Gravity": true,
@@ -29,7 +32,9 @@
 			"Dungeons": true,
 			"Up": 1,
 			"Down": -1,
-			"Linkage" : "Cross"
+			"No Parallax": true,
+			"Linkage" : null,
+			"Name": "Lower Yuma"
 		},
 		{
 			"Gravity": true,
@@ -37,22 +42,39 @@
 			"Station": 1,
 			"Up": 1,
 			"Down": -1,
-			"Linkage" : "Cross"
+			"No Parallax": true,
+			"Linkage" : "Cross",
+			"Name": "Yuma"
 		},
 		{
 			"Gravity": true,
 			"Baseturf": "/turf/open/transparent/openspace",
 			"Up": 1,
 			"Down": -1,
-			"Linkage" : "Cross",
-			"Above": true
+			"No Parallax": true,
+			"Linkage" : null,
+			"Above": true,
+			"Name": "Yuma - Upper"
 		},
 		{
 			"Gravity": true,
 			"Baseturf": "/turf/open/transparent/openspace",
 			"Down": -1,
+			"Linkage" : null,
+			"No Parallax": true,
+			"Above": true,
+			"Name": "Yuma - Second Upper boogaloo 2"
+		},
+		{
+			"Gravity": true,
+			"Baseturf": "/turf/open/indestructible/ground/inside/mountain",
+			"Station": 1,
+			"Up": 1,
+			"Down": -1,
+			"No Parallax": true,
 			"Linkage" : "Cross",
-			"Above": true
+			"Force South": 1,
+			"Name": "Rock Springs"
 		}
 	],
 	"minetype": "none"

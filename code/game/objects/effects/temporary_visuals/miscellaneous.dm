@@ -145,7 +145,6 @@
 	icon = 'icons/effects/beam_splash.dmi'
 	icon_state = "beam_splash_l"
 	layer = ABOVE_ALL_MOB_LAYER
-	plane = MOB_PLANE
 	pixel_y = -16
 	duration = 50
 
@@ -304,7 +303,6 @@
 	name = "kinetic explosion"
 	icon = 'icons/obj/projectiles.dmi'
 	icon_state = "kinetic_blast"
-	plane = MOB_PLANE
 	layer = ABOVE_ALL_MOB_LAYER
 	duration = 4
 
@@ -469,7 +467,6 @@
 /obj/effect/constructing_effect
 	icon = 'icons/effects/effects_rcd.dmi'
 	icon_state = ""
-	plane = MOB_PLANE
 	layer = ABOVE_ALL_MOB_LAYER
 	anchored = TRUE
 	var/status = 0

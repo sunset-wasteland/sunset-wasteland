@@ -291,8 +291,7 @@
 	to_chat(user, "<span class='warning'>You hit [src] but bounce off it!</span>")
 	playsound(src.loc, 'sound/weapons/tap.ogg', 100, 1)
 
-/obj/structure/foamedmetal/CanAllowThrough(atom/movable/mover, border_dir)
-	..()
+/obj/structure/foamedmetal/CanPass(atom/movable/mover, border_dir)
 	return !density
 
 /obj/structure/foamedmetal/iron
@@ -334,8 +333,7 @@
 		for(var/obj/item/Item in O)
 			Item.extinguish()
 
-/obj/structure/foamedmetal/resin/CanAllowThrough(atom/movable/mover, border_dir)
-	..()
+/obj/structure/foamedmetal/resin/CanPass(atom/movable/mover, border_dir)
 	if(istype(mover) && (mover.pass_flags & pass_flags_self))
 		return TRUE
 	. = ..()

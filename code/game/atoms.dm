@@ -4,9 +4,6 @@
 	var/level = 2
 	var/article  // If non-null, overrides a/an/some in all cases
 
-	/// pass_flags that we are. If any of this matches a pass_flag on a moving thing, by default, we let them through.
-	var/pass_flags_self = NONE
-
 	var/flags_1 = NONE
 	var/flags_2 = NONE // Sorry, we ran out of space and needed a second flag pit
 	var/interaction_flags_atom = NONE
@@ -92,9 +89,6 @@
 
 	///Mobs that are currently do_after'ing this atom, to be cleared from on Destroy()
 	var/list/targeted_by
-	/// If false makes [CanPass][/atom/proc/CanPass] call [CanPassThrough][/atom/movable/proc/CanPassThrough] on this type instead of using default behaviour
-	var/generic_canpass = TRUE
-
 
 
 /atom/New(loc, ...)
@@ -200,23 +194,11 @@
 	return TRUE
 
 
-/// Whether the mover object can avoid being blocked by this atom, while arriving from (or leaving through) the border_dir.
+/**
+ * Whether mover can enter enter or leave the turf src is in (or is, if it's a turf).
+ * border_dir determines from which direction the attempted move is originating.
+ */
 /atom/proc/CanPass(atom/movable/mover, border_dir)
-	SHOULD_CALL_PARENT(TRUE)
-	SHOULD_BE_PURE(TRUE)
-	. = CanAllowThrough(mover, border_dir)
-	// This is cheaper than calling the proc every time since most things dont override CanPassThrough
-	if(!mover.generic_canpass)
-		return mover.CanPassThrough(src, REVERSE_DIR(border_dir), .)
-
-/// Returns true or false to allow the mover to move through src
-/atom/proc/CanAllowThrough(atom/movable/mover, border_dir)
-	SHOULD_CALL_PARENT(TRUE)
-	//SHOULD_BE_PURE(TRUE)
-	if(mover.pass_flags & pass_flags_self)
-		return TRUE
-	if(mover.throwing && (pass_flags_self & LETPASSTHROW))
-		return TRUE
 	return !density
 
 
@@ -931,36 +913,16 @@
 /atom/proc/vv_auto_rename(newname)
 	name = newname
 
-/**
- * An atom has entered this atom's contents
- *
- * Default behaviour is to send the [COMSIG_ATOM_ENTERED]
- */
-/atom/Entered(atom/movable/arrived, atom/old_loc, list/atom/old_locs)
-	SEND_SIGNAL(src, COMSIG_ATOM_ENTERED, arrived, old_loc, old_locs)
-	SEND_SIGNAL(arrived, COMSIG_ATOM_ENTERING, src, old_loc, old_locs)
+/atom/Entered(atom/movable/AM, atom/oldLoc)
+	SEND_SIGNAL(src, COMSIG_ATOM_ENTERED, AM, oldLoc)
 
-/**
- * An atom is attempting to exit this atom's contents
- *
- * Default behaviour is to send the [COMSIG_ATOM_EXIT]
- */
-/atom/Exit(atom/movable/leaving, direction)
-	// Don't call `..()` here, otherwise `Uncross()` gets called.
-	// See the doc comment on `Uncross()` to learn why this is bad.
-
-	if(SEND_SIGNAL(src, COMSIG_ATOM_EXIT, leaving, direction) & COMPONENT_ATOM_BLOCK_EXIT)
+/atom/Exit(atom/movable/AM, atom/newLoc)
+	. = ..()
+	if(SEND_SIGNAL(src, COMSIG_ATOM_EXIT, AM, newLoc) & COMPONENT_ATOM_BLOCK_EXIT)
 		return FALSE
 
-	return TRUE
-
-/**
- * An atom has exited this atom's contents
- *
- * Default behaviour is to send the [COMSIG_ATOM_EXITED]
- */
-/atom/Exited(atom/movable/gone, direction)
-	SEND_SIGNAL(src, COMSIG_ATOM_EXITED, gone, direction)
+/atom/Exited(atom/movable/AM, atom/newLoc)
+	SEND_SIGNAL(src, COMSIG_ATOM_EXITED, AM, newLoc)
 
 /atom/proc/return_temperature()
 	return

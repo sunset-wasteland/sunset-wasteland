@@ -146,7 +146,7 @@
 				/obj/item/clothing/under/redeveninggown,
 				/obj/effect/spawner/bundle/f13/mexican,
 				/obj/item/clothing/under/sailor,
-				/obj/effect/spawner/bundle/f13/schoolgirl,
+				/obj/effect/spawner/lootdrop/f13/schoolgirl,
 				/obj/effect/spawner/bundle/f13/hats,
 				/obj/effect/spawner/bundle/f13/jabroni,
 				/obj/effect/spawner/bundle/f13/romeaboo,
@@ -178,9 +178,9 @@
 				/obj/item/clothing/neck/mantle/poncho
 				)
 
-/obj/effect/spawner/bundle/f13/schoolgirl
+/obj/effect/spawner/lootdrop/f13/schoolgirl
 	name = "schoolgirl outfit spawner"
-	items = list(
+	loot = list(
 				/obj/item/clothing/under/schoolgirl/red,
 				/obj/item/clothing/under/schoolgirl
 				)
@@ -572,9 +572,7 @@
 		/obj/item/wrench/power,
 		/obj/item/storage/box/medicine/stimpaks/stimpaks5,
 		/obj/item/stack/sheet/prewar/twenty,
-		/obj/item/stack/sheet/prewar/five,
 		/obj/item/stack/sheet/plastic/twenty,
-		/obj/item/stack/sheet/plastic/five,
 		/obj/item/defibrillator/primitive,
 		/obj/item/reagent_containers/syringe/bluespace,
 		)
@@ -1515,6 +1513,7 @@ obj/effect/spawner/bundle/f13/combat_rifle
 	)
 
 
+
 /*	------------------------------------------------
 	------------WEAPON AMMO SPAWNERS----------------
 	------------------------------------------------ */
@@ -1624,10 +1623,11 @@ obj/effect/spawner/bundle/f13/combat_rifle
 //BOMBS N GRENADES
 /obj/effect/spawner/loot/f13/bomb
 	name = "DO NOT USE THIS BASIC SPAWNER"
+	icon_state = "ammo_loot"
 
 /obj/effect/spawner/lootdrop/f13/bomb/tier1
 	name = "tier 1 grenade spawner"
-	icon_state = "bomb_loot"
+	icon_state = "ammo_loot"
 	lootdoubles = TRUE
 	lootcount = 2 //2 random grenades
 	loot = list(
@@ -1639,8 +1639,6 @@ obj/effect/spawner/bundle/f13/combat_rifle
 				)
 
 /obj/effect/spawner/lootdrop/f13/bomb/tier2
-	name = "tier 2 grenade spawner"
-	icon_state = "bomb_loot"
 	loot = list(
 				/obj/item/grenade/f13/frag = 30,
 				/obj/item/grenade/flashbang,
@@ -1649,8 +1647,6 @@ obj/effect/spawner/bundle/f13/combat_rifle
 				)
 
 /obj/effect/spawner/lootdrop/f13/bomb/tier3
-	name = "tier 3 grenade spawner"
-	icon_state = "bomb_loot"
 	loot = list(
 				/obj/item/grenade/syndieminibomb/concussion,
 				/obj/item/grenade/plastic/c4,
@@ -1660,8 +1656,6 @@ obj/effect/spawner/bundle/f13/combat_rifle
 				/obj/effect/spawner/bundle/f13/grenadelauncher,
 				)
 /obj/effect/spawner/lootdrop/f13/bomb/top_tier
-	name = "tier 4 grenade spawner"
-	icon_state = "bomb_loot"
 	lootcount = 1
 	loot = list(
 				/obj/item/grenade/f13/plasma,
@@ -1672,22 +1666,9 @@ obj/effect/spawner/bundle/f13/combat_rifle
 				/obj/effect/spawner/bundle/f13/rocketlauncher,
 				)
 
-/obj/effect/spawner/lootdrop/f13/bomb/mine
-	name = "mine trap spawner"
-	icon_state = "bomb_loot"
-	lootcount = 1
-	loot = list(
-				/obj/item/mine/shrapnel = 30,
-				/obj/item/mine/stun = 30,
-				/obj/item/mine/emp = 10,
-				/obj/item/mine/gas = 10,
-				/obj/effect/spawner/lootdrop/f13/junkspawners = 20,
-				)
-
 
 /obj/effect/spawner/lootdrop/f13/junkspawners //TIER 4 GARBAGE
 	name = "garbage spawner"
-	icon_state = "trash_loot"
 	lootcount = 2
 	fan_out_items = TRUE
 
@@ -1714,23 +1695,6 @@ obj/effect/spawner/bundle/f13/combat_rifle
 				/obj/item/trash/f13/tin,
 				/obj/item/trash/f13/dog,
 				/obj/item/trash/f13/dandyapples,
-				/obj/item/trash/f13/bubblegum,
-				/obj/item/trash/f13/bubblegum_large,
-				/obj/item/trash/f13/cram,
-				/obj/item/trash/f13/cram_large,
-				/obj/item/trash/f13/yumyum,
-				/obj/item/trash/f13/fancylads,
-				/obj/item/trash/f13/sugarbombs,
-				/obj/item/trash/f13/crisps,
-				/obj/item/trash/f13/steak,
-				/obj/item/trash/f13/specialapples,
-				/obj/item/trash/f13/blamco_large,
-				/obj/item/trash/f13/blamco,
-				/obj/item/trash/f13/mechanist,
-				/obj/item/trash/f13/instamash,
-				/obj/item/trash/f13/porknbeans,
-				/obj/item/trash/f13/borscht,
-				/obj/item/trash/f13/mre,
 				/obj/item/storage/crayons,
 				/obj/item/stack/packageWrap,
 				/obj/item/storage/box/matches,
@@ -1758,7 +1722,6 @@ obj/effect/spawner/bundle/f13/combat_rifle
 
 /obj/effect/spawner/lootdrop/f13/seedspawner
 	name = "seed spawner"
-	icon_state = "seed_loot"
 	lootdoubles = TRUE
 	fan_out_items = TRUE
 	lootcount = 4
@@ -1817,7 +1780,6 @@ obj/effect/spawner/bundle/f13/combat_rifle
 
 /obj/effect/spawner/lootdrop/f13/foodspawner
 	name = "food spawner"
-	icon_state = "food_loot"
 	lootdoubles = TRUE
 	fan_out_items = TRUE
 
@@ -1868,7 +1830,6 @@ obj/effect/spawner/bundle/f13/combat_rifle
 
 /obj/effect/spawner/lootdrop/f13/crafting
 	name = "crafting spawner"
-	icon_state = "craft_loot"
 	lootdoubles = TRUE
 	fan_out_items = TRUE
 
@@ -1889,7 +1850,6 @@ obj/effect/spawner/bundle/f13/combat_rifle
 
 /obj/effect/spawner/lootdrop/f13/alcoholspawner //TIER 7 ALCOHOL
 	name = "alcoholspawner"
-	icon_state = "alcohol_loot"
 	lootdoubles = TRUE
 	fan_out_items = TRUE
 
@@ -1920,7 +1880,6 @@ obj/effect/spawner/bundle/f13/combat_rifle
 
 /obj/effect/spawner/lootdrop/f13/resourcespawner //now include R N G (TM) (higher number means it has a bigger spawn chance)
 	name = "resource spawner"
-	icon_state = "resource_loot"
 	lootcount = 2
 
 	loot = list(
@@ -2055,9 +2014,13 @@ obj/effect/spawner/bundle/f13/combat_rifle
 			/obj/item/stack/f13Cash/random/med = 5,
 			)
 
+/obj/effect/spawner/lootdrop/f13/deadrodent_or_brainwashdisk
+	name = "100% chance of deceased rodent"
+	loot = list(
+		/obj/item/reagent_containers/food/snacks/deadmouse = 50)
+
 /obj/effect/spawner/lootdrop/f13/traitbooks
 	name = "trait book spawner"
-	icon_state = "book_loot"
 	lootcount = 1
 	loot = list(/obj/item/book/granter/trait/lowsurgery = 10,
 				/obj/item/book/granter/trait/chemistry = 10,
@@ -2202,7 +2165,6 @@ obj/effect/spawner/bundle/f13/combat_rifle
 
 /obj/effect/spawner/lootdrop/f13/advcrafting
 	name = "advanced_crafting"
-	icon_state = "advresource_loot"
 	lootcount = 1
 	lootdoubles = FALSE
 	loot = list(
@@ -2217,7 +2179,6 @@ obj/effect/spawner/bundle/f13/combat_rifle
 
 /obj/effect/spawner/lootdrop/f13/attachments
 	name = "attachments"
-	icon_state = "attachment_loot"
 	lootcount = 1
 	lootdoubles = FALSE
 	loot = list(

@@ -20,8 +20,7 @@
 	var/static/superheated_walls = 0
 	var/lastWarning = 0
 
-/mob/camera/eminence/CanAllowThrough(atom/movable/mover, border_dir)
-	..()
+/mob/camera/eminence/CanPass(atom/movable/mover, border_dir)
 	return TRUE
 
 /mob/camera/eminence/Move(NewLoc, direct)
@@ -50,7 +49,7 @@
 		forceMove(T)
 		Moved(OldLoc, direct)
 
-/mob/camera/eminence/Process_Spacemove(movement_dir = 0, continuous_move)
+/mob/camera/eminence/Process_Spacemove(movement_dir = 0)
 	return TRUE
 
 /mob/camera/eminence/Login()

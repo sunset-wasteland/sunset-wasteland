@@ -23,11 +23,6 @@
 /obj/item/grenade/plastic/Initialize()
 	. = ..()
 	plastic_overlay = mutable_appearance(icon, "[item_state]2", HIGH_OBJ_LAYER)
-	var/static/list/loc_connections = list(
-
-		COMSIG_ATOM_ENTERED = .proc/on_entered,
-	)
-	AddElement(/datum/element/connect_loc, loc_connections)
 
 /obj/item/grenade/plastic/ComponentInitialize()
 	. = ..()
@@ -86,10 +81,9 @@
 /obj/item/grenade/plastic/receive_signal()
 	prime()
 
-/obj/item/grenade/plastic/proc/on_entered(atom/movable/AM)
-	SIGNAL_HANDLER
+/obj/item/grenade/plastic/Crossed(atom/movable/AM)
 	if(nadeassembly)
-		INVOKE_ASYNC(nadeassembly, .proc/on_entered, AM)
+		nadeassembly.Crossed(AM)
 
 /obj/item/grenade/plastic/on_found(mob/finder)
 	if(nadeassembly)

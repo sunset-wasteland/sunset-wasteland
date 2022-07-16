@@ -107,15 +107,15 @@
 		if(-1 to 1)
 			qualname = "normal"
 		if(10 to INFINITY)
-			qualname = "good"
+			qualname = "legendary"
 		if(7.5 to 10)
-			qualname = "fair"
+			qualname = "masterwork"
 		if(5.5 to 7.5)
-			qualname = "makeshift"
+			qualname = "excellent"
 		if(3.5 to 5.5)
-			qualname = "crude"
+			qualname = "good"
 		if(0 to 3.5)
-			qualname = "improvised"
+			qualname = "above-average"
 	var/datum/material/mat = custom_materials[1]
 	finalitem.set_custom_materials(custom_materials)
 	mat = mat.name
@@ -247,8 +247,7 @@
 		finalforreal.toolspeed = max(0.05,(1-(quality/10)))
 	else
 		finalforreal.toolspeed *= max(1, (quality * -1))
-	finalforreal.digrange = 1
-/* 	switch(quality)
+	switch(quality)
 		if(10 to INFINITY)
 			finalforreal.digrange = 2
 		if(5 to 9)
@@ -256,7 +255,7 @@
 		if(3,4)
 			finalforreal.digrange = 1
 		else
-			finalforreal.digrange = 1 */
+			finalforreal.digrange = 1
 	finalitem = finalforreal
 	..()
 
@@ -297,7 +296,7 @@
 
 // Does not produce the expected result with force dependent on quality, instead just uses the base one. The finished item is a placeholder, it works though.
 /obj/item/smithing/unitool
-	name = "unwrapped crowbaxe"
+	name = "unwrapped universal tool"
 	desc = "Add leather strips."
 	icon_state = "unitool_smith"
 	finishingitem = /obj/item/stack/sheet/leatherstrips
@@ -319,7 +318,7 @@
 /obj/item/smithing/knifeblade/startfinish()
 	var/obj/item/smithing/knifeblade/finalforreal = new /obj/item/smithing/knifeblade(src)
 	finalitem = new /obj/item/kitchen/knife(src)
-	finalforreal.force += quality*2
+	finalforreal.force += quality*3
 	finalitem = finalforreal
 	finalitem.icon = 'icons/fallout/objects/crafting/blacksmith.dmi'
 	finalitem.icon_state = "knife_smith"
@@ -419,46 +418,46 @@
 ///////////////
 
 /obj/item/smithing/swordblade
-	name = "sharpened longblade"
+	name = "smithed swordblade"
 	icon_state = "sword_smith"
 	finishingitem = /obj/item/blacksmith/swordhandle
 	finalitem = /obj/item/melee/smith/sword
 
 /obj/item/smithing/swordblade/startfinish()
 	finalitem = new /obj/item/melee/smith/sword(src)
-	finalitem.force += quality
+	finalitem.force += quality*1.5
 	..()
 
 /obj/item/smithing/sabreblade
-	name = "scrap sabre blade"
+	name = "smithed sabre blade"
 	finishingitem = /obj/item/blacksmith/swordhandle
 	finalitem = /obj/item/melee/smith/sword/sabre
 	icon_state = "sabre_smith"
 
 /obj/item/smithing/sabreblade/startfinish()
 	finalitem = new /obj/item/melee/smith/sword/sabre(src)
-	finalitem.force += quality
+	finalitem.force += quality*1.5
 	..()
 
 /obj/item/smithing/spathablade
-	name = "papercutter blade"
+	name = "smithed spathablade"
 	icon_state = "spatha_smith"
 	finishingitem = /obj/item/blacksmith/swordhandle
 	finalitem = /obj/item/melee/smith/sword/spatha
 
 /obj/item/smithing/spathablade/startfinish()
 	finalitem = new /obj/item/melee/smith/sword/spatha(src)
-	finalitem.force += quality
+	finalitem.force += quality*1.5
 	..()
 
 /obj/item/smithing/spearhead
-	name = "sharpened length of rebar"
+	name = "smithed spearhead"
 	finalitem = /obj/item/melee/smith/twohand/spear
 	icon_state = "spear_smith"
 
 /obj/item/smithing/spearhead/startfinish()
 	var/obj/item/melee/smith/twohand/spear/finalforreal = new /obj/item/melee/smith/twohand/spear(src)
-	finalforreal.force += quality
+	finalforreal.force += quality*1.5
 	finalforreal.wield_force = finalforreal.force*finalforreal.wielded_mult
 	finalforreal.AddComponent(/datum/component/two_handed, force_unwielded=finalforreal.force, force_wielded=finalforreal.wield_force, icon_wielded="[icon_state]2")
 	finalforreal.throwforce = finalforreal.force/10
@@ -467,13 +466,13 @@
 
 
 /obj/item/smithing/lancehead
-	name = "pointy length of rebar"
+	name = "smithed lancehead"
 	finalitem = /obj/item/melee/smith/twohand/spear/lance
 	icon_state = "lance_smith"
 
 /obj/item/smithing/lancehead/startfinish()
 	var/obj/item/melee/smith/twohand/spear/lance/finalforreal = new /obj/item/melee/smith/twohand/spear/lance(src)
-	finalforreal.force += quality
+	finalforreal.force += quality*1.5
 	finalforreal.wield_force = finalforreal.force*finalforreal.wielded_mult
 	finalforreal.AddComponent(/datum/component/two_handed, force_unwielded=finalforreal.force, force_wielded=finalforreal.wield_force, icon_wielded="[icon_state]2")
 	finalforreal.throwforce = finalforreal.force/10
@@ -488,34 +487,34 @@
 
 /obj/item/smithing/axehead/startfinish()
 	var/obj/item/melee/smith/twohand/axe/finalforreal = new /obj/item/melee/smith/twohand/axe(src)
-	finalforreal.force += quality
+	finalforreal.force += quality*1.5
 	finalforreal.wield_force = finalforreal.force*finalforreal.wielded_mult
 	finalforreal.AddComponent(/datum/component/two_handed, force_unwielded=finalforreal.force, force_wielded=finalforreal.wield_force, icon_wielded="[icon_state]2")
 	finalitem = finalforreal
 	..()
 
 /obj/item/smithing/warhonedhead
-	name = "sharpened wedge"
+	name = "smithed axehead"
 	icon_state = "warhoned_smith"
 	finalitem = /obj/item/melee/smith/twohand/axe/warhoned
 
 /obj/item/smithing/warhonedhead/startfinish()
 	var/obj/item/melee/smith/twohand/axe/warhoned/finalforreal = new /obj/item/melee/smith/twohand/axe/warhoned(src)
-	finalforreal.force += quality
+	finalforreal.force += quality*1.5
 	finalforreal.wield_force = finalforreal.force*finalforreal.wielded_mult
 	finalforreal.AddComponent(/datum/component/two_handed, force_unwielded=finalforreal.force, force_wielded=finalforreal.wield_force, icon_wielded="[icon_state]2")
 	finalitem = finalforreal
 	..()
 
 /obj/item/smithing/scrapblade
-	name = "jagged wedge"
+	name = "smithed scrap blade"
 	icon_state = "scrap_smith"
 	finishingitem = /obj/item/blacksmith/swordhandle
 	finalitem = /obj/item/melee/smith/twohand/axe/scrapblade
 
 /obj/item/smithing/scrapblade/startfinish()
 	var/obj/item/melee/smith/twohand/axe/scrapblade/finalforreal = new /obj/item/melee/smith/twohand/axe/scrapblade(src)
-	finalforreal.force += quality
+	finalforreal.force += quality*1.5
 	finalforreal.wield_force = finalforreal.force*finalforreal.wielded_mult
 	finalforreal.AddComponent(/datum/component/two_handed, force_unwielded=finalforreal.force, force_wielded=finalforreal.wield_force, icon_wielded="[icon_state]2")
 	finalitem = finalforreal
@@ -523,88 +522,88 @@
 
 
 /obj/item/smithing/daggerblade
-	name = "spike"
+	name = "smithed dagger blade"
 	icon_state = "dagger_smith"
 	finishingitem = /obj/item/blacksmith/swordhandle
 	finalitem = /obj/item/melee/smith/dagger
 
 /obj/item/smithing/daggerblade/startfinish()
 	finalitem = new /obj/item/melee/smith/dagger(src)
-	finalitem.force += quality
-	//finalitem.armour_penetration += quality*0.0375
+	finalitem.force += quality*1.5
+	finalitem.armour_penetration += quality*0.0375
 	..()
 
 
 /obj/item/smithing/macheteblade
-	name = "sharpened blade"
+	name = "smithed machete blade"
 	icon_state = "machete_smith"
 	finishingitem = /obj/item/blacksmith/swordhandle
 	finalitem = /obj/item/melee/smith/machete
 
 /obj/item/smithing/macheteblade/startfinish()
 	finalitem = new /obj/item/melee/smith/machete(src)
-	finalitem.force += quality
+	finalitem.force += quality*1.5
 	..()
 
 
 /obj/item/smithing/gladiusblade
-	name = "razorbar"
+	name = "smithed gladius blade"
 	icon_state = "gladius_smith"
 	finishingitem = /obj/item/blacksmith/swordhandle
 	finalitem = /obj/item/melee/smith/machete/gladius
 
 /obj/item/smithing/gladiusblade/startfinish()
 	finalitem = new /obj/item/melee/smith/machete/gladius(src)
-	finalitem.force += quality
+	finalitem.force += quality*1.5
 	..()
 
 
 /obj/item/smithing/macheterblade
-	name = "welded together lawnmower blades"
+	name = "reforged machete blade"
 	icon_state = "macheter_smith"
 	finishingitem = /obj/item/blacksmith/swordhandle
 	finalitem = /obj/item/melee/smith/machete/reforged
 
 /obj/item/smithing/macheterblade/startfinish()
 	finalitem = new /obj/item/melee/smith/machete/reforged(src)
-	finalitem.force += quality
+	finalitem.force += quality*1.5
 	..()
 
 /obj/item/smithing/macehead
-	name = "heavy lump"
+	name = "smithed macehead"
 	icon_state = "mace_smith"
 	finishingitem = /obj/item/blacksmith/swordhandle
 	finalitem = /obj/item/melee/smith/mace
 
 /obj/item/smithing/macehead/startfinish()
 	finalitem = new /obj/item/melee/smith/mace(src)
-	finalitem.force += quality
-	//finalitem.armour_penetration += quality*0.05
+	finalitem.force += quality*1.5
+	finalitem.armour_penetration += quality*0.05
 	..()
 
 
 
 /obj/item/smithing/wakiblade
-	name = "shortblade"
+	name = "smithed wakizashi blade"
 	icon_state = "waki_smith"
 	finishingitem = /obj/item/blacksmith/swordhandle
 	finalitem = /obj/item/melee/smith/wakizashi
 
 /obj/item/smithing/wakiblade/startfinish()
 	finalitem = new /obj/item/melee/smith/wakizashi(src)
-	finalitem.force += quality
+	finalitem.force += quality*1.5
 	..()
 
 
 /obj/item/smithing/katanablade
-	name = "longblade"
+	name = "smithed katana blade"
 	icon_state = "katana_smith"
 	finishingitem = /obj/item/blacksmith/swordhandle
 	finalitem = /obj/item/melee/smith/twohand/katana
 
 /obj/item/smithing/katanablade/startfinish()
 	var/obj/item/melee/smith/twohand/katana/finalforreal = new /obj/item/melee/smith/twohand/katana(src)
-	finalforreal.force += quality
+	finalforreal.force += quality*1.5
 	finalforreal.wield_force = finalforreal.force*finalforreal.wielded_mult
 	finalforreal.AddComponent(/datum/component/two_handed, force_unwielded=finalforreal.force, force_wielded=finalforreal.wield_force, icon_wielded="[icon_state]2")
 	finalitem = finalforreal
@@ -612,20 +611,20 @@
 
 
 /obj/item/smithing/javelinhead
-	name = "streamlined rebar spike"
+	name = "smithed javelin head"
 	icon_state = "javelin_smith"
 	finalitem = /obj/item/melee/smith/javelin
 
 /obj/item/smithing/javelinhead/startfinish()
 	var/obj/item/melee/smith/javelin/finalforreal = new /obj/item/melee/smith/javelin(src)
-	finalforreal.force += quality
+	finalforreal.force += quality*1.5
 	finalforreal.throwforce = finalforreal.force*1.5
 	finalitem = finalforreal
 	..()
 
 
 /obj/item/smithing/throwingknife
-	name = "shortened lawnmower blade"
+	name = "unfinished throwing knife"
 	desc = "Add leather strips."
 	icon_state = "throwing_smith"
 	finishingitem = /obj/item/stack/sheet/leatherstrips
@@ -633,7 +632,7 @@
 
 /obj/item/smithing/throwingknife/startfinish()
 	var/obj/item/melee/smith/throwingknife/finalforreal = new /obj/item/melee/smith/throwingknife(src)
-	finalforreal.force += quality
+	finalforreal.force += quality*1.4
 	finalforreal.throwforce = finalforreal.force*1.4
 	finalitem = finalforreal
 	..()

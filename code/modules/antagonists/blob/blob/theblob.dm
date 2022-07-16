@@ -67,8 +67,7 @@
 /obj/structure/blob/BlockThermalConductivity()
 	return atmosblock
 
-/obj/structure/blob/CanAllowThrough(atom/movable/mover, border_dir)
-	..()
+/obj/structure/blob/CanPass(atom/movable/mover, border_dir)
 	if(istype(mover) && (mover.pass_flags & PASSBLOB))
 		return 1
 	return 0

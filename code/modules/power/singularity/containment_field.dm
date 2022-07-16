@@ -16,13 +16,6 @@
 	var/obj/machinery/field/generator/FG1 = null
 	var/obj/machinery/field/generator/FG2 = null
 
-/obj/machinery/field/containment/Initialize()
-	. = ..()
-	var/static/list/loc_connections = list(
-		COMSIG_ATOM_ENTERED = .proc/on_entered,
-	)
-	AddElement(/datum/element/connect_loc, loc_connections)
-
 /obj/machinery/field/containment/Destroy()
 	FG1.fields -= src
 	FG2.fields -= src
@@ -63,13 +56,12 @@
 	else
 		..()
 
-/obj/machinery/field/containment/proc/on_entered(mob/mover)
-	SIGNAL_HANDLER
+/obj/machinery/field/containment/Crossed(mob/mover)
 	if(isliving(mover))
-		INVOKE_ASYNC(src, .proc/shock, mover)
+		shock(mover)
 
 	if(ismachinery(mover) || isstructure(mover) || ismecha(mover))
-		INVOKE_ASYNC(src, .proc/bump_field, mover)
+		bump_field(mover)
 
 /obj/machinery/field/containment/proc/set_master(master1,master2)
 	if(!master1 || !master2)
@@ -106,8 +98,7 @@
 		return
 
 
-/obj/machinery/field/CanAllowThrough(atom/movable/mover, border_dir)
-	..()
+/obj/machinery/field/CanPass(atom/movable/mover, border_dir)
 	if(hasShocked || isliving(mover) || ismachinery(mover) || isstructure(mover) || ismecha(mover))
 		return FALSE
 	return ..()

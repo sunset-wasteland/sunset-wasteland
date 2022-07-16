@@ -40,8 +40,6 @@
 	aggrosound = list('sound/f13npc/ghoul/aggro1.ogg', 'sound/f13npc/ghoul/aggro2.ogg')
 	idlesound = list('sound/f13npc/ghoul/idle.ogg')
 	death_sound = 'sound/f13npc/ghoul/ghoul_death.ogg'
-	footstep_type = FOOTSTEP_MOB_BAREFOOT
-
 
 // Ghoul Reaver
 /mob/living/simple_animal/hostile/ghoul/reaver
@@ -56,7 +54,6 @@
 	harm_intent_damage = 8
 	melee_damage_lower = 25
 	melee_damage_upper = 25
-	footstep_type = FOOTSTEP_MOB_BAREFOOT
 
 /mob/living/simple_animal/hostile/ghoul/reaver/Initialize()
 	. = ..()
@@ -94,7 +91,6 @@
 	harm_intent_damage = 8
 	melee_damage_lower = 15
 	melee_damage_upper = 15
-	footstep_type = FOOTSTEP_MOB_BAREFOOT
 
 //Frozen Feral Ghoul
 /mob/living/simple_animal/hostile/ghoul/frozenreaver
@@ -109,8 +105,7 @@
 	harm_intent_damage = 8
 	melee_damage_lower = 15
 	melee_damage_upper = 15
-	footstep_type = FOOTSTEP_MOB_BAREFOOT
-	
+
 //Legendary Ghoul
 /mob/living/simple_animal/hostile/ghoul/legendary
 	name = "legendary ghoul"
@@ -128,8 +123,7 @@
 	mob_size = 5
 	wound_bonus = 0
 	bare_wound_bonus = 0
-	footstep_type = FOOTSTEP_MOB_BAREFOOT
-	
+
 //Glowing Ghoul
 /mob/living/simple_animal/hostile/ghoul/glowing
 	name = "glowing feral ghoul"
@@ -145,8 +139,7 @@
 	melee_damage_upper = 25
 	light_system = MOVABLE_LIGHT
 	light_range = 2
-	footstep_type = FOOTSTEP_MOB_BAREFOOT
-	
+
 /mob/living/simple_animal/hostile/ghoul/glowing/Initialize(mapload)
 	. = ..()
 	// we only heal BRUTELOSS because each type directly heals a simplemob's health
@@ -183,8 +176,7 @@
 	icon_gib = "syndicate_gib"
 	maxHealth = 90
 	health = 90
-	footstep_type = FOOTSTEP_MOB_BAREFOOT
-	
+
 //Alive Ghoul
 /mob/living/simple_animal/hostile/ghoul/soldier/armored
 	name = "armored ghoul soldier"
@@ -195,8 +187,7 @@
 	icon_gib = "syndicate_gib"
 	maxHealth = 100
 	health = 100
-	footstep_type = FOOTSTEP_MOB_BAREFOOT
-	
+
 //Alive Ghoul
 /mob/living/simple_animal/hostile/ghoul/scorched
 	name = "scorched ghoul soldier"
@@ -217,8 +208,7 @@
 	aggro_vision_range = 10
 	attack_verb_simple = "punches"
 	attack_sound = "punch"
-	footstep_type = FOOTSTEP_MOB_BAREFOOT
-	
+
 //Alive Ghoul Ranged
 /mob/living/simple_animal/hostile/ghoul/scorched/ranged
 	name = "Ranged Ghoul Solder"
@@ -244,9 +234,7 @@
 	aggro_vision_range = 10
 	attack_verb_simple = "shoots"
 	attack_sound = "punch"
-	footstep_type = FOOTSTEP_MOB_BAREFOOT
-	
-//Sunset mob of some sort?
+
 /mob/living/simple_animal/hostile/ghoul/wyomingghost
 	name = "ghost soldier"
 	desc = "A figure clad in armor that stands silent except for the slight wheezing coming from them, a dark orange and black liquid pumps through a clear tube into the gas mask. The armor they wear seems to be sealed to their skin."
@@ -273,8 +261,7 @@
 	faction = list("supermutant","ghoul")
 	decompose = FALSE
 	sharpness = SHARP_EDGED //They need to cut their finger nails
-	footstep_type = FOOTSTEP_MOB_BAREFOOT
-	
+
 //Halloween Event Ghouls
 /mob/living/simple_animal/hostile/ghoul/zombie
 	name = "ravenous feral ghoul"
@@ -283,8 +270,7 @@
 	stat_attack = UNCONSCIOUS
 	maxHealth = 200
 	health = 200
-	footstep_type = FOOTSTEP_MOB_BAREFOOT
-	
+
 /mob/living/simple_animal/hostile/ghoul/zombie/AttackingTarget()
 	. = ..()
 	if(. && ishuman(target))
@@ -303,8 +289,7 @@
 	harm_intent_damage = 8
 	melee_damage_lower = 30
 	melee_damage_upper = 30
-	footstep_type = FOOTSTEP_MOB_BAREFOOT
-	
+
 /mob/living/simple_animal/hostile/ghoul/zombie/glowing
 	name = "ravenous glowing feral ghoul"
 	desc = "A ferocious feral ghoul, hungry for human meat. This one has absorbed massive amounts of radiation, causing them to glow in the dark and radiate constantly."
@@ -319,8 +304,7 @@
 	melee_damage_upper = 30
 	light_system = MOVABLE_LIGHT
 	light_range = 2
-	footstep_type = FOOTSTEP_MOB_BAREFOOT
-	
+
 /mob/living/simple_animal/hostile/ghoul/zombie/glowing/Initialize(mapload)
 	. = ..()
 	// we only heal BRUTELOSS because each type directly heals a simplemob's health
@@ -355,5 +339,3 @@
 	mob_size = 5
 	wound_bonus = 0
 	bare_wound_bonus = 0
-	footstep_type = FOOTSTEP_MOB_BAREFOOT
-

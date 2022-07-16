@@ -13,7 +13,6 @@
 	var/buildstacktype = /obj/item/stack/sheet/metal
 	var/buildstackamount = 1
 	var/item_chair = /obj/item/chair // if null it can't be picked up
-	plane = MOB_PLANE
 	layer = OBJ_LAYER
 
 /obj/structure/chair/examine(mob/user)
@@ -134,10 +133,8 @@
 
 /obj/structure/chair/proc/handle_layer()
 	if(has_buckled_mobs() && dir == NORTH)
-		plane = MOB_PLANE
 		layer = ABOVE_MOB_LAYER
 	else
-		plane = initial(plane)
 		layer = OBJ_LAYER
 
 /obj/structure/chair/post_buckle_mob(mob/living/M)
@@ -341,8 +338,6 @@
 /obj/structure/chair/comfy/Initialize()
 	armrest = GetArmrest()
 	armrest.layer = ABOVE_MOB_LAYER
-	armrest.plane = MOB_PLANE
-
 	return ..()
 
 /obj/structure/chair/comfy/proc/GetArmrest()
@@ -776,7 +771,6 @@
 /obj/structure/chair/booth/Initialize()
 	overlay = GetOverlay()
 	overlay.layer = ABOVE_ALL_MOB_LAYER
-	overlay.plane = MOB_PLANE
 	return ..()
 
 /obj/structure/chair/booth/Destroy()
@@ -802,7 +796,6 @@
 /obj/structure/chair/left/Initialize()
 	overlay = GetOverlay()
 	overlay.layer = ABOVE_ALL_MOB_LAYER
-	overlay.plane = MOB_PLANE
 	return ..()
 
 /obj/structure/chair/left/Destroy()
@@ -825,7 +818,6 @@
 /obj/structure/chair/left/Initialize()
 	overlay = GetOverlay()
 	overlay.layer = ABOVE_ALL_MOB_LAYER
-	overlay.plane = MOB_PLANE
 	return ..()
 
 /obj/structure/chair/left/Destroy()
@@ -848,7 +840,6 @@
 /obj/structure/chair/middle/Initialize()
 	overlay = GetOverlay()
 	overlay.layer = ABOVE_ALL_MOB_LAYER
-	overlay.plane = MOB_PLANE
 	return ..()
 
 /obj/structure/chair/middle/Destroy()
@@ -874,7 +865,6 @@
 /obj/structure/chair/right/Initialize()
 	overlay = GetOverlay()
 	overlay.layer = ABOVE_ALL_MOB_LAYER
-	overlay.plane = MOB_PLANE
 	return ..()
 
 /obj/structure/chair/right/Destroy()

@@ -258,11 +258,6 @@ GLOBAL_DATUM(necropolis_gate, /obj/structure/necropolis_gate/legion_gate)
 /obj/structure/stone_tile/Initialize(mapload)
 	. = ..()
 	icon_state = "[tile_key][rand(1, tile_random_sprite_max)]"
-	var/static/list/loc_connections = list(
-		COMSIG_ATOM_ENTERED = .proc/on_entered,
-	)
-	AddElement(/datum/element/connect_loc, loc_connections)
-
 
 /obj/structure/stone_tile/Destroy(force)
 	if(force || fallen)
@@ -273,8 +268,7 @@ GLOBAL_DATUM(necropolis_gate, /obj/structure/necropolis_gate/legion_gate)
 /obj/structure/stone_tile/singularity_pull()
 	return
 
-/obj/structure/stone_tile/proc/on_entered(atom/movable/AM)
-	SIGNAL_HANDLER
+/obj/structure/stone_tile/Crossed(atom/movable/AM)
 	if(falling || fallen)
 		return
 	var/turf/T = get_turf(src)
@@ -289,7 +283,7 @@ GLOBAL_DATUM(necropolis_gate, /obj/structure/necropolis_gate/legion_gate)
 	switch(fall_on_cross)
 		if(COLLAPSE_ON_CROSS, DESTROY_ON_CROSS)
 			if((I && I.w_class >= WEIGHT_CLASS_BULKY) || (L && !(L.movement_type & FLYING) && L.mob_size >= MOB_SIZE_HUMAN)) //too heavy! too big! aaah!
-				INVOKE_ASYNC(src, .proc/collapse)
+				collapse()
 		if(UNIQUE_EFFECT)
 			crossed_effect(AM)
 

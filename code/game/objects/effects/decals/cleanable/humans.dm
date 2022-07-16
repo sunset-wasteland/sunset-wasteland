@@ -87,18 +87,7 @@
 	blood_state = BLOOD_STATE_BLOOD //the icon state to load images from
 	var/list/shoe_types = list()
 
-/obj/effect/decal/cleanable/blood/footprints/Initialize(mapload, list/datum/disease/diseases)
-	. = ..()
-	
-	var/static/list/loc_connections = list(
-		COMSIG_ATOM_ENTERED = .proc/on_entered,
-		COMSIG_ATOM_EXITED = .proc/on_exit,
-
-	)
-	AddElement(/datum/element/connect_loc, loc_connections)
-
-/obj/effect/decal/cleanable/blood/footprints/on_entered(atom/movable/O)
-	..()
+/obj/effect/decal/cleanable/blood/footprints/Crossed(atom/movable/O)
 	if(ishuman(O))
 		var/mob/living/carbon/human/H = O
 		var/obj/item/clothing/shoes/S = H.shoes
@@ -111,8 +100,7 @@
 				entered_dirs |= H.dir
 				update_icon()
 
-/obj/effect/decal/cleanable/blood/footprints/proc/on_exit(atom/movable/O)
-	SIGNAL_HANDLER
+/obj/effect/decal/cleanable/blood/footprints/Uncrossed(atom/movable/O)
 	if(ishuman(O))
 		var/mob/living/carbon/human/H = O
 		var/obj/item/clothing/shoes/S = H.shoes

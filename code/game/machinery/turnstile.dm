@@ -24,8 +24,7 @@
 	else
 		return allowed(B)
 
-/obj/machinery/turnstile/CanAllowThrough(atom/movable/AM, border_dir)
-	..()
+/obj/machinery/turnstile/CanPass(atom/movable/AM, border_dir)
 	if(istype(AM, /obj/item/projectile))
 		return TRUE
 	if(ismob(AM))

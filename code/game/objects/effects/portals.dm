@@ -30,13 +30,6 @@
 	var/last_effect = 0
 	var/force_teleport = FALSE
 
-/obj/effect/portal/Initialize(mapload, _lifespan, obj/effect/portal/_linked, automatic_link, turf/hard_target_override, atmos_link_override)
-	. = ..()
-	var/static/list/loc_connections = list(
-		COMSIG_ATOM_ENTERED = .proc/on_entered,
-	)
-	AddElement(/datum/element/connect_loc, loc_connections)
-
 /obj/effect/portal/anom
 	name = "wormhole"
 	icon = 'icons/obj/objects.dmi'
@@ -56,16 +49,15 @@
 		user.forceMove(get_turf(src))
 		return TRUE
 
-/obj/effect/portal/proc/on_entered(atom/movable/AM, oldloc, force_stop = 0)
-	SIGNAL_HANDLER
+/obj/effect/portal/Crossed(atom/movable/AM, oldloc, force_stop = 0)
 	if(force_stop)
-		return
+		return ..()
 	if(isobserver(AM))
-		return
+		return ..()
 	if(linked && (get_turf(oldloc) == get_turf(linked)))
-		return
+		return ..()
 	if(!teleport(AM))
-		return
+		return ..()
 
 /obj/effect/portal/attack_tk(mob/user)
 	return

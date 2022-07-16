@@ -31,14 +31,9 @@
 		sigdev.frequency = roundstart_signaller_freq
 		if(isopenturf(loc))
 			hide(TRUE)
-	
-	var/static/list/loc_connections = list(
-		COMSIG_ATOM_ENTERED = .proc/on_entered,
-	)
-	AddElement(/datum/element/connect_loc, loc_connections)
 
-/obj/item/pressure_plate/proc/on_entered(atom/movable/AM)
-	SIGNAL_HANDLER
+/obj/item/pressure_plate/Crossed(atom/movable/AM)
+	. = ..()
 	if(!can_trigger || !active)
 		return
 	if(trigger_item && !istype(AM, specific_item))

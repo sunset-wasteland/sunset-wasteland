@@ -126,8 +126,7 @@
 	. = ..()
 	move_update_air(T)
 
-/obj/machinery/door/CanAllowThrough(atom/movable/mover, border_dir)
-	..()
+/obj/machinery/door/CanPass(atom/movable/mover, border_dir)
 	if(istype(mover) && (mover.pass_flags & PASSGLASS))
 		return !opacity
 	return !density

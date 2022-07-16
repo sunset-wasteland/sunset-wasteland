@@ -18,8 +18,8 @@
 		qdel(cc)
 	client_colours = null
 	ghostize()
-
-	return ..() // Coyote Modify, Mobs wont lag the server when gibbed :o
+	..()
+	return QDEL_HINT_HARDDEL
 
 /mob/Initialize()
 	GLOB.mob_list += src

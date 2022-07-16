@@ -59,7 +59,3 @@
 			matches[key] = value
 			CHECK_TICK
 	return matches
-
-// used only for the movement subsystem.
-/proc/return_typenames(type)
-	return splittext("[type]", "/")

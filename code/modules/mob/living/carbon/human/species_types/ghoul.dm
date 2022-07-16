@@ -165,4 +165,4 @@
 	wagging_type = "mam_waggingtail"
 	species_type = "furry ghoul"
 
-	allowed_limb_ids = list("mammal","aquatic","avian","insect","apid","moth","moth_not_greyscale")
+	allowed_limb_ids = list("mammal","aquatic","avian","lizard","insect","apid","moth","moth_not_greyscale")

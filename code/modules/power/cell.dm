@@ -472,6 +472,7 @@
 	icon = 'icons/fallout/objects/powercells.dmi'
 	icon_state = "ec-full"
 	maxcharge = 2000
+	self_recharge = 1
 
 /obj/item/stock_parts/cell/ammo/ec/update_icon()
 	switch(charge)

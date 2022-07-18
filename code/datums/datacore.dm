@@ -182,7 +182,7 @@
 			even = !even
 	if(length(khan))
 		dat += "<tr><th colspan=3>Great Khans</th></tr>"
-		for(var/name in bighorn)
+		for(var/name in khan)
 			dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[khan[name]]</td></tr>"
 			even = !even
 	if(length(leg))

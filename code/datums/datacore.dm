@@ -96,6 +96,7 @@
 	var/list/bos = list()
 	var/list/enclave = list()
 	var/list/bighorn = list()
+	var/list/khan = list()
 	var/list/leg = list()
 	var/list/ncr = list()
 	var/list/vault = list()
@@ -136,6 +137,9 @@
 		if(rank in GLOB.bighorn_positions)
 			bighorn[name] = rank
 			department = 1
+		if(rank in GLOB.khan_positions)
+			khan[name] = rank
+			department = 1
 		if(rank in GLOB.legion_positions)
 			leg[name] = rank
 			department = 1
@@ -172,9 +176,14 @@
 			dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[enclave[name]]</td></tr>"
 			even = !even
 	if(length(bighorn))
-		dat += "<tr><th colspan=3>Oasis</th></tr>"
+		dat += "<tr><th colspan=3>Bighorn</th></tr>"
 		for(var/name in bighorn)
 			dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[bighorn[name]]</td></tr>"
+			even = !even
+	if(length(khan))
+		dat += "<tr><th colspan=3>Great Khans</th></tr>"
+		for(var/name in bighorn)
+			dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[khan[name]]</td></tr>"
 			even = !even
 	if(length(leg))
 		dat += "<tr><th colspan=3>Caesar's Legion</th></tr>"

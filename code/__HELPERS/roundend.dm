@@ -209,7 +209,7 @@
 	if(length(CONFIG_GET(keyed_list/cross_server)))
 		send_news_report()
 	//fortuna addition. list of random names for the roundend news author
-	var/list/publisher = list("Oasis Publishing","Brotherhood News","Mojave Publishing","FEV News")
+	var/list/publisher = list("Bighorn Publishing","Brotherhood News","Wyoming Publishing","FEV News")
 	//tell the nice people on discord what went on before the salt cannon happens.
 	// send2chat sending the new round ping off
 	send2chat(" <@&922230570791108628> ", CONFIG_GET(string/discord_channel_serverstatus))
@@ -222,7 +222,7 @@
 	set_observer_default_invisibility(0, "<span class='warning'>The round is over! You are now visible to the living.</span>")
 
 	CHECK_TICK
-	
+
 	//These need update to actually reflect the real antagonists
 	//Print a list of antagonists to the server log
 	var/list/total_antagonists = list()

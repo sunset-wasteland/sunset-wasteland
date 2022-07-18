@@ -88,7 +88,7 @@
 	new /obj/item/stack/f13Cash/random/ncr/med(src)
 
 // Oasis reserves. Spawns with the Mayor.
-/obj/item/storage/bag/money/small/oasis/PopulateContents()
+/obj/item/storage/bag/money/small/bighorn/PopulateContents()
 	// exactly 1000 caps, and about 200 in foreign reserves
 	new /obj/item/stack/f13Cash/caps/onezerozerozero(src)
 	new /obj/item/stack/f13Cash/random/denarius/med(src)

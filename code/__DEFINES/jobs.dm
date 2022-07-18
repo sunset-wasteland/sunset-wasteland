@@ -4,7 +4,7 @@
 #define FACTION_NCR "NCR"
 #define FACTION_LEGION "Legion"
 #define FACTION_BROTHERHOOD "BOS"
-#define FACTION_OASIS "Town"
+#define FACTION_BIGHORN "Town"
 #define FACTION_ENCLAVE "Enclave"
 #define FACTION_WASTELAND "Wastelander"
 #define FACTION_RAIDERS "Raiders"
@@ -116,7 +116,7 @@
 #define F13INITIATE		(1<<10)
 #define F13OFFDUTYBOS	(1<<11)
 
-#define DEP_OASIS (1<<6)
+#define DEP_BIGHORN (1<<6)
 
 #define F13SHERIFF		(1<<0)
 #define F13DENDOC       (1<<1)

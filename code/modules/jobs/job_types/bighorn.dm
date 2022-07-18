@@ -27,7 +27,7 @@ Mayor
 	spawn_positions = 2
 	supervisors = "the free market and Bighorn laws"
 	description = "As a proprietor of the Blue Oyster, you are responsible for ensuring both citizens and travellers in Bighorn can get some food, drink and rest. This town is usually run by the Great Khans, and the farm within their compound could provide fresh supplies for your business, so try negotiating with them if they are present."
-	enforces = "The Blue Oyster is a private business and you can decide who is welcome there. However, you are still subject to the overarching laws of Bighorn."
+	enforces = "While you have dominion over your private business, your premium status as a citizen may be revoked if you are considered a danger to the populace or anger those in control of the town."
 	selection_color = "#dcba97"
 
 	outfit = /datum/outfit/job/den/f13barkeep
@@ -111,8 +111,8 @@ Mayor
 	total_positions = 2
 	spawn_positions = 2
 	supervisors = "the free market and Bighorn laws"
-	description = "The big trading caravan companies have often neglected humble Bighorn. This leaves one thing for certain - opportunities for local business! Your store allows you to sell all kinds of merchandise, from dandy boy apples to laser rifles. Ensure you make a profit and retain enough capital for your day-to-day operations. This town is usually under control of the Great Khans, so just be careful not to get in the way of their chem business."
-	enforces = "Your store is a private business and you can decide who is welcome there. However, you are still subject to the overarching laws of Bighorn."
+	description = "You are a Crimson Caravan affiliate based in Bighorn - a settlement typically run by the Great Khans. Your store allows you to sell all kinds of merchandise, from dandy boy apples to laser rifles. Ensure you make a profit and retain enough capital for your day-to-day operations."
+	enforces = "While you have dominion over your private business, your premium status as a citizen may be revoked if you are considered a danger to the populace or anger those in control of the town."
 	selection_color = "#dcba97"
 	exp_requirements = 300
 
@@ -180,7 +180,8 @@ Mayor
 	total_positions = 8
 	spawn_positions = 8
 	supervisors = "Bighorn laws"
-	description = "You are a citizen living in Bighorn - a settlement typically run by the Great Khans. Treat your town with respect and make sure to follow the laws in place, as your premium status may be revoked if you are considered a danger to the populace. One of the local businesses or the Khans themselves may have work if you require funds."
+	description = "You are a citizen living in Bighorn - a settlement typically run by the Great Khans. Take good care of your town, and consider picking up a trade to support the settlement - farming, hunting, or something more particular. One of the local businesses or the Khans themselves may have work if you require funds."
+	enforces = "Your premium status as a citizen may be revoked if you are considered a danger to the populace or anger those in control of the town."
 	selection_color = "#dcba97"
 
 	outfit = /datum/outfit/job/den/f13settler
@@ -205,6 +206,192 @@ Mayor
 		),
 	)
 
+//Wasteland Preacher
+/datum/job/bighorn/f13preacher
+	title = "Preacher"
+	flag = F13PREACHER
+	faction = FACTION_WASTELAND
+	total_positions = 1
+	spawn_positions = 1
+	supervisors = "your faith and Bighorn laws"
+	description = "You are a preacher based in Bighorn - a settlement typically run by the Great Khans. As a bastion of faith, spread the good word and bring hope to the needy. The divine may not protect from the harsh realities of the wasteland, but surely offers some solace."
+	enforces = "Your premium status as a citizen may be revoked if you are considered a danger to the populace or anger those in control of the town."
+	selection_color = "#dcba97"
+
+	outfit = /datum/outfit/job/bighorn/f13preacher
+
+	loadout_options = list(
+	/datum/outfit/loadout/crusader, 	//This is kinda a given. You bet.
+	/datum/outfit/loadout/samaritan, 	//Water and food to share with the wastes.
+	/datum/outfit/loadout/cleanser		//Just some bombs.
+	)
+
+	access = list()		//we can expand on this and make alterations as people suggest different loadouts
+	minimal_access = list()
+	matchmaking_allowed = list(
+		/datum/matchmaking_pref/friend = list(
+			/datum/job/wasteland/f13wastelander,
+		),
+		/datum/matchmaking_pref/rival = list(
+			/datum/job/wasteland/f13wastelander,
+		),
+		/datum/matchmaking_pref/mentor = list(
+			/datum/job/wasteland/f13wastelander,
+		),
+		/datum/matchmaking_pref/disciple = list(
+			/datum/job/wasteland/f13wastelander,
+		),
+		/datum/matchmaking_pref/patron = list(
+			/datum/job/wasteland/f13wastelander,
+		),
+		/datum/matchmaking_pref/protegee = list(
+			/datum/job/wasteland/f13wastelander,
+		),
+	)
+
+
+
+/datum/outfit/loadout/crusader
+	name = "Crusader"
+	backpack_contents = list(
+		/obj/item/clothing/suit/armor/knight = 1,
+		/obj/item/clothing/head/helmet/knight/red = 1,
+		/obj/item/melee/onehanded/machete = 1,
+	)
+
+/datum/outfit/loadout/samaritan
+	name = "Samaritan"
+	backpack_contents = list(
+		/obj/item/reagent_containers/food/snacks/store/bread/plain = 5,
+		/obj/item/reagent_containers/food/snacks/fishmeat/salmon = 2,
+		/obj/item/reagent_containers/glass/beaker/waterbottle = 2,
+		/obj/item/nullrod = 1,
+	)	//Matthew 14:17 RSVCE and KJV - Kitsunemitsu
+
+/datum/outfit/loadout/cleanser
+	name = "Cleanser"
+	backpack_contents = list(
+		/obj/item/grenade/homemade/coffeepotbomb = 2,	//This is funny. I swear guys.
+		/obj/item/gun/ballistic/revolver/m29 = 1,		//Moved here for more *variety*
+		/obj/item/ammo_box/m44 = 2
+	)
+
+
+/datum/job/bighorn/f13preacher/after_spawn(mob/living/H, mob/M)
+	. = ..()
+	if(H.mind)
+		H.mind.isholy = TRUE
+
+	var/obj/item/storage/book/bible/booze/B = new
+
+	if(GLOB.religion)
+		B.deity_name = GLOB.deity
+		B.name = GLOB.bible_name
+		B.icon_state = GLOB.bible_icon_state
+		B.item_state = GLOB.bible_item_state
+		to_chat(H, "There is already an established religion onboard the station. You are an acolyte of [GLOB.deity]. Defer to the Chaplain.")
+		H.equip_to_slot_or_del(B, SLOT_IN_BACKPACK)
+		var/nrt = GLOB.holy_weapon_type || /obj/item/nullrod
+		var/obj/item/nullrod/N = new nrt(H)
+		H.put_in_hands(N)
+		return
+
+	var/new_religion = DEFAULT_RELIGION
+	if(M.client && M.client.prefs.custom_names["religion"])
+		new_religion = M.client.prefs.custom_names["religion"]
+
+	var/new_deity = DEFAULT_DEITY
+	if(M.client && M.client.prefs.custom_names["deity"])
+		new_deity = M.client.prefs.custom_names["deity"]
+
+	B.deity_name = new_deity
+
+
+	switch(lowertext(new_religion))
+		if("christianity") // DEFAULT_RELIGION
+			B.name = pick("The Holy Bible","The Dead Sea Scrolls")
+		if("buddhism")
+			B.name = "The Sutras"
+		if("clownism","honkmother","honk","honkism","comedy")
+			B.name = pick("The Holy Joke Book", "Just a Prank", "Hymns to the Honkmother")
+		if("chaos")
+			B.name = "The Book of Lorgar"
+		if("cthulhu")
+			B.name = "The Necronomicon"
+		if("hinduism")
+			B.name = "The Vedas"
+		if("homosexuality")
+			B.name = pick("Guys Gone Wild","Coming Out of The Closet")
+		if("imperium")
+			B.name = "Uplifting Primer"
+		if("islam")
+			B.name = "Quran"
+		if("judaism")
+			B.name = "The Torah"
+		if("lampism")
+			B.name = "Fluorescent Incandescence"
+		if("lol", "wtf", "gay", "penis", "ass", "poo", "badmin", "shitmin", "deadmin", "cock", "cocks", "meme", "memes")
+			B.name = pick("Woodys Got Wood: The Aftermath", "War of the Cocks", "Sweet Bro and Hella Jef: Expanded Edition", "F.A.T.A.L. Rulebook")
+			H.adjustOrganLoss(ORGAN_SLOT_BRAIN, 100) // starts off dumb as fuck
+		if("monkeyism","apism","gorillism","primatism")
+			B.name = pick("Going Bananas", "Bananas Out For Harambe")
+		if("mormonism")
+			B.name = "The Book of Mormon"
+		if("pastafarianism")
+			B.name = "The Gospel of the Flying Spaghetti Monster"
+		if("rastafarianism","rasta")
+			B.name = "The Holy Piby"
+		if("satanism")
+			B.name = "The Unholy Bible"
+		if("science")
+			B.name = pick("Principle of Relativity", "Quantum Enigma: Physics Encounters Consciousness", "Programming the Universe", "Quantum Physics and Theology", "String Theory for Dummies", "How To: Build Your Own Warp Drive", "The Mysteries of Bluespace", "Playing God: Collector's Edition")
+		if("scientology")
+			B.name = pick("The Biography of L. Ron Hubbard","Dianetics")
+		if("servicianism", "partying")
+			B.name = "The Tenets of Servicia"
+			B.deity_name = pick("Servicia", "Space Bacchus", "Space Dionysus")
+			B.desc = "Happy, Full, Clean. Live it and give it."
+		if("subgenius")
+			B.name = "Book of the SubGenius"
+		if("toolboxia","greytide")
+			B.name = pick("Toolbox Manifesto","iGlove Assistants")
+		if("weeaboo","kawaii")
+			B.name = pick("Fanfiction Compendium","Japanese for Dummies","The Manganomicon","Establishing Your O.T.P")
+		else
+			B.name = "The Holy Book of [new_religion]"
+
+	GLOB.religion = new_religion
+	GLOB.bible_name = B.name
+	GLOB.deity = B.deity_name
+
+	H.equip_to_slot_or_del(B, SLOT_IN_BACKPACK)
+
+	SSblackbox.record_feedback("text", "religion_name", 1, "[new_religion]", 1)
+	SSblackbox.record_feedback("text", "religion_deity", 1, "[new_deity]", 1)
+
+
+/datum/outfit/job/bighorn/f13preacher
+	name = "Preacher"
+	jobtype = /datum/job/bighorn/f13preacher
+
+	id = /obj/item/card/id/dogtag/town
+	ears = /obj/item/radio/headset
+	ears = 			/obj/item/radio/headset
+	belt = null
+	uniform = 		/obj/item/clothing/under/f13/chaplain
+	gloves =		/obj/item/clothing/gloves/fingerless
+	shoes = 		/obj/item/clothing/shoes/jackboots
+	r_pocket = 		/obj/item/flashlight/flare
+
+	backpack =		/obj/item/storage/backpack/cultpack
+	satchel = 		/obj/item/storage/backpack/cultpack
+	backpack_contents = list(
+		/obj/item/camera/spooky = 1, \
+		/obj/item/reagent_containers/food/drinks/flask=1, \
+		/obj/item/reagent_containers/hypospray/medipen/stimpak=2, \
+		/obj/item/storage/fancy/candle_box, \
+		/obj/item/storage/bag/money/small/settler)
+//end preacher
 
 /datum/outfit/job/den/f13settler
 	name = "Citizen"

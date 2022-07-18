@@ -155,6 +155,7 @@ GLOBAL_LIST_INIT(brotherhood_positions, list(
 GLOBAL_LIST_INIT(bighorn_positions, list(
 	"Shopkeeper",
 	"Barkeep",
+	"Preacher",
 	"Citizen",
 ))
 
@@ -226,7 +227,6 @@ GLOBAL_LIST_INIT(wasteland_positions, list(
 	"Outlaw",
 	"Faithful",
 	"Vigilante",
-	"Preacher",
 	"Tribal",
 	"Wastelander",
 ))
@@ -305,7 +305,7 @@ GLOBAL_LIST_INIT(exp_jobsmap, list(
 
 	EXP_TYPE_OUTLAW = list("titles" = list("Outlaw","Den Mob Boss","Den Mob Enforcer","Den Doctor",)),
 	EXP_TYPE_BROTHERHOOD = list("titles" = brotherhood_positions),
-	EXP_TYPE_BIGHORN = list("titles" = bighorn_positions ),
+	EXP_TYPE_BIGHORN = list("titles" = bighorn_positions),
 	EXP_TYPE_LEGION = list("titles" = legion_positions),
 	EXP_TYPE_NCR = list("titles" = ncr_positions),
 	EXP_TYPE_VAULT = list("titles" = vault_positions),

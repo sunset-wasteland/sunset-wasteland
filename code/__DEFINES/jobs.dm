@@ -4,7 +4,7 @@
 #define FACTION_NCR "NCR"
 #define FACTION_LEGION "Legion"
 #define FACTION_BROTHERHOOD "BOS"
-#define FACTION_BIGHORN "Town"
+#define FACTION_BIGHORN "Bighorn"
 #define FACTION_ENCLAVE "Enclave"
 #define FACTION_WASTELAND "Wastelander"
 #define FACTION_RAIDERS "Raiders"
@@ -118,19 +118,10 @@
 
 #define DEP_BIGHORN (1<<6)
 
-#define F13SHERIFF		(1<<0)
-#define F13DENDOC       (1<<1)
-#define F13SETTLER		(1<<2)
-#define F13FARMER		(1<<3)
-#define F13PROSPECTOR	(1<<4)
-#define F13DEPUTY		(1<<5)
-#define F13MAYOR		(1<<6)
-#define F13SECRETARY    (1<<7)
-#define F13PREACHER		(1<<8)
-#define F13SHOPKEEPER	(1<<9)
-#define F13FAITHFUL		(1<<10) // WHAT IS BITFLAG. WHAT DOES IT DO. WHERE IS THIS INFO USED.
-#define F13BANKER		(1<<11)	// IDK MAN BUT IT SEEMS IMPORTANT
-#define F13BARKEEP		(1<<12)
+#define F13SETTLER		(1<<0)
+#define F13SHOPKEEPER	(1<<1)
+#define F13BARKEEP		(1<<2)
+#define F13PREACHER		(1<<3)
 
 #define VAULT			(1<<7)
 
@@ -152,7 +143,6 @@
 #define F13WASTELANDER	(1<<2)
 #define F13RAIDER		(1<<3)
 #define F13PUNRAIDER	(1<<4)
-#define F13DETECTIVE	(1<<5)
 #define EVENTCOVEN		(1<<6)
 #define F13VIGILANTE	(1<<7)
 #define F13ADMINBOOS	(1<<8)

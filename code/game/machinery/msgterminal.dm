@@ -430,17 +430,17 @@ GLOBAL_LIST_EMPTY(allTerminals)
 */
 /obj/machinery/msgterminal/bighorn
 	terminalid = "bighorn"
-	terminal = "Oasis Terminal"
+	terminal = "Bighorn Terminal"
 	terminalType = 2
 
 /obj/machinery/msgterminal/bighorn/followers
 	terminalid = "follower"
-	terminal = "Oasis Followers Terminal"
+	terminal = "Followers Terminal"
 	terminalType = 2
 
 /obj/machinery/msgterminal/brotherhood
 	terminalid = "brotherhood"
-	terminal = "Brotherhood Communcations Terminal"
+	terminal = "Brotherhood Terminal"
 	terminalType = 2
 /obj/machinery/msgterminal/command
 	terminalid = "command"

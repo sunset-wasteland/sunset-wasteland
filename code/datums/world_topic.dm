@@ -279,7 +279,7 @@
 	.["Legion"] = legion
 	.["Followers"] = followers
 	.["Brotherhood of Steel"] = brotherhood
-	.["Oasis"] = bighorn
+	.["Bighorn"] = bighorn
 	.["Wastelanders"] = wastelanders
 	.["Other"] = misc
 	return json_encode(.)

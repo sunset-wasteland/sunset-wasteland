@@ -82,14 +82,14 @@ GLOBAL_LIST_EMPTY(allTerminals)
 
 /obj/machinery/msgterminal/ui_interact(mob/user)
 	. = ..()
-	if(open) 
+	if(open)
 		return
 	var/dat = ""
 	dat += "<head><style>body {padding: 0; margin: 15px; background-color: #062113; color: #4aed92; line-height: 170%;} a, button, a:link, a:visited, a:active, .linkOn, .linkOff {color: #4aed92; text-decoration: none; background: #062113; border: none; padding: 1px 4px 1px 4px; margin: 0 2px 0 0; cursor:default;} a:hover {color: #062113; background: #4aed92; border: 1px solid #4aed92} a.white, a.white:link, a.white:visited, a.white:active {color: #4aed92; text-decoration: none; background: #4aed92; border: 1px solid #161616; padding: 1px 4px 1px 4px; margin: 0 2px 0 0; cursor:default;} a.white:hover {color: #062113; background: #4aed92;} .linkOn, a.linkOn:link, a.linkOn:visited, a.linkOn:active, a.linkOn:hover {color: #4aed92; background: #062113; border-color: #062113;} .linkOff, a.linkOff:link, a.linkOff:visited, a.linkOff:active, a.linkOff:hover{color: #4aed92; background: #062113; border-color: #062113;}</style></head><font face='courier'>"
 	dat += "<center><b>ROBCO INDUSTRIES UNIFIED OPERATING SYSTEM v.85</b><br>"
 	dat += "<b>COPYRIGHT 2075-2077 ROBCO INDUSTRIES</b><br><br><br><br>"
 
-	
+
 	playsound(src, 'sound/f13machines/terminalkeytap01.ogg', 20, 1)
 	switch(screen)
 		if(1)	//choose your target
@@ -109,11 +109,11 @@ GLOBAL_LIST_EMPTY(allTerminals)
 				dat += "</tr>"
 			dat += "<tr>"
 			dat += "<td width='55%'>"
-			if(src.terminalid == "brotherhood")	
+			if(src.terminalid == "brotherhood")
 				dat += "<br>Circle of Steel"
-			if(src.terminalid == "legion")	
+			if(src.terminalid == "legion")
 				dat += "<br>Cohort War Council of Southwestern Arizona"
-			if(src.terminalid == "ncr")	
+			if(src.terminalid == "ncr")
 				dat += "<br>Arizona Command Camp Alexander"
 			dat += "</td>"
 			dat += "<td width='45%'>"
@@ -124,7 +124,7 @@ GLOBAL_LIST_EMPTY(allTerminals)
 			dat += "</table>"
 			dat += "<br><A href='?src=[REF(src)];setScreen=0'><< Back</A><br>"
 			dat += "<br><div class='panel redborder'><span class='redtext'>(( NOTE: Do not misuse this terminal to send harassing, joke or meme messages to other factions or groups in the terminal list. ))</span></div><br>"
-			
+
 
 		if(3)	//relay information
 			dat += "Who would you like to send a message to?<br><br>"
@@ -237,7 +237,7 @@ GLOBAL_LIST_EMPTY(allTerminals)
 			dpt = "";
 			screen = 0
 			priority = NORMAL_MESSAGE_PRIORITY
-		
+
 	if(href_list["terminal"] && message)
 		var/sending = message
 		sending += "<br>"
@@ -428,12 +428,12 @@ GLOBAL_LIST_EMPTY(allTerminals)
 	terminal = "Terminal"
 	terminalType = 2
 */
-/obj/machinery/msgterminal/oasis
-	terminalid = "oasis"
+/obj/machinery/msgterminal/bighorn
+	terminalid = "bighorn"
 	terminal = "Oasis Terminal"
 	terminalType = 2
 
-/obj/machinery/msgterminal/oasis/followers
+/obj/machinery/msgterminal/bighorn/followers
 	terminalid = "follower"
 	terminal = "Oasis Followers Terminal"
 	terminalType = 2

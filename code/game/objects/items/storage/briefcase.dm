@@ -58,11 +58,11 @@
 	new /obj/item/paper_bin(src)
 	new /obj/item/storage/box/evidence(src)
 	new /obj/item/storage/box/lawyer(src)
-	
+
 /obj/item/storage/briefcase/secretary
 	name = "fancy briefcase"
 	desc = "a gecko-skin briefcase with nickel-plated hinges and carrying handle, the height of post-war business fashion."
-	force = 12 //oasis made it better
+	force = 12
 
 /obj/item/storage/briefcase/secretary/PopulateContents()
 	new /obj/item/suppressor(src)
@@ -71,9 +71,9 @@
 	new /obj/item/clothing/under/suit/black/skirt(src)
 	new /obj/item/pen(src)
 	new /obj/item/storage/box/funds(src)
-	
+
 /obj/item/storage/box/funds
-	name = "Oasis operating funds"
+	name = "Bighorn operating funds"
 	desc = "A box filled with both local and foreign currency, to cover unexpected purchases"
 
 // Secretary spawns with all 3 types of money for negotatiating with any side. ~325 caps worth

@@ -244,7 +244,7 @@
 	var/list/command = list()
 	var/list/ncr = list()
 	var/list/legion = list()
-	var/list/oasis = list()
+	var/list/bighorn = list()
 	var/list/brotherhood = list()
 	var/list/wastelanders = list()
 	var/list/followers = list()
@@ -259,8 +259,8 @@
 			followers[name] = rank
 		else if(real_rank in GLOB.legion_positions)
 			legion[name] = rank
-		else if(real_rank in GLOB.oasis_positions)
-			oasis[name] = rank
+		else if(real_rank in GLOB.bighorn_positions)
+			bighorn[name] = rank
 		else if(real_rank in GLOB.brotherhood_positions)
 			brotherhood[name] = rank
 		else if(real_rank in GLOB.command_positions)
@@ -279,7 +279,7 @@
 	.["Legion"] = legion
 	.["Followers"] = followers
 	.["Brotherhood of Steel"] = brotherhood
-	.["Oasis"] = oasis
+	.["Bighorn"] = bighorn
 	.["Wastelanders"] = wastelanders
 	.["Other"] = misc
 	return json_encode(.)

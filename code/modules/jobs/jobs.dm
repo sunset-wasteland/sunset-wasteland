@@ -152,9 +152,10 @@ GLOBAL_LIST_INIT(brotherhood_positions, list(
 	"Initiate",
 ))
 
-GLOBAL_LIST_INIT(oasis_positions, list(
+GLOBAL_LIST_INIT(bighorn_positions, list(
 	"Shopkeeper",
 	"Barkeep",
+	"Preacher",
 	"Citizen",
 ))
 
@@ -226,7 +227,6 @@ GLOBAL_LIST_INIT(wasteland_positions, list(
 	"Outlaw",
 	"Faithful",
 	"Vigilante",
-	"Preacher",
 	"Tribal",
 	"Wastelander",
 ))
@@ -287,7 +287,7 @@ GLOBAL_LIST_INIT(position_categories, list(
 	EXP_TYPE_WASTELAND = list("jobs" = wasteland_positions, "color" = "#5a5a5a"),
 	EXP_TYPE_ENCLAVE = list("jobs" = enclave_positions, "color" = "#323232"),
 	EXP_TYPE_KHAN = list("jobs" = khan_positions, "color" = "#006666"),
-	EXP_TYPE_OASIS = list("jobs" = oasis_positions, "color" = "#d7b088"),
+	EXP_TYPE_BIGHORN = list("jobs" = bighorn_positions, "color" = "#d7b088"),
 ))
 
 GLOBAL_LIST_INIT(exp_jobsmap, list(
@@ -301,11 +301,11 @@ GLOBAL_LIST_INIT(exp_jobsmap, list(
 	EXP_TYPE_SILICON = list("titles" = list("AI","Cyborg")),
 	EXP_TYPE_SERVICE = list("titles" = civilian_positions),
 
-	EXP_TYPE_FALLOUT = list("titles" = brotherhood_positions | oasis_positions | legion_positions | ncr_positions | vault_positions | wasteland_positions | tribal_positions | followers_positions | enclave_positions),
+	EXP_TYPE_FALLOUT = list("titles" = brotherhood_positions | bighorn_positions | legion_positions | ncr_positions | vault_positions | wasteland_positions | tribal_positions | followers_positions | enclave_positions),
 
 	EXP_TYPE_OUTLAW = list("titles" = list("Outlaw","Den Mob Boss","Den Mob Enforcer","Den Doctor",)),
 	EXP_TYPE_BROTHERHOOD = list("titles" = brotherhood_positions),
-	EXP_TYPE_OASIS = list("titles" = oasis_positions ),
+	EXP_TYPE_BIGHORN = list("titles" = bighorn_positions),
 	EXP_TYPE_LEGION = list("titles" = legion_positions),
 	EXP_TYPE_NCR = list("titles" = ncr_positions),
 	EXP_TYPE_VAULT = list("titles" = vault_positions),

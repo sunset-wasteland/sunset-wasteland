@@ -65,23 +65,6 @@
 	desc = "So awful..."
 	light_color = LIGHT_COLOR_YELLOW
 
-/obj/machinery/light/sign/oasis
-	name = "Oasis sign"
-	icon_state = "Oasis"
-	base_state = "Oasis"
-	icon = 'icons/fallout/objects/structures/kebabtown.dmi'
-	density = 1
-	desc = "A sign marking the town of Oasis. It's remarkably fancy."
-	light_color = LIGHT_COLOR_YELLOW
-
-/obj/machinery/light/sign/oasis_sign
-	name = "Oasis"
-	icon_state = "oasis_sign"
-	base_state = "oasis_sign"
-	icon = 'icons/fallout/objects/structures/kebabtown.dmi'
-	desc = "A sign marking the town of Oasis. It's remarkably fancy.."
-	light_color = LIGHT_COLOR_YELLOW
-
 /obj/machinery/light/sign/chiken_ranch
 	name = "Chiken Ranch sign"
 	icon_state = "chiken_ranch"

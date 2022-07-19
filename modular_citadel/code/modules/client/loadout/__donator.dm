@@ -27,7 +27,7 @@
 	slot = SLOT_IN_BACKPACK
 	path = /obj/item/book/granter/crafting_recipe/happysharky
 	category = LOADOUT_CATEGORY_BACKPACK
-	ckeywhitelist = list("mrsanderp")
+	ckeywhitelist = list("mr.sanderp")
 	cost = 0
 
 /////////////////////

@@ -149,9 +149,6 @@
 		if(rank in GLOB.followers_positions)
 			flw[name] = rank
 			department = 1
-		if(rank in GLOB.tribal_positions)
-			tribe[name] = rank
-			department = 1
 		if(rank in GLOB.vault_positions)
 			vault[name] = rank
 			department = 1

@@ -91,51 +91,6 @@ Administrator
 	)
 
 /*
-Professor
-
-/datum/job/followers/f13Professor
-	title = "Followers Scientist"
-	flag = F13PRACTITIONER
-	department_flag = FOLLOWERS
-	faction = "Followers"
-	total_positions = 3
-	spawn_positions = 3
-	supervisors = "Followers having no strict command structure, don't report to anyone- though they will look to the Administrator for guidance."
-	description = "You are a Follower Scientist. As a Scientist it is your job to teach the wastes- be it teaching them how to make medicine, grow crops or treat toxic water. You are a learned individual in your chosen field, you know how to do research and have all the basic tools to teach others how to handle the technology they will come across.Followers are not fond of the NCR due to their corruption, but they will help them. They dislike the Brotherhood for hoarding tech, but will make deals to work with them if it furthers the spreading of knowledge. Legion is our mistake and its our job to correct the mistake by speaking of the truth, but recognize that the best way to fight the legion is to teach them and sometimes that can mean helping them.Preaching humanitarianism and valuing human life, Provide free education for all those who are willing to learn."
-	forbids = "Causing harm to others except in times of self-defense."
-	enforces = "Followers are not fond of the NCR due to their corruption, but they will help them. They dislike the Brotherhood for hoarding tech, but will make deals to work with them if it furthers the spreading of knowledge. Legion is our mistake and its our job to correct the mistake by speaking of the truth, but recognize that the best way to fight the legion is to teach them and sometimes that can mean helping them.Preaching humanitarianism and valuing human life. Assist and provide medical services to any who require it, regardless of faction. Provide free education for all those who are willing to learn."
-	selection_color = "#FFDDFF"
-	exp_requirements = 540
-	exp_type = EXP_TYPE_FOLLOWERS
-
-	outfit = /datum/outfit/job/followers/f13Professor
-
-	access = list(ACCESS_FOLLOWER, ACCESS_COMMAND, ACCESS_MILITARY, ACCESS_ENGINE, ACCESS_ENGINE_EQUIP, ACCESS_ATMOSPHERICS)
-	minimal_access = list(ACCESS_FOLLOWER, ACCESS_COMMAND, ACCESS_MILITARY, ACCESS_ENGINE, ACCESS_ENGINE_EQUIP, ACCESS_ATMOSPHERICS)
-
-/datum/outfit/job/followers/f13Professor/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	..()
-	if(visualsOnly)
-		return
-	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
-	ADD_TRAIT(H, TRAIT_GENERIC, src)
-	ADD_TRAIT(H, TRAIT_CHEMWHIZ, src)
-
-/datum/outfit/job/followers/f13Professor
-	name = "Followers Scientist"
-	jobtype = /datum/job/followers/f13Professor
-	backpack = /obj/item/storage/backpack/explorer
-	uniform = /obj/item/clothing/under/f13/followers
-	suit= /obj/item/clothing/suit/toggle/labcoat/f13/followers
-	belt =/obj/item/storage/belt/utility/full/engi
-	id = /obj/item/card/id/silver
-	glasses = /obj/item/clothing/glasses/science
-	chemwhiz = TRUE
-	backpack_contents = list(
-		/obj/item/storage/firstaid/ancient=1)
-*/
-
-/*
 Practitioner
 */
 /datum/job/followers/f13practitioner

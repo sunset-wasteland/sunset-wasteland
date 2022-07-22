@@ -46,6 +46,10 @@
 	name = "Quarry"
 	icon_state = "quarry"
 
+/area/f13/wasteland/valley
+	name = "Corocotta Valley"
+	icon_state = "valley"
+
 /area/f13/wasteland/massfusion
 	name = "Mass Fusion Exterior"
 	icon_state = "massfusionout"

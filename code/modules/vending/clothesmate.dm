@@ -240,3 +240,6 @@
 					/obj/item/clothing/mask/muzzle = 5,
 					/obj/item/clothing/suit/straight_jacket = 5,
 					/obj/item/melee/chainofcommand/fake = 5)
+	contraband = null
+
+	premium = null

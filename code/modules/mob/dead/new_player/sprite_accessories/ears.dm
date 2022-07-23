@@ -145,7 +145,18 @@
 	name = "Eevee"
 	icon_state = "eevee"
 	icon = 'modular_citadel/icons/mob/mam_ears.dmi'
+	color_src = MATRIXED
+	matrixed_sections = MATRIX_RED
 
+/datum/sprite_accessory/ears/human/eeveealt
+	name = "Eevee Alt"
+	icon_state = "eeveealt"
+	color_src = MATRIXED
+	matrixed_sections = MATRIX_RED
+
+/datum/sprite_accessory/ears/human/eeveetorn
+	name = "Eeeve Torn"
+	icon_state = "eeveetorn"
 	color_src = MATRIXED
 	matrixed_sections = MATRIX_RED
 
@@ -287,6 +298,12 @@
 	color_src = MATRIXED
 	matrixed_sections = MATRIX_RED_BLUE
 
+/datum/sprite_accessory/ears/human/zorgoia
+	name = "Zorgoia"
+	icon_state = "zorgoia"
+	color_src = MATRIXED
+	matrixed_sections = MATRIX_RED
+
 
 /******************************************
 *************** Furry Ears ****************
@@ -399,6 +416,18 @@
 	icon_state = "eevee"
 	matrixed_sections = MATRIX_RED
 
+/datum/sprite_accessory/ears/mam_ears/eeveealt
+	name = "Eevee Alt"
+	icon_state = "eeveealt"
+	color_src = MATRIXED
+	matrixed_sections = MATRIX_RED
+
+/datum/sprite_accessory/ears/mam_ears/eeveetorn
+	name = "Eeeve Torn"
+	icon_state = "eeveetorn"
+	color_src = MATRIXED
+	matrixed_sections = MATRIX_RED
+
 /datum/sprite_accessory/ears/mam_ears/elf
 	name = "Elf"
 	icon_state = "elf"
@@ -488,3 +517,10 @@
 	name = "Wolf"
 	icon_state = "wolf"
 	matrixed_sections = MATRIX_RED_BLUE
+
+/datum/sprite_accessory/ears/mam_ears/zorgoia
+	name = "Zorgoia"
+	icon_state = "zorgoia"
+	color_src = MATRIXED
+	matrixed_sections = MATRIX_RED
+

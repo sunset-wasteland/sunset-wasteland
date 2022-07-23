@@ -11,6 +11,17 @@ obj/item/bighorn_flag
 	w_class = 4
 	layer = 4.1
 
+obj/item/renegade_flag
+	name = "Renegade Corps flag"
+	desc = "A flag marking territory belonging to the Renegade Corps mercenaries."
+	icon = 'modular_sunset/icons/structures/bighorn_flag.dmi'
+	icon_state = "renegade_flag"
+	item_state = "renegade_flag"
+	density = 1
+	anchored = 1
+	w_class = 4
+	layer = 4.1
+
 // Sunset Signs - SMALL
 
 obj/item/sign/bee_warning

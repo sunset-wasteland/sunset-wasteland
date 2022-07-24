@@ -547,6 +547,7 @@ Raider
 	title = "Tribal"
 	flag = F13TRIBAL
 	faction = FACTION_WASTELAND
+	social_faction = "Tribal"
 	total_positions = -1
 	spawn_positions = -1
 	description = "You are a member of a tribe, far away from your homeland. Well, relatively far away. Whatever your reasons for coming here, you've found yourself pinned between the ongoing war of the NCR and Caesar's Legion. Try not to get shot."

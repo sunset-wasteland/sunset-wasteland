@@ -115,7 +115,8 @@
 	if(!client)
 		return
 
-	if(client.interviewee)
+	if(client.interviewee || !BC_IsKeyAllowedToConnect(key))
+		to_chat(usr, "<span class='danger'>You are not currently whitelisted!  Please visit the discord to request whitelisting, or adminhelp for more info.</span>")
 		return FALSE
 
 	//don't let people get to this unless they are specifically not verified

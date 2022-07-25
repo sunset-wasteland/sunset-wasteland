@@ -126,6 +126,7 @@ turf/closed/wall/f13/wood/house/update_damage_overlay()
 	hardness = 10
 	smooth = SMOOTH_OLD
 	//	disasemblable = 0
+	unbreakable = 0
 	baseturfs = /turf/open/indestructible/ground/outside/ruins
 	girder_type = 0
 	sheet_type = null

@@ -186,6 +186,17 @@
 	active = FALSE
 	UpdateButtonIcon()
 
+/////////
+// ADMIN FOR DEBUG
+/////////
+/obj/item/book/granter/trait/pilot
+	name = "Piloting and You"
+	desc = "An indepth look into how aircraft function, alongside your very own authorisation codes!"
+	oneuse = TRUE
+	granted_trait = TRAIT_PILOT
+	traitname = "vb_pilot"
+	remarks = list("Remember, your standard VB-02 is only as good as the pilots flying it.", "Assure you've another pilot at your side, in case of emergency.")
+
 ///SPELLS///
 
 /obj/item/book/granter/spell

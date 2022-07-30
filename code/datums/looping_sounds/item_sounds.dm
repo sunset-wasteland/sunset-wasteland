@@ -46,3 +46,10 @@
 	mid_sounds = list('sound/machines/beep.ogg')
 	mid_length = 60
 	volume = 10
+
+
+//vehicle
+/datum/looping_sound/motorcycle
+	mid_sounds = list('sound/f13machines/bike_loop.ogg')
+	mid_length = 42
+	volume = 30

@@ -196,30 +196,6 @@
 		plantGrass()
 	if(icon_state != "wasteland")
 		icon_state = "wasteland[rand(1,31)]"
-	for(var/direction in GLOB.cardinals)
-		var/turf/turf_to_check = get_step(src, direction)
-		if(istype(turf_to_check, /turf/open/water))
-			var/obj/effect/overlay/desert_side/DS = new /obj/effect/overlay/desert_side(src)
-			switch(direction)
-				if(NORTH)
-					DS.pixel_y = 32
-				if(SOUTH)
-					DS.pixel_y = -32
-				if(EAST)
-					DS.pixel_x = 32
-				if(WEST)
-					DS.pixel_x = -32
-			DS.dir = dir = turn(direction, 180)
-
-/turf/open/indestructible/ground/outside/desert/harsh/Initialize()
-	. = ..()
-	if(prob(2))
-		var/obj/derp = pickweight(loots)
-		salvage = new derp()
-	if(!((locate(/obj/structure) in src) || (locate(/obj/machinery) in src)))
-		plantGrass()
-	if(icon_state != "wasteland")
-		icon_state = "wasteland[rand(1,31)]"
 
 /obj/effect/overlay/desert_side
 	name = "desert"

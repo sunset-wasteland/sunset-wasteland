@@ -25,6 +25,21 @@
 /turf/open/water/Initialize()
 	. = ..()
 	update_icon()
+	// Moved from /turf/open/indestructible/ground/outside/desert to reduce lag.
+	for(var/direction in GLOB.cardinals)
+		var/turf/turf_to_check = get_step(src, direction)
+		if(turf_to_check.type == /turf/open/indestructible/ground/outside/desert) // don't do it for subtypes!
+			var/obj/effect/overlay/desert_side/DS = new /obj/effect/overlay/desert_side(turf_to_check)
+			switch(direction)
+				if(NORTH)
+					DS.pixel_y = -32
+				if(SOUTH)
+					DS.pixel_y = 32
+				if(EAST)
+					DS.pixel_x = -32
+				if(WEST)
+					DS.pixel_x = 32
+			DS.dir = direction
 
 /turf/open/water/update_icon()
 	. = ..()

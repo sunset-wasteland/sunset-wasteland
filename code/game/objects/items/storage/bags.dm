@@ -408,7 +408,7 @@
 
 /*	Now in tribal mode!*/
 
-obj/item/storage/bag/chemistry/tribal
+/obj/item/storage/bag/chemistry/tribal
 	name = "tribal medicinal bag"
 	icon = 'icons/obj/chemical.dmi'
 	icon_state = "tribal_chembag"

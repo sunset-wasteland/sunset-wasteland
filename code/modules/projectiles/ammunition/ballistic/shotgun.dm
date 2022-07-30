@@ -34,7 +34,7 @@
 	custom_materials = list(/datum/material/iron=250, /datum/material/blackpowder=70)
 
 
-obj/item/ammo_casing/shotgun/executioner
+/obj/item/ammo_casing/shotgun/executioner
 	name = "executioner slug"
 	desc = "A 12 gauge lead slug purpose built to annihilate flesh on impact."
 	icon_state = "stunshell"

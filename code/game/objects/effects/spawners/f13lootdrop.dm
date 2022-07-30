@@ -1281,7 +1281,7 @@
 				/obj/item/ammo_box/magazine/m556/rifle/
 				)
 
-obj/effect/spawner/bundle/f13/combat_rifle
+/obj/effect/spawner/bundle/f13/combat_rifle
 	name = "combat rifle and ammo spawner"
 	items = list(
 				/obj/item/gun/ballistic/automatic/combat,

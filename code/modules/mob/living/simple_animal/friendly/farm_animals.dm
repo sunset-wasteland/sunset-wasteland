@@ -933,7 +933,7 @@
 	onclose(user, "mob[real_name]")
 	return
 
-mob/living/simple_animal/cow/brahmin/Topic(href, href_list)
+/mob/living/simple_animal/cow/brahmin/Topic(href, href_list)
 	if(usr.stat)
 		return
 

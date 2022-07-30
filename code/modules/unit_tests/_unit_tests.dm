@@ -46,7 +46,6 @@
 #include "component_tests.dm"
 #include "crafting_recipes.dm"
 #include "designs.dm"
-#include "emoting.dm"
 #include "initialize_sanity.dm"
 #include "medical_wounds.dm"
 #include "merge_type.dm"

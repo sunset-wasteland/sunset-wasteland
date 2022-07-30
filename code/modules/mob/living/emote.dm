@@ -770,3 +770,223 @@
 	key_third_person = "whistles to get someones attention"
 	message = "whistles to get someones attention!"
 	sound = 'sound/f13effects/sunsetsounds/whistle-overhere.ogg'
+
+#define EMOTE_SPECIAL_STR "Strength"
+#define EMOTE_SPECIAL_PER "Perception"
+#define EMOTE_SPECIAL_END "Endurance"
+#define EMOTE_SPECIAL_CHA "Charisma"
+#define EMOTE_SPECIAL_INT "Intelligence"
+#define EMOTE_SPECIAL_AGI "Agility"
+#define EMOTE_SPECIAL_LCK "Luck"
+
+GLOBAL_LIST_INIT(special_skill_list, list(
+	EMOTE_SPECIAL_STR,
+	EMOTE_SPECIAL_PER,
+	EMOTE_SPECIAL_END,
+	EMOTE_SPECIAL_CHA,
+	EMOTE_SPECIAL_INT,
+	EMOTE_SPECIAL_AGI,
+	EMOTE_SPECIAL_LCK))
+
+GLOBAL_LIST_INIT(special_triggers, list(
+	EMOTE_SPECIAL_STR = list(
+		"s",
+		"str",
+		"strength",
+		"strangth",
+		"strong",
+		"strongth",
+		"might",
+		"power"),
+	EMOTE_SPECIAL_PER = list(
+		"p",
+		"per",
+		"perception",
+		"preception",
+		"look",
+		"see",
+		"peep"),
+	EMOTE_SPECIAL_END = list(
+		"e",
+		"end",
+		"endurance",
+		"endurence",
+		"toughness",
+		"tough",
+		"grit",
+		"beef",
+		"beefiness"),
+	EMOTE_SPECIAL_CHA = list(
+		"c",
+		"cha",
+		"charisma",
+		"charesma",
+		"charm",
+		"moxie",
+		"smarm",
+		"wink",
+		"char"),
+	EMOTE_SPECIAL_INT = list(
+		"int",
+		"i",
+		"intelligence",
+		"inteligence",
+		"intelligance",
+		"inteligance",
+		"intel",
+		"intell",
+		"intelect",
+		"intellect",
+		"smart",
+		"smartness",
+		"nerd",
+		"nerdiness",
+		"dork",
+		"dorkiness",
+		"dweeb",
+		"dweebishness"),
+	EMOTE_SPECIAL_AGI = list(
+		"agi",
+		"a",
+		"agility",
+		"agillity",
+		"quick",
+		"quickness",
+		"fast",
+		"fastness",
+		"dex",
+		"speed",
+		"speediness",
+		"athleticism",
+		"acrobatics",
+		"escape",
+		"dodge",
+		"evade",
+		"evasion",
+		"cat"),
+	EMOTE_SPECIAL_LCK = list(
+		"l",
+		"lck",
+		"luck",
+		"lick",
+		"lock",
+		"lunk",
+		"link",
+		"chance",
+		"fortune",
+		"dice",
+		"luk",
+		"luc")))
+
+GLOBAL_LIST_INIT(special_phrases, list(
+	EMOTE_SPECIAL_STR = list(
+		"initial" = "tests their strength...",
+		"success" = "was strong!",
+		"failure" = "was too weak..."),
+	EMOTE_SPECIAL_PER = list(
+		"initial" = "takes a good, long look...",
+		"success" = "was perceptive!",
+		"failure" = "was totally oblivious..."),
+	EMOTE_SPECIAL_END = list(
+		"initial" = "tests their toughness...",
+		"success" = "was tough!",
+		"failure" = "was a floppy lil' noodle..."),
+	EMOTE_SPECIAL_CHA = list(
+		"initial" = "starts to be charismatic...",
+		"success" = "was charismatic!",
+		"failure" = "was totally uncharismatic..."),
+	EMOTE_SPECIAL_INT = list(
+		"initial" = "thinks hard...",
+		"success" = "was clever!",
+		"failure" = "was dumb as a doornail..."),
+	EMOTE_SPECIAL_AGI = list(
+		"initial" = "tries to get agile...",
+		"success" = "was agile as a cat!",
+		"failure" = "was clumsy as a cat..."),
+	EMOTE_SPECIAL_LCK = list(
+		"initial" = "tries their luck...",
+		"success" = "lucked out!",
+		"failure" = "was unlucky...")))
+
+
+/datum/emote/living/special
+	key = "special"
+	message = null
+	cooldown = 2.5 SECONDS // longer than it takes for the emote to run
+	stat_allowed = UNCONSCIOUS
+	var/special_delay = 2 SECONDS
+
+/datum/emote/living/special/run_emote(mob/user, params, type_override, intentional = FALSE)
+	if(!can_run_emote(user, TRUE, intentional))
+		return FALSE
+	if(jobban_isbanned(user, "emote"))	// emote ban
+		to_chat(user, "You cannot send emotes (banned).")
+		return FALSE
+	else if(user.client && user.client.prefs.muted & MUTE_IC)	// muted
+		to_chat(user, "You cannot send IC messages (muted).")
+		return FALSE
+
+	if(isnull(user.special_a))
+		to_chat(user, span_phobia("You arent special."))
+		to_chat(user, span_notice("Mainly because you're playing a mob withough any special skills. This is probably a bug~"))
+		return FALSE
+
+	var/special_noun = null
+
+	for(var/which_special in GLOB.special_skill_list)
+		/// if the thing we said after the emote is in one of these lists, pick the corresponding key
+		if(params in GLOB.special_triggers[which_special])
+			special_noun = which_special
+
+	if(!(special_noun in GLOB.special_skill_list) || !special_noun)
+		to_chat(user, span_alert("That's not a valid SPECIAL stat!"))
+		to_chat(user, span_notice("To use this emote, type '*special' followed by a SPECIAL stat. For instance, '*special luck' will do a (luck*10)% roll and say if you passed or not."))
+		var/valid_specials
+		for(var/word in GLOB.special_triggers)
+			valid_specials += "[GLOB.special_triggers[word][1]], "
+			valid_specials += "[GLOB.special_triggers[word][2]]. "
+		to_chat(user, span_notice("Some of the valid SPECIAL keywords are:[valid_specials]."))
+		return
+
+	var/special_skill = null
+	switch(special_noun)
+		if(EMOTE_SPECIAL_STR)
+			special_skill = user.special_s
+		if(EMOTE_SPECIAL_PER)
+			special_skill = user.special_p
+		if(EMOTE_SPECIAL_END)
+			special_skill = user.special_e
+		if(EMOTE_SPECIAL_CHA)
+			special_skill = user.special_c
+		if(EMOTE_SPECIAL_INT)
+			special_skill = user.special_i
+		if(EMOTE_SPECIAL_AGI)
+			special_skill = user.special_a
+		if(EMOTE_SPECIAL_LCK)
+			special_skill = user.special_l
+
+	var/message_first = span_notice("\[[special_noun], [special_skill]0%] <b>[user]</b> [GLOB.special_phrases[special_noun]["initial"]].")	// [Luck, 100%] User tests their Luck.
+
+	user.visible_message(
+		message = message_first,
+		self_message = message_first,
+		blind_message = message_first)
+	user.emote_for_ghost_sight(message_first)
+
+	spawn(special_delay)
+		if(!user)
+			return
+		if(!can_run_emote(user, TRUE,intentional))
+			return
+
+		var/message_second
+		if(prob(special_skill * 10))
+			message_second = span_green("\[Success\] <b>[user]</b> [GLOB.special_phrases[special_noun]["success"]]") // [Success] User is pretty lucky!
+		else
+			message_second = span_red("\[Failure\] <b>[user]</b> [GLOB.special_phrases[special_noun]["failure"]]") // [Failure} User isn't very lucky...
+
+		user.visible_message(
+			message = message_second,
+			self_message = message_second,
+			blind_message = message_second)
+		user.emote_for_ghost_sight(message_second)

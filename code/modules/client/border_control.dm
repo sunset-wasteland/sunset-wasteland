@@ -16,7 +16,7 @@ GLOBAL_PROTECT(borderControlFile)
 GLOBAL_PROTECT(whitelistLoaded)
 
 //////////////////////////////////////////////////////////////////////////////////
-/proc/BC_ModeToText(var/mode)
+/proc/BC_ModeToText(mode)
 	switch(mode)
 		if(BORDER_CONTROL_MODE_DISABLED)
 			return "Disabled"
@@ -26,7 +26,7 @@ GLOBAL_PROTECT(whitelistLoaded)
 			return "Enforced"
 
 //////////////////////////////////////////////////////////////////////////////////
-/proc/BC_StyleToText(var/style)
+/proc/BC_StyleToText(style)
 	switch(style)
 		if(BORDER_CONTROL_STYLE_NO_SERVER_CONNECT)
 			return "Clients are not permitted to connect"
@@ -34,7 +34,7 @@ GLOBAL_PROTECT(whitelistLoaded)
 			return "Clients are permitted to connect, but not join a round"
 
 //////////////////////////////////////////////////////////////////////////////////
-/proc/BC_IsKeyAllowedToConnect(var/key)
+/proc/BC_IsKeyAllowedToConnect(key)
 	key = ckey(key)
 
 	var/borderControlMode = CONFIG_GET(number/border_control)
@@ -77,7 +77,7 @@ GLOBAL_PROTECT(whitelistLoaded)
 
 
 //////////////////////////////////////////////////////////////////////////////////
-/proc/BC_IsKeyWhitelisted(var/key)
+/proc/BC_IsKeyWhitelisted(key)
 	key = ckey(key)
 
 	if(!GLOB.whitelistLoaded)
@@ -106,7 +106,7 @@ GLOBAL_PROTECT(whitelistLoaded)
 
 
 //////////////////////////////////////////////////////////////////////////////////
-/proc/BC_WhitelistKey(var/key)
+/proc/BC_WhitelistKey(key)
 	var/keyAsCkey = ckey(key)
 
 	if(!GLOB.whitelistLoaded)
@@ -147,7 +147,7 @@ GLOBAL_PROTECT(whitelistLoaded)
 
 
 //////////////////////////////////////////////////////////////////////////////////
-/proc/BC_RemoveKey(var/key)
+/proc/BC_RemoveKey(key)
 	key = ckey(key)
 
 	if(!LAZYISIN(GLOB.whitelistedCkeys, key))

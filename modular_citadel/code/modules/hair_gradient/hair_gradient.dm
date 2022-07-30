@@ -41,7 +41,7 @@ GLOBAL_LIST_INIT(hair_gradients, list(
 	H.dna.features["grad_style"] = pick(GLOB.hair_gradients)
 	..(H)
 
-/mob/living/carbon/human/proc/change_hair_gradient(var/hair_gradient)
+/mob/living/carbon/human/proc/change_hair_gradient(hair_gradient)
 	if(dna.features["grad_style"] == "none")
 		return
 

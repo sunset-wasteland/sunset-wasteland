@@ -254,7 +254,7 @@
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
 
-obj/item/clothing/head/helmet/f13/enclave/usmcriot
+/obj/item/clothing/head/helmet/f13/enclave/usmcriot
 	name = "old United States Marine Corp riot helmet"
 	desc = "A pre-war riot armor helmet used by the USCM For various tasks and operations, it's handled the nuclear wasteland somewhat better than the rest of the armors you've seen."
 	icon_state = "modified_usmc_riot"
@@ -1110,7 +1110,7 @@ obj/item/clothing/head/helmet/f13/enclave/usmcriot
 	item_state = "army_general"
 	armor = list("melee" = 27, "bullet" = 12, "laser" = 12, "energy" = 15, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 0, "wound" = 30)
 
-obj/item/clothing/head/f13/army/beret
+/obj/item/clothing/head/f13/army/beret
 	name = "US Army beret"
 	desc = "A black beret, standard issue for all US Army personnel not authorised to wear a different beret."
 	icon = 'icons/fallout/clothing/hats.dmi'

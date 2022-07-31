@@ -69,27 +69,27 @@
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	var/unbuttoned = 0
 
-	verb/toggle()
-		set name = "Toggle coat buttons"
-		set category = "Object"
-		set src in usr
+/obj/item/clothing/suit/storage/fluff/fedcoat/verb/toggle()
+	set name = "Toggle coat buttons"
+	set category = "Object"
+	set src in usr
 
-		var/mob/living/L = usr
-		if(!istype(L) || !CHECK_MOBILITY(L, MOBILITY_USE))
-			return FALSE
+	var/mob/living/L = usr
+	if(!istype(L) || !CHECK_MOBILITY(L, MOBILITY_USE))
+		return FALSE
 
-		switch(unbuttoned)
-			if(0)
-				icon_state = "[initial(icon_state)]_open"
-				item_state = "[initial(item_state)]_open"
-				unbuttoned = 1
-				to_chat(usr,"You unbutton the coat.")
-			if(1)
-				icon_state = "[initial(icon_state)]"
-				item_state = "[initial(item_state)]"
-				unbuttoned = 0
-				to_chat(usr,"You button up the coat.")
-		usr.update_inv_wear_suit()
+	switch(unbuttoned)
+		if(0)
+			icon_state = "[initial(icon_state)]_open"
+			item_state = "[initial(item_state)]_open"
+			unbuttoned = 1
+			to_chat(usr,"You unbutton the coat.")
+		if(1)
+			icon_state = "[initial(icon_state)]"
+			item_state = "[initial(item_state)]"
+			unbuttoned = 0
+			to_chat(usr,"You button up the coat.")
+	usr.update_inv_wear_suit()
 
 	//Variants
 /obj/item/clothing/suit/storage/fluff/fedcoat/medsci
@@ -126,16 +126,16 @@
 
 	//Variants
 /obj/item/clothing/suit/storage/fluff/modernfedcoat/medsci
-		icon_state = "fedmodernblue"
-		item_state = "fedmodernblue"
+	icon_state = "fedmodernblue"
+	item_state = "fedmodernblue"
 
 /obj/item/clothing/suit/storage/fluff/modernfedcoat/eng
-		icon_state = "fedmoderneng"
-		item_state = "fedmoderneng"
+	icon_state = "fedmoderneng"
+	item_state = "fedmoderneng"
 
 /obj/item/clothing/suit/storage/fluff/modernfedcoat/sec
-		icon_state = "fedmodernsec"
-		item_state = "fedmodernsec"
+	icon_state = "fedmodernsec"
+	item_state = "fedmodernsec"
 
 /obj/item/clothing/head/caphat/formal/fedcover
 	name = "Federation Officer's Cap"

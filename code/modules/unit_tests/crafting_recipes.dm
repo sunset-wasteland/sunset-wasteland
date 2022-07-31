@@ -3,5 +3,5 @@
 		var/datum/crafting_recipe/R = i
 		if(!R.subcategory)
 			Fail("Invalid subcategory on [R] ([R.type]).")
-		if(!R.category && (R.cateogry != CAT_NONE))
+		if(!R.category && (R.category != CAT_NONE))
 			Fail("Invalid category on [R] ([R.type])")

@@ -94,7 +94,7 @@
 	list_reagents = list(/datum/reagent/consumable/nuka_cola = 50)
 	foodtype = NUKA
 
-obj/item/reagent_containers/food/drinks/drinkingglass/filled/nuka_float
+/obj/item/reagent_containers/food/drinks/drinkingglass/filled/nuka_float
 	name = "Nuka Float"
 	list_reagents = list(/datum/reagent/consumable/nukafloat = 50)
 	foodtype = NUKA

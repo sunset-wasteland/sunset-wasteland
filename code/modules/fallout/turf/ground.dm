@@ -164,9 +164,9 @@
 	icon = 'icons/fallout/turfs/wasteland.dmi'
 	icon_state = "desertsmooth"
 	slowdown = 0.3
-	list/loots = list(
-						/obj/item/stack/crafting/metalparts/five = 30,
-						)
+	loots = list(
+				/obj/item/stack/crafting/metalparts/five = 30,
+				)
 	footstep = FOOTSTEP_LOOSE_SAND
 	barefootstep = FOOTSTEP_LOOSE_SAND
 	clawfootstep = FOOTSTEP_LOOSE_SAND

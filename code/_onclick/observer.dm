@@ -10,7 +10,7 @@
 
 	// Otherwise jump
 	else if(A.loc)
-		forceMove(get_turf(A))
+		abstract_move(get_turf(A))
 		update_parallax_contents()
 
 /mob/dead/observer/ClickOn(atom/A, params)
@@ -70,5 +70,5 @@
 
 /obj/machinery/teleport/hub/attack_ghost(mob/user)
 	if(power_station && power_station.engaged && power_station.teleporter_console && power_station.teleporter_console.target)
-		user.forceMove(get_turf(power_station.teleporter_console.target))
+		user.abstract_move(get_turf(power_station.teleporter_console.target))
 	return ..()

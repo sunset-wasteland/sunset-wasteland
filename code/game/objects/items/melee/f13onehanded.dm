@@ -878,7 +878,7 @@
 	righthand_file = 'icons/fallout/onmob/weapons/melee1h_righthand.dmi'
 	icon_state = "entrenching_tool"
 	item_state = "trench"
-	w_class = WEIGHT_CLASS_NORMAL
+	w_class = WEIGHT_CLASS_SMALL
 	force = 30
 	throwforce = 15
 	toolspeed = 0.7

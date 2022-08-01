@@ -243,7 +243,9 @@
 		else if(alert_category)
 			H.clear_alert(alert_category)
 	var/list/breath_reagents = GLOB.gas_data.breath_reagents
-	var/static/datum/reagents/reagents_holder = new
+	var/static/datum/reagents/reagents_holder
+	if(!reagents_holder)
+		reagents_holder = new
 	reagents_holder.clear_reagents()
 	reagents_holder.chem_temp = breath.return_temperature()
 	for(var/gas in breath.get_gases())

@@ -96,7 +96,9 @@
 	if(!istype(location))
 		return
 	var/temperature = air.return_temperature()
-	var/static/datum/reagents/reagents_holder = new
+	var/static/datum/reagents/reagents_holder
+	if(!reagents_holder)
+		reagents_holder = new
 	reagents_holder.clear_reagents()
 	reagents_holder.chem_temp = temperature
 	var/G = condensing_reagent.get_gas()

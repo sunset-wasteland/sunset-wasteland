@@ -314,14 +314,20 @@
 	data["PC_showexitprogram"] = active_program ? 1 : 0 // Hides "Exit Program" button on mainscreen
 	return data
 
+///Wipes the computer's current program. Doesn't handle any of the niceties around doing this
+/obj/item/modular_computer/proc/wipe_program(forced)
+	if(!active_program)
+		return
+	active_program.kill_program(forced)
+	active_program = null
+
 // Relays kill program request to currently active program. Use this to quit current program.
 /obj/item/modular_computer/proc/kill_program(forced = FALSE)
-	if(active_program)
-		active_program.kill_program(forced)
-		active_program = null
+	wipe_program(forced)
 	var/mob/user = usr
 	if(user && istype(user))
-		ui_interact(user) // Re-open the UI on this computer. It should show the main screen now.
+		//Here to prevent programs sleeping in destroy
+		INVOKE_ASYNC(src, /datum/proc/ui_interact, user) // Re-open the UI on this computer. It should show the main screen now.
 	update_icon()
 
 // Returns 0 for No Signal, 1 for Low Signal and 2 for Good Signal. 3 is for wired connection (always-on)

@@ -1021,7 +1021,7 @@
 
 	if(L && L.client)
 		L.update_mouse_pointer()
-		L.client.change_view(CONFIG_GET(string/default_view))
+		INVOKE_ASYNC(L.client, /client/.proc/change_view, CONFIG_GET(string/default_view))
 		zoom_mode = 0
 
 /////////////////////////

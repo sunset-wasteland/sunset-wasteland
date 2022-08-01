@@ -53,11 +53,6 @@
 	aggrosound = list('sound/f13npc/deathclaw/aggro1.ogg', 'sound/f13npc/deathclaw/aggro2.ogg', )
 	idlesound = list('sound/f13npc/deathclaw/idle.ogg',)
 	death_sound = 'sound/f13npc/deathclaw/death.ogg'
-	
-/mob/living/simple_animal/hostile/deathclaw/Initialize()
-    . = ..()
-    if(prob(1))
-        guaranteed_butcher_results = list(/obj/item/melee/unarmed/deathclawgauntlet = 1)
 
 /mob/living/simple_animal/hostile/deathclaw/playable
 	emote_taunt_sound = null
@@ -83,11 +78,6 @@
 	color = rgb(95,104,94)
 	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/deathclaw = 6,
 							/obj/item/stack/sheet/animalhide/deathclaw = 3)
-
-/mob/living/simple_animal/hostile/deathclaw/mother/Initialize()
-    . = ..()
-    if(prob(5))
-        guaranteed_butcher_results = list(/obj/item/melee/unarmed/deathclawgauntlet = 1)
 
 //Legendary Deathclaw
 /mob/living/simple_animal/hostile/deathclaw/legendary

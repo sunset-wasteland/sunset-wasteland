@@ -94,9 +94,9 @@
 	guaranteed_butcher_results = list(/obj/item/stack/sheet/animalhide/deathclaw = 6)
 
 /mob/living/simple_animal/hostile/deathclaw/legendary/Initialize()
-    . = ..()
-    if(prob(37))
-        guaranteed_butcher_results = list(/obj/item/melee/unarmed/deathclawgauntlet = 1)
+	. = ..()
+	if(prob(37))
+		guaranteed_butcher_results = list(/obj/item/melee/unarmed/deathclawgauntlet = 1)
 
 //Power Armor Deathclaw the tankest and the scariest deathclaw in the West. One mistake will end you. May the choice be with you.
 /mob/living/simple_animal/hostile/deathclaw/power_armor

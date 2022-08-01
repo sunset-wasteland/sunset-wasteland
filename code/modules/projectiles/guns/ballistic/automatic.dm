@@ -253,7 +253,6 @@
 	is_automatic = TRUE
 	automatic = 1
 	autofire_shot_delay = 2.5
-	spread = 14
 	can_attachments = TRUE
 	suppressor_state = "uzi_suppressor"
 	suppressor_x_offset = 26
@@ -390,7 +389,6 @@
 	extra_damage = 17
 	can_suppress = TRUE
 	can_attachments = TRUE
-	spread = 10
 	suppressor_state = "uzi_suppressor"
 	suppressor_x_offset = 29
 	suppressor_y_offset = 16

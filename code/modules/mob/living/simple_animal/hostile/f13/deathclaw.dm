@@ -83,21 +83,20 @@
 /mob/living/simple_animal/hostile/deathclaw/legendary
 	name = "legendary deathclaw"
 	desc = "A massive, reptilian creature with powerful muscles, razor-sharp claws, and aggression to match. This one is a legendary enemy."
-	maxHealth = 1200
-	health = 1200
+	maxHealth = 1500
+	health = 1500
 	color = "#FFFF00"
 	stat_attack = UNCONSCIOUS
 	melee_damage_lower = 55
 	melee_damage_upper = 55
-	armour_penetration = 0.5
+	armour_penetration = 0.55
 	footstep_type = FOOTSTEP_MOB_HEAVY
+	guaranteed_butcher_results = list(/obj/item/stack/sheet/animalhide/deathclaw = 6)
 
-
-/mob/living/simple_animal/hostile/deathclaw/legendary/death(gibbed)
-	var/turf/T = get_turf(src)
-	if(prob(60))
-		new /obj/item/melee/unarmed/deathclawgauntlet(T)
+/mob/living/simple_animal/hostile/deathclaw/legendary/Initialize()
 	. = ..()
+	if(prob(37))
+		guaranteed_butcher_results = list(/obj/item/melee/unarmed/deathclawgauntlet = 1)
 
 //Power Armor Deathclaw the tankest and the scariest deathclaw in the West. One mistake will end you. May the choice be with you.
 /mob/living/simple_animal/hostile/deathclaw/power_armor

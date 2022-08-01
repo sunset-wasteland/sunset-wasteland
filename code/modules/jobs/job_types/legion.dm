@@ -381,6 +381,16 @@ commented out pending rework*/
 		/obj/item/ammo_box/shotgun/buck = 2,
 		/obj/item/gun/ballistic/revolver/m29 = 1,
 		)
+		
+/datum/outfit/loadout/decvetspecialist
+	name = "Mark of the Heedful"
+	head = /obj/item/clothing/head/helmet/f13/legion/vet/decan
+	suit_store = /obj/item/gun/ballistic/automatic/pistol/mk23
+	backpack_contents = list(
+		/obj/item/melee/powerfist/f13 = 1,
+		/obj/item/ammo_box/magazine/m45exp = 2,
+		/obj/item/clothing/neck/mantle/legion = 1,
+		)
 
 
 // PRIME DECANUS

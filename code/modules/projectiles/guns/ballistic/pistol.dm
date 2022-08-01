@@ -215,7 +215,6 @@
 	automatic_burst_overlay = TRUE
 	can_attachments = FALSE
 	semi_auto = FALSE
-	actions_types = list(/datum/action/item_action/toggle_firemode)
 
 /obj/item/gun/ballistic/automatic/pistol/beretta/automatic/burst_select()
 	var/mob/living/carbon/human/user = usr

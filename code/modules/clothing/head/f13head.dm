@@ -31,7 +31,7 @@
 	icon_state = "helmet"
 	item_state = "helmet"
 	armor = list("melee" = 40, "bullet" = 40, "laser" = 40, "energy" = 20, "bomb" = 50, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20)
-	flags_inv = HIDEEARS
+	flags_inv = HIDEEARS | HIDEHAIR
 	cold_protection = HEAD
 	min_cold_protection_temperature = HELMET_MIN_TEMP_PROTECT
 	heat_protection = HEAD
@@ -39,7 +39,6 @@
 	strip_delay = 60
 	resistance_flags = NONE
 	flags_cover = HEADCOVERSEYES
-	flags_inv = HIDEHAIR
 
 	dog_fashion = /datum/dog_fashion/head/helmet
 
@@ -217,9 +216,7 @@
 
 /obj/item/clothing/head/helmet/f13/power_armor
 	cold_protection = HEAD
-	min_cold_protection_temperature = SPACE_HELM_MIN_TEMP_PROTECT
 	heat_protection = HEAD
-	max_heat_protection_temperature = SPACE_HELM_MAX_TEMP_PROTECT
 	ispowerarmor = 1 //TRUE
 	strip_delay = 200
 	equip_delay_self = 20
@@ -233,7 +230,6 @@
 	dynamic_hair_suffix = ""
 	dynamic_fhair_suffix = ""
 	speechspan = SPAN_ROBOT //makes you sound like a robot
-	heat_protection = HEAD
 	max_heat_protection_temperature = FIRE_HELM_MAX_TEMP_PROTECT
 	cold_protection = HEAD
 	min_cold_protection_temperature = FIRE_HELM_MIN_TEMP_PROTECT
@@ -679,7 +675,6 @@
 	item_state = "rusted_cowboy"
 	flags_inv = HIDEEARS|HIDEHAIR
 	armor = list("melee" = 25, "bullet" = 25, "laser" = 25, "energy" = 10, "bomb" = 15, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 0)
-	flags_inv = HIDEEARS|HIDEHAIR
 
 /obj/item/clothing/head/helmet/f13/rustedcowboyhat/Initialize()
 	. = ..()

@@ -376,7 +376,6 @@ Mayor
 
 	id = /obj/item/card/id/dogtag/town
 	ears = /obj/item/radio/headset
-	ears = 			/obj/item/radio/headset
 	belt = null
 	uniform = 		/obj/item/clothing/under/f13/chaplain
 	gloves =		/obj/item/clothing/gloves/fingerless
@@ -399,7 +398,6 @@ Mayor
 	ears = /obj/item/radio/headset/headset_town
 	belt = null
 	id = /obj/item/card/id/dogtag/town
-	ears = /obj/item/radio/headset/headset_town
 	uniform = /obj/item/clothing/under/f13/settler
 	shoes = /obj/item/clothing/shoes/jackboots
 	backpack = /obj/item/storage/backpack/satchel/explorer
@@ -424,7 +422,6 @@ Mayor
 	name = "Provisioner"
 	neck = /obj/item/clothing/neck/scarf/cptpatriot
 	suit = /obj/item/clothing/suit/jacket/miljacket
-	neck = /obj/item/clothing/ears/headphones
 	uniform = /obj/item/clothing/under/f13/merca
 	gloves = /obj/item/clothing/gloves/f13/leather
 	shoes = /obj/item/clothing/shoes/f13/explorer

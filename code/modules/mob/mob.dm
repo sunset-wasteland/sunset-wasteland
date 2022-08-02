@@ -158,13 +158,21 @@
 			continue
 		//This entire if/else chain could be in two lines but isn't for readabilty's sake.
 		var/msg = message
-		if(M.see_invisible<invisibility || (T != loc && T != src))//if src is invisible to us or is inside something (and isn't a turf),
+		var/msg_type = MSG_VISUAL
+		if(M.see_invisible < invisibility)//if src is invisible to M
 			msg = blind_message
+			msg_type = MSG_AUDIBLE
+		else if(T != loc && T != src) //if src is inside something and not a turf.
+			if(M != loc) // Only give the blind message to hearers that aren't the location
+				msg = blind_message
+				msg_type = MSG_AUDIBLE
+		if(!msg)
+			continue
 
 		if(visible_message_flags & EMOTE_MESSAGE && runechat_prefs_check(M, visible_message_flags) && !M.is_blind())
 			M.create_chat_message(src, raw_message = raw_msg, runechat_flags = visible_message_flags)
 
-		M.show_message(msg, MSG_VISUAL, blind_message, MSG_AUDIBLE)
+		M.show_message(msg, msg_type, blind_message, MSG_AUDIBLE)
 
 ///Adds the functionality to self_message.
 /mob/visible_message(message, self_message, blind_message, vision_distance = DEFAULT_MESSAGE_RANGE, list/ignored_mobs, mob/target, target_message, visible_message_flags = NONE)

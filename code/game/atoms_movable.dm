@@ -648,13 +648,12 @@
 	if(throwing)
 		return
 	if(on && (!(movement_type & FLOATING) || floating_need_update))
-		animate(src, pixel_y = pixel_y + 2, time = 10, loop = -1)
-		sleep(10)
-		animate(src, pixel_y = pixel_y - 2, time = 10, loop = -1)
+		animate(src, pixel_y = 2, time = 1 SECONDS, loop = -1, flags = ANIMATION_RELATIVE);
+		animate(pixel_y = -2, time = 1 SECONDS, flags = ANIMATION_RELATIVE)
 		if(!(movement_type & FLOATING))
 			setMovetype(movement_type | FLOATING)
 	else if (!on && movement_type & FLOATING)
-		animate(src, pixel_y = initial(pixel_y), time = 10)
+		animate(src, pixel_y = initial(pixel_y), time = 1 SECONDS) // todo: port and replace with base_pixel_y
 		setMovetype(movement_type & ~FLOATING)
 	floating_need_update = FALSE
 

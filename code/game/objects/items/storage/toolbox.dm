@@ -339,3 +339,7 @@ GLOBAL_LIST_EMPTY(rubber_toolbox_icons)
 	icon = GLOB.rubber_toolbox_icons[icon_state]
 	. = ..()
 	AddComponent(/datum/component/bouncy)
+
+/obj/item/storage/toolbox/haunted
+	name = "old toolbox"
+	custom_materials = list(/datum/material/hauntium = 500)

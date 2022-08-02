@@ -13,7 +13,7 @@
 		return AI_CONTROLLER_INCOMPATIBLE
 	var/obj/machinery/vending/vendor_pawn = new_pawn
 	vendor_pawn.tiltable = FALSE  //Not manually tiltable by hitting it anymore. We are now agressively doing it ourselves.
-	vendor_pawn.AddComponent(/datum/component/waddling)
+	vendor_pawn.AddElement(/datum/element/waddling)
 	vendor_pawn.AddComponent(/datum/component/footstep, FOOTSTEP_OBJ_MACHINE, 1, -6, vary = TRUE)
 	vendor_pawn.squish_damage = 15
 	return ..() //Run parent at end
@@ -21,7 +21,7 @@
 /datum/ai_controller/vending_machine/UnpossessPawn(destroy)
 	var/obj/machinery/vending/vendor_pawn = pawn
 	vendor_pawn.tiltable = TRUE
-	qdel(vendor_pawn.GetComponent(/datum/component/waddling))
+	vendor_pawn.RemoveElement(/datum/element/waddling)
 	vendor_pawn.squish_damage = initial(vendor_pawn.squish_damage)
 	qdel(vendor_pawn.GetComponent(/datum/component/footstep))
 	return ..() //Run parent at end

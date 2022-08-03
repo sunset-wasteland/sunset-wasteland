@@ -689,7 +689,7 @@
 			return 'modular_citadel/icons/ui/screen_clockwork.dmi'
 		if('icons/mob/screen_midnight.dmi')
 			return 'modular_citadel/icons/ui/screen_midnight.dmi'
-		if('icons/fallout/UI/screen_fallout2_dark.dmi')
-			return 'icons/fallout/UI/screen_fallout2_dark.dmi'
-		else
+		if('icons/fallout/UI/screen_fallout2.dmi', 'icons/fallout/UI/screen_fallout2_dark.dmi')
 			return 'icons/fallout/UI/buttons_fallout2.dmi'
+		else
+			return ui_style

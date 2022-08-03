@@ -28,7 +28,7 @@
 	RegisterSignal(new_pawn, COMSIG_ATOM_ATTACK_HAND, .proc/on_attack_hand)
 	RegisterSignal(new_pawn, COMSIG_PARENT_EXAMINE, .proc/on_examined)
 	RegisterSignal(new_pawn, COMSIG_CLICK_ALT, .proc/check_altclicked)
-	RegisterSignal(new_pawn, list(COMSIG_LIVING_DEATH, COMSIG_PARENT_QDELETING), .proc/on_death)
+	RegisterSignal(new_pawn, list(COMSIG_MOB_DEATH, COMSIG_PARENT_QDELETING), .proc/on_death)
 	RegisterSignal(SSdcs, COMSIG_GLOB_CARBON_THROW_THING, .proc/listened_throw)
 	return ..() //Run parent at end
 
@@ -38,7 +38,7 @@
 		pawn.visible_message("<span='danger'>[pawn] drops [carried_item].</span>")
 		carried_item.forceMove(pawn.drop_location())
 		blackboard[BB_SIMPLE_CARRY_ITEM] = null
-	UnregisterSignal(pawn, list(COMSIG_ATOM_ATTACK_HAND, COMSIG_PARENT_EXAMINE, COMSIG_CLICK_ALT, COMSIG_LIVING_DEATH, COMSIG_GLOB_CARBON_THROW_THING, COMSIG_PARENT_QDELETING))
+	UnregisterSignal(pawn, list(COMSIG_ATOM_ATTACK_HAND, COMSIG_PARENT_EXAMINE, COMSIG_CLICK_ALT, COMSIG_MOB_DEATH, COMSIG_GLOB_CARBON_THROW_THING, COMSIG_PARENT_QDELETING))
 	return ..() //Run parent at end
 
 /datum/ai_controller/dog/able_to_run()

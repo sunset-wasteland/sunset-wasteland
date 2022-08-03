@@ -11,7 +11,7 @@
 	var/obj/item/fetch_thing = controller.blackboard[BB_FETCH_TARGET]
 
 	//either we can't pick it up, or we'd rather eat it, so stop trying.
-	if(fetch_thing.anchored || !isturf(fetch_thing.loc) || IS_EDIBLE(fetch_thing) || !living_pawn.CanReach(fetch_thing))
+	if(fetch_thing.anchored || !isturf(fetch_thing.loc) || IS_EDIBLE(fetch_thing) || !living_pawn.can_reach(fetch_thing))
 		finish_action(controller, FALSE)
 		return
 
@@ -196,7 +196,7 @@
 
 /// A proc representing when the mob is pushed to actually attack the target. Again, subtypes can be used to represent different attacks from different animals, or it can be some other generic behavior
 /datum/ai_behavior/harass/proc/attack(datum/ai_controller/controller, mob/living/living_target)
-	var/mob/living/living_pawn = controller.pawn
+	var/mob/living/simple_animal/living_pawn = controller.pawn // todo: move melee_damage_lower down to /mob/living
 	if(!istype(living_pawn))
 		return
 	// make sure the pawn gets some temporary strength boost to actually attack the target instead of pathetically nuzzling them.

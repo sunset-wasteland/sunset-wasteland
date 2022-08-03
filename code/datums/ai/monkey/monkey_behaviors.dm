@@ -83,7 +83,7 @@
 	var/mob/living/victim = target.loc
 	var/mob/living/living_pawn = controller.pawn
 
-	if(!istype(victim) || !living_pawn.CanReach(victim))
+	if(!istype(victim) || !living_pawn.can_reach(victim))
 		finish_action(controller, FALSE)
 		return
 
@@ -95,7 +95,7 @@
 
 	var/success = FALSE
 
-	if(do_mob(living_pawn, victim, MONKEY_ITEM_SNATCH_DELAY) && target && living_pawn.CanReach(victim))
+	if(do_mob(living_pawn, victim, MONKEY_ITEM_SNATCH_DELAY) && target && living_pawn.can_reach(victim))
 
 		for(var/obj/item/I in victim.held_items)
 			if(I == target)

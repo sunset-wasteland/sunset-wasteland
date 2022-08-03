@@ -28,6 +28,13 @@
 	can_suppress = FALSE
 	equipsound = 'sound/f13weapons/equipsounds/riflequip.ogg'
 
+/obj/item/gun/ballistic/automatic/examine(mob/user)
+	. = ..()
+	if (auto_sear)
+		. += "It has an automatic sear installed."
+	else if (can_automatic && semi_auto)
+		. += "It has room to install an extra <b>automatic sear</b> for select-fire capabilities."
+
 /obj/item/gun/ballistic/automatic/attackby(obj/item/I, mob/user, params)
 	if(user.a_intent == INTENT_HARM)
 		return ..()
@@ -37,7 +44,6 @@
 			if(!user.transferItemToLoc(I, src))
 				return
 			auto_sear = A
-			src.desc += " It has an automatic sear installed."
 			src.burst_size += 1
 			src.spread += 6
 			src.recoil += 0.1

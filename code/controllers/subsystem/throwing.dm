@@ -225,9 +225,6 @@ SUBSYSTEM_DEF(throwing)
 	if(thrownthing)
 		SEND_SIGNAL(thrownthing, COMSIG_MOVABLE_THROW_LANDED, src)
 
-	if(thrownthing)
-		SEND_SIGNAL(thrownthing, COMSIG_MOVABLE_THROW_LANDED, src)
-
 	qdel(src)
 
 /datum/thrownthing/proc/hit_atom(atom/A)

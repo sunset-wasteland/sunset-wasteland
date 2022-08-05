@@ -118,10 +118,13 @@
 
 /obj/item/projectile/bullet/pellet/shotgun_rubbershot
 	name = "rubbershot pellet"
-	damage = 2
-	stamina = 10
+	damage = 1 //Low potential for killing
+	stamina = 30 //But great for crowd control. Riot shotguns and City-Killers should perform well with this.
+	armour_penetration = 0.5 //Stamina damage doesn't bypass armor in this codebase, and you have to do 200 stamina damage to stamcrit.
 	sharpness = SHARP_NONE
 	embedding = null
+	wound_bonus = -25
+	bare_wound_bonus = -25
 
 /obj/item/projectile/bullet/pellet/Range()
 	..()

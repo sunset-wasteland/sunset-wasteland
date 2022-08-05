@@ -147,6 +147,7 @@
 	item_state = "legion_war"
 	armor = list(melee = 20, bullet = 20, laser = 10, energy = 10, bomb = 20, bio = 0, rad = 0, fire = 20, acid = 0)
 
+
 /obj/item/clothing/shoes/f13/military/legate
 	name = "heavy metal boots"
 	desc = "A pair of heavy leather boots with bronzed metal leg guards added. These belong to a Legate of Caesar's Legion."
@@ -215,7 +216,15 @@
 	icon_state = "khan_peltboots"
 	item_state = "khan_peltboots"
 
-
+/obj/item/clothing/shoes/f13/military/khan_plated
+	name = "sabatons"
+	desc = "A pair of comfortable durathread-lined boots with well-made steel plating."
+	icon = 'icons/fallout/clothing/khans.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/khaans.dmi'
+	icon_state = "khan_warboots"
+	item_state = "khan_warboots"
+	strip_delay = 50
+	armor = list("melee" = 15, "bullet" = 15, "laser" = 10, "energy" = 10, "bomb" = 10, "bio" = 0, "rad" = 10, "fire" = 50, "acid" = 50)
 
 //Fluff
 

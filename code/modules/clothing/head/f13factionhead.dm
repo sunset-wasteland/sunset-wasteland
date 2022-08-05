@@ -900,15 +900,66 @@
 	AddComponent(/datum/component/armor_plate)
 
 /obj/item/clothing/head/helmet/f13/khan/mangudai
-	name = "Khanate Mangudai helmet"
-	desc = "A handmade studded leather helm based on armor based on those worn by ancient - even by pre-war standards - soldiers who share the Mangudai name-sake. Its leather covering protects the ears and neck, and features a stylish fur trim."
+	name = "Studded leather skull cap"
+	desc = "A handmade skull cap bound in studded leather helm based on armor based on those worn by ancient - even by pre-war standards - soldiers who share the Mangudai name-sake. Its leather covering protects the ears and neck, and features a stylish fur trim."
 	icon_state = "mangudai_helm"
 	item_state = "mangudai_helm"
-	armor = list("melee" = 45, "bullet" = 45, "laser" = 35, "energy" = 30, "bomb" = 40, "bio" = 40, "rad" = 60, "fire" = 50, "acid" = 25, "wound" = 50)
+	armor = list("melee" = 45, "bullet" = 45, "laser" = 30, "energy" = 40, "bomb" = 40, "bio" = 40, "rad" = 40, "fire" = 40, "acid" = 40, "wound" = 40)
+	damage_threshold = 10
 
 /obj/item/clothing/head/helmet/f13/khan/mangudai/Initialize()
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
+
+/obj/item/clothing/head/helmet/f13/khan/kipchak
+	name = "Steel skull cap"
+	desc = "A steel-reinforced skull cap worn by Kipchaks."
+	icon_state = "kipchak_helm"
+	item_state = "kipchak_helm"
+	armor = list("melee" = 55, "bullet" = 55, "laser" = 40, "energy" = 45, "bomb" = 45, "bio" = 45, "rad" = 45, "fire" = 45, "acid" = 45, "wound" = 50)
+	damage_threshold = 10
+
+/obj/item/clothing/head/helmet/f13/khan/kipchak/Initialize()
+	. = ..()
+	AddComponent(/datum/component/armor_plate)
+
+/obj/item/clothing/head/helmet/f13/khan/khorchin
+	name = "polished cavalry helm"
+	desc = "A well-fitted helm made of high-quality metal, worn by Khorchin."
+	icon_state = "khorchin_helm"
+	item_state = "khorchin_helm"
+	armor = list("melee" = 65, "bullet" = 65, "laser" = 50, "energy" = 50, "bomb" = 50, "bio" = 50, "rad" = 50, "fire" = 50, "acid" = 50, "wound" = 60)
+	damage_threshold = 15
+
+/obj/item/clothing/head/helmet/f13/khan/khorchin/Initialize()
+	. = ..()
+	AddComponent(/datum/component/armor_plate)
+
+/obj/item/clothing/head/helmet/f13/khan/kheshig
+	name = "titanium plated full helm"
+	desc = "An ornate titanium helmet with a heavy chain skirting over durathread neck covering. It has a beaded horse-hair plume that hangs from the top, and polarizing lenses protect from bright flashes."
+	icon_state = "khorchin_helm"
+	item_state = "khorchin_helm"
+	armor = list("melee" = 70, "bullet" = 70, "laser" = 70, "energy" = 60, "bomb" = 60, "bio" = 60, "rad" = 60, "fire" = 60, "acid" = 60, "wound" = 70)
+	damage_threshold = 15
+	flash_protect = 2
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEHAIR|HIDEFACIALHAIR|HIDEFACE
+	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
+
+/obj/item/clothing/head/helmet/f13/khan/kheshig/Initialize()
+	. = ..()
+	AddComponent(/datum/component/armor_plate)
+
+/obj/item/clothing/head/helmet/f13/khan/avarga //Khanate Death Squad. Only use to punish killing/kidnapping of Bighorn residents when there are few or no Khans playing.
+	name = "adamantine plated full helm"
+	desc = "An ornate adamantine helmet styled after that of the Kheshigs, and worn by the Mönkhiin. Its horsehair plume has golden beads."
+	icon_state = "avarga_helm"
+	item_state = "avarga_helm"
+	armor = list("melee" = 90, "bullet" = 90, "laser" = 90, "energy" = 90, "bomb" = 100, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100, "wound" = 90)
+	damage_threshold = 25
+	flash_protect = 2
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEHAIR|HIDEFACIALHAIR|HIDEFACE
+	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
 
 /obj/item/clothing/head/helmet/f13/khan/bandana
 	name = "Great Khan bandana"

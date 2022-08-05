@@ -780,7 +780,7 @@ obj/item/melee/unarmed/punchdagger/cyborg
 	attack_verb = list("slashed", "sliced", "torn", "ripped", "diced", "cut")
 	hitsound = 'sound/weapons/bladeslice.ogg'
 
-//Yao Guai Gauntlet	Keywords: Damage 30, Fast, "Saw Bleed" Effect
+//Yao Guai Gauntlet	Keywords: Damage 25, Fast, "Saw Bleed" Effect
 /obj/item/melee/unarmed/yaoguaigauntlet
 	name = "yao guai gauntlet"
 	desc = "The severed hand of a yao guai, the hide cured, the muscles and bone removed, and given a harness to turn it into a deadly gauntlet. Usually seen around the hands of the Sorrows tribe."
@@ -788,11 +788,13 @@ obj/item/melee/unarmed/punchdagger/cyborg
 	item_state = "deathclaw_g"
 	slot_flags = ITEM_SLOT_GLOVES
 	w_class = WEIGHT_CLASS_NORMAL
-	force = 20
+	force = 25
 	sharpness = SHARP_EDGED
 	attack_verb = list("slashed", "sliced", "torn", "ripped", "diced", "cut")
 	hitsound = 'sound/weapons/bladeslice.ogg'
-	attack_speed = CLICK_CD_MELEE * 0.7
+	attack_speed = CLICK_CD_MELEE * 0.75
+
+
 
 /obj/item/melee/unarmed/yaoguaigauntlet/attack(mob/living/target, mob/living/user)
 	if(isliving(target))
@@ -800,6 +802,19 @@ obj/item/melee/unarmed/punchdagger/cyborg
 	else
 		return
 
+//Khan Spiked Gauntlet Keywords: Damage 20, Extra Fast, Pointy, Armored
+/obj/item/melee/unarmed/khangauntlets
+	name = "spiked gauntlets"
+	desc = "durathread gloves with metal reinforcement and spikes welded to the knuckles."
+	icon_state = "khangauntlets"
+	item_state = "khangauntlets"
+	attack_verb = list("punched", "jabbed", "whacked")
+	force = 20
+	heat_protection = HANDS
+	max_heat_protection_temperature = GLOVES_MAX_TEMP_PROTECT
+	armor = list("melee" = 15, "bullet" = 15, "laser" = 10, "energy" = 10, "bomb" = 10, "bio" = 0, "rad" = 10, "fire" = 50, "acid" = 50)
+	custom_materials = list(/datum/material/iron = 2000)
+	attack_speed = CLICK_CD_MELEE * 0.5
 
 ///////////
 // TOOLS //

@@ -707,14 +707,15 @@
 //Great Khan
 /obj/item/clothing/suit/armor/khan/prospect
 	name = "Khanate prospect armor"
-	desc = "A comfortable cut-off jacket upgraded with gambeson lining, leather padding, and a steel pauldron. This one lacks the patch and gear harness worn by Khanate citizens, marking the wearer as a Prospect yet to earn it. Like all Khanate armor, it can be upgraded."
+	desc = "A comfortable cut-off jacket upgraded with gambeson lining, leather padding, and a steel pauldron. This one lacks the patch and gear harness worn by Khanate citizens, marking the wearer as a Prospect yet to earn it."
 	icon = 'icons/fallout/clothing/khans.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/khaans.dmi'
 	icon_state = "prospect"
 	item_state = "prospect"
-	body_parts_covered = CHEST|GROIN|LEGS|ARMS
-	armor = list("melee" = 30, "bullet" = 30, "laser" = 30,  "energy" = 30, "bomb" = 30, "bio" = 40, "rad" = 40, "fire" = 50, "acid" = 10, "wound" = 35)
+	body_parts_covered = CHEST|GROIN|LEGS|ARMS|FEET
+	armor = list("melee" = 30, "bullet" = 30, "laser" = 30,  "energy" = 30, "bomb" = 30, "bio" = 30, "rad" = 30, "fire" = 30, "acid" = 30, "wound" = 30)
 	slowdown = 0
+	damage_threshold = 5
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets
 
 /obj/item/clothing/suit/armor/khan/prospect/Initialize()
@@ -723,23 +724,88 @@
 
 /obj/item/clothing/suit/armor/khan/prospect/citizen
 	name = "Khanate citizen armor"
-	desc = "A comfortable cut-off jacket upgraded with gambeson lining, leather padding, a gear harness for extra storage, and a steel pauldron. Worn by citizens of Bighorn who have earned their place among the Khans, as well as members of its Warrior caste who are off-duty. Like all Khanate armor, it can be upgraded."
-	armor = list("melee" = 35, "bullet" = 35, "laser" = 30, "energy" = 30, "bomb" = 30, "bio" = 40, "rad" = 40, "fire" = 50, "acid" = 15, "wound" = 40)
+	desc = "A comfortable cut-off jacket upgraded with gambeson lining, leather padding, a gear harness for extra storage, and a steel pauldron. Worn by citizens of Bighorn who have earned their place among the Khans, as well as members of its Warrior caste who are off-duty."
+	icon_state = "citizen"
+	item_state = "citizen"
+	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 35, "bomb" = 35, "bio" = 35, "rad" = 35, "fire" = 35, "acid" = 35, "wound" = 35)
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/huge //This is to encourage khan citizens to embrace their versatility and get creative.
+	damage_threshold = 5
 
 /obj/item/clothing/suit/armor/f13/khan/mangudai
-	name = "Khanate Mangudai armor"
-	desc = "A thick suit of gambeson-lined, studded leather armor hand-made for each Mangudai. It also features lamellar chausses to protect the legs. Like all Khanate armor, it can be upgraded."
+	name = "studded leather armor"
+	desc = "A thick suit of gambeson-lined, studded leather armor hand-made for each Mangudai. It also features lamellar chausses to protect the legs."
 	icon = 'icons/fallout/clothing/khans.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/khaans.dmi'
 	icon_state = "mangudai"
 	item_state = "mangudai"
-	body_parts_covered = CHEST|GROIN|LEGS|ARMS
-	armor = list("melee" = 45, "bullet" = 45, "laser" = 35, "energy" = 30, "bomb" = 40, "bio" = 40, "rad" = 60, "fire" = 50, "acid" = 25, "wound" = 50)
+	body_parts_covered = CHEST|GROIN|LEGS|ARMS|FEET
+	armor = list("melee" = 45, "bullet" = 45, "laser" = 30, "energy" = 40, "bomb" = 40, "bio" = 40, "rad" = 40, "fire" = 40, "acid" = 40, "wound" = 40)
+	damage_threshold = 10
+	slowdown = 0.05
 
 /obj/item/clothing/suit/armor/f13/khan/mangudai/Initialize()
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
+
+/obj/item/clothing/suit/armor/f13/khan/kipchak
+	name = "steel brigandine armor"
+	desc = "When a Mangudai advances to the rank of Kipchak, steel plates are riveted to their their armor in banded fashion, giving it an added layer of protection."
+	icon = 'icons/fallout/clothing/khans.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/khaans.dmi'
+	icon_state = "kipchak"
+	item_state = "kipchak"
+	body_parts_covered = CHEST|GROIN|LEGS|ARMS|FEET
+	armor = list("melee" = 55, "bullet" = 55, "laser" = 40, "energy" = 45, "bomb" = 45, "bio" = 45, "rad" = 45, "fire" = 45, "acid" = 45, "wound" = 50)
+	damage_threshold = 10
+	slowdown = 0.1
+
+/obj/item/clothing/suit/armor/f13/khan/kipchak/Initialize()
+	. = ..()
+	AddComponent(/datum/component/armor_plate)
+
+/obj/item/clothing/suit/armor/f13/khan/khorchin
+	name = "polished lamellar armor"
+	desc = "Considered the 'captains' of Khanate war parties, Khorchin also serve as envoys and heavy cavalry. Their armor is made of high-quality metal, "
+	icon = 'icons/fallout/clothing/khans.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/khaans.dmi'
+	icon_state = "kipchak"
+	item_state = "kipchak"
+	body_parts_covered = CHEST|GROIN|LEGS|ARMS|FEET
+	armor = list("melee" = 65, "bullet" = 65, "laser" = 50, "energy" = 50, "bomb" = 50, "bio" = 50, "rad" = 50, "fire" = 50, "acid" = 50, "wound" = 60)
+	damage_threshold = 15
+	slowdown = 0.125
+
+/obj/item/clothing/suit/armor/f13/khan/khorchin/Initialize()
+	. = ..()
+	AddComponent(/datum/component/armor_plate)
+
+/obj/item/clothing/suit/armor/f13/khan/kheshig
+	name = "titanium plated armor"
+	desc = "As seasoned veterans of numerous battles, Kheshig are some of the finest combatants in the Khanate. They are selected to defend Bighorn and the surrounding National Forest from military incursions. Their armor is some of the finest in Wyoming, being titanium plate over a mail hauberk and durathread gambeson."
+	icon = 'icons/fallout/clothing/khans.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/khaans.dmi'
+	icon_state = "kipchak"
+	item_state = "kipchak"
+	body_parts_covered = CHEST|GROIN|LEGS|ARMS|FEET
+	armor = list("melee" = 70, "bullet" = 70, "laser" = 70, "energy" = 60, "bomb" = 60, "bio" = 60, "rad" = 60, "fire" = 60, "acid" = 60, "wound" = 70)
+	damage_threshold = 15
+	slowdown = 0.15
+
+/obj/item/clothing/suit/armor/f13/khan/kheshig/Initialize()
+	. = ..()
+	AddComponent(/datum/component/armor_plate)
+
+/obj/item/clothing/suit/armor/f13/khan/avarga //Khanate Death Squad. Only use to punish killing/kidnapping of Bighorn residents when there are few or no Khans playing.
+	name = "adamantine plated armor"
+	desc = "Hand-picked by the Khagan for staunch fearlessness, steadfast loyalty, and unrelenting appetite for war, the Mönkhiin are the champion fighters of the Khanate. The Khagan sees them deployed exclusively to fall upon her enemies like the hammer of a wrathful god. If you are seeing them, someone has made a terrible enemy of the Khans. This armor is made of adamantine, and has golden inlays."
+	icon = 'icons/fallout/clothing/khans.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/khaans.dmi'
+	icon_state = "avarga"
+	item_state = "avarga"
+	body_parts_covered = CHEST|GROIN|LEGS|ARMS|FEET
+	armor = list("melee" = 90, "bullet" = 90, "laser" = 90, "energy" = 90, "bomb" = 100, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100, "wound" = 90)
+	damage_threshold = 25
+	slowdown = 0.15
 
 //Wayfarer
 /obj/item/clothing/suit/armor/f13/lightcloak

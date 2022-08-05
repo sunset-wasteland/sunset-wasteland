@@ -63,8 +63,13 @@
 		qdel(I)
 
 	var/obj/O = parent
+	var/obj/item/clothing/A = parent
 	amount++
 	O.armor = O.armor.attachArmor(added_armor)
+	if(istype(A,/obj/item/clothing/suit/armor || /obj/item/clothing/head/helmet))
+		if(A.damage_threshold < 25)
+			A.damage_threshold++
+			return
 
 	if(ismecha(O))
 		var/obj/mecha/R = O

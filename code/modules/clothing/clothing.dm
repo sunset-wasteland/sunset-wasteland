@@ -25,6 +25,7 @@
 	var/darkness_view = 0
 	var/lighting_alpha
 	var/glass_colour_type //colors your vision when worn
+	var/damage_threshold = 0 // Incoming damage is reduced by this amount, regardless of AP, before resistances are applied.
 
 
 	var/blocks_shove_knockdown = FALSE //Whether wearing the clothing item blocks the ability for shove to knock down.

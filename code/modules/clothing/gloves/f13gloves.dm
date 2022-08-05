@@ -189,3 +189,16 @@
 	item_state = "legion_legate"
 	transfer_prints = FALSE
 	armor = list("melee" = 25, "bullet" = 25, "laser" = 35, "energy" = 20, "bomb" = 35, "bio" = 35, "rad" = 35, "fire" = 0, "acid" = 0)
+
+/obj/item/clothing/gloves/khan/war
+	name = "articulated gauntlets"
+	desc = "durathread gloves with metal reinforcement."
+	icon = 'icons/fallout/clothing/khans.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/khaans.dmi'
+	icon_state = "khan_wargloves"
+	item_state = "khan_wargloves"
+	transfer_prints = FALSE
+	strip_delay = 50
+	heat_protection = HANDS
+	max_heat_protection_temperature = GLOVES_MAX_TEMP_PROTECT
+	armor = list("melee" = 15, "bullet" = 15, "laser" = 10, "energy" = 10, "bomb" = 10, "bio" = 0, "rad" = 10, "fire" = 50, "acid" = 50)

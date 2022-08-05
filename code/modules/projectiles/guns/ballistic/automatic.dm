@@ -711,6 +711,12 @@
 	scope_x_offset = 6
 	scope_y_offset = 14
 
+/obj/item/gun/ballistic/automatic/delisle/commando/kipchak
+	name = "Ambusher carbine"
+	desc = "A integrally suppressed carbine, known for being one of the quietest firearms ever made. This version has customised furniture allowing it to mount a scope, and its receiver is updated to allow attachments. Typically only found in the hands of the more rogueish among the Khans."
+	mag_type = /obj/item/ammo_box/magazine/m9mmds
+	can_attachments = TRUE
+
 //'Verminkiller'									Keywords: 5.56, 10/20/30 round magazine, Suppressed, Scoped, 25 damage
 //Basically an obtainable ratslayer
 /obj/item/gun/ballistic/automatic/varmint/verminkiller

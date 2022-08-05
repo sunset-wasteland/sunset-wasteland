@@ -724,7 +724,7 @@ ATTACHMENTS
 		var/obj/item/attachments/scope/C = scope
 		C.forceMove(get_turf(user))
 		src.zoomable = FALSE
-		azoom.Remove(user)
+		QDEL_NULL(azoom) // removes it + stops it from being re-added until we readd the scope
 		scope = null
 		update_icon()
 		return TRUE
@@ -805,7 +805,7 @@ ATTACHMENTS
 	. = ..()
 	if(user.get_active_held_item() != src) //we can only stay zoomed in if it's in our hands	//yeah and we only unzoom if we're actually zoomed using the gun!!
 		zoom(user, FALSE)
-		if(zoomable == TRUE)
+		if(azoom)
 			azoom.Remove(user)
 
 /obj/item/gun/dropped(mob/user)

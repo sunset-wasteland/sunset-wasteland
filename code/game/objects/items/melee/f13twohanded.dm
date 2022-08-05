@@ -350,7 +350,6 @@
 	attack_verb = list("beat", "smacked", "clubbed", "clobbered")
 	w_class = WEIGHT_CLASS_NORMAL
 	sharpness = SHARP_NONE
-	icon_prefix = "baseball"
 
 /obj/item/twohanded/baseball/ComponentInitialize()
 	. = ..()
@@ -530,11 +529,11 @@
 	icon_prefix = "hammer-super"
 	force = 25
 
-obj/item/twohanded/sledgehammer/supersledge/ComponentInitialize()
+/obj/item/twohanded/sledgehammer/supersledge/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/two_handed, force_unwielded = 25, force_wielded = 60, icon_wielded="[icon_prefix]2")
 
-obj/item/twohanded/sledgehammer/supersledge/afterattack(atom/A, mob/living/user, proximity)
+/obj/item/twohanded/sledgehammer/supersledge/afterattack(atom/A, mob/living/user, proximity)
 	. = ..()
 	if(!proximity || !wielded || IS_STAMCRIT(user))
 		return

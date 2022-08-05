@@ -17,7 +17,6 @@
 	var/mode = 1
 	var/condi = FALSE
 	var/advanced = FALSE
-	var/primitive = FALSE
 	var/chosenPillStyle = 1
 	var/screen = "home"
 	var/analyzeVars[0]
@@ -188,7 +187,6 @@
 	data["mode"] = mode
 	data["condi"] = condi
 	data["advanced"] = advanced
-	data["primitive"] = primitive
 	data["screen"] = screen
 	data["analyzeVars"] = analyzeVars
 	data["fermianalyze"] = fermianalyze
@@ -303,10 +301,6 @@
 			vol_each_max = min(10, vol_each_max)
 		else if (item_type == "superStimpak")
 			vol_each_max = min(20, vol_each_max)
-		else if (item_type == "bottle_primitive")
-			vol_each_max = min(60, vol_each_max)
-		else if (item_type == "bag")
-			vol_each_max = min (40, vol_each_max)
 		else
 			return FALSE
 		if(vol_each_text == "auto")
@@ -429,21 +423,6 @@
 				reagents.trans_to(P, vol_each)
 				P.update_icon()
 			return TRUE
-		if(item_type == "bag")
-			var/obj/item/reagent_containers/pill/patch/P
-			for(var/i = 0; i < amount; i++)
-				P = new/obj/item/reagent_containers/pill/patch/healingpowder/custom(drop_location())
-				P.name = trim("[name] powder")
-				adjust_item_drop_location(P)
-				reagents.trans_to(P, vol_each)//, transfered_by = usr)
-			return TRUE
-		if(item_type == "bottle_primitive")
-			var/obj/item/reagent_containers/glass/bottle/P
-			for(var/i = 0; i < amount; i++)
-				P = new/obj/item/reagent_containers/glass/bottle/primitive(drop_location())
-				P.name = trim("[name] bottle")
-				adjust_item_drop_location(P)
-				reagents.trans_to(P, vol_each)//, transfered_by = usr)
 		return FALSE
 
 	if(action == "analyze")
@@ -452,11 +431,11 @@
 		var/datum/reagent/R = GLOB.chemical_reagents_list[reagent]
 		if(R)
 			var/state = "Unknown"
-			if(initial(R.reagent_state) == 1)
+			if(initial(R.reagent_state) == SOLID)
 				state = "Solid"
-			else if(initial(R.reagent_state) == 2)
+			else if(initial(R.reagent_state) == LIQUID)
 				state = "Liquid"
-			else if(initial(R.reagent_state) == 3)
+			else if(initial(R.reagent_state) == GAS)
 				state = "Gas"
 			var/const/P = 3 //The number of seconds between life ticks
 			var/T = initial(R.metabolization_rate) * (60 / P)
@@ -520,61 +499,6 @@
 	name = "CondiMaster 3000"
 	desc = "Used to create condiments and other cooking supplies."
 	condi = TRUE
-
-/obj/machinery/chem_master/primitive
-	name = "alchemy table"
-	desc = "A wooden table with various bone mortars and pistles, as well as other tools."
-	icon_state = "alchemy_table"
-	primitive = TRUE
-	use_power = FALSE
-	idle_power_usage = 0
-	flags_1 = NODECONSTRUCT_1
-	can_be_unanchored = TRUE
-	basereagents = 240
-
-/obj/machinery/chem_master/primitive/update_icon_state()
-	if(beaker)
-		icon_state = "alchemy_table"
-	else
-		icon_state = "alchemy_table"
-
-/obj/machinery/chem_master/primitive/attackby(obj/item/I, mob/user, params)
-	if(default_unfasten_wrench(user, I))
-		return
-	if(istype(I, /obj/item/reagent_containers) && !(I.item_flags & ABSTRACT) && I.is_open_container())
-		. = TRUE // no afterattack
-		var/obj/item/reagent_containers/B = I
-		if(!user.transferItemToLoc(B, src))
-			return
-		replace_beaker(user, B)
-		to_chat(user, "<span class='notice'>You add [B] to [src].</span>")
-		updateUsrDialog()
-		update_icon()
-	else if(!condi && istype(I, /obj/item/storage/pill_bottle))
-		. = TRUE // no afterattack
-		if(!user.transferItemToLoc(I, src))
-			return
-		replace_pillbottle(user, I)
-		to_chat(user, "<span class='notice'>You add [I] into the dispenser slot.</span>")
-		updateUsrDialog()
-	else
-		return ..()
-
-/obj/machinery/chem_master/primitive/ui_interact(mob/living/user, datum/tgui/ui)
-	ui = SStgui.try_update_ui(user, src, ui)
-	if(istype(user, /mob/dead/observer))
-		if(!ui)
-			ui = new(user, src, "ChemMaster", name)
-			ui.open()
-	else
-		if(!HAS_TRAIT(user, TRAIT_MACHINE_SPIRITS) && !HAS_TRAIT(user, TRAIT_MARS_TEACH) && !istype(src, /obj/machinery/chem_master/condimaster))
-			to_chat(user, "<span class='warning'>Try as you might, you have no clue how to work this thing.</span>")
-			return
-		if(!ui)
-			ui = new(user, src, "ChemMaster", name)
-			if(user.hallucinating())
-				ui.set_autoupdate(FALSE) //to not ruin the immersion by constantly changing the fake chemicals
-			ui.open()
 
 /obj/machinery/chem_master/advanced
 	name = "Old-World Refinery"

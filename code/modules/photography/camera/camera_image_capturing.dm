@@ -65,17 +65,45 @@
 	var/ycomp = FLOOR(psize_y / 2, 1) - 15
 
 
-	for(var/atom/A in sorted)
-		var/xo = (A.x - center.x) * world.icon_size + A.pixel_x + xcomp
-		var/yo = (A.y - center.y) * world.icon_size + A.pixel_y + ycomp
-		if(ismovable(A))
-			var/atom/movable/AM = A
-			xo += AM.step_x
-			yo += AM.step_y
-		var/icon/img = getFlatIcon(A)
-		if(img)
+	if(!skip_normal) //these are not clones
+		for(var/atom/A in sorted)
+			var/xo = (A.x - center.x) * world.icon_size + A.pixel_x + xcomp
+			var/yo = (A.y - center.y) * world.icon_size + A.pixel_y + ycomp
+			if(ismovableatom(A))
+				var/atom/movable/AM = A
+				xo += AM.step_x
+				yo += AM.step_y
+			var/icon/img = getFlatIcon(A)
 			res.Blend(img, blendMode2iconMode(A.blend_mode), xo, yo)
-		CHECK_TICK
+			CHECK_TICK
+	else
+		for(var/X in sorted) //these are clones
+			var/obj/effect/appearance_clone/clone = X
+			var/xo = (clone.x - center.x) * world.icon_size + clone.pixel_x + xcomp
+			var/yo = (clone.y - center.y) * world.icon_size + clone.pixel_y + ycomp
+			xo += clone.step_x
+			yo += clone.step_y
+			var/icon/img = getFlatIcon(clone)
+			if(img)
+				if(clone.transform) // getFlatIcon doesn't give a snot about transforms.'
+					var/sx = clone.transform.get_x_scale()
+					var/sy = clone.transform.get_y_scale()
+					if(sx != 1 || sy != 1)
+						var/wi = img.Width() * sx
+						var/he = img.Width() * sx
+						img.Scale(wi, he)
+						img.Shift(WEST, wi / 2, wrap=1)
+						img.Shift(SOUTH, he / 2, wrap=1)
+					if(clone.transform.get_rotation() != 0)
+						img.Turn(clone.transform.get_rotation())
+					var/dx = clone.transform.get_x_shift()
+					if(dx != 0)
+						img.Shift(EAST, dx, wrap=1)
+					var/dy = clone.transform.get_y_shift()
+					if(dy != 0)
+						img.Shift(NORTH, dy, wrap=1)
+				res.Blend(img, blendMode2iconMode(clone.blend_mode), xo, yo)
+			CHECK_TICK
 
 	if(!silent)
 		if(istype(custom_sound))				//This is where the camera actually finishes its exposure.

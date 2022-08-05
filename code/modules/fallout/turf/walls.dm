@@ -82,7 +82,7 @@
 		set_opacity(0)
 	..()
 
-turf/closed/wall/f13/wood/house/update_damage_overlay()
+/turf/closed/wall/f13/wood/house/update_damage_overlay()
 	if(broken)
 		return
 	..()
@@ -345,7 +345,7 @@ turf/closed/wall/f13/wood/house/update_damage_overlay()
 	var/tickerPeriod = 300 //in deciseconds
 	var/go/fullDark
 
-turf/closed/indestructible/f13/splashscreen/New()
+/turf/closed/indestructible/f13/splashscreen/New()
 	.=..()
 	name = "Fallout 13"
 	desc = "The wasteland is calling!"
@@ -363,7 +363,7 @@ turf/closed/indestructible/f13/splashscreen/New()
 	spawn() src.ticker()
 	return
 
-turf/closed/indestructible/f13/splashscreen/proc/ticker()
+/turf/closed/indestructible/f13/splashscreen/proc/ticker()
 	while(src && istype(src,/turf/closed/indestructible/f13/splashscreen))
 		src.swapImage()
 		sleep(src.tickerPeriod)

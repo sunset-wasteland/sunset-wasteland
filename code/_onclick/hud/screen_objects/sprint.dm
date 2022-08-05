@@ -1,6 +1,12 @@
 /obj/screen/mov_intent
 	icon = 'icons/fallout/UI/buttons_fallout2.dmi'
 
+/obj/screen/mov_intent/update_icon()
+	// todo: report back if this causes lag
+	// it probably shouldn't because this should just run when ui style is changed
+	. = ..()
+	icon = tg_ui_icon_to_cit_ui(icon) // no-op if it's already set or unsupported
+
 /obj/screen/sprintbutton
 	name = "toggle sprint"
 	icon = 'icons/fallout/UI/buttons_fallout2.dmi'
@@ -8,6 +14,11 @@
 	layer = HUD_LAYER - 0.1
 	var/mutable_appearance/flashy
 
+/obj/screen/sprintbutton/update_icon()
+	// todo: report back if this causes lag
+	// it probably shouldn't because this should just run when ui style is changed
+	. = ..()
+	icon = tg_ui_icon_to_cit_ui(icon) // no-op if it's already set or unsupported
 
 /obj/screen/sprintbutton/Click()
 	if(ishuman(usr))
@@ -46,6 +57,17 @@
 	name = "sprint buffer"
 	icon = 'icons/fallout/UI/sprintbar.dmi'
 	icon_state = "prog_bar_100"
+
+/obj/screen/sprint_buffer/update_icon()
+	// snowflake code, update to use something like tg_ui_icon_to_cit_ui later
+	var/mob/living/carbon/user = hud?.mymob
+	if(!istype(user) || !user.client)
+		return
+	switch(hud.ui_style)
+		if('icons/fallout/UI/screen_fallout2.dmi', 'icons/fallout/UI/screen_fallout2_dark.dmi')
+			icon = 'icons/fallout/UI/sprintbar.dmi'
+		else
+			icon = 'icons/effects/progessbar.dmi'
 
 /obj/screen/sprint_buffer/Click()
 	if(isliving(usr))

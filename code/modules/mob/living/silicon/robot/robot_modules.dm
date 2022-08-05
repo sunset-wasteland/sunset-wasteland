@@ -687,7 +687,6 @@
 	emag_modules = list(/obj/item/gun/energy/laser/cyborg)
 	ratvar_modules = list(/obj/item/clockwork/slab/cyborg/security,
 		/obj/item/clockwork/weapon/ratvarian_spear)
-	hat_offset = 3 //what
 	borghealth = 450 //Assaultron health
 	cyborg_base_icon = "assaultron"
 	moduleselect_icon = "security"
@@ -698,7 +697,7 @@
 	var/mob/living/silicon/robot/assault = loc
 	assault.faction += "wastebots" //So other assaultrons don't gank you for existing.
 
-obj/item/robot_module/assaultron/remove_module(obj/item/I, delete_after)
+/obj/item/robot_module/assaultron/remove_module(obj/item/I, delete_after)
 	..()
 	var/mob/living/silicon/robot/assault = loc
 	assault.faction -= "wastebots" //Removes the faction if the module is removed.

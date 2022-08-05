@@ -28,6 +28,13 @@
 	can_suppress = FALSE
 	equipsound = 'sound/f13weapons/equipsounds/riflequip.ogg'
 
+/obj/item/gun/ballistic/automatic/examine(mob/user)
+	. = ..()
+	if (auto_sear)
+		. += "It has an automatic sear installed."
+	else if (can_automatic && semi_auto)
+		. += "It has room to install an extra <b>automatic sear</b> for select-fire capabilities."
+
 /obj/item/gun/ballistic/automatic/attackby(obj/item/I, mob/user, params)
 	if(user.a_intent == INTENT_HARM)
 		return ..()
@@ -37,7 +44,6 @@
 			if(!user.transferItemToLoc(I, src))
 				return
 			auto_sear = A
-			src.desc += " It has an automatic sear installed."
 			src.burst_size += 1
 			src.spread += 6
 			src.recoil += 0.1
@@ -253,7 +259,6 @@
 	is_automatic = TRUE
 	automatic = 1
 	autofire_shot_delay = 2.5
-	spread = 14
 	can_attachments = TRUE
 	suppressor_state = "uzi_suppressor"
 	suppressor_x_offset = 26
@@ -390,7 +395,6 @@
 	extra_damage = 17
 	can_suppress = TRUE
 	can_attachments = TRUE
-	spread = 10
 	suppressor_state = "uzi_suppressor"
 	suppressor_x_offset = 29
 	suppressor_y_offset = 16
@@ -1322,7 +1326,7 @@
 	actions_types = list(/datum/action/item_action/toggle_firemode)
 	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
 
-obj/item/gun/ballistic/automatic/bar
+/obj/item/gun/ballistic/automatic/bar
 	name = "automatic rifle (.308)"
 	desc = "An ancient machine gun that looks like outdated even by pre-war standards. It has Colt etched on one-side and Sierra Madre on the other. It is alarmingly heavy for a rifle."
 	icon = 'icons/fallout/objects/guns/bar.dmi'

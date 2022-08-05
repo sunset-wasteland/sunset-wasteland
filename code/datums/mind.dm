@@ -748,7 +748,7 @@
 	var/mob/dead/observer/G = get_ghost(even_if_they_cant_reenter = force)
 	. = G
 	if(G)
-		G.reenter_corpse()
+		INVOKE_ASYNC(G, /mob/dead/observer.verb/reenter_corpse)
 
 /// Sets our can_hijack to the fastest speed our antag datums allow.
 /datum/mind/proc/get_hijack_speed()

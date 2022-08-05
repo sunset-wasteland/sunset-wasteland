@@ -349,7 +349,7 @@
 	RateUpLim 		= 15
 	FermiChem 		= TRUE
 
-datum/chemical_reaction/fermi/eigenstate
+/datum/chemical_reaction/fermi/eigenstate
 	name = "Eigenstasium"
 	id = /datum/reagent/fermi/eigenstate
 	results = list(/datum/reagent/fermi/eigenstate = 1)
@@ -404,7 +404,7 @@ datum/chemical_reaction/fermi/eigenstate
 	FermiExplode 	= TRUE
 	PurityMin		= 0.6
 
-/datum/chemical_reaction/fermi/plushmium/FermiExplode(datum/reagents, var/atom/my_atom, volume, temp, pH)
+/datum/chemical_reaction/fermi/plushmium/FermiExplode(datum/reagents, atom/my_atom, volume, temp, pH)
 	if(volume < 20) //It creates a normal plush at low volume.. at higher amounts, things get slightly more interesting.
 		new /obj/item/toy/plush/beeplushie(get_turf(my_atom))
 	else

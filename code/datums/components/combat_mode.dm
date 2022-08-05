@@ -44,7 +44,7 @@
 	hud_icon.icon = tg_ui_icon_to_cit_ui(source.hud_used.ui_style)
 	hud_icon.screen_loc = hud_loc
 	source.hud_used.static_inventory += hud_icon
-	hud_icon.update_icon()
+	hud_icon.update_icon_state() // icon is already set to the cit version
 
 /// Combat mode can be locked out, forcibly disabled by a status trait.
 /datum/component/combat_mode/proc/update_combat_lock()
@@ -65,7 +65,7 @@
 	if(locked)
 		if(hud_icon)
 			hud_icon.combat_on = TRUE
-			hud_icon.update_icon()
+			hud_icon.update_icon_state() // call this instead of update_icon to prevent potential lag
 		return
 	if(mode_flags & COMBAT_MODE_ACTIVE)
 		return
@@ -91,7 +91,7 @@
 	RegisterSignal(source, COMSIG_MOVABLE_MOVED, .proc/on_move)
 	if(hud_icon)
 		hud_icon.combat_on = TRUE
-		hud_icon.update_icon()
+		hud_icon.update_icon_state() // call this instead of update_icon to prevent potential lag
 	var/mob/living/L = source
 	L.toggle_combat_mode()
 
@@ -100,7 +100,7 @@
 	if(locked)
 		if(hud_icon)
 			hud_icon.combat_on = FALSE
-			hud_icon.update_icon()
+			hud_icon.update_icon_state() // call this instead of update_icon to prevent potential lag
 		return
 	if(!(mode_flags & COMBAT_MODE_ACTIVE))
 		return
@@ -118,7 +118,7 @@
 	UnregisterSignal(source, list(COMSIG_MOB_CLIENT_MOUSEMOVE, COMSIG_MOVABLE_MOVED))
 	if(hud_icon)
 		hud_icon.combat_on = FALSE
-		hud_icon.update_icon()
+		hud_icon.update_icon_state() // call this instead of update_icon to prevent potential lag
 	source.stop_active_blocking()
 	source.end_parry_sequence()
 	var/mob/living/L = source
@@ -183,6 +183,12 @@
 	icon_state = "combat_off"
 	var/mutable_appearance/flashy
 	var/combat_on = FALSE ///Wheter combat mode is enabled or not, so we don't have to store a reference.
+
+/obj/screen/combattoggle/update_icon()
+	// todo: report back if this causes lag
+	// it probably shouldn't because this should just run when ui style is changed
+	. = ..()
+	icon = tg_ui_icon_to_cit_ui(icon) // no-op if it's already set or unsupported
 
 /obj/screen/combattoggle/Click()
 	if(hud && usr == hud.mymob)

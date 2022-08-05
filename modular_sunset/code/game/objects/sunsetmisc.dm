@@ -1,6 +1,6 @@
 // Sunset Flags
 
-obj/item/bighorn_flag
+/obj/item/bighorn_flag
 	name = "Bighorn flag"
 	desc = "A flag depicting the head of a bighorner. It's the symbol of the town of Bighorn."
 	icon = 'modular_sunset/icons/structures/bighorn_flag.dmi'
@@ -11,7 +11,7 @@ obj/item/bighorn_flag
 	w_class = 4
 	layer = 4.1
 
-obj/item/renegade_flag
+/obj/item/renegade_flag
 	name = "Renegade Corps flag"
 	desc = "A flag marking territory belonging to the Renegade Corps mercenaries."
 	icon = 'modular_sunset/icons/structures/bighorn_flag.dmi'
@@ -24,7 +24,7 @@ obj/item/renegade_flag
 
 // Sunset Signs - SMALL
 
-obj/item/sign/bee_warning
+/obj/item/sign/bee_warning
 	name = "Beeware, Bees"
 	desc = "Appears to be warning of a potential dangerous bee hive and that ample protection should be worn."
 	icon = 'modular_sunset/icons/structures/sunset_signs_small.dmi'
@@ -35,7 +35,7 @@ obj/item/sign/bee_warning
 	w_class = 4
 	layer = 5
 
-obj/item/highway_sign
+/obj/item/highway_sign
 	name = "highway sign"
 	desc = "A metal highway sign. This one is blank."
 	icon = 'modular_sunset/icons/structures/sunset_signs_small.dmi'
@@ -46,7 +46,7 @@ obj/item/highway_sign
 	w_class = 4
 	layer = 5
 
-obj/item/highway_sign/casper
+/obj/item/highway_sign/casper
 	name = "Casper"
 	desc = "An aged highway sign indicating the road leads to Casper."
 	icon = 'modular_sunset/icons/structures/sunset_signs_small.dmi'
@@ -57,7 +57,7 @@ obj/item/highway_sign/casper
 	w_class = 4
 	layer = 5
 
-obj/item/highway_sign/bighorn
+/obj/item/highway_sign/bighorn
 	name = "Bighorn National Park"
 	desc = "An aged highway sign indicating the road leads to the Bighorn National Park."
 	icon = 'modular_sunset/icons/structures/sunset_signs_small.dmi'
@@ -68,7 +68,7 @@ obj/item/highway_sign/bighorn
 	w_class = 4
 	layer = 5
 
-obj/item/highway_sign/gillette
+/obj/item/highway_sign/gillette
 	name = "Gillette"
 	desc = "An aged highway sign indicating the road leads to Gillette."
 	icon = 'modular_sunset/icons/structures/sunset_signs_small.dmi'
@@ -79,7 +79,7 @@ obj/item/highway_sign/gillette
 	w_class = 4
 	layer = 5
 
-obj/item/highway_sign/rocksprings
+/obj/item/highway_sign/rocksprings
 	name = "Rock Springs"
 	desc = "An aged highway sign indicating the road leads to Rock Springs."
 	icon = 'modular_sunset/icons/structures/sunset_signs_small.dmi'
@@ -90,7 +90,7 @@ obj/item/highway_sign/rocksprings
 	w_class = 4
 	layer = 5
 
-obj/item/highway_sign/warren
+/obj/item/highway_sign/warren
 	name = "Warren"
 	desc = "An aged highway sign indicating the road leads to the city of Warren."
 	icon = 'modular_sunset/icons/structures/sunset_signs_small.dmi'
@@ -103,7 +103,7 @@ obj/item/highway_sign/warren
 
 // Sunset Signs - LARGE
 
-obj/item/bighorn_sign
+/obj/item/bighorn_sign
 	name = "Bighorn sign"
 	desc = "A repurposed highway sign with the spray painted name of 'Bighorn'."
 	icon = 'modular_sunset/icons/structures/bighorn_sign.dmi'
@@ -114,7 +114,7 @@ obj/item/bighorn_sign
 	w_class = 4
 	layer = 5
 
-obj/item/trade_sign
+/obj/item/trade_sign
 	name = "Trade sign"
 	desc = "A wooden sign with seemingly hand forged lettering bolted to it."
 	icon = 'modular_sunset/icons/structures/sunset_signs.dmi'

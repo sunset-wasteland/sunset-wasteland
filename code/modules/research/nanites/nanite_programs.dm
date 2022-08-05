@@ -54,6 +54,9 @@
 	//Rules that automatically manage if the program's active without requiring separate sensor programs
 	var/list/datum/nanite_rule/rules = list()
 
+	// Handled by the downloader + disk, used for things like generating research for a techweb
+	var/datum/techweb/linked_techweb
+
 /datum/nanite_program/New()
 	. = ..()
 	register_extra_settings()
@@ -68,6 +71,7 @@
 		on_mob_remove()
 	if(nanites)
 		nanites.programs -= src
+	linked_techweb = null
 	return ..()
 
 /datum/nanite_program/proc/copy()

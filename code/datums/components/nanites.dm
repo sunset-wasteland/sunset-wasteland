@@ -16,6 +16,7 @@
 	var/start_time = 0 ///Timestamp to when the nanites were first inserted in the host
 	var/stealth = FALSE //if TRUE, does not appear on HUDs and health scans
 	var/diagnostics = TRUE //if TRUE, displays program list when scanned by nanite scanners
+	var/research_id = "SCIENCE"
 
 /datum/component/nanites/Initialize(amount = 100, cloud = 0)
 	if(!isliving(parent) && !istype(parent, /datum/nanite_cloud_backup))
@@ -297,7 +298,7 @@
 		research_value *= 0.5
 	if(host_mob.stat == DEAD)
 		research_value *= 0.75
-	SSresearch.science_tech.add_point_list(list(TECHWEB_POINT_TYPE_NANITES = research_value))
+	SSresearch.get_techweb_by_id(research_id).add_point_list(list(TECHWEB_POINT_TYPE_NANITES = research_value))
 
 /datum/component/nanites/proc/nanite_scan(datum/source, mob/user, full_scan)
 	if(!full_scan)

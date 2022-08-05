@@ -18,9 +18,9 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 	selection_color = "#ffeeee"
 	faction = FACTION_LEGION
 
-	forbids = "The Legion forbids: Using drugs such as stimpacks and alcohol. Ghouls joining. Women fighting (self defense and suicide allowed). Slaves carrying weapons. Using robots and advanced machines. Killing Legion members in secret, only if according to law and in public is it acceptable."
-	enforces = "The Legion demands: Obeying orders of superiors. A roman style name. Wearing the uniform, unless acting as a NON-COMBAT infiltrator. Expect death as punishment for failing to obey."
-	objectivesList = list("Focus on the tribals, win them over or intimidate them.", "Focus on Oasis, display dominance.", "Send out patrols and establish checkpoints to curb use of digusting drugs and degenerate behaviour.", "Flagstaff requests more worker: acquire slaves, train them if possible, send them east for breaking if not.", "Make sure no other faction gains dominance over Oasis, if they remain neutral it can be used to the Legions advantage.")
+	forbids = "The Legion forbids: Using chemicals the likes of stimpacks, buffout, med-x, et cetera. Ghouls or mutants serving. Women fighting (self defense and suicide allowed). Slaves carrying weapons. Reliance on technology & Killing Legion members in secret, only if according to law and in public is it acceptable."
+	enforces = "The Legion demands: Obeying the orders of superiors. A Latin name. Wearing the uniform (Unless acting as a Frumentarius). Expect death as punishment for failing to obey."
+	objectivesList = list("Focus on the tribals, win them over or intimidate them.", "Focus on Bighorn, display power.", "Send out patrols and establish checkpoints to curb use of digusting drugs and degenerate behaviour.", "Flagstaff requests more workers: acquire slaves, train them if possible, send them east for breaking if not.", "Make sure no other faction than the Khans gains dominance in Bighorn, if they remain neutral it can be used to the Legion's advantage.")
 
 	exp_type = EXP_TYPE_LEGION
 
@@ -48,19 +48,6 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 	shoes = /obj/item/clothing/shoes/f13/military/legion
 	gloves = /obj/item/clothing/gloves/legion
 	box = /obj/item/storage/survivalkit_tribal
-
-/datum/outfit/job/CaesarsLegion/Legionnaire/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	..()
-	if(visualsOnly)
-		return
-	if(H.gender == FEMALE)
-		H.gender = MALE
-		H.real_name = random_unique_name(MALE)
-		H.name = H.real_name
-		if(H.wear_id)
-			var/obj/item/card/id/dogtag/L = H.wear_id
-			L.registered_name = H.name
-			L.update_label()
 
 /datum/outfit/job/CaesarsLegion/Legionnaire/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
@@ -390,6 +377,7 @@ commented out pending rework*/
 	backpack_contents = list(
 		/obj/item/melee/powerfist/f13 = 1,
 		/obj/item/ammo_box/magazine/m45exp = 2,
+		/obj/item/suppressor = 1,
 		/obj/item/clothing/neck/mantle/legion = 1,
 		)
 
@@ -929,7 +917,7 @@ commented out pending rework*/
 	flag = F13RECRUITLEG
 	total_positions = 5
 	spawn_positions = 5
-	description = "You have recently come of age or been inducted into Caesar's Legion. You have absolutely no training, and are expected to follow every whim of the Decanii and your Centurion. Respect the soldiers of higher rank."
+	description = "You have recently been transfered or inducted into The Legion. You have minimal training, and are expected to follow every whim of the Decani and your Centurion. Respect every soldier of higher rank."
 	supervisors = "the Decani and Centurion."
 	display_order = JOB_DISPLAY_ORDER_RECRUITLEG
 	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13recleg

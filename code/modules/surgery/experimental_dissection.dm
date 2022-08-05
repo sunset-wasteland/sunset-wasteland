@@ -77,7 +77,8 @@
 	display_results(user, target, "<span class='notice'>You dissect [target], and add your [points_earned] point\s worth of discoveries to the research database!</span>",
 	"[user] dissects [target], discovering [points_earned] point\s of data!",
 	"[user] dissects [target]!")
-	SSresearch.science_tech.add_point_list(list(TECHWEB_POINT_TYPE_GENERIC = points_earned))
+	// todo: find some way to identify who to send research to. operating computer? special optable?
+	SSresearch.get_techweb_by_id("SCIENCE").add_point_list(list(TECHWEB_POINT_TYPE_GENERIC = points_earned))
 	var/obj/item/bodypart/L = target.get_bodypart(BODY_ZONE_CHEST)
 	target.apply_damage(80, BRUTE, L, wound_bonus=CANT_WOUND)
 	ADD_TRAIT(target, TRAIT_DISSECTED, "[surgery.name]")
@@ -88,7 +89,8 @@
 	display_results(user, target, "<span class='notice'>You dissect [target], but do not find anything particularly interesting.</span>",
 	"[user] dissects [target], however it seems [user.p_they()] didn't find anything useful.",
 	"[user] dissects [target], but looks a little dissapointed.")
-	SSresearch.science_tech.add_point_list(list(TECHWEB_POINT_TYPE_GENERIC = (round(check_value(target, surgery) * 0.01))))
+	// todo: find some way to identify who to send research to. operating computer? special optable?
+	SSresearch.get_techweb_by_id("SCIENCE").add_point_list(list(TECHWEB_POINT_TYPE_GENERIC = (round(check_value(target, surgery) * 0.01))))
 	var/obj/item/bodypart/L = target.get_bodypart(BODY_ZONE_CHEST)
 	target.apply_damage(80, BRUTE, L, wound_bonus=CANT_WOUND)
 	return TRUE

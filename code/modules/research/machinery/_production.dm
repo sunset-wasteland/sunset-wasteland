@@ -14,6 +14,7 @@
 	var/list/datum/design/matching_designs
 	var/department_tag = "Unidentified"			//used for material distribution among other things.
 	var/datum/techweb/stored_research
+	var/host_id = "SCIENCE"
 	var/datum/techweb/host_research
 
 	var/screen = RESEARCH_FABRICATOR_SCREEN_MAIN
@@ -25,10 +26,15 @@
 	matching_designs = list()
 	cached_designs = list()
 	stored_research = new
-	host_research = SSresearch.science_tech
+	update_techweb()
 	INVOKE_ASYNC(src, .proc/update_research)
 	materials = AddComponent(/datum/component/remote_materials, "lathe", mapload, _after_insert=CALLBACK(src, .proc/AfterMaterialInsert))
 	RefreshParts()
+
+/obj/machinery/rnd/production/proc/update_techweb(new_research_id = null)
+	if(istext(new_research_id))
+		host_id = new_research_id
+	host_research = SSresearch.get_techweb_by_id(host_id)
 
 /obj/machinery/rnd/production/Destroy()
 	materials = null

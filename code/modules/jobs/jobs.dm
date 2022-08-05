@@ -48,9 +48,10 @@ GLOBAL_LIST_INIT(nonhuman_positions, list(
 	))
 
 GLOBAL_LIST_INIT(command_positions, list(
-	"Head Paladin",
-	"Head Knight",
-	"Head Scribe", //Wasn't here before. Still technically command, I put it here - Kitsunemitsu
+	"Baron",
+	"Castellan",
+	"Knight-Commander",
+	"Keeper",
 
 	"NCR Captain",
 	"NCR Veteran Ranger",
@@ -71,18 +72,17 @@ GLOBAL_LIST_INIT(silicon_whitelist_positions, list(
 //NCR Assistant and Legion Camp Follower re-added to whitelisting.  BoS Initiate removed from whitelist.
 
 GLOBAL_LIST_INIT(faction_whitelist_positions, list(
-"Head Scribe",
-"Elder",
-"Head Paladin",
-"Head Knight",
-"Head Scribe",
-"Senior Paladin",
+"Baron",
+"Castellan",
+"Knight-Commander",
+"Keeper",
+"Paladin Marshal",
 "Paladin",
-"Senior Knight",
+"Knight-Captain",
 "Knight",
-"Senior Scribe",
+"Librarian",
 "Scribe",
-"BoS Off-Duty",
+"Initiate",
 
 "Legion Centurion",
 "Legion Venator",
@@ -122,14 +122,15 @@ GLOBAL_LIST_INIT(faction_whitelist_positions, list(
 ))
 
 GLOBAL_LIST_INIT(brotherhood_positions, list(
-	"Head Paladin",
-	"Head Knight",
-	"Head Scribe",
-	"Senior Paladin",
+	"Baron",
+	"Castellan",
+	"Knight-Commander",
+	"Keeper",
+	"Paladin Marshal",
 	"Paladin",
-	"Senior Knight",
+	"Knight-Captain",
 	"Knight",
-	"Senior Scribe",
+	"Librarian",
 	"Scribe",
 	"Initiate",
 ))

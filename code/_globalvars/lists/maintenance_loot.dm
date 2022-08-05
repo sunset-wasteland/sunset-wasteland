@@ -253,7 +253,6 @@ GLOBAL_LIST_INIT(trash_tool, list(
 ))
 
 GLOBAL_LIST_INIT(trash_misc, list(
-	/obj/item/pipe = 5,
 	/obj/item/trash/f13/electronic/toaster = 5,
 	/obj/item/reagent_containers/glass/bucket = 5,
 	/obj/item/kitchen/knife = 5,

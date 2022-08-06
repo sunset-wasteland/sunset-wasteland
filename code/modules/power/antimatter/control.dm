@@ -35,7 +35,7 @@
 	. = ..()
 	linked_shielding = list()
 	linked_cores = list()
-	soundloop = new(list(src), TRUE) //fortuna edit
+	soundloop = new(src, TRUE) //fortuna edit
 
 /obj/machinery/power/am_control_unit/Destroy()//Perhaps damage and run stability checks rather than just del on the others
 	for(var/obj/machinery/am_shielding/AMS in linked_shielding)

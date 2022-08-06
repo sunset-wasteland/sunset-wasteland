@@ -68,16 +68,18 @@
 	var/list/obj/machinery/atmospherics/atmos_machines = list()
 	var/list/obj/structure/cable/cables = list()
 	var/list/atom/atoms = list()
-	var/list/area/areas = list()
+	var/list/area_zs = list()
+
+	for(var/z in bounds[MAP_MINZ] to bounds[MAP_MAXZ])
+		area_zs["[z]"] = list()
 
 	var/list/turfs = block(	locate(bounds[MAP_MINX], bounds[MAP_MINY], bounds[MAP_MINZ]),
 							locate(bounds[MAP_MAXX], bounds[MAP_MAXY], bounds[MAP_MAXZ]))
 	var/list/border = block(locate(max(bounds[MAP_MINX]-1, 1),			max(bounds[MAP_MINY]-1, 1),			 bounds[MAP_MINZ]),
 							locate(min(bounds[MAP_MAXX]+1, world.maxx),	min(bounds[MAP_MAXY]+1, world.maxy), bounds[MAP_MAXZ])) - turfs
-	for(var/L in turfs)
-		var/turf/B = L
+	for(var/turf/B as anything in turfs)
 		atoms += B
-		areas |= B.loc
+		area_zs["[B.z]"][B.loc] = TRUE // assoc for speed
 		for(var/A in B)
 			atoms += A
 			if(istype(A, /obj/structure/cable))
@@ -89,7 +91,9 @@
 		var/turf/T = L
 		T.air_update_turf(TRUE) //calculate adjacent turfs along the border to prevent runtimes
 
-	SSmapping.reg_in_areas_in_z(areas)
+	for(var/z in area_zs) // reminder: this gives an assoc mapping
+		for(var/area in z)
+			SSmapping.areas_in_z[z] |= area
 	SSatoms.InitializeAtoms(atoms)
 	SSmachines.setup_template_powernets(cables)
 	SSair.setup_template_machinery(atmos_machines)

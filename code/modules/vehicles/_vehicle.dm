@@ -26,7 +26,7 @@
 	var/engine_on = 0
 	var/engine_on_sound = null
 	var/engine_loop_sound = null//not used.
-	var/datum/looping_sound/motorcycle/soundloop//Given we only use motorbikes, for now, we'll just use this.
+	var/datum/looping_sound/motorcycle/soundloop //Given we only use motorbikes, for now, we'll just use this.
 
 /obj/vehicle/New()
 	..()
@@ -37,7 +37,7 @@
 
 /obj/vehicle/Initialize(mapload)
 	. = ..()
-	soundloop = new(list(src))
+	soundloop = new(src)
 	occupants = list()
 	autogrant_actions_passenger = list()
 	autogrant_actions_controller = list()

@@ -666,31 +666,31 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 // Brotherhood of Steel
 
 /obj/effect/landmark/start/f13/elder
-	name = "Elder"
+	name = "Baron"
 	icon_state = "Elder"
 
 /obj/effect/landmark/start/f13/headscribe
-	name = "Head Scribe"
+	name = "Keeper"
 	icon_state = "Scribe"
 
 /obj/effect/landmark/start/f13/seniorscribe
-	name = "Senior Scribe"
+	name = "Librarian"
 	icon_state = "Scribe"
 
 /obj/effect/landmark/start/f13/sentinel
-	name = "Head Paladin"
+	name = "Castellan"
 	icon_state = "Paladin"
 
 /obj/effect/landmark/start/f13/knightcap
-	name = "Head Knight"
+	name = "Knight-Commander"
 	icon_state = "Knight"
 
 /obj/effect/landmark/start/f13/seniorknight
-	name = "Senior Knight"
+	name = "Knight-Captain"
 	icon_state = "Knight"
 
 /obj/effect/landmark/start/f13/seniorpaladin
-	name = "Senior Paladin"
+	name = "Paladin Marshal"
 	icon_state = "Knight"
 
 /obj/effect/landmark/start/f13/paladin

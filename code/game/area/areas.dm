@@ -204,22 +204,16 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 	update_beauty()
 
 /area/proc/reg_in_areas_in_z()
-	if(contents.len)
-		var/list/areas_in_z = SSmapping.areas_in_z
-		var/z
-		update_areasize()
-		for(var/i in 1 to contents.len)
-			var/atom/thing = contents[i]
-			if(!thing)
-				continue
-			z = thing.z
-			break
-		if(!z)
-			WARNING("No z found for [src]")
-			return
-		if(!areas_in_z["[z]"])
-			areas_in_z["[z]"] = list()
-		areas_in_z["[z]"] += src
+	var/list/areas_in_z = SSmapping.areas_in_z
+	var/list/z_cache = list() // assoc for speed
+	update_areasize()
+	for(var/turf/thing in contents)
+		z_cache["[thing.z]"] = TRUE
+	if(!length(z_cache))
+		WARNING("No z found for [src]")
+		return
+	for(var/z in z_cache)
+		LAZYADD(areas_in_z[z], src)
 
 /area/Destroy()
 	if(GLOB.areas_by_type[type] == src)

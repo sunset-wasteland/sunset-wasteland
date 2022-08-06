@@ -1097,3 +1097,15 @@
 	path = /obj/item/clothing/under/f13/sleazeball
 	cost = 1
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_WASTELAND
+
+/datum/gear/uniform/wasteland/raider_leather
+	name = "raider leathers"
+	path = /obj/item/clothing/under/f13/raider_leather
+	cost = 1
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_WASTELAND
+
+/datum/gear/uniform/wasteland/raiderrags
+	name = "raider rags"
+	path = /obj/item/clothing/under/f13/raiderrags
+	cost = 1
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_WASTELAND

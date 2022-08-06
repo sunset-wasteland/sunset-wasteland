@@ -112,8 +112,10 @@
 		var/area/A = V
 		if(protect_indoors && !A.outdoors)
 			continue
-		if(A.z in impacted_z_levels)
-			impacted_areas |= A
+		for(var/z_level in impacted_z_levels)
+			if(A in SSmapping.areas_in_z["[z_level]"])
+				impacted_areas |= A
+				break
 	weather_duration = rand(weather_duration_lower, weather_duration_upper)
 	START_PROCESSING(SSweather, src)			//The reason this doesn't start and stop at main stage is because processing list is also used to see active running weathers (for example, you wouldn't want two ash storms starting at once.)
 	update_areas()

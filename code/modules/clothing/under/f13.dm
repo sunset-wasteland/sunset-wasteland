@@ -644,7 +644,7 @@
 
 /obj/item/clothing/under/f13/raiderrags
 	name = "raider rags"
-	desc = "Fragments of clothing crudely stitched together, worn unanimously by raiders."
+	desc = "Fragments of clothing crudely stitched together, often worn by raiders."
 	icon_state = "raiderrags"
 	item_state = "raiderrags"
 	item_color = "raiderrags"

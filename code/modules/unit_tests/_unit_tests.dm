@@ -59,6 +59,7 @@
 #include "subsystem_init.dm"
 #include "surgeries.dm"
 #include "timer_sanity.dm"
+#include "unique_areas.dm"
 #include "unit_test.dm"
 
 #undef TEST_ASSERT

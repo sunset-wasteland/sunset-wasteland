@@ -707,7 +707,6 @@
 /area/f13/tunnel)
 "aoy" = (
 /obj/machinery/door/unpowered/securedoor{
-	max_integrity = 500;
 	name = "Store Bedroom";
 	req_one_access_txt = "34"
 	},
@@ -2277,10 +2276,6 @@
 /area/f13/tunnel)
 "bJg" = (
 /obj/machinery/recharge_station,
-/turf/open/floor/plating/tunnel,
-/area/f13/tunnel)
-"bJh" = (
-/obj/machinery/door/window/right,
 /turf/open/floor/plating/tunnel,
 /area/f13/tunnel)
 "bJi" = (
@@ -4992,8 +4987,8 @@
 /area/f13/sewer)
 "bWq" = (
 /mob/living/simple_animal/hostile/ghoul/legendary{
-	resize = 1.2;
-	desc = "The intense radiation deep inside Mass Fusion has morphed this ghoul into something far stronger."
+	desc = "The intense radiation deep inside Mass Fusion has morphed this ghoul into something far stronger.";
+	resize = 1.2
 	},
 /turf/open/water,
 /area/f13/radiation)
@@ -8581,7 +8576,6 @@
 /area/f13/tunnel)
 "gJE" = (
 /obj/machinery/door/window/right{
-	dir = 2;
 	req_one_access_txt = "120"
 	},
 /turf/open/floor/carpet/black,
@@ -8686,7 +8680,7 @@
 /area/f13/tunnel)
 "gTT" = (
 /obj/machinery/door/airlock/hatch{
-	name = "Knight-Captain Office";
+	name = "Knight-Commander Office";
 	req_access_txt = "120"
 	},
 /obj/machinery/door/firedoor/heavy,
@@ -10971,9 +10965,6 @@
 	icon_state = "darkrustysolid"
 	},
 /area/f13/building/massfusion)
-"kVP" = (
-/turf/closed/wall/r_wall/f13/vault,
-/area/f13/brotherhood)
 "kVU" = (
 /obj/effect/decal/cleanable/greenglow,
 /obj/item/stack/sheet/mineral/uranium,
@@ -11143,7 +11134,6 @@
 /area/f13/tunnel)
 "ljv" = (
 /obj/machinery/door/window/right{
-	dir = 2;
 	req_one_access_txt = "120"
 	},
 /obj/machinery/door/firedoor/border_only,
@@ -12262,9 +12252,9 @@
 /area/f13/tunnel)
 "mNH" = (
 /obj/machinery/button/door{
+	id = "BOSPAS";
 	name = "Power Armor Storage Button";
-	req_access_txt = "255";
-	id = "BOSPAS"
+	req_access_txt = "255"
 	},
 /turf/closed/wall/r_wall/f13/vault,
 /area/f13/brotherhood)
@@ -16015,7 +16005,7 @@
 /area/f13/tunnel)
 "sWg" = (
 /obj/machinery/door/airlock/hatch{
-	name = "Knight-Captain Office";
+	name = "Knight-Commander Office";
 	req_access_txt = "120"
 	},
 /obj/machinery/door/firedoor/heavy,
@@ -46013,7 +46003,7 @@ bAY
 apg
 bIz
 bIT
-bJh
+bJi
 bJq
 bJq
 apj
@@ -71736,7 +71726,7 @@ oVq
 oVq
 oVq
 oVq
-kVP
+oVq
 mKl
 jak
 dWc

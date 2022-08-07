@@ -4,6 +4,8 @@
 // To continue my coding standard.
 
 /turf/closed/indestructible/f13/matrix/transition
+	name = "transit matrix"
+	desc = "It looks like walking into this will take you someplace else."
 	icon_state = "matrixblue"
 	var/destination_z
 	var/destination_x
@@ -26,7 +28,7 @@
 		var/itercount = 0
 		while(DT.density || istype(DT.loc,/area/shuttle)) // Extend towards the center of the map, trying to look for a better place to arrive
 			if (itercount++ >= 100)
-				log_game("SPACE Z-TRANSIT ERROR: Could not find a safe place to land [A] within 100 iterations.")
+				log_game("MATRIX Z-TRANSIT ERROR: Could not find a safe place to land [A] within 100 iterations.")
 				break
 			if (tx < 128)
 				tx++

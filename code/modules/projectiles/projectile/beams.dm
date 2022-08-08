@@ -329,8 +329,10 @@
 
 /obj/item/projectile/beam/laser/lasgun/hitscan //hitscan aer9 test
 	name = "laser beam"
-	damage = 22
-	armour_penetration = 0.02 //mostly just to allow scratch damage, so you arent SOL just mostly fucced
+	damage = 32
+	armour_penetration = 0.1//It's a concentrated beam of light.
+	wound_bonus = 20//Ditto.
+	bare_wound_bonus = 5//As above.
 	hitscan = TRUE
 	tracer_type = /obj/effect/projectile/tracer/laser
 	muzzle_type = /obj/effect/projectile/muzzle/laser
@@ -338,12 +340,12 @@
 
 /obj/item/projectile/beam/laser/lasgun/hitscan/focused
 	name = "overcharged laser beam"
-	damage = 34
+	damage = 42
 	armour_penetration = 0.6
 
 /obj/item/projectile/beam/laser/gatling/hitscan //Gatling Laser
 	name = "laser beam"
-	damage = 12
+	damage = 16
 	armour_penetration = 0
 	hitscan = TRUE
 	tracer_type = /obj/effect/projectile/tracer/laser
@@ -356,9 +358,11 @@
 
 /obj/item/projectile/beam/laser/pistol/hitscan //hitscan AEP7
 	name = "laser beam"
-	damage = 19
+	damage = 24
 	hitscan = TRUE
-	armour_penetration = 0.02
+	armour_penetration = 0.08//Less concentrated beam of light.
+	wound_bonus = 5//Ditto.
+	bare_wound_bonus = 2//As above.
 	tracer_type = /obj/effect/projectile/tracer/laser
 	muzzle_type = /obj/effect/projectile/muzzle/laser
 	impact_type = /obj/effect/projectile/impact/laser
@@ -407,7 +411,7 @@
 
 /obj/item/projectile/beam/laser/pistol/wattz/hitscan //hitscan wattz
 	name = "weak laser beam"
-	damage = 15
+	damage = 18
 	hitscan = TRUE
 	tracer_type = /obj/effect/projectile/tracer/laser
 	muzzle_type = /obj/effect/projectile/muzzle/laser
@@ -420,7 +424,7 @@
 
 /obj/item/projectile/beam/laser/pistol/wattz/magneto/hitscan
 	name = "penetrating laser beam"
-	damage = 15
+	damage = 20
 	hitscan = TRUE
 	armour_penetration = 0.2 //rare laser to keep its AP, since base model is so bad
 	tracer_type = /obj/effect/projectile/tracer/laser
@@ -448,7 +452,7 @@
 	name = "tribeam laser"
 	damage = 25 //if all bullets connect, this will do 75.
 	hitscan = TRUE
-	bare_wound_bonus = -30 //tribeam is bad at wounding, as basically its only real downside
+	bare_wound_bonus = 5 //tribeam is bad at wounding, as basically its only real downside
 	tracer_type = /obj/effect/projectile/tracer/laser
 	muzzle_type = /obj/effect/projectile/muzzle/laser
 	impact_type = /obj/effect/projectile/impact/laser
@@ -567,9 +571,9 @@
 	light_color = LIGHT_COLOR_BLUE
 
 /obj/item/projectile/beam/laser/aer14/hitscan
-	damage = 32
-	wound_bonus = 20
-	armour_penetration = 0.05
+	damage = 36
+	wound_bonus = 25
+	armour_penetration = 0.2
 	tracer_type = /obj/effect/projectile/tracer/pulse
 	muzzle_type = /obj/effect/projectile/muzzle/pulse
 	impact_type = /obj/effect/projectile/impact/pulse
@@ -594,9 +598,10 @@
 
 /obj/item/projectile/beam/laser/aer12/hitscan
 	name = "laser beam"
-	damage = 28
+	damage = 34
 	hitscan = TRUE
-	armour_penetration = 0.02
+	wound_bonus = 20
+	armour_penetration = 0.15
 	tracer_type = /obj/effect/projectile/tracer/xray
 	muzzle_type = /obj/effect/projectile/muzzle/xray
 	impact_type = /obj/effect/projectile/impact/xray
@@ -617,8 +622,8 @@
 
 /obj/item/projectile/beam/laser/wattz2k/hitscan
 	name = "sniper laser bolt"
-	damage = 25
-	wound_bonus = 10
+	damage = 38
+	wound_bonus = 20
 	bare_wound_bonus = 20
 	armour_penetration = 0.2
 	tracer_type = /obj/effect/projectile/tracer/heavy_laser

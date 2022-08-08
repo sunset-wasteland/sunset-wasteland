@@ -1051,6 +1051,44 @@
 				remarks = list("Grognak hit the Death Knight only once, but that was enough.", "Grognak is surprisingly agile, never committing too heavily on an attack, dancing between his enemies.", "Grognak isn't good at talking, but he knows it has its place. He has friends to talk for him.", "Other barbarians might change their weapons, but Grognak could never leave his beloved axe.")
 	return ..()
 
+/obj/item/book/granter/trait/selection/khan
+	name = "Instructional Book"
+	desc = "Pressed and bound by the Followers of the Apocalypse, this book was written to teach one of several skills useful to the Khans."
+	granted_trait = null
+	pages_to_mastery = 0
+	time_per_page = 0
+
+/obj/item/book/granter/trait/selection/khan/attack_self(mob/user)
+	var/list/choices = list("Chemistry","Electrical Engineering","Butchery, Skinning, and De-boning","Introduction to Surgery","Infantryman's Guide to Firearms")
+	if(granted_trait == null)
+		var/choice = input("Choose a trait:") in choices
+		switch(choice)
+			if(null)
+				return 0
+			if("Infantryman's Guide to Firearms")
+				granted_trait = TRAIT_FAST_PUMP
+				traitname = "single action mastery"
+				remarks = list("One smooth motion...", "Palm the bolt...", "Push up, rotate back, push forward, down...", "Don't slap yourself with the bolt...", "Wait, what's this about pumping?", "Who just scribbled \"Z\" and \"LMB\" on this page?")
+			if("Introduction to Surgery")
+				granted_trait = TRAIT_SURGERY_LOW
+				traitname = "minor surgery"
+				remarks = list("Keep your hands and any injuries clean!", "While bandages help to seal a wound, they do not heal a wound.", "Remain calm, focus on the task at hand, stop the bleeding.", "An open wound can lead to easy infection of said wound.", "Keep track of your home's first aid kit, restock used components regularly.", "If a body part has been lost, ice and transport it with the injured to a hospital.",)
+			if("Chemistry")
+				granted_trait = TRAIT_CHEMWHIZ
+				traitname = "chemistry"
+				crafting_recipe_types = list(/datum/crafting_recipe/jet, /datum/crafting_recipe/turbo, /datum/crafting_recipe/psycho, /datum/crafting_recipe/medx, /datum/crafting_recipe/buffout)
+				remarks = list("Always ensure a safe working environment, promptly clean any chemical mess.", "Improperly stored chemicals can quickly lead to safety hazards.", "Do not abuse chemicals for recreational use in the laboratory!", "Labcoats and goggles not only protect you from burns, but give an aura of authority.", "Keep your laboratory clean and organized, utilize cabinets and shelves.", "Potassium and water should not be mixed, or they will react violently.")
+			if("Electrical Engineering")
+				granted_trait = TRAIT_WIREVISION
+				traitname = "wire vision"
+				crafting_recipe_types = list(/datum/crafting_recipe/tribalradio)
+				remarks = list("Troubleshooting is a systematic approach to problem solving, do not skip any steps in the process.", "Ensure you have all the required parts before you begin.", "Always wear personal protective equipment, electric shock can be fatal.", "Combustibles and sparks do not mix, store welding fuel in a safe location.", "Don't lose track of your tools, or you have a new problem to deal with.")
+			if("Butchery, Skinning, and De-boning")
+				granted_trait = TRAIT_TRAPPER
+				traitname = "butchering"
+				remarks = list()
+	return ..()
+
 
 /obj/item/book/granter/trait/selection/Initialize()
 	. = ..()
@@ -1135,8 +1173,8 @@
 	name = "Bone Dancer traditions"
 	crafting_recipe_types = list(/datum/crafting_recipe/tribalwar/bone/lightarmour,/datum/crafting_recipe/tribalwar/bone/armour, /datum/crafting_recipe/tribalwar/bone/heavyarmour,
 								/datum/crafting_recipe/tribalwar/bone/garb,/datum/crafting_recipe/tribalwar/bone/helmet)
-								
-								
-								
-								
-								
+
+
+
+
+

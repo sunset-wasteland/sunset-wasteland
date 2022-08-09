@@ -26,11 +26,11 @@
 		. = FALSE
 	if (T == src)
 		return .
-	for(var/obj/O in contents+T.contents)
-		var/turf/other = (O.loc == src ? T : src)
-		if(!(vertical? (CANVERTICALATMOSPASS(O, other)) : (CANATMOSPASS(O, other))))
+	for(var/atom/movable/AM as anything in contents+T.contents)
+		var/turf/other = (AM.loc == src ? T : src)
+		if(!(vertical? (CANVERTICALATMOSPASS(AM, other)) : (CANATMOSPASS(AM, other))))
 			. = FALSE
-		if(O.BlockThermalConductivity()) 	//the direction and open/closed are already checked on CanAtmosPass() so there are no arguments
+		if(AM.BlockThermalConductivity()) 	//the direction and open/closed are already checked on CanAtmosPass() so there are no arguments
 			conductivity_blocked_directions |= dir
 			T.conductivity_blocked_directions |= opp
 			if(!.)

@@ -3,13 +3,17 @@
 	var/offset_y = 0
 	var/is_swarming = FALSE
 	var/list/swarm_members = list()
+	///given to connect_loc to listen for something moving onto or off of parent
+	var/static/list/crossed_connections = list(
+		COMSIG_ATOM_ENTERED = .proc/join_swarm,
+		COMSIG_ATOM_EXITED = .proc/leave_swarm,
+	)
 
 /datum/component/swarming/Initialize(max_x = 24, max_y = 24)
 	offset_x = rand(-max_x, max_x)
 	offset_y = rand(-max_y, max_y)
 
-	RegisterSignal(parent, COMSIG_MOVABLE_CROSSED, .proc/join_swarm)
-	RegisterSignal(parent, COMSIG_MOVABLE_UNCROSSED, .proc/leave_swarm)
+	AddComponent(/datum/component/connect_loc_behalf, parent, crossed_connections)
 
 /datum/component/swarming/Destroy()
 	if(is_swarming)

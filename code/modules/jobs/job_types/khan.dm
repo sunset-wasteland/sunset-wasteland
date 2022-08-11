@@ -108,7 +108,7 @@
 /datum/outfit/job/khanleader
 	name = "Khan Officer"
 	jobtype = /datum/job/khanleader
-	suit = /obj/item/clothing/suit/armor/khan/prospect/citizen
+	suit = /obj/item/clothing/suit/armor/f13/khan/prospect/citizen
 	id = /obj/item/card/id/khanleadertattoo
 	ears = /obj/item/radio/headset/headset_khans
 	head = /obj/item/clothing/head/helmet/f13/khan/bandana

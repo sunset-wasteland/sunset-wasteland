@@ -705,7 +705,7 @@
 	strip_delay = 5
 
 //Great Khan
-/obj/item/clothing/suit/armor/khan/prospect
+/obj/item/clothing/suit/armor/f13/khan/prospect
 	name = "Khanate prospect armor"
 	desc = "A comfortable cut-off jacket upgraded with gambeson lining, leather padding, and a steel pauldron. This one lacks the patch and gear harness worn by Khanate citizens, marking the wearer as a Prospect yet to earn it."
 	icon = 'icons/fallout/clothing/khans.dmi'
@@ -718,11 +718,11 @@
 	damage_threshold = 5
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets
 
-/obj/item/clothing/suit/armor/khan/prospect/Initialize()
+/obj/item/clothing/suit/armor/f13/khan/prospect/Initialize()
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
 
-/obj/item/clothing/suit/armor/khan/prospect/citizen
+/obj/item/clothing/suit/armor/f13/khan/prospect/citizen
 	name = "Khanate citizen armor"
 	desc = "A comfortable cut-off jacket upgraded with gambeson lining, leather padding, a gear harness for extra storage, and a steel pauldron. Worn by citizens of Bighorn who have earned their place among the Khans, as well as members of its Warrior caste who are off-duty."
 	icon_state = "citizen"

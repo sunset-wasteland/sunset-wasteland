@@ -54,10 +54,7 @@
 	shoes = /obj/item/clothing/shoes/f13/military/khan
 	backpack_contents = list(
 		/obj/item/storage/bag/money/small/khan = 1,
-		/obj/item/book/granter/trait/techno  = 1,
-		/obj/item/book/granter/trait/trekking  = 1,
-		/obj/item/book/granter/trait/iron_fist  = 1,
-		/obj/item/book/granter/trait/bigleagues  = 1
+		/obj/item/book/granter/trait/techno  = 1
 		)
 
 /datum/outfit/job/khan/khorchin
@@ -70,6 +67,14 @@
 
 /datum/outfit/job/khan/kheshig
 	name = "Kheshig"
+	jobtype = /datum/job/khan/kheshig
+	suit = /obj/item/clothing/suit/armor/f13/khan/kheshig
+	head = /obj/item/clothing/head/helmet/f13/khan/kheshig
+	gloves = /obj/item/melee/unarmed/khangauntlets
+	shoes = /obj/item/clothing/shoes/f13/military/khan_plated
+
+/datum/outfit/job/khanleader/noyan
+	name = "Noyan"
 	jobtype = /datum/job/khan/kheshig
 	suit = /obj/item/clothing/suit/armor/f13/khan/kheshig
 	head = /obj/item/clothing/head/helmet/f13/khan/kheshig
@@ -285,16 +290,16 @@
 		/obj/item/reagent_containers/hypospray/medipen/stimpak = 3,
 		/obj/item/book/granter/trait/bigleagues = 1)
 
-/datum/outfit/loadout/sprayer
-	name = "Heavy Gunner"
+/datum/outfit/loadout/anti_pa
+	name = "Blackguard" //The Khans' answer to power armor
 	belt = /obj/item/storage/belt/bandolier
-	r_hand = /obj/item/gun/ballistic/automatic/smg/smg10mm
+	r_hand = /obj/item/gun/ballistic/rifle/repeater/brush
 	suit = /obj/item/clothing/suit/toggle/labcoat/f13/khan_jacket/coat
 	head = /obj/item/clothing/head/helmet/f13/khan
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/m10mm_adv/ext = 3,
-		/obj/item/reagent_containers/hypospray/medipen/stimpak = 3,
-		/obj/item/book/granter/trait/bigleagues = 1)
+		/obj/item/ammo_box/tube/c4570/empty = 3,
+		/obj/item/ammo_box/c4570box/explosive = 1,
+		/obj/item/reagent_containers/hypospray/medipen/stimpak = 3)
 
 /datum/outfit/loadout/pacifier
 	name = "Pacifier"
@@ -364,7 +369,7 @@
 		/obj/item/book/granter/trait/bigleagues = 1)
 
 /datum/outfit/loadout/peopleleader
-	name = "People's leader"
+	name = "People's Leader"
 	r_hand = /obj/item/gun/ballistic/revolver/revolver45
 	head = /obj/item/clothing/head/helmet/f13/khan/fullhelm
 	suit = /obj/item/clothing/suit/toggle/labcoat/f13/khan_jacket/coat
@@ -393,7 +398,7 @@
 	loadout_options = list(
 		/datum/outfit/loadout/enforcer,
 		/datum/outfit/loadout/khanskirmisher,
-		/datum/outfit/loadout/khandrug,
+		/datum/outfit/loadout/khanpointman,
 		)
 
 /datum/job/khan/kipchak
@@ -410,8 +415,8 @@
 	outfit = /datum/outfit/job/khan
 
 	loadout_options = list(
+		/datum/outfit/loadout/enforcerplus,
 		/datum/outfit/loadout/roadcaptain,
-		/datum/outfit/loadout/expforeman,
 		/datum/outfit/loadout/ambusher,
 		)
 
@@ -430,8 +435,8 @@
 	outfit = /datum/outfit/job/khan
 
 	loadout_options = list(
-		/datum/outfit/loadout/fighter,
-		/datum/outfit/loadout/guard,
+		/datum/outfit/loadout/sarge_at_arms,
+		/datum/outfit/loadout/khanpointmanvet,
 		/datum/outfit/loadout/protector,
 		)
 
@@ -442,7 +447,7 @@
 	faction = FACTION_KHAN
 	total_positions = 6 // Kheshigs are not permitted to leave Bighorn under normal circumstances
 	spawn_positions = 6
-	description = "You are a Kheshig, a veteran soldier of the Great Khans who has displayed a degree of combat mastery in service to the Khanate considered second to none, save for your Khan. More than anything, you are a living exemplar of the unbreakable will of the Khanate, both in conducting its defense and, if need be, delivering its fearsome retribution. You are expected to remain in the city at all times."
+	description = "You are a Kheshig, a veteran soldier of the Great Khans who has displayed a degree of combat mastery in service to the Khanate considered second to none, save for your Khan. More than anything, you are a living exemplar of the unbreakable will of the Khanate, both in conducting its defense and, if need be, delivering its fearsome retribution. You are expected to remain in the city at all times, unless you are needed to wage war in the Khagan's name."
 	supervisors = "the Khan and Khagan"
 	selection_color = "#ff915e"
 	exp_requirements = 500
@@ -450,8 +455,8 @@
 	outfit = /datum/outfit/job/khan
 
 	loadout_options = list(
-		/datum/outfit/loadout/veteran,
-		/datum/outfit/loadout/sprayer,
+		/datum/outfit/loadout/sardaukar,
+		/datum/outfit/loadout/anti_pa,
 		/datum/outfit/loadout/pacifier,
 		)
 
@@ -491,7 +496,7 @@
 	req_admin_notify = 1
 	exp_requirements = 1000
 	exp_type = EXP_TYPE_KHAN
-	outfit = /datum/outfit/job/khanleader
+	outfit = /datum/outfit/job/khanleader/noyan
 
 	loadout_options = list(
 		/datum/outfit/loadout/ironfist,

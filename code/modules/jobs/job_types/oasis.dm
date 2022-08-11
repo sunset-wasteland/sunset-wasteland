@@ -448,7 +448,7 @@ Mayor
 	spawn_positions = 4
 	supervisors = "Bighorn laws"
 	description = "You are a farmer living in Bighorn - a settlement typically run by the Great Khans. Treat your town with respect and make sure to follow the laws in place, as your premium status may be revoked if you are considered a danger to the populace. One of the local businesses or the Khans themselves may purchase your produce."
-	enforces = "Farming is a public service, and you are under control of local governance - and you are expected to produce food over drugs."
+	enforces = "Farming is a public service, and you are under control of local governance - and you are expected to produce food over drugs. You're a Citizen, and are protected by the Khans."
 	selection_color = "#dcba97"
 
 	outfit = /datum/outfit/job/den/f13farmer
@@ -471,6 +471,8 @@ Mayor
 	id = /obj/item/card/id/dogtag/town
 	ears = 			/obj/item/radio/headset/headset_town
 	backpack = /obj/item/storage/backpack/satchel/explorer
+	uniform = /obj/item/clothing/under/f13/khan
+	suit = /obj/item/clothing/suit/armor/f13/khan/prospect/citizen
 	satchel = /obj/item/storage/backpack/satchel/explorer
 	l_pocket = /obj/item/storage/bag/money/small/settler
 	r_pocket = /obj/item/flashlight/flare
@@ -482,15 +484,6 @@ Mayor
 		/obj/item/gun/ballistic/automatic/pistol/n99, \
 		/obj/item/ammo_box/magazine/m10mm_adv/simple=2)
 	shoes = 		/obj/item/clothing/shoes/workboots
-
-/datum/outfit/job/den/f13settler/pre_equip(mob/living/carbon/human/H)
-	..()
-	uniform = pick(
-		/obj/item/clothing/under/f13/settler, \
-		/obj/item/clothing/under/f13/brahminm, \
-		/obj/item/clothing/under/f13/machinist, \
-		/obj/item/clothing/under/f13/lumberjack, \
-		/obj/item/clothing/under/f13/roving)
 
 /*--------------------------------------------------------------*/
 /*
@@ -617,7 +610,7 @@ Mayor
 	spawn_positions = 2
 	supervisors = "the free market and Bighorn laws"
 	description = "As a proprietor of the Blue Oyster, you are responsible for ensuring both citizens and travellers in Bighorn can get some food, drink and rest. This town is usually run by the Great Khans, and the farm within their compound could provide fresh supplies for your business, so try negotiating with them if they are present."
-	enforces = "The Blue Oyster is a private business and you can decide who is welcome there. However, you are still subject to the overarching laws of Bighorn."
+	enforces = "The Blue Oyster is a private business and you can decide who is welcome there. However, you are still subject to the overarching laws of Bighorn. You are also a Citizen, and under the protection of the Khans"
 	selection_color = "#dcba97"
 
 	outfit = /datum/outfit/job/den/f13barkeep
@@ -644,7 +637,8 @@ Mayor
 	name = "Barkeep"
 	jobtype = /datum/job/oasis/f13barkeep
 
-	uniform = /obj/item/clothing/under/f13/bartenderalt
+	uniform = /obj/item/clothing/under/f13/khan
+	suit = /obj/item/clothing/suit/armor/f13/khan/prospect/citizen
 	id = /obj/item/card/id/dogtag/town
 	ears = /obj/item/radio/headset/headset_town
 	belt = /obj/item/gun/ballistic/revolver/caravan_shotgun
@@ -701,7 +695,7 @@ Mayor
 	total_positions = 8
 	spawn_positions = 8
 	supervisors = "Bighorn laws"
-	description = "You are a citizen living in Bighorn - a settlement typically run by the Great Khans. Treat your town with respect and make sure to follow the laws in place, as your premium status may be revoked if you are considered a danger to the populace. One of the local businesses or the Khans themselves may have work if you require funds."
+	description = "You are a Citizen of Bighorn, welcomed into the Great Khans. Although you are not among their warriors and thus don't bear a tattoo as identification, you are part of the family and are under their protection and have been provided an armored jacket with the Khan regalia to show allegiance."
 	selection_color = "#dcba97"
 
 	outfit = /datum/outfit/job/den/f13settler
@@ -733,7 +727,8 @@ Mayor
 	belt = null
 	id = /obj/item/card/id/dogtag/town
 	ears = /obj/item/radio/headset/headset_town
-	uniform = /obj/item/clothing/under/f13/settler
+	uniform = /obj/item/clothing/under/f13/khan
+	suit = /obj/item/clothing/suit/armor/f13/khan/prospect/citizen
 	shoes = /obj/item/clothing/shoes/jackboots
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	r_pocket = /obj/item/flashlight/flare
@@ -955,7 +950,7 @@ Mayor
 	spawn_positions = 2
 	supervisors = "the free market and Bighorn laws"
 	description = "The big trading caravan companies have often neglected humble Bighorn. This leaves one thing for certain - opportunities for local business! Your store allows you to sell all kinds of merchandise, from dandy boy apples to laser rifles. Ensure you make a profit and retain enough capital for your day-to-day operations. This town is usually under control of the Great Khans, so just be careful not to get in the way of their chem business."
-	enforces = "Your store is a private business and you can decide who is welcome there. However, you are still subject to the overarching laws of Bighorn."
+	enforces = "Your store is a private business and you can decide who is welcome there. However, you are still subject to the overarching laws of Bighorn. You are also a Citizen, and under the protection of the Khans."
 	selection_color = "#dcba97"
 	exp_requirements = 300
 
@@ -976,7 +971,8 @@ Mayor
 	jobtype = /datum/job/oasis/f13shopkeeper
 
 	id = /obj/item/card/id/dogtag/town
-	uniform = /obj/item/clothing/under/f13/roving
+	uniform = /obj/item/clothing/under/f13/khan
+	suit = /obj/item/clothing/suit/armor/f13/khan/prospect/citizen
 	ears = /obj/item/radio/headset/headset_town
 	backpack = /obj/item/storage/backpack
 	satchel = /obj/item/storage/backpack/satchel

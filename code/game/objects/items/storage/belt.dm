@@ -902,7 +902,8 @@
 		. += "<span class='notice'>Alt-click it to quickly draw the blade.</span>"
 
 /obj/item/storage/belt/sabre/PopulateContents()
-	new starting_sword(src)
+	if(ispath(starting_sword))
+		new starting_sword(src)
 
 /obj/item/storage/belt/sabre/heavy
 	name = "heavy-duty sheath"
@@ -955,7 +956,6 @@
 	content_overlays = TRUE
 	onmob_overlays = TRUE
 	var/list/fitting_swords = list(/obj/item/melee/smith/sword, /obj/item/melee/baton/stunsword)
-	var/starting_sword = null
 
 // Instead of half-assed broken weaboo stuff lets have something that works.
 /obj/item/storage/belt/sword/twin
@@ -964,7 +964,6 @@
 	icon_state = "sheath_twin"
 	item_state = "sheath_twin"
 	fitting_swords = list(/obj/item/melee/smith/wakizashi, /obj/item/melee/smith/twohand/katana, /obj/item/melee/bokken)
-	starting_sword = null
 
 /obj/item/storage/belt/sword/twin/ComponentInitialize()
 	. = ..()

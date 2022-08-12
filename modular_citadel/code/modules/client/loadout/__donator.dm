@@ -171,3 +171,30 @@
 
 /obj/item/storage/box/large/custom_kit/sadismbox/PopulateContents()
 	new /obj/item/melee/onehanded/scourge(src)
+
+// to auto-delete when emptied, no free storage
+/obj/item/storage/backpack/duffelbag/equipment/fengoperative/PopulateContents()
+	new /obj/item/clothing/under/f13/chinasuitcosmetic(src)
+	new /obj/item/clothing/head/f13/chinahelmetcosmetic(src)
+	new /obj/item/clothing/suit/armor/f13/combat/chinese(src)
+	new /obj/item/gun/ballistic/automatic/pistol/type17/strelle(src)
+	new /obj/item/gun/ballistic/automatic/smg/p90/worn(src)
+	new /obj/item/storage/box/medicine/stimpaks/stimpaks5(src)
+	for (var/i in 1 to 2)
+		new /obj/item/reagent_containers/hypospray/medipen/medx(src)
+	for (var/i in 1 to 3)
+		new /obj/item/ammo_box/magazine/m10mm_p90(src)
+	for (var/i in 1 to 5)
+		new /obj/item/ammo_box/magazine/m10mm_adv/simple(src)
+	new /obj/item/implanter/stealth(src)
+	new /obj/item/clothing/shoes/combat/sneakboots(src)
+	new /obj/item/clothing/gloves/krav_maga(src)
+	new /obj/item/binoculars(src)
+	new /obj/item/radio/headset/headset_sec(src)
+	new /obj/item/storage/belt/military/assault(src)
+	new /obj/item/clothing/glasses/hud/health(src)
+	
+/datum/gear/donator/kits/fengoperative
+	name = "Operative Kit"
+	path = /obj/item/storage/backpack/duffelbag/equipment/fengoperative
+	ckeywhitelist = list("pornhublive")

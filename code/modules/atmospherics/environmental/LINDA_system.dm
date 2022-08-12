@@ -26,11 +26,11 @@
 		. = FALSE
 	if (T == src)
 		return .
-	for(var/obj/O in contents+T.contents)
-		var/turf/other = (O.loc == src ? T : src)
-		if(!(vertical? (CANVERTICALATMOSPASS(O, other)) : (CANATMOSPASS(O, other))))
+	for(var/atom/movable/AM as anything in contents+T.contents)
+		var/turf/other = (AM.loc == src ? T : src)
+		if(!(vertical? (CANVERTICALATMOSPASS(AM, other)) : (CANATMOSPASS(AM, other))))
 			. = FALSE
-		if(O.BlockThermalConductivity()) 	//the direction and open/closed are already checked on CanAtmosPass() so there are no arguments
+		if(AM.BlockThermalConductivity()) 	//the direction and open/closed are already checked on CanAtmosPass() so there are no arguments
 			conductivity_blocked_directions |= dir
 			T.conductivity_blocked_directions |= opp
 			if(!.)
@@ -64,11 +64,13 @@
 				T.atmos_adjacent_turfs -= src
 			UNSETEMPTY(T.atmos_adjacent_turfs)
 			T.set_sleeping(T.blocks_air)
-		T.__update_auxtools_turf_adjacency_info(isspaceturf(T.get_z_base_turf()), -1)
+		// This was originally (isspaceturf(T.get_z_base_turf()), -1), but we don't have space, so
+		// we just pass FALSE to save time.
+		T.__update_auxtools_turf_adjacency_info(FALSE, -1)
 	UNSETEMPTY(atmos_adjacent_turfs)
 	src.atmos_adjacent_turfs = atmos_adjacent_turfs
 	set_sleeping(blocks_air)
-	__update_auxtools_turf_adjacency_info(isspaceturf(get_z_base_turf()))
+	__update_auxtools_turf_adjacency_info(FALSE)
 
 
 /turf/proc/set_sleeping(should_sleep)

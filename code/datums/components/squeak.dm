@@ -19,13 +19,19 @@
 	/// chance we'll be stopped from squeaking by cooldown when something crossing us squeaks
 	var/cross_squeak_delay_chance = 33		// about 3 things can squeak at a time
 
+	///given to connect_loc to listen for something moving over target
+	var/static/list/crossed_connections = list(
+		COMSIG_ATOM_ENTERED = .proc/play_squeak_crossed,
+	)
+
 /datum/component/squeak/Initialize(custom_sounds, volume_override, chance_override, step_delay_override, use_delay_override)
 	if(!isatom(parent))
 		return COMPONENT_INCOMPATIBLE
 	RegisterSignal(parent, list(COMSIG_ATOM_ENTERED, COMSIG_ATOM_BLOB_ACT, COMSIG_ATOM_HULK_ATTACK, COMSIG_PARENT_ATTACKBY), .proc/play_squeak)
 	if(ismovable(parent))
 		RegisterSignal(parent, list(COMSIG_MOVABLE_BUMP, COMSIG_MOVABLE_IMPACT), .proc/play_squeak)
-		RegisterSignal(parent, list(COMSIG_MOVABLE_CROSSED, COMSIG_ITEM_WEARERCROSSED), .proc/play_squeak_crossed)
+		RegisterSignal(parent, list(COMSIG_ITEM_WEARERCROSSED), .proc/play_squeak_crossed)
+		AddComponent(/datum/component/connect_loc_behalf, parent, crossed_connections)
 		RegisterSignal(parent, COMSIG_CROSS_SQUEAKED, .proc/delay_squeak)
 		RegisterSignal(parent, COMSIG_MOVABLE_DISPOSING, .proc/disposing_react)
 		if(isitem(parent))
@@ -45,6 +51,11 @@
 		step_delay = step_delay_override
 	if(isnum(use_delay_override))
 		use_delay = use_delay_override
+
+/datum/component/squeak/UnregisterFromParent()
+	..()
+	if(ismovable(parent))
+		qdel(GetComponent(/datum/component/connect_loc_behalf))
 
 /datum/component/squeak/proc/play_squeak()
 	do_play_squeak()

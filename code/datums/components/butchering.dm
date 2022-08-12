@@ -120,6 +120,10 @@
 
 ///Special snowflake component only used for the recycler.
 /datum/component/butchering/recycler
+	///given to connect_loc to listen for something moving over target
+	var/static/list/crossed_connections = list(
+		COMSIG_ATOM_ENTERED = .proc/on_entered,
+	)
 
 /datum/component/butchering/recycler/Initialize(_speed, _effectiveness, _bonus_modifier, _butcher_sound, disabled, _can_be_blunt)
 	if(!istype(parent, /obj/machinery/recycler)) //EWWW
@@ -127,9 +131,12 @@
 	. = ..()
 	if(. == COMPONENT_INCOMPATIBLE)
 		return
-	RegisterSignal(parent, COMSIG_MOVABLE_CROSSED, .proc/onCrossed)
+	if(ismovable(parent)) // technically redundant but i'm pretending that istype above isn't real
+		AddComponent(/datum/component/connect_loc_behalf, parent, crossed_connections)
+	else
+		RegisterSignal(get_turf(parent), COMSIG_ATOM_ENTERED, .proc/on_entered)
 
-/datum/component/butchering/recycler/proc/onCrossed(datum/source, mob/living/L)
+/datum/component/butchering/recycler/proc/on_entered(datum/source, mob/living/L)
 	if(!istype(L))
 		return
 	var/obj/machinery/recycler/eater = parent
@@ -137,3 +144,8 @@
 		return
 	if(L.stat == DEAD && (L.butcher_results || L.guaranteed_butcher_results))
 		Butcher(parent, L)
+
+/datum/component/butchering/recycler/UnregisterFromParent()
+	..()
+	if(ismovable(parent))
+		qdel(GetComponent(/datum/component/connect_loc_behalf))

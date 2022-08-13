@@ -107,6 +107,7 @@ GLOBAL_LIST_INIT(faction_whitelist_positions, list(
 "Enclave Scientist",
 "Enclave Private",
 "Enclave Bunker Duty",
+"Synthetic",
 
 "Noyan",
 "Steward",
@@ -223,6 +224,7 @@ GLOBAL_LIST_INIT(enclave_positions, list(
 	"Enclave Scientist",
 	"Enclave Private",
 	"Enclave Bunker Duty",
+	"Synthetic",
 ))
 
 GLOBAL_LIST_INIT(security_positions, list(
@@ -248,7 +250,7 @@ GLOBAL_LIST_INIT(position_categories, list(
 	EXP_TYPE_BROTHERHOOD = list("jobs" = brotherhood_positions, "color" = "#95a5a6"),
 	EXP_TYPE_LEGION = list("jobs" = legion_positions, "color" = "#f81717"),
 	EXP_TYPE_WASTELAND = list("jobs" = wasteland_positions, "color" = "#5a5a5a"),
-	EXP_TYPE_ENCLAVE = list("jobs" = enclave_positions, "color" = "#323232"),
+	EXP_TYPE_ENCLAVE = list("jobs" = enclave_positions, "color" = "#434944"),
 	EXP_TYPE_KHAN = list("jobs" = khan_positions, "color" = "#006666"),
 	EXP_TYPE_BIGHORN = list("jobs" = bighorn_positions, "color" = "#d7b088"),
 ))

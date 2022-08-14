@@ -164,10 +164,10 @@
 /obj/item/storage/box/large/custom_kit/mrsanderp/PopulateContents()
 	new /obj/item/book/granter/crafting_recipe/happysharky(src)
 
-/datum/gear/donator/kits/developerabuse
-	name ="Type 17 Strelle"
-	path = /obj/item/storage/box/large/custom_kit/developerabuse
-	ckeywhitelist = list ("apwill")
+/datum/gear/donator/kits/tessa
+	name ="Scourge custom whip"
+	path = /obj/item/storage/box/large/custom_kit/sadismbox
+	ckeywhitelist = list ("abelshift")
 
-/obj/item/storage/box/large/custom_kit/developerabuse/PopulateContents()
-	new /obj/item/gun/ballistic/automatic/pistol/type17/strelle(src)
+/obj/item/storage/box/large/custom_kit/sadismbox/PopulateContents()
+	new /obj/item/melee/onehanded/scourge(src)

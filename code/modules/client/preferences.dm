@@ -2429,10 +2429,10 @@ Records disabled until a use for them is found
 						markings[index_up] = first_marking
 
 				if("marking_remove")
-					// move the specified marking up
+					// remove the specified marking
 					var/index = text2num(href_list["marking_index"])
 					var/marking_type = href_list["marking_type"]
-					if(index && marking_type && features[marking_type])
+					if(index > 0 && marking_type && index < length(features[marking_type]))
 						// because linters are just absolutely awful:
 						var/list/L = features[marking_type]
 						L.Cut(index, index + 1)

@@ -95,8 +95,8 @@
 //Check if has client or not bruh
 /mob/living/proc/hud_client_check()
 	var/image/onlineholder = hud_list[ONLINE_HUD]
-	var/icon/I = icon(icon, icon_state, dir)
-	onlineholder.pixel_y = I.Height() - world.icon_size
+	if(!onlineholder) // we don't have an SSD hud
+		return
 	if(living_flags & HIDE_OFFLINE_INDICATOR)
 		onlineholder.icon_state = "none"
 		return

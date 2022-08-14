@@ -1,5 +1,5 @@
 
-/mob/living/proc/run_armor_check(def_zone = null, attack_flag = "melee", absorb_text = "Your armor absorbs the blow!", soften_text = "Your armor softens the blow!", armour_penetration, penetrated_text = "Your armor was penetrated!", silent=FALSE)
+/mob/living/proc/run_armor_check(def_zone = null, attack_flag = "melee", absorb_text = "Your armor absorbs the blow!", soften_text = "Your armor softens the blow!", armour_penetration = null, penetrated_text = "Your armor was penetrated!", silent=FALSE)
 	var/armor = getarmor(def_zone, attack_flag)
 
 	if(silent && armor > 0)

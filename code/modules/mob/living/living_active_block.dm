@@ -9,8 +9,9 @@
 	REMOVE_TRAIT(src, TRAIT_MOBILITY_NOUSE, ACTIVE_BLOCK_TRAIT)
 	REMOVE_TRAIT(src, TRAIT_SPRINT_LOCKED, ACTIVE_BLOCK_TRAIT)
 	remove_movespeed_modifier(/datum/movespeed_modifier/active_block)
-	var/datum/block_parry_data/data = I.get_block_parry_data()
-	DelayNextAction(data.block_end_click_cd_add)
+	if(I)
+		var/datum/block_parry_data/data = I.get_block_parry_data()
+		DelayNextAction(data.block_end_click_cd_add)
 	return TRUE
 
 /mob/living/proc/active_block_start(obj/item/I)

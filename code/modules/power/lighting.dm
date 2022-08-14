@@ -354,7 +354,7 @@
 			if(rigged)
 				if(status == LIGHT_OK && trigger)
 					explode()
-			else if( prob( min(60, (switchcount**2)*0.01) ) )
+			else if( prob( min(60, (switchcount*2)*0.01) ) )
 				if(trigger)
 					burn_out()
 			else
@@ -383,8 +383,8 @@
 	update()
 
 /obj/machinery/light/process()
-//	if (flicker_chance && !flickering && prob(flicker_chance)) // fucking stop, please. I think this is causing lots of lag. 
-//		flicker(amount = rand(3, 8), spark = FALSE, sounds = FALSE, loud = FALSE) // Yes, I'm talking to you. + Ratio + idfk my brain is in half rn help i require sugar but my diet says no so Im just gonna desperately ask for sugar in this random ass comment i made so yeah please, i require some sugar, some nectar, some honey, carbohydrates, if you will.
+	if (flicker_chance && !flickering && prob(flicker_chance)).
+		flicker(amount = rand(3, 8), spark = FALSE, sounds = FALSE, loud = FALSE)
 	if(!cell)
 		return flicker_chance ? null : PROCESS_KILL // only kill if we don't flicker or have a cell
 	if(has_power())

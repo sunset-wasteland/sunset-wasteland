@@ -118,28 +118,6 @@
 	for(var/obj/item/bodypart/b in C.bodyparts)
 		b.max_damage = initial(b.max_damage)
 
-/datum/species/zombie/infectious/spore
-	name = "Spore Victim"
-	id = "sporezombies"
-	limbs_id = "ghoul"
-	say_mod = "rasps"
-	inherent_traits = list(TRAIT_NODECAP, TRAIT_NIGHT_VISION)
-	mutanthands = /obj/item/ghoul_zombie_hand/spore
-	brutemod = 0.5
-	burnmod = 0.5
-
-/datum/species/zombie/infectious/spore/on_species_gain(mob/living/carbon/C, datum/species/old_species)
-	..()
-	for(var/obj/item/bodypart/b in C.bodyparts)
-		b.max_damage += 35
-	C.faction |= "plants"
-
-/datum/species/zombie/infectious/spore/on_species_loss(mob/living/carbon/C)
-	..()
-	C.faction -= "plants"
-	for(var/obj/item/bodypart/b in C.bodyparts)
-		b.max_damage = initial(b.max_damage)
-
 // Your skin falls off
 /datum/species/krokodil_addict
 	name = "Human"

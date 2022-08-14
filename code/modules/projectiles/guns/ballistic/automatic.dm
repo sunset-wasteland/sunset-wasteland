@@ -1348,8 +1348,9 @@
 
 //H&K G11				Keywords: 4.73mm, Automatic, 50 round magazine
 /obj/item/gun/ballistic/automatic/g11
-	name = "g11"
-	desc = "This experimental gun fires a caseless cartridge consisting of a block of propellant with a bullet buried inside. The weight and space savings allows for a very high magazine capacity. Chambered in 4.73mm."
+	name = "G11"
+	desc = "This experimental gun fires a caseless cartridge consisting of a block of propellant with a bullet buried inside. The weight and space savings allows for a very high magazine capacity. Chambered in 4.73mm. \
+	Given the rarity, it's usually seen in the hands of pre-war fanatics."
 	icon_state = "g11"
 	item_state = "arg"
 	mag_type = /obj/item/ammo_box/magazine/m473
@@ -1370,6 +1371,17 @@
 	zoom_out_amt = 13
 	actions_types = list(/datum/action/item_action/toggle_firemode)
 	select = 0
+
+//H&K G11E				Keywords: 4.73mm, Automatic, 50 round magazine
+/obj/item/gun/ballistic/automatic/g11/g11e
+	name = "G11E"
+	desc = "The rifle to rival its older brother, which is a challenge in and of itself. Yet it surpasses even that, somehow. \
+	There are markings along the side of the barrel, indicating it belongs to a 'Lieutenant' of some sort. Whatever that means."
+	icon_state = "g11e"
+	spread = 2
+	can_unsuppress = FALSE
+	suppressed = 1
+	fire_sound = 'sound/weapons/Gunshot_large_silenced.ogg'
 
 ////////////////
 //MACHINE-GUNS//

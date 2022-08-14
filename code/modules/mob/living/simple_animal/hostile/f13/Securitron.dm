@@ -130,6 +130,16 @@
 			warned = TRUE
 			playsound(src, 'sound/f13npc/sentry/systemfailure.ogg', 75, FALSE)
 
+/mob/living/simple_animal/hostile/securitron/sentrybot/bullet_act(obj/item/projectile/Proj)
+	if(!Proj)
+		CRASH("[src] sentrybot invoked bullet_act() without a projectile")
+	if(prob(5) || Proj.damage > 40) //prob(x) = chance for proj to actually do something, adjust depending on how OP you want it to be. \
+	In our case, we want them to be super dangerous. Come prepared, or not at all. :)
+		return ..()
+	else
+		visible_message(span_danger("\The [Proj] shatters on \the [src]'s armor plating!"))
+		return 0
+
 // Lil chew-chew
 /mob/living/simple_animal/hostile/securitron/sentrybot/chew
 	name = "lil' chew-chew"

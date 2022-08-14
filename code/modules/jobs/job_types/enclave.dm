@@ -89,7 +89,7 @@
 
 /datum/outfit/loadout/lt_ballistics
 	name = "Shiny Bullet"
-	suit_store = /obj/item/gun/ballistic/automatic/g11
+	suit_store = /obj/item/gun/ballistic/automatic/g11/g11e
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/m473 = 3,
 		/obj/item/gun/ballistic/automatic/pistol/pistol14/custom = 1,

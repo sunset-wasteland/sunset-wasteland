@@ -355,7 +355,7 @@
 	else
 		result = A.examine(src) // if a tree is examined but no client is there to see it, did the tree ever really exist?
 
-	if(!result)
+	if(!length(result))
 		return
 	else
 		to_chat(src, result.Join("\n"))

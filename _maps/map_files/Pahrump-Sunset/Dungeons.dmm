@@ -449,7 +449,8 @@
 /area/f13/enclave)
 "abC" = (
 /obj/machinery/door/airlock/hatch{
-	req_access = "134"
+	req_access = null;
+	req_access_txt = "134"
 	},
 /turf/open/floor/f13,
 /area/f13/enclave)
@@ -638,7 +639,8 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/door/airlock/hatch{
-	req_access = "256"
+	req_access = null;
+	req_access_txt = "256"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/yellow/whiteyellowfull,
 /area/f13/enclave)
@@ -697,7 +699,8 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/door/airlock/hatch{
-	req_access = "256"
+	req_access = null;
+	req_access_txt = "256"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/enclave)
@@ -752,7 +755,8 @@
 /area/f13/enclave)
 "acD" = (
 /obj/machinery/door/airlock/hatch{
-	req_access = "134"
+	req_access = null;
+	req_access_txt = "134"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/red/whiteredfull,
 /area/f13/enclave)
@@ -923,7 +927,8 @@
 /area/f13/bunker)
 "adj" = (
 /obj/machinery/door/airlock/hatch{
-	req_access = "134"
+	req_access = null;
+	req_access_txt = "134"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/neutral,
 /area/f13/enclave)
@@ -944,7 +949,8 @@
 /area/f13/enclave)
 "adn" = (
 /obj/machinery/door/airlock/hatch{
-	req_access = "134"
+	req_access = null;
+	req_access_txt = "134"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/enclave)
@@ -1101,7 +1107,8 @@
 /area/f13/enclave)
 "adL" = (
 /obj/machinery/door/airlock/hatch{
-	req_access = "134"
+	req_access = null;
+	req_access_txt = "134"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/enclave)
@@ -2017,7 +2024,8 @@
 /area/f13/enclave)
 "agL" = (
 /obj/machinery/door/airlock/hatch{
-	req_access = "256"
+	req_access = null;
+	req_access_txt = "256"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/enclave)
@@ -2600,9 +2608,6 @@
 	icon_state = "redrustyfull"
 	},
 /area/f13/bunker)
-"ave" = (
-/turf/open/floor/plasteel/hydrofloor,
-/area/f13/enclave)
 "avj" = (
 /obj/structure/decoration/sign{
 	desc = "It's a portrait of a person you don't know anything about.";
@@ -4354,6 +4359,12 @@
 /obj/structure/sign/departments/engineering,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/vault)
+"cyR" = (
+/obj/structure/chair/office/dark{
+	dir = 1
+	},
+/turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
+/area/f13/enclave)
 "czy" = (
 /obj/structure/table/reinforced,
 /obj/effect/decal/cleanable/dirt,
@@ -5283,6 +5294,13 @@
 	icon_state = "tunnelrusty"
 	},
 /area/f13/bunker/bighornbunker)
+"doe" = (
+/obj/machinery/light{
+	dir = 4;
+	light_color = "#c1caff"
+	},
+/turf/open/floor/plasteel/f13/vault_floor/dark,
+/area/f13/enclave)
 "doi" = (
 /obj/structure/bed/old,
 /obj/effect/spawner/lootdrop/plush,
@@ -5470,6 +5488,10 @@
 	icon_state = "yellowdirtyfull"
 	},
 /area/f13/bunker)
+"dwA" = (
+/obj/structure/table,
+/turf/open/floor/f13,
+/area/f13/enclave)
 "dwQ" = (
 /obj/effect/decal/cleanable/oil/slippery,
 /obj/effect/decal/cleanable/dirt,
@@ -5513,12 +5535,6 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/f13/vault)
-"dzf" = (
-/obj/structure/chair/office/dark{
-	dir = 1
-	},
-/turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
-/area/f13/enclave)
 "dzg" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -6161,6 +6177,19 @@
 	icon_state = "plating"
 	},
 /area/f13/radiation)
+"efy" = (
+/obj/structure/closet/crate/secure/weapon{
+	name = "secure crate"
+	},
+/obj/item/assembly/signaler/advanced,
+/obj/item/key/collar,
+/obj/item/key/bcollar,
+/obj/item/electropack/shockcollar,
+/obj/item/electropack/shockcollar,
+/obj/item/electropack/shockcollar/explosive,
+/obj/item/electropack/shockcollar/explosive,
+/turf/open/floor/f13,
+/area/f13/enclave)
 "ege" = (
 /obj/structure/rack,
 /obj/item/pickaxe,
@@ -9739,10 +9768,6 @@
 /obj/structure/simple_door/bunker,
 /turf/open/floor/f13/wood,
 /area/f13/legion)
-"hMA" = (
-/obj/structure/table,
-/turf/open/floor/f13,
-/area/f13/enclave)
 "hNR" = (
 /obj/structure/barricade/wooden,
 /turf/open/floor/plasteel/barber{
@@ -10650,6 +10675,10 @@
 	dir = 8
 	},
 /area/f13/bunker)
+"iHH" = (
+/obj/item/twohanded/required/kirbyplants/random,
+/turf/open/floor/f13,
+/area/f13/enclave)
 "iHM" = (
 /obj/machinery/light/broken,
 /turf/open/floor/f13{
@@ -13936,10 +13965,6 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/vault)
-"lYp" = (
-/obj/structure/table,
-/turf/open/floor/plasteel/hydrofloor,
-/area/f13/enclave)
 "lYt" = (
 /obj/structure/decoration/hatch{
 	dir = 4
@@ -15049,19 +15074,6 @@
 /obj/item/reagent_containers/glass/rag,
 /turf/open/floor/mineral/plastitanium,
 /area/f13/vault)
-"niz" = (
-/obj/structure/closet/crate/secure/weapon{
-	name = "secure crate"
-	},
-/obj/item/assembly/signaler/advanced,
-/obj/item/key/collar,
-/obj/item/key/bcollar,
-/obj/item/electropack/shockcollar,
-/obj/item/electropack/shockcollar,
-/obj/item/electropack/shockcollar/explosive,
-/obj/item/electropack/shockcollar/explosive,
-/turf/open/floor/f13,
-/area/f13/enclave)
 "niD" = (
 /obj/structure/chair/stool/retro/tan,
 /obj/effect/decal/cleanable/dirt,
@@ -15326,6 +15338,10 @@
 	icon_state = "floorgrime"
 	},
 /area/f13/bunker)
+"nvh" = (
+/obj/structure/table,
+/turf/open/floor/plasteel/hydrofloor,
+/area/f13/enclave)
 "nwG" = (
 /turf/open/floor/f13{
 	icon_state = "whitegreenrustychess"
@@ -17986,10 +18002,6 @@
 	icon_state = "dirt"
 	},
 /area/f13/underground/cave)
-"pYZ" = (
-/obj/item/twohanded/required/kirbyplants/random,
-/turf/open/floor/f13,
-/area/f13/enclave)
 "pZi" = (
 /mob/living/simple_animal/hostile/handy/gutsy,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
@@ -20629,13 +20641,6 @@
 	dir = 8
 	},
 /area/f13/vault)
-"sXx" = (
-/obj/machinery/light{
-	dir = 4;
-	light_color = "#c1caff"
-	},
-/turf/open/floor/plasteel/f13/vault_floor/dark,
-/area/f13/enclave)
 "sXL" = (
 /obj/structure/table/wood,
 /obj/item/reagent_containers/hypospray/medipen/stimpak,
@@ -21431,6 +21436,9 @@
 	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker/bighornbunker)
+"tLb" = (
+/turf/open/floor/plasteel/hydrofloor,
+/area/f13/enclave)
 "tLA" = (
 /obj/structure/reagent_dispensers/barrel/explosive,
 /turf/open/indestructible/ground/outside/sidewalk,
@@ -61582,11 +61590,11 @@ adc
 adc
 adc
 adL
-ave
-ave
-ave
-ave
-ave
+tLb
+tLb
+tLb
+tLb
+tLb
 aao
 aao
 aan
@@ -61839,11 +61847,11 @@ aar
 adc
 adc
 aeB
-ave
-lYp
-lYp
+tLb
+nvh
+nvh
 afl
-ave
+tLb
 aao
 aao
 aan
@@ -62096,11 +62104,11 @@ adc
 adc
 adc
 aeC
-ave
-lYp
-lYp
+tLb
+nvh
+nvh
 afm
-ave
+tLb
 aao
 aao
 aan
@@ -62353,11 +62361,11 @@ ado
 adb
 adc
 aeD
-ave
-ave
-ave
-ave
-ave
+tLb
+tLb
+tLb
+tLb
+tLb
 aao
 aao
 aan
@@ -62611,10 +62619,10 @@ aao
 aao
 aao
 aeJ
-ave
-ave
-ave
-ave
+tLb
+tLb
+tLb
+tLb
 aao
 aao
 aan
@@ -62868,10 +62876,10 @@ aej
 aej
 aao
 aeK
-ave
-ave
+tLb
+tLb
 adX
-ave
+tLb
 aao
 aao
 aao
@@ -65444,7 +65452,7 @@ agx
 agx
 agx
 ahG
-dzf
+cyR
 aef
 agx
 adL
@@ -65958,7 +65966,7 @@ aft
 ahi
 agx
 agx
-sXx
+doe
 agx
 agx
 aao
@@ -66210,7 +66218,7 @@ aex
 ahK
 aao
 agx
-sXx
+doe
 agx
 aao
 aao
@@ -66731,7 +66739,7 @@ aao
 ahF
 afx
 aej
-niz
+efy
 aao
 aao
 afH
@@ -69292,7 +69300,7 @@ aao
 aej
 aej
 aao
-pYZ
+iHH
 adM
 abI
 aej
@@ -69553,7 +69561,7 @@ aej
 afb
 abI
 afq
-hMA
+dwA
 aao
 aao
 aan
@@ -70577,7 +70585,7 @@ aao
 aej
 aej
 aao
-pYZ
+iHH
 adM
 abI
 aej
@@ -70838,7 +70846,7 @@ aej
 afb
 abI
 afq
-hMA
+dwA
 aao
 aao
 aan

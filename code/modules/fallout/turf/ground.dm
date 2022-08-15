@@ -196,6 +196,7 @@
 	if(icon_state != "wasteland")
 		icon_state = "wasteland[rand(1,31)]"
 
+
 /obj/effect/overlay/desert_side
 	name = "desert"
 	icon = 'icons/fallout/turfs/smoothing.dmi'
@@ -216,6 +217,14 @@
 /obj/effect/overlay/desert/sonora/edge/corner
 	icon_state = "desertcorner"
 
+/turf/open/indestructible/ground/outside/desert/proc/setTurfPlant(newTurfPlant)
+	turfPlant = newTurfPlant
+	RegisterSignal(turfPlant, COMSIG_PARENT_QDELETING, .proc/clear_turfplant)
+
+/turf/open/indestructible/ground/outside/desert/proc/clear_turfplant()
+	UnregisterSignal(turfPlant, COMSIG_PARENT_QDELETING)
+	turfPlant = null
+
 /turf/open/indestructible/ground/outside/desert/proc/plantGrass(Plantforce = FALSE)
 	var/Weight = 0
 	var/randPlant = null
@@ -223,9 +232,8 @@
 	//spontaneously spawn grass
 	if(Plantforce || prob(GRASS_SPONTANEOUS))
 		randPlant = pickweight(LUSH_PLANT_SPAWN_LIST) //Create a new grass object at this location, and assign var
-		turfPlant = new randPlant(src)
-		. = TRUE //in case we ever need this to return if we spawned
-		return .
+		setTurfPlant(new randPlant(src))
+		return TRUE
 
 	//loop through neighbouring desert turfs, if they have grass, then increase weight
 	for(var/turf/open/indestructible/ground/outside/desert/T in RANGE_TURFS(3, src))
@@ -240,8 +248,8 @@
 			randPlant = pickweight(LUSH_PLANT_SPAWN_LIST)
 		else
 			randPlant = pickweight(DESOLATE_PLANT_SPAWN_LIST)
-		turfPlant = new randPlant(src)
-		. = TRUE
+		setTurfPlant(new randPlant(src))
+		return TRUE
 
 /turf/open/indestructible/ground/outside/desert/MakeSlippery(wet_setting, min_wet_time, wet_time_to_add, max_wet_time, permanent)
 	return //I mean, it makes sense that deserts don't get slippery, I guess... :(
@@ -475,11 +483,18 @@
 	anchored = TRUE
 	resistance_flags = INDESTRUCTIBLE
 
+/turf/open/indestructible/ground/inside/mountain/proc/setTurfPlant(newTurfPlant)
+	turfPlant = newTurfPlant
+	RegisterSignal(turfPlant, COMSIG_PARENT_QDELETING, .proc/clear_turfplant)
+
+/turf/open/indestructible/ground/inside/mountain/proc/clear_turfplant()
+	UnregisterSignal(turfPlant, COMSIG_PARENT_QDELETING)
+	turfPlant = null
+
 /turf/open/indestructible/ground/inside/mountain/proc/plantShrooms()
 	if(prob(SHROOM_SPAWN_GROUND))
-		turfPlant = new /obj/structure/flora/wasteplant/wild_fungus(src)
-		. = TRUE //in case we ever need this to return if we spawned
-		return.
+		setTurfPlant(new /obj/structure/flora/wasteplant/wild_fungus(src))
+		return TRUE
 
 /turf/open/indestructible/ground/inside/mountain/New()
 	..()

@@ -51,7 +51,7 @@
 	flag = F13USLT
 	total_positions = 1
 	spawn_positions = 1
-	access = list(ACCESS_ENCLAVE, ACCESS_CHANGE_IDS)
+	access = list(ACCESS_ENCLAVE, ACCESS_CHANGE_IDS, ACCESS_ENCLAVE_COMMAND)
 	description = "You are probably the last operating cell of the Enclave in the US, as far as you know. Your goal, primarily, is to collect organic material. Preferably alive, for the sake of testing. <br>\
 	Now that the lore is out of the way, just make the round fun. You set the policies and the attitude of the Enclave this week."
 	supervisors = "Enclave Department of the Army."
@@ -362,6 +362,7 @@
 	supervisors = "Enclave Research and Development Division."
 	outfit = /datum/outfit/job/enclave/noncombat/enclavesci
 	exp_requirements = 1000
+	access = list(ACCESS_ENCLAVE, ACCESS_ENCLAVE_COMMAND)
 
 /datum/outfit/job/enclave/noncombat/enclavesci
 	name = "Enclave Scientist"

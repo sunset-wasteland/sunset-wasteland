@@ -86,7 +86,7 @@
 #define ACCESS_NCR			121 //general NCR access
 #define ACCESS_NCR_ARMORY   122 //NCR armory access
 
-#define ACCESS_DEN			87	
+#define ACCESS_DEN			87
 /*general den access. This one has the same number as the line it's on, the rest should
 also be like that but I can't be arsed to go back and change them all*/
 
@@ -127,4 +127,5 @@ also be like that but I can't be arsed to go back and change them all*/
 
 #define ACCESS_NCR_COMMAND 253
 #define ACCESS_LEGION_COMMAND 254
-#define ACCESS_BROTHERHOOD_COMMAND 255 
+#define ACCESS_BROTHERHOOD_COMMAND 255
+#define ACCESS_ENCLAVE_COMMAND 256 //Enclave Science Wing and Radio-Terminal

@@ -889,12 +889,12 @@
 /turf/open/floor/plasteel/f13/vault_floor/green,
 /area/f13/enclave)
 "add" = (
-/obj/structure/toilet{
-	dir = 4
-	},
 /obj/machinery/light/small{
 	brightness = 3;
 	dir = 8
+	},
+/obj/structure/toilet{
+	dir = 4
 	},
 /turf/open/floor/f13,
 /area/f13/enclave)
@@ -1710,11 +1710,10 @@
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/enclave)
 "afL" = (
-/obj/structure/chair{
-	dir = 8;
-	tag = "icon-chair (WEST)"
-	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/chair{
+	dir = 8
+	},
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/enclave)
 "afM" = (
@@ -2077,7 +2076,10 @@
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/enclave)
 "agU" = (
-/obj/structure/urinal,
+/obj/structure/urinal{
+	dir = 8;
+	pixel_x = 31
+	},
 /turf/open/floor/f13,
 /area/f13/enclave)
 "agV" = (
@@ -2902,6 +2904,10 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/vault)
+"aNQ" = (
+/obj/structure/table,
+/turf/open/floor/f13,
+/area/f13/enclave)
 "aOl" = (
 /obj/structure/closet/crate/freezer/surplus_limbs,
 /turf/open/floor/f13{
@@ -4307,6 +4313,10 @@
 	icon_state = "horizontaltopbordertop2left"
 	},
 /area/f13/underground/cave)
+"cvs" = (
+/obj/structure/table,
+/turf/open/floor/plasteel/hydrofloor,
+/area/f13/enclave)
 "cvV" = (
 /obj/effect/decal/cleanable/oil/slippery,
 /obj/machinery/light/small{
@@ -4612,10 +4622,6 @@
 	icon_state = "yellowdirtyfull"
 	},
 /area/f13/bunker)
-"cLN" = (
-/obj/item/twohanded/required/kirbyplants/random,
-/turf/open/floor/f13,
-/area/f13/enclave)
 "cLO" = (
 /obj/item/twohanded/required/kirbyplants/dead,
 /turf/open/floor/f13/wood,
@@ -6277,6 +6283,19 @@
 	},
 /turf/open/floor/plasteel,
 /area/f13/vault)
+"ekN" = (
+/obj/structure/closet/crate/secure/weapon{
+	name = "secure crate"
+	},
+/obj/item/assembly/signaler/advanced,
+/obj/item/key/collar,
+/obj/item/key/bcollar,
+/obj/item/electropack/shockcollar,
+/obj/item/electropack/shockcollar,
+/obj/item/electropack/shockcollar/explosive,
+/obj/item/electropack/shockcollar/explosive,
+/turf/open/floor/f13,
+/area/f13/enclave)
 "ekT" = (
 /turf/closed/mineral/random/low_chance,
 /area/f13/bunker/bighornbunker)
@@ -12225,6 +12244,12 @@
 	icon_state = "floorgrime"
 	},
 /area/f13/bunker)
+"krw" = (
+/obj/structure/chair/office/dark{
+	dir = 1
+	},
+/turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
+/area/f13/enclave)
 "krM" = (
 /obj/machinery/camera/autoname{
 	dir = 10
@@ -12779,10 +12804,6 @@
 	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker/bighornbunker)
-"kVa" = (
-/obj/structure/table,
-/turf/open/floor/plasteel/hydrofloor,
-/area/f13/enclave)
 "kVk" = (
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
@@ -15525,6 +15546,9 @@
 /obj/item/stack/sheet/plasteel/twenty,
 /turf/open/floor/plasteel/f13/vault_floor/yellow/whiteyellowfull,
 /area/f13/vault)
+"nEG" = (
+/turf/open/floor/plasteel/hydrofloor,
+/area/f13/enclave)
 "nER" = (
 /obj/structure/table/reinforced,
 /obj/machinery/button/door{
@@ -18304,6 +18328,10 @@
 	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
+"qqq" = (
+/obj/item/twohanded/required/kirbyplants/random,
+/turf/open/floor/f13,
+/area/f13/enclave)
 "qqV" = (
 /obj/structure/window/reinforced{
 	dir = 1;
@@ -18934,19 +18962,6 @@
 	icon_state = "plating"
 	},
 /area/f13/bunker)
-"qZI" = (
-/obj/structure/closet/crate/secure/weapon{
-	name = "secure crate"
-	},
-/obj/item/assembly/signaler/advanced,
-/obj/item/key/collar,
-/obj/item/key/bcollar,
-/obj/item/electropack/shockcollar,
-/obj/item/electropack/shockcollar,
-/obj/item/electropack/shockcollar/explosive,
-/obj/item/electropack/shockcollar/explosive,
-/turf/open/floor/f13,
-/area/f13/enclave)
 "rbm" = (
 /obj/structure/closet/decay,
 /obj/item/flashlight{
@@ -20711,12 +20726,6 @@
 	icon_state = "darkdirtysolid"
 	},
 /area/f13/brotherhood)
-"taG" = (
-/obj/structure/chair/office/dark{
-	dir = 1
-	},
-/turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
-/area/f13/enclave)
 "taT" = (
 /obj/machinery/washing_machine,
 /turf/open/floor/f13{
@@ -21679,16 +21688,6 @@
 	icon_state = "darkdirtysolid"
 	},
 /area/f13/bunker)
-"ubx" = (
-/turf/open/floor/plasteel/hydrofloor,
-/area/f13/enclave)
-"ubI" = (
-/obj/machinery/light{
-	dir = 4;
-	light_color = "#c1caff"
-	},
-/turf/open/floor/plasteel/f13/vault_floor/dark,
-/area/f13/enclave)
 "ubM" = (
 /obj/effect/spawner/lootdrop/low_tools,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
@@ -25245,6 +25244,13 @@
 /obj/structure/closet/decay,
 /turf/open/floor/plasteel/f13/vault_floor/green/white/whitegreenchess,
 /area/f13/bunker)
+"xLE" = (
+/obj/machinery/light{
+	dir = 4;
+	light_color = "#c1caff"
+	},
+/turf/open/floor/plasteel/f13/vault_floor/dark,
+/area/f13/enclave)
 "xLF" = (
 /obj/effect/spawner/lootdrop/f13/bomb/tier1,
 /turf/open/floor/plasteel/barber{
@@ -25568,10 +25574,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/bunker)
-"yhA" = (
-/obj/structure/table,
-/turf/open/floor/f13,
-/area/f13/enclave)
 "yhW" = (
 /obj/effect/spawner/lootdrop/minor/beret_or_rabbitears,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
@@ -61585,11 +61587,11 @@ adc
 adc
 adc
 adL
-ubx
-ubx
-ubx
-ubx
-ubx
+nEG
+nEG
+nEG
+nEG
+nEG
 aao
 aao
 aan
@@ -61842,11 +61844,11 @@ aar
 adc
 adc
 aeB
-ubx
-kVa
-kVa
+nEG
+cvs
+cvs
 afl
-ubx
+nEG
 aao
 aao
 aan
@@ -62099,11 +62101,11 @@ adc
 adc
 adc
 aeC
-ubx
-kVa
-kVa
+nEG
+cvs
+cvs
 afm
-ubx
+nEG
 aao
 aao
 aan
@@ -62356,11 +62358,11 @@ ado
 adb
 adc
 aeD
-ubx
-ubx
-ubx
-ubx
-ubx
+nEG
+nEG
+nEG
+nEG
+nEG
 aao
 aao
 aan
@@ -62614,10 +62616,10 @@ aao
 aao
 aao
 aeJ
-ubx
-ubx
-ubx
-ubx
+nEG
+nEG
+nEG
+nEG
 aao
 aao
 aan
@@ -62871,10 +62873,10 @@ acE
 acE
 aao
 aeK
-ubx
-ubx
+nEG
+nEG
 adX
-ubx
+nEG
 aao
 aao
 aao
@@ -64403,9 +64405,9 @@ acx
 acE
 aao
 agU
-acE
-acE
-acE
+agU
+agU
+agU
 acE
 acE
 aet
@@ -65447,7 +65449,7 @@ agx
 agx
 agx
 ahG
-taG
+krw
 aef
 agx
 adL
@@ -65961,7 +65963,7 @@ aft
 ahi
 agx
 agx
-ubI
+xLE
 agx
 agx
 aao
@@ -66213,7 +66215,7 @@ aex
 ahK
 aao
 agx
-ubI
+xLE
 agx
 aao
 aao
@@ -66734,7 +66736,7 @@ aao
 ahF
 afx
 acE
-qZI
+ekN
 aao
 aao
 afH
@@ -69295,7 +69297,7 @@ aao
 acE
 acE
 aao
-cLN
+qqq
 adM
 abI
 acE
@@ -69556,7 +69558,7 @@ acE
 afb
 abI
 afq
-yhA
+aNQ
 aao
 aao
 aan
@@ -70580,7 +70582,7 @@ aao
 acE
 acE
 aao
-cLN
+qqq
 adM
 abI
 acE
@@ -70841,7 +70843,7 @@ acE
 afb
 abI
 afq
-yhA
+aNQ
 aao
 aao
 aan

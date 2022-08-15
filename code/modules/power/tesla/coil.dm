@@ -18,6 +18,7 @@
 	var/zap_cooldown = 100
 	var/last_zap = 0
 
+	var/research_id = "SCIENCE" // TODO: Config with multitool? DCS component?
 	var/datum/techweb/linked_techweb
 
 /obj/machinery/power/tesla_coil/power
@@ -26,7 +27,12 @@
 /obj/machinery/power/tesla_coil/Initialize()
 	. = ..()
 	wires = new /datum/wires/tesla_coil(src)
-	linked_techweb = SSresearch.science_tech
+	update_techweb()
+
+/obj/machinery/power/tesla_coil/proc/update_techweb(new_research_id = null)
+	if(istext(new_research_id))
+		research_id = new_research_id
+	linked_techweb = SSresearch.get_techweb_by_id(research_id)
 
 /obj/machinery/power/tesla_coil/RefreshParts()
 	var/power_multiplier = 0

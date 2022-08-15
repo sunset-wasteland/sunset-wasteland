@@ -142,6 +142,7 @@ GLOBAL_LIST_EMPTY(doppler_arrays)
 /obj/machinery/doppler_array/research
 	name = "tachyon-doppler research array"
 	desc = "A specialized tachyon-doppler bomb detection array that uses the results of the highest yield of explosions for research."
+	var/research_id = "SCIENCE" // TODO: Config with multitool? DCS component?
 	var/datum/techweb/linked_techweb
 
 /obj/machinery/doppler_array/research/sense_explosion(turf/epicenter, dev, heavy, light, time, orig_dev, orig_heavy, orig_light)	//probably needs a way to ignore admin explosives later on
@@ -179,7 +180,11 @@ GLOBAL_LIST_EMPTY(doppler_arrays)
 		say("Data already captured. Aborting.")
 		return
 
-
-/obj/machinery/doppler_array/research/science/Initialize()
+/obj/machinery/doppler_array/research/Initialize()
 	. = ..()
-	linked_techweb = SSresearch.science_tech
+	update_techweb()
+
+/obj/machinery/doppler_array/research/proc/update_techweb(new_research_id = null)
+	if(istext(new_research_id))
+		research_id = new_research_id
+	linked_techweb = SSresearch.get_techweb_by_id(research_id)

@@ -10,8 +10,8 @@
 	var/climbable = FALSE
 	var/mob/living/structureclimber
 	var/broken = 0 //similar to machinery's stat BROKEN
-	var/barricade = TRUE //set to true to allow projectiles to always pass over it, default false (checks vs density)
-	var/proj_pass_rate = 65 //if barricade=1, sets how many projectiles will pass the cover. Lower means stronger cover
+	var/barricade = FALSE //set to true to allow projectiles to always pass over it, default false (checks vs density)
+	var/proj_pass_rate = 65 //if barricade=TRUE, sets how many projectiles will pass the cover. Lower means stronger cover
 	layer = BELOW_OBJ_LAYER
 	//ricochets on structures commented out for now because there's a lot of structures that /shouldnt/ be ricocheting and those need to be reviewed first
 	//flags_1 = DEFAULT_RICOCHET_1
@@ -121,17 +121,18 @@
 	take_damage(500, BRUTE, "melee", 1)
 
 /obj/structure/CanAllowThrough(atom/movable/mover, border_dir)
-	..()//So bullets will fly over and stuff.
-	if(istype(mover, /obj/item/projectile)) // Treats especifically projectiles
-		var/obj/item/projectile/proj = mover
-		if(proj.firer && Adjacent(proj.firer))
-			return 1
-		else if(prob(proj_pass_rate))
-			return 1
-		else if(barricade == FALSE)
-			return !density
-		else if(density == FALSE)
-			return 1
-		return 0
-	else // All other than projectiles should use the regular CanPass inheritance
-		return ..()
+	. = ..()//So bullets will fly over and stuff.
+	if(!. && barricade)
+		// Barricades only let projectiles and thrown things through.
+		if (istype(mover, /obj/item/projectile))
+			var/obj/item/projectile/proj = mover
+			if(proj.firer?.Adjacent(src))
+				return TRUE
+		else if (mover.throwing)
+			if (mover.throwing.thrower.Adjacent(src))
+				return TRUE
+		else // neither thrown nor fired
+			return FALSE
+		// thrown or fired but no firer/thrower or not adjacent
+		if(prob(proj_pass_rate))
+			return TRUE

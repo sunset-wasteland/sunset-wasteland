@@ -383,7 +383,7 @@
 	update()
 
 /obj/machinery/light/process()
-	if (flicker_chance && !flickering && prob(flicker_chance)).
+	if (flicker_chance && !flickering && prob(flicker_chance))
 		flicker(amount = rand(3, 8), spark = FALSE, sounds = FALSE, loud = FALSE)
 	if(!cell)
 		return flicker_chance ? null : PROCESS_KILL // only kill if we don't flicker or have a cell

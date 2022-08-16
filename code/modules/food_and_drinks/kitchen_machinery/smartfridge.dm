@@ -243,6 +243,7 @@
 	idle_power_usage = 15
 	active_power_usage = 600
 	visible_contents = FALSE
+	barricade = TRUE
 	proj_pass_rate = 30
 	pass_flags_self = PASSTABLE | LETPASSTHROW
 	var/drying = FALSE
@@ -638,6 +639,7 @@
 	icon = 'icons/fallout/farming/farming_structures.dmi'
 	icon_state = "seedbin"
 	max_n_of_items = 400
+	barricade = TRUE
 	proj_pass_rate = 70
 	pass_flags_self = PASSTABLE | LETPASSTHROW
 	var/climbable = TRUE
@@ -666,6 +668,7 @@
 	icon = 'icons/fallout/farming/farming_structures.dmi'
 	icon_state = "grownbin"
 	max_n_of_items = 1000
+	barricade = TRUE
 	proj_pass_rate = 70
 	pass_flags_self = PASSTABLE | LETPASSTHROW
 

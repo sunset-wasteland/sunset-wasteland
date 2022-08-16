@@ -171,8 +171,8 @@ GLOBAL_VAR_INIT(observer_default_invisibility, INVISIBILITY_OBSERVER)
 	return ..()
 
 /mob/dead/CanAllowThrough(atom/movable/mover, border_dir)
-	..()
-	return 1
+	SHOULD_CALL_PARENT(FALSE)
+	return TRUE
 
 /*
  * This proc will update the icon of the ghost itself, with hair overlays, as well as the ghost image.

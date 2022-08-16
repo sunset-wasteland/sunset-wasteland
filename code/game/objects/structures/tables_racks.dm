@@ -100,8 +100,6 @@
 	. = ..()
 	if(.)
 		return
-	if(mover.throwing)
-		return 1
 	if(locate(/obj/structure/table) in get_turf(mover))
 		return 1
 	else
@@ -714,15 +712,6 @@
 /obj/structure/rack/examine(mob/user)
 	. = ..()
 	. += "<span class='notice'>It's held together by a couple of <b>bolts</b>.</span>"
-
-/obj/structure/rack/CanAllowThrough(atom/movable/mover, border_dir)
-	..()
-	if(src.density == 0) //Because broken racks -Agouri |TODO: SPRITE!|
-		return 1
-	if(istype(mover) && (mover.pass_flags & pass_flags_self))
-		return 1
-	else
-		return 0
 
 /obj/structure/rack/MouseDrop_T(obj/O, mob/user)
 	. = ..()

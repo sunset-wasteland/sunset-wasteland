@@ -54,10 +54,9 @@
 	return TryToSwitchState(user)
 
 /obj/structure/mineral_door/CanAllowThrough(atom/movable/mover, border_dir)
-	..()
-	if(istype(mover, /obj/effect/beam))
+	. = ..()
+	if(!. && istype(mover, /obj/effect/beam))
 		return !opacity
-	return !density
 
 /obj/structure/mineral_door/proc/TryToSwitchState(atom/user)
 	if(isSwitchingStates)

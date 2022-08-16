@@ -123,10 +123,11 @@
 		investigate_log("had its contents examined by [user] as a ghost.", INVESTIGATE_GHOST)
 
 /obj/structure/closet/CanAllowThrough(atom/movable/mover, border_dir)
-	..()
+	. = ..()
+	if(.)
+		return
 	if(wall_mounted)
 		return TRUE
-	return !density
 
 /obj/structure/closet/proc/can_open(mob/living/user)
 	if(welded || locked)

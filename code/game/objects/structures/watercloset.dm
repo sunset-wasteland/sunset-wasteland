@@ -311,7 +311,7 @@
 
 /obj/machinery/shower/Initialize()
 	. = ..()
-	
+
 	var/static/list/loc_connections = list(
 		COMSIG_ATOM_ENTERED = .proc/on_entered,
 	)
@@ -758,7 +758,7 @@
 		icon_state = "closed"
 		layer = WALL_OBJ_LAYER
 		plane = MOB_PLANE
-		density = TRUE
+		density = FALSE//WHY TRUE? This makes it a PITA when offset to work with.
 		open = FALSE
 		set_opacity(TRUE)
 

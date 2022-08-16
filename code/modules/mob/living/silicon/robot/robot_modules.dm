@@ -662,7 +662,8 @@
 		/obj/item/borg/cyborghug,
 		/obj/item/megaphone,
 		/obj/item/melee/classic_baton/police,
-		/obj/item/gun/energy/laser/pistol/cyborg/gutsy,
+		/obj/item/gun/energy/laser/plasma/pistol/worn/gutsy,
+		/obj/item/gun/energy/gutsy_flamethrower,
 		/obj/item/clothing/mask/gas/sechailer/cyborg,
 		/obj/item/pinpointer/crew)
 	emag_modules = list(/obj/item/gun/energy/laser/cyborg)
@@ -672,6 +673,16 @@
 	cyborg_base_icon = "gutsy"
 	moduleselect_icon = "standard"
 	hat_offset = -2
+
+/obj/item/robot_module/gutsy/rebuild_modules()
+	..()
+	var/mob/living/silicon/robot/gutsy = loc
+	gutsy.faction += "wastebots" //So other bots don't gank you for existing.
+
+/obj/item/robot_module/gutsy/remove_module(obj/item/I, delete_after)
+	..()
+	var/mob/living/silicon/robot/gutsy = loc
+	gutsy.faction -= "wastebots" //Removes the faction if the module is removed.
 
 /obj/item/robot_module/assaultron
 	name = "Assaultron"

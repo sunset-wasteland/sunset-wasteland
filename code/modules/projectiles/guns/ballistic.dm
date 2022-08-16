@@ -238,7 +238,6 @@
 			process_fire(user, user, FALSE)
 			. = 1
 
-
 /obj/item/suppressor
 	name = "suppressor"
 	desc = "A syndicate small-arms suppressor for maximum espionage."
@@ -246,7 +245,6 @@
 	icon_state = "suppressor"
 	w_class = WEIGHT_CLASS_TINY
 	var/oldsound = null
-
 
 /obj/item/suppressor/specialoffer
 	name = "cheap suppressor"

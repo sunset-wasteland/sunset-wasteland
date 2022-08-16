@@ -27,6 +27,9 @@
 /obj/machinery/computer/operating/bos
 	research_id = "BOS"
 
+/obj/machinery/computer/operating/enclave
+	research_id = "ENCLAVE"
+
 /obj/machinery/computer/operating/attackby(obj/item/O, mob/user, params)
 	if(istype(O, /obj/item/disk/surgery))
 		user.visible_message("[user] begins to load \the [O] in \the [src]...",

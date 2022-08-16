@@ -1273,7 +1273,7 @@
 	icon_state = "enclaveofficer"
 	item_state = "card-id_leg"
 	assignment = "US dogtags"
-	access = list(ACCESS_ENCLAVE)
+	access = list(ACCESS_ENCLAVE, ACCESS_ENCLAVE_COMMAND)
 
 /obj/item/card/id/dogtag/enclave/trooper
 	name = "US dogtags"

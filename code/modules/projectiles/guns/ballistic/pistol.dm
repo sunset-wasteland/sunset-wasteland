@@ -368,6 +368,13 @@
 	extra_damage = 50
 	fire_delay = 4
 
+/obj/item/gun/ballistic/automatic/pistol/pistol14/custom
+	name= "Custom 14mm pistol"
+	desc = "A Swiss SIG-Sauer 14mm handgun, this one is a finely tuned custom firearm. How'd this get into service?"
+	icon_state = "lildev"
+	w_class = WEIGHT_CLASS_SMALL
+	extra_damage = 50
+	fire_delay = 4
 
 /////////////////////////////////
 // TEMPORARY REMOVE AFTER BETA //

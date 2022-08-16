@@ -389,12 +389,14 @@
 
 /* Enclave */
 /proc/get_all_enclave_access()
-	return list(ACCESS_ENCLAVE)
+	return list(ACCESS_ENCLAVE, ACCESS_ENCLAVE_COMMAND)
 
 /proc/get_enclave_access_desc(A)
 	switch(A)
 		if(ACCESS_ENCLAVE)
 			return "Enclave Access"
+		if(ACCESS_ENCLAVE_COMMAND)
+			return "Enclave Command"
 
 /* Brotherhood of Steel */
 /proc/get_all_bos_access()

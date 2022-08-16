@@ -115,7 +115,7 @@
 
 
 
-/*/datum/species/ghoul/glowing
+/datum/species/ghoul/glowing
 	name = "Glowing Ghoul"
 	id = "glowing ghoul"
 	limbs_id = "glowghoul"
@@ -143,7 +143,7 @@
 	for(var/obj/item/bodypart/b in C.bodyparts)
 		b.max_damage = initial(b.max_damage)
 	SSradiation.processing -= C
-*/
+
 
 /datum/species/ghoul/anthropomorph
 	name = "Ghoulified Anthromorph"

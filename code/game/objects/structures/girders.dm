@@ -298,14 +298,9 @@
 		return TRUE
 
 /obj/structure/girder/CanAllowThrough(atom/movable/mover, border_dir)
-	..()
-	if(istype(mover) && (mover.pass_flags & PASSGRILLE))
+	. = ..()
+	if(!. && istype(mover) && (mover.pass_flags & PASSGRILLE) || istype(mover, /obj/item/projectile))
 		return prob(girderpasschance)
-	else
-		if(istype(mover, /obj/item/projectile))
-			return prob(girderpasschance)
-		else
-			return 0
 
 /obj/structure/girder/CanAStarPass(ID, dir, caller)
 	. = !density

@@ -223,12 +223,6 @@
 //	user.changeNext_move(CLICK_CD_MELEE)
 	..()
 
-/obj/structure/simple_door/CanAllowThrough(atom/movable/mover, border_dir, height=0)
-	..()
-	if(mover.loc == loc)
-		return 1
-	return !density
-
 /obj/structure/simple_door/CheckExit(atom/movable/O as mob|obj, target)
 	if(!density && !manual_opened && ishuman(O))
 		var/mob/living/carbon/human/H = O

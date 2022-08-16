@@ -248,14 +248,6 @@
 
 	return FALSE
 
-/turf/CanAllowThrough(atom/movable/mover)
-	..()
-	if(istype(mover)) // turf/Enter(...) will perform more advanced checks
-		return !density
-
-	stack_trace("Non movable passed to turf CanPass : [mover]")
-	return FALSE
-
 /turf/Enter(atom/movable/mover, atom/oldloc)
 	// Do not call ..()
 	// Byond's default turf/Enter() doesn't have the behaviour we want with Bump()

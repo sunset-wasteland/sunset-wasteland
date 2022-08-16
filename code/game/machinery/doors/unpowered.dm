@@ -131,6 +131,7 @@
 	visible = FALSE
 	explosion_block = FALSE
 	pass_flags_self = LETPASSTHROW
+	barricade = TRUE
 	proj_pass_rate = 95
 
 /obj/machinery/door/unpowered/celldoor/update_icon()
@@ -168,6 +169,7 @@
 	assemblytype = /obj/item/stack/rods
 	visible = FALSE
 	explosion_block = FALSE
+	barricade = TRUE
 	proj_pass_rate = 95
 	req_access_txt = "123"
 

@@ -16,6 +16,7 @@
 	icon = 'icons/fallout/structures/barricades.dmi'
 	anchored = TRUE
 	density = TRUE
+	barricade = TRUE
 	obj_integrity = 150
 	max_integrity = 150
 

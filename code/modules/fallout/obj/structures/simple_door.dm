@@ -367,6 +367,7 @@
 	opacity = FALSE
 	base_opacity = FALSE
 	can_hold_padlock = TRUE
+	barricade = TRUE
 	proj_pass_rate = 95
 	pass_flags_self = LETPASSTHROW
 

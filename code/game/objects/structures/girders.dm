@@ -11,6 +11,7 @@
 	max_integrity = 200
 	rad_flags = RAD_PROTECT_CONTENTS | RAD_NO_CONTAMINATE
 	rad_insulation = RAD_VERY_LIGHT_INSULATION
+	barricade = TRUE
 	proj_pass_rate = 40
 
 /obj/structure/girder/examine(mob/user)

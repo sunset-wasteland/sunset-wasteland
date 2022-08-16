@@ -105,8 +105,8 @@
 	l_hand = /obj/item/gun/ballistic/automatic/pistol/n99
 	belt = /obj/item/storage/belt
 	backpack_contents = list(
-		/obj/item/stack/sheet/metal = 50,
-		/obj/item/stack/sheet/mineral/wood = 50,
+		/obj/item/stack/sheet/metal/fifty = 1,
+		/obj/item/stack/sheet/mineral/wood/fifty = 1,
 		/obj/item/pickaxe/mini = 1,
 		/obj/item/toy/crayon/spraycan = 1,
 		/obj/item/cultivator = 1,

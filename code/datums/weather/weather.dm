@@ -73,7 +73,7 @@
 	/// Weight amongst other eligible weather. if zero, will never happen randomly.
 	var/probability = 0
 	/// The z-level trait to affect when run randomly or when not overridden.
-	var/target_trait = ZTRAIT_STATION
+	var/target_trait = ZTRAIT_SURFACE
 
 	/// Whether a barometer can predict when the weather will happen
 	var/barometer_predictable = FALSE

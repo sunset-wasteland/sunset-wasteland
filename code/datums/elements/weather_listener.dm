@@ -11,7 +11,7 @@
 	var/list/playlist
 
 
-/datum/element/weather_listener/Attach(datum/target, w_type, trait, weather_playlist)
+/datum/element/weather_listener/Attach(atom/target, w_type, trait, weather_playlist)
 	. = ..()
 	if(!weather_type)
 		weather_type = w_type
@@ -27,16 +27,24 @@
 	RegisterSignal(target, COMSIG_MOVABLE_Z_CHANGED, .proc/handle_z_level_change)
 	RegisterSignal(target, COMSIG_MOB_LOGOUT, .proc/handle_logout)
 
-	handle_z_level_change(target, target.z, target.z)
+	var/turf/target_turf = get_turf(target)
+	handle_z_level_change(target, target_turf, target_turf)
 
 /datum/element/weather_listener/Detach(datum/source)
 	. = ..()
 	UnregisterSignal(source, list(COMSIG_MOVABLE_Z_CHANGED, COMSIG_MOB_LOGOUT))
 
-/datum/element/weather_listener/proc/handle_z_level_change(datum/source, old_z, new_z)
+/datum/element/weather_listener/proc/handle_z_level_change(datum/source, turf/old_turf, turf/new_turf)
 	SIGNAL_HANDLER
-	var/list/fitting_z_levels = SSmapping.levels_by_trait(weather_trait)
-	if(!(new_z in fitting_z_levels))
+	var/list/trait_levels = SSmapping.levels_by_trait(weather_trait)
+	var/list/fitting_z_levels
+	if(weather_trait == ZTRAIT_SURFACE)
+		fitting_z_levels = list()
+		for(var/trait_level in trait_levels)
+			fitting_z_levels += get_surface_zblock(trait_level)
+	else
+		fitting_z_levels = trait_levels
+	if(!(new_turf?.z in fitting_z_levels))
 		return
 	var/datum/component/our_comp = source.AddComponent(/datum/component/area_sound_manager, playlist, list(), COMSIG_MOB_LOGOUT, fitting_z_levels)
 	our_comp.RegisterSignal(SSdcs, sound_change_signals, /datum/component/area_sound_manager/proc/handle_change)

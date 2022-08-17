@@ -31,6 +31,7 @@ require only minor tweaks.
 // boolean - marks a level as having that property if present
 #define ZTRAIT_CENTCOM "CentCom"
 #define ZTRAIT_STATION "Station"
+#define ZTRAIT_SURFACE "Surface"
 #define ZTRAIT_MINING "Mining"
 #define ZTRAIT_REEBE "Reebe"
 #define ZTRAIT_RESERVED "Transit/Reserved"

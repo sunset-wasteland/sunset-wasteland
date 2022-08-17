@@ -1,5 +1,6 @@
 ///Allows you to set a theme for a set of areas without tying them to looping sounds explicitly
 /datum/component/area_sound_manager
+	dupe_mode = COMPONENT_DUPE_ALLOWED
 	///area -> looping sound type
 	var/list/area_to_looping_type = list()
 	///Current sound loop
@@ -32,9 +33,9 @@
 		return
 	change_the_track(TRUE)
 
-/datum/component/area_sound_manager/proc/react_to_z_move(datum/source, old_z, new_z)
+/datum/component/area_sound_manager/proc/react_to_z_move(datum/source, turf/old_turf, turf/new_turf)
 	SIGNAL_HANDLER
-	if(!length(accepted_zs) || (new_z in accepted_zs))
+	if(!length(accepted_zs) || (new_turf?.z in accepted_zs))
 		return
 	qdel(src)
 

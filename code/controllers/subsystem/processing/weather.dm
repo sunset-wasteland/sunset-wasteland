@@ -20,7 +20,8 @@ PROCESSING_SUBSYSTEM_DEF(weather)
 	for(var/z in eligible_zlevels)
 		var/possible_weather = eligible_zlevels[z]
 		var/datum/weather/our_event = pickweight(possible_weather)
-		run_weather(our_event, list(text2num(z)))
+		// Run weather together on all Zs in a block, from the surface upwards
+		run_weather(our_event, get_surface_zblock(text2num(z))) // Sunset change
 		eligible_zlevels -= z
 		var/randTime = rand(25 MINUTES, 30 MINUTES)
 		next_hit_by_zlevel["[z]"] = addtimer(CALLBACK(src, .proc/make_eligible, z, possible_weather), randTime + initial(our_event.weather_duration_upper), TIMER_UNIQUE|TIMER_STOPPABLE) //Around 5-10 minutes between weathers

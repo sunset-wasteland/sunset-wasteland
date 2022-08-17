@@ -136,7 +136,7 @@
 /atom/movable/lighting_object/blob_act()
 	return
 
-/atom/movable/lighting_object/onTransitZ()
+/atom/movable/lighting_object/on_changed_z_level(turf/old_turf, turf/new_turf)
 	return
 
 // Override here to prevent things accidentally moving around overlays.

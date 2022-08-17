@@ -961,7 +961,7 @@ GLOBAL_LIST_EMPTY(vending_products)
 /obj/machinery/vending/proc/canLoadItem(obj/item/I, mob/user)
 	return FALSE
 
-/obj/machinery/vending/onTransitZ()
+/obj/machinery/vending/on_changed_z_level(turf/old_turf, turf/new_turf)
 	return
 
 /obj/machinery/vending/custom

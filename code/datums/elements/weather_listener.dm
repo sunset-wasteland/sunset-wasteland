@@ -27,6 +27,8 @@
 	RegisterSignal(target, COMSIG_MOVABLE_Z_CHANGED, .proc/handle_z_level_change)
 	RegisterSignal(target, COMSIG_MOB_LOGOUT, .proc/handle_logout)
 
+	handle_z_level_change(target, target.z, target.z)
+
 /datum/element/weather_listener/Detach(datum/source)
 	. = ..()
 	UnregisterSignal(source, list(COMSIG_MOVABLE_Z_CHANGED, COMSIG_MOB_LOGOUT))

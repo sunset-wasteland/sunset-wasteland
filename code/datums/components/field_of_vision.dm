@@ -339,7 +339,7 @@
 /atom/movable/fov_holder/blob_act()
 	return
 
-/atom/movable/fov_holder/onTransitZ()
+/atom/movable/fov_holder/on_changed_z_level(turf/old_turf, turf/new_turf)
 	return
 
 /// Prevents people from moving these after creation, because they shouldn't be.

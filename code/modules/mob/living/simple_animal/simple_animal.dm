@@ -635,10 +635,10 @@
 			toggle_ai(AI_ON)
 
 
-/mob/living/simple_animal/onTransitZ(old_z, new_z)
+/mob/living/simple_animal/on_changed_z_level(turf/old_turf, turf/new_turf)
 	..()
-	if (AIStatus == AI_Z_OFF)
-		SSidlenpcpool.idle_mobs_by_zlevel[old_z] -= src
+	if (old_turf && AIStatus == AI_Z_OFF)
+		SSidlenpcpool.idle_mobs_by_zlevel[old_turf.z] -= src
 		toggle_ai(initial(AIStatus))
 
 /mob/living/simple_animal/Life()

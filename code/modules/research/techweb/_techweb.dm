@@ -74,6 +74,10 @@
 	id = "BOS"
 	organization = "Brotherhood of Steel"
 
+/datum/techweb/enclave	//enclave techweb
+	id = "ENCLAVE"
+	organization = "Enclave"
+
 /datum/techweb/vault	//vault techweb
 	id = "VAULT"
 	organization = "Vault" // add number when we actually add the vault

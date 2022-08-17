@@ -417,7 +417,7 @@
 						old_comp.InheritComponent(new_comp, TRUE)
 		else if(!new_comp)
 			new_comp = new nt(raw_args) // There's a valid dupe mode but there's no old component, act like normal
-	else if(COMPONENT_DUPE_SELECTIVE)
+	else if(dm == COMPONENT_DUPE_SELECTIVE)
 		var/list/arguments = raw_args.Copy()
 		arguments[1] = new_comp
 		var/make_new_component = TRUE

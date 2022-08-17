@@ -254,7 +254,7 @@
 	// By default byond will call Bump() on the first dense object in contents
 	// Here's hoping it doesn't stay like this for years before we finish conversion to step_
 	var/atom/firstbump
-	var/canPassSelf = CanPass(mover, src)
+	var/canPassSelf = CanPass(mover)
 	if(canPassSelf || (mover.movement_type & PHASING))
 		for(var/i in contents)
 			if(i == mover || i == mover.loc) // Multi tile objects and moving out of other objects

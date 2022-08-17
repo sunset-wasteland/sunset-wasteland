@@ -254,8 +254,9 @@
 	// By default byond will call Bump() on the first dense object in contents
 	// Here's hoping it doesn't stay like this for years before we finish conversion to step_
 	var/atom/firstbump
-	var/canPassSelf = CanPass(mover)
-	if(canPassSelf || (mover.movement_type & PHASING))
+	if(!CanPass(mover))
+		firstbump = src
+	else
 		for(var/i in contents)
 			if(i == mover || i == mover.loc) // Multi tile objects and moving out of other objects
 				continue
@@ -263,17 +264,16 @@
 				break
 			var/atom/movable/thing = i
 			if(!thing.Cross(mover))
-				if(QDELETED(mover))		//Mover deleted from Cross/CanPass, do not proceed.
-					return FALSE
-				if((mover.movement_type & PHASING))
+				if(mover.movement_type & PHASING)
 					mover.Bump(thing)
 					continue
 				else
 					if(!firstbump || ((thing.layer > firstbump.layer || thing.flags_1 & ON_BORDER_1) && !(firstbump.flags_1 & ON_BORDER_1)))
 						firstbump = thing
 	if(firstbump)
-		mover.Bump(firstbump)
-		return (mover.movement_type & PHASING)
+		if(!QDELETED(mover))
+			mover.Bump(firstbump)
+		return mover.movement_type & PHASING
 	return TRUE
 
 /turf/Entered(atom/movable/AM)

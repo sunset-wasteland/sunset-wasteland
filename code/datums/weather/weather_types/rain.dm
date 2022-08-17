@@ -43,6 +43,10 @@
 	GLOB.rain_sounds += storm_sounds
 	return ..()
 
+/datum/weather/rain/end()
+	GLOB.rain_sounds -= storm_sounds
+	return ..()
+
 /datum/weather/rain/eventarea
 	area_types = list(/area/f13/wasteland/event)
 	probability = 0

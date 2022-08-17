@@ -15,6 +15,9 @@
 	sparks.autocleanup = TRUE
 	sparks.start()
 
+// Don't let particle systems drift in space.
+/obj/effect/particle_effect/newtonian_move(direction, instant = FALSE, start_delay = 0)
+	return
 
 /obj/effect/particle_effect/sparks
 	name = "sparks"

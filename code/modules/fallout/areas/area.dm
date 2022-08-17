@@ -106,6 +106,12 @@
 	name = "Legion Fortress Exterior"
 	icon_state = "legionex"
 
+/area/f13/wasteland/rocksprings
+	name = "Rock Springs"
+
+/area/f13/wasteland/warren
+	name = "Warren"
+
 /area/f13/forest
 	name = "Forest"
 	icon_state = "forest"

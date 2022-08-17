@@ -1,13 +1,13 @@
 /datum/component/personal_crafting/Initialize()
 	if(ismob(parent))
-		RegisterSignal(parent, COMSIG_MOB_CLIENT_LOGIN, .proc/create_mob_button)
+		RegisterSignal(parent, COMSIG_MOB_LOGIN, .proc/create_mob_button)
 
-/datum/component/personal_crafting/proc/create_mob_button(mob/user, client/CL)
+/datum/component/personal_crafting/proc/create_mob_button(mob/user)
 	var/datum/hud/H = user.hud_used
 	var/obj/screen/craft/C = new()
 	C.icon = H.ui_style
 	H.static_inventory += C
-	CL.screen += C
+	user.client.screen += C
 	RegisterSignal(C, COMSIG_CLICK, .proc/component_ui_interact)
 
 /datum/component/personal_crafting

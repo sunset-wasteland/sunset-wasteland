@@ -129,7 +129,7 @@
 			if(proj.firer?.Adjacent(src))
 				return TRUE
 		else if (mover.throwing)
-			if (mover.throwing.thrower.Adjacent(src))
+			if (mover.throwing.thrower?.Adjacent(src))
 				return TRUE
 		else // neither thrown nor fired
 			return FALSE

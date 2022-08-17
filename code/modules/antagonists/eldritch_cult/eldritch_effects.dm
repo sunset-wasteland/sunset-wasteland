@@ -165,7 +165,7 @@
  * Use this whenever you want to add someone to the list
  */
 /datum/reality_smash_tracker/proc/AddMind(datum/mind/M)
-	RegisterSignal(M.current,COMSIG_MOB_CLIENT_LOGIN,.proc/ReworkNetwork)
+	RegisterSignal(M.current,COMSIG_MOB_LOGIN,.proc/ReworkNetwork)
 	targets |= M
 	_Generate()
 	for(var/X in smashes)
@@ -179,7 +179,7 @@
  * Use this whenever you want to remove someone from the list
  */
 /datum/reality_smash_tracker/proc/RemoveMind(datum/mind/M)
-	UnregisterSignal(M.current,COMSIG_MOB_CLIENT_LOGIN)
+	UnregisterSignal(M.current,COMSIG_MOB_LOGIN)
 	targets -= M
 	for(var/obj/effect/reality_smash/RS in smashes)
 		RS.RemoveMind(M)

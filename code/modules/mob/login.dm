@@ -11,6 +11,7 @@
  * * reset next_move to 1
  * * Set statobj to our mob
  * * NOT the parent call. The only unique thing it does is a very obtuse move op, see the comment lower down
+ * * send signal COMSIG_MOB_LOGIN
  * * if the client exists set the perspective to the mob loc
  * * call on_log on the loc (sigh)
  * * reload the huds for the mob
@@ -20,8 +21,7 @@
  * * call any client login callbacks that exist
  * * grant any actions the mob has to the client
  * * calls [auto_deadmin_on_login](mob.html#proc/auto_deadmin_on_login)
- * * send signal COMSIG_MOB_CLIENT_LOGIN
- * * attaches the ash listener element so clients can hear weather
+ * * attaches the weather listener element so clients can hear weather
  * client can be deleted mid-execution of this proc, chiefly on parent calls, with lag
  */
 /mob/Login()
@@ -100,7 +100,6 @@
 	mind?.hide_ckey = client?.prefs?.hide_ckey
 
 	log_message("Client [key_name(src)] has taken ownership of mob [src]([src.type])", LOG_OWNERSHIP)
-	SEND_SIGNAL(src, COMSIG_MOB_CLIENT_LOGIN, client)
 	client.init_verbs()
 
 	AddElement(/datum/element/weather_listener, /datum/weather/rain, ZTRAIT_SURFACE, GLOB.rain_sounds)

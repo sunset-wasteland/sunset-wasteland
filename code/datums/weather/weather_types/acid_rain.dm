@@ -19,7 +19,7 @@
 	end_sound = 'sound/ambience/acidrain_end.ogg'
 
 	area_types = list(/area/f13/wasteland, /area/f13/desert, /area/f13/farm, /area/f13/forest, /area/f13/ruins)
-	target_trait = ZTRAIT_STATION
+	target_trait = ZTRAIT_SURFACE
 	protect_indoors = TRUE
 
 	immunity_type = "acid" // temp

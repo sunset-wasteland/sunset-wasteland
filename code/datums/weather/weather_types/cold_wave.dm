@@ -18,7 +18,7 @@
 
 	area_types = list(/area/f13/wasteland, /area/f13/desert, /area/f13/farm, /area/f13/forest, /area/f13/ruins)
 	protected_areas = list(/area/shuttle)
-	target_trait = ZTRAIT_STATION
+	target_trait = ZTRAIT_SURFACE
 
 	immunity_type = "snow"
 

@@ -36,7 +36,8 @@
 	addtimer(CALLBACK(src, /datum.proc/_AddElement, list(/datum/element/beauty, beauty)), 0)
 
 /obj/effect/decal/cleanable/proc/on_rain()
-	if((get_area(src)).outdoors)
+	var/area/A = get_area(src)
+	if(A?.outdoors)
 		QDEL_IN(src, rand(10 SECONDS, 60 SECONDS)) // that's a lotta timers
 
 /obj/effect/decal/cleanable/proc/replace_decal(obj/effect/decal/cleanable/C) // Returns true if we should give up in favor of the pre-existing decal

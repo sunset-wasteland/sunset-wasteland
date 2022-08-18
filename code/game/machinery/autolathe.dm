@@ -586,8 +586,9 @@
 	var/intermediate = 0
 	var/advanced = 0
 	tooadvanced = TRUE //technophobes will still need to be able to make ammo	//not anymore they wont
+
 /obj/machinery/autolathe/ammo/attackby(obj/item/O, mob/user, params)
-	if(istype(O, /obj/item/storage/bag/casings))
+	if(!busy && !stat && istype(O, /obj/item/storage/bag/casings))
 		var/obj/item/storage/bag/casings/casings_bag = O
 		var/datum/component/material_container/mats = GetComponent(/datum/component/material_container)
 		var/count = 0
@@ -620,28 +621,28 @@
 		else
 			to_chat(user, span_warning("There aren't any casings in \the [O] to recycle!"))
 		return
-	if(!simple && panel_open)
-		if(istype(O, /obj/item/book/granter/crafting_recipe/gunsmith_one))
+	if(panel_open)
+		if(!simple && istype(O, /obj/item/book/granter/crafting_recipe/gunsmith_one))
 			to_chat(user, "<span class='notice'>You upgrade [src] with simple ammunition schematics.</span>")
-			simple = 1
+			simple = TRUE
 			qdel(O)
-	if(!basic && panel_open)
-		if(istype(O, /obj/item/book/granter/crafting_recipe/gunsmith_two))
+			return
+		if(!basic && istype(O, /obj/item/book/granter/crafting_recipe/gunsmith_two))
 			to_chat(user, "<span class='notice'>You upgrade [src] with basic ammunition schematics.</span>")
-			basic = 1
+			basic = TRUE
 			qdel(O)
-	if(!intermediate && panel_open)
-		if(istype(O, /obj/item/book/granter/crafting_recipe/gunsmith_three))
+			return
+		else if(!intermediate && istype(O, /obj/item/book/granter/crafting_recipe/gunsmith_three))
 			to_chat(user, "<span class='notice'>You upgrade [src] with intermediate ammunition schematics.</span>")
-			intermediate = 1
+			intermediate = TRUE
 			qdel(O)
-	if(!advanced && panel_open)
-		if(istype(O, /obj/item/book/granter/crafting_recipe/gunsmith_four))
+			return
+		else if(!advanced && istype(O, /obj/item/book/granter/crafting_recipe/gunsmith_four))
 			to_chat(user, "<span class='notice'>You upgrade [src] with advanced ammunition schematics.</span>")
-			advanced = 1
+			advanced = TRUE
 			qdel(O)
-	else
-		return ..()
+			return
+	return ..()
 
 /obj/machinery/autolathe/ammo/can_build(datum/design/D, amount = 1)
 	if("Simple Ammo" in D.category)

@@ -58,6 +58,8 @@
 
 GLOBAL_LIST_EMPTY(surface_zblocks)
 /proc/get_surface_zblock(surface_z)
+	if(!SSmapping.initialized) // Don't bother; it'll be invalid until maploading is done.
+		return list()
 	// this assumes we pass in a surface level
 	if (!SSmapping.level_trait(surface_z, ZTRAIT_SURFACE))
 		CRASH("Non-surface level [surface_z] passed to get_surface_zblocks!")

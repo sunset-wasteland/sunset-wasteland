@@ -13,6 +13,7 @@
 	desc = "Looks like this would make good cover."
 	anchored = TRUE
 	density = TRUE
+	barricade = TRUE
 	max_integrity = 100
 //	var/proj_pass_rate = 50 //How many projectiles will pass the cover. Lower means stronger cover
 	var/bar_material = METAL

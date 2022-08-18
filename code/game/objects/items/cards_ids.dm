@@ -1090,12 +1090,18 @@
 	assignment = "centurion medallion"
 
 /obj/item/card/id/dogtag/legvenator
-	name = "explorer medallion"
+	name = "venator medallion"
 	desc = "A golden disc awarded to the elite hunters of the legion. If you are close enough to read the insignia you won't be alive much longer."
 	icon_state = "legionmedallioncent"
 	item_state = "card-id_leg2"
-	assignment = "Venator"
+	assignment = "venator medallion"
 
+/obj/item/card/id/dogtag/legexplorer
+	name = "explorer medallion"
+	desc = "A golden disc awarded to the scouts of the legion."
+	icon_state = "legionmedallioncent"
+	item_state = "card-id_leg2"
+	assignment = "explorer medallion"
 
 /obj/item/card/id/dogtag/legpriest
 	name = "priestess medallion"

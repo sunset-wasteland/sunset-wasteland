@@ -165,6 +165,9 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
 	ADD_TRAIT(H, TRAIT_LIFEGIVER, src)
 	ADD_TRAIT(H, TRAIT_BIG_LEAGUES, src)
+	if(H.mind)
+		var/obj/effect/proc_holder/spell/terrifying_presence/S = new /obj/effect/proc_holder/spell/terrifying_presence
+		H.mind.AddSpell(S)
 
 /////////////////
 //// Officers ///
@@ -369,7 +372,7 @@ commented out pending rework*/
 		/obj/item/ammo_box/shotgun/buck = 2,
 		/obj/item/gun/ballistic/revolver/m29 = 1,
 		)
-		
+
 /datum/outfit/loadout/decvetspecialist
 	name = "Mark of the Heedful"
 	head = /obj/item/clothing/head/helmet/f13/legion/vet/decan
@@ -678,13 +681,14 @@ commented out pending rework*/
 	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
 	ADD_TRAIT(H, TRAIT_BIG_LEAGUES, src)
 	ADD_TRAIT(H, TRAIT_SILENT_STEP, src)
+	ADD_TRAIT(H, TRAIT_INSANE_AIM, src)
 
 
 
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13explorer
 	name = "Legion Explorer"
 	jobtype = /datum/job/CaesarsLegion/Legionnaire/f13explorer
-	id = /obj/item/card/id/dogtag/legprime
+	id = /obj/item/card/id/dogtag/legexplorer
 	suit = /obj/item/clothing/suit/armor/f13/legion/vet/explorer
 	head = /obj/item/clothing/head/helmet/f13/legion/vet/explorer
 	neck = /obj/item/storage/belt/holster
@@ -1291,6 +1295,10 @@ Venator  - Zero slots, role built on cloning vet ranger, linear just vastly bett
 	ADD_TRAIT(H, TRAIT_BIG_LEAGUES, src)
 	ADD_TRAIT(H, TRAIT_GENERIC, src)
 	ADD_TRAIT(H, TRAIT_SILENT_STEP, src)
+	ADD_TRAIT(H, TRAIT_INSANE_AIM, src)
+	if(H.mind)
+		var/obj/effect/proc_holder/spell/terrifying_presence/S = new /obj/effect/proc_holder/spell/terrifying_presence
+		H.mind.AddSpell(S)
 
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13venator
 	name = "Legion Venator"
@@ -1330,7 +1338,7 @@ Venator  - Zero slots, role built on cloning vet ranger, linear just vastly bett
 	name = "Legion Slavemaster"
 	jobtype = /datum/job/CaesarsLegion/Legionnaire/f13legionary
 	id =			/obj/item/card/id/dogtag/legslavemaster
-	uniform =		/obj/item/clothing/under/gladiator
+//	uniform =		/obj/item/clothing/under/gladiator
 	suit = 			/obj/item/clothing/suit/armor/f13/legion/prime/slavemaster
 	belt = 			/obj/item/melee/onehanded/slavewhip
 	head = 			/obj/item/clothing/head/helmet/f13/legion/prime/slavemaster
@@ -1351,6 +1359,9 @@ Venator  - Zero slots, role built on cloning vet ranger, linear just vastly bett
 	ADD_TRAIT(H, TRAIT_BIG_LEAGUES, src)
 	ADD_TRAIT(H, TRAIT_TRIBAL, src)
 	ADD_TRAIT(H, TRAIT_GENERIC, src)
+	if(H.mind)
+		var/obj/effect/proc_holder/spell/terrifying_presence/S = new /obj/effect/proc_holder/spell/terrifying_presence
+		H.mind.AddSpell(S)
 
 
 // Legion Citizen

@@ -396,7 +396,7 @@
 	ADD_TRAIT(H, TRAIT_CHEMWHIZ, src)
 	ADD_TRAIT(H, TRAIT_UNETHICAL_PRACTITIONER, src) // Brainwashing
 	ADD_TRAIT(H, TRAIT_PA_WEAR, src)
-	ADD_TRAIT(H, TRAIT_POOR_AIM, src)
+//	ADD_TRAIT(H, TRAIT_POOR_AIM, src)
 
 // Enclave Citizen
 // Really only used for ID console

@@ -627,6 +627,7 @@
 			stack_trace("Something attempted to set simple animals AI to an invalid state: [togglestatus]")
 
 /mob/living/simple_animal/proc/consider_wakeup()
+	set waitfor = FALSE
 	if (pulledby || shouldwakeup)
 		toggle_ai(AI_ON)
 

@@ -18,13 +18,13 @@
 /datum/component/area_sound_manager/CheckDupeComponent(datum/component/C, area_loop_pairs, change_on, remove_on, global_change_on, global_remove_on, acceptable_zs)
 	if(area_loop_pairs != area_to_looping_type) // Reference, not value comparison
 		return FALSE // Different areas, can always dupe!
-	if(change_on ~= change_on_signals)
+	if(change_on ~! change_on_signals)
 		return FALSE // Different change signals, can also always dupe!
-	if(remove_on ~= remove_on_signals)
+	if(remove_on ~! remove_on_signals)
 		return FALSE // Different remove signals, can also always dupe!
-	if(global_change_on ~= global_change_on_signals)
+	if(global_change_on ~! global_change_on_signals)
 		return FALSE // Different global change signals, can also always dupe!
-	if(global_remove_on ~= global_remove_on_signals)
+	if(global_remove_on ~! global_remove_on_signals)
 		return FALSE // Different global remove signals, can also always dupe!
 	return TRUE // Otherwise, we don't differ in any meaningful way.
 

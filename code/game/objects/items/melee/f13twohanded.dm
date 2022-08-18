@@ -510,7 +510,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = null
 	force = 20
-	force_on = 52
+	force_on = 41
 	armour_penetration = 0.7
 	throwforce = 15
 	throwforce_on = 50

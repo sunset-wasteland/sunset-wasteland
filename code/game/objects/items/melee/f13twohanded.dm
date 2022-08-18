@@ -498,7 +498,7 @@
 	else if(istype(A, /turf/closed))
 		playsound(loc, hitsound, 70, TRUE)
 
-// Proton axe			Keywords: Damage 20/32, AP 0.7
+// Proton axe			Keywords: Damage 20/52, AP 0.7
 /obj/item/melee/transforming/energy/axe/protonaxe
 	name = "proton axe"
 	desc = "The experimental proton axe resembles a futuristic war-axe with a glowing blue blade of electrical energy at its head."
@@ -510,7 +510,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = null
 	force = 20
-	force_on = 32
+	force_on = 52
 	armour_penetration = 0.7
 	throwforce = 15
 	throwforce_on = 30

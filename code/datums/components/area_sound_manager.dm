@@ -49,7 +49,6 @@
 
 /datum/component/area_sound_manager/Destroy(force, silent)
 	QDEL_NULL(our_loop)
-	deltimer(timerid, SSsound_loops)
 	UnregisterSignal(parent, list(COMSIG_MOVABLE_MOVED, COMSIG_MOVABLE_Z_CHANGED) + change_on_signals + remove_on_signals)
 	UnregisterSignal(SSdcs, global_change_on_signals + global_remove_on_signals)
 	. = ..()

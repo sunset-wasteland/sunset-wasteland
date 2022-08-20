@@ -155,7 +155,8 @@
 	P.starting = targets_from
 	P.firer = user
 	P.original = target
-	playsound(src, 'sound/weapons/gunshot_smg.ogg', 75, 1)
+//	playsound(src, 'sound/weapons/gunshot_smg.ogg', 75, 1)//Not for what we use this for.
+	playsound(src, 'sound/f13weapons/antimaterielfire.ogg', 75, 1)
 	P.xo = target.x - targets_from.x
 	P.yo = target.y - targets_from.y
 	P.Angle = calculated_projectile_vars[1] + rand(-9, 9)
@@ -175,18 +176,38 @@
 	target_turf = get_turf(target)
 	fire_helper(user)
 
+/////////
+// M2
+/////////
+/obj/machinery/manned_turret/m2
+	name = "M2 Browning"
+	desc = "A heavy machine gun developed in 1918 and still in use right up until the outbreak of war.\
+	You could easily punch through anything with what this lobs downrange."
+	icon = 'icons/obj/turrets.dmi'
+	icon_state = "turret"//We pulled this from TGMC, but it's only temp. Thank you, lads. We'll remove it if you wish. Lacking some directionals, but it works for now.
+	can_buckle = TRUE
+	anchored = FALSE
+	density = TRUE
+	view_range = 10
+	projectile_type = /obj/item/projectile/bullet/a50MG//Admin abuse only, for now.
+	rate_of_fire = 1
+	number_of_shots = 1
+	cooldown_duration = 120
+/////////
+// M2 End
+/////////
+
 /obj/item/gun_control
 	name = "turret controls"
 	icon = 'icons/obj/items_and_weapons.dmi'
 	icon_state = "offhand"
 	w_class = WEIGHT_CLASS_HUGE
-	item_flags = ABSTRACT | NOBLUDGEON | DROPDEL
+	item_flags = ABSTRACT | NODROP | NOBLUDGEON | DROPDEL
 	resistance_flags = FIRE_PROOF | UNACIDABLE | ACID_PROOF
 	var/obj/machinery/manned_turret/turret
 
 /obj/item/gun_control/Initialize()
 	. = ..()
-	ADD_TRAIT(src, TRAIT_NODROP, ABSTRACT_ITEM_TRAIT)
 	turret = loc
 	if(!istype(turret))
 		return INITIALIZE_HINT_QDEL
@@ -197,6 +218,10 @@
 
 /obj/item/gun_control/CanItemAutoclick()
 	return TRUE
+
+/obj/item/gun_control/attack_obj(obj/O, mob/living/user)
+	user.changeNext_move(CLICK_CD_MELEE)
+	O.attacked_by(src, user)
 
 /obj/item/gun_control/attack(mob/living/M, mob/living/user)
 	M.lastattacker = user.real_name

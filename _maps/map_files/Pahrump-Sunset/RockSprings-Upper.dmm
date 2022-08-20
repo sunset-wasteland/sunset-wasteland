@@ -169,6 +169,15 @@
 /obj/effect/landmark/start/f13/venator,
 /turf/open/floor/wood/wood_mosaic,
 /area/f13/legion)
+"bo" = (
+/obj/structure/table/optable,
+/turf/open/floor/holofloor{
+	desc = "You'd bet there's no way you could blow through this.";
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "vaultrust";
+	name = "reinforced plating"
+	},
+/area/f13/building)
 "bp" = (
 /obj/structure/barricade/sandbags,
 /obj/machinery/light/small{
@@ -375,14 +384,6 @@
 	dir = 5
 	},
 /turf/open/transparent/openspace,
-/area/f13/wasteland/rocksprings)
-"cA" = (
-/turf/open/floor/holofloor{
-	desc = "You'd bet there's no way you could blow through this.";
-	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "vaultrust";
-	name = "reinforced plating"
-	},
 /area/f13/wasteland/rocksprings)
 "cB" = (
 /obj/structure/bed/wooden{
@@ -646,9 +647,6 @@
 	name = "reinforced plating"
 	},
 /area/f13/building)
-"eV" = (
-/turf/open/floor/holofloor/plating/refplating,
-/area/f13/wasteland/rocksprings)
 "fd" = (
 /obj/structure/curtain{
 	color = "#363636";
@@ -1622,20 +1620,6 @@
 /obj/structure/lattice,
 /turf/open/transparent/openspace,
 /area/f13/wasteland/rocksprings)
-"mm" = (
-/obj/structure/bed/mattress/pregame,
-/mob/living/simple_animal/hostile/centaur{
-	desc = "The misbegotten son of a she-devil and a beast. It's very existence makes you sick.";
-	faction = list("MCfailed");
-	name = "quadrupedal abomination"
-	},
-/turf/open/floor/holofloor{
-	desc = "You'd bet there's no way you could blow through this.";
-	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "vaultrust";
-	name = "reinforced plating"
-	},
-/area/f13/building)
 "mq" = (
 /obj/item/stack/cable_coil/cyan,
 /obj/item/multitool,
@@ -2304,6 +2288,7 @@
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "gibbearcore"
 	},
+/obj/structure/table/glass,
 /turf/open/floor/holofloor{
 	desc = "You'd bet there's no way you could blow through this.";
 	icon = 'icons/turf/f13floors2.dmi';
@@ -3122,6 +3107,7 @@
 /area/f13/building)
 "xN" = (
 /obj/item/ingot/adamantine,
+/obj/structure/showcase/horrific_experiment,
 /turf/open/floor/holofloor{
 	desc = "You'd bet there's no way you could blow through this.";
 	icon = 'icons/turf/f13floors2.dmi';
@@ -3629,18 +3615,6 @@
 	},
 /turf/open/transparent/openspace,
 /area/f13/wasteland/rocksprings)
-"Dg" = (
-/obj/effect/decal/cleanable/blood/old{
-	icon_state = "floor3"
-	},
-/obj/structure/showcase/horrific_experiment,
-/turf/open/floor/holofloor{
-	desc = "You'd bet there's no way you could blow through this.";
-	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "vaultrust";
-	name = "reinforced plating"
-	},
-/area/f13/building)
 "Di" = (
 /obj/structure/nest/ghoul,
 /turf/open/indestructible/ground/outside/sidewalk,
@@ -3746,6 +3720,7 @@
 	faction = list("MCfailed");
 	name = "quadrupedal abomination"
 	},
+/obj/machinery/iv_drip/telescopic,
 /turf/open/floor/holofloor{
 	desc = "You'd bet there's no way you could blow through this.";
 	icon = 'icons/turf/f13floors2.dmi';
@@ -3793,12 +3768,34 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/legion)
+"GS" = (
+/obj/effect/decal/cleanable/blood/old{
+	icon_state = "floor6-old"
+	},
+/obj/structure/table/glass,
+/turf/open/floor/holofloor{
+	desc = "You'd bet there's no way you could blow through this.";
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "vaultrust";
+	name = "reinforced plating"
+	},
+/area/f13/building)
 "Hi" = (
 /obj/structure/railing{
 	dir = 8
 	},
 /turf/open/transparent/openspace,
 /area/f13/wasteland/rocksprings)
+"HH" = (
+/obj/machinery/defibrillator_mount,
+/turf/closed/indestructible/riveted{
+	desc = "A heavily reinforced utility tunnel  wall. You doubt anything short of a nuke would break it.";
+	icon = 'icons/fallout/turfs/walls/tunnel.dmi';
+	icon_state = "tunnel0";
+	icon_type_smooth = "tunnel";
+	name = "Reinforced utility tunnel"
+	},
+/area/f13/building)
 "Ij" = (
 /obj/item/kirbyplants/random,
 /turf/open/floor/f13/wood,
@@ -3832,14 +3829,6 @@
 	},
 /turf/open/floor/wood/wood_mosaic,
 /area/f13/legion)
-"IZ" = (
-/turf/open/floor/holofloor{
-	desc = "You'd bet there's no way you could blow through this.";
-	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "showroomfloor";
-	name = "reinforced plating"
-	},
-/area/f13/wasteland/rocksprings)
 "Jd" = (
 /obj/effect/decal/remains/human,
 /obj/effect/decal/cleanable/blood/old{
@@ -3979,6 +3968,7 @@
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "gibmid1"
 	},
+/obj/structure/showcase/horrific_experiment,
 /turf/open/floor/holofloor{
 	desc = "You'd bet there's no way you could blow through this.";
 	icon = 'icons/turf/f13floors2.dmi';
@@ -4048,10 +4038,21 @@
 /mob/living/simple_animal/hostile/renegade/drifter,
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"KI" = (
+/obj/structure/table/reinforced,
+/obj/item/ingot/adamantine,
+/turf/open/floor/holofloor{
+	desc = "You'd bet there's no way you could blow through this.";
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "vaultrust";
+	name = "reinforced plating"
+	},
+/area/f13/building)
 "KJ" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "gibbear1"
 	},
+/obj/structure/showcase/horrific_experiment,
 /turf/open/floor/holofloor{
 	desc = "You'd bet there's no way you could blow through this.";
 	icon = 'icons/turf/f13floors2.dmi';
@@ -4350,12 +4351,6 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/wood_common/wood_common_light,
-/area/f13/building)
-"Nj" = (
-/obj/machinery/door/unpowered/celldoor,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
-	name = "metal plating"
-	},
 /area/f13/building)
 "No" = (
 /obj/structure/railing,
@@ -5163,7 +5158,7 @@
 	},
 /area/f13/building)
 "UC" = (
-/obj/structure/bed/mattress/pregame,
+/obj/structure/table/glass,
 /turf/open/floor/holofloor{
 	desc = "You'd bet there's no way you could blow through this.";
 	icon = 'icons/turf/f13floors2.dmi';
@@ -5353,11 +5348,6 @@
 /turf/open/floor/plating/tunnel,
 /area/f13/building)
 "VT" = (
-/obj/structure/barricade/bars{
-	max_integrity = 800;
-	name = "strong metal bars";
-	obj_integrity = 800
-	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
 	name = "metal plating"
 	},
@@ -64519,7 +64509,7 @@ UX
 UX
 Jw
 PP
-cA
+DH
 DH
 DH
 DH
@@ -65037,7 +65027,7 @@ OI
 TZ
 zC
 zC
-zC
+PX
 Rg
 fl
 Pw
@@ -65548,7 +65538,7 @@ in
 PP
 PP
 OI
-EF
+KI
 qy
 EF
 NS
@@ -65794,7 +65784,7 @@ rv
 PP
 eU
 eU
-dw
+PP
 pb
 pb
 UX
@@ -65807,7 +65797,7 @@ OI
 OI
 Lr
 zC
-zC
+Li
 WM
 OI
 OI
@@ -66051,7 +66041,7 @@ sJ
 PP
 QW
 eU
-dw
+PP
 LA
 Rv
 UX
@@ -66069,7 +66059,7 @@ zC
 VT
 Li
 hH
-UC
+bK
 OI
 DH
 DH
@@ -66308,7 +66298,7 @@ YR
 PP
 eU
 eU
-dw
+PP
 UX
 Xo
 UX
@@ -66822,7 +66812,7 @@ ng
 ah
 eU
 eU
-dw
+PP
 UX
 Uw
 UX
@@ -66837,7 +66827,7 @@ zC
 zC
 zC
 PX
-Nj
+VT
 xD
 ie
 UC
@@ -67079,7 +67069,7 @@ sF
 PP
 eU
 eU
-dw
+PP
 LN
 fW
 UX
@@ -67336,7 +67326,7 @@ wz
 PP
 kI
 AF
-dw
+PP
 Ty
 Oc
 zA
@@ -67354,7 +67344,7 @@ zC
 OI
 EG
 iM
-xD
+GS
 OI
 DH
 DH
@@ -67608,8 +67598,8 @@ zC
 dx
 vg
 zC
-OI
-zC
+HH
+bo
 iM
 KJ
 OI
@@ -67868,7 +67858,7 @@ WM
 OI
 hV
 cX
-mm
+UC
 OI
 DH
 DH
@@ -68105,7 +68095,7 @@ DH
 DH
 DH
 DH
-IZ
+DH
 DH
 DH
 DH
@@ -68123,7 +68113,7 @@ zC
 zC
 zC
 OI
-Dg
+NS
 uM
 bK
 OI
@@ -68365,7 +68355,7 @@ DH
 DH
 DH
 DH
-eV
+DH
 DH
 DH
 DH

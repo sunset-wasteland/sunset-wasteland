@@ -200,6 +200,13 @@ heavy rifle calibers (12.7, 14mm, 7.62): Uranium, Contaminated, Incin
 		S.start()
 	..()
 
+/obj/item/projectile/bullet/a50MG/depleteduranium//Used, currently, for the emplaced MG.
+	name = ".50 DU-bullet"
+	damage = 5//Fire rate is absurd. Makes up for it.
+	armour_penetration = 1//:)
+	wound_bonus = 60//Makes up for the low damage. Not to mention that it works well with the fire rate.
+	bare_wound_bonus = 80//As above.
+
 //////////////////////
 // 4.73 MM CASELESS //
 //////////////////////			-Small rifle bullet

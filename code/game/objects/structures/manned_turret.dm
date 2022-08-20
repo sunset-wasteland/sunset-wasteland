@@ -39,7 +39,7 @@
 		buckled_mob.pixel_y = 0
 		if(buckled_mob.client)
 			buckled_mob.client.change_view(CONFIG_GET(string/default_view))
-	anchored = FALSE
+	anchored = TRUE//from false
 	. = ..()
 	STOP_PROCESSING(SSfastprocess, src)
 
@@ -186,13 +186,18 @@
 	icon = 'icons/obj/turrets.dmi'
 	icon_state = "turret"//We pulled this from TGMC, but it's only temp. Thank you, lads. We'll remove it if you wish. Lacking some directionals, but it works for now.
 	can_buckle = TRUE
-	anchored = FALSE
+	anchored = TRUE
 	density = TRUE
 	view_range = 10
-	projectile_type = /obj/item/projectile/bullet/a50MG//Admin abuse only, for now.
+	projectile_type = /obj/item/projectile/bullet/a50MG/depleteduranium
 	rate_of_fire = 1
 	number_of_shots = 1
 	cooldown_duration = 120
+	max_integrity = 1250//can't be destroyed by stray bullets by on 'accident'.
+
+//Unanchored, for use with a mob dropping it, so it anchors when used afterwards.
+/obj/machinery/manned_turret/m2/unanchored
+	anchored = FALSE
 /////////
 // M2 End
 /////////

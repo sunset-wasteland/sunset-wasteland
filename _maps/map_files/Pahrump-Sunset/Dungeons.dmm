@@ -97,13 +97,14 @@
 /turf/closed/mineral/random/low_chance,
 /area/f13/caves)
 "aau" = (
+/obj/machinery/door/airlock/hatch{
+	req_access = null;
+	req_access_txt = "134"
+	},
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/machinery/door/airlock/security/glass{
-	req_access = "134"
-	},
-/turf/open/floor/plasteel/f13/vault_floor/red/whiteredfull,
+/turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/enclave)
 "aav" = (
 /obj/structure/closet,
@@ -1409,10 +1410,10 @@
 /turf/open/floor/plating,
 /area/f13/enclave)
 "aeQ" = (
-/obj/machinery/door/airlock/security/glass{
-	req_access = "134"
-	},
-/turf/open/floor/plasteel/f13/vault_floor/red/whiteredfull,
+/obj/structure/table,
+/obj/item/paper_bin,
+/obj/item/pen/fountain,
+/turf/open/floor/plasteel/f13/vault_floor/neutral,
 /area/f13/enclave)
 "aeR" = (
 /obj/structure/cable{
@@ -1749,15 +1750,6 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/purple/whitepurplefull,
 /area/f13/enclave)
-"afT" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 4
-	},
-/obj/machinery/firealarm{
-	name = "INTRUDER ALERT"
-	},
-/turf/closed/wall/r_wall/f13/vault,
-/area/f13/enclave)
 "afU" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
@@ -1767,12 +1759,6 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/reagent_dispensers/fueltank,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
-/area/f13/enclave)
-"afW" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 4
-	},
-/turf/closed/wall/r_wall/f13/vault,
 /area/f13/enclave)
 "afY" = (
 /obj/structure/rack,
@@ -1820,7 +1806,10 @@
 /turf/open/floor/engine,
 /area/f13/enclave)
 "agg" = (
-/mob/living/simple_animal/slime,
+/mob/living/simple_animal/slime{
+	desc = "This is Steven. He likes to break containment.";
+	name = "Steven"
+	},
 /turf/open/floor/engine,
 /area/f13/enclave)
 "agh" = (
@@ -1842,6 +1831,7 @@
 /area/f13/enclave)
 "agl" = (
 /obj/structure/glowshroom/single,
+/obj/item/circuitboard/computer/cloning/prototype,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/enclave)
 "agm" = (
@@ -2209,9 +2199,14 @@
 /area/f13/enclave)
 "ahp" = (
 /obj/structure/rack,
+/obj/machinery/light/small,
 /obj/item/circuitboard/computer/nanite_chamber_control,
 /obj/item/circuitboard/computer/nanite_cloud_controller,
-/obj/machinery/light/small,
+/obj/item/circuitboard/machine/nanite_chamber,
+/obj/item/circuitboard/machine/nanite_program_hub,
+/obj/item/circuitboard/machine/nanite_programmer,
+/obj/item/storage/box/disks_nanite,
+/obj/item/circuitboard/machine/public_nanite_chamber,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/enclave)
 "ahq" = (
@@ -2221,7 +2216,10 @@
 /area/f13/enclave)
 "ahr" = (
 /obj/structure/rack,
-/obj/item/circuitboard/machine/clonepod/experimental,
+/obj/item/jammer{
+	name = "extended range radio jammer";
+	range = 42
+	},
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/enclave)
 "ahs" = (
@@ -3314,6 +3312,11 @@
 /obj/item/crafting/abraxo,
 /turf/open/floor/plasteel/f13/vault_floor/purple,
 /area/f13/vault)
+"blk" = (
+/obj/structure/table,
+/obj/item/paper/guides/jobs/medical/morgue,
+/turf/open/floor/plasteel/f13/vault_floor/neutral,
+/area/f13/enclave)
 "blp" = (
 /obj/machinery/shower{
 	dir = 4
@@ -5767,6 +5770,12 @@
 /obj/effect/turf_decal/delivery/red,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/bunker)
+"dKi" = (
+/obj/structure/bodycontainer/crematorium{
+	id = "enc_crem"
+	},
+/turf/open/floor/plasteel/f13/vault_floor/neutral,
+/area/f13/enclave)
 "dKo" = (
 /obj/machinery/light/small/broken{
 	dir = 4
@@ -7868,6 +7877,14 @@
 	icon_state = "darkdirty"
 	},
 /area/f13/bunker)
+"fQR" = (
+/obj/machinery/button/crematorium{
+	id = "enc_crem";
+	pixel_x = 6;
+	pixel_y = 26
+	},
+/turf/open/floor/plasteel/f13/vault_floor/neutral,
+/area/f13/enclave)
 "fRd" = (
 /obj/item/radio/intercom{
 	frequency = 1361;
@@ -9467,6 +9484,10 @@
 /obj/item/reagent_containers/food/snacks/burger/superbite,
 /turf/open/floor/f13/wood,
 /area/f13/city)
+"hvf" = (
+/obj/structure/bodycontainer/morgue,
+/turf/open/floor/plasteel/f13/vault_floor/neutral,
+/area/f13/enclave)
 "hvq" = (
 /obj/effect/decal/cleanable/oil/slippery,
 /turf/open/floor/plating/tunnel,
@@ -15948,6 +15969,16 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/bunker)
+"obf" = (
+/obj/structure/bodycontainer/morgue{
+	dir = 8
+	},
+/obj/machinery/light/small{
+	brightness = 3;
+	dir = 4
+	},
+/turf/open/floor/plasteel/f13/vault_floor/neutral,
+/area/f13/enclave)
 "obk" = (
 /obj/structure/falsewall/reinforced{
 	icon = 'icons/turf/walls/rusty_reinforced_wall.dmi';
@@ -19069,6 +19100,14 @@
 	},
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/city)
+"rgY" = (
+/obj/structure/bodycontainer/morgue,
+/obj/machinery/light/small{
+	brightness = 3;
+	dir = 8
+	},
+/turf/open/floor/plasteel/f13/vault_floor/neutral,
+/area/f13/enclave)
 "rhG" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/structure/sign/departments/botany,
@@ -24987,6 +25026,16 @@
 /obj/machinery/autolathe,
 /turf/open/floor/plasteel/f13/vault_floor/yellow/whiteyellowfull,
 /area/f13/vault)
+"xvh" = (
+/obj/structure/table,
+/obj/item/clothing/under/burial,
+/obj/item/clothing/under/burial,
+/obj/item/clothing/under/burial,
+/obj/item/clothing/under/burial,
+/obj/item/clothing/under/burial,
+/obj/item/clothing/under/burial,
+/turf/open/floor/plasteel/f13/vault_floor/neutral,
+/area/f13/enclave)
 "xvm" = (
 /obj/machinery/computer/cargo{
 	dir = 4
@@ -64930,17 +64979,17 @@ agz
 agx
 agx
 aao
-aao
+aaI
 afG
 afM
 afM
 afM
-afT
-afW
-afW
-afW
-afW
-afW
+aao
+aao
+aao
+aao
+aao
+aao
 aao
 aao
 aan
@@ -67233,7 +67282,7 @@ aej
 aez
 acd
 aeP
-aeQ
+adL
 aeZ
 afj
 aao
@@ -68261,7 +68310,7 @@ aci
 aco
 acd
 aeS
-aeQ
+adL
 afg
 afj
 aao
@@ -71316,8 +71365,8 @@ shC
 aan
 aan
 aan
-aan
-aan
+aao
+aao
 aao
 aao
 aao
@@ -71573,10 +71622,10 @@ shC
 aan
 aan
 aan
-aan
-aan
-aan
 aao
+aeQ
+rgY
+hvf
 aao
 acv
 aaC
@@ -71830,11 +71879,11 @@ shC
 aan
 aan
 aan
-aan
-aan
-aan
 aao
-aao
+fQR
+aaC
+aaC
+aaC
 aaC
 aaC
 aaC
@@ -72087,11 +72136,11 @@ shC
 aan
 aan
 aan
-aan
-aan
-aan
 aao
-aao
+dKi
+aaC
+aaC
+aaC
 aaC
 aaC
 aaC
@@ -72344,12 +72393,12 @@ shC
 aan
 aan
 aan
-aan
-aan
-aan
-aao
 aao
 aaC
+aaC
+aaC
+blk
+abx
 abx
 abx
 abO
@@ -72601,10 +72650,10 @@ shC
 aan
 aan
 aan
-aan
-aan
-aan
 aao
+xvh
+obf
+abx
 aao
 aao
 aao
@@ -72858,9 +72907,9 @@ shC
 aan
 aan
 aan
-aan
-aan
-aan
+aao
+aao
+aao
 aao
 aao
 aao

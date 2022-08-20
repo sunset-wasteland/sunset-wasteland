@@ -1177,7 +1177,7 @@
 	icon_state = "r93"
 	item_state = "r93"
 	mag_type = /obj/item/ammo_box/magazine/m556/rifle
-	fire_delay = 3.25
+	fire_delay = 1.15
 	spread = 1
 	extra_damage = 25
 	burst_size = 1
@@ -1188,8 +1188,9 @@
 	zoomable = TRUE
 	zoom_amt = 6
 	zoom_out_amt = 9
-	can_bayonet = FALSE
+	can_bayonet = TRUE
 	fire_sound = 'sound/weapons/Gunshot_large_silenced.ogg'
+	slowdown = 0.15
 
 //Type 93 Chinese rifle				Keywords: 5.56mm, Automatic, 20 (10-50) round magazine, 26dmg
 /obj/item/gun/ballistic/automatic/type93

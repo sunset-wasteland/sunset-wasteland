@@ -188,11 +188,11 @@
 	can_buckle = TRUE
 	anchored = TRUE
 	density = TRUE
-	view_range = 10
+	view_range = 15
 	projectile_type = /obj/item/projectile/bullet/a50MG/depleteduranium
 	rate_of_fire = 1
 	number_of_shots = 1
-	cooldown_duration = 120
+	cooldown_duration = 2
 	max_integrity = 1250//can't be destroyed by stray bullets by on 'accident'.
 
 //Unanchored, for use with a mob dropping it, so it anchors when used afterwards.
@@ -207,7 +207,7 @@
 	icon = 'icons/obj/items_and_weapons.dmi'
 	icon_state = "offhand"
 	w_class = WEIGHT_CLASS_HUGE
-	item_flags = ABSTRACT | NOBLUDGEON | DROPDEL
+	item_flags = ABSTRACT | NOBLUDGEON | DROPDEL | NODROP
 	resistance_flags = FIRE_PROOF | UNACIDABLE | ACID_PROOF
 	var/obj/machinery/manned_turret/turret
 

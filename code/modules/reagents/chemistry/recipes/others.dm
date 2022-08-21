@@ -943,8 +943,16 @@
 
 /datum/chemical_reaction/purewaterc
 	name = "Carbon and Boiled Water"
-	id = /datum/reagent/water/water
-	results = list(/datum/reagent/water/water = 1)
+	id = /datum/reagent/water
+	results = list(/datum/reagent/water = 1)
 	required_reagents = list(/datum/reagent/water/bwater = 1, /datum/reagent/carbon = 1)
+	mob_react = FALSE
+	required_temp = 512
+
+/datum/chemical_reaction/purewaterd
+	name = "Iodine and Boiled Water"
+	id = /datum/reagent/water
+	results = list(/datum/reagent/water = 1)
+	required_reagents = list(/datum/reagent/water/bwater = 1, /datum/reagent/iodine = 1)
 	mob_react = FALSE
 	required_temp = 512

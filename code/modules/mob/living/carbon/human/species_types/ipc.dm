@@ -64,3 +64,8 @@
 		H.nutrition = NUTRITION_LEVEL_FED
 	if(H.nutrition > NUTRITION_LEVEL_FED)
 		H.nutrition = NUTRITION_LEVEL_FED
+	if(H.water < THIRST_LEVEL_FULL)
+		H.water = THIRST_LEVEL_FULL
+	if(H.water > THIRST_LEVEL_FULL)
+		H.water = THIRST_LEVEL_FULL
+

@@ -16,11 +16,14 @@
 	var/max_nutrition = INFINITY
 	var/quality = 0	//affects mood, typically higher for mixed drinks with more complex recipes
 	ghoulfriendly = TRUE
+	var/water_level = 0.1
+	var/max_water = INFINITY
 
 /datum/reagent/consumable/on_mob_life(mob/living/carbon/M)
 	if(!HAS_TRAIT(M, TRAIT_NO_PROCESS_FOOD))
 		current_cycle++
 		M.adjust_nutrition(nutriment_factor, max_nutrition)
+		M.adjust_thirst(water_level, max_water)
 	M.CheckBloodsuckerEatFood(nutriment_factor)
 	holder?.remove_reagent(type, metabolization_rate)
 

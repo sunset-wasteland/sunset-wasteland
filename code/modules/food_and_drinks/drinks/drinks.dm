@@ -30,6 +30,13 @@
 	if(!canconsume(M, user))
 		return 0
 
+	if(M.water > THIRST_LEVEL_FULL)
+		if(M == user)
+			M << "<span class='notice'>You do not want to drink.</span>"
+		else
+			user << "<span class='notice'>[M] does not want to drink.</span>"
+		return 0
+
 	if (!is_drainable())
 		to_chat(user, "<span class='warning'>[src]'s lid hasn't been opened!</span>")
 		return 0
@@ -450,6 +457,11 @@
 	volume = 60
 	isGlass = FALSE
 	custom_price = PRICE_ABOVE_NORMAL
+
+/obj/item/reagent_containers/food/drinks/flask/survival
+	name = "survival flask"
+	desc = "Every good wastelander knows it's a good idea to bring along a couple of pints of water wherever they go."
+	list_reagents = list(/datum/reagent/water/bwater = 60)
 
 /obj/item/reagent_containers/food/drinks/flask/gold
 	name = "captain's flask"

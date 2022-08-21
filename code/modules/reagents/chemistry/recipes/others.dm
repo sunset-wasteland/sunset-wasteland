@@ -897,24 +897,54 @@
 	results = list(/datum/reagent/breast_enlarger = 2)
 	required_reagents = list(/datum/reagent/medicine/salglu_solution = 2, /datum/reagent/consumable/milk = 1, /datum/reagent/medicine/synthflesh = 2, /datum/reagent/silicon = 3, /datum/reagent/drug/aphrodisiac = 3)
 	required_temp = 200
-	
+
 /datum/chemical_reaction/BEsmaller
 	name = "Modesty Milk"
 	id = "/datum/reagent/BEsmaller"
 	results = list(/datum/reagent/BEsmaller = 2)
 	required_reagents = list(/datum/reagent/medicine/salglu_solution = 2, /datum/reagent/consumable/milk = 1, /datum/reagent/medicine/synthflesh = 2, /datum/reagent/silicon = 3, /datum/reagent/drug/anaphrodisiac = 3)
 	required_temp = 200
-	
+
 /datum/chemical_reaction/penis_enlarger
 	name = "Incubus Draft"
 	id = "/datum/reagent/penis_enlarger"
 	results = list(/datum/reagent/penis_enlarger = 2)
 	required_reagents = list(/datum/reagent/medicine/salglu_solution = 2, /datum/reagent/blood = 5, /datum/reagent/medicine/synthflesh = 2, /datum/reagent/carbon = 2, /datum/reagent/drug/aphrodisiac = 2)
 	required_temp = 200
-	
+
 /datum/chemical_reaction/PEsmaller
 	name = "Chastity Draft"
 	id = "/datum/reagent/PEsmaller"
 	results = list(/datum/reagent/PEsmaller = 2)
 	required_reagents = list(/datum/reagent/medicine/salglu_solution = 2, /datum/reagent/blood = 5, /datum/reagent/medicine/synthflesh = 2, /datum/reagent/carbon = 2, /datum/reagent/drug/anaphrodisiac = 2)
 	required_temp = 200
+
+// Fallout Stuff
+
+/datum/chemical_reaction/boilingwater
+	name = "Boiling Water"
+	id = /datum/reagent/water/bwater
+	results = list(/datum/reagent/water/bwater = 1)
+	required_reagents = list(/datum/reagent/water/dwater = 1) // ADVANCED BOILING WATER CODE URAH
+	mob_react = FALSE // You cannot boil water inside yourself you fucking mongoloid
+	required_temp = 372
+
+/datum/chemical_reaction/purewatera
+	name = "Purify Dirty Water"
+	id = /datum/reagent/water
+	results = list(/datum/reagent/water = 1)
+	required_reagents = list(/datum/reagent/watertabletpowder = 1, /datum/reagent/water/dwater = 1)
+
+/datum/chemical_reaction/purewaterb
+	name = "Purify Boiled Water"
+	id = /datum/reagent/water
+	results = list(/datum/reagent/water = 1)
+	required_reagents = list(/datum/reagent/watertabletpowder = 1, /datum/reagent/water/bwater = 1)
+
+/datum/chemical_reaction/purewaterc
+	name = "Carbon and Boiled Water"
+	id = /datum/reagent/water/water
+	results = list(/datum/reagent/water/water = 1)
+	required_reagents = list(/datum/reagent/water/bwater = 1, /datum/reagent/carbon = 1)
+	mob_react = FALSE
+	required_temp = 512

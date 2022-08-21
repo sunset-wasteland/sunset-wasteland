@@ -169,6 +169,7 @@
 /area/f13/building/mall
 	name = "Mall of Wyoming"
 	icon_state = "mall"
+	requires_power = TRUE
 
 /area/f13/building/museum
 	name = "Museum of Technology"
@@ -356,6 +357,7 @@
 	'sound/f13ambience/ambigen_12.ogg','sound/f13ambience/ambigen_13.ogg')
 	environment = 11
 	grow_chance = 5
+	requires_power = TRUE
 
 /area/f13/bunker/bunkertwo
 	name = "Bunker Two"
@@ -488,7 +490,7 @@
 	blob_allowed = 0
 	environment = 6
 	grow_chance = 5
-	requires_power = TRUE//Shouldn't be needed, but you never know.
+	requires_power = TRUE
 
 /area/f13/vault/reactor
 	name = "Reactor"
@@ -596,7 +598,7 @@
 	blob_allowed = 0
 	environment = 6
 	grow_chance = 5
-	requires_power = TRUE//Shouldn't be needed, but you never know.
+	requires_power = TRUE
 
 /area/f13/brotherhood/rnd
 	name = "Brotherhood of Steel RnD Department"//Brother Hood
@@ -664,7 +666,7 @@
 	blob_allowed = 0
 	environment = 6
 	grow_chance = 5
-	requires_power = TRUE//Shouldn't be needed, but you never know.
+	requires_power = TRUE
 
 /area/f13/ahs
 	name = "Adepts of Hubology Studies"

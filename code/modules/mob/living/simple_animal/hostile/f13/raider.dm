@@ -284,10 +284,8 @@
 	minimum_distance = 8
 	projectiletype = /obj/item/projectile/bullet/c45/op
 	projectilesound = 'sound/weapons/gunshot.ogg'
-	var/list/spawned_mobs = list()
 	var/max_mobs = 2
 	var/mob_types = list(/mob/living/simple_animal/hostile/eyebot/reinforced)
-	var/spawn_delay = 0
 	var/spawn_time = 15 SECONDS
 	var/spawn_text = "flies from"
 	footstep_type = FOOTSTEP_MOB_SHOE
@@ -295,32 +293,19 @@
 
 /mob/living/simple_animal/hostile/raider/junker/creator/Initialize()
 	. = ..()
-	GLOB.mob_nests += src
+	AddComponent(/datum/component/spawner/ranged, mob_types, spawn_time, faction, spawn_text, max_mobs, _range = 7)
 
 /mob/living/simple_animal/hostile/raider/junker/creator/death()
-	GLOB.mob_nests -= src
+	qdel(GetComponent(/datum/component/spawner/ranged))
 	. = ..()
 
 /mob/living/simple_animal/hostile/raider/junker/creator/Destroy()
-	GLOB.mob_nests -= src
+	qdel(GetComponent(/datum/component/spawner/ranged))
 	. = ..()
 
 /mob/living/simple_animal/hostile/raider/junker/creator/Aggro()
 	..()
 	summon_backup(10)
-
-/mob/living/simple_animal/hostile/raider/junker/creator/proc/spawn_mob()
-	if(world.time < spawn_delay)
-		return 0
-	spawn_delay = world.time + spawn_time
-	if(spawned_mobs.len >= max_mobs)
-		return FALSE
-	var/chosen_mob_type = pickweight(mob_types)
-	var/mob/living/simple_animal/L = new chosen_mob_type(get_turf(src))
-	L.flags_1 |= (flags_1 & ADMIN_SPAWNED_1)
-	spawned_mobs += L
-	L.nest = src
-	visible_message("<span class='danger'>[L] [spawn_text] [src].</span>")
 
 /mob/living/simple_animal/hostile/raider/junker/boss
 	name = "Junker Boss"

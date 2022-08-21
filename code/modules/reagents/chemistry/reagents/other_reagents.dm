@@ -289,8 +289,8 @@
 	color = "#ACBCBD"
 	taste_description = "chalky water"
 	glass_icon_state = "glass_clear"
-	glass_name = "glass of dirty water"
-	glass_desc = "A rather foul smelling glass of water."
+	glass_name = "glass of boiled water"
+	glass_desc = "A glass of boiled water."
 	shot_glass_icon_state = "shotglassclear"
 	water_level = 4.5
 

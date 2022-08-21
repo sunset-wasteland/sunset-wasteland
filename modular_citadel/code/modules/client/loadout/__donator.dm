@@ -171,3 +171,11 @@
 
 /obj/item/storage/box/large/custom_kit/sadismbox/PopulateContents()
 	new /obj/item/melee/onehanded/scourge(src)
+
+/datum/gear/donator/kits/abel
+	name ="modified NCRCF jacket"
+	path = /obj/item/storage/box/large/custom_kit/ncrcfbox
+	ckeywhitelist = list ("abelshift")
+
+/obj/item/storage/box/large/custom_kit/ncrcfbox/PopulateContents()
+	new /obj/item/clothing/suit/toggle/labcoat/abeljacket(src)

@@ -633,12 +633,15 @@
 
 /obj/structure/sink/kitchen
 	name = "kitchen sink"
+	desc = "Looks like there's some sort of filter on this!"
 	icon_state = "sink_alt"
+	dispensedreagent = /datum/reagent/water
 
 /obj/structure/sink/well
 	name = "well"
 	desc = "A well, used to get water from an underground reservoir."
 	icon_state = "well"
+	dispensedreagent = /datum/reagent/water
 
 //The making of the well
 /obj/structure/well_foundation

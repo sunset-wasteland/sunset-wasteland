@@ -253,7 +253,7 @@
 	glass_desc = "The father of all refreshments."
 	shot_glass_icon_state = "shotglassclear"
 	ghoulfriendly = TRUE
-	var/water_level = 2
+	var/water_level = 5
 
 /datum/reagent/water/on_mob_life(mob/living/carbon/M)
 	. = ..()
@@ -272,7 +272,7 @@
 	glass_name = "glass of dirty water"
 	glass_desc = "A rather foul smelling glass of water."
 	shot_glass_icon_state = "shotglassclear"
-	water_level = 0.2
+	water_level = 3
 
 /datum/reagent/water/dwater/on_mob_life(mob/living/M, mob/user)
 	if(ishuman(M))
@@ -292,7 +292,7 @@
 	glass_name = "glass of dirty water"
 	glass_desc = "A rather foul smelling glass of water."
 	shot_glass_icon_state = "shotglassclear"
-	water_level = 1
+	water_level = 4.5
 
 /datum/reagent/water/bwater/on_mob_life(mob/living/M, mob/user)
 	if(ishuman(M))

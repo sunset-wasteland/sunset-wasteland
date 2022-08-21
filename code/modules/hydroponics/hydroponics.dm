@@ -564,6 +564,14 @@
 			to_chat(user, "<span class='notice'>[src] is full.</span>")
 			return
 
+		if(reagents.total_volume >= reagents.maximum_volume && !reagent_source.reagents.has_reagent(/datum/reagent/water/bwater, 1))
+			to_chat(user, "<span class='notice'>[src] is full.</span>")
+			return
+
+		if(reagents.total_volume >= reagents.maximum_volume && !reagent_source.reagents.has_reagent(/datum/reagent/water/dwater, 1))
+			to_chat(user, "<span class='notice'>[src] is full.</span>")
+			return
+
 		var/list/trays = list(src)//makes the list just this in cases of syringes and compost etc
 		var/target = myseed ? myseed.plantname : src
 		var/visi_msg = ""
@@ -594,10 +602,22 @@
 		for(var/obj/machinery/hydroponics/H in trays)
 		//cause I don't want to feel like im juggling 15 tamagotchis and I can get to my real work of ripping flooring apart in hopes of validating my life choices of becoming a space-gardener
 			//This was originally in apply_chemicals, but due to apply_chemicals only holding nutrients, we handle it here now.
-			if(reagent_source.reagents.has_reagent(/datum/reagent/water, 1))
+
+		if(reagent_source.reagents.has_reagent(/datum/reagent/water, 1))
 				var/water_amt = reagent_source.reagents.get_reagent_amount(/datum/reagent/water) * transfer_amount / reagent_source.reagents.total_volume
 				H.adjustWater(round(water_amt))
 				reagent_source.reagents.remove_reagent(/datum/reagent/water, water_amt)
+
+			if(reagent_source.reagents.has_reagent(/datum/reagent/water/bwater, 1))
+				var/water_amt = reagent_source.reagents.get_reagent_amount(/datum/reagent/water/bwater) * transfer_amount / reagent_source.reagents.total_volume
+				H.adjustWater(round(water_amt))
+				reagent_source.reagents.remove_reagent(/datum/reagent/water/bwater, water_amt)
+
+			if(reagent_source.reagents.has_reagent(/datum/reagent/water/dwater, 1))
+				var/water_amt = reagent_source.reagents.get_reagent_amount(/datum/reagent/water/dwater) * transfer_amount / reagent_source.reagents.total_volume
+				H.adjustWater(round(water_amt))
+				reagent_source.reagents.remove_reagent(/datum/reagent/water/dwater, water_amt)
+
 			reagent_source.reagents.trans_to(H.reagents, transfer_amount)
 			if(istype(reagent_source, /obj/item/reagent_containers/food/snacks) || istype(reagent_source, /obj/item/reagent_containers/pill))
 				qdel(reagent_source)

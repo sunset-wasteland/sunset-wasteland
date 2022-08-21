@@ -12,3 +12,4 @@
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets
 	armor = list("melee" = 15, "bullet" = 45, "laser" = 10, "energy" = 10, "bomb" = 30, "bio" = 0, "rad" = 0, "fire" = 5, "acid" = -5)
 	togglename = "bandolier"
+	

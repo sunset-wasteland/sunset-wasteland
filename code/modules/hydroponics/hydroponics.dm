@@ -603,7 +603,7 @@
 		//cause I don't want to feel like im juggling 15 tamagotchis and I can get to my real work of ripping flooring apart in hopes of validating my life choices of becoming a space-gardener
 			//This was originally in apply_chemicals, but due to apply_chemicals only holding nutrients, we handle it here now.
 
-		if(reagent_source.reagents.has_reagent(/datum/reagent/water, 1))
+			if(reagent_source.reagents.has_reagent(/datum/reagent/water, 1))
 				var/water_amt = reagent_source.reagents.get_reagent_amount(/datum/reagent/water) * transfer_amount / reagent_source.reagents.total_volume
 				H.adjustWater(round(water_amt))
 				reagent_source.reagents.remove_reagent(/datum/reagent/water, water_amt)

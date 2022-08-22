@@ -125,7 +125,7 @@
 		if (!open)
 			return
 		var/obj/item/reagent_containers/RG = I
-		RG.reagents.add_reagent(/datum/reagent/water, min(RG.volume - RG.reagents.total_volume, RG.amount_per_transfer_from_this))
+		RG.reagents.add_reagent(/datum/reagent/water/dwater, min(RG.volume - RG.reagents.total_volume, RG.amount_per_transfer_from_this))
 		to_chat(user, "<span class='notice'>You fill [RG] from [src]. Gross.</span>")
 	else
 		return ..()
@@ -495,7 +495,7 @@
 	desc = "A sink used for washing one's hands and face."
 	anchored = TRUE
 	var/busy = FALSE 	//Something's being washed at the moment
-	var/dispensedreagent = /datum/reagent/water // for whenever plumbing happens
+	var/dispensedreagent = /datum/reagent/water/dwater // for whenever plumbing happens
 	var/buildstacktype = /obj/item/stack/sheet/metal
 	var/buildstackamount = 1
 
@@ -633,12 +633,15 @@
 
 /obj/structure/sink/kitchen
 	name = "kitchen sink"
+	desc = "Looks like there's some sort of filter on this!"
 	icon_state = "sink_alt"
+	dispensedreagent = /datum/reagent/water
 
 /obj/structure/sink/well
 	name = "well"
 	desc = "A well, used to get water from an underground reservoir."
 	icon_state = "well"
+	dispensedreagent = /datum/reagent/water
 
 //The making of the well
 /obj/structure/well_foundation

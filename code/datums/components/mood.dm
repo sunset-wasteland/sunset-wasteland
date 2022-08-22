@@ -313,17 +313,17 @@
 		return FALSE //no mood events for nutrition
 	switch(L.nutrition)
 		if(NUTRITION_LEVEL_FULL to INFINITY)
-			add_event(null, "nutrition", /datum/mood_event/fat)
+			add_event(null, "nutrition", /datum/mood_event/nutrition/fat)
 		if(NUTRITION_LEVEL_WELL_FED to NUTRITION_LEVEL_FULL)
-			add_event(null, "nutrition", /datum/mood_event/wellfed)
+			add_event(null, "nutrition", /datum/mood_event/nutrition/wellfed)
 		if( NUTRITION_LEVEL_FED to NUTRITION_LEVEL_WELL_FED)
-			add_event(null, "nutrition", /datum/mood_event/fed)
+			add_event(null, "nutrition", /datum/mood_event/nutrition/fed)
 		if(NUTRITION_LEVEL_HUNGRY to NUTRITION_LEVEL_FED)
 			clear_event(null, "nutrition")
 		if(NUTRITION_LEVEL_STARVING to NUTRITION_LEVEL_HUNGRY)
-			add_event(null, "nutrition", /datum/mood_event/hungry)
+			add_event(null, "nutrition", /datum/mood_event/nutrition/hungry)
 		if(0 to NUTRITION_LEVEL_STARVING)
-			add_event(null, "nutrition", /datum/mood_event/starving)
+			add_event(null, "nutrition", /datum/mood_event/nutrition/starving)
 
 /datum/component/mood/proc/HandleCharge(mob/living/carbon/human/H)
 	var/datum/species/ethereal/E = H.dna.species

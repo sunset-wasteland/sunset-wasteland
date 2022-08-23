@@ -16,7 +16,7 @@
 	var/max_nutrition = INFINITY
 	var/quality = 0	//affects mood, typically higher for mixed drinks with more complex recipes
 	ghoulfriendly = TRUE
-	var/water_level = 0.1
+	var/water_level = 3
 	var/max_water = INFINITY
 
 /datum/reagent/consumable/on_mob_life(mob/living/carbon/M)

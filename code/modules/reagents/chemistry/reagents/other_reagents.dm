@@ -253,11 +253,67 @@
 	glass_desc = "The father of all refreshments."
 	shot_glass_icon_state = "shotglassclear"
 	ghoulfriendly = TRUE
+	var/water_level = 5
 
 /datum/reagent/water/on_mob_life(mob/living/carbon/M)
 	. = ..()
 	if(M.blood_volume)
 		M.blood_volume += 0.1 // water is good for you!
+	M.water += water_level
+	holder.remove_reagent(type, 1)
+
+//dirty water
+/datum/reagent/water/dwater
+	name = "Dirty Water"
+	description = "This has visible debris floating around in it."
+	color = "#ACBCBD"
+	taste_description = "chalky water"
+	glass_icon_state = "glass_clear"
+	glass_name = "glass of dirty water"
+	glass_desc = "A rather foul smelling glass of water."
+	shot_glass_icon_state = "shotglassclear"
+	water_level = 3
+
+/datum/reagent/water/dwater/on_mob_life(mob/living/M, mob/user)
+	if(ishuman(M))
+		M.apply_effect(1.5,EFFECT_IRRADIATE,0)
+		var/mob/living/carbon/human/H = M
+		if(prob(5))
+			H.vomit(1)
+			M.reagents.remove_all()
+	..()
+
+/datum/reagent/water/bwater
+	name = "Boiled Water"
+	description = "Someone has boiled this, removing some of the impurities."
+	color = "#ACBCBD"
+	taste_description = "chalky water"
+	glass_icon_state = "glass_clear"
+	glass_name = "glass of boiled water"
+	glass_desc = "A glass of boiled water."
+	shot_glass_icon_state = "shotglassclear"
+	water_level = 4.5
+
+/datum/reagent/water/bwater/on_mob_life(mob/living/M, mob/user)
+	if(ishuman(M))
+		M.apply_effect(0.1,EFFECT_IRRADIATE,0)//near nothing.
+		var/mob/living/carbon/human/H = M
+		if(prob(1))//Practically never. Safe to drink, except for rads.
+			H.emote("cough")
+			if(prob(5))//RNG within RNG.
+				H.vomit(1)
+				M.reagents.remove_all()
+	..()
+
+/datum/reagent/watertabletpowder
+	name = "Water Purification Powder"
+	description = "This compound can be used to purify water"
+	color = "#ACBCBD"
+	taste_description = "charred and metallic"
+	glass_icon_state = "glass_clear"
+	glass_name = "glass with a water purification tablet"
+	glass_desc = "A glass containing a powdery grey substance"
+	shot_glass_icon_state = "shotglassclear"
 
 /*
  *	Water reaction to turf
@@ -2938,7 +2994,7 @@
 		return ..()
 	B.modify_size(-0.05)
 	return ..()
-	
+
 /datum/reagent/penis_enlarger // Due to popular demand...!
 	name = "Incubus draft"
 	description = "A volatile collodial mixture derived from various masculine solutions that encourages a larger gentleman's package via a potent testosterone mix, formula derived from a collaboration from Fermichem  and Doctor Ronald Hyatt, who is well known for his phallus palace." //The toxic masculinity thing is a joke because I thought it would be funny to include it in the reagents, but I don't think many would find it funny? dumb

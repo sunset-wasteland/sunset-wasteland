@@ -1177,7 +1177,7 @@
 	icon_state = "r93"
 	item_state = "r93"
 	mag_type = /obj/item/ammo_box/magazine/m556/rifle
-	fire_delay = 3.25
+	fire_delay = 1.15
 	spread = 1
 	extra_damage = 25
 	burst_size = 1
@@ -1188,8 +1188,9 @@
 	zoomable = TRUE
 	zoom_amt = 6
 	zoom_out_amt = 9
-	can_bayonet = FALSE
+	can_bayonet = TRUE
 	fire_sound = 'sound/weapons/Gunshot_large_silenced.ogg'
+	slowdown = 0.15
 
 //Type 93 Chinese rifle				Keywords: 5.56mm, Automatic, 20 (10-50) round magazine, 26dmg
 /obj/item/gun/ballistic/automatic/type93
@@ -1251,7 +1252,7 @@
 	fire_sound = 'sound/f13weapons/bozar_fire.ogg'
 
 
-//Assault Carbine				Keywords: 5mm, Automatic, 30 round magazine, Flashlight, 20dmg/0.25AP
+//Assault Carbine				Keywords: 5mm, Automatic, 30 round magazine, Flashlight, 20dmg/0.50AP
 /obj/item/gun/ballistic/automatic/assault_carbine
 	name = "assault carbine"
 	desc = "The U.S. army carbine version of the R91, made by Colt and issued to special forces."
@@ -1260,13 +1261,13 @@
 	icon_prefix = "assault_carbine"
 	slot_flags = 0
 	mag_type = /obj/item/ammo_box/magazine/m5mm
-	fire_delay = 3
-	burst_shot_delay = 2.0
+	fire_delay = 2.5
+	burst_shot_delay = 1.8
 	is_automatic = TRUE
 	automatic = 1
-	autofire_shot_delay = 2
-	extra_damage = 19
-	extra_penetration = 0.25
+	autofire_shot_delay = 1.75
+	extra_damage = 20
+	extra_penetration = 0.50
 	spread = 10 //high-velocity
 	can_attachments = TRUE
 	can_scope = TRUE
@@ -1293,9 +1294,10 @@
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	icon_state = "rifle-police"
 	autofire_shot_delay = 3.5 //not a real auto-gun, a lot slower than the assault carbine
-	extra_damage = 20 //longer barrel
+	extra_damage = 24 //longer barrel
 	spread = 8 //more accurate than the assault carbine, its a rifle
 	can_scope = TRUE
+	extra_penetration = 0.10
 
 /obj/item/gun/ballistic/automatic/assault_carbine/worn
 	name = "worn assault carbine"
@@ -1304,8 +1306,8 @@
 	fire_delay = 3.5
 	burst_shot_delay = 2.2
 	spread = 14
-	extra_damage = 18
-	extra_penetration = 0.12
+	extra_damage = 19
+	extra_penetration = 0.30
 //FN-FAL				Keywords: 7.62mm, Automatic, 10/20 round magazine
 /obj/item/gun/ballistic/automatic/fnfal
 	name = "FN FAL"

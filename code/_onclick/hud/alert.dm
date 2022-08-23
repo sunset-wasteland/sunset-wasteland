@@ -711,3 +711,48 @@ so as to remain in compliance with the most up-to-date laws."
 	master = null
 	mob_viewer = null
 	screen_loc = ""
+
+/////////
+// Food/Water
+/////////
+/obj/screen/alert/thirst1
+	name = "Thirst"
+	desc = "Your mouth is slightly dry."
+	icon_state = "water1"//temp
+
+/obj/screen/alert/thirst2
+	name = "Thirst"
+	desc = "You're starting to feel the effects of slight fatigue. Find something to drink."
+	icon_state = "water2"//temp
+
+/obj/screen/alert/thirst3
+	name = "Thirst"
+	desc = "You're starting to feel the effects of extreme fatigue. Find something to drink."
+	icon_state = "water3"//temp
+
+/obj/screen/alert/thirst4
+	name = "Thirst"
+	desc = "Drink something, or you're soon going to waste away."
+	icon_state = "water4"//temp
+
+
+
+/obj/screen/alert/hunger1
+	name = "Hunger"
+	desc = "You could do with something to eat."
+	icon_state = "starv1"//temp
+
+/obj/screen/alert/hunger2
+	name = "Hunger"
+	desc = "You're more than peckish. Get something to snack on."
+	icon_state = "starv2"//temp
+
+/obj/screen/alert/hunger3
+	name = "Hunger"
+	desc = "You feel as if your stomach is in freefall. Find something to eat."
+	icon_state = "starv3"//temp
+
+/obj/screen/alert/hunger4
+	name = "Hunger"
+	desc = "Your body is slowly starting to waste away. Find food. Soon."
+	icon_state = "starv4"//temp

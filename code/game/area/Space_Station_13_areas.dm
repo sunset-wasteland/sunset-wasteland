@@ -1599,6 +1599,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/f13
 	has_gravity = STANDARD_GRAVITY
 	dynamic_lighting = DYNAMIC_LIGHTING_FORCED
+	requires_power = FALSE // Enable on specific subtypes, until we get a working power plant added.
 
 /area/f13/admeme
 	icon_state = "secret"

@@ -19,6 +19,10 @@
 	name = "holodeck projector floor"
 	icon_state = "engine"
 
+/turf/open/floor/holofloor/plating/refplating
+	name = "reinforced plating"
+	desc = "Heavily reinforced ground plating. It looks impervious to damage."
+
 /turf/open/floor/holofloor/plating/burnmix
 	name = "burn-mix floor"
 	initial_gas_mix = BURNMIX_ATMOS

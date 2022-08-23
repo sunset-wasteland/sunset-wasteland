@@ -185,8 +185,6 @@
 		else // Many other things have registered here
 			lookup[sig_type][src] = TRUE
 
-	signal_enabled = TRUE
-
 /**
  * Stop listening to a given signal from target
  *
@@ -297,18 +295,17 @@
 /datum/proc/_SendSignal(sigtype, list/arguments)
 	var/target = comp_lookup[sigtype]
 	if(!length(target))
-		var/datum/C = target
-		if(!C.signal_enabled)
-			return NONE
-		var/proctype = C.signal_procs[src][sigtype]
-		return NONE | CallAsync(C, proctype, arguments)
+		var/datum/listening_datum = target
+		return NONE | call(listening_datum, listening_datum.signal_procs[src][sigtype])(arglist(arguments))
 	. = NONE
-	for(var/I in target)
-		var/datum/C = I
-		if(!C.signal_enabled)
-			continue
-		var/proctype = C.signal_procs[src][sigtype]
-		. |= CallAsync(C, proctype, arguments)
+	// This exists so that even if one of the signal receivers unregisters the signal,
+	// all the objects that are receiving the signal get the signal this final time.
+	// AKA: No you can't cancel the signal reception of another object by doing an unregister in the same signal.
+	var/list/queued_calls = list()
+	for(var/datum/listening_datum as anything in target)
+		queued_calls[listening_datum] = listening_datum.signal_procs[src][sigtype]
+	for(var/datum/listening_datum as anything in queued_calls)
+		. |= call(listening_datum, queued_calls[listening_datum])(arglist(arguments))
 
 // The type arg is casted so initial works, you shouldn't be passing a real instance into this
 /**

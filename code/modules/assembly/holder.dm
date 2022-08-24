@@ -14,15 +14,6 @@
 	var/obj/item/assembly/a_left = null
 	var/obj/item/assembly/a_right = null
 
-/obj/item/assembly_holder/Initialize()
-	. = ..()
-
-	var/static/list/loc_connections = list(
-		COMSIG_ATOM_ENTERED = .proc/on_entered,
-	)
-	AddElement(/datum/element/connect_loc, loc_connections)
-
-
 /obj/item/assembly_holder/IsAssemblyHolder()
 	return TRUE
 
@@ -69,13 +60,6 @@
 
 	if(master)
 		master.update_icon()
-
-/obj/item/assembly_holder/proc/on_entered(atom/movable/AM as mob|obj)
-	SIGNAL_HANDLER
-	if(a_left)
-		INVOKE_ASYNC(a_left, .proc/on_entered, AM)
-	if(a_right)
-		INVOKE_ASYNC(a_right, .proc/on_entered, AM)
 
 /obj/item/assembly_holder/on_found(mob/finder)
 	if(a_left)

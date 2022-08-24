@@ -24,7 +24,7 @@
 	)
 	AddElement(/datum/element/connect_loc, loc_connections)
 
-/obj/structure/destructible/clockwork/trap/steam_vent/proc/on_entered(atom/movable/AM)
+/obj/structure/destructible/clockwork/trap/steam_vent/proc/on_entered(datum/source, atom/movable/AM)
 	SIGNAL_HANDLER
 	if(isliving(AM) && opacity)
 		var/mob/living/L = AM

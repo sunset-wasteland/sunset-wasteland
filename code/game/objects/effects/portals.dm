@@ -56,7 +56,7 @@
 		user.forceMove(get_turf(src))
 		return TRUE
 
-/obj/effect/portal/proc/on_entered(atom/movable/AM, oldloc, force_stop = 0)
+/obj/effect/portal/proc/on_entered(datum/source, atom/movable/AM, oldloc, force_stop = 0)
 	SIGNAL_HANDLER
 	if(force_stop)
 		return

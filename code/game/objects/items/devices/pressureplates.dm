@@ -37,7 +37,7 @@
 	)
 	AddElement(/datum/element/connect_loc, loc_connections)
 
-/obj/item/pressure_plate/proc/on_entered(atom/movable/AM)
+/obj/item/pressure_plate/proc/on_entered(datum/source, atom/movable/AM)
 	SIGNAL_HANDLER
 	if(!can_trigger || !active)
 		return

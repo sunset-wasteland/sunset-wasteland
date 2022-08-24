@@ -18,7 +18,7 @@
 /obj/effect/step_trigger/proc/Trigger(atom/movable/A)
 	return 0
 
-/obj/effect/step_trigger/proc/on_entered(H as mob|obj)
+/obj/effect/step_trigger/proc/on_entered(datum/source, H as mob|obj)
 	SIGNAL_HANDLER
 	if(!H)
 		return

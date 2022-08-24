@@ -44,7 +44,7 @@
 	if(move_dir == eat_dir)
 		return TRUE
 
-/obj/machinery/plumbing/grinder_chemical/proc/on_entered(atom/movable/AM)
+/obj/machinery/plumbing/grinder_chemical/proc/on_entered(datum/source, atom/movable/AM)
 	SIGNAL_HANDLER
 	INVOKE_ASYNC(src, .proc/grind, AM)
 

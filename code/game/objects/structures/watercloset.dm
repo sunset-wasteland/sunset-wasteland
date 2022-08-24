@@ -638,9 +638,18 @@
 	dispensedreagent = /datum/reagent/water
 
 /obj/structure/sink/well
-	name = "well"
-	desc = "A well, used to get water from an underground reservoir."
-	icon_state = "well"
+	name = "old well"
+	desc = "There's a bloated corpse at the bottom of this. Gross."
+	icon = 'icons/obj/Ritas.dmi'
+	icon_state = "old_well"
+	bound_width = 64
+
+/obj/structure/sink/well/clean
+	name = "water well"
+	desc = "A structure used to provide a source of fresh water - nothing out of the ordinary."
+	icon_state = "wellwheel"
+	icon = 'icons/obj/Ritas.dmi'
+	bound_width = 64
 	dispensedreagent = /datum/reagent/water
 
 //The making of the well

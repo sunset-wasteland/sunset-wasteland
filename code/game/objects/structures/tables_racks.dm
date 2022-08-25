@@ -266,7 +266,7 @@
 	attached_items -= source
 	UnregisterSignal(source, COMSIG_MOVABLE_MOVED)
 
-/obj/structure/table/rolling/proc/on_entered(atom/OldLoc, Dir)
+/obj/structure/table/rolling/proc/on_entered(datum/source, atom/OldLoc, Dir)
 	SIGNAL_HANDLER
 	INVOKE_ASYNC(src, .proc/on_move, OldLoc, Dir)
 
@@ -310,7 +310,7 @@
 	QDEL_LIST(debris)
 	. = ..()
 
-/obj/structure/table/glass/proc/on_entered(atom/movable/AM)
+/obj/structure/table/glass/proc/on_entered(datum/source, atom/movable/AM)
 	SIGNAL_HANDLER
 	if(flags_1 & NODECONSTRUCT_1)
 		return

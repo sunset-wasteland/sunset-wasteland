@@ -273,7 +273,7 @@
 		icon_state = "[initial(icon_state)][armed]"
 		to_chat(user, "<span class='notice'>[src] is now [armed ? "armed" : "disarmed"]</span>")
 
-/obj/item/restraints/legcuffs/beartrap/proc/handle_enter(AM as mob|obj)
+/obj/item/restraints/legcuffs/beartrap/proc/handle_enter(datum/source, atom/movable/AM)
 	if(armed && isturf(src.loc))
 		if(isliving(AM))
 			var/mob/living/L = AM
@@ -304,7 +304,7 @@
 						"<span class='userdanger'>You trigger \the [src]!</span>")
 				L.apply_damage(trap_damage, BRUTE, def_zone)
 
-/obj/item/restraints/legcuffs/beartrap/proc/on_entered(AM as mob|obj)
+/obj/item/restraints/legcuffs/beartrap/proc/on_entered(datum/source, AM as mob|obj)
 	SIGNAL_HANDLER
 	INVOKE_ASYNC(src, .proc/handle_enter, AM)
 /obj/item/restraints/legcuffs/beartrap/energy

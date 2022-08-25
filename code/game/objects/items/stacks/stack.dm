@@ -404,7 +404,7 @@
 	S.add(transfer)
 	return transfer
 
-/obj/item/stack/proc/on_entered(obj/o)
+/obj/item/stack/proc/on_entered(datum/source, obj/o)
 	SIGNAL_HANDLER
 	if(istype(o, merge_type) && !o.throwing)
 		merge(o)

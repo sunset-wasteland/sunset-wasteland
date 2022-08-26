@@ -231,7 +231,7 @@
 	AddElement(/datum/element/connect_loc, loc_connections)
 
 
-/obj/effect/beam/i_beam/proc/on_entered(atom/movable/AM as mob|obj)
+/obj/effect/beam/i_beam/proc/on_entered(datum/source, atom/movable/AM as mob|obj)
 	SIGNAL_HANDLER
 	if(istype(AM, /obj/effect/beam))
 		return

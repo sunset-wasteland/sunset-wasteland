@@ -116,7 +116,7 @@
 	AddElement(/datum/element/connect_loc, loc_connections)
 
 
-/obj/effect/snare/proc/on_entered(AM as mob|obj)
+/obj/effect/snare/proc/on_entered(datum/source, AM as mob|obj)
 	SIGNAL_HANDLER
 	if(isliving(AM) && spawner && spawner.summoner && AM != spawner && !spawner.hasmatchingsummoner(AM))
 		to_chat(spawner.summoner, "<span class='danger'><B>[AM] has crossed surveillance snare, [name].</span></B>")

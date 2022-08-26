@@ -646,7 +646,7 @@
 /mob/living/proc/update_damage_overlays()
 	return
 
-/mob/living/proc/on_entered(atom/movable/AM)
+/mob/living/proc/on_entered(datum/source, atom/movable/AM)
 	SIGNAL_HANDLER
 	for(var/i in get_equipped_items())
 		var/obj/item/item = i

@@ -98,7 +98,7 @@
 	. = ..()
 	Attach(M)
 
-/obj/item/clothing/mask/facehugger/proc/on_entered(atom/target)
+/obj/item/clothing/mask/facehugger/proc/on_entered(datum/source, atom/target)
 	SIGNAL_HANDLER
 	INVOKE_ASYNC(src, /atom/.proc/HasProximity, target)
 	return

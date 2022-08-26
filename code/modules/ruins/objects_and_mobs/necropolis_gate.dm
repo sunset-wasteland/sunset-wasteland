@@ -273,7 +273,7 @@ GLOBAL_DATUM(necropolis_gate, /obj/structure/necropolis_gate/legion_gate)
 /obj/structure/stone_tile/singularity_pull()
 	return
 
-/obj/structure/stone_tile/proc/on_entered(atom/movable/AM)
+/obj/structure/stone_tile/proc/on_entered(datum/source, atom/movable/AM)
 	SIGNAL_HANDLER
 	if(falling || fallen)
 		return

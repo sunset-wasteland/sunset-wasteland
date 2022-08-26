@@ -776,7 +776,7 @@
 		angle = arctan(y - oy, x - ox)
 	return list(angle, p_x, p_y)
 
-/obj/item/projectile/proc/on_entered(atom/movable/AM) //A mob moving on a tile with a projectile is hit by it.
+/obj/item/projectile/proc/on_entered(datum/source, atom/movable/AM) //A mob moving on a tile with a projectile is hit by it.
 	SIGNAL_HANDLER
 	if(isliving(AM) && !(pass_flags & PASSMOB))
 		var/mob/living/L = AM

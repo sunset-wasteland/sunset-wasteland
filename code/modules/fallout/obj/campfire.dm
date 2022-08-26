@@ -60,7 +60,7 @@
 /obj/structure/campfire/fire_act(exposed_temperature, exposed_volume)
 	fire()
 
-/obj/structure/campfire/proc/on_entered(atom/movable/AM)
+/obj/structure/campfire/proc/on_entered(datum/source, atom/movable/AM)
 	SIGNAL_HANDLER
 	if(fired)
 		INVOKE_ASYNC(src, .proc/burn_process)

@@ -63,7 +63,7 @@
 	else
 		..()
 
-/obj/machinery/field/containment/proc/on_entered(mob/mover)
+/obj/machinery/field/containment/proc/on_entered(datum/source, mob/mover)
 	SIGNAL_HANDLER
 	if(isliving(mover))
 		INVOKE_ASYNC(src, .proc/shock, mover)

@@ -60,7 +60,7 @@
 	else
 		animate(src, alpha = initial(alpha), time = time_between_triggers)
 
-/obj/structure/trap/proc/on_entered(atom/movable/AM)
+/obj/structure/trap/proc/on_entered(datum/source, atom/movable/AM)
 	SIGNAL_HANDLER
 	INVOKE_ASYNC(src, .proc/process_entered, AM)
 

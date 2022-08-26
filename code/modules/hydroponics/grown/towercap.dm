@@ -240,7 +240,7 @@
 /obj/structure/bonfire/fire_act(exposed_temperature, exposed_volume)
 	StartBurning()
 
-/obj/structure/bonfire/proc/on_entered(atom/movable/AM)
+/obj/structure/bonfire/proc/on_entered(datum/source, atom/movable/AM)
 	SIGNAL_HANDLER
 	if(burning & !grill)
 		INVOKE_ASYNC(src, .proc/Burn)

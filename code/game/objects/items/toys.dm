@@ -538,7 +538,7 @@
 	if(!..())
 		pop_burst()
 
-/obj/item/toy/snappop/proc/on_entered(H as mob|obj)
+/obj/item/toy/snappop/proc/on_entered(datum/source, H as mob|obj)
 	SIGNAL_HANDLER
 	if(ishuman(H) || issilicon(H)) //i guess carp and shit shouldn't set them off
 		var/mob/living/carbon/M = H

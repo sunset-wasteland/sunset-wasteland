@@ -217,7 +217,7 @@
 				T.to_be_destroyed = FALSE
 				T.max_fire_temperature_sustained = 0
 
-/obj/effect/hotspot/proc/on_entered(atom/movable/AM, oldLoc)
+/obj/effect/hotspot/proc/on_entered(datum/source, atom/movable/AM, oldLoc)
 	SIGNAL_HANDLER
 	if(isliving(AM))
 		INVOKE_ASYNC(AM, /atom/.proc/fire_act, temperature, volume)

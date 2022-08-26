@@ -221,23 +221,23 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/belt.dmi'
 	layer = MOB_UPPER_LAYER
 	wound_bonus = 20
-	block_chance = 50
+	block_chance = 15
 
 /obj/item/melee/smith/sword/spatha
 	name = "spatha"
 	icon_state = "spatha_smith"
 	item_state = "spatha_smith"
 	overlay_state = "hilt_spatha"
-	block_chance = 60
+	block_chance = 25
 
 /obj/item/melee/smith/sword/sabre
 	name = "sabre"
 	icon_state = "sabre_smith"
 	item_state = "sabre_smith"
 	overlay_state = "hilt_sabre"
-	armour_penetration = 0.15
+	armour_penetration = 0.2
 	force = 24
-	block_chance = 55
+	block_chance = 25
 
 // go for the eyes Boo
 /obj/item/melee/smith/dagger
@@ -286,7 +286,7 @@
 	item_flags = NEEDS_PERMIT | ITEM_CAN_PARRY
 	block_parry_data = /datum/block_parry_data/waki
 	hitsound = 'sound/weapons/rapierhit.ogg'
-	block_chance = 60
+	block_chance = 5
 
 /datum/block_parry_data/waki //like longbokken but worse reflect
 	parry_stamina_cost = 6
@@ -335,7 +335,7 @@
 	slot_flags = ITEM_SLOT_BELT
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/belt.dmi'
 	layer = MOB_UPPER_LAYER
-	block_chance = 50
+	block_chance = 30
 
 /datum/block_parry_data/smithrapier //Old rapier code reused. parry into riposte. i am pretty sure this is going to be nearly fucking impossible to land.
 	parry_stamina_cost = 12 //dont miss

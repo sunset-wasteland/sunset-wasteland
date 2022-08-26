@@ -932,14 +932,14 @@
 /datum/chemical_reaction/purewatera
 	name = "Purify Dirty Water"
 	id = /datum/reagent/water
-	results = list(/datum/reagent/water = 1)
-	required_reagents = list(/datum/reagent/watertabletpowder = 1, /datum/reagent/water/dwater = 1)
+	results = list(/datum/reagent/water = 5)
+	required_reagents = list(/datum/reagent/watertabletpowder = 1, /datum/reagent/water/dwater = 5)
 
 /datum/chemical_reaction/purewaterb
 	name = "Purify Boiled Water"
 	id = /datum/reagent/water
-	results = list(/datum/reagent/water = 1)
-	required_reagents = list(/datum/reagent/watertabletpowder = 1, /datum/reagent/water/bwater = 1)
+	results = list(/datum/reagent/water = 5)
+	required_reagents = list(/datum/reagent/watertabletpowder = 1, /datum/reagent/water/bwater = 5)
 
 /datum/chemical_reaction/purewaterc
 	name = "Carbon and Boiled Water"

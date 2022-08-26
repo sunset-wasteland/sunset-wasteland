@@ -634,4 +634,28 @@
 /obj/item/storage/pill_bottle/chem_tin/buffout/PopulateContents()
 	for(var/i in 1 to 5)
 		new /obj/item/reagent_containers/pill/buffout(src)
-	
+
+
+// ---------------------------------------------
+// WATER PURIFICATION TABLETS
+
+/obj/item/storage/pill_bottle/chem_tin/waterpuretablet
+	name = "Water Purification Tablets"
+	icon_state = "pill_canister_water"
+	desc = "Contains tablets used to treat dirty water. Simply drop a tablet in a bottle or cup, and wait a few seconds."
+
+/obj/item/storage/pill_bottle/chem_tin/waterpuretablet/PopulateContents()
+	for(var/i in 1 to 5)
+		new /obj/item/reagent_containers/pill/waterpuretablet(src)
+
+// ---------------------------------------------
+// NUTRIMENT TABLETS
+
+/obj/item/storage/pill_bottle/chem_tin/foodpaste
+	name = "Nutriment Tablets"
+	icon_state = "pill_canister_paste"
+	desc = "Contains tablets that contain nutriments needed for survival. Don't take more than one every five minutes at once, to avoid wasting them all."
+
+/obj/item/storage/pill_bottle/chem_tin/foodpaste/PopulateContents()
+	for(var/i in 1 to 5)
+		new /obj/item/reagent_containers/pill/foodpaste(src)

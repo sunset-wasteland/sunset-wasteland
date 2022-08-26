@@ -153,7 +153,7 @@
 	desc = "A custom-made Gun Runners brush gun with a shorter tube, featuring a sturdier frame, longer barrel, reinforced rifling, padded lever and a muzzle device. A medicine wheel is attached to one side of the stock along with two feathers."
 	icon_state = "brushgun"
 	item_state = "medistick"
-	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube4570
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube4570/medicine
 	extra_damage = 50
 	extra_penetration = 0.2
 	extra_speed = 150

@@ -319,9 +319,9 @@
 /datum/job/enclave/enclavespy
 	title = "Enclave Private"
 	flag = F13USPRIVATE
-	total_positions = 0
-	spawn_positions = 0
-	description = "You are an enlisted member of the Enclave. Obey your Lieutenant. He sets the Enclave's policies."
+	total_positions = 4
+	spawn_positions = 4
+	description = "You are an enlisted member of the Enclave. Obey your Lieutenant. He sets the Enclave's policies. Unfortunately, you've not yet received your PA training. <br> (OOC NOTE: If you use this role to TDM, you'll be jobbanned and risk a potential permaban from the server.)"
 	supervisors = "The Lieutenant and the Sergeants"
 	outfit = /datum/outfit/job/enclave/peacekeeper/enclavespy
 	exp_type = EXP_TYPE_FALLOUT
@@ -343,13 +343,13 @@
 		/obj/item/reagent_containers/hypospray/medipen/psycho = 1,
 		/obj/item/reagent_containers/hypospray/medipen/medx = 1
 		)
-
+/*
 /datum/outfit/job/enclave/peacekeeper/enclavespy/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
 		return
 	ADD_TRAIT(H, TRAIT_PA_WEAR, src)
-
+*/
 //NON-COMBATANTS
 
 //Scientist

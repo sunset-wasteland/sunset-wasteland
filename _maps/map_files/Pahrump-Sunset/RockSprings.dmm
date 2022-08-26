@@ -852,13 +852,11 @@
 /turf/open/indestructible/ground/outside/road,
 /area/f13/wasteland/rocksprings)
 "aSU" = (
-/obj/structure/sink{
-	dir = 4;
-	pixel_x = 12
+/obj/machinery/base_dispenser/food,
+/turf/open/floor/plasteel/f13{
+	icon_state = "greenrustychess"
 	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/f13/stone/rugged,
-/area/f13/legion)
+/area/f13/building)
 "aTb" = (
 /obj/item/melee/onehanded/machete/training,
 /turf/open/indestructible/ground/inside/mountain,
@@ -8689,6 +8687,7 @@
 "kHT" = (
 /obj/effect/decal/remains/human,
 /obj/effect/decal/cleanable/blood,
+/obj/effect/spawner/lootdrop/f13/weapon/melee/tier3,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "kJo" = (
@@ -10553,6 +10552,11 @@
 	icon_state = "floorgrime"
 	},
 /area/f13/building)
+"mZT" = (
+/obj/effect/decal/remains/human,
+/obj/effect/spawner/lootdrop/f13/armor/tier3,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/caves)
 "nam" = (
 /obj/structure/chair/comfy/brown,
 /obj/effect/landmark/start/f13/vexillarius,
@@ -11586,6 +11590,14 @@
 /obj/structure/spacevine,
 /turf/open/water,
 /area/f13/wasteland/rocksprings)
+"omK" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/sink/kitchen{
+	dir = 8;
+	pixel_x = 12
+	},
+/turf/open/floor/plasteel/f13/stone/rugged,
+/area/f13/legion)
 "onb" = (
 /obj/machinery/door/unpowered/securedoor{
 	damage_deflection = 28;
@@ -26131,8 +26143,8 @@ jLa
 iDc
 gtX
 gtX
-aSU
 amM
+omK
 amM
 amM
 mTT
@@ -41534,7 +41546,7 @@ sSh
 rPW
 rPW
 rPW
-tvL
+mZT
 lOb
 qUb
 nXV
@@ -62055,7 +62067,7 @@ rPW
 rPW
 rPW
 bYn
-fWk
+aSU
 qRn
 qRn
 fWk

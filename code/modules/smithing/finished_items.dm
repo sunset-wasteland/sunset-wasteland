@@ -235,9 +235,26 @@
 	icon_state = "sabre_smith"
 	item_state = "sabre_smith"
 	overlay_state = "hilt_sabre"
+	block_parry_data = /datum/block_parry_data/smithsaber
 	armour_penetration = 0.2
 	force = 24
 	block_chance = 25
+
+
+/datum/block_parry_data/smithsaber
+	parry_stamina_cost = 15
+	parry_time_active = 8
+	parry_time_perfect = 2
+	parry_time_perfect_leeway = 2
+	parry_failed_stagger_duration = 3 SECONDS
+	parry_failed_clickcd_duration = 3 SECONDS
+	parry_time_windup = 0
+	parry_time_spindown = 0
+	parry_imperfect_falloff_percent = 0
+	parry_efficiency_to_counterattack = 100
+	parry_efficiency_considered_successful = 100
+	parry_efficiency_perfect = 120
+	parry_data = list(PARRY_COUNTERATTACK_MELEE_ATTACK_CHAIN = 4)
 
 // go for the eyes Boo
 /obj/item/melee/smith/dagger
@@ -282,11 +299,13 @@
 	icon_state = "waki_smith"
 	overlay_state = "hilt_waki"
 	sharpness = SHARP_EDGED
-	force = 24
+	force = 25
 	item_flags = NEEDS_PERMIT | ITEM_CAN_PARRY
 	block_parry_data = /datum/block_parry_data/waki
 	hitsound = 'sound/weapons/rapierhit.ogg'
 	block_chance = 5
+	wound_bonus = 15
+	bare_wound_bonus = 30
 
 /datum/block_parry_data/waki //like longbokken but worse reflect
 	parry_stamina_cost = 6
@@ -330,18 +349,20 @@
 	force = 22
 	wielded_mult = 1.5
 	item_flags = ITEM_CAN_PARRY | NEEDS_PERMIT
-	block_parry_data = /datum/block_parry_data/smithrapier
+	block_parry_data = /datum/block_parry_data/smithkatana
 	hitsound = 'sound/weapons/rapierhit.ogg'
 	slot_flags = ITEM_SLOT_BELT
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/belt.dmi'
 	layer = MOB_UPPER_LAYER
 	block_chance = 30
+	wound_bonus = 25
+	bare_wound_bonus = 40
 
-/datum/block_parry_data/smithrapier //Old rapier code reused. parry into riposte. i am pretty sure this is going to be nearly fucking impossible to land.
+/datum/block_parry_data/smithkatana
 	parry_stamina_cost = 12 //dont miss
-	parry_time_active = 4
-	parry_time_perfect = 2
-	parry_time_perfect_leeway = 2
+	parry_time_active = 6
+	parry_time_perfect = 3
+	parry_time_perfect_leeway = 3
 	parry_failed_stagger_duration = 3 SECONDS
 	parry_failed_clickcd_duration = 3 SECONDS
 	parry_time_windup = 0

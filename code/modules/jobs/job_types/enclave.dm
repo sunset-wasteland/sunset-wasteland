@@ -89,9 +89,9 @@
 
 /datum/outfit/loadout/lt_ballistics
 	name = "Shiny Bullet"
-	suit_store = /obj/item/gun/ballistic/automatic/g11/g11e
+	suit_store = /obj/item/gun/ballistic/automatic/assault_carbine
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/m473 = 3,
+		/obj/item/ammo_box/magazine/m5mm = 3,
 		/obj/item/gun/ballistic/automatic/pistol/pistol14/custom = 1,
 		/obj/item/ammo_box/magazine/m14mm = 2,
 		)
@@ -200,7 +200,7 @@
 	exp_requirements = 1200
 
 	loadout_options = list(
-		/datum/outfit/loadout/sgt_ballistics,	// G11
+		/datum/outfit/loadout/sgt_ballistics,	// Ass Carbine
 		/datum/outfit/loadout/sgt_laser, 	// Wattz2k
 		)
 
@@ -226,9 +226,9 @@
 
 /datum/outfit/loadout/sgt_ballistics
 	name = "Frontline Operator"
-	suit_store = /obj/item/gun/ballistic/automatic/g11
+	suit_store = /obj/item/gun/ballistic/automatic/assault_carbine
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/m473 = 3,
+		/obj/item/ammo_box/magazine/m5mm = 3,
 		)
 
 /datum/outfit/loadout/sgt_laser

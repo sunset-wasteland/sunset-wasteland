@@ -260,7 +260,6 @@
 	if(M.blood_volume)
 		M.blood_volume += 0.1 // water is good for you!
 	M.water += water_level
-	holder.remove_reagent(type, 1)
 
 //dirty water
 /datum/reagent/water/dwater

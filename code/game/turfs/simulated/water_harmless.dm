@@ -7,7 +7,7 @@
 		if(L.check_submerged() <= 0)
 			return
 		if(!istype(oldloc, /turf/open/water/hwater))
-			to_chat(L, "<span class='warning'>You get drenched in hwater!</span>")
+			to_chat(L, "<span class='warning'>You get drenched in water!</span>")
 	AM.water_act(5)
 	..()
 

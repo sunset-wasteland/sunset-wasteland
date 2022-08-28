@@ -101,7 +101,12 @@
 /turf/open/floor/plasteel/f13/vault_floor/red/whiteredfull,
 /area/f13/enclave)
 "aax" = (
-/obj/machinery/workbench/advanced,
+/obj/structure/rack,
+/obj/effect/turf_decal/bot,
+/obj/item/gun/ballistic/automatic/assault_carbine,
+/obj/item/gun/ballistic/automatic/assault_carbine,
+/obj/item/gun/ballistic/automatic/assault_carbine,
+/obj/item/gun/ballistic/automatic/assault_carbine,
 /turf/open/floor/plasteel/f13/vault_floor/red/whiteredfull,
 /area/f13/enclave)
 "aay" = (
@@ -216,6 +221,7 @@
 	dir = 4;
 	light_color = "#c1caff"
 	},
+/obj/item/gun/energy/laser/plasma/pistol/worn,
 /turf/open/floor/plasteel/f13/vault_floor/red/whiteredfull,
 /area/f13/enclave)
 "aaP" = (
@@ -1624,10 +1630,10 @@
 "afD" = (
 /obj/structure/rack,
 /obj/effect/turf_decal/bot,
-/obj/item/gun/ballistic/automatic/g11,
-/obj/item/gun/ballistic/automatic/g11,
-/obj/item/gun/ballistic/automatic/g11,
-/obj/item/gun/ballistic/automatic/g11,
+/obj/item/gun/energy/laser/complianceregulator,
+/obj/item/gun/energy/laser/complianceregulator,
+/obj/item/gun/energy/laser/complianceregulator,
+/obj/item/gun/energy/laser/complianceregulator,
 /turf/open/floor/plasteel/f13/vault_floor/red/whiteredfull,
 /area/f13/enclave)
 "afE" = (
@@ -1808,7 +1814,9 @@
 /obj/machinery/door/poddoor/preopen{
 	id = 920
 	},
-/obj/machinery/door/window/brigdoor,
+/obj/machinery/door/window/brigdoor{
+	req_access_txt = "256"
+	},
 /turf/open/floor/engine,
 /area/f13/enclave)
 "agq" = (
@@ -1831,7 +1839,9 @@
 /obj/machinery/door/poddoor/preopen{
 	id = 922
 	},
-/obj/machinery/door/window/brigdoor,
+/obj/machinery/door/window/brigdoor{
+	req_access_txt = "256"
+	},
 /turf/open/floor/engine,
 /area/f13/enclave)
 "agt" = (
@@ -1893,8 +1903,11 @@
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/enclave)
 "agB" = (
-/obj/machinery/door/airlock,
 /obj/structure/barricade/wooden/planks/pregame,
+/obj/machinery/door/airlock/hatch{
+	req_access = null;
+	req_access_txt = "256"
+	},
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/enclave)
 "agC" = (
@@ -1914,8 +1927,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/neutral,
 /area/f13/enclave)
 "agE" = (
-/obj/structure/reagent_dispensers/watertank,
-/obj/item/extinguisher,
+/obj/structure/closet/crate/freezer,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/enclave)
 "agF" = (
@@ -3440,8 +3452,9 @@
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/bunker)
 "bJP" = (
-/turf/closed/wall/r_wall/f13/vault,
-/area/f13/caves)
+/obj/machinery/workbench/advanced,
+/turf/open/floor/plasteel/f13/vault_floor/red/whiteredfull,
+/area/f13/enclave)
 "bKm" = (
 /obj/structure/table,
 /obj/item/reagent_containers/hypospray/medipen/medx,
@@ -6793,6 +6806,11 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/bunker)
+"fxY" = (
+/obj/structure/reagent_dispensers/watertank,
+/obj/item/extinguisher,
+/turf/open/floor/plasteel/f13/vault_floor/dark,
+/area/f13/enclave)
 "fyi" = (
 /obj/effect/turf_decal/loading_area,
 /turf/open/floor/plasteel/f13/vault_floor/green/greenchess/greenchess2,
@@ -9630,8 +9648,10 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite,
 /area/f13/vault)
 "iRU" = (
-/turf/open/floor/plasteel/f13/vault_floor/neutral,
-/area/f13/caves)
+/obj/effect/turf_decal/bot,
+/obj/machinery/base_dispenser/ammo,
+/turf/open/floor/plasteel/f13/vault_floor/red/whiteredfull,
+/area/f13/enclave)
 "iSc" = (
 /obj/structure/table/optable,
 /obj/effect/decal/cleanable/blood/old,
@@ -11376,7 +11396,7 @@
 	id = "enc_crem"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/neutral,
-/area/f13/caves)
+/area/f13/enclave)
 "kSq" = (
 /obj/effect/decal/waste,
 /obj/effect/decal/cleanable/oil/slippery,
@@ -11720,6 +11740,15 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/vault)
+"lkM" = (
+/obj/structure/rack,
+/obj/effect/turf_decal/bot,
+/obj/item/melee/baton,
+/obj/item/melee/baton,
+/obj/item/melee/baton,
+/obj/item/melee/baton,
+/turf/open/floor/plasteel/f13/vault_floor/red/whiteredfull,
+/area/f13/enclave)
 "lkS" = (
 /obj/structure/flora/tree/tall,
 /turf/open/indestructible/ground/outside/desert,
@@ -12024,6 +12053,12 @@
 	icon_state = "yellowdirtyfull"
 	},
 /area/f13/bunker)
+"lDF" = (
+/obj/machinery/door/airlock/survival_pod/glass{
+	req_access_txt = "134"
+	},
+/turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
+/area/f13/enclave)
 "lDX" = (
 /obj/structure/table,
 /obj/machinery/button/door{
@@ -14272,6 +14307,15 @@
 /obj/structure/flora/tree/tall,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/underground/cave)
+"ojV" = (
+/obj/effect/turf_decal/bot,
+/obj/structure/closet/crate/secure/weapon,
+/obj/item/ammo_box/magazine/m5mm,
+/obj/item/ammo_box/magazine/m5mm,
+/obj/item/ammo_box/magazine/m5mm,
+/obj/item/ammo_box/magazine/m5mm,
+/turf/open/floor/plasteel/f13/vault_floor/red/whiteredfull,
+/area/f13/enclave)
 "okr" = (
 /obj/structure/closet/cabinet{
 	name = "Vault 223 cabinet"
@@ -17526,12 +17570,11 @@
 /turf/open/floor/plasteel/dark,
 /area/f13/vault)
 "rRh" = (
-/obj/machinery/door/airlock/hatch{
-	req_access = null;
-	req_access_txt = "134"
-	},
 /obj/structure/cable{
 	icon_state = "1-2"
+	},
+/obj/machinery/door/airlock/survival_pod/glass{
+	req_access_txt = "134"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/enclave)
@@ -19882,7 +19925,7 @@
 /obj/item/clothing/under/burial,
 /obj/item/clothing/under/burial,
 /turf/open/floor/plasteel/f13/vault_floor/neutral,
-/area/f13/caves)
+/area/f13/enclave)
 "uFK" = (
 /obj/structure/chair/stool/retro/backed{
 	dir = 8;
@@ -64509,7 +64552,7 @@ aej
 aez
 acd
 aeP
-adL
+lDF
 aeZ
 afj
 aao
@@ -65537,7 +65580,7 @@ aci
 aco
 acd
 aeS
-adL
+lDF
 afg
 afj
 aao
@@ -67309,7 +67352,7 @@ aao
 aao
 aaF
 aaF
-aaF
+iRU
 aaF
 aaz
 aaF
@@ -67564,9 +67607,9 @@ hrZ
 aan
 aao
 aao
-aao
-aaF
 aaI
+aaF
+lkM
 aaF
 afD
 aaF
@@ -67823,7 +67866,7 @@ aao
 aao
 aay
 aaF
-aao
+aaF
 aaF
 aaF
 aaF
@@ -68080,7 +68123,7 @@ aao
 aao
 aaN
 aaF
-aao
+ojV
 aaK
 eSt
 aaP
@@ -68336,7 +68379,7 @@ aan
 aao
 aao
 aao
-aao
+bJP
 aao
 aao
 aao
@@ -69363,7 +69406,7 @@ wrg
 wrg
 wrg
 wrg
-bJP
+aao
 kRD
 aaC
 aaC
@@ -69620,8 +69663,8 @@ hrZ
 wrg
 wrg
 wrg
-bJP
-iRU
+aao
+aaC
 aaC
 aaC
 xUX
@@ -69877,7 +69920,7 @@ hrZ
 wrg
 wrg
 wrg
-bJP
+aao
 uFG
 dOF
 abx
@@ -70134,8 +70177,8 @@ hrZ
 wrg
 wrg
 wrg
-bJP
-bJP
+aao
+aao
 aao
 aao
 aao
@@ -70409,7 +70452,7 @@ agK
 agz
 agx
 agx
-agx
+fxY
 aao
 adH
 adM

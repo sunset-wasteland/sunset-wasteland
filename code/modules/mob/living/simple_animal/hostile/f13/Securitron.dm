@@ -133,7 +133,7 @@
 /mob/living/simple_animal/hostile/securitron/sentrybot/bullet_act(obj/item/projectile/Proj)
 	if(!Proj)
 		CRASH("[src] sentrybot invoked bullet_act() without a projectile")
-	if(prob(5) || Proj.damage > 40) //prob(x) = chance for proj to actually do something, adjust depending on how OP you want it to be.
+	if(prob(5) || Proj.damage > 30) //prob(x) = chance for proj to actually do something, adjust depending on how OP you want it to be.
 		return ..()
 	else
 		visible_message(span_danger("\The [Proj] shatters on \the [src]'s armor plating!"))

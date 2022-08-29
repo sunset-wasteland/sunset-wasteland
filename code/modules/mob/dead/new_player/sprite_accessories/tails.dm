@@ -1214,3 +1214,4 @@
 	name = "Jackal"
 	icon_state = "jackal"
 	matrixed_sections = MATRIX_RED_GREEN
+

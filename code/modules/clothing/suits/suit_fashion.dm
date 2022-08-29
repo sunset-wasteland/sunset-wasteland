@@ -205,7 +205,7 @@
 
 /obj/item/clothing/suit/toggle/labcoat/fieldscribe
 	name = "fieldscribe suit"
-	desc = "A Modified scribcoat fitted with lightweight meshes and plates for protection during expeditions outside of the bunker."
+	desc = "A modified scribe coat fitted with lightweight meshes and plates for protection during expeditions outside of the bunker."
 	icon_state = "fieldscribe"
 	armor = list("melee" = 25, "bullet" = 30, "laser" = 40, "energy" = 10, "bomb" = 16, "bio" = 30, "rad" = 20, "fire" = 10, "acid" = 40)
 

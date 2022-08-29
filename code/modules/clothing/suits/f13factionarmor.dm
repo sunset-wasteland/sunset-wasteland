@@ -621,6 +621,7 @@
 	item_state = "headscribe"
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
 	armor = list("melee" = 10, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 36, "bio" = 50, "rad" = 69, "fire" = 10, "acid" = 70, "wound" = 30)
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets
 
 /obj/item/clothing/suit/f13/scribe
 	name = "Brotherhood Scribe's robe"
@@ -629,6 +630,7 @@
 	item_state = "scribe"
 	body_parts_covered = CHEST|ARMS|LEGS
 	armor = list("melee" = 10, "bullet" = 25, "laser" = 25, "energy" = 10, "bomb" = 16, "bio" = 100, "rad" = 0, "fire" = 0, "acid" = 0, "wound" = 30)
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets
 
 /obj/item/clothing/suit/f13/seniorscribe
 	name = "Brotherhood Senior Scribe's robe"
@@ -637,6 +639,7 @@
 	item_state = "seniorscribe"
 	body_parts_covered = CHEST|ARMS|LEGS
 	armor = list("melee" = 10, "bullet" = 25, "laser" = 25, "energy" = 10, "bomb" = 16, "bio" = 100, "rad" = 0, "fire" = 0, "acid" = 0, "wound" = 30)
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets
 
 /obj/item/clothing/suit/f13/elder
 	name = "Brotherhood Elder's robe"

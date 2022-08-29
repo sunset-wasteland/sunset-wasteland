@@ -236,6 +236,10 @@
 	actions_types = list(/datum/action/item_action/toggle_helmet)
 	var/helmettype = /obj/item/clothing/head/bio_hood/f13/hazmat
 	
+	/obj/item/clothing/suit/bio_suit/f13/hazmat/item_action_slot_check(slot, mob/user, datum/action/A)
+	if(slot == SLOT_WEAR_SUIT) //we only give the mob the ability to toggle the helmet if he's wearing the hazmat suit.
+		return 1
+	
 /obj/item/clothing/head/bio_hood/f13/hazmat
 	name = "hazmat hood"
 	desc = "My star, my perfect silence."

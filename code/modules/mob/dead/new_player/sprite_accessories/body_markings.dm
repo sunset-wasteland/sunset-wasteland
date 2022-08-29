@@ -250,6 +250,16 @@
 	icon_state = "lbelly"
 	covered_limbs = list("Head" = MATRIX_RED, "Chest" = MATRIX_RED, "Left Leg" = MATRIX_RED, "Right Leg" = MATRIX_RED, "Left Arm" = MATRIX_RED, "Right Arm" = MATRIX_RED)
 
+/datum/sprite_accessory/mam_body_markings/jackalb
+	name = "Jackal Bareback"
+	icon_state = "jackalb"
+	covered_limbs = list("Chest" = MATRIX_RED, "Left Leg" = MATRIX_RED, "Right Leg" = MATRIX_RED, "Left Arm" = MATRIX_RED, "Right Arm" = MATRIX_RED)
+
+/datum/sprite_accessory/mam_body_markings/jackalp
+	name = "Jackal Backpattern"
+	icon_state = "jackalp"
+	covered_limbs = list("Chest" = MATRIX_RED, "Left Leg" = MATRIX_RED, "Right Leg" = MATRIX_RED, "Left Arm" = MATRIX_RED, "Right Arm" = MATRIX_RED)
+
 /******************************************
 ************* Insect Markings *************
 *******************************************/

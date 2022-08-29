@@ -658,6 +658,20 @@
 	color_src = MATRIXED
 	matrixed_sections = MATRIX_ALL
 
+/datum/sprite_accessory/tails/human/jackal
+	name = "Jackal"
+	icon_state = "jackal"
+	color_src = MATRIXED 
+	icon = 'modular_citadel/icons/mob/mam_tails.dmi'
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/tails_animated/human/jackal
+	name = "Jackal"
+	icon_state = "jackal"
+	color_src = MATRIXED 
+	icon = 'modular_citadel/icons/mob/mam_tails.dmi'
+	matrixed_sections = MATRIX_RED_GREEN
+
 /******************************************
 ************** Furry Tails ****************
 *******************************************/
@@ -1191,3 +1205,12 @@
 	color_src = MATRIXED
 	matrixed_sections = MATRIX_ALL
 
+/datum/sprite_accessory/tails/mam_tails/jackal
+	name = "Jackal"
+	icon_state = "jackal"
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/tails_animated/mam_tails_animated/jackal
+	name = "Jackal"
+	icon_state = "jackal"
+	matrixed_sections = MATRIX_RED_GREEN

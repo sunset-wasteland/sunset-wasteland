@@ -307,6 +307,7 @@
 		/obj/item/gun/ballistic/automatic/pistol/ninemil/maria,
 		/obj/item/gun/energy/laser/plasma/pistol/alien,
 		/obj/item/melee/unarmed/deathclawgauntlet,
+		/obj/effect/spawner/bundle/f13/medicinestick
 		)
 
 /obj/effect/spawner/lootdrop/weapons/experimental

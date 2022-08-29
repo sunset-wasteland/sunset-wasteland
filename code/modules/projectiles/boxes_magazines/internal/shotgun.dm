@@ -85,6 +85,10 @@
 	max_ammo = 10
 	multiload = 1
 
+/obj/item/ammo_box/magazine/internal/shot/tube4570/medicine
+	name = "medicine stick tube magazine"
+	max_ammo = 8
+
 /obj/item/ammo_box/magazine/internal/shot/lasmusket
 	name = "lasmusket magazine"
 	desc = "Oh god, this shouldn't be here"

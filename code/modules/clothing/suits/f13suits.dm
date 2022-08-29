@@ -230,7 +230,8 @@
 	item_state = "hazmat"
 	w_class = WEIGHT_CLASS_NORMAL
 	slowdown = 0
-	armor = list("melee" = 30, "bullet" = 10, "laser" = 30, "energy" = 25, "bomb" = 16, "bio" = 100, "rad" = 100, "fire" = 0, "acid" = 100)
+	resistance_flags = ACID_PROOF
+	armor = list("melee" = 30, "bullet" = 10, "laser" = 30, "energy" = 25, "bomb" = 16, "bio" = 100, "rad" = 100, "fire" = 35, "acid" = 100)
 	rad_flags = RAD_PROTECT_CONTENTS | RAD_NO_CONTAMINATE
 	var/obj/item/clothing/head/bio_hood/f13/hazmat
 	actions_types = list(/datum/action/item_action/toggle_helmet)

@@ -228,7 +228,7 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/suit_utility.dmi'
 	icon_state = "hazmat"
 	item_state = "hazmat"
-	w_class = WEIGHT_CLASS_HEAVY
+	w_class = WEIGHT_CLASS_NORMAL
 	slowdown = 0
 	armor = list("melee" = 30, "bullet" = 10, "laser" = 30, "energy" = 25, "bomb" = 16, "bio" = 100, "rad" = 100, "fire" = 0, "acid" = 100)
 	rad_flags = RAD_PROTECT_CONTENTS | RAD_NO_CONTAMINATE

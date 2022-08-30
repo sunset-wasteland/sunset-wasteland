@@ -384,13 +384,14 @@
 
 /obj/item/gun/ballistic/automatic/shotgun/pancor
 	name = "Pancor Jackhammer"
-	desc = "A drum-loaded, fully automatic shotgun. The pinnacle of turning things into swiss cheese."
+	desc = "The Jackhammer, despite its name, is an easy to control shotgun, even when fired on full automatic. The popular bullpup design, which places the magazine behind the trigger, makes the weapon well balanced & easy to control." //Nod to Fallout 2 in the description :)
 	icon_state = "pancor"
 	item_state = "cshotgun1"
 	fire_sound = 'sound/f13weapons/repeater_fire.ogg'
 	mag_type = /obj/item/ammo_box/magazine/d12g
 	is_automatic = TRUE
 	autofire_shot_delay = 4
+	fire_delay = 2.85
 	recoil = 1
 	automatic = 1
 	w_class = WEIGHT_CLASS_BULKY

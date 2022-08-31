@@ -1040,7 +1040,7 @@
 	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
 
 
-//DKS 501 sniper rifle				Keywords: .308, Semi-auto, 7 round magazine, Scoped, Extra speed +500, Fire delay +1, 45dmg
+//DKS 501 sniper rifle				Keywords: .308, Semi-auto, 7 round magazine, Scoped, Extra speed +500, Fire delay +1, 43dmg
 /obj/item/gun/ballistic/automatic/marksman/sniper
 	name = "sniper rifle"
 	desc = "A DKS 501, chambered in .308 Winchester.  With a light polymer body, it's suited for long treks through the desert."
@@ -1048,12 +1048,12 @@
 	icon_state = "sniper_rifle"
 	item_state = "sniper_rifle"
 	mag_type = /obj/item/ammo_box/magazine/w308
-	fire_delay = 4
+	fire_delay = 3
 	burst_size = 1
-	extra_speed = 800
+	extra_speed = 900
 	extra_penetration = 0.2
-	extra_damage = 35
-	slowdown = 0.4
+	extra_damage = 43
+	slowdown = 0.3
 	zoom_amt = 10
 	zoom_out_amt = 13
 	semi_auto = TRUE
@@ -1063,13 +1063,15 @@
 
 /obj/item/gun/ballistic/automatic/marksman/sniper/gold
 	name = "golden sniper rifle"
-	desc = "A DKS 501, chambered in .308 Winchester. This one has a gold trim and the words 'Old Cassius' engraved into the stock."
+	desc = "A Customized DKS 501, chambered in .308 Winchester. This one has a gold trim and the words 'Old Cassius' engraved into the stock."
 	icon_state = "gold_sniper"
 	item_state = "gold_sniper"
 	slowdown = 0
+	fire_delay = 2.60
+	can_bayonet = TRUE
 
 /obj/item/gun/ballistic/automatic/marksman/sniper/snipervenator
-	name = "Explorer sniper rifle"
+	name = "explorer sniper rifle"
 	desc = "The customized sniper rifle, fitted with a telescopic sight for extreme accuracy and chambered for a high-ballistic performance centerfire cartridge. It is a superior version of the regular sniper rifle and is decorated with the flag of the bull and tokens of a hunt."
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
@@ -1078,7 +1080,7 @@
 	icon_state = "venator_sniper"
 	item_state = "venator_sniper"
 	fire_delay = 6
-	slowdown = 0.3
+	slowdown = 0.25
 	zoom_amt = 15
 	zoom_out_amt = 17
 	extra_penetration = 0.4
@@ -1087,8 +1089,8 @@
 /obj/item/gun/ballistic/automatic/marksman/sniper/sniperranger
 	name = "compact sniper rifle"
 	desc = "A DKS 501, chambered in .308 Winchester.  With a light polymer body, it's suited for long treks through the desert. This particular model is lighter and faster."
-	slowdown = 0.4
-	fire_delay = 4
+	slowdown = 0.25
+	fire_delay = 2
 
 //////////////////
 //ASSAULT RIFLES//

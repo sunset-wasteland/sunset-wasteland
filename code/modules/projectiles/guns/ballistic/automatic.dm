@@ -906,8 +906,8 @@
 	icon_prefix = "308"
 	force = 20
 	mag_type = /obj/item/ammo_box/magazine/m762
-	extra_damage = 40
-	extra_penetration = 0.2
+	extra_damage = 35
+	extra_penetration = 0.18
 	extra_speed = 500
 	burst_size = 1
 	fire_delay = 4

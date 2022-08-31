@@ -91,13 +91,6 @@
 	deathmessage = "wails as its form shudders and violently comes to a stop."
 	death_sound = 'sound/voice/abomburning.ogg'
 
-/mob/living/simple_animal/hostile/abomination/AttackingTarget()
-	. = ..()
-	if(. && ishuman(target))
-		var/mob/living/carbon/human/H = target
-		var/choice = pick(1, 1, 2, 2, 3, 4)
-		H.reagents.add_reagent(/datum/reagent/toxin/FEV_solution, choice)
-
 /mob/living/simple_animal/hostile/abomination/Initialize()
 	. = ..()
 	abom_sounds = list('sound/voice/abomination1.ogg', 'sound/voice/abomscream.ogg', 'sound/voice/abommoan.ogg', 'sound/voice/abomscream2.ogg', 'sound/voice/abomscream3.ogg')

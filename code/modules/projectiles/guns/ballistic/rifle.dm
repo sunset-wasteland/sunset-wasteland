@@ -328,8 +328,8 @@
 	item_state = "amr"
 	mag_type = /obj/item/ammo_box/magazine/amr
 	fire_delay = 12 //Heavy round, tiny bit slower
-	extra_damage = 50
-	extra_penetration = 0.6
+	extra_damage = 60
+	extra_penetration = 1//Chunky munitions.
 	recoil = 1
 	spread = 0
 	force = 10 //Big clumsy and sensitive scope, makes for a poor club
@@ -338,6 +338,11 @@
 	zoom_out_amt = 13
 	fire_sound = 'sound/f13weapons/antimaterielfire.ogg'
 	pump_sound = 'sound/f13weapons/antimaterielreload.ogg'
+
+/obj/item/gun/ballistic/rifle/mag/antimateriel/shoot_live_shot(mob/living/user, pointblank = FALSE, mob/pbtarget, message = 1, stam_cost = 0)
+	..()
+	if(HAS_TRAIT(user, TRAIT_FAST_PUMP))
+		src.pump(user)
 
 // BETA // Obsolete
 /obj/item/gun/ballistic/rifle/rifletesting

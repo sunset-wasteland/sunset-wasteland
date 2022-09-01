@@ -142,6 +142,8 @@ heavy rifle calibers (12.7, 14mm, 7.62): Uranium, Contaminated, Incin
 	damage = 0
 	pixels_per_second = 4000
 	zone_accuracy_factor = 100
+	wound_bonus = 20
+	bare_wound_bonus = 60
 
 /obj/item/projectile/bullet/a50MG/incendiary
 	damage = -10
@@ -202,7 +204,7 @@ heavy rifle calibers (12.7, 14mm, 7.62): Uranium, Contaminated, Incin
 
 /obj/item/projectile/bullet/a50MG/depleteduranium//Used, currently, for the emplaced MG.
 	name = ".50 DU-bullet"
-	damage = 5//Fire rate is absurd. Makes up for it.
+	damage = 15//Fire rate is absurd. Makes up for it.
 	armour_penetration = 1//:)
 	wound_bonus = 60//Makes up for the low damage. Not to mention that it works well with the fire rate.
 	bare_wound_bonus = 80//As above.

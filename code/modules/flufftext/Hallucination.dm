@@ -1085,7 +1085,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 	if(target.client)
 		target.client.images += image
 
-/obj/effect/hallucination/danger/lava/proc/on_entered(atom/movable/AM)
+/obj/effect/hallucination/danger/lava/proc/on_entered(datum/source, atom/movable/AM)
 	SIGNAL_HANDLER
 	if(AM == target)
 		INVOKE_ASYNC(target, /mob/living/.proc/adjustStaminaLoss, 20)
@@ -1107,7 +1107,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 	if(target.client)
 		target.client.images += image
 
-/obj/effect/hallucination/danger/chasm/proc/on_entered(atom/movable/AM)
+/obj/effect/hallucination/danger/chasm/proc/on_entered(datum/source, atom/movable/AM)
 	SIGNAL_HANDLER
 	if(AM == target)
 		if(istype(target, /obj/effect/dummy/phased_mob))
@@ -1142,7 +1142,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 	if(target.client)
 		target.client.images += image
 
-/obj/effect/hallucination/danger/anomaly/proc/on_entered(atom/movable/AM)
+/obj/effect/hallucination/danger/anomaly/proc/on_entered(datum/source, atom/movable/AM)
 	SIGNAL_HANDLER
 	if(AM == target)
 		new /datum/hallucination/shock(target)

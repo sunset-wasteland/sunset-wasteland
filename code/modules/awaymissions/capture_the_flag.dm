@@ -618,7 +618,7 @@
 
 	QDEL_IN(src, AMMO_DROP_LIFETIME)
 
-/obj/effect/ctf/ammo/proc/on_entered(atom/movable/AM)
+/obj/effect/ctf/ammo/proc/on_entered(datum/source, atom/movable/AM)
 	SIGNAL_HANDLER
 	reload(AM)
 

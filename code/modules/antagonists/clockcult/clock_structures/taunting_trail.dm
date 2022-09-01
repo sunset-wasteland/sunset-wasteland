@@ -46,7 +46,7 @@
 	..()
 	return TRUE
 
-/obj/structure/destructible/clockwork/taunting_trail/proc/on_entered(atom/movable/AM)
+/obj/structure/destructible/clockwork/taunting_trail/proc/on_entered(datum/source, atom/movable/AM)
 	SIGNAL_HANDLER
 	affect_mob(AM)
 

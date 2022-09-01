@@ -12,6 +12,9 @@
 /datum/config_entry/string/servertagline
 	config_entry_value = "We forgot to set the server's tagline in config.txt"
 
+/datum/config_entry/string/discordurl
+	config_entry_value = ""
+
 /datum/config_entry/string/serversqlname	// short form server name used for the DB
 
 /datum/config_entry/string/stationname	// station name (the name of the station in-game)

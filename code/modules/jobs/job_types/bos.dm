@@ -243,6 +243,7 @@ Head Scribe
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/AEP7)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/dks)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/R93)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/medx)
 
 /datum/outfit/job/bos/f13headscribe
 	name = "Head Scribe"
@@ -619,6 +620,7 @@ Senior Scribe
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/AEP7)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/dks)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/R93)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/medx)
 
 /datum/outfit/job/bos/f13seniorscribe
 	name =	"Senior Scribe"
@@ -711,6 +713,7 @@ Scribe
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/AEP7)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/dks)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/R93)
+		H.mind.teach_crafting_recipe(/datum/crafting_recipe/medx)
 
 /datum/outfit/loadout/scribea
 	name = "Junior Scribe"

@@ -36,7 +36,7 @@
 	if(istype(C, /obj/item/screwdriver))
 		if(broken || burnt)
 			new /obj/item/stack/sheet/mineral/wood(src)
-		else
+		else if (floor_tile)
 			new floor_tile(src)
 		to_chat(user, "<span class='danger'>You unscrew the planks.</span>")
 		make_plating()

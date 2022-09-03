@@ -645,7 +645,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 
 	loadout_options = list( // ALL: Binoculars, Bowie knife
 	/datum/outfit/loadout/rangerrecon, // DKS Sniper rifle, .45 Revolver
-	/datum/outfit/loadout/rangertrail, // Rangermaster, 2 x .357 Revolvers
+	/datum/outfit/loadout/rangertrail, // Trail Carbine, 2 x .357 Revolvers
 	/datum/outfit/loadout/rangerpatrol, // R91 Assault Rifle, .44 SA Revolver
 	/datum/outfit/loadout/rangerpatrolcqb, // 10mm SMG, .44 Snubnose revolver
 	)
@@ -702,9 +702,10 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	suit = /obj/item/clothing/suit/armor/f13/trailranger
 	belt = /obj/item/storage/belt/military/NCR_Bandolier
 	neck = /obj/item/clothing/neck/mantle/ranger
-	suit_store = /obj/item/gun/ballistic/automatic/rangemaster
+	suit_store = /obj/item/gun/ballistic/rifle/repeater/trail
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/m762 = 3,
+		/obj/item/ammo_box/m44box = 2,
+		/obj/item/ammo_box/m44box/incendiary = 1,
 		/obj/item/melee/classic_baton/telescopic = 1,
 		/obj/item/attachments/scope = 1,
 		/obj/item/gun/ballistic/revolver/colt357 = 2,

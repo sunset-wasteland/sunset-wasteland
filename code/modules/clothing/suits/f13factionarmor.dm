@@ -873,7 +873,17 @@
 	icon_state = "police_chief"
 	item_state = "police_chief"
 	armor = list("melee" = 15, "bullet" = 15, "laser" = 15, "energy" = 15, "bomb" = 20, "bio" = 5, "rad" = 0, "fire" = 15, "acid" = 5, "wound" = 30)
-
+	
+//SWAT
+	
+/obj/item/clothing/suit/armor/f13/rangercombat/eliteriot
+	name = "elite riot gear"
+	desc = "A heavily reinforced set of military grade armor, commonly seen in the Divide now repurposed and reissued to Chief Rangers."
+	icon_state = "elite_riot"
+	item_state = "elite_riot"
+	armor = list("melee" = 60, "bullet" = 60, "laser" = 60, "energy" = 40, "bomb" = 55, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20, "wound" = 55)
+	icon = 'icons/obj/clothing/suits.dmi'
+	slowdown = 0.1
 
 //Enclave
 
@@ -949,14 +959,6 @@
 	icon_state = "towntrench_special"
 	item_state = "towntrench_special"
 	armor = list("melee" = 60, "bullet" = 60, "laser" = 60, "energy" = 40, "bomb" = 55, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20, "wound" = 55)
-
-/obj/item/clothing/suit/armor/f13/rangercombat/eliteriot
-	name = "elite riot gear"
-	desc = "A heavily reinforced set of military grade armor, commonly seen in the Divide now repurposed and reissued to Chief Rangers."
-	icon_state = "elite_riot"
-	item_state = "elite_riot"
-	armor = list("melee" = 60, "bullet" = 60, "laser" = 60, "energy" = 40, "bomb" = 55, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20, "wound" = 55)
-	icon = 'icons/obj/clothing/suits.dmi'
 
 /obj/item/clothing/suit/armor/f13/rangercombat/desert
 	name = "desert ranger combat armor"

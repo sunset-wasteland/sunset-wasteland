@@ -18,6 +18,10 @@ GLOBAL_LIST_INIT(auxtools_atmos_initialized,FALSE)
 
 /proc/auxtools_atmos_init()
 
+// So that this auxmos proc shows up properly in profiling.
+/datum/gas_mixture/proc/gasmixture_register_wrapper()
+	__gasmixture_register()
+
 /datum/gas_mixture/New(volume)
 	if (!isnull(volume))
 		initial_volume = volume
@@ -25,7 +29,7 @@ GLOBAL_LIST_INIT(auxtools_atmos_initialized,FALSE)
 		AUXTOOLS_CHECK(AUXMOS)
 		if(auxtools_atmos_init())
 			GLOB.auxtools_atmos_initialized = TRUE
-	__gasmixture_register()
+	gasmixture_register_wrapper()
 	reaction_results = new
 
 /datum/gas_mixture/vv_edit_var(var_name, var_value)

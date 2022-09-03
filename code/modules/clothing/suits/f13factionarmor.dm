@@ -319,7 +319,7 @@
 	icon_state = "legion_rangercent"
 	item_state = "legion_rangercent"
 	armor = list("melee" = 27.5, "bullet" = 62.5, "laser" = 25, "energy" = 15, "bomb" = 35, "bio" = 60, "rad" = 20, "fire" = 80, "acid" = 0, "wound" = 55)
-	slowdown = 0.08
+	slowdown = 0.03
 
 /obj/item/clothing/suit/armor/f13/legion/legate
 	name = "legion legate armor"

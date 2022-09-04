@@ -19,7 +19,7 @@
 	var/wield_force = 15
 
 /obj/item/melee/smith/Initialize()
-	..()
+	. = ..()
 	if(desc == "cringe")
 		desc = "A handmade [name]."
 	overlay = mutable_appearance(icon, overlay_state)

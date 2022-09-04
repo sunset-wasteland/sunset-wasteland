@@ -130,6 +130,7 @@
 	var/AIStatus = AI_ON
 	///once we have become sentient, we can never go back.
 	var/can_have_ai = TRUE
+	var/last_active = 0 // world.time of the last time we were active, used for lazy wakeup checks
 
 	///convenience var for forcibly waking up an idling AI on next check.
 	var/shouldwakeup = FALSE
@@ -619,6 +620,8 @@
 					SSidlenpcpool.idle_mobs_by_zlevel[T.z] -= src
 				else
 					SSidlenpcpool.idle_mobs_by_zlevel[T.z] += src
+			if (AIStatus == AI_ON)
+				last_active = world.time
 			GLOB.simple_animals[AIStatus] -= src
 			GLOB.simple_animals[togglestatus] += src
 			AIStatus = togglestatus

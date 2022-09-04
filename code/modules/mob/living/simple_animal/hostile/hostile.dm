@@ -611,7 +611,9 @@
 		toggle_ai(AI_Z_OFF)
 		return
 
-	var/cheap_search = isturf(T) && !is_station_level(T.z)
+	// If we're on a non-station level or we've not been active in the last 2 minutes,
+	// do a less expensive check.
+	var/cheap_search = !is_station_level(T.z) || ((world.time - last_active) > 2 MINUTES)
 	if (cheap_search)
 		tlist = ListTargetsLazy(T.z)
 	else

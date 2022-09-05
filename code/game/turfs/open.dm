@@ -204,7 +204,10 @@
 
 /turf/open/Initialize_Atmos(times_fired)
 	update_visuals()
-	ImmediateCalculateAdjacentTurfs()
+	if(times_fired)
+		init_immediate_calculate_adjacent_turfs()
+	else
+		ImmediateCalculateAdjacentTurfs()
 
 /turf/open/proc/GetHeatCapacity()
 	. = air.heat_capacity()

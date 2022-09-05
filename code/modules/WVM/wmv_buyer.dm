@@ -54,9 +54,9 @@
 								/obj/item/export/bottle/blazaam = 25,
 								/obj/item/export/bottle/trappist = 25,
 								/obj/item/export/bottle/minikeg = 25,
-								/obj/item/export/bottle/nukashine = 100,
+								/obj/item/export/bottle/nukashine = 20,
 								/obj/item/reagent_containers/hypospray/medipen/stimpak = 50,
-								/obj/item/reagent_containers/hypospray/medipen/stimpak/super = 100,
+								/obj/item/reagent_containers/hypospray/medipen/stimpak/super = 80,
 								)
 
 /obj/machinery/mineral/wasteland_trader/general

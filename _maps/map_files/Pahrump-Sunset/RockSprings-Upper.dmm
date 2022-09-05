@@ -494,6 +494,15 @@
 /mob/living/simple_animal/hostile/renegade/soldier,
 /turf/open/floor/wood/wood_wide,
 /area/f13/building)
+"dC" = (
+/obj/structure/rack/shelf_metal,
+/obj/effect/spawner/lootdrop/f13/blueprintVHigh,
+/obj/effect/spawner/lootdrop/f13/armor/tier4,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
+	baseturfs = /turf/open/indestructible/ground/outside/sidewalk;
+	name = "metal plating"
+	},
+/area/f13/building)
 "dF" = (
 /obj/machinery/light/small,
 /turf/open/floor/f13/wood,
@@ -1017,14 +1026,6 @@
 	icon_state = "bluedirtychess2"
 	},
 /area/f13/building)
-"hV" = (
-/obj/structure/junk/small/table,
-/obj/effect/spawner/lootdrop/f13/medical/random_fev,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
-	baseturfs = /turf/open/indestructible/ground/outside/sidewalk;
-	name = "metal plating"
-	},
-/area/f13/building)
 "hW" = (
 /turf/open/floor/wood/wood_fancy,
 /area/f13/building)
@@ -1042,11 +1043,6 @@
 	baseturfs = /turf/open/indestructible/ground/outside/sidewalk;
 	name = "metal plating"
 	},
-/area/f13/building)
-"ig" = (
-/obj/item/clothing/suit/bio_suit/f13/hazmat,
-/obj/structure/rack/shelf_metal,
-/turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/building)
 "im" = (
 /obj/structure/curtain{
@@ -1718,15 +1714,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/wood_fancy/wood_fancy_light,
 /area/f13/building)
-"nC" = (
-/obj/structure/rack/shelf_metal,
-/obj/effect/spawner/lootdrop/f13/blueprintVHigh,
-/obj/effect/spawner/lootdrop/f13/armor/tier4,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
-	baseturfs = /turf/open/indestructible/ground/outside/sidewalk;
-	name = "metal plating"
-	},
-/area/f13/building)
 "nI" = (
 /obj/machinery/light/small{
 	dir = 8;
@@ -1742,6 +1729,13 @@
 /obj/item/pda,
 /turf/open/floor/wood/wood_mosaic,
 /area/f13/legion)
+"nM" = (
+/obj/machinery/door/airlock/highsecurity{
+	armor = list("melee"=55,"bullet"=30,"laser"=20,"energy"=20,"bomb"=10,"bio"=100,"rad"=100,"fire"=80,"acid"=70);
+	name = "Guard Station"
+	},
+/turf/open/indestructible/ground/outside/sidewalk,
+/area/f13/building)
 "nO" = (
 /obj/structure/debris/v1,
 /turf/open/floor/plasteel/stairs{
@@ -2155,6 +2149,10 @@
 "rb" = (
 /obj/structure/simple_door/wood,
 /obj/effect/decal/cleanable/dirt,
+/turf/open/floor/f13/wood,
+/area/f13/building)
+"rd" = (
+/obj/structure/railing,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "rf" = (
@@ -2725,19 +2723,6 @@
 	},
 /obj/structure/barricade/wooden/planks,
 /turf/open/indestructible/ground/outside/sidewalk,
-/area/f13/building)
-"wn" = (
-/obj/machinery/door/airlock/highsecurity{
-	armor = list("melee"=55,"bullet"=30,"laser"=20,"energy"=20,"bomb"=10,"bio"=100,"rad"=100,"fire"=80,"acid"=70);
-	name = "Guard Station"
-	},
-/obj/machinery/door/poddoor/shutters/old/preopen{
-	id = 23000;
-	name = "Prison Lockdown"
-	},
-/turf/open/floor/wood/wood_fancy/wood_fancy_dark{
-	baseturfs = /turf/open/indestructible/ground/outside/sidewalk
-	},
 /area/f13/building)
 "wo" = (
 /obj/structure/chair/wood/dining{
@@ -3594,6 +3579,11 @@
 	icon_state = "wide-broken6"
 	},
 /area/f13/building)
+"Gh" = (
+/obj/item/clothing/suit/bio_suit/f13/hazmat,
+/obj/structure/rack/shelf_metal,
+/turf/open/indestructible/ground/outside/sidewalk,
+/area/f13/building)
 "Gj" = (
 /obj/structure/barricade/bars{
 	max_integrity = 800;
@@ -3641,6 +3631,12 @@
 	icon_type_smooth = "tunnel";
 	name = "Reinforced utility tunnel"
 	},
+/area/f13/building)
+"HQ" = (
+/obj/structure/railing{
+	dir = 8
+	},
+/turf/open/floor/f13/wood,
 /area/f13/building)
 "Ij" = (
 /obj/item/kirbyplants/random,
@@ -3798,6 +3794,19 @@
 	color = "000000"
 	},
 /turf/open/floor/plasteel/showroomfloor{
+	baseturfs = /turf/open/indestructible/ground/outside/sidewalk
+	},
+/area/f13/building)
+"JZ" = (
+/obj/machinery/door/airlock/highsecurity{
+	armor = list("melee"=55,"bullet"=30,"laser"=20,"energy"=20,"bomb"=10,"bio"=100,"rad"=100,"fire"=80,"acid"=70);
+	name = "Guard Station"
+	},
+/obj/machinery/door/poddoor/shutters/old/preopen{
+	id = 23000;
+	name = "Prison Lockdown"
+	},
+/turf/open/floor/wood/wood_fancy/wood_fancy_dark{
 	baseturfs = /turf/open/indestructible/ground/outside/sidewalk
 	},
 /area/f13/building)
@@ -4389,12 +4398,6 @@
 /obj/machinery/light/small/broken,
 /turf/open/floor/wood/wood_wide,
 /area/f13/building)
-"PC" = (
-/obj/structure/railing{
-	dir = 8
-	},
-/turf/open/floor/f13/wood,
-/area/f13/building)
 "PH" = (
 /obj/structure/fence/wooden{
 	density = 0;
@@ -4403,10 +4406,6 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/lootdrop/f13/junkspawners,
-/turf/open/floor/f13/wood,
-/area/f13/building)
-"PI" = (
-/obj/structure/railing,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "PJ" = (
@@ -4591,6 +4590,14 @@
 /area/f13/building)
 "Rg" = (
 /turf/closed/wall/f13/tunnel,
+/area/f13/building)
+"Rk" = (
+/obj/structure/junk/small/table,
+/obj/effect/spawner/lootdrop/f13/medical/random_fev,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
+	baseturfs = /turf/open/indestructible/ground/outside/sidewalk;
+	name = "metal plating"
+	},
 /area/f13/building)
 "Rr" = (
 /obj/structure/table/snooker{
@@ -5374,13 +5381,6 @@
 	icon_type_smooth = "tunnel";
 	name = "Reinforced utility tunnel"
 	},
-/area/f13/building)
-"Yn" = (
-/obj/machinery/door/airlock/highsecurity{
-	armor = list("melee"=55,"bullet"=30,"laser"=20,"energy"=20,"bomb"=10,"bio"=100,"rad"=100,"fire"=80,"acid"=70);
-	name = "Guard Station"
-	},
-/turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/building)
 "Yq" = (
 /obj/structure/window/fulltile/wood/broken,
@@ -39112,7 +39112,7 @@ Ss
 Te
 DV
 Ss
-PI
+rd
 MD
 wR
 DH
@@ -39369,7 +39369,7 @@ Ss
 DV
 Te
 JO
-PI
+rd
 MD
 wR
 DH
@@ -39627,7 +39627,7 @@ WV
 PA
 Ss
 xg
-PC
+HQ
 tF
 DH
 DH
@@ -62198,7 +62198,7 @@ DH
 DH
 DH
 OI
-ig
+Gh
 WK
 oI
 xQ
@@ -64282,7 +64282,7 @@ zC
 zC
 zC
 zC
-wn
+JZ
 UX
 UX
 Jw
@@ -65544,7 +65544,7 @@ oI
 oI
 oI
 oI
-Yn
+nM
 oI
 ix
 CB
@@ -67630,11 +67630,11 @@ DH
 DH
 OI
 Lr
-nC
+dC
 Kd
 WM
 OI
-hV
+Rk
 cX
 UC
 OI

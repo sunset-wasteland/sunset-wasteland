@@ -727,9 +727,9 @@
 		/obj/item/storage/pill_bottle,
 		/obj/item/reagent_containers/medspray,
 		/obj/item/reagent_containers/pill,
-		/obj/item/reagent_containers/glass/bottle
+		/obj/item/reagent_containers/glass/bottle,
 		/obj/item/reagent_containers/hypospray,
-		/obj/item/reagent_containers/syringe
+		/obj/item/reagent_containers/syringe,
 		))
 
 /obj/item/storage/belt/medolier/full/PopulateContents()

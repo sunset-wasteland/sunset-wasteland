@@ -92,8 +92,8 @@
 	suit_store = /obj/item/gun/ballistic/automatic/g11/g11e
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/m473 = 3,
-		/obj/item/gun/ballistic/automatic/pistol/pistol14/custom = 1,
-		/obj/item/ammo_box/magazine/m14mm = 2,
+		/obj/item/gun/energy/laser/plasma/glock = 1,
+		/obj/item/stock_parts/cell/ammo/ec = 2,
 		)
 
 /datum/outfit/loadout/lt_plasma
@@ -101,8 +101,8 @@
 	suit_store = /obj/item/gun/energy/laser/plasma
 	backpack_contents = list(
 		/obj/item/stock_parts/cell/ammo/mfc = 2,
-		/obj/item/gun/energy/laser/plasma/glock = 1,
-		/obj/item/stock_parts/cell/ammo/ec = 2,
+		/obj/item/gun/ballistic/automatic/pistol/pistol14/custom = 1,
+		/obj/item/ammo_box/magazine/m14mm = 2,
 		)
 
 /datum/outfit/job/enclave/peacekeeper/enclavelt/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -125,7 +125,7 @@
 	flag = F13USGYSGT
 	total_positions = 1
 	spawn_positions = 1
-	access = list(ACCESS_ENCLAVE, ACCESS_CHANGE_IDS)
+	access = list(ACCESS_ENCLAVE, ACCESS_CHANGE_IDS, ACCESS_ENCLAVE_COMMAND)
 	description = "Second in command after Lieutenant, your role is to direct their orders directly to the sergeants and regular troops."
 	supervisors = "The Lieutenant."
 	outfit = /datum/outfit/job/enclave/peacekeeper/f13gysergeant

@@ -1613,10 +1613,13 @@
 /area/f13/enclave)
 "afC" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/f13/traitbooks,
-/obj/effect/spawner/lootdrop/f13/traitbooks,
-/obj/effect/spawner/lootdrop/f13/traitbooks,
-/obj/effect/spawner/lootdrop/f13/traitbooks,
+/obj/item/assembly/signaler/advanced,
+/obj/item/key/collar,
+/obj/item/key/bcollar,
+/obj/item/electropack/shockcollar,
+/obj/item/electropack/shockcollar,
+/obj/item/electropack/shockcollar/explosive,
+/obj/item/electropack/shockcollar/explosive,
 /turf/open/floor/f13,
 /area/f13/enclave)
 "afE" = (
@@ -2217,14 +2220,6 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/enclave)
-"ahC" = (
-/obj/structure/rack,
-/obj/effect/spawner/lootdrop/f13/cash_ncr_high,
-/obj/effect/spawner/lootdrop/f13/cash_legion_high,
-/obj/effect/spawner/lootdrop/f13/cash_random_high,
-/obj/item/storage/bag/money/small,
-/turf/open/floor/f13,
-/area/f13/enclave)
 "ahD" = (
 /obj/structure/table/reinforced,
 /obj/item/stamp/enclave,
@@ -2260,7 +2255,6 @@
 	pixel_y = -32;
 	use_power = 0
 	},
-/obj/machinery/light,
 /turf/open/floor/f13,
 /area/f13/enclave)
 "ahK" = (
@@ -5718,15 +5712,16 @@
 /area/f13/radiation)
 "efy" = (
 /obj/structure/closet/crate/secure/weapon{
-	name = "secure crate"
+	name = "secure crate";
+	req_access_txt = "256"
 	},
-/obj/item/assembly/signaler/advanced,
-/obj/item/key/collar,
-/obj/item/key/bcollar,
-/obj/item/electropack/shockcollar,
-/obj/item/electropack/shockcollar,
-/obj/item/electropack/shockcollar/explosive,
-/obj/item/electropack/shockcollar/explosive,
+/obj/effect/spawner/lootdrop/f13/traitbooks,
+/obj/effect/spawner/lootdrop/f13/traitbooks,
+/obj/effect/spawner/lootdrop/f13/traitbooks,
+/obj/effect/spawner/lootdrop/f13/traitbooks,
+/obj/effect/spawner/lootdrop/f13/cash_ncr_high,
+/obj/effect/spawner/lootdrop/f13/cash_legion_high,
+/obj/effect/spawner/lootdrop/f13/cash_random_high,
 /turf/open/floor/f13,
 /area/f13/enclave)
 "ege" = (
@@ -8022,9 +8017,6 @@
 	icon_state = "platingdmg1"
 	},
 /area/f13/bunker)
-"gVH" = (
-/turf/open/floor/plasteel/f13/vault_floor/neutral,
-/area/f13/caves)
 "gVI" = (
 /obj/machinery/chem_dispenser,
 /turf/open/floor/plasteel/f13{
@@ -16318,9 +16310,6 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
-"qkF" = (
-/turf/closed/wall/r_wall/f13/vault,
-/area/f13/caves)
 "qkV" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -17270,7 +17259,7 @@
 	id = "enc_crem"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/neutral,
-/area/f13/caves)
+/area/f13/enclave)
 "rvr" = (
 /obj/machinery/door/window{
 	dir = 1
@@ -19413,7 +19402,7 @@
 /obj/item/clothing/under/burial,
 /obj/item/clothing/under/burial,
 /turf/open/floor/plasteel/f13/vault_floor/neutral,
-/area/f13/caves)
+/area/f13/enclave)
 "ucH" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -64566,7 +64555,7 @@ aao
 aej
 aej
 aej
-ahC
+aej
 afv
 aao
 afH
@@ -69412,7 +69401,7 @@ kYl
 kYl
 kYl
 kYl
-qkF
+aao
 rvq
 aaC
 aaC
@@ -69669,8 +69658,8 @@ hrZ
 kYl
 kYl
 kYl
-qkF
-gVH
+aao
+aaC
 aaC
 aaC
 blk
@@ -69926,7 +69915,7 @@ hrZ
 kYl
 kYl
 kYl
-qkF
+aao
 uct
 obf
 abx
@@ -70183,8 +70172,8 @@ hrZ
 kYl
 kYl
 kYl
-qkF
-qkF
+aao
+aao
 aao
 aao
 aao

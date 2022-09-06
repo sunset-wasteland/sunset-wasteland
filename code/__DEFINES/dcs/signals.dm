@@ -273,7 +273,6 @@
 
 // /client signals
 #define COMSIG_MOB_CLIENT_CHANGE_VIEW "mob_client_change_view"		//from base of /client/change_view(): (client, old_view, view)
-#define COMSIG_MOB_CLIENT_MOUSEMOVE "mob_client_mousemove"			//from base of /client/MouseMove(): (object, location, control, params)
 
 /// From base of /client/Move(): (list/move_args)
 #define COMSIG_MOB_CLIENT_PRE_MOVE "mob_client_pre_move"

@@ -18,7 +18,7 @@
 	layer = BELOW_OBJ_LAYER
 	var/radius = 7
 	var/spawnsound //specify an audio file to play when a mob emerges from the spawner
-	var/infinite = TRUE
+	var/infinite = FALSE
 
 /obj/structure/nest/Initialize()
 	. = ..()

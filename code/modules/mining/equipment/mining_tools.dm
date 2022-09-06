@@ -13,7 +13,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 	custom_materials = list(/datum/material/iron=2000) //one sheet, but where can you make them?
 	tool_behaviour = TOOL_MINING
-	toolspeed = 1
+	toolspeed = 5
 	usesound = list('sound/effects/picaxe1.ogg', 'sound/effects/picaxe2.ogg', 'sound/effects/picaxe3.ogg')
 	attack_verb = list("hit", "pierced", "sliced", "attacked")
 	var/digrange = 1
@@ -52,7 +52,7 @@
 	name = "silver-plated pickaxe"
 	icon_state = "spickaxe"
 	item_state = "spickaxe"
-	toolspeed = 0.5 //mines faster than a normal pickaxe, bought from mining vendor
+	toolspeed = 3.5 //mines faster than a normal pickaxe, bought from mining vendor
 	desc = "A silver-plated pickaxe that mines slightly faster than standard-issue."
 	force = 17
 	custom_materials = list(/datum/material/silver=4000)
@@ -61,7 +61,7 @@
 	name = "diamond-tipped pickaxe"
 	icon_state = "dpickaxe"
 	item_state = "dpickaxe"
-	toolspeed = 0.3
+	toolspeed = 1.5
 	desc = "A pickaxe with a diamond pick head. Extremely robust at cracking rock walls and digging up dirt."
 	force = 19
 	custom_materials = list(/datum/material/diamond=4000)
@@ -70,7 +70,7 @@
 	name = "rose gold pickaxe"
 	icon_state = "rgpickaxe"
 	item_state = "rgpickaxe"
-	toolspeed = 0.1
+	toolspeed = 1
 	desc = "A pickaxe with a light rose gold head and some red glowing runes. Extremely robust at cracking rock walls and digging up dirt."
 	force = 19
 	custom_materials = list(/datum/material/gold=4000)
@@ -79,7 +79,7 @@
 /obj/item/pickaxe/plasteel
 	name = "plasteel-tipped pickaxe"
 	icon_state = "titaxe"
-	toolspeed = 0.5
+	toolspeed = 1
 	desc = "A pickaxe with a plasteel pick head. Less robust at cracking rock walls and digging up dirt than the titanium pickaxe, but better at cracking open skulls."
 	force = 19
 	custom_materials = list(/datum/material/iron=2000, /datum/material/plasma=2000)
@@ -87,7 +87,7 @@
 /obj/item/pickaxe/titanium
 	name = "titanium-tipped pickaxe"
 	icon_state = "psteelaxe"
-	toolspeed = 0.3
+	toolspeed = 1
 	desc = "A pickaxe with a titanium pick head. Extremely robust at cracking rock walls and digging up dirt, but less than the plasteel pickaxe at cracking open skulls."
 	force = 17
 	custom_materials = list(/datum/material/titanium=4000)
@@ -97,7 +97,7 @@
 	icon_state = "handdrill"
 	item_state = "jackhammer"
 	slot_flags = ITEM_SLOT_BELT
-	toolspeed = 0.6 //available from roundstart, faster than a pickaxe.
+	toolspeed = 1.5 //available from roundstart, faster than a pickaxe.
 	usesound = 'sound/weapons/drill.ogg'
 	hitsound = 'sound/weapons/drill.ogg'
 	desc = "An electric mining drill for the especially scrawny."
@@ -106,7 +106,7 @@
 	name = "cyborg mining drill"
 	desc = "An integrated electric mining drill."
 	flags_1 = NONE
-	toolspeed = 0.5
+	toolspeed = 1.5
 
 /obj/item/pickaxe/drill/cyborg/Initialize()
 	. = ..()
@@ -115,13 +115,13 @@
 /obj/item/pickaxe/drill/diamonddrill
 	name = "diamond-tipped mining drill"
 	icon_state = "diamonddrill"
-	toolspeed = 0.4
+	toolspeed = 1
 	desc = "Yours is the drill that will pierce the heavens!"
 
 /obj/item/pickaxe/drill/cyborg/diamond //This is the BORG version!
 	name = "diamond-tipped cyborg mining drill" //To inherit the NODROP_1 flag, and easier to change borg specific drill mechanics.
 	icon_state = "diamonddrill"
-	toolspeed = 0.4
+	toolspeed = 0.5
 	digrange = 2
 
 /obj/item/pickaxe/drill/jackhammer
@@ -129,7 +129,7 @@
 	icon_state = "jackhammer"
 	item_state = "jackhammer"
 	w_class = WEIGHT_CLASS_HUGE
-	toolspeed = 0.2 //the epitome of powertools. extremely fast mining, laughs at puny walls
+	toolspeed = 0.3 //the epitome of powertools. extremely fast mining, laughs at puny walls
 	usesound = 'sound/weapons/sonic_jackhammer.ogg'
 	hitsound = 'sound/weapons/sonic_jackhammer.ogg'
 	desc = "Cracks rocks with sonic blasts, and doubles as a demolition power tool for smashing walls."

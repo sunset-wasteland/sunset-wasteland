@@ -120,6 +120,7 @@
 	RateUpLim 			= 10
 	FermiChem 			= TRUE
 */
+
 /datum/chemical_reaction/turbo
 	name = "Turbo"
 	id = /datum/reagent/drug/turbo
@@ -138,6 +139,7 @@
 	RateUpLim 			= 7
 	FermiChem 			= TRUE
 */
+
 /datum/chemical_reaction/psycho
 	name = "Psycho"
 	id = /datum/reagent/drug/psycho
@@ -156,6 +158,7 @@
 	RateUpLim 			= 5
 	FermiChem 			= TRUE
 */
+
 /datum/chemical_reaction/buffout
 	name = "Buffout"
 	id = /datum/reagent/drug/buffout

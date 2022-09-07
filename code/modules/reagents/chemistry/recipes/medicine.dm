@@ -388,6 +388,7 @@
 	FermiChem 			= TRUE//If the chemical uses the Fermichem reaction mechanics
 	FermiExplode 		= FALSE //If the chemical explodes in a special way
 */
+
 /datum/chemical_reaction/stimpak2
 	name = "Imitation Stimpak Fluid"
 	id = /datum/reagent/medicine/stimpakimitation
@@ -407,6 +408,7 @@
 	FermiChem 			= TRUE//If the chemical uses the Fermichem reaction mechanics
 	FermiExplode 		= FALSE //If the chemical explodes in a special way
 */
+
 /datum/chemical_reaction/superstimpak
 	name = "Super Stimpak Fluid"
 	id = /datum/reagent/medicine/super_stimpak
@@ -426,6 +428,7 @@
 	FermiChem 			= TRUE
 	FermiExplode 		= FALSE
 */
+
 /datum/chemical_reaction/medx
 	name = "Med-X"
 	id = /datum/reagent/medicine/medx

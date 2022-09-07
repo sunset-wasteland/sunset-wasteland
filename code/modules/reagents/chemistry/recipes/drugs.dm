@@ -107,69 +107,70 @@
 	id = /datum/reagent/drug/jet
 	results = list(/datum/reagent/drug/jet = 5)
 	required_reagents = list(/datum/reagent/drug/nicotine = 2, /datum/reagent/consumable/milk = 2, /datum/reagent/fuel = 1, /datum/reagent/consumable/ethanol = 1)
-//	OptimalTempMin 		= 600
-//	OptimalTempMax		= 675
-//	ExplodeTemp			= 700
-//	OptimalpHMin		= 7
-//	OptimalpHMax		= 10
-//	ReactpHLim			= 2
-//	CurveSharpT 		= 5
-//	CurveSharppH 		= 0.7
-//	ThermicConstant		= -6
-//	HIonRelease 		= -0.5
-//	RateUpLim 			= 10
-//	FermiChem 			= TRUE
-
+/*	OptimalTempMin 		= 600
+	OptimalTempMax		= 675
+	ExplodeTemp			= 700
+	OptimalpHMin		= 7
+	OptimalpHMax		= 10
+	ReactpHLim			= 2
+	CurveSharpT 		= 5
+	CurveSharppH 		= 0.7
+	ThermicConstant		= -6
+	HIonRelease 		= -0.5
+	RateUpLim 			= 10
+	FermiChem 			= TRUE
+*/
 /datum/chemical_reaction/turbo
 	name = "Turbo"
 	id = /datum/reagent/drug/turbo
 	results = list(/datum/reagent/drug/turbo = 4)
 	required_reagents = list(/datum/reagent/cellulose = 1, /datum/reagent/toxin/cyanide = 1, /datum/reagent/consumable/brocjuice = 1, /datum/reagent/drug/jet = 1) //fairly close to the ingame recipe
-//	OptimalTempMin 		= 410
-//	OptimalTempMax		= 525
-//	ExplodeTemp			= 585
-//	OptimalpHMin		= 4
-//	OptimalpHMax		= 7
-//	ReactpHLim			= 2
-//	CurveSharpT 		= 5
-//	CurveSharppH 		= 0.7
-//	ThermicConstant		= 8
-//	HIonRelease 		= 0.5
-//	RateUpLim 			= 7
-//	FermiChem 			= TRUE
-
+/*	OptimalTempMin 		= 410
+	OptimalTempMax		= 525
+	ExplodeTemp			= 585
+	OptimalpHMin		= 4
+	OptimalpHMax		= 7
+	ReactpHLim			= 2
+	CurveSharpT 		= 5
+	CurveSharppH 		= 0.7
+	ThermicConstant		= 8
+	HIonRelease 		= 0.5
+	RateUpLim 			= 7
+	FermiChem 			= TRUE
+*/
 /datum/chemical_reaction/psycho
 	name = "Psycho"
 	id = /datum/reagent/drug/psycho
 	results = list(/datum/reagent/drug/psycho = 3)
 	required_reagents = list(/datum/reagent/toxin/acid = 1, /datum/reagent/consumable/cavefungusjuice = 1, /datum/reagent/ash = 1, /datum/reagent/drug/methamphetamine = 1)
-//	OptimalTempMin 		= 223
-//	OptimalTempMax		= 303
-//	ExplodeTemp			= 323
-//	OptimalpHMin		= 3
-//	OptimalpHMax		= 6
-//	ReactpHLim			= 1
-//	CurveSharpT 		= 5
-//	CurveSharppH 		= 0.7
-//	ThermicConstant		= 5
-//	HIonRelease 		= 0.5
-//	RateUpLim 			= 5
-//	FermiChem 			= TRUE
-
+/*	OptimalTempMin 		= 223
+	OptimalTempMax		= 303
+	ExplodeTemp			= 323
+	OptimalpHMin		= 3
+	OptimalpHMax		= 6
+	ReactpHLim			= 1
+	CurveSharpT 		= 5
+	CurveSharppH 		= 0.7
+	ThermicConstant		= 5
+	HIonRelease 		= 0.5
+	RateUpLim 			= 5
+	FermiChem 			= TRUE
+*/
 /datum/chemical_reaction/buffout
 	name = "Buffout"
 	id = /datum/reagent/drug/buffout
 	results = list(/datum/reagent/drug/buffout = 10)
 	required_reagents = list(/datum/reagent/consumable/sugar = 1, /datum/reagent/phosphorus = 1, /datum/reagent/sulfur = 1, /datum/reagent/drug/crank = 1, /datum/reagent/carbondioxide = 1, /datum/reagent/nitrous_oxide = 1, /datum/reagent/consumable/yuccajuice = 1)
-//	OptimalTempMin 		= 165
-//	OptimalTempMax		= 215
-//	ExplodeTemp			= 223
-//	OptimalpHMin		= 8
-//	OptimalpHMax		= 11
-//	ReactpHLim			= 1
-//	CurveSharpT 		= 5
-//	CurveSharppH 		= 0.7
-//	ThermicConstant		= 2
-//	HIonRelease 		= 0.25
-//	RateUpLim 			= 3
-//	FermiChem 			= TRUE
+/*	OptimalTempMin 		= 165
+	OptimalTempMax		= 215
+	ExplodeTemp			= 223
+	OptimalpHMin		= 8
+	OptimalpHMax		= 11
+	ReactpHLim			= 1
+	CurveSharpT 		= 5
+	CurveSharppH 		= 0.7
+	ThermicConstant		= 2
+	HIonRelease 		= 0.25
+	RateUpLim 			= 3
+	FermiChem 			= TRUE
+*/

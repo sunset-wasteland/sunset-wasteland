@@ -1438,7 +1438,7 @@
 	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
 
 
-//M1919 Machinegun				Keywords: LEGION, .308, Automatic, 80 round belt. Special modifiers: damage decrease bullethose
+//M1919 Machinegun				Keywords: LEGION, .308, Automatic, 80 round belt.
 /obj/item/gun/ballistic/automatic/m1919
 	name = "Browning M1919"
 	desc = "This ancient machine gun has been dug up and put into working order by the Legion Forgemasters. It's loud, heavy and terrifying."
@@ -1450,10 +1450,10 @@
 	burst_shot_delay = 1.5
 	is_automatic = TRUE
 	automatic = 1
-	autofire_shot_delay = 2.2
-	fire_delay = 4
+	autofire_shot_delay = 1.1
+	fire_delay = 2
 	extra_damage = 30
-	extra_penetration = 0.1
+	extra_penetration = 0.35
 	spread = 8
 	can_attachments = FALSE
 	var/cover_open = FALSE

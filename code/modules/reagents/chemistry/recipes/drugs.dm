@@ -69,7 +69,7 @@
 	results = list(/datum/reagent/moonsugar = 1, /datum/reagent/medicine/morphine = 2.5)
 	required_temp = 315 //a little above normal body temperature
 	required_reagents = list(/datum/reagent/drug/skooma = 1)
-	
+
 /datum/chemical_reaction/aphro
 	name = "crocin"
 	id = /datum/reagent/drug/aphrodisiac
@@ -77,7 +77,7 @@
 	required_reagents = list(/datum/reagent/carbon = 2, /datum/reagent/hydrogen = 2, /datum/reagent/oxygen = 2, /datum/reagent/water = 1)
 	required_temp = 400
 	mix_message = "The mixture boils off a pink vapor..."//The water boils off, leaving the crocin
-	
+
 /datum/chemical_reaction/aphroplus
 	name = "hexacrocin"
 	id = /datum/reagent/drug/aphrodisiacplus
@@ -107,7 +107,7 @@
 	id = /datum/reagent/drug/jet
 	results = list(/datum/reagent/drug/jet = 5)
 	required_reagents = list(/datum/reagent/drug/nicotine = 2, /datum/reagent/consumable/milk = 2, /datum/reagent/fuel = 1, /datum/reagent/consumable/ethanol = 1)
-	OptimalTempMin 		= 600
+/*	OptimalTempMin 		= 600
 	OptimalTempMax		= 675
 	ExplodeTemp			= 700
 	OptimalpHMin		= 7
@@ -119,13 +119,14 @@
 	HIonRelease 		= -0.5
 	RateUpLim 			= 10
 	FermiChem 			= TRUE
+*/
 
 /datum/chemical_reaction/turbo
 	name = "Turbo"
 	id = /datum/reagent/drug/turbo
 	results = list(/datum/reagent/drug/turbo = 4)
 	required_reagents = list(/datum/reagent/cellulose = 1, /datum/reagent/toxin/cyanide = 1, /datum/reagent/consumable/brocjuice = 1, /datum/reagent/drug/jet = 1) //fairly close to the ingame recipe
-	OptimalTempMin 		= 410
+/*	OptimalTempMin 		= 410
 	OptimalTempMax		= 525
 	ExplodeTemp			= 585
 	OptimalpHMin		= 4
@@ -137,13 +138,14 @@
 	HIonRelease 		= 0.5
 	RateUpLim 			= 7
 	FermiChem 			= TRUE
+*/
 
 /datum/chemical_reaction/psycho
 	name = "Psycho"
 	id = /datum/reagent/drug/psycho
 	results = list(/datum/reagent/drug/psycho = 3)
 	required_reagents = list(/datum/reagent/toxin/acid = 1, /datum/reagent/consumable/cavefungusjuice = 1, /datum/reagent/ash = 1, /datum/reagent/drug/methamphetamine = 1)
-	OptimalTempMin 		= 223
+/*	OptimalTempMin 		= 223
 	OptimalTempMax		= 303
 	ExplodeTemp			= 323
 	OptimalpHMin		= 3
@@ -155,13 +157,14 @@
 	HIonRelease 		= 0.5
 	RateUpLim 			= 5
 	FermiChem 			= TRUE
+*/
 
 /datum/chemical_reaction/buffout
 	name = "Buffout"
 	id = /datum/reagent/drug/buffout
 	results = list(/datum/reagent/drug/buffout = 10)
 	required_reagents = list(/datum/reagent/consumable/sugar = 1, /datum/reagent/phosphorus = 1, /datum/reagent/sulfur = 1, /datum/reagent/drug/crank = 1, /datum/reagent/carbondioxide = 1, /datum/reagent/nitrous_oxide = 1, /datum/reagent/consumable/yuccajuice = 1)
-	OptimalTempMin 		= 165
+/*	OptimalTempMin 		= 165
 	OptimalTempMax		= 215
 	ExplodeTemp			= 223
 	OptimalpHMin		= 8
@@ -173,3 +176,5 @@
 	HIonRelease 		= 0.25
 	RateUpLim 			= 3
 	FermiChem 			= TRUE
+*/
+

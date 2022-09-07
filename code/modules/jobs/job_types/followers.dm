@@ -67,6 +67,8 @@ Administrator
 	ADD_TRAIT(H, TRAIT_RESEARCHER, src)
 	ADD_TRAIT(H, TRAIT_MEDICALEXPERT, src)
 	ADD_TRAIT(H, TRAIT_SURGERY_HIGH, src)
+	ADD_TRAIT(H, TRAIT_RESEARCHER, src)
+	ADD_TRAIT(H, TRAIT_CYBERNETICIST_EXPERT, src)
 
 /datum/outfit/job/followers/f13leadpractitioner
 	name =	"Followers Administrator"

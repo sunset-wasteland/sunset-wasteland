@@ -723,7 +723,13 @@
 	STR.allow_quick_empty = TRUE
 	STR.click_gather = TRUE
 	STR.can_hold = typecacheof(list(
-		/obj/item/reagent_containers/syringe/dart
+		/obj/item/reagent_containers/syringe/dart,
+		/obj/item/storage/pill_bottle,
+		/obj/item/reagent_containers/medspray,
+		/obj/item/reagent_containers/pill,
+		/obj/item/reagent_containers/glass/bottle,
+		/obj/item/reagent_containers/hypospray,
+		/obj/item/reagent_containers/syringe,
 		))
 
 /obj/item/storage/belt/medolier/full/PopulateContents()

@@ -92,8 +92,8 @@
 	suit_store = /obj/item/gun/ballistic/automatic/g11/g11e
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/m473 = 3,
-		/obj/item/gun/ballistic/automatic/pistol/pistol14/custom = 1,
-		/obj/item/ammo_box/magazine/m14mm = 2,
+		/obj/item/gun/energy/laser/plasma/glock = 1,
+		/obj/item/stock_parts/cell/ammo/ec = 2,
 		)
 
 /datum/outfit/loadout/lt_plasma
@@ -101,8 +101,8 @@
 	suit_store = /obj/item/gun/energy/laser/plasma
 	backpack_contents = list(
 		/obj/item/stock_parts/cell/ammo/mfc = 2,
-		/obj/item/gun/energy/laser/plasma/glock = 1,
-		/obj/item/stock_parts/cell/ammo/ec = 2,
+		/obj/item/gun/ballistic/automatic/pistol/pistol14/custom = 1,
+		/obj/item/ammo_box/magazine/m14mm = 2,
 		)
 
 /datum/outfit/job/enclave/peacekeeper/enclavelt/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -125,8 +125,8 @@
 	flag = F13USGYSGT
 	total_positions = 1
 	spawn_positions = 1
-	access = list(ACCESS_ENCLAVE, ACCESS_CHANGE_IDS)
-	description = "Second in command after Lieutenant, your role is to direct their orders directly to the sergeants and regular troops."
+	access = list(ACCESS_ENCLAVE, ACCESS_CHANGE_IDS, ACCESS_ENCLAVE_COMMAND)
+	description = "Second in command after Lieutenant, your role is to direct their orders directly to the Sergeants and regular troops."
 	supervisors = "The Lieutenant."
 	outfit = /datum/outfit/job/enclave/peacekeeper/f13gysergeant
 	exp_requirements = 1400
@@ -258,7 +258,7 @@
 	flag = F13USSPECIALIST
 	total_positions = 2
 	spawn_positions = 2
-	description = "You are an operative for the remnants of the Enclave. You, unlike the normal privates, have recieved specialist training in either engineering or medicine."
+	description = "You are an operative for the remnants of the Enclave. You, unlike the normal Privates, have recieved specialist training in either engineering or medicine."
 	supervisors = "The Lieutenant and the Sergeants."
 	outfit = /datum/outfit/job/enclave/peacekeeper/f13specialist
 	exp_requirements = 700
@@ -324,7 +324,7 @@
 	flag = F13USPRIVATE
 	total_positions = 4
 	spawn_positions = 4
-	description = "You are an enlisted member of the Enclave. Obey your Lieutenant. He sets the Enclave's policies. Unfortunately, you've not yet received your PA training. <br> (OOC NOTE: If you use this role to TDM, you'll be jobbanned and risk a potential permaban from the server.)"
+	description = "You are an enlisted member of the Enclave. Obey your Lieutenant. They set the Enclave's policies. Unfortunately, you've not yet received your PA training. <br> (OOC NOTE: If you use this role to TDM, you'll be jobbanned and risk a potential permaban from the server.)"
 	supervisors = "The Lieutenant and the Sergeants"
 	outfit = /datum/outfit/job/enclave/peacekeeper/enclavespy
 	exp_type = EXP_TYPE_FALLOUT

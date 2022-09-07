@@ -319,7 +319,7 @@
 	icon_state = "legion_rangercent"
 	item_state = "legion_rangercent"
 	armor = list("melee" = 27.5, "bullet" = 62.5, "laser" = 25, "energy" = 15, "bomb" = 35, "bio" = 60, "rad" = 20, "fire" = 80, "acid" = 0, "wound" = 55)
-	slowdown = 0.08
+	slowdown = 0.03
 
 /obj/item/clothing/suit/armor/f13/legion/legate
 	name = "legion legate armor"
@@ -549,7 +549,7 @@
 	icon_state = "cowboyrang"
 	item_state = "cowboyrang"
 	armor = list("melee" = 35, "bullet" = 40, "laser" = 35, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0, "wound" = 40)
-	slowdown = 0.01
+	slowdown = 0.03
 	salvage_loot = list(/obj/item/stack/crafting/armor_plate = 4)
 
 /obj/item/clothing/suit/armor/f13/trailranger/Initialize()

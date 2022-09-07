@@ -18,6 +18,8 @@
 	icon_state = "gasmask_enclave"
 	item_state = "gasmask_enclave"
 	flash_protect = 2
+	
+	var/voice_change = 1
 
 /obj/item/clothing/mask/gas/glass
 	name = "glass gas mask"

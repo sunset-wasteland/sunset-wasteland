@@ -374,7 +374,7 @@
 	id = /datum/reagent/medicine/stimpak
 	results = list(/datum/reagent/medicine/stimpak = 1)
 	required_reagents = list(/datum/reagent/blood = 1, /datum/reagent/medicine/spaceacillin = 1)
-	OptimalTempMin 		= 500 // Lower area of bell curve for determining heat based rate reactions
+/*	OptimalTempMin 		= 500 // Lower area of bell curve for determining heat based rate reactions
 	OptimalTempMax		= 550 // Upper end for above
 	ExplodeTemp			= 9999 //Temperature at which reaction explodes
 	OptimalpHMin		= 3 // Lowest value of pH determining pH a 1 value for pH based rate reactions (Plateu phase)
@@ -387,13 +387,14 @@
 	RateUpLim 			= 5 //Optimal/max rate possible if all conditions are perfect
 	FermiChem 			= TRUE//If the chemical uses the Fermichem reaction mechanics
 	FermiExplode 		= FALSE //If the chemical explodes in a special way
+*/
 
 /datum/chemical_reaction/stimpak2
 	name = "Imitation Stimpak Fluid"
 	id = /datum/reagent/medicine/stimpakimitation
 	results = list(/datum/reagent/medicine/stimpakimitation = 2)
 	required_reagents = list(/datum/reagent/consumable/brocjuice = 1, /datum/reagent/consumable/xanderjuice = 1)
-	OptimalTempMin 		= 500 // Lower area of bell curve for determining heat based rate reactions
+/*	OptimalTempMin 		= 500 // Lower area of bell curve for determining heat based rate reactions
 	OptimalTempMax		= 650 // Upper end for above
 	ExplodeTemp			= 9999 //Temperature at which reaction explodes
 	OptimalpHMin		= 2 // Lowest value of pH determining pH a 1 value for pH based rate reactions (Plateu phase)
@@ -406,13 +407,14 @@
 	RateUpLim 			= 12 //Optimal/max rate possible if all conditions are perfect
 	FermiChem 			= TRUE//If the chemical uses the Fermichem reaction mechanics
 	FermiExplode 		= FALSE //If the chemical explodes in a special way
+*/
 
 /datum/chemical_reaction/superstimpak
 	name = "Super Stimpak Fluid"
 	id = /datum/reagent/medicine/super_stimpak
 	results = list(/datum/reagent/medicine/super_stimpak = 5)
 	required_reagents = list(/datum/reagent/blood/synthetics = 1, /datum/reagent/medicine/stimpak = 1, /datum/reagent/consumable/mutjuice = 1) //1 mutfruit at 50 potency yields 6 mutfruit juice
-	OptimalTempMin 		= 65
+/*	OptimalTempMin 		= 65
 	OptimalTempMax		= 95
 	ExplodeTemp			= 100
 	OptimalpHMin		= 0.5
@@ -425,13 +427,14 @@
 	RateUpLim 			= 50 //this seems quite high but 1. runaway thermals 2. it's very slow since it's 100K
 	FermiChem 			= TRUE
 	FermiExplode 		= FALSE
+*/
 
 /datum/chemical_reaction/medx
 	name = "Med-X"
 	id = /datum/reagent/medicine/medx
 	results = list(/datum/reagent/medicine/medx = 4)
 	required_reagents = list(/datum/reagent/drug/aranesp = 1, /datum/reagent/phenol = 1, /datum/reagent/drug/heroin = 1, /datum/reagent/medicine/stimpakimitation = 1)
-	OptimalTempMin 		= 780
+/*	OptimalTempMin 		= 780
 	OptimalTempMax		= 821
 	ExplodeTemp			= 824
 	OptimalpHMin		= 10
@@ -443,7 +446,7 @@
 	HIonRelease 		= -0.5
 	RateUpLim 			= 40
 	FermiChem 			= TRUE
-
+*/
 
 /datum/chemical_reaction/mentats
 	name = "mentats"

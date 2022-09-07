@@ -54,6 +54,13 @@
 	shrapnel_radius = 10
 	var/rad_damage = 300
 
+/obj/item/grenade/f13/plasma/remnant
+	name = "dusty plasma grenade"
+	desc = "A prewar military-grade plasma grenade, used for permanent riot suppression pre-war. This one appears old. Corroded, even. Here's hoping it doesn't explode in your hand."
+	icon_state = "plasma"
+	shrapnel_type = /obj/item/projectile/bullet/shrapnel/plasma
+	shrapnel_radius = 4//Far less, for balance sake.
+
 /obj/item/grenade/f13/plasma/prime(mob/living/lanced_by)
 	. = ..()
 	update_mob()

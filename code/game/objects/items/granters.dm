@@ -834,6 +834,11 @@
 	icon_state = "blueprint2"
 	crafting_recipe_types = list(/datum/crafting_recipe/explosive/shrapnelmine, /datum/crafting_recipe/explosive/explomine, /datum/crafting_recipe/explosive/stingmine, /datum/crafting_recipe/explosive/pulsemine, /datum/crafting_recipe/explosive/stunmine)
 
+/obj/item/book/granter/crafting_recipe/blueprint/plasmapistol_rem
+	name = "plasma sidearm repair guide"
+	icon_state = "blueprint2"
+	crafting_recipe_types = list(/datum/crafting_recipe/plasmapistol_rem)
+
 /*
 /obj/item/book/granter/crafting_recipe/blueprint/fnfal
 	name = "fn fal blueprint"

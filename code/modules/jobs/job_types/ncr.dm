@@ -422,8 +422,8 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 /datum/outfit/loadout/seatechnical
 	name = "Technical Senior Advisor"
 	suit = /obj/item/clothing/suit/armor/f13/ncrarmor/mantle/reinforced
+	suit_store = /obj/item/gun/ballistic/automatic/assault_carbine/worn
 	backpack_contents = list(
-		/obj/item/gun/ballistic/automatic/assault_carbine = 1,
 		/obj/item/ammo_box/magazine/m5mm = 1,
 		/obj/item/clothing/accessory/ncr/FSGT = 1
 		)

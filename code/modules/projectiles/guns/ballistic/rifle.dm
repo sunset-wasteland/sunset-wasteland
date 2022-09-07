@@ -146,7 +146,7 @@
 	fire_delay = 3
 	recoil = 0.15
 	fire_sound = 'sound/f13weapons/brushgunfire.ogg'
-	
+
 //Medicine Stick						Keywords: .45-70, Lever action, 8 round internal, Long barrel, Unique
 /obj/item/gun/ballistic/rifle/repeater/brush/medistick
 	name = "medicine stick"
@@ -356,6 +356,13 @@
 	..()
 	if(HAS_TRAIT(user, TRAIT_FAST_PUMP))
 		src.pump(user)
+	if((prob(95) && !zoomed))
+		var/mob/living/carbon/human/H = user
+		playsound(loc, 'sound/f13effects/surrender.ogg', 100, 1)
+		shake_camera(user, recoil + 1, recoil)
+		to_chat(user, "<span class ='danger'>You attempt to fire the rifle from the hip unprepared, tossing you to the ground!</span>")
+		H.visible_message("<span class='danger'>[H] drops to the floor from recoil as they fire unprepared!</span>")
+		user.Knockdown(60)
 
 // BETA // Obsolete
 /obj/item/gun/ballistic/rifle/rifletesting

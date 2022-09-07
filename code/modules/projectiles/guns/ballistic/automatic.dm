@@ -1268,11 +1268,11 @@
 	is_automatic = TRUE
 	automatic = 1
 	autofire_shot_delay = 1.75
-	extra_damage = 20
+	extra_damage = 16
 	extra_penetration = 0.50
-	spread = 10 //high-velocity
+	spread = 18 //high-velocity
 	can_attachments = TRUE
-	can_scope = TRUE
+	can_scope = FALSE
 	scope_state = "scope_short"
 	scope_x_offset = 4
 	scope_y_offset = 15
@@ -1307,8 +1307,8 @@
 	icon_state = "assault_carbine"
 	fire_delay = 3.5
 	burst_shot_delay = 2.2
-	spread = 14
-	extra_damage = 19
+	spread = 18
+	extra_damage = 13
 	extra_penetration = 0.30
 //FN-FAL				Keywords: 7.62mm, Automatic, 10/20 round magazine
 /obj/item/gun/ballistic/automatic/fnfal

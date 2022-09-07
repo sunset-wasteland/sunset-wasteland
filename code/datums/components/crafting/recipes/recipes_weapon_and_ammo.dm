@@ -1126,6 +1126,20 @@
 	subcategory = CAT_WEAPON
 	always_available = FALSE
 
+//Remnant plasma pistol
+/datum/crafting_recipe/plasmapistol_rem
+	name = "Plasma Pistol"
+	result = /obj/item/gun/energy/laser/plasma/pistol
+	reqs = list(/obj/item/stack/sheet/metal = 5,
+				/obj/item/stack/crafting/metalparts = 3,
+				/obj/item/stack/crafting/electronicparts = 3
+				)
+	tools = list(TOOL_WORKBENCH)
+	time = 120
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+	always_available = FALSE
+
 //uzi
 /datum/crafting_recipe/uzi
 	name = "Uzi SMG"

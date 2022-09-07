@@ -35,6 +35,7 @@
 /obj/item/gun/energy/laser/plasma/pistol/worn/gutsy
 	name ="\improper integrated plasma pistol"
 	desc = "A pistol-sized miniaturized plasma caster built by REPCONN. It fires a bolt of superhot ionized gas."
+	selfcharge = EGUN_SELFCHARGE_BORG
 
 //Glock 86 Plasma pistol
 /obj/item/gun/energy/laser/plasma/glock

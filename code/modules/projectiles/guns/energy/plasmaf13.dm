@@ -32,6 +32,12 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/plasma/pistol/worn)
 	fire_delay = 4.5
 
+/obj/item/gun/energy/laser/plasma/pistol/remnant
+	name ="corroded plasma pistol"
+	desc = "A pistol-sized miniaturized plasma caster built by REPCONN. It fires a bolt of superhot ionized gas. This one's internal parts have loose seals and corroded electronics. Despite the aforementioned issues, it appears someone has maintained this relic for quite some time."
+	ammo_type = list(/obj/item/ammo_casing/energy/plasma/pistol/worn)
+	fire_delay = 8
+
 /obj/item/gun/energy/laser/plasma/pistol/worn/gutsy
 	name ="\improper integrated plasma pistol"
 	desc = "A pistol-sized miniaturized plasma caster built by REPCONN. It fires a bolt of superhot ionized gas."

@@ -84,7 +84,8 @@
 		/obj/item/storage/pill_bottle/chem_tin/buffout = 1,
 		/obj/item/storage/pill_bottle/chem_tin/mentats = 1,
 		/obj/item/reagent_containers/hypospray/medipen/psycho = 1,
-		/obj/item/reagent_containers/hypospray/medipen/medx = 1
+		/obj/item/reagent_containers/hypospray/medipen/medx = 1,
+		/obj/item/card/id/syndicate/anyone =1
 		)
 
 /datum/outfit/loadout/lt_ballistics
@@ -153,7 +154,8 @@
 		/obj/item/storage/pill_bottle/chem_tin/buffout = 1,
 		/obj/item/storage/pill_bottle/chem_tin/mentats = 1,
 		/obj/item/reagent_containers/hypospray/medipen/psycho = 1,
-		/obj/item/reagent_containers/hypospray/medipen/medx = 1
+		/obj/item/reagent_containers/hypospray/medipen/medx = 1,
+		/obj/item/card/id/syndicate/anyone =1
 		)
 
 /datum/outfit/loadout/gysgt_ballistics
@@ -223,7 +225,8 @@
 		/obj/item/storage/pill_bottle/chem_tin/buffout = 1,
 		/obj/item/storage/pill_bottle/chem_tin/mentats = 1,
 		/obj/item/reagent_containers/hypospray/medipen/psycho = 1,
-		/obj/item/reagent_containers/hypospray/medipen/medx = 1
+		/obj/item/reagent_containers/hypospray/medipen/medx = 1,
+		/obj/item/card/id/syndicate/anyone =1
 		)
 
 /datum/outfit/loadout/sgt_ballistics
@@ -285,7 +288,8 @@
 		/obj/item/storage/pill_bottle/chem_tin/buffout = 1,
 		/obj/item/storage/pill_bottle/chem_tin/mentats = 1,
 		/obj/item/reagent_containers/hypospray/medipen/psycho = 1,
-		/obj/item/reagent_containers/hypospray/medipen/medx = 1
+		/obj/item/reagent_containers/hypospray/medipen/medx = 1,
+		/obj/item/card/id/syndicate/anyone =1
 		)
 
 /datum/outfit/loadout/combatmedic
@@ -344,7 +348,8 @@
 		/obj/item/storage/pill_bottle/chem_tin/buffout = 1,
 		/obj/item/storage/pill_bottle/chem_tin/mentats = 1,
 		/obj/item/reagent_containers/hypospray/medipen/psycho = 1,
-		/obj/item/reagent_containers/hypospray/medipen/medx = 1
+		/obj/item/reagent_containers/hypospray/medipen/medx = 1,
+		/obj/item/card/id/syndicate/anyone =1
 		)
 /*
 /datum/outfit/job/enclave/peacekeeper/enclavespy/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -383,10 +388,11 @@
 		/obj/item/grenade/chem_grenade/cleaner = 1,
 		/obj/item/pda = 1,
 		/obj/item/gun/energy/gammagun = 1,
-		/obj/item/stock_parts/cell/ammo/ec = 2,
+		/obj/item/stock_parts/cell/ammo/mfc = 2,
 		/obj/item/storage/bag/money/small/wastelander = 1,
 		/obj/item/melee/onehanded/knife/survival = 1,
 		/obj/item/clothing/head/beret/enclave/science = 1,
+		/obj/item/card/id/syndicate/anyone =1
 		)
 
 /datum/outfit/job/enclave/noncombat/enclavesci/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)

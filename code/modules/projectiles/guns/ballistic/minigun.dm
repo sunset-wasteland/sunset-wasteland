@@ -119,7 +119,7 @@
 	extra_damage = 10
 	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
 	mag_type = /obj/item/ammo_box/magazine/internal/minigunbal5mm
-	casing_ejector = TRUE
+	casing_ejector = FALSE//For now.
 	item_flags = SLOWS_WHILE_IN_HAND
 	var/obj/item/minigunpackbal5mm/ammo_pack
 

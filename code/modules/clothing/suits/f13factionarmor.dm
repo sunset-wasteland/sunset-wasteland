@@ -873,9 +873,9 @@
 	icon_state = "police_chief"
 	item_state = "police_chief"
 	armor = list("melee" = 15, "bullet" = 15, "laser" = 15, "energy" = 15, "bomb" = 20, "bio" = 5, "rad" = 0, "fire" = 15, "acid" = 5, "wound" = 30)
-	
+
 //SWAT
-	
+
 /obj/item/clothing/suit/armor/f13/rangercombat/eliteriot
 	name = "elite riot gear"
 	desc = "A heavily reinforced set of military grade armor, commonly seen in the Divide now repurposed and reissued to Chief Rangers."

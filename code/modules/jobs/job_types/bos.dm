@@ -390,7 +390,7 @@ Star Paladin
 		/datum/outfit/loadout/spaladina, //5mm minigun
 		/datum/outfit/loadout/spaladinb, //WT-550
 		/datum/outfit/loadout/spaladinc,  //Aer9
-		/datum/outfit/loadout/spaladind //Sledge and fist
+		/datum/outfit/loadout/spaladind, //Sledge and fist
 		/datum/outfit/loadout/spaladine //Silence and fist
 		)
 
@@ -503,7 +503,7 @@ Paladin
 	/datum/outfit/loadout/paladina, //Minigun
 	/datum/outfit/loadout/paladinb, //WT-550
 	/datum/outfit/loadout/paladinc, //Aer9
-	/datum/outfit/loadout/paladind //Sledge and fists
+	/datum/outfit/loadout/paladind, //Sledge and fists
 	/datum/outfit/loadout/paladine //Silence and fist
 	)
 
@@ -572,7 +572,7 @@ Paladin
 		/obj/item/gun/energy/laser/pistol=1,
 		/obj/item/stock_parts/cell/ammo/mfc = 2,
 		/obj/item/stock_parts/cell/ammo/ec=2,
-		/obj/item/clothing/accessory/bos/paladin = 1
+		/obj/item/clothing/accessory/bos/paladin = 1,
 		)
 
 /datum/outfit/loadout/paladind
@@ -582,16 +582,16 @@ Paladin
 		/obj/item/twohanded/sledgehammer/supersledge =1,
 		/obj/item/gun/energy/laser/pistol=1,
 		/obj/item/stock_parts/cell/ammo/ec=2,
-		/obj/item/clothing/accessory/bos/paladin = 1
+		/obj/item/clothing/accessory/bos/paladin = 1,
 		)
 
-/datum/outfit/loadout/spaladine
-	name = "Senior Stealth Specialist"
+/datum/outfit/loadout/paladine
+	name = "Stealth Specialist"
 	backpack_contents = list(
 		/obj/item/melee/powerfist/f13 = 1,
 		/obj/item/gun/ballistic/automatic/assault_rifle/infiltrator = 1,
 		/obj/item/ammo_box/magazine/m556/rifle = 3,
-		obj/item/clothing/accessory/bos/paladin = 1
+		/obj/item/clothing/accessory/bos/paladin = 1,
 		)
 
 /*

@@ -88,9 +88,10 @@ Elder
 	neck =	/obj/item/clothing/neck/mantle/bos/right
 	ears = /obj/item/radio/headset/headset_bos/command
 	backpack_contents = list(
-		/obj/item/stock_parts/cell/ammo/mfc = 2,
 		/obj/item/melee/onehanded/knife/hunting = 1,
-		/obj/item/gun/ballistic/automatic/pistol/n99 = 1,
+		/obj/item/gun/ballistic/automatic/pistol/n99/crusader = 1,
+		/obj/item/ammo_box/magazine/m10mm_adv/simple = 4,
+		/obj/item/gun/energy/laser/wattz/recharger/Walker = 1,
 	)
 
 /*

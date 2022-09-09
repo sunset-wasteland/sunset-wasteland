@@ -391,6 +391,7 @@ Star Paladin
 		/datum/outfit/loadout/spaladinb, //WT-550
 		/datum/outfit/loadout/spaladinc,  //Aer9
 		/datum/outfit/loadout/spaladind //Sledge and fist
+		/datum/outfit/loadout/spaladine //Silence and fist
 		)
 
 	outfit = /datum/outfit/job/bos/f13seniorpaladin
@@ -446,19 +447,21 @@ Star Paladin
 /datum/outfit/loadout/spaladinb
 	name = "Senior Tactical Paladin"
 	backpack_contents = list(
-		/obj/item/gun/ballistic/automatic/wt550 = 1,
-		/obj/item/ammo_box/magazine/m473/small = 3,
+		/obj/item/gun/ballistic/automatic/assault_carbine/policerifle = 1,
+		/obj/item/ammo_box/magazine/m5mm = 3,
 		/obj/item/gun/energy/laser/pistol=1,
 		/obj/item/stock_parts/cell/ammo/ec=2,
+		/obj/item/clothing/accessory/bos/paladin=1,
 		)
 
 /datum/outfit/loadout/spaladinc
 	name = "Senior Frontline Paladin"
 	backpack_contents = list(
-		/obj/item/gun/energy/laser/aer9 = 1,
+		/obj/item/gun/energy/laser/aer12 = 1,
 		/obj/item/gun/energy/laser/pistol=1,
 		/obj/item/stock_parts/cell/ammo/mfc = 2,
 		/obj/item/stock_parts/cell/ammo/ec=2,
+		/obj/item/clothing/accessory/bos/paladin=1,
 		)
 
 /datum/outfit/loadout/spaladind
@@ -468,8 +471,17 @@ Star Paladin
 		/obj/item/twohanded/sledgehammer/supersledge =1,
 		/obj/item/gun/energy/laser/pistol=1,
 		/obj/item/stock_parts/cell/ammo/ec=2,
+		/obj/item/clothing/accessory/bos/paladin=1,
 		)
 
+/datum/outfit/loadout/spaladine
+	name = "Senior Stealth Specialist"
+	backpack_contents = list(
+		/obj/item/melee/powerfist/f13 = 1,
+		/obj/item/gun/ballistic/automatic/assault_rifle/infiltrator = 1,
+		/obj/item/ammo_box/magazine/m556/rifle = 3,
+		/obj/item/clothing/accessory/bos/paladin=1,
+		)
 
 /*
 Paladin
@@ -492,6 +504,7 @@ Paladin
 	/datum/outfit/loadout/paladinb, //WT-550
 	/datum/outfit/loadout/paladinc, //Aer9
 	/datum/outfit/loadout/paladind //Sledge and fists
+	/datum/outfit/loadout/paladine //Silence and fist
 	)
 
 	outfit = /datum/outfit/job/bos/f13paladin
@@ -529,7 +542,7 @@ Paladin
 	belt =	/obj/item/storage/belt/military/assault
 	neck =	/obj/item/clothing/neck/mantle/bos/paladin
 	backpack_contents = list(
-		/obj/item/reagent_containers/hypospray/medipen/stimpak= 1,
+		/obj/item/reagent_containers/hypospray/medipen/stimpak= 2,
 		/obj/item/melee/onehanded/knife/hunting = 1,
 	)
 
@@ -539,27 +552,27 @@ Paladin
 		/obj/item/minigunpackbal5mm = 1,
 		/obj/item/gun/energy/laser/pistol=1,
 		/obj/item/stock_parts/cell/ammo/ec=2,
-		/obj/item/clothing/accessory/bos/paladin=1,
+		/obj/item/clothing/accessory/bos/paladin = 1,
 	)
 
 /datum/outfit/loadout/paladinb
 	name = "Tactical Paladin"
 	backpack_contents = list(
-		/obj/item/gun/ballistic/automatic/wt550 = 1,
-		/obj/item/ammo_box/magazine/m473/small = 3,
+		/obj/item/gun/ballistic/automatic/assault_carbine/policerifle = 1,
+		/obj/item/ammo_box/magazine/m5mm = 3,
 		/obj/item/gun/energy/laser/pistol=1,
 		/obj/item/stock_parts/cell/ammo/ec=2,
-		/obj/item/clothing/accessory/bos/paladin=1,
+		/obj/item/clothing/accessory/bos/paladin = 1,
 		)
 
 /datum/outfit/loadout/paladinc
 	name = "Frontline Paladin"
 	backpack_contents = list(
-		/obj/item/gun/energy/laser/aer9 = 1,
+		/obj/item/gun/energy/laser/aer12 = 1,
 		/obj/item/gun/energy/laser/pistol=1,
 		/obj/item/stock_parts/cell/ammo/mfc = 2,
 		/obj/item/stock_parts/cell/ammo/ec=2,
-		/obj/item/clothing/accessory/bos/paladin=1
+		/obj/item/clothing/accessory/bos/paladin = 1
 		)
 
 /datum/outfit/loadout/paladind
@@ -569,7 +582,16 @@ Paladin
 		/obj/item/twohanded/sledgehammer/supersledge =1,
 		/obj/item/gun/energy/laser/pistol=1,
 		/obj/item/stock_parts/cell/ammo/ec=2,
-		/obj/item/clothing/accessory/bos/paladin=1
+		/obj/item/clothing/accessory/bos/paladin = 1
+		)
+
+/datum/outfit/loadout/spaladine
+	name = "Senior Stealth Specialist"
+	backpack_contents = list(
+		/obj/item/melee/powerfist/f13 = 1,
+		/obj/item/gun/ballistic/automatic/assault_rifle/infiltrator = 1,
+		/obj/item/ammo_box/magazine/m556/rifle = 3,
+		obj/item/clothing/accessory/bos/paladin = 1
 		)
 
 /*

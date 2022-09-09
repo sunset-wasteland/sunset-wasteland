@@ -239,7 +239,7 @@
 	equipsound = 'sound/f13weapons/equipsounds/aep7equip.ogg'
 
 /obj/item/gun/energy/laser/wattz/recharger/Walker
-	name = "Walkers Recharger Pistol"
+	name = "Walker's Recharger Pistol"
 	desc = "A recharger pistol procured and modified by the scribes under Walker. It charges its capacitor banks over time using radioactive decay. Only a few of these weapons exist."
 	can_remove = 0
 	can_charge = 0

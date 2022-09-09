@@ -410,7 +410,7 @@
 
 /obj/item/clothing/accessory/bos/KnightT
 	name = "Knight Templar pins"
-	desc = "A silver pin with one device and blue coloring, worn by fully fledged Knights that have taken the duty as a templar of the Brotherhood."
+	desc = "A silver pin with one device and blue coloring, worn by fully fledged Knights that have taken the duty as a Templar of the Brotherhood."
 	icon_state = "knight"
 	item_color = "knight"
 	minimize_when_attached = TRUE

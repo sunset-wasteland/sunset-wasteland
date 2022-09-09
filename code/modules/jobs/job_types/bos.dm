@@ -465,7 +465,7 @@ Star Paladin
 		)
 
 /datum/outfit/loadout/spaladind
-	name = "Senior Melee Specialist"
+	name = "Senior Melee Specialist Paladin"
 	backpack_contents = list(
 		/obj/item/melee/powerfist/f13 = 1,
 		/obj/item/twohanded/sledgehammer/supersledge =1,
@@ -475,7 +475,7 @@ Star Paladin
 		)
 
 /datum/outfit/loadout/spaladine
-	name = "Senior Stealth Specialist"
+	name = "Senior Stealth Specialist Paladin"
 	backpack_contents = list(
 		/obj/item/melee/powerfist/f13 = 1,
 		/obj/item/gun/ballistic/automatic/assault_rifle/infiltrator = 1,
@@ -576,7 +576,7 @@ Paladin
 		)
 
 /datum/outfit/loadout/paladind
-	name = "Melee Specialist"
+	name = "Melee Specialist Paladin"
 	backpack_contents = list(
 		/obj/item/melee/powerfist/f13 = 1,
 		/obj/item/twohanded/sledgehammer/supersledge =1,
@@ -586,7 +586,7 @@ Paladin
 		)
 
 /datum/outfit/loadout/paladine
-	name = "Stealth Specialist"
+	name = "Stealth Specialist Paladin"
 	backpack_contents = list(
 		/obj/item/melee/powerfist/f13 = 1,
 		/obj/item/gun/ballistic/automatic/assault_rifle/infiltrator = 1,

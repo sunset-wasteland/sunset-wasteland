@@ -447,7 +447,7 @@
 /obj/item/storage/box/donkpockets/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.can_hold = typecacheof(list(/obj/item/reagent_containers/food/snacks/donkpocket))
+	CANHOLD_STATIC(STR, typecacheof(list(/obj/item/reagent_containers/food/snacks/donkpocket)))
 
 /obj/item/storage/box/donkpockets/PopulateContents()
 	for(var/i in 1 to 6)
@@ -463,7 +463,7 @@
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 7
-	STR.can_hold = typecacheof(list(/obj/item/reagent_containers/food/snacks/cube/monkey))
+	CANHOLD_STATIC(STR, typecacheof(list(/obj/item/reagent_containers/food/snacks/cube/monkey)))
 
 /obj/item/storage/box/monkeycubes/PopulateContents()
 	for(var/i in 1 to 5)
@@ -617,7 +617,7 @@
 /obj/item/storage/box/snappops/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.can_hold = typecacheof(list(/obj/item/toy/snappop))
+	CANHOLD_STATIC(STR, typecacheof(list(/obj/item/toy/snappop)))
 	STR.max_items = 8
 
 /obj/item/storage/box/snappops/PopulateContents()
@@ -637,7 +637,7 @@
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 10
-	STR.can_hold = typecacheof(list(/obj/item/match))
+	CANHOLD_STATIC(STR, typecacheof(list(/obj/item/match)))
 
 /obj/item/storage/box/matches/PopulateContents()
 	SEND_SIGNAL(src, COMSIG_TRY_STORAGE_FILL_TYPE, /obj/item/match)
@@ -660,7 +660,7 @@
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 21
-	STR.can_hold = typecacheof(list(/obj/item/light/tube, /obj/item/light/bulb))
+	CANHOLD_STATIC(STR, typecacheof(list(/obj/item/light/tube, /obj/item/light/bulb)))
 	STR.max_combined_w_class = 21
 	STR.click_gather = TRUE
 

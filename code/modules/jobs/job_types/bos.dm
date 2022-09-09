@@ -91,6 +91,8 @@ Elder
 		/obj/item/melee/onehanded/knife/hunting = 1,
 		/obj/item/gun/energy/laser/wattz/recharger/Walker = 1,
 		/obj/item/stock_parts/cell/ammo/mfc = 3,
+		/obj/item/gun/ballistic/automatic/pistol/n99 = 1,
+		/obj/item/ammo_box/magazine/m10mm_adv/simple = 2,
 	)
 
 /*

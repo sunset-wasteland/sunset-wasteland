@@ -408,6 +408,20 @@
 	item_color = "knight"
 	minimize_when_attached = TRUE
 
+/obj/item/clothing/accessory/bos/KnightT
+	name = "Knight Templar pins"
+	desc = "A silver pin with one device and blue coloring, worn by fully fledged Knights that have taken the duty as a templar of the Brotherhood."
+	icon_state = "knight"
+	item_color = "knight"
+	minimize_when_attached = TRUE
+
+/obj/item/clothing/accessory/bos/KnightC
+	name = "Knight Cavalier pins"
+	desc = "A silver pin with one device and blue coloring, worn by fully fledged Knights that have taken the duty as a Cavalier of the Brotherhood."
+	icon_state = "knight"
+	item_color = "knight"
+	minimize_when_attached = TRUE
+
 /obj/item/clothing/accessory/bos/scribe
 	name = "Scribe pins"
 	desc = "A silver pin with one device and red coloring, worn by fully fledged Scribes of the Brotherhood."

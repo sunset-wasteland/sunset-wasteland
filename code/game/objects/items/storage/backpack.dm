@@ -72,7 +72,7 @@
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 7
-	STR.can_hold = typecacheof(list(/obj/item/throwing_star/spear, /obj/item/restraints/legcuffs/bola))
+	CANHOLD_STATIC(STR, typecacheof(list(/obj/item/throwing_star/spear, /obj/item/restraints/legcuffs/bola)))
 
 /obj/item/storage/backpack/spearquiver/PopulateContents()
 	new /obj/item/throwing_star/spear(src)
@@ -334,7 +334,7 @@
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_combined_w_class = 6
-	STR.cant_hold = typecacheof(list(/obj/item/storage/backpack/satchel/flat)) //muh recursive backpacks
+	CANTHOLD_STATIC(STR, typecacheof(list(/obj/item/storage/backpack/satchel/flat))) //muh recursive backpacks
 
 /obj/item/storage/backpack/satchel/flat/hide(intact)
 	if(intact)

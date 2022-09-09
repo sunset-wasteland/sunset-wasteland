@@ -40,3 +40,13 @@
 #define WEIGHT_CLASS_HUGE     5
 /// Essentially means it cannot be picked up or placed in an inventory, ex: Mech Parts, Safe - Can not fit in Boh
 #define WEIGHT_CLASS_GIGANTIC 6
+
+// Use this instead of directly setting STR.can_hold to reduce unnecessary typecacheof calls.
+#define CANHOLD_STATIC(comp, L) \
+var/static/list/canhold_typecache = L; \
+comp.can_hold = canhold_typecache
+
+// Ditto, for cant_hold.
+#define CANTHOLD_STATIC(comp, L) \
+var/static/list/canthold_typecache = L; \
+comp.cant_hold = canthold_typecache

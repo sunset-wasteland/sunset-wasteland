@@ -15,7 +15,7 @@
 	STR.max_w_class = WEIGHT_CLASS_NORMAL
 	STR.max_items = 40
 	STR.max_combined_w_class = 40
-	STR.can_hold = typecacheof(list(/obj/item/coin, /obj/item/stack/spacecash, /obj/item/holochip))
+	CANHOLD_STATIC(STR, typecacheof(list(/obj/item/coin, /obj/item/stack/spacecash, /obj/item/holochip)))
 
 /obj/item/storage/bag/money/vault/PopulateContents()
 	new /obj/item/coin/silver(src)
@@ -45,7 +45,7 @@
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_w_class = WEIGHT_CLASS_NORMAL
 	STR.max_items = 20
-	STR.can_hold = typecacheof(list(/obj/item/coin, /obj/item/stack/spacecash, /obj/item/stack/f13Cash))
+	CANHOLD_STATIC(STR, typecacheof(list(/obj/item/coin, /obj/item/stack/spacecash, /obj/item/stack/f13Cash)))
 
 // Legion reserves. Spawns with the Centurion.
 /obj/item/storage/bag/money/small/legion/PopulateContents()

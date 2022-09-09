@@ -931,9 +931,10 @@
 /datum/crafting_recipe/lmg
 	name = "R84 LMG"
 	result = /obj/item/gun/ballistic/automatic/r84
-	reqs = list(/obj/item/stack/sheet/metal = 5,
+	reqs = list(/obj/item/stack/sheet/metal = 15,
 				/obj/item/advanced_crafting_components/assembly = 1,
-				/obj/item/advanced_crafting_components/alloys = 1,
+				/obj/item/advanced_crafting_components/alloys = 2,
+				/obj/item/stack/crafting/metalparts = 10,
 				/obj/item/stack/crafting/goodparts = 5
 				)
 	tools = list(TOOL_WORKBENCH)

@@ -357,7 +357,6 @@
 	'sound/f13ambience/ambigen_12.ogg','sound/f13ambience/ambigen_13.ogg')
 	environment = 11
 	grow_chance = 5
-	requires_power = TRUE
 
 /area/f13/bunker/bunkertwo
 	name = "Bunker Two"

@@ -9,6 +9,8 @@
 	taste_mult = 1.2
 	value = REAGENT_VALUE_COMMON //Encouraging people to mix toxins for reasons beyond harming each other or mixing reagents such as pen acid.
 	var/toxpwr = 1.5
+	var/toxin_hurting = 0
+	var/toxin_lover_healing = -1
 	ghoulfriendly = TRUE
 
 // Are you a bad enough dude to poison your own plants?
@@ -20,6 +22,14 @@
 /datum/reagent/toxin/on_mob_life(mob/living/carbon/M)
 	if(toxpwr)
 		M.adjustToxLoss(toxpwr*REM, 0)
+	var/is_toxinlover = FALSE
+	if(HAS_TRAIT(M, TRAIT_TOXINLOVER))
+		is_toxinlover = TRUE
+	var/toxin_heal_rate = (is_toxinlover ? toxin_lover_healing : toxin_hurting) * toxpwr
+	if(!M.reagents.has_reagent(/datum/reagent/medicine/stimpak) && !M.reagents.has_reagent(/datum/reagent/medicine/healing_powder))
+		M.adjustFireLoss(toxin_heal_rate)
+		M.adjustBruteLoss(toxin_heal_rate)
+
 		. = TRUE
 	..()
 

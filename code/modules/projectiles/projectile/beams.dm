@@ -389,6 +389,15 @@
 	impact_type = /obj/effect/projectile/impact/pulse
 	light_color = LIGHT_COLOR_BLUE
 
+/obj/item/projectile/beam/laser/recharger/hitscan/walker //hitscan walker recharger pistol
+	name = "recharger beam"
+	damage = 25
+	hitscan = TRUE
+	armour_penetration = 0.06 //slightly worse than the AEP7
+	tracer_type = /obj/effect/projectile/tracer/pulse
+	muzzle_type = /obj/effect/projectile/muzzle/pulse
+	impact_type = /obj/effect/projectile/impact/pulse
+	light_color = LIGHT_COLOR_BLUE
 
 /obj/item/projectile/beam/laser/ultra_pistol //unused
 	name = "laser beam"

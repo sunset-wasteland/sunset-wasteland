@@ -238,6 +238,21 @@
 	cell_type = /obj/item/stock_parts/cell/ammo/breeder
 	equipsound = 'sound/f13weapons/equipsounds/aep7equip.ogg'
 
+/obj/item/gun/energy/laser/wattz/recharger/Walker
+	name = "Walker's Recharger Pistol"
+	desc = "A recharger pistol procured and modified by the scribes under Walker. It charges its capacitor banks over time using radioactive decay. Only a few of these weapons exist."
+	can_remove = 0
+	can_charge = 0
+	selfcharge = 1
+	icon_state = "wattz1000"
+	item_state = "laser-pistol"
+	w_class = WEIGHT_CLASS_SMALL
+	weapon_weight = WEAPON_MEDIUM
+	slot_flags = ITEM_SLOT_BELT
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/pistol/recharger/hitscan/walker)
+	cell_type = /obj/item/stock_parts/cell/ammo/breeder
+	equipsound = 'sound/f13weapons/equipsounds/aep7equip.ogg'
+
 //AEP 7 Laser pistol
 /obj/item/gun/energy/laser/pistol
 	name = "\improper AEP7 laser pistol"

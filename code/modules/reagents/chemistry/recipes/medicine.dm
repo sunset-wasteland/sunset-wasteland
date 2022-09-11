@@ -113,7 +113,7 @@
 		return
 	if(holder.chem_temp > 320)
 		var/temp_ratio = 1-(330 - holder.chem_temp)/10
-		holder.remove_reagent(id, added_volume*temp_ratio)
+		holder.remove_reagent(/datum/reagent/synthtissue, added_volume*temp_ratio)
 	if(St.purity < 1)
 		St.volume *= St.purity
 		St.purity = 1

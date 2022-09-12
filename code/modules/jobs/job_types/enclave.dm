@@ -156,7 +156,7 @@
 		/obj/item/storage/pill_bottle/chem_tin/mentats = 1,
 		/obj/item/reagent_containers/hypospray/medipen/psycho = 1,
 		/obj/item/reagent_containers/hypospray/medipen/medx = 1,
-		/obj/item/megaphone = 1
+		/obj/item/megaphone = 1,
 		/obj/item/card/id/syndicate/anyone = 1
 		)
 

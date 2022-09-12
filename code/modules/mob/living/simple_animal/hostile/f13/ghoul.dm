@@ -156,7 +156,7 @@
 	light_system = MOVABLE_LIGHT
 	light_range = 2
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
-	var/radburst_cooldown = 60
+	var/radburst_cooldown = 1200
 
 /mob/living/simple_animal/hostile/ghoul/glowing/Initialize(mapload)
 	. = ..()
@@ -165,7 +165,6 @@
 /mob/living/simple_animal/hostile/ghoul/glowing/Aggro()
 	..()
 	summon_backup(10)
-	RadBurst()//temp test
 
 /mob/living/simple_animal/hostile/ghoul/glowing/AttackingTarget()
 	. = ..()
@@ -193,6 +192,11 @@
 			G.revive(1)
 		else
 			G.revive(1, 1)
+	for(var/mob/living/simple_animal/hostile/ghoul/glowing/L in range(7, src))
+		if(L.stat == 3)
+			L.gib()
+			visible_message("<span class='warning'>[src] detonates into a brilliant glowing cloud!</span>")
+			radiation_pulse(src, 120)
 	set_light(7, 5, "#39FF14")
 	spawn(40)
 	set_light(2)

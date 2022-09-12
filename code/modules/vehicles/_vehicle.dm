@@ -220,9 +220,6 @@
 
 /obj/vehicle/proc/start_engine(mob/living/M)
 	GetComponent(/datum/component/riding)
-
-	src.verbs += /obj/vehicle/proc/StopEngine
-	src.verbs -= /obj/vehicle/proc/StartEngine
 /*
 	if(!M.buckled)
 		usr.visible_message("<span class = 'notice'>Sit on [src] to do this.</span>")
@@ -231,6 +228,9 @@
 	if(!inserted_key)
 		M.visible_message(span_notice("There is no key."))
 		return
+
+	src.verbs += /obj/vehicle/proc/StopEngine
+	src.verbs -= /obj/vehicle/proc/StartEngine
 
 	if(M)
 		M.visible_message("[M] starts the engine of [src].", "You start the engine.")

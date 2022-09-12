@@ -32,8 +32,7 @@
 	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/human/ghoul = 2,
 							/obj/item/stack/sheet/animalhide/human = 1,
 							/obj/item/stack/sheet/bone = 1)
-
-	emote_taunt_sound = list('sound/f13npc/ghoul_new/ghoul_charge1.ogg','sound/f13npc/ghoul_new/ghoul_charge2.ogg','sound/f13npc/ghoul_new/ghoul_charge3.ogg')
+	footstep_type = FOOTSTEP_MOB_BAREFOOT
 	emote_taunt = list(
 		"gurgles",
 		"stares",
@@ -46,33 +45,13 @@
 		"charges")
 	taunt_chance = 30
 
+	emote_taunt_sound = list('sound/f13npc/ghoul_new/ghoul_charge1.ogg','sound/f13npc/ghoul_new/ghoul_charge2.ogg','sound/f13npc/ghoul_new/ghoul_charge3.ogg')
 	aggrosound = list('sound/f13npc/ghoul/aggro1.ogg', 'sound/f13npc/ghoul/aggro2.ogg')
-//	idlesound = list('sound/f13npc/ghoul/idle.ogg')//See ghoul_noises
-	footstep_type = FOOTSTEP_MOB_BAREFOOT
-
 	attack_sound = list('sound/f13npc/ghoul_new/ghoul_attack_01.ogg','sound/f13npc/ghoul_new/ghoul_attack_02.ogg','sound/f13npc/ghoul_new/ghoul_attack_03.ogg',\
 	'sound/f13npc/ghoul_new/ghoul_attack_04.ogg')
-
 	death_sound = list('sound/f13npc/ghoul_new/ghoul_death_01.ogg','sound/f13npc/ghoul_new/ghoul_death_02.ogg','sound/f13npc/ghoul_new/ghoul_death_03.ogg',\
 	'sound/f13npc/ghoul_new/ghoul_death_04.ogg')
-
-	var/ghoul_noises = list('sound/f13npc/ghoul/idle.ogg','sound/f13npc/ghoul_new/ghoul_seizure_long.ogg','sound/f13npc/ghoul_new/ghoul_seizure_short.ogg')
-
-/mob/living/simple_animal/hostile/ghoul/say(message, datum/language/language = null, var/list/spans = list(), language, sanitize, ignore_spam)
-	..()
-	if(stat)
-		return
-	var/chosen_sound = pick(ghoul_noises)
-	playsound(src, chosen_sound, 100, TRUE)
-
-/mob/living/simple_animal/hostile/ghoul/Life()
-	..()
-	if(stat)
-		return
-	if(prob(10))
-		var/chosen_sound = pick(ghoul_noises)
-		playsound(src, chosen_sound, 100, TRUE)
-
+	idlesound = list('sound/f13npc/ghoul/idle.ogg','sound/f13npc/ghoul_new/ghoul_seizure_long.ogg','sound/f13npc/ghoul_new/ghoul_seizure_short.ogg')
 
 // Ghoul Reaver
 /mob/living/simple_animal/hostile/ghoul/reaver

@@ -1004,14 +1004,14 @@
 	},
 /area/f13/tunnel)
 "aKk" = (
-/obj/structure/window/reinforced/spawner/north,
-/obj/structure/window/reinforced/spawner,
-/obj/structure/table/reinforced,
-/obj/item/pda/heads/cmo,
-/obj/machinery/door/window/brigdoor{
+/obj/machinery/light{
 	dir = 8
 	},
-/turf/open/floor/carpet/black,
+/obj/machinery/rnd/server/bos,
+/obj/effect/turf_decal/delivery,
+/turf/open/floor/plasteel/darkpurple/side{
+	dir = 8
+	},
 /area/f13/brotherhood)
 "aKr" = (
 /obj/machinery/mineral/mint,
@@ -1238,7 +1238,14 @@
 /turf/open/water,
 /area/f13/radiation)
 "bkj" = (
-/obj/structure/dresser,
+/obj/structure/table/reinforced,
+/obj/item/pda/heads/cmo,
+/obj/structure/window/reinforced/spawner/north{
+	dir = 8
+	},
+/obj/machinery/door/window/brigdoor{
+	req_access_txt = "255"
+	},
 /turf/open/floor/plasteel/darkpurple/side{
 	dir = 5
 	},
@@ -7418,9 +7425,14 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/cmo,
 /area/f13/building/museum)
 "ewN" = (
-/turf/open/floor/plasteel/darkpurple/side{
-	dir = 10
+/obj/structure/curtain{
+	color = "#845f58";
+	pixel_x = -32
 	},
+/obj/structure/table/reinforced,
+/obj/item/flashlight/lamp,
+/obj/effect/spawner/lootdrop/f13/cash_random_high,
+/turf/open/floor/carpet/black,
 /area/f13/brotherhood)
 "exb" = (
 /obj/machinery/conveyor/inverted,
@@ -8691,11 +8703,6 @@
 "gGe" = (
 /obj/structure/sign/warning/securearea,
 /turf/closed/wall/r_wall/f13/vault,
-/area/f13/brotherhood)
-"gGy" = (
-/obj/structure/table/reinforced,
-/obj/effect/spawner/lootdrop/f13/traitbooks,
-/turf/open/floor/carpet/black,
 /area/f13/brotherhood)
 "gHC" = (
 /obj/structure/table,
@@ -10255,6 +10262,8 @@
 	color = "#845f58";
 	pixel_x = -32
 	},
+/obj/structure/table/reinforced,
+/obj/item/card/id/dogtag,
 /turf/open/floor/carpet/black,
 /area/f13/brotherhood)
 "jqi" = (
@@ -10476,13 +10485,13 @@
 	},
 /area/f13/tunnel)
 "jGM" = (
-/obj/machinery/computer/rdconsole/core/bos{
-	dir = 1
-	},
 /obj/machinery/light,
 /obj/structure/curtain{
 	color = "#845f58";
 	pixel_x = -32
+	},
+/obj/machinery/computer/card/bos{
+	dir = 4
 	},
 /turf/open/floor/carpet/black,
 /area/f13/brotherhood)
@@ -12810,13 +12819,6 @@
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/highmid,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
-"nFZ" = (
-/obj/structure/closet/crate/rcd,
-/obj/item/construction/rld,
-/turf/open/floor/plasteel/darkpurple/side{
-	dir = 6
-	},
-/area/f13/brotherhood)
 "nGd" = (
 /obj/structure/table/glass,
 /obj/item/reagent_containers/glass/beaker/large{
@@ -15292,9 +15294,6 @@
 /obj/structure/table/reinforced,
 /obj/item/paper_bin,
 /obj/item/pen,
-/obj/item/flashlight/lamp,
-/obj/item/card/id/dogtag,
-/obj/item/card/id/dogtag,
 /turf/open/floor/carpet/black,
 /area/f13/brotherhood)
 "rvZ" = (
@@ -16163,12 +16162,12 @@
 	},
 /area/f13/radiation)
 "sMy" = (
+/obj/effect/landmark/start/f13/headscribe,
 /obj/structure/chair/comfy/shuttle{
 	desc = "A comfortable, secure seat. It has a very futuristic vouge feel.";
-	dir = 1;
+	dir = 8;
 	name = "prewar lounge chair"
 	},
-/obj/effect/landmark/start/f13/headscribe,
 /turf/open/floor/carpet/black,
 /area/f13/brotherhood)
 "sMO" = (
@@ -17833,7 +17832,8 @@
 /obj/structure/sign/poster/official/science{
 	pixel_y = 30
 	},
-/obj/item/twohanded/required/kirbyplants/random,
+/obj/structure/closet/crate/rcd,
+/obj/item/construction/rld,
 /turf/open/floor/plasteel/darkpurple/side{
 	dir = 1
 	},
@@ -18203,12 +18203,6 @@
 /turf/open/floor/plasteel/f13{
 	icon_state = "whitebluechess"
 	},
-/area/f13/brotherhood)
-"wcg" = (
-/obj/structure/table/reinforced,
-/obj/effect/spawner/lootdrop/f13/cash_random_high,
-/obj/effect/spawner/lootdrop/f13/cash_random_high,
-/turf/open/floor/carpet/black,
 /area/f13/brotherhood)
 "wdl" = (
 /obj/structure/table/reinforced,
@@ -18967,16 +18961,6 @@
 /area/f13/ncr)
 "xwF" = (
 /turf/closed/mineral/random/low_chance,
-/area/f13/brotherhood)
-"xxf" = (
-/obj/machinery/light{
-	dir = 8
-	},
-/obj/machinery/rnd/server/bos,
-/obj/effect/turf_decal/delivery,
-/turf/open/floor/plasteel/darkpurple/side{
-	dir = 8
-	},
 /area/f13/brotherhood)
 "xxp" = (
 /obj/structure/chair/wood,
@@ -78735,7 +78719,7 @@ xsc
 qDV
 snn
 sUJ
-xxf
+aKk
 wWo
 wWo
 fIn
@@ -80537,7 +80521,7 @@ onW
 lEP
 onW
 onW
-ygU
+onW
 aqo
 gqF
 mKl
@@ -81306,7 +81290,7 @@ mlD
 mqg
 wVL
 oVq
-jpS
+ewN
 jpS
 jGM
 oVq
@@ -81565,7 +81549,7 @@ umB
 oVq
 rvy
 sMy
-gGy
+fAE
 oVq
 kHa
 aTN
@@ -81819,12 +81803,12 @@ onW
 tau
 hNm
 hNm
-ewN
-pbB
-fAE
-wcg
 oVq
-vaL
+fAE
+fAE
+fAE
+iBq
+gqF
 sSo
 dWc
 dWc
@@ -82076,7 +82060,7 @@ onW
 onW
 onW
 onW
-ygU
+iBq
 fAE
 fAE
 fAE
@@ -82333,9 +82317,9 @@ mlD
 mAI
 quH
 qyT
-nFZ
+oVq
 pBq
-aKk
+aBm
 azL
 oVq
 vuj

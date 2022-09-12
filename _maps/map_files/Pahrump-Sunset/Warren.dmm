@@ -5675,8 +5675,11 @@
 /turf/open/floor/plasteel/f13/vault_floor/red/redchess/redchess2,
 /area/f13/city)
 "fvh" = (
-/obj/effect/landmark/start/f13/ncrcombatengineer,
 /obj/effect/decal/cleanable/dirt,
+/obj/vehicle/ridden/fuel/motorcycle/green{
+	fuel = 0;
+	name = "Ranger motorcycle"
+	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vault1,
 /area/f13/ncr)
 "fvl" = (
@@ -6657,7 +6660,7 @@
 	},
 /area/f13/wasteland/warren)
 "gsW" = (
-/obj/item/key/motorcycle,
+/obj/effect/landmark/start/f13/ncrcombatengineer,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vault1,
 /area/f13/ncr)
 "gtg" = (
@@ -7083,13 +7086,6 @@
 /obj/structure/flora/grass/jungle/b,
 /turf/open/water,
 /area/f13/city)
-"gJH" = (
-/obj/structure/wreck/car/bike{
-	dir = 8;
-	icon_state = "bike_rust_med_no_wheels"
-	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/vault1,
-/area/f13/ncr)
 "gJX" = (
 /obj/effect/overlay/turfs/cliff{
 	pixel_y = -10
@@ -9077,7 +9073,6 @@
 /area/f13/wasteland/warren)
 "iEN" = (
 /obj/structure/table,
-/obj/item/storage/toolbox/mechanical,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ncr)
 "iFH" = (
@@ -19545,6 +19540,9 @@
 /obj/structure/table/wood,
 /obj/item/flashlight/lamp/green{
 	pixel_x = -5
+	},
+/obj/item/key/motorcycle{
+	pixel_x = 5
 	},
 /turf/open/floor/carpet/black,
 /area/f13/ncr)
@@ -40551,7 +40549,7 @@ eeQ
 aQW
 aRt
 qEu
-gsW
+lWw
 qBR
 lWw
 lWw
@@ -40703,7 +40701,7 @@ xTm
 aQW
 aRt
 nNg
-gJH
+lWw
 fvh
 lWw
 qBR
@@ -40857,7 +40855,7 @@ aRt
 wDo
 qBR
 jjD
-lWw
+gsW
 qBR
 lWw
 qBR

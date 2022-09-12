@@ -454,9 +454,10 @@
 	AddComponent(/datum/component/glow_heal, chosen_targets = /mob/living/simple_animal/hostile/supermutant, allow_revival = TRUE, restrict_faction = null, type_healing = BRUTELOSS | FIRELOSS)
 
 /////////
-// HMG Mutant - Boss mutant, similar to Robobrain and Sentrybot. Not used yet outside of Admin abuse(and soon Lavaland.).
+// HMG Mutant - Boss mutant, similar to Robobrain and Sentrybot.
 /////////
 /mob/living/simple_animal/hostile/supermutant/rangedmutant/heavy
+	name = "mutant overlord"
 	desc = "A huge and ugly mutant humanoid.  This one is clad in armor and carrying a rather large gun."
 	icon = 'icons/fallout/mobs/supermutant.dmi'
 	icon_state = "hulk_hmg_s"
@@ -465,14 +466,14 @@
 	ranged = 1
 	maxHealth = 640
 	health = 640
-	retreat_distance = 0
-	minimum_distance = 0
+	retreat_distance = 8
+	minimum_distance = 8
 	stop_automated_movement = 1
-	see_in_dark = 7
+	see_in_dark = 6//Semi-avoidable.
 	projectiletype = /obj/item/projectile/bullet/F13/sm_hmg
 	projectilesound = 'sound/f13weapons/antimaterielfire.ogg'
 	extra_projectiles = 4 //5 projectiles
-	ranged_cooldown_time = 15//From 120, - 'Long cooldown due to damage output.' | Changed due to it being an admin only mob.
+	ranged_cooldown_time = 60//From 120, - 'Long cooldown due to damage output.' | Changed due to it being an on-map mob.
 	loot = list(/obj/machinery/manned_turret/m2/unanchored)
 
 /mob/living/simple_animal/hostile/supermutant/rangedmutant/heavy/death(gibbed)

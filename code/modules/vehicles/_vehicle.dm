@@ -229,7 +229,7 @@
 		return
 */
 	if(!inserted_key)
-		usr.visible_message("<span class = 'notice'>There is no key.</span>")
+		M.visible_message(span_notice("There is no key."))
 		return
 
 	if(M)

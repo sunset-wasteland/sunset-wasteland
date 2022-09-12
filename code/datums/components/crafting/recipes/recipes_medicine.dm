@@ -114,7 +114,7 @@
 
 /datum/crafting_recipe/legionmedx
 	name = "Natural Painkiller"
-	result = /obj/item/reagent_containers/pill/patch/hydra
+	result = /obj/item/reagent_containers/pill/patch/healingpowder/legionmedx
 	reqs = list(/obj/item/reagent_containers/food/snacks/grown/feracactus = 2,
 				/obj/item/reagent_containers/food/snacks/grown/fungus = 2)
 	time = 15

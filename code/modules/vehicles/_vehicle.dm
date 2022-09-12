@@ -233,7 +233,7 @@
 		return
 
 	if(usr)
-		usr.visible_message("[usr] start engine of [src].", "You start engine.")
+		M.visible_message("[M] starts the engine of [src].", "You start the engine.")
 
 	engine_on = TRUE
 	if(engine_on_sound)

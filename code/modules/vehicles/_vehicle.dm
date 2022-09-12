@@ -232,7 +232,7 @@
 		usr.visible_message("<span class = 'notice'>There is no key.</span>")
 		return
 
-	if(usr)
+	if(M)
 		M.visible_message("[M] starts the engine of [src].", "You start the engine.")
 
 	engine_on = TRUE

@@ -334,7 +334,7 @@
 "ani" = (
 /obj/structure/reagent_dispensers/barrel/old,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
-/area/f13/wasteland/rocksprings)
+/area/f13/building)
 "anw" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor1-old"
@@ -607,6 +607,10 @@
 /obj/effect/turf_decal/huge{
 	dir = 1
 	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/railing/handrail{
+	dir = 1
+	},
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland/rocksprings)
 "aCD" = (
@@ -666,13 +670,15 @@
 /turf/open/indestructible/ground/outside/road,
 /area/f13/building)
 "aGi" = (
+/obj/structure/railing/handrail{
+	dir = 5
+	},
 /obj/effect/turf_decal/huge{
 	dir = 1
 	},
 /obj/effect/turf_decal/huge{
 	dir = 4
 	},
-/mob/living/simple_animal/hostile/handy/gutsy/flamer,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland/rocksprings)
 "aGI" = (
@@ -1216,7 +1222,7 @@
 	dir = 4
 	},
 /turf/open/indestructible/ground/outside/dirt/harsh,
-/area/f13/wasteland/rocksprings)
+/area/f13/building)
 "btu" = (
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "horizontalinnermain2"
@@ -1256,21 +1262,21 @@
 	},
 /area/f13/building)
 "buS" = (
-/obj/machinery/porta_turret/syndicate/vehicle_turret{
-	desc = "An improvised ballistic turret - it looks exceptionally shoddy, yet stil functional. Safe to assume it's a repaired security system from whatever this place once was";
-	faction = list("raider");
-	lethal_projectile = /obj/item/projectile/bullet/a762/sport/simple;
-	lethal_projectile_sound = 'sound/f13weapons/auto5.ogg';
-	name = "Repaired Turret";
-	scan_range = 9;
-	stun_projectile = /obj/item/projectile/bullet/a762/sport/simple;
-	stun_projectile_sound = 'sound/f13weapons/auto5.ogg';
-	throw_range = 9
-	},
-/turf/open/floor/plasteel/f13{
-	icon_state = "greenrustychess"
-	},
-/area/f13/building)
+/obj/structure/closet/crate,
+/obj/item/card/id/dogtag/town/legion,
+/obj/item/card/id/dogtag/town/legion,
+/obj/item/card/id/dogtag/town/legion,
+/obj/item/card/id/dogtag/town/legion,
+/obj/item/card/id/dogtag/town/legion,
+/obj/item/card/id/dogtag/town/legion,
+/obj/item/card/id/dogtag/town/legion,
+/obj/item/card/id/dogtag/town/legion,
+/obj/item/card/id/dogtag/town/legion,
+/obj/item/card/id/dogtag/town/legion,
+/obj/item/card/id/dogtag/town/legion,
+/obj/item/card/id/dogtag/town/legion,
+/turf/open/floor/wood/wood_mosaic,
+/area/f13/legion)
 "buU" = (
 /obj/effect/decal/cleanable/insectguts,
 /obj/effect/decal/cleanable/dirt,
@@ -1631,9 +1637,11 @@
 	},
 /area/f13/building)
 "bQe" = (
-/mob/living/simple_animal/hostile/handy/gutsy,
-/turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
-/area/f13/wasteland/rocksprings)
+/obj/structure/chair/wood{
+	dir = 4
+	},
+/turf/open/floor/plasteel/f13/stone/rugged,
+/area/f13/legion)
 "bQf" = (
 /obj/structure/flora/ausbushes/stalkybush,
 /turf/open/water/hwater,
@@ -1942,9 +1950,12 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "cgb" = (
-/mob/living/simple_animal/hostile/supermutant/legendary,
-/turf/open/indestructible/ground/outside/road,
-/area/f13/caves)
+/obj/effect/decal/riverbank,
+/obj/structure/obstacle/barbedwire/end{
+	dir = 4
+	},
+/turf/open/water/hwater,
+/area/f13/wasteland/rocksprings)
 "cgd" = (
 /obj/machinery/vending/cigarette,
 /obj/effect/decal/cleanable/dirt{
@@ -2329,16 +2340,6 @@
 /obj/effect/landmark/start/f13/priestess,
 /turf/open/floor/carpet,
 /area/f13/legion)
-"cEJ" = (
-/obj/effect/turf_decal/huge{
-	dir = 1
-	},
-/obj/effect/turf_decal/huge{
-	dir = 8
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/indestructible/ground/outside/sidewalk,
-/area/f13/wasteland/rocksprings)
 "cFa" = (
 /obj/structure/bed/old,
 /turf/open/indestructible/ground/inside/mountain,
@@ -2420,9 +2421,11 @@
 	},
 /area/f13/building)
 "cJy" = (
-/obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/handy/assaultron,
-/turf/open/indestructible/ground/outside/sidewalk,
+/obj/effect/decal/riverbank,
+/obj/structure/obstacle/barbedwire{
+	dir = 4
+	},
+/turf/open/water/hwater,
 /area/f13/wasteland/rocksprings)
 "cJT" = (
 /obj/structure/curtain{
@@ -3360,8 +3363,14 @@
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/building)
 "dTT" = (
-/obj/structure/reagent_dispensers/barrel/explosive,
-/turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
+/obj/structure/fence/wooden{
+	pixel_x = -18
+	},
+/obj/structure/obstacle/barbedwire/end{
+	dir = 4
+	},
+/obj/effect/decal/riverbank,
+/turf/open/water/hwater,
 /area/f13/wasteland/rocksprings)
 "dUk" = (
 /mob/living/simple_animal/hostile/cazador,
@@ -3523,11 +3532,6 @@
 	},
 /turf/open/floor/plasteel/cafeteria,
 /area/f13/building)
-"ecI" = (
-/turf/open/floor/plasteel/barber{
-	icon_state = "plating"
-	},
-/area/f13/wasteland/rocksprings)
 "edt" = (
 /obj/structure/table/wood,
 /obj/item/seeds/apple,
@@ -4028,22 +4032,12 @@
 	},
 /area/f13/building)
 "eGp" = (
-/obj/machinery/porta_turret/syndicate/vehicle_turret{
-	desc = "An improvised ballistic turret - it looks exceptionally shoddy, yet stil functional. Safe to assume it's a repaired security system from whatever this place once was";
-	faction = list("raider");
-	lethal_projectile = /obj/item/projectile/bullet/a762/sport/simple;
-	lethal_projectile_sound = 'sound/f13weapons/auto5.ogg';
-	name = "Repaired Turret";
-	scan_range = 9;
-	stun_projectile = /obj/item/projectile/bullet/a762/sport/simple;
-	stun_projectile_sound = 'sound/f13weapons/auto5.ogg';
-	throw_range = 9
+/obj/structure/obstacle/barbedwire{
+	dir = 4
 	},
-/obj/effect/decal/cleanable/blood/drip,
-/turf/open/floor/plasteel/f13{
-	icon_state = "greenrustychess"
-	},
-/area/f13/building)
+/obj/effect/decal/riverbank,
+/turf/open/water/hwater,
+/area/f13/wasteland/rocksprings)
 "eGu" = (
 /obj/structure/chair/stool/retro,
 /obj/machinery/button/door{
@@ -5144,7 +5138,7 @@
 /obj/effect/spawner/lootdrop/f13/weapon/gun/energy/low,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier2,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
-/area/f13/wasteland/rocksprings)
+/area/f13/building)
 "fXg" = (
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
 /turf/open/floor/plasteel/f13{
@@ -5521,9 +5515,11 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "gzl" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/trash,
-/turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
+/obj/effect/decal/riverbank,
+/obj/structure/obstacle/barbedwire/end{
+	dir = 8
+	},
+/turf/open/water/hwater,
 /area/f13/wasteland/rocksprings)
 "gzy" = (
 /obj/item/chair/wood,
@@ -5668,7 +5664,7 @@
 /turf/open/floor/plasteel/barber{
 	icon_state = "plating"
 	},
-/area/f13/wasteland/rocksprings)
+/area/f13/building)
 "gJf" = (
 /mob/living/simple_animal/hostile/bloatfly,
 /turf/open/indestructible/ground/outside/dirt/harsh,
@@ -5725,7 +5721,7 @@
 /turf/open/indestructible/ground/outside/gravel,
 /area/f13/wasteland/rocksprings)
 "gNb" = (
-/obj/structure/car,
+/obj/effect/decal/waste,
 /turf/open/indestructible/ground/outside/road,
 /area/f13/caves)
 "gNg" = (
@@ -6452,6 +6448,9 @@
 /obj/effect/turf_decal/huge{
 	dir = 8
 	},
+/obj/structure/railing/handrail{
+	dir = 10
+	},
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland/rocksprings)
 "hDF" = (
@@ -6495,6 +6494,9 @@
 /area/f13/legion)
 "hHa" = (
 /obj/effect/turf_decal/huge{
+	dir = 4
+	},
+/obj/structure/railing/handrail{
 	dir = 4
 	},
 /turf/open/indestructible/ground/outside/sidewalk,
@@ -6564,7 +6566,7 @@
 	pixel_y = -12
 	},
 /turf/open/indestructible/ground/inside/mountain,
-/area/f13/wasteland/rocksprings)
+/area/f13/building)
 "hNQ" = (
 /obj/structure/flora/rock/pile/largejungle,
 /turf/open/indestructible/ground/outside/road{
@@ -6701,11 +6703,6 @@
 	color = "#363636"
 	},
 /turf/open/indestructible/ground/outside/desert/harsh,
-/area/f13/wasteland/rocksprings)
-"hWh" = (
-/obj/effect/turf_decal/huge,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland/rocksprings)
 "hWw" = (
 /obj/effect/turf_decal/stripes/white/line{
@@ -7026,11 +7023,10 @@
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/building)
 "ipO" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/fakelattice,
-/turf/open/floor/plasteel/barber{
-	icon_state = "plating"
+/obj/effect/decal/riverbank{
+	dir = 1
 	},
+/turf/open/water/hwater,
 /area/f13/wasteland/rocksprings)
 "iqc" = (
 /obj/structure/junk/small/tv,
@@ -8771,10 +8767,18 @@
 /turf/closed/wall/f13/wood/house,
 /area/f13/building)
 "kMY" = (
-/obj/machinery/light/small{
-	dir = 4
+/obj/structure/fence/wooden{
+	climbable = 0;
+	density = 0;
+	dir = 1;
+	layer = 3.6;
+	pixel_x = 13;
+	pixel_y = 1
 	},
-/turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
+/obj/effect/decal/riverbank{
+	dir = 1
+	},
+/turf/open/water/hwater,
 /area/f13/wasteland/rocksprings)
 "kNa" = (
 /obj/structure/closet/locker/oldstyle,
@@ -9254,7 +9258,7 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
-/area/f13/wasteland/rocksprings)
+/area/f13/building)
 "ltA" = (
 /obj/effect/turf_decal/stripes/white/line{
 	dir = 9
@@ -9509,7 +9513,9 @@
 /obj/effect/turf_decal/huge{
 	dir = 1
 	},
-/obj/effect/decal/cleanable/dirt,
+/obj/structure/railing/handrail{
+	dir = 1
+	},
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland/rocksprings)
 "lJT" = (
@@ -9692,14 +9698,6 @@
 /obj/structure/reagent_dispensers/barrel/three,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/building)
-"lVv" = (
-/obj/effect/turf_decal/huge,
-/obj/effect/turf_decal/huge{
-	dir = 4
-	},
-/mob/living/simple_animal/hostile/handy/gutsy/flamer,
-/turf/open/indestructible/ground/outside/sidewalk,
-/area/f13/wasteland/rocksprings)
 "lVw" = (
 /obj/machinery/light/broken{
 	dir = 1
@@ -9897,6 +9895,10 @@
 	},
 /obj/effect/turf_decal/huge{
 	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/railing/handrail{
+	dir = 9
 	},
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland/rocksprings)
@@ -10500,7 +10502,7 @@
 	pixel_x = -9
 	},
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
-/area/f13/wasteland/rocksprings)
+/area/f13/building)
 "mVe" = (
 /turf/open/floor/plating/f13/outside/road{
 	icon_state = "cross3"
@@ -10700,8 +10702,13 @@
 /turf/open/floor/wood/wood_wide,
 /area/f13/building)
 "nli" = (
-/obj/effect/spawner/lootdrop/trash,
-/turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
+/obj/structure/fence/wooden{
+	pixel_x = -18
+	},
+/obj/effect/decal/riverbank{
+	dir = 1
+	},
+/turf/open/water/hwater,
 /area/f13/wasteland/rocksprings)
 "nlm" = (
 /obj/structure/table/wood,
@@ -10745,6 +10752,8 @@
 /area/f13/caves)
 "npz" = (
 /obj/effect/turf_decal/huge,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/railing/handrail,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland/rocksprings)
 "npP" = (
@@ -11257,8 +11266,8 @@
 /turf/open/floor/plasteel/darkgreen/side/telecomms,
 /area/f13/bunker)
 "nRN" = (
-/obj/structure/decoration/warning,
-/turf/closed/wall/f13/tunnel,
+/obj/effect/spawner/lootdrop/f13/weapon/melee/tier4,
+/turf/open/indestructible/ground/outside/road,
 /area/f13/caves)
 "nSx" = (
 /obj/structure/simple_door/interior{
@@ -11486,9 +11495,9 @@
 /turf/open/floor/plasteel/dark,
 /area/f13/bunker)
 "oeo" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
-/area/f13/wasteland/rocksprings)
+/obj/structure/reagent_dispensers/barrel/dangerous,
+/turf/open/indestructible/ground/outside/road,
+/area/f13/caves)
 "oet" = (
 /turf/closed/indestructible/rock{
 	desc = "A pre-War wall made of solid concrete.";
@@ -12234,7 +12243,7 @@
 "oVs" = (
 /obj/structure/wreck/trash/three_barrels,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
-/area/f13/wasteland/rocksprings)
+/area/f13/building)
 "oVU" = (
 /obj/machinery/vending/cola/random,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -12314,9 +12323,10 @@
 /turf/closed/wall/f13/wood/house,
 /area/f13/building)
 "oYd" = (
-/mob/living/simple_animal/hostile/handy/assaultron,
-/turf/open/indestructible/ground/outside/sidewalk,
-/area/f13/wasteland/rocksprings)
+/obj/structure/barricade/concrete,
+/obj/machinery/door/poddoor/shutters/radiation,
+/turf/open/indestructible/ground/outside/road,
+/area/f13/caves)
 "oYe" = (
 /obj/effect/overlay/turfs/sidewalk{
 	dir = 8
@@ -12359,7 +12369,7 @@
 	},
 /obj/structure/debris/v4,
 /turf/open/indestructible/ground/outside/dirt/harsh,
-/area/f13/wasteland/rocksprings)
+/area/f13/building)
 "oZH" = (
 /obj/structure/debris/v3,
 /turf/closed/wall/mineral/concrete/blastproof,
@@ -13417,6 +13427,9 @@
 	pixel_x = 13;
 	pixel_y = 1
 	},
+/obj/structure/obstacle/barbedwire/end{
+	dir = 8
+	},
 /turf/open/water/hwater,
 /area/f13/wasteland/rocksprings)
 "qqq" = (
@@ -13570,7 +13583,7 @@
 	pixel_y = 20
 	},
 /turf/open/indestructible/ground/outside/dirt/harsh,
-/area/f13/wasteland/rocksprings)
+/area/f13/building)
 "qFJ" = (
 /obj/structure/sign/warning/securearea{
 	name = "Restricted Area"
@@ -13633,11 +13646,10 @@
 	},
 /area/f13/building)
 "qKF" = (
-/obj/effect/decal/fakelattice,
-/turf/open/floor/plasteel/barber{
-	icon_state = "plating"
-	},
-/area/f13/wasteland/rocksprings)
+/obj/structure/barricade/wooden/planks/pregame,
+/obj/structure/barricade/wooden/strong,
+/turf/open/indestructible/ground/outside/road,
+/area/f13/caves)
 "qLh" = (
 /obj/structure/table/glass,
 /turf/open/floor/carpet/orange,
@@ -14280,9 +14292,23 @@
 	},
 /area/f13/bunker)
 "rwd" = (
-/obj/structure/rack,
-/obj/item/binoculars,
-/obj/item/binoculars,
+/obj/machinery/button/door{
+	id = "legiongateinner";
+	name = "Gate button";
+	pixel_x = 32;
+	pixel_y = 6
+	},
+/obj/machinery/button/door{
+	id = "legiongateouter";
+	name = "Gate button";
+	pixel_x = 32;
+	pixel_y = 12
+	},
+/obj/machinery/button/door{
+	id = "legioneastgatehouse";
+	name = "Gatehouse shutters";
+	pixel_y = 32
+	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/stone/rugged,
 /area/f13/legion)
@@ -14483,9 +14509,9 @@
 	},
 /area/f13/caves)
 "rEQ" = (
-/mob/living/simple_animal/hostile/securitron/sentrybot,
-/turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
-/area/f13/wasteland/rocksprings)
+/mob/living/simple_animal/hostile/supermutant/rangedmutant/heavy,
+/turf/open/indestructible/ground/outside/road,
+/area/f13/caves)
 "rGe" = (
 /obj/structure/simple_door/metal,
 /turf/open/indestructible/ground/outside/sidewalk,
@@ -15201,6 +15227,9 @@
 /obj/effect/turf_decal/huge{
 	dir = 8
 	},
+/obj/structure/railing/handrail{
+	dir = 8
+	},
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland/rocksprings)
 "svu" = (
@@ -15208,8 +15237,9 @@
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland/rocksprings)
 "svG" = (
-/turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
-/area/f13/wasteland/rocksprings)
+/obj/structure/decoration/warning,
+/turf/closed/wall/f13/tunnel,
+/area/f13/caves)
 "swx" = (
 /obj/structure/mopbucket,
 /obj/item/mop,
@@ -16334,9 +16364,8 @@
 /turf/open/indestructible/ground/outside/dirt/harsh,
 /area/f13/building)
 "tUV" = (
-/obj/effect/decal/fakelattice,
-/turf/open/indestructible/ground/outside/dirt/harsh,
-/area/f13/wasteland/rocksprings)
+/turf/closed/wall/f13/ruins,
+/area/f13/caves)
 "tVB" = (
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier1,
 /turf/open/indestructible/ground/outside/road,
@@ -16914,10 +16943,12 @@
 	},
 /area/f13/building)
 "uFM" = (
+/obj/structure/railing/handrail{
+	dir = 4
+	},
 /obj/effect/turf_decal/huge{
 	dir = 4
 	},
-/obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland/rocksprings)
 "uFQ" = (
@@ -16988,7 +17019,7 @@
 /obj/structure/closet,
 /obj/effect/spawner/lootdrop/coin,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
-/area/f13/wasteland/rocksprings)
+/area/f13/building)
 "uJU" = (
 /obj/structure/table/wood,
 /obj/item/pickaxe,
@@ -17886,8 +17917,8 @@
 	},
 /area/f13/building)
 "vRG" = (
-/obj/structure/car/rubbish3,
-/turf/open/indestructible/ground/outside/road,
+/obj/structure/decoration/ruins,
+/turf/open/indestructible/ground/outside/ruins,
 /area/f13/caves)
 "vRY" = (
 /obj/structure/closet/crate/secure/hydroponics,
@@ -18358,11 +18389,13 @@
 	},
 /area/f13/building)
 "wsD" = (
-/obj/structure/debris/v3{
-	pixel_x = -11;
-	pixel_y = 22
+/obj/structure/railing/handrail{
+	dir = 1
 	},
-/turf/open/indestructible/ground/outside/dirt/harsh,
+/obj/effect/turf_decal/huge{
+	dir = 1
+	},
+/turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland/rocksprings)
 "wsR" = (
 /obj/structure/rack/shelf_metal,
@@ -18821,9 +18854,15 @@
 	},
 /area/f13/legion)
 "wZy" = (
-/obj/structure/car/rubbish2,
-/turf/open/indestructible/ground/outside/road,
-/area/f13/caves)
+/obj/effect/turf_decal/huge{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/railing/handrail{
+	dir = 4
+	},
+/turf/open/indestructible/ground/outside/sidewalk,
+/area/f13/wasteland/rocksprings)
 "wZV" = (
 /obj/structure/statue/sandstone/mars{
 	anchored = 1
@@ -19056,7 +19095,7 @@
 /obj/structure/closet,
 /obj/effect/spawner/lootdrop/f13/advcrafting,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
-/area/f13/wasteland/rocksprings)
+/area/f13/building)
 "xni" = (
 /obj/structure/flora/grass/wasteland,
 /turf/open/indestructible/ground/outside/dirt/harsh{
@@ -19631,6 +19670,9 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/railing/handrail{
+	dir = 6
+	},
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland/rocksprings)
 "xWj" = (
@@ -19846,10 +19888,9 @@
 	},
 /area/f13/building)
 "ykR" = (
-/obj/machinery/light/small/broken{
-	dir = 4
-	},
-/turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
+/obj/effect/turf_decal/huge,
+/obj/structure/railing/handrail,
+/turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland/rocksprings)
 "ylu" = (
 /obj/machinery/light/small/broken{
@@ -20327,12 +20368,12 @@ qnp
 eUg
 eUg
 eUg
-eUg
 qnp
 eUg
 eUg
-qnp
 eUg
+tUV
+rPW
 rPW
 rPW
 rPW
@@ -20570,26 +20611,26 @@ rPW
 rPW
 rPW
 eUg
-ohl
+gNb
 wmN
-ohl
+gNb
 ohl
 lUg
+gNb
+ohl
+ohl
+oeo
+gNb
+gNb
 ohl
 ohl
 ohl
-ohl
-ohl
-ohl
-ohl
-ohl
-ohl
-ohl
-ohl
+gNb
+gNb
 wmN
 ohl
-ohl
-eUg
+vRG
+rPW
 rPW
 rPW
 rPW
@@ -20829,24 +20870,24 @@ rPW
 eUg
 ohl
 ohl
+ohl
+iUd
+ohl
+ohl
+ohl
+ohl
+ohl
+ohl
+ohl
+ohl
+gNb
+ohl
+ohl
+ohl
+ohl
+ohl
 vRG
-ohl
-ohl
-ohl
-ohl
-ohl
-ohl
-ohl
-ohl
-wZy
-ohl
-ohl
-ohl
-ohl
-ohl
-ohl
-ohl
-eUg
+rPW
 rPW
 rPW
 rPW
@@ -21084,11 +21125,11 @@ rPW
 rPW
 rPW
 eUg
-iUd
 ohl
 ohl
-cgb
 ohl
+ohl
+gNb
 ivO
 ohl
 ohl
@@ -21097,13 +21138,13 @@ ohl
 ohl
 ohl
 iUd
-ohl
-ohl
-ohl
-lUg
 gNb
 ohl
-eUg
+ohl
+ohl
+gNb
+vRG
+rPW
 rPW
 rPW
 rPW
@@ -21341,26 +21382,26 @@ rPW
 rPW
 rPW
 eUg
+nRN
+gNb
+oeo
+gNb
+gNb
+ohl
+gNb
+ohl
+gNb
+gNb
 ohl
 ohl
+rEQ
 ohl
 ohl
-ohl
-ohl
-ohl
-ohl
-ohl
-ohl
-ohl
-ohl
-ohl
-ohl
-ohl
-ohl
-ohl
-ohl
-ohl
-eUg
+gNb
+oeo
+gNb
+vRG
+rPW
 rPW
 rPW
 rPW
@@ -21609,15 +21650,15 @@ eUg
 eUg
 eUg
 qnp
-ohl
-ohl
-ohl
-nRN
+oYd
+oYd
+oYd
 qnp
 eUg
 eUg
-qnp
 eUg
+tUV
+rPW
 rPW
 rPW
 rPW
@@ -21783,7 +21824,7 @@ rPW
 wdu
 wdu
 wdu
-rfA
+rPW
 rPW
 rPW
 rPW
@@ -22554,7 +22595,7 @@ rPW
 rPW
 rPW
 rPW
-rPW
+rfA
 rPW
 rPW
 rPW
@@ -22637,9 +22678,9 @@ hgP
 hgP
 eUg
 qnp
-ohl
-wmN
-ohl
+qKF
+qKF
+qKF
 qnp
 eUg
 hgP
@@ -23152,7 +23193,7 @@ hgP
 hgP
 pPg
 paT
-paT
+svG
 paT
 qWV
 hgP
@@ -23326,7 +23367,7 @@ wlX
 wdu
 rPW
 rfA
-rPW
+rfA
 rPW
 rPW
 rPW
@@ -24359,7 +24400,7 @@ rPW
 wdu
 wdu
 rfA
-rPW
+rfA
 rPW
 rPW
 rPW
@@ -24594,7 +24635,7 @@ rPW
 rfA
 rfA
 xLw
-uGk
+ipO
 pkD
 rPW
 rPW
@@ -24851,7 +24892,7 @@ rPW
 rfA
 rfA
 xLw
-uGk
+ipO
 cTj
 rqF
 rPW
@@ -24874,7 +24915,7 @@ rPW
 rPW
 wdu
 rfA
-rPW
+rfA
 rPW
 rPW
 rPW
@@ -25108,7 +25149,7 @@ rPW
 rfA
 rfA
 xLw
-uGk
+ipO
 dFm
 qWV
 hgP
@@ -25365,7 +25406,7 @@ rPW
 rfA
 rfA
 xLw
-uGk
+ipO
 dFm
 qWV
 hgP
@@ -25389,7 +25430,7 @@ rPW
 rPW
 wdu
 rfA
-rPW
+rfA
 rPW
 rPW
 rPW
@@ -25622,7 +25663,7 @@ rPW
 rfA
 rfA
 xLw
-uGk
+ipO
 ohe
 qWV
 hgP
@@ -25879,7 +25920,7 @@ rPW
 rfA
 rfA
 xLw
-uGk
+ipO
 cos
 vTD
 hgP
@@ -25903,7 +25944,7 @@ rPW
 rPW
 rPW
 wdu
-rfA
+rPW
 rPW
 rPW
 rPW
@@ -26136,7 +26177,7 @@ rPW
 rfA
 rfA
 xLw
-uGk
+ipO
 pkD
 hgP
 hgP
@@ -26160,7 +26201,7 @@ wdu
 rPW
 rPW
 wdu
-rfA
+rPW
 rPW
 rPW
 rPW
@@ -26393,7 +26434,7 @@ rPW
 rfA
 rfA
 xLw
-uGk
+ipO
 tNW
 rqF
 hgP
@@ -26417,7 +26458,7 @@ wdu
 wdu
 wdu
 wdu
-rfA
+rPW
 rPW
 rPW
 rPW
@@ -26650,7 +26691,7 @@ uGk
 rfA
 rfA
 xLw
-uGk
+ipO
 paT
 qWV
 hgP
@@ -26907,7 +26948,7 @@ uGk
 rfA
 rfA
 xLw
-uGk
+ipO
 paT
 rnh
 rqF
@@ -26930,7 +26971,7 @@ rPW
 rPW
 rPW
 wdu
-rPW
+rfA
 rfA
 rPW
 rPW
@@ -27161,10 +27202,10 @@ gyp
 paT
 uGk
 bQf
-vNb
-vNb
+rfA
+rfA
 xLw
-uGk
+ipO
 rMl
 paT
 rnh
@@ -27187,7 +27228,7 @@ rPW
 wdu
 wdu
 wdu
-rPW
+rfA
 rPW
 rPW
 rPW
@@ -27418,10 +27459,10 @@ pph
 paT
 uGk
 uGk
-vNb
-vNb
+rfA
+rfA
 xLw
-uGk
+ipO
 dFm
 paT
 paT
@@ -27443,8 +27484,8 @@ rPW
 rPW
 wdu
 wdu
-rPW
-rPW
+rfA
+rfA
 rPW
 rPW
 rPW
@@ -27675,10 +27716,10 @@ hKN
 toe
 paT
 uGk
-vNb
-vNb
+rfA
+rfA
 xLw
-uGk
+ipO
 dFm
 paT
 paT
@@ -27699,8 +27740,8 @@ wdu
 rPW
 kSg
 wdu
-rPW
-rPW
+rfA
+rfA
 rPW
 rPW
 rPW
@@ -27932,10 +27973,10 @@ eQr
 iAF
 toe
 paT
-vNb
-vNb
+rfA
+rfA
 xLw
-uGk
+ipO
 dFm
 paT
 paT
@@ -27955,8 +27996,8 @@ hNq
 wdu
 wdu
 wdu
-rPW
-rPW
+rfA
+rfA
 rPW
 rPW
 rPW
@@ -28189,10 +28230,10 @@ eQr
 hgP
 iAF
 nsp
-vNb
-vNb
+rfA
+rfA
 xLw
-uGk
+ipO
 dFm
 paT
 fmb
@@ -28210,9 +28251,9 @@ hgP
 hgP
 hgP
 wdu
-rPW
-rPW
-rPW
+rfA
+rfA
+rfA
 rPW
 rPW
 rPW
@@ -28446,10 +28487,10 @@ qRe
 hgP
 hgP
 hgP
-vNb
-vNb
-xLw
-uGk
+pnE
+pnE
+cgb
+ipO
 dFm
 paT
 qWV
@@ -28466,8 +28507,8 @@ hgP
 hgP
 hgP
 hgP
-rPW
-rPW
+rfA
+rfA
 rPW
 rPW
 rPW
@@ -28703,10 +28744,10 @@ hgP
 hgP
 hgP
 hgP
-vNb
-vNb
-xLw
-uGk
+pnE
+pnE
+cJy
+ipO
 ohe
 psz
 vTD
@@ -28960,10 +29001,10 @@ hgP
 hgP
 hgP
 hgP
-vNb
-vNb
-xLw
-uGk
+pnE
+pnE
+cJy
+ipO
 dFm
 qWV
 hgP
@@ -29135,14 +29176,6 @@ hmL
 rPW
 rPW
 rPW
-lqw
-lqw
-rfA
-rPW
-rPW
-rPW
-rPW
-lqw
 rPW
 rPW
 rPW
@@ -29150,7 +29183,15 @@ rPW
 rPW
 rPW
 rPW
-lqw
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
 rPW
 rPW
 rPW
@@ -29217,10 +29258,10 @@ hgP
 hgP
 hgP
 hgP
-vNb
-vNb
-xLw
-uGk
+pnE
+pnE
+cJy
+ipO
 cos
 vTD
 oxq
@@ -29391,11 +29432,11 @@ hmL
 hmL
 rPW
 rPW
-rPW
-rfA
 lqw
-rfA
-rfA
+lqw
+lqw
+rPW
+rPW
 rPW
 rPW
 rPW
@@ -29472,12 +29513,12 @@ hgP
 hgP
 pnE
 pnE
+ryC
+ryC
 pnE
-fCY
 pnE
-pnE
-xLw
-uGk
+cJy
+ipO
 mQs
 hgP
 hgP
@@ -29652,10 +29693,6 @@ rPW
 rPW
 rPW
 rPW
-rfA
-rfA
-rfA
-rfA
 rPW
 rPW
 rPW
@@ -29667,7 +29704,11 @@ rPW
 rPW
 rPW
 rPW
-lqw
+rPW
+rPW
+rPW
+rPW
+rPW
 rPW
 rPW
 rPW
@@ -29733,8 +29774,8 @@ qHB
 gtX
 iyD
 pnE
-xLw
-uGk
+cJy
+ipO
 pkD
 hgP
 hgP
@@ -29905,19 +29946,6 @@ hmL
 hmL
 rPW
 rPW
-rfA
-rfA
-rfA
-rPW
-lqw
-rPW
-rPW
-rfA
-rPW
-lqw
-rPW
-rPW
-rPW
 rPW
 rPW
 rPW
@@ -29925,8 +29953,21 @@ rPW
 rPW
 lqw
 lqw
-lqw
 rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+lqw
 rPW
 rPW
 rPW
@@ -29989,9 +30030,9 @@ gtX
 amM
 amM
 amM
-pnE
-xLw
-uGk
+lPB
+cJy
+ipO
 wes
 hgP
 hgP
@@ -30162,15 +30203,16 @@ hmL
 hmL
 rPW
 rPW
-rfA
 rPW
 rPW
-rfA
-rfA
 rPW
 rPW
-rfA
-rfA
+rPW
+lqw
+rPW
+rPW
+rPW
+rPW
 rPW
 rPW
 rPW
@@ -30182,9 +30224,8 @@ rPW
 rPW
 rPW
 lqw
-rPW
-rPW
-rPW
+lqw
+lqw
 rPW
 rPW
 rPW
@@ -30241,14 +30282,14 @@ hXy
 anP
 psz
 nsp
-fCY
+ryC
 gtX
 gtX
 amM
-gtX
-pnE
-xLw
-uGk
+lle
+lPB
+cJy
+ipO
 wes
 hgP
 oxq
@@ -30417,20 +30458,9 @@ hmL
 "}
 (42,1,1) = {"
 hmL
-rfA
-rPW
-rPW
-lqw
-rPW
-rfA
 rPW
 rPW
 rPW
-rPW
-rfA
-rfA
-rPW
-rfA
 rPW
 rPW
 rPW
@@ -30441,6 +30471,17 @@ rPW
 rPW
 rPW
 rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+lqw
 rPW
 rPW
 rPW
@@ -30500,12 +30541,12 @@ qWV
 hgP
 pnE
 rwd
-gtX
+bQe
 amM
-hAL
+klI
 pnE
-xLw
-uGk
+cJy
+ipO
 pkD
 hgP
 hgP
@@ -30674,23 +30715,23 @@ hmL
 "}
 (43,1,1) = {"
 hmL
-rfA
 rPW
-rfA
-rfA
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
 lqw
-rfA
-rPW
-rPW
-rfA
-rPW
-rfA
-rfA
-rPW
-rfA
-rfA
-rPW
-rPW
 rPW
 rPW
 rPW
@@ -30757,12 +30798,12 @@ uwo
 gNZ
 pnE
 pnE
-pnE
-pnE
+lPB
+lPB
 pnE
 pnE
 qpL
-jqK
+kMY
 hWA
 ujw
 gNZ
@@ -30931,24 +30972,24 @@ hmL
 "}
 (44,1,1) = {"
 hmL
-rfA
-rPW
-rfA
 rPW
 rPW
-rfA
 rPW
-rfA
+rPW
+rPW
+rPW
 lqw
 rPW
 rPW
-rfA
 rPW
 rPW
 rPW
 rPW
 rPW
 rPW
+lqw
+lqw
+lqw
 rPW
 rPW
 rPW
@@ -31188,23 +31229,23 @@ hmL
 "}
 (45,1,1) = {"
 hmL
-rfA
-rPW
-rfA
 rPW
 rPW
-rfA
-rPW
-rfA
-rPW
-rfA
-rPW
-rfA
-rfA
 rPW
 rPW
-rfA
 rPW
+lqw
+lqw
+lqw
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+lqw
 rPW
 rPW
 rPW
@@ -31445,24 +31486,24 @@ hmL
 "}
 (46,1,1) = {"
 hmL
-rfA
 rPW
 rPW
 rPW
-rfA
-rfA
-rfA
-rfA
+rPW
+rPW
+rPW
 lqw
-rfA
 rPW
 rPW
 rPW
-rfA
-rfA
-rfA
-rfA
-rfA
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
 rPW
 rPW
 rPW
@@ -31706,26 +31747,26 @@ rPW
 rPW
 rPW
 rPW
-rfA
-rPW
-rPW
-rPW
-rPW
-rfA
-rfA
-rfA
-rPW
-lqw
-lqw
-rfA
-rfA
 rPW
 rPW
 rPW
 rPW
 rPW
 rPW
-lqw
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
 rPW
 rPW
 rPW
@@ -31789,8 +31830,8 @@ lPB
 lPB
 pnE
 pnE
-mCb
-mCb
+dTT
+nli
 bht
 kgU
 nsp
@@ -31960,30 +32001,30 @@ hmL
 (48,1,1) = {"
 hmL
 rPW
-rfA
-rPW
-rfA
-rfA
-rfA
-rfA
 rPW
 rPW
 rPW
 rPW
-rfA
 rPW
 rPW
 rPW
-rfA
 rPW
 rPW
 rPW
-rfA
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
 rPW
 rPW
 lqw
-lqw
-lqw
+rPW
+rPW
 rPW
 rPW
 rPW
@@ -32046,8 +32087,8 @@ eCY
 amM
 klI
 pnE
-uGk
-uGk
+eGp
+ipO
 pkD
 hgP
 hgP
@@ -32217,28 +32258,28 @@ hmL
 (49,1,1) = {"
 hmL
 rPW
-rfA
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
 rPW
 rPW
 lqw
-rfA
-rfA
-rPW
-rfA
-rfA
-rPW
-rfA
-rPW
-rPW
-rPW
-rPW
-rfA
-rfA
-rPW
-rPW
-rPW
-rPW
-rPW
+lqw
 lqw
 rPW
 rPW
@@ -32303,8 +32344,8 @@ gtX
 gtX
 lle
 lPB
-uGk
-uGk
+eGp
+ipO
 pkD
 hgP
 oxq
@@ -32473,29 +32514,29 @@ hmL
 "}
 (50,1,1) = {"
 hmL
-rfA
-rfA
-rfA
-rfA
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
 lqw
-rfA
-rfA
-rPW
-rPW
-rPW
-rPW
-rfA
-rfA
-rfA
-rfA
-rfA
-rfA
-rfA
-rfA
-rfA
-rPW
-rPW
-rPW
 rPW
 rPW
 rPW
@@ -32560,8 +32601,8 @@ amM
 gtX
 amM
 lPB
-xLw
-uGk
+cJy
+ipO
 pkD
 hgP
 hgP
@@ -32730,16 +32771,6 @@ hmL
 "}
 (51,1,1) = {"
 hmL
-rfA
-rPW
-rfA
-rPW
-rPW
-rfA
-rfA
-rPW
-rPW
-rfA
 rPW
 rPW
 rPW
@@ -32748,10 +32779,20 @@ rPW
 rPW
 rPW
 rPW
-rfA
-rfA
-rfA
-rfA
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
 rPW
 rPW
 rPW
@@ -32817,8 +32858,8 @@ qHB
 gtX
 xUD
 pnE
-xLw
-uGk
+cJy
+ipO
 pkD
 hgP
 hgP
@@ -32987,32 +33028,32 @@ hmL
 "}
 (52,1,1) = {"
 hmL
-rfA
 rPW
 rPW
-rPW
-rPW
-rPW
-rfA
-rfA
-rPW
-rfA
-rfA
-rfA
-rfA
-rfA
-rfA
-rfA
-rfA
-rPW
-rPW
-rPW
-rPW
-rfA
 rPW
 rPW
 lqw
-lqw
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
 rPW
 rPW
 rPW
@@ -33074,8 +33115,8 @@ ryC
 ryC
 pnE
 pnE
-xLw
-uGk
+cJy
+ipO
 cTj
 rqF
 hgP
@@ -33244,29 +33285,29 @@ hmL
 "}
 (53,1,1) = {"
 hmL
-rfA
-rfA
-rfA
-rPW
-rfA
-rPW
-rPW
-rfA
-rPW
-rfA
-rfA
-rPW
 rPW
 rPW
 rPW
 lqw
 lqw
-rfA
-rfA
-rfA
+lqw
 rPW
-rfA
-rfA
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+lqw
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
 rPW
 rPW
 rPW
@@ -33329,10 +33370,10 @@ jLa
 jLa
 hgP
 hgP
-vNb
-vNb
-xLw
-uGk
+pnE
+pnE
+cJy
+ipO
 dFm
 rnh
 ayy
@@ -33502,30 +33543,30 @@ hmL
 (54,1,1) = {"
 hmL
 rPW
-rfA
-rfA
-rPW
-rfA
 rPW
 rPW
-rfA
 rPW
-rPW
-rfA
-rPW
-rfA
-rfA
-rfA
-rfA
-rfA
-rPW
-rfA
-rfA
-rPW
-rfA
-rfA
-rfA
 lqw
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+lqw
+lqw
+lqw
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
 rPW
 rPW
 rPW
@@ -33586,10 +33627,10 @@ snB
 jLa
 hgP
 hgP
-vNb
-vNb
-xLw
-uGk
+pnE
+pnE
+cJy
+ipO
 ohe
 paT
 qWV
@@ -33759,31 +33800,31 @@ hmL
 (55,1,1) = {"
 hmL
 rPW
-rfA
-rPW
-rPW
-rfA
-rfA
-lqw
-rfA
-rfA
-rPW
-rfA
-rPW
-rfA
 rPW
 rPW
 rPW
-rfA
 rPW
-rfA
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
 rPW
 lqw
-rfA
-rfA
-rfA
-rfA
-rfA
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
 rPW
 rPW
 rPW
@@ -33843,10 +33884,10 @@ sFb
 jLa
 hgP
 hgP
-vNb
-vNb
-xLw
-uGk
+pnE
+pnE
+cJy
+ipO
 dFm
 paT
 qWV
@@ -34016,32 +34057,32 @@ hmL
 (56,1,1) = {"
 hmL
 rPW
-rfA
 rPW
 rPW
-rfA
 rPW
 rPW
-rfA
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
 rPW
 lqw
-rfA
 rPW
-rfA
 rPW
-rfA
-rfA
-rfA
 rPW
-rfA
+lqw
 rPW
-rfA
-rfA
-rfA
-rfA
-rfA
-rfA
-rfA
+rPW
 rPW
 rPW
 jLa
@@ -34100,10 +34141,10 @@ ouI
 jLa
 hgP
 hgP
-vNb
-vNb
-xLw
-uGk
+pnE
+pnE
+gzl
+ipO
 dFm
 psz
 vTD
@@ -34273,33 +34314,33 @@ hmL
 (57,1,1) = {"
 hmL
 rPW
-rfA
-rfA
 rPW
 rPW
 rPW
 rPW
 rPW
-rfA
-rPW
-rfA
-rPW
-rfA
 rPW
 rPW
 rPW
 rPW
 rPW
-rfA
 rPW
-rfA
 rPW
-rfA
-rfA
 rPW
-rfA
-rfA
-rfA
+rPW
+rPW
+rPW
+rPW
+rPW
+lqw
+lqw
+lqw
+rPW
+rPW
+lqw
+lqw
+rPW
+rPW
 rPW
 jLa
 yfL
@@ -34533,30 +34574,30 @@ rPW
 rPW
 rPW
 rPW
-rfA
-rfA
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
 rPW
 lqw
 rPW
 rPW
 rPW
 rPW
-rfA
-rPW
-rPW
-rfA
-rfA
-rfA
-rfA
 rPW
 rPW
 rPW
-rfA
-rPW
-rPW
-rPW
-rfA
-rfA
 rPW
 jLa
 iis
@@ -34787,34 +34828,34 @@ hmL
 (59,1,1) = {"
 hmL
 rPW
-rfA
-rfA
-rfA
-rfA
-rfA
-rPW
-rfA
-rfA
-rfA
-rfA
-rfA
-rfA
-rfA
-rPW
-rPW
-rPW
-rfA
-rPW
-rPW
-rfA
 rPW
 rPW
 rPW
 rPW
 rPW
-rfA
-rfA
-rfA
+lqw
+lqw
+lqw
+lqw
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
 jLa
 jZc
 uFs
@@ -35045,28 +35086,28 @@ hmL
 hmL
 rPW
 rPW
-rfA
-rPW
-rPW
-rfA
-rPW
-rPW
-rfA
-rfA
-rfA
 rPW
 rPW
 rPW
-rfA
-rfA
 rPW
-rfA
+lqw
 rPW
 rPW
 rPW
-rfA
-rfA
-rfA
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
 rPW
 rPW
 rPW
@@ -35312,18 +35353,18 @@ rPW
 rPW
 rPW
 rPW
-rfA
 rPW
 rPW
 rPW
 rPW
-rfA
-rfA
-rfA
 rPW
 rPW
 rPW
-rfA
+rPW
+rPW
+rPW
+rPW
+rPW
 rPW
 rPW
 rPW
@@ -35556,29 +35597,29 @@ rPW
 hmL
 "}
 (62,1,1) = {"
-rfA
-rfA
-rfA
-rfA
-rfA
-rfA
-rfA
-rfA
-rfA
-rfA
-rfA
-rfA
-rfA
-rfA
-rfA
-rfA
-rfA
+hmL
 rPW
 rPW
-rfA
-rfA
-rfA
-rfA
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
 rPW
 rPW
 rPW
@@ -35813,31 +35854,31 @@ rPW
 hmL
 "}
 (63,1,1) = {"
-rfA
-rfA
-rfA
-rfA
-rfA
+hmL
 rPW
-rfA
-rfA
-rfA
-rfA
 rPW
-rfA
-rfA
-rfA
-rfA
-rfA
-rfA
-rfA
 rPW
-rfA
-rfA
-rfA
-rfA
-rfA
-rfA
+lqw
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+lqw
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+lqw
+rPW
+rPW
 rPW
 rPW
 rPW
@@ -36071,8 +36112,10 @@ hmL
 "}
 (64,1,1) = {"
 hmL
-rfA
-rfA
+rPW
+rPW
+rPW
+lqw
 rPW
 rPW
 rPW
@@ -36081,21 +36124,19 @@ rPW
 rPW
 rPW
 rPW
-rfA
-rfA
+rPW
+lqw
 rPW
 rPW
 rPW
+lqw
+lqw
+lqw
+lqw
+lqw
 rPW
 rPW
 rPW
-rfA
-rfA
-rPW
-rfA
-rfA
-rfA
-rfA
 rPW
 rPW
 jLa
@@ -36328,35 +36369,35 @@ hmL
 "}
 (65,1,1) = {"
 hmL
-rfA
+rPW
+rPW
+rPW
+lqw
 rPW
 rPW
 rPW
 rPW
 rPW
 rPW
-rfA
+rPW
+lqw
+lqw
+lqw
+rPW
+rPW
+rPW
+rPW
+rPW
+lqw
 rPW
 rPW
 rPW
 rPW
 rPW
 rPW
-rfA
-rfA
-rfA
-rfA
 rPW
 rPW
 rPW
-rPW
-rPW
-rfA
-rfA
-rfA
-rfA
-rfA
-rfA
 rPW
 jLa
 jLa
@@ -36588,33 +36629,33 @@ hmL
 rPW
 rPW
 rPW
-rPW
-rPW
-rfA
-rfA
-rfA
-rPW
-rfA
-rfA
-rfA
-rfA
-rfA
-rfA
-rfA
+lqw
 rPW
 rPW
 rPW
-rfA
-rfA
-rfA
 rPW
 rPW
-rfA
 rPW
 rPW
-rfA
-rfA
-rfA
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+lqw
+lqw
+lqw
+lqw
+lqw
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
 rPW
 rPW
 rPW
@@ -36845,38 +36886,38 @@ hmL
 rPW
 rPW
 rPW
-rPW
-rPW
 lqw
-lqw
-rfA
-rPW
-rPW
-rPW
-rPW
-rfA
-rfA
 rPW
 rPW
 rPW
 rPW
 rPW
 rPW
-rfA
-rPW
-rPW
-rfA
 rPW
 rPW
 rPW
 rPW
-rfA
-rfA
-rfA
-rfA
-rfA
-rfA
-rfA
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
 rfA
 rfA
 rfA
@@ -36920,7 +36961,7 @@ jLa
 jLa
 jLa
 jLa
-udo
+buS
 ivH
 gUM
 taA
@@ -37102,37 +37143,37 @@ hmL
 rPW
 rPW
 rPW
-rPW
-rfA
-rPW
 lqw
-rfA
-rfA
 rPW
 rPW
 rPW
 rPW
 rPW
 rPW
-rfA
-rfA
-rfA
-rfA
-rfA
-rfA
-rPW
-rPW
-rfA
 rPW
 rPW
 rPW
 rPW
 rPW
-rfA
-rfA
-rfA
-rfA
-rfA
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
 rfA
 rfA
 rfA
@@ -37359,6 +37400,30 @@ hmL
 rPW
 rPW
 rPW
+lqw
+lqw
+lqw
+lqw
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
 rPW
 rPW
 rPW
@@ -37367,30 +37432,6 @@ rPW
 rPW
 rfA
 rfA
-rfA
-rPW
-rPW
-rPW
-rfA
-rfA
-rfA
-rPW
-rPW
-rPW
-rPW
-rPW
-rPW
-rPW
-rfA
-rfA
-rPW
-rPW
-rPW
-rPW
-rPW
-rPW
-rPW
-rPW
 rPW
 rPW
 rPW
@@ -37615,38 +37656,38 @@ hmL
 hmL
 rPW
 rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
 rfA
 rfA
-rPW
-rfA
-rPW
-rfA
-rPW
-rPW
-rPW
-rPW
-rPW
-rfA
-rPW
-rfA
-rfA
-rPW
-rPW
-lqw
-rPW
-rfA
-rfA
-rfA
-rfA
-rfA
-rPW
-rPW
-rPW
-rPW
-rPW
-rPW
-rPW
-rPW
 rPW
 rPW
 rPW
@@ -37872,37 +37913,37 @@ hmL
 hmL
 rPW
 rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
 rfA
 rfA
-rPW
-rfA
-rPW
-rfA
-rfA
-rPW
-rfA
-rfA
-rPW
-rfA
-rPW
-rfA
-rPW
-rPW
-lqw
-lqw
-lqw
-rPW
-rPW
-rfA
-rfA
-rPW
-rPW
-rPW
-rPW
-rPW
-rPW
-rPW
-rPW
 rPW
 rPW
 rPW
@@ -38132,33 +38173,33 @@ rPW
 rPW
 rPW
 rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
 rfA
-rPW
-rPW
 rfA
-rfA
-rPW
-rPW
-rPW
-rfA
-rPW
-rfA
-rPW
-rPW
-rPW
-lqw
-rPW
-rPW
-rPW
-rPW
-rPW
-rPW
-rPW
-rPW
-rPW
-rPW
-rPW
-rPW
 rPW
 rPW
 rPW
@@ -38384,37 +38425,37 @@ hmL
 "}
 (73,1,1) = {"
 hmL
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
 rfA
 rfA
-rfA
-rfA
-rfA
-rPW
-rPW
-rPW
-rPW
-rPW
-rPW
-rPW
-rfA
-rfA
-rPW
-rPW
-rfA
-rPW
-rPW
-rPW
-rPW
-rPW
-rPW
-rPW
-rPW
-rPW
-rPW
-rPW
-rPW
-rPW
-rPW
 lqw
 rPW
 rPW
@@ -38652,25 +38693,25 @@ rPW
 rPW
 rPW
 rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
 rfA
-rPW
-rPW
-rPW
-rPW
 rfA
-rPW
-rPW
-rPW
-rPW
-rPW
-rPW
-rPW
-rPW
-rPW
-rPW
-rPW
-rPW
-rPW
+rfA
 rPW
 rPW
 rPW
@@ -38908,24 +38949,24 @@ rPW
 rPW
 rPW
 rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
 rfA
 rfA
-rPW
 rfA
-rPW
-rPW
-rPW
-rPW
-rPW
-rPW
-rPW
-rPW
-rPW
-rPW
-rPW
-rPW
-rPW
-rPW
+rfA
+rfA
+rfA
+rfA
+rfA
+rfA
+rfA
+rfA
 rPW
 rPW
 rPW
@@ -39160,19 +39201,19 @@ rPW
 lqw
 lqw
 lqw
-rPW
-rPW
-rPW
-rPW
-rPW
-rfA
-rfA
-rPW
 rfA
 rfA
 rfA
-rPW
-rPW
+rfA
+rfA
+rfA
+rfA
+rfA
+rfA
+rfA
+rfA
+rfA
+rfA
 rPW
 rPW
 rPW
@@ -39416,18 +39457,18 @@ rPW
 rPW
 rPW
 lqw
-rPW
-rPW
-rPW
-rPW
-rPW
-rPW
-rPW
-rPW
-rPW
-rPW
 rfA
 rfA
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
 rPW
 rPW
 rPW
@@ -39673,7 +39714,7 @@ rPW
 rPW
 rPW
 rPW
-rPW
+rfA
 rPW
 rPW
 hgP
@@ -39929,8 +39970,8 @@ hmL
 rPW
 rPW
 rPW
-rPW
-rPW
+rfA
+rfA
 rPW
 hgP
 hgP
@@ -40186,7 +40227,7 @@ hmL
 rPW
 rPW
 rPW
-rPW
+rfA
 rPW
 rPW
 hgP
@@ -40443,7 +40484,7 @@ hmL
 rPW
 rPW
 rPW
-rPW
+rfA
 rPW
 hgP
 hgP
@@ -40700,7 +40741,7 @@ hmL
 rPW
 rPW
 rPW
-rPW
+rfA
 rPW
 hgP
 hgP
@@ -40957,7 +40998,7 @@ hmL
 rPW
 rPW
 rPW
-rPW
+rfA
 rPW
 hgP
 hgP
@@ -41214,7 +41255,7 @@ hmL
 rPW
 rPW
 rPW
-rPW
+rfA
 rPW
 hgP
 hgP
@@ -41471,7 +41512,7 @@ hmL
 rPW
 rPW
 rPW
-rPW
+rfA
 rPW
 hgP
 hgP
@@ -41728,7 +41769,7 @@ hmL
 rPW
 rPW
 rPW
-rPW
+rfA
 rPW
 hgP
 hgP
@@ -41985,7 +42026,7 @@ hmL
 rPW
 rPW
 rPW
-rPW
+rfA
 rPW
 hgP
 hgP
@@ -42242,7 +42283,7 @@ hmL
 rPW
 rPW
 rPW
-rPW
+rfA
 rPW
 hgP
 hgP
@@ -42499,7 +42540,7 @@ hmL
 rPW
 rPW
 rPW
-rPW
+rfA
 rPW
 hgP
 hgP
@@ -42756,7 +42797,7 @@ hmL
 rPW
 rPW
 rPW
-rPW
+rfA
 rPW
 hgP
 hgP
@@ -43013,7 +43054,7 @@ hmL
 rPW
 rPW
 rPW
-rPW
+rfA
 rPW
 hgP
 azN
@@ -43270,7 +43311,7 @@ hmL
 rPW
 rPW
 rPW
-rPW
+rfA
 rPW
 hgP
 mrw
@@ -43527,7 +43568,7 @@ hmL
 rPW
 rPW
 rPW
-rPW
+rfA
 rPW
 hgP
 quY
@@ -43781,10 +43822,10 @@ hmL
 "}
 (94,1,1) = {"
 hmL
-rPW
-rPW
-rPW
-rPW
+rfA
+rfA
+rfA
+rfA
 rPW
 hgP
 hgP
@@ -53570,7 +53611,7 @@ rPW
 rPW
 rfA
 bYn
-buS
+fWk
 mDV
 qRn
 qRn
@@ -53582,7 +53623,7 @@ qRn
 gCC
 xwV
 fAl
-eGp
+gAc
 bYn
 rfA
 rPW
@@ -72542,16 +72583,16 @@ oVs
 ltq
 fWX
 uJJ
-tUV
-qKF
-tUV
+aru
+lHr
+aru
 gHV
-svG
+vhd
 mUV
-svG
-svG
-svG
-svG
+vhd
+vhd
+vhd
+vhd
 xmw
 laS
 dnY
@@ -72795,21 +72836,21 @@ rPW
 rPW
 tgY
 xsC
-oeo
-svG
-svG
-qKF
-ipO
-oeo
-svG
-tUV
-svG
-svG
-oeo
-oeo
-svG
-svG
-svG
+vSA
+vhd
+vhd
+lHr
+xMp
+vSA
+vhd
+aru
+vhd
+vhd
+vSA
+vSA
+vhd
+vhd
+vhd
 vhd
 vhd
 vhd
@@ -73052,17 +73093,17 @@ rPW
 rPW
 tgY
 xsC
-oeo
-svG
+vSA
+vhd
 miO
 suX
 suX
 suX
 hDD
-oeo
-svG
-gzl
-cEJ
+vSA
+vhd
+tzj
+miO
 suX
 suX
 suX
@@ -73309,21 +73350,21 @@ rPW
 rPW
 tgY
 xsC
-oeo
-svG
+vSA
+vhd
 aCn
 giH
-giH
+vGk
 vGk
 npz
-oeo
-oeo
-oeo
-lJp
+vSA
+vSA
+vSA
+aCn
 giH
 vGk
 vGk
-hWh
+npz
 vhd
 vhd
 vhd
@@ -73566,21 +73607,21 @@ rPW
 rPW
 tgY
 xsC
-dTT
-svG
-aCn
-vGk
+wOr
+vhd
+lJp
 giH
 giH
-npz
-svG
-oeo
-svG
-aCn
+giH
+ykR
+vhd
+vSA
+vhd
+lJp
 giH
 giH
-cJy
-npz
+giH
+ykR
 vSA
 vhd
 vhd
@@ -73823,21 +73864,21 @@ rPW
 rPW
 tgY
 xsC
-svG
-svG
+vhd
+vhd
 lJp
-vGk
-giH
-vGk
-npz
-svG
-rEQ
-svG
-aCn
 giH
 giH
 giH
-npz
+ykR
+vhd
+aiX
+vhd
+lJp
+giH
+giH
+giH
+ykR
 vhd
 aiX
 vhd
@@ -74080,21 +74121,21 @@ rPW
 rPW
 tgY
 xsC
-svG
-oeo
-lJp
+vhd
+vSA
+aCn
 vGk
 giH
 vGk
-npz
-svG
-svG
-ecI
-lJp
+ykR
+vhd
+vhd
+fgA
+aCn
 vGk
 giH
-oYd
-npz
+vGk
+ykR
 vhd
 vhd
 vhd
@@ -74337,21 +74378,21 @@ rPW
 rPW
 tgY
 xsC
-svG
-oeo
-lJp
-vGk
-giH
-vGk
-hWh
-svG
-svG
-ecI
-vGk
+vhd
+vSA
+wsD
 giH
 vGk
 vGk
-hWh
+npz
+vhd
+vhd
+fgA
+wsD
+giH
+vGk
+vGk
+npz
 vhd
 vhd
 vhd
@@ -74594,20 +74635,20 @@ rPW
 rPW
 tgY
 xsC
-svG
-oeo
+vhd
+vSA
 aGi
 uFM
 hHa
-hHa
-lVv
-svG
-ecI
+wZy
+xWh
+vhd
+fgA
 qFs
-paT
-ecI
-hHa
+aGi
 uFM
+hHa
+wZy
 xWh
 tzj
 vSA
@@ -74852,20 +74893,20 @@ rPW
 tgY
 xsC
 ani
-svG
-svG
-nli
-svG
-svG
-svG
-svG
-paT
-paT
-svG
+vhd
+vhd
+iBR
+vhd
+vhd
+vhd
+vhd
+qTr
+qTr
+vhd
 oZB
-svG
-oeo
-oeo
+vhd
+vSA
+vSA
 vSA
 sKA
 vhd
@@ -75108,21 +75149,21 @@ rPW
 rPW
 tgY
 xsC
-bQe
-ykR
-svG
-svG
-svG
-svG
-bQe
-kMY
-svG
-wsD
+jGv
+qLx
+vhd
+vhd
+vhd
+vhd
+jGv
+oqo
+vhd
+sNV
 hNI
-paT
+qTr
 brZ
-ecI
-svG
+fgA
+vhd
 vhd
 oqo
 vhd

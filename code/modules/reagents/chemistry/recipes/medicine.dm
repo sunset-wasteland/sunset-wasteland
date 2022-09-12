@@ -383,14 +383,12 @@
 
 /datum/chemical_reaction/stimpak_imitation
 	name = "Imitation Stimpak Fluid"
-	id = /datum/reagent/medicine/stimpak_imitation
+	id = /datum/reagent/medicine/stimpakimitation
 	results = list(/datum/reagent/medicine/stimpakimitation = 2)
 	required_reagents = list(/datum/reagent/consumable/brocjuice = 1, /datum/reagent/consumable/xanderjuice = 1)
 
-/datum/chemical_reaction/stimpak_synthetic
-	name = "Synthetic Stimpak Fluid"
-	id = /datum/reagent/medicine/stimpak_synthetic
-	results = list(/datum/reagent/medicine/stimpak = 1)
+/datum/chemical_reaction/stimpak/synthetic
+	id = "stimpak_synthetic"
 	required_reagents = list(/datum/reagent/blood/synthetics = 1, /datum/reagent/medicine/spaceacillin = 1)
 
 /datum/chemical_reaction/superstimpak
@@ -399,10 +397,8 @@
 	results = list(/datum/reagent/medicine/super_stimpak = 2)
 	required_reagents = list(/datum/reagent/blood = 1, /datum/reagent/medicine/stimpak = 1, /datum/reagent/consumable/mutjuice = 1) //1 mutfruit at 50 potency yields 6 mutfruit juice
 
-/datum/chemical_reaction/superstimpak_synthetic
-	name = "Synthetic Super Stimpak Fluid"
-	id = /datum/reagent/medicine/super_stimpak_synthetic
-	results = list(/datum/reagent/medicine/super_stimpak = 2)
+/datum/chemical_reaction/superstimpak/synthetic
+	id = "super_stimpak_synthetic"
 	required_reagents = list(/datum/reagent/blood/synthetics = 1, /datum/reagent/medicine/stimpak = 1, /datum/reagent/consumable/mutjuice = 1) //1 mutfruit at 50 potency yields 6 mutfruit juice
 
 /datum/chemical_reaction/medx

@@ -378,6 +378,10 @@
 	name = "Brotherhood T-45d power helmet"
 	desc = "It's an old pre-War power armor helmet. It's pretty hot inside of it."
 
+/obj/item/clothing/head/helmet/f13/power_armor/t45d/Knightcommander
+	name = "Knight-Commander's T-45d Power Armour"
+	desc = "It's an old pre-War power armor helmet. It's pretty hot inside of it. But, this helmet was made with a bit of comfort in mind."
+
 /obj/item/clothing/head/helmet/f13/power_armor/t45d/bos/update_icon_state()
 	icon_state = "t45dhelmet[light_on]"
 	item_state = "t45dhelmet[light_on]"

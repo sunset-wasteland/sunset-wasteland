@@ -15,7 +15,7 @@
 	name = "Overpass Raider"
 	},
 /turf/open/floor/f13/wood,
-/area/f13/wasteland/rocksprings)
+/area/f13/building)
 "aac" = (
 /obj/effect/decal/cleanable/dirt,
 /mob/living/simple_animal/hostile/raider/tribal,
@@ -241,8 +241,9 @@
 	},
 /area/f13/building)
 "age" = (
-/turf/closed/wall/f13/wood/house,
-/area/f13/wasteland/rocksprings)
+/obj/machinery/mineral/ore_redemption,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/legion)
 "agk" = (
 /obj/structure/fence/wooden{
 	dir = 4;
@@ -646,7 +647,7 @@
 /obj/structure/simple_door/interior,
 /obj/structure/barricade/wooden/planks/pregame,
 /turf/open/floor/f13/wood,
-/area/f13/wasteland/rocksprings)
+/area/f13/building)
 "aEn" = (
 /obj/structure/debris/v3,
 /turf/open/indestructible/ground/outside/desert/harsh,
@@ -878,7 +879,7 @@
 	},
 /obj/structure/barricade/wooden/planks/pregame,
 /turf/open/floor/f13/wood,
-/area/f13/wasteland/rocksprings)
+/area/f13/building)
 "aUa" = (
 /obj/structure/rack,
 /obj/item/storage/belt/utility/gardener,
@@ -1023,7 +1024,7 @@
 	color = "#363636"
 	},
 /turf/open/floor/f13/wood,
-/area/f13/wasteland/rocksprings)
+/area/f13/building)
 "bgs" = (
 /obj/structure/lattice,
 /obj/structure/junk/small/tv,
@@ -1031,8 +1032,9 @@
 /turf/open/indestructible/ground/outside/dirt/harsh,
 /area/f13/wasteland/rocksprings)
 "bgX" = (
-/turf/open/floor/f13/wood,
-/area/f13/wasteland/rocksprings)
+/obj/structure/obstacle/barbedwire,
+/turf/open/indestructible/ground/outside/desert/harsh,
+/area/f13/building)
 "bht" = (
 /obj/structure/fence/corner/wooden{
 	dir = 1
@@ -1976,8 +1978,9 @@
 	desc = "An old pre-war motorcycle, this ones wheels have been pulled off and it's clear parts are just flat out missing.  It's very ruined.";
 	dir = 4
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/desert/harsh,
-/area/f13/wasteland/rocksprings)
+/area/f13/building)
 "ckR" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "verticalleftborderleft0"
@@ -2178,9 +2181,13 @@
 /turf/open/floor/plasteel/f13/stone/rugged,
 /area/f13/legion)
 "cxv" = (
-/obj/structure/simple_door/interior,
-/turf/open/floor/f13/wood,
-/area/f13/wasteland/rocksprings)
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/obstacle/barbedwire/end{
+	dir = 1;
+	pixel_x = 5
+	},
+/turf/open/indestructible/ground/outside/desert/harsh,
+/area/f13/building)
 "cxC" = (
 /obj/effect/decal/remains/human,
 /turf/open/indestructible/ground/outside/dirt/harsh,
@@ -2382,7 +2389,7 @@
 	color = "#363636"
 	},
 /turf/open/floor/f13/wood,
-/area/f13/wasteland/rocksprings)
+/area/f13/building)
 "cGA" = (
 /mob/living/simple_animal/hostile/raider/ranged/sulphiteranged{
 	name = "Razor Twins Raider"
@@ -2443,7 +2450,7 @@
 	},
 /obj/effect/spawner/lootdrop/trash,
 /turf/open/floor/f13/wood,
-/area/f13/wasteland/rocksprings)
+/area/f13/building)
 "cLm" = (
 /obj/structure/chair/f13chair2{
 	dir = 1
@@ -2564,7 +2571,7 @@
 	color = "#363636"
 	},
 /turf/open/floor/f13/wood,
-/area/f13/wasteland/rocksprings)
+/area/f13/building)
 "cSj" = (
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 1;
@@ -2621,11 +2628,10 @@
 	},
 /area/f13/building)
 "cVd" = (
-/obj/structure/stairs/north{
-	name = "makeshift stairs"
-	},
-/turf/open/floor/f13/wood,
-/area/f13/wasteland/rocksprings)
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/obstacle/barbedwire/end,
+/turf/open/indestructible/ground/outside/desert/harsh,
+/area/f13/building)
 "cWp" = (
 /obj/structure/table/wood/settler,
 /obj/machinery/computer/terminal{
@@ -2636,7 +2642,7 @@
 	color = "#363636"
 	},
 /turf/open/floor/f13/wood,
-/area/f13/wasteland/rocksprings)
+/area/f13/building)
 "cWO" = (
 /obj/machinery/light/small{
 	dir = 4
@@ -3029,7 +3035,9 @@
 	},
 /area/f13/wasteland/rocksprings)
 "duC" = (
-/obj/structure/chair/office/dark,
+/obj/structure/chair/office/dark{
+	dir = 4
+	},
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/building)
 "duD" = (
@@ -3419,11 +3427,11 @@
 	},
 /area/f13/building)
 "dXK" = (
-/obj/machinery/computer/camera_advanced{
-	desc = "Used to access the various cameras in the prison.";
-	name = "Prison Camera console"
+/obj/structure/obstacle/barbedwire/end{
+	dir = 1;
+	pixel_x = 5
 	},
-/turf/open/indestructible/ground/outside/sidewalk,
+/turf/open/indestructible/ground/outside/desert/harsh,
 /area/f13/building)
 "dYb" = (
 /obj/structure/dresser,
@@ -3441,7 +3449,7 @@
 	name = "Overpass Raider"
 	},
 /turf/open/floor/f13/wood,
-/area/f13/wasteland/rocksprings)
+/area/f13/building)
 "dZS" = (
 /obj/item/reagent_containers/food/snacks/f13/deathclawegg{
 	pixel_x = 4;
@@ -3518,7 +3526,7 @@
 	color = "#363636"
 	},
 /turf/open/floor/f13/wood,
-/area/f13/wasteland/rocksprings)
+/area/f13/building)
 "ebO" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/oil/slippery,
@@ -3637,9 +3645,11 @@
 	},
 /area/f13/wasteland/rocksprings)
 "ejX" = (
-/obj/structure/dresser,
-/turf/open/floor/f13/wood,
-/area/f13/wasteland/rocksprings)
+/obj/machinery/door/poddoor/gate{
+	id = "firetowergate"
+	},
+/turf/open/indestructible/ground/outside/desert/harsh,
+/area/f13/building)
 "eke" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/lootdrop/f13/junkspawners,
@@ -3737,7 +3747,7 @@
 	name = "Sprinkles"
 	},
 /turf/open/floor/f13/wood,
-/area/f13/wasteland/rocksprings)
+/area/f13/building)
 "ers" = (
 /obj/structure/toilet{
 	dir = 8
@@ -3747,7 +3757,7 @@
 	},
 /obj/item/stack/f13Cash/random/med,
 /turf/open/floor/f13/wood,
-/area/f13/wasteland/rocksprings)
+/area/f13/building)
 "erI" = (
 /obj/structure/fence/wooden,
 /obj/structure/fence/wooden{
@@ -3774,7 +3784,7 @@
 	dir = 1
 	},
 /turf/open/floor/f13/wood,
-/area/f13/wasteland/rocksprings)
+/area/f13/building)
 "esI" = (
 /obj/structure/curtain{
 	color = "#363636";
@@ -3855,7 +3865,7 @@
 /obj/structure/closet/fridge,
 /obj/effect/spawner/lootdrop/f13/foodspawner,
 /turf/open/floor/f13/wood,
-/area/f13/wasteland/rocksprings)
+/area/f13/building)
 "exl" = (
 /obj/structure/rack/shelf_metal,
 /obj/item/stack/sheet/rglass,
@@ -4576,12 +4586,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/wood_fancy/wood_fancy_light,
 /area/f13/building)
-"fpT" = (
-/obj/structure/fence/door/opened{
-	dir = 4
-	},
-/turf/open/indestructible/ground/outside/desert/harsh,
-/area/f13/wasteland/rocksprings)
 "fqn" = (
 /obj/structure/campfire/barrel,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -5287,12 +5291,12 @@
 /turf/open/indestructible/ground/outside/dirt/harsh,
 /area/f13/wasteland/rocksprings)
 "gks" = (
-/obj/structure/fence/door/opened{
-	dir = 4
+/obj/structure/simple_door/metal/fence{
+	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/desert/harsh,
-/area/f13/wasteland/rocksprings)
+/area/f13/building)
 "gld" = (
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 4
@@ -5336,7 +5340,7 @@
 /area/f13/bunker)
 "gnE" = (
 /obj/structure/table/reinforced,
-/obj/item/storage/toolbox/electrical,
+/obj/item/key/motorcycle,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/building)
 "gob" = (
@@ -5775,7 +5779,7 @@
 	color = "#363636"
 	},
 /turf/open/floor/f13/wood,
-/area/f13/wasteland/rocksprings)
+/area/f13/building)
 "gPr" = (
 /turf/open/indestructible/ground/outside/dirt/harsh/corner{
 	dir = 1
@@ -5941,7 +5945,7 @@
 	pixel_x = 13
 	},
 /turf/open/floor/f13/wood,
-/area/f13/wasteland/rocksprings)
+/area/f13/building)
 "hac" = (
 /obj/structure/window/fulltile/wood/broken,
 /obj/structure/barricade/wooden/planks{
@@ -8949,6 +8953,14 @@
 	icon_state = "fancy_light-broken6"
 	},
 /area/f13/building)
+"kXJ" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/vehicle/ridden/fuel/motorcycle/flamy{
+	dir = 4;
+	fuel = 0
+	},
+/turf/open/indestructible/ground/outside/sidewalk,
+/area/f13/building)
 "kXY" = (
 /mob/living/simple_animal/hostile/gecko{
 	color = "#ff0000";
@@ -9564,7 +9576,7 @@
 	},
 /area/f13/caves)
 "lMr" = (
-/obj/machinery/mineral/ore_redemption,
+/obj/machinery/mineral/equipment_vendor,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/legion)
 "lNv" = (
@@ -10421,7 +10433,9 @@
 /area/f13/building)
 "mOA" = (
 /obj/machinery/light,
-/obj/machinery/msgterminal,
+/obj/machinery/msgterminal{
+	dir = 8
+	},
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/building)
 "mPL" = (
@@ -13387,7 +13401,7 @@
 /area/f13/building)
 "qnp" = (
 /obj/machinery/light/floor,
-/turf/closed/wall/f13/tunnel,
+/turf/closed/wall/f13/ruins,
 /area/f13/caves)
 "qnU" = (
 /obj/machinery/power/floodlight,
@@ -13750,11 +13764,8 @@
 	},
 /area/f13/wasteland/rocksprings)
 "qOR" = (
-/obj/structure/wreck/car{
-	desc = "An old pre-war car rusted and destroyed with age and weathering.  This one seems to have been used for quite a bit of target practice, with an uncountable number of bullet holes in it."
-	},
-/turf/open/indestructible/ground/outside/desert/harsh,
-/area/f13/wasteland/rocksprings)
+/turf/open/indestructible/ground/outside/desert,
+/area/f13/building)
 "qPa" = (
 /obj/structure/obstacle/barbedwire/end{
 	dir = 1
@@ -15565,12 +15576,6 @@
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
-"sSE" = (
-/obj/machinery/door/poddoor/gate{
-	id = "firetowergate"
-	},
-/turf/open/indestructible/ground/outside/desert/harsh,
-/area/f13/wasteland/rocksprings)
 "sSK" = (
 /obj/structure/table/wood,
 /turf/open/indestructible/ground/outside/dirt/harsh{
@@ -15867,12 +15872,6 @@
 	icon_state = "horizontalinnermain2left"
 	},
 /area/f13/wasteland/rocksprings)
-"tkm" = (
-/obj/structure/fence/corner{
-	dir = 1
-	},
-/turf/open/indestructible/ground/outside/desert/harsh,
-/area/f13/wasteland/rocksprings)
 "tkB" = (
 /obj/machinery/light/small{
 	dir = 4
@@ -15937,11 +15936,6 @@
 	dir = 10;
 	icon_state = "dirt"
 	},
-/area/f13/wasteland/rocksprings)
-"tpO" = (
-/obj/structure/fence,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/indestructible/ground/outside/desert/harsh,
 /area/f13/wasteland/rocksprings)
 "tqX" = (
 /obj/structure/chair/f13chair2{
@@ -16884,7 +16878,7 @@
 	pixel_y = 15
 	},
 /turf/open/indestructible/ground/outside/desert/harsh,
-/area/f13/wasteland/rocksprings)
+/area/f13/building)
 "uCz" = (
 /obj/effect/decal/marking{
 	icon_state = "doublevertical"
@@ -17697,11 +17691,8 @@
 	},
 /area/f13/wasteland/rocksprings)
 "vEa" = (
-/obj/structure/fence/corner{
-	color = "#515249"
-	},
-/turf/open/indestructible/ground/outside/desert/harsh,
-/area/f13/wasteland/rocksprings)
+/turf/closed/wall/f13/sunset/brick_small_dark,
+/area/f13/building)
 "vEe" = (
 /obj/structure/bed/old,
 /obj/item/card/id/rusted/brokenholodog/enclave,
@@ -19373,7 +19364,7 @@
 	pixel_y = 9
 	},
 /turf/open/indestructible/ground/outside/desert/harsh,
-/area/f13/wasteland/rocksprings)
+/area/f13/building)
 "xDn" = (
 /obj/item/kirbyplants/random,
 /obj/structure/curtain{
@@ -20353,25 +20344,25 @@ rPW
 rPW
 rPW
 rPW
-eUg
-eUg
-eUg
-eUg
-eUg
-eUg
-eUg
+tUV
+tUV
+tUV
+tUV
+tUV
+tUV
+tUV
 qnp
-eUg
-eUg
-eUg
+tUV
+tUV
+tUV
 qnp
-eUg
-eUg
-eUg
+tUV
+tUV
+tUV
 qnp
-eUg
-eUg
-eUg
+tUV
+tUV
+tUV
 tUV
 rPW
 rPW
@@ -20610,7 +20601,7 @@ rPW
 rPW
 rPW
 rPW
-eUg
+tUV
 gNb
 wmN
 gNb
@@ -20867,7 +20858,7 @@ rPW
 rPW
 rPW
 rPW
-eUg
+tUV
 ohl
 ohl
 ohl
@@ -21124,7 +21115,7 @@ rPW
 rPW
 rPW
 rPW
-eUg
+tUV
 ohl
 ohl
 ohl
@@ -21381,7 +21372,7 @@ lqw
 rPW
 rPW
 rPW
-eUg
+tUV
 nRN
 gNb
 oeo
@@ -21638,25 +21629,25 @@ rPW
 rPW
 rPW
 rPW
-eUg
-eUg
-eUg
-eUg
-eUg
-eUg
-eUg
+tUV
+tUV
+tUV
+tUV
+tUV
+tUV
+tUV
 qnp
-eUg
-eUg
-eUg
+tUV
+tUV
+tUV
 qnp
 oYd
 oYd
 oYd
 qnp
-eUg
-eUg
-eUg
+tUV
+tUV
+tUV
 tUV
 rPW
 rPW
@@ -21905,13 +21896,13 @@ rPW
 rPW
 rPW
 rPW
-eUg
+tUV
 ohl
 ohl
 ohl
 ohl
 ohl
-eUg
+tUV
 rPW
 rPW
 rPW
@@ -22162,13 +22153,13 @@ rPW
 rPW
 rPW
 rPW
-eUg
+tUV
 ohl
 iUd
 ohl
 ohl
 ivO
-eUg
+tUV
 rPW
 rPW
 rPW
@@ -22419,13 +22410,13 @@ hgP
 hgP
 rPW
 rPW
-eUg
+tUV
 ohl
 ohl
 ohl
 ohl
 ohl
-eUg
+tUV
 hgP
 hgP
 rPW
@@ -22676,13 +22667,13 @@ hgP
 hgP
 hgP
 hgP
-eUg
+tUV
 qnp
 qKF
 qKF
 qKF
 qnp
-eUg
+tUV
 hgP
 hgP
 hgP
@@ -33324,7 +33315,7 @@ gUl
 iis
 iis
 iis
-iis
+age
 rcx
 rcx
 tew
@@ -60636,20 +60627,20 @@ hgP
 hgP
 hgP
 hgP
-hgP
-hgP
-hgP
-hgP
-hgP
-hgP
-hgP
-hgP
-hgP
-hgP
-hgP
-hgP
-hgP
-hgP
+vEa
+vDO
+bgX
+bgX
+bgX
+bgX
+cxv
+wrc
+cVd
+bgX
+bgX
+bgX
+dXK
+vEa
 hgP
 hgP
 hgP
@@ -60893,20 +60884,20 @@ hgP
 hgP
 hgP
 hgP
-hgP
-hgP
-tkm
-eEc
-eEc
-eEc
-eEc
-fpT
-eEc
-eEc
-eEc
-eEc
-tkm
-hgP
+wBF
+vEa
+vEa
+vEa
+vEa
+vEa
+vEa
+gks
+vEa
+vEa
+vEa
+vEa
+vEa
+wBF
 hgP
 hgP
 nzH
@@ -61150,20 +61141,20 @@ hgP
 hgP
 hgP
 hgP
+hDK
+vEa
+rXY
+rXY
+rXY
 hgP
 hgP
-pHb
+rXY
+hgP
 rXY
 rXY
 hgP
-hgP
-rXY
-hgP
-rXY
-rXY
-qOR
-pHb
-hgP
+vEa
+hDK
 hgP
 hgP
 hgP
@@ -61407,20 +61398,20 @@ hgP
 hgP
 rTl
 hgP
-hgP
-hgP
-pHb
-hgP
-hgP
-rXY
-rXY
-rXY
+hDK
+vEa
 hgP
 hgP
 hgP
 rXY
-pHb
+rXY
+rXY
 hgP
+hgP
+hgP
+rXY
+vEa
+hDK
 rTl
 hgP
 hgP
@@ -61664,9 +61655,9 @@ hgP
 hgP
 hgP
 hgP
+hDK
+vEa
 hgP
-hgP
-pHb
 hgP
 wBF
 qPa
@@ -61676,8 +61667,8 @@ vDO
 wBF
 hgP
 rXY
-pHb
-hgP
+vEa
+hDK
 hgP
 hgP
 hgP
@@ -61921,9 +61912,9 @@ hgP
 hgP
 hgP
 hgP
+hDK
+vEa
 hgP
-hgP
-pHb
 hgP
 tWg
 aGV
@@ -61933,8 +61924,8 @@ vtR
 hDK
 rXY
 jnV
-pHb
-hgP
+vEa
+qfS
 hgP
 hgP
 hgP
@@ -62178,9 +62169,9 @@ hgP
 hgP
 hgP
 hgP
-hgP
-hgP
-pHb
+hDK
+vEa
+rXY
 rXY
 hDK
 aGV
@@ -62190,8 +62181,8 @@ aGV
 hDK
 hgP
 rXY
-pHb
-hgP
+ejX
+aGV
 hgP
 hgP
 hgP
@@ -62435,9 +62426,9 @@ hgP
 hgP
 hgP
 hgP
-hgP
-hgP
-pHb
+hDK
+vEa
+rXY
 rXY
 hDK
 aGV
@@ -62447,8 +62438,8 @@ aGV
 hDK
 hgP
 rXY
-sSE
-hgP
+aGV
+aGV
 hgP
 hgP
 hgP
@@ -62692,9 +62683,9 @@ hgP
 hgP
 hgP
 hgP
-hgP
-hgP
-pHb
+hDK
+vEa
+rXY
 rXY
 hDK
 aGV
@@ -62704,8 +62695,8 @@ lNy
 hDK
 rXY
 rXY
-hgP
-hgP
+qOR
+aGV
 hgP
 hgP
 hgP
@@ -62949,9 +62940,9 @@ hgP
 hgP
 hgP
 hgP
-hgP
-hgP
-pHb
+hDK
+vEa
+rXY
 rXY
 hDK
 aGV
@@ -62961,8 +62952,8 @@ gft
 hDK
 rXY
 hgP
-hgP
-hgP
+vEa
+wBF
 hgP
 hgP
 hgP
@@ -63206,9 +63197,9 @@ hgP
 hgP
 hgP
 hgP
+hDK
+vEa
 hgP
-hgP
-pHb
 hgP
 efC
 qPa
@@ -63218,8 +63209,8 @@ eBO
 qfS
 rXY
 hgP
-pHb
-hgP
+vEa
+hDK
 hgP
 hgP
 hgP
@@ -63463,20 +63454,20 @@ hgP
 hgP
 hgP
 hgP
-hgP
-hgP
-pHb
-hgP
-rXY
+hDK
+vEa
 hgP
 hgP
 rXY
+hgP
+hgP
+rXY
 rXY
 rXY
 rXY
 hgP
-pHb
-hgP
+vEa
+hDK
 hgP
 hgP
 rTl
@@ -63720,20 +63711,20 @@ hgP
 hgP
 hgP
 nzH
-hgP
-hgP
-pHb
-rXY
-rXY
-hgP
-hgP
+hDK
+vEa
 rXY
 rXY
 rXY
 hgP
 hgP
-pHb
+rXY
+rXY
+rXY
 hgP
+hgP
+vEa
+hDK
 hgP
 hgP
 hgP
@@ -63977,20 +63968,20 @@ hgP
 hgP
 hgP
 hgP
-hgP
-hgP
-eDC
-tpO
-eEc
-eEc
-eEc
-gks
-tpO
-tpO
-eEc
-eEc
+qfS
 vEa
-hgP
+vEa
+vEa
+vEa
+vEa
+vEa
+gks
+vEa
+vEa
+vEa
+vEa
+vEa
+qfS
 hgP
 hgP
 hgP
@@ -64234,20 +64225,20 @@ hgP
 hgP
 hgP
 hgP
-hgP
-hgP
-hgP
-hgP
-hgP
-hgP
-hgP
-hgP
+vEa
+vDO
+bgX
+bgX
+bgX
+bgX
+cxv
+wrc
 cjq
 uCk
 xCV
-hgP
-hgP
-hgP
+vDO
+dXK
+vEa
 hgP
 hgP
 hgP
@@ -67258,7 +67249,7 @@ hgP
 hZH
 sDB
 bWo
-pHF
+kXJ
 bWo
 xps
 etW
@@ -78842,11 +78833,11 @@ hgP
 hgP
 hgP
 hgP
-age
+oXV
 bfT
 bfT
 bfT
-age
+oXV
 hgP
 hgP
 hgP
@@ -79099,11 +79090,11 @@ hgP
 hgP
 hgP
 hgP
-age
-bgX
+oXV
+coX
 cGu
 ebE
-age
+oXV
 hgP
 hgP
 hgP
@@ -79356,11 +79347,11 @@ hgP
 hgP
 hgP
 hgP
-age
+oXV
 aab
-bgX
-ejX
-age
+coX
+dYb
+oXV
 hgP
 hgP
 hgP
@@ -79435,7 +79426,7 @@ arx
 aQx
 fPb
 nIE
-dXK
+bWo
 mOA
 kCG
 kCG
@@ -79613,11 +79604,11 @@ hgP
 hgP
 hgP
 hgP
-age
-cxv
-age
-age
-age
+oXV
+uPu
+oXV
+oXV
+oXV
 hgP
 hgP
 nzH
@@ -79870,11 +79861,11 @@ hgP
 hgP
 hgP
 hgP
-age
+oXV
 cGu
 aDQ
 eqA
-age
+oXV
 hgP
 hgP
 hgP
@@ -80129,9 +80120,9 @@ hgP
 hgP
 aDQ
 cKQ
-age
+oXV
 ers
-age
+oXV
 hgP
 hgP
 hgP
@@ -80384,11 +80375,11 @@ hgP
 hgP
 hgP
 hgP
-age
+oXV
 cGu
-age
-age
-age
+oXV
+oXV
+oXV
 eOw
 fBt
 hgP
@@ -80641,12 +80632,12 @@ hgP
 hgP
 hgP
 hgP
-age
+oXV
 cSb
 cWp
 esy
-age
-bgX
+oXV
+coX
 gOE
 hgP
 hgP
@@ -80899,10 +80890,10 @@ hgP
 hgP
 hgP
 aTA
-bgX
+coX
 dYI
 cGu
-cxv
+uPu
 cGu
 gZJ
 hgP
@@ -81155,11 +81146,11 @@ hgP
 hgP
 hgP
 hgP
-age
-cVd
-bgX
+oXV
+coX
+coX
 ewL
-age
+oXV
 ftC
 hhc
 hgP
@@ -81412,11 +81403,11 @@ hgP
 hgP
 hgP
 hgP
-age
+oXV
 aTA
 aTA
 aTA
-age
+oXV
 fwo
 hgP
 hgP

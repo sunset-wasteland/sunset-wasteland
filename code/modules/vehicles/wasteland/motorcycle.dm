@@ -47,7 +47,10 @@
 /obj/vehicle/ridden/fuel/motorcycle/relaymove(mob/user)
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
-		if(istype(H.wear_suit, /obj/item/clothing/suit/armor/f13/power_armor))
+		if(istype(H.wear_suit, /obj/item/clothing/suit/armor/f13/power_armor))//Standard PA.
+			to_chat(user, "The [name] will not move, because you are too heavy.")
+			return
+		if(istype(H.wear_suit, /obj/item/clothing/suit/armored/heavy))//Salvaged PA and misc.
 			to_chat(user, "The [name] will not move, because you are too heavy.")
 			return
 	..()

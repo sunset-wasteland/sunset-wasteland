@@ -668,10 +668,7 @@
 /turf/open/floor/plasteel/vault,
 /area/f13/ncr)
 "aBI" = (
-/obj/machinery/light{
-	dir = 8;
-	pixel_y = -16
-	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/ncr)
 "aBN" = (
@@ -1079,16 +1076,6 @@
 	icon_state = "bluedirty"
 	},
 /area/f13/city)
-"aVN" = (
-/obj/structure/ladder/unbreakable{
-	id = "NCRNoMans";
-	name = "Tunnel to No Man's Land"
-	},
-/turf/open/floor/f13{
-	dir = 10;
-	icon_state = "redmark"
-	},
-/area/f13/ncr)
 "aVX" = (
 /obj/machinery/light{
 	dir = 1
@@ -1315,12 +1302,12 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/warren)
 "bfB" = (
-/obj/machinery/light,
-/turf/open/floor/f13{
-	dir = 10;
-	icon_state = "redmark"
+/obj/item/flag/ncr{
+	pixel_y = 31;
+	density = 0
 	},
-/area/f13/ncr)
+/turf/open/indestructible/ground/outside/sidewalk,
+/area/f13/wasteland/ncr)
 "bgq" = (
 /obj/effect/decal/marking{
 	icon_state = "doublehorizontalcorroded"
@@ -1674,7 +1661,10 @@
 /area/f13/ncr)
 "byo" = (
 /obj/machinery/light,
-/turf/open/floor/plasteel/vault,
+/turf/open/floor/f13{
+	dir = 10;
+	icon_state = "redmark"
+	},
 /area/f13/ncr)
 "byH" = (
 /obj/structure/reagent_dispensers/peppertank{
@@ -3718,6 +3708,10 @@
 /obj/machinery/light,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/city)
+"duB" = (
+/obj/machinery/light,
+/turf/open/floor/plasteel/vault,
+/area/f13/ncr)
 "duQ" = (
 /obj/structure/simple_door/room{
 	name = "Archives"
@@ -4065,6 +4059,16 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/city)
+"dOt" = (
+/obj/structure/ladder/unbreakable{
+	id = "NCRNoMans";
+	name = "Tunnel to No Man's Land"
+	},
+/turf/open/floor/f13{
+	dir = 10;
+	icon_state = "redmark"
+	},
+/area/f13/ncr)
 "dOV" = (
 /obj/structure/simple_door/metal/store,
 /turf/open/floor/wood/wood_common,
@@ -10486,6 +10490,12 @@
 "kht" = (
 /turf/open/floor/plasteel/f13/vault_floor/red/white/whiteredchess/whiteredchess2,
 /area/f13/ncr)
+"kiA" = (
+/turf/open/floor/f13{
+	dir = 10;
+	icon_state = "redmark"
+	},
+/area/f13/ncr)
 "kiK" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt{
@@ -11049,13 +11059,6 @@
 /obj/structure/safe,
 /turf/open/floor/plasteel/dark,
 /area/f13/city)
-"kNq" = (
-/obj/item/flag/ncr{
-	pixel_y = 31;
-	density = 0
-	},
-/turf/open/indestructible/ground/outside/sidewalk,
-/area/f13/wasteland/ncr)
 "kNv" = (
 /obj/structure/chair/stool/retro/tan,
 /turf/open/floor/f13/wood,
@@ -12558,13 +12561,11 @@
 /turf/open/floor/plasteel/dark,
 /area/f13/city)
 "mhZ" = (
-/obj/machinery/door/airlock/security/glass{
-	name = "Command Centre";
-	req_access_txt = "121"
+/obj/machinery/light{
+	dir = 8;
+	pixel_y = -16
 	},
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticaloutermain0"
-	},
+/turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/ncr)
 "mii" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -15069,6 +15070,15 @@
 	icon_state = "horizontalbottombordertop2"
 	},
 /area/f13/wasteland/warren)
+"oGP" = (
+/obj/machinery/door/airlock/security/glass{
+	name = "Command Centre";
+	req_access_txt = "121"
+	},
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "verticaloutermain0"
+	},
+/area/f13/ncr)
 "oHQ" = (
 /obj/structure/chair/pew/left{
 	dir = 4
@@ -21558,14 +21568,6 @@
 	dir = 5
 	},
 /area/f13/wasteland/warren)
-"uGK" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light{
-	dir = 8;
-	pixel_y = -16
-	},
-/turf/open/indestructible/ground/outside/sidewalk,
-/area/f13/ncr)
 "uHw" = (
 /obj/structure/railing/wood{
 	dir = 4;
@@ -21669,6 +21671,10 @@
 /area/f13/city)
 "uNq" = (
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/light{
+	dir = 8;
+	pixel_y = -16
+	},
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/ncr)
 "uNu" = (
@@ -24005,12 +24011,6 @@
 "wSU" = (
 /turf/closed/wall/f13/sunset/brick_small_dark,
 /area/f13/city)
-"wTJ" = (
-/turf/open/floor/f13{
-	dir = 10;
-	icon_state = "redmark"
-	},
-/area/f13/ncr)
 "wTR" = (
 /obj/structure/chair/stool/f13stool,
 /obj/effect/landmark/start/f13/ncrconscript,
@@ -43334,7 +43334,7 @@ nxf
 xAc
 xAc
 tzp
-kNq
+bfB
 xAc
 xAc
 goE
@@ -47130,9 +47130,9 @@ sKT
 xAc
 mEf
 cMJ
-uGK
+uNq
 cMJ
-aBI
+mhZ
 cMJ
 mRV
 lrJ
@@ -47280,11 +47280,11 @@ jXh
 ykB
 sKT
 aNO
-mhZ
-uNq
+oGP
+aBI
 cMJ
 cMJ
-uNq
+aBI
 cMJ
 mRV
 nRO
@@ -47589,7 +47589,7 @@ pRa
 cJB
 cJB
 cJB
-byo
+duB
 goE
 cJB
 cJB
@@ -47890,10 +47890,10 @@ mUf
 xAc
 goE
 hdM
-wTJ
-aVN
-wTJ
-bfB
+kiA
+dOt
+kiA
+byo
 goE
 kRt
 pFA

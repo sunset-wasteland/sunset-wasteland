@@ -668,13 +668,12 @@
 /turf/open/floor/plasteel/vault,
 /area/f13/ncr)
 "aBI" = (
-/obj/machinery/door/airlock/security/glass{
-	name = "Command Centre";
-	req_access_txt = "121"
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light{
+	dir = 8;
+	pixel_y = -16
 	},
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticaloutermain0"
-	},
+/turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/ncr)
 "aBN" = (
 /obj/structure/weightlifter,
@@ -1307,12 +1306,12 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/warren)
 "bfB" = (
-/obj/machinery/light,
-/turf/open/floor/f13{
-	dir = 10;
-	icon_state = "redmark"
+/obj/item/flag/ncr{
+	pixel_y = 31;
+	density = 0
 	},
-/area/f13/ncr)
+/turf/open/indestructible/ground/outside/sidewalk,
+/area/f13/wasteland/ncr)
 "bgq" = (
 /obj/effect/decal/marking{
 	icon_state = "doublehorizontalcorroded"
@@ -1588,10 +1587,6 @@
 	icon_state = "rubblepillar"
 	},
 /area/f13/wasteland/warren)
-"brH" = (
-/obj/machinery/light,
-/turf/open/floor/plasteel/vault,
-/area/f13/ncr)
 "bsC" = (
 /obj/structure/table/wood,
 /obj/item/pda,
@@ -1669,12 +1664,14 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vault1,
 /area/f13/ncr)
 "byo" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light{
-	dir = 8;
-	pixel_y = -16
+/obj/structure/ladder/unbreakable{
+	id = "NCRNoMans";
+	name = "Tunnel to No Man's Land"
 	},
-/turf/open/indestructible/ground/outside/sidewalk,
+/turf/open/floor/f13{
+	dir = 10;
+	icon_state = "redmark"
+	},
 /area/f13/ncr)
 "byH" = (
 /obj/structure/reagent_dispensers/peppertank{
@@ -2629,13 +2626,6 @@
 /obj/structure/flora/grass/jungle/b,
 /turf/open/water,
 /area/f13/city)
-"cte" = (
-/obj/machinery/light{
-	dir = 8;
-	pixel_y = -16
-	},
-/turf/open/indestructible/ground/outside/sidewalk,
-/area/f13/ncr)
 "ctG" = (
 /obj/structure/chair/f13chair2{
 	dir = 8
@@ -3008,6 +2998,15 @@
 /area/f13/wasteland/warren)
 "cMJ" = (
 /turf/open/indestructible/ground/outside/sidewalk,
+/area/f13/ncr)
+"cMM" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/f13{
+	dir = 10;
+	icon_state = "redmark"
+	},
 /area/f13/ncr)
 "cMZ" = (
 /obj/structure/rack,
@@ -6426,6 +6425,12 @@
 	icon_state = "verticaloutermain0"
 	},
 /area/f13/wasteland/ncr)
+"ghJ" = (
+/turf/open/floor/f13{
+	dir = 10;
+	icon_state = "redmark"
+	},
+/area/f13/ncr)
 "gic" = (
 /obj/structure/window/fulltile/house{
 	dir = 2;
@@ -6963,6 +6968,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/wood_fancy,
 /area/f13/city)
+"gCU" = (
+/obj/machinery/light,
+/turf/open/floor/plasteel/vault,
+/area/f13/ncr)
 "gDu" = (
 /obj/effect/overlay/junk/shower{
 	dir = 4
@@ -7463,12 +7472,10 @@
 /area/f13/wasteland/warren)
 "hdM" = (
 /obj/machinery/light{
-	dir = 1
+	dir = 8;
+	pixel_y = -16
 	},
-/turf/open/floor/f13{
-	dir = 10;
-	icon_state = "redmark"
-	},
+/turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/ncr)
 "hdQ" = (
 /obj/structure/curtain{
@@ -8053,13 +8060,6 @@
 	icon_state = "greenrustyfull"
 	},
 /area/f13/city)
-"hHQ" = (
-/obj/item/flag/ncr{
-	pixel_y = 31;
-	density = 0
-	},
-/turf/open/indestructible/ground/outside/sidewalk,
-/area/f13/wasteland/ncr)
 "hHW" = (
 /obj/structure/table/reinforced,
 /obj/machinery/door/poddoor/shutters{
@@ -11766,16 +11766,6 @@
 /obj/structure/filingcabinet/chestdrawer/wheeled,
 /turf/open/floor/plasteel/vault,
 /area/f13/ncr)
-"luN" = (
-/obj/structure/ladder/unbreakable{
-	id = "NCRNoMans";
-	name = "Tunnel to No Man's Land"
-	},
-/turf/open/floor/f13{
-	dir = 10;
-	icon_state = "redmark"
-	},
-/area/f13/ncr)
 "luR" = (
 /obj/effect/decal/riverbank,
 /obj/effect/decal/riverbank{
@@ -12575,6 +12565,7 @@
 /turf/open/floor/plasteel/dark,
 /area/f13/city)
 "mhZ" = (
+/obj/machinery/light,
 /turf/open/floor/f13{
 	dir = 10;
 	icon_state = "redmark"
@@ -15918,6 +15909,15 @@
 /obj/item/pen,
 /obj/item/pen,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/ncr)
+"pBm" = (
+/obj/machinery/door/airlock/security/glass{
+	name = "Command Centre";
+	req_access_txt = "121"
+	},
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "verticaloutermain0"
+	},
 /area/f13/ncr)
 "pCg" = (
 /obj/machinery/vending/dinnerware,
@@ -43333,7 +43333,7 @@ nxf
 xAc
 xAc
 tzp
-hHQ
+bfB
 xAc
 xAc
 goE
@@ -47129,9 +47129,9 @@ sKT
 xAc
 mEf
 cMJ
-byo
+aBI
 cMJ
-cte
+hdM
 cMJ
 mRV
 lrJ
@@ -47279,7 +47279,7 @@ jXh
 ykB
 sKT
 aNO
-aBI
+pBm
 uNq
 cMJ
 cMJ
@@ -47588,7 +47588,7 @@ pRa
 cJB
 cJB
 cJB
-brH
+gCU
 goE
 cJB
 cJB
@@ -47888,11 +47888,11 @@ ykB
 mUf
 xAc
 goE
-hdM
+cMM
+ghJ
+byo
+ghJ
 mhZ
-luN
-mhZ
-bfB
 goE
 kRt
 pFA

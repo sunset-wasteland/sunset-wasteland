@@ -455,6 +455,13 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/city)
+"arS" = (
+/obj/machinery/light,
+/turf/open/floor/f13{
+	dir = 10;
+	icon_state = "redmark"
+	},
+/area/f13/ncr)
 "arU" = (
 /obj/structure/chair/comfy/purple{
 	dir = 4;
@@ -668,12 +675,13 @@
 /turf/open/floor/plasteel/vault,
 /area/f13/ncr)
 "aBI" = (
-/obj/effect/decal/cleanable/dirt,
 /obj/machinery/light{
-	dir = 8;
-	pixel_y = -16
+	dir = 1
 	},
-/turf/open/indestructible/ground/outside/sidewalk,
+/turf/open/floor/f13{
+	dir = 10;
+	icon_state = "redmark"
+	},
 /area/f13/ncr)
 "aBN" = (
 /obj/structure/weightlifter,
@@ -1306,12 +1314,12 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/warren)
 "bfB" = (
-/obj/item/flag/ncr{
-	pixel_y = 31;
-	density = 0
+/obj/machinery/light{
+	dir = 8;
+	pixel_y = -16
 	},
 /turf/open/indestructible/ground/outside/sidewalk,
-/area/f13/wasteland/ncr)
+/area/f13/ncr)
 "bgq" = (
 /obj/effect/decal/marking{
 	icon_state = "doublehorizontalcorroded"
@@ -1664,10 +1672,6 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vault1,
 /area/f13/ncr)
 "byo" = (
-/obj/structure/ladder/unbreakable{
-	id = "NCRNoMans";
-	name = "Tunnel to No Man's Land"
-	},
 /turf/open/floor/f13{
 	dir = 10;
 	icon_state = "redmark"
@@ -2998,15 +3002,6 @@
 /area/f13/wasteland/warren)
 "cMJ" = (
 /turf/open/indestructible/ground/outside/sidewalk,
-/area/f13/ncr)
-"cMM" = (
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/open/floor/f13{
-	dir = 10;
-	icon_state = "redmark"
-	},
 /area/f13/ncr)
 "cMZ" = (
 /obj/structure/rack,
@@ -6422,12 +6417,6 @@
 	icon_state = "verticaloutermain0"
 	},
 /area/f13/wasteland/ncr)
-"ghJ" = (
-/turf/open/floor/f13{
-	dir = 10;
-	icon_state = "redmark"
-	},
-/area/f13/ncr)
 "gic" = (
 /obj/structure/window/fulltile/house{
 	dir = 2;
@@ -6965,10 +6954,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/wood_fancy,
 /area/f13/city)
-"gCU" = (
-/obj/machinery/light,
-/turf/open/floor/plasteel/vault,
-/area/f13/ncr)
 "gDu" = (
 /obj/effect/overlay/junk/shower{
 	dir = 4
@@ -7475,12 +7460,12 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/warren)
 "hdM" = (
-/obj/machinery/light{
-	dir = 8;
-	pixel_y = -16
+/obj/item/flag/ncr{
+	pixel_y = 31;
+	density = 0
 	},
 /turf/open/indestructible/ground/outside/sidewalk,
-/area/f13/ncr)
+/area/f13/wasteland/ncr)
 "hdQ" = (
 /obj/structure/curtain{
 	color = "#845f58"
@@ -8141,6 +8126,14 @@
 /obj/item/storage/toolbox/mechanical,
 /turf/open/indestructible/ground/outside/road,
 /area/f13/city)
+"hKM" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light{
+	dir = 8;
+	pixel_y = -16
+	},
+/turf/open/indestructible/ground/outside/sidewalk,
+/area/f13/ncr)
 "hKR" = (
 /obj/structure/bookshelf,
 /obj/effect/spawner/lootdrop/f13/traitbooks,
@@ -12570,11 +12563,8 @@
 /turf/open/floor/plasteel/dark,
 /area/f13/city)
 "mhZ" = (
-/obj/machinery/light,
-/turf/open/floor/f13{
-	dir = 10;
-	icon_state = "redmark"
-	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/ncr)
 "mii" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -15915,15 +15905,6 @@
 /obj/item/pen,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ncr)
-"pBm" = (
-/obj/machinery/door/airlock/security/glass{
-	name = "Command Centre";
-	req_access_txt = "121"
-	},
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticaloutermain0"
-	},
-/area/f13/ncr)
 "pCg" = (
 /obj/machinery/vending/dinnerware,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
@@ -17249,6 +17230,10 @@
 	icon_state = "verticalleftborderleft2top"
 	},
 /area/f13/wasteland/warren)
+"qIA" = (
+/obj/machinery/light,
+/turf/open/floor/plasteel/vault,
+/area/f13/ncr)
 "qIF" = (
 /obj/structure/fence{
 	max_integrity = 500;
@@ -18029,6 +18014,16 @@
 	icon_state = "horizontalinnermain0"
 	},
 /area/f13/wasteland/warren)
+"rsG" = (
+/obj/structure/ladder/unbreakable{
+	id = "NCRNoMans";
+	name = "Tunnel to No Man's Land"
+	},
+/turf/open/floor/f13{
+	dir = 10;
+	icon_state = "redmark"
+	},
+/area/f13/ncr)
 "rsO" = (
 /obj/structure/chair/folding,
 /turf/open/indestructible/ground/outside/savannah,
@@ -21675,8 +21670,13 @@
 /turf/open/floor/carpet,
 /area/f13/city)
 "uNq" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/indestructible/ground/outside/sidewalk,
+/obj/machinery/door/airlock/security/glass{
+	name = "Command Centre";
+	req_access_txt = "121"
+	},
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "verticaloutermain0"
+	},
 /area/f13/ncr)
 "uNu" = (
 /obj/machinery/workbench,
@@ -43335,7 +43335,7 @@ nxf
 xAc
 xAc
 tzp
-bfB
+hdM
 xAc
 xAc
 goE
@@ -47131,9 +47131,9 @@ sKT
 xAc
 mEf
 cMJ
-aBI
+hKM
 cMJ
-hdM
+bfB
 cMJ
 mRV
 lrJ
@@ -47281,11 +47281,11 @@ jXh
 ykB
 sKT
 aNO
-pBm
 uNq
+mhZ
 cMJ
 cMJ
-uNq
+mhZ
 cMJ
 mRV
 nRO
@@ -47590,7 +47590,7 @@ pRa
 cJB
 cJB
 cJB
-gCU
+qIA
 goE
 cJB
 cJB
@@ -47890,11 +47890,11 @@ ykB
 mUf
 xAc
 goE
-cMM
-ghJ
+aBI
 byo
-ghJ
-mhZ
+rsG
+byo
+arS
 goE
 kRt
 pFA

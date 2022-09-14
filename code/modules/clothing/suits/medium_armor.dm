@@ -382,7 +382,7 @@
 
 /obj/item/clothing/suit/armored/medium/steelbib/town
 	name = "steel breastplate"
-	desc = "A steel breastplate inspired by a pre-war design, this one was made locally in Oasis. It uses a stronger steel alloy in it's construction, still heavy though"
+	desc = "A steel breastplate inspired by a pre-war design, this one was made locally in Bighorn. It uses a stronger steel alloy in it's construction, still heavy though"
 	armor = list("melee" = 30, "bullet" = 35, "laser" = 35, "energy" = 15, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 20, "acid" = -10)
 	slowdown = 0.11
 

@@ -1162,7 +1162,7 @@
 	new /obj/item/stock_parts/matter_bin/bluespace(src)
 	new /obj/item/stock_parts/matter_bin/bluespace(src)
 	new /obj/item/stock_parts/matter_bin/bluespace(src)
-	
+
 /obj/item/storage/box/sparelimbs
 	name = "box of prosthethic limbs"
 	desc = "Contains superior prosthethic limbs, one of each type."
@@ -1174,7 +1174,7 @@
 	new /obj/item/bodypart/r_arm/robot(src)
 	new /obj/item/bodypart/l_leg/robot(src)
 	new /obj/item/bodypart/r_leg/robot(src)
-	
+
 //Colored boxes.
 /obj/item/storage/box/green
 	icon_state = "box_green"
@@ -1402,7 +1402,7 @@
 
 /obj/item/storage/box/citizenship_permits
 	name = "box of citizenship permits"
-	desc = "A box containing spare citizenship permits for Oasis. Use a mayor's ID on a citizenship permit to assign its owner."
+	desc = "A box containing spare citizenship permits for Bighorn. Use a mayor's ID on a citizenship permit to assign its owner."
 	illustration = "id"
 
 /obj/item/storage/box/citizenship_permits/PopulateContents()
@@ -1437,7 +1437,7 @@ list(/obj/item/stack/sheet/metal = 20,
 /obj/item/storage/box/shopkeeper
 	name = "Shopkeeper's blueprints"
 	desc = "a box of the shopkeeper's blueprints"
-	
+
 
 /obj/item/storage/box/shopkeeper/PopulateContents()
 	for(var/i in 1 to 4)
@@ -1453,6 +1453,6 @@ list(/obj/item/stack/sheet/metal = 20,
 							/obj/item/book/granter/crafting_recipe/blueprint/brushgun,
 							)
 		new randomgun(src)
-	
+
 
 

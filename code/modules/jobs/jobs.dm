@@ -58,12 +58,14 @@ GLOBAL_LIST_INIT(command_positions, list(
 
 	"Legion Centurion",
 
-	"Chief of Police",
+	"Sheriff",
+	"Banker",
+	"Mayor",
 
 	"Enclave Lieutenant",
 
-	"Noyan",
-	"Steward",
+//	"Noyan",
+//	"Steward",
 	))
 
 GLOBAL_LIST_INIT(silicon_whitelist_positions, list(
@@ -138,6 +140,10 @@ GLOBAL_LIST_INIT(brotherhood_positions, list(
 
 GLOBAL_LIST_INIT(bighorn_positions, list(
 	"Shopkeeper",
+	"Sheriff",
+	"Mayor",
+	"Deputy",
+	"Banker",
 	"Barkeep",
 	"Preacher",
 	"Citizen",
@@ -205,7 +211,7 @@ GLOBAL_LIST_INIT(wasteland_positions, list(
 	"Tribal",
 	"Wastelander",
 ))
-
+/*
 GLOBAL_LIST_INIT(khan_positions, list(
 	"Noyan",
 	"Steward",
@@ -213,6 +219,11 @@ GLOBAL_LIST_INIT(khan_positions, list(
 	"Khorchin",
 	"Kipchak",
 	"Mangudai",
+))
+*/
+GLOBAL_LIST_INIT(khan_positions, list(
+	"Khan Enforcer",
+	"Khan Chemist",
 ))
 
 GLOBAL_LIST_INIT(enclave_positions, list(

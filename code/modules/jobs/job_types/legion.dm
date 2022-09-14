@@ -1122,6 +1122,7 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 	r_pocket = /obj/item/flashlight/lantern
 	backpack_contents = list(
 		/obj/item/reagent_containers/pill/patch/healingpowder = 2,
+		/obj/item/reagent_containers/food/snacks/grown/ambrosia/deus = 1,
 		/obj/item/warpaint_bowl
 		)
 

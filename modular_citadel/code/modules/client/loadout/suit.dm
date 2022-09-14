@@ -194,13 +194,13 @@
 							)
 
 /datum/gear/suit/deputyvest
-	name = "OPD armor vest"
+	name = "BPD armor vest"
 	path = /obj/item/clothing/suit/armor/vest/oasis
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_FACTIONS
 	cost = 4
-	restricted_desc = "Oasis Police, Oasis Officials"
-	restricted_roles = list("Chief of Police",
-							"Officer",
+	restricted_desc = "Bighorn Police, Bighorn Officials"
+	restricted_roles = list("Sheriff",
+							"Deputy",
 							"Mayor",
 							"Detective",
 							"Secretary",

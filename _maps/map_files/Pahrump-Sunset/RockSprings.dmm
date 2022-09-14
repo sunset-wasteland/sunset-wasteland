@@ -324,6 +324,16 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/wood_fancy/wood_fancy_light,
 /area/f13/building)
+"amD" = (
+/obj/structure/ladder/unbreakable{
+	name = "Tunnel to No Man's Land";
+	id = "LegionNoMans"
+	},
+/turf/open/floor/f13{
+	dir = 10;
+	icon_state = "redmark"
+	},
+/area/f13/legion)
 "amM" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/stone/rugged,
@@ -6368,6 +6378,12 @@
 	icon_state = "greenrustychess"
 	},
 /area/f13/building)
+"hzc" = (
+/turf/open/floor/f13{
+	dir = 10;
+	icon_state = "redmark"
+	},
+/area/f13/legion)
 "hzg" = (
 /obj/item/mine/shrapnel/random{
 	armed = 1
@@ -7578,16 +7594,6 @@
 	icon_state = "floorgrime"
 	},
 /area/f13/building)
-"jcN" = (
-/obj/structure/ladder/unbreakable{
-	name = "Tunnel to No Man's Land";
-	id = "LegionNoMans"
-	},
-/turf/open/floor/f13{
-	dir = 10;
-	icon_state = "redmark"
-	},
-/area/f13/legion)
 "jcW" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -7813,6 +7819,17 @@
 	light_color = "#f4e3b0"
 	},
 /turf/open/floor/wood/wood_mosaic,
+/area/f13/legion)
+"jvm" = (
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 1;
+	light_color = "#f4e3b0";
+	pixel_y = 24
+	},
+/turf/open/floor/f13{
+	dir = 10;
+	icon_state = "redmark"
+	},
 /area/f13/legion)
 "jvI" = (
 /obj/structure/fence/door/opened,
@@ -12165,12 +12182,6 @@
 /obj/structure/billboard/cola/pristine,
 /turf/open/indestructible/ground/outside/desert/harsh,
 /area/f13/wasteland/rocksprings)
-"oSe" = (
-/turf/open/floor/f13{
-	dir = 10;
-	icon_state = "redmark"
-	},
-/area/f13/legion)
 "oSw" = (
 /obj/effect/decal/cleanable/glass,
 /obj/item/shard{
@@ -14967,17 +14978,6 @@
 	icon_state = "bluedirtychess2"
 	},
 /area/f13/building)
-"sen" = (
-/obj/structure/destructible/tribal_torch/wall/lit{
-	dir = 1;
-	light_color = "#f4e3b0";
-	pixel_y = 24
-	},
-/turf/open/floor/f13{
-	dir = 10;
-	icon_state = "redmark"
-	},
-/area/f13/legion)
 "seO" = (
 /obj/structure/rack/shelf_metal,
 /obj/item/stack/sheet/metal/fifty,
@@ -17229,9 +17229,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/stone/rugged,
 /area/f13/legion)
-"uVL" = (
-/turf/closed/mineral/random/high_chance,
-/area/f13/legion)
 "uVP" = (
 /obj/structure/table,
 /obj/effect/decal/cleanable/dirt,
@@ -18994,6 +18991,9 @@
 	icon_state = "bluedirtychess2"
 	},
 /area/f13/building)
+"xdp" = (
+/turf/closed/mineral/random/high_chance,
+/area/f13/legion)
 "xej" = (
 /obj/structure/flora/grass/wasteland,
 /obj/structure/fence/wooden{
@@ -22274,7 +22274,7 @@ rPW
 rPW
 rPW
 jLa
-oSe
+hzc
 gtX
 gtX
 gtX
@@ -22531,7 +22531,7 @@ rPW
 rPW
 rPW
 jLa
-sen
+jvm
 gtX
 gtX
 yjZ
@@ -22788,7 +22788,7 @@ rPW
 rPW
 rPW
 jLa
-jcN
+amD
 gtX
 gtX
 gtX
@@ -23045,7 +23045,7 @@ rPW
 rPW
 rPW
 jLa
-sen
+jvm
 gtX
 gtX
 yjZ
@@ -23302,7 +23302,7 @@ rfA
 rfA
 rfA
 jLa
-oSe
+hzc
 gtX
 gtX
 gtX
@@ -81329,7 +81329,7 @@ rPW
 rPW
 rPW
 lqw
-uVL
+xdp
 lqw
 rPW
 rPW

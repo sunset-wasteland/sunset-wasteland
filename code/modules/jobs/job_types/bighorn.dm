@@ -150,7 +150,7 @@ Mayor
 		return
 	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
 /*--------------------------------------------------------------*/
-/datum/job/den/f13banker
+/datum/job/bighorn/f13banker
 	title = "Banker"
 	flag = F13BANKER
 	department_flag = DEP_BIGHORN
@@ -161,7 +161,7 @@ Mayor
 	selection_color = "#dcba97"
 	exp_requirements = 1500
 	enforces = "You are in a Job meant for encouraging roleplay with others, do not abandon your post or hoard money unless absolutely necessary. Do not use the caps provided for yourself."
-	outfit = /datum/outfit/job/den/f13banker
+	outfit = /datum/outfit/job/bighorn/f13banker
 	access = list(ACCESS_KHAN, ACCESS_BAR, ACCESS_CLINIC, ACCESS_GATEWAY, ACCESS_MINT_VAULT, ACCESS_MINING, ACCESS_FORENSICS_LOCKERS, ACCESS_CLONING)
 	minimal_access = list(ACCESS_KHAN, ACCESS_BAR, ACCESS_CLINIC, ACCESS_GATEWAY, ACCESS_MINT_VAULT, ACCESS_MINING, ACCESS_FORENSICS_LOCKERS, ACCESS_CLONING)
 	loadout_options = list(
@@ -170,9 +170,9 @@ Mayor
 	/datum/outfit/loadout/investor,
 	)
 
-/datum/outfit/job/den/f13banker
+/datum/outfit/job/bighorn/f13banker
 	name = "Banker"
-	jobtype = /datum/job/den/f13banker
+	jobtype = /datum/job/bighorn/f13banker
 	uniform = /obj/item/clothing/under/lawyer/blacksuit
 	id = /obj/item/card/id/silver
 	ears = /obj/item/radio/headset/headset_town

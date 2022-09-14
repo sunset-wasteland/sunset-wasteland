@@ -4018,10 +4018,6 @@
 	},
 /area/f13/city)
 "crf" = (
-/obj/structure/ladder/unbreakable{
-	height = 1;
-	id = "Legion"
-	},
 /turf/open/floor/f13{
 	dir = 10;
 	icon_state = "redmark"
@@ -17879,10 +17875,6 @@
 /turf/open/floor/f13/wood,
 /area/f13/city)
 "skm" = (
-/obj/structure/ladder/unbreakable{
-	height = 1;
-	id = "NCR"
-	},
 /turf/open/floor/f13{
 	dir = 10;
 	icon_state = "redmark"
@@ -19783,6 +19775,18 @@
 	icon_state = "freezerfloor"
 	},
 /area/f13/city)
+"uuE" = (
+/obj/structure/ladder/unbreakable{
+	height = 1;
+	icon_state = "ladder10";
+	id = "LegionNoMans";
+	name = "Ladder To Legion Camp"
+	},
+/turf/open/floor/f13{
+	dir = 10;
+	icon_state = "redmark"
+	},
+/area/f13/legion)
 "uuZ" = (
 /mob/living/simple_animal/hostile/supermutant/meleemutant,
 /turf/open/floor/plasteel/barber{
@@ -20000,6 +20004,18 @@
 	icon_state = "yellowsiding"
 	},
 /area/f13/city)
+"uHp" = (
+/obj/structure/ladder/unbreakable{
+	height = 1;
+	icon_state = "ladder10";
+	id = "NCRNoMans";
+	name = "Ladder To NCR Base"
+	},
+/turf/open/floor/f13{
+	dir = 10;
+	icon_state = "redmark"
+	},
+/area/f13/ncr)
 "uHr" = (
 /obj/effect/decal/remains/human,
 /obj/machinery/light/small{
@@ -27467,7 +27483,7 @@ hrZ
 hrZ
 shC
 pUB
-skm
+uHp
 iOY
 iOY
 mON
@@ -45836,7 +45852,7 @@ hLU
 cZa
 wyr
 wyr
-crf
+uuE
 mWP
 shC
 "}

@@ -668,14 +668,12 @@
 /turf/open/floor/plasteel/vault,
 /area/f13/ncr)
 "aBI" = (
-/obj/structure/barricade/tentclothcorner{
-	dir = 4;
-	pixel_y = 3
+/obj/machinery/light,
+/turf/open/floor/f13{
+	dir = 10;
+	icon_state = "redmark"
 	},
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticaloutermain0"
-	},
-/area/f13/wasteland/ncr)
+/area/f13/ncr)
 "aBN" = (
 /obj/structure/weightlifter,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1307,14 +1305,15 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/warren)
 "bfB" = (
-/obj/structure/barricade/tentclothedge{
-	dir = 8;
-	pixel_x = -4
+/obj/structure/ladder/unbreakable{
+	id = "NCRNoMans";
+	name = "Tunnel to No Man's Land"
 	},
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticaloutermain0"
+/turf/open/floor/f13{
+	dir = 10;
+	icon_state = "redmark"
 	},
-/area/f13/wasteland/ncr)
+/area/f13/ncr)
 "bgq" = (
 /obj/effect/decal/marking{
 	icon_state = "doublehorizontalcorroded"
@@ -1606,6 +1605,15 @@
 /obj/item/reagent_containers/pill/salicyclic,
 /turf/open/floor/f13,
 /area/f13/city)
+"btw" = (
+/obj/machinery/door/airlock/security/glass{
+	name = "Command Centre";
+	req_access_txt = "121"
+	},
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "verticaloutermain0"
+	},
+/area/f13/ncr)
 "btE" = (
 /turf/closed/wall/f13/wood,
 /area/f13/wasteland/warren)
@@ -1667,13 +1675,13 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vault1,
 /area/f13/ncr)
 "byo" = (
-/obj/structure/barricade/tentclothcorner{
-	dir = 8
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light{
+	dir = 8;
+	pixel_y = -16
 	},
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticaloutermain0"
-	},
-/area/f13/wasteland/ncr)
+/turf/open/indestructible/ground/outside/sidewalk,
+/area/f13/ncr)
 "byH" = (
 /obj/structure/reagent_dispensers/peppertank{
 	pixel_x = 30
@@ -2749,6 +2757,15 @@
 	icon_state = "outerborder"
 	},
 /area/f13/city)
+"cAd" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/f13{
+	dir = 10;
+	icon_state = "redmark"
+	},
+/area/f13/ncr)
 "cAq" = (
 /turf/open/indestructible/ground/outside/ruins{
 	icon_state = "rubbleplate"
@@ -7453,13 +7470,11 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/warren)
 "hdM" = (
-/obj/structure/simple_door/tentflap_cloth{
-	pixel_y = -3
+/turf/open/floor/f13{
+	dir = 10;
+	icon_state = "redmark"
 	},
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticaloutermain0"
-	},
-/area/f13/wasteland/ncr)
+/area/f13/ncr)
 "hdQ" = (
 /obj/structure/curtain{
 	color = "#845f58"
@@ -7516,6 +7531,13 @@
 	},
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland/warren)
+"hhh" = (
+/obj/machinery/light{
+	dir = 8;
+	pixel_y = -16
+	},
+/turf/open/indestructible/ground/outside/sidewalk,
+/area/f13/ncr)
 "hhq" = (
 /obj/machinery/door/unpowered/secure_steeldoor{
 	req_one_access_txt = "121"
@@ -12548,12 +12570,9 @@
 /turf/open/floor/plasteel/dark,
 /area/f13/city)
 "mhZ" = (
-/obj/structure/barricade/tentclothedge{
-	dir = 8;
-	pixel_x = -4
-	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/sidewalk,
-/area/f13/wasteland/ncr)
+/area/f13/ncr)
 "mii" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/wreck/car/bike{
@@ -12945,11 +12964,12 @@
 	},
 /area/f13/city)
 "mEf" = (
-/obj/structure/campfire/barrel,
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticaloutermain0"
+/obj/machinery/door/airlock/security/glass{
+	name = "Command Centre";
+	req_access_txt = "121"
 	},
-/area/f13/wasteland/ncr)
+/turf/open/indestructible/ground/outside/sidewalk,
+/area/f13/ncr)
 "mEA" = (
 /obj/structure/window/fulltile/wood/broken,
 /obj/structure/barricade/wooden/planks{
@@ -16263,14 +16283,11 @@
 /turf/open/floor/plasteel/dark,
 /area/f13/city)
 "pRa" = (
-/obj/structure/barricade/tentclothedge{
-	dir = 4;
-	pixel_x = 4
+/obj/machinery/light{
+	dir = 1
 	},
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticaloutermain0"
-	},
-/area/f13/wasteland/ncr)
+/turf/open/floor/plasteel/vault,
+/area/f13/ncr)
 "pRt" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "verticalrightborderright1"
@@ -21648,11 +21665,9 @@
 /turf/open/floor/carpet,
 /area/f13/city)
 "uNq" = (
-/obj/structure/barricade/tentclothcorner{
-	pixel_y = 3
-	},
-/turf/open/indestructible/ground/outside/sidewalk,
-/area/f13/wasteland/ncr)
+/obj/machinery/light,
+/turf/open/floor/plasteel/vault,
+/area/f13/ncr)
 "uNu" = (
 /obj/machinery/workbench,
 /obj/effect/spawner/lootdrop/f13/blueprintMid,
@@ -47104,12 +47119,12 @@ gaL
 ykB
 sKT
 xAc
-xAc
-xAc
-aNO
-xAc
-xAc
-xAc
+mEf
+cMJ
+byo
+cMJ
+hhh
+cMJ
 mRV
 lrJ
 nRO
@@ -47256,12 +47271,12 @@ jXh
 ykB
 sKT
 aNO
-ghE
-aNO
-xAc
-xAc
-aNO
-xAc
+btw
+mhZ
+cMJ
+cMJ
+mhZ
+cMJ
 mRV
 nRO
 nRO
@@ -47408,12 +47423,12 @@ jXh
 ykB
 sKT
 xAc
-ghE
-ghE
+goE
+goE
 mEf
-xAc
-ghE
-xAc
+goE
+mEf
+goE
 goE
 goE
 ccp
@@ -47560,12 +47575,12 @@ jXh
 ykB
 mVp
 xAc
-xYk
+goE
 pRa
-pRa
-pRa
-aBI
-fdR
+cJB
+cJB
+cJB
+uNq
 goE
 cJB
 cJB
@@ -47712,12 +47727,12 @@ jXh
 ykB
 mUf
 xAc
-hdM
-cMJ
-nYb
-nYb
-mGL
-xAc
+goE
+cJB
+cJB
+cJB
+cJB
+cJB
 goE
 wwI
 qCs
@@ -47864,12 +47879,12 @@ jXh
 ykB
 mUf
 xAc
-bfd
-cMJ
-cMJ
-cMJ
-mAm
-xAc
+goE
+cAd
+hdM
+bfB
+hdM
+aBI
 goE
 kRt
 pFA
@@ -48016,12 +48031,12 @@ jXh
 ykB
 mUf
 xAc
-byo
-bfB
-bfB
-mhZ
-uNq
-xAc
+goE
+goE
+goE
+goE
+goE
+goE
 goE
 frd
 kOL

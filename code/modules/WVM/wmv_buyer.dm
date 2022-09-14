@@ -17,7 +17,7 @@
 	var/list/goods_list = list( /obj/item/stack/sheet/mineral/diamond = 20,
 								/obj/item/stack/sheet/mineral/gold = 10,
 								/obj/item/stack/sheet/mineral/silver = 5,
-								/obj/item/stack/sheet/metal = 1.5,
+								/obj/item/stack/sheet/metal = 2,
 								/obj/item/reagent_containers/food/snacks/grown/wheat = 1,
 								/obj/item/reagent_containers/food/snacks/grown/rice = 1,
 								/obj/item/reagent_containers/food/snacks/grown/oat = 1,

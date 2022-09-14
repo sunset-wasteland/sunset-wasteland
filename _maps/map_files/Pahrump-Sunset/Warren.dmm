@@ -668,14 +668,12 @@
 /turf/open/floor/plasteel/vault,
 /area/f13/ncr)
 "aBI" = (
-/obj/structure/ladder/unbreakable{
-	height = 1;
-	icon_state = "ladder10";
-	id = "NCR"
+/obj/machinery/door/airlock/security/glass{
+	name = "Command Centre";
+	req_access_txt = "121"
 	},
-/turf/open/floor/f13{
-	dir = 10;
-	icon_state = "redmark"
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "verticaloutermain0"
 	},
 /area/f13/ncr)
 "aBN" = (
@@ -1309,13 +1307,12 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/warren)
 "bfB" = (
-/obj/machinery/door/airlock/security/glass{
-	name = "Command Centre";
-	req_access_txt = "121"
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light{
+	dir = 8;
+	pixel_y = -16
 	},
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticaloutermain0"
-	},
+/turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/ncr)
 "bgq" = (
 /obj/effect/decal/marking{
@@ -7456,10 +7453,6 @@
 /area/f13/wasteland/warren)
 "hdM" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/light{
-	dir = 8;
-	pixel_y = -16
-	},
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/ncr)
 "hdQ" = (
@@ -10094,20 +10087,6 @@
 	icon_state = "verticalrightborderright0"
 	},
 /area/f13/radiation)
-"jOI" = (
-/obj/machinery/light{
-	dir = 1
-	},
-/obj/structure/ladder/unbreakable{
-	height = 1;
-	icon_state = "ladder10";
-	id = "NCR"
-	},
-/turf/open/floor/f13{
-	dir = 10;
-	icon_state = "redmark"
-	},
-/area/f13/ncr)
 "jOK" = (
 /turf/closed/wall/f13/store,
 /area/f13/city)
@@ -10806,6 +10785,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/wood_fancy,
 /area/f13/city)
+"kCB" = (
+/obj/machinery/light{
+	dir = 8;
+	pixel_y = -16
+	},
+/turf/open/indestructible/ground/outside/sidewalk,
+/area/f13/ncr)
 "kCT" = (
 /obj/structure/barricade/tentclothedge{
 	dir = 1;
@@ -12566,11 +12552,6 @@
 /area/f13/city)
 "mhZ" = (
 /obj/machinery/light,
-/obj/structure/ladder/unbreakable{
-	height = 1;
-	icon_state = "ladder10";
-	id = "NCR"
-	},
 /turf/open/floor/f13{
 	dir = 10;
 	icon_state = "redmark"
@@ -20157,10 +20138,6 @@
 "tyI" = (
 /turf/open/indestructible/ground/outside/graveldirt,
 /area/f13/raiders)
-"tzc" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/indestructible/ground/outside/sidewalk,
-/area/f13/ncr)
 "tzp" = (
 /obj/machinery/light{
 	dir = 4;
@@ -21672,10 +21649,12 @@
 /area/f13/city)
 "uNq" = (
 /obj/machinery/light{
-	dir = 8;
-	pixel_y = -16
+	dir = 1
 	},
-/turf/open/indestructible/ground/outside/sidewalk,
+/turf/open/floor/f13{
+	dir = 10;
+	icon_state = "redmark"
+	},
 /area/f13/ncr)
 "uNu" = (
 /obj/machinery/workbench,
@@ -21872,6 +21851,17 @@
 /obj/machinery/vending/coffee,
 /turf/open/floor/plasteel/f13/vault_floor/dark{
 	icon_state = "darkdirty"
+	},
+/area/f13/ncr)
+"uXO" = (
+/obj/structure/ladder/unbreakable{
+	height = 1;
+	icon_state = "ladder10";
+	id = "NCR"
+	},
+/turf/open/floor/f13{
+	dir = 10;
+	icon_state = "redmark"
 	},
 /area/f13/ncr)
 "uYf" = (
@@ -23144,6 +23134,12 @@
 	icon_state = "tealwhrustychess"
 	},
 /area/f13/city)
+"wcZ" = (
+/turf/open/floor/f13{
+	dir = 10;
+	icon_state = "redmark"
+	},
+/area/f13/ncr)
 "wdj" = (
 /obj/structure/window/reinforced/spawner{
 	dir = 1
@@ -47130,9 +47126,9 @@ sKT
 xAc
 mEf
 cMJ
-hdM
+bfB
 cMJ
-uNq
+kCB
 cMJ
 mRV
 lrJ
@@ -47280,11 +47276,11 @@ jXh
 ykB
 sKT
 aNO
-bfB
-tzc
+aBI
+hdM
 cMJ
 cMJ
-tzc
+hdM
 cMJ
 mRV
 nRO
@@ -47889,10 +47885,10 @@ ykB
 mUf
 xAc
 goE
-jOI
-aBI
-aBI
-aBI
+uNq
+wcZ
+uXO
+wcZ
 mhZ
 goE
 kRt

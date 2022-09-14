@@ -668,12 +668,14 @@
 /turf/open/floor/plasteel/vault,
 /area/f13/ncr)
 "aBI" = (
-/obj/item/flag/ncr{
-	pixel_y = 31;
-	density = 0
+/obj/machinery/door/airlock/security/glass{
+	name = "Command Centre";
+	req_access_txt = "121"
 	},
-/turf/open/indestructible/ground/outside/sidewalk,
-/area/f13/wasteland/ncr)
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "verticaloutermain0"
+	},
+/area/f13/ncr)
 "aBN" = (
 /obj/structure/weightlifter,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1306,7 +1308,10 @@
 /area/f13/wasteland/warren)
 "bfB" = (
 /obj/machinery/light,
-/turf/open/floor/plasteel/vault,
+/turf/open/floor/f13{
+	dir = 10;
+	icon_state = "redmark"
+	},
 /area/f13/ncr)
 "bgq" = (
 /obj/effect/decal/marking{
@@ -1583,6 +1588,10 @@
 	icon_state = "rubblepillar"
 	},
 /area/f13/wasteland/warren)
+"brH" = (
+/obj/machinery/light,
+/turf/open/floor/plasteel/vault,
+/area/f13/ncr)
 "bsC" = (
 /obj/structure/table/wood,
 /obj/item/pda,
@@ -1660,13 +1669,12 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vault1,
 /area/f13/ncr)
 "byo" = (
-/obj/machinery/door/airlock/security/glass{
-	name = "Command Centre";
-	req_access_txt = "121"
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light{
+	dir = 8;
+	pixel_y = -16
 	},
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticaloutermain0"
-	},
+/turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/ncr)
 "byH" = (
 /obj/structure/reagent_dispensers/peppertank{
@@ -2621,6 +2629,13 @@
 /obj/structure/flora/grass/jungle/b,
 /turf/open/water,
 /area/f13/city)
+"cte" = (
+/obj/machinery/light{
+	dir = 8;
+	pixel_y = -16
+	},
+/turf/open/indestructible/ground/outside/sidewalk,
+/area/f13/ncr)
 "ctG" = (
 /obj/structure/chair/f13chair2{
 	dir = 8
@@ -7451,7 +7466,9 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/warren)
 "hdM" = (
-/obj/machinery/light,
+/obj/machinery/light{
+	dir = 1
+	},
 /turf/open/floor/f13{
 	dir = 10;
 	icon_state = "redmark"
@@ -8040,6 +8057,13 @@
 	icon_state = "greenrustyfull"
 	},
 /area/f13/city)
+"hHQ" = (
+/obj/item/flag/ncr{
+	pixel_y = 31;
+	density = 0
+	},
+/turf/open/indestructible/ground/outside/sidewalk,
+/area/f13/wasteland/ncr)
 "hHW" = (
 /obj/structure/table/reinforced,
 /obj/machinery/door/poddoor/shutters{
@@ -9116,14 +9140,6 @@
 /obj/item/reagent_containers/glass/bucket/wood,
 /turf/open/indestructible/ground/outside/savannah/edgesnew,
 /area/f13/city)
-"iIF" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light{
-	dir = 8;
-	pixel_y = -16
-	},
-/turf/open/indestructible/ground/outside/sidewalk,
-/area/f13/ncr)
 "iIM" = (
 /obj/structure/window/fulltile/house{
 	dir = 2;
@@ -11755,6 +11771,16 @@
 /obj/structure/filingcabinet/chestdrawer/wheeled,
 /turf/open/floor/plasteel/vault,
 /area/f13/ncr)
+"luN" = (
+/obj/structure/ladder/unbreakable{
+	id = "NCRNoMans";
+	name = "Tunnel to No Man's Land"
+	},
+/turf/open/floor/f13{
+	dir = 10;
+	icon_state = "redmark"
+	},
+/area/f13/ncr)
 "luR" = (
 /obj/effect/decal/riverbank,
 /obj/effect/decal/riverbank{
@@ -11806,15 +11832,6 @@
 	icon_state = "outerbordercorner"
 	},
 /area/f13/wasteland/warren)
-"lxc" = (
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/open/floor/f13{
-	dir = 10;
-	icon_state = "redmark"
-	},
-/area/f13/ncr)
 "lxQ" = (
 /obj/effect/spawner/lootdrop/f13/junkspawners,
 /turf/open/indestructible/ground/outside/savannah/edgesnew{
@@ -12563,8 +12580,10 @@
 /turf/open/floor/plasteel/dark,
 /area/f13/city)
 "mhZ" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/indestructible/ground/outside/sidewalk,
+/turf/open/floor/f13{
+	dir = 10;
+	icon_state = "redmark"
+	},
 /area/f13/ncr)
 "mii" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -17543,16 +17562,6 @@
 	icon_state = "horizontaloutermain1"
 	},
 /area/f13/wasteland/ncr)
-"qVv" = (
-/obj/structure/ladder/unbreakable{
-	id = "NCRNoMans";
-	name = "Tunnel to No Man's Land"
-	},
-/turf/open/floor/f13{
-	dir = 10;
-	icon_state = "redmark"
-	},
-/area/f13/ncr)
 "qVC" = (
 /obj/structure/simple_door/room,
 /turf/open/floor/plasteel/freezer{
@@ -21666,10 +21675,8 @@
 /turf/open/floor/carpet,
 /area/f13/city)
 "uNq" = (
-/turf/open/floor/f13{
-	dir = 10;
-	icon_state = "redmark"
-	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/ncr)
 "uNu" = (
 /obj/machinery/workbench,
@@ -25104,13 +25111,6 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/warren)
-"xRh" = (
-/obj/machinery/light{
-	dir = 8;
-	pixel_y = -16
-	},
-/turf/open/indestructible/ground/outside/sidewalk,
-/area/f13/ncr)
 "xRB" = (
 /obj/structure/window/fulltile/house{
 	dir = 2;
@@ -43335,7 +43335,7 @@ nxf
 xAc
 xAc
 tzp
-aBI
+hHQ
 xAc
 xAc
 goE
@@ -47131,9 +47131,9 @@ sKT
 xAc
 mEf
 cMJ
-iIF
+byo
 cMJ
-xRh
+cte
 cMJ
 mRV
 lrJ
@@ -47281,11 +47281,11 @@ jXh
 ykB
 sKT
 aNO
-byo
-mhZ
+aBI
+uNq
 cMJ
 cMJ
-mhZ
+uNq
 cMJ
 mRV
 nRO
@@ -47590,7 +47590,7 @@ pRa
 cJB
 cJB
 cJB
-bfB
+brH
 goE
 cJB
 cJB
@@ -47890,11 +47890,11 @@ ykB
 mUf
 xAc
 goE
-lxc
-uNq
-qVv
-uNq
 hdM
+mhZ
+luN
+mhZ
+bfB
 goE
 kRt
 pFA

@@ -323,16 +323,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/wood_fancy/wood_fancy_light,
 /area/f13/building)
-"amD" = (
-/obj/structure/ladder/unbreakable{
-	name = "Tunnel to No Man's Land";
-	id = "LegionNoMans"
-	},
-/turf/open/floor/f13{
-	dir = 10;
-	icon_state = "redmark"
-	},
-/area/f13/legion)
 "amM" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/stone/rugged,
@@ -5276,6 +5266,16 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland/rocksprings)
+"gjs" = (
+/obj/structure/ladder/unbreakable{
+	name = "Tunnel to No Man's Land";
+	id = "LegionNoMans"
+	},
+/turf/open/floor/f13{
+	dir = 10;
+	icon_state = "redmark"
+	},
+/area/f13/legion)
 "gjt" = (
 /obj/structure/pondlily_small{
 	pixel_x = -10;
@@ -6374,12 +6374,6 @@
 	icon_state = "greenrustychess"
 	},
 /area/f13/building)
-"hzc" = (
-/turf/open/floor/f13{
-	dir = 10;
-	icon_state = "redmark"
-	},
-/area/f13/legion)
 "hzg" = (
 /obj/item/mine/shrapnel/random{
 	armed = 1
@@ -6442,6 +6436,9 @@
 "hAL" = (
 /obj/structure/rack,
 /turf/open/floor/plasteel/f13/stone/rugged,
+/area/f13/legion)
+"hBA" = (
+/turf/closed/mineral/random/high_chance,
 /area/f13/legion)
 "hCa" = (
 /obj/structure/chair/comfy/purple{
@@ -7815,17 +7812,6 @@
 	light_color = "#f4e3b0"
 	},
 /turf/open/floor/wood/wood_mosaic,
-/area/f13/legion)
-"jvm" = (
-/obj/structure/destructible/tribal_torch/wall/lit{
-	dir = 1;
-	light_color = "#f4e3b0";
-	pixel_y = 24
-	},
-/turf/open/floor/f13{
-	dir = 10;
-	icon_state = "redmark"
-	},
 /area/f13/legion)
 "jvI" = (
 /obj/structure/fence/door/opened,
@@ -13356,6 +13342,12 @@
 /obj/structure/bookcase,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/building)
+"qge" = (
+/turf/open/floor/f13{
+	dir = 10;
+	icon_state = "redmark"
+	},
+/area/f13/legion)
 "qib" = (
 /obj/structure/table/wood,
 /obj/item/reagent_containers/food/drinks/trophy/silver_cup{
@@ -16860,6 +16852,17 @@
 	icon_state = "plating"
 	},
 /area/f13/building)
+"uyR" = (
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 1;
+	light_color = "#f4e3b0";
+	pixel_y = 24
+	},
+/turf/open/floor/f13{
+	dir = 10;
+	icon_state = "redmark"
+	},
+/area/f13/legion)
 "uyU" = (
 /obj/structure/bookshelf{
 	density = 1;
@@ -19000,9 +19003,6 @@
 	icon_state = "bluedirtychess2"
 	},
 /area/f13/building)
-"xdp" = (
-/turf/closed/mineral/random/high_chance,
-/area/f13/legion)
 "xej" = (
 /obj/structure/flora/grass/wasteland,
 /obj/structure/fence/wooden{
@@ -22283,7 +22283,7 @@ rPW
 rPW
 rPW
 jLa
-hzc
+qge
 gtX
 gtX
 gtX
@@ -22540,7 +22540,7 @@ rPW
 rPW
 rPW
 jLa
-jvm
+uyR
 gtX
 gtX
 yjZ
@@ -22797,7 +22797,7 @@ rPW
 rPW
 rPW
 jLa
-amD
+gjs
 gtX
 gtX
 gtX
@@ -23054,7 +23054,7 @@ rPW
 rPW
 rPW
 jLa
-jvm
+uyR
 gtX
 gtX
 yjZ
@@ -23311,7 +23311,7 @@ rfA
 rfA
 rfA
 jLa
-hzc
+qge
 gtX
 gtX
 gtX
@@ -81338,7 +81338,7 @@ rPW
 rPW
 rPW
 lqw
-xdp
+hBA
 lqw
 rPW
 rPW

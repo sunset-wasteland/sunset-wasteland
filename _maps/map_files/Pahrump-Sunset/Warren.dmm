@@ -455,13 +455,6 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/city)
-"arS" = (
-/obj/machinery/light,
-/turf/open/floor/f13{
-	dir = 10;
-	icon_state = "redmark"
-	},
-/area/f13/ncr)
 "arU" = (
 /obj/structure/chair/comfy/purple{
 	dir = 4;
@@ -675,8 +668,10 @@
 /turf/open/floor/plasteel/vault,
 /area/f13/ncr)
 "aBI" = (
-/obj/machinery/light{
-	dir = 1
+/obj/structure/ladder/unbreakable{
+	height = 1;
+	icon_state = "ladder10";
+	id = "NCR"
 	},
 /turf/open/floor/f13{
 	dir = 10;
@@ -1314,11 +1309,13 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/warren)
 "bfB" = (
-/obj/machinery/light{
-	dir = 8;
-	pixel_y = -16
+/obj/machinery/door/airlock/security/glass{
+	name = "Command Centre";
+	req_access_txt = "121"
 	},
-/turf/open/indestructible/ground/outside/sidewalk,
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "verticaloutermain0"
+	},
 /area/f13/ncr)
 "bgq" = (
 /obj/effect/decal/marking{
@@ -1672,10 +1669,8 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vault1,
 /area/f13/ncr)
 "byo" = (
-/turf/open/floor/f13{
-	dir = 10;
-	icon_state = "redmark"
-	},
+/obj/machinery/light,
+/turf/open/floor/plasteel/vault,
 /area/f13/ncr)
 "byH" = (
 /obj/structure/reagent_dispensers/peppertank{
@@ -5678,11 +5673,8 @@
 /turf/open/floor/plasteel/f13/vault_floor/red/redchess/redchess2,
 /area/f13/city)
 "fvh" = (
+/obj/effect/landmark/start/f13/ncrcombatengineer,
 /obj/effect/decal/cleanable/dirt,
-/obj/vehicle/ridden/fuel/motorcycle/green{
-	fuel = 0;
-	name = "Ranger motorcycle"
-	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vault1,
 /area/f13/ncr)
 "fvl" = (
@@ -6663,7 +6655,7 @@
 	},
 /area/f13/wasteland/warren)
 "gsW" = (
-/obj/effect/landmark/start/f13/ncrcombatengineer,
+/obj/item/key/motorcycle,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vault1,
 /area/f13/ncr)
 "gtg" = (
@@ -7089,6 +7081,13 @@
 /obj/structure/flora/grass/jungle/b,
 /turf/open/water,
 /area/f13/city)
+"gJH" = (
+/obj/structure/wreck/car/bike{
+	dir = 8;
+	icon_state = "bike_rust_med_no_wheels"
+	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/vault1,
+/area/f13/ncr)
 "gJX" = (
 /obj/effect/overlay/turfs/cliff{
 	pixel_y = -10
@@ -7456,12 +7455,13 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/warren)
 "hdM" = (
-/obj/item/flag/ncr{
-	pixel_y = 31;
-	density = 0
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light{
+	dir = 8;
+	pixel_y = -16
 	},
 /turf/open/indestructible/ground/outside/sidewalk,
-/area/f13/wasteland/ncr)
+/area/f13/ncr)
 "hdQ" = (
 /obj/structure/curtain{
 	color = "#845f58"
@@ -8122,14 +8122,6 @@
 /obj/item/storage/toolbox/mechanical,
 /turf/open/indestructible/ground/outside/road,
 /area/f13/city)
-"hKM" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light{
-	dir = 8;
-	pixel_y = -16
-	},
-/turf/open/indestructible/ground/outside/sidewalk,
-/area/f13/ncr)
 "hKR" = (
 /obj/structure/bookshelf,
 /obj/effect/spawner/lootdrop/f13/traitbooks,
@@ -9083,6 +9075,7 @@
 /area/f13/wasteland/warren)
 "iEN" = (
 /obj/structure/table,
+/obj/item/storage/toolbox/mechanical,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ncr)
 "iFH" = (
@@ -10101,6 +10094,20 @@
 	icon_state = "verticalrightborderright0"
 	},
 /area/f13/radiation)
+"jOI" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/structure/ladder/unbreakable{
+	height = 1;
+	icon_state = "ladder10";
+	id = "NCR"
+	},
+/turf/open/floor/f13{
+	dir = 10;
+	icon_state = "redmark"
+	},
+/area/f13/ncr)
 "jOK" = (
 /turf/closed/wall/f13/store,
 /area/f13/city)
@@ -12558,8 +12565,16 @@
 /turf/open/floor/plasteel/dark,
 /area/f13/city)
 "mhZ" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/indestructible/ground/outside/sidewalk,
+/obj/machinery/light,
+/obj/structure/ladder/unbreakable{
+	height = 1;
+	icon_state = "ladder10";
+	id = "NCR"
+	},
+/turf/open/floor/f13{
+	dir = 10;
+	icon_state = "redmark"
+	},
 /area/f13/ncr)
 "mii" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -17225,10 +17240,6 @@
 	icon_state = "verticalleftborderleft2top"
 	},
 /area/f13/wasteland/warren)
-"qIA" = (
-/obj/machinery/light,
-/turf/open/floor/plasteel/vault,
-/area/f13/ncr)
 "qIF" = (
 /obj/structure/fence{
 	max_integrity = 500;
@@ -18009,16 +18020,6 @@
 	icon_state = "horizontalinnermain0"
 	},
 /area/f13/wasteland/warren)
-"rsG" = (
-/obj/structure/ladder/unbreakable{
-	id = "NCRNoMans";
-	name = "Tunnel to No Man's Land"
-	},
-/turf/open/floor/f13{
-	dir = 10;
-	icon_state = "redmark"
-	},
-/area/f13/ncr)
 "rsO" = (
 /obj/structure/chair/folding,
 /turf/open/indestructible/ground/outside/savannah,
@@ -19560,9 +19561,6 @@
 /obj/item/flashlight/lamp/green{
 	pixel_x = -5
 	},
-/obj/item/key/motorcycle{
-	pixel_x = 5
-	},
 /turf/open/floor/carpet/black,
 /area/f13/ncr)
 "sPD" = (
@@ -20159,6 +20157,10 @@
 "tyI" = (
 /turf/open/indestructible/ground/outside/graveldirt,
 /area/f13/raiders)
+"tzc" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/indestructible/ground/outside/sidewalk,
+/area/f13/ncr)
 "tzp" = (
 /obj/machinery/light{
 	dir = 4;
@@ -21669,13 +21671,11 @@
 /turf/open/floor/carpet,
 /area/f13/city)
 "uNq" = (
-/obj/machinery/door/airlock/security/glass{
-	name = "Command Centre";
-	req_access_txt = "121"
+/obj/machinery/light{
+	dir = 8;
+	pixel_y = -16
 	},
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticaloutermain0"
-	},
+/turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/ncr)
 "uNu" = (
 /obj/machinery/workbench,
@@ -40573,7 +40573,7 @@ eeQ
 aQW
 aRt
 qEu
-lWw
+gsW
 qBR
 lWw
 lWw
@@ -40725,7 +40725,7 @@ xTm
 aQW
 aRt
 nNg
-lWw
+gJH
 fvh
 lWw
 qBR
@@ -40879,7 +40879,7 @@ aRt
 wDo
 qBR
 jjD
-gsW
+lWw
 qBR
 lWw
 qBR
@@ -43334,7 +43334,7 @@ nxf
 xAc
 xAc
 tzp
-hdM
+eoC
 xAc
 xAc
 goE
@@ -47130,9 +47130,9 @@ sKT
 xAc
 mEf
 cMJ
-hKM
+hdM
 cMJ
-bfB
+uNq
 cMJ
 mRV
 lrJ
@@ -47280,11 +47280,11 @@ jXh
 ykB
 sKT
 aNO
-uNq
-mhZ
+bfB
+tzc
 cMJ
 cMJ
-mhZ
+tzc
 cMJ
 mRV
 nRO
@@ -47589,7 +47589,7 @@ pRa
 cJB
 cJB
 cJB
-qIA
+byo
 goE
 cJB
 cJB
@@ -47889,11 +47889,11 @@ ykB
 mUf
 xAc
 goE
+jOI
 aBI
-byo
-rsG
-byo
-arS
+aBI
+aBI
+mhZ
 goE
 kRt
 pFA

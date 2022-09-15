@@ -10,14 +10,218 @@ Detective : 4 ACCESS_FORENSICS_LOCKERS
 here's a tip, go search DEFINES/access.dm
 */
 
-/*
-Mayor
-*/
-
 /datum/job/bighorn
 	exp_type = EXP_TYPE_BIGHORN
 	faction = FACTION_BIGHORN
 
+/*
+Mayor
+*/
+/datum/job/bighorn/f13mayor
+	title = "Mayor"
+	flag = F13MAYOR
+	department_flag = DEP_BIGHORN
+	total_positions = 1
+	spawn_positions = 1
+	supervisors = "Yourself"
+	description = "You are the benevolent tyrant of Bighorn, chosen by the people to represent and lead them. Pass laws to protect your citizens, distribute town funds and make deals with the powers present within the Region to better the people, and yourself, of course."
+	selection_color = "#d7b088"
+	exp_requirements = 1500
+	outfit = /datum/outfit/job/bighorn/f13mayor
+	access = list(ACCESS_KHAN, ACCESS_BAR, ACCESS_CLINIC, ACCESS_GATEWAY, ACCESS_MINT_VAULT, ACCESS_MINING, ACCESS_FORENSICS_LOCKERS, ACCESS_CLONING)
+	minimal_access = list(ACCESS_KHAN, ACCESS_BAR, ACCESS_CLINIC, ACCESS_GATEWAY, ACCESS_MINT_VAULT, ACCESS_MINING, ACCESS_FORENSICS_LOCKERS, ACCESS_CLONING)
+
+/datum/outfit/job/bighorn/f13mayor/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
+	ADD_TRAIT(H, TRAIT_GENERIC, src)
+
+/datum/outfit/job/bighorn/f13mayor
+	name = "Mayor"
+	jobtype = 	/datum/job/bighorn/f13mayor
+	ears =		/obj/item/radio/headset/headset_town
+	id =		/obj/item/card/id/silver/mayor
+	backpack = 	/obj/item/storage/backpack/satchel/explorer
+	satchel = 	/obj/item/storage/backpack/satchel/explorer
+	l_pocket = 	/obj/item/storage/bag/money/small/settler
+	r_pocket = 	/obj/item/flashlight/flare
+	belt = 		/obj/item/gun/ballistic/revolver/colt357
+	shoes = 	/obj/item/clothing/shoes/laceup
+	uniform = 	/obj/item/clothing/under/suit/checkered
+	suit = 		/obj/item/clothing/suit/armor/f13/kit
+	head = 		/obj/item/clothing/head/fedora
+	backpack_contents = list(
+		/obj/item/clothing/head/f13/town/big = 1, \
+		/obj/item/storage/box/citizenship_permits = 1, \
+		/obj/item/ammo_box/a357=2, \
+		/obj/item/pen/fountain/captain = 1)
+/*--------------------------------------------------------------*/
+/datum/job/bighorn/f13sheriff
+	title = "Sheriff"
+	flag = F13SHERIFF
+	department_flag = DEP_BIGHORN
+	total_positions = 1
+	spawn_positions = 1
+	supervisors = "the mayor"
+	description = "As the chief law enforcer of the Town, your job is to keep the peace, settle local disputes, and keep your townsfolk safe and alive. Unfortunately, with the NCR and Legion closing in on the region, the Town is caught between a rock and a hard place, as with the war brings with it unsavory elements like the Khans and Outlaws. Sometimes the people you handle inside the town will be alive in cuffs, or dead on the street. Other times, they'll escape the limits of the town, to which you can put a bounty on their head for their capture, or have your deputies capture them. However, you must remember these three critical things: never leave the town undefended, keep the townsfolk alive and safe, and most importantly - keep your hand on your gun and don't you trust anyone."
+	selection_color = "#d7b088"
+	exp_requirements = 1500
+	outfit = /datum/outfit/job/bighorn/f13sheriff
+	access = list(ACCESS_KHAN, ACCESS_BAR, ACCESS_CLINIC, ACCESS_GATEWAY, ACCESS_MINT_VAULT, ACCESS_MINING, ACCESS_FORENSICS_LOCKERS, ACCESS_CLONING)
+	minimal_access = list(ACCESS_KHAN, ACCESS_BAR, ACCESS_CLINIC, ACCESS_GATEWAY, ACCESS_MINT_VAULT, ACCESS_MINING, ACCESS_FORENSICS_LOCKERS, ACCESS_CLONING)
+
+/datum/outfit/job/bighorn/f13sheriff
+	name = "Sheriff"
+	jobtype = /datum/job/bighorn/f13sheriff
+	id = /obj/item/card/id/dogtag/sheriff
+	belt = null
+	backpack = /obj/item/storage/backpack/satchel/explorer
+	satchel = /obj/item/storage/backpack/satchel/explorer
+
+	ears = 			/obj/item/radio/headset/headset_town
+	uniform =  		/obj/item/clothing/under/f13/sheriff
+	neck =			/obj/item/storage/belt/holster
+	shoes = 		/obj/item/clothing/shoes/f13/cowboy
+	suit = 			/obj/item/clothing/suit/armor/f13/town/chief
+	head = 			/obj/item/clothing/head/f13/town/sheriff
+	glasses =		/obj/item/clothing/glasses/sunglasses
+	l_hand = 		/obj/item/gun/ballistic/rifle/repeater/brush
+	l_pocket =		/obj/item/storage/bag/money/small/bighorn
+
+	backpack_contents = list(
+		/obj/item/storage/box/deputy_badges=1, \
+		/obj/item/ammo_box/tube/c4570=3, \
+		/obj/item/ammo_box/m44=2, \
+		/obj/item/restraints/handcuffs=1, \
+		/obj/item/melee/classic_baton=1,
+		/obj/item/melee/onehanded/knife/survival = 1,
+		/obj/item/book/granter/crafting_recipe/ODF = 1)
+	r_pocket = /obj/item/flashlight/flare
+
+/datum/outfit/job/bighorn/f13sheriff/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
+	ADD_TRAIT(H, TRAIT_LIFEGIVER, src)
+	ADD_TRAIT(H, TRAIT_SELF_AWARE, src)
+/*--------------------------------------------------------------*/
+/datum/job/bighorn/f13deputy
+	title = "Deputy"
+	flag = F13DEPUTY
+	department_flag = DEP_BIGHORN
+	total_positions = 4
+	spawn_positions = 4
+	supervisors = "the sheriff and the mayor"
+	description = "Working alongside the Sheriff you've known them for a while, having worked with them under the previous Sheriff - you bagged many a bandit and raider together on the road. These days you patrol the areas outside of town, tracking down bounties on the run and keeping the settlers safe from harm."
+	selection_color = "#dcba97"
+	exp_requirements = 620
+	outfit = /datum/outfit/job/bighorn/f13deputy
+	access = list(ACCESS_KHAN, ACCESS_BAR, ACCESS_CLINIC, ACCESS_GATEWAY, ACCESS_MINT_VAULT, ACCESS_MINING, ACCESS_FORENSICS_LOCKERS, ACCESS_CLONING)
+	minimal_access = list(ACCESS_KHAN, ACCESS_BAR, ACCESS_CLINIC, ACCESS_GATEWAY, ACCESS_MINT_VAULT, ACCESS_MINING, ACCESS_FORENSICS_LOCKERS, ACCESS_CLONING)
+
+/datum/outfit/job/bighorn/f13deputy
+	name = "Deputy"
+	jobtype = /datum/job/bighorn/f13deputy
+	ears = 			/obj/item/radio/headset/headset_town
+	id =            /obj/item/card/id/dogtag/deputy
+	backpack = /obj/item/storage/backpack/satchel/explorer
+	satchel = /obj/item/storage/backpack/satchel/explorer
+	l_pocket = /obj/item/storage/bag/money/small/settler
+	r_pocket = /obj/item/flashlight/flare
+	r_hand = /obj/item/gun/ballistic/rifle/repeater/trail
+	suit = 			/obj/item/clothing/suit/armor/vest/oasis
+	head =	/obj/item/clothing/head/f13/town/deputy
+	belt = /obj/item/gun/ballistic/revolver/colt357
+	shoes = 		/obj/item/clothing/shoes/f13/explorer
+	uniform = /obj/item/clothing/under/f13/cowboyb
+	backpack_contents = list(
+		/obj/item/ammo_box/a357=2, \
+		/obj/item/ammo_box/tube/m44=2, \
+		/obj/item/restraints/handcuffs=1,
+		/obj/item/melee/onehanded/knife/survival = 1,
+		/obj/item/book/granter/crafting_recipe/ODF = 1)
+
+/datum/outfit/job/bighorn/f13deputy/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
+/*--------------------------------------------------------------*/
+/datum/job/bighorn/f13banker
+	title = "Banker"
+	flag = F13BANKER
+	department_flag = DEP_BIGHORN
+	total_positions = 1
+	spawn_positions = 1
+	supervisors = "the mayor"
+	description = "No matter where society lurks, profit and fortune are there to be made! It is up to you to distribute caps and earn interest while safekeeping items of value for the wastelands denizens! Ensure you make a profit and make your money back no matter the cost. You are to work alongside the Town, and should not be attempting to harm the residents of Bighorn."
+	selection_color = "#dcba97"
+	exp_requirements = 1500
+	enforces = "You are in a Job meant for encouraging roleplay with others, do not abandon your post or hoard money unless absolutely necessary. Do not use the caps provided for yourself."
+	outfit = /datum/outfit/job/bighorn/f13banker
+	access = list(ACCESS_KHAN, ACCESS_BAR, ACCESS_CLINIC, ACCESS_GATEWAY, ACCESS_MINT_VAULT, ACCESS_MINING, ACCESS_FORENSICS_LOCKERS, ACCESS_CLONING)
+	minimal_access = list(ACCESS_KHAN, ACCESS_BAR, ACCESS_CLINIC, ACCESS_GATEWAY, ACCESS_MINT_VAULT, ACCESS_MINING, ACCESS_FORENSICS_LOCKERS, ACCESS_CLONING)
+	loadout_options = list(
+	/datum/outfit/loadout/classy,
+	/datum/outfit/loadout/loanshark,
+	/datum/outfit/loadout/investor,
+	)
+
+/datum/outfit/job/bighorn/f13banker
+	name = "Banker"
+	jobtype = /datum/job/bighorn/f13banker
+	uniform = /obj/item/clothing/under/lawyer/blacksuit
+	id = /obj/item/card/id/silver
+	ears = /obj/item/radio/headset/headset_town
+	shoes = /obj/item/clothing/shoes/f13/fancy
+	backpack = /obj/item/storage/backpack/satchel/leather
+	satchel = /obj/item/storage/backpack/satchel/leather
+	backpack_contents = list(
+		/obj/item/storage/bag/money/small/banker)
+
+/datum/outfit/loadout/classy
+	name = "Classy"
+	head = /obj/item/clothing/head/collectable/tophat
+	glasses = /obj/item/clothing/glasses/monocle
+	uniform = /obj/item/clothing/under/suit_jacket/charcoal
+	suit = /obj/item/clothing/suit/f13/banker
+	gloves = /obj/item/clothing/gloves/color/white
+	shoes = /obj/item/clothing/shoes/laceup
+	backpack_contents = list(
+	/obj/item/cane=1,
+	/obj/item/storage/fancy/cigarettes/cigpack_bigboss=1,
+	/obj/item/reagent_containers/food/drinks/bottle/whiskey=1,
+	/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass=1
+	)
+
+/datum/outfit/loadout/loanshark
+	name = "Loanshark"
+	glasses = /obj/item/clothing/glasses/orange
+	mask = /obj/item/clothing/mask/cigarette/cigar
+	suit = /obj/item/clothing/suit/f13/vest
+	uniform = /obj/item/clothing/under/f13/sleazeball
+	shoes = /obj/item/clothing/shoes/sandal
+	backpack_contents = list(
+	/obj/item/reagent_containers/food/drinks/bottle/whiskey=1,
+	/obj/item/storage/box/matches=1,
+	/obj/item/gun/ballistic/automatic/smg/mini_uzi=1
+	)
+
+/datum/outfit/loadout/investor
+	name = "Investor"
+	glasses = /obj/item/clothing/glasses/sunglasses
+	suit = /obj/item/clothing/suit/toggle/lawyer/black
+	uniform = /obj/item/clothing/under/f13/bennys
+	gloves = /obj/item/clothing/gloves/fingerless
+	shoes = /obj/item/clothing/shoes/laceup
+	backpack_contents = list(
+		/obj/item/gun/ballistic/revolver/colt357=1,
+		/obj/item/storage/fancy/cigarettes/cigpack_bigboss=1,
+		/obj/item/storage/box/matches=1
+		)
 /*--------------------------------------------------------------*/
 /datum/job/bighorn/f13barkeep
 	title = "Barkeep"
@@ -30,7 +234,7 @@ Mayor
 	enforces = "While you have dominion over your private business, your premium status as a citizen may be revoked if you are considered a danger to the populace or anger those in control of the town."
 	selection_color = "#dcba97"
 
-	outfit = /datum/outfit/job/den/f13barkeep
+	outfit = /datum/outfit/job/bighorn/f13barkeep
 
 	loadout_options = list(
 	/datum/outfit/loadout/rugged,
@@ -50,7 +254,7 @@ Mayor
 	)
 
 
-/datum/outfit/job/den/f13barkeep
+/datum/outfit/job/bighorn/f13barkeep
 	name = "Barkeep"
 	jobtype = /datum/job/bighorn/f13barkeep
 
@@ -116,7 +320,7 @@ Mayor
 	selection_color = "#dcba97"
 	exp_requirements = 300
 
-	outfit = /datum/outfit/job/den/f13shopkeeper
+	outfit = /datum/outfit/job/bighorn/f13shopkeeper
 	access = list(ACCESS_BAR, ACCESS_CARGO_BOT)
 	minimal_access = list(ACCESS_BAR, ACCESS_CARGO_BOT)
 	matchmaking_allowed = list(
@@ -128,7 +332,7 @@ Mayor
 		),
 	)
 
-/datum/outfit/job/den/f13shopkeeper
+/datum/outfit/job/bighorn/f13shopkeeper
 	name = "Shopkeeper"
 	jobtype = /datum/job/bighorn/f13shopkeeper
 
@@ -139,12 +343,12 @@ Mayor
 	satchel = /obj/item/storage/backpack/satchel
 	duffelbag = /obj/item/storage/backpack/duffelbag
 	gloves = /obj/item/clothing/gloves/fingerless
-	l_pocket = /obj/item/storage/bag/money/small/den
+	l_pocket = /obj/item/storage/bag/money/small/bighorn
 	r_pocket = /obj/item/flashlight/glowstick
 	shoes = /obj/item/clothing/shoes/f13/explorer
 	backpack_contents = list(/obj/item/storage/box/shopkeeper = 1)
 
-/datum/outfit/job/den/f13shopkeeper/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+/datum/outfit/job/bighorn/f13shopkeeper/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
 		return
@@ -167,7 +371,7 @@ Mayor
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/concussion)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/explosive/shrapnelmine)
 
-/datum/outfit/job/den/f13shopkeeper/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+/datum/outfit/job/bighorn/f13shopkeeper/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
 		return
@@ -184,7 +388,7 @@ Mayor
 	enforces = "Your premium status as a citizen may be revoked if you are considered a danger to the populace or anger those in control of the town."
 	selection_color = "#dcba97"
 
-	outfit = /datum/outfit/job/den/f13settler
+	outfit = /datum/outfit/job/bighorn/f13settler
 
 	loadout_options = list(
 		/datum/outfit/loadout/provisioner,
@@ -392,7 +596,7 @@ Mayor
 		/obj/item/storage/bag/money/small/settler)
 //end preacher
 
-/datum/outfit/job/den/f13settler
+/datum/outfit/job/bighorn/f13settler
 	name = "Citizen"
 	jobtype = /datum/job/bighorn/f13settler
 	ears = /obj/item/radio/headset/headset_town
@@ -408,7 +612,7 @@ Mayor
 		/obj/item/melee/onehanded/knife/hunting = 1,
 		)
 
-/datum/outfit/job/den/f13settler/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/job/bighorn/f13settler/pre_equip(mob/living/carbon/human/H)
 	..()
 	uniform = pick(
 		/obj/item/clothing/under/f13/settler, \

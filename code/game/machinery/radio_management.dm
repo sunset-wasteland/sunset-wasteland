@@ -11,6 +11,7 @@ GLOBAL_LIST_EMPTY(bos_radios)
 	desc = "A terminal used to remotely disable radios that may have been lost."
 	icon = 'icons/obj/computer.dmi'
 	icon_state = "computer"
+	density = TRUE
 	var/open = FALSE // TRUE if open
 	var/assigned_faction
 	max_integrity = 750

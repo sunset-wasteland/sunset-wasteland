@@ -120,6 +120,10 @@
 #define F13SHOPKEEPER	(1<<1)
 #define F13BARKEEP		(1<<2)
 #define F13PREACHER		(1<<3)
+#define F13SHERIFF		(1<<4)
+#define F13MAYOR		(1<<5)
+#define F13BANKER		(1<<6)
+#define F13DEPUTY		(1<<7)
 
 #define VAULT			(1<<7)
 
@@ -153,13 +157,16 @@
 #define F13FOLLOWERVOLUNTEER	(1<<3)
 
 #define KHAN		(1<<12)
-
+/*
 #define F13NOYAN (1<<0)
 #define F13STEWARD (1<<1)
 #define F13KHESHIG (1<<2)
 #define F13KHORCHIN (1<<3)
 #define F13KIPCHAK (1<<4)
 #define F13MANGUDAI (1<<5)
+*/
+#define F13KHAN (1<<0)
+#define F13KHANCHEMIST (1<<1)
 
 #define JOB_AVAILABLE 0
 #define JOB_UNAVAILABLE_GENERIC 1

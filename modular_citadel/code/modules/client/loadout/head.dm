@@ -426,9 +426,9 @@
 	path = /obj/item/clothing/head/helmet/blueshirt
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_FACTIONS
 	cost = 3
-	restricted_desc = "Oasis PD, Oasis officials"
-	restricted_roles = list("Chief of Police",
-							"Officer",
+	restricted_desc = "Bighorn PD, Bighorn officials"
+	restricted_roles = list("Sheriff",
+							"Deputy",
 							"Mayor",
 							"Detective",
 							"Secretary",

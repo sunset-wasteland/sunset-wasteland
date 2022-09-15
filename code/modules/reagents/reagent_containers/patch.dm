@@ -8,7 +8,7 @@
 	volume = 40
 	apply_type = PATCH
 	apply_method = "apply"
-	self_delay = 30
+	self_delay = 15
 	dissolvable = FALSE
 
 /obj/item/reagent_containers/pill/patch/attack(mob/living/L, mob/user)
@@ -35,6 +35,7 @@
 	icon = 'icons/obj/chemical.dmi'
 	list_reagents = list(/datum/reagent/medicine/styptic_powder = 20)
 	icon_state = "bandaid_brute"
+	self_delay = 15
 
 /obj/item/reagent_containers/pill/patch/silver_sulf
 	name = "burn patch"
@@ -42,6 +43,7 @@
 	icon = 'icons/obj/chemical.dmi'
 	list_reagents = list(/datum/reagent/medicine/silver_sulfadiazine = 20)
 	icon_state = "bandaid_burn"
+	self_delay = 15
 
 /obj/item/reagent_containers/pill/patch/get_belt_overlay()
 	return mutable_appearance('icons/obj/clothing/belt_overlays.dmi', "pouch")
@@ -56,6 +58,7 @@
 	list_reagents = list(/datum/reagent/drug/jet = 10)
 	icon = 'icons/fallout/objects/medicine/drugs.dmi'
 	icon_state = "patch_jet"
+	self_delay = 15
 
 
 // ---------------------------------
@@ -67,6 +70,7 @@
 	icon = 'icons/fallout/objects/medicine/drugs.dmi'
 	icon_state = "patch_turbo"
 	list_reagents = list(/datum/reagent/drug/turbo = 5)
+	self_delay = 15
 
 
 // ---------------------------------
@@ -78,7 +82,7 @@
 	icon = 'icons/fallout/objects/medicine/drugs.dmi'
 	icon_state = "patch_healingpowder"
 	list_reagents = list(/datum/reagent/medicine/healing_powder = 10)
-	self_delay = 30
+	self_delay = 15
 
 // ---------------------------------
 // HEALING POULTICE
@@ -89,7 +93,7 @@
 	icon = 'icons/fallout/objects/medicine/drugs.dmi'
 	list_reagents = list(/datum/reagent/medicine/healing_powder/poultice = 10)
 	icon_state = "patch_healingpoultice"
-	self_delay = 30
+	self_delay = 15
 
 
 // ---------------------------------
@@ -102,7 +106,7 @@
 	icon = 'icons/fallout/objects/medicine/drugs.dmi'
 	icon_state = "patch_healingpowder"
 	color = COLOR_PALE_GREEN_GRAY
-	self_delay = 30
+	self_delay = 15
 
 // ---------------------------------
 // BITTER DRINK
@@ -113,7 +117,7 @@
 	icon = 'icons/fallout/objects/medicine/drugs.dmi'
 	icon_state = "patch_bitterdrink"
 	list_reagents = list(/datum/reagent/medicine/bitter_drink = 15)
-	self_delay = 10
+	self_delay = 5
 
 // ---------------------------------
 // HYDRA
@@ -135,6 +139,7 @@
 	icon = 'icons/fallout/objects/medicine/drugs.dmi'
 	list_reagents = list(/datum/reagent/medicine/berserker_powder = 10)
 	icon_state = "patch_berserkerpowder"
+	self_delay = 15
 
 // -----------------
 // Natural Painkiller
@@ -146,3 +151,4 @@
 	icon = 'icons/fallout/objects/medicine/drugs.dmi'
 	list_reagents = list(/datum/reagent/medicine/legionmedx = 10)
 	icon_state = "patch_legionmedx"
+	self_delay = 15

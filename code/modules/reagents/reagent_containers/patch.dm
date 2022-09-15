@@ -8,7 +8,7 @@
 	volume = 40
 	apply_type = PATCH
 	apply_method = "apply"
-	self_delay = 30		// three seconds
+	self_delay = 30
 	dissolvable = FALSE
 
 /obj/item/reagent_containers/pill/patch/attack(mob/living/L, mob/user)
@@ -78,7 +78,7 @@
 	icon = 'icons/fallout/objects/medicine/drugs.dmi'
 	icon_state = "patch_healingpowder"
 	list_reagents = list(/datum/reagent/medicine/healing_powder = 10)
-	self_delay = 0
+	self_delay = 30
 
 // ---------------------------------
 // HEALING POULTICE
@@ -89,7 +89,7 @@
 	icon = 'icons/fallout/objects/medicine/drugs.dmi'
 	list_reagents = list(/datum/reagent/medicine/healing_powder/poultice = 10)
 	icon_state = "patch_healingpoultice"
-	self_delay = 0
+	self_delay = 30
 
 
 // ---------------------------------
@@ -101,8 +101,8 @@
 	list_reagents = null
 	icon = 'icons/fallout/objects/medicine/drugs.dmi'
 	icon_state = "patch_healingpowder"
-	self_delay = 0
 	color = COLOR_PALE_GREEN_GRAY
+	self_delay = 30
 
 // ---------------------------------
 // BITTER DRINK
@@ -113,7 +113,7 @@
 	icon = 'icons/fallout/objects/medicine/drugs.dmi'
 	icon_state = "patch_bitterdrink"
 	list_reagents = list(/datum/reagent/medicine/bitter_drink = 15)
-	self_delay = 0
+	self_delay = 10
 
 // ---------------------------------
 // HYDRA
@@ -135,7 +135,6 @@
 	icon = 'icons/fallout/objects/medicine/drugs.dmi'
 	list_reagents = list(/datum/reagent/medicine/berserker_powder = 10)
 	icon_state = "patch_berserkerpowder"
-	self_delay = 0
 
 // -----------------
 // Natural Painkiller

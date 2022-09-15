@@ -193,3 +193,4 @@
 		return
 	else
 		to_chat(user, "[goal - progress] until an item is ready to be dispensed.")
+

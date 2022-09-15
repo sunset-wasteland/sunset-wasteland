@@ -1179,6 +1179,12 @@
 /obj/machinery/icecream_vat,
 /turf/open/floor/plasteel/hydrofloor,
 /area/f13/enclave)
+"adY" = (
+/mob/living/simple_animal/chicken{
+	name = "\improper Bitch"
+	},
+/turf/open/floor/grass,
+/area/f13/enclave)
 "adZ" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -10968,11 +10974,16 @@
 /turf/open/floor/plasteel/f13/vault_floor/green,
 /area/f13/vault)
 "klg" = (
-/obj/structure/cable,
-/obj/machinery/power/port_gen/pacman/super{
-	anchored = 1
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
-/turf/open/floor/plasteel/f13/vault_floor/yellow,
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/turf/open/floor/plasteel/f13/vault_floor/yellow/whiteyellowfull,
 /area/f13/enclave)
 "klq" = (
 /obj/effect/decal/fakelattice,
@@ -14545,16 +14556,11 @@
 /turf/open/floor/plating/dirt,
 /area/f13/bunker)
 "ohB" = (
-/obj/structure/cable{
-	icon_state = "4-8"
+/obj/structure/cable,
+/obj/machinery/power/port_gen/pacman/super{
+	anchored = 1
 	},
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
-/turf/open/floor/plasteel/f13/vault_floor/yellow/whiteyellowfull,
+/turf/open/floor/plasteel/f13/vault_floor/yellow,
 /area/f13/enclave)
 "ohL" = (
 /obj/structure/table,
@@ -59501,7 +59507,7 @@ afl
 tLb
 tLb
 tLf
-mpz
+adY
 ejo
 ejo
 ejo
@@ -64114,8 +64120,8 @@ adf
 aao
 adv
 adR
-ohB
 klg
+ohB
 aao
 aej
 aez

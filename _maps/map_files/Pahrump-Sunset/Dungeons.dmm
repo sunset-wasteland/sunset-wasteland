@@ -655,7 +655,7 @@
 	},
 /obj/machinery/door/airlock/hatch{
 	req_access = null;
-	req_access_txt = "134"
+	req_access_txt = "256"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/yellow/whiteyellowfull,
 /area/f13/enclave)
@@ -749,7 +749,6 @@
 /area/f13/enclave)
 "acy" = (
 /obj/structure/rack,
-/obj/item/book/granter/martial/cqc,
 /obj/item/stack/sheet/mineral/abductor/ten,
 /obj/item/storage/belt/utility/full/engi,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
@@ -1179,15 +1178,6 @@
 	},
 /obj/machinery/icecream_vat,
 /turf/open/floor/plasteel/hydrofloor,
-/area/f13/enclave)
-"adY" = (
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
-/obj/machinery/power/port_gen/pacman/super{
-	anchored = 1
-	},
-/turf/open/floor/plasteel/f13/vault_floor/yellow/whiteyellowfull,
 /area/f13/enclave)
 "adZ" = (
 /obj/structure/cable{
@@ -1970,9 +1960,10 @@
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/enclave)
 "agJ" = (
-/obj/item/clothing/gloves/color/latex/nitrile,
-/obj/item/cautery,
-/obj/structure/table/glass,
+/obj/machinery/shower{
+	dir = 1
+	},
+/obj/effect/turf_decal/bot,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/enclave)
 "agK" = (
@@ -2019,6 +2010,8 @@
 /obj/item/surgicaldrill,
 /obj/structure/table/glass,
 /obj/machinery/light,
+/obj/item/cautery,
+/obj/item/clothing/gloves/color/latex/nitrile,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/enclave)
 "agQ" = (
@@ -2081,9 +2074,6 @@
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/enclave)
 "aha" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
@@ -4108,10 +4098,6 @@
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/mid,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/bunker)
-"cuJ" = (
-/obj/machinery/portable_atmospherics/scrubber,
-/turf/open/floor/f13,
-/area/f13/enclave)
 "cuZ" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontaltopbordertop2left"
@@ -5774,6 +5760,7 @@
 /obj/effect/spawner/lootdrop/f13/cash_ncr_high,
 /obj/effect/spawner/lootdrop/f13/cash_legion_high,
 /obj/effect/spawner/lootdrop/f13/cash_random_high,
+/obj/item/book/granter/martial/cqc,
 /turf/open/floor/f13,
 /area/f13/enclave)
 "ege" = (
@@ -10981,8 +10968,11 @@
 /turf/open/floor/plasteel/f13/vault_floor/green,
 /area/f13/vault)
 "klg" = (
-/obj/machinery/recharge_station,
-/turf/open/floor/f13,
+/obj/structure/cable,
+/obj/machinery/power/port_gen/pacman/super{
+	anchored = 1
+	},
+/turf/open/floor/plasteel/f13/vault_floor/yellow,
 /area/f13/enclave)
 "klq" = (
 /obj/effect/decal/fakelattice,
@@ -14555,9 +14545,16 @@
 /turf/open/floor/plating/dirt,
 /area/f13/bunker)
 "ohB" = (
-/obj/structure/decoration/vent,
-/obj/machinery/portable_atmospherics/scrubber,
-/turf/open/floor/f13,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/turf/open/floor/plasteel/f13/vault_floor/yellow/whiteyellowfull,
 /area/f13/enclave)
 "ohL" = (
 /obj/structure/table,
@@ -20445,11 +20442,6 @@
 /obj/effect/decal/cleanable/oil,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/bunker)
-"uOF" = (
-/obj/structure/chair/bench,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/f13,
-/area/f13/enclave)
 "uOR" = (
 /obj/effect/decal/cleanable/greenglow,
 /turf/open/floor/plating/f13/inside/mountain{
@@ -62837,7 +62829,7 @@ agV
 adO
 agW
 adO
-adY
+aes
 adO
 aao
 aej
@@ -64122,8 +64114,8 @@ adf
 aao
 adv
 adR
-aec
-adO
+ohB
+klg
 aao
 aej
 aez
@@ -66962,10 +66954,10 @@ adM
 aej
 tkZ
 aao
-klg
-grb
 aej
-uOF
+aej
+aej
+aGO
 aao
 grb
 aej
@@ -67220,8 +67212,8 @@ aej
 aej
 pVe
 aej
-grb
-grb
+aej
+aej
 aej
 pVe
 aej
@@ -67734,8 +67726,8 @@ aej
 aej
 pVe
 aej
-grb
-grb
+aej
+aej
 aej
 pVe
 aej
@@ -68506,7 +68498,7 @@ abo
 aao
 uBJ
 aej
-grb
+aej
 aco
 aao
 aci
@@ -68762,7 +68754,7 @@ afq
 dwA
 aao
 fuz
-grb
+aej
 aej
 grb
 aao
@@ -69800,7 +69792,7 @@ aej
 aej
 aao
 inb
-ohB
+agm
 aej
 agm
 aao
@@ -70056,7 +70048,7 @@ aej
 aej
 aej
 aao
-cuJ
+aej
 aej
 aej
 vQp
@@ -70313,7 +70305,7 @@ hPD
 aej
 aej
 xib
-cuJ
+aej
 agm
 bsM
 fZU

@@ -5,13 +5,13 @@
 	if(istype(AM, /mob/living))
 		var/mob/living/L = AM
 		L.update_water()
-		L.radiation -= min(L.radiation, 4.1)
+		L.radiation -= min(L.radiation, 4.2)
 	..()
 
-/turf/open/hwater/Exited(atom/movable/AM, atom/newloc)
+/turf/open/water/hwater/Exited(atom/movable/AM, atom/newloc)
 	if(istype(AM, /mob/living))
 		var/mob/living/L = AM
 		L.update_water()
-		L.radiation -= min(L.radiation, 4.1)
+		L.radiation -= min(L.radiation, 4.2)
 	..()
 

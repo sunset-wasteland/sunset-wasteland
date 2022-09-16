@@ -1,12 +1,4 @@
 // Removes restrictions for certain items
-/datum/gear/suit/deputyvest
-	name = "Deputy armor vest"
-	path = /obj/item/clothing/suit/armor/vest/oasis
-	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
-	cost = 4
-	restricted_desc = null
-	restricted_roles = list()
-
 /datum/gear/suit/NCRutilityvest
 	name = "Utility Vest"
 	path = /obj/item/clothing/suit/armor/f13/utilityvest

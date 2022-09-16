@@ -1,12 +1,3 @@
-// Removes restrictions for certain items
-/datum/gear/uniform/suit/blueshift
-	name = "security suit and tie"
-	path = /obj/item/clothing/under/rank/security/officer/blueshirt
-	cost = 1
-	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_GENERAL
-	restricted_desc = null
-	restricted_roles = list()
-
 /datum/gear/uniform/goner_red
 	name = "utility uniform, red"
 	cost = 1

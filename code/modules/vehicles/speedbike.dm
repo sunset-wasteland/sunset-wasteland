@@ -12,13 +12,13 @@
 	icon = 'icons/obj/bike.dmi'
 	icon_state = "speedbike_blue"
 	layer = LYING_MOB_LAYER
-	var/overlay_state = "cover_blue"
-	var/mutable_appearance/overlay
+	var/cover_overlay_state = "cover_blue"
+	var/mutable_appearance/cover_overlay
 
 /obj/vehicle/ridden/space/speedbike/Initialize()
 	. = ..()
-	overlay = mutable_appearance(icon, overlay_state, ABOVE_MOB_LAYER)
-	add_overlay(overlay)
+	cover_overlay = mutable_appearance(icon, cover_overlay_state, ABOVE_MOB_LAYER)
+	add_overlay(cover_overlay)
 	var/datum/component/riding/D = LoadComponent(/datum/component/riding)
 	D.set_riding_offsets(RIDING_OFFSET_ALL, list(TEXT_NORTH = list(0, -8), TEXT_SOUTH = list(0, 4), TEXT_EAST = list(-10, 5), TEXT_WEST = list( 10, 5)))
 	D.vehicle_move_delay = 0
@@ -34,7 +34,7 @@
 
 /obj/vehicle/ridden/space/speedbike/red
 	icon_state = "speedbike_red"
-	overlay_state = "cover_red"
+	cover_overlay_state = "cover_red"
 
 //BM SPEEDWAGON
 
@@ -44,7 +44,7 @@
 	icon = 'icons/obj/car.dmi'
 	icon_state = "speedwagon"
 	layer = LYING_MOB_LAYER
-	var/static/mutable_appearance/overlay = mutable_appearance(icon, "speedwagon_cover", ABOVE_MOB_LAYER)
+	var/static/mutable_appearance/cover_overlay = mutable_appearance('icons/obj/car.dmi', "speedwagon_cover", ABOVE_MOB_LAYER)
 	max_buckled_mobs = 4
 	var/crash_all = FALSE //CHAOS
 	pixel_y = -48
@@ -52,7 +52,7 @@
 
 /obj/vehicle/ridden/space/speedwagon/Initialize()
 	. = ..()
-	add_overlay(overlay)
+	add_overlay(cover_overlay)
 	var/datum/component/riding/D = LoadComponent(/datum/component/riding)
 	D.vehicle_move_delay = 0
 	D.set_riding_offsets(1, list(TEXT_NORTH = list(-10, -4), TEXT_SOUTH = list(16, 3), TEXT_EAST = list(-4, 30), TEXT_WEST = list(4, -3)))

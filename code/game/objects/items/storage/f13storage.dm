@@ -12,11 +12,11 @@
 	STR.max_items = 2
 	STR.rustle_sound = FALSE
 	STR.max_w_class = WEIGHT_CLASS_BULKY
-	STR.can_hold = typecacheof(list(
+	CANHOLD_STATIC(STR, typecacheof(list(
 		/obj/item/storage/backpack/backsheathstorage,
 		/obj/item/melee/onehanded/machete,
 		/obj/item/twohanded/fireaxe/bmprsword
-		))
+		)))
 
 /obj/item/storage/backpack/backsheath/update_icon()
 	icon_state = "sheathback"
@@ -60,10 +60,10 @@
 	STR.max_items = 2
 	STR.rustle_sound = FALSE
 	STR.max_w_class = WEIGHT_CLASS_BULKY
-	STR.can_hold = typecacheof(list(
+	CANHOLD_STATIC(STR, typecacheof(list(
 		/obj/item/storage/belt/waistsheathstorage,
 		/obj/item/melee/onehanded/machete,
-		))
+		)))
 
 /obj/item/storage/belt/waistsheath/examine(mob/user)
 	..()
@@ -151,7 +151,7 @@
 	STR.max_w_class = WEIGHT_CLASS_NORMAL
 	STR.max_combined_w_class = 600
 	STR.max_items = 600
-	STR.can_hold = typecacheof(list(/obj/item/ammo_casing))
+	CANHOLD_STATIC(STR, typecacheof(list(/obj/item/ammo_casing)))
 
 /obj/item/storage/bag/casings/equipped(mob/user)
 	. = ..()

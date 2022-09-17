@@ -69,6 +69,16 @@
 	baseturfs = /turf/open/indestructible/ground/outside/sidewalk
 	},
 /area/f13/building)
+"ak" = (
+/obj/machinery/door/unpowered/securedoor{
+	damage_deflection = 28;
+	max_integrity = 600;
+	name = "Vertan Decanus' Quarters";
+	obj_integrity = 600;
+	req_access_txt = "123"
+	},
+/turf/open/floor/wood/wood_mosaic,
+/area/f13/legion)
 "aq" = (
 /obj/structure/curtain{
 	color = "#845f58";
@@ -463,7 +473,10 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "dw" = (
-/turf/closed/wall/mineral/concrete/blastproof,
+/obj/structure/bed/mattress/pregame,
+/obj/structure/camera_assembly,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/energy/midhigh,
+/turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/building)
 "dx" = (
 /obj/structure/rack/shelf_metal,
@@ -558,10 +571,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
 /area/f13/building)
-"eh" = (
-/obj/structure/destructible/tribal_torch/lit,
-/turf/open/floor/f13/wood,
-/area/f13/wasteland/rocksprings)
 "ej" = (
 /turf/open/floor/wood/wood_wide{
 	icon_state = "wide-broken4"
@@ -1003,7 +1012,13 @@
 /area/f13/building)
 "hN" = (
 /obj/structure/sign/departments/chemistry,
-/turf/closed/wall/mineral/concrete/blastproof,
+/turf/closed/indestructible/riveted{
+	desc = "A heavily reinforced prison wall. You doubt anything short of a nuke would break it.";
+	icon = 'icons/turf/walls/f13superstore.dmi';
+	icon_state = "supermart";
+	icon_type_smooth = "supermart";
+	name = "Reinforced prison wall"
+	},
 /area/f13/building)
 "hP" = (
 /obj/structure/railing/corner{
@@ -1086,6 +1101,17 @@
 "iv" = (
 /obj/structure/simple_door/wood,
 /turf/open/floor/f13/wood,
+/area/f13/building)
+"iw" = (
+/obj/machinery/button/door{
+	id = 56545;
+	name = "Restricted Area Lockdown";
+	pixel_y = -32
+	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
+	baseturfs = /turf/open/indestructible/ground/outside/sidewalk;
+	name = "metal plating"
+	},
 /area/f13/building)
 "ix" = (
 /obj/machinery/light/fo13colored/Red{
@@ -1566,6 +1592,11 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/wood_common/wood_common_light,
 /area/f13/building)
+"mu" = (
+/obj/structure/table/wood,
+/obj/effect/spawner/lootdrop/f13/traitbooks/low,
+/turf/open/floor/wood/wood_mosaic,
+/area/f13/legion)
 "mv" = (
 /obj/structure/fluff/railing/corner,
 /turf/open/transparent/openspace,
@@ -1630,6 +1661,16 @@
 /obj/structure/curtain{
 	color = "#c40e0e";
 	pixel_x = -32
+	},
+/turf/open/floor/wood/wood_mosaic,
+/area/f13/legion)
+"mY" = (
+/obj/machinery/door/unpowered/securedoor{
+	damage_deflection = 28;
+	max_integrity = 600;
+	name = "Venator's Quarters";
+	obj_integrity = 600;
+	req_access_txt = "123"
 	},
 /turf/open/floor/wood/wood_mosaic,
 /area/f13/legion)
@@ -1705,8 +1746,9 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "nt" = (
-/obj/effect/landmark/start/f13/decanvet,
-/turf/open/floor/carpet/black,
+/obj/structure/barricade/wooden,
+/obj/structure/decoration/rag,
+/turf/closed/wall/f13/wood,
 /area/f13/legion)
 "nx" = (
 /obj/structure/dresser,
@@ -2320,6 +2362,9 @@
 "sP" = (
 /turf/open/floor/wood/wood_mosaic,
 /area/f13/legion)
+"sQ" = (
+/turf/closed/mineral/random/low_chance,
+/area/f13/legion)
 "sT" = (
 /obj/structure/simple_door/repaired,
 /turf/open/floor/wood/wood_wide,
@@ -2487,6 +2532,10 @@
 	icon_state = "housewood4-broken"
 	},
 /area/f13/building)
+"uw" = (
+/obj/structure/barricade/wooden,
+/turf/closed/mineral/random/low_chance,
+/area/f13/legion)
 "uz" = (
 /obj/structure/bed/wooden,
 /turf/open/floor/wood/wood_fancy{
@@ -2551,6 +2600,11 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"uO" = (
+/obj/structure/table/wood,
+/obj/item/paper_bin,
+/turf/open/floor/wood/wood_mosaic,
+/area/f13/legion)
 "uW" = (
 /obj/structure/railing/corner,
 /turf/open/transparent/openspace,
@@ -2653,6 +2707,14 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"vy" = (
+/obj/structure/table/wood,
+/obj/item/toy/plush/slaggy{
+	desc = "A piece of slag with some googly eyes and a drawn on mouth. Someone's attached a sticker to the bottom that says 'Vidua'. What?";
+	name = "Vidua plushie"
+	},
+/turf/open/floor/wood/wood_mosaic,
+/area/f13/legion)
 "vA" = (
 /obj/effect/overlay/junk/sink{
 	dir = 4;
@@ -2884,7 +2946,13 @@
 /area/f13/building)
 "xk" = (
 /obj/structure/sign/warning/explosives,
-/turf/closed/wall/mineral/concrete/blastproof,
+/turf/closed/indestructible/riveted{
+	desc = "A heavily reinforced prison wall. You doubt anything short of a nuke would break it.";
+	icon = 'icons/turf/walls/f13superstore.dmi';
+	icon_state = "supermart";
+	icon_type_smooth = "supermart";
+	name = "Reinforced prison wall"
+	},
 /area/f13/building)
 "xn" = (
 /obj/structure/simple_door/wood,
@@ -3123,6 +3191,11 @@
 	baseturfs = /turf/open/indestructible/ground/outside/sidewalk
 	},
 /area/f13/building)
+"zB" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/landmark/start/f13/decanvet,
+/turf/open/floor/wood/wood_mosaic,
+/area/f13/legion)
 "zC" = (
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
 	baseturfs = /turf/open/indestructible/ground/outside/sidewalk;
@@ -3330,7 +3403,13 @@
 /area/f13/legion)
 "BP" = (
 /obj/machinery/vending/wallmed,
-/turf/closed/wall/mineral/concrete/blastproof,
+/turf/closed/indestructible/riveted{
+	desc = "A heavily reinforced prison wall. You doubt anything short of a nuke would break it.";
+	icon = 'icons/turf/walls/f13superstore.dmi';
+	icon_state = "supermart";
+	icon_type_smooth = "supermart";
+	name = "Reinforced prison wall"
+	},
 /area/f13/building)
 "BQ" = (
 /obj/structure/fence/wooden{
@@ -3622,6 +3701,12 @@
 	},
 /turf/open/transparent/openspace,
 /area/f13/wasteland/rocksprings)
+"Hz" = (
+/obj/effect/landmark/start/f13/explorer{
+	name = "Legion Immune"
+	},
+/turf/open/floor/f13/wood,
+/area/f13/legion)
 "HH" = (
 /obj/machinery/defibrillator_mount,
 /turf/closed/indestructible/riveted{
@@ -3662,14 +3747,7 @@
 	},
 /area/f13/building)
 "IP" = (
-/obj/machinery/door/unpowered/securedoor{
-	damage_deflection = 28;
-	max_integrity = 600;
-	name = "Venator's Quarters";
-	obj_integrity = 600;
-	req_access_txt = "123"
-	},
-/turf/open/floor/wood/wood_mosaic,
+/turf/closed/wall/f13/sunset/brick_small,
 /area/f13/legion)
 "Jd" = (
 /obj/effect/decal/remains/human,
@@ -4195,6 +4273,11 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"Nt" = (
+/obj/structure/table/wood,
+/obj/item/key/motorcycle,
+/turf/open/floor/wood/wood_mosaic,
+/area/f13/legion)
 "Nu" = (
 /obj/effect/decal/cleanable/glass,
 /obj/structure/curtain{
@@ -5344,10 +5427,6 @@
 	},
 /turf/open/floor/wood/wood_wide,
 /area/f13/building)
-"XW" = (
-/obj/structure/mirror,
-/turf/open/transparent/openspace,
-/area/f13/wasteland/rocksprings)
 "XZ" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/wood_fancy/wood_fancy_light{
@@ -5417,7 +5496,13 @@
 /area/f13/building)
 "YR" = (
 /obj/machinery/defibrillator_mount/loaded,
-/turf/closed/wall/mineral/concrete/blastproof,
+/turf/closed/indestructible/riveted{
+	desc = "A heavily reinforced prison wall. You doubt anything short of a nuke would break it.";
+	icon = 'icons/turf/walls/f13superstore.dmi';
+	icon_state = "supermart";
+	icon_type_smooth = "supermart";
+	name = "Reinforced prison wall"
+	},
 /area/f13/building)
 "YS" = (
 /obj/machinery/door/poddoor/shutters/radiation,
@@ -12554,10 +12639,10 @@ DH
 DH
 DH
 DH
-eN
+DH
 EV
 EV
-cn
+DH
 DH
 DH
 DH
@@ -12811,10 +12896,10 @@ DH
 DH
 DH
 DH
-CA
-UL
-UL
-AR
+DH
+EV
+EV
+DH
 DH
 DH
 DH
@@ -13068,10 +13153,10 @@ DH
 DH
 DH
 DH
-CA
-UL
-eh
-AR
+DH
+EV
+EV
+DH
 DH
 DH
 DH
@@ -13325,10 +13410,10 @@ DH
 DH
 DH
 DH
-CA
-UL
-UL
-AR
+DH
+EV
+EV
+DH
 DH
 DH
 DH
@@ -13582,10 +13667,9 @@ DH
 DH
 DH
 DH
-CA
-UL
-UL
-AR
+DH
+EV
+EV
 DH
 DH
 DH
@@ -13602,6 +13686,7 @@ DH
 DH
 DH
 DH
+DH
 AI
 AI
 AI
@@ -13626,7 +13711,7 @@ AI
 DH
 DH
 DH
-XW
+DH
 DH
 DH
 DH
@@ -13839,10 +13924,10 @@ DH
 DH
 DH
 DH
-CA
-UL
-UL
-AR
+eN
+EV
+EV
+cn
 DH
 DH
 DH
@@ -14331,10 +14416,10 @@ DH
 DH
 DH
 DH
-Qo
-Qf
-Qf
-Qo
+nt
+uw
+uw
+nt
 DH
 DH
 UL
@@ -14588,10 +14673,10 @@ DH
 DH
 DH
 DH
-kx
-AI
-AI
-kx
+IP
+sQ
+sQ
+IP
 DH
 DH
 UL
@@ -14845,10 +14930,10 @@ DH
 DH
 DH
 DH
-kx
-AI
-AI
-kx
+IP
+sQ
+sQ
+IP
 DH
 DH
 DH
@@ -15102,10 +15187,10 @@ DH
 DH
 DH
 DH
-kx
-AI
-AI
-kx
+IP
+sQ
+sQ
+IP
 DH
 DH
 DH
@@ -15359,10 +15444,10 @@ DH
 DH
 DH
 DH
-Qo
-Qf
-Qf
-Qo
+nt
+uw
+uw
+nt
 DH
 DH
 DH
@@ -15616,10 +15701,10 @@ DH
 DH
 DH
 DH
-kx
-AI
-AI
-kx
+IP
+sQ
+sQ
+IP
 DH
 DH
 DH
@@ -15873,10 +15958,10 @@ DH
 DH
 DH
 DH
-kx
-AI
-AI
-kx
+IP
+sQ
+sQ
+IP
 DH
 DH
 DH
@@ -16130,10 +16215,10 @@ DH
 DH
 DH
 DH
-kx
-AI
-AI
-kx
+IP
+sQ
+sQ
+IP
 DH
 DH
 DH
@@ -16387,10 +16472,10 @@ DH
 DH
 DH
 DH
-Qo
-Qf
-Qf
-Qo
+nt
+uw
+uw
+nt
 DH
 DH
 DH
@@ -17415,10 +17500,10 @@ DH
 DH
 DH
 DH
-Qo
-Qf
-Qf
-Qo
+nt
+uw
+uw
+nt
 DH
 DH
 DH
@@ -17672,10 +17757,10 @@ DH
 DH
 DH
 DH
-kx
-AI
-AI
-kx
+IP
+sQ
+sQ
+IP
 DH
 DH
 DH
@@ -17929,10 +18014,10 @@ DH
 DH
 DH
 DH
-kx
-AI
-AI
-kx
+IP
+sQ
+sQ
+IP
 DH
 DH
 DH
@@ -18186,10 +18271,10 @@ DH
 DH
 DH
 DH
-kx
-AI
-AI
-kx
+IP
+sQ
+sQ
+IP
 DH
 DH
 DH
@@ -18443,10 +18528,10 @@ DH
 DH
 DH
 DH
-Qo
-Qf
-Qf
-Qo
+nt
+uw
+uw
+nt
 DH
 DH
 DH
@@ -18700,10 +18785,10 @@ DH
 DH
 DH
 DH
-kx
-AI
-AI
-kx
+IP
+sQ
+sQ
+IP
 DH
 DH
 DH
@@ -18957,10 +19042,10 @@ DH
 DH
 DH
 DH
-kx
-AI
-AI
-kx
+IP
+sQ
+sQ
+IP
 Wi
 Wi
 ar
@@ -19214,10 +19299,10 @@ DH
 DH
 DH
 DH
-kx
-AI
-AI
-kx
+IP
+sQ
+sQ
+IP
 Wi
 op
 Uu
@@ -19471,10 +19556,10 @@ DH
 DH
 DH
 DH
-Qo
-Qf
-Qf
-Qo
+nt
+uw
+uw
+nt
 Wi
 rl
 ac
@@ -19487,7 +19572,7 @@ Va
 Va
 Va
 Wi
-RO
+mu
 sg
 ha
 sP
@@ -19728,10 +19813,10 @@ DH
 DH
 DH
 DH
-kx
-AI
-AI
-kx
+IP
+sQ
+sQ
+IP
 Wi
 xo
 BS
@@ -19985,10 +20070,10 @@ DH
 DH
 DH
 DH
-kx
-AI
-AI
-kx
+IP
+sQ
+sQ
+IP
 Wi
 KM
 BS
@@ -19997,7 +20082,7 @@ bJ
 Br
 Va
 Va
-Va
+Hz
 Va
 Va
 Wi
@@ -20242,10 +20327,10 @@ DH
 DH
 DH
 DH
-kx
-AI
-AI
-kx
+IP
+sQ
+sQ
+IP
 Wi
 ZJ
 BS
@@ -20499,10 +20584,10 @@ DH
 DH
 DH
 DH
-Qo
-Qf
-Qf
-Qo
+nt
+uw
+uw
+nt
 Wi
 qN
 ad
@@ -20511,7 +20596,7 @@ yr
 ar
 Va
 Va
-Va
+Hz
 Va
 Va
 Wi
@@ -21025,7 +21110,7 @@ Wi
 Wi
 SG
 Va
-Va
+Hz
 Va
 Ce
 Wi
@@ -21527,10 +21612,10 @@ AI
 AI
 AI
 AI
-Qo
-Qf
-Qf
-Qo
+nt
+uw
+uw
+nt
 Wi
 tH
 UI
@@ -21539,7 +21624,7 @@ uZ
 ar
 Va
 Va
-Va
+Hz
 Va
 Va
 Wi
@@ -21784,10 +21869,10 @@ AI
 AI
 AI
 AI
-kx
-AI
-AI
-kx
+IP
+sQ
+sQ
+IP
 Wi
 qN
 ZT
@@ -22041,14 +22126,14 @@ AI
 AI
 AI
 AI
-kx
-AI
-AI
-kx
+IP
+sQ
+sQ
+IP
 Wi
 dp
 BS
-nt
+BS
 oP
 Vs
 Va
@@ -22059,7 +22144,7 @@ Va
 Wi
 zF
 AZ
-RO
+mu
 nL
 Wi
 AI
@@ -22298,10 +22383,10 @@ AI
 AI
 AI
 AI
-kx
-AI
-AI
-kx
+IP
+sQ
+sQ
+IP
 Wi
 CU
 BS
@@ -22555,10 +22640,10 @@ AI
 AI
 AI
 AI
-Qo
-Qf
-Qf
-Qo
+nt
+uw
+uw
+nt
 Wi
 tH
 fJ
@@ -22812,10 +22897,10 @@ AI
 AI
 AI
 AI
-kx
-AI
-AI
-kx
+IP
+sQ
+sQ
+IP
 Wi
 hD
 oP
@@ -22823,9 +22908,9 @@ xf
 un
 Wi
 cL
-Wi
-IP
-Wi
+Va
+Va
+Va
 cL
 Wi
 rn
@@ -23069,19 +23154,19 @@ AI
 AI
 AI
 AI
-kx
-AI
-AI
-kx
+IP
+sQ
+sQ
+IP
+Wi
+Wi
+ak
 Wi
 Wi
 Wi
 Wi
 Wi
-Wi
-Wi
-Wi
-sP
+mY
 Wi
 Wi
 Wi
@@ -23326,21 +23411,21 @@ AI
 AI
 AI
 AI
-kx
-AI
-AI
-kx
-AI
-AI
-AI
-AI
-AI
-AI
+IP
+sQ
+sQ
+IP
 Wi
 zF
 sP
-RO
-RO
+mu
+vy
+Wi
+Wi
+zF
+sP
+mu
+Nt
 Wi
 AI
 AI
@@ -23583,21 +23668,21 @@ AI
 AI
 AI
 AI
-Qo
-Qf
-Qf
-Qo
-AI
-AI
-AI
-AI
-AI
-AI
+nt
+uw
+uw
+nt
 Wi
 RM
 MT
 kT
-RO
+uO
+Wi
+Wi
+RM
+MT
+kT
+uO
 Wi
 AI
 AI
@@ -23840,16 +23925,16 @@ AI
 AI
 AI
 AI
-kx
-AI
-AI
-kx
-AI
-AI
-AI
-AI
-AI
-AI
+IP
+sQ
+sQ
+IP
+Wi
+rn
+MT
+MT
+zB
+Wi
 Wi
 rn
 MT
@@ -24097,16 +24182,16 @@ AI
 AI
 AI
 AI
-kx
-AI
-AI
-kx
-AI
-AI
-AI
-AI
-AI
-AI
+IP
+sQ
+sQ
+IP
+Wi
+sP
+bW
+nL
+xc
+Wi
 Wi
 sP
 bW
@@ -24354,16 +24439,16 @@ AI
 AI
 AI
 AI
-kx
-AI
-AI
-kx
-AI
-AI
-AI
-AI
-AI
-AI
+IP
+sQ
+sQ
+IP
+Wi
+Wi
+Wi
+Wi
+Wi
+Wi
 Wi
 Wi
 Wi
@@ -24611,10 +24696,10 @@ AI
 AI
 AI
 AI
-Qo
-Qf
-Qf
-Qo
+nt
+uw
+uw
+nt
 AI
 AI
 AI
@@ -61697,7 +61782,7 @@ PP
 oI
 oI
 PP
-dw
+PP
 PP
 PP
 PP
@@ -62213,7 +62298,7 @@ oI
 PP
 PP
 PP
-sc
+dw
 oI
 Qs
 oI
@@ -62470,9 +62555,9 @@ oI
 PP
 Qm
 PP
-dw
-dw
-dw
+PP
+PP
+PP
 oI
 oI
 hK
@@ -63767,7 +63852,7 @@ PP
 vk
 zC
 zC
-zC
+iw
 PP
 PP
 DH
@@ -65807,11 +65892,11 @@ OI
 OI
 OI
 PP
-dw
-dw
-dw
-dw
-dw
+PP
+PP
+PP
+PP
+PP
 hS
 es
 ng
@@ -66058,20 +66143,20 @@ nq
 Yg
 oI
 Rz
-dw
-dw
-dw
-dw
-dw
+PP
+PP
+PP
+PP
+PP
 PP
 wH
 wT
 CQ
 bq
-dw
-dw
+PP
+PP
 jf
-dw
+PP
 YR
 PP
 eU
@@ -66315,7 +66400,7 @@ oI
 jx
 oI
 oI
-dw
+PP
 UG
 NH
 YZ
@@ -67086,7 +67171,7 @@ Vl
 dm
 Dn
 dm
-dw
+PP
 kQ
 ce
 iu
@@ -67113,7 +67198,7 @@ PP
 OI
 OI
 OI
-mM
+OI
 OI
 zC
 zC
@@ -67343,11 +67428,11 @@ OI
 dK
 OI
 ge
-dw
-dw
-dw
-dw
-dw
+PP
+PP
+PP
+PP
+PP
 PP
 PP
 PP

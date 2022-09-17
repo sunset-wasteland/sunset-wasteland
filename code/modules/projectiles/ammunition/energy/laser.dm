@@ -138,6 +138,11 @@ also: most hitscan weapons have more charge than their normal projectile counter
 	e_cost = 100 //20 shots
 	fire_sound = 'sound/f13weapons/aep7fire.ogg'
 
+/obj/item/ammo_casing/energy/laser/pistol/recharger/hitscan/walker
+	projectile_type = /obj/item/projectile/beam/laser/recharger/hitscan/walker
+	e_cost = 125 //16 shots
+	fire_sound = 'sound/f13weapons/aep7fire.ogg'
+
 /obj/item/ammo_casing/energy/laser/stun  //compliance regulator
 	projectile_type = /obj/item/projectile/beam/laser/pistol/hitscan/stun
 	e_cost = 100
@@ -246,7 +251,7 @@ also: most hitscan weapons have more charge than their normal projectile counter
 	projectile_type = /obj/item/projectile/beam/laser/musket
 	e_cost = 250
 	fire_sound = 'sound/weapons/laser3.ogg'
-	
+
 //autolasers
 
 /obj/item/ammo_casing/energy/laser/autolaser

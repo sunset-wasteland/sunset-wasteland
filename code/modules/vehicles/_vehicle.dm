@@ -120,6 +120,8 @@
 /obj/vehicle/proc/after_remove_occupant(mob/M)
 
 /obj/vehicle/relaymove(mob/user, direction)
+	if(!engine_on)
+		return
 	if(is_driver(user))
 		return driver_move(user, direction)
 	return FALSE
@@ -205,7 +207,7 @@
 
 	stop_engine()
 
-/obj/vehicle/proc/stop_engine(mob/M)
+/obj/vehicle/proc/stop_engine(mob/living/M)
 	src.verbs += /obj/vehicle/proc/StartEngine
 	src.verbs -= /obj/vehicle/proc/StopEngine
 
@@ -218,19 +220,20 @@
 
 /obj/vehicle/proc/start_engine(mob/living/M)
 	GetComponent(/datum/component/riding)
+/*
 	if(!M.buckled)
 		usr.visible_message("<span class = 'notice'>Sit on [src] to do this.</span>")
 		return
-
+*/
 	if(!inserted_key)
-		usr.visible_message("<span class = 'notice'>There is no key.</span>")
+		M.visible_message(span_notice("There is no key."))
 		return
 
 	src.verbs += /obj/vehicle/proc/StopEngine
 	src.verbs -= /obj/vehicle/proc/StartEngine
 
-	if(usr)
-		usr.visible_message("[usr] start engine of [src].", "You start engine.")
+	if(M)
+		M.visible_message("[M] starts the engine of [src].", "You start the engine.")
 
 	engine_on = TRUE
 	if(engine_on_sound)

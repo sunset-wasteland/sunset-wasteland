@@ -144,6 +144,7 @@
 	head = /obj/item/clothing/head/helmet/f13/power_armor/x02helmet
 	suit = /obj/item/clothing/suit/armor/f13/power_armor/x02
 	accessory = /obj/item/clothing/accessory/enclave/master_sergeant
+	ears = /obj/item/radio/headset/headset_enclave/command
 
 	backpack_contents = list(
 		/obj/item/reagent_containers/hypospray/medipen/stimpak = 2,
@@ -155,7 +156,8 @@
 		/obj/item/storage/pill_bottle/chem_tin/mentats = 1,
 		/obj/item/reagent_containers/hypospray/medipen/psycho = 1,
 		/obj/item/reagent_containers/hypospray/medipen/medx = 1,
-		/obj/item/card/id/syndicate/anyone =1
+		/obj/item/megaphone = 1,
+		/obj/item/card/id/syndicate/anyone = 1
 		)
 
 /datum/outfit/loadout/gysgt_ballistics

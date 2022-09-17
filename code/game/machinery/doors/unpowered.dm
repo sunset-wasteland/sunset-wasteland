@@ -60,6 +60,10 @@
 	name = "khan door"
 	req_access_txt = "125"
 
+//bdoor
+/obj/machinery/door/unpowered/securedoor/sheriff_door
+	name = "secure door"
+	req_access_txt = "62"
 
 // ------------------------------------
 // NCR SECURE REINFORCED DOOR - tough airlock replacement

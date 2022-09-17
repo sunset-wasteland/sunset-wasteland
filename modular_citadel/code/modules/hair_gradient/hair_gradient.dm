@@ -67,9 +67,6 @@ GLOBAL_LIST_INIT(hair_gradients, list(
 		return . // There's an error!!
 
 	var/savefile/S = new /savefile(path)
-	S.cd = "/"
-	slot = sanitize_integer(slot, 1, max_save_slots, initial(default_slot))
-
 	S.cd = "/character[slot]"
 
 	S["gradient_color"]		>> features_override["grad_color"]

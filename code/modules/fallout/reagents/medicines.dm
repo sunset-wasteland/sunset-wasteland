@@ -190,6 +190,7 @@
 		M.adjustOxyLoss(5*REAGENTS_EFFECT_MULTIPLIER)
 	..()
 	. = TRUE
+
 /datum/reagent/medicine/berserker_powder/on_mob_add(mob/living/carbon/human/M)
 	..()
 	if(isliving(M))
@@ -226,7 +227,7 @@
 			M.vomit(30, 1, 1, 5, 0, 0, 0, 60)
 			M.Jitter(1000)
 			M.playsound_local(M, 'sound/effects/singlebeat.ogg', 100, 0)
-			M.set_heartattack(TRUE)
+//			M.set_heartattack(TRUE)
 			M.visible_message("<span class='userdanger'>[M] grabs at their throat and vomits violently onto the ground, screaming as they have a seizure! They need medical attention immediately!</span>")
 			to_chat(M, "<span class='userdanger'>The sky splits in half, rays of golden light piercing down towards you. Mars reaches out of the sky above, the holy aura causing you to fall to your knees. He beckoning you to heaven, and you take his hand. Your whole body begins to seize up as you go in a glorious rapture. </span>")
 
@@ -417,7 +418,7 @@
 			M.adjustOrganLoss(ORGAN_SLOT_EYES, 3)
 			M.Unconscious(400)
 			M.Jitter(1000)
-			M.set_heartattack(TRUE)
+//			M.set_heartattack(TRUE)
 			M.visible_message("<span class='userdanger'>[M] clutches at their chest as if their heart stopped!</span>")
 			to_chat(M, "<span class='danger'>Your vision goes black and your heart stops beating as the amount of drugs in your system shut down your organs one by one. Say hello to Elvis in the afterlife. </span>")
 
@@ -681,4 +682,59 @@
 
 /datum/reagent/medicine/gaia/overdose_start(mob/living/M)
 	metabolization_rate = 15 * REAGENTS_METABOLISM
+	..()
+
+// ---------------------------
+// HYDRA - Basically Determination chem but made by Legionnaires.
+
+/datum/reagent/medicine/hydra
+	name = "Hydra"
+	description = "Hydra is a drug developed from antivenom. Due to the Legion's disapproval of using modern medicine, some Legionaries attempted to develop a different means to help them heal damaged limbs."
+	reagent_state = LIQUID
+	color = "#6D6374"
+	metabolization_rate = 0.5 * REAGENTS_METABOLISM
+	overdose_threshold = 16//No real downsides with use, aside from popping it twice quickly.
+	addiction_threshold = 14//No real downsides with use, aside from popping it twice quickly.
+	self_consuming = TRUE//So you can process without a liver. For future disembowelment reworks.
+
+/datum/reagent/medicine/hydra/on_mob_life(mob/living/carbon/M)
+	for(var/thing in M.all_wounds)
+		var/datum/wound/W = thing
+		var/obj/item/bodypart/wounded_part = W.limb
+		if(wounded_part)
+			wounded_part.heal_damage(125, 125)//Does this even work? AAAAAAAAAAAAAAAAA
+	..()
+
+/datum/reagent/medicine/hydra/overdose_process(mob/living/M)
+	if(prob(33))
+		M.drop_all_held_items()
+		M.Dizzy(2)
+		M.Jitter(2)
+	..()
+
+/datum/reagent/medicine/hydra/addiction_act_stage1(mob/living/M)
+	if(prob(33))
+		M.drop_all_held_items()
+		M.Jitter(2)
+	..()
+
+/datum/reagent/medicine/hydra/addiction_act_stage2(mob/living/M)
+	if(prob(33))
+		M.drop_all_held_items()
+		M.Dizzy(3)
+		M.Jitter(3)
+	..()
+
+/datum/reagent/medicine/hydra/addiction_act_stage3(mob/living/M)
+	if(prob(33))
+		M.drop_all_held_items()
+		M.Dizzy(4)
+		M.Jitter(4)
+	..()
+
+/datum/reagent/medicine/hydra/addiction_act_stage4(mob/living/M)
+	if(prob(33))
+		M.drop_all_held_items()
+		M.Dizzy(5)
+		M.Jitter(5)
 	..()

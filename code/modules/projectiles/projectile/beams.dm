@@ -389,6 +389,15 @@
 	impact_type = /obj/effect/projectile/impact/pulse
 	light_color = LIGHT_COLOR_BLUE
 
+/obj/item/projectile/beam/laser/recharger/hitscan/walker //hitscan walker recharger pistol
+	name = "recharger beam"
+	damage = 25
+	hitscan = TRUE
+	armour_penetration = 0.06 //slightly worse than the AEP7
+	tracer_type = /obj/effect/projectile/tracer/pulse
+	muzzle_type = /obj/effect/projectile/muzzle/pulse
+	impact_type = /obj/effect/projectile/impact/pulse
+	light_color = LIGHT_COLOR_BLUE
 
 /obj/item/projectile/beam/laser/ultra_pistol //unused
 	name = "laser beam"
@@ -566,42 +575,15 @@
 	name = "laser beam"
 	damage = 38
 	armour_penetration = 0.6
-	icon_state = "omnilaser"
-	impact_effect_type = /obj/effect/temp_visual/impact_effect/blue_laser
-	light_color = LIGHT_COLOR_BLUE
+	icon_state = "xray"
+	impact_effect_type = /obj/effect/temp_visual/impact_effect/green_laser
+	light_color = LIGHT_COLOR_GREEN
 
 /obj/item/projectile/beam/laser/aer14/hitscan
 	damage = 36
 	wound_bonus = 25
 	armour_penetration = 0.2
-	tracer_type = /obj/effect/projectile/tracer/pulse
-	muzzle_type = /obj/effect/projectile/muzzle/pulse
-	impact_type = /obj/effect/projectile/impact/pulse
 	hitscan = TRUE
-	hitscan_light_intensity = 3
-	hitscan_light_range = 0.75
-	hitscan_light_color_override = LIGHT_COLOR_BLUE
-	muzzle_flash_intensity = 6
-	muzzle_flash_range = 2
-	muzzle_flash_color_override = LIGHT_COLOR_BLUE
-	impact_light_intensity = 7
-	impact_light_range = 2.5
-	impact_light_color_override = LIGHT_COLOR_BLUE
-
-/obj/item/projectile/beam/laser/aer12 //AER12
-	name = "laser beam"
-	damage = 34
-	armour_penetration = 0.55
-	icon_state = "xray"
-	impact_effect_type = /obj/effect/temp_visual/impact_effect/green_laser
-	light_color = LIGHT_COLOR_GREEN
-
-/obj/item/projectile/beam/laser/aer12/hitscan
-	name = "laser beam"
-	damage = 34
-	hitscan = TRUE
-	wound_bonus = 20
-	armour_penetration = 0.15
 	tracer_type = /obj/effect/projectile/tracer/xray
 	muzzle_type = /obj/effect/projectile/muzzle/xray
 	impact_type = /obj/effect/projectile/impact/xray
@@ -614,6 +596,33 @@
 	impact_light_intensity = 7
 	impact_light_range = 2.5
 	impact_light_color_override = COLOR_LIME
+
+/obj/item/projectile/beam/laser/aer12 //AER12
+	name = "laser beam"
+	damage = 34
+	armour_penetration = 0.55
+	icon_state = "omnilaser"
+	impact_effect_type = /obj/effect/temp_visual/impact_effect/blue_laser
+	light_color = LIGHT_COLOR_BLUE
+
+/obj/item/projectile/beam/laser/aer12/hitscan
+	name = "laser beam"
+	damage = 34
+	wound_bonus = 20
+	armour_penetration = 0.15
+	hitscan = TRUE
+	tracer_type = /obj/effect/projectile/tracer/pulse
+	muzzle_type = /obj/effect/projectile/muzzle/pulse
+	impact_type = /obj/effect/projectile/impact/pulse
+	hitscan_light_intensity = 3
+	hitscan_light_range = 0.75
+	hitscan_light_color_override = LIGHT_COLOR_BLUE
+	muzzle_flash_intensity = 6
+	muzzle_flash_range = 2
+	muzzle_flash_color_override = LIGHT_COLOR_BLUE
+	impact_light_intensity = 7
+	impact_light_range = 2.5
+	impact_light_color_override = LIGHT_COLOR_BLUE
 
 /obj/item/projectile/beam/laser/wattz2k
 	name = "laser bolt"

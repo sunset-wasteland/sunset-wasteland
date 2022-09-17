@@ -243,8 +243,8 @@
 	STR.max_volume = STORAGE_VOLUME_PILL_BOTTLE
 	STR.allow_quick_gather = TRUE
 	STR.click_gather = TRUE
-	STR.can_hold = typecacheof(list(/obj/item/reagent_containers/pill, /obj/item/dice))
-	STR.cant_hold = typecacheof(list(/obj/item/reagent_containers/pill/patch/jet, /obj/item/reagent_containers/pill/patch/turbo, /obj/item/reagent_containers/pill/patch/healingpowder, /obj/item/reagent_containers/pill/patch/healpoultice))
+	CANHOLD_STATIC(STR, typecacheof(list(/obj/item/reagent_containers/pill, /obj/item/dice)))
+	CANTHOLD_STATIC(STR, typecacheof(list(/obj/item/reagent_containers/pill/patch/jet, /obj/item/reagent_containers/pill/patch/turbo, /obj/item/reagent_containers/pill/patch/healingpowder, /obj/item/reagent_containers/pill/patch/healpoultice)))
 
 /obj/item/storage/pill_bottle/AltClick(mob/living/carbon/user)
 	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
@@ -419,7 +419,7 @@
 	STR.max_items = 16
 	STR.max_w_class = WEIGHT_CLASS_BULKY
 	STR.max_combined_w_class = 20
-	STR.can_hold = typecacheof(list(
+	CANHOLD_STATIC(STR, typecacheof(list(
 	/obj/item/storage/pill_bottle,
 	/obj/item/reagent_containers/hypospray,
 	/obj/item/pinpointer/crew,
@@ -449,7 +449,7 @@
 	/obj/item/stack/sheet/mineral/silver,
 	/obj/item/organ_storage,
 	/obj/item/reagent_containers/chem_pack
-	))
+	)))
 
 //hijacking the minature first aids for hypospray boxes. <3
 /obj/item/storage/hypospraykit
@@ -469,9 +469,9 @@
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 12
-	STR.can_hold = typecacheof(list(
+	CANHOLD_STATIC(STR, typecacheof(list(
 	/obj/item/hypospray/mkii,
-	/obj/item/reagent_containers/glass/bottle/vial))
+	/obj/item/reagent_containers/glass/bottle/vial)))
 
 /obj/item/storage/hypospraykit/regular
 	icon_state = "firstaid-mini"
@@ -581,7 +581,7 @@
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.allow_quick_gather = TRUE
 	STR.click_gather = TRUE
-	STR.can_hold = typecacheof(list(/obj/item/reagent_containers/pill, /obj/item/reagent_containers/syringe, /obj/item/dice))
+	CANHOLD_STATIC(STR, typecacheof(list(/obj/item/reagent_containers/pill, /obj/item/reagent_containers/syringe, /obj/item/dice)))
 
 // ---------------------------------------------
 // MENTAT TIN

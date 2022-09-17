@@ -57,7 +57,7 @@
 				else if(W && W.w_class >= 3) //Otherwise they can only see large or normal items from a distance...
 					M.show_message("<span class='notice'>[user] puts [W] in the hole.</span>", 1)
 
-			pitcontents += W
+			LAZYADD(pitcontents, W)
 			user.transferItemToLoc(W, mypit)
 			storedindex = storedindex+1
 
@@ -75,10 +75,10 @@
 			M.show_message("<span class='notice'>There is nothing in the pit!</span>", 1)
 			return
 		else
-			var/obj/item/I = pitcontents[storedindex]
-			storedindex = storedindex - 1
-			I.loc = M.loc
-			pitcontents-=I
+			var/obj/item/I = LAZYACCESS(pitcontents, storedindex)
+			LAZYREMOVE(pitcontents, I)
+			storedindex--
+			I.forceMove(get_turf(M))
 
 /turf/open/indestructible/ground/outside/desert/proc/finishBury(mob/user)
 	if(!(gravebody in src.loc))
@@ -217,7 +217,7 @@
 	mypit.update_icon()
 	mypit.invisibility = 0
 	storedindex = 0
-	pitcontents = list()
+	LAZYINITLIST(pitcontents)
 	dug = TRUE
 	slowdown = 0
 	if (gravebody)

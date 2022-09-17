@@ -1022,7 +1022,7 @@
 	force = 20
 	slowdown = 1.32
 	autofire_shot_delay = 2.7
-	extra_damage = 28
+	extra_damage = 30
 	extra_penetration = 0.1
 	spread = 8
 	recoil = 0.35

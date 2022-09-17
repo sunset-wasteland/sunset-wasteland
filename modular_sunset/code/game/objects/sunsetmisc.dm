@@ -155,4 +155,17 @@ Nowhere else to really put this. Pulled from what I had done on Hyper. - Carl
 /obj/structure/fluff/destroyed_nuclear_reactor/Initialize()
 	. = ..()
 	set_light(3)
-	AddComponent(/datum/component/radioactive, 15000 , src)
+//	AddComponent(/datum/component/radioactive, 15000 , src)
+	START_PROCESSING(SSradiation,src)
+
+/obj/structure/fluff/destroyed_nuclear_reactor/Destroy()
+	STOP_PROCESSING(SSradiation,src)
+	..()
+
+/obj/structure/fluff/destroyed_nuclear_reactor/process()
+	if(QDELETED(src))
+		return PROCESS_KILL
+
+	for(var/mob/living/carbon/human/victim in view(src,5))
+		if(istype(victim) && victim.stat != DEAD)
+			victim.rad_act(1500)//WHY ARE YOU STANDING NEAR IT?

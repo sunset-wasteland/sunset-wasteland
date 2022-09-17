@@ -209,7 +209,7 @@
 	fire_delay = 0
 	slowdown = 0.2
 	w_class = WEIGHT_CLASS_NORMAL
-	weapon_weight = WEAPON_MEDIUM
+	weapon_weight = WEAPON_LIGHT //Can dual wield, which makes up for the meh damage. Especially so with the Magneto.
 	slot_flags = ITEM_SLOT_BELT
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/pistol/wattz/hitscan)
 	cell_type = /obj/item/stock_parts/cell/ammo/ec

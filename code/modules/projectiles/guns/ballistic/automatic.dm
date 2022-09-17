@@ -1021,7 +1021,7 @@
 	desc = "A special modified heavy battle rifle built on the BAR, featuring an added pistol grip and a Cutts recoil compensator."
 	force = 20
 	slowdown = 1.32
-	autofire_shot_delay = 2.7
+	autofire_shot_delay = 3.3
 	extra_damage = 30
 	extra_penetration = 0.1
 	spread = 8

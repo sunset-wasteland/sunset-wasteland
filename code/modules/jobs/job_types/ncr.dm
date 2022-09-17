@@ -752,7 +752,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	flag = F13HEAVYTROOPER
 	total_positions = 1
 	spawn_positions = 1
-	description = "You are the most elite of the enlisted, sergeant in rank but forgoing regular command roles to lead in battle only. You are expected to be on the frontlines of every engagement, and to provide firing support for the rank and file. Your power armor lacks the protection the full working sets have, but you have trained with it and can use it in battle well. General Oliver praises you and your other Heavy Troopers, prove to him you're no exception to the rule."
+	description = "You are the most elite of the enlisted, sergeant in rank but forgoing regular command roles to lead in battle only. You are expected to be on the frontlines of every engagement, and to provide firing support for the rank and file. Your power armor lacks the protection the full working sets have, but you have trained with it and can use it in battle well. You're the NCR's heaviest hitter in combat, don't be the exception."
 	supervisors = "Lieutenant and Above"
 	access = list(ACCESS_NCR, ACCESS_NCR_ARMORY, ACCESS_NCR_COMMAND)
 	selection_color = "#fff5cc"
@@ -790,18 +790,19 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 		)
 
 /datum/outfit/loadout/shockht
-	name = "Shock Heavy Trooper"
+	name = "Infantry Support Heavy Trooper"
 	backpack_contents = list(
-		/obj/item/minigunpackbal5mm = 1,
-		/obj/item/melee/onehanded/knife/bowie = 1,
+		/obj/item/gun/ballistic/automatic/bar/glowie = 1,
+		/obj/item/ammo_box/magazine/m762/ext = 2,
+		/obj/item/melee/onehanded/knife/trench = 1,
 		)
 
 /datum/outfit/loadout/supportht
-	name = "Support Heavy Trooper"
+	name = "Heavy Trooper Frontliner"
 	backpack_contents = list(
 		/obj/item/gun/ballistic/automatic/r84 = 1,
-		/obj/item/ammo_box/magazine/lmg = 1,
-		/obj/item/melee/onehanded/knife/bayonet = 1,
+		/obj/item/ammo_box/magazine/lmg = 2,
+		/obj/item/melee/onehanded/knife/bowie = 1,
 		)
 
 

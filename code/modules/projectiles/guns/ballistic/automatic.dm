@@ -1014,7 +1014,18 @@
 	zoom_out_amt = 13
 	fire_delay = 0.5
 	can_scope = FALSE
-
+	
+//HT battle rifle
+/obj/item/gun/ballistic/automatic/bar/glowie
+	name = "Colt Monitor"
+	desc = "A special modified heavy battle rifle built on the BAR, featuring an added pistol grip and a Cutts recoil compensator."
+	force = 20
+	slowdown = 1.32
+	autofire_shot_delay = 2.7
+	extra_damage = 28
+	extra_penetration = 0.1
+	spread = 8
+	recoil = 0.35
 
 //SKS				Keywords: LEGION, .308, Semi-auto, 10 rounds internal, Penetration +0.1
 /obj/item/gun/ballistic/automatic/m1garand/sks

@@ -113,7 +113,7 @@
 	desc = "An old barrel. Oddly enough, it stands undamaged after all this time.<br>You wonder if there is anything left in it."
 	icon_state = "one_b"
 	tank_volume = 500
-	reagent_id = /datum/reagent/water
+	reagent_id = /datum/reagent/water/dwater
 //	self_weight = 200
 
 /obj/structure/reagent_dispensers/barrel/two
@@ -121,7 +121,7 @@
 	desc = "A couple of old barrels. Oddly enough, they stand undamaged after all this time.<br>You wonder if there is anything left in these."
 	icon_state = "two_b"
 	tank_volume = 1000
-	reagent_id = /datum/reagent/lube
+	reagent_id = /datum/reagent/water/dwater
 	anchored = 1
 //	self_weight = 400
 
@@ -130,7 +130,7 @@
 	desc = "Ancient containers with something inside of them. Or are they empty? Actually, how would you know that..."
 	icon_state = "three_b"
 	tank_volume = 1500
-	reagent_id = /datum/reagent/water
+	reagent_id = /datum/reagent/water/dwater
 	anchored = 1
 //	self_weight = 600
 
@@ -138,7 +138,7 @@
 	name = "four old barrels"
 	desc = "Ancient containers with something inside of them. Or are they empty? Actually, that's a lot of barrels standing in a single spot..."
 	icon_state = "four_b"
-	tank_volume = 800
-	reagent_id = /datum/reagent/radium
+	tank_volume = 2000
+	reagent_id = /datum/reagent/water/dwater
 	anchored = 1
 //	self_weight = 60

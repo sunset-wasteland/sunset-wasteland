@@ -1,7 +1,7 @@
 /turf/open/water
 	gender = PLURAL
-	name = "water"
-	desc = "Shallow water."
+	name = "spring water"
+	desc = "Shallow, almost clear water."
 	icon = 'icons/turf/floors.dmi'
 	icon_state = "riverwater_motion"
 	baseturfs = /turf/open/indestructible/ground/inside/mountain
@@ -48,7 +48,6 @@
 	if(istype(AM, /mob/living))
 		var/mob/living/L = AM
 		L.update_water()
-		L.apply_effect(2, EFFECT_IRRADIATE, 0)
 		if(L.check_submerged() <= 0)
 			return
 		if(!istype(oldloc, /turf/open/water))
@@ -60,7 +59,6 @@
 	if(istype(AM, /mob/living))
 		var/mob/living/L = AM
 		L.update_water()
-		L.apply_effect(2, EFFECT_IRRADIATE, 0)
 		if(L.check_submerged() <= 0)
 			return
 		if(!istype(newloc, /turf/open/water))

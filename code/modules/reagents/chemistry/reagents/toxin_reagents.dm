@@ -10,7 +10,7 @@
 	value = REAGENT_VALUE_COMMON //Encouraging people to mix toxins for reasons beyond harming each other or mixing reagents such as pen acid.
 	var/toxpwr = 1.5
 	var/toxin_hurting = 0
-	var/toxin_lover_healing = -1
+	var/toxin_lover_healing = -2
 	ghoulfriendly = TRUE
 
 // Are you a bad enough dude to poison your own plants?

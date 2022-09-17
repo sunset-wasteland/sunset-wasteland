@@ -16,7 +16,7 @@
 	speed = -1
 	health = 600
 	obj_damage = 200
-	armour_penetration = 0.3
+	armour_penetration = 0.8
 	melee_damage_lower = 40
 	melee_damage_upper = 50
 	footstep_type = FOOTSTEP_MOB_HEAVY
@@ -32,10 +32,12 @@
 	speak_chance = 10
 	taunt_chance = 25
 
+	stat_attack = UNCONSCIOUS
+
 	see_in_dark = 8
 	decompose = FALSE
 	wound_bonus = 0 //This might be a TERRIBLE idea
-	bare_wound_bonus = 0 
+	bare_wound_bonus = 0
 	sharpness = SHARP_EDGED
 	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/deathclaw = 4,
 							/obj/item/stack/sheet/animalhide/deathclaw = 2,
@@ -53,6 +55,29 @@
 	aggrosound = list('sound/f13npc/deathclaw/aggro1.ogg', 'sound/f13npc/deathclaw/aggro2.ogg', )
 	idlesound = list('sound/f13npc/deathclaw/idle.ogg',)
 	death_sound = 'sound/f13npc/deathclaw/death.ogg'
+
+
+
+/mob/living/simple_animal/hostile/deathclaw/AttackingTarget()
+	var/mob/living/M = target
+	if(!ishuman(M) || M.health > 20)
+		..()
+		return
+
+	if(get_dist(src, M) > 0)
+		a_intent = INTENT_GRAB
+		grab_state = GRAB_NECK
+
+		start_pulling(M, 1)
+		M.grabbedby(src)
+		M.drop_all_held_items()
+		M.stop_pulling()
+
+	if(!ishuman(M) || M.health <= 0)
+		src.drop_all_held_items()
+		src.stop_pulling()
+
+
 
 /mob/living/simple_animal/hostile/deathclaw/playable
 	emote_taunt_sound = null
@@ -73,7 +98,7 @@
 	stat_attack = UNCONSCIOUS
 	melee_damage_lower = 50
 	melee_damage_upper = 55
-	armour_penetration = 0.35
+	armour_penetration = 0.9
 	footstep_type = FOOTSTEP_MOB_HEAVY
 	color = rgb(95,104,94)
 	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/deathclaw = 6,
@@ -89,7 +114,7 @@
 	stat_attack = UNCONSCIOUS
 	melee_damage_lower = 55
 	melee_damage_upper = 55
-	armour_penetration = 0.55
+	armour_penetration = 1
 	footstep_type = FOOTSTEP_MOB_HEAVY
 	guaranteed_butcher_results = list(/obj/item/stack/sheet/animalhide/deathclaw = 6)
 
@@ -110,7 +135,7 @@
 	stat_attack = UNCONSCIOUS
 	melee_damage_lower = 70
 	melee_damage_upper = 80
-	armour_penetration = 0.7
+	armour_penetration = 1
 	footstep_type = FOOTSTEP_MOB_HEAVY
 
 

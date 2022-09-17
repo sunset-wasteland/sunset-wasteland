@@ -473,7 +473,10 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "dw" = (
-/turf/closed/wall/mineral/concrete/blastproof,
+/obj/structure/bed/mattress/pregame,
+/obj/structure/camera_assembly,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/energy/midhigh,
+/turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/building)
 "dx" = (
 /obj/structure/rack/shelf_metal,
@@ -1009,7 +1012,13 @@
 /area/f13/building)
 "hN" = (
 /obj/structure/sign/departments/chemistry,
-/turf/closed/wall/mineral/concrete/blastproof,
+/turf/closed/indestructible/riveted{
+	desc = "A heavily reinforced prison wall. You doubt anything short of a nuke would break it.";
+	icon = 'icons/turf/walls/f13superstore.dmi';
+	icon_state = "supermart";
+	icon_type_smooth = "supermart";
+	name = "Reinforced prison wall"
+	},
 /area/f13/building)
 "hP" = (
 /obj/structure/railing/corner{
@@ -1092,6 +1101,17 @@
 "iv" = (
 /obj/structure/simple_door/wood,
 /turf/open/floor/f13/wood,
+/area/f13/building)
+"iw" = (
+/obj/machinery/button/door{
+	id = 56545;
+	name = "Restricted Area Lockdown";
+	pixel_y = -32
+	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
+	baseturfs = /turf/open/indestructible/ground/outside/sidewalk;
+	name = "metal plating"
+	},
 /area/f13/building)
 "ix" = (
 /obj/machinery/light/fo13colored/Red{
@@ -1572,6 +1592,11 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/wood_common/wood_common_light,
 /area/f13/building)
+"mu" = (
+/obj/structure/table/wood,
+/obj/effect/spawner/lootdrop/f13/traitbooks/low,
+/turf/open/floor/wood/wood_mosaic,
+/area/f13/legion)
 "mv" = (
 /obj/structure/fluff/railing/corner,
 /turf/open/transparent/openspace,
@@ -2575,6 +2600,11 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"uO" = (
+/obj/structure/table/wood,
+/obj/item/paper_bin,
+/turf/open/floor/wood/wood_mosaic,
+/area/f13/legion)
 "uW" = (
 /obj/structure/railing/corner,
 /turf/open/transparent/openspace,
@@ -2677,6 +2707,14 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"vy" = (
+/obj/structure/table/wood,
+/obj/item/toy/plush/slaggy{
+	desc = "A piece of slag with some googly eyes and a drawn on mouth. Someone's attached a sticker to the bottom that says 'Vidua'. What?";
+	name = "Vidua plushie"
+	},
+/turf/open/floor/wood/wood_mosaic,
+/area/f13/legion)
 "vA" = (
 /obj/effect/overlay/junk/sink{
 	dir = 4;
@@ -2908,7 +2946,13 @@
 /area/f13/building)
 "xk" = (
 /obj/structure/sign/warning/explosives,
-/turf/closed/wall/mineral/concrete/blastproof,
+/turf/closed/indestructible/riveted{
+	desc = "A heavily reinforced prison wall. You doubt anything short of a nuke would break it.";
+	icon = 'icons/turf/walls/f13superstore.dmi';
+	icon_state = "supermart";
+	icon_type_smooth = "supermart";
+	name = "Reinforced prison wall"
+	},
 /area/f13/building)
 "xn" = (
 /obj/structure/simple_door/wood,
@@ -3359,7 +3403,13 @@
 /area/f13/legion)
 "BP" = (
 /obj/machinery/vending/wallmed,
-/turf/closed/wall/mineral/concrete/blastproof,
+/turf/closed/indestructible/riveted{
+	desc = "A heavily reinforced prison wall. You doubt anything short of a nuke would break it.";
+	icon = 'icons/turf/walls/f13superstore.dmi';
+	icon_state = "supermart";
+	icon_type_smooth = "supermart";
+	name = "Reinforced prison wall"
+	},
 /area/f13/building)
 "BQ" = (
 /obj/structure/fence/wooden{
@@ -4223,6 +4273,11 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"Nt" = (
+/obj/structure/table/wood,
+/obj/item/key/motorcycle,
+/turf/open/floor/wood/wood_mosaic,
+/area/f13/legion)
 "Nu" = (
 /obj/effect/decal/cleanable/glass,
 /obj/structure/curtain{
@@ -5372,10 +5427,6 @@
 	},
 /turf/open/floor/wood/wood_wide,
 /area/f13/building)
-"XW" = (
-/obj/structure/mirror,
-/turf/open/transparent/openspace,
-/area/f13/wasteland/rocksprings)
 "XZ" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/wood_fancy/wood_fancy_light{
@@ -5445,7 +5496,13 @@
 /area/f13/building)
 "YR" = (
 /obj/machinery/defibrillator_mount/loaded,
-/turf/closed/wall/mineral/concrete/blastproof,
+/turf/closed/indestructible/riveted{
+	desc = "A heavily reinforced prison wall. You doubt anything short of a nuke would break it.";
+	icon = 'icons/turf/walls/f13superstore.dmi';
+	icon_state = "supermart";
+	icon_type_smooth = "supermart";
+	name = "Reinforced prison wall"
+	},
 /area/f13/building)
 "YS" = (
 /obj/machinery/door/poddoor/shutters/radiation,
@@ -13654,7 +13711,7 @@ AI
 DH
 DH
 DH
-XW
+DH
 DH
 DH
 DH
@@ -19515,7 +19572,7 @@ Va
 Va
 Va
 Wi
-RO
+mu
 sg
 ha
 sP
@@ -22087,7 +22144,7 @@ Va
 Wi
 zF
 AZ
-RO
+mu
 nL
 Wi
 AI
@@ -23361,14 +23418,14 @@ IP
 Wi
 zF
 sP
-RO
-RO
+mu
+vy
 Wi
 Wi
 zF
 sP
-RO
-RO
+mu
+Nt
 Wi
 AI
 AI
@@ -23619,13 +23676,13 @@ Wi
 RM
 MT
 kT
-RO
+uO
 Wi
 Wi
 RM
 MT
 kT
-RO
+uO
 Wi
 AI
 AI
@@ -61725,7 +61782,7 @@ PP
 oI
 oI
 PP
-dw
+PP
 PP
 PP
 PP
@@ -62241,7 +62298,7 @@ oI
 PP
 PP
 PP
-sc
+dw
 oI
 Qs
 oI
@@ -62498,9 +62555,9 @@ oI
 PP
 Qm
 PP
-dw
-dw
-dw
+PP
+PP
+PP
 oI
 oI
 hK
@@ -63795,7 +63852,7 @@ PP
 vk
 zC
 zC
-zC
+iw
 PP
 PP
 DH
@@ -65835,11 +65892,11 @@ OI
 OI
 OI
 PP
-dw
-dw
-dw
-dw
-dw
+PP
+PP
+PP
+PP
+PP
 hS
 es
 ng
@@ -66086,20 +66143,20 @@ nq
 Yg
 oI
 Rz
-dw
-dw
-dw
-dw
-dw
+PP
+PP
+PP
+PP
+PP
 PP
 wH
 wT
 CQ
 bq
-dw
-dw
+PP
+PP
 jf
-dw
+PP
 YR
 PP
 eU
@@ -66343,7 +66400,7 @@ oI
 jx
 oI
 oI
-dw
+PP
 UG
 NH
 YZ
@@ -67114,7 +67171,7 @@ Vl
 dm
 Dn
 dm
-dw
+PP
 kQ
 ce
 iu
@@ -67141,7 +67198,7 @@ PP
 OI
 OI
 OI
-mM
+OI
 OI
 zC
 zC
@@ -67371,11 +67428,11 @@ OI
 dK
 OI
 ge
-dw
-dw
-dw
-dw
-dw
+PP
+PP
+PP
+PP
+PP
 PP
 PP
 PP

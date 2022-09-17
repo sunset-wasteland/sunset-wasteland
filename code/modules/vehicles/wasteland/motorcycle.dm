@@ -30,20 +30,26 @@
 	D.set_vehicle_dir_offsets(WEST, -18, 0)
 
 /obj/vehicle/ridden/fuel/motorcycle/post_buckle_mob(mob/living/M)
+	for(var/V in M.held_items)
+		var/obj/item/I = V
+		if(istype(I))
+			if(M.dropItemToGround(I))
+				var/obj/item/handlebars/TC = new(src)
+				M.put_in_hands(TC)
+		else	//Entries in the list should only ever be items or null, so if it's not an item, we can assume it's an empty hand
+			var/obj/item/handlebars/TC = new(src)
+			M.put_in_hands(TC)
 	add_overlay(motorcycle)
 	return ..()
 
-/obj/vehicle/ridden/fuel/motorcycle/post_unbuckle_mob(mob/living/M)
+/obj/vehicle/ridden/fuel/motorcycle/post_unbuckle_mob(mob/living/buckled_mob,force = FALSE)
+	for(var/obj/item/I in buckled_mob.held_items)
+		if(istype(I, /obj/item/handlebars))
+			qdel(I)
 	if(!has_buckled_mobs())
 		cut_overlay(motorcycle)
 	return ..()
 
-
-/*
-/obj/vehicle/ridden/fuel/motorcycle/buckle_mob()
-	. = ..()
-	riding_datum = new datum_type()
-*/
 /obj/vehicle/ridden/fuel/motorcycle/relaymove(mob/user)
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
@@ -53,19 +59,11 @@
 		if(istype(H.wear_suit, /obj/item/clothing/suit/armored/heavy))//Salvaged PA and misc.
 			to_chat(user, "The [name] will not move, because you are too heavy.")
 			return
+		if(H.pulling)
+			to_chat(user, "The [name] will not move, because you are attempting to pull something.")
+			return
 	..()
-/*
-/obj/vehicle/ridden/fuel/motorcycle/post_buckle_mob(mob/living/M)
-	if(has_buckled_mobs())
-		add_overlay(cover)
-	else
-		overlays -= cover
 
-/obj/vehicle/ridden/fuel/motorcycle/New()
-	..()
-	cover = image(icon, "[icon_state]_cover")//"bike_cover")
-	cover.layer = ABOVE_MOB_LAYER
-*/
 /obj/item/key/motorcycle
 	name = "motorcycle key"
 	desc = "A keyring with a small steel key.<br>By the look of the key cuts it likely belongs to a motorcycle."
@@ -109,36 +107,17 @@
 	D.vehicle_move_delay = 0.7
 
 /*
-//Motorcycle riding datum
+ * Handlebars
+ */
 
-/datum/riding/motorcycle/fast
-	vehicle_move_delay = 0.7
+/obj/item/handlebars
+	name = "motorcycle handlebars"
+	icon = 'icons/obj/items_and_weapons.dmi'
+	icon_state = "offhand"
+	w_class = WEIGHT_CLASS_HUGE
+	item_flags = ABSTRACT | NOBLUDGEON | DROPDEL
+	resistance_flags = FIRE_PROOF | UNACIDABLE | ACID_PROOF
 
-/datum/riding/motorcycle/slow
-	vehicle_move_delay = 1.2
-
-/datum/riding/motorcycle
-	keytype = /obj/item/key/motorcycle
-	vehicle_move_delay = 1
-
-/datum/riding/motorcycle/proc/handle_vehicle_layer()
-	return
-
-/datum/riding/motorcycle/proc/handle_vehicle_offsets()
-	..()
-	if(ridden.has_buckled_mobs())
-		for(var/m in ridden.buckled_mobs)
-			var/mob/living/buckled_mob = m
-			switch(buckled_mob.dir)
-				if(NORTH)
-					buckled_mob.pixel_x = 0
-					buckled_mob.pixel_y = 8
-				if(EAST)
-					buckled_mob.pixel_x = -2
-					buckled_mob.pixel_y = 5
-				if(SOUTH)
-					buckled_mob.pixel_x = 0
-					buckled_mob.pixel_y = 12
-				if(WEST)
-					buckled_mob.pixel_x = 2
-					buckled_mob.pixel_y = 5*/
+/obj/item/handlebars/Initialize()
+	. = ..()
+	ADD_TRAIT(src, TRAIT_NODROP, TRAIT_GENERIC)

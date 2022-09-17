@@ -66,6 +66,8 @@
 	harm_intent_damage = 8
 	melee_damage_lower = 25
 	melee_damage_upper = 25
+	armour_penetration = 0.1//Making them some manner of threat.
+	sharpness = SHARP_EDGED//As above.
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
 
 /mob/living/simple_animal/hostile/ghoul/reaver/Initialize()
@@ -147,16 +149,18 @@
 	icon_state = "glowinghoul"
 	icon_living = "glowinghoul"
 	icon_dead = "glowinghoul_dead"
-	maxHealth = 100
-	health = 100
+	maxHealth = 250
+	health = 250
 	speed = 2
+	retreat_distance = 1
+	minimum_distance = 2
 	harm_intent_damage = 8
 	melee_damage_lower = 25
 	melee_damage_upper = 25
 	light_system = MOVABLE_LIGHT
 	light_range = 2
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
-	var/radburst_cooldown = 1200
+	var/radburst_cooldown = 60//Support mob, revives others every six seconds, provided a player is within three tiles.
 
 /mob/living/simple_animal/hostile/ghoul/glowing/Initialize(mapload)
 	. = ..()
@@ -178,7 +182,8 @@
 	radburst_cooldown--
 
 	if(target in range(3,src))
-		if((health <= (0.6 * maxHealth)) && radburst_cooldown<=0)
+//		if((health <= (0.6 * maxHealth)) && radburst_cooldown<=0)
+		if(radburst_cooldown<=0)
 			radburst_cooldown = initial(radburst_cooldown)
 			RadBurst()
 
@@ -187,16 +192,16 @@
 						"<span class='notice'>You release a concentrated burst of radiation from your body!</span>")
 	playsound(src, 'sound/f13npc/ghoul_new/ghoul_radburst.ogg', 50, 0, 3)
 	radiation_pulse(src, 30)
+	for(var/mob/living/simple_animal/hostile/ghoul/glowing/L in range(7, src))
+		if(L.stat == 3)
+			L.gib()
+			visible_message("<span class='danger'>[src] detonates into a brilliant glowing cloud!</span>")
+			radiation_pulse(src, 120)
 	for(var/mob/living/simple_animal/hostile/ghoul/G in range(7, src))
 		if(G.stat == 3)
 			G.revive(1)
 		else
 			G.revive(1, 1)
-	for(var/mob/living/simple_animal/hostile/ghoul/glowing/L in range(7, src))
-		if(L.stat == 3)
-			L.gib()
-			visible_message("<span class='warning'>[src] detonates into a brilliant glowing cloud!</span>")
-			radiation_pulse(src, 120)
 	set_light(7, 5, "#39FF14")
 	spawn(40)
 	set_light(2)
@@ -207,6 +212,8 @@
 	speed = 1.4 // Nyooom
 	melee_damage_lower = 35
 	melee_damage_upper = 35
+	retreat_distance = 0//These ghouls don't run, unlike standard glowing ones.
+	minimum_distance = 0
 	armour_penetration = 0.1
 
 //Alive Ghoul

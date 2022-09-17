@@ -783,10 +783,9 @@
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/building)
 "aMV" = (
-/obj/structure/barricade/wooden,
-/obj/structure/decoration/rag,
-/turf/closed/wall/f13/sunset/brick_small,
-/area/f13/wasteland/rocksprings)
+/obj/structure/table/reinforced,
+/turf/open/indestructible/ground/outside/sidewalk,
+/area/f13/legion)
 "aNc" = (
 /obj/structure/table,
 /obj/machinery/computer/terminal,
@@ -1590,10 +1589,12 @@
 /turf/open/floor/wood/wood_fancy/wood_fancy_light,
 /area/f13/building)
 "bMS" = (
-/obj/structure/target_stake,
-/obj/item/target,
-/turf/open/indestructible/ground/outside/dirt/harsh,
-/area/f13/wasteland/rocksprings)
+/obj/structure/table/reinforced,
+/obj/item/storage/toolbox/electrical{
+	pixel_y = 5
+	},
+/turf/open/indestructible/ground/outside/sidewalk,
+/area/f13/legion)
 "bNa" = (
 /obj/effect/overlay/junk/sink{
 	dir = 8;
@@ -4238,10 +4239,14 @@
 	},
 /area/f13/building)
 "eQr" = (
-/obj/structure/barricade/wooden,
-/obj/structure/decoration/rag,
-/turf/open/indestructible/ground/outside/desert/harsh,
-/area/f13/wasteland/rocksprings)
+/mob/living/simple_animal/hostile/stalker/playable/legion{
+	desc = "Augustus, the Venator's companion of many years. Does not take kindly to Profligates.";
+	dir = 4;
+	faction = list("neutral");
+	name = "Augustus"
+	},
+/turf/open/indestructible/ground/outside/sidewalk,
+/area/f13/legion)
 "eRn" = (
 /obj/structure/junk/small/tv,
 /turf/open/floor/carpet/green,
@@ -5104,6 +5109,10 @@
 /obj/structure/furnace,
 /turf/open/floor/plasteel/f13/stone/rugged,
 /area/f13/legion)
+"fSZ" = (
+/obj/effect/decal/cleanable/oil,
+/turf/open/indestructible/ground/outside/sidewalk,
+/area/f13/legion)
 "fTf" = (
 /obj/structure/debris/v2,
 /turf/closed/indestructible/riveted{
@@ -5369,7 +5378,6 @@
 /area/f13/bunker)
 "gnE" = (
 /obj/structure/table/reinforced,
-/obj/item/key/motorcycle,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/building)
 "gob" = (
@@ -5531,13 +5539,11 @@
 	},
 /area/f13/wasteland/rocksprings)
 "gyp" = (
-/obj/structure/barricade/wooden,
-/obj/structure/decoration/rag,
-/obj/structure/decoration/rag{
-	icon_state = "skin"
+/obj/effect/decal/cleanable/oil{
+	icon_state = "floor2"
 	},
-/turf/open/indestructible/ground/outside/dirt/harsh,
-/area/f13/wasteland/rocksprings)
+/turf/open/indestructible/ground/outside/sidewalk,
+/area/f13/legion)
 "gyr" = (
 /obj/effect/landmark/start/f13/wastelander,
 /turf/open/indestructible/ground/outside/dirthole,
@@ -6107,10 +6113,12 @@
 	},
 /area/f13/legion)
 "hiz" = (
-/obj/structure/target_stake,
-/obj/item/target/vaultie,
-/turf/open/indestructible/ground/outside/dirt/harsh,
-/area/f13/wasteland/rocksprings)
+/obj/vehicle/ridden/fuel/motorcycle/flamy{
+	dir = 4;
+	fuel = 0
+	},
+/turf/open/indestructible/ground/outside/sidewalk,
+/area/f13/legion)
 "hiG" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontalbottomborderbottom0"
@@ -6569,12 +6577,8 @@
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/building)
 "hKN" = (
-/obj/structure/barricade/sandbags,
-/turf/open/indestructible/ground/outside/dirt/harsh{
-	dir = 8;
-	icon_state = "dirt"
-	},
-/area/f13/wasteland/rocksprings)
+/turf/open/indestructible/ground/outside/sidewalk,
+/area/f13/legion)
 "hKO" = (
 /obj/structure/table/reinforced,
 /obj/structure/fluff/paper/stack{
@@ -8995,13 +8999,12 @@
 	},
 /area/f13/building)
 "kXJ" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/vehicle/ridden/fuel/motorcycle/flamy{
-	dir = 4;
-	fuel = 0
+/obj/machinery/door/poddoor/shutters{
+	id = "legion_garage_shutters";
+	name = "garage shutters"
 	},
 /turf/open/indestructible/ground/outside/sidewalk,
-/area/f13/building)
+/area/f13/legion)
 "kXY" = (
 /mob/living/simple_animal/hostile/gecko{
 	color = "#ff0000";
@@ -10295,6 +10298,10 @@
 	pixel_x = 32
 	},
 /obj/structure/table/wood,
+/obj/item/reagent_containers/pill/patch/healingpowder/legionmedx,
+/obj/item/reagent_containers/pill/patch/healingpowder/legionmedx,
+/obj/item/reagent_containers/pill/patch/healingpowder/legionmedx,
+/obj/item/reagent_containers/pill/patch/healingpowder/legionmedx,
 /turf/open/floor/plasteel/f13/vault_floor/red/white,
 /area/f13/legion)
 "mBT" = (
@@ -12443,9 +12450,13 @@
 	},
 /area/f13/building)
 "oZn" = (
-/obj/structure/reagent_dispensers/barrel/three,
-/turf/open/indestructible/ground/outside/dirt/harsh,
-/area/f13/wasteland/rocksprings)
+/obj/structure/wreck/trash/autoshaft,
+/obj/effect/decal/cleanable/oil,
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 8
+	},
+/turf/open/indestructible/ground/outside/sidewalk,
+/area/f13/legion)
 "oZB" = (
 /obj/structure/debris/v3{
 	pixel_x = -11;
@@ -12646,10 +12657,9 @@
 	},
 /area/f13/building)
 "pph" = (
-/obj/structure/barricade/wooden,
-/obj/structure/decoration/rag,
-/turf/open/indestructible/ground/outside/dirt/harsh,
-/area/f13/wasteland/rocksprings)
+/obj/structure/wreck/trash/five_tires,
+/turf/open/indestructible/ground/outside/sidewalk,
+/area/f13/legion)
 "ppY" = (
 /obj/structure/destructible/tribal_torch/lit,
 /turf/open/indestructible/ground/outside/dirt/harsh{
@@ -13873,10 +13883,9 @@
 	},
 /area/f13/building)
 "qRe" = (
-/obj/structure/barricade/sandbags,
-/obj/structure/destructible/tribal_torch/lit,
-/turf/open/indestructible/ground/outside/desert/harsh,
-/area/f13/wasteland/rocksprings)
+/obj/structure/reagent_dispensers/barrel/explosive,
+/turf/open/indestructible/ground/outside/sidewalk,
+/area/f13/legion)
 "qRn" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13{
@@ -14377,7 +14386,7 @@
 	id = "legiongateouter";
 	name = "Gate button";
 	pixel_x = 32;
-	pixel_y = 12
+	pixel_y = -6
 	},
 /obj/machinery/button/door{
 	id = "legioneastgatehouse";
@@ -16087,12 +16096,9 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "tvN" = (
-/obj/structure/barricade/wooden,
-/obj/structure/decoration/rag{
-	icon_state = "skin"
-	},
-/turf/closed/wall/f13/sunset/brick_small,
-/area/f13/wasteland/rocksprings)
+/obj/structure/wreck/trash/engine,
+/turf/open/indestructible/ground/outside/sidewalk,
+/area/f13/legion)
 "tvT" = (
 /obj/structure/bonfire,
 /turf/open/indestructible/ground/inside/dirt,
@@ -17935,9 +17941,6 @@
 	icon_state = "fancy_light-broken2"
 	},
 /area/f13/building)
-"vNb" = (
-/turf/closed/wall/f13/sunset/brick_small,
-/area/f13/wasteland/rocksprings)
 "vNk" = (
 /obj/effect/turf_decal/trimline/neutral/line{
 	dir = 4
@@ -18106,6 +18109,14 @@
 "vVk" = (
 /obj/structure/barricade/sandbags,
 /turf/open/indestructible/ground/outside/gravel,
+/area/f13/wasteland/rocksprings)
+"vVx" = (
+/obj/machinery/button/door{
+	id = "legion_garage_shutters";
+	name = "Garage shutters";
+	pixel_y = -32
+	},
+/turf/open/indestructible/ground/outside/graveldirt,
 /area/f13/wasteland/rocksprings)
 "vVK" = (
 /obj/effect/decal/cleanable/dirt{
@@ -23425,13 +23436,13 @@ rPW
 rPW
 rPW
 rPW
-rfA
-rfA
-rfA
-rfA
-rfA
-rfA
-rfA
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
 rPW
 rPW
 rPW
@@ -23682,7 +23693,7 @@ rPW
 rPW
 lqw
 rPW
-rfA
+rPW
 jLa
 jLa
 jLa
@@ -23939,7 +23950,7 @@ rPW
 rPW
 rPW
 rPW
-rfA
+rPW
 jLa
 wne
 ydf
@@ -24196,7 +24207,7 @@ rPW
 rPW
 rPW
 rPW
-rfA
+rPW
 jLa
 aKf
 aKf
@@ -24453,7 +24464,7 @@ rPW
 rPW
 rPW
 rPW
-rfA
+rPW
 jLa
 tyP
 okw
@@ -24710,7 +24721,7 @@ rPW
 rPW
 rPW
 rPW
-rfA
+rPW
 jLa
 kng
 llH
@@ -24967,7 +24978,7 @@ rPW
 rPW
 rPW
 rPW
-rfA
+rPW
 jLa
 aKf
 llH
@@ -25224,7 +25235,7 @@ rPW
 rPW
 rPW
 rPW
-rfA
+rPW
 jLa
 utx
 okw
@@ -25481,7 +25492,7 @@ rPW
 rPW
 rPW
 rPW
-rfA
+rPW
 jLa
 kng
 okw
@@ -25738,7 +25749,7 @@ rPW
 rPW
 rPW
 rPW
-rfA
+rPW
 jLa
 kng
 okw
@@ -25995,7 +26006,7 @@ rPW
 rPW
 rPW
 rPW
-rfA
+rPW
 jLa
 utx
 okw
@@ -26252,7 +26263,7 @@ lqw
 rPW
 rPW
 rPW
-rfA
+rPW
 jLa
 kng
 llH
@@ -26509,7 +26520,7 @@ lqw
 lqw
 rPW
 rPW
-rfA
+rPW
 jLa
 kng
 llH
@@ -26576,10 +26587,10 @@ izX
 djN
 jLa
 jLa
-aMV
-tvN
-aMV
-vNb
+pnE
+pnE
+pnE
+pnE
 uGk
 uGk
 rPW
@@ -26766,7 +26777,7 @@ lqw
 rPW
 rPW
 rPW
-rfA
+rPW
 jLa
 utx
 okw
@@ -26835,8 +26846,8 @@ kjw
 jLa
 bMS
 oZn
-bMS
-aMV
+pph
+pnE
 paT
 uGk
 uGk
@@ -27023,7 +27034,7 @@ rPW
 rPW
 rPW
 rPW
-rfA
+rPW
 jLa
 kng
 aKf
@@ -27090,10 +27101,10 @@ wJW
 uOO
 dkO
 jLa
-paT
+aMV
 hiz
-paT
-paT
+qRe
+pnE
 paT
 uGk
 uGk
@@ -27280,7 +27291,7 @@ rPW
 rPW
 rPW
 rPW
-rfA
+rPW
 jLa
 wne
 hAu
@@ -27347,10 +27358,10 @@ uOO
 uOO
 uOO
 jLa
-paT
-paT
-paT
-gyp
+eQr
+hKN
+tvN
+pnE
 paT
 uGk
 bQf
@@ -27537,7 +27548,7 @@ rPW
 rPW
 rPW
 rPW
-rfA
+rPW
 jLa
 jLa
 jLa
@@ -27604,10 +27615,10 @@ lLi
 sCb
 dkO
 jLa
-iAF
-toe
-paT
-pph
+gyp
+hKN
+hKN
+pnE
 paT
 uGk
 uGk
@@ -27794,14 +27805,14 @@ rPW
 rPW
 rPW
 rPW
-rfA
-rfA
-rfA
-rfA
-rfA
-rfA
-rfA
-rfA
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
 jLa
 lTc
 xoe
@@ -27861,10 +27872,10 @@ vjJ
 ohg
 fRN
 jLa
-hgP
-iAF
-nsp
 hKN
+hKN
+fSZ
+pnE
 toe
 paT
 uGk
@@ -28118,10 +28129,10 @@ azX
 ohg
 jkz
 jLa
-hgP
-hgP
-hgP
-eQr
+kXJ
+kXJ
+kXJ
+pnE
 iAF
 toe
 paT
@@ -28315,20 +28326,20 @@ lqw
 rPW
 rPW
 rPW
-rfA
+rPW
 jLa
 jLa
 jLa
 jLa
 jLa
-rfA
-rfA
-rfA
-rfA
-rfA
-rfA
-rfA
-rfA
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
 lLp
 hYe
 hYe
@@ -28375,11 +28386,11 @@ vxw
 sCb
 dkO
 jLa
-hgP
-hgP
-hgP
-eQr
-hgP
+hXy
+hXy
+vVx
+pnE
+rqF
 iAF
 nsp
 rfA
@@ -28572,13 +28583,13 @@ rPW
 rPW
 rPW
 rPW
-rfA
-rfA
-rfA
-rfA
-rfA
-rfA
-rfA
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
+rPW
 rPW
 rPW
 rPW
@@ -28632,11 +28643,11 @@ nlm
 sCb
 dkO
 jLa
-csk
-csk
-csk
-qRe
-hgP
+hXy
+hXy
+hXy
+ppY
+vTD
 hgP
 hgP
 pnE
@@ -28889,10 +28900,10 @@ fOM
 efN
 vFs
 jLa
-hgP
-hgP
-hgP
-hgP
+hXy
+hXy
+hXy
+qWV
 hgP
 hgP
 hgP
@@ -29146,10 +29157,10 @@ hgz
 hgz
 jLa
 jLa
-hgP
-hgP
-hgP
-hgP
+hXy
+hXy
+hXy
+qWV
 hgP
 hgP
 hgP
@@ -29401,13 +29412,13 @@ hgP
 hgP
 hgP
 hgP
-hgP
-hgP
-hgP
-hgP
-hgP
-hgP
-hgP
+iAF
+toe
+hXy
+hXy
+hXy
+rnh
+rqF
 hgP
 hgP
 pnE
@@ -29659,10 +29670,10 @@ gNZ
 gNZ
 gNZ
 gNZ
-gNZ
-rqF
-hgP
-hgP
+gct
+hXy
+hXy
+hXy
 pnE
 pnE
 ryC
@@ -29917,9 +29928,9 @@ anP
 hXy
 anP
 hXy
-rnh
-gNZ
-gNZ
+hXy
+hXy
+hXy
 pnE
 pnE
 qHB
@@ -67410,7 +67421,7 @@ hgP
 hZH
 sDB
 bWo
-kXJ
+pHF
 bWo
 xps
 etW
@@ -85427,13 +85438,13 @@ hmL
 hmL
 hmL
 hmL
-hmL
-hmL
-hmL
-hmL
-hmL
-hmL
-hmL
+qzU
+qzU
+qzU
+qzU
+qzU
+qzU
+qzU
 hmL
 hmL
 hmL

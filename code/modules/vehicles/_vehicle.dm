@@ -207,7 +207,7 @@
 
 	stop_engine()
 
-/obj/vehicle/proc/stop_engine(mob/M)
+/obj/vehicle/proc/stop_engine(mob/living/M)
 	src.verbs += /obj/vehicle/proc/StartEngine
 	src.verbs -= /obj/vehicle/proc/StopEngine
 

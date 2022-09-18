@@ -16,12 +16,13 @@
 	speak_emote = list("growls")
 	emote_see = list("screeches")
 	a_intent = INTENT_HARM
-	maxHealth = 60
-	health = 60
-	speed = 3
+	maxHealth = 120
+	health = 120
+	speed = 2.4
 	harm_intent_damage = 8
-	melee_damage_lower = 15
-	melee_damage_upper = 15
+	melee_damage_lower = 25
+	melee_damage_upper = 25
+	armour_penetration = 0.1//Making them some manner of threat.
 	attack_verb_simple = "claw"
 	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
 	unsuitable_atmos_damage = 20
@@ -60,15 +61,27 @@
 	icon_state = "ghoulreaver"
 	icon_living = "ghoulreaver"
 	icon_dead = "ghoulreaver_dead"
-	speed = 2
-	maxHealth = 120
-	health = 120
+	speed = 1.8
+	maxHealth = 240
+	health = 240
 	harm_intent_damage = 8
 	melee_damage_lower = 25
-	melee_damage_upper = 25
-	armour_penetration = 0.1//Making them some manner of threat.
-	sharpness = SHARP_EDGED//As above.
+	melee_damage_upper = 45
+	armour_penetration = 0.2//Making them some manner of threat.
+	retreat_distance = 0
+	minimum_distance = 2
+	ranged = 1
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
+	projectiletype = /obj/item/projectile/reaver
+	projectilesound = 'sound/f13npc/centaur/lash.ogg'
+
+/obj/item/projectile/reaver
+	name = "radioactive glob"
+	damage = 15
+	armour_penetration = 5
+	irradiate = 250//Toxic threshold. Don't tweak this any higher.
+	pass_flags = PASSTABLE | PASSGRILLE
+	icon_state = "toxin"
 
 /mob/living/simple_animal/hostile/ghoul/reaver/Initialize()
 	. = ..()

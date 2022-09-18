@@ -12,4 +12,17 @@
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets
 	armor = list("melee" = 15, "bullet" = 45, "laser" = 10, "energy" = 10, "bomb" = 30, "bio" = 0, "rad" = 0, "fire" = 5, "acid" = -5)
 	togglename = "bandolier"
-	
+
+	// Custom NCR Officer Vest FLUFF ITEM >> Balanced around the standard NCR Officer Vest.
+
+/obj/item/clothing/suit/armor/f13/ncrarmor/bellacoat
+	name = "Bella's Fieldcoat"
+	desc = "A custom fitted NCR officer's coat with a higher collar and custom stitchwork."
+	icon = 'modular_sunset/icons/mob/clothing/abel_jacket.dmi'
+	icon_state = "bellacoat"
+	item_state = "bellacoat"
+	mob_overlay_icon = 'modular_sunset/icons/mob/clothing/abel_jacket.dmi'
+	blood_overlay_type = "coat"
+	body_parts_covered = CHEST|ARMS
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets
+	armor = list("melee" = 25, "bullet" = 45, "laser" = 45, "energy" = 20, "bomb" = 45, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0, "wound" = 50)

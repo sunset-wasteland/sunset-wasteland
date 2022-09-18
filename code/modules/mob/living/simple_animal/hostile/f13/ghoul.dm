@@ -66,7 +66,7 @@
 	health = 240
 	harm_intent_damage = 8
 	melee_damage_lower = 25
-	melee_damage_upper = 45
+	melee_damage_upper = 35
 	armour_penetration = 0.2//Making them some manner of threat.
 	retreat_distance = 0
 	minimum_distance = 2

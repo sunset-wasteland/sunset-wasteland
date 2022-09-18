@@ -277,7 +277,7 @@ GLOBAL_LIST_INIT(plasteel_recipes, list ( \
 //  Wood
 
 GLOBAL_LIST_INIT(wood_recipes, list ( \
-	new/datum/stack_recipe("wooden barricade", /obj/structure/barricade/wooden, 5, time = 120, one_per_turf = TRUE, on_floor = TRUE), \
+	new/datum/stack_recipe("wooden barricade", /obj/structure/barricade/wooden, 5, time = 50, one_per_turf = TRUE, on_floor = TRUE), \
 	null, \
 	new/datum/stack_recipe_list("floor tiles", list( \
 	new/datum/stack_recipe("common floor tile", /obj/item/stack/tile/wood/common, 1, 4, 20), \
@@ -311,6 +311,8 @@ GLOBAL_LIST_INIT(wood_recipes, list ( \
 	new/datum/stack_recipe("deckchair", /obj/structure/chair/comfy/plywood, 4, time = 10, one_per_turf = TRUE, on_floor = TRUE), \
 	new/datum/stack_recipe("table frame", /obj/structure/table_frame/wood, 2, time = 10), \
 	new/datum/stack_recipe("bed", /obj/structure/bed/wooden, 2, time = 20, one_per_turf = TRUE, on_floor = TRUE), \
+	new/datum/stack_recipe("closet", /obj/structure/closet/cabinet, 2, time = 20, one_per_turf = TRUE, on_floor = TRUE), \
+	new/datum/stack_recipe("shelf", /obj/structure/shelf_wood, 1, time = 20, one_per_turf = TRUE, on_floor = TRUE), \
 		)), \
 	null, \
 	new/datum/stack_recipe_list("primitive industry & agriculture", list( \

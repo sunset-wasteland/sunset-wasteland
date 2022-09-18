@@ -16,8 +16,8 @@
 	// Custom NCR Officer Vest FLUFF ITEM >> Balanced around the standard NCR Officer Vest.
 
 /obj/item/clothing/suit/armor/f13/ncrarmor/bellacoat
-	name = "Bella's Fieldcoat"
-	desc = "A custom fitted NCR officer's coat with a higher collar and custom stitchwork."
+	name = "Grizzled Campaign Coat"
+	desc = "An old custom fitted NCR coat rarely used anymore given it's old age and design featuring custom stitchwork, additional protective padding, lenghtier sizing and a higher collar. Anyone waering this has been around a while."
 	icon = 'modular_sunset/icons/mob/clothing/abel_jacket.dmi'
 	icon_state = "bellacoat"
 	item_state = "bellacoat"

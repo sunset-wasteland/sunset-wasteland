@@ -380,6 +380,13 @@
 	obj_damage = 15
 	melee_damage_lower = 5
 	melee_damage_upper = 8
+	ranged = 1
+
+
+	projectiletype = /obj/item/projectile/bloatfly
+	projectilesound = 'sound/f13npc/centaur/spit.ogg'
+	retreat_distance = 6
+	minimum_distance = 4
 
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	speak_chance = 0
@@ -409,6 +416,12 @@
 	else
 		visible_message("<span class='danger'>[src] dodges [Proj]!</span>")
 		return 0
+
+/obj/item/projectile/bloatfly
+	name = "bloatfly projectile"
+	damage = 15
+	armour_penetration = 5
+	icon_state = "toxin"
 
 //////////////
 // RADROACH //

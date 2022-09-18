@@ -1019,13 +1019,11 @@
 /obj/item/gun/ballistic/automatic/bar/glowie
 	name = "Colt Monitor"
 	desc = "A special modified heavy battle rifle built on the BAR, featuring an added pistol grip and a Cutts recoil compensator."
-	force = 20
-	slowdown = 1.32
-	autofire_shot_delay = 3.3
-	extra_damage = 30
-	extra_penetration = 0.1
+	slowdown = 1.35
+	autofire_shot_delay = 2.95
+	extra_penetration = 0.2
 	spread = 8
-	recoil = 0.35
+	recoil = 0.2
 
 //SKS				Keywords: LEGION, .308, Semi-auto, 10 rounds internal, Penetration +0.1
 /obj/item/gun/ballistic/automatic/m1garand/sks

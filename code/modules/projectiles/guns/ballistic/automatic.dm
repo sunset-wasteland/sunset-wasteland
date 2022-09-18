@@ -1024,6 +1024,7 @@
 	extra_penetration = 0.2
 	spread = 8
 	recoil = 0.2
+	extra_speed = 250 //Get a load of this guy.
 
 //SKS				Keywords: LEGION, .308, Semi-auto, 10 rounds internal, Penetration +0.1
 /obj/item/gun/ballistic/automatic/m1garand/sks

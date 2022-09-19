@@ -228,7 +228,7 @@ GLOBAL_LIST_INIT(khan_positions, list(
 
 GLOBAL_LIST_INIT(enclave_positions, list(
 	"Enclave Lieutenant",
-	"Enclave Gunnery Sergeant",
+	"Enclave Platoon Sergeant",
 	"Enclave Sergeant",
 	"Enclave Armored Infantry",
 	"Enclave Specialist",

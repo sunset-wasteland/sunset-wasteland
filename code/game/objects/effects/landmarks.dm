@@ -850,7 +850,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	icon_state = "usscientist"
 
 /obj/effect/landmark/start/f13/usgysgt
-	name = "Enclave Gunnery Sergeant"
+	name = "Enclave Platoon Sergeant"
 	icon_state = "usgunnery"
 /*
 /obj/effect/landmark/start/f13/uslightduty

@@ -122,7 +122,7 @@
 // Gunnery Sergeant
 
 /datum/job/enclave/f13gysergeant
-	title = "Enclave Gunnery Sergeant"
+	title = "Enclave Platoon Sergeant"
 	flag = F13USGYSGT
 	total_positions = 1
 	spawn_positions = 1
@@ -139,11 +139,11 @@
 		)
 
 /datum/outfit/job/enclave/peacekeeper/f13gysergeant
-	name = "Enclave Gunnery Sergeant"
+	name = "Enclave Platoon Sergeant"
 	jobtype = /datum/job/enclave/f13gysergeant
 	head = /obj/item/clothing/head/helmet/f13/power_armor/x02helmet
 	suit = /obj/item/clothing/suit/armor/f13/power_armor/x02
-	accessory = /obj/item/clothing/accessory/enclave/master_sergeant
+	accessory = /obj/item/clothing/accessory/enclave/sergeant_firstclass
 	ears = /obj/item/radio/headset/headset_enclave/command
 
 	backpack_contents = list(

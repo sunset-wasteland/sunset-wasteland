@@ -68,8 +68,8 @@
 	melee_damage_lower = 25
 	melee_damage_upper = 35
 	armour_penetration = 0.2//Making them some manner of threat.
-	retreat_distance = 0
-	minimum_distance = 2
+	ranged_message = "throws a chunk of flesh"
+	ranged_cooldown_time = 60
 	ranged = 1
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
 	projectiletype = /obj/item/projectile/reaver

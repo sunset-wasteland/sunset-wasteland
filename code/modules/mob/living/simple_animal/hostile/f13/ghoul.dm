@@ -79,7 +79,7 @@
 	name = "radioactive glob"
 	damage = 15
 	armour_penetration = 5
-	irradiate = 250//Toxic threshold. Don't tweak this any higher.
+	irradiate = 25//Toxic threshold is 250.
 	pass_flags = PASSTABLE | PASSGRILLE
 	icon_state = "toxin"
 

@@ -16,8 +16,8 @@
 	speak_emote = list("growls")
 	emote_see = list("screeches")
 	a_intent = INTENT_HARM
-	maxHealth = 120
-	health = 120
+	maxHealth = 60
+	health = 60
 	speed = 2.4
 	harm_intent_damage = 8
 	melee_damage_lower = 25
@@ -62,8 +62,8 @@
 	icon_living = "ghoulreaver"
 	icon_dead = "ghoulreaver_dead"
 	speed = 1.8
-	maxHealth = 240
-	health = 240
+	maxHealth = 120
+	health = 120
 	harm_intent_damage = 8
 	melee_damage_lower = 25
 	melee_damage_upper = 35
@@ -173,7 +173,7 @@
 	light_system = MOVABLE_LIGHT
 	light_range = 2
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
-	var/radburst_cooldown = 6//Support mob, revives others every six seconds, provided a player is within three tiles. Previously sixty, because I thought this was deciseconds.
+	var/radburst_cooldown = 6//Support mob, revives others every six seconds, provided a player is within six tiles. Previously sixty, because I thought this was deciseconds.
 
 /mob/living/simple_animal/hostile/ghoul/glowing/Initialize(mapload)
 	. = ..()
@@ -194,7 +194,7 @@
 		return
 	radburst_cooldown--
 
-	if(target in range(3,src))
+	if(target in range(6,src))
 //		if((health <= (0.6 * maxHealth)) && radburst_cooldown<=0)
 		if(radburst_cooldown<=0)
 			radburst_cooldown = initial(radburst_cooldown)

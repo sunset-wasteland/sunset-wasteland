@@ -205,7 +205,7 @@
 	user.visible_message("<span class='notice'>[user] works the metal on the anvil with their hammer with a loud clang!</span>", \
 						"<span class='notice'>You [stepdone] the metal with a loud clang!</span>")
 	playsound(src, 'sound/effects/clang2.ogg',40, 2)
-	do_smithing_sparks(1, TRUE, src)
+	do_smithing_sparks(1, TRUE, src) 
 	addtimer(CALLBACK(GLOBAL_PROC, .proc/playsound, src, 'sound/effects/clang2.ogg', 40, 2), 15)
 	if(length(stepsdone) >= 3)
 		tryfinish(user)
@@ -300,7 +300,7 @@
 	desc = "A solid steel anvil with a stamped bull on it."
 	icon_state = "legvil"
 	anvilquality = 1
-	itemqualitymax = 10
+	itemqualitymax = 8
 	anchored = TRUE
 	smithrecipes = list(RECIPE_HAMMER = /obj/item/smithing/hammerhead,
 	RECIPE_SHOVEL = /obj/item/smithing/shovelhead,

@@ -280,6 +280,15 @@
 	grind_results = list(/datum/reagent/medicine/polypyr = 2)
 	merge_type = /obj/item/stack/medical/suture/medicated
 
+/obj/item/stack/medical/suture/medicated/five
+	amount = 5
+
+/obj/item/stack/medical/suture/medicated/ten
+	amount = 10
+
+/obj/item/stack/medical/suture/medicated/fifteen
+	amount = 15
+
 /obj/item/stack/medical/suture/heal(mob/living/M, mob/user)
 	. = ..()
 	if(M.stat == DEAD)
@@ -375,6 +384,9 @@
 
 /obj/item/stack/medical/mesh/advanced/one
 	amount = 1
+
+/obj/item/stack/medical/mesh/advanced/five
+	amount = 5
 
 /obj/item/stack/medical/mesh/Initialize()
 	. = ..()

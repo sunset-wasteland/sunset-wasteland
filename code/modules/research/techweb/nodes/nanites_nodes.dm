@@ -6,9 +6,9 @@
 	display_name = "Broken Nanite Programming"
 	description = "The basics of nanite construction and programming. This is usueless unless if you have the machinery"
 	prereq_ids = list("datatheory","robotics")
-	design_ids = list("nanite_disk","nanite_remote","nanite_comm_remote","nanite_scanner",\
+	design_ids = list("nanite_disk","nanite_scanner",\
 						"relay_nanites", "monitoring_nanites", "access_nanites", "repairing_nanites","sensor_nanite_volume", "repeater_nanites", "relay_repeater_nanites","red_diag_nanites")
-	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 1500)
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 
 /datum/techweb_node/nanite_smart
 	id = "nanite_smart"

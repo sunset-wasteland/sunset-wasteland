@@ -6,15 +6,15 @@
 	name = "base raider armor"
 	desc = "for testing"
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
-	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "bio" = 0, "rad" = 0, "fire" = 25, "acid" = 25, "wound" = 35)
+	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 10, "bio" = 0, "bomb" = 10, "rad" = 0, "fire" = 25, "acid" = 25, "wound" = 35)
 	strip_delay = 40
 	slowdown = 0.05
 
 /obj/item/clothing/suit/armor/f13/raider/supafly //melee spec
 	name = "supa-fly raider armor"
 	desc = "Fabulous mutant powers were revealed to me the day I held aloft my bumper sword and said...<br>BY THE POWER OF NUKA-COLA, I AM RAIDER MAN!"
-	armor = list("melee" = 45, "bullet" = 20, "laser" = 20, "bio" = 0, "rad" = 0, "fire" = 25, "acid" = 25, "wound" = 40)
-	slowdown = 0.01
+	armor = list("melee" = 45, "bullet" = 20, "laser" = 20, "energy" = 10, "bio" = 0, "bomb" = 10, "rad" = 0, "fire" = 25, "acid" = 25, "wound" = 40)
+	slowdown = 0.05
 	icon_state = "supafly"
 	item_state = "supafly"
 
@@ -25,6 +25,7 @@
 /obj/item/clothing/suit/armor/f13/raider/rebel
 	name = "rebel raider armor"
 	desc = "Rebel, rebel. Your face is a mess."
+	armor = list("melee" = 20, "bullet" = 45, "laser" = 20, "energy" = 10, "bio" = 0, "bomb" = 10, "rad" = 0, "fire" = 25, "acid" = 25, "wound" = 40)
 	icon_state = "raider_rebel_icon"
 	item_state = "raider_rebel_armor"
 
@@ -35,6 +36,7 @@
 /obj/item/clothing/suit/armor/f13/raider/sadist
 	name = "sadist raider armor"
 	desc = "A bunch of metal chaps adorned with severed hands at the waist with a leather plate worn on the left shoulder. Very intimidating."
+	armor = list("melee" = 25, "bullet" = 20, "laser" = 35, "energy" = 25, "bio" = 0, "bomb" = 10, "rad" = 0, "fire" = 25, "acid" = 25, "wound" = 40)
 	icon_state = "sadist"
 	item_state = "sadist"
 
@@ -48,8 +50,9 @@
 	icon_state = "blastmaster"
 	item_state = "blastmaster"
 	max_heat_protection_temperature = ARMOR_MAX_TEMP_PROTECT
-	armor = list("melee" = 40, "bullet" = 15, "laser" = 40, "bio" = 0, "bomb" = 90, "rad" = 0, "fire" = 25, "acid" = 25, "wound" = 40)
+	armor = list("melee" = 40, "bullet" = 15, "laser" = 40, "energy" = 0, "bio" = 0, "bomb" = 90, "rad" = 0, "fire" = 25, "acid" = 25, "wound" = 40)
 	flash_protect = 2
+	slowdown = 0.25
 
 /obj/item/clothing/suit/armor/f13/raider/blastmaster/Initialize()
 	. = ..()
@@ -58,6 +61,7 @@
 /obj/item/clothing/suit/armor/f13/raider/yankee
 	name = "yankee raider armor"
 	desc = "A set of armor made from bulky plastic and rubber. A faded sports team logo is printed in various places. Go Desert Rats!"
+	armor = list("melee" = 50, "bullet" = 20, "laser" = 20, "energy" = 50, "bio" = 0, "bomb" = 50, "rad" = 0, "fire" = 25, "acid" = 50, "wound" = 40)
 	icon_state = "yankee"
 	item_state = "yankee"
 
@@ -71,7 +75,7 @@
 	desc = "A leather top with a bandolier over it and a straps that cover the arms."
 	icon_state = "badlands"
 	item_state = "badlands"
-	armor = list("melee" = 30, "bullet" = 30, "laser" = 30, "bio" = 0, "rad" = 0, "fire" = 25, "acid" = 25)
+	armor = list("melee" = 30, "bullet" = 30, "laser" = 30, "energy" = 0, "bio" = 0, "bomb" = 20 "rad" = 0, "fire" = 25, "acid" = 25, "wound" = 40)
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/bulletbelt
 
 /obj/item/clothing/suit/armor/f13/raider/badlands/Initialize()
@@ -83,7 +87,7 @@
 	desc = "A particularly unhuggable armor, even by raider standards. Extremely spiky."
 	icon_state = "painspike"
 	item_state = "painspike"
-	armor = list("melee" = 40, "bullet" = 30, "laser" = 30, "bio" = 0, "rad" = 0, "fire" = 25, "acid" = 25)
+	armor = list("melee" = 40, "bullet" = 30, "laser" = 30, "energy" = 0, "bio" = 0, "bomb" = 20, "rad" = 0, "fire" = 25, "acid" = 25, "wound" = 40)
 
 /obj/item/clothing/suit/armor/f13/raider/painspike/Initialize()
 	. = ..()
@@ -94,7 +98,7 @@
 	desc = "A rigid armor set that appears to be fashioned from a radiation suit, or a mining suit."
 	icon_state = "iconoclast"
 	item_state = "iconoclast"
-	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "bio" = 0, "rad" = 60, "fire" = 25, "acid" = 25, "wound" = 35)
+	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "enery" = 20, "bio" = 20, "bomb" = 20, "rad" = 60, "fire" = 25, "acid" = 25, "wound" = 35)
 
 /obj/item/clothing/suit/armor/f13/raider/iconoclast/Initialize()
 	. = ..()
@@ -103,10 +107,10 @@
 /obj/item/clothing/suit/armor/f13/raider/combatduster
 	name = "combat duster"
 	desc = "An old military-grade pre-war combat armor under a weathered duster. It appears to be fitted with metal plates to replace the crumbling ceramic."
-	armor = list("melee" = 25, "bullet" = 50, "laser" = 25, "bio" = 0, "rad" = 0, "fire" = 25, "acid" = 25)
+	armor = list("melee" = 25, "bullet" = 50, "laser" = 25, "energy" = 20, "bio" = 0, "bomb" = 45, "rad" = 0, "fire" = 25, "acid" = 25, "wound" = 40)
 	icon_state = "combatduster"
 	item_state = "combatduster"
-	slowdown = 0.07
+	slowdown = 0.1
 
 /obj/item/clothing/suit/armor/f13/raider/combatduster/patrolduster
 	name = "Patrol Duster"
@@ -122,7 +126,7 @@
 	name = "base faction exile armor"
 	desc = "this is for testing."
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
-	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 20, "bomb" = 40, "bio" = 40, "rad" = 20, "fire" = 60, "acid" = 20)
+	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 20, "bomb" = 40, "bio" = 40, "rad" = 20, "fire" = 60, "acid" = 20, "wound" = 40)
 	strip_delay = 30
 	icon = 'icons/fallout/clothing/armored_medium.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
@@ -130,6 +134,7 @@
 /obj/item/clothing/suit/armor/f13/exile/ncrexile
 	name = "modified NCR armor"
 	desc = "A modified detoriated armor kit consisting of NCR gear and scrap metal."
+	armor = list("melee" = 30, "bullet" = 40, "laser" = 30, "energy" = 20, "bomb" = 40, "bio" = 40, "rad" = 20, "fire" = 60, "acid" = 20, "wound" = 40)
 	icon_state = "ncrexile"
 	item_state = "ncrexile"
 
@@ -140,7 +145,7 @@
 /obj/item/clothing/suit/armor/f13/exile/legexile
 	name = "modified Legion armor"
 	desc = "A modified detoriated armor kit consisting of Legion gear and scrap metal."
-	armor = list("melee" = 40, "bullet" = 30, "laser" = 35, "energy" = 20, "bomb" = 40, "bio" = 40, "rad" = 20, "fire" = 60, "acid" = 20)
+	armor = list("melee" = 40, "bullet" = 30, "laser" = 30, "energy" = 20, "bomb" = 40, "bio" = 40, "rad" = 20, "fire" = 60, "acid" = 20, "wound" = 40)
 	icon_state = "legexile"
 	item_state = "legexile"
 
@@ -153,6 +158,7 @@
 	desc = "A modified detoriated armor kit consisting of brotherhood combat armor and scrap metal."
 	icon = 'icons/fallout/clothing/armored_heavy.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_heavy.dmi'
+	armor = list("melee" = 30, "bullet" = 30, "laser" = 45, "energy" = 25, "bomb" = 30, "bio" = 30, "rad" = 25, "fire" = 60, "acid" = 20, "wound" = 40)
 	icon_state = "exile_bos"
 	item_state = "exile_bos"
 
@@ -165,15 +171,15 @@
 	desc = "An old military-grade pre-war combat armor. It appears to be fitted with metal plates to replace the crumbling ceramic."
 	icon_state = "raider_combat"
 	item_state = "raider_combat"
-	armor = list("melee" = 40, "bullet" = 40 , "laser" = 40,"energy" = 25, "bomb" = 50, "bio" = 50, "rad" = 10, "fire" = 60, "acid" = 10)
-	slowdown = 0.1
+	armor = list("melee" = 35, "bullet" = 50 , "laser" = 35,"energy" = 25, "bomb" = 50, "bio" = 50, "rad" = 20, "fire" = 60, "acid" = 20, "wound" = 40)
+	slowdown = 0.15
 
 /obj/item/clothing/suit/armor/f13/raider/raidermetal
 	name = "metal raider armor"
 	desc = "A suit of welded, fused metal plates. Looks bulky, with great protection."
 	icon_state = "raider_metal"
 	item_state = "raider_metal"
-	armor = list("melee" = 55, "bullet" = 35, "laser" = 55, "energy" = 25, "bomb" = 45, "bio" = 30, "rad" = 15, "fire" = 60, "acid" = 0, "wound" = 40)
+	armor = list("melee" = 50, "bullet" = 35, "laser" = 35, "energy" = 15, "bomb" = 40, "bio" = 30, "rad" = 40, "fire" = 60, "acid" = 0, "wound" = 40)
 	resistance_flags = FIRE_PROOF
 	slowdown = 0.25
 

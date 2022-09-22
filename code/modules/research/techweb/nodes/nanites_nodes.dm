@@ -4,7 +4,7 @@
 /datum/techweb_node/nanite_base
 	id = "nanite_base"
 	display_name = "Broken Nanite Programming"
-	description = "The basics of nanite construction and programming. This is usueless unless if you have the machinery"
+	description = "The basics of nanite construction and programming. This is useless to most, without the machinery"
 	prereq_ids = list("datatheory","robotics")
 	design_ids = list("nanite_disk","nanite_scanner",\
 						"relay_nanites", "monitoring_nanites", "access_nanites", "repairing_nanites","sensor_nanite_volume", "repeater_nanites", "relay_repeater_nanites","red_diag_nanites")

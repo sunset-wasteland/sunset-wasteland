@@ -355,7 +355,7 @@
 /datum/chemical_reaction/medmesh/on_reaction(datum/reagents/holder, created_volume)
 	var/location = get_turf(holder.my_atom)
 	for(var/i = 1, i <= created_volume, i++)
-		new /obj/item/stack/medical/mesh/advanced(location)
+		new /obj/item/stack/medical/mesh/advanced/five(location)
 
 /datum/chemical_reaction/suture
 	id = "suture"
@@ -364,7 +364,7 @@
 /datum/chemical_reaction/suture/on_reaction(datum/reagents/holder, created_volume)
 	var/location = get_turf(holder.my_atom)
 	for(var/i = 1, i <= created_volume, i++)
-		new /obj/item/stack/medical/suture/one(location)
+		new /obj/item/stack/medical/suture/five(location)
 
 /datum/chemical_reaction/mesh
 	id = "mesh"

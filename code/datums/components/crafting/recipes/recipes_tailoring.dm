@@ -1180,3 +1180,92 @@
 	category = CAT_CLOTHING
 	subcategory = CAT_GENCLOTHES
 */
+//Legion armor conversions
+/datum/crafting_recipe/legioncombatarmor
+	name = "Legion combat armor"
+	result = /obj/item/clothing/suit/armor/f13/combat/legion
+	blacklist = list(/obj/item/clothing/suit/armor/f13/combat/mk2)
+	reqs = list(/obj/item/clothing/suit/armor/f13/combat = 1,
+				/obj/item/toy/crayon/spraycan)
+	time = 30
+	category = CAT_CLOTHING
+	subcategory = CAT_ARMOR
+	always_available = FALSE
+
+/datum/crafting_recipe/legioncombathelmet
+	name = "legion combat helmet"
+	result = /obj/item/clothing/head/helmet/f13/combat/legion
+	blacklist = list(/obj/item/clothing/head/helmet/f13/combat/mk2)
+	reqs = list(/obj/item/clothing/head/helmet/f13/combat = 1,
+				/obj/item/toy/crayon/spraycan)
+	time = 30
+	category = CAT_CLOTHING
+	subcategory = CAT_ARMOR
+	always_available = FALSE
+
+/datum/crafting_recipe/legioncombatarmormk2
+	name = "reinforced legion combat armor"
+	result = /obj/item/clothing/suit/armor/f13/combat/mk2/legion
+	blacklist = list(/obj/item/clothing/suit/armor/f13/combat)
+	reqs = list(/obj/item/clothing/suit/armor/f13/combat/mk2 = 1,
+				/obj/item/toy/crayon/spraycan)
+	time = 30
+	category = CAT_CLOTHING
+	subcategory = CAT_ARMOR
+	always_available = FALSE
+
+/datum/crafting_recipe/legioncombathelmetmk2
+	name = "reinforced legion combat helmet"
+	result = /obj/item/clothing/head/helmet/f13/combat/mk2/legion
+	blacklist = list(/obj/item/clothing/head/helmet/f13/combat)
+	reqs = list(/obj/item/clothing/head/helmet/f13/combat/mk2 = 1,
+				/obj/item/toy/crayon/spraycan)
+	time = 30
+	category = CAT_CLOTHING
+	subcategory = CAT_ARMOR
+	always_available = FALSE
+
+// NCR Armor conversions
+/datum/crafting_recipe/ncrcombatarmor
+	name = "NCR combat armor"
+	result = /obj/item/clothing/suit/armor/f13/combat/ncr
+	blacklist = list(/obj/item/clothing/suit/armor/f13/combat/mk2)
+	reqs = list(/obj/item/clothing/suit/armor/f13/combat = 1,
+				/obj/item/toy/crayon/spraycan)
+	time = 30
+	category = CAT_CLOTHING
+	subcategory = CAT_ARMOR
+	always_available = FALSE
+
+/datum/crafting_recipe/ncrcombathelmet
+	name = "NCR combat helmet"
+	result = /obj/item/clothing/head/helmet/f13/combat/ncr
+	blacklist = list(/obj/item/clothing/head/helmet/f13/combat/mk2)
+	reqs = list(/obj/item/clothing/head/helmet/f13/combat = 1,
+				/obj/item/toy/crayon/spraycan)
+	time = 30
+	category = CAT_CLOTHING
+	subcategory = CAT_ARMOR
+	always_available = FALSE
+
+/datum/crafting_recipe/ncrcombatarmormk2
+	name = "reinforced NCR combat armor"
+	result = /obj/item/clothing/suit/armor/f13/combat/mk2/ncr
+	blacklist = list(/obj/item/clothing/suit/armor/f13/combat)
+	reqs = list(/obj/item/clothing/suit/armor/f13/combat/mk2 = 1,
+				/obj/item/toy/crayon/spraycan)
+	time = 30
+	category = CAT_CLOTHING
+	subcategory = CAT_ARMOR
+	always_available = FALSE
+
+/datum/crafting_recipe/ncrcombathelmetmk2
+	name = "reinforced NCR combat helmet"
+	result = /obj/item/clothing/head/helmet/f13/combat/mk2/ncr
+	blacklist = list(/obj/item/clothing/head/helmet/f13/combat)
+	reqs = list(/obj/item/clothing/head/helmet/f13/combat/mk2 = 1,
+				/obj/item/toy/crayon/spraycan)
+	time = 30
+	category = CAT_CLOTHING
+	subcategory = CAT_ARMOR
+	always_available = FALSE

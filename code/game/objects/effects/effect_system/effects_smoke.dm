@@ -325,3 +325,24 @@
 
 /obj/effect/particle_effect/smoke/transparent
 	opaque = FALSE
+
+/////////////////////////////////////////////
+// Teargas
+/////////////////////////////////////////////
+
+/obj/effect/particle_effect/smoke/teargas
+	color = "#EDE8E8"
+	lifetime = 24//Incredible lifetime for good reason.
+
+/obj/effect/particle_effect/smoke/teargas/smoke_mob(mob/living/carbon/M)
+	if(..())
+		if(M.getStaminaLoss() > 120)//just in case
+			return
+//		M.drop_all_held_items()//HAHAHA, no. Not for now. Crit stamina is more than enough of a 'gtfo' sign.
+		M.adjustOxyLoss(5)
+		M.adjustStaminaLoss(10)//sitting in the cloud will bring you to just about 120stam and near 70/80 oxy. Enough for crit but won't kill most people.
+		M.emote("cough")
+		return 1
+
+/datum/effect_system/smoke_spread/teargas
+	effect_type = /obj/effect/particle_effect/smoke/teargas

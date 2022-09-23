@@ -738,6 +738,10 @@
 	armor = list("melee" = 45, "bullet" = 33, "laser" = 45,  "energy" = 35, "bomb" = 30, "bio" = 40, "rad" = 40, "fire" = 50, "acid" = 10, "wound" = 50)
 	slowdown = 0.08 //combat armor but less slowdown
 
+/obj/item/clothing/suit/armor/f13/town/deputy/Initialize()
+	. = ..()
+	AddComponent(/datum/component/armor_plate)
+
 /obj/item/clothing/suit/armor/vest/oasis
 	name = "BPD vest"
 	desc = "a lightweight ballistic vest that combines protection and comfort. This one has pockets sewn into the front and a badge pinned on it."
@@ -747,6 +751,10 @@
 	item_state = "blueshift"
 	slowdown = 0.02
 
+/obj/item/clothing/suit/armor/vest/oasis/Initialize()
+	. = ..()
+	AddComponent(/datum/component/armor_plate)
+
 /obj/item/clothing/suit/armor/f13/metalarmor/steelbib/oasis
 	name = "heavy steel breastplate"
 	desc = "a steel breastplate, inspired by a pre-war design. Looks like Bighorn citizens added an additional layer of metal on the front face."
@@ -755,6 +763,10 @@
 	armor = list( "melee" = 30, "bullet" = 50, "laser" = 30, "energy" = 15, "bomb" = 20, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0, "wound" = 45)
 	slowdown = 0.1
 	strip_delay = 5
+
+/obj/item/clothing/suit/armor/f13/metalarmor/steelbib/oasis/Initialize()
+	. = ..()
+	AddComponent(/datum/component/armor_plate)
 
 //Great Khan
 /obj/item/clothing/suit/armor/khan_jacket

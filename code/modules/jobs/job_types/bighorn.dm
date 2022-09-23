@@ -5,8 +5,8 @@ General access: 25 ACCESS_BAR
 Clinic surgery/storage: 68 ACCESS_CLONING
 Shopkeeper: 34 ACCESS_CARGO_BOT
 Barkeep : 28 ACCESS_KITCHEN - you jebronis made default bar for no reason bruh
-Prospector : 48 ACCESS_MINING
-Detective : 4 ACCESS_FORENSICS_LOCKERS
+Banker : 48 ACCESS_MINING
+Mayor : 4 ACCESS_FORENSICS_LOCKERS
 here's a tip, go search DEFINES/access.dm
 */
 
@@ -28,8 +28,8 @@ Mayor
 	selection_color = "#d7b088"
 	exp_requirements = 1500
 	outfit = /datum/outfit/job/bighorn/f13mayor
-	access = list(ACCESS_KHAN, ACCESS_BAR, ACCESS_CLINIC, ACCESS_GATEWAY, ACCESS_MINT_VAULT, ACCESS_MINING, ACCESS_FORENSICS_LOCKERS, ACCESS_CLONING)
-	minimal_access = list(ACCESS_KHAN, ACCESS_BAR, ACCESS_CLINIC, ACCESS_GATEWAY, ACCESS_MINT_VAULT, ACCESS_MINING, ACCESS_FORENSICS_LOCKERS, ACCESS_CLONING)
+	access = list(ACCESS_BAR, ACCESS_GATEWAY, ACCESS_FORENSICS_LOCKERS)
+	minimal_access = list(ACCESS_BAR, ACCESS_GATEWAY, ACCESS_FORENSICS_LOCKERS)
 
 /datum/outfit/job/bighorn/f13mayor/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
@@ -41,7 +41,7 @@ Mayor
 /datum/outfit/job/bighorn/f13mayor
 	name = "Mayor"
 	jobtype = 	/datum/job/bighorn/f13mayor
-	ears =		/obj/item/radio/headset/headset_town
+	ears =		/obj/item/radio/headset/headset_sheriff
 	id =		/obj/item/card/id/silver/mayor
 	backpack = 	/obj/item/storage/backpack/satchel/explorer
 	satchel = 	/obj/item/storage/backpack/satchel/explorer
@@ -69,8 +69,8 @@ Mayor
 	selection_color = "#d7b088"
 	exp_requirements = 1500
 	outfit = /datum/outfit/job/bighorn/f13sheriff
-	access = list(ACCESS_KHAN, ACCESS_BAR, ACCESS_CLINIC, ACCESS_GATEWAY, ACCESS_MINT_VAULT, ACCESS_MINING, ACCESS_FORENSICS_LOCKERS, ACCESS_CLONING)
-	minimal_access = list(ACCESS_KHAN, ACCESS_BAR, ACCESS_CLINIC, ACCESS_GATEWAY, ACCESS_MINT_VAULT, ACCESS_MINING, ACCESS_FORENSICS_LOCKERS, ACCESS_CLONING)
+	access = list(ACCESS_BAR, ACCESS_GATEWAY)
+	minimal_access = list(ACCESS_BAR, ACCESS_GATEWAY)
 
 /datum/outfit/job/bighorn/f13sheriff
 	name = "Sheriff"
@@ -80,7 +80,7 @@ Mayor
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
 
-	ears = 			/obj/item/radio/headset/headset_town
+	ears = 			/obj/item/radio/headset/headset_sheriff
 	uniform =  		/obj/item/clothing/under/f13/sheriff
 	neck =			/obj/item/storage/belt/holster
 	shoes = 		/obj/item/clothing/shoes/f13/cowboy
@@ -119,13 +119,13 @@ Mayor
 	selection_color = "#dcba97"
 	exp_requirements = 620
 	outfit = /datum/outfit/job/bighorn/f13deputy
-	access = list(ACCESS_KHAN, ACCESS_BAR, ACCESS_CLINIC, ACCESS_GATEWAY, ACCESS_MINT_VAULT, ACCESS_MINING, ACCESS_FORENSICS_LOCKERS, ACCESS_CLONING)
-	minimal_access = list(ACCESS_KHAN, ACCESS_BAR, ACCESS_CLINIC, ACCESS_GATEWAY, ACCESS_MINT_VAULT, ACCESS_MINING, ACCESS_FORENSICS_LOCKERS, ACCESS_CLONING)
+	access = list(ACCESS_BAR, ACCESS_GATEWAY)
+	minimal_access = list(ACCESS_BAR, ACCESS_GATEWAY)
 
 /datum/outfit/job/bighorn/f13deputy
 	name = "Deputy"
 	jobtype = /datum/job/bighorn/f13deputy
-	ears = 			/obj/item/radio/headset/headset_town
+	ears = 			/obj/item/radio/headset/headset_sheriff
 	id =            /obj/item/card/id/dogtag/deputy
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
@@ -162,8 +162,8 @@ Mayor
 	exp_requirements = 1500
 	enforces = "You are in a Job meant for encouraging roleplay with others, do not abandon your post or hoard money unless absolutely necessary. Do not use the caps provided for yourself."
 	outfit = /datum/outfit/job/bighorn/f13banker
-	access = list(ACCESS_KHAN, ACCESS_BAR, ACCESS_CLINIC, ACCESS_GATEWAY, ACCESS_MINT_VAULT, ACCESS_MINING, ACCESS_FORENSICS_LOCKERS, ACCESS_CLONING)
-	minimal_access = list(ACCESS_KHAN, ACCESS_BAR, ACCESS_CLINIC, ACCESS_GATEWAY, ACCESS_MINT_VAULT, ACCESS_MINING, ACCESS_FORENSICS_LOCKERS, ACCESS_CLONING)
+	access = list(ACCESS_BAR, ACCESS_FORENSICS_LOCKERS, ACCESS_MINING)
+	minimal_access = list(ACCESS_BAR, ACCESS_FORENSICS_LOCKERS, ACCESS_MINING)
 	loadout_options = list(
 	/datum/outfit/loadout/classy,
 	/datum/outfit/loadout/loanshark,
@@ -381,8 +381,8 @@ Mayor
 	title = "Citizen"
 	flag = F13SETTLER
 	department_flag = DEP_BIGHORN
-	total_positions = 8
-	spawn_positions = 8
+	total_positions = -1
+	spawn_positions = -1
 	supervisors = "Bighorn laws"
 	description = "You are a citizen living in Bighorn - a settlement typically run by the Great Khans. Take good care of your town, and consider picking up a trade to support the settlement - farming, hunting, or something more particular. One of the local businesses or the Khans themselves may have work if you require funds."
 	enforces = "Your premium status as a citizen may be revoked if you are considered a danger to the populace or anger those in control of the town."
@@ -703,3 +703,29 @@ Mayor
 	/obj/item/ammo_box/a357 = 2,
 	)
 
+/*--------------------------------------------------------------*/
+/datum/job/bighorn/f13secretary
+	title = "Secretary"
+	flag = F13SECRETARY
+	department_flag = DEP_BIGHORN
+	total_positions = 1
+	spawn_positions = 1
+	supervisors = "the mayor"
+	description = "Working alongside the Mayor, you've known them for a while. Your duties mainly consist of handling appointments and managing mundane tasks."
+	selection_color = "#dcba97"
+	exp_requirements = 60
+	outfit = /datum/outfit/job/bighorn/f13secretary
+	access = list(ACCESS_BAR, ACCESS_FORENSICS_LOCKERS)
+	minimal_access = list(ACCESS_BAR, ACCESS_FORENSICS_LOCKERS)
+
+/datum/outfit/job/bighorn/f13secretary
+	name = "Secretary"
+	jobtype = /datum/job/bighorn/f13secretary
+	ears = 			/obj/item/radio/headset/headset_town
+	l_pocket = /obj/item/storage/bag/money/small/settler
+	shoes = /obj/item/clothing/shoes/laceup
+	backpack_contents = list(/obj/item/clothing/under/f13/classdress = 1,
+	/obj/item/clothing/under/suit/black_really = 1,
+	/obj/item/clothing/gloves/evening = 1,
+	/obj/item/clothing/gloves/color/white = 1)
+/*--------------------------------------------------------------*/

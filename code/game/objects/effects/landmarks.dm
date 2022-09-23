@@ -859,7 +859,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 */
 /obj/effect/landmark/start/f13/enclave_synthetic
 	name = "Synthetic"
-	icon_state = "usoffduty"
+	icon_state = "Cyborg"
 
 //Tribal
 
@@ -915,6 +915,15 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 
 /obj/effect/landmark/start/f13/followersscientist
 	name = "Followers Scientist"
+
+/obj/effect/landmark/start/f13/followersrobot
+	name = "Followers Robot"
+	icon_state = "Cyborg"
+
+/obj/effect/landmark/start/f13/followersrobot/Initialize()
+	..()
+	GLOB.special_borg_start += loc
+	return INITIALIZE_HINT_QDEL
 
 //Khans
 // OLD KHAN STUFF

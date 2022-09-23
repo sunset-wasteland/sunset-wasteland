@@ -326,7 +326,7 @@
 /obj/structure/decoration/rag{
 	icon_state = "skin"
 	},
-/turf/closed/wall/f13/wood,
+/turf/closed/wall/f13/sunset/brick_small,
 /area/f13/city/bighorn)
 "abk" = (
 /obj/machinery/power/terminal{
@@ -354,10 +354,8 @@
 /turf/closed/wall/mineral/concrete,
 /area/f13/radiation)
 "abn" = (
-/obj/structure/destructible/tribal_torch/wall/lit{
-	dir = 1;
-	light_color = "#f4e3b0";
-	pixel_y = 12
+/obj/machinery/light{
+	dir = 1
 	},
 /turf/open/floor/wood/wood_worn,
 /area/f13/city/bighorn)
@@ -384,9 +382,8 @@
 /turf/open/floor/wood/wood_worn,
 /area/f13/city/bighorn)
 "abu" = (
-/obj/structure/destructible/tribal_torch/wall/lit{
-	dir = 8;
-	light_color = "#f4e3b0"
+/obj/machinery/light{
+	dir = 8
 	},
 /obj/structure/table/wood,
 /obj/structure/bedsheetbin/towel,
@@ -396,11 +393,7 @@
 /turf/closed/mineral/random/low_chance,
 /area/f13/caves)
 "abw" = (
-/obj/structure/destructible/tribal_torch/wall/lit{
-	dir = 4;
-	light_color = "#f4e3b0"
-	},
-/turf/open/floor/f13/wood,
+/turf/closed/wall/f13/sunset/brick_small,
 /area/f13/city/bighorn)
 "abx" = (
 /turf/closed/indestructible/rock,
@@ -449,9 +442,8 @@
 	},
 /area/f13/city/bighorn)
 "abJ" = (
-/obj/structure/destructible/tribal_torch/wall/lit{
-	dir = 8;
-	light_color = "#f4e3b0"
+/obj/machinery/light{
+	dir = 8
 	},
 /turf/open/floor/wood/wood_worn,
 /area/f13/city/bighorn)
@@ -489,9 +481,8 @@
 /area/f13/brotherhood)
 "abR" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/destructible/tribal_torch/wall/lit{
-	dir = 8;
-	light_color = "#f4e3b0"
+/obj/machinery/light{
+	dir = 8
 	},
 /turf/open/floor/f13{
 	icon_state = "bluedirtychess2"
@@ -530,16 +521,11 @@
 /area/f13/city/bighorn)
 "acb" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/destructible/tribal_torch/wall/lit{
-	dir = 4;
-	light_color = "#f4e3b0"
-	},
-/turf/open/floor/f13/wood,
+/turf/closed/wall/f13/sunset/brick_small,
 /area/f13/city/bighorn)
 "acc" = (
-/obj/structure/destructible/tribal_torch/wall/lit{
-	dir = 4;
-	light_color = "#f4e3b0"
+/obj/machinery/light{
+	dir = 4
 	},
 /turf/open/floor/wood/wood_worn,
 /area/f13/city/bighorn)
@@ -581,9 +567,8 @@
 "aci" = (
 /obj/structure/table/wood,
 /obj/machinery/processor/chopping_block,
-/obj/structure/destructible/tribal_torch/wall/lit{
-	dir = 8;
-	light_color = "#f4e3b0"
+/obj/machinery/light{
+	dir = 8
 	},
 /obj/structure/sign/poster/official/cohiba_robusto_ad{
 	pixel_x = -32
@@ -619,9 +604,8 @@
 /turf/open/floor/f13/wood,
 /area/f13/city/bighorn)
 "acp" = (
-/obj/structure/destructible/tribal_torch/wall/lit{
-	dir = 4;
-	light_color = "#f4e3b0"
+/obj/machinery/light{
+	dir = 4
 	},
 /turf/open/floor/plasteel/stairs{
 	color = "#4b3a26"
@@ -2127,6 +2111,11 @@
 /obj/item/taperecorder/empty,
 /turf/open/floor/carpet/green,
 /area/f13/village)
+"cWt" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/overlay/junk/oldpipes,
+/turf/open/floor/f13/wood,
+/area/f13/city/bighorn)
 "cWM" = (
 /obj/item/storage/trash_stack,
 /turf/open/floor/f13/wood,
@@ -2272,9 +2261,8 @@
 /area/f13/building/mall)
 "dnf" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/destructible/tribal_torch/wall/lit{
-	dir = 8;
-	light_color = "#f4e3b0"
+/obj/machinery/light{
+	dir = 8
 	},
 /turf/open/floor/f13/wood,
 /area/f13/city/bighorn)
@@ -2338,7 +2326,14 @@
 /turf/open/floor/wood/wood_common,
 /area/f13/city/bighorn)
 "dvF" = (
-/turf/closed/wall/f13/sunset/brick_small,
+/turf/closed/indestructible/rock{
+	desc = "A wall made out of solid brick.";
+	icon = 'modular_sunset/icons/turfs/walls/brick_small_dark.dmi';
+	icon_state = "brick0";
+	icon_type_smooth = "brick";
+	name = "brick wall";
+	smooth = 1
+	},
 /area/f13/city/bighorn)
 "dxe" = (
 /obj/effect/decal/cleanable/dirt{
@@ -2830,9 +2825,8 @@
 	},
 /area/f13/building/hospital)
 "eOj" = (
-/obj/structure/destructible/tribal_torch/wall/lit{
-	dir = 8;
-	light_color = "#f4e3b0"
+/obj/machinery/light{
+	dir = 8
 	},
 /turf/open/floor/f13/wood,
 /area/f13/city/bighorn)
@@ -3026,6 +3020,22 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/purple,
 /area/f13/building/mall)
+"frG" = (
+/obj/machinery/door/unpowered/securedoor/sheriff_door{
+	desc = "A heavily reinforced door.";
+	max_integrity = 1200;
+	name = "reinforced secure door";
+	obj_integrity = 1200
+	},
+/turf/open/floor/f13/wood,
+/area/f13/city/bighorn)
+"fxl" = (
+/obj/structure/decoration/warning{
+	desc = "A sign indicating that ahead is a secure area!";
+	pixel_x = 32
+	},
+/turf/open/floor/wood/wood_worn,
+/area/f13/city/bighorn)
 "fyf" = (
 /obj/machinery/door/airlock/hatch{
 	locked = 1
@@ -3184,9 +3194,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building/mall)
 "fUK" = (
-/obj/structure/destructible/tribal_torch/wall/lit{
-	light_color = "#f4e3b0"
-	},
+/obj/machinery/light,
 /turf/open/floor/wood/wood_worn,
 /area/f13/city/bighorn)
 "fVh" = (
@@ -3829,6 +3837,7 @@
 /area/f13/wasteland)
 "hsp" = (
 /obj/structure/barricade/bars,
+/obj/effect/spawner/structure/window/hollow/reinforced,
 /turf/open/floor/wood/wood_worn,
 /area/f13/city/bighorn)
 "hsU" = (
@@ -4140,9 +4149,8 @@
 /turf/open/floor/plasteel/f13/vault_floor/blue,
 /area/f13/building/mall)
 "igu" = (
-/obj/structure/destructible/tribal_torch/wall/lit{
-	dir = 4;
-	light_color = "#f4e3b0"
+/obj/machinery/light{
+	dir = 4
 	},
 /turf/open/transparent/openspace,
 /area/f13/city/bighorn)
@@ -4266,6 +4274,10 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/building/mall)
+"iuW" = (
+/obj/machinery/door/unpowered/securedoor/bighorn_door,
+/turf/open/floor/f13/wood,
+/area/f13/city/bighorn)
 "ivA" = (
 /turf/open/floor/plasteel/f13/vault_floor/blue/side{
 	dir = 6;
@@ -4706,6 +4718,10 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/building/mall)
+"jye" = (
+/obj/machinery/door/unpowered/securedoor/bighorn_door,
+/turf/open/floor/wood/wood_worn,
+/area/f13/city/bighorn)
 "jyG" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
@@ -4982,9 +4998,8 @@
 "kdI" = (
 /obj/structure/table/wood,
 /obj/machinery/microwave,
-/obj/structure/destructible/tribal_torch/wall/lit{
-	dir = 4;
-	light_color = "#f4e3b0"
+/obj/machinery/light{
+	dir = 4
 	},
 /turf/open/floor/f13{
 	icon_state = "bluedirtychess2"
@@ -5836,9 +5851,8 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/bar,
 /area/f13/building/mall)
 "meo" = (
-/obj/structure/destructible/tribal_torch/wall/lit{
-	dir = 8;
-	light_color = "#f4e3b0"
+/obj/machinery/light{
+	dir = 8
 	},
 /obj/structure/table/wood,
 /obj/item/reagent_containers/glass/beaker/waterbottle,
@@ -8334,7 +8348,7 @@
 /area/f13/building/mall)
 "rOo" = (
 /obj/structure/sign/poster/contraband/revolver,
-/turf/closed/wall/f13/wood,
+/turf/closed/wall/f13/sunset/brick_small,
 /area/f13/city/bighorn)
 "rPV" = (
 /obj/structure/simple_door/room,
@@ -8511,6 +8525,10 @@
 	icon_state = "darkrusty"
 	},
 /area/f13/building/mall)
+"sqC" = (
+/obj/effect/overlay/junk/oldpipes,
+/turf/open/floor/f13/wood,
+/area/f13/city/bighorn)
 "sri" = (
 /obj/effect/spawner/lootdrop/ammo/fiftypercent,
 /turf/open/floor/plasteel/f13{
@@ -8706,9 +8724,8 @@
 /turf/closed/indestructible/riveted,
 /area/f13/wasteland/ncr)
 "sPU" = (
-/obj/structure/destructible/tribal_torch/wall/lit{
-	dir = 8;
-	light_color = "#f4e3b0"
+/obj/machinery/light{
+	dir = 8
 	},
 /turf/open/transparent/openspace,
 /area/f13/city/bighorn)
@@ -11772,10 +11789,10 @@ dvF
 dvF
 dvF
 dvF
-xuM
-xuM
-xuM
-xuM
+dvF
+dvF
+dvF
+dvF
 abv
 abv
 abv
@@ -12020,10 +12037,10 @@ abx
 abv
 abv
 abx
-xuM
-xuM
-xuM
-xuM
+abw
+abw
+abw
+abw
 vKS
 dvF
 sPU
@@ -12032,7 +12049,7 @@ dvF
 myk
 abH
 abR
-xuM
+abw
 abv
 abv
 abv
@@ -12277,7 +12294,7 @@ abv
 abv
 abx
 abx
-xuM
+abw
 abD
 aci
 kIp
@@ -12289,7 +12306,7 @@ dvF
 lhS
 abI
 ucW
-xuM
+abw
 abv
 abv
 abv
@@ -12534,23 +12551,23 @@ abv
 abx
 abx
 abx
-xuM
+abw
 abE
 ucW
 ucW
 ucW
-xuM
+abw
 gkd
 gSV
-xuM
-xuM
-xuM
+abw
+abw
+abw
 onq
-xuM
-xuM
-xuM
-xuM
-xuM
+abw
+abw
+abw
+abw
+abw
 oez
 oez
 aKa
@@ -12791,15 +12808,15 @@ abv
 abx
 abx
 abv
-xuM
+abw
 abF
 ucW
 ocJ
 ucW
-xuM
-gkd
-gkd
-cUT
+abw
+sqC
+sqC
+acb
 dJh
 abu
 qWS
@@ -12807,7 +12824,7 @@ kke
 oig
 ixn
 oub
-xuM
+abw
 oez
 oez
 aKa
@@ -13048,12 +13065,12 @@ abv
 abv
 abx
 abv
-xuM
+abw
 abO
 ucW
 unf
 ucW
-ngO
+jye
 gkd
 gkd
 ngO
@@ -13305,15 +13322,15 @@ abx
 abv
 abx
 abx
-xuM
+abw
 abO
 ucW
 ocJ
 ucW
-xuM
+abw
 gkd
 nGj
-xuM
+abw
 wDR
 wDR
 wDR
@@ -13562,15 +13579,15 @@ abx
 abv
 abv
 abx
-xuM
+abw
 abW
 ucW
 ucW
 ucW
-xuM
+abw
 gkd
 nGj
-xuM
+abw
 abU
 wDR
 abU
@@ -13819,15 +13836,15 @@ abx
 abv
 abv
 abx
-xuM
+abw
 ucW
 ucW
 xbW
 jRs
-xuM
 abw
+bxd
 gkd
-xuM
+abw
 abV
 acc
 ach
@@ -13835,7 +13852,7 @@ wDR
 abV
 euz
 ach
-xuM
+abw
 oez
 oez
 oez
@@ -14076,23 +14093,23 @@ abx
 abv
 abx
 abx
-xuM
+abw
 iUi
 kdI
-xuM
-xuM
-cUT
-xuM
+abw
+abw
+acb
+abw
+jye
+abw
+abw
+abw
+abw
 ngO
-xuM
-xuM
-xuM
-xuM
-ngO
-cUT
-cUT
-xuM
-xuM
+acb
+acb
+abw
+abw
 oez
 oez
 oez
@@ -14333,10 +14350,10 @@ abx
 abv
 abx
 abx
-xuM
-xuM
-xuM
-xuM
+abw
+abw
+abw
+abw
 qWS
 qWS
 abJ
@@ -14346,10 +14363,10 @@ wDR
 abJ
 wDR
 wDR
-xuM
-xuM
-xuM
-xuM
+abw
+abw
+abw
+abw
 oez
 oez
 oez
@@ -14593,7 +14610,7 @@ abx
 abx
 abv
 abv
-xuM
+abw
 wDR
 qWS
 uKN
@@ -14603,7 +14620,7 @@ uKN
 aba
 qWS
 wDR
-xuM
+abw
 dnf
 nGj
 aIJ
@@ -14850,7 +14867,7 @@ abv
 abv
 abv
 abx
-xuM
+abw
 wDR
 wDR
 aby
@@ -14860,7 +14877,7 @@ aby
 qmn
 qWS
 wDR
-ngO
+jye
 gkd
 acj
 aco
@@ -15117,7 +15134,7 @@ wDR
 wDR
 wDR
 wDR
-ngO
+jye
 gkd
 acj
 aIJ
@@ -15364,7 +15381,7 @@ abv
 abv
 abv
 abx
-xuM
+abw
 abn
 abs
 aby
@@ -15374,7 +15391,7 @@ abT
 wDR
 wDR
 fUK
-xuM
+abw
 gkd
 gkd
 aIJ
@@ -15631,7 +15648,7 @@ wDR
 wDR
 wDR
 wDR
-ngO
+jye
 gkd
 acj
 aIJ
@@ -15878,7 +15895,7 @@ abx
 abx
 abv
 abv
-xuM
+abw
 wDR
 wDR
 aby
@@ -15888,7 +15905,7 @@ aby
 aby
 wDR
 wDR
-ngO
+jye
 gkd
 acj
 aIJ
@@ -16135,7 +16152,7 @@ abx
 abx
 abx
 abx
-xuM
+abw
 qWS
 wDR
 fEX
@@ -16145,8 +16162,8 @@ fEX
 fEX
 wDR
 qWS
-xuM
-acb
+abw
+bnr
 nel
 aIJ
 oez
@@ -16389,23 +16406,23 @@ abv
 abv
 abx
 abx
-xuM
-xuM
-xuM
-xuM
+abw
+abw
+abw
+abw
 wDR
 qWS
 acc
 wDR
-wDR
+fxl
 qWS
 acc
 qWS
 wDR
-xuM
-xuM
-xuM
-xuM
+abw
+abw
+abw
+abw
 oez
 oez
 oez
@@ -16646,23 +16663,23 @@ abv
 abv
 abx
 abx
-xuM
+abw
 abf
-xuM
-xuM
-xuH
-xuM
-xuM
-xuH
-xuM
-xuM
-xuM
-xuM
-ngO
-xuM
+abw
+abw
+iuW
+dvF
+dvF
+frG
+dvF
+abw
+abw
+abw
+jye
+abw
 meo
 ack
-xuM
+abw
 oez
 oez
 oez
@@ -16903,15 +16920,15 @@ abx
 abv
 abx
 abx
-xuM
+abw
 gkd
 acp
 abh
 gkd
-xuM
+dvF
 dnf
 gkd
-xuM
+dvF
 tjb
 abJ
 mls
@@ -16919,7 +16936,7 @@ qWS
 wDR
 wDR
 abK
-xuM
+abw
 oez
 oez
 oez
@@ -17160,15 +17177,15 @@ abx
 abx
 abx
 abx
-xuM
-xuM
-xuM
-xuM
-xuM
-xuM
+abw
+abw
+dvF
+dvF
+dvF
+dvF
 gkd
 gkd
-qqp
+dvF
 wDR
 wDR
 wDR
@@ -17419,13 +17436,13 @@ abx
 abx
 abx
 abx
-xuM
+dvF
 emF
 gkd
 mZq
 gkd
 gkd
-qqp
+dvF
 wLN
 wDR
 wLN
@@ -17676,13 +17693,13 @@ csj
 csj
 csj
 abx
-xuM
+dvF
 fAx
 gkd
-xuM
+dvF
 gkd
 gkd
-qqp
+dvF
 wDR
 wDR
 wDR
@@ -17933,13 +17950,13 @@ kLH
 dos
 csj
 abx
-xuM
-xuM
-xuM
-xuM
-nGj
-nGj
-xuM
+dvF
+dvF
+dvF
+dvF
+cWt
+cWt
+dvF
 aby
 qWS
 wDR
@@ -17947,7 +17964,7 @@ wDR
 wDR
 acc
 aby
-xuM
+abw
 oez
 oez
 aKa
@@ -18193,18 +18210,18 @@ abx
 abv
 abv
 abx
-xuM
+dvF
 gkd
 xHP
-xuM
-xuM
+dvF
+dvF
 wDR
 wDR
-xuM
+abw
 rOo
-xuM
-xuM
-xuM
+abw
+abw
+abw
 oez
 oez
 aKa
@@ -18454,13 +18471,13 @@ dvF
 kaE
 kaE
 dvF
-xuM
+dvF
 abn
 wDR
-xuM
+abw
 gkd
 eOj
-xuM
+abw
 abv
 abv
 abv
@@ -18711,13 +18728,13 @@ dvF
 igu
 kaE
 dvF
-xuM
+dvF
 abN
 pNa
 xuH
 gkd
 gkd
-xuM
+abw
 abv
 abx
 abv
@@ -18968,13 +18985,13 @@ dvF
 dvF
 dvF
 dvF
-xuM
+dvF
 hsp
 hsp
-xuM
+abw
 gkd
 gkd
-xuM
+abw
 abx
 abv
 abv

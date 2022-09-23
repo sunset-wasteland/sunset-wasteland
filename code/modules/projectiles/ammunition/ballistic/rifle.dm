@@ -76,6 +76,13 @@
 	icon_state = "40mmHE"
 	projectile_type = /obj/item/projectile/bullet/a40mm
 
+/obj/item/ammo_casing/a40mmg
+	name = "40mm TG shell"
+	desc = "A thin, cased tear gas grenade. Only activates once it impacts the ground at high speed."
+	caliber = "40mmg"
+	icon_state = "40mmTG"
+	projectile_type = /obj/item/projectile/bullet/a40mmg
+
 // 2mm EC
 /obj/item/ammo_casing/c2mm
 	name = "2mm gauss projectile casing"

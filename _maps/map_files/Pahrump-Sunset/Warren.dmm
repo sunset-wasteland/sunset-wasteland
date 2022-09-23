@@ -2822,6 +2822,9 @@
 /obj/structure/reagent_dispensers/peppertank{
 	pixel_y = -31
 	},
+/obj/item/flashlight/seclite,
+/obj/item/flashlight/seclite,
+/obj/structure/table,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -5335,9 +5338,12 @@
 /area/f13/city)
 "fgO" = (
 /obj/structure/table,
-/obj/item/ammo_box/shotgun/bean,
-/obj/item/ammo_box/shotgun/bean,
-/obj/item/gun/ballistic/shotgun/hunting,
+/obj/item/grenade/f13/stinger,
+/obj/item/grenade/f13/stinger,
+/obj/item/grenade/f13/stinger,
+/obj/item/grenade/f13/stinger,
+/obj/item/grenade/f13/stinger,
+/obj/item/grenade/f13/stinger,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -8089,7 +8095,9 @@
 	icon_state = "skin"
 	},
 /obj/structure/decoration/rag,
-/turf/closed/wall/rust,
+/turf/closed/indestructible/f13vaultrusted{
+	name = "rusty reinforced wall"
+	},
 /area/f13/raiders)
 "hGM" = (
 /obj/structure/sign/poster/contraband/pinup_pink,
@@ -8126,6 +8134,12 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/ncr)
+"hIB" = (
+/obj/structure/decoration/rag,
+/turf/closed/indestructible/f13vaultrusted{
+	name = "rusty reinforced wall"
+	},
+/area/f13/raiders)
 "hIE" = (
 /obj/structure/fireaxecabinet{
 	pixel_y = 28
@@ -13933,6 +13947,7 @@
 /obj/structure/guncase{
 	anchored = 1
 	},
+/obj/item/gun/ballistic/revolver/grenadelauncher/nonlethal,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -14990,9 +15005,8 @@
 /area/f13/city)
 "ovP" = (
 /obj/structure/table,
-/obj/effect/spawner/lootdrop/trash,
-/obj/item/flashlight/seclite,
-/obj/item/flashlight/seclite,
+/obj/item/ammo_box/a40mmg,
+/obj/item/ammo_box/a40mmg,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -15522,6 +15536,24 @@
 	},
 /turf/open/floor/carpet,
 /area/f13/city)
+"oXS" = (
+/obj/structure/closet,
+/obj/item/clothing/mask/gas/glass,
+/obj/item/clothing/mask/gas/glass,
+/obj/item/clothing/mask/gas/glass,
+/obj/item/clothing/mask/gas/glass,
+/obj/item/clothing/mask/gas/glass,
+/obj/item/clothing/mask/gas/glass,
+/obj/item/tank/internals/emergency_oxygen,
+/obj/item/tank/internals/emergency_oxygen,
+/obj/item/tank/internals/emergency_oxygen,
+/obj/item/tank/internals/emergency_oxygen,
+/obj/item/tank/internals/emergency_oxygen,
+/obj/item/tank/internals/emergency_oxygen,
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
+/area/f13/ncr)
 "oYp" = (
 /obj/structure/flora/junglebush/b,
 /turf/open/water,
@@ -17012,7 +17044,9 @@
 /area/f13/city)
 "qvC" = (
 /obj/structure/sign/poster/contraband/punch_shit,
-/turf/closed/wall/r_wall/rust,
+/turf/closed/indestructible/f13vaultrusted{
+	name = "rusty reinforced wall"
+	},
 /area/f13/raiders)
 "qvK" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -20374,7 +20408,9 @@
 	pixel_x = 4;
 	pixel_y = 2
 	},
-/turf/closed/wall/rust,
+/turf/closed/indestructible/f13vaultrusted{
+	name = "rusty reinforced wall"
+	},
 /area/f13/raiders)
 "tEZ" = (
 /obj/structure/fence/corner,
@@ -23103,6 +23139,11 @@
 	icon_state = "horizontalinnermain0"
 	},
 /area/f13/wasteland/ncr)
+"vVj" = (
+/turf/closed/indestructible/f13vaultrusted{
+	name = "rusty reinforced wall"
+	},
+/area/f13/raiders)
 "vVp" = (
 /obj/structure/car/rubbish3,
 /turf/open/indestructible/ground/outside/road{
@@ -38131,7 +38172,7 @@ lMO
 jfK
 giD
 aQW
-dva
+oXS
 hwE
 cJK
 cDq
@@ -43825,8 +43866,8 @@ pLS
 pLS
 pLS
 pLS
-pLS
-pLS
+qZx
+qZx
 boQ
 boQ
 boQ
@@ -43970,14 +44011,14 @@ qZx
 qZx
 qZx
 pLS
-pLS
-pLS
-pLS
-pLS
-pLS
-pLS
-pLS
-pLS
+qZx
+qZx
+qZx
+qZx
+qZx
+qZx
+qZx
+qZx
 anJ
 fsv
 fsv
@@ -46841,12 +46882,12 @@ wUT
 wUT
 ssR
 qvC
-vVX
-vVX
-vVX
-vVX
-vVX
-vVX
+vVj
+vVj
+vVj
+vVj
+vVj
+vVj
 qZx
 qZx
 qZx
@@ -47144,7 +47185,7 @@ oTq
 wUT
 wUT
 sNb
-yln
+hIB
 anJ
 slt
 qvf
@@ -47296,7 +47337,7 @@ kNv
 wUT
 wUT
 wUT
-yln
+hIB
 anJ
 wzw
 aID
@@ -47600,7 +47641,7 @@ hBB
 jiC
 yln
 yln
-vVX
+vVj
 anJ
 wzw
 pWr
@@ -47752,7 +47793,7 @@ sNb
 vVX
 xcW
 gAW
-vVX
+vVj
 anJ
 wzw
 aID
@@ -47904,7 +47945,7 @@ wUT
 hNU
 hwx
 fGM
-vVX
+vVj
 anJ
 slt
 lgq
@@ -48054,9 +48095,9 @@ ujz
 sNb
 gFW
 xqa
-vVX
-vVX
-vVX
+vVj
+vVj
+vVj
 anJ
 anJ
 anJ

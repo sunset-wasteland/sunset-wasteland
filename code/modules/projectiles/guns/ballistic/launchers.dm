@@ -29,6 +29,12 @@
 /obj/item/gun/ballistic/revolver/grenadelauncher/cyborg/attack_self()
 	return
 
+/obj/item/gun/ballistic/revolver/grenadelauncher/nonlethal
+	name = "M79-TG grenade launcher"
+	desc = "A break-operated grenade launcher. This one appears modified for riot control."
+	mag_type = /obj/item/ammo_box/magazine/internal/grenadelauncher_nl
+	pin = /obj/item/firing_pin
+
 /obj/item/gun/ballistic/automatic/gyropistol
 	name = "gyrojet pistol"
 	desc = "A prototype pistol designed to fire self propelled rockets."

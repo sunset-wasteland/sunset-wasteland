@@ -75,7 +75,7 @@
 	desc = "A leather top with a bandolier over it and a straps that cover the arms."
 	icon_state = "badlands"
 	item_state = "badlands"
-	armor = list("melee" = 30, "bullet" = 30, "laser" = 30, "energy" = 0, "bio" = 0, "bomb" = 20 "rad" = 0, "fire" = 25, "acid" = 25, "wound" = 40)
+	armor = list("melee" = 30, "bullet" = 30, "laser" = 30, "energy" = 0, "bio" = 0, "bomb" = 20, "rad" = 0, "fire" = 25, "acid" = 25, "wound" = 40)
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/bulletbelt
 
 /obj/item/clothing/suit/armor/f13/raider/badlands/Initialize()

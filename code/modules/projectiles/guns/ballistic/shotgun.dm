@@ -98,10 +98,10 @@
 ////////////////////////////////////////
 
 
-//Caravan shotgun							Keywords: Shotgun, Double barrel, saw-off, extra damage +1
+//Caravan shotgun							Keywords: Shotgun, Double barrel, saw-off, extra damage +5.2, extra pen 10%
 /obj/item/gun/ballistic/revolver/caravan_shotgun
 	name = "caravan shotgun"
-	desc = "An common over-under double barreled shotgun made in the post-war era."
+	desc = "A common over-under double barreled shotgun made in the post-war era."
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
@@ -115,6 +115,8 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/dual/simple
 	sawn_desc = "Short and concealable, terribly uncomfortable to fire, but worse on the other end."
 	fire_sound = 'sound/f13weapons/caravan_shotgun.ogg'
+	extra_damage = 5.2
+	extra_penetration = 0.1
 
 /obj/item/gun/ballistic/revolver/caravan_shotgun/attackby(obj/item/A, mob/user, params)
 	..()
@@ -134,7 +136,7 @@
 		icon_state = "[initial(icon_state)]"
 
 
-//Widowmaker				Keywords: Shotgun, Double barrel, saw-off
+//Widowmaker				Keywords: Shotgun, Double barrel, saw-off, extra damage +3.5, extra pen 5%
 /obj/item/gun/ballistic/revolver/widowmaker
 	name = "Winchester Widowmaker"
 	desc = "Old-world Winchester Widowmaker double-barreled 12 gauge shotgun, with mahogany furniture"
@@ -151,6 +153,8 @@
 	force = 20
 	sawn_desc = "Someone took the time to chop the last few inches off the barrel and stock of this shotgun. Now, the wide spread of this hand-cannon's short-barreled shots makes it perfect for short-range crowd control."
 	fire_sound = 'sound/f13weapons/max_sawn_off.ogg'
+	extra_damage = 3.5
+	extra_penetration = 0.05
 
 /obj/item/gun/ballistic/revolver/widowmaker/attackby(obj/item/A, mob/user, params)
 	..()

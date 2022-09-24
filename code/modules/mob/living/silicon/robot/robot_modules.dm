@@ -8,7 +8,7 @@
 	righthand_file = 'icons/mob/inhands/misc/devices_righthand.dmi'
 	flags_1 = CONDUCT_1
 
-	var/borghealth = 100
+	var/borghealth = 300
 
 	var/list/basic_modules = list() //a list of paths, converted to a list of instances on New()
 	var/list/emag_modules = list() //ditto
@@ -211,6 +211,8 @@
 	R.maxHealth = borghealth
 	R.health = min(borghealth, R.health)
 	qdel(src)
+	R.radio.extra_channels = RM.added_channels
+	R.radio.recalculateChannels()
 	return RM
 
 /obj/item/robot_module/proc/be_transformed_to(obj/item/robot_module/old_module)

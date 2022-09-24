@@ -39,7 +39,7 @@
 /obj/item/gun/energy/laser/cyborg
 	name = "integrated AER9"
 	can_charge = FALSE
-	desc = "An energy-based laser gun that draws power from the Handy's internal energy cell directly. So this is what freedom looks like?"
+	desc = "An energy-based laser gun that draws power from the robot's internal energy cell directly. So this is what freedom looks like?"
 	fire_delay = 1
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/lasgun/hitscan)
 	icon_state = "laser"

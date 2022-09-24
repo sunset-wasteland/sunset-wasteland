@@ -213,6 +213,7 @@
 	qdel(src)
 	R.radio.extra_channels = RM.added_channels
 	R.radio.recalculateChannels()
+	R.update_dogborg() //Adds resting and resting style verbs
 	return RM
 
 /obj/item/robot_module/proc/be_transformed_to(obj/item/robot_module/old_module)

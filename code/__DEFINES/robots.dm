@@ -73,3 +73,8 @@
 #define PRIVILEDGES_PAI		(1<<1)
 #define PRIVILEDGES_BOT		(1<<2)
 #define PRIVILEDGES_DRONE	(1<<3)
+
+//Defines for dogborgs and stuff
+#define ROBOT_REST_NORMAL 1
+#define ROBOT_REST_SITTING 2
+#define ROBOT_REST_BELLY_UP 3

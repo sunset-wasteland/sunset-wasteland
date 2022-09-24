@@ -87,7 +87,7 @@
 	can_be_pushed = FALSE
 	hat_offset = INFINITY
 	sleeper_overlay = "ksleeper"
-	cyborg_icon_override = 'modular_citadel/icons/mob/widerobot.dmi'
+	cyborg_icon_override = 'modular_sunset/icons/mob/robot/widerobot_sec.dmi'
 	has_snowflake_deadsprite = TRUE
 	dogborg = TRUE
 	cyborg_pixel_offset = -16
@@ -97,16 +97,27 @@
 	var/static/list/k9_models
 	if(!k9_models)
 		k9_models = list(
-			"k9" = image(icon = 'modular_citadel/icons/mob/widerobot.dmi', icon_state = "k9")
+			"K9" = image(icon = 'modular_sunset/icons/mob/robot/widerobot_sec.dmi', icon_state = "k9", pixel_x = -16),
+			"Dark" = image(icon = 'modular_sunset/icons/mob/robot/widerobot_sec.dmi', icon_state = "k9dark", pixel_x = -16),
+			"Vale" = image(icon = 'modular_sunset/icons/mob/robot/widerobot_sec.dmi', icon_state = "valesec", pixel_x = -16),
+			"Otie" = image(icon = 'modular_sunset/icons/mob/robot/widerobot_sec.dmi', icon_state = "oties", pixel_x = -16),
+			"Drake" = image(icon = 'modular_sunset/icons/mob/robot/widerobot_sec.dmi', icon_state = "drakesec", pixel_x = -16)
 		)
 		k9_models = sortList(k9_models)
 	var/k9_borg_icon = show_radial_menu(R, R , k9_models, custom_check = CALLBACK(src, .proc/check_menu, R), radius = 42, require_near = TRUE, tooltips = TRUE)
 	if(!k9_borg_icon)
 		return
 	switch(k9_borg_icon)
-		if("k9")
+		if("K9")
 			cyborg_base_icon = "k9"
-			moduleselect_icon = "k9"
+		if("Dark")
+			cyborg_base_icon = "k9dark"
+		if("Vale")
+			cyborg_base_icon = "valesec"
+		if("Otie")
+			cyborg_base_icon = "oties"
+		if("Drake")
+			cyborg_base_icon = "drakesec"
 	return ..()
 
 /obj/item/robot_module/medihound
@@ -144,7 +155,7 @@
 	can_be_pushed = FALSE
 	hat_offset = INFINITY
 	sleeper_overlay = "msleeper"
-	cyborg_icon_override = 'modular_citadel/icons/mob/widerobot.dmi'
+	cyborg_icon_override = 'modular_sunset/icons/mob/robot/widerobot_med.dmi'
 	has_snowflake_deadsprite = TRUE
 	dogborg = TRUE
 	cyborg_pixel_offset = -16
@@ -154,15 +165,24 @@
 	var/static/list/medihound_models
 	if(!medihound_models)
 		medihound_models = list(
-		"medihound" = image(icon = 'modular_citadel/icons/mob/widerobot.dmi', icon_state = "medihound")
+		"Medihound" = image(icon = 'modular_sunset/icons/mob/robot/widerobot_med.dmi', icon_state = "medihound", pixel_x = -16),
+		"Dark" = image(icon = 'modular_sunset/icons/mob/robot/widerobot_med.dmi', icon_state = "medihounddark", pixel_x = -16),
+		"Vale" = image(icon = 'modular_sunset/icons/mob/robot/widerobot_med.dmi', icon_state = "valemed", pixel_x = -16),
+		"Drake" = image(icon = 'modular_sunset/icons/mob/robot/widerobot_med.dmi', icon_state = "drakemed", pixel_x = -16)
 		)
 		medihound_models = sortList(medihound_models)
 	var/medihound_borg_icon = show_radial_menu(R, R , medihound_models, custom_check = CALLBACK(src, .proc/check_menu, R), radius = 42, require_near = TRUE, tooltips = TRUE)
 	if(!medihound_borg_icon)
 		return
 	switch(medihound_borg_icon)
-		if("Default")
+		if("Medihound")
 			cyborg_base_icon = "medihound"
+		if("Dark")
+			cyborg_base_icon = "medihounddark"
+		if("Vale")
+			cyborg_base_icon = "valemed"
+		if("Drake")
+			cyborg_base_icon = "drakemed"
 	return ..()
 
 /obj/item/robot_module/scrubpup
@@ -186,24 +206,33 @@
 	hat_offset = INFINITY
 	clean_on_move = TRUE
 	sleeper_overlay = "jsleeper"
-	cyborg_icon_override = 'modular_citadel/icons/mob/widerobot.dmi'
+	cyborg_icon_override = 'modular_sunset/icons/mob/robot/widerobot_jani.dmi'
 	has_snowflake_deadsprite = TRUE
-	cyborg_pixel_offset = -16
 	dogborg = TRUE
+	cyborg_pixel_offset = -16
 
 /obj/item/robot_module/scrubpup/be_transformed_to(obj/item/robot_module/old_module)
 	var/mob/living/silicon/robot/R = loc
 	var/static/list/scrubpup_models
 	if(!scrubpup_models)
 		scrubpup_models = list(
-		"scrubpup" = image(icon = 'modular_citadel/icons/mob/widerobot.dmi', icon_state = "scrubpup")
+		"Scrubpup" = image(icon = 'modular_sunset/icons/mob/robot/widerobot_jani.dmi', icon_state = "scrubpup", pixel_x = -16),
+		"Otie" = image(icon = 'modular_sunset/icons/mob/robot/widerobot_jani.dmi', icon_state = "otiej", pixel_x = -16),
+		"Drake" = image(icon = 'modular_sunset/icons/mob/robot/widerobot_jani.dmi', icon_state = "drakejanit", pixel_x = -16),
+		"J9" = image(icon = 'modular_sunset/icons/mob/robot/widerobot_jani.dmi', icon_state = "J9", pixel_x = -16)
 		)
 	var/scrubpup_borg_icon = show_radial_menu(R, R , scrubpup_models, custom_check = CALLBACK(src, .proc/check_menu, R), radius = 42, require_near = TRUE, tooltips = TRUE)
 	if(!scrubpup_borg_icon)
 		return
 	switch(scrubpup_borg_icon)
-		if("scrubpup")
+		if("Scrubpup")
 			cyborg_base_icon = "scrubpup"
+		if("Otie")
+			cyborg_base_icon = "otiej"
+		if("Drake")
+			cyborg_base_icon = "drakejanit"
+		if("J9")
+			cyborg_base_icon = "J9"
 	return ..()
 
 /obj/item/robot_module/scrubpup/respawn_consumable(mob/living/silicon/robot/R, coeff = 1)

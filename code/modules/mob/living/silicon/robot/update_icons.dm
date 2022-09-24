@@ -10,12 +10,20 @@
 	if(disabler)
 		add_overlay("disabler")//ditto
 
-	if(module.dogborg == TRUE)
-		if(resting)
+	if(robot_resting)
+		if(stat != DEAD && can_rest())
+			switch(robot_resting)
+				if(ROBOT_REST_NORMAL)
+					icon_state = "[module.cyborg_base_icon]-rest"
+				if(ROBOT_REST_SITTING)
+					icon_state = "[module.cyborg_base_icon]-sit"
+				if(ROBOT_REST_BELLY_UP)
+					icon_state = "[module.cyborg_base_icon]-bellyup"
+				else
+					icon_state = "[module.cyborg_base_icon]"
 			cut_overlays()
-			icon_state = "[module.cyborg_base_icon]-rest"
-		else
-			icon_state = "[module.cyborg_base_icon]"
+	else
+		icon_state = "[module.cyborg_base_icon]"
 
 	if(stat == DEAD && module.has_snowflake_deadsprite)
 		icon_state = "[module.cyborg_base_icon]-wreck"
@@ -29,7 +37,7 @@
 		pixel_w = initial(pixel_w)
 		pixel_x = initial(pixel_x)
 
-	if(stat != DEAD && !(IsUnconscious() ||IsStun() || IsKnockdown() || IsParalyzed() || low_power_mode)) //Not dead, not stunned.
+	if(stat != DEAD && !(IsUnconscious() ||IsStun() || IsKnockdown() || IsParalyzed() || low_power_mode) && !robot_resting) //Not dead, not stunned.
 		if(!eye_lights)
 			eye_lights = new()
 		if(lamp_intensity > 2)

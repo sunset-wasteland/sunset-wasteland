@@ -16,7 +16,7 @@
 	end_duration = 100
 	end_message = "<span class='notice'>The cold snap dies down, it should be safe to go outside again.</span>"
 
-	area_types = list(/area/f13/wasteland, /area/f13/desert, /area/f13/farm, /area/f13/forest, /area/f13/ruins)
+	area_types = list(/area/f13/wasteland, /area/f13/desert, /area/f13/farm, /area/f13/forest, /area/f13/ruins, /area/f13/mountain_area)
 	protected_areas = list(/area/shuttle)
 	target_trait = ZTRAIT_SURFACE
 

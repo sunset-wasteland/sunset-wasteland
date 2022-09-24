@@ -65,6 +65,7 @@
 	desc = "An integrated disabler that draws from a cyborg's power cell. This one contains a limiter to prevent the cyborg's power cell from overheating."
 	icon = 'icons/obj/items_cyborg.dmi'
 	icon_state = "taser"
+	item_state = "taser"
 	can_charge = FALSE
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler/secborg)
 	selfcharge = EGUN_SELFCHARGE_BORG

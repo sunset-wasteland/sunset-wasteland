@@ -26,6 +26,14 @@
 		update_sight()
 	else if(istype(O, /obj/item/storage/bag/tray/))
 		SEND_SIGNAL(O, COMSIG_TRY_STORAGE_QUICK_EMPTY)
+	//CITADEL EDIT reee proc, Dogborg modules
+	if(istype(O,/obj/item/gun/energy/laser/cyborg))
+		laser = FALSE
+		update_icons()
+	else if(istype(O,/obj/item/gun/energy/disabler/cyborg))
+		disabler = FALSE
+		update_icons() //PUT THE GUN AWAY
+	//END CITADEL EDIT
 	if(client)
 		client.screen -= O
 	observer_screen_update(O,FALSE)
@@ -57,6 +65,14 @@
 	if(activated(O))
 		to_chat(src, "<span class='warning'>That module is already activated.</span>")
 		return
+	//CITADEL EDIT Dogborg lasers
+	if(istype(O,/obj/item/gun/energy/laser/cyborg))
+		laser = TRUE
+		update_icons() //REEEEEEACH FOR THE SKY
+	if(istype(O,/obj/item/gun/energy/disabler/cyborg))
+		disabler = TRUE
+		update_icons()
+	//END CITADEL EDIT
 	if(!held_items[1] && health >= -maxHealth*0.5)
 		held_items[1] = O
 		O.screen_loc = inv1.screen_loc

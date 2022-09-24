@@ -534,6 +534,14 @@
 #define COMSIG_ACTION_TRIGGER "action_trigger"						//from base of datum/action/proc/Trigger(): (datum/action)
 	#define COMPONENT_ACTION_BLOCK_TRIGGER 1
 
+//Hyperstation Signals
+//
+///from datum/action/cyborg_small_sprite and sends when a cyborg changes modules
+#define COMSIG_CYBORG_MODULE_CHANGE "cyborg_module_change"
+
+///sent from borg mobs to itself, for tools to catch an upcoming destroy() due to safe decon (rather than detonation)
+#define COMSIG_BORG_SAFE_DECONSTRUCT "borg_safe_decon"
+
 //Xenobio hotkeys
 #define COMSIG_XENO_SLIME_CLICK_CTRL "xeno_slime_click_ctrl"				//from slime CtrlClickOn(): (/mob)
 #define COMSIG_XENO_SLIME_CLICK_ALT "xeno_slime_click_alt"					//from slime AltClickOn(): (/mob)

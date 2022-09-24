@@ -915,7 +915,7 @@
 
 /obj/item/clothing/suit/armor/f13/usmcriot
 	name = "old United States Marine Corp riot suit"
-	desc = "A pre-war riot suit helmet used by the USCM For various tasks and operations, it's handled the nuclear wasteland somewhat better than the rest of the armors you've seen."
+	desc = "A pre-war riot suit used by the USCM For various tasks and operations, it's handled the nuclear wasteland somewhat better than the rest of the armors you've seen."
 	icon_state = "usmc_riot_gear"
 	item_state = "usmc_riot_gear"
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
@@ -924,6 +924,10 @@
 /obj/item/clothing/suit/armor/f13/usmcriot/Initialize() //HQ parts reinforcement
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
+
+/obj/item/clothing/suit/armor/f13/usmcriot/armypilot
+	name = "enclave officer pilot suit"
+	desc = "A pre-war riot suit, repurposed for duty aboard aircraft."
 
 /obj/item/clothing/suit/armor/f13/enclavetrenchcoat
 	name = "enclave officer trenchcoat"

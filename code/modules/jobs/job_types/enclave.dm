@@ -52,10 +52,11 @@
 	total_positions = 1
 	spawn_positions = 1
 	access = list(ACCESS_ENCLAVE, ACCESS_CHANGE_IDS, ACCESS_ENCLAVE_COMMAND)
-	description = "You are probably the last operating cell of the Enclave in the US, as far as you know. Your goal, primarily, is to collect organic material. Preferably alive, for the sake of testing. <br>\
+	description = "You're a small garrison within a side entrance of a far larger complex. This complex sits within the Casper mountain range. Your goal, primarily, is to collect organic material. Preferably alive, for the sake of testing. <br>\
 	Now that the lore is out of the way, just make the round fun. You set the policies and the attitude of the Enclave this week."
 	supervisors = "Enclave Department of the Army."
 	outfit = /datum/outfit/job/enclave/peacekeeper/enclavelt
+	req_admin_notify = 1
 	exp_requirements = 1500
 
 	loadout_options = list(
@@ -113,7 +114,6 @@
 		return
 	ADD_TRAIT(H, TRAIT_PA_WEAR, src)
 	ADD_TRAIT(H, TRAIT_LIFEGIVER, src)
-	ADD_TRAIT(H, TRAIT_PILOT, src)
 	ADD_TRAIT(H, TRAIT_RESEARCHER, src)
 	if(H.mind)
 		var/obj/effect/proc_holder/spell/terrifying_presence/S = new /obj/effect/proc_holder/spell/terrifying_presence
@@ -128,7 +128,7 @@
 	total_positions = 1
 	spawn_positions = 1
 	access = list(ACCESS_ENCLAVE, ACCESS_CHANGE_IDS, ACCESS_ENCLAVE_COMMAND)
-	description = "Second in command after Lieutenant, your role is to direct their orders directly to the Sergeants and regular troops."
+	description = "You're a small garrison within a side entrance of a far larger complex. This complex sits within the Casper mountain range. Second in command after Lieutenant, your role is to direct their orders directly to the Sergeants and regular troops."
 	supervisors = "The Lieutenant."
 	outfit = /datum/outfit/job/enclave/peacekeeper/f13gysergeant
 	exp_requirements = 1400
@@ -202,7 +202,7 @@
 	flag = F13USSGT
 	total_positions = 2
 	spawn_positions = 2
-	description = "Entrusted with the command of the squads assigned to the bunker, your job is to assist the Lieutenant alongside the scientists."
+	description = "You're a small garrison within a side entrance of a far larger complex. This complex sits within the Casper mountain range. Entrusted with the command of the squads assigned to the bunker, your job is to assist the Lieutenant alongside the scientists."
 	supervisors = "The Lieutenant and the Gunnery Sergeant."
 	outfit = /datum/outfit/job/enclave/peacekeeper/enclavesgt
 	exp_requirements = 1200
@@ -266,7 +266,7 @@
 	flag = F13USSPECIALIST
 	total_positions = 2
 	spawn_positions = 2
-	description = "You are an operative for the remnants of the Enclave. You, unlike the normal Privates, have recieved specialist training in either engineering or medicine."
+	description = "You're a small garrison within a side entrance of a far larger complex. This complex sits within the Casper mountain range. You are an operative for the remnants of the Enclave. You, unlike the normal Privates, have recieved specialist training in either engineering or medicine."
 	supervisors = "The Lieutenant and the Sergeants."
 	outfit = /datum/outfit/job/enclave/peacekeeper/f13specialist
 	exp_requirements = 700
@@ -334,7 +334,7 @@
 	flag = F13USPRIVATE
 	total_positions = 4
 	spawn_positions = 4
-	description = "You are an enlisted member of the Enclave. Obey your Lieutenant. They set the Enclave's policies. Unfortunately, you've not yet received your PA training. <br> (OOC NOTE: If you use this role to TDM, you'll be jobbanned and risk a potential permaban from the server.)"
+	description = "You're a small garrison within a side entrance of a far larger complex. This complex sits within the Casper mountain range. You are an enlisted member of the Enclave. Obey your Lieutenant. They set the Enclave's policies. Unfortunately, you've not yet received your PA training. <br> (OOC NOTE: If you use this role to TDM, you'll be jobbanned and risk a potential permaban from the server.)"
 	supervisors = "The Lieutenant and the Sergeants"
 	outfit = /datum/outfit/job/enclave/peacekeeper/enclavespy
 	exp_type = EXP_TYPE_FALLOUT
@@ -373,7 +373,7 @@
 	flag = F13USSCIENTIST
 	total_positions = 2
 	spawn_positions = 2
-	description = "You're responsible for the maintenance of the base and field studies, the knowledge you've accumulated over the years is the only thing keeping the remnants alive. You've dabbled in enough to be considered a Professor in your field of research, but they call you Doctor. Support your dwindling forces and listen to the Lieutenant."
+	description = "You're a small garrison within a side entrance of a far larger complex. This complex sits within the Casper mountain range. You're responsible for the maintenance of the base and field studies, the knowledge you've accumulated over the years is the only thing keeping the remnants alive. You've dabbled in enough to be considered a Professor in your field of research, but they call you Doctor. Support your dwindling forces and listen to the Lieutenant."
 	supervisors = "Enclave Research and Development Division."
 	outfit = /datum/outfit/job/enclave/noncombat/enclavesci
 	exp_requirements = 1000
@@ -415,6 +415,135 @@
 	ADD_TRAIT(H, TRAIT_UNETHICAL_PRACTITIONER, src) // Brainwashing
 	ADD_TRAIT(H, TRAIT_PA_WEAR, src)
 //	ADD_TRAIT(H, TRAIT_POOR_AIM, src)
+
+//Pilot
+/datum/job/enclave/enclavepilot
+	title = "Enclave Pilot Officer"
+	flag = F13USSCIENTIST
+	total_positions = 2
+	spawn_positions = 2
+	description = "You're a small garrison within a side entrance of a far larger complex. This complex sits within the Casper mountain range. You're responsible for the operation of your assigned aircraft on base and within field operations. Support the First Lieutenant."
+	supervisors = "Enclave Department of the Army, Air Force Division."
+	outfit = /datum/outfit/job/enclave/noncombat/enclavepilot
+	req_admin_notify = 1
+	exp_requirements = 1000
+	access = list(ACCESS_ENCLAVE, ACCESS_ENCLAVE_COMMAND)
+
+/datum/outfit/job/enclave/noncombat/enclavepilot
+	name = "Enclave Pilot Officer"
+	jobtype = /datum/job/enclave/enclavepilot
+	head = /obj/item/clothing/head/helmet/f13/enclave/usmcriot/armypilot//TEMP UNTIL WE GET A PROPER PILOT UNIFORM
+	uniform = /obj/item/clothing/under/f13/enclave/officer
+	suit = /obj/item/clothing/suit/armor/f13/usmcriot/armypilot//TEMP UNTIL WE GET A PROPER PILOT UNIFORM
+	accessory = /obj/item/clothing/accessory/ncr/LT2
+	id = /obj/item/card/id/dogtag/enclave/officer
+	ears = /obj/item/radio/headset/headset_enclave/command
+
+	backpack_contents = list(
+		/obj/item/storage/survivalkit_aid_adv = 1,
+		/obj/item/pda = 1,
+		/obj/item/storage/bag/money/small/wastelander = 1,
+		/obj/item/melee/onehanded/knife/survival = 1,
+		/obj/item/clothing/mask/chameleon = 1,
+		/obj/item/card/id/syndicate/anyone =1
+		)
+
+/datum/outfit/job/enclave/noncombat/enclavepilot/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+	ADD_TRAIT(H, TRAIT_PILOT, src)
+	if(H.mind)
+		var/obj/effect/proc_holder/spell/terrifying_presence/S = new /obj/effect/proc_holder/spell/terrifying_presence
+		H.mind.AddSpell(S)
+
+//Bunker Duty
+/datum/job/enclave/f13BDUTY
+	title = "Enclave Bunker Duty"
+	flag = F13USBDUTY
+	total_positions = 2
+	spawn_positions = 2
+	description = "You're a small garrison within a side entrance of a far larger complex. This complex sits within the Casper mountain range. You're a non-combatant, skilled in a field outside of exterior operations. Given your value, you aren't permitted to engage in conflict."
+	enforces = "You are not permited to leave the base. You are a non-combatant. You cannot join any raids or battles on the surface."
+	supervisors = "Everyone else."
+	outfit = /datum/outfit/job/enclave/noncombat/f13BDUTY
+	roleplay_exclusive_notify = 1
+	exp_requirements = 100
+
+	loadout_options = list(
+		/datum/outfit/loadout/bunkerduty_pharma,
+		/datum/outfit/loadout/bunkerduty_engi,
+		/datum/outfit/loadout/bunkerduty_janny,
+		/datum/outfit/loadout/bunkerduty_chaplain,
+		/datum/outfit/loadout/bunkerduty_cook,
+		)
+
+/datum/outfit/job/enclave/noncombat/f13BDUTY
+	name = "Enclave Bunker Duty"
+	jobtype = /datum/job/enclave/f13BDUTY
+	id = /obj/item/card/id/dogtag/enclave/trooper
+	glasses = /obj/item/clothing/glasses/sunglasses/big
+	uniform = /obj/item/clothing/under/f13/enclave/peacekeeper
+	accessory = /obj/item/clothing/accessory/enclave
+
+	backpack_contents = list(
+		/obj/item/reagent_containers/hypospray/medipen/stimpak = 2,
+		/obj/item/storage/survivalkit_aid_adv = 1,
+		/obj/item/storage/bag/money/small/wastelander = 1,
+		)
+
+/datum/outfit/loadout/bunkerduty_pharma
+	name = "Pharmaceutical Technician"
+	mask = /obj/item/clothing/mask/surgical
+	suit = /obj/item/clothing/suit/hooded/surgical
+	gloves = /obj/item/clothing/gloves/color/latex/nitrile
+	backpack_contents = list(
+		/obj/item/book/granter/trait/chemistry = 1,
+		/obj/item/healthanalyzer = 1,
+		)
+
+/datum/outfit/loadout/bunkerduty_engi
+	name = "Maintenance Technician"
+	head = /obj/item/clothing/head/hardhat
+	suit = /obj/item/clothing/suit/hazardvest
+	gloves = /obj/item/clothing/gloves/color/yellow
+	backpack_contents = list(
+		/obj/item/storage/belt/utility = 1,
+		/obj/item/stack/sheet/metal/twenty = 1,
+		/obj/item/stack/sheet/glass/ten = 2,
+		/obj/item/stack/cable_coil/thirty = 2,
+		)
+
+/datum/outfit/loadout/bunkerduty_janny
+	name = "Sanitation Technician"
+	gloves = /obj/item/clothing/gloves/color/black
+	head = /obj/item/clothing/head/soft/purple
+	shoes = /obj/item/clothing/shoes/galoshes
+	backpack_contents = list(
+		/obj/item/reagent_containers/spray/cleaner = 1,
+		/obj/item/mop/advanced = 1,
+		/obj/item/grenade/chem_grenade/cleaner = 3,
+		)
+
+/datum/outfit/loadout/bunkerduty_chaplain
+	name = "Spiritual Technician"
+	mask = /obj/item/clothing/mask/surgical
+	suit = /obj/item/clothing/suit/f13/autumn
+	backpack_contents = list(
+		/obj/item/storage/book/bible = 2,
+		/obj/item/pen = 1,
+		/obj/item/folder = 1,
+		)
+
+/datum/outfit/loadout/bunkerduty_cook
+	name = "Culinary Technician"
+	head = /obj/item/clothing/head/chefhat
+	suit = /obj/item/clothing/neck/apron/housewife
+	backpack_contents = list(
+		/obj/item/storage/box/ingredients/wildcard = 4,
+		/obj/item/kitchen/knife/butcher = 1,
+		)
+
 
 // Enclave Citizen
 // Really only used for ID console

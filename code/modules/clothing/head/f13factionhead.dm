@@ -262,6 +262,10 @@
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
 	armor = list("melee" = 50, "bullet" = 50, "laser" = 40, "energy" = 22, "bomb" = 55, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20, "wound" = 40)
 
+/obj/item/clothing/head/helmet/f13/enclave/usmcriot/armypilot
+	name = "enclave officer pilot helmet"
+	desc = "A pre-war riot helmet, repurposed for duty aboard aircraft."
+
 /obj/item/clothing/head/helmet/f13/combat/mk2/remnant
 	name = "remnant combat helmet"
 	desc = "A dark helmet with yellow lenses, used commonly in espionage or shadow ops."

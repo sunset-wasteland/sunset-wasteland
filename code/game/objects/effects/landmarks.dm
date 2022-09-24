@@ -861,6 +861,10 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	name = "Synthetic"
 	icon_state = "Cyborg"
 
+/obj/effect/landmark/start/f13/uspilot
+	name = "Enclave Pilot Officer"
+	icon_state = "uslt"
+
 //Tribal
 
 /obj/effect/landmark/start/f13/tribal

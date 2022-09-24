@@ -8,7 +8,7 @@
 	righthand_file = 'icons/mob/inhands/misc/devices_righthand.dmi'
 	flags_1 = CONDUCT_1
 
-	var/borghealth = 300
+	var/borghealth = 300 //Sunset edit: 100->300 (200 increase) Makes them a bit more healthy to stand in line with power creeped mobs for some reason
 
 	var/list/basic_modules = list() //a list of paths, converted to a list of instances on New()
 	var/list/emag_modules = list() //ditto
@@ -464,7 +464,7 @@
 		/obj/item/clockwork/weapon/ratvarian_spear)
 	cyborg_base_icon = "peace"
 	moduleselect_icon = "standard"
-	borghealth = 300
+	borghealth = 500 //Sunset edit: 300->500 (200 increase) Makes them a bit more healthy to stand with the buffed base borg
 	hat_offset = -2
 
 /obj/item/robot_module/peacekeeper/do_transform_animation()
@@ -654,9 +654,10 @@
 			return FALSE
 	return ..()
 
+//Security borg
 /obj/item/robot_module/gutsy
 	name = "Gutsy"
-	basic_modules = list( //Security borg
+	basic_modules = list(
 		/obj/item/assembly/flash/cyborg,
 		/obj/item/extinguisher/mini,
 		/obj/item/crowbar/cyborg,
@@ -671,7 +672,7 @@
 	emag_modules = list(/obj/item/gun/energy/laser/cyborg)
 	ratvar_modules = list(/obj/item/clockwork/slab/cyborg/security,
 		/obj/item/clockwork/weapon/ratvarian_spear)
-	borghealth = 300
+	borghealth = 500 //Sunset edit: 300->500 (200 increase) Makes them a bit more healthy to stand with the buffed base borg
 	cyborg_base_icon = "gutsy"
 	moduleselect_icon = "standard"
 	hat_offset = -2
@@ -686,9 +687,10 @@
 	var/mob/living/silicon/robot/gutsy = loc
 	gutsy.faction -= "wastebots" //Removes the faction if the module is removed.
 
+//Security borg
 /obj/item/robot_module/assaultron
 	name = "Assaultron"
-	basic_modules = list( //Security borg
+	basic_modules = list(
 		/obj/item/assembly/flash/cyborg,
 		/obj/item/extinguisher/mini,
 		/obj/item/crowbar/cyborg,
@@ -700,7 +702,7 @@
 	emag_modules = list(/obj/item/gun/energy/laser/cyborg)
 	ratvar_modules = list(/obj/item/clockwork/slab/cyborg/security,
 		/obj/item/clockwork/weapon/ratvarian_spear)
-	borghealth = 450
+	borghealth = 650 //Sunset edit: 450->650 (200 increase) Makes them a bit more healthy to stand with the buffed base borg
 	cyborg_base_icon = "assaultron"
 	moduleselect_icon = "security"
 	hat_offset = 3

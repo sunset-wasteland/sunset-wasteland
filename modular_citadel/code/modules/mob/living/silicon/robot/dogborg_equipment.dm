@@ -113,7 +113,7 @@ SLEEPER CODE IS IN game/objects/items/devices/dogborg_sleeper.dm !
 /obj/item/soap/tongue/scrubpup
 	cleanspeed = 25 //slightly faster than a mop.
 
-/obj/item/soap/tongue/New()
+/obj/item/soap/tongue/Initialize()
 	..()
 	item_flags |= NOBLUDGEON //No more attack messages
 
@@ -151,35 +151,6 @@ SLEEPER CODE IS IN game/objects/items/devices/dogborg_sleeper.dm !
 			to_chat(R, "<span class='notice'>You finish licking off \the [target.name].</span>")
 			qdel(target)
 			R.cell.give(50)
-	else if(isobj(target)) //hoo boy. danger zone man
-		if(istype(target,/obj/item/trash))
-			R.visible_message("[R] nibbles away at \the [target.name].", "<span class='warning'>You begin to nibble away at \the [target.name]...</span>")
-			if(!do_after(R, src.cleanspeed, target = target))
-				return //If they moved away, you can't eat them.
-			to_chat(R, "<span class='notice'>You finish off \the [target.name].</span>")
-			qdel(target)
-			R.cell.give(250)
-			return
-		if(istype(target,/obj/item/stock_parts/cell))
-			R.visible_message("[R] begins cramming \the [target.name] down its throat.", "<span class='warning'>You begin cramming \the [target.name] down your throat...</span>")
-			if(!do_after(R, 50, target = target))
-				return //If they moved away, you can't eat them.
-			to_chat(R, "<span class='notice'>You finish off \the [target.name].</span>")
-			var/obj/item/stock_parts/cell/C = target
-			R.cell.charge = R.cell.charge + (C.charge / 3) //Instant full cell upgrades op idgaf
-			qdel(target)
-			return
-		var/obj/item/I = target //HAHA FUCK IT, NOT LIKE WE ALREADY HAVE A SHITTON OF WAYS TO REMOVE SHIT
-		if(!I.anchored && R.emagged)
-			R.visible_message("[R] begins chewing up \the [target.name]. Looks like it's trying to loophole around its diet restriction!", "<span class='warning'>You begin chewing up \the [target.name]...</span>")
-			if(!do_after(R, 100, target = I)) //Nerf dat time yo
-				return //If they moved away, you can't eat them.
-			visible_message("<span class='warning'>[R] chews up \the [target.name] and cleans off the debris!</span>")
-			to_chat(R, "<span class='notice'>You finish off \the [target.name].</span>")
-			qdel(I)
-			R.cell.give(500)
-			return
-		R.visible_message("[R] begins to lick \the [target.name] clean...", "<span class='notice'>You begin to lick \the [target.name] clean...</span>")
 	else if(ishuman(target))
 		var/mob/living/L = target
 		if(status == 0 && check_zone(R.zone_selected) == "head")
@@ -240,95 +211,3 @@ SLEEPER CODE IS IN game/objects/items/devices/dogborg_sleeper.dm !
 	icon = 'icons/mob/dogborg.dmi'
 	icon_state = "defibpaddles0"
 	item_state = "defibpaddles0"
-
-// Pounce stuff for K-9
-
-/obj/item/dogborg/pounce
-	name = "pounce"
-	icon = 'icons/mob/dogborg.dmi'
-	icon_state = "pounce"
-	desc = "Leap at your target to momentarily stun them."
-	force = 0
-	throwforce = 0
-
-/obj/item/dogborg/pounce/New()
-	..()
-	item_flags |= NOBLUDGEON
-
-/mob/living/silicon/robot
-	var/leaping = 0
-	var/pounce_cooldown = 0
-	var/pounce_cooldown_time = 20 //Buffed to counter balance changes
-	var/pounce_spoolup = 1
-	var/leap_at
-	var/disabler
-	var/laser
-
-#define MAX_K9_LEAP_DIST 4 //because something's definitely borked the pounce functioning from a distance.
-
-/obj/item/dogborg/pounce/afterattack(atom/A, mob/user)
-	var/mob/living/silicon/robot/R = user
-	if(R && !R.pounce_cooldown)
-		R.pounce_cooldown = !R.pounce_cooldown
-		to_chat(R, "<span class ='warning'>Your targeting systems lock on to [A]...</span>")
-		addtimer(CALLBACK(R, /mob/living/silicon/robot.proc/leap_at, A), R.pounce_spoolup)
-		spawn(R.pounce_cooldown_time)
-			R.pounce_cooldown = !R.pounce_cooldown
-	else if(R && R.pounce_cooldown)
-		to_chat(R, "<span class='danger'>Your leg actuators are still recharging!</span>")
-
-/mob/living/silicon/robot/proc/leap_at(atom/A)
-	if(leaping || stat || buckled || lying)
-		return
-
-	if(!has_gravity(src) || !has_gravity(A))
-		to_chat(src,"<span class='danger'>It is unsafe to leap without gravity!</span>")
-		//It's also extremely buggy visually, so it's balance+bugfix
-		return
-
-	if(cell.charge <= 750)
-		to_chat(src,"<span class='danger'>Insufficent reserves for jump actuators!</span>")
-		return
-
-	else
-		leaping = 1
-		weather_immunities += "lava"
-		pixel_y = 10
-		update_icons()
-		throw_at(A, MAX_K9_LEAP_DIST, 1, spin=0, diagonals_first = 1)
-		cell.use(750) //Less than a stunbaton since stunbatons hit everytime.
-		weather_immunities -= "lava"
-
-/mob/living/silicon/robot/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
-
-	if(!leaping)
-		return ..()
-
-	if(hit_atom)
-		if(isliving(hit_atom))
-			var/mob/living/L = hit_atom
-
-			L.visible_message("<span class ='danger'>[src] pounces on [L]!</span>", "<span class ='userdanger'>[src] pounces on you!</span>")
-			L.DefaultCombatKnockdown(iscarbon(L) ? 225 : 45) // Temporary. If someone could rework how dogborg pounces work to accomodate for combat changes, that'd be nice.
-			playsound(src, 'sound/weapons/Egloves.ogg', 50, 1)
-			sleep(2)//Runtime prevention (infinite bump() calls on hulks)
-			step_towards(src,L)
-			log_combat(src, L, "borg pounced")
-
-			pounce_cooldown = !pounce_cooldown
-			spawn(pounce_cooldown_time) //3s by default
-				pounce_cooldown = !pounce_cooldown
-		else if(hit_atom.density && !hit_atom.CanPass(src))
-			visible_message("<span class ='danger'>[src] smashes into [hit_atom]!</span>", "<span class ='userdanger'>You smash into [hit_atom]!</span>")
-			if(roll(1,20) == 1)
-				playsound(src, 'modular_sunset/sound/metal_bar.ogg', 50, 1)
-				DefaultCombatKnockdown(30, 1, 1)
-			else
-				playsound(src, 'sound/items/trayhit1.ogg', 50, 1)
-				DefaultCombatKnockdown(15, 1, 1)
-
-		if(leaping)
-			leaping = 0
-			pixel_y = initial(pixel_y)
-			update_icons()
-			update_mobility()

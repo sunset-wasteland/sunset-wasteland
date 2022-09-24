@@ -387,6 +387,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	access = list(ACCESS_NCR, ACCESS_NCR_ARMORY, ACCESS_NCR_COMMAND)
 	display_order = JOB_DISPLAY_ORDER_SERGEANT
 	outfit = /datum/outfit/job/ncr/f13drillsergeant
+	roleplay_exclusive_notify = 1
 	exp_requirements = 1000
 
 	loadout_options = list( // ALL: Bayonet
@@ -466,6 +467,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	supervisors = "The Captain and the NCR"
 	display_order = JOB_DISPLAY_ORDER_REPRESENTATIVE
 	outfit = /datum/outfit/job/ncr/f13representative
+	roleplay_exclusive_notify = 1
 	exp_requirements = 750
 
 	loadout_options = list(
@@ -932,6 +934,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	selection_color = "#fff5cc"
 	display_order = JOB_DISPLAY_ORDER_TROOPER
 	outfit = /datum/outfit/job/ncr/f13mp
+	roleplay_exclusive_notify = 1
 	exp_requirements = 150
 
 /datum/outfit/job/ncr/f13mp		// .45 Pistol, Beanbag Shotgun, Military baton
@@ -1264,6 +1267,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	access = list(ACCESS_NCR, ACCESS_NCR_ARMORY, ACCESS_NCR_COMMAND)
 	display_order = JOB_DISPLAY_ORDER_MEDICALOFFICER
 	outfit = /datum/outfit/job/ncr/f13medicalofficer
+	roleplay_exclusive_notify = 1
 	exp_requirements = 750
 	matchmaking_allowed = list(
 		/datum/matchmaking_pref/friend = list(
@@ -1322,6 +1326,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	selection_color = "#fff5cc"
 	display_order = JOB_DISPLAY_ORDER_LOGISTICSOFFICER
 	outfit = /datum/outfit/job/ncr/f13logisticsofficer
+	roleplay_exclusive_notify = 1
 	exp_requirements = 750
 
 /datum/outfit/job/ncr/f13logisticsofficer/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -1394,6 +1399,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	exp_type = EXP_TYPE_NCR
 	display_order = JOB_DISPLAY_ORDER_REAR_ECHELON
 	outfit = /datum/outfit/job/ncr/f13rearechelon
+	roleplay_exclusive_notify = 1
 	exp_requirements = 60
 
 	loadout_options = list( // ALL: Very limited blueprints

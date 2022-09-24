@@ -279,7 +279,7 @@
 	icon_state = "legion_vex"
 	item_state = "legion_vex"
 	armor = list("melee" = 57, "bullet" = 42, "laser" = 42, "energy" = 20, "bomb" = 30, "bio" = 30, "rad" = 30, "fire" = 30, "acid" = 0, "wound" = 40)
-	slowdown = 0.04
+	slowdown = 0.05
 
 /obj/item/clothing/suit/armor/f13/legion/venator
 	name = "legion explorer armor"

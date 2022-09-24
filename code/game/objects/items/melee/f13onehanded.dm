@@ -725,6 +725,21 @@
 	force = 24
 	custom_materials = list(/datum/material/iron = 2000)
 
+// Brass knuckles	Keywords: Damage 23
+/obj/item/melee/unarmed/brass/lovetap
+	name = "Love Tap"
+	desc = "Specially made brass knuckles, designed to get the most out of your love taps."
+	icon_state = "brass"
+	item_state = "brass"
+	attack_verb = list("tapped", "punched", "jabbed", "whacked")
+	force = 28
+
+/obj/item/melee/unarmed/brass/lovetap/attack(mob/living/M, mob/living/user)
+	. = ..()
+	if(!istype(M))
+		return
+	M.apply_damage(25, STAMINA, null, 0)
+
 // Spiked knuckles	Keywords: Damage 24
 /obj/item/melee/unarmed/brass/spiked
 	name = "spiked knuckes"
@@ -801,6 +816,7 @@
 	icon_state = "tiger_claw"
 	item_state = "tiger_claw"
 	force = 40 //Assaultron, so, makes sense.
+	armour_penetration = 0.5
 
 // Deathclaw Gauntlet	Keywords: Damage 28, AP 1
 /obj/item/melee/unarmed/deathclawgauntlet

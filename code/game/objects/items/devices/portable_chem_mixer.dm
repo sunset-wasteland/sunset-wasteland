@@ -19,9 +19,9 @@
 	STR.max_combined_w_class = 200
 	STR.max_items = 50
 	STR.insert_preposition = "in"
-	STR.can_hold = typecacheof(list(
+	CANHOLD_STATIC(STR, typecacheof(list(
 		/obj/item/reagent_containers/glass/beaker,
-	))
+	)))
 
 /obj/item/storage/portable_chem_mixer/Destroy()
 	QDEL_NULL(beaker)

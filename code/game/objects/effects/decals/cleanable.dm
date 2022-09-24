@@ -83,7 +83,7 @@
 
 //Add "bloodiness" of this blood's type, to the human's shoes
 //This is on /cleanable because fuck this ancient mess
-/obj/effect/decal/cleanable/proc/on_entered(atom/movable/O)
+/obj/effect/decal/cleanable/proc/on_entered(datum/source, atom/movable/O)
 	SIGNAL_HANDLER
 	if(ishuman(O))
 		var/mob/living/carbon/human/H = O

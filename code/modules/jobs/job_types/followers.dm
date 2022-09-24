@@ -64,8 +64,11 @@ Administrator
 	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
 	ADD_TRAIT(H, TRAIT_GENERIC, src)
 	ADD_TRAIT(H, TRAIT_CHEMWHIZ, src)
+	ADD_TRAIT(H, TRAIT_RESEARCHER, src)
 	ADD_TRAIT(H, TRAIT_MEDICALEXPERT, src)
 	ADD_TRAIT(H, TRAIT_SURGERY_HIGH, src)
+	ADD_TRAIT(H, TRAIT_RESEARCHER, src)
+	ADD_TRAIT(H, TRAIT_CYBERNETICIST_EXPERT, src)
 
 /datum/outfit/job/followers/f13leadpractitioner
 	name =	"Followers Administrator"
@@ -132,6 +135,7 @@ Practitioner
 		return
 	ADD_TRAIT(H, TRAIT_MEDICALGRADUATE, src)
 	ADD_TRAIT(H, TRAIT_CHEMWHIZ, src)
+	ADD_TRAIT(H, TRAIT_RESEARCHER, src)
 	ADD_TRAIT(H, TRAIT_GENERIC, src)
 	ADD_TRAIT(H, TRAIT_SURGERY_MID, src)
 	ADD_TRAIT(H, TRAIT_CYBERNETICIST, src)
@@ -351,3 +355,30 @@ Follower Volunteer
 		/obj/item/ammo_box/shotgun/buck = 1,
 		/obj/item/ammo_box/shotgun/slug = 1,
 	)
+
+// Special - 'Borg
+/datum/job/followers/f13folborg
+	title = "Followers Robot"
+	flag = F13FOLCYBORG
+	department_flag = FOLLOWERS
+	faction = "Followers"
+	total_positions = 1
+	spawn_positions = 1
+	supervisors = "Administrator and Doctors, in that order"
+	exp_requirements = 300
+	description = "You are a Robotic unit assigned to this clinic. As a Robot for the Followers, you're bound to the orders of the Administrator and Doctors, in that order for priority. Should the Administrator declare something, you must follow it."
+	forbids = "Abandoning your post and not defending the clinic."
+	selection_color = "#FFDDFF"
+
+/datum/job/followers/f13folborg/equip(mob/living/carbon/human/H, visualsOnly = FALSE, announce = TRUE, latejoin = FALSE, datum/outfit/outfit_override = null, client/preference_source)
+	return H.Robotize(FALSE, latejoin)
+
+/datum/job/followers/f13folborg/override_latejoin_spawn()
+	return TRUE
+
+/datum/job/followers/f13folborg/after_spawn(mob/living/silicon/robot/R, mob/M)
+	. = ..()
+	ADD_TRAIT(R, TRAIT_TECHNOPHREAK, TRAIT_GENERIC)
+	R.apply_pref_name("human", M.client)
+	R.gender = NEUTER
+	R.forceMove(pick(GLOB.special_borg_start))

@@ -1,12 +1,3 @@
-// Removes restrictions for certain items
-/datum/gear/head/oasishelmet
-	name = "light security helmet"
-	path = /obj/item/clothing/head/helmet/blueshirt
-	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
-	cost = 3
-	restricted_desc = null
-	restricted_roles = list()
-
 /datum/gear/head/goner_red
 	name = "cheap helmet, red"
 	path = /obj/item/clothing/head/helmet/f13/goner/red

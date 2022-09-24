@@ -45,7 +45,8 @@
 	/datum/outfit/loadout/warrior,
 	/datum/outfit/loadout/ncrcitizen,
 	/datum/outfit/loadout/legioncivilian,
-	/datum/outfit/loadout/wastelander_desert_ranger)
+	/datum/outfit/loadout/wastelander_desert_ranger,
+	/datum/outfit/loadout/bos_exile)
 
 /datum/outfit/job/wasteland/f13wastelander
 	name = "Wastelander"
@@ -208,6 +209,17 @@
 		/obj/item/binoculars=1,
 		/obj/item/radio=1)
 
+/datum/outfit/loadout/bos_exile
+	name = "Brotherhood Exile"
+	suit = /obj/item/clothing/suit/armor/f13/exile/bosexile
+	id = /obj/item/card/id/rusted/brokenholodog
+	backpack_contents = list(
+		/obj/item/gun/energy/laser/pistol=1,
+		/obj/item/stock_parts/cell/ammo/ec = 2,
+		/obj/item/book/granter/crafting_recipe/blueprint/aep7 = 1,
+		/obj/item/grenade/f13/frag = 2,
+		)
+
 /*
 Raider
 */
@@ -258,6 +270,7 @@ Raider
 	/datum/outfit/loadout/raider_ncr,
 	/datum/outfit/loadout/raider_legion,
 	/datum/outfit/loadout/raider_bos,
+	/datum/outfit/loadout/raider_enclave,
 	/datum/outfit/loadout/quack_doctor,
 	/datum/outfit/loadout/raider_mobster,
 	/datum/outfit/loadout/raider_tribal
@@ -458,17 +471,6 @@ Raider
 		/obj/item/book/granter/trait/trekking = 1
 		)
 
-/datum/outfit/loadout/raider_bos
-	name = "Brotherhood Exile"
-	suit = /obj/item/clothing/suit/armor/f13/exile/bosexile
-	id = /obj/item/card/id/rusted/brokenholodog
-	backpack_contents = list(
-		/obj/item/gun/energy/laser/pistol=1,
-		/obj/item/stock_parts/cell/ammo/ec = 2,
-		/obj/item/book/granter/crafting_recipe/blueprint/aep7 = 1,
-		/obj/item/grenade/f13/frag = 2,
-		)
-
 /datum/outfit/loadout/raider_sheriff
 	name = "Desperado"
 	suit = /obj/item/clothing/suit/armored/light/duster/desperado
@@ -539,6 +541,33 @@ Raider
 		/obj/item/melee/onehanded/knife/switchblade = 1,
 		/obj/item/ammo_box/magazine/greasegun = 2,
 		/obj/item/card/id/dogtag/town/mafia=1,
+		)
+
+/datum/outfit/loadout/raider_enclave
+	name = "Enclave Remnant"
+	suit = /obj/item/clothing/suit/armor/f13/combat/mk2/remnant
+	head = /obj/item/clothing/head/helmet/f13/combat/mk2/remnant
+	id = /obj/item/card/id/rusted/brokenholodog/enclave
+	backpack_contents = list(
+		/obj/item/clothing/under/f13/exile/enclave = 1,
+		/obj/item/clothing/mask/gas/enclave = 1,
+		/obj/item/gun/energy/laser/plasma/pistol/remnant=1,
+		/obj/item/stock_parts/cell/ammo/ec = 2,
+		/obj/item/book/granter/crafting_recipe/blueprint/plasmapistol_rem = 1,
+		/obj/item/grenade/f13/plasma/remnant = 2,
+		)
+
+/datum/outfit/loadout/raider_bos
+	name = "Brotherhood Outcast"
+	suit = /obj/item/clothing/suit/armor/f13/combat/brotherhood/outcast
+	head = /obj/item/clothing/head/helmet/f13/combat/brotherhood/outcast
+	id = /obj/item/card/id/rusted/brokenholodog
+	backpack_contents = list(
+		/obj/item/clothing/under/f13/recon/outcast = 1,
+		/obj/item/gun/energy/laser/pistol=1,
+		/obj/item/stock_parts/cell/ammo/ec = 2,
+		/obj/item/book/granter/crafting_recipe/blueprint/aep7 = 1,
+		/obj/item/grenade/f13/frag = 2,
 		)
 
 //New tribal role. Replaces old tribe stuff.

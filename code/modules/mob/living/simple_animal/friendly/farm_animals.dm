@@ -63,7 +63,7 @@
 			Retaliate()
 
 		if(enemies.len && prob(10))
-			enemies = list()
+			enemies.Cut()
 			LoseTarget()
 			src.visible_message("<span class='notice'>[src] calms down.</span>")
 		udder.generateMilk(milk_reagent)

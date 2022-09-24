@@ -353,7 +353,7 @@
 		else if(isobj(AM))
 			wash_obj(AM)
 
-/obj/machinery/shower/proc/on_entered(atom/movable/AM)
+/obj/machinery/shower/proc/on_entered(datum/source, atom/movable/AM)
 	SIGNAL_HANDLER
 	INVOKE_ASYNC(src, .proc/handle_enter, AM)
 

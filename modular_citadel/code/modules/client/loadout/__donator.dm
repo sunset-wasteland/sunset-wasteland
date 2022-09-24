@@ -179,3 +179,11 @@
 
 /obj/item/storage/box/large/custom_kit/ncrcfbox/PopulateContents()
 	new /obj/item/clothing/suit/toggle/labcoat/abeljacket(src)
+
+/datum/gear/donator/kits/bella
+	name ="Bella's Fieldcoat"
+	path = /obj/item/storage/box/large/custom_kit/bellacoatbox
+	ckeywhitelist = list ("abelshift")
+
+/obj/item/storage/box/large/custom_kit/bellacoatbox/PopulateContents()
+	new /obj/item/clothing/suit/armor/f13/ncrarmor/bellacoat(src)

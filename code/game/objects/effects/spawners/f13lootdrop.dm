@@ -1512,6 +1512,13 @@
 				/obj/item/ammo_box/a40mm
 	)
 
+/obj/effect/spawner/bundle/f13/medicinestick
+	name = "medicine stick and ammo spawner"
+	items = list(
+				/obj/item/gun/ballistic/rifle/repeater/brush/medistick,
+				/obj/item/ammo_box/tube/c4570
+	)
+
 
 
 /*	------------------------------------------------

@@ -334,7 +334,7 @@
 		if(BURN)
 			playsound(src.loc, 'sound/items/welder.ogg', 100, TRUE)
 
-/obj/structure/spacevine/proc/on_entered(atom/movable/AM)
+/obj/structure/spacevine/proc/on_entered(datum/source, atom/movable/AM)
 	SIGNAL_HANDLER
 	if(!isliving(AM))
 		return

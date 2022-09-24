@@ -119,6 +119,14 @@
 /obj/machinery/door/window/Bumped(atom/movable/AM)
 	if(operating || !density)
 		return
+	if (!ismob(AM)) // Items and other objects shouldn't be able to open doors.
+		if(ismecha(AM)) // An exception is mechs, where we check the occupant's access.
+			var/obj/mecha/mecha = AM
+			if(!requiresID() || allowed(mecha.occupant))
+				open_and_close()
+				return
+			do_animate("deny")
+		return
 	if(!SSticker)
 		return
 	var/mob/M = AM

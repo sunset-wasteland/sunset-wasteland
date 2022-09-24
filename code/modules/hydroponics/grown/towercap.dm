@@ -240,7 +240,7 @@
 /obj/structure/bonfire/fire_act(exposed_temperature, exposed_volume)
 	StartBurning()
 
-/obj/structure/bonfire/proc/on_entered(atom/movable/AM)
+/obj/structure/bonfire/proc/on_entered(datum/source, atom/movable/AM)
 	SIGNAL_HANDLER
 	if(burning & !grill)
 		INVOKE_ASYNC(src, .proc/Burn)
@@ -248,8 +248,8 @@
 /obj/structure/bonfire/proc/Burn()
 	var/turf/current_location = get_turf(src)
 	current_location.hotspot_expose(1000,100,1)
-	for(var/A in current_location)
-		if(A == src)
+	for(var/atom/A in current_location)
+		if(A == src || QDELETED(A))
 			continue
 		if(isobj(A))
 			var/obj/O = A
@@ -261,8 +261,8 @@
 
 /obj/structure/bonfire/proc/Cook()
 	var/turf/current_location = get_turf(src)
-	for(var/A in current_location)
-		if(A == src)
+	for(var/atom/A in current_location)
+		if(A == src || QDELETED(A))
 			continue
 		else if(isliving(A)) //It's still a fire, idiot.
 			var/mob/living/L = A

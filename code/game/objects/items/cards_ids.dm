@@ -1187,7 +1187,7 @@
 	item_state = null
 	assignment = "gang tattoo"
 	uses_overlays = FALSE
-	access = list(ACCESS_KHAN, ACCESS_BAR, ACCESS_GATEWAY, ACCESS_MINING)
+	access = list(ACCESS_KHAN)
 
 /obj/item/card/id/khantattoo/Initialize()
 	. = ..()
@@ -1239,7 +1239,7 @@
 
 /obj/item/card/id/silver/mayor
 	name = "Mayor's mayoral permit"
-	desc = "A silver encrusted identification permit reserved for the Mayor of Oasis."
+	desc = "A silver encrusted identification permit reserved for the Mayor of Bighorn."
 	icon_state = "silver"
 	item_state = "silver_id"
 	assignment = "mayoral permit"

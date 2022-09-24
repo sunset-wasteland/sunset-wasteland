@@ -48,7 +48,7 @@
 	visible_message("<span class='warning'>[src] scatters into thousands of particles.</span>")
 	qdel(src)
 
-/obj/effect/clockwork/sigil/proc/on_entered(atom/movable/AM)
+/obj/effect/clockwork/sigil/proc/on_entered(datum/source, atom/movable/AM)
 	SIGNAL_HANDLER
 	if(isliving(AM))
 		var/mob/living/L = AM

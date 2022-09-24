@@ -44,6 +44,7 @@ GLOBAL_LIST_INIT(civilian_positions, list(
 GLOBAL_LIST_INIT(nonhuman_positions, list(
 	"AI",
 	"Cyborg",
+	"Followers Robot",
 	ROLE_PAI,
 	))
 
@@ -58,12 +59,14 @@ GLOBAL_LIST_INIT(command_positions, list(
 
 	"Legion Centurion",
 
-	"Chief of Police",
+	"Sheriff",
+	"Banker",
+	"Mayor",
 
 	"Enclave Lieutenant",
 
-	"Noyan",
-	"Steward",
+//	"Noyan",
+//	"Steward",
 	))
 
 GLOBAL_LIST_INIT(silicon_whitelist_positions, list(
@@ -118,6 +121,7 @@ GLOBAL_LIST_INIT(faction_whitelist_positions, list(
 "Followers Administrator",
 "Followers Doctor",
 "Followers Guard",
+"Followers Robot",
 
 "Cyborg",
 ))
@@ -138,9 +142,14 @@ GLOBAL_LIST_INIT(brotherhood_positions, list(
 
 GLOBAL_LIST_INIT(bighorn_positions, list(
 	"Shopkeeper",
+	"Sheriff",
+	"Mayor",
+	"Deputy",
+	"Banker",
 	"Barkeep",
 	"Preacher",
 	"Citizen",
+	"Secretary",
 ))
 
 GLOBAL_LIST_INIT(legion_command_positions, list(
@@ -205,7 +214,7 @@ GLOBAL_LIST_INIT(wasteland_positions, list(
 	"Tribal",
 	"Wastelander",
 ))
-
+/*
 GLOBAL_LIST_INIT(khan_positions, list(
 	"Noyan",
 	"Steward",
@@ -214,10 +223,15 @@ GLOBAL_LIST_INIT(khan_positions, list(
 	"Kipchak",
 	"Mangudai",
 ))
+*/
+GLOBAL_LIST_INIT(khan_positions, list(
+	"Khan Enforcer",
+	"Khan Chemist",
+))
 
 GLOBAL_LIST_INIT(enclave_positions, list(
 	"Enclave Lieutenant",
-	"Enclave Gunnery Sergeant",
+	"Enclave Platoon Sergeant",
 	"Enclave Sergeant",
 	"Enclave Armored Infantry",
 	"Enclave Specialist",
@@ -241,6 +255,7 @@ GLOBAL_LIST_INIT(followers_positions, list(
 	"Followers Guard",
 	"Followers Volunteer",
 	"Followers Scientist",
+	"Followers Robot",
 ))
 
 // job categories for rendering the late join menu

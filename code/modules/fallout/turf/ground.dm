@@ -144,44 +144,21 @@
 	clawfootstep = FOOTSTEP_SAND
 	var/dug = FALSE				//FALSE = has not yet been dug, TRUE = has already been dug
 	var/pit_sand = 1
+	// TODO: REWRITE PITS ENTIRELY
 	var/storedindex = 0			//amount of stored items
 	var/mob/living/gravebody	//is there a body in the pit?
 	var/obj/structure/closet/crate/coffin/gravecoffin //or maybe a coffin?
 	var/obj/salvage //or salvage
-	var/pitcontents = list()
+	var/pitcontents // Lazylist of pit contents. TODO: Replace with mypit.contents?
 	var/obj/dugpit/mypit
 	var/unburylevel = 0
-	var/list/loots = list(
+	var/static/list/loots = list(
 						/obj/item/stack/crafting/metalparts/five = 30,
 						/obj/item/stack/crafting/goodparts/five = 30,
 						/obj/item/stack/ore/blackpowder/twenty = 10,
 						/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/mid = 3,
 						/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low = 3
 						)
-
-//For sculpting with more precision, the random picking does not work very well. Slowdown 0.5 instead of 1. No random armor or gunpowder or titanium. Use directions for control. - Pebbles
-/turf/open/indestructible/ground/outside/desert/sonora
-	icon = 'icons/fallout/turfs/wasteland.dmi'
-	icon_state = "desertsmooth"
-	slowdown = 0.3
-	loots = list(
-				/obj/item/stack/crafting/metalparts/five = 30,
-				)
-	footstep = FOOTSTEP_LOOSE_SAND
-	barefootstep = FOOTSTEP_LOOSE_SAND
-	clawfootstep = FOOTSTEP_LOOSE_SAND
-
-/turf/open/indestructible/ground/outside/desert/sonora/coarse
-	icon_state = "desertcoarse"
-	slowdown = 0.6
-
-/turf/open/indestructible/ground/outside/desert/sonora/coarse2
-	icon_state = "desertcoarse2"
-	slowdown = 0.6
-
-/turf/open/indestructible/ground/outside/desert/sonora/rough
-	icon_state = "desertrough"
-	slowdown = 0.4
 
 /turf/open/indestructible/ground/outside/desert/harsh
 	icon_state = "wasteland"
@@ -394,6 +371,7 @@
 	if(istype(AM, /mob/living))
 		var/mob/living/L = AM
 		L.update_water()
+		L.apply_effect(2, EFFECT_IRRADIATE, 0)
 		if(L.check_submerged() <= 0)
 			return
 		if(!istype(oldloc, /turf/open/indestructible/ground/outside/water))
@@ -405,10 +383,11 @@
 	if(istype(AM, /mob/living))
 		var/mob/living/L = AM
 		L.update_water()
+		L.apply_effect(2, EFFECT_IRRADIATE, 0)
 		if(L.check_submerged() <= 0)
 			return
 		if(!istype(newloc, /turf/open/indestructible/ground/outside/water))
-			to_chat(L, "<span class='warning'>You climb out of \the [src].</span>")
+			to_chat(L, "<span class='warning'>You wade through \the [src].</span>")
 	..()
 
 /turf/open/indestructible/ground/outside/water/update_icon()

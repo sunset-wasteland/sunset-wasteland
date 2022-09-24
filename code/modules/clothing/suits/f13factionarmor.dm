@@ -296,7 +296,7 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_heavy.dmi'
 	icon_state = "legion_centurion"
 	item_state = "legion_centurion"
-	armor = list("melee" = 60, "bullet" = 55, "laser" = 35, "energy" = 25, "bomb" = 45, "bio" = 20, "rad" = 20, "fire" = 45, "acid" = 45, "wound" = 55)
+	armor = list("melee" = 60, "bullet" = 50, "laser" = 35, "energy" = 25, "bomb" = 45, "bio" = 20, "rad" = 20, "fire" = 45, "acid" = 45, "wound" = 55)
 	slowdown = 0.1
 	salvage_loot = list(/obj/item/stack/crafting/armor_plate = 10) // Rest in pieces
 
@@ -307,7 +307,7 @@
 	desc = "A Centurion able to defeat a Brotherhood Paladin gets the honorific title 'Paladin-Slayer', and adds bits of the looted armor to his own."
 	icon_state = "legion_palacent"
 	item_state = "legion_palacent"
-	armor = list("melee" = 45, "bullet" = 45, "laser" = 70, "energy" = 65, "bomb" = 55, "bio" = 20, "rad" = 20, "fire" = 25, "acid" = 0, "wound" = 75)
+	armor = list("melee" = 55, "bullet" = 45, "laser" = 70, "energy" = 65, "bomb" = 55, "bio" = 20, "rad" = 20, "fire" = 25, "acid" = 0, "wound" = 75)
 	slowdown = 0.3
 
 
@@ -318,8 +318,8 @@
 	desc = "Centurions who have led many patrols and ambushes against NCR Rangers have a distinct look from the many looted pieces of Ranger armor, and are often experienced in skirmishing."
 	icon_state = "legion_rangercent"
 	item_state = "legion_rangercent"
-	armor = list("melee" = 20, "bullet" = 67, "laser" = 25, "energy" = 15, "bomb" = 35, "bio" = 60, "rad" = 20, "fire" = 80, "acid" = 0, "wound" = 55)
-	slowdown = 0.08
+	armor = list("melee" = 27.5, "bullet" = 62.5, "laser" = 25, "energy" = 15, "bomb" = 35, "bio" = 60, "rad" = 20, "fire" = 80, "acid" = 0, "wound" = 55)
+	slowdown = 0.03
 
 /obj/item/clothing/suit/armor/f13/legion/legate
 	name = "legion legate armor"
@@ -549,7 +549,7 @@
 	icon_state = "cowboyrang"
 	item_state = "cowboyrang"
 	armor = list("melee" = 35, "bullet" = 40, "laser" = 35, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0, "wound" = 40)
-	slowdown = 0.01
+	slowdown = 0.03
 	salvage_loot = list(/obj/item/stack/crafting/armor_plate = 4)
 
 /obj/item/clothing/suit/armor/f13/trailranger/Initialize()
@@ -621,6 +621,7 @@
 	item_state = "headscribe"
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
 	armor = list("melee" = 10, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 36, "bio" = 50, "rad" = 69, "fire" = 10, "acid" = 70, "wound" = 30)
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets
 
 /obj/item/clothing/suit/f13/scribe
 	name = "Brotherhood Scribe's robe"
@@ -629,6 +630,7 @@
 	item_state = "scribe"
 	body_parts_covered = CHEST|ARMS|LEGS
 	armor = list("melee" = 10, "bullet" = 25, "laser" = 25, "energy" = 10, "bomb" = 16, "bio" = 100, "rad" = 0, "fire" = 0, "acid" = 0, "wound" = 30)
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets
 
 /obj/item/clothing/suit/f13/seniorscribe
 	name = "Brotherhood Senior Scribe's robe"
@@ -637,6 +639,7 @@
 	item_state = "seniorscribe"
 	body_parts_covered = CHEST|ARMS|LEGS
 	armor = list("melee" = 10, "bullet" = 25, "laser" = 25, "energy" = 10, "bomb" = 16, "bio" = 100, "rad" = 0, "fire" = 0, "acid" = 0, "wound" = 30)
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets
 
 /obj/item/clothing/suit/f13/elder
 	name = "Brotherhood Elder's robe"
@@ -714,8 +717,8 @@
 	slowdown = 0.12
 
 /obj/item/clothing/suit/armor/f13/town/chief
-	name = "OPD Chief's jacket"
-	desc = "A navy-blue jacket with blue shoulder designations, '/OPD/' stitched into one of the chest pockets, and hidden ceramic trauma plates. It has a small compartment for a holdout pistol."
+	name = "BPD Chief's jacket"
+	desc = "A navy-blue jacket with blue shoulder designations, '/BPD/' stitched into one of the chest pockets, and hidden ceramic trauma plates. It has a small compartment for a holdout pistol."
 	icon = 'icons/fallout/clothing/suits_cosmetic.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/suit_cosmetic.dmi'
 	icon_state = "police_chief"
@@ -735,8 +738,12 @@
 	armor = list("melee" = 45, "bullet" = 33, "laser" = 45,  "energy" = 35, "bomb" = 30, "bio" = 40, "rad" = 40, "fire" = 50, "acid" = 10, "wound" = 50)
 	slowdown = 0.08 //combat armor but less slowdown
 
+/obj/item/clothing/suit/armor/f13/town/deputy/Initialize()
+	. = ..()
+	AddComponent(/datum/component/armor_plate)
+
 /obj/item/clothing/suit/armor/vest/oasis
-	name = "OPD vest"
+	name = "BPD vest"
 	desc = "a lightweight ballistic vest that combines protection and comfort. This one has pockets sewn into the front and a badge pinned on it."
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets
 	armor = list("melee" = 15, "bullet" = 45, "laser" = 15,  "energy" = 30, "bomb" = 40, "bio" = 40, "rad" = 40, "fire" = 50, "acid" = 10, "wound" = 50)
@@ -744,14 +751,22 @@
 	item_state = "blueshift"
 	slowdown = 0.02
 
+/obj/item/clothing/suit/armor/vest/oasis/Initialize()
+	. = ..()
+	AddComponent(/datum/component/armor_plate)
+
 /obj/item/clothing/suit/armor/f13/metalarmor/steelbib/oasis
 	name = "heavy steel breastplate"
-	desc = "a steel breastplate, inspired by a pre-war design. Looks like oasis citizens added an additional layer of metal on the front face."
+	desc = "a steel breastplate, inspired by a pre-war design. Looks like Bighorn citizens added an additional layer of metal on the front face."
 	icon_state = "steel_bib"
 	item_state = "steel_bib"
 	armor = list( "melee" = 30, "bullet" = 50, "laser" = 30, "energy" = 15, "bomb" = 20, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0, "wound" = 45)
 	slowdown = 0.1
 	strip_delay = 5
+
+/obj/item/clothing/suit/armor/f13/metalarmor/steelbib/oasis/Initialize()
+	. = ..()
+	AddComponent(/datum/component/armor_plate)
 
 //Great Khan
 /obj/item/clothing/suit/armor/khan_jacket
@@ -871,6 +886,16 @@
 	item_state = "police_chief"
 	armor = list("melee" = 15, "bullet" = 15, "laser" = 15, "energy" = 15, "bomb" = 20, "bio" = 5, "rad" = 0, "fire" = 15, "acid" = 5, "wound" = 30)
 
+//SWAT
+
+/obj/item/clothing/suit/armor/f13/rangercombat/eliteriot
+	name = "elite riot gear"
+	desc = "A heavily reinforced set of military grade armor, commonly seen in the Divide now repurposed and reissued to Chief Rangers."
+	icon_state = "elite_riot"
+	item_state = "elite_riot"
+	armor = list("melee" = 60, "bullet" = 60, "laser" = 60, "energy" = 40, "bomb" = 55, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20, "wound" = 55)
+	icon = 'icons/obj/clothing/suits.dmi'
+	slowdown = 0.1
 
 //Enclave
 
@@ -946,14 +971,6 @@
 	icon_state = "towntrench_special"
 	item_state = "towntrench_special"
 	armor = list("melee" = 60, "bullet" = 60, "laser" = 60, "energy" = 40, "bomb" = 55, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20, "wound" = 55)
-
-/obj/item/clothing/suit/armor/f13/rangercombat/eliteriot
-	name = "elite riot gear"
-	desc = "A heavily reinforced set of military grade armor, commonly seen in the Divide now repurposed and reissued to Chief Rangers."
-	icon_state = "elite_riot"
-	item_state = "elite_riot"
-	armor = list("melee" = 60, "bullet" = 60, "laser" = 60, "energy" = 40, "bomb" = 55, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20, "wound" = 55)
-	icon = 'icons/obj/clothing/suits.dmi'
 
 /obj/item/clothing/suit/armor/f13/rangercombat/desert
 	name = "desert ranger combat armor"

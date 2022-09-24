@@ -269,25 +269,22 @@
 /proc/typecache_filter_list(list/atoms, list/typecache)
 	RETURN_TYPE(/list)
 	. = list()
-	for(var/thing in atoms)
-		var/atom/A = thing
-		if (typecache[A.type])
-			. += A
+	for(var/atom/candidate as anything in atoms)
+		if (typecache[candidate.type])
+			. += candidate
 
 /proc/typecache_filter_list_reverse(list/atoms, list/typecache)
 	RETURN_TYPE(/list)
 	. = list()
-	for(var/thing in atoms)
-		var/atom/A = thing
-		if(!typecache[A.type])
-			. += A
+	for(var/atom/candidate as anything in atoms)
+		if(!typecache[candidate.type])
+			. += candidate
 
 /proc/typecache_filter_multi_list_exclusion(list/atoms, list/typecache_include, list/typecache_exclude)
 	. = list()
-	for(var/thing in atoms)
-		var/atom/A = thing
-		if(typecache_include[A.type] && !typecache_exclude[A.type])
-			. += A
+	for(var/atom/candidate as anything in atoms)
+		if(typecache_include[candidate.type] && !typecache_exclude[candidate.type])
+			. += candidate
 
 //Like typesof() or subtypesof(), but returns a typecache instead of a list
 /proc/typecacheof(path, ignore_root_path, only_root_path = FALSE)

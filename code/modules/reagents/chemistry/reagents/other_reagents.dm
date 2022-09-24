@@ -260,7 +260,6 @@
 	if(M.blood_volume)
 		M.blood_volume += 0.1 // water is good for you!
 	M.water += water_level
-	holder.remove_reagent(type, 1)
 
 //dirty water
 /datum/reagent/water/dwater
@@ -1080,7 +1079,7 @@
 	boiling_point = 20.271
 	color = "#808080" // rgb: 128, 128, 128
 	taste_mult = 0
-	pH = 0.1//Now I'm stuck in a trap of my own design. Maybe I should make -ve pHes? (not 0 so I don't get div/0 errors)
+	pH = 7//Now I'm stuck in a trap of my own design. Maybe I should make -ve pHes? (not 0 so I don't get div/0 errors)
 	ghoulfriendly = TRUE
 
 /datum/reagent/potassium

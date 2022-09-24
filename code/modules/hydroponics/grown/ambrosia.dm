@@ -75,6 +75,7 @@
 	desc = "Eating this <i>makes</i> you immortal."
 	icon_state = "ambrosia_gaia"
 	filling_color = rgb(255, 175, 0)
+	juice_results = list(/datum/reagent/medicine/gaia = 0)
 	light_range = 3
 	seed = /obj/item/seeds/ambrosia/gaia
 	wine_power = 70

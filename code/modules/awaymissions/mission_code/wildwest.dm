@@ -139,7 +139,7 @@
 	AddElement(/datum/element/connect_loc, loc_connections)
 
 
-/obj/effect/meatgrinder/proc/on_entered(atom/movable/AM)
+/obj/effect/meatgrinder/proc/on_entered(datum/source, atom/movable/AM)
 	SIGNAL_HANDLER
 	Bumped(AM)
 

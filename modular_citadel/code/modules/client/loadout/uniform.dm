@@ -150,7 +150,7 @@
 	name = "torn rags"
 	path = /obj/item/clothing/under/f13/rag
 
-//suits 
+//suits
 
 /datum/gear/uniform/suit
 	name = "black suit"
@@ -671,10 +671,10 @@
 	restricted_desc = "Oasis"
 	restricted_roles = list("Mayor",
 							"Secretary",
-							"Chief of Police",
+							"Sheriff",
 							"Doctor",
 							"Citizen",
-							"Officer",
+							"Deputy",
 							"Shopkeeper",
 							"Farmer",
 							"Prospector",
@@ -682,7 +682,7 @@
 							"Barkeep",
 							)
 
-//Khans 
+//Khans
 
 /datum/gear/uniform/khans
 	name = "great khans jorts"

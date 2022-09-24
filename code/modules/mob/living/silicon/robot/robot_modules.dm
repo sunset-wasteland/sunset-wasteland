@@ -8,7 +8,7 @@
 	righthand_file = 'icons/mob/inhands/misc/devices_righthand.dmi'
 	flags_1 = CONDUCT_1
 
-	var/borghealth = 100
+	var/borghealth = 150 //Slight buff, 100 -> 150
 
 	var/list/basic_modules = list() //a list of paths, converted to a list of instances on New()
 	var/list/emag_modules = list() //ditto
@@ -211,6 +211,9 @@
 	R.maxHealth = borghealth
 	R.health = min(borghealth, R.health)
 	qdel(src)
+	R.radio.extra_channels = RM.added_channels
+	R.radio.recalculateChannels()
+	R.update_dogborg() //Adds resting and resting style verbs
 	return RM
 
 /obj/item/robot_module/proc/be_transformed_to(obj/item/robot_module/old_module)
@@ -316,7 +319,6 @@
 		/obj/item/stack/medical/bone_gel/cyborg,
 		/obj/item/organ_storage,
 		/obj/item/borg/lollipop,
-		/obj/item/sensor_device,
 		/obj/item/shockpaddles/cyborg)
 	emag_modules = list(/obj/item/reagent_containers/borghypo/hacked)
 	ratvar_modules = list(
@@ -698,7 +700,7 @@
 	emag_modules = list(/obj/item/gun/energy/laser/cyborg)
 	ratvar_modules = list(/obj/item/clockwork/slab/cyborg/security,
 		/obj/item/clockwork/weapon/ratvarian_spear)
-	borghealth = 450 //Assaultron health
+	borghealth = 450
 	cyborg_base_icon = "assaultron"
 	moduleselect_icon = "security"
 	hat_offset = 3
@@ -738,7 +740,6 @@
 		/obj/item/stack/medical/bone_gel/cyborg,
 		/obj/item/organ_storage,
 		/obj/item/borg/lollipop,
-		/obj/item/sensor_device,
 		/obj/item/shockpaddles/cyborg,
 		/obj/item/melee/unarmed/punchdagger/cyborg
 		)
@@ -746,6 +747,7 @@
 	ratvar_modules = list(
 		/obj/item/clockwork/slab/cyborg/medical,
 		/obj/item/clockwork/weapon/ratvarian_spear)
+	borghealth = 300
 	cyborg_base_icon = "assaultron_sase"
 
 /obj/item/robot_module/syndicate

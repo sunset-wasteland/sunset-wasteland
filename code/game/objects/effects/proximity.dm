@@ -113,7 +113,7 @@
 	monitor = null
 	return ..()
 
-/obj/effect/abstract/proximity_checker/proc/on_entered(atom/movable/AM)
+/obj/effect/abstract/proximity_checker/proc/on_entered(datum/source, atom/movable/AM)
 	SIGNAL_HANDLER
 	set waitfor = FALSE
 	monitor?.hasprox_receiver.HasProximity(AM)

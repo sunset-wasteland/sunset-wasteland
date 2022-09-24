@@ -358,6 +358,8 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	return 1
 
 /mob/living/proc/get_key(message)
+	if (length(message) < 2) // So that say ":" doesn't runtime.
+		return
 	var/key = message[1]
 	if(key in GLOB.department_radio_prefixes)
 		return lowertext(message[1 + length(key)])

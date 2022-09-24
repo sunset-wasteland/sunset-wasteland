@@ -197,9 +197,11 @@
 	else if(istype(W, /obj/item/wrench))
 		if(state==1)
 			state = 2
+			move_resist = MOVE_RESIST_DEFAULT
 			to_chat(user, "<span class='notice'>You undo the securing bolts.</span>")
 		else if(state==2)
 			state = 1
+			move_resist = initial(move_resist)
 			to_chat(user, "<span class='notice'>You tighten the securing bolts.</span>")
 		return
 	else if(istype(W, /obj/item/crowbar))

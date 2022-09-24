@@ -752,11 +752,11 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	icon_state = "Lawyer"
 
 /obj/effect/landmark/start/f13/sheriff
-	name = "Chief of Police"
+	name = "Sheriff"
 	icon_state = "Chief of Police"
 
 /obj/effect/landmark/start/f13/deputy
-	name = "Officer"
+	name = "Deputy"
 	icon_state = "Officer"
 
 /obj/effect/landmark/start/f13/farmer
@@ -850,7 +850,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	icon_state = "usscientist"
 
 /obj/effect/landmark/start/f13/usgysgt
-	name = "Enclave Gunnery Sergeant"
+	name = "Enclave Platoon Sergeant"
 	icon_state = "usgunnery"
 /*
 /obj/effect/landmark/start/f13/uslightduty
@@ -859,7 +859,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 */
 /obj/effect/landmark/start/f13/enclave_synthetic
 	name = "Synthetic"
-	icon_state = "usoffduty"
+	icon_state = "Cyborg"
 
 //Tribal
 
@@ -916,26 +916,17 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 /obj/effect/landmark/start/f13/followersscientist
 	name = "Followers Scientist"
 
+/obj/effect/landmark/start/f13/followersrobot
+	name = "Followers Robot"
+	icon_state = "Cyborg"
 
+/obj/effect/landmark/start/f13/followersrobot/Initialize()
+	..()
+	GLOB.special_borg_start += loc
+	return INITIALIZE_HINT_QDEL
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//Khans
+// OLD KHAN STUFF
 /obj/effect/landmark/start/f13/noyan
 	name = "Noyan"
 	icon_state = "Pusher"
@@ -958,4 +949,13 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 
 /obj/effect/landmark/start/f13/mangudai
 	name = "Mangudai"
+	icon_state = "Pusher"
+
+// Proper Khans
+/obj/effect/landmark/start/f13/khan
+	name = "Khan Enforcer"
+	icon_state = "Pusher"
+
+/obj/effect/landmark/start/f13/khan_chemist
+	name = "Khan Chemist"
 	icon_state = "Pusher"

@@ -173,7 +173,9 @@ SUBSYSTEM_DEF(timer)
 				callBack.InvokeAsync()
 				last_invoke_tick = world.time
 
-			if (timer.flags & TIMER_LOOP) // Prepare looping timers to re-enter the queue
+			if (timer.flags & TIMER_LOOP) // Prepare valid looping timers to re-enter the queue
+				if(QDELETED(timer)) // If a loop is deleted in its callback, we need to avoid re-inserting it.
+					continue
 				timer.spent = 0
 				timer.timeToRun = world.time + timer.wait
 				timer.bucketJoin()
@@ -577,7 +579,10 @@ SUBSYSTEM_DEF(timer)
 		stack_trace("addtimer called with a callback assigned to a qdeleted object. In the future such timers will not \
 			be supported and may refuse to run or run with a 0 wait")
 
-	wait = max(CEILING(wait, world.tick_lag), world.tick_lag)
+	if (flags & TIMER_CLIENT_TIME)
+		wait = max(CEILING(wait, 1), 1)
+	else
+		wait = max(CEILING(wait, world.tick_lag), world.tick_lag)
 
 	if(wait >= INFINITY)
 		CRASH("Attempted to create timer with INFINITY delay")

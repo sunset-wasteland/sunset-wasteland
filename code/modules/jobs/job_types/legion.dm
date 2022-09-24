@@ -37,6 +37,8 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 		return
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/legiongate)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/berserker_powder)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/hydra)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/legionmedx)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/rip/crossexecution)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/legioncombatarmor)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/legioncombathelmet)
@@ -200,6 +202,7 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 		/datum/outfit/loadout/palacent,		// 10mm SMG, Goliath, CQC
 		/datum/outfit/loadout/rangerhunter,	// Hunting Revolver, AMR, Spatha
 		/datum/outfit/loadout/centurion,	// M1919, Hunting Revolver
+		/datum/outfit/loadout/berserkercenturion,	// Love Tap, Berserker Martial Art
 		)
 
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13centurion/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -268,16 +271,15 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 		/obj/item/throwing_star/ninja = 3
 		)
 
-/* /datum/outfit/loadout/berserkercenturion
+/datum/outfit/loadout/berserkercenturion
 	name = 			"Praetorian Candidate"
 	suit = 			/obj/item/clothing/suit/armor/f13/legion/centurion
 	head = 			/obj/item/clothing/head/helmet/f13/legion/centurion
 	backpack_contents = list(
-					/obj/item/melee/unarmed/sappers = 1,
+					/obj/item/melee/unarmed/brass/lovetap = 1,
 					/obj/item/book/granter/martial/berserker = 1,
 					/obj/item/reagent_containers/pill/patch/healingpowder/berserker = 2
 					)
-commented out pending rework*/
 
 
 // VETERAN DECANUS
@@ -685,7 +687,6 @@ commented out pending rework*/
 	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
 	ADD_TRAIT(H, TRAIT_BIG_LEAGUES, src)
 	ADD_TRAIT(H, TRAIT_SILENT_STEP, src)
-	ADD_TRAIT(H, TRAIT_INSANE_AIM, src)
 
 
 
@@ -1094,6 +1095,7 @@ commented out pending rework*/
 	display_order = JOB_DISPLAY_ORDER_AUXILIA
 	outfit = /datum/outfit/job/CaesarsLegion/auxilia
 	exp_requirements = 0
+	exp_type = EXP_TYPE_WASTELAND//So you can't sit on it and play Centurion. :)
 
 	loadout_options = list(
 		/datum/outfit/loadout/auxassist, // Keep track of the money, handle trading beneath the warriors
@@ -1124,6 +1126,7 @@ commented out pending rework*/
 	r_pocket = /obj/item/flashlight/lantern
 	backpack_contents = list(
 		/obj/item/reagent_containers/pill/patch/healingpowder = 2,
+		/obj/item/reagent_containers/food/snacks/grown/ambrosia/deus = 1,
 		/obj/item/warpaint_bowl
 		)
 
@@ -1195,6 +1198,7 @@ commented out pending rework*/
 	display_order = JOB_DISPLAY_ORDER_LEGIONSLAVE
 	exp_requirements = 0
 	outfit = /datum/outfit/job/CaesarsLegion/slave
+	exp_type = EXP_TYPE_WASTELAND//So you can't sit on it and play Centurion. :)
 
 	loadout_options = list(
 		/datum/outfit/loadout/slaveservant,
@@ -1306,7 +1310,7 @@ Venator  - Zero slots, role built on cloning vet ranger, linear just vastly bett
 
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13venator
 	name = "Legion Venator"
-	jobtype = /datum/job/CaesarsLegion/Legionnaire/f13explorer
+	jobtype = /datum/job/CaesarsLegion/Legionnaire/f13venator
 	id = /obj/item/card/id/dogtag/legvenator
 	suit = /obj/item/clothing/suit/armor/f13/legion/venator
 	head = /obj/item/clothing/head/helmet/f13/legion/venator
@@ -1340,7 +1344,7 @@ Venator  - Zero slots, role built on cloning vet ranger, linear just vastly bett
 
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13slavemaster
 	name = "Legion Slavemaster"
-	jobtype = /datum/job/CaesarsLegion/Legionnaire/f13legionary
+	jobtype = /datum/job/CaesarsLegion/Legionnaire/f13slavemaster
 	id =			/obj/item/card/id/dogtag/legslavemaster
 //	uniform =		/obj/item/clothing/under/gladiator
 	suit = 			/obj/item/clothing/suit/armor/f13/legion/prime/slavemaster

@@ -12,7 +12,7 @@
 	var/other_z = center_z
 	var/offset
 	while((offset = SSmapping.level_trait(other_z, ZTRAIT_DOWN)))
-		other_z += offset
+		other_z -= offset
 		. += other_z
 	other_z = center_z
 	while((offset = SSmapping.level_trait(other_z, ZTRAIT_UP)))

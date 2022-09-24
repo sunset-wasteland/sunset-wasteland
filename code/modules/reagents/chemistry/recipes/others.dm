@@ -6,7 +6,7 @@
 
 /datum/chemical_reaction/metalgen_imprint
 	name = "metalgen imprint"
-	id = /datum/reagent/metalgen
+	id = "metalgen_imprint"
 	required_reagents = list(/datum/reagent/metalgen = 1, /datum/reagent/liquid_dark_matter = 1)
 	results = list(/datum/reagent/metalgen = 1)
 
@@ -670,6 +670,7 @@
 	required_reagents = list(/datum/reagent/barbers_aid = 1, /datum/reagent/toxin/mutagen = 1)
 
 /datum/chemical_reaction/baldium
+	id = "baldium"
 	results = list(/datum/reagent/baldium = 1)
 	required_reagents = list(/datum/reagent/radium = 1, /datum/reagent/toxin/acid = 1, /datum/reagent/lye = 1)
 	required_temp = 395
@@ -852,6 +853,7 @@
 	required_temp = 350
 
 /datum/chemical_reaction/cellulose_carbonization
+	id = "cellulose_carbonization"
 	results = list(/datum/reagent/carbon = 1)
 	required_reagents = list(/datum/reagent/cellulose = 1)
 	required_temp = 512
@@ -931,19 +933,19 @@
 
 /datum/chemical_reaction/purewatera
 	name = "Purify Dirty Water"
-	id = /datum/reagent/water
-	results = list(/datum/reagent/water = 1)
-	required_reagents = list(/datum/reagent/watertabletpowder = 1, /datum/reagent/water/dwater = 1)
+	id = "dirty_water_purify"
+	results = list(/datum/reagent/water = 5)
+	required_reagents = list(/datum/reagent/watertabletpowder = 1, /datum/reagent/water/dwater = 5)
 
 /datum/chemical_reaction/purewaterb
 	name = "Purify Boiled Water"
-	id = /datum/reagent/water
-	results = list(/datum/reagent/water = 1)
-	required_reagents = list(/datum/reagent/watertabletpowder = 1, /datum/reagent/water/bwater = 1)
+	id = "boiled_water_purify"
+	results = list(/datum/reagent/water = 5)
+	required_reagents = list(/datum/reagent/watertabletpowder = 1, /datum/reagent/water/bwater = 5)
 
 /datum/chemical_reaction/purewaterc
 	name = "Carbon and Boiled Water"
-	id = /datum/reagent/water
+	id = "boiled_water_carbon_purify"
 	results = list(/datum/reagent/water = 1)
 	required_reagents = list(/datum/reagent/water/bwater = 1, /datum/reagent/carbon = 1)
 	mob_react = FALSE
@@ -951,7 +953,7 @@
 
 /datum/chemical_reaction/purewaterd
 	name = "Iodine and Boiled Water"
-	id = /datum/reagent/water
+	id = "boiled_water_iodine_purify"
 	results = list(/datum/reagent/water = 1)
 	required_reagents = list(/datum/reagent/water/bwater = 1, /datum/reagent/iodine = 1)
 	mob_react = FALSE

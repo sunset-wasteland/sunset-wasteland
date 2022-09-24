@@ -651,7 +651,7 @@
 	AddElement(/datum/element/connect_loc, loc_connections)
 
 
-/obj/structure/swarmer/trap/proc/on_entered(atom/movable/AM)
+/obj/structure/swarmer/trap/proc/on_entered(datum/source, atom/movable/AM)
 	SIGNAL_HANDLER
 	if(isliving(AM))
 		var/mob/living/L = AM

@@ -74,6 +74,7 @@
 	accessory = /obj/item/clothing/accessory/ncr/LT1
 	id = /obj/item/card/id/dogtag/enclave/officer
 	ears = /obj/item/radio/headset/headset_enclave/command
+	l_pocket = /obj/item/clothing/mask/chameleon
 
 	backpack_contents = list(
 		/obj/item/reagent_containers/hypospray/medipen/stimpak/super = 3,
@@ -84,7 +85,8 @@
 		/obj/item/storage/pill_bottle/chem_tin/buffout = 1,
 		/obj/item/storage/pill_bottle/chem_tin/mentats = 1,
 		/obj/item/reagent_containers/hypospray/medipen/psycho = 1,
-		/obj/item/reagent_containers/hypospray/medipen/medx = 1
+		/obj/item/reagent_containers/hypospray/medipen/medx = 1,
+		/obj/item/card/id/syndicate/anyone =1
 		)
 
 /datum/outfit/loadout/lt_ballistics
@@ -92,8 +94,8 @@
 	suit_store = /obj/item/gun/ballistic/automatic/g11/g11e
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/m473 = 3,
-		/obj/item/gun/ballistic/automatic/pistol/pistol14/custom = 1,
-		/obj/item/ammo_box/magazine/m14mm = 2,
+		/obj/item/gun/energy/laser/plasma/glock = 1,
+		/obj/item/stock_parts/cell/ammo/ec = 2,
 		)
 
 /datum/outfit/loadout/lt_plasma
@@ -101,8 +103,8 @@
 	suit_store = /obj/item/gun/energy/laser/plasma
 	backpack_contents = list(
 		/obj/item/stock_parts/cell/ammo/mfc = 2,
-		/obj/item/gun/energy/laser/plasma/glock = 1,
-		/obj/item/stock_parts/cell/ammo/ec = 2,
+		/obj/item/gun/ballistic/automatic/pistol/pistol14/custom = 1,
+		/obj/item/ammo_box/magazine/m14mm = 2,
 		)
 
 /datum/outfit/job/enclave/peacekeeper/enclavelt/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -112,6 +114,7 @@
 	ADD_TRAIT(H, TRAIT_PA_WEAR, src)
 	ADD_TRAIT(H, TRAIT_LIFEGIVER, src)
 	ADD_TRAIT(H, TRAIT_PILOT, src)
+	ADD_TRAIT(H, TRAIT_RESEARCHER, src)
 	if(H.mind)
 		var/obj/effect/proc_holder/spell/terrifying_presence/S = new /obj/effect/proc_holder/spell/terrifying_presence
 		H.mind.AddSpell(S)
@@ -120,12 +123,12 @@
 // Gunnery Sergeant
 
 /datum/job/enclave/f13gysergeant
-	title = "Enclave Gunnery Sergeant"
+	title = "Enclave Platoon Sergeant"
 	flag = F13USGYSGT
 	total_positions = 1
 	spawn_positions = 1
-	access = list(ACCESS_ENCLAVE, ACCESS_CHANGE_IDS)
-	description = "Second in command after Lieutenant, your role is to direct their orders directly to the sergeants and regular troops."
+	access = list(ACCESS_ENCLAVE, ACCESS_CHANGE_IDS, ACCESS_ENCLAVE_COMMAND)
+	description = "Second in command after Lieutenant, your role is to direct their orders directly to the Sergeants and regular troops."
 	supervisors = "The Lieutenant."
 	outfit = /datum/outfit/job/enclave/peacekeeper/f13gysergeant
 	exp_requirements = 1400
@@ -137,11 +140,13 @@
 		)
 
 /datum/outfit/job/enclave/peacekeeper/f13gysergeant
-	name = "Enclave Gunnery Sergeant"
+	name = "Enclave Platoon Sergeant"
 	jobtype = /datum/job/enclave/f13gysergeant
 	head = /obj/item/clothing/head/helmet/f13/power_armor/x02helmet
 	suit = /obj/item/clothing/suit/armor/f13/power_armor/x02
-	accessory = /obj/item/clothing/accessory/enclave/master_sergeant
+	accessory = /obj/item/clothing/accessory/enclave/sergeant_firstclass
+	ears = /obj/item/radio/headset/headset_enclave/command
+	l_pocket = /obj/item/clothing/mask/chameleon
 
 	backpack_contents = list(
 		/obj/item/reagent_containers/hypospray/medipen/stimpak = 2,
@@ -152,7 +157,9 @@
 		/obj/item/storage/pill_bottle/chem_tin/buffout = 1,
 		/obj/item/storage/pill_bottle/chem_tin/mentats = 1,
 		/obj/item/reagent_containers/hypospray/medipen/psycho = 1,
-		/obj/item/reagent_containers/hypospray/medipen/medx = 1
+		/obj/item/reagent_containers/hypospray/medipen/medx = 1,
+		/obj/item/megaphone = 1,
+		/obj/item/card/id/syndicate/anyone = 1
 		)
 
 /datum/outfit/loadout/gysgt_ballistics
@@ -182,6 +189,7 @@
 		return
 	ADD_TRAIT(H, TRAIT_PA_WEAR, src)
 	ADD_TRAIT(H, TRAIT_LIFEGIVER, src)
+	ADD_TRAIT(H, TRAIT_RESEARCHER, src)
 	if(H.mind)
 		var/obj/effect/proc_holder/spell/terrifying_presence/S = new /obj/effect/proc_holder/spell/terrifying_presence
 		H.mind.AddSpell(S)
@@ -210,6 +218,7 @@
 	head = /obj/item/clothing/head/helmet/f13/power_armor/x02helmet
 	suit = /obj/item/clothing/suit/armor/f13/power_armor/x02
 	accessory = /obj/item/clothing/accessory/enclave/sergeant
+	l_pocket = /obj/item/clothing/mask/chameleon
 
 	backpack_contents = list(
 		/obj/item/reagent_containers/hypospray/medipen/stimpak = 2,
@@ -221,7 +230,8 @@
 		/obj/item/storage/pill_bottle/chem_tin/buffout = 1,
 		/obj/item/storage/pill_bottle/chem_tin/mentats = 1,
 		/obj/item/reagent_containers/hypospray/medipen/psycho = 1,
-		/obj/item/reagent_containers/hypospray/medipen/medx = 1
+		/obj/item/reagent_containers/hypospray/medipen/medx = 1,
+		/obj/item/card/id/syndicate/anyone =1
 		)
 
 /datum/outfit/loadout/sgt_ballistics
@@ -244,6 +254,7 @@
 		return
 	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
 	ADD_TRAIT(H, TRAIT_PA_WEAR, src)
+	ADD_TRAIT(H, TRAIT_RESEARCHER, src)
 	if(H.mind)
 		var/obj/effect/proc_holder/spell/terrifying_presence/S = new /obj/effect/proc_holder/spell/terrifying_presence
 		H.mind.AddSpell(S)
@@ -255,7 +266,7 @@
 	flag = F13USSPECIALIST
 	total_positions = 2
 	spawn_positions = 2
-	description = "You are an operative for the remnants of the Enclave. You, unlike the normal privates, have recieved specialist training in either engineering or medicine."
+	description = "You are an operative for the remnants of the Enclave. You, unlike the normal Privates, have recieved specialist training in either engineering or medicine."
 	supervisors = "The Lieutenant and the Sergeants."
 	outfit = /datum/outfit/job/enclave/peacekeeper/f13specialist
 	exp_requirements = 700
@@ -282,7 +293,9 @@
 		/obj/item/storage/pill_bottle/chem_tin/buffout = 1,
 		/obj/item/storage/pill_bottle/chem_tin/mentats = 1,
 		/obj/item/reagent_containers/hypospray/medipen/psycho = 1,
-		/obj/item/reagent_containers/hypospray/medipen/medx = 1
+		/obj/item/reagent_containers/hypospray/medipen/medx = 1,
+		/obj/item/clothing/mask/chameleon = 1,
+		/obj/item/card/id/syndicate/anyone =1
 		)
 
 /datum/outfit/loadout/combatmedic
@@ -319,9 +332,9 @@
 /datum/job/enclave/enclavespy
 	title = "Enclave Private"
 	flag = F13USPRIVATE
-	total_positions = 0
-	spawn_positions = 0
-	description = "You are an enlisted member of the Enclave. Obey your Lieutenant. He sets the Enclave's policies."
+	total_positions = 4
+	spawn_positions = 4
+	description = "You are an enlisted member of the Enclave. Obey your Lieutenant. They set the Enclave's policies. Unfortunately, you've not yet received your PA training. <br> (OOC NOTE: If you use this role to TDM, you'll be jobbanned and risk a potential permaban from the server.)"
 	supervisors = "The Lieutenant and the Sergeants"
 	outfit = /datum/outfit/job/enclave/peacekeeper/enclavespy
 	exp_type = EXP_TYPE_FALLOUT
@@ -341,15 +354,17 @@
 		/obj/item/storage/pill_bottle/chem_tin/buffout = 1,
 		/obj/item/storage/pill_bottle/chem_tin/mentats = 1,
 		/obj/item/reagent_containers/hypospray/medipen/psycho = 1,
-		/obj/item/reagent_containers/hypospray/medipen/medx = 1
+		/obj/item/reagent_containers/hypospray/medipen/medx = 1,
+		/obj/item/clothing/mask/chameleon = 1,
+		/obj/item/card/id/syndicate/anyone =1
 		)
-
+/*
 /datum/outfit/job/enclave/peacekeeper/enclavespy/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
 		return
 	ADD_TRAIT(H, TRAIT_PA_WEAR, src)
-
+*/
 //NON-COMBATANTS
 
 //Scientist
@@ -380,10 +395,12 @@
 		/obj/item/grenade/chem_grenade/cleaner = 1,
 		/obj/item/pda = 1,
 		/obj/item/gun/energy/gammagun = 1,
-		/obj/item/stock_parts/cell/ammo/ec = 2,
+		/obj/item/stock_parts/cell/ammo/mfc = 2,
 		/obj/item/storage/bag/money/small/wastelander = 1,
 		/obj/item/melee/onehanded/knife/survival = 1,
 		/obj/item/clothing/head/beret/enclave/science = 1,
+		/obj/item/clothing/mask/chameleon = 1,
+		/obj/item/card/id/syndicate/anyone =1
 		)
 
 /datum/outfit/job/enclave/noncombat/enclavesci/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -394,6 +411,7 @@
 	ADD_TRAIT(H, TRAIT_CYBERNETICIST_EXPERT, src)
 	ADD_TRAIT(H, TRAIT_SURGERY_HIGH, src)
 	ADD_TRAIT(H, TRAIT_CHEMWHIZ, src)
+	ADD_TRAIT(H, TRAIT_RESEARCHER, src)
 	ADD_TRAIT(H, TRAIT_UNETHICAL_PRACTITIONER, src) // Brainwashing
 	ADD_TRAIT(H, TRAIT_PA_WEAR, src)
 //	ADD_TRAIT(H, TRAIT_POOR_AIM, src)

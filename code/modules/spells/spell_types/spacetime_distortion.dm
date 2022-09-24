@@ -104,7 +104,7 @@
 	playsound(get_turf(src),sound,70,0)
 	busy = FALSE
 
-/obj/effect/cross_action/spacetime_dist/proc/on_entered(atom/movable/AM)
+/obj/effect/cross_action/spacetime_dist/proc/on_entered(datum/source, atom/movable/AM)
 	SIGNAL_HANDLER
 	if(!busy)
 		walk_link(AM)

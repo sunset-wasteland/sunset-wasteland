@@ -38,6 +38,9 @@
 		if(istype(previewJob,/datum/job/enclave/encborg))
 			parent.show_character_previews(image('icons/mob/robots.dmi', icon_state = "robot", dir = SOUTH))
 			return
+		if(istype(previewJob,/datum/job/followers/f13folborg))
+			parent.show_character_previews(image('icons/mob/robots.dmi', icon_state = "robot", dir = SOUTH))
+			return
 
 	// Set up the dummy for its photoshoot
 	var/mob/living/carbon/human/dummy/mannequin = generate_or_wait_for_human_dummy(DUMMY_HUMAN_SLOT_PREFERENCES)

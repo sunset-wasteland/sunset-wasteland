@@ -24,7 +24,7 @@
 /obj/vehicle/ridden/fuel/Move(NewLoc,Dir=0,step_x=0,step_y=0)
 	. = ..()
 	if(engine_on && move_wasting)
-		fuel_holder.reagents.remove_reagent("welding_fuel",move_wasting)
+		fuel_holder.reagents.remove_reagent(/datum/reagent/fuel,move_wasting)
 
 /obj/vehicle/ridden/fuel/process() //If process begining you can sure that engine is on
 	var/fuel_wasting
@@ -39,15 +39,15 @@
 			fuel_wasting += 2
 			new /obj/effect/hotspot(get_turf(src))
 			if(prob(50)) //MOAR FIRE
-				dyn_explosion(epicenter = src, power = fuel_holder.reagents.get_reagent_amount("welding_fuel")/10, flash_range = 2, adminlog = 0, flame_range = 5 ,silent = 1)
+				dyn_explosion(epicenter = src, power = fuel_holder.reagents.get_reagent_amount(/datum/reagent/fuel)/10, flash_range = 2, adminlog = 0, flame_range = 5 ,silent = 1)
 
-	fuel_holder.reagents.remove_reagent("welding_fuel",fuel_wasting)
+	fuel_holder.reagents.remove_reagent(/datum/reagent/fuel,fuel_wasting)
 
-	if(!fuel_holder.reagents.get_reagent_amount("welding_fuel"))
+	if(!fuel_holder.reagents.get_reagent_amount(/datum/reagent/fuel))
 		StopEngine()
 
 /obj/vehicle/ridden/fuel/start_engine()
-	if(!fuel_holder.reagents.get_reagent_amount("welding_fuel"))
+	if(!fuel_holder.reagents.get_reagent_amount(/datum/reagent/fuel))
 		playsound(src, 'sound/f13machines/engine_fail.ogg', 50)
 		to_chat(usr, "<span class='warning'>\The [src] has run out of fuel!</span>")
 		return
@@ -92,7 +92,7 @@
 
 /obj/item/reagent_containers/fuel_tank/New(volume, fuel)
 	src.volume = volume
-	list_reagents = list("welding_fuel" = fuel)
+	list_reagents = list(/datum/reagent/fuel = fuel)
 	..()
 
 /obj/item/reagent_containers/fuel_tank/attackby(obj/item/weapon/W, mob/user, params)

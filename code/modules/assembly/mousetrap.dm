@@ -120,7 +120,7 @@
 		else if(AM.density) // For mousetrap grenades, set off by anything heavy
 			triggered(AM)
 
-/obj/item/assembly/mousetrap/proc/on_entered(atom/movable/AM as mob|obj)
+/obj/item/assembly/mousetrap/proc/on_entered(datum/source, atom/movable/AM as mob|obj)
 	SIGNAL_HANDLER
 	INVOKE_ASYNC(src, .proc/handle_entered, AM)
 

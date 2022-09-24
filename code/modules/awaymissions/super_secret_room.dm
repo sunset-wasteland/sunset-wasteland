@@ -137,7 +137,7 @@
 	add_atom_colour(newcolor, FIXED_COLOUR_PRIORITY)
 	..()
 
-/obj/item/rupee/proc/on_entered(mob/M)
+/obj/item/rupee/proc/on_entered(datum/source, mob/M)
 	SIGNAL_HANDLER
 	if(!istype(M))
 		return

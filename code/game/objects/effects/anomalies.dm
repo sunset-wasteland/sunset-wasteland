@@ -123,7 +123,7 @@
 			if(target && !target.stat)
 				O.throw_at(target, 5, 10)
 
-/obj/effect/anomaly/grav/proc/on_entered(atom/movable/AM)
+/obj/effect/anomaly/grav/proc/on_entered(datum/source, atom/movable/AM)
 	SIGNAL_HANDLER
 	gravShock(AM)
 
@@ -179,7 +179,7 @@
 	for(var/mob/living/M in range(0, src))
 		mobShock(M)
 
-/obj/effect/anomaly/flux/proc/on_entered(atom/movable/AM)
+/obj/effect/anomaly/flux/proc/on_entered(datum/source, atom/movable/AM)
 	SIGNAL_HANDLER
 	INVOKE_ASYNC(src, .proc/mobShock, AM)
 

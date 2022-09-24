@@ -425,8 +425,8 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 /datum/outfit/loadout/seatechnical
 	name = "Technical Senior Advisor"
 	suit = /obj/item/clothing/suit/armor/f13/ncrarmor/mantle/reinforced
+	suit_store = /obj/item/gun/ballistic/automatic/assault_carbine/worn
 	backpack_contents = list(
-		/obj/item/gun/ballistic/automatic/assault_carbine = 1,
 		/obj/item/ammo_box/magazine/m5mm = 1,
 		/obj/item/clothing/accessory/ncr/FSGT = 1
 		)
@@ -563,6 +563,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	ADD_TRAIT(H, TRAIT_IRONFIST, src)
 	ADD_TRAIT(H, TRAIT_SILENT_STEP, src)
 	ADD_TRAIT(H, TRAIT_INSANE_AIM, src)
+	ADD_TRAIT(H, TRAIT_FAST_PUMP, src)
 	ADD_TRAIT(H, TRAIT_GENERIC, src)
 	var/datum/martial_art/rangertakedown/RT = new
 	RT.teach(H)
@@ -600,7 +601,6 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 		/obj/item/gun/ballistic/revolver/sequoia = 1,
 		/obj/item/ammo_box/c4570box/knockback = 1,
 		/obj/item/ammo_box/magazine/amr/penetrator = 1,
-		/obj/item/book/granter/trait/rifleman = 1,
 		)
 
 /datum/outfit/loadout/vrlite
@@ -609,7 +609,6 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	backpack_contents = list(
 		/obj/item/ammo_box/c4570 = 3,
 		/obj/item/gun/ballistic/revolver/sequoia = 1,
-		/obj/item/book/granter/trait/rifleman = 1,
 		)
 
 /datum/outfit/loadout/vrshotgunner
@@ -649,7 +648,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 
 	loadout_options = list( // ALL: Binoculars, Bowie knife
 	/datum/outfit/loadout/rangerrecon, // DKS Sniper rifle, .45 Revolver
-	/datum/outfit/loadout/rangertrail, // Rangermaster, 2 x .357 Revolvers
+	/datum/outfit/loadout/rangertrail, // Trail Carbine, 2 x .357 Revolvers
 	/datum/outfit/loadout/rangerpatrol, // R91 Assault Rifle, .44 SA Revolver
 	/datum/outfit/loadout/rangerpatrolcqb, // 10mm SMG, .44 Snubnose revolver
 	)
@@ -706,9 +705,10 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	suit = /obj/item/clothing/suit/armor/f13/trailranger
 	belt = /obj/item/storage/belt/military/NCR_Bandolier
 	neck = /obj/item/clothing/neck/mantle/ranger
-	suit_store = /obj/item/gun/ballistic/automatic/rangemaster
+	suit_store = /obj/item/gun/ballistic/rifle/repeater/trail
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/m762 = 3,
+		/obj/item/ammo_box/m44box = 2,
+		/obj/item/ammo_box/m44box/incendiary = 1,
 		/obj/item/melee/classic_baton/telescopic = 1,
 		/obj/item/attachments/scope = 1,
 		/obj/item/gun/ballistic/revolver/colt357 = 2,
@@ -755,7 +755,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	flag = F13HEAVYTROOPER
 	total_positions = 1
 	spawn_positions = 1
-	description = "You are the most elite of the enlisted, sergeant in rank but forgoing regular command roles to lead in battle only. You are expected to be on the frontlines of every engagement, and to provide firing support for the rank and file. Your power armor lacks the protection the full working sets have, but you have trained with it and can use it in battle well. General Oliver praises you and your other Heavy Troopers, prove to him you're no exception to the rule."
+	description = "You are the most elite of the enlisted, sergeant in rank but forgoing regular command roles to lead in battle only. You are expected to be on the frontlines of every engagement, and to provide firing support for the rank and file. Your power armor lacks the protection the full working sets have, but you have trained with it and can use it in battle well. You're the NCR's heaviest hitter in combat, don't be the exception."
 	supervisors = "Lieutenant and Above"
 	access = list(ACCESS_NCR, ACCESS_NCR_ARMORY, ACCESS_NCR_COMMAND)
 	selection_color = "#fff5cc"
@@ -793,18 +793,19 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 		)
 
 /datum/outfit/loadout/shockht
-	name = "Shock Heavy Trooper"
+	name = "Infantry Support Heavy Trooper"
 	backpack_contents = list(
-		/obj/item/minigunpackbal5mm = 1,
-		/obj/item/melee/onehanded/knife/bowie = 1,
+		/obj/item/gun/ballistic/automatic/bar/glowie = 1,
+		/obj/item/ammo_box/magazine/m762/ext = 2,
+		/obj/item/melee/onehanded/knife/trench = 1,
 		)
 
 /datum/outfit/loadout/supportht
-	name = "Support Heavy Trooper"
+	name = "Heavy Trooper Frontliner"
 	backpack_contents = list(
 		/obj/item/gun/ballistic/automatic/r84 = 1,
-		/obj/item/ammo_box/magazine/lmg = 1,
-		/obj/item/melee/onehanded/knife/bayonet = 1,
+		/obj/item/ammo_box/magazine/lmg = 2,
+		/obj/item/melee/onehanded/knife/bowie = 1,
 		)
 
 

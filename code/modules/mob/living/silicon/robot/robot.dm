@@ -4,6 +4,8 @@
 	icon = 'icons/mob/robots.dmi'
 	icon_state = "robot"
 	bubble_icon = "robot"
+	var/laser = FALSE
+	var/disabler = FALSE
 
 /mob/living/silicon/robot/get_cell()
 	return cell
@@ -72,6 +74,8 @@
 	toner = tonermax
 	diag_hud_set_borgcell()
 
+	verbs += /mob/living/proc/lay_down //CITADEL EDIT gimmie rest verb kthx
+
 //If there's an MMI in the robot, have it ejected when the mob goes away. --NEO
 /mob/living/silicon/robot/Destroy()
 	var/atom/T = drop_location()//To hopefully prevent run time errors.
@@ -132,6 +136,8 @@
 	"Assaultron" = /obj/item/robot_module/assaultron,
 	"Medical" = /obj/item/robot_module/assaultron/medical
 	)
+
+	modulelist += get_cit_modules() //Citadel change - adds Citadel's borg modules.
 
 	if(!CONFIG_GET(flag/disable_peaceborg))
 		modulelist["Peacekeeper"] = /obj/item/robot_module/peacekeeper

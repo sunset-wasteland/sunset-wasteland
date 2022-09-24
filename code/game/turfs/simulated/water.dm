@@ -1,7 +1,7 @@
 /turf/open/water
 	gender = PLURAL
-	name = "water"
-	desc = "Shallow water."
+	name = "spring water"
+	desc = "Shallow, almost clear water."
 	icon = 'icons/turf/floors.dmi'
 	icon_state = "riverwater_motion"
 	baseturfs = /turf/open/indestructible/ground/inside/mountain
@@ -62,7 +62,7 @@
 		if(L.check_submerged() <= 0)
 			return
 		if(!istype(newloc, /turf/open/water))
-			to_chat(L, "<span class='warning'>You climb out of \the [src].</span>")
+			to_chat(L, "<span class='warning'>You wade through \the [src].</span>")
 	..()
 
 /mob/living/proc/check_submerged()

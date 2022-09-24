@@ -315,6 +315,21 @@
 	barefootstep = FOOTSTEP_HARD_BAREFOOT
 //	step_sounds = list("human" = "erikafootsteps")
 
+/turf/open/indestructible/ground/outside/ruins/ex_act(severity, target)
+	contents_explosion(severity, target)
+	switch(severity)
+		if(4)
+			if(prob(5))
+				ChangeTurf(baseturfs)
+		if(3)
+			if(prob(25))
+				ChangeTurf(baseturfs)
+		if(2)
+			if(prob(50))
+				ChangeTurf(baseturfs)
+		if(1)
+			ChangeTurf(baseturfs)
+
 /turf/open/indestructible/ground/outside/wood
 	name = "\proper wood planks"
 	icon_state = "housewood1"
@@ -403,20 +418,19 @@
 	barefootstep = FOOTSTEP_SNOW
 	clawfootstep = FOOTSTEP_SNOW
 
-/turf/open/indestructible/ground/outside/ruins/ex_act(severity, target)
-	contents_explosion(severity, target)
-	switch(severity)
-		if(4)
-			if(prob(5))
-				ChangeTurf(baseturfs)
-		if(3)
-			if(prob(25))
-				ChangeTurf(baseturfs)
-		if(2)
-			if(prob(50))
-				ChangeTurf(baseturfs)
-		if(1)
-			ChangeTurf(baseturfs)
+/turf/open/indestructible/ground/outside/snow/New()
+	..()
+	icon_state = "snow[rand(0,12)]"
+
+/turf/open/indestructible/ground/outside/snow_plating
+	initial_gas_mix = "o2=22;n2=82;TEMP=285"
+	name = "snow"
+	icon = 'icons/turf/snow.dmi'
+	desc = "Looks cold."
+	icon_state = "snowplating"
+	footstep = FOOTSTEP_PLATING
+	barefootstep = FOOTSTEP_PLATING
+	clawfootstep = FOOTSTEP_PLATING
 
 /////////////////////////////////////////////////////////
 

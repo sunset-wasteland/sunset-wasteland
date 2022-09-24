@@ -4,6 +4,8 @@
 	icon = 'icons/mob/robots.dmi'
 	icon_state = "robot"
 	bubble_icon = "robot"
+	var/laser = FALSE
+	var/disabler = FALSE
 
 /mob/living/silicon/robot/get_cell()
 	return cell

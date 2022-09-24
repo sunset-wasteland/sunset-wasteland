@@ -56,6 +56,7 @@ Elder
 	supervisors = "the high elders"
 	selection_color = "#7f8c8d"
 	req_admin_notify = 1
+	roleplay_exclusive_notify = 1
 
 	exp_requirements = 3000
 

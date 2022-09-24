@@ -377,6 +377,7 @@
 	supervisors = "Enclave Research and Development Division."
 	outfit = /datum/outfit/job/enclave/noncombat/enclavesci
 	exp_requirements = 1000
+	roleplay_exclusive_notify = 1
 	access = list(ACCESS_ENCLAVE, ACCESS_ENCLAVE_COMMAND)
 
 /datum/outfit/job/enclave/noncombat/enclavesci
@@ -426,6 +427,7 @@
 	supervisors = "Enclave Department of the Army, Air Force Division."
 	outfit = /datum/outfit/job/enclave/noncombat/enclavepilot
 	req_admin_notify = 1
+	roleplay_exclusive_notify = 1
 	exp_requirements = 1000
 	access = list(ACCESS_ENCLAVE, ACCESS_ENCLAVE_COMMAND)
 

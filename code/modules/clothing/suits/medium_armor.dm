@@ -69,7 +69,7 @@
 	permeability_coefficient = 0.9
 	heat_protection = CHEST | GROIN | LEGS
 	cold_protection = CHEST | GROIN | LEGS
-	armor = list("melee" = 30, "bullet" = 35, "laser" = 30, "energy" = 20, "bomb" = 25, "bio" = 10, "rad" = 15, "fire" = 25, "acid" = 10)
+	armor = list("melee" = 45, "bullet" = 45, "laser" = 45, "energy" = 20, "bomb" = 50, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20, "wound" = 10)
 
 /obj/item/clothing/suit/armored/medium/combat/swat
 	name = "SWAT combat armor"

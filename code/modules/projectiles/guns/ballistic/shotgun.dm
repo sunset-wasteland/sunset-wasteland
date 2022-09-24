@@ -356,15 +356,18 @@
 	toggle_tube(user)
 
 
-//Winchester City-Killer				Keywords: Shotgun, Semi-auto, 12 rounds internal
+//Winchester City-Killer				Keywords: Shotgun, Full-auto, 10 rounds internal
 /obj/item/gun/ballistic/shotgun/automatic/combat/citykiller
 	name = "Winchester City-Killer shotgun"
-	desc = "A semi automatic shotgun with black tactical furniture made by Winchester Arms. This particular model uses a internal tube magazine."
+	desc = "A semi automatic shotgun with black tactical furniture made by Winchester Arms. This particular model uses an internal tube magazine."
 	icon_state = "citykiller"
 	item_state = "shotguncity"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/com/citykiller
-	fire_delay = 5
-	var/semi_auto = TRUE
+	fire_delay = 4.45
+	autofire_shot_delay = 5
+	is_automatic = TRUE
+	automatic = 1
+	recoil = 1.25
 	fire_sound = 'sound/f13weapons/riot_shotgun.ogg'
 
 
@@ -379,7 +382,7 @@
 	item_state = "shotgunriot"
 	w_class = WEIGHT_CLASS_BULKY
 	mag_type = /obj/item/ammo_box/magazine/d12g
-	fire_delay = 5
+	fire_delay = 4
 	burst_size = 1
 	recoil = 0.5
 	automatic_burst_overlay = FALSE

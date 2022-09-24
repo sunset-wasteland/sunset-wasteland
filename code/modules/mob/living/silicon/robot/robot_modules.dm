@@ -319,7 +319,6 @@
 		/obj/item/stack/medical/bone_gel/cyborg,
 		/obj/item/organ_storage,
 		/obj/item/borg/lollipop,
-		/obj/item/sensor_device,
 		/obj/item/shockpaddles/cyborg)
 	emag_modules = list(/obj/item/reagent_containers/borghypo/hacked)
 	ratvar_modules = list(
@@ -741,7 +740,6 @@
 		/obj/item/stack/medical/bone_gel/cyborg,
 		/obj/item/organ_storage,
 		/obj/item/borg/lollipop,
-		/obj/item/sensor_device,
 		/obj/item/shockpaddles/cyborg,
 		/obj/item/melee/unarmed/punchdagger/cyborg
 		)

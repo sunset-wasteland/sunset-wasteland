@@ -144,8 +144,7 @@
 		/obj/item/twohanded/shockpaddles/cyborg/hound,
 		/obj/item/stack/medical/gauze/cyborg,
 		/obj/item/reagent_containers/syringe,
-		/obj/item/organ_storage,
-		/obj/item/sensor_device)
+		/obj/item/organ_storage)
 	emag_modules = list(/obj/item/dogborg/pounce)
 	ratvar_modules = list(/obj/item/clockwork/slab/cyborg/medical,
 		/obj/item/clockwork/weapon/ratvarian_spear)

@@ -365,7 +365,6 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/com/citykiller
 	fire_delay = 4.45
 	autofire_shot_delay = 5
-	is_automatic = TRUE
 	automatic = 1
 	recoil = 1.25
 	fire_sound = 'sound/f13weapons/riot_shotgun.ogg'

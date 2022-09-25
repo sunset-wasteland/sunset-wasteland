@@ -247,53 +247,6 @@
 	resistance_flags = ACID_PROOF
 	armor = list("melee" = 30, "bullet" = 10, "laser" = 30, "energy" = 25, "bomb" = 16, "bio" = 100, "rad" = 100, "fire" = 35, "acid" = 100)
 	rad_flags = RAD_PROTECT_CONTENTS | RAD_NO_CONTAMINATE
-	
-	/obj/item/clothing/head/bio_hood/f13/hazmat/Initialize()
-	. = ..()
-	soundloop = new(src, FALSE, TRUE)
-	soundloop.volume = 5
-	START_PROCESSING(SSobj, src)
-
-/obj/item/clothing/head/bio_hood/f13/hazmat/Destroy()
-	. = ..()
-	STOP_PROCESSING(SSobj, src)
-
-/obj/item/clothing/head/bio_hood/f13/hazmat/attack_self(mob/user)
-	on = !on
-	update_icon() //the mob overlay update is already done by the update_icon_updates_onmob element.
-	if(on)
-		set_light_on(TRUE)
-	else
-		set_light_on(FALSE)
-
-/obj/item/clothing/head/bio_hood/f13/hazmat/update_icon_state()
-	icon_state = "[basestate][on]-[hardsuit_type]"
-
-/obj/item/clothing/head/bio_hood/f13/hazmat/dropped(mob/user)
-	..()
-	if(suit && !ismob(loc)) //equipped() will handle mob cases, so it doesn't disengage twice.
-		suit.RemoveHelmet()
-		soundloop.stop(user)
-
-/obj/item/clothing/head/bio_hood/f13/hazmat/item_action_slot_check(slot, mob/user, datum/action/A)
-	if(slot == SLOT_HEAD)
-		return 1
-
-/obj/item/clothing/head/bio_hood/f13/hazmat/equipped(mob/user, slot)
-	..()
-	if(slot != SLOT_HEAD)
-		if(suit)
-			suit.RemoveHelmet()
-			soundloop.stop(user)
-		else
-			qdel(src)
-	else
-		soundloop.start(user)
-
-/obj/item/clothing/head/bio_hood/f13/hazmat/proc/display_visor_message(msg)
-	var/mob/wearer = loc
-	if(msg && ishuman(wearer))
-		wearer.show_message("[icon2html(src, wearer)]<b><span class='robot'>[msg]</span></b>", MSG_VISUAL)
 
 //Fallout 13 toggle apparel directory
 /obj/item/clothing/suit/toggle/labcoat/f13/emergency

@@ -1114,7 +1114,7 @@ Off-Duty
 	flag = F13OFFDUTYBOS
 	total_positions = 6//Likely far too many, but this stops you know what. :)
 	spawn_positions = 6
-	description = "While off-duty, you are relieved of both your duties and your authority. You are not required to participate in any routine duties of the bunker, and you may spend your time doing whatever you please, within reason. However, you may not leave the bunker, and you may not get in the way of on-duty personnel. Do not pull rank or give orders. Should the bunker be attacked, you are expected NOT to participate in the fighting, and must instead head to the lower levels for safety (i.e. despawn yourself at the matrix point)."
+	description = "While off-duty, you are relieved of both your duties and your authority. You are not required to participate in any routine duties of the bunker, and you may spend your time doing whatever you please, within reason."
 	supervisors = "your superior rank."
 	selection_color = "#95a5a6"
 	roleplay_exclusive_notify = 1

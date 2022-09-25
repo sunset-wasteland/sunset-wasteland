@@ -394,12 +394,12 @@
 /datum/chemical_reaction/superstimpak
 	name = "Super Stimpak Fluid"
 	id = /datum/reagent/medicine/super_stimpak
-	results = list(/datum/reagent/medicine/super_stimpak = 2)
-	required_reagents = list(/datum/reagent/blood = 1, /datum/reagent/medicine/stimpak = 1, /datum/reagent/consumable/mutjuice = 1) //1 mutfruit at 50 potency yields 6 mutfruit juice
+	results = list(/datum/reagent/medicine/super_stimpak = 3)
+	required_reagents = list(/datum/reagent/blood = 1, /datum/reagent/medicine/stimpak = 1, /datum/reagent/consumable/mutjuice = 1, /datum/reagent/medicine/clonexadone = 1) //1 mutfruit at 50 potency yields 6 mutfruit juice
 
 /datum/chemical_reaction/superstimpak/synthetic
 	id = "super_stimpak_synthetic"
-	required_reagents = list(/datum/reagent/blood/synthetics = 1, /datum/reagent/medicine/stimpak = 1, /datum/reagent/consumable/mutjuice = 1) //1 mutfruit at 50 potency yields 6 mutfruit juice
+	required_reagents = list(/datum/reagent/blood/synthetics = 1, /datum/reagent/medicine/stimpak = 1, /datum/reagent/consumable/mutjuice = 1, /datum/reagent/medicine/clonexadone = 1) //1 mutfruit at 50 potency yields 6 mutfruit juice
 
 /datum/chemical_reaction/medx
 	name = "Med-X"

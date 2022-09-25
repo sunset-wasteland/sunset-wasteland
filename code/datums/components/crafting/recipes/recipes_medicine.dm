@@ -124,8 +124,7 @@
 /datum/crafting_recipe/stimpak
 	name = "Stimpak"
 	result = /obj/item/reagent_containers/hypospray/medipen/stimpak
-	reqs = list(/obj/item/reagent_containers/food/snacks/grown/broc = 2,
-				/obj/item/reagent_containers/food/snacks/grown/xander = 2,
+	reqs = list(/datum/reagent/medicine/stimpak = 10,
 				/obj/item/reagent_containers/syringe = 1)
 	tools = list(TOOL_WORKBENCH)
 	time = 15
@@ -133,6 +132,25 @@
 
 /datum/crafting_recipe/stimpak5
 	name = "Stimpak x5"
+	result = /obj/item/storage/box/medicine/stimpaks/stimpaks5
+	reqs = list(/datum/reagent/medicine/stimpak = 50,
+				/obj/item/reagent_containers/syringe = 5)
+	tools = list(TOOL_WORKBENCH)
+	time = 20
+	category = CAT_MEDICAL
+
+/datum/crafting_recipe/imitationstimpak
+	name = "Imitation Stimpak"
+	result = /obj/item/reagent_containers/hypospray/medipen/stimpak
+	reqs = list(/obj/item/reagent_containers/food/snacks/grown/broc = 2,
+				/obj/item/reagent_containers/food/snacks/grown/xander = 2,
+				/obj/item/reagent_containers/syringe = 1)
+	tools = list(TOOL_WORKBENCH)
+	time = 15
+	category = CAT_MEDICAL
+
+/datum/crafting_recipe/imitationstimpak5
+	name = "Imitation Stimpak x5"
 	result = /obj/item/storage/box/medicine/stimpaks/stimpaks5
 	reqs = list(/obj/item/reagent_containers/food/snacks/grown/broc = 10,
 				/obj/item/reagent_containers/food/snacks/grown/xander = 10,
@@ -146,7 +164,8 @@
 	result = /obj/item/reagent_containers/hypospray/medipen/stimpak/super
 	reqs = list(/obj/item/reagent_containers/hypospray/medipen/stimpak = 1,
 				/obj/item/stack/sheet/leather = 2,
-				/obj/item/reagent_containers/food/snacks/grown/mutfruit = 2)
+				/obj/item/reagent_containers/food/snacks/grown/mutfruit = 2,
+				/datum/reagent/medicine/clonexadone = 5)
 	tools = list(TOOL_WORKBENCH)
 	time = 20
 	category = CAT_MEDICAL
@@ -156,7 +175,8 @@
 	result = /obj/item/storage/box/medicine/stimpaks/superstimpaks5
 	reqs = list(/obj/item/reagent_containers/hypospray/medipen/stimpak = 5,
 				/obj/item/stack/sheet/leather = 10,
-				/obj/item/reagent_containers/food/snacks/grown/mutfruit = 10)
+				/obj/item/reagent_containers/food/snacks/grown/mutfruit = 10,
+				/datum/reagent/medicine/clonexadone = 25)
 	tools = list(TOOL_WORKBENCH)
 	time = 30
 	category = CAT_MEDICAL

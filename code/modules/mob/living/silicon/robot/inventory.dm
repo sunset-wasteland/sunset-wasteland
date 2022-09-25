@@ -66,7 +66,7 @@
 		to_chat(src, "<span class='warning'>That module is already activated.</span>")
 		return
 	//CITADEL EDIT Dogborg lasers
-	if(istype(O,/obj/item/gun/energy/laser/cyborg))
+	if(istype(O,/obj/item/gun/energy/laser/cyborg) || istype(O,/obj/item/gun/energy/laser/pistol/cyborg))
 		laser = TRUE
 		update_icons() //REEEEEEACH FOR THE SKY
 	if(istype(O,/obj/item/gun/energy/disabler/cyborg))

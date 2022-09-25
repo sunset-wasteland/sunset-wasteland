@@ -9,7 +9,7 @@
 		on_standing_up()
 		update_icons()
 
-/mob/living/silicon/robot/proc/toggle_resting()
+/mob/living/silicon/robot/toggle_resting()
 	robot_lay_down()
 
 /mob/living/silicon/robot/proc/rest_style()

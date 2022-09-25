@@ -141,7 +141,8 @@
 	time = 20
 	category = CAT_MEDICAL
 
-/*datum/crafting_recipe/superstimpak
+/*
+/datum/crafting_recipe/superstimpak
 	/name = "Super Stimpak"
 	/result = /obj/item/reagent_containers/hypospray/medipen/stimpak/super
 	/reqs = list(/obj/item/reagent_containers/hypospray/medipen/stimpak = 1,
@@ -159,7 +160,8 @@
 				/obj/item/reagent_containers/food/snacks/grown/mutfruit = 10)
 	/tools = list(TOOL_WORKBENCH)
 	/time = 30
-	/category = CAT_MEDICAL*/
+	/category = CAT_MEDICAL
+*/
 
 /datum/crafting_recipe/salvage_stimpak
 	name = "Salvage injector"

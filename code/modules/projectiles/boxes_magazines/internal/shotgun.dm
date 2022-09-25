@@ -39,7 +39,7 @@
 /obj/item/ammo_box/magazine/internal/shot/com/citykiller
 	name = "city killer shotgun internal magazine"
 	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
-	max_ammo = 12
+	max_ammo = 10
 
 /obj/item/ammo_box/magazine/internal/shot/dual
 	name = "double-barrel shotgun internal magazine"

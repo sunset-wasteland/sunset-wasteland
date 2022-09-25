@@ -18,10 +18,11 @@
 	a_intent = INTENT_HARM
 	maxHealth = 60
 	health = 60
-	speed = 3
+	speed = 2.4
 	harm_intent_damage = 8
-	melee_damage_lower = 15
-	melee_damage_upper = 15
+	melee_damage_lower = 25
+	melee_damage_upper = 25
+	armour_penetration = 0.1//Making them some manner of threat.
 	attack_verb_simple = "claw"
 	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
 	unsuitable_atmos_damage = 20
@@ -60,15 +61,27 @@
 	icon_state = "ghoulreaver"
 	icon_living = "ghoulreaver"
 	icon_dead = "ghoulreaver_dead"
-	speed = 2
+	speed = 1.8
 	maxHealth = 120
 	health = 120
 	harm_intent_damage = 8
 	melee_damage_lower = 25
-	melee_damage_upper = 25
-	armour_penetration = 0.1//Making them some manner of threat.
-	sharpness = SHARP_EDGED//As above.
+	melee_damage_upper = 35
+	armour_penetration = 0.2//Making them some manner of threat.
+	ranged_message = "throws a chunk of flesh"
+	ranged_cooldown_time = 60
+	ranged = 1
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
+	projectiletype = /obj/item/projectile/reaver
+	projectilesound = 'sound/f13npc/centaur/lash.ogg'
+
+/obj/item/projectile/reaver
+	name = "radioactive glob"
+	damage = 15
+	armour_penetration = 5
+	irradiate = 25//Toxic threshold is 250.
+	pass_flags = PASSTABLE | PASSGRILLE
+	icon_state = "toxin"
 
 /mob/living/simple_animal/hostile/ghoul/reaver/Initialize()
 	. = ..()
@@ -160,7 +173,7 @@
 	light_system = MOVABLE_LIGHT
 	light_range = 2
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
-	var/radburst_cooldown = 6//Support mob, revives others every six seconds, provided a player is within three tiles. Previously sixty, because I thought this was deciseconds.
+	var/radburst_cooldown = 6//Support mob, revives others every six seconds, provided a player is within six tiles. Previously sixty, because I thought this was deciseconds.
 
 /mob/living/simple_animal/hostile/ghoul/glowing/Initialize(mapload)
 	. = ..()
@@ -181,7 +194,7 @@
 		return
 	radburst_cooldown--
 
-	if(target in range(3,src))
+	if(target in range(6,src))
 //		if((health <= (0.6 * maxHealth)) && radburst_cooldown<=0)
 		if(radburst_cooldown<=0)
 			radburst_cooldown = initial(radburst_cooldown)

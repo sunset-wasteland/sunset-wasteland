@@ -44,6 +44,7 @@ GLOBAL_LIST_INIT(civilian_positions, list(
 GLOBAL_LIST_INIT(nonhuman_positions, list(
 	"AI",
 	"Cyborg",
+	"Followers Robot",
 	ROLE_PAI,
 	))
 
@@ -120,6 +121,7 @@ GLOBAL_LIST_INIT(faction_whitelist_positions, list(
 "Followers Administrator",
 "Followers Doctor",
 "Followers Guard",
+"Followers Robot",
 
 "Cyborg",
 ))
@@ -147,6 +149,7 @@ GLOBAL_LIST_INIT(bighorn_positions, list(
 	"Barkeep",
 	"Preacher",
 	"Citizen",
+	"Secretary",
 ))
 
 GLOBAL_LIST_INIT(legion_command_positions, list(
@@ -228,7 +231,7 @@ GLOBAL_LIST_INIT(khan_positions, list(
 
 GLOBAL_LIST_INIT(enclave_positions, list(
 	"Enclave Lieutenant",
-	"Enclave Gunnery Sergeant",
+	"Enclave Platoon Sergeant",
 	"Enclave Sergeant",
 	"Enclave Armored Infantry",
 	"Enclave Specialist",
@@ -252,6 +255,7 @@ GLOBAL_LIST_INIT(followers_positions, list(
 	"Followers Guard",
 	"Followers Volunteer",
 	"Followers Scientist",
+	"Followers Robot",
 ))
 
 // job categories for rendering the late join menu

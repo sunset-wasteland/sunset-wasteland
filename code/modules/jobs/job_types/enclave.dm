@@ -74,6 +74,7 @@
 	accessory = /obj/item/clothing/accessory/ncr/LT1
 	id = /obj/item/card/id/dogtag/enclave/officer
 	ears = /obj/item/radio/headset/headset_enclave/command
+	l_pocket = /obj/item/clothing/mask/chameleon
 
 	backpack_contents = list(
 		/obj/item/reagent_containers/hypospray/medipen/stimpak/super = 3,
@@ -122,7 +123,7 @@
 // Gunnery Sergeant
 
 /datum/job/enclave/f13gysergeant
-	title = "Enclave Gunnery Sergeant"
+	title = "Enclave Platoon Sergeant"
 	flag = F13USGYSGT
 	total_positions = 1
 	spawn_positions = 1
@@ -139,12 +140,13 @@
 		)
 
 /datum/outfit/job/enclave/peacekeeper/f13gysergeant
-	name = "Enclave Gunnery Sergeant"
+	name = "Enclave Platoon Sergeant"
 	jobtype = /datum/job/enclave/f13gysergeant
 	head = /obj/item/clothing/head/helmet/f13/power_armor/x02helmet
 	suit = /obj/item/clothing/suit/armor/f13/power_armor/x02
-	accessory = /obj/item/clothing/accessory/enclave/master_sergeant
+	accessory = /obj/item/clothing/accessory/enclave/sergeant_firstclass
 	ears = /obj/item/radio/headset/headset_enclave/command
+	l_pocket = /obj/item/clothing/mask/chameleon
 
 	backpack_contents = list(
 		/obj/item/reagent_containers/hypospray/medipen/stimpak = 2,
@@ -216,6 +218,7 @@
 	head = /obj/item/clothing/head/helmet/f13/power_armor/x02helmet
 	suit = /obj/item/clothing/suit/armor/f13/power_armor/x02
 	accessory = /obj/item/clothing/accessory/enclave/sergeant
+	l_pocket = /obj/item/clothing/mask/chameleon
 
 	backpack_contents = list(
 		/obj/item/reagent_containers/hypospray/medipen/stimpak = 2,
@@ -291,6 +294,7 @@
 		/obj/item/storage/pill_bottle/chem_tin/mentats = 1,
 		/obj/item/reagent_containers/hypospray/medipen/psycho = 1,
 		/obj/item/reagent_containers/hypospray/medipen/medx = 1,
+		/obj/item/clothing/mask/chameleon = 1,
 		/obj/item/card/id/syndicate/anyone =1
 		)
 
@@ -351,6 +355,7 @@
 		/obj/item/storage/pill_bottle/chem_tin/mentats = 1,
 		/obj/item/reagent_containers/hypospray/medipen/psycho = 1,
 		/obj/item/reagent_containers/hypospray/medipen/medx = 1,
+		/obj/item/clothing/mask/chameleon = 1,
 		/obj/item/card/id/syndicate/anyone =1
 		)
 /*
@@ -394,6 +399,7 @@
 		/obj/item/storage/bag/money/small/wastelander = 1,
 		/obj/item/melee/onehanded/knife/survival = 1,
 		/obj/item/clothing/head/beret/enclave/science = 1,
+		/obj/item/clothing/mask/chameleon = 1,
 		/obj/item/card/id/syndicate/anyone =1
 		)
 

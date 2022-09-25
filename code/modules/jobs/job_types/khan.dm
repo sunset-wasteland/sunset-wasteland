@@ -40,9 +40,6 @@
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/smg10mm)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/gate_khanate)
 
-/datum/outfit/job/khan/chemist
-	jobtype = /datum/job/khan/chemist
-
 /datum/job/khan/enforcer
 	title = "Khan Enforcer"
 	flag = F13KHAN
@@ -54,7 +51,7 @@
 	selection_color = "#ff915e"
 	exp_requirements = 240
 	exp_type = EXP_TYPE_WASTELAND
-	outfit = /datum/outfit/job/khan
+	outfit = /datum/outfit/job/khan/enforcer
 
 	loadout_options = list(
 		/datum/outfit/loadout/soldier
@@ -81,6 +78,12 @@
 		)
 
 //=========================================================== LOADOUT DATUMS ===========================================================
+
+/datum/outfit/job/khan/enforcer
+	jobtype = /datum/job/khan/enforcer
+
+/datum/outfit/job/khan/chemist
+	jobtype = /datum/job/khan/chemist
 
 //KHAN =================================================================
 

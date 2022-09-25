@@ -48,6 +48,8 @@
 	var/mob/living/carbon/linked_mob = null // Which mob the radio is checked out to.
 	//fortuna addition end. radio management.
 
+	var/list/extra_channels = list() //Allows indivudal channels, used for borgs
+
 /obj/item/radio/suicide_act(mob/living/user)
 	user.visible_message("<span class='suicide'>[user] starts bouncing [src] off [user.p_their()] head! It looks like [user.p_theyre()] trying to commit suicide!</span>")
 	return BRUTELOSS
@@ -74,6 +76,13 @@
 			syndie = TRUE
 		if(keyslot.independent)
 			independent = TRUE
+
+	//Skyrat edit start
+	if(extra_channels)
+		for(var/ch_name in extra_channels)
+			if(!(ch_name in channels))
+				channels[ch_name] = extra_channels[ch_name]
+	//Skyrat edit end
 
 	for(var/ch_name in channels)
 		secure_radio_connections[ch_name] = add_radio(src, GLOB.radiochannels[ch_name])

@@ -4,6 +4,7 @@
 -Protectrons
 -Robobrains
 -Assaultrons
+-Liberators
 */
 
 /mob/living/simple_animal/hostile/handy
@@ -128,17 +129,18 @@
 /mob/living/simple_animal/hostile/handy/liberator
 	name = "liberator"
 	desc = "A small pre-War droned used by the People's Liberation Army."
+	icon = 'icons/fallout/mobs/robots/weirdrobots.dmi'
 	icon_state = "liberator"
 	icon_living = "leberator"
 	icon_dead = "liberator_d"
 	icon_gib = "liberator_g"
-	health = 80
-	maxHealth = 80
+	health = 25
+	maxHealth = 25
 	melee_damage_lower = 5
 	melee_damage_upper = 10
 	attack_verb_simple = "slaps"
 	projectilesound = 'sound/weapons/laser.ogg'
-	projectiletype = /obj/item/projectile/beam/laser/pistol
+	projectiletype = /obj/item/projectile/beam/laser/liberator
 	extra_projectiles = 1
 	ranged = TRUE
 	retreat_distance = 2
@@ -147,10 +149,17 @@
 	loot = list(/obj/effect/decal/cleanable/robot_debris, /obj/item/stack/crafting/electronicparts/three, /obj/item/stock_parts/cell/ammo/mfc)
 	emote_taunt_sound = null
 	emote_taunt = list("levels its laser")
+	faction = list("china")
 	aggrosound = null
 	idlesound = null
 	death_sound = null
 	attack_sound = null
+
+/obj/item/projectile/beam/laser/liberator
+	name = "laser bolt"
+	damage = 5
+	wound_bonus = 35
+	armour_penetration = 1
 
 /mob/living/simple_animal/hostile/handy/liberator/yellow
 	name = "liberator"

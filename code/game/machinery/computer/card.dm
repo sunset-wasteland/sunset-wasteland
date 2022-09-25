@@ -133,10 +133,7 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 			return TRUE
 
 /obj/machinery/computer/card/ui_interact(mob/user)
-	if(LAZYLEN(job_req) && !(user.mind?.assigned_role in job_req))
-		to_chat(user, "<span class='warning'>You have no idea how to use it...</span>")
-		return
-	. = ..()
+
 	var/list/dat = list()
 
 	var/list/header = list()
@@ -508,6 +505,9 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 		"Legion Citizen",
 		"Recruit Legionnaire",
 		"Prime Legionnaire",
+		"Legion Explorer",
+		"Legion Immune",
+		"Legion Auxilia",
 		"Veteran Legionnaire",
 		)
 	job_req = list(
@@ -522,28 +522,33 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 	job_list = list(
 		"Enclave Sergeant",
 		"Enclave Private",
+		"Enclave Specialist",
+		"Enclave Scientist",
 		"Enclave Bunker Duty",
 		"American Citizen",
+		"Enclave Pilot Officer",
 		)
 	job_req = list(
 		"Enclave Lieutenant",
-		"Enclave Master Sergeant",
+		"Enclave Platoon Sergeant",
 		)
 
 /obj/machinery/computer/card/bos
 	name = "\improper Brotherhood of Steel identification console"
 	circuit = /obj/item/circuitboard/computer/card/bos
 	job_list = list(
+		"Paladin Marshal",
 		"Paladin",
+		"Librarian",
 		"Scribe",
-		"Junior Scribe",
+		"Knight-Captain",
 		"Knight",
-		"Junior Knight",
 		"Initiate",
+		"BoS Off-Duty",
 		)
 	job_req = list(
-		"Elder",
-		"Head Paladin",
-		"Head Scribe",
-		"Head Knight",
+		"Baron",
+		"Castellan",
+		"Keeper",
+		"Knight-Commander",
 		)

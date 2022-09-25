@@ -164,8 +164,7 @@
 	result = /obj/item/reagent_containers/hypospray/medipen/stimpak/super
 	reqs = list(/obj/item/reagent_containers/hypospray/medipen/stimpak = 1,
 				/obj/item/stack/sheet/leather = 2,
-				/obj/item/reagent_containers/food/snacks/grown/mutfruit = 2,
-				/datum/reagent/medicine/clonexadone = 5)
+				/datum/reagent/medicine/super_stimpak = 10)
 	tools = list(TOOL_WORKBENCH)
 	time = 20
 	category = CAT_MEDICAL
@@ -175,8 +174,7 @@
 	result = /obj/item/storage/box/medicine/stimpaks/superstimpaks5
 	reqs = list(/obj/item/reagent_containers/hypospray/medipen/stimpak = 5,
 				/obj/item/stack/sheet/leather = 10,
-				/obj/item/reagent_containers/food/snacks/grown/mutfruit = 10,
-				/datum/reagent/medicine/clonexadone = 25)
+				/datum/reagent/medicine/super_stimpak = 50)
 	tools = list(TOOL_WORKBENCH)
 	time = 30
 	category = CAT_MEDICAL

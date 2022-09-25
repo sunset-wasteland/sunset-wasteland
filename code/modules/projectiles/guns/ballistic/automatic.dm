@@ -1416,12 +1416,13 @@
 	item_state = "R84"
 	slowdown = 1.2
 	mag_type = /obj/item/ammo_box/magazine/lmg
-	extra_damage = 21
-	fire_delay = 6
+	extra_damage = 19
+	extra_penetration = 0.15
+	fire_delay = 2.7
 	burst_shot_delay = 3
 	is_automatic = TRUE
 	automatic = 1
-	autofire_shot_delay = 2.7
+	autofire_shot_delay = 1.75
 	spread = 12
 	can_attachments = FALSE
 	actions_types = null

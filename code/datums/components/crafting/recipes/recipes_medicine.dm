@@ -141,25 +141,25 @@
 	time = 20
 	category = CAT_MEDICAL
 
-//datum/crafting_recipe/superstimpak
-	//name = "Super Stimpak"
-	//result = /obj/item/reagent_containers/hypospray/medipen/stimpak/super
-	//reqs = list(/obj/item/reagent_containers/hypospray/medipen/stimpak = 1,
-				///obj/item/stack/sheet/leather = 2,
-				///obj/item/reagent_containers/food/snacks/grown/mutfruit = 2)
-	//tools = list(TOOL_WORKBENCH)
-	//time = 20
-	//category = CAT_MEDICAL
+/*datum/crafting_recipe/superstimpak
+	/name = "Super Stimpak"
+	/result = /obj/item/reagent_containers/hypospray/medipen/stimpak/super
+	/reqs = list(/obj/item/reagent_containers/hypospray/medipen/stimpak = 1,
+				/obj/item/stack/sheet/leather = 2,
+				/obj/item/reagent_containers/food/snacks/grown/mutfruit = 2)
+	/tools = list(TOOL_WORKBENCH)
+	/time = 20
+	/category = CAT_MEDICAL
 
-//datum/crafting_recipe/superstimpak5
-	//name = "Super Stimpak (x5)"
-	//result = /obj/item/storage/box/medicine/stimpaks/superstimpaks5
-	//reqs = list(/obj/item/reagent_containers/hypospray/medipen/stimpak = 5,
-				///obj/item/stack/sheet/leather = 10,
-				///obj/item/reagent_containers/food/snacks/grown/mutfruit = 10)
-	//tools = list(TOOL_WORKBENCH)
-	//time = 30
-	//category = CAT_MEDICAL
+/datum/crafting_recipe/superstimpak5
+	/name = "Super Stimpak (x5)"
+	/result = /obj/item/storage/box/medicine/stimpaks/superstimpaks5
+	/reqs = list(/obj/item/reagent_containers/hypospray/medipen/stimpak = 5,
+				/obj/item/stack/sheet/leather = 10,
+				/obj/item/reagent_containers/food/snacks/grown/mutfruit = 10)
+	/tools = list(TOOL_WORKBENCH)
+	/time = 30
+	/category = CAT_MEDICAL*/
 
 /datum/crafting_recipe/salvage_stimpak
 	name = "Salvage injector"

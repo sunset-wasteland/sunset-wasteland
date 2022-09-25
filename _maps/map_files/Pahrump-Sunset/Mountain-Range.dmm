@@ -255,6 +255,9 @@
 /obj/machinery/computer/vertibird_console,
 /turf/open/floor/f13,
 /area/f13/enclave)
+"dE" = (
+/turf/open/indestructible,
+/area/f13/tcoms)
 "dF" = (
 /mob/living/simple_animal/hostile/ghoul/coldferal,
 /turf/open/indestructible/ground/outside/snow_plating,
@@ -306,15 +309,16 @@
 /area/f13/wasteland)
 "eE" = (
 /obj/effect/turf_decal/stripes/line,
-/obj/machinery/door/poddoor/shutters{
-	name = "security shutters"
-	},
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/enclave)
 "eL" = (
 /obj/effect/landmark/start/f13/uslt,
 /turf/open/floor/f13,
 /area/f13/enclave)
+"eM" = (
+/obj/machinery/telecomms/relay/preset/telecomms,
+/turf/open/indestructible,
+/area/f13/tcoms)
 "fa" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
@@ -328,6 +332,9 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/enclave)
+"fh" = (
+/turf/closed/indestructible/riveted,
+/area/f13/tcoms)
 "fj" = (
 /obj/machinery/light/small{
 	brightness = 3;
@@ -1903,13 +1910,6 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/enclave)
-"yu" = (
-/obj/machinery/door/airlock/hatch{
-	locked = 1;
-	req_access_txt = "134"
-	},
-/turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
-/area/f13/enclave)
 "yv" = (
 /obj/machinery/light/small,
 /turf/open/floor/plasteel/f13/vault_floor/yellow,
@@ -2306,10 +2306,6 @@
 /obj/machinery/disposal/bin,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/enclave)
-"Ec" = (
-/obj/structure/obstacle/jammed_door,
-/turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
-/area/f13/enclave)
 "Ed" = (
 /obj/machinery/light{
 	dir = 4;
@@ -2529,9 +2525,10 @@
 /area/f13/wasteland)
 "GN" = (
 /obj/machinery/door/airlock/hatch{
-	locked = 1;
+	req_access = null;
 	req_access_txt = "134"
 	},
+/obj/structure/barricade/wooden/planks/pregame,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/enclave)
 "GY" = (
@@ -3498,12 +3495,6 @@
 /obj/item/storage/backpack/chameleon,
 /obj/item/storage/backpack/chameleon,
 /turf/open/floor/plasteel/f13/vault_floor/red/whiteredfull,
-/area/f13/enclave)
-"TP" = (
-/obj/machinery/door/airlock/vault{
-	locked = 1
-	},
-/turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/enclave)
 "TX" = (
 /obj/structure/table/glass,
@@ -8694,7 +8685,7 @@ iT
 AW
 AW
 AW
-Ec
+gp
 AW
 AW
 AW
@@ -8951,7 +8942,7 @@ TI
 TI
 TI
 TI
-yu
+gp
 Ih
 nP
 tH
@@ -9586,7 +9577,7 @@ be
 vs
 TI
 TI
-yu
+gp
 Ih
 tH
 nP
@@ -9837,7 +9828,7 @@ iT
 AW
 AW
 AW
-TP
+gp
 AW
 AW
 AW
@@ -19162,11 +19153,11 @@ HA
 HA
 HA
 HA
-HA
-HA
-HA
-HA
-HA
+iT
+iT
+iT
+iT
+iT
 iT
 "}
 (121,1,1) = {"
@@ -19289,12 +19280,12 @@ HA
 HA
 HA
 HA
-HA
-HA
-HA
-HA
-HA
 iT
+fh
+fh
+fh
+fh
+fh
 "}
 (122,1,1) = {"
 pl
@@ -19416,12 +19407,12 @@ HA
 HA
 HA
 HA
-HA
-HA
-HA
-HA
-HA
 iT
+fh
+dE
+dE
+dE
+fh
 "}
 (123,1,1) = {"
 pl
@@ -19543,12 +19534,12 @@ HA
 HA
 HA
 HA
-HA
-HA
-HA
-HA
-HA
 iT
+fh
+dE
+eM
+dE
+fh
 "}
 (124,1,1) = {"
 pl
@@ -19670,12 +19661,12 @@ HA
 HA
 HA
 HA
-HA
-HA
-HA
-HA
-HA
 iT
+fh
+dE
+dE
+dE
+fh
 "}
 (125,1,1) = {"
 pl
@@ -19798,9 +19789,9 @@ iT
 iT
 iT
 iT
-iT
-iT
-iT
-iT
-iT
+fh
+fh
+fh
+fh
+fh
 "}

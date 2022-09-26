@@ -309,7 +309,7 @@ GLOBAL_LIST_INIT(wood_recipes, list ( \
 	new/datum/stack_recipe("fancy chair", /obj/structure/chair/wood/fancy, 3, time = 10, one_per_turf = TRUE, on_floor = TRUE), \
 	new/datum/stack_recipe("antique chair", /obj/structure/chair/wood/wings, 3, time = 10, one_per_turf = TRUE, on_floor = TRUE), \
 	new/datum/stack_recipe("deckchair", /obj/structure/chair/comfy/plywood, 4, time = 10, one_per_turf = TRUE, on_floor = TRUE), \
-	new/datum/stack_recipe("table frame", /obj/structure/table_frame/wood, 2, time = 10), \
+	new/datum/stack_recipe("table frame", /obj/structure/table_frame/wood, 2, time = 10, check_for = GLOB.blocking_structures), \
 	new/datum/stack_recipe("bed", /obj/structure/bed/wooden, 2, time = 20, one_per_turf = TRUE, on_floor = TRUE), \
 	new/datum/stack_recipe("closet", /obj/structure/closet/cabinet, 2, time = 20, one_per_turf = TRUE, on_floor = TRUE), \
 	new/datum/stack_recipe("shelf", /obj/structure/shelf_wood, 1, time = 20, one_per_turf = TRUE, on_floor = TRUE), \
@@ -673,7 +673,7 @@ GLOBAL_LIST_INIT(brass_recipes, list ( \
 	new/datum/stack_recipe("brass chair", /obj/structure/chair/brass, 1, time = 0, one_per_turf = TRUE, on_floor = TRUE), \
 	new/datum/stack_recipe("brass bar stool",  /obj/structure/chair/stool/bar/brass, 1, time = 0, one_per_turf = TRUE, on_floor = TRUE), \
 	new/datum/stack_recipe("brass stool", /obj/structure/chair/stool/brass, 1, time = 0, one_per_turf = TRUE, on_floor = TRUE), \
-	new/datum/stack_recipe("brass table frame", /obj/structure/table_frame/brass, 1, time = 5, one_per_turf = TRUE, on_floor = TRUE), \
+	new/datum/stack_recipe("brass table frame", /obj/structure/table_frame/brass, 1, time = 5, one_per_turf = TRUE, on_floor = TRUE, check_for = GLOB.blocking_structures), \
 	new/datum/stack_recipe("brass anvil", /obj/structure/anvil/obtainable/ratvar, 10, time = 15, one_per_turf = TRUE, on_floor = TRUE), \
 	new/datum/stack_recipe("brass furnace", /obj/structure/furnace/infinite/ratvar, 10, time = 15, one_per_turf = TRUE, on_floor = TRUE), \
 	null, \

@@ -6,6 +6,19 @@
 #define WOOD 2
 #define SAND 3
 
+//To avoid cheesing when building defenses
+
+GLOBAL_LIST_INIT(blocking_structures, typecacheof(list(
+		/obj/structure/table,
+		/obj/structure/table_frame,
+		/obj/structure/barricade/concrete,
+		/obj/structure/barricade/sandbags,
+		/obj/structure/barricade/wooden,
+		/obj/structure/obstacle/barbedwire,
+		/obj/structure/grille,
+		/obj/structure/fence
+)))
+
 //Barricades/cover
 
 /obj/structure/barricade
@@ -99,8 +112,6 @@
 	return ..()
 */
 
-
-
 /obj/structure/barricade/sandbags
 	name = "sandbags"
 	desc = "Bags of sand. Self explanatory."
@@ -128,11 +139,6 @@
 
 /obj/structure/barricade/sandbags/make_debris()
 	new /obj/item/stack/ore/glass(get_turf(src), drop_amount)
-
-
-
-
-
 
 /obj/structure/barricade/tent
 	name = "tent wall"
@@ -162,18 +168,6 @@
 /obj/structure/barricade/tent/make_debris()
 	new /obj/item/stack/sheet/cloth(get_turf(src), drop_amount)
 
-
-
-
-
-
-
-
-
-
-
-
-
 /obj/structure/barricade/security
 	name = "security barrier"
 	desc = "A deployable barrier. Provides good cover in fire fights."
@@ -199,7 +193,6 @@
 	anchored = TRUE
 	if(deploy_message)
 		visible_message("<span class='warning'>[src] deploys!</span>")
-
 
 /obj/item/grenade/barrier
 	name = "barrier grenade"

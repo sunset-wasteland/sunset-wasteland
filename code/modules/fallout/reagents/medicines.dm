@@ -247,8 +247,8 @@
 	taste_description = "bitterness"
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM //in between powder/stimpaks and poultice/superstims?
 	overdose_threshold = 31
-	var/heal_factor = -5 //Subtractive multiplier if you do not have the perk.
-	var/heal_factor_perk = -5.5 //Multiplier if you have the right perk.
+	var/heal_factor = -3 //Subtractive multiplier if you do not have the perk.
+	var/heal_factor_perk = -3.5 //Multiplier if you have the right perk.
 	ghoulfriendly = TRUE
 
 /datum/reagent/medicine/bitter_drink/on_mob_life(mob/living/carbon/M)
@@ -283,8 +283,8 @@
 	taste_description = "bitterness"
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	overdose_threshold = 30
-	var/heal_factor = -1.5 //Subtractive multiplier if you do not have the perk.
-	var/heal_factor_perk = -2.2 //Multiplier if you have the right perk.
+	var/heal_factor = -0.8 //Subtractive multiplier if you do not have the perk.
+	var/heal_factor_perk = -1 //Multiplier if you have the right perk.
 	ghoulfriendly = TRUE
 
 /datum/reagent/medicine/healing_powder/on_mob_life(mob/living/carbon/M)
@@ -321,8 +321,8 @@
 	description = "Restores limb condition and heals rapidly."
 	color = "#C8A5DC"
 	overdose_threshold = 20
-	heal_factor = -3.0
-	heal_factor_perk = -3.5
+	heal_factor = -1.5
+	heal_factor_perk = -2.0
 
 // ---------------------------
 // RAD-X REAGENT
@@ -694,10 +694,23 @@
 	color = "#6D6374"
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	overdose_threshold = 16//No real downsides with use, aside from popping it twice quickly.
+	var/heal_factor = -6 //Subtractive multiplier if you do not have the perk.
+	var/heal_factor_perk = -8 //Multiplier if you have the right perk.
 	addiction_threshold = 14//No real downsides with use, aside from popping it twice quickly.
 	self_consuming = TRUE//So you can process without a liver. For future disembowelment reworks.
 
 /datum/reagent/medicine/hydra/on_mob_life(mob/living/carbon/M)
+	var/is_tribal = FALSE
+	if(HAS_TRAIT(M, TRAIT_TRIBAL))
+		is_tribal = TRUE
+	var/heal_rate = (is_tribal ? heal_factor_perk : heal_factor) * REAGENTS_EFFECT_MULTIPLIER
+	if(!M.reagents.has_reagent(/datum/reagent/medicine/stimpak) && !M.reagents.has_reagent(/datum/reagent/medicine/healing_powder/poultice) && !M.reagents.has_reagent(/datum/reagent/medicine/healing_powder) && !M.reagents.has_reagent(/datum/reagent/medicine/super_stimpak))
+		M.adjustFireLoss(heal_rate)
+		M.adjustBruteLoss(heal_rate)
+		M.adjustToxLoss(heal_rate)
+		M.hallucination = max(M.hallucination, is_tribal ? 0 : 5)
+		M.radiation -= min(M.radiation, 8)
+		. = TRUE
 	for(var/thing in M.all_wounds)
 		var/datum/wound/W = thing
 		var/obj/item/bodypart/wounded_part = W.limb

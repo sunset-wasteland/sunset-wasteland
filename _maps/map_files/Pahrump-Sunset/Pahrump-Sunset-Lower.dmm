@@ -231,7 +231,7 @@
 "aaW" = (
 /obj/machinery/vending/wardrobe/medi_wardrobe,
 /turf/open/floor/f13{
-	icon_state = "floorrusty"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/followers)
 "aaY" = (
@@ -881,7 +881,7 @@
 "aAJ" = (
 /obj/structure/closet/crate/freezer/blood,
 /turf/open/floor/f13{
-	icon_state = "floorrusty"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/followers)
 "aAX" = (
@@ -1003,12 +1003,10 @@
 	},
 /area/f13/building/museum)
 "aMs" = (
-/obj/structure/chair/comfy/teal{
+/obj/structure/chair/comfy/black{
 	dir = 4
 	},
-/turf/open/floor/f13{
-	icon_state = "floorrusty"
-	},
+/turf/open/floor/f13/wood,
 /area/f13/followers)
 "aMO" = (
 /obj/structure/lattice/catwalk,
@@ -1124,6 +1122,23 @@
 	dir = 1
 	},
 /area/f13/brotherhood)
+"aYj" = (
+/obj/machinery/light,
+/obj/structure/closet/secure_closet/medical1{
+	anchored = 1
+	},
+/obj/item/storage/firstaid/o2,
+/obj/item/storage/firstaid/o2,
+/obj/item/storage/firstaid/toxin,
+/obj/item/storage/firstaid/toxin,
+/obj/item/storage/firstaid/fire,
+/obj/item/storage/firstaid/fire,
+/obj/item/storage/firstaid/brute,
+/obj/item/storage/firstaid/brute,
+/turf/open/floor/f13{
+	icon_state = "floorrustysolid"
+	},
+/area/f13/followers)
 "baR" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/f13/advcrafting,
@@ -1405,9 +1420,9 @@
 /turf/open/floor/plasteel/vault,
 /area/f13/brotherhood)
 "bwx" = (
-/obj/machinery/iv_drip,
-/turf/open/floor/f13{
-	icon_state = "floorrusty"
+/obj/structure/chair/sofa/corner,
+/turf/open/floor/f13/wood{
+	icon_state = "housewood3-broken"
 	},
 /area/f13/followers)
 "bwO" = (
@@ -5177,7 +5192,7 @@
 	pixel_x = 32
 	},
 /turf/open/floor/f13{
-	icon_state = "floorrusty"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/followers)
 "cfG" = (
@@ -6000,7 +6015,7 @@
 "cyp" = (
 /obj/machinery/vending/coffee,
 /turf/open/floor/f13{
-	icon_state = "floorrusty"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/followers)
 "cyD" = (
@@ -6450,7 +6465,7 @@
 "dlV" = (
 /obj/machinery/vending/medical,
 /turf/open/floor/f13{
-	icon_state = "floorrusty"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/followers)
 "dmc" = (
@@ -6509,6 +6524,10 @@
 	icon_state = "greenrustyfull"
 	},
 /area/f13/tunnel)
+"drw" = (
+/obj/structure/chair/sofa,
+/turf/open/floor/f13/wood,
+/area/f13/followers)
 "drV" = (
 /obj/structure/railing{
 	dir = 8
@@ -7607,9 +7626,17 @@
 /turf/open/floor/plasteel/darkpurple/side,
 /area/f13/brotherhood)
 "fqy" = (
-/obj/machinery/light,
-/turf/open/floor/f13{
-	icon_state = "floorrusty"
+/obj/structure/table/wood,
+/obj/item/reagent_containers/food/drinks/drinkingglass{
+	pixel_y = 4;
+	pixel_x = 6
+	},
+/obj/item/reagent_containers/food/drinks/drinkingglass{
+	pixel_y = 9;
+	pixel_x = -7
+	},
+/turf/open/floor/f13/wood{
+	icon_state = "housewood3-broken"
 	},
 /area/f13/followers)
 "fqQ" = (
@@ -7752,11 +7779,8 @@
 /turf/open/floor/plating,
 /area/f13/tunnel)
 "fGZ" = (
-/obj/item/kirbyplants{
-	icon_state = "plant-08"
-	},
-/turf/open/floor/f13{
-	icon_state = "floorrusty"
+/turf/open/floor/f13/wood{
+	icon_state = "housewood2-broken"
 	},
 /area/f13/followers)
 "fHO" = (
@@ -8097,6 +8121,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/tunnel,
 /area/f13/tunnel)
+"glI" = (
+/obj/structure/chair/sofa/right,
+/turf/open/floor/f13/wood,
+/area/f13/followers)
 "glY" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -9149,7 +9177,7 @@
 	},
 /area/f13/followers)
 "ijZ" = (
-/obj/machinery/rnd/production/circuit_imprinter,
+/obj/item/kirbyplants/random,
 /turf/open/floor/f13{
 	icon_state = "purplefull"
 	},
@@ -10527,6 +10555,9 @@
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/radiation)
+"kUh" = (
+/turf/open/floor/f13/wood,
+/area/f13/followers)
 "kUs" = (
 /obj/structure/chair/sofa/corp/left,
 /turf/open/floor/f13/wood,
@@ -11399,8 +11430,9 @@
 	dir = 1;
 	light_color = "#706891"
 	},
+/obj/item/kirbyplants/random,
 /turf/open/floor/f13{
-	icon_state = "floorrusty"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/followers)
 "mby" = (
@@ -11593,15 +11625,13 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "myk" = (
-/obj/structure/table/reinforced,
-/obj/item/storage/firstaid/brute,
-/obj/item/storage/firstaid/brute,
 /obj/machinery/light{
 	dir = 4
 	},
-/turf/open/floor/f13{
-	icon_state = "floorrusty"
+/obj/structure/chair/sofa/left{
+	dir = 8
 	},
+/turf/open/floor/f13/wood,
 /area/f13/followers)
 "myu" = (
 /obj/structure/table,
@@ -11678,7 +11708,7 @@
 "mER" = (
 /obj/structure/closet/secure_closet/personal,
 /turf/open/floor/f13{
-	icon_state = "floorrusty"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/followers)
 "mGm" = (
@@ -12479,11 +12509,11 @@
 	},
 /area/f13/tunnel)
 "ooY" = (
-/obj/structure/chair/comfy/teal{
+/obj/structure/chair/comfy/black{
 	dir = 8
 	},
-/turf/open/floor/f13{
-	icon_state = "floorrusty"
+/turf/open/floor/f13/wood{
+	icon_state = "housewood2-broken"
 	},
 /area/f13/followers)
 "oqB" = (
@@ -12597,7 +12627,7 @@
 "oBx" = (
 /obj/machinery/vending/wardrobe/science_wardrobe,
 /turf/open/floor/f13{
-	icon_state = "floorrusty"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/followers)
 "oBH" = (
@@ -13295,11 +13325,8 @@
 	},
 /area/f13/bunker)
 "pHi" = (
-/obj/structure/table/reinforced,
-/obj/item/storage/firstaid/fire,
-/obj/item/storage/firstaid/fire,
-/turf/open/floor/f13{
-	icon_state = "floorrusty"
+/turf/open/floor/f13/wood{
+	icon_state = "housewood4-broken"
 	},
 /area/f13/followers)
 "pHr" = (
@@ -14078,7 +14105,7 @@
 "qRH" = (
 /obj/machinery/vending/wardrobe/chem_wardrobe,
 /turf/open/floor/f13{
-	icon_state = "floorrusty"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/followers)
 "qTW" = (
@@ -14508,10 +14535,8 @@
 	},
 /area/f13/building/massfusion)
 "rMH" = (
-/obj/structure/table/glass,
-/turf/open/floor/f13{
-	icon_state = "floorrusty"
-	},
+/obj/structure/table/wood,
+/turf/open/floor/f13/wood,
 /area/f13/followers)
 "rNn" = (
 /obj/machinery/smartfridge/bottlerack,
@@ -15479,6 +15504,13 @@
 	},
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/sewer)
+"toQ" = (
+/obj/machinery/iv_drip,
+/obj/machinery/iv_drip,
+/turf/open/floor/f13{
+	icon_state = "floorrustysolid"
+	},
+/area/f13/followers)
 "tpb" = (
 /obj/structure/sign/warning/securearea{
 	desc = "A warning sign which reads 'SECURE AREA: POWER ARMOR STORAGE'."
@@ -16109,11 +16141,9 @@
 /turf/open/floor/plasteel/f13,
 /area/f13/tunnel)
 "uAZ" = (
-/obj/structure/table/reinforced,
-/obj/item/storage/firstaid/toxin,
-/obj/item/storage/firstaid/toxin,
+/obj/item/kirbyplants/random,
 /turf/open/floor/f13{
-	icon_state = "floorrusty"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/followers)
 "uBh" = (
@@ -16830,7 +16860,7 @@
 	},
 /obj/structure/closet,
 /turf/open/floor/f13{
-	icon_state = "floorrusty"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/followers)
 "vOh" = (
@@ -17233,6 +17263,12 @@
 /obj/item/circuitboard/machine/mining_equipment_vendor,
 /obj/item/circuitboard/machine/destructive_analyzer,
 /obj/structure/rack/shelf_metal,
+/obj/item/circuitboard/machine/colormate,
+/obj/item/circuitboard/machine/cell_charger,
+/obj/item/circuitboard/machine/cell_charger,
+/obj/item/circuitboard/machine/bloodbankgen,
+/obj/item/circuitboard/machine/plantgenes,
+/obj/item/circuitboard/machine/medipen_refiller,
 /turf/open/floor/f13{
 	icon_state = "purplefull"
 	},
@@ -17298,9 +17334,6 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "wHC" = (
-/obj/structure/table/reinforced,
-/obj/item/storage/firstaid/o2,
-/obj/item/storage/firstaid/o2,
 /obj/machinery/light{
 	dir = 4
 	},
@@ -17371,7 +17404,7 @@
 	dir = 8
 	},
 /turf/open/floor/f13{
-	icon_state = "floorrusty"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/followers)
 "wMe" = (
@@ -17568,11 +17601,8 @@
 /turf/open/floor/plasteel/floorgrime,
 /area/f13/tunnel)
 "xeZ" = (
-/obj/item/kirbyplants{
-	icon_state = "plant-05"
-	},
 /turf/open/floor/f13{
-	icon_state = "floorrusty"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/followers)
 "xfv" = (
@@ -34628,8 +34658,8 @@ wKP
 txF
 txF
 yjR
-wZj
-wZj
+yjR
+yjR
 yjR
 yjR
 yjR
@@ -34885,9 +34915,9 @@ txF
 txF
 oDj
 cGq
-yjR
-yjR
-yjR
+gpd
+jpC
+fVM
 qKn
 loH
 xEA
@@ -35142,9 +35172,9 @@ hor
 txF
 pnV
 yjR
-gpd
-jpC
-fVM
+yle
+yle
+yle
 qzp
 yle
 ije
@@ -37194,7 +37224,7 @@ yjR
 mER
 vOc
 mER
-yle
+xeZ
 nnA
 nuA
 jcp
@@ -37973,7 +38003,7 @@ yle
 yle
 yle
 yle
-yle
+xeZ
 rMH
 yjR
 wZj
@@ -38226,11 +38256,11 @@ yle
 xkv
 yle
 yle
+vuI
+vuI
 yle
 yle
-yle
-yle
-yle
+xeZ
 ooY
 yjR
 wZj
@@ -38479,13 +38509,13 @@ yjR
 mER
 cfF
 mER
-yle
+xeZ
 nnA
 yle
-xeZ
 yle
 yle
-fGZ
+yle
+yle
 yle
 cyp
 yjR
@@ -38739,12 +38769,12 @@ yjR
 yjR
 yjR
 maO
+xeZ
+xeZ
+xeZ
 yle
-vuI
-vuI
 yle
-fqy
-yjR
+aYj
 yjR
 wZj
 wZj
@@ -38995,10 +39025,10 @@ wZj
 wZj
 wZj
 yjR
-yle
-yle
-yle
-yle
+glI
+fqy
+fGZ
+xeZ
 yle
 yle
 aAJ
@@ -39252,10 +39282,10 @@ bKb
 xXK
 wZj
 yjR
-yle
-yle
-yle
-yle
+drw
+rMH
+kUh
+xeZ
 yle
 yle
 aAJ
@@ -39514,8 +39544,8 @@ myk
 pHi
 uAZ
 wHC
-bwx
-yjR
+yle
+toQ
 yjR
 wZj
 dlm

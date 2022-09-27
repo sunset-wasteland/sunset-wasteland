@@ -325,6 +325,7 @@
 	icon_state = "neostead"
 	item_state = "shotguncity"
 	fire_delay = 5
+	recoil = 1
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube
 	force = 10
 	var/toggled = FALSE
@@ -403,7 +404,7 @@
 	is_automatic = TRUE
 	autofire_shot_delay = 4
 	fire_delay = 2.85
-	recoil = 1
+	recoil = 1.35
 	automatic = 1
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY

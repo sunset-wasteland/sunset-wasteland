@@ -454,6 +454,20 @@
 				)
 
 
+/obj/effect/spawner/bundle/f13/armor/t51b_midwest
+	name = "t51b midwest power armor spawner"
+	items = list(
+			/obj/item/clothing/suit/armor/f13/power_armor/midwest,
+			/obj/item/clothing/head/helmet/f13/power_armor/midwest,
+			)
+
+/obj/effect/spawner/bundle/f13/armor/excavator
+	name = "t51b excavator power armor spawner"
+	items = list(
+		/obj/item/clothing/head/helmet/f13/power_armor/excavator,
+		/obj/item/clothing/suit/armor/f13/power_armor/excavator,
+		)
+
 /obj/effect/spawner/lootdrop/f13/armor/random
 	name = "random armor loot"
 	lootcount = 1
@@ -1519,7 +1533,12 @@
 				/obj/item/ammo_box/tube/c4570
 	)
 
-
+/obj/effect/spawner/bundle/f13/boscombatrifle
+	name = "BoS combat rifle and ammo spawner"
+	items = list(
+				/obj/item/gun/ballistic/automatic/combat,
+				/obj/item/ammo_box/magazine/tommygunm45/stick
+	)
 
 /*	------------------------------------------------
 	------------WEAPON AMMO SPAWNERS----------------
@@ -2261,3 +2280,27 @@
 			/obj/item/storage/box/ration/ranger_lunch,
 			/obj/item/storage/box/ration/ranger_dinner,
 			)
+
+/obj/effect/spawner/lootdrop/f13/armor/bos_vault
+	name = "BoS roundstart vault loot"
+	lootcount = 1
+	loot = list(
+		/obj/effect/spawner/bundle/f13/armor/t51b_midwest = 2,
+		/obj/effect/spawner/bundle/f13/armor/excavator = 2,
+		/obj/effect/spawner/lootdrop/f13/armor/tier5 = 2,
+		/obj/effect/spawner/lootdrop/f13/weapon/melee/tier5 = 2,
+		/obj/effect/spawner/lootdrop/f13/weapon/gun/energy/mid = 25,
+		/obj/effect/spawner/lootdrop/f13/weapon/gun/energy/midhigh = 10,
+		/obj/effect/spawner/lootdrop/f13/weapon/gun/energy/high = 5,
+		/obj/effect/spawner/bundle/f13/boscombatrifle = 25,
+		)
+
+/obj/effect/spawner/lootdrop/f13/armor/bos_vault_armor
+	name = "BoS roundstart power armor loot"
+	lootcount = 1
+	loot = list(
+		/obj/effect/spawner/bundle/f13/armor/t51b_midwest = 4,
+		/obj/effect/spawner/bundle/f13/armor/excavator = 3,
+		/obj/effect/spawner/lootdrop/f13/armor/tier5 = 2,
+		)
+

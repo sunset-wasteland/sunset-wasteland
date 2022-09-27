@@ -117,6 +117,7 @@
 	fire_sound = 'sound/f13weapons/caravan_shotgun.ogg'
 	extra_damage = 5.2
 	extra_penetration = 0.1
+	recoil = 1.55
 
 /obj/item/gun/ballistic/revolver/caravan_shotgun/attackby(obj/item/A, mob/user, params)
 	..()
@@ -155,6 +156,7 @@
 	fire_sound = 'sound/f13weapons/max_sawn_off.ogg'
 	extra_damage = 3.5
 	extra_penetration = 0.05
+	recoil = 0.55
 
 /obj/item/gun/ballistic/revolver/widowmaker/attackby(obj/item/A, mob/user, params)
 	..()
@@ -287,7 +289,8 @@
 /obj/item/gun/ballistic/shotgun/automatic/combat/auto5
 	name = "Browning Auto-5"
 	desc = "A semi automatic shotgun with a four round tube."
-	fire_delay = 5
+	fire_delay = 3.95
+	recoil = 0.55
 	icon_state = "auto5"
 	item_state = "shotgunauto5"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/com/compact
@@ -303,7 +306,9 @@
 	icon_prefix = "shotgunlever"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/trench
 	fire_delay = 4
-	recoil = 0.5
+	slowdown = 0.25
+	extra_damage = 1.8
+	recoil = 1.35
 	w_class = WEIGHT_CLASS_NORMAL
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
 	fire_sound = 'sound/f13weapons/shotgun.ogg'
@@ -366,7 +371,7 @@
 	fire_delay = 4.45
 	autofire_shot_delay = 5
 	automatic = 1
-	recoil = 1.25
+	recoil = 1.75
 	fire_sound = 'sound/f13weapons/riot_shotgun.ogg'
 
 

@@ -399,7 +399,7 @@
 
 /datum/chemical_reaction/superstimpak/synthetic
 	id = "super_stimpak_synthetic"
-	required_reagents = list(/datum/reagent/blood/synthetics = 1, /datum/reagent/medicine/stimpak = 1, /datum/reagent/toxin/plasma = 1) //1 mutfruit at 50 potency yields 6 mutfruit juice
+	required_reagents = list(/datum/reagent/blood/synthetics = 1, /datum/reagent/medicine/stimpak = 1, /datum/reagent/toxin/plasma = 1)
 
 /datum/chemical_reaction/medx
 	name = "Med-X"

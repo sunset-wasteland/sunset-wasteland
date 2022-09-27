@@ -229,7 +229,10 @@
 	},
 /area/f13/followers)
 "aaW" = (
-/obj/machinery/vending/wardrobe/medi_wardrobe,
+/obj/machinery/vending/wardrobe/medi_wardrobe{
+	pixel_y = 22;
+	density = 0
+	},
 /turf/open/floor/f13{
 	icon_state = "floorrustysolid"
 	},
@@ -1122,23 +1125,6 @@
 	dir = 1
 	},
 /area/f13/brotherhood)
-"aYj" = (
-/obj/machinery/light,
-/obj/structure/closet/secure_closet/medical1{
-	anchored = 1
-	},
-/obj/item/storage/firstaid/o2,
-/obj/item/storage/firstaid/o2,
-/obj/item/storage/firstaid/toxin,
-/obj/item/storage/firstaid/toxin,
-/obj/item/storage/firstaid/fire,
-/obj/item/storage/firstaid/fire,
-/obj/item/storage/firstaid/brute,
-/obj/item/storage/firstaid/brute,
-/turf/open/floor/f13{
-	icon_state = "floorrustysolid"
-	},
-/area/f13/followers)
 "baR" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/f13/advcrafting,
@@ -6042,6 +6028,13 @@
 	icon_state = "darkrustysolid"
 	},
 /area/f13/tunnel)
+"cyX" = (
+/obj/machinery/iv_drip,
+/obj/machinery/iv_drip,
+/turf/open/floor/f13{
+	icon_state = "floorrustysolid"
+	},
+/area/f13/followers)
 "czN" = (
 /obj/effect/decal/remains{
 	icon_state = "remains"
@@ -6463,7 +6456,10 @@
 	},
 /area/f13/tunnel)
 "dlV" = (
-/obj/machinery/vending/medical,
+/obj/machinery/vending/medical{
+	pixel_y = 22;
+	density = 0
+	},
 /turf/open/floor/f13{
 	icon_state = "floorrustysolid"
 	},
@@ -6524,10 +6520,6 @@
 	icon_state = "greenrustyfull"
 	},
 /area/f13/tunnel)
-"drw" = (
-/obj/structure/chair/sofa,
-/turf/open/floor/f13/wood,
-/area/f13/followers)
 "drV" = (
 /obj/structure/railing{
 	dir = 8
@@ -7367,6 +7359,10 @@
 	icon_state = "darkrustysolid"
 	},
 /area/f13/radiation)
+"eKJ" = (
+/obj/structure/chair/sofa/right,
+/turf/open/floor/f13/wood,
+/area/f13/followers)
 "eLg" = (
 /obj/machinery/hydroponics/soil,
 /obj/item/reagent_containers/food/snacks/grown/cannabis,
@@ -7626,17 +7622,20 @@
 /turf/open/floor/plasteel/darkpurple/side,
 /area/f13/brotherhood)
 "fqy" = (
-/obj/structure/table/wood,
-/obj/item/reagent_containers/food/drinks/drinkingglass{
-	pixel_y = 4;
-	pixel_x = 6
+/obj/machinery/light,
+/obj/structure/closet/secure_closet/medical1{
+	anchored = 1
 	},
-/obj/item/reagent_containers/food/drinks/drinkingglass{
-	pixel_y = 9;
-	pixel_x = -7
-	},
-/turf/open/floor/f13/wood{
-	icon_state = "housewood3-broken"
+/obj/item/storage/firstaid/o2,
+/obj/item/storage/firstaid/o2,
+/obj/item/storage/firstaid/toxin,
+/obj/item/storage/firstaid/toxin,
+/obj/item/storage/firstaid/fire,
+/obj/item/storage/firstaid/fire,
+/obj/item/storage/firstaid/brute,
+/obj/item/storage/firstaid/brute,
+/turf/open/floor/f13{
+	icon_state = "floorrustysolid"
 	},
 /area/f13/followers)
 "fqQ" = (
@@ -7779,8 +7778,8 @@
 /turf/open/floor/plating,
 /area/f13/tunnel)
 "fGZ" = (
-/turf/open/floor/f13/wood{
-	icon_state = "housewood2-broken"
+/turf/open/floor/f13{
+	icon_state = "floorrustysolid"
 	},
 /area/f13/followers)
 "fHO" = (
@@ -8121,10 +8120,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/tunnel,
 /area/f13/tunnel)
-"glI" = (
-/obj/structure/chair/sofa/right,
-/turf/open/floor/f13/wood,
-/area/f13/followers)
 "glY" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -9425,6 +9420,11 @@
 	dir = 8
 	},
 /area/f13/brotherhood)
+"iGS" = (
+/turf/open/floor/f13/wood{
+	icon_state = "housewood2-broken"
+	},
+/area/f13/followers)
 "iIb" = (
 /obj/structure/chair/booth{
 	icon_state = "booth_east_north"
@@ -10555,9 +10555,6 @@
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/radiation)
-"kUh" = (
-/turf/open/floor/f13/wood,
-/area/f13/followers)
 "kUs" = (
 /obj/structure/chair/sofa/corp/left,
 /turf/open/floor/f13/wood,
@@ -12625,7 +12622,10 @@
 /turf/open/floor/wood/wood_common,
 /area/f13/tunnel)
 "oBx" = (
-/obj/machinery/vending/wardrobe/science_wardrobe,
+/obj/machinery/vending/wardrobe/science_wardrobe{
+	pixel_y = 22;
+	density = 0
+	},
 /turf/open/floor/f13{
 	icon_state = "floorrustysolid"
 	},
@@ -13747,6 +13747,10 @@
 /obj/structure/barricade/wooden,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
+"qpm" = (
+/obj/structure/chair/sofa,
+/turf/open/floor/f13/wood,
+/area/f13/followers)
 "qpr" = (
 /obj/machinery/workbench,
 /turf/open/floor/plasteel/darkred/side,
@@ -14103,7 +14107,10 @@
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
 "qRH" = (
-/obj/machinery/vending/wardrobe/chem_wardrobe,
+/obj/machinery/vending/wardrobe/chem_wardrobe{
+	pixel_y = 22;
+	density = 0
+	},
 /turf/open/floor/f13{
 	icon_state = "floorrustysolid"
 	},
@@ -14911,6 +14918,9 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/followers)
+"sqy" = (
+/turf/open/floor/f13/wood,
+/area/f13/followers)
 "srb" = (
 /obj/item/storage/trash_stack,
 /turf/open/floor/f13{
@@ -15504,13 +15514,6 @@
 	},
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/sewer)
-"toQ" = (
-/obj/machinery/iv_drip,
-/obj/machinery/iv_drip,
-/turf/open/floor/f13{
-	icon_state = "floorrustysolid"
-	},
-/area/f13/followers)
 "tpb" = (
 /obj/structure/sign/warning/securearea{
 	desc = "A warning sign which reads 'SECURE AREA: POWER ARMOR STORAGE'."
@@ -17601,8 +17604,17 @@
 /turf/open/floor/plasteel/floorgrime,
 /area/f13/tunnel)
 "xeZ" = (
-/turf/open/floor/f13{
-	icon_state = "floorrustysolid"
+/obj/structure/table/wood,
+/obj/item/reagent_containers/food/drinks/drinkingglass{
+	pixel_y = 4;
+	pixel_x = 6
+	},
+/obj/item/reagent_containers/food/drinks/drinkingglass{
+	pixel_y = 9;
+	pixel_x = -7
+	},
+/turf/open/floor/f13/wood{
+	icon_state = "housewood3-broken"
 	},
 /area/f13/followers)
 "xfv" = (
@@ -37224,7 +37236,7 @@ yjR
 mER
 vOc
 mER
-xeZ
+fGZ
 nnA
 nuA
 jcp
@@ -38003,7 +38015,7 @@ yle
 yle
 yle
 yle
-xeZ
+fGZ
 rMH
 yjR
 wZj
@@ -38260,7 +38272,7 @@ vuI
 vuI
 yle
 yle
-xeZ
+fGZ
 ooY
 yjR
 wZj
@@ -38509,7 +38521,7 @@ yjR
 mER
 cfF
 mER
-xeZ
+fGZ
 nnA
 yle
 yle
@@ -38769,12 +38781,12 @@ yjR
 yjR
 yjR
 maO
-xeZ
-xeZ
-xeZ
+fGZ
+fGZ
+fGZ
 yle
 yle
-aYj
+fqy
 yjR
 wZj
 wZj
@@ -39025,10 +39037,10 @@ wZj
 wZj
 wZj
 yjR
-glI
-fqy
-fGZ
+eKJ
 xeZ
+iGS
+fGZ
 yle
 yle
 aAJ
@@ -39282,10 +39294,10 @@ bKb
 xXK
 wZj
 yjR
-drw
+qpm
 rMH
-kUh
-xeZ
+sqy
+fGZ
 yle
 yle
 aAJ
@@ -39545,7 +39557,7 @@ pHi
 uAZ
 wHC
 yle
-toQ
+cyX
 yjR
 wZj
 dlm

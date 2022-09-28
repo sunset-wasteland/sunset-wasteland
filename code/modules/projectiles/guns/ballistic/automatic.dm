@@ -1113,10 +1113,10 @@
 //////////////////
 
 
-//R82				Keywords: 5.56mm, Semi-auto, 20 (10-50) round magazine	NOT CANON
+//HEAVY SERVICE RIFLE				Keywords: 5.56mm, Semi-auto, 20 (10-50) round magazine	NOW CANON!
 /obj/item/gun/ballistic/automatic/service/r82
-	name = "R82 heavy service rifle"
-	desc = "The assault rifle variant of the R84, based off the pre-war FN FNC. Issued to high-ranking troopers and specialized units. Chambered in 5.56."
+	name = "upgraded service rifle"
+	desc = "A fully-automatic service rifle with a heavier barrel, optics, and upgraded recoil springs. Issued to high-ranking troopers and specialized units. Chambered in 5.56."
 	icon_state = "R82"
 	item_state = "R84"
 	icon_prefix = "r82"

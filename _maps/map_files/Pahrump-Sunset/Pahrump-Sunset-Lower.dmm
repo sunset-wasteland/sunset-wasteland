@@ -854,8 +854,6 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "axe" = (
-/obj/structure/window/reinforced/spawner/east,
-/obj/structure/window/reinforced/spawner/north,
 /turf/open/floor/plasteel/vault/side{
 	dir = 6
 	},
@@ -1248,10 +1246,6 @@
 	},
 /turf/open/floor/wood/wood_common,
 /area/f13/tunnel)
-"boo" = (
-/obj/structure/window/reinforced/spawner/north,
-/turf/open/floor/plasteel/vault/side,
-/area/f13/brotherhood)
 "bot" = (
 /obj/structure/bed,
 /obj/item/bedsheet{
@@ -6035,13 +6029,6 @@
 	},
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
-"czQ" = (
-/obj/structure/window/reinforced/spawner,
-/obj/structure/window/reinforced/spawner/west,
-/turf/open/floor/plasteel/vault/side{
-	dir = 1
-	},
-/area/f13/brotherhood)
 "cAf" = (
 /obj/structure/chair/wood{
 	dir = 1
@@ -6697,12 +6684,6 @@
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
-"dFt" = (
-/obj/structure/window/reinforced/spawner,
-/turf/open/floor/plasteel/vault/side{
-	dir = 1
-	},
-/area/f13/brotherhood)
 "dFM" = (
 /obj/item/stack/sheet/mineral/sandbags,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
@@ -6987,8 +6968,12 @@
 	},
 /area/f13/tunnel)
 "edQ" = (
-/obj/structure/window/reinforced/spawner,
 /obj/structure/window/reinforced/spawner/west,
+/obj/structure/table/reinforced,
+/obj/machinery/door/window/brigdoor{
+	req_access_txt = "255"
+	},
+/obj/effect/spawner/lootdrop/f13/armor/bos_vault,
 /turf/open/floor/plasteel/vault/side{
 	dir = 8
 	},
@@ -8352,13 +8337,6 @@
 /obj/structure/table/reinforced,
 /turf/open/floor/carpet/black,
 /area/f13/brotherhood)
-"gNw" = (
-/obj/structure/window/reinforced/spawner/west,
-/obj/structure/window/reinforced/spawner/north,
-/turf/open/floor/plasteel/vault/side{
-	dir = 4
-	},
-/area/f13/brotherhood)
 "gNN" = (
 /obj/machinery/chem_dispenser,
 /turf/open/floor/plasteel/f13/vault_floor/misc/cmo,
@@ -9061,8 +9039,12 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "ibq" = (
-/obj/structure/window/reinforced/spawner,
 /obj/structure/window/reinforced/spawner/east,
+/obj/structure/table/reinforced,
+/obj/machinery/door/window/brigdoor{
+	req_access_txt = "255"
+	},
+/obj/effect/spawner/lootdrop/f13/armor/bos_vault,
 /turf/open/floor/plasteel/vault/side{
 	dir = 4
 	},
@@ -12015,7 +11997,6 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "nxn" = (
-/obj/item/clothing/suit/armor/f13/power_armor/excavator,
 /obj/structure/window/reinforced/spawner/north,
 /obj/structure/window/reinforced/spawner/west,
 /obj/structure/window/reinforced/spawner/east,
@@ -12023,7 +12004,7 @@
 /obj/machinery/door/window/brigdoor{
 	req_access_txt = "255"
 	},
-/obj/item/clothing/head/helmet/f13/power_armor/excavator,
+/obj/effect/spawner/lootdrop/f13/armor/bos_vault_armor,
 /turf/open/floor/plasteel/vault,
 /area/f13/brotherhood)
 "nyY" = (
@@ -13143,13 +13124,16 @@
 	},
 /area/f13/tunnel)
 "pvC" = (
-/obj/item/clothing/suit/armor/f13/power_armor/midwest,
 /obj/structure/window/reinforced/spawner/north,
 /obj/structure/window/reinforced/spawner/east,
 /obj/structure/window/reinforced/spawner,
 /obj/structure/table/reinforced,
-/obj/item/clothing/head/helmet/f13/power_armor/midwest,
 /obj/structure/table/reinforced,
+/obj/machinery/door/window/brigdoor{
+	req_access_txt = "255";
+	dir = 8
+	},
+/obj/effect/spawner/lootdrop/f13/armor/bos_vault,
 /turf/open/floor/plasteel/vault/side{
 	dir = 8
 	},
@@ -13820,13 +13804,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
 /area/f13/building/museum)
-"qwy" = (
-/obj/structure/window/reinforced/spawner,
-/obj/structure/window/reinforced/spawner/east,
-/turf/open/floor/plasteel/vault/side{
-	dir = 1
-	},
-/area/f13/brotherhood)
 "qwU" = (
 /obj/structure/noticeboard,
 /turf/closed/wall/rust,
@@ -14198,12 +14175,15 @@
 	},
 /area/f13/brotherhood)
 "rgG" = (
-/obj/item/clothing/suit/armor/f13/power_armor/midwest,
 /obj/structure/window/reinforced/spawner/north,
 /obj/structure/window/reinforced/spawner,
 /obj/structure/window/reinforced/spawner/west,
 /obj/structure/table/reinforced,
-/obj/item/clothing/head/helmet/f13/power_armor/midwest,
+/obj/machinery/door/window/brigdoor{
+	req_access_txt = "255";
+	dir = 4
+	},
+/obj/effect/spawner/lootdrop/f13/armor/bos_vault,
 /turf/open/floor/plasteel/vault/side{
 	dir = 4
 	},
@@ -15156,9 +15136,12 @@
 /turf/open/floor/plasteel/vault,
 /area/f13/brotherhood)
 "sNC" = (
-/obj/structure/window/reinforced/spawner,
-/obj/structure/window/reinforced/spawner/east,
 /obj/structure/window/reinforced/spawner/north,
+/obj/structure/table/reinforced,
+/obj/machinery/door/window/brigdoor{
+	req_access_txt = "255";
+	dir = 4
+	},
 /turf/open/floor/plasteel/vault/side{
 	dir = 4
 	},
@@ -15852,9 +15835,12 @@
 	},
 /area/f13/tunnel)
 "ubO" = (
-/obj/structure/window/reinforced/spawner,
-/obj/structure/window/reinforced/spawner/west,
 /obj/structure/window/reinforced/spawner/north,
+/obj/structure/table/reinforced,
+/obj/machinery/door/window/brigdoor{
+	req_access_txt = "255";
+	dir = 8
+	},
 /turf/open/floor/plasteel/vault/side{
 	dir = 8
 	},
@@ -18178,7 +18164,6 @@
 	},
 /area/f13/followers)
 "yke" = (
-/obj/item/clothing/suit/armor/f13/power_armor/midwest,
 /obj/structure/window/reinforced/spawner/north,
 /obj/structure/window/reinforced/spawner/east,
 /obj/structure/window/reinforced/spawner/west,
@@ -18186,7 +18171,7 @@
 /obj/machinery/door/window/brigdoor{
 	req_access_txt = "255"
 	},
-/obj/item/clothing/head/helmet/f13/power_armor/midwest,
+/obj/effect/spawner/lootdrop/f13/armor/bos_vault,
 /turf/open/floor/plasteel/vault/side,
 /area/f13/brotherhood)
 "ykl" = (
@@ -69392,9 +69377,9 @@ aae
 oVq
 oVq
 vGf
-gNw
+gFh
 vuj
-czQ
+vaL
 vaL
 oVq
 jxG
@@ -69649,9 +69634,9 @@ aae
 oVq
 oVq
 sEK
-boo
+mKl
 vuj
-dFt
+vaL
 tnm
 tpb
 vaL
@@ -70163,9 +70148,9 @@ aae
 oVq
 oVq
 sEK
-boo
+mKl
 vuj
-dFt
+vaL
 tnm
 mNH
 vaL
@@ -70422,7 +70407,7 @@ oVq
 vGf
 axe
 vuj
-qwy
+vaL
 vaL
 oVq
 hFx

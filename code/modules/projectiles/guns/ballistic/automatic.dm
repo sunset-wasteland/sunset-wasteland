@@ -1347,8 +1347,8 @@
 	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
 
 /obj/item/gun/ballistic/automatic/bar
-	name = "automatic rifle (.308)"
-	desc = "An ancient machine gun that looks like outdated even by pre-war standards. It has Colt etched on one-side and Sierra Madre on the other. It is alarmingly heavy for a rifle."
+	name = "FN Model D"
+	desc = "An exceedingly heavy machine gun based on the BAR, featuring the blessing of Belgian gunsmithing. It's the last, and best of its kind in regards to model."
 	icon = 'icons/fallout/objects/guns/bar.dmi'
 	slot_flags = ITEM_SLOT_BACK
 	icon_state = "BAR"
@@ -1358,11 +1358,11 @@
 	mag_type = /obj/item/ammo_box/magazine/m762/ext
 	force = 24 //club
 	slowdown = 1.5 //really goddamn big
-	autofire_shot_delay = 2.3
-	extra_damage = 30
-	extra_penetration = 0.3
+	autofire_shot_delay = 1.7
+	extra_damage = 32
+	extra_penetration = 0.35
 	spread = 10
-	recoil = 0.3
+	recoil = 0.85
 	actions_types = list(/datum/action/item_action/toggle_firemode)
 	fire_sound = 'sound/f13weapons/automaticrifle_BAR.ogg'
 
@@ -1414,16 +1414,18 @@
 	desc = "A light machinegun using 60 round belts fed from an ammobox, its one of the few heavy weapons designs NCR has produced."
 	icon_state = "R84"
 	item_state = "R84"
-	slowdown = 1.2
+	slowdown = 1.25
+	recoil = 1
 	mag_type = /obj/item/ammo_box/magazine/lmg
-	extra_damage = 19
+	extra_damage = 17
 	extra_penetration = 0.15
 	fire_delay = 2.7
 	burst_shot_delay = 3
 	is_automatic = TRUE
 	automatic = 1
-	autofire_shot_delay = 1.75
+	autofire_shot_delay = 1.13
 	spread = 12
+	extra_speed = -80
 	can_attachments = FALSE
 	actions_types = null
 	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'

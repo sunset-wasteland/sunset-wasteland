@@ -304,6 +304,12 @@
 	if(R.one_per_turf && (locate(R.result_type) in T))
 		to_chat(usr, "<span class='warning'>There is another [R.title] here!</span>")
 		return FALSE
+	if(R.check_for.len)
+		for(var/check in R.check_for)
+			var/obj/found = locate(check) in T
+			if(found)
+				to_chat(usr, "<span class='warning'>There is a [found.name] here!</span>")
+				return FALSE
 	if(R.on_floor)
 		if(!isfloorturf(T) && !isgroundturf(T))
 			to_chat(usr, "<span class='warning'>\The [R.title] must be constructed on the floor!</span>")
@@ -495,8 +501,9 @@
 	var/applies_mats = FALSE
 	var/trait_booster = null
 	var/trait_modifier = 1
+	var/list/check_for = list()
 
-/datum/stack_recipe/New(title, result_type, req_amount = 1, res_amount = 1, max_res_amount = 1,time = 0, one_per_turf = FALSE, on_floor = FALSE, window_checks = FALSE, placement_checks = FALSE, applies_mats = FALSE, trait_booster = null, trait_modifier = 1)
+/datum/stack_recipe/New(title, result_type, req_amount = 1, res_amount = 1, max_res_amount = 1,time = 0, one_per_turf = FALSE, on_floor = FALSE, window_checks = FALSE, placement_checks = FALSE, applies_mats = FALSE, trait_booster = null, trait_modifier = 1, list/check_for = list())
 
 
 	src.title = title
@@ -512,6 +519,7 @@
 	src.applies_mats = applies_mats
 	src.trait_booster = trait_booster
 	src.trait_modifier = trait_modifier
+	src.check_for = check_for
 /*
  * Recipe list datum
  */

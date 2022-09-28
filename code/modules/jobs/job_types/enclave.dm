@@ -396,7 +396,7 @@
 		/obj/item/grenade/chem_grenade/cleaner = 1,
 		/obj/item/pda = 1,
 		/obj/item/gun/energy/gammagun = 1,
-		/obj/item/stock_parts/cell/ammo/mfc = 2,
+		/obj/item/stock_parts/cell/ammo/ec = 2,
 		/obj/item/storage/bag/money/small/wastelander = 1,
 		/obj/item/melee/onehanded/knife/survival = 1,
 		/obj/item/clothing/head/beret/enclave/science = 1,
@@ -478,6 +478,7 @@
 		/datum/outfit/loadout/bunkerduty_janny,
 		/datum/outfit/loadout/bunkerduty_chaplain,
 		/datum/outfit/loadout/bunkerduty_cook,
+		/datum/outfit/loadout/bunkerduty_is,
 		)
 
 /datum/outfit/job/enclave/noncombat/f13BDUTY
@@ -546,6 +547,20 @@
 		/obj/item/kitchen/knife/butcher = 1,
 		)
 
+//Internal Security. Takes the role of general Security Detail.
+// RP loadout primarily.
+/datum/outfit/loadout/bunkerduty_is
+	name = "Internal Security"
+	head = /obj/item/clothing/head/f13/enclave
+	suit = /obj/item/clothing/suit/armor/f13/enclavetrenchcoat
+	suit_store = /obj/item/gun/ballistic/automatic/smg/smg14
+	accessory = /obj/item/clothing/accessory/cia_badge
+	backpack_contents = list(
+		/obj/item/ammo_box/magazine/smg14 = 2,
+		/obj/item/restraints/handcuffs = 1,
+		/obj/item/melee/classic_baton = 1,
+		/obj/item/melee/onehanded/knife/survival = 1,
+		)
 
 // Enclave Citizen
 // Really only used for ID console

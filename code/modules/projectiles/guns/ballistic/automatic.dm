@@ -332,12 +332,11 @@
 	init_mag_type = /obj/item/ammo_box/magazine/m10mm_adv/ext
 	is_automatic = TRUE
 	automatic = 1
-	autofire_shot_delay = 2.25
+	autofire_shot_delay = 2.35
 	spread = 12
 	slowdown = 0.3
-	extra_damage = 20
-	extra_penetration = 0.1
-	recoil = 0.05
+	extra_damage = 22
+	recoil = 0.5
 	fire_delay = 3.25
 	can_attachments = TRUE
 	suppressor_state = "10mm_suppressor" //activate if sprited
@@ -351,7 +350,6 @@
 	desc = "Mass-produced weapon from the Great War, this one has seen use ever since. Grip is wrapped in tape to keep the plastic from crumbling, the metals are oxidizing, but the gun still works."
 	init_mag_type = /obj/item/ammo_box/magazine/m10mm_adv/ext
 	worn_out = TRUE
-	extra_penetration = 0.05
 	extra_damage = 18
 	spread = 10
 

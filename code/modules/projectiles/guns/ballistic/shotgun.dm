@@ -290,7 +290,7 @@
 	name = "Browning Auto-5"
 	desc = "A semi automatic shotgun with a four round tube."
 	fire_delay = 3.95
-	recoil = 0.55
+	recoil = 2
 	icon_state = "auto5"
 	item_state = "shotgunauto5"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/com/compact
@@ -308,7 +308,7 @@
 	fire_delay = 4
 	slowdown = 0.25
 	extra_damage = 1.4
-	recoil = 1.35
+	recoil = 2.1
 	w_class = WEIGHT_CLASS_NORMAL
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
 	fire_sound = 'sound/f13weapons/shotgun.ogg'
@@ -325,7 +325,7 @@
 	icon_state = "neostead"
 	item_state = "shotguncity"
 	fire_delay = 5
-	recoil = 1
+	recoil = 1.3
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube
 	force = 10
 	var/toggled = FALSE
@@ -372,7 +372,7 @@
 	fire_delay = 4.45
 	autofire_shot_delay = 5
 	automatic = 1
-	recoil = 1.75
+	recoil = 2.7
 	fire_sound = 'sound/f13weapons/riot_shotgun.ogg'
 
 
@@ -389,7 +389,7 @@
 	mag_type = /obj/item/ammo_box/magazine/d12g
 	fire_delay = 4
 	burst_size = 1
-	recoil = 0.5
+	recoil = 1.1
 	automatic_burst_overlay = FALSE
 	semi_auto = TRUE
 	fire_sound = 'sound/f13weapons/riot_shotgun.ogg'

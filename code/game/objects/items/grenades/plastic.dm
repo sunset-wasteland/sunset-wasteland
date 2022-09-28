@@ -74,7 +74,7 @@
 			explosion(location, boom_sizes[1], boom_sizes[2], boom_sizes[3])
 	if(ismob(target))
 		var/mob/M = target
-		M.gib()
+//		M.gib()
 	qdel(src)
 
 //assembly stuff

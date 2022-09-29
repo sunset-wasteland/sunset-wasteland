@@ -502,3 +502,41 @@
 	heat_protection = HEAD
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	armor = list("melee" = 40, "bullet" = 40, "laser" = 35, "energy" = 20, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 0, "wound" = 10)
+
+//Followers
+
+ /obj/item/clothing/suit/hooded/followerlight
+	name = "Follower's Labcoat"
+	desc = "A well-kept labcoat with the insignia of the followers stitched onto the back and shoulders, provides excellent protection from chemical hazards and radiation."
+	icon = 'icons/fallout/clothing/suits_cosmetic.dmi'
+	hoodtype = /obj/item/clothing/head/hooded/followerlight
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/suit_cosmetic.dmi'
+	icon_state = "follower_light"
+	item_state = "follower_light"
+	armor = list("melee" = 15, "bullet" = 15, "laser" = 15, "energy" = 15, "bomb" = 20, "bio" = 50, "rad" = 50, "fire" = 50, "acid" = 80, "wound" = 10)
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small
+
+/obj/item/clothing/head/hooded/followerlight
+	icon_state = "follower_light"
+	armor = list("melee" = 15, "bullet" = 15, "laser" = 15, "energy" = 15, "bomb" = 20, "bio" = 50, "rad" = 50, "fire" = 50, "acid" = 80, "wound" = 10)
+
+ /obj/item/clothing/suit/hooded/followermedium
+	name = "Follower's Plated Labcoat"
+	desc = "A modified labcoat fitted with flexible plates under the surface for the doctor who might find himself privy to the dangers of the wasteland."
+	icon = 'icons/fallout/clothing/suits_cosmetic.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/suit_cosmetic.dmi'
+	icon_state = "follower_medium"
+	item_state = "follower_medium"
+	armor = list("melee" = 30, "bullet" = 40, "laser" = 25, "energy" = 25, "bomb" = 20, "bio" = 50, "rad" = 50, "fire" = 50, "acid" = 80, "wound" = 20)
+	slowdown = 0.10
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small
+
+ /obj/item/clothing/suit/hooded/followerheavy
+	name = "Follower's Guard Heavy Armor"
+	desc = "An overhauled set of armor using a mixture of treated metal plates and restitched labcoat material, built to protect those who cannot protect themselves."
+	icon = 'icons/fallout/clothing/suits_cosmetic.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/suit_cosmetic.dmi'
+	icon_state = "follower_heavy"
+	item_state = "follower_heavy"
+	armor = list("melee" = 45, "bullet" = 50, "laser" = 35, "energy" = 35, "bomb" = 20, "bio" = 50, "rad" = 50, "fire" = 50, "acid" = 80, "wound" = 30)
+	slowdown = 0.20

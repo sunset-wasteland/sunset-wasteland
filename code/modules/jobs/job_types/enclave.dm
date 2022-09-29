@@ -372,7 +372,7 @@
 	title = "Enclave Scientist"
 	flag = F13USSCIENTIST
 	total_positions = 3
-	spawn_positions = 2
+	spawn_positions = 3
 	description = "You're a small garrison within a side entrance of a far larger complex. This complex sits within the Casper mountain range. You're responsible for the maintenance of the base and field studies, the knowledge you've accumulated over the years is the only thing keeping the remnants alive. You've dabbled in enough to be considered a Professor in your field of research, but they call you Doctor. Support your dwindling forces and listen to the Lieutenant."
 	supervisors = "Enclave Research and Development Division."
 	outfit = /datum/outfit/job/enclave/noncombat/enclavesci

@@ -244,7 +244,7 @@
 
 /obj/item/gun/energy/laser/wattz/recharger/Walker
 	name = "Walker's Recharger Pistol"
-	desc = "A recharger pistol procured and modified by the scribes under Walker. It charges its capacitor banks over time using fusion fuel. Only a few of these weapons exist."
+	desc = "A recharger pistol procured and modified by the scribes under Walker. It charges its capacitor banks over time using radioactive decay. Only a few of these weapons exist."
 	can_remove = 0
 	can_charge = 0
 	selfcharge = 1

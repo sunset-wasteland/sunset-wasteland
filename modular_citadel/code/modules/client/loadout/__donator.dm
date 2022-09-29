@@ -20,16 +20,6 @@
 	path = /obj/item/clothing/accessory/cia_badge
 	ckeywhitelist = list("monke1818")
 
-// SUNSET FLUFF ITEMS
-
-/datum/gear/donator/mrsanderp
-	name = "Happy Sharky Company Cuisine Book"
-	slot = SLOT_IN_BACKPACK
-	path = /obj/item/book/granter/crafting_recipe/happysharky
-	category = LOADOUT_CATEGORY_BACKPACK
-	ckeywhitelist = list("mr.sanderp")
-	cost = 0
-
 /////////////////////
 ///Loadout Boxes///// See kits.dm, use this model for loadouts that have more than one item per character.
 /////////////////////
@@ -156,14 +146,6 @@
 	new /obj/item/modkit/kemblehat(src)
 	new /obj/item/storage/belt/holster/kemble(src)
 
-/datum/gear/donator/kits/mrsanderp
-	name = "Happy Sharky Co. Business Bundle"
-	path = /obj/item/storage/box/large/custom_kit/mrsanderp
-	ckeywhitelist = list("mr.sanderp")
-
-/obj/item/storage/box/large/custom_kit/mrsanderp/PopulateContents()
-	new /obj/item/book/granter/crafting_recipe/happysharky(src)
-
 /datum/gear/donator/kits/tessa
 	name ="Scourge custom whip"
 	path = /obj/item/storage/box/large/custom_kit/sadismbox
@@ -187,3 +169,24 @@
 
 /obj/item/storage/box/large/custom_kit/bellacoatbox/PopulateContents()
 	new /obj/item/clothing/suit/armor/f13/ncrarmor/bellacoat(src)
+
+/datum/gear/donator/kits/kemble
+	name = "Trinity Kemble's belongings"
+	path = /obj/item/storage/box/large/custom_kit/kemble
+	ckeywhitelist = list("yeehawguvnah")
+
+/obj/item/storage/box/large/custom_kit/kemble/PopulateContents()
+	new /obj/item/modkit/kemblevest(src)
+	new /obj/item/modkit/kemblehat(src)
+	new /obj/item/storage/belt/holster/kemble(src)
+
+/datum/gear/donator/kits/shark
+	name ="Happy Shark Material"
+	path = /obj/item/storage/box/large/custom_kit/shark
+	ckeywhitelist = list ("mr.sanderp","mrsanderp","nothingbutcarl")//Because for some reason one wasn't working? Brute force time.
+
+/obj/item/storage/box/large/custom_kit/shark/PopulateContents()
+	new /obj/item/book/granter/crafting_recipe/happysharky(src)
+	new /obj/item/reagent_containers/food/snacks/sunset/happyshark/jerky(src)
+	new /obj/item/reagent_containers/food/snacks/sunset/happyshark/candybar(src)
+	new /obj/item/reagent_containers/food/drinks/sunset/happyshark/bittercola(src)

@@ -478,6 +478,7 @@
 		/datum/outfit/loadout/bunkerduty_janny,
 		/datum/outfit/loadout/bunkerduty_chaplain,
 		/datum/outfit/loadout/bunkerduty_cook,
+		/datum/outfit/loadout/bunkerduty_is,
 		)
 
 /datum/outfit/job/enclave/noncombat/f13BDUTY
@@ -546,6 +547,24 @@
 		/obj/item/kitchen/knife/butcher = 1,
 		)
 
+//Internal Security. Takes the role of general Security Detail.
+// RP loadout primarily. Gets the incredibly rare 14mm SMG and a subtype of the Enclave Remnant plasma pistol.
+// Not a big deal. This has the RP flag as a Bunker Duty loadout.
+/datum/outfit/loadout/bunkerduty_is
+	name = "Internal Security"
+	head = /obj/item/clothing/head/f13/enclave
+	suit = /obj/item/clothing/suit/armor/f13/enclavetrenchcoat
+	suit_store = /obj/item/gun/ballistic/automatic/smg/smg14
+	backpack_contents = list(
+		/obj/item/ammo_box/magazine/smg14 = 2,
+		/obj/item/stock_parts/cell/ammo/ec = 2,
+		/obj/item/restraints/handcuffs = 1,
+		/obj/item/melee/classic_baton = 1,
+		/obj/item/melee/onehanded/knife/survival = 1,
+		/obj/item/clothing/accessory/cia_badge = 1,
+		/obj/item/gun/energy/laser/plasma/pistol/remnant/is = 1,
+		/obj/item/storage/belt/holster = 1,
+		)
 
 // Enclave Citizen
 // Really only used for ID console

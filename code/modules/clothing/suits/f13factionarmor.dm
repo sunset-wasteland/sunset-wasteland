@@ -845,7 +845,6 @@
 	requires_training = FALSE
 	powered = FALSE
 
-//Followers
 
 //Vault
 

@@ -1282,3 +1282,31 @@
 	category = CAT_CLOTHING
 	subcategory = CAT_ARMOR
 	always_available = FALSE
+
+/datum/crafting_recipe/follower_medium
+	name = "Follower Labcoat Plating"
+	result = /obj/item/clothing/suit/hooded/followermedium
+	reqs = list(/obj/item/clothing/suit/hooded/followerlight,
+				/obj/item/stack/sheet/cloth = 1,
+				/obj/item/stack/crafting/armor_plate = 2,
+				/obj/item/stack/crafting/metalparts = 5,
+				/obj/item/stack/crafting/goodparts = 2)
+	tools = list(TOOL_WORKBENCH)
+	time = 30
+	category = CAT_CLOTHING
+	subcategory = CAT_ARMOR
+	always_available = FALSE
+
+/datum/crafting_recipe/follower_heavy
+	name = "Follower Labcoat Reforging"
+	result = /obj/item/clothing/suit/hooded/followerheavy
+	reqs = list(/obj/item/clothing/suit/hooded/followermedium,
+				/obj/item/stack/sheet/cloth = 1,
+				/obj/item/clothing/suit/armor/f13/metalarmor,
+				/obj/item/stack/crafting/metalparts = 5,
+				/obj/item/stack/crafting/goodparts = 2)
+	tools = list(TOOL_WORKBENCH)
+	time = 30
+	category = CAT_CLOTHING
+	subcategory = CAT_ARMOR
+	always_available = FALSE

@@ -26,6 +26,9 @@
 	if(visualsOnly)
 		return
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/set_vrboard/followers)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/follower_light)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/follower_medium)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/follower_heavy)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/rechargerpistol)
 
 //datum/outfit/job/followers/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)

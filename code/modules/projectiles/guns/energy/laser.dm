@@ -238,9 +238,13 @@
 	cell_type = /obj/item/stock_parts/cell/ammo/breeder
 	equipsound = 'sound/f13weapons/equipsounds/aep7equip.ogg'
 
+/obj/item/gun/energy/laser/wattz/recharger/enclave
+	name = "Recharger Pistol"
+	desc = "A recharger pistol manufactured by the Enclave. As the name implied, it charges its capacitor banks over time utilizing some kind of microfusion breeder cell. Only a few of these weapons exist.."
+
 /obj/item/gun/energy/laser/wattz/recharger/Walker
 	name = "Walker's Recharger Pistol"
-	desc = "A recharger pistol procured and modified by the scribes under Walker. It charges its capacitor banks over time using radioactive decay. Only a few of these weapons exist."
+	desc = "A recharger pistol procured and modified by the scribes under Walker. It charges its capacitor banks over time using fusion fuel. Only a few of these weapons exist."
 	can_remove = 0
 	can_charge = 0
 	selfcharge = 1

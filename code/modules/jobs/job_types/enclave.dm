@@ -81,13 +81,7 @@
 		/obj/item/reagent_containers/hypospray/medipen/stimpak/super = 3,
 		/obj/item/grenade/flashbang = 1,
 		/obj/item/pda = 1,
-		/obj/item/storage/bag/money/small/wastelander = 1,
-		/obj/item/melee/onehanded/knife/survival = 1,
-		/obj/item/storage/pill_bottle/chem_tin/buffout = 1,
-		/obj/item/storage/pill_bottle/chem_tin/mentats = 1,
-		/obj/item/reagent_containers/hypospray/medipen/psycho = 1,
-		/obj/item/reagent_containers/hypospray/medipen/medx = 1,
-		/obj/item/card/id/syndicate/anyone =1
+		/obj/item/storage/bag/money/small/wastelander = 1
 		)
 
 /datum/outfit/loadout/lt_ballistics
@@ -97,6 +91,11 @@
 		/obj/item/ammo_box/magazine/m473 = 3,
 		/obj/item/gun/energy/laser/plasma/glock = 1,
 		/obj/item/stock_parts/cell/ammo/ec = 2,
+		/obj/item/storage/pill_bottle/chem_tin/buffout = 1,
+		/obj/item/storage/pill_bottle/chem_tin/mentats = 1,
+		/obj/item/reagent_containers/hypospray/medipen/psycho = 1,
+		/obj/item/reagent_containers/hypospray/medipen/medx = 1,
+		/obj/item/card/id/syndicate/anyone = 1,
 		)
 
 /datum/outfit/loadout/lt_plasma
@@ -106,6 +105,11 @@
 		/obj/item/stock_parts/cell/ammo/mfc = 2,
 		/obj/item/gun/ballistic/automatic/pistol/pistol14/custom = 1,
 		/obj/item/ammo_box/magazine/m14mm = 2,
+		/obj/item/storage/pill_bottle/chem_tin/buffout = 1,
+		/obj/item/storage/pill_bottle/chem_tin/mentats = 1,
+		/obj/item/reagent_containers/hypospray/medipen/psycho = 1,
+		/obj/item/reagent_containers/hypospray/medipen/medx = 1,
+		/obj/item/card/id/syndicate/anyone = 1,
 		)
 
 /datum/outfit/job/enclave/peacekeeper/enclavelt/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -154,19 +158,20 @@
 		/obj/item/pda = 1,
 		/obj/item/storage/bag/money/small/wastelander = 1,
 		/obj/item/melee/onehanded/knife/survival = 1,
-		/obj/item/storage/pill_bottle/chem_tin/buffout = 1,
-		/obj/item/storage/pill_bottle/chem_tin/mentats = 1,
-		/obj/item/reagent_containers/hypospray/medipen/psycho = 1,
-		/obj/item/reagent_containers/hypospray/medipen/medx = 1,
-		/obj/item/megaphone = 1,
-		/obj/item/card/id/syndicate/anyone = 1
 		)
 
 /datum/outfit/loadout/gysgt_ballistics
 	name = "Armored Assault Kit"
 	backpack_contents = list(
 		/obj/item/minigunpackbal5mm = 1,
-		/obj/item/ammo_box/magazine/cz53 = 2
+		/obj/item/ammo_box/magazine/cz53 = 2,
+		/obj/item/storage/pill_bottle/chem_tin/buffout = 1,
+		/obj/item/storage/pill_bottle/chem_tin/mentats = 1,
+		/obj/item/reagent_containers/hypospray/medipen/psycho = 1,
+		/obj/item/reagent_containers/hypospray/medipen/medx = 1,
+		/obj/item/megaphone = 1,
+		/obj/item/card/id/syndicate/anyone = 1,
+		/obj/item/clothing/mask/chameleon = 1,
 		)
 
 /datum/outfit/loadout/gysgt_laser
@@ -174,6 +179,13 @@
 	suit_store = /obj/item/gun/energy/laser/aer14
 	backpack_contents = list(
 		/obj/item/stock_parts/cell/ammo/mfc = 4,
+		/obj/item/storage/pill_bottle/chem_tin/buffout = 1,
+		/obj/item/storage/pill_bottle/chem_tin/mentats = 1,
+		/obj/item/reagent_containers/hypospray/medipen/psycho = 1,
+		/obj/item/reagent_containers/hypospray/medipen/medx = 1,
+		/obj/item/megaphone = 1,
+		/obj/item/card/id/syndicate/anyone = 1,
+		/obj/item/clothing/mask/chameleon = 1,
 		)
 
 /datum/outfit/loadout/gysgt_minigun
@@ -181,6 +193,13 @@
 	suit_store = 	/obj/item/minigunpack
 	backpack_contents = list(
 		/obj/item/stock_parts/cell/ammo/ecp = 2,
+		/obj/item/storage/pill_bottle/chem_tin/buffout = 1,
+		/obj/item/storage/pill_bottle/chem_tin/mentats = 1,
+		/obj/item/reagent_containers/hypospray/medipen/psycho = 1,
+		/obj/item/reagent_containers/hypospray/medipen/medx = 1,
+		/obj/item/megaphone = 1,
+		/obj/item/card/id/syndicate/anyone = 1,
+		/obj/item/clothing/mask/chameleon = 1,
 		)
 
 /datum/outfit/job/enclave/peacekeeper/f13gysergeant/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -210,6 +229,7 @@
 	loadout_options = list(
 		/datum/outfit/loadout/sgt_ballistics,	// G11
 		/datum/outfit/loadout/sgt_laser, 	// Wattz2k
+		/datum/outfit/loadout/sgt_melee, 	// Melee
 		)
 
 /datum/outfit/job/enclave/peacekeeper/enclavesgt
@@ -227,11 +247,6 @@
 		/obj/item/storage/bag/money/small/wastelander = 1,
 		/obj/item/melee/onehanded/knife/survival = 1,
 		/obj/item/clothing/head/f13/enclave/peacekeeper = 1,
-		/obj/item/storage/pill_bottle/chem_tin/buffout = 1,
-		/obj/item/storage/pill_bottle/chem_tin/mentats = 1,
-		/obj/item/reagent_containers/hypospray/medipen/psycho = 1,
-		/obj/item/reagent_containers/hypospray/medipen/medx = 1,
-		/obj/item/card/id/syndicate/anyone =1
 		)
 
 /datum/outfit/loadout/sgt_ballistics
@@ -239,6 +254,12 @@
 	suit_store = /obj/item/gun/ballistic/automatic/g11
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/m473 = 3,
+		/obj/item/storage/pill_bottle/chem_tin/buffout = 1,
+		/obj/item/storage/pill_bottle/chem_tin/mentats = 1,
+		/obj/item/reagent_containers/hypospray/medipen/psycho = 1,
+		/obj/item/reagent_containers/hypospray/medipen/medx = 1,
+		/obj/item/card/id/syndicate/anyone = 1,
+		/obj/item/clothing/mask/chameleon = 1
 		)
 
 /datum/outfit/loadout/sgt_laser
@@ -246,6 +267,25 @@
 	suit_store = /obj/item/gun/energy/laser/wattz2k
 	backpack_contents = list(
 		/obj/item/stock_parts/cell/ammo/mfc = 3,
+		/obj/item/storage/pill_bottle/chem_tin/buffout = 1,
+		/obj/item/storage/pill_bottle/chem_tin/mentats = 1,
+		/obj/item/reagent_containers/hypospray/medipen/psycho = 1,
+		/obj/item/reagent_containers/hypospray/medipen/medx = 1,
+		/obj/item/card/id/syndicate/anyone = 1,
+		/obj/item/clothing/mask/chameleon = 1
+		)
+
+/datum/outfit/loadout/sgt_melee
+	name = "Frontline destroyer"
+	suit_store = /obj/item/melee/powered/ripper/prewar
+	backpack_contents = list(
+		/obj/item/book/granter/martial/krav_maga = 1,
+		/obj/item/storage/pill_bottle/chem_tin/buffout = 1,
+		/obj/item/storage/pill_bottle/chem_tin/mentats = 1,
+		/obj/item/reagent_containers/hypospray/medipen/psycho = 1,
+		/obj/item/reagent_containers/hypospray/medipen/medx = 1,
+		/obj/item/card/id/syndicate/anyone = 1,
+		/obj/item/clothing/mask/chameleon = 1
 		)
 
 /datum/outfit/job/enclave/peacekeeper/enclavesgt/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -289,13 +329,7 @@
 		/obj/item/pda = 1,
 		/obj/item/storage/bag/money/small/wastelander = 1,
 		/obj/item/stock_parts/cell/ammo/mfc = 2,
-		/obj/item/melee/onehanded/knife/survival = 1,
-		/obj/item/storage/pill_bottle/chem_tin/buffout = 1,
-		/obj/item/storage/pill_bottle/chem_tin/mentats = 1,
-		/obj/item/reagent_containers/hypospray/medipen/psycho = 1,
-		/obj/item/reagent_containers/hypospray/medipen/medx = 1,
-		/obj/item/clothing/mask/chameleon = 1,
-		/obj/item/card/id/syndicate/anyone =1
+		/obj/item/melee/onehanded/knife/survival = 1
 		)
 
 /datum/outfit/loadout/combatmedic
@@ -306,7 +340,14 @@
 	backpack_contents = list(
 		/obj/item/storage/firstaid/ancient = 1,
 		/obj/item/book/granter/trait/chemistry = 1,
-		/obj/item/book/granter/trait/midsurgery = 1
+		/obj/item/book/granter/trait/midsurgery = 1,
+		/obj/item/melee/onehanded/knife/survival = 1,
+		/obj/item/storage/pill_bottle/chem_tin/buffout = 1,
+		/obj/item/storage/pill_bottle/chem_tin/mentats = 1,
+		/obj/item/reagent_containers/hypospray/medipen/psycho = 1,
+		/obj/item/reagent_containers/hypospray/medipen/medx = 1,
+		/obj/item/clothing/mask/chameleon = 1,
+		/obj/item/card/id/syndicate/anyone = 1
 		)
 
 /datum/outfit/loadout/combatengie
@@ -319,7 +360,14 @@
 		/obj/item/storage/belt/utility = 1,
 		/obj/item/ammo_box/a40mm = 2,
 		/obj/item/shovel/trench = 1,
-		/obj/item/metaldetector = 1
+		/obj/item/metaldetector = 1,
+		/obj/item/melee/onehanded/knife/survival = 1,
+		/obj/item/storage/pill_bottle/chem_tin/buffout = 1,
+		/obj/item/storage/pill_bottle/chem_tin/mentats = 1,
+		/obj/item/reagent_containers/hypospray/medipen/psycho = 1,
+		/obj/item/reagent_containers/hypospray/medipen/medx = 1,
+		/obj/item/clothing/mask/chameleon = 1,
+		/obj/item/card/id/syndicate/anyone = 1
 	)
 
 /datum/outfit/job/enclave/peacekeeper/f13specialist/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -340,6 +388,12 @@
 	exp_type = EXP_TYPE_FALLOUT
 	exp_requirements = 3600//Next to a whitelist, this is the only thing to keep it bereft of you know what.
 
+	loadout_options = list(
+		/datum/outfit/loadout/meleeprivate, // Melee Equipment
+		/datum/outfit/loadout/energyprivate, // Energy guns
+		/datum/outfit/loadout/assaultprivate, // Assault guns
+		)
+
 /datum/outfit/job/enclave/peacekeeper/enclavespy
 	name = "Enclave Private"
 	jobtype = /datum/job/enclave/enclavespy
@@ -350,14 +404,50 @@
 		/obj/item/reagent_containers/hypospray/medipen/stimpak = 2,
 		/obj/item/grenade/smokebomb = 1,
 		/obj/item/pda = 1,
+		)
+/datum/outfit/loadout/meleeprivate
+	name = "Melee equipment"
+	backpack_contents = list(
+		/obj/item/melee/smith/sword/sabre = 1,
+		/obj/item/gun/energy/laser/plasma/pistol/light = 1,
+		/obj/item/stock_parts/cell/ammo/ec = 2,
 		/obj/item/melee/onehanded/knife/survival = 1,
 		/obj/item/storage/pill_bottle/chem_tin/buffout = 1,
 		/obj/item/storage/pill_bottle/chem_tin/mentats = 1,
 		/obj/item/reagent_containers/hypospray/medipen/psycho = 1,
 		/obj/item/reagent_containers/hypospray/medipen/medx = 1,
 		/obj/item/clothing/mask/chameleon = 1,
-		/obj/item/card/id/syndicate/anyone =1
+		/obj/item/card/id/syndicate/anyone = 1
 		)
+
+/datum/outfit/loadout/energyprivate
+	name = "Energy equipment"
+	backpack_contents = list(
+		/obj/item/gun/energy/laser/aer9 = 1,
+		/obj/item/stock_parts/cell/ammo/mfc = 2,
+		/obj/item/melee/onehanded/knife/survival = 1,
+		/obj/item/storage/pill_bottle/chem_tin/buffout = 1,
+		/obj/item/storage/pill_bottle/chem_tin/mentats = 1,
+		/obj/item/reagent_containers/hypospray/medipen/psycho = 1,
+		/obj/item/reagent_containers/hypospray/medipen/medx = 1,
+		/obj/item/clothing/mask/chameleon = 1,
+		/obj/item/card/id/syndicate/anyone = 1
+	)
+
+/datum/outfit/loadout/assaultprivate
+	name = "Assault equipment"
+	backpack_contents = list(
+		/obj/item/gun/ballistic/automatic/assault_carbine = 1,
+		/obj/item/ammo_box/magazine/m5mm = 2,
+		/obj/item/melee/onehanded/knife/survival = 1,
+		/obj/item/storage/pill_bottle/chem_tin/buffout = 1,
+		/obj/item/storage/pill_bottle/chem_tin/mentats = 1,
+		/obj/item/reagent_containers/hypospray/medipen/psycho = 1,
+		/obj/item/reagent_containers/hypospray/medipen/medx = 1,
+		/obj/item/clothing/mask/chameleon = 1,
+		/obj/item/card/id/syndicate/anyone = 1
+	)
+
 /*
 /datum/outfit/job/enclave/peacekeeper/enclavespy/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
@@ -371,14 +461,19 @@
 /datum/job/enclave/enclavesci
 	title = "Enclave Scientist"
 	flag = F13USSCIENTIST
-	total_positions = 2
-	spawn_positions = 2
+	total_positions = 3
+	spawn_positions = 3
 	description = "You're a small garrison within a side entrance of a far larger complex. This complex sits within the Casper mountain range. You're responsible for the maintenance of the base and field studies, the knowledge you've accumulated over the years is the only thing keeping the remnants alive. You've dabbled in enough to be considered a Professor in your field of research, but they call you Doctor. Support your dwindling forces and listen to the Lieutenant."
 	supervisors = "Enclave Research and Development Division."
 	outfit = /datum/outfit/job/enclave/noncombat/enclavesci
 	exp_requirements = 1000
 	roleplay_exclusive_notify = 1
 	access = list(ACCESS_ENCLAVE, ACCESS_ENCLAVE_COMMAND)
+
+	loadout_options = list(
+		/datum/outfit/loadout/escientistheal, // Healing Equipment
+		/datum/outfit/loadout/escientistfield, // Energy guns
+		)
 
 /datum/outfit/job/enclave/noncombat/enclavesci
 	name = "Enclave Scientist"
@@ -397,12 +492,33 @@
 		/obj/item/pda = 1,
 		/obj/item/gun/energy/gammagun = 1,
 		/obj/item/stock_parts/cell/ammo/ec = 2,
+		)
+
+/datum/outfit/loadout/escientistheal
+	name = "Healing Equipment"
+	backpack_contents = list(
+		/obj/item/storage/box/medicine/stimpaks/superstimpaks5 = 1,
+		/obj/item/reagent_containers/hypospray/CMO = 1.
 		/obj/item/storage/bag/money/small/wastelander = 1,
 		/obj/item/melee/onehanded/knife/survival = 1,
 		/obj/item/clothing/head/beret/enclave/science = 1,
 		/obj/item/clothing/mask/chameleon = 1,
-		/obj/item/card/id/syndicate/anyone =1
+		/obj/item/card/id/syndicate/anyone = 1
 		)
+
+/datum/outfit/loadout/escientistfield
+	name = "Field Equipment"
+	backpack_contents = list(
+		/obj/item/storage/belt/grenade/full = 1,
+		/obj/item/binoculars = 1,
+		/obj/item/jammer = 1,
+		/obj/item/gun/energy/laser/wattz/recharger/enclave = 1,
+		/obj/item/storage/bag/money/small/wastelander = 1,
+		/obj/item/melee/onehanded/knife/survival = 1,
+		/obj/item/clothing/head/beret/enclave/science = 1,
+		/obj/item/clothing/mask/chameleon = 1,
+		/obj/item/card/id/syndicate/anyone = 1
+	)
 
 /datum/outfit/job/enclave/noncombat/enclavesci/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()

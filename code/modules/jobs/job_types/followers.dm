@@ -80,7 +80,7 @@ Administrator
 	id =	/obj/item/card/id/silver
 	chemwhiz =	TRUE
 	uniform =	/obj/item/clothing/under/f13/followers
-	suit=	/obj/item/clothing/suit/toggle/labcoat/cmo
+	suit=	/obj/item/clothing/suit/hooded/followerlight
 	shoes =	/obj/item/clothing/shoes/f13/brownie
 	belt =	/obj/item/healthanalyzer/advanced
 	backpack =	/obj/item/storage/backpack/medic
@@ -152,6 +152,7 @@ Practitioner
 	name =	"Followers Doctor"
 	jobtype =	/datum/job/followers/f13practitioner
 	uniform =	/obj/item/clothing/under/f13/followers
+	suit=	/obj/item/clothing/suit/hooded/followerlight
 	id =	/obj/item/card/id/silver
 	chemwhiz =	TRUE
 	backpack =	/obj/item/storage/backpack/medic
@@ -330,7 +331,7 @@ Follower Volunteer
 	belt =	/obj/item/storage/belt/military/army/military/followers
 	id =	/obj/item/card/id/silver
 	uniform =	/obj/item/clothing/under/f13/bodyguard
-	suit =	/obj/item/clothing/suit/armor/vest/big
+	/obj/item/clothing/suit/hooded/followermedium
 	head =	/obj/item/clothing/head/helmet/riot/vaultsec
 	glasses =	/obj/item/clothing/glasses/sunglasses
 	shoes =	/obj/item/clothing/shoes/combat

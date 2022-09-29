@@ -498,7 +498,7 @@
 	name = "Healing Equipment"
 	backpack_contents = list(
 		/obj/item/storage/box/medicine/stimpaks/superstimpaks5 = 1,
-		/obj/item/reagent_containers/hypospray/CMO = 1.
+		/obj/item/reagent_containers/hypospray/CMO = 1,
 		/obj/item/storage/bag/money/small/wastelander = 1,
 		/obj/item/melee/onehanded/knife/survival = 1,
 		/obj/item/clothing/head/beret/enclave/science = 1,

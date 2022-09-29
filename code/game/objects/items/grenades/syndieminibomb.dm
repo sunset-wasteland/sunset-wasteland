@@ -4,7 +4,7 @@
 	icon = 'icons/obj/grenade.dmi'
 	icon_state = "syndicate"
 	item_state = "flashbang"
-	ex_dev = 1
+	ex_dev = 0
 	ex_heavy = 2
 	ex_light = 4
 	ex_flame = 2
@@ -19,6 +19,7 @@
 	name = "HE Grenade"
 	desc = "A compact shrapnel grenade meant to devastate nearby organisms and cause some damage in the process. Pull pin and throw opposite direction."
 	icon_state = "concussion"
+	ex_dev = 0
 	ex_heavy = 2
 	ex_light = 3
 	ex_flame = 3
@@ -35,6 +36,7 @@
 	icon_state = "frag"
 	shrapnel_type = /obj/item/projectile/bullet/shrapnel
 	shrapnel_radius = 4
+	ex_dev = 0
 	ex_heavy = 1
 	ex_light = 3
 	ex_flame = 4

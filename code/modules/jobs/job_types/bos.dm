@@ -801,11 +801,6 @@ Senior Knight
 		),
 	)
 
-/datum/outfit/job/bos/f13seniorknight/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	..()
-	if(visualsOnly)
-		return
-	ADD_TRAIT(H, TRAIT_PA_WEAR, src)
 
 /datum/outfit/job/bos/f13seniorknight/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
@@ -918,12 +913,6 @@ Knight
 			/datum/job/bos/f13seniorknight,
 		),
 	)
-
-/datum/outfit/job/bos/f13knight/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	..()
-	if(visualsOnly)
-		return
-	ADD_TRAIT(H, TRAIT_PA_WEAR, src)
 
 /datum/outfit/job/bos/f13knight/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
@@ -1073,13 +1062,6 @@ Initiate
 	backpack_contents = list(
 		/obj/item/melee/onehanded/knife/survival = 1,
 		)
-
-/datum/outfit/job/bos/f13initiate/post_equip(mob/living/carbon/human/H, visualsOnly)
-	..()
-	if(visualsOnly)
-		return
-	ADD_TRAIT(H, TRAIT_SURGERY_LOW, src)
-
 
 /datum/outfit/loadout/initiatek
 	name = "Errant"

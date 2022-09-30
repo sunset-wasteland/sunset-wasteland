@@ -1043,7 +1043,7 @@
 	time_per_page = 0
 
 /obj/item/book/granter/trait/selection/attack_self(mob/user)
-	var/list/choices = list("Big Book of Science","Dean's Electronics","Grognak the Barbarian","First Aid Pamphlet","Wasteland Survival Guide")
+	var/list/choices = list("Grognak the Barbarian","Wasteland Survival Guide")
 	if(granted_trait == null)
 		var/choice = input("Choose a trait:") in choices
 		switch(choice)
@@ -1053,20 +1053,6 @@
 				granted_trait = TRAIT_HARD_YARDS
 				traitname = "trekking"
 				remarks = list("Tribes and gangs often hide the best loot in the back room.", "Radiation is best avoided entirely, but it helps to carry spare rad-x.", "Whether ancient or recent, landmines are still a threat, and readers should look out for them. Their detonators can be removed with a screwdriver.", "Injuries and open bleeding make it harder to travel, always carry spare medical supplies.", "Most animals are simple-minded, and can be led into easy lines of fire.")
-			if("First Aid Pamphlet")
-				granted_trait = TRAIT_SURGERY_LOW
-				traitname = "minor surgery"
-				remarks = list("Keep your hands and any injuries clean!", "While bandages help to seal a wound, they do not heal a wound.", "Remain calm, focus on the task at hand, stop the bleeding.", "An open wound can lead to easy infection of said wound.", "Keep track of your home's first aid kit, restock used components regularly.", "If a body part has been lost, ice and transport it with the injured to a hospital.",)
-			if("Big Book of Science")
-				granted_trait = TRAIT_CHEMWHIZ
-				traitname = "chemistry"
-				crafting_recipe_types = list(/datum/crafting_recipe/jet, /datum/crafting_recipe/turbo, /datum/crafting_recipe/psycho, /datum/crafting_recipe/medx, /datum/crafting_recipe/buffout)
-				remarks = list("Always ensure a safe working environment, promptly clean any chemical mess.", "Improperly stored chemicals can quickly lead to safety hazards.", "Do not abuse chemicals for recreational use in the laboratory!", "Labcoats and goggles not only protect you from burns, but give an aura of authority.", "Keep your laboratory clean and organized, utilize cabinets and shelves.", "Potassium and water should not be mixed, or they will react violently.")
-			if("Dean's Electronics")
-				granted_trait = TRAIT_TECHNOPHREAK
-				traitname = "craftsmanship"
-				crafting_recipe_types = list(/datum/crafting_recipe/tribalradio)
-				remarks = list("Troubleshooting is a systematic approach to problem solving, do not skip any steps in the process.", "Ensure you have all the required parts before you begin.", "Always wear personal protective equipment, electric shock can be fatal.", "Combustibles and sparks do not mix, store welding fuel in a safe location.", "Don't lose track of your tools, or you have a new problem to deal with.")
 			if("Grognak the Barbarian")
 				granted_trait = TRAIT_BIG_LEAGUES
 				traitname = "hitting things"
@@ -1085,7 +1071,7 @@
 		desc = "A compendium of knowledge passed down from the elders. It looks to be in poor condition."
 
 /obj/item/book/granter/trait/selection/tribal/attack_self(mob/user)
-	var/list/choices = list("Hit Them With Sticks","Technophilia","Pugilist","Padded Feet","Veteran Table Climber","Basic Surgery")
+	var/list/choices = list("Hit Them With Sticks","Pugilist","Padded Feet","Veteran Table Climber","Desert Affinity")
 	if(granted_trait == null)
 		var/choice = input("Choose a trait:") in choices
 		switch(choice)
@@ -1094,10 +1080,6 @@
 			if("Hit Them With Sticks")
 				granted_trait = TRAIT_BIG_LEAGUES
 				traitname = "fighting with melee weapons"
-			if("Technophilia")
-				granted_trait = TRAIT_TECHNOPHREAK
-				traitname = "technology and crafting"
-				crafting_recipe_types = list(/datum/crafting_recipe/ninemil, /datum/crafting_recipe/huntingrifle, /datum/crafting_recipe/n99, /datum/crafting_recipe/huntingrifle, /datum/crafting_recipe/m1911, /datum/crafting_recipe/varmintrifle, /datum/crafting_recipe/autoaxe, /datum/crafting_recipe/steelsaw, /datum/crafting_recipe/tools/forged/entrenching_tool, /datum/crafting_recipe/chainsaw, /datum/crafting_recipe/steeltower, /datum/crafting_recipe/durathread_vest)
 			if("Pugilist")
 				granted_trait = TRAIT_IRONFIST
 				traitname = "using your fists"
@@ -1107,9 +1089,6 @@
 			if("Veteran Table Climber")
 				granted_trait = TRAIT_FREERUNNING
 				traitname = "....climbing tables"
-			if("Basic Surgery")
-				granted_trait = TRAIT_SURGERY_LOW
-				traitname = "basic surgery"
 			if("Desert Affinity")
 				granted_trait = TRAIT_HARD_YARDS
 				traitname = "trekking"

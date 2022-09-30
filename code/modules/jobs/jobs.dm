@@ -86,6 +86,7 @@ GLOBAL_LIST_INIT(faction_whitelist_positions, list(
 "Librarian",
 "Scribe",
 "Initiate",
+"BoS Off-Duty",
 
 "Legion Centurion",
 "Legion Venator",
@@ -109,6 +110,7 @@ GLOBAL_LIST_INIT(faction_whitelist_positions, list(
 "Enclave Specialist",
 "Enclave Scientist",
 "Enclave Private",
+"Enclave Pilot Officer",
 "Enclave Bunker Duty",
 "Synthetic",
 
@@ -137,6 +139,7 @@ GLOBAL_LIST_INIT(brotherhood_positions, list(
 	"Knight",
 	"Librarian",
 	"Scribe",
+	"BoS Off-Duty",
 	"Initiate",
 ))
 
@@ -236,6 +239,7 @@ GLOBAL_LIST_INIT(enclave_positions, list(
 	"Enclave Armored Infantry",
 	"Enclave Specialist",
 	"Enclave Scientist",
+	"Enclave Pilot Officer",
 	"Enclave Private",
 	"Enclave Bunker Duty",
 	"Synthetic",

@@ -332,12 +332,11 @@
 	init_mag_type = /obj/item/ammo_box/magazine/m10mm_adv/ext
 	is_automatic = TRUE
 	automatic = 1
-	autofire_shot_delay = 2.25
+	autofire_shot_delay = 2.35
 	spread = 12
 	slowdown = 0.3
-	extra_damage = 20
-	extra_penetration = 0.1
-	recoil = 0.05
+	extra_damage = 22
+	recoil = 0.5
 	fire_delay = 3.25
 	can_attachments = TRUE
 	suppressor_state = "10mm_suppressor" //activate if sprited
@@ -351,7 +350,6 @@
 	desc = "Mass-produced weapon from the Great War, this one has seen use ever since. Grip is wrapped in tape to keep the plastic from crumbling, the metals are oxidizing, but the gun still works."
 	init_mag_type = /obj/item/ammo_box/magazine/m10mm_adv/ext
 	worn_out = TRUE
-	extra_penetration = 0.05
 	extra_damage = 18
 	spread = 10
 
@@ -764,7 +762,7 @@
 	spread = 1
 	extra_damage = 32
 	extra_penetration = 0.2
-	slowdown = 0.5
+	slowdown = 0.25
 	can_attachments = FALSE
 	automatic_burst_overlay = FALSE
 	semi_auto = TRUE
@@ -911,7 +909,7 @@
 	extra_speed = 500
 	burst_size = 1
 	fire_delay = 4
-	slowdown = 0.4
+	slowdown = 0.3
 	spread = 1
 	automatic_burst_overlay = FALSE
 	semi_auto = TRUE
@@ -1113,13 +1111,13 @@
 //////////////////
 
 
-//R82				Keywords: 5.56mm, Semi-auto, 20 (10-50) round magazine	NOT CANON
+//HEAVY SERVICE RIFLE				Keywords: 5.56mm, Semi-auto, 20 (10-50) round magazine	NOW CANON!
 /obj/item/gun/ballistic/automatic/service/r82
-	name = "R82 heavy service rifle"
-	desc = "The assault rifle variant of the R84, based off the pre-war FN FNC. Issued to high-ranking troopers and specialized units. Chambered in 5.56."
-	icon_state = "R82"
-	item_state = "R84"
-	icon_prefix = "r82"
+	name = "upgraded service rifle"
+	desc = "A fully-automatic service rifle with a heavier barrel, and upgraded recoil springs. Issued to high-ranking troopers and specialized units. Chambered in 5.56."
+	icon_state = "m16a1"
+	item_state = "servicerifle"
+	icon_prefix = "m16a1"
 	extra_damage = 28
 	fire_delay = 2.5
 	is_automatic = TRUE
@@ -1347,8 +1345,8 @@
 	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
 
 /obj/item/gun/ballistic/automatic/bar
-	name = "automatic rifle (.308)"
-	desc = "An ancient machine gun that looks like outdated even by pre-war standards. It has Colt etched on one-side and Sierra Madre on the other. It is alarmingly heavy for a rifle."
+	name = "FN Model D"
+	desc = "An exceedingly heavy machine gun based on the BAR, featuring the blessing of Belgian gunsmithing. It's the last, and best of its kind in regards to model."
 	icon = 'icons/fallout/objects/guns/bar.dmi'
 	slot_flags = ITEM_SLOT_BACK
 	icon_state = "BAR"
@@ -1358,11 +1356,11 @@
 	mag_type = /obj/item/ammo_box/magazine/m762/ext
 	force = 24 //club
 	slowdown = 1.5 //really goddamn big
-	autofire_shot_delay = 2.3
-	extra_damage = 30
-	extra_penetration = 0.3
+	autofire_shot_delay = 1.7
+	extra_damage = 32
+	extra_penetration = 0.35
 	spread = 10
-	recoil = 0.3
+	recoil = 0.85
 	actions_types = list(/datum/action/item_action/toggle_firemode)
 	fire_sound = 'sound/f13weapons/automaticrifle_BAR.ogg'
 
@@ -1414,15 +1412,18 @@
 	desc = "A light machinegun using 60 round belts fed from an ammobox, its one of the few heavy weapons designs NCR has produced."
 	icon_state = "R84"
 	item_state = "R84"
-	slowdown = 1.2
+	slowdown = 1.25
+	recoil = 1
 	mag_type = /obj/item/ammo_box/magazine/lmg
-	extra_damage = 21
-	fire_delay = 6
+	extra_damage = 17
+	extra_penetration = 0.15
+	fire_delay = 2.7
 	burst_shot_delay = 3
 	is_automatic = TRUE
 	automatic = 1
-	autofire_shot_delay = 2.7
+	autofire_shot_delay = 1.13
 	spread = 12
+	extra_speed = -80
 	can_attachments = FALSE
 	actions_types = null
 	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'

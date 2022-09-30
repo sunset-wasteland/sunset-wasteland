@@ -715,3 +715,12 @@
 /area/f13/wasteland/khans
 	name = "Great Khan Encampment"
 	icon_state = "tribe"
+
+/area/f13/mountain_area
+	name = "Unknown"
+	icon_state = "forest"
+	ambientsounds = list('sound/f13ambience/bird_1.ogg','sound/f13ambience/bird_2.ogg','sound/f13ambience/bird_3.ogg','sound/f13ambience/bird_4.ogg','sound/f13ambience/bird_5.ogg','sound/f13ambience/bird_6.ogg','sound/f13ambience/bird_7.ogg','sound/f13ambience/bird_8.ogg')
+	outdoors = 1
+	open_space = 1
+	environment = 15
+	grow_chance = 0

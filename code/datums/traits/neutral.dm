@@ -138,3 +138,34 @@
 /datum/quirk/longtimer/on_spawn()
 	var/mob/living/carbon/C = quirk_holder
 	C.generate_fake_scars(rand(min_scars, max_scars))
+
+//Horrid and pulled from Crash
+/datum/quirk/soapstone
+	name = "Soapstone"
+	desc = "You recently found this yellow rock. Neat. Now, if only you knew what this did..."
+	value = 0
+	var/obj/item/heirloom
+	var/where
+
+/datum/quirk/soapstone/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	var/obj/item/heirloom_type  ///DONT CHANGE HERILOOM STUFF FOR SOME REASON DONT WORK IF YOU REMOVE IT AAAAA.
+	switch(quirk_holder.mind.assigned_role)
+		if("Baron", "Centurion", "Sheriff", "NCR Captain")
+			heirloom_type = pick(/obj/item/soapstone)
+		else
+			heirloom_type = pick(
+				/obj/item/soapstone/trait)
+	heirloom = new heirloom_type(get_turf(quirk_holder)) //IF YOU CHANGE THIS FOR SOME REASON WILL NOT WORK.
+	var/list/slots = list(
+		"in your left pocket" = SLOT_L_STORE, //SPAWNS IN THE POCKETS
+		"in your right pocket" = SLOT_R_STORE,
+		"in your backpack" = SLOT_IN_BACKPACK	//SPAWNS IN THE BACKPACK
+
+	)
+	where = H.equip_in_one_of_slots(heirloom, slots, FALSE) || "at your feet"
+
+/datum/quirk/soapstone/post_add()
+	if(where == "in your backpack")
+		var/mob/living/carbon/human/H = quirk_holder
+		SEND_SIGNAL(H.back, COMSIG_TRY_STORAGE_SHOW, H)

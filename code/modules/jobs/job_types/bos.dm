@@ -56,6 +56,7 @@ Elder
 	supervisors = "the high elders"
 	selection_color = "#7f8c8d"
 	req_admin_notify = 1
+	roleplay_exclusive_notify = 1
 
 	exp_requirements = 3000
 
@@ -502,8 +503,8 @@ Paladin
 /datum/job/bos/f13paladin
 	title = "Paladin"
 	flag = F13PALADIN
-	total_positions = 1
-	spawn_positions = 1
+	total_positions = 2
+	spawn_positions = 2
 	description = "You answer directly to the Marshal. You are this Chapter's main line of defense and offense; highly trained in combat and weaponry though with little practical field experience, you are eager to prove your worth to the Brotherhood. Your primary duties are defense and surface operations. You may also be assigned a trainee Initiate."
 	forbids = "The Brotherhood of Steel Forbids: Unethical human experimentation. Violence beyond what is needed to accomplish Brotherhood goals, and cruel torture or experiments on the minds or bodies of prisoners."
 	enforces = "The Brotherhood of Steel Expects: Obeying the Chain That - Binds your direct superior. Collection and safeguarding of technology from the wasteland. Experimentation and research."
@@ -1103,4 +1104,37 @@ Initiate
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1,
 		/obj/item/book/granter/trait/chemistry=1,
 		/obj/item/clothing/accessory/bos/initiateS=1,
+		)
+
+/*
+Off-Duty
+*/
+/datum/job/bos/f13offdutybos
+	title = "BoS Off-Duty"
+	flag = F13OFFDUTYBOS
+	total_positions = 6//Likely far too many, but this stops you know what. :)
+	spawn_positions = 6
+	description = "While off-duty, you are relieved of both your duties and your authority. You are not required to participate in any routine duties of the bunker, and you may spend your time doing whatever you please, within reason."
+	supervisors = "your superior rank."
+	selection_color = "#95a5a6"
+	roleplay_exclusive_notify = 1
+	exp_requirements = 300
+	outfit = /datum/outfit/job/bos/f13offdutybos
+	access = list(ACCESS_ROBOTICS, ACCESS_BOS, ACCESS_ENGINE_EQUIP, ACCESS_ENGINE, ACCESS_HYDROPONICS, ACCESS_KITCHEN, ACCESS_BAR, ACCESS_SEC_DOORS)
+	minimal_access = list(ACCESS_ROBOTICS, ACCESS_BOS, ACCESS_ENGINE_EQUIP, ACCESS_ENGINE, ACCESS_HYDROPONICS, ACCESS_KITCHEN, ACCESS_BAR, ACCESS_SEC_DOORS)
+
+/datum/outfit/job/bos/f13offdutybos
+	name = "BoS Off-Duty"
+	jobtype = /datum/job/bos/f13offdutybos
+	backpack = /obj/item/storage/backpack
+	ears = 			/obj/item/radio/headset
+	uniform =		/obj/item/clothing/under/syndicate
+	belt = 			/obj/item/storage/belt/military/army
+	shoes = 		/obj/item/clothing/shoes/combat
+	gloves = 		/obj/item/clothing/gloves/combat
+	id = 			/obj/item/card/id/dogtag
+	backpack_contents = list(
+		/obj/item/reagent_containers/hypospray/medipen/stimpak=1,
+		/obj/item/encryptionkey/headset_bos=1,
+		/obj/item/melee/onehanded/knife/survival=1
 		)

@@ -49,7 +49,7 @@
 /datum/crafting_recipe/armor_plate_plastit
 	name = "Armor Plate"
 	result = /obj/item/stack/crafting/armor_plate
-	reqs = list(/obj/item/stack/sheet/plasteel = 2,
+	reqs = list(/obj/item/stack/sheet/prewar = 2,
 				/obj/item/stack/crafting/goodparts = 1,
 				/obj/item/stack/crafting/metalparts = 2)
 	tools = list(TOOL_WORKBENCH)
@@ -1265,6 +1265,47 @@
 	blacklist = list(/obj/item/clothing/head/helmet/f13/combat)
 	reqs = list(/obj/item/clothing/head/helmet/f13/combat/mk2 = 1,
 				/obj/item/toy/crayon/spraycan)
+	time = 30
+	category = CAT_CLOTHING
+	subcategory = CAT_ARMOR
+	always_available = FALSE
+
+//Follower Armor
+
+/datum/crafting_recipe/follower_light
+	name = "Follower Insignia Stitching"
+	result = /obj/item/clothing/suit/hooded/followerlight
+	reqs = list(/obj/item/clothing/suit/toggle/labcoat,
+				/obj/item/stack/sheet/cloth = 1)
+	tools = list(TOOL_WORKBENCH)
+	time = 30
+	category = CAT_CLOTHING
+	subcategory = CAT_ARMOR
+	always_available = FALSE
+
+/datum/crafting_recipe/follower_medium
+	name = "Follower Labcoat Plating"
+	result = /obj/item/clothing/suit/hooded/followermedium
+	reqs = list(/obj/item/clothing/suit/hooded/followerlight,
+				/obj/item/stack/sheet/cloth = 1,
+				/obj/item/stack/crafting/armor_plate = 2,
+				/obj/item/stack/crafting/metalparts = 5,
+				/obj/item/stack/crafting/goodparts = 2)
+	tools = list(TOOL_WORKBENCH)
+	time = 30
+	category = CAT_CLOTHING
+	subcategory = CAT_ARMOR
+	always_available = FALSE
+
+/datum/crafting_recipe/follower_heavy
+	name = "Follower Labcoat Reforging"
+	result = /obj/item/clothing/suit/hooded/followerheavy
+	reqs = list(/obj/item/clothing/suit/hooded/followermedium,
+				/obj/item/stack/sheet/cloth = 1,
+				/obj/item/clothing/suit/armor/f13/metalarmor,
+				/obj/item/stack/crafting/metalparts = 5,
+				/obj/item/stack/crafting/goodparts = 2)
+	tools = list(TOOL_WORKBENCH)
 	time = 30
 	category = CAT_CLOTHING
 	subcategory = CAT_ARMOR

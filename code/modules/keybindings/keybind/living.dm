@@ -24,7 +24,7 @@
 
 /datum/keybinding/living/toggle_resting/down(client/user)
 	var/mob/living/L = user.mob
-	L.lay_down()
+	L.toggle_resting()
 
 /datum/keybinding/living/cancel_action
 	hotkey_keys = list("Unbound")

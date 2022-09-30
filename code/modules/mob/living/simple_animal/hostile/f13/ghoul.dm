@@ -119,6 +119,7 @@
 	harm_intent_damage = 8
 	melee_damage_lower = 15
 	melee_damage_upper = 15
+	unsuitable_atmos_damage = 0//shitty hack
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
 
 //Frozen Feral Ghoul
@@ -134,6 +135,7 @@
 	harm_intent_damage = 8
 	melee_damage_lower = 15
 	melee_damage_upper = 15
+	unsuitable_atmos_damage = 0//shitty hack
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
 
 //Legendary Ghoul

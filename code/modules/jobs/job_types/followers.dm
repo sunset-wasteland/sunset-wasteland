@@ -4,6 +4,7 @@
 	exp_type = EXP_TYPE_FOLLOWERS
 	access = list(ACCESS_FOLLOWER)
 	minimal_access = list(ACCESS_FOLLOWER)
+	roleplay_exclusive_notify = 1
 	forbids = "Aligning oneself with a faction exclusively. Acting in an aggressive and violent way on the offensive, not in defense. Abandoning your facility, peers, and community."
 	enforces = "Preaching humanitarianism and valuing human life. Assist and provide medical services to those in need. Provide free education for all those who are willing to learn."
 	objectivesList = list("Leadership recommends the following goal for this week: Establish medical outposts throughout the wasteland","Leadership recommends the following goal for this week: Experiment with and improve medical techniques and equipment", "Leadership recommends the following goal for this week: Replenish the operation's funds through donations and sales.")
@@ -25,6 +26,9 @@
 	if(visualsOnly)
 		return
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/set_vrboard/followers)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/follower_light)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/follower_medium)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/follower_heavy)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/rechargerpistol)
 
 //datum/outfit/job/followers/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -76,7 +80,7 @@ Administrator
 	id =	/obj/item/card/id/silver
 	chemwhiz =	TRUE
 	uniform =	/obj/item/clothing/under/f13/followers
-	suit=	/obj/item/clothing/suit/toggle/labcoat/cmo
+	suit=	/obj/item/clothing/suit/hooded/followerlight
 	shoes =	/obj/item/clothing/shoes/f13/brownie
 	belt =	/obj/item/healthanalyzer/advanced
 	backpack =	/obj/item/storage/backpack/medic
@@ -148,6 +152,7 @@ Practitioner
 	name =	"Followers Doctor"
 	jobtype =	/datum/job/followers/f13practitioner
 	uniform =	/obj/item/clothing/under/f13/followers
+	suit=	/obj/item/clothing/suit/hooded/followerlight
 	id =	/obj/item/card/id/silver
 	chemwhiz =	TRUE
 	backpack =	/obj/item/storage/backpack/medic
@@ -326,7 +331,7 @@ Follower Volunteer
 	belt =	/obj/item/storage/belt/military/army/military/followers
 	id =	/obj/item/card/id/silver
 	uniform =	/obj/item/clothing/under/f13/bodyguard
-	suit =	/obj/item/clothing/suit/armor/vest/big
+	suit = /obj/item/clothing/suit/hooded/followermedium
 	head =	/obj/item/clothing/head/helmet/riot/vaultsec
 	glasses =	/obj/item/clothing/glasses/sunglasses
 	shoes =	/obj/item/clothing/shoes/combat

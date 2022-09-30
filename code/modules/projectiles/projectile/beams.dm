@@ -116,7 +116,7 @@
 	flag = "energy"
 	armour_penetration = 1 //it only does 5 damage.
 	damage_type = "toxin"
-	irradiate = 200
+	irradiate = 250
 	range = 15
 	pass_flags = PASSTABLE | PASSGLASS | PASSGRILLE | PASSCLOSEDTURF
 

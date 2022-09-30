@@ -627,7 +627,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["silicon_feature_flavor_text"]		>> features["silicon_flavor_text"]
 
 	S["feature_ooc_notes"]				>> features["ooc_notes"]
-	S["silicon_flavor_text"] >> features["silicon_flavor_text"]
 
 	//gear loadout
 	if(S["loadout"])

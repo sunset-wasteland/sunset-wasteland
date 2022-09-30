@@ -1115,9 +1115,9 @@
 /obj/item/gun/ballistic/automatic/service/r82
 	name = "upgraded service rifle"
 	desc = "A fully-automatic service rifle with a heavier barrel, optics, and upgraded recoil springs. Issued to high-ranking troopers and specialized units. Chambered in 5.56."
-	icon_state = "R82"
+	icon_state = "m16a1"
 	item_state = "servicerifle"
-	icon_prefix = "r82"
+	icon_prefix = "m16a1"
 	extra_damage = 28
 	fire_delay = 2.5
 	is_automatic = TRUE

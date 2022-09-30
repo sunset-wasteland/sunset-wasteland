@@ -521,6 +521,7 @@
 	icon = 'icons/fallout/clothing/hats.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/head.dmi'
 	item_state = "follower_light"
+	flags_inv = HIDEEARS|HIDEEYES|HIDEHAIR|HIDEFACIALHAIR
 	armor = list("melee" = 15, "bullet" = 15, "laser" = 15, "energy" = 15, "bomb" = 20, "bio" = 50, "rad" = 50, "fire" = 50, "acid" = 80, "wound" = 10)
 
 /obj/item/clothing/suit/hooded/followermedium
@@ -539,6 +540,7 @@
 	icon_state = "follower_medium"
 	icon = 'icons/fallout/clothing/hats.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/head.dmi'
+	flags_inv = HIDEEARS|HIDEEYES|HIDEHAIR|HIDEFACIALHAIR
 	item_state = "follower_medium"
 	armor = list("melee" = 40, "bullet" = 50, "laser" = 35, "energy" = 35, "bomb" = 20, "bio" = 50, "rad" = 50, "fire" = 50, "acid" = 80, "wound" = 40)
 
@@ -557,5 +559,6 @@
 	icon_state = "follower_heavy"
 	icon = 'icons/fallout/clothing/hats.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/head.dmi'
+	flags_inv = HIDEEARS|HIDEEYES|HIDEHAIR|HIDEFACIALHAIR
 	item_state = "follower_heavy"
 	armor = list("melee" = 70, "bullet" = 70, "laser" = 50, "energy" = 35, "bomb" = 20, "bio" = 50, "rad" = 50, "fire" = 50, "acid" = 80, "wound" = 50)

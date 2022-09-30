@@ -229,9 +229,12 @@
 	},
 /area/f13/followers)
 "aaW" = (
-/obj/machinery/vending/wardrobe/medi_wardrobe,
+/obj/machinery/vending/wardrobe/medi_wardrobe{
+	pixel_y = 22;
+	density = 0
+	},
 /turf/open/floor/f13{
-	icon_state = "floorrusty"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/followers)
 "aaY" = (
@@ -879,7 +882,7 @@
 "aAJ" = (
 /obj/structure/closet/crate/freezer/blood,
 /turf/open/floor/f13{
-	icon_state = "floorrusty"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/followers)
 "aAX" = (
@@ -1001,12 +1004,10 @@
 	},
 /area/f13/building/museum)
 "aMs" = (
-/obj/structure/chair/comfy/teal{
+/obj/structure/chair/comfy/black{
 	dir = 4
 	},
-/turf/open/floor/f13{
-	icon_state = "floorrusty"
-	},
+/turf/open/floor/f13/wood,
 /area/f13/followers)
 "aMO" = (
 /obj/structure/lattice/catwalk,
@@ -1399,11 +1400,9 @@
 /turf/open/floor/plasteel/vault,
 /area/f13/brotherhood)
 "bwx" = (
-/obj/structure/table/reinforced,
-/obj/item/storage/firstaid/brute,
-/obj/item/storage/firstaid/brute,
-/turf/open/floor/f13{
-	icon_state = "floorrusty"
+/obj/structure/chair/sofa/corner,
+/turf/open/floor/f13/wood{
+	icon_state = "housewood3-broken"
 	},
 /area/f13/followers)
 "bwO" = (
@@ -5173,7 +5172,7 @@
 	pixel_x = 32
 	},
 /turf/open/floor/f13{
-	icon_state = "floorrusty"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/followers)
 "cfG" = (
@@ -5996,7 +5995,7 @@
 "cyp" = (
 /obj/machinery/vending/coffee,
 /turf/open/floor/f13{
-	icon_state = "floorrusty"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/followers)
 "cyD" = (
@@ -6023,6 +6022,13 @@
 	icon_state = "darkrustysolid"
 	},
 /area/f13/tunnel)
+"cyX" = (
+/obj/machinery/iv_drip,
+/obj/machinery/iv_drip,
+/turf/open/floor/f13{
+	icon_state = "floorrustysolid"
+	},
+/area/f13/followers)
 "czN" = (
 /obj/effect/decal/remains{
 	icon_state = "remains"
@@ -6086,11 +6092,9 @@
 	},
 /area/f13/tunnel)
 "cGq" = (
-/obj/structure/table/reinforced,
-/obj/item/storage/firstaid/o2,
-/obj/item/storage/firstaid/o2,
-/turf/open/floor/f13{
-	icon_state = "floorrusty"
+/obj/machinery/smartfridge/chemistry/preloaded,
+/turf/closed/wall/r_wall/f13vault{
+	icon_state = "2-i"
 	},
 /area/f13/followers)
 "cGQ" = (
@@ -6439,9 +6443,12 @@
 	},
 /area/f13/tunnel)
 "dlV" = (
-/obj/machinery/vending/medical,
+/obj/machinery/vending/medical{
+	pixel_y = 22;
+	density = 0
+	},
 /turf/open/floor/f13{
-	icon_state = "floorrusty"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/followers)
 "dmc" = (
@@ -7337,6 +7344,10 @@
 	icon_state = "darkrustysolid"
 	},
 /area/f13/radiation)
+"eKJ" = (
+/obj/structure/chair/sofa/right,
+/turf/open/floor/f13/wood,
+/area/f13/followers)
 "eLg" = (
 /obj/machinery/hydroponics/soil,
 /obj/item/reagent_containers/food/snacks/grown/cannabis,
@@ -7597,8 +7608,19 @@
 /area/f13/brotherhood)
 "fqy" = (
 /obj/machinery/light,
+/obj/structure/closet/secure_closet/medical1{
+	anchored = 1
+	},
+/obj/item/storage/firstaid/o2,
+/obj/item/storage/firstaid/o2,
+/obj/item/storage/firstaid/toxin,
+/obj/item/storage/firstaid/toxin,
+/obj/item/storage/firstaid/fire,
+/obj/item/storage/firstaid/fire,
+/obj/item/storage/firstaid/brute,
+/obj/item/storage/firstaid/brute,
 /turf/open/floor/f13{
-	icon_state = "floorrusty"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/followers)
 "fqQ" = (
@@ -7741,11 +7763,8 @@
 /turf/open/floor/plating,
 /area/f13/tunnel)
 "fGZ" = (
-/obj/item/kirbyplants{
-	icon_state = "plant-08"
-	},
 /turf/open/floor/f13{
-	icon_state = "floorrusty"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/followers)
 "fHO" = (
@@ -8145,7 +8164,7 @@
 /turf/open/floor/wood/wood_common,
 /area/f13/tunnel)
 "guP" = (
-/obj/machinery/rnd/production/protolathe/department/medical,
+/obj/machinery/rnd/production/protolathe,
 /turf/open/floor/f13{
 	icon_state = "purplefull"
 	},
@@ -9135,9 +9154,7 @@
 	},
 /area/f13/followers)
 "ijZ" = (
-/obj/item/kirbyplants{
-	icon_state = "plant-17"
-	},
+/obj/item/kirbyplants/random,
 /turf/open/floor/f13{
 	icon_state = "purplefull"
 	},
@@ -9385,6 +9402,11 @@
 	dir = 8
 	},
 /area/f13/brotherhood)
+"iGS" = (
+/turf/open/floor/f13/wood{
+	icon_state = "housewood2-broken"
+	},
+/area/f13/followers)
 "iIb" = (
 /obj/structure/chair/booth{
 	icon_state = "booth_east_north"
@@ -11387,8 +11409,9 @@
 	dir = 1;
 	light_color = "#706891"
 	},
+/obj/item/kirbyplants/random,
 /turf/open/floor/f13{
-	icon_state = "floorrusty"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/followers)
 "mby" = (
@@ -11580,6 +11603,15 @@
 /obj/structure/junk/small/tv,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
+"myk" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/structure/chair/sofa/left{
+	dir = 8
+	},
+/turf/open/floor/f13/wood,
+/area/f13/followers)
 "myu" = (
 /obj/structure/table,
 /obj/effect/spawner/lootdrop/f13/medical/rnd/mid,
@@ -11655,7 +11687,7 @@
 "mER" = (
 /obj/structure/closet/secure_closet/personal,
 /turf/open/floor/f13{
-	icon_state = "floorrusty"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/followers)
 "mGm" = (
@@ -12455,11 +12487,11 @@
 	},
 /area/f13/tunnel)
 "ooY" = (
-/obj/structure/chair/comfy/teal{
+/obj/structure/chair/comfy/black{
 	dir = 8
 	},
-/turf/open/floor/f13{
-	icon_state = "floorrusty"
+/turf/open/floor/f13/wood{
+	icon_state = "housewood2-broken"
 	},
 /area/f13/followers)
 "oqB" = (
@@ -12571,9 +12603,12 @@
 /turf/open/floor/wood/wood_common,
 /area/f13/tunnel)
 "oBx" = (
-/obj/machinery/vending/wardrobe/science_wardrobe,
+/obj/machinery/vending/wardrobe/science_wardrobe{
+	pixel_y = 22;
+	density = 0
+	},
 /turf/open/floor/f13{
-	icon_state = "floorrusty"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/followers)
 "oBH" = (
@@ -12603,9 +12638,6 @@
 /area/f13/tunnel)
 "oDj" = (
 /obj/machinery/light,
-/obj/item/kirbyplants{
-	icon_state = "plant-02"
-	},
 /turf/open/floor/f13{
 	icon_state = "bluerustysolid"
 	},
@@ -13277,11 +13309,8 @@
 	},
 /area/f13/bunker)
 "pHi" = (
-/obj/structure/table/reinforced,
-/obj/item/storage/firstaid/fire,
-/obj/item/storage/firstaid/fire,
-/turf/open/floor/f13{
-	icon_state = "floorrusty"
+/turf/open/floor/f13/wood{
+	icon_state = "housewood4-broken"
 	},
 /area/f13/followers)
 "pHr" = (
@@ -13702,6 +13731,10 @@
 /obj/structure/barricade/wooden,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
+"qpm" = (
+/obj/structure/chair/sofa,
+/turf/open/floor/f13/wood,
+/area/f13/followers)
 "qpr" = (
 /obj/machinery/workbench,
 /turf/open/floor/plasteel/darkred/side,
@@ -14051,9 +14084,12 @@
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
 "qRH" = (
-/obj/machinery/vending/wardrobe/chem_wardrobe,
+/obj/machinery/vending/wardrobe/chem_wardrobe{
+	pixel_y = 22;
+	density = 0
+	},
 /turf/open/floor/f13{
-	icon_state = "floorrusty"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/followers)
 "qTW" = (
@@ -14486,10 +14522,8 @@
 	},
 /area/f13/building/massfusion)
 "rMH" = (
-/obj/structure/table/glass,
-/turf/open/floor/f13{
-	icon_state = "floorrusty"
-	},
+/obj/structure/table/wood,
+/turf/open/floor/f13/wood,
 /area/f13/followers)
 "rNn" = (
 /obj/machinery/smartfridge/bottlerack,
@@ -14863,6 +14897,9 @@
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
+/area/f13/followers)
+"sqy" = (
+/turf/open/floor/f13/wood,
 /area/f13/followers)
 "srb" = (
 /obj/item/storage/trash_stack,
@@ -16093,11 +16130,9 @@
 /turf/open/floor/plasteel/f13,
 /area/f13/tunnel)
 "uAZ" = (
-/obj/structure/table/reinforced,
-/obj/item/storage/firstaid/toxin,
-/obj/item/storage/firstaid/toxin,
+/obj/item/kirbyplants/random,
 /turf/open/floor/f13{
-	icon_state = "floorrusty"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/followers)
 "uBh" = (
@@ -16814,7 +16849,7 @@
 	},
 /obj/structure/closet,
 /turf/open/floor/f13{
-	icon_state = "floorrusty"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/followers)
 "vOh" = (
@@ -17217,6 +17252,12 @@
 /obj/item/circuitboard/machine/mining_equipment_vendor,
 /obj/item/circuitboard/machine/destructive_analyzer,
 /obj/structure/rack/shelf_metal,
+/obj/item/circuitboard/machine/colormate,
+/obj/item/circuitboard/machine/cell_charger,
+/obj/item/circuitboard/machine/cell_charger,
+/obj/item/circuitboard/machine/bloodbankgen,
+/obj/item/circuitboard/machine/plantgenes,
+/obj/item/circuitboard/machine/medipen_refiller,
 /turf/open/floor/f13{
 	icon_state = "purplefull"
 	},
@@ -17285,7 +17326,6 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/obj/machinery/iv_drip,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -17353,7 +17393,7 @@
 	dir = 8
 	},
 /turf/open/floor/f13{
-	icon_state = "floorrusty"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/followers)
 "wMe" = (
@@ -17550,11 +17590,17 @@
 /turf/open/floor/plasteel/floorgrime,
 /area/f13/tunnel)
 "xeZ" = (
-/obj/item/kirbyplants{
-	icon_state = "plant-05"
+/obj/structure/table/wood,
+/obj/item/reagent_containers/food/drinks/drinkingglass{
+	pixel_y = 4;
+	pixel_x = 6
 	},
-/turf/open/floor/f13{
-	icon_state = "floorrusty"
+/obj/item/reagent_containers/food/drinks/drinkingglass{
+	pixel_y = 9;
+	pixel_x = -7
+	},
+/turf/open/floor/f13/wood{
+	icon_state = "housewood3-broken"
 	},
 /area/f13/followers)
 "xfv" = (
@@ -34609,8 +34655,8 @@ wKP
 txF
 txF
 yjR
-wZj
-wZj
+yjR
+yjR
 yjR
 yjR
 yjR
@@ -34865,10 +34911,10 @@ dAL
 txF
 txF
 oDj
-yjR
-yjR
-yjR
-yjR
+cGq
+gpd
+jpC
+fVM
 qKn
 loH
 xEA
@@ -35123,9 +35169,9 @@ hor
 txF
 pnV
 yjR
-gpd
-jpC
-fVM
+yle
+yle
+yle
 qzp
 yle
 ije
@@ -37175,7 +37221,7 @@ yjR
 mER
 vOc
 mER
-yle
+fGZ
 nnA
 nuA
 jcp
@@ -37954,7 +38000,7 @@ yle
 yle
 yle
 yle
-yle
+fGZ
 rMH
 yjR
 wZj
@@ -38207,11 +38253,11 @@ yle
 xkv
 yle
 yle
+vuI
+vuI
 yle
 yle
-yle
-yle
-yle
+fGZ
 ooY
 yjR
 wZj
@@ -38460,13 +38506,13 @@ yjR
 mER
 cfF
 mER
-yle
+fGZ
 nnA
 yle
-xeZ
 yle
 yle
-fGZ
+yle
+yle
 yle
 cyp
 yjR
@@ -38720,12 +38766,12 @@ yjR
 yjR
 yjR
 maO
-xkv
-vuI
-vuI
-xkv
+fGZ
+fGZ
+fGZ
+yle
+yle
 fqy
-yjR
 yjR
 wZj
 wZj
@@ -38976,10 +39022,10 @@ wZj
 wZj
 wZj
 yjR
-yle
-yle
-yle
-yle
+eKJ
+xeZ
+iGS
+fGZ
 yle
 yle
 aAJ
@@ -39233,11 +39279,11 @@ bKb
 xXK
 wZj
 yjR
+qpm
+rMH
+sqy
+fGZ
 yle
-bwx
-pHi
-uAZ
-cGq
 yle
 aAJ
 yjR
@@ -39490,13 +39536,13 @@ bKb
 xXK
 wZj
 yjR
-yle
+bwx
+myk
+pHi
+uAZ
 wHC
-yjR
-yjR
-wHC
 yle
-yjR
+cyX
 yjR
 wZj
 dlm

@@ -16,7 +16,7 @@
 	end_duration = 100
 	end_message = "<span class='notice'>The cold snap dies down, it should be safe to go outside again.</span>"
 
-	area_types = list(/area/f13/wasteland, /area/f13/desert, /area/f13/farm, /area/f13/forest, /area/f13/ruins, /area/f13/mountain_area)
+	area_types = list(/area/f13/wasteland, /area/f13/desert, /area/f13/farm, /area/f13/forest, /area/f13/ruins)
 	protected_areas = list(/area/shuttle)
 	target_trait = ZTRAIT_SURFACE
 
@@ -26,3 +26,8 @@
 
 /datum/weather/cold_wave/weather_act(mob/living/L)
 	L.adjust_bodytemperature(-rand(5, 15))
+
+/datum/weather/cold_wave/casper
+	name = "casper mountain cold wave"
+	area_types = list(/area/f13/mountain_area)
+	probability = 10

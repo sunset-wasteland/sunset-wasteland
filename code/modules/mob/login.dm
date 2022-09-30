@@ -104,6 +104,7 @@
 
 	AddElement(/datum/element/weather_listener, /datum/weather/rain, ZTRAIT_SURFACE, GLOB.rain_sounds)
 	AddElement(/datum/element/weather_listener, /datum/weather/rain/eventarea, ZTRAIT_SURFACE, GLOB.rain_sounds)
+	AddElement(/datum/element/weather_listener, /datum/weather/snow_storm, ZTRAIT_SURFACE, GLOB.ash_storm_sounds)
 	AddElement(/datum/element/weather_listener, /datum/weather/ash_storm, ZTRAIT_ASHSTORM, GLOB.ash_storm_sounds)
 	AddElement(/datum/element/weather_listener, /datum/weather/ash_storm/sandstorm, ZTRAIT_SURFACE, GLOB.ash_storm_sounds)
 	AddElement(/datum/element/weather_listener, /datum/weather/ash_storm/dust_event, ZTRAIT_SURFACE, GLOB.ash_storm_sounds)

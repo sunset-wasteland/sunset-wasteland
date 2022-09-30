@@ -2131,16 +2131,19 @@
 	},
 /area/vertibird_interior)
 "gm" = (
-/obj/structure/closet/crate/medical,
-/obj/item/storage/firstaid/ancient,
+/obj/structure/window/reinforced/spawner/north,
+/obj/structure/chair/comfy/shuttle{
+	desc = "A comfortable, secure seat. It has a futuristic vouge feel.";
+	dir = 4;
+	name = "prewar lounge chair"
+	},
 /turf/open/floor/f13,
 /area/vertibird_interior)
 "gn" = (
-/obj/structure/closet/crate{
-	name = "emergency supplies crate"
-	},
 /obj/machinery/light,
-/obj/item/storage/crayons,
+/obj/machinery/door/window/brigdoor/left/directional/north{
+	req_access_txt = "134"
+	},
 /turf/open/floor/f13,
 /area/vertibird_interior)
 "go" = (
@@ -2158,15 +2161,10 @@
 	},
 /area/vertibird_interior/temp)
 "gr" = (
-/obj/structure/closet/crate{
-	name = "emergency supplies crate"
+/obj/structure/window/reinforced/spawner/north,
+/obj/structure/chair/comfy/shuttle{
+	dir = 8
 	},
-/obj/item/reagent_containers/food/snacks/f13/mre,
-/obj/item/reagent_containers/food/snacks/f13/mre,
-/obj/item/reagent_containers/food/snacks/f13/mre,
-/obj/item/reagent_containers/food/snacks/f13/mre,
-/obj/item/reagent_containers/food/snacks/f13/mre,
-/obj/item/reagent_containers/food/snacks/f13/mre,
 /turf/open/floor/f13,
 /area/vertibird_interior)
 "gt" = (
@@ -2224,6 +2222,15 @@
 /obj/effect/turf_decal/stripes/line,
 /turf/open/floor/plasteel,
 /area/centcom/evac)
+"hD" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 4
+	},
+/obj/effect/turf_decal/stripes/red/corner,
+/turf/open/floor/f13{
+	icon_state = "darkdirtysolid"
+	},
+/area/vertibird_interior)
 "hQ" = (
 /obj/structure/table/reinforced,
 /obj/item/storage/fancy/donut_box,
@@ -3269,6 +3276,10 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/centcom/evac)
+"lF" = (
+/obj/effect/turf_decal/stripes/red/line,
+/turf/open/floor/f13,
+/area/vertibird_interior)
 "lI" = (
 /turf/open/indestructible/binary,
 /area/f13/underground/mountain)
@@ -8462,6 +8473,17 @@
 /obj/item/book/manual/random,
 /turf/open/floor/mineral/titanium,
 /area/shuttle/escape/backup)
+"KA" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 8
+	},
+/obj/effect/turf_decal/stripes/red/corner{
+	dir = 8
+	},
+/turf/open/floor/f13{
+	icon_state = "darkdirtysolid"
+	},
+/area/vertibird_interior)
 "KD" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table/wood/poker,
@@ -9661,6 +9683,12 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/centcom/evac)
+"Zd" = (
+/obj/machinery/holopad{
+	secure = 1
+	},
+/turf/open/floor/f13,
+/area/vertibird_interior)
 "Zk" = (
 /obj/effect/turf_decal/trimline/yellow/filled/corner,
 /obj/effect/turf_decal/stripes/corner{
@@ -58206,7 +58234,7 @@ gg
 ga
 gk
 gk
-gk
+hD
 ga
 ga
 aw
@@ -58463,7 +58491,7 @@ gh
 SU
 gg
 gg
-gg
+lF
 gm
 ga
 aw
@@ -58716,11 +58744,11 @@ aw
 ga
 ga
 gd
+Zd
 gg
 gg
 gg
-gg
-gg
+lF
 gn
 ga
 aw
@@ -58977,7 +59005,7 @@ gh
 gg
 gg
 gg
-gg
+lF
 gr
 ga
 aw
@@ -59234,7 +59262,7 @@ gi
 ga
 gl
 gl
-gl
+KA
 ga
 ga
 aw

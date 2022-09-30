@@ -5,8 +5,8 @@
 	faction = FACTION_ENCLAVE
 	exp_type = EXP_TYPE_ENCLAVE
 
-	access = list(ACCESS_ENCLAVE)
-	minimal_access = list(ACCESS_ENCLAVE)
+	access = list(ACCESS_ENCLAVE, ACCESS_SECURITY, ACCESS_AI_UPLOAD)
+	minimal_access = list(ACCESS_ENCLAVE, ACCESS_SECURITY, ACCESS_AI_UPLOAD)
 	forbids = "Enclave taboos: Aiding Brotherhood or Republic members in any way no matter how small."
 	enforces = "Enclave rules: Stay in uniform. Act mature and respectful. Obey orders and always remember you are fighting for the only true legitimate power in this land of savages. Wearing gasmasks outside the compound is encouraged but not required."
 	objectivesList = list("Department of Defense advisory: Collect resources, attrition is depleting our reserves.", "Science Divison advisory: Capture human subjects for experiments, alive.")
@@ -51,7 +51,7 @@
 	flag = F13USLT
 	total_positions = 1
 	spawn_positions = 1
-	access = list(ACCESS_ENCLAVE, ACCESS_CHANGE_IDS, ACCESS_ENCLAVE_COMMAND)
+	access = list(ACCESS_ENCLAVE, ACCESS_CHANGE_IDS, ACCESS_ENCLAVE_COMMAND, ACCESS_SECURITY, ACCESS_AI_UPLOAD)
 	description = "You're a small garrison within a side entrance of a far larger complex. This complex sits within the Casper mountain range. Your goal, primarily, is to collect organic material. Preferably alive, for the sake of testing. <br>\
 	Now that the lore is out of the way, just make the round fun. You set the policies and the attitude of the Enclave this week."
 	supervisors = "Enclave Department of the Army."
@@ -127,7 +127,7 @@
 	flag = F13USGYSGT
 	total_positions = 1
 	spawn_positions = 1
-	access = list(ACCESS_ENCLAVE, ACCESS_CHANGE_IDS, ACCESS_ENCLAVE_COMMAND)
+	access = list(ACCESS_ENCLAVE, ACCESS_CHANGE_IDS, ACCESS_ENCLAVE_COMMAND, ACCESS_SECURITY, ACCESS_AI_UPLOAD)
 	description = "You're a small garrison within a side entrance of a far larger complex. This complex sits within the Casper mountain range. Second in command after Lieutenant, your role is to direct their orders directly to the Sergeants and regular troops."
 	supervisors = "The Lieutenant."
 	outfit = /datum/outfit/job/enclave/peacekeeper/f13gysergeant
@@ -378,7 +378,7 @@
 	outfit = /datum/outfit/job/enclave/noncombat/enclavesci
 	exp_requirements = 1000
 	roleplay_exclusive_notify = 1
-	access = list(ACCESS_ENCLAVE, ACCESS_ENCLAVE_COMMAND)
+	access = list(ACCESS_ENCLAVE, ACCESS_ENCLAVE_COMMAND, ACCESS_SECURITY, ACCESS_AI_UPLOAD)
 
 /datum/outfit/job/enclave/noncombat/enclavesci
 	name = "Enclave Scientist"
@@ -429,7 +429,7 @@
 	req_admin_notify = 1
 	roleplay_exclusive_notify = 1
 	exp_requirements = 1000
-	access = list(ACCESS_ENCLAVE, ACCESS_ENCLAVE_COMMAND)
+	access = list(ACCESS_ENCLAVE, ACCESS_ENCLAVE_COMMAND, ACCESS_SECURITY, ACCESS_AI_UPLOAD)
 
 /datum/outfit/job/enclave/noncombat/enclavepilot
 	name = "Enclave Pilot Officer"

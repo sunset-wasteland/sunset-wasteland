@@ -457,3 +457,16 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 	gain_text = "<span class='notice'>You can't smell anything!</span>"
 	lose_text = "<span class='notice'>You can smell again!</span>"
 	medical_record_text = "Patient suffers from anosmia and is incapable of smelling gases or particulates."
+
+/datum/quirk/cursed
+	name = "Cursed"
+	desc = "You've been cursed, to put it bluntly. Your time in this world is running short, with nothing you can do to change that."
+	value = -6
+	gain_text = "<span class='danger'>What a waste of a life.</span>"
+	lose_text = "<span class='notice'>You feel as if the gods have granted you a second chance. Use it.</span>"
+	medical_record_text = "Patient displays signs of distress when they feel no one is looking."
+
+/datum/quirk/cursed/post_add()
+	. = ..()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.apply_necropolis_curse_quirk()

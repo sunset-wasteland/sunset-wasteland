@@ -731,6 +731,9 @@
 		C.apply_curse(set_curse)
 		C.duration += duration * 0.5 //additional curses add half their duration
 
+/mob/living/proc/apply_necropolis_curse_quirk(set_curse, duration = -1)//Infinite
+	set_curse = list(CURSE_BLINDING, CURSE_SPAWNING, CURSE_WASTING, CURSE_GRASPING)
+
 /datum/status_effect/necropolis_curse
 	id = "necrocurse"
 	duration = 10 MINUTES //you're cursed for 10 minutes have fun

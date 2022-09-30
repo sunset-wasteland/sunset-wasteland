@@ -2073,11 +2073,10 @@
 "gd" = (
 /obj/machinery/blackbox_recorder,
 /obj/machinery/light{
-	dir = 1;
-	light_color = "#706891"
+	dir = 1
 	},
 /turf/open/floor/f13{
-	icon_state = "floordirtysolid"
+	icon_state = "darkdirtysolid"
 	},
 /area/vertibird_interior)
 "ge" = (
@@ -2184,6 +2183,12 @@
 	name = "CentCom Warehouse"
 	},
 /area/f13/underground/mountain)
+"gZ" = (
+/obj/machinery/computer/camera_advanced/verti,
+/turf/open/floor/f13{
+	icon_state = "floordirtysolid"
+	},
+/area/vertibird_interior)
 "hd" = (
 /obj/structure/sign/nanotrasen,
 /turf/closed/indestructible/riveted,
@@ -9303,6 +9308,12 @@
 	dir = 8
 	},
 /area/f13/tcoms)
+"SU" = (
+/obj/machinery/vending/wallmed{
+	pixel_x = -32
+	},
+/turf/open/floor/f13,
+/area/vertibird_interior)
 "SY" = (
 /obj/structure/simple_door/metal/barred,
 /obj/effect/decal/cleanable/dirt,
@@ -58449,7 +58460,7 @@ ga
 gb
 gc
 gh
-gg
+SU
 gg
 gg
 gg
@@ -58960,7 +58971,7 @@ fZ
 fZ
 aw
 ga
-gb
+gZ
 ge
 gh
 gg

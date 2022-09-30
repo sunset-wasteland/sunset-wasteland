@@ -331,7 +331,7 @@ Follower Volunteer
 	belt =	/obj/item/storage/belt/military/army/military/followers
 	id =	/obj/item/card/id/silver
 	uniform =	/obj/item/clothing/under/f13/bodyguard
-	/obj/item/clothing/suit/hooded/followermedium
+	suit = /obj/item/clothing/suit/hooded/followermedium
 	head =	/obj/item/clothing/head/helmet/riot/vaultsec
 	glasses =	/obj/item/clothing/glasses/sunglasses
 	shoes =	/obj/item/clothing/shoes/combat

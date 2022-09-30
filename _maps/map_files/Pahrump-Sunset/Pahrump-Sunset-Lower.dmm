@@ -878,6 +878,7 @@
 	req_access_txt = "255"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/lootdrop/f13/armor/bos_vault_armor,
 /turf/open/floor/plasteel/vault/side,
 /area/f13/brotherhood)
 "aAJ" = (
@@ -7110,21 +7111,6 @@
 	icon_state = "greenrustyfull"
 	},
 /area/f13/tunnel)
-"eaY" = (
-/obj/structure/window/reinforced/spawner/north,
-/obj/structure/window/reinforced/spawner/east,
-/obj/structure/window/reinforced/spawner,
-/obj/structure/table/reinforced,
-/obj/structure/table/reinforced,
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/door/window/brigdoor{
-	dir = 8;
-	req_access_txt = "255"
-	},
-/turf/open/floor/plasteel/vault/side{
-	dir = 8
-	},
-/area/f13/brotherhood)
 "ebV" = (
 /obj/item/storage/box/lights/tubes,
 /turf/open/floor/plasteel/f13/vault_floor/yellow/whiteyellowfull,
@@ -8029,13 +8015,6 @@
 	icon_state = "darkrustysolid"
 	},
 /area/f13/radiation)
-"fAE" = (
-/obj/structure/window/reinforced/spawner,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/vault/side{
-	dir = 1
-	},
-/area/f13/brotherhood)
 "fCT" = (
 /turf/open/floor/f13{
 	icon_state = "rampdowntop"
@@ -8102,20 +8081,6 @@
 	icon_state = "greenrustyfull"
 	},
 /area/f13/tunnel)
-"fIn" = (
-/obj/structure/window/reinforced/spawner/north,
-/obj/structure/window/reinforced/spawner,
-/obj/structure/window/reinforced/spawner/west,
-/obj/structure/table/reinforced,
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/door/window/brigdoor{
-	dir = 4;
-	req_access_txt = "255"
-	},
-/turf/open/floor/plasteel/vault/side{
-	dir = 4
-	},
-/area/f13/brotherhood)
 "fII" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 4
@@ -12236,10 +12201,16 @@
 	},
 /area/f13/brotherhood/armory)
 "mqg" = (
-/obj/structure/window/reinforced/spawner,
-/obj/structure/window/reinforced/spawner/east,
 /obj/structure/window/reinforced/spawner/north,
+/obj/structure/window/reinforced/spawner,
+/obj/structure/window/reinforced/spawner/west,
+/obj/structure/table/reinforced,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/window/brigdoor{
+	dir = 4;
+	req_access_txt = "255"
+	},
+/obj/effect/spawner/lootdrop/f13/armor/bos_vault,
 /turf/open/floor/plasteel/vault/side{
 	dir = 4
 	},
@@ -13723,14 +13694,6 @@
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
 /turf/open/floor/f13/wood,
 /area/f13/building)
-"oTd" = (
-/obj/structure/window/reinforced/spawner/west,
-/obj/structure/window/reinforced/spawner/east,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/vault/side{
-	dir = 1
-	},
-/area/f13/brotherhood)
 "oTg" = (
 /obj/machinery/light/small{
 	dir = 8
@@ -17512,10 +17475,17 @@
 	},
 /area/f13/bunker)
 "uUY" = (
-/obj/structure/window/reinforced/spawner,
-/obj/structure/window/reinforced/spawner/west,
 /obj/structure/window/reinforced/spawner/north,
+/obj/structure/window/reinforced/spawner/east,
+/obj/structure/window/reinforced/spawner,
+/obj/structure/table/reinforced,
+/obj/structure/table/reinforced,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/window/brigdoor{
+	dir = 8;
+	req_access_txt = "255"
+	},
+/obj/effect/spawner/lootdrop/f13/armor/bos_vault,
 /turf/open/floor/plasteel/vault/side{
 	dir = 8
 	},
@@ -78982,7 +78952,7 @@ aae
 oVq
 iko
 dIo
-fIn
+mqg
 dIo
 mqg
 oVq
@@ -79497,7 +79467,7 @@ oVq
 sEc
 duV
 hpP
-fAE
+mpk
 cdu
 tpb
 vuj
@@ -79755,7 +79725,7 @@ aAb
 hpP
 sbH
 hpP
-oTd
+mpk
 soO
 oCe
 gYI
@@ -80011,7 +79981,7 @@ oVq
 sEc
 duV
 hpP
-fAE
+mpk
 cdu
 oVq
 mNH
@@ -80524,7 +80494,7 @@ aae
 oVq
 sWg
 hSI
-eaY
+uUY
 hSI
 uUY
 oVq

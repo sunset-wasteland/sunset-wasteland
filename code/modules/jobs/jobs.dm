@@ -44,25 +44,29 @@ GLOBAL_LIST_INIT(civilian_positions, list(
 GLOBAL_LIST_INIT(nonhuman_positions, list(
 	"AI",
 	"Cyborg",
+	"Followers Robot",
 	ROLE_PAI,
 	))
 
 GLOBAL_LIST_INIT(command_positions, list(
-	"Head Paladin",
-	"Head Knight",
-	"Head Scribe", //Wasn't here before. Still technically command, I put it here - Kitsunemitsu
+	"Baron",
+	"Castellan",
+	"Knight-Commander",
+	"Keeper",
 
 	"NCR Captain",
 	"NCR Veteran Ranger",
 
 	"Legion Centurion",
 
-	"Chief of Police",
+	"Sheriff",
+	"Banker",
+	"Mayor",
 
 	"Enclave Lieutenant",
 
-	"Noyan",
-	"Steward",
+//	"Noyan",
+//	"Steward",
 	))
 
 GLOBAL_LIST_INIT(silicon_whitelist_positions, list(
@@ -71,17 +75,17 @@ GLOBAL_LIST_INIT(silicon_whitelist_positions, list(
 //NCR Assistant and Legion Camp Follower re-added to whitelisting.  BoS Initiate removed from whitelist.
 
 GLOBAL_LIST_INIT(faction_whitelist_positions, list(
-"Head Scribe",
-"Elder",
-"Head Paladin",
-"Head Knight",
-"Head Scribe",
-"Senior Paladin",
+"Baron",
+"Castellan",
+"Knight-Commander",
+"Keeper",
+"Paladin Marshal",
 "Paladin",
-"Senior Knight",
+"Knight-Captain",
 "Knight",
-"Senior Scribe",
+"Librarian",
 "Scribe",
+"Initiate",
 "BoS Off-Duty",
 
 "Legion Centurion",
@@ -97,13 +101,7 @@ GLOBAL_LIST_INIT(faction_whitelist_positions, list(
 "Legion Auxilia",
 "Legion Slave",
 
-"Mayor",
-"Sheriff",
-"Deputy",
 "Shopkeeper",
-"Doctor",
-"Prospector",
-"Detective",
 
 "Enclave Lieutenant",
 "Enclave Gunnery Sergeant",
@@ -112,13 +110,9 @@ GLOBAL_LIST_INIT(faction_whitelist_positions, list(
 "Enclave Specialist",
 "Enclave Scientist",
 "Enclave Private",
+"Enclave Pilot Officer",
 "Enclave Bunker Duty",
-
-"Chief",
-"Shaman",
-"Head Hunter",
-"Druid",
-"Hunter",
+"Synthetic",
 
 "Noyan",
 "Steward",
@@ -129,33 +123,36 @@ GLOBAL_LIST_INIT(faction_whitelist_positions, list(
 "Followers Administrator",
 "Followers Doctor",
 "Followers Guard",
+"Followers Robot",
 
 "Cyborg",
-"Overseer",
-"Chief of Security",
-"Vault-tec Doctor",
-"Vault-tec Scientist",
-"Vault-tec Security",
-"Vault-tec Engineer",
 ))
 
 GLOBAL_LIST_INIT(brotherhood_positions, list(
-	"Head Paladin",
-	"Head Knight",
-	"Head Scribe",
-	"Senior Paladin",
+	"Baron",
+	"Castellan",
+	"Knight-Commander",
+	"Keeper",
+	"Paladin Marshal",
 	"Paladin",
-	"Senior Knight",
+	"Knight-Captain",
 	"Knight",
-	"Senior Scribe",
+	"Librarian",
 	"Scribe",
+	"BoS Off-Duty",
 	"Initiate",
 ))
 
-GLOBAL_LIST_INIT(oasis_positions, list(
+GLOBAL_LIST_INIT(bighorn_positions, list(
 	"Shopkeeper",
+	"Sheriff",
+	"Mayor",
+	"Deputy",
+	"Banker",
 	"Barkeep",
+	"Preacher",
 	"Citizen",
+	"Secretary",
 ))
 
 GLOBAL_LIST_INIT(legion_command_positions, list(
@@ -211,26 +208,16 @@ GLOBAL_LIST_INIT(ncr_positions, list(
 ))
 
 GLOBAL_LIST_INIT(vault_positions, list(
-	"Vault-tec Doctor",
-	"Vault-tec Scientist",
-	"Vault-tec Security",
-	"Vault-tec Engineer",
-	"Vault Dweller",
 	"Cyborg",
 ))
 
 GLOBAL_LIST_INIT(wasteland_positions, list(
-	"Den Mob Boss",
-	"Den Mob Enforcer",
-	"Den Doctor",
 	"Outlaw",
-	"Faithful",
 	"Vigilante",
-	"Preacher",
 	"Tribal",
 	"Wastelander",
 ))
-
+/*
 GLOBAL_LIST_INIT(khan_positions, list(
 	"Noyan",
 	"Steward",
@@ -239,16 +226,23 @@ GLOBAL_LIST_INIT(khan_positions, list(
 	"Kipchak",
 	"Mangudai",
 ))
+*/
+GLOBAL_LIST_INIT(khan_positions, list(
+	"Khan Enforcer",
+	"Khan Chemist",
+))
 
 GLOBAL_LIST_INIT(enclave_positions, list(
 	"Enclave Lieutenant",
-	"Enclave Gunnery Sergeant",
+	"Enclave Platoon Sergeant",
 	"Enclave Sergeant",
 	"Enclave Armored Infantry",
 	"Enclave Specialist",
 	"Enclave Scientist",
+	"Enclave Pilot Officer",
 	"Enclave Private",
 	"Enclave Bunker Duty",
+	"Synthetic",
 ))
 
 GLOBAL_LIST_INIT(security_positions, list(
@@ -259,23 +253,13 @@ GLOBAL_LIST_INIT(silicon_positions, list(
 	"Mr. Handy",
 ))
 
-GLOBAL_LIST_INIT(tribal_positions, list(
-	"Chief",
-	"Shaman",
-	"Head Hunter",
-	"Druid",
-	"Villager",
-	"Hunter",
-	"Spirit-Pledged",
-	"Guardian",
-))
-
 GLOBAL_LIST_INIT(followers_positions, list(
 	"Followers Administrator",
 	"Followers Doctor",
 	"Followers Guard",
 	"Followers Volunteer",
 	"Followers Scientist",
+	"Followers Robot",
 ))
 
 // job categories for rendering the late join menu
@@ -285,9 +269,9 @@ GLOBAL_LIST_INIT(position_categories, list(
 	EXP_TYPE_BROTHERHOOD = list("jobs" = brotherhood_positions, "color" = "#95a5a6"),
 	EXP_TYPE_LEGION = list("jobs" = legion_positions, "color" = "#f81717"),
 	EXP_TYPE_WASTELAND = list("jobs" = wasteland_positions, "color" = "#5a5a5a"),
-	EXP_TYPE_ENCLAVE = list("jobs" = enclave_positions, "color" = "#323232"),
+	EXP_TYPE_ENCLAVE = list("jobs" = enclave_positions, "color" = "#434944"),
 	EXP_TYPE_KHAN = list("jobs" = khan_positions, "color" = "#006666"),
-	EXP_TYPE_OASIS = list("jobs" = oasis_positions, "color" = "#d7b088"),
+	EXP_TYPE_BIGHORN = list("jobs" = bighorn_positions, "color" = "#d7b088"),
 ))
 
 GLOBAL_LIST_INIT(exp_jobsmap, list(
@@ -301,11 +285,11 @@ GLOBAL_LIST_INIT(exp_jobsmap, list(
 	EXP_TYPE_SILICON = list("titles" = list("AI","Cyborg")),
 	EXP_TYPE_SERVICE = list("titles" = civilian_positions),
 
-	EXP_TYPE_FALLOUT = list("titles" = brotherhood_positions | oasis_positions | legion_positions | ncr_positions | vault_positions | wasteland_positions | tribal_positions | followers_positions | enclave_positions),
+	EXP_TYPE_FALLOUT = list("titles" = brotherhood_positions | bighorn_positions | legion_positions | ncr_positions | vault_positions | wasteland_positions | followers_positions | enclave_positions),
 
 	EXP_TYPE_OUTLAW = list("titles" = list("Outlaw","Den Mob Boss","Den Mob Enforcer","Den Doctor",)),
 	EXP_TYPE_BROTHERHOOD = list("titles" = brotherhood_positions),
-	EXP_TYPE_OASIS = list("titles" = oasis_positions ),
+	EXP_TYPE_BIGHORN = list("titles" = bighorn_positions),
 	EXP_TYPE_LEGION = list("titles" = legion_positions),
 	EXP_TYPE_NCR = list("titles" = ncr_positions),
 	EXP_TYPE_VAULT = list("titles" = vault_positions),
@@ -317,7 +301,6 @@ GLOBAL_LIST_INIT(exp_jobsmap, list(
 	EXP_TYPE_SCRIBE = list("titles" = list("Scribe")),
 	EXP_TYPE_DECANUS = list("titles" = list("Legion Decanus")),
 
-	EXP_TYPE_TRIBALCOMMAND = list("titles" = list("Chief","Shaman","Head Hunter")),
 	EXP_TYPE_FOLLOWERSCOMMAND = list("titles" = list("Followers Administrator")),
 	EXP_TYPE_NCRCOMMAND = list("titles" = list("NCR Lieutenant","NCR Sergeant First Class","NCR Captain", "NCR Veteran Ranger"))
 ))

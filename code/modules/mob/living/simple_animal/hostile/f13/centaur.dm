@@ -22,6 +22,7 @@
 	wound_bonus = 0
 	retreat_distance = 5
 	minimum_distance = 5
+	footstep_type = FOOTSTEP_MOB_CRAWL
 
 	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
 	robust_searching = TRUE
@@ -30,7 +31,6 @@
 	emote_see = list("screeches")
 	a_intent = INTENT_HARM
 	attack_verb_simple = "whipped"
-	attack_sound = 'sound/hallucinations/growl1.ogg'
 	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
 	unsuitable_atmos_damage = 20
 	stat_attack = UNCONSCIOUS
@@ -90,13 +90,6 @@
 	var/static/list/abom_sounds
 	deathmessage = "wails as its form shudders and violently comes to a stop."
 	death_sound = 'sound/voice/abomburning.ogg'
-
-/mob/living/simple_animal/hostile/abomination/AttackingTarget()
-	. = ..()
-	if(. && ishuman(target))
-		var/mob/living/carbon/human/H = target
-		var/choice = pick(1, 1, 2, 2, 3, 4)
-		H.reagents.add_reagent(/datum/reagent/toxin/FEV_solution, choice)
 
 /mob/living/simple_animal/hostile/abomination/Initialize()
 	. = ..()

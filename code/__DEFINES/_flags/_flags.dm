@@ -24,8 +24,8 @@ GLOBAL_LIST_INIT(bitflags, list(1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 204
 #define ALL_CARDINALS (NORTH|SOUTH|EAST|WEST)
 
 // for /datum/var/datum_flags
-#define DF_USE_TAG		(1<<0)
-#define DF_VAR_EDITED	(1<<1)
+#define DF_USE_TAG (1<<0)
+#define DF_VAR_EDITED (1<<1)
 #define DF_ISPROCESSING (1<<2)
 
 //FLAGS BITMASK
@@ -56,6 +56,8 @@ GLOBAL_LIST_INIT(bitflags, list(1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 204
 #define BLOCK_FACE_ATOM_1			(1<<17)
 /// Use when this shouldn't be obscured by large icons.
 #define CRITICAL_ATOM_1 (1<<20)
+/// Should we use the initial icon for display? Mostly used by overlay only objects
+#define HTML_USE_INITAL_ICON_1 (1<<21)
 
 //turf-only flags
 #define NOJAUNT_1					(1<<0)
@@ -80,15 +82,18 @@ GLOBAL_LIST_INIT(bitflags, list(1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 204
 #define PASSBLOB		(1<<3)
 #define PASSMOB			(1<<4)
 #define PASSCLOSEDTURF	(1<<5)
+/// Let thrown things past us. **ONLY MEANINGFUL ON pass_flags_self!**
 #define LETPASSTHROW	(1<<6)
+#define	PASSMACHINE		(1<<7)
+#define PASSSTRUCTURE	(1<<8)
 
 //Movement Types
 #define GROUND				(1<<0)
 #define FLYING				(1<<1)
 #define VENTCRAWLING		(1<<2)
 #define FLOATING			(1<<3)
-///When moving, will Bump()/Cross()/Uncross() everything, but won't be stopped.
-#define UNSTOPPABLE			(1<<4)
+/// When moving, will Cross()/Uncross() everything, but won't stop or Bump() anything.
+#define PHASING			(1<<4)
 ///Applied if you're crawling around on the ground/resting.
 #define CRAWLING			(1<<5)
 

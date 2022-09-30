@@ -75,6 +75,8 @@
 	var/heat_level_3_damage = HEAT_GAS_DAMAGE_LEVEL_3
 	var/heat_damage_type = BURN
 
+	var/smell_sensitivity = 1
+
 	var/crit_stabilizing_reagent = /datum/reagent/medicine/epinephrine
 
 /obj/item/organ/lungs/New()
@@ -241,12 +243,18 @@
 		else if(alert_category)
 			H.clear_alert(alert_category)
 	var/list/breath_reagents = GLOB.gas_data.breath_reagents
+	var/static/datum/reagents/reagents_holder
+	if(!reagents_holder)
+		reagents_holder = new
+	reagents_holder.clear_reagents()
+	reagents_holder.chem_temp = breath.return_temperature()
 	for(var/gas in breath.get_gases())
 		if(gas in breath_reagents)
 			var/datum/reagent/R = breath_reagents[gas]
-			H.reagents.add_reagent(R, PP(breath,gas))
+			reagents_holder.add_reagent(R, breath.get_moles(gas) * initial(R.molarity))
 			mole_adjustments[gas] = (gas in mole_adjustments) ? mole_adjustments[gas] - breath.get_moles(gas) : -breath.get_moles(gas)
-
+	reagents_holder.reaction(H, VAPOR, from_gas = 1)
+	H.smell(breath)
 	for(var/gas in mole_adjustments)
 		breath.adjust_moles(gas, mole_adjustments[gas])
 
@@ -470,6 +478,7 @@
 	safe_breath_min = 13
 	safe_breath_max = 100
 	emp_vulnerability = 2
+	smell_sensitivity = 1.5
 
 
 /obj/item/organ/lungs/cybernetic/emp_act()
@@ -484,7 +493,6 @@
 
 	desc = "A more advanced version of the stock cybernetic lungs. Features the ability to filter out various airbourne toxins and carbon dioxide even at heavy levels."
 	icon_state = "lungs-c-u2"
-	maxHealth = 2 * STANDARD_ORGAN_THRESHOLD
 	safe_breath_min = 4 //You could literally be breathing the thinnest amount of oxygen and be fine
 	safe_breath_max = 250 //Or be in an enriched oxygen room for that matter
 	gas_max = list(
@@ -496,6 +504,7 @@
 	SA_sleep_min = 50
 	BZ_trip_balls_min = 30
 	emp_vulnerability = 3
+	smell_sensitivity = 2
 
 
 	cold_level_1_threshold = 200

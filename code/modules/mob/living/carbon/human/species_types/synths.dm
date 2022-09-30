@@ -119,3 +119,13 @@
 			switch (fake_species.type)
 				if (/datum/species/golem/clockwork)
 					speech_args[SPEECH_SPANS] |= SPAN_ROBOT
+
+/datum/species/synth/spec_life(mob/living/carbon/human/H)
+	if(H.nutrition < NUTRITION_LEVEL_FED)
+		H.nutrition = NUTRITION_LEVEL_FED
+	if(H.nutrition > NUTRITION_LEVEL_FED)
+		H.nutrition = NUTRITION_LEVEL_FED
+	if(H.water < THIRST_LEVEL_FULL)
+		H.water = THIRST_LEVEL_FULL
+	if(H.water > THIRST_LEVEL_FULL)
+		H.water = THIRST_LEVEL_FULL

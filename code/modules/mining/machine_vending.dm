@@ -24,6 +24,7 @@
 //		new /datum/data/mining_equipment("Fulton Beacon",				/obj/item/fulton_core,												400),
 //		new /datum/data/mining_equipment("Shelter Capsule",				/obj/item/survivalcapsule,											400),
 		new /datum/data/mining_equipment("Survival Knife",				/obj/item/melee/onehanded/knife/survival,							450),
+		new /datum/data/mining_equipment("50 bottlecaps",				/obj/item/stack/f13Cash/caps/fivezero,								500),
 		new /datum/data/mining_equipment("GAR Meson Scanners",			/obj/item/clothing/glasses/meson/gar,								500),
 		new /datum/data/mining_equipment("Explorer's Webbing",			/obj/item/storage/belt/mining,										500),
 		new /datum/data/mining_equipment("Larger Ore Bag",				/obj/item/storage/bag/ore/large,									500),
@@ -116,7 +117,7 @@
 	.["product_records"] = list()
 	for(var/datum/data/mining_equipment/prize in prize_list)
 		var/list/product_data = list(
-			path = replacetext(replacetext("[prize.equipment_path]", "/obj/item/", ""), "/", "-"),
+			asset = get_spritesheet_icon_key_from_type(prize.equipment_path),
 			name = prize.equipment_name,
 			price = prize.cost,
 			ref = REF(prize)

@@ -38,6 +38,7 @@
 	aggrosound = list('sound/f13npc/supermutant/alert1.ogg', 'sound/f13npc/supermutant/alert2.ogg', 'sound/f13npc/supermutant/alert3.ogg', 'sound/f13npc/supermutant/alert4.ogg')
 	wound_bonus = 0
 	bare_wound_bonus = 0
+	footstep_type = FOOTSTEP_MOB_HEAVY
 
 /mob/living/simple_animal/hostile/supermutant/playable
 	health = 500
@@ -112,6 +113,7 @@
 	melee_damage_lower = 40
 	melee_damage_upper = 60
 	attack_sound = "hit_swing"
+	footstep_type = FOOTSTEP_MOB_HEAVY
 
 /mob/living/simple_animal/hostile/supermutant/meleemutant/death(gibbed)
 	icon = 'icons/fallout/mobs/supermutant_dead.dmi'
@@ -133,6 +135,7 @@
 	projectiletype = /obj/item/projectile/bullet/a762/sport/simple
 	projectilesound = 'sound/f13weapons/hunting_rifle.ogg'
 	loot = list(/obj/item/ammo_box/a308)
+	footstep_type = FOOTSTEP_MOB_HEAVY
 
 /mob/living/simple_animal/hostile/supermutant/rangedmutant/death(gibbed)
 	icon = 'icons/fallout/mobs/supermutant_dead.dmi'
@@ -152,6 +155,7 @@
 	maxHealth = 700 //30 shots of 5.56, bring an extended mag
 	health = 700
 	mob_size = 5
+	footstep_type = FOOTSTEP_MOB_HEAVY
 
 /mob/living/simple_animal/hostile/supermutant/legendary/death(gibbed)
 	icon = 'icons/fallout/mobs/supermutant_dead.dmi'
@@ -174,6 +178,7 @@
 	melee_damage_upper = 60
 	attack_verb_simple = "slashes"
 	attack_sound = "sound/weapons/bladeslice.ogg"
+	footstep_type = FOOTSTEP_MOB_HEAVY
 
 /mob/living/simple_animal/hostile/supermutant/nightkin/Aggro()
 	..()
@@ -208,6 +213,7 @@
 	projectiletype = /obj/item/projectile/bullet/a556/simple
 	projectilesound = 'sound/f13weapons/assaultrifle_fire.ogg'
 	loot = list(/obj/item/ammo_box/magazine/m556/rifle)
+	footstep_type = FOOTSTEP_MOB_HEAVY
 
 /mob/living/simple_animal/hostile/supermutant/nightkin/rangedmutant/Aggro()
 	..()
@@ -241,6 +247,7 @@
 	projectiletype = /obj/item/projectile/f13plasma/repeater
 	projectilesound = 'sound/f13weapons/plasma_rifle.ogg'
 	loot = list(/obj/item/stock_parts/cell/ammo/mfc)
+	footstep_type = FOOTSTEP_MOB_HEAVY
 
 /mob/living/simple_animal/hostile/supermutant/nightkin/elitemutant/Aggro()
 	..()
@@ -265,6 +272,7 @@
 	damage_coeff = list(BRUTE = 0.5, BURN = 1, TOX = 0, CLONE = 0, STAMINA = 0, OXY = 0)
 	melee_damage_lower = 50
 	melee_damage_upper = 70
+	footstep_type = FOOTSTEP_MOB_HEAVY
 
 /mob/living/simple_animal/hostile/supermutant/rangedmutant/rain
 	name = "super mutant rain cultist"
@@ -277,6 +285,7 @@
 	damage_coeff = list(BRUTE = 1, BURN = 0.5, TOX = 0, CLONE = 0, STAMINA = 0, OXY = 0)
 	melee_damage_lower = 50
 	melee_damage_upper = 70
+	footstep_type = FOOTSTEP_MOB_HEAVY
 
 /mob/living/simple_animal/hostile/supermutant/nightkin/rain
 	name = "nightkin berserker rain priest"
@@ -290,6 +299,7 @@
 	melee_damage_lower = 60
 	melee_damage_upper = 70
 	var/charging = FALSE
+	footstep_type = FOOTSTEP_MOB_HEAVY
 
 /mob/living/simple_animal/hostile/supermutant/nightkin/rain/bullet_act(obj/item/projectile/Proj)
 	if(!Proj)
@@ -442,3 +452,45 @@
 /mob/living/simple_animal/hostile/supermutant/nightkin/elitemutant/rain/Initialize(mapload)
 	. = ..()
 	AddComponent(/datum/component/glow_heal, chosen_targets = /mob/living/simple_animal/hostile/supermutant, allow_revival = TRUE, restrict_faction = null, type_healing = BRUTELOSS | FIRELOSS)
+
+/////////
+// HMG Mutant - Boss mutant, similar to Robobrain and Sentrybot.
+/////////
+/mob/living/simple_animal/hostile/supermutant/rangedmutant/heavy
+	name = "mutant overlord"
+	desc = "A huge and ugly mutant humanoid.  This one is clad in armor and carrying a rather large gun."
+	icon = 'icons/fallout/mobs/supermutant.dmi'
+	icon_state = "hulk_hmg_s"
+	icon_living = "hulk_hmg_s"
+	icon_dead = "hulk_ranged_s"
+	ranged = 1
+	maxHealth = 640
+	health = 640
+	retreat_distance = 8
+	minimum_distance = 8
+	stop_automated_movement = 1
+	see_in_dark = 6//Semi-avoidable.
+	projectiletype = /obj/item/projectile/bullet/F13/sm_hmg
+	projectilesound = 'sound/f13weapons/antimaterielfire.ogg'
+	extra_projectiles = 4 //5 projectiles
+	ranged_cooldown_time = 60//From 120, - 'Long cooldown due to damage output.' | Changed due to it being an on-map mob.
+	loot = list(/obj/machinery/manned_turret/m2/unanchored)
+
+/mob/living/simple_animal/hostile/supermutant/rangedmutant/heavy/death(gibbed)
+	icon = 'icons/fallout/mobs/supermutant_dead.dmi'
+	icon_state = icon_dead
+	anchored = FALSE
+	..()
+
+/mob/living/simple_animal/hostile/supermutant/rangedmutant/heavy/bullet_act(obj/item/projectile/Proj)
+	if(!Proj)
+		CRASH("[src] heavy supermutant invoked bullet_act() without a projectile")
+	if(prob(75) || Proj.damage > 26)
+		return ..()
+	else
+		visible_message("<span class='danger'>\The [Proj] bounces off \the [src]'s armor plating!</span>")
+		return FALSE
+
+/obj/item/projectile/bullet/F13/sm_hmg
+	damage = 15//from 35
+	armour_penetration = 45

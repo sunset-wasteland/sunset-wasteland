@@ -4,6 +4,8 @@
 	icon = 'icons/mob/robots.dmi'
 	icon_state = "robot"
 	bubble_icon = "robot"
+	var/laser = FALSE
+	var/disabler = FALSE
 
 /mob/living/silicon/robot/get_cell()
 	return cell
@@ -72,6 +74,8 @@
 	toner = tonermax
 	diag_hud_set_borgcell()
 
+	verbs += /mob/living/proc/lay_down //CITADEL EDIT gimmie rest verb kthx
+
 //If there's an MMI in the robot, have it ejected when the mob goes away. --NEO
 /mob/living/silicon/robot/Destroy()
 	var/atom/T = drop_location()//To hopefully prevent run time errors.
@@ -123,13 +127,17 @@
 	if(!CONFIG_GET(flag/disable_secborg) && GLOB.security_level < CONFIG_GET(number/minimum_secborg_alert))
 		to_chat(src, "<span class='notice'>NOTICE: Due to local station regulations, the security cyborg module and its variants are only available during [NUM2SECLEVEL(CONFIG_GET(number/minimum_secborg_alert))] alert and greater.</span>")
 
-	var/list/modulelist = list("Standard" = /obj/item/robot_module/standard, \
+	var/list/modulelist = list(/*"Standard" = /obj/item/robot_module/standard, \
 	"Engineering" = /obj/item/robot_module/engineering, \
 	"Medical" = /obj/item/robot_module/medical, \
 	"Miner" = /obj/item/robot_module/miner, \
-	"Service" = /obj/item/robot_module/butler,
-	"Gutsy" = /obj/item/robot_module/gutsy
+	"Service" = /obj/item/robot_module/butler,*/
+	"Gutsy" = /obj/item/robot_module/gutsy,
+	"Assaultron" = /obj/item/robot_module/assaultron,
+	"Medical" = /obj/item/robot_module/assaultron/medical
 	)
+
+	//modulelist += get_cit_modules() //Citadel change - adds Citadel's borg modules.
 
 	if(!CONFIG_GET(flag/disable_peaceborg))
 		modulelist["Peacekeeper"] = /obj/item/robot_module/peacekeeper
@@ -706,11 +714,12 @@
 
 /mob/living/silicon/robot/modules/gutsy
 	set_module = /obj/item/robot_module/gutsy
+	faction = list("wastebots") //Friendly to other robots?
 
 /mob/living/silicon/robot/modules/assaultron //F13 stuff, better Handy.
 	name = "Assaultron"
 	set_module = /obj/item/robot_module/assaultron
-	faction = list("wastebots") //Friendly to other assaultrons?
+	faction = list("wastebots") //Friendly to other robots?
 
 /mob/living/silicon/robot/modules/assaultron/Initialize()
 	. = ..()

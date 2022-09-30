@@ -389,12 +389,14 @@
 
 /* Enclave */
 /proc/get_all_enclave_access()
-	return list(ACCESS_ENCLAVE)
+	return list(ACCESS_ENCLAVE, ACCESS_ENCLAVE_COMMAND)
 
 /proc/get_enclave_access_desc(A)
 	switch(A)
 		if(ACCESS_ENCLAVE)
 			return "Enclave Access"
+		if(ACCESS_ENCLAVE_COMMAND)
+			return "Enclave Command"
 
 /* Brotherhood of Steel */
 /proc/get_all_bos_access()
@@ -436,6 +438,8 @@
 				"NCR Scout", "NCR Scout Sergeant", "NCR Scout Lieutenant",
 				"Chief of Security", "Vault-tec Doctor", "Vault-tec Scientist",
 				"Vault-tec Security", "Vault-tec Engineer", "Vault Dweller", "Settler",
+				"Enclave Lieutenant", "Enclave Platoon Sergeant", "Enclave Sergeant", "Enclave Specialist",
+				"Enclave Private", "Enclave Scientist", "Enclave Pilot Officer", "Enclave Bunker Duty",
 				"Wastelander", "Raider", "Great Khan", "Preacher", "Head Hunter", "Chief", "Shaman", "Villager", "Hunter")
 
 /proc/get_all_job_icons() //For all existing HUD icons

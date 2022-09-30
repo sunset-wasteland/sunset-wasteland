@@ -5,16 +5,32 @@
 	pixel_x = -128
 	pixel_y = -64
 	layer = 4
-	var/engine = FALSE
-	var/locked = TRUE
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
+	anchored = TRUE
+	density = TRUE
+	var/engine = FALSE//This isn't even used????
+	var/locked = FALSE
 	var/inFly = FALSE
-	var/obj/machinery/camera/portable/builtInCamera
+	var/updating = FALSE
+	var/obj/machinery/camera/VertiCamera
 
 /obj/vertibird/New()
-	var/obj/item/start = new /obj/landmark/vertibird()
-	start.name = "Poseidon Oil 057 - 'The Freezer'"
+	..()
+	var/obj/item/start = new /obj/effect/landmark/vertibird()
+	start.name = "Vertibird Hanger"
 	start.loc = loc
-	vertibird = src
+
+	if(GLOB.vertibird)
+		CRASH("Vertibird already exists!")
+	GLOB.vertibird = src
+
+	VertiCamera = new (src)
+	VertiCamera.c_tag = src
+	VertiCamera.network = list("vertibird")
+	VertiCamera.upgradeEmpProof()
+	VertiCamera.invuln = TRUE
+	VertiCamera.light_range = 10
+	VertiCamera.view_range = 24
 
 /obj/vertibird/attack_hand(mob/user)
 	if(locked)
@@ -37,6 +53,8 @@
 /obj/vertibird/attackby(obj/item/weapon/W, mob/user, params)
 	if(istype(W, /obj/item/key/vertibird))
 		toggleLock(user)
+	else
+		return ..()
 
 /obj/vertibird/MouseDrop_T(obj/O, mob/user)
 	if(locked)
@@ -55,21 +73,21 @@
 /obj/vertibird/proc/ejectTurf()
 	return locate(src.x, src.y + 6, src.z)
 
-obj/vertibird/proc/getLocationsHTML()
+/obj/vertibird/proc/getLocationsHTML()
 	var/html
-	for(var/I = 1 to length(GLOB.vertibirdLandZone))
-		var/obj/landmark/vertibird/mark = GLOB.vertibirdLandZone[I]
+	for(var/I = 1 to GLOB.vertibirdLandZone.len)
+		var/obj/effect/landmark/vertibird/mark = GLOB.vertibirdLandZone[I]
 		html += "<a href='?src=\ref[src];fly=true;x=[mark.x];y=[mark.y];z=[mark.z]'>[mark.name]</a><br>"
 	return html
 
-obj/vertibird/proc/flew(targetX, targetY, targetZ)
+/obj/vertibird/proc/flew(targetX, targetY, targetZ)
 
 	x = targetX
 	y = targetY
 	z = targetZ
 
-	playsound(src, "sound/f13machines/vertibird_land.ogg", 100)
-	playsound(GLOB.vertibirdEnterZone, "sound/f13machines/vertibird_land.ogg", 50)
+	playsound(src, "sound/f13machines/vertibird_stop.ogg", 100)
+	playsound(GLOB.vertibirdEnterZone, "sound/f13machines/vertibird_stop.ogg", 50)
 
 	spawn(100)
 		inFly = FALSE
@@ -79,35 +97,46 @@ obj/vertibird/proc/flew(targetX, targetY, targetZ)
 		if(src.icon_state == "vb-slow")
 			src.icon_state = "vb-static"
 
-obj/vertibird/proc/beginFly()
+/obj/vertibird/proc/beginFly()
 	var/datum/browser/popup = new(usr, "vending", (name))
 	popup.set_content(getLocationsHTML())
 	popup.open()
 
-obj/vertibird/proc/flyGlobal()
-	to_chat(world, "<font size='3' color='orange'>The ever increasing roar of an aircraft tearing through the skies above enters your ears.</font>")
+/obj/vertibird/proc/flyGlobal()
+	spawn(300)//Probably a little off from when it actually lands, but it works.
+		to_chat(world, "<font size='3' color='orange'>The ever increasing roar of an aircraft tearing through the skies above enters your ears.</font>")
 	var/sound/global_sound
-	global_sound = sound("sound/f13machines/vertibird_global.ogg", repeat = 0, wait = 0, channel = 776)
+	global_sound = sound("sound/effects/flyby.ogg", repeat = 0, wait = 0, channel = 776)
 	global_sound.priority = 250
 	global_sound.status = SOUND_UPDATE|SOUND_STREAM
 
 
-obj/vertibird/proc/fly(targetX, targetY, targetZ)
+/obj/vertibird/proc/fly(targetX, targetY, targetZ)
 	if(inFly)
 		return
 
-	playsound(src, "sound/f13machines/vertibird_takeoff.ogg", 100)
-	playsound(GLOB.vertibirdEnterZone, "sound/f13machines/vertibird_takeoff.ogg", 50)
+	playsound(src, "sound/f13machines/vertibird_start.ogg", 100)
+	playsound(GLOB.vertibirdEnterZone, "sound/f13machines/vertibird_start.ogg", 50)
 	inFly = TRUE
 	icon_state = "vb-fast"
+
+	for(var/obj/machinery/computer/vertibird_console/C in GLOB.vertibird_console)
+		var/message = "Now departing."
+		if(name)
+			message += " Destination: [targetX], [targetY], [targetZ]."
+		message += " Please stand by"
+		C.say(message)
+
 	spawn(60)
-		playsound(src, "sound/f13machines/vertibird_local.ogg", 100)
-		playsound(GLOB.vertibirdEnterZone, "sound/f13machines/vertibird_local.ogg", 50)
+		playsound(src, "sound/effects/flyby.ogg", 100)
+		playsound(GLOB.vertibirdEnterZone, "sound/effects/flyby.ogg", 50)
 
 		flyGlobal()
 
-		spawn(100)
+		spawn(300)//Probably a little off from when it actually lands, but it works.
 			flew(targetX, targetY, targetZ)
+			for(var/obj/machinery/computer/vertibird_console/C in GLOB.vertibird_console)
+				C.say("Destination point reached. Doors safeties disabled")
 
 /obj/vertibird/Topic(href, href_list)
 	if(..())

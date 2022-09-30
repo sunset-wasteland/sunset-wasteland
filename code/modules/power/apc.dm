@@ -53,7 +53,6 @@
 	plane = ABOVE_WALL_PLANE
 	icon_state = "apc0"
 	use_power = NO_POWER_USE
-	req_access = null
 	max_integrity = 300
 	integrity_failure = 0.17
 	var/damage_deflection = 10
@@ -1341,9 +1340,9 @@
 	// next: take from or charge to the cell, depending on how much is left
 	if(cell && !shorted)
 		if(cur_excess > 0)
-			var/charging_cell = min(cur_excess, cell.maxcharge * GLOB.CHARGELEVEL)
+			var/charging_cell = min(min(cur_excess*GLOB.CELLRATE, cell.maxcharge * GLOB.CHARGELEVEL), cell.maxcharge - cell.charge)
 			cell.give(charging_cell)
-			add_load(charging_cell)
+			add_load(charging_cell/GLOB.CELLRATE)
 			lastused_total += charging_cell
 			longtermpower = min(10,longtermpower + 1)
 			if(chargemode && !charging)
@@ -1356,13 +1355,7 @@
 			charging = APC_NOT_CHARGING
 			chargecount = 0
 			longtermpower = max(-10,longtermpower - 2)
-			if(cell.charge >= cur_used)
-				cell.use(GLOB.CELLRATE * cur_used)
-			else
-				// This turns everything off in the case that there is still a charge left on the battery, just not enough to run the room.
-				equipment = autoset(equipment, 0)
-				lighting = autoset(lighting, 0)
-				environ = autoset(environ, 0)
+			cell.use(min(GLOB.CELLRATE * cur_used, cell.charge))
 
 		// set channels based on remaining charge
 

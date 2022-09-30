@@ -171,7 +171,7 @@
 		return TRUE
 	if(CHECK_MOBILITY(D, MOBILITY_MOVE) || !restraining)
 		A.do_attack_animation(D, ATTACK_EFFECT_PUNCH)
-		if(damage >= stunthreshold)	
+		if(damage >= stunthreshold)
 			I = D.get_active_held_item()
 			D.visible_message("<span class='warning'>[A] strikes [D]'s jaw with their hand!</span>", \
 							"<span class='userdanger'>[A] strikes your jaw, disorienting you!</span>")
@@ -199,6 +199,16 @@
 		restraining = FALSE
 		return FALSE
 	return TRUE
+
+/datum/martial_art/cqc/teach(mob/living/carbon/human/H, make_temporary = FALSE)
+	. = ..()
+	if(!.)
+		return
+	ADD_TRAIT(H, TRAIT_NOGUNS, SLEEPING_CARP_TRAIT)
+
+/datum/martial_art/cqc/on_remove(mob/living/carbon/human/H)
+	. = ..()
+	REMOVE_TRAIT(H, TRAIT_NOGUNS, SLEEPING_CARP_TRAIT)
 
 /mob/living/carbon/human/proc/CQC_help()
 	set name = "Remember The Basics"

@@ -33,6 +33,7 @@
 	weight = (length(goodPrefixes) + length(badPrefixes)) * 10
 
 /datum/fantasy_affix/cosmetic_prefixes/apply(datum/component/fantasy/comp, newName)
+	. = ..()
 	if(comp.quality > 0 || (comp.quality == 0 && prob(50)))
 		return "[pick(goodPrefixes)] [newName]"
 	else
@@ -44,20 +45,30 @@
 	weight = 1 // Very powerful, no one should have such power
 
 /datum/fantasy_affix/tactical/apply(datum/component/fantasy/comp, newName)
+	. = ..()
 	var/obj/item/master = comp.parent
-	var/list/dat = list(/datum/element/tactical)
-	master._AddElement(dat)
-	comp.appliedElements += list(dat)
+	master.AddElement(/datum/element/tactical)
 	return "tactical [newName]"
+
+/datum/fantasy_affix/tactical/remove(datum/component/fantasy/comp)
+	. = ..()
+	var/obj/item/master = comp.parent
+	master.RemoveElement(/datum/element/tactical)
 
 /datum/fantasy_affix/pyromantic
 	placement = AFFIX_PREFIX
 	alignment = AFFIX_GOOD
 
 /datum/fantasy_affix/pyromantic/apply(datum/component/fantasy/comp, newName)
+	. = ..()
 	var/obj/item/master = comp.parent
-	comp.appliedComponents += master.AddComponent(/datum/component/igniter, clamp(comp.quality, 1, 10))
+	master.AddComponent(/datum/component/igniter, clamp(comp.quality, 1, 10))
 	return "pyromantic [newName]"
+
+/datum/fantasy_affix/pyromantic/remove(datum/component/fantasy/comp)
+	. = ..()
+	var/obj/item/master = comp.parent
+	qdel(master.GetComponent(/datum/component/igniter))
 
 /datum/fantasy_affix/vampiric
 	placement = AFFIX_PREFIX
@@ -65,6 +76,12 @@
 	weight = 5
 
 /datum/fantasy_affix/vampiric/apply(datum/component/fantasy/comp, newName)
+	. = ..()
 	var/obj/item/master = comp.parent
-	comp.appliedComponents += master.AddComponent(/datum/component/lifesteal, comp.quality)
+	master.AddComponent(/datum/component/lifesteal, comp.quality)
 	return "vampiric [newName]"
+
+/datum/fantasy_affix/vampiric/remove(datum/component/fantasy/comp)
+	. = ..()
+	var/obj/item/master = comp.parent
+	qdel(master.GetComponent(/datum/component/lifesteal))

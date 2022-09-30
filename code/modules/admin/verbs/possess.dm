@@ -23,6 +23,11 @@
 	usr.name = O.name
 	usr.reset_perspective(O)
 	usr.control_object = O
+	O.AddElement(/datum/element/weather_listener, /datum/weather/rain, ZTRAIT_SURFACE, GLOB.rain_sounds)
+	O.AddElement(/datum/element/weather_listener, /datum/weather/rain/eventarea, ZTRAIT_SURFACE, GLOB.rain_sounds)
+	O.AddElement(/datum/element/weather_listener, /datum/weather/ash_storm, ZTRAIT_SURFACE, GLOB.ash_storm_sounds)
+	O.AddElement(/datum/element/weather_listener, /datum/weather/ash_storm/sandstorm, ZTRAIT_SURFACE, GLOB.ash_storm_sounds)
+	O.AddElement(/datum/element/weather_listener, /datum/weather/ash_storm/dust_event, ZTRAIT_SURFACE, GLOB.ash_storm_sounds)
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Possess Object") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /proc/release()
@@ -38,8 +43,12 @@
 			var/mob/living/carbon/human/H = usr
 			H.name = H.get_visible_name()
 
-
-	usr.loc = get_turf(usr.control_object)
+	usr.control_object.RemoveElement(/datum/element/weather_listener, /datum/weather/rain, ZTRAIT_SURFACE, GLOB.rain_sounds)
+	usr.control_object.RemoveElement(/datum/element/weather_listener, /datum/weather/rain/eventarea, ZTRAIT_SURFACE, GLOB.rain_sounds)
+	usr.control_object.RemoveElement(/datum/element/weather_listener, /datum/weather/ash_storm, ZTRAIT_ASHSTORM, GLOB.ash_storm_sounds)
+	usr.control_object.RemoveElement(/datum/element/weather_listener, /datum/weather/ash_storm/sandstorm, ZTRAIT_SURFACE, GLOB.ash_storm_sounds)
+	usr.control_object.RemoveElement(/datum/element/weather_listener, /datum/weather/ash_storm/dust_event, ZTRAIT_SURFACE, GLOB.ash_storm_sounds)
+	usr.forceMove(get_turf(usr.control_object))
 	usr.reset_perspective()
 	usr.control_object = null
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Release Object") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!

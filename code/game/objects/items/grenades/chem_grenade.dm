@@ -152,11 +152,6 @@
 /obj/item/grenade/chem_grenade/receive_signal()
 	prime()
 
-
-/obj/item/grenade/chem_grenade/Crossed(atom/movable/AM)
-	if(nadeassembly)
-		nadeassembly.Crossed(AM)
-
 /obj/item/grenade/chem_grenade/on_found(mob/finder)
 	if(nadeassembly)
 		nadeassembly.on_found(finder)

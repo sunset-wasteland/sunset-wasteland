@@ -4,7 +4,7 @@
 	icon_state = "helmet"
 	item_state = "helmet"
 	armor = list("melee" = 35, "bullet" = 30, "laser" = 30, "energy" = 10, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50, "wound" = 10)
-	flags_inv = HIDEEARS
+	flags_inv = HIDEEARS | HIDEHAIR
 	cold_protection = HEAD
 	min_cold_protection_temperature = HELMET_MIN_TEMP_PROTECT
 	heat_protection = HEAD
@@ -12,7 +12,6 @@
 	strip_delay = 60
 	resistance_flags = NONE
 	flags_cover = HEADCOVERSEYES
-	flags_inv = HIDEHAIR
 	var/list/protected_zones = list(BODY_ZONE_HEAD)
 
 	dog_fashion = /datum/dog_fashion/head/helmet
@@ -459,6 +458,10 @@
 	icon_state = "armyhelmet"
 	item_state = "armyhelmet"
 
+/obj/item/clothing/head/helmet/armyhelmet/Initialize()
+	. = ..()
+	AddComponent(/datum/component/armor_plate)
+
 /obj/item/clothing/head/helmet/armyhelmet/heavy
 	name = "heavy steel helmet"
 	desc = "a steel helmet, inspired by several pre-war designs. This one has been modified by oasis citizens to provide more protection to the face and neck."
@@ -466,3 +469,7 @@
 	item_state = "armyhelmetheavy"
 	armor = list("melee" = 30, "bullet" = 50, "laser" = 30, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
 	slowdown = 0.025
+
+/obj/item/clothing/head/helmet/armyhelmet/heavy/Initialize()
+	. = ..()
+	AddComponent(/datum/component/armor_plate)

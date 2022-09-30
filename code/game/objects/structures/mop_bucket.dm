@@ -10,7 +10,7 @@
 
 /obj/structure/mopbucket/Initialize()
 	. = ..()
-	create_reagents(100, OPENCONTAINER)
+	create_reagents(500, OPENCONTAINER)
 
 /obj/structure/mopbucket/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/mop))

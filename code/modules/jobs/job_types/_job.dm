@@ -39,6 +39,9 @@
 	//If this is set to 1, a text is printed to the player when jobs are assigned, telling him that he should let admins know that he has to disconnect.
 	var/req_admin_notify
 
+	//If this is set to 1, a text is printed to the player when jobs are assigned, telling him that he cannot engage in raids.
+	var/roleplay_exclusive_notify
+
 	// This is for Citadel specific tweaks to job notices.
 	var/custom_spawn_text
 
@@ -158,7 +161,7 @@
 			H.set_species(/datum/species/human)
 			H.apply_pref_name("human", preference_source)
 	// F13 EDIT: GHOULS CANNOT BE LEGION, BROTHERHOOD, TRIBAL OR VAULT
-	if((title in GLOB.legion_positions) || (title in GLOB.vault_positions) || (title in GLOB.brotherhood_positions) || (title in GLOB.tribal_positions))
+	if((title in GLOB.legion_positions) || (title in GLOB.vault_positions) || (title in GLOB.brotherhood_positions))
 		if(H.dna.species.id == "ghoul")
 			H.set_species(/datum/species/human)
 			H.apply_pref_name("human", H.client)
@@ -268,6 +271,7 @@
 	var/gunsmith_two = FALSE //F13 gunsmith perk, ability to craft Tier 3 guns and ammo
 	var/gunsmith_three = FALSE //F13 gunsmith perk, ability to craft Tier 4 guns and ammo
 	var/gunsmith_four = FALSE //F13 gunsmith perk, ability to craft Tier 5 guns and ammo
+	var/vb_pilot = FALSE //F13 vb_pilot. Allows someone to fly the Vertibird.
 
 
 /datum/outfit/job/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
@@ -318,6 +322,9 @@
 	if(gunsmith_four == TRUE)
 		ADD_TRAIT(H, TRAIT_GUNSMITH_FOUR, "gunsmith_four")
 
+	if(vb_pilot == TRUE)
+		ADD_TRAIT(H, TRAIT_PILOT, "vb_pilot")
+
 /datum/outfit/job/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
 	if(visualsOnly)
 		return
@@ -354,6 +361,9 @@
 
 	if(pa_wear == TRUE)
 		ADD_TRAIT(H, TRAIT_PA_WEAR, src)
+
+	if(vb_pilot == TRUE)
+		ADD_TRAIT(H, TRAIT_PILOT, "vb_pilot")
 
 	//Fortuna edit start. radio management
 	if(J.faction && ears)

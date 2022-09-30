@@ -80,6 +80,7 @@
 
 	var/mob_size = MOB_SIZE_HUMAN
 	var/mob_biotypes = MOB_ORGANIC
+	var/transpiration_efficiency = 1.1
 	var/metabolism_efficiency = 1 //more or less efficiency to metabolize helpful/harmful reagents and regulate body temperature..
 	var/has_limbs = 0 //does the mob have distinct limbs?(arms,legs, chest,head)
 
@@ -154,8 +155,8 @@
 	var/stambufferregentime
 
 	//Sprint buffer---
-	var/sprint_buffer = 42					//Tiles
-	var/sprint_buffer_max = 42
+	var/sprint_buffer = 43					//Tiles
+	var/sprint_buffer_max = 43
 	var/sprint_buffer_regen_ds = 0.1		//Tiles per world.time decisecond
 	var/sprint_buffer_regen_last = 0		//last world.time this was regen'd for math.
 	var/sprint_stamina_cost = 0.70			//stamina loss per tile while insufficient sprint buffer.

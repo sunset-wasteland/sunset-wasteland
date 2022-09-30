@@ -218,7 +218,9 @@ as performing this in action() will cause the upgrade to end up in the borg inst
 	desc = "A trash bag of holding replacement for the janiborg's standard trash bag."
 	icon_state = "cyborg_upgrade3"
 	require_module = 1
-	module_type = list(/obj/item/robot_module/butler)
+	module_type = list(
+		/obj/item/robot_module/butler,
+		/obj/item/robot_module/scrubpup)
 	module_flags = BORG_MODULE_JANITOR
 
 /obj/item/borg/upgrade/tboh/action(mob/living/silicon/robot/R)
@@ -246,7 +248,9 @@ as performing this in action() will cause the upgrade to end up in the borg inst
 	desc = "An advanced mop replacement for the janiborg's standard mop."
 	icon_state = "cyborg_upgrade3"
 	require_module = 1
-	module_type = list(/obj/item/robot_module/butler)
+	module_type = list(
+		/obj/item/robot_module/butler,
+		/obj/item/robot_module/scrubpup)
 	module_flags = BORG_MODULE_JANITOR
 
 /obj/item/borg/upgrade/amop/action(mob/living/silicon/robot/R)
@@ -415,7 +419,9 @@ as performing this in action() will cause the upgrade to end up in the borg inst
 	icon_state = "cyborg_upgrade3"
 	require_module = 1
 	module_type = list(/obj/item/robot_module/medical,
-		/obj/item/robot_module/syndicate_medical)
+		/obj/item/robot_module/syndicate_medical,
+		/obj/item/robot_module/medihound,
+		/obj/item/robot_module/assaultron/medical)
 	var/list/additional_reagents = list()
 	module_flags = BORG_MODULE_MEDICAL
 
@@ -486,7 +492,9 @@ as performing this in action() will cause the upgrade to end up in the borg inst
 	icon_state = "cyborg_upgrade3"
 	require_module = 1
 	module_type = list(/obj/item/robot_module/medical,
-		/obj/item/robot_module/syndicate_medical)
+		/obj/item/robot_module/syndicate_medical,
+		/obj/item/robot_module/medihound,
+		/obj/item/robot_module/assaultron/medical)
 	module_flags = BORG_MODULE_MEDICAL
 
 /obj/item/borg/upgrade/processor/action(mob/living/silicon/robot/R, user = usr)
@@ -510,7 +518,9 @@ as performing this in action() will cause the upgrade to end up in the borg inst
 	require_module = 1
 	module_type = list(
 		/obj/item/robot_module/medical,
-		/obj/item/robot_module/syndicate_medical)
+		/obj/item/robot_module/syndicate_medical,
+		/obj/item/robot_module/medihound,
+		/obj/item/robot_module/assaultron/medical)
 
 /obj/item/borg/upgrade/advhealth/action(mob/living/silicon/robot/R, user = usr)
 	. = ..()
@@ -630,7 +640,11 @@ as performing this in action() will cause the upgrade to end up in the borg inst
 	icon = 'icons/obj/device.dmi'
 	icon_state = "pinpointer_crew"
 	require_module = TRUE
-	module_type = list(/obj/item/robot_module/medical, /obj/item/robot_module/syndicate_medical)
+	module_type = list(
+		/obj/item/robot_module/medical,
+		/obj/item/robot_module/syndicate_medical,
+		/obj/item/robot_module/medihound,
+		/obj/item/robot_module/assaultron/medical)
 	module_flags = BORG_MODULE_MEDICAL
 
 /obj/item/borg/upgrade/pinpointer/action(mob/living/silicon/robot/R, user = usr)
@@ -691,3 +705,62 @@ as performing this in action() will cause the upgrade to end up in the borg inst
 	action.UpdateButtonIcon()
 
 	return TRUE
+
+/obj/item/borg/upgrade/radio_transceiver
+	name = "cyborg radio transceiver"
+	desc = "A cyborg module that allows decryption of radio channels.\nSlide an ID to register its appropriate channels onto the module.\nUse in hand to reset the added channels."
+	icon = 'icons/obj/device.dmi'
+	icon_state = "musicaltuner"
+	var/list/added_channels = list()
+
+/obj/item/borg/upgrade/radio_transceiver/examine(user)
+	. = ..()
+	if(!added_channels.len)
+		. += "\nThere are extra radio channels added."
+	else
+		. += "\nCurrent channels:"
+		for(var/channel in added_channels)
+			. += "- [channel]"
+
+/obj/item/borg/upgrade/radio_transceiver/action(mob/living/silicon/robot/R, user = usr)
+	. = ..()
+	if(.)
+		var/obj/item/borg/upgrade/radio_transceiver/c = locate() in R
+		if(c)
+			to_chat(user, span_warning("This unit is already equipped with a radio transceiver module."))
+			return FALSE
+		if(!R.radio)
+			to_chat(user, span_warning("This unit has no functioning radio installed."))
+			return FALSE
+
+		R.radio.extra_channels |= added_channels
+		R.radio.recalculateChannels()
+
+		if(added_channels.len)
+			to_chat(R, span_info("New radio decryptions installed."))
+				
+
+/obj/item/borg/upgrade/radio_transceiver/deactivate(mob/living/silicon/robot/R, user = usr)
+	. = ..()
+	if (.)
+		if(R.radio)
+			R.radio.extra_channels -= added_channels
+			R.radio.recalculateChannels()
+
+/obj/item/borg/upgrade/radio_transceiver/attackby(obj/item/W, mob/user, params)
+	. = ..()
+	if(istype(W,/obj/item/card/id))
+		var/obj/item/card/id/granter = W
+		var/accesstxt = ""
+		for(var/access in granter.access)
+			accesstxt = GLOB.accesstoradio["[access]"]
+			if(accesstxt)
+				added_channels |= accesstxt
+		playsound(src, "modular_sunset/sound/pipsounds/pip1.ogg", 40, 1)
+		to_chat(user, span_info("Transceiver decryptions set."))
+
+/obj/item/borg/upgrade/radio_transceiver/attack_self(mob/user)
+	. = ..()
+	added_channels = list()
+	playsound(src, "modular_sunset/sound/pipsounds/pip1.ogg", 40, 1)
+	to_chat(user, span_info("Transceiver decryptions reset."))

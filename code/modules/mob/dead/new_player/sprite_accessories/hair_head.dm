@@ -358,6 +358,10 @@
 /datum/sprite_accessory/hair/halfshaved
 	name = "Half-shaved"
 	icon_state = "hair_halfshaved"
+	
+/datum/sprite_accessory/hair/halfshaved2
+	name = "Half-shaved 2"
+	icon_state = "hair_halfshave2"
 
 /datum/sprite_accessory/hair/hedgehog
 	name = "Hedgehog Hair"

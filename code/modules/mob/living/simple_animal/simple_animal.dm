@@ -130,6 +130,7 @@
 	var/AIStatus = AI_ON
 	///once we have become sentient, we can never go back.
 	var/can_have_ai = TRUE
+	var/last_active = 0 // world.time of the last time we were active, used for lazy wakeup checks
 
 	///convenience var for forcibly waking up an idling AI on next check.
 	var/shouldwakeup = FALSE
@@ -169,16 +170,17 @@
 
 /mob/living/simple_animal/Destroy()
 	GLOB.simple_animals[AIStatus] -= src
-	if (SSnpcpool.state == SS_PAUSED && LAZYLEN(SSnpcpool.currentrun))
-		SSnpcpool.currentrun -= src
+	SSnpcpool.currentrun -= src
 
 	if(nest)
-		nest.spawned_mobs -= src
+		nest.spawned_mobs -= WEAKREF(src)
 		nest = null
 
 	var/turf/T = get_turf(src)
 	if (T && AIStatus == AI_Z_OFF)
 		SSidlenpcpool.idle_mobs_by_zlevel[T.z] -= src
+	
+	QDEL_NULL(access_card)
 
 	return ..()
 
@@ -355,16 +357,14 @@
 
 
 /mob/living/simple_animal/proc/drop_loot()
-	if(!loot.len)
-		return
 	for(var/drop in loot)
 		for(var/i in 1 to max(1, loot[drop]))
-			new drop(loc)
+			new drop(drop_location())
 
 /mob/living/simple_animal/death(gibbed)
 	movement_type &= ~FLYING
 	if(nest)
-		nest.spawned_mobs -= src
+		nest.spawned_mobs -= WEAKREF(src)
 		nest = null
 	drop_loot()
 	if(dextrous)
@@ -608,6 +608,8 @@
 	LoadComponent(/datum/component/riding)
 
 /mob/living/simple_animal/proc/toggle_ai(togglestatus)
+	if(QDELETED(src))
+		return
 	if(!can_have_ai && (togglestatus != AI_OFF))
 		return
 	if (AIStatus != togglestatus)
@@ -618,6 +620,8 @@
 					SSidlenpcpool.idle_mobs_by_zlevel[T.z] -= src
 				else
 					SSidlenpcpool.idle_mobs_by_zlevel[T.z] += src
+			if (AIStatus == AI_ON)
+				last_active = world.time
 			GLOB.simple_animals[AIStatus] -= src
 			GLOB.simple_animals[togglestatus] += src
 			AIStatus = togglestatus
@@ -625,6 +629,7 @@
 			stack_trace("Something attempted to set simple animals AI to an invalid state: [togglestatus]")
 
 /mob/living/simple_animal/proc/consider_wakeup()
+	set waitfor = FALSE
 	if (pulledby || shouldwakeup)
 		toggle_ai(AI_ON)
 
@@ -635,10 +640,10 @@
 			toggle_ai(AI_ON)
 
 
-/mob/living/simple_animal/onTransitZ(old_z, new_z)
+/mob/living/simple_animal/on_changed_z_level(turf/old_turf, turf/new_turf)
 	..()
-	if (AIStatus == AI_Z_OFF)
-		SSidlenpcpool.idle_mobs_by_zlevel[old_z] -= src
+	if (old_turf && AIStatus == AI_Z_OFF)
+		SSidlenpcpool.idle_mobs_by_zlevel[old_turf.z] -= src
 		toggle_ai(initial(AIStatus))
 
 /mob/living/simple_animal/Life()

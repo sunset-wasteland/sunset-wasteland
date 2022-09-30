@@ -39,7 +39,7 @@
 		buckled_mob.pixel_y = 0
 		if(buckled_mob.client)
 			buckled_mob.client.change_view(CONFIG_GET(string/default_view))
-	anchored = FALSE
+	anchored = TRUE//from false
 	. = ..()
 	STOP_PROCESSING(SSfastprocess, src)
 
@@ -155,7 +155,8 @@
 	P.starting = targets_from
 	P.firer = user
 	P.original = target
-	playsound(src, 'sound/weapons/gunshot_smg.ogg', 75, 1)
+//	playsound(src, 'sound/weapons/gunshot_smg.ogg', 75, 1)//Not for what we use this for.
+	playsound(src, 'sound/f13weapons/antimaterielfire.ogg', 75, 1)
 	P.xo = target.x - targets_from.x
 	P.yo = target.y - targets_from.y
 	P.Angle = calculated_projectile_vars[1] + rand(-9, 9)
@@ -175,6 +176,32 @@
 	target_turf = get_turf(target)
 	fire_helper(user)
 
+/////////
+// M2
+/////////
+/obj/machinery/manned_turret/m2
+	name = "M2 Browning"
+	desc = "A heavy machine gun developed in 1918 and still in use right up until the outbreak of war.\
+	You could easily punch through anything with what this lobs downrange."
+	icon = 'icons/obj/turrets.dmi'
+	icon_state = "turret"//We pulled this from TGMC, but it's only temp. Thank you, lads. We'll remove it if you wish. Lacking some directionals, but it works for now.
+	can_buckle = TRUE
+	anchored = TRUE
+	density = TRUE
+	view_range = 15
+	projectile_type = /obj/item/projectile/bullet/a50MG/depleteduranium
+	rate_of_fire = 1
+	number_of_shots = 1
+	cooldown_duration = 2
+	max_integrity = 1250//can't be destroyed by stray bullets by on 'accident'.
+
+//Unanchored, for use with a mob dropping it, so it anchors when used afterwards.
+/obj/machinery/manned_turret/m2/unanchored
+	anchored = FALSE
+/////////
+// M2 End
+/////////
+
 /obj/item/gun_control
 	name = "turret controls"
 	icon = 'icons/obj/items_and_weapons.dmi'
@@ -186,7 +213,7 @@
 
 /obj/item/gun_control/Initialize()
 	. = ..()
-	ADD_TRAIT(src, TRAIT_NODROP, ABSTRACT_ITEM_TRAIT)
+	ADD_TRAIT(src, TRAIT_NODROP, TRAIT_GENERIC)
 	turret = loc
 	if(!istype(turret))
 		return INITIALIZE_HINT_QDEL

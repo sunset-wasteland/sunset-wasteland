@@ -6,11 +6,13 @@
 	desc = "A disk capable of storing nanite programs. Can be customized using a Nanite Programming Console."
 	var/program_type
 	var/datum/nanite_program/program
+	var/datum/techweb/linked_techweb // set by downloader
 
 /obj/item/disk/nanite_program/Initialize()
 	. = ..()
 	if(program_type)
 		program = new program_type
+		program.linked_techweb = linked_techweb
 
 /obj/item/disk/nanite_program/aggressive_replication
 	program_type = /datum/nanite_program/aggressive_replication

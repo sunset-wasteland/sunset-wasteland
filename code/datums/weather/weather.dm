@@ -73,7 +73,7 @@
 	/// Weight amongst other eligible weather. if zero, will never happen randomly.
 	var/probability = 0
 	/// The z-level trait to affect when run randomly or when not overridden.
-	var/target_trait = ZTRAIT_STATION
+	var/target_trait = ZTRAIT_SURFACE
 
 	/// Whether a barometer can predict when the weather will happen
 	var/barometer_predictable = FALSE
@@ -82,7 +82,6 @@
 	
 	var/affects_turfs = FALSE //Does this weather affect turfs at all?
 	var/turfs_impacted = FALSE // Did this weather already impact turfs?
-	var/carbons_only = FALSE //Does this weather affect only carbon mobs?
 
 /datum/weather/New(z_levels)
 	..()
@@ -98,6 +97,7 @@
 /datum/weather/proc/telegraph()
 	if(stage == STARTUP_STAGE)
 		return
+	SEND_GLOBAL_SIGNAL(COMSIG_WEATHER_TELEGRAPH(type))
 	stage = STARTUP_STAGE
 	var/list/affectareas = list()
 	for(var/area_type in area_types)
@@ -112,18 +112,22 @@
 		var/area/A = V
 		if(protect_indoors && !A.outdoors)
 			continue
-		if(A.z in impacted_z_levels)
-			impacted_areas |= A
+		for(var/z_level in impacted_z_levels)
+			if(A in SSmapping.areas_in_z["[z_level]"])
+				impacted_areas |= A
+				break
 	weather_duration = rand(weather_duration_lower, weather_duration_upper)
 	START_PROCESSING(SSweather, src)			//The reason this doesn't start and stop at main stage is because processing list is also used to see active running weathers (for example, you wouldn't want two ash storms starting at once.)
 	update_areas()
-	for(var/M in GLOB.player_list)
-		var/turf/mob_turf = get_turf(M)
-		if(mob_turf && (mob_turf.z in impacted_z_levels))
+	for(var/z_level in impacted_z_levels)
+		for(var/mob/player as anything in SSmobs.clients_by_zlevel[z_level])
+			var/turf/mob_turf = get_turf(player)
+			if(!mob_turf)
+				continue
 			if(telegraph_message)
-				to_chat(M, telegraph_message)
+				to_chat(player, telegraph_message)
 			if(telegraph_sound)
-				SEND_SOUND(M, sound(telegraph_sound))
+				SEND_SOUND(player, sound(telegraph_sound))
 	addtimer(CALLBACK(src, .proc/start), telegraph_duration)
 
 /**
@@ -136,15 +140,18 @@
 /datum/weather/proc/start()
 	if(stage >= MAIN_STAGE)
 		return
+	SEND_GLOBAL_SIGNAL(COMSIG_WEATHER_START(type))
 	stage = MAIN_STAGE
 	update_areas()
-	for(var/M in GLOB.player_list)
-		var/turf/mob_turf = get_turf(M)
-		if(mob_turf && (mob_turf.z in impacted_z_levels))
+	for(var/z_level in impacted_z_levels)
+		for(var/mob/player as anything in SSmobs.clients_by_zlevel[z_level])
+			var/turf/mob_turf = get_turf(player)
+			if(!mob_turf)
+				continue
 			if(weather_message)
-				to_chat(M, weather_message)
+				to_chat(player, weather_message)
 			if(weather_sound)
-				SEND_SOUND(M, sound(weather_sound))
+				SEND_SOUND(player, sound(weather_sound))
 	addtimer(CALLBACK(src, .proc/wind_down), weather_duration)
 
 /**
@@ -157,15 +164,18 @@
 /datum/weather/proc/wind_down()
 	if(stage >= WIND_DOWN_STAGE)
 		return
+	SEND_GLOBAL_SIGNAL(COMSIG_WEATHER_WINDDOWN(type))
 	stage = WIND_DOWN_STAGE
 	update_areas()
-	for(var/M in GLOB.player_list)
-		var/turf/mob_turf = get_turf(M)
-		if(mob_turf && (mob_turf.z in impacted_z_levels))
+	for(var/z_level in impacted_z_levels)
+		for(var/mob/player as anything in SSmobs.clients_by_zlevel[z_level])
+			var/turf/mob_turf = get_turf(player)
+			if(!mob_turf)
+				continue
 			if(end_message)
-				to_chat(M, end_message)
+				to_chat(player, end_message)
 			if(end_sound)
-				SEND_SOUND(M, sound(end_sound))
+				SEND_SOUND(player, sound(end_sound))
 	addtimer(CALLBACK(src, .proc/end), end_duration)
 
 /**
@@ -177,7 +187,8 @@
  */
 /datum/weather/proc/end()
 	if(stage == END_STAGE)
-		return 1
+		return
+	SEND_GLOBAL_SIGNAL(COMSIG_WEATHER_END(type))
 	stage = END_STAGE
 	STOP_PROCESSING(SSweather, src)
 	update_areas()
@@ -191,22 +202,21 @@
 			var/area/A = i
 			for(var/turf/T in get_area_turfs(A))
 				weather_act_turf(T)
-	for(var/i in (carbons_only ? GLOB.carbon_list : GLOB.mob_living_list))
-		var/mob/living/L = i
-		if(can_weather_act(L))
-			weather_act(L)
+	for(var/mob/act_on as anything in GLOB.mob_living_list)
+		if(can_weather_act(act_on))
+			weather_act(act_on)
 
 /**
  * Returns TRUE if the living mob can be affected by the weather
  *
  */
-/datum/weather/proc/can_weather_act(mob/living/L)
-	var/turf/mob_turf = get_turf(L)
+/datum/weather/proc/can_weather_act(mob/living/act_on)
+	var/turf/mob_turf = get_turf(act_on)
 	if(mob_turf && !(mob_turf.z in impacted_z_levels))
 		return
-	if(immunity_type in L.weather_immunities)
+	if(immunity_type in act_on.weather_immunities)
 		return
-	if(!(get_area(L) in impacted_areas))
+	if(!(get_area(act_on) in impacted_areas))
 		return
 	return TRUE
 

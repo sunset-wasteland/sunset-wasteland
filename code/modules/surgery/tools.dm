@@ -357,11 +357,17 @@
 /obj/item/surgical_drapes/advanced
 	name = "smart surgical drapes"
 	desc = "A smart set of drapes with wireless synchronization to the station's research networks, with an integrated display allowing users to execute advanced surgeries without the aid of an operating computer."
+	var/research_id = "SCIENCE"
 	var/datum/techweb/linked_techweb
 
 /obj/item/surgical_drapes/advanced/Initialize(mapload)
 	. = ..()
-	linked_techweb = SSresearch.science_tech
+	update_techweb()
+
+/obj/item/surgical_drapes/advanced/proc/update_techweb(new_research_id = null)
+	if(istext(new_research_id))
+		research_id = new_research_id
+	linked_techweb = SSresearch.get_techweb_by_id(research_id)
 
 /obj/item/surgical_drapes/advanced/proc/get_advanced_surgeries()
 	. = list()

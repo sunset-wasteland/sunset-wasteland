@@ -117,6 +117,33 @@
 	can_suppress = FALSE
 	fire_sound = 'sound/f13weapons/10mm_fire_02.ogg'
 
+/obj/item/gun/ballistic/automatic/pistol/type17/strelle
+	name = "Type 17 Strelle"
+	desc = "Modification of the classic Chinese military sidearm with select fire mechanism and pearl finishing. <span class='warning'>'Zhizn' korotká.'</span>"
+	icon_state = "chinapistols"
+	actions_types = list(/datum/action/item_action/toggle_firemode)
+	automatic_burst_overlay = TRUE
+	can_attachments = FALSE
+	semi_auto = FALSE
+
+/obj/item/gun/ballistic/automatic/pistol/type17/strelle/burst_select()
+	var/mob/living/carbon/human/user = usr
+	switch(select)
+		if(0)
+			select += 1
+			burst_size = 2
+			spread = 9
+			recoil = 0.1
+			to_chat(user, "<span class='notice'>You switch to automatic fire.</span>")
+		if(1)
+			select = 0
+			burst_size = 1
+			spread = 1
+			recoil = 0
+			to_chat(user, "<span class='notice'>You switch to semi-auto.</span>")
+	playsound(user, 'sound/weapons/empty.ogg', 100, 1)
+	update_icon()
+	return
 
 //Browning Hi-power						Keywords: 9mm, Semi-auto
 /obj/item/gun/ballistic/automatic/pistol/ninemil
@@ -188,7 +215,6 @@
 	automatic_burst_overlay = TRUE
 	can_attachments = FALSE
 	semi_auto = FALSE
-	actions_types = list(/datum/action/item_action/toggle_firemode)
 
 /obj/item/gun/ballistic/automatic/pistol/beretta/automatic/burst_select()
 	var/mob/living/carbon/human/user = usr
@@ -342,6 +368,13 @@
 	extra_damage = 50
 	fire_delay = 4
 
+/obj/item/gun/ballistic/automatic/pistol/pistol14/custom
+	name= "Custom 14mm pistol"
+	desc = "A Swiss SIG-Sauer 14mm handgun, this one is a finely tuned custom firearm. How'd this get into service?"
+	icon_state = "lildev"
+	w_class = WEIGHT_CLASS_SMALL
+	extra_damage = 50
+	fire_delay = 4
 
 /////////////////////////////////
 // TEMPORARY REMOVE AFTER BETA //

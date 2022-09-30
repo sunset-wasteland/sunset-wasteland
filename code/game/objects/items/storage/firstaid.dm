@@ -243,8 +243,8 @@
 	STR.max_volume = STORAGE_VOLUME_PILL_BOTTLE
 	STR.allow_quick_gather = TRUE
 	STR.click_gather = TRUE
-	STR.can_hold = typecacheof(list(/obj/item/reagent_containers/pill, /obj/item/dice))
-	STR.cant_hold = typecacheof(list(/obj/item/reagent_containers/pill/patch/jet, /obj/item/reagent_containers/pill/patch/turbo, /obj/item/reagent_containers/pill/patch/healingpowder, /obj/item/reagent_containers/pill/patch/healpoultice))
+	CANHOLD_STATIC(STR, typecacheof(list(/obj/item/reagent_containers/pill, /obj/item/dice)))
+	CANTHOLD_STATIC(STR, typecacheof(list(/obj/item/reagent_containers/pill/patch/jet, /obj/item/reagent_containers/pill/patch/turbo, /obj/item/reagent_containers/pill/patch/healingpowder, /obj/item/reagent_containers/pill/patch/healpoultice)))
 
 /obj/item/storage/pill_bottle/AltClick(mob/living/carbon/user)
 	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
@@ -419,7 +419,7 @@
 	STR.max_items = 16
 	STR.max_w_class = WEIGHT_CLASS_BULKY
 	STR.max_combined_w_class = 20
-	STR.can_hold = typecacheof(list(
+	CANHOLD_STATIC(STR, typecacheof(list(
 	/obj/item/storage/pill_bottle,
 	/obj/item/reagent_containers/hypospray,
 	/obj/item/pinpointer/crew,
@@ -449,7 +449,7 @@
 	/obj/item/stack/sheet/mineral/silver,
 	/obj/item/organ_storage,
 	/obj/item/reagent_containers/chem_pack
-	))
+	)))
 
 //hijacking the minature first aids for hypospray boxes. <3
 /obj/item/storage/hypospraykit
@@ -469,9 +469,9 @@
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 12
-	STR.can_hold = typecacheof(list(
+	CANHOLD_STATIC(STR, typecacheof(list(
 	/obj/item/hypospray/mkii,
-	/obj/item/reagent_containers/glass/bottle/vial))
+	/obj/item/reagent_containers/glass/bottle/vial)))
 
 /obj/item/storage/hypospraykit/regular
 	icon_state = "firstaid-mini"
@@ -581,7 +581,7 @@
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.allow_quick_gather = TRUE
 	STR.click_gather = TRUE
-	STR.can_hold = typecacheof(list(/obj/item/reagent_containers/pill, /obj/item/reagent_containers/syringe, /obj/item/dice))
+	CANHOLD_STATIC(STR, typecacheof(list(/obj/item/reagent_containers/pill, /obj/item/reagent_containers/syringe, /obj/item/dice)))
 
 // ---------------------------------------------
 // MENTAT TIN
@@ -634,4 +634,28 @@
 /obj/item/storage/pill_bottle/chem_tin/buffout/PopulateContents()
 	for(var/i in 1 to 5)
 		new /obj/item/reagent_containers/pill/buffout(src)
-	
+
+
+// ---------------------------------------------
+// WATER PURIFICATION TABLETS
+
+/obj/item/storage/pill_bottle/chem_tin/waterpuretablet
+	name = "Water Purification Tablets"
+	icon_state = "pill_canister_water"
+	desc = "Contains tablets used to treat dirty water. Simply drop a tablet in a bottle or cup, and wait a few seconds."
+
+/obj/item/storage/pill_bottle/chem_tin/waterpuretablet/PopulateContents()
+	for(var/i in 1 to 5)
+		new /obj/item/reagent_containers/pill/waterpuretablet(src)
+
+// ---------------------------------------------
+// NUTRIMENT TABLETS
+
+/obj/item/storage/pill_bottle/chem_tin/foodpaste
+	name = "Nutriment Tablets"
+	icon_state = "pill_canister_paste"
+	desc = "Contains tablets that contain nutriments needed for survival. Don't take more than one every five minutes at once, to avoid wasting them all."
+
+/obj/item/storage/pill_bottle/chem_tin/foodpaste/PopulateContents()
+	for(var/i in 1 to 5)
+		new /obj/item/reagent_containers/pill/foodpaste(src)

@@ -95,7 +95,7 @@
 	M.adjustBruteLoss(15)
 	src.visible_message(text("<span class='danger'>[M] falls free of [src]!</span>"))
 	unbuckle_mob(M,force=1)
-	M.emote("collapse")
+	INVOKE_ASYNC(M, /mob/proc/emote, "collapse")
 	M.overlays -= image('icons/obj/cross.dmi', "lashing")
 
 /obj/structure/cross/Destroy()
@@ -192,7 +192,7 @@
 	src.visible_message(text("<span class='danger'>[M] falls free of [src]!</span>"))
 	unbuckle_mob(M,force=1)
 	M.losebreath = 0
-	M.emote("collapse")
+	INVOKE_ASYNC(M, /mob/proc/emote, "collapse")
 	M.overlays -= image('icons/obj/gallows.dmi', "noose")
 
 /obj/structure/gallow/Destroy()

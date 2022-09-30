@@ -1,45 +1,89 @@
-#define BORDER_CONTROL_DISABLED 0
-#define BORDER_CONTROL_LEARNING 1
-#define BORDER_CONTROL_ENFORCED 2
+#define BORDER_CONTROL_MODE_DISABLED 0
+#define BORDER_CONTROL_MODE_LEARNING 1
+#define BORDER_CONTROL_MODE_ENFORCED 2
 
-var/list/whitelistedCkeys
-var/savefile/borderControlFile = new /savefile("data/bordercontrol.db")
-var/whitelistLoaded = 0
+#define BORDER_CONTROL_STYLE_NO_SERVER_CONNECT  0
+#define BORDER_CONTROL_STYLE_NO_ROUND_JOIN		1
+
+#define BORDER_CONTROL_VERBOSE 0
+
+GLOBAL_LIST(whitelistedCkeys)
+GLOBAL_DATUM_INIT(borderControlFile, /savefile, new("data/bordercontrol.db"))
+GLOBAL_VAR_INIT(whitelistLoaded, 0)
+
+GLOBAL_PROTECT(whitelistedCkeys)
+GLOBAL_PROTECT(borderControlFile)
+GLOBAL_PROTECT(whitelistLoaded)
 
 //////////////////////////////////////////////////////////////////////////////////
-proc/BC_ModeToText(var/mode)
+/proc/BC_ModeToText(mode)
 	switch(mode)
-		if(BORDER_CONTROL_DISABLED)
+		if(BORDER_CONTROL_MODE_DISABLED)
 			return "Disabled"
-		if(BORDER_CONTROL_LEARNING)
+		if(BORDER_CONTROL_MODE_LEARNING)
 			return "Learning"
-		if(BORDER_CONTROL_ENFORCED)
+		if(BORDER_CONTROL_MODE_ENFORCED)
 			return "Enforced"
 
 //////////////////////////////////////////////////////////////////////////////////
-proc/BC_IsKeyAllowedToConnect(var/key)
+/proc/BC_StyleToText(style)
+	switch(style)
+		if(BORDER_CONTROL_STYLE_NO_SERVER_CONNECT)
+			return "Clients are not permitted to connect"
+		if(BORDER_CONTROL_STYLE_NO_ROUND_JOIN)
+			return "Clients are permitted to connect, but not join a round"
+
+//////////////////////////////////////////////////////////////////////////////////
+/proc/BC_IsKeyAllowedToConnect(key)
 	key = ckey(key)
 
 	var/borderControlMode = CONFIG_GET(number/border_control)
 
-	if(borderControlMode == BORDER_CONTROL_DISABLED)
+	if(borderControlMode == BORDER_CONTROL_MODE_DISABLED)
+
+		#if (BORDER_CONTROL_VERBOSE)
+			log_and_message_admins("[key] has bypassed border control due to border control being disabled.")
+		#endif
+
 		return 1
-	else if (borderControlMode == BORDER_CONTROL_LEARNING)
+	else if (borderControlMode == BORDER_CONTROL_MODE_LEARNING)
+
+		#if(BORDER_CONTROL_VERBOSE)
+			log_and_message_admins("[key] has bypassed border control due to border control being in learning mode.")
+		#endif
+
 		if(!BC_IsKeyWhitelisted(key))
 			log_and_message_admins("[key] has joined and was added to the border whitelist.")
 		BC_WhitelistKey(key)
 		return 1
+	else if (key in GLOB.admin_datums)
+		#if(BORDER_CONTROL_VERBOSE)
+			log_and_message_admins("[key] has bypassed border control due to being an admin.")
+		#endif
+
+		return 1
+	else if (BC_IsKeyWhitelisted(key))
+		#if(BORDER_CONTROL_VERBOSE)
+			log_and_message_admins("[key] has bypassed border control due to being in the whitelist.")
+		#endif
+
+		return 1
 	else
-		return BC_IsKeyWhitelisted(key)
+		#if(BORDER_CONTROL_VERBOSE)
+			log_and_message_admins("[key] has failed to bypass border control.")
+		#endif
+
+		return 0
+
 
 //////////////////////////////////////////////////////////////////////////////////
-proc/BC_IsKeyWhitelisted(var/key)
+/proc/BC_IsKeyWhitelisted(key)
 	key = ckey(key)
 
-	if(!whitelistLoaded)
+	if(!GLOB.whitelistLoaded)
 		BC_LoadWhitelist()
 
-	if(LAZYISIN(whitelistedCkeys, key))
+	if(LAZYISIN(GLOB.whitelistedCkeys, key))
 		return 1
 	else
 		return 0
@@ -62,27 +106,25 @@ proc/BC_IsKeyWhitelisted(var/key)
 
 
 //////////////////////////////////////////////////////////////////////////////////
-proc/BC_WhitelistKey(var/key)
+/proc/BC_WhitelistKey(key)
 	var/keyAsCkey = ckey(key)
 
-	if(!whitelistLoaded)
+	if(!GLOB.whitelistLoaded)
 		BC_LoadWhitelist()
 
 	if(!keyAsCkey)
 		return 0
 	else
-		if(LAZYISIN(whitelistedCkeys,keyAsCkey))
+		if(LAZYISIN(GLOB.whitelistedCkeys,keyAsCkey))
 			// Already in
 			return 0
 		else
-			LAZYINITLIST(whitelistedCkeys)
+			LAZYINITLIST(GLOB.whitelistedCkeys)
 
-			ADD_SORTED(whitelistedCkeys, keyAsCkey, /proc/cmp_text_asc)
+			ADD_SORTED(GLOB.whitelistedCkeys, keyAsCkey, /proc/cmp_text_asc)
 
 			BC_SaveWhitelist()
 			return 1
-
-	return
 
 
 //////////////////////////////////////////////////////////////////////////////////
@@ -93,7 +135,7 @@ proc/BC_WhitelistKey(var/key)
 	set name = "Border Control - Remove Key"
 	set category = "Admin.Border Control"
 
-	var/keyToRemove = input("CKey to Remove", "Remove Key") as null|anything in whitelistedCkeys
+	var/keyToRemove = input("CKey to Remove", "Remove Key") as null|anything in GLOB.whitelistedCkeys
 
 	if(keyToRemove)
 		var/confirm = alert("Remove [keyToRemove] from the border control whitelist?", , "Yes", "No")
@@ -105,14 +147,14 @@ proc/BC_WhitelistKey(var/key)
 
 
 //////////////////////////////////////////////////////////////////////////////////
-proc/BC_RemoveKey(var/key)
+/proc/BC_RemoveKey(key)
 	key = ckey(key)
 
-	if(!LAZYISIN(whitelistedCkeys, key))
+	if(!LAZYISIN(GLOB.whitelistedCkeys, key))
 		return 1
 	else
-		if(whitelistedCkeys)
-			whitelistedCkeys.Remove(key)
+		if(GLOB.whitelistedCkeys)
+			GLOB.whitelistedCkeys.Remove(key)
 		BC_SaveWhitelist()
 		return 1
 
@@ -134,12 +176,12 @@ proc/BC_RemoveKey(var/key)
 
 	switch(choice)
 		if("Disabled")
-			if(borderControlMode != BORDER_CONTROL_DISABLED)
-				borderControlMode = BORDER_CONTROL_DISABLED
+			if(borderControlMode != BORDER_CONTROL_MODE_DISABLED)
+				borderControlMode = BORDER_CONTROL_MODE_DISABLED
 				log_and_message_admins("has disabled border control.")
 		if("Learning")
-			if(borderControlMode != BORDER_CONTROL_LEARNING)
-				borderControlMode = BORDER_CONTROL_LEARNING
+			if(borderControlMode != BORDER_CONTROL_MODE_LEARNING)
+				borderControlMode = BORDER_CONTROL_MODE_LEARNING
 				log_and_message_admins("has set border control to learn new keys on connection!")
 			var/confirm = alert("Learn currently connected keys?", , "Yes", "No")
 			if(confirm == "Yes")
@@ -148,8 +190,8 @@ proc/BC_RemoveKey(var/key)
 						log_and_message_admins("[key_name(usr)] added [C.key] to the border whitelist by adding all current clients.")
 
 		if("Enforced")
-			if(borderControlMode != BORDER_CONTROL_ENFORCED)
-				borderControlMode = BORDER_CONTROL_ENFORCED
+			if(borderControlMode != BORDER_CONTROL_MODE_ENFORCED)
+				borderControlMode = BORDER_CONTROL_MODE_ENFORCED
 				log_and_message_admins("has enforced border controls. New keys can no longer join.")
 
 	CONFIG_SET(number/border_control, borderControlMode)
@@ -166,24 +208,24 @@ proc/BC_RemoveKey(var/key)
 //////////////////////////////////////////////////////////////////////////////////
 /proc/BC_LoadWhitelist()
 
-	LAZYCLEARLIST(whitelistedCkeys)
+	LAZYCLEARLIST(GLOB.whitelistedCkeys)
 
-	LAZYINITLIST(whitelistedCkeys)
+	LAZYINITLIST(GLOB.whitelistedCkeys)
 
-	if(!borderControlFile)
+	if(!GLOB.borderControlFile)
 		return 0
 
-	borderControlFile["WhitelistedCkeys"] >> whitelistedCkeys
+	GLOB.borderControlFile["WhitelistedCkeys"] >> GLOB.whitelistedCkeys
 
-	whitelistLoaded = 1
+	GLOB.whitelistLoaded = 1
 
 
 //////////////////////////////////////////////////////////////////////////////////
-proc/BC_SaveWhitelist()
-	if(!whitelistedCkeys)
+/proc/BC_SaveWhitelist()
+	if(!GLOB.whitelistedCkeys)
 		return 0
 
-	if(!borderControlFile)
+	if(!GLOB.borderControlFile)
 		return 0
 
-	borderControlFile["WhitelistedCkeys"] << whitelistedCkeys
+	GLOB.borderControlFile["WhitelistedCkeys"] << GLOB.whitelistedCkeys

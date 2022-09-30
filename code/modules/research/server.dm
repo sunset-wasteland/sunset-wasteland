@@ -3,6 +3,7 @@
 	desc = "A computer system running a deep neural network that processes arbitrary information to produce data useable in the development of new technologies. In layman's terms, it makes research points."
 	icon = 'icons/obj/machines/research.dmi'
 	icon_state = "server"
+	var/research_id = "SCIENCE" // this is all over the place, todo: centralize/componentize
 	var/datum/techweb/stored_research
 	//Code for point mining here.
 	var/working = TRUE			//temperature should break it.
@@ -17,15 +18,36 @@
 	var/temp_penalty_coefficient = 0.5	//1 = -1 points per degree above high tolerance. 0.5 = -0.5 points per degree above high tolerance.
 	req_access = list(ACCESS_RD) //ONLY THE R&D CAN CHANGE SERVER SETTINGS.
 
+/obj/machinery/rnd/server/proc/create_custom_techweb() // admin call only ATM, heavy wip
+	// todo: maybe move this to SSresearch
+	if(SSresearch.technets[research_id])
+		stored_research = SSresearch.technets[research_id] // no overwriting existing servers
+		return
+	stored_research = new /datum/techweb/custom(research_id)
+	SSresearch.technets[research_id] = stored_research
+
+/obj/machinery/rnd/server/proc/init_server() // separate from initialize for admin purposes
+	LAZYADD(SSresearch.servernets[research_id], src)
+	// might do more in the future
+
+/obj/machinery/rnd/server/proc/disconnect_server() // above, but with destroy
+	LAZYREMOVE(SSresearch.servernets[research_id], src)
+	// todo: maybe delete (custom?) techwebs if we remove the last server one has? :thinking:
+
 /obj/machinery/rnd/server/Initialize()
 	. = ..()
-	SSresearch.servers |= src
-	stored_research = SSresearch.science_tech
-	var/obj/item/circuitboard/machine/B = new /obj/item/circuitboard/machine/rdserver(null)
-	B.apply_default_parts(src)
+	SSresearch.servers |= src // global rnd server list
+	init_server()
+	update_techweb()
+
+/obj/machinery/rnd/server/proc/update_techweb(new_research_id = null)
+	if(istext(new_research_id))
+		research_id = new_research_id
+	stored_research = SSresearch.get_techweb_by_id(research_id)
 
 /obj/machinery/rnd/server/Destroy()
 	SSresearch.servers -= src
+	disconnect_server()
 	return ..()
 
 /obj/machinery/rnd/server/RefreshParts()
@@ -152,26 +174,17 @@
 	return TRUE
 
 
-/obj/machinery/rnd/server/bos/Initialize()
-	. = ..()
-	SSresearch.BOSservers |= src
-	stored_research = SSresearch.bos_tech //note this lettern
-	var/obj/item/circuitboard/machine/B = new /obj/item/circuitboard/machine/rdserver(null)
-	B.apply_default_parts(src)
+/obj/machinery/rnd/server/bos
+	research_id = "BOS"
 
-/obj/machinery/rnd/server/vault/Initialize()
-	. = ..()
-	SSresearch.VAULTservers |= src
-	stored_research = SSresearch.science_tech //note this lettern
-	var/obj/item/circuitboard/machine/B = new /obj/item/circuitboard/machine/rdserver(null)
-	B.apply_default_parts(src)
+/obj/machinery/rnd/server/vault
+	research_id = "VAULT"
 
-/obj/machinery/rnd/server/followers/Initialize()
-	. = ..()
-	SSresearch.VAULTservers |= src
-	stored_research = SSresearch.followers_tech
-	var/obj/item/circuitboard/machine/B = new /obj/item/circuitboard/machine/rdserver(null)
-	B.apply_default_parts(src)
+/obj/machinery/rnd/server/followers
+	research_id = "FOLLOWERS"
+
+/obj/machinery/rnd/server/enclave
+	research_id = "ENCLAVE"
 
 /* so we can link lathes and such to this server's techweb */
 /obj/machinery/rnd/server/multitool_act(mob/living/user, obj/item/I)

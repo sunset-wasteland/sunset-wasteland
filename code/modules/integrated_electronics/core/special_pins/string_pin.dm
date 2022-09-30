@@ -10,6 +10,8 @@
 
 /datum/integrated_io/string/write_data_to_pin(new_data)
 	if(isnull(new_data) || istext(new_data))
+		if(length(new_data) > MAX_MESSAGE_LEN)
+			new_data = copytext(new_data, 1, MAX_MESSAGE_LEN+1)
 		data = new_data
 		holder.on_data_written()
 

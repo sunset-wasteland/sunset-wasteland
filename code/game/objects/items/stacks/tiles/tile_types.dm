@@ -162,14 +162,118 @@
 	merge_type = /obj/item/stack/tile/fairygrass/pink
 
 //Wood
-/obj/item/stack/tile/wood
-	name = "wooden floor tile"
-	singular_name = "wooden floor tile"
+
+/obj/item/stack/tile/wood //debug item. shouldn't show up but integration tests fail unless there's some logic here.
+	name = "debug wooden floor tile"
+	singular_name = "debug wooden floor tile"
 	desc = "An easy to fit wood floor tile."
-	icon_state = "tile-wood"
-	turf_type = /turf/open/floor/wood
 	resistance_flags = FLAMMABLE
 	merge_type = /obj/item/stack/tile/wood
+
+/obj/item/stack/tile/wood/common
+	name = "common wooden floor tile"
+	singular_name = "common wooden floor tile"
+	icon_state = "tile-common"
+	turf_type = /turf/open/floor/wood/wood_common
+	merge_type = /obj/item/stack/tile/wood/common
+
+/obj/item/stack/tile/wood/common/light
+	name = "common light wooden floor tile"
+	singular_name = "common light wooden floor tile"
+	icon_state = "tile-common-light"
+	turf_type = /turf/open/floor/wood/wood_common/wood_common_light
+	merge_type = /obj/item/stack/tile/wood/common/light
+
+/obj/item/stack/tile/wood/common/dark
+	name = "common dark wooden floor tile"
+	singular_name = "common dark wooden floor tile"
+	icon_state = "tile-common-dark"
+	turf_type = /turf/open/floor/wood/wood_common/wood_common_dark
+	merge_type = /obj/item/stack/tile/wood/common/dark
+
+/obj/item/stack/tile/wood/fancy
+	name = "fancy wooden floor tile"
+	singular_name = "fancy wooden floor tile"
+	icon_state = "tile-fancy"
+	turf_type = /turf/open/floor/wood/wood_fancy
+	merge_type = /obj/item/stack/tile/wood/fancy
+
+/obj/item/stack/tile/wood/fancy/light
+	name = "fancy light wooden floor tile"
+	singular_name = "fancy light wooden floor tile"
+	icon_state = "tile-fancy-light"
+	turf_type = /turf/open/floor/wood/wood_fancy/wood_fancy_light
+	merge_type = /obj/item/stack/tile/wood/fancy/light
+
+/obj/item/stack/tile/wood/fancy/dark
+	name = "fancy dark wooden floor tile"
+	singular_name = "fancy dark wooden floor tile"
+	icon_state = "tile-fancy-dark"
+	turf_type = /turf/open/floor/wood/wood_fancy/wood_fancy_dark
+	merge_type = /obj/item/stack/tile/wood/fancy/dark
+
+/obj/item/stack/tile/wood/mosaic
+	name = "mosaic wooden floor tile"
+	singular_name = "mosaic wooden floor tile"
+	icon_state = "tile-mosaic"
+	turf_type = /turf/open/floor/wood/wood_mosaic
+	merge_type = /obj/item/stack/tile/wood/mosaic
+
+/obj/item/stack/tile/wood/mosaic/light
+	name = "mosaic light wooden floor tile"
+	singular_name = "mosaic light wooden floor tile"
+	icon_state = "tile-mosaic-light"
+	turf_type = /turf/open/floor/wood/wood_mosaic/wood_mosaic_light
+	merge_type = /obj/item/stack/tile/wood/mosaic/light
+
+/obj/item/stack/tile/wood/mosaic/dark
+	name = "mosaic dark wooden floor tile"
+	singular_name = "mosaic dark wooden floor tile"
+	icon_state = "tile-mosaic-dark"
+	turf_type = /turf/open/floor/wood/wood_mosaic/wood_mosaic_dark
+	merge_type = /obj/item/stack/tile/wood/mosaic/dark
+
+/obj/item/stack/tile/wood/wide
+	name = "wide wooden floor tile"
+	singular_name = "wide wooden floor tile"
+	icon_state = "tile-wide"
+	turf_type = /turf/open/floor/wood/wood_wide
+	merge_type = /obj/item/stack/tile/wood/wide
+
+/obj/item/stack/tile/wood/wide/light
+	name = "wide light wooden floor tile"
+	singular_name = "wide light wooden floor tile"
+	icon_state = "tile-wide-light"
+	turf_type = /turf/open/floor/wood/wood_wide/wood_wide_light
+	merge_type = /obj/item/stack/tile/wood/wide/light
+
+/obj/item/stack/tile/wood/wide/dark
+	name = "wide dark wooden floor tile"
+	singular_name = "wide dark wooden floor tile"
+	icon_state = "tile-wide-dark"
+	turf_type = /turf/open/floor/wood/wood_wide/wood_wide_dark
+	merge_type = /obj/item/stack/tile/wood/wide/dark
+
+/obj/item/stack/tile/wood/worn
+	name = "worn wooden floor tile"
+	singular_name = "worn wooden floor tile"
+	icon_state = "tile-worn"
+	turf_type = /turf/open/floor/wood/wood_worn
+	merge_type = /obj/item/stack/tile/wood/worn
+
+/obj/item/stack/tile/wood/worn/light
+	name = "worn light wooden floor tile"
+	singular_name = "worn light wooden floor tile"
+	icon_state = "tile-worn-light"
+	turf_type = /turf/open/floor/wood/wood_worn/wood_worn_light
+	merge_type = /obj/item/stack/tile/wood/worn/light
+
+/obj/item/stack/tile/wood/worn/dark
+	name = "worn dark wooden floor tile"
+	singular_name = "worn dark wooden floor tile"
+	icon_state = "tile-worn-dark"
+	turf_type = /turf/open/floor/wood/wood_worn/wood_worn_dark
+	merge_type = /obj/item/stack/tile/wood/worn/dark
 
 
 //Cloth Floors

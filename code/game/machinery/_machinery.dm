@@ -90,6 +90,7 @@ Class Procs:
 	verb_say = "beeps"
 	verb_yell = "blares"
 	pressure_resistance = 15
+	pass_flags_self = PASSMACHINE
 	max_integrity = 200
 	layer = BELOW_OBJ_LAYER //keeps shit coming out of the machine from ending up underneath it.
 	flags_1 = DEFAULT_RICOCHET_1
@@ -295,20 +296,22 @@ Class Procs:
 /obj/machinery/proc/nap_violation(mob/violator)
 	return
 
-/obj/machinery/CanPass(atom/movable/mover, border_dir)//So bullets will fly over and stuff.
-	if(barricade == FALSE)
-		return !density
-	else if(density == FALSE)
-		return 1
-	else if(istype(mover, /obj/item/projectile))
-		var/obj/item/projectile/proj = mover
-		if(proj.firer && Adjacent(proj.firer))
-			return 1
+/obj/machinery/CanAllowThrough(atom/movable/mover, border_dir)
+	. = ..()//So bullets will fly over and stuff.
+	if(!. && barricade)
+		// Barricades only let projectiles and thrown things through.
+		if (istype(mover, /obj/item/projectile))
+			var/obj/item/projectile/proj = mover
+			if(proj.firer?.Adjacent(src))
+				return TRUE
+		else if (mover.throwing)
+			if (mover.throwing.thrower?.Adjacent(src))
+				return TRUE
+		else // neither thrown nor fired
+			return FALSE
+		// thrown or fired but no firer/thrower or not adjacent
 		if(prob(proj_pass_rate))
-			return 1
-		return 0
-	else
-		return !density
+			return TRUE
 
 ////////////////////////////////////////////////////////////////////////////////////////////
 

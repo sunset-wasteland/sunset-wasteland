@@ -223,11 +223,6 @@
 //	user.changeNext_move(CLICK_CD_MELEE)
 	..()
 
-/obj/structure/simple_door/CanPass(atom/movable/mover, border_dir, height=0)
-	if(mover.loc == loc)
-		return 1
-	return !density
-
 /obj/structure/simple_door/CheckExit(atom/movable/O as mob|obj, target)
 	if(!density && !manual_opened && ishuman(O))
 		var/mob/living/carbon/human/H = O
@@ -246,14 +241,14 @@
 //	WOODEN DOORS
 
 // weathered white door
-/obj/structure/simple_door/house 
+/obj/structure/simple_door/house
 	icon_state = "house"
 	door_type = "house"
 	can_disasemble = TRUE
 	can_hold_padlock = TRUE
 
 // cleaned and repainted white
-/obj/structure/simple_door/house/clean 
+/obj/structure/simple_door/house/clean
 	icon_state = "houseclean"
 	door_type = "houseclean"
 
@@ -294,7 +289,8 @@
 //	TENT FLAPS
 
 /obj/structure/simple_door/tentflap_leather
-	name = "brahminskin tent entrance"
+	name = "tent flap"
+	desc = "The brahminskin flap of a tent. You can breeze right through."
 	icon_state = "tentflap_leather"
 	door_type = "tentflap_leather"
 	base_opacity = TRUE
@@ -304,7 +300,8 @@
 	close_sound = 'sound/effects/footstep/hardbarefoot5.ogg'
 
 /obj/structure/simple_door/tentflap_cloth
-	name = "cotton tent entrance"
+	name = "tent flap"
+	desc = "The cloth door of a tent. You can breeze right through."
 	icon_state = "tentflap_cloth"
 	door_type = "tentflap_cloth"
 	base_opacity = TRUE
@@ -312,6 +309,18 @@
 	can_hold_padlock = FALSE
 	open_sound = 'sound/effects/footstep/hardbarefoot4.ogg'
 	close_sound = 'sound/effects//footstep/hardbarefoot5.ogg'
+	max_integrity = 100
+
+/obj/structure/simple_door/tentflap_cloth/Destroy()
+	if(padlock)
+		padlock.forceMove(get_turf(src))
+		padlock = null
+	//fortuna edit
+	investigate_log("Door '[src]' destroyed at [AREACOORD(src)]. Last fingerprints: [src.fingerprintslast]", INVESTIGATE_DESTROYED)
+	message_admins("Door '[ADMIN_JMP(src)]' destroyed at [AREACOORD(src)]. Last fingerprints(If any): [src.fingerprintslast]")
+	log_game("Door '[src]' destroyed at [AREACOORD(src)]. Last fingerprints: [src.fingerprintslast]")
+	new /obj/item/stack/sheet/cloth/three(src.loc)
+	return ..()
 
 // Old square style tent door
 /obj/structure/simple_door/tent
@@ -358,8 +367,9 @@
 	opacity = FALSE
 	base_opacity = FALSE
 	can_hold_padlock = TRUE
+	barricade = TRUE
 	proj_pass_rate = 95
-	pass_flags = LETPASSTHROW 
+	pass_flags_self = LETPASSTHROW
 
 /obj/structure/simple_door/dirtyglass
 	desc = "The glass is dirty, you can't see a thing behind it."

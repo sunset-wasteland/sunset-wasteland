@@ -11,8 +11,8 @@
 #define BEE_POLLINATE_POTENCY_CHANCE	50
 
 /mob/living/simple_animal/hostile/poison/bees
-	name = "bee"
-	desc = "Buzzy buzzy bee, stingy sti- Ouch!"
+	name = "radbee"
+	desc = "Buzzy buzzy radbee, stingy sti- oh god I'm vomiting blood!"
 	icon_state = ""
 	icon_living = ""
 	icon = 'icons/mob/bees.dmi'
@@ -135,7 +135,7 @@
 			var/obj/structure/beebox/BB = target
 			forceMove(BB)
 			toggle_ai(AI_IDLE)
-			target = null
+			LoseTarget()
 			wanted_objects -= beehometypecache //so we don't attack beeboxes when not going home
 		return //no don't attack the goddamm box
 	else
@@ -156,10 +156,10 @@
 
 /mob/living/simple_animal/hostile/poison/bees/proc/pollinate(obj/machinery/hydroponics/Hydro)
 	if(!istype(Hydro) || !Hydro.myseed || Hydro.dead || Hydro.recent_bee_visit)
-		target = null
+		LoseTarget()
 		return
 
-	target = null //so we pick a new hydro tray next FindTarget(), instead of loving the same plant for eternity
+	LoseTarget() //so we pick a new hydro tray next FindTarget(), instead of loving the same plant for eternity
 	wanted_objects -= hydroponicstypecache //so we only hunt them while they're alive/seeded/not visisted
 	Hydro.recent_bee_visit = TRUE
 	spawn(BEE_TRAY_RECENT_VISIT)
@@ -197,7 +197,7 @@
 			if(idle <= BEE_IDLE_GOHOME && prob(BEE_PROB_GOHOME))
 				if(!FindTarget())
 					wanted_objects |= beehometypecache //so we don't attack beeboxes when not going home
-					target = beehome
+					GiveTarget(beehome)
 	if(!beehome) //add outselves to a beebox (of the same reagent) if we have no home
 		for(var/obj/structure/beebox/BB in view(vision_range, src))
 			if(reagent_incompatible(BB.queen_bee) || BB.bees.len >= BB.get_max_bees())
@@ -212,11 +212,15 @@
 	assign_reagent(GLOB.chemical_reagents_list[R])
 
 /mob/living/simple_animal/hostile/poison/bees/queen
-	name = "queen bee"
-	desc = "She's the queen of bees, BZZ BZZ!"
+	name = "queen radbee"
+	desc = "She's the queen of radbees, BZZ BZZ!"
 	icon_base = "queen"
 	isqueen = TRUE
 
+/mob/living/simple_animal/hostile/poison/bees/queen/Destroy()
+	if (beehome && beehome.queen_bee == src)
+		beehome.queen_bee = null
+	return ..()
 
 //the Queen doesn't leave the box on her own, and she CERTAINLY doesn't pollinate by herself
 /mob/living/simple_animal/hostile/poison/bees/queen/Found(atom/A)
@@ -246,8 +250,8 @@
 
 
 /obj/item/queen_bee
-	name = "queen bee"
-	desc = "She's the queen of bees, BZZ BZZ!"
+	name = "queen radbee"
+	desc = "She's the queen of radbees, BZZ BZZ!"
 	icon_state = "queen_item"
 	item_state = ""
 	icon = 'icons/mob/bees.dmi'

@@ -6,7 +6,7 @@
 
 /datum/chemical_reaction/metalgen_imprint
 	name = "metalgen imprint"
-	id = /datum/reagent/metalgen
+	id = "metalgen_imprint"
 	required_reagents = list(/datum/reagent/metalgen = 1, /datum/reagent/liquid_dark_matter = 1)
 	results = list(/datum/reagent/metalgen = 1)
 
@@ -670,6 +670,7 @@
 	required_reagents = list(/datum/reagent/barbers_aid = 1, /datum/reagent/toxin/mutagen = 1)
 
 /datum/chemical_reaction/baldium
+	id = "baldium"
 	results = list(/datum/reagent/baldium = 1)
 	required_reagents = list(/datum/reagent/radium = 1, /datum/reagent/toxin/acid = 1, /datum/reagent/lye = 1)
 	required_temp = 395
@@ -852,6 +853,7 @@
 	required_temp = 350
 
 /datum/chemical_reaction/cellulose_carbonization
+	id = "cellulose_carbonization"
 	results = list(/datum/reagent/carbon = 1)
 	required_reagents = list(/datum/reagent/cellulose = 1)
 	required_temp = 512
@@ -897,24 +899,62 @@
 	results = list(/datum/reagent/breast_enlarger = 2)
 	required_reagents = list(/datum/reagent/medicine/salglu_solution = 2, /datum/reagent/consumable/milk = 1, /datum/reagent/medicine/synthflesh = 2, /datum/reagent/silicon = 3, /datum/reagent/drug/aphrodisiac = 3)
 	required_temp = 200
-	
+
 /datum/chemical_reaction/BEsmaller
 	name = "Modesty Milk"
 	id = "/datum/reagent/BEsmaller"
 	results = list(/datum/reagent/BEsmaller = 2)
 	required_reagents = list(/datum/reagent/medicine/salglu_solution = 2, /datum/reagent/consumable/milk = 1, /datum/reagent/medicine/synthflesh = 2, /datum/reagent/silicon = 3, /datum/reagent/drug/anaphrodisiac = 3)
 	required_temp = 200
-	
+
 /datum/chemical_reaction/penis_enlarger
 	name = "Incubus Draft"
 	id = "/datum/reagent/penis_enlarger"
 	results = list(/datum/reagent/penis_enlarger = 2)
 	required_reagents = list(/datum/reagent/medicine/salglu_solution = 2, /datum/reagent/blood = 5, /datum/reagent/medicine/synthflesh = 2, /datum/reagent/carbon = 2, /datum/reagent/drug/aphrodisiac = 2)
 	required_temp = 200
-	
+
 /datum/chemical_reaction/PEsmaller
 	name = "Chastity Draft"
 	id = "/datum/reagent/PEsmaller"
 	results = list(/datum/reagent/PEsmaller = 2)
 	required_reagents = list(/datum/reagent/medicine/salglu_solution = 2, /datum/reagent/blood = 5, /datum/reagent/medicine/synthflesh = 2, /datum/reagent/carbon = 2, /datum/reagent/drug/anaphrodisiac = 2)
 	required_temp = 200
+
+// Fallout Stuff
+
+/datum/chemical_reaction/boilingwater
+	name = "Boiling Water"
+	id = /datum/reagent/water/bwater
+	results = list(/datum/reagent/water/bwater = 1)
+	required_reagents = list(/datum/reagent/water/dwater = 1) // ADVANCED BOILING WATER CODE URAH
+	mob_react = FALSE // You cannot boil water inside yourself you fucking mongoloid
+	required_temp = 372
+
+/datum/chemical_reaction/purewatera
+	name = "Purify Dirty Water"
+	id = "dirty_water_purify"
+	results = list(/datum/reagent/water = 5)
+	required_reagents = list(/datum/reagent/watertabletpowder = 1, /datum/reagent/water/dwater = 5)
+
+/datum/chemical_reaction/purewaterb
+	name = "Purify Boiled Water"
+	id = "boiled_water_purify"
+	results = list(/datum/reagent/water = 5)
+	required_reagents = list(/datum/reagent/watertabletpowder = 1, /datum/reagent/water/bwater = 5)
+
+/datum/chemical_reaction/purewaterc
+	name = "Carbon and Boiled Water"
+	id = "boiled_water_carbon_purify"
+	results = list(/datum/reagent/water = 1)
+	required_reagents = list(/datum/reagent/water/bwater = 1, /datum/reagent/carbon = 1)
+	mob_react = FALSE
+	required_temp = 512
+
+/datum/chemical_reaction/purewaterd
+	name = "Iodine and Boiled Water"
+	id = "boiled_water_iodine_purify"
+	results = list(/datum/reagent/water = 1)
+	required_reagents = list(/datum/reagent/water/bwater = 1, /datum/reagent/iodine = 1)
+	mob_react = FALSE
+	required_temp = 512

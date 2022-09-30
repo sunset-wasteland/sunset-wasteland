@@ -39,6 +39,8 @@ GLOBAL_LIST_EMPTY(servant_spawns) //Servants of Ratvar spawn here
 GLOBAL_LIST_EMPTY(city_of_cogs_spawns) //Anyone entering the City of Cogs spawns here
 GLOBAL_LIST_EMPTY(ruin_landmarks)
 
+GLOBAL_LIST_EMPTY(special_borg_start)
+
 //away missions
 GLOBAL_LIST_EMPTY(vr_spawnpoints)
 

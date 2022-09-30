@@ -8,7 +8,7 @@
 
 	health = 3000
 	maxHealth = 3000
-	
+
 	armour_penetration = 0.7
 	melee_damage_lower = 40
 	melee_damage_upper = 50
@@ -138,4 +138,7 @@
 	SetRecoveryTime(30, 0)
 	SLEEP_CHECK_DEATH(12)
 	can_move = TRUE
+	return
+
+/mob/living/simple_animal/hostile/megafauna/behemoth/devour()
 	return

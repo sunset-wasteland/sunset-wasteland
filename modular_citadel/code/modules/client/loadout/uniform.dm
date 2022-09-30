@@ -150,7 +150,7 @@
 	name = "torn rags"
 	path = /obj/item/clothing/under/f13/rag
 
-//suits 
+//suits
 
 /datum/gear/uniform/suit
 	name = "black suit"
@@ -321,6 +321,22 @@
 /datum/gear/uniform/shorts/jean
 	name = "jean shorts"
 	path = /obj/item/clothing/under/pants/jeanshort
+
+/datum/gear/uniform/shorts/jeanbshorts
+	name = "jean booty shorts"
+	path = /obj/item/clothing/under/jeanbshorts
+
+/datum/gear/uniform/shorts/darkbshorts
+	name = "dark booty shorts"
+	path = /obj/item/clothing/under/darkbshorts
+
+/datum/gear/uniform/shorts/blackbshorts
+	name = "black booty shorts"
+	path = /obj/item/clothing/under/blackbshorts
+
+/datum/gear/uniform/shorts/brownbshorts
+	name = "Cargo booty shorts"
+	path = /obj/item/clothing/under/brownbshorts
 
 /datum/gear/uniform/tealturtle
 	name = "teal turtleneck"
@@ -584,7 +600,7 @@
 						)
 
 /datum/gear/uniform/ncr_shorts
-	name = "NCR Rhodesian shorts"
+	name = "NCR fatigue shorts"
 	path = /obj/item/clothing/under/f13/ncr/ncr_shorts
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_FACTIONS
 	restricted_desc = "NCR"
@@ -655,10 +671,10 @@
 	restricted_desc = "Oasis"
 	restricted_roles = list("Mayor",
 							"Secretary",
-							"Chief of Police",
+							"Sheriff",
 							"Doctor",
 							"Citizen",
-							"Officer",
+							"Deputy",
 							"Shopkeeper",
 							"Farmer",
 							"Prospector",
@@ -666,7 +682,7 @@
 							"Barkeep",
 							)
 
-//Khans 
+//Khans
 
 /datum/gear/uniform/khans
 	name = "great khans jorts"
@@ -1079,5 +1095,17 @@
 /datum/gear/uniform/wasteland/sleazeball
 	name = "Loanshark outfit"
 	path = /obj/item/clothing/under/f13/sleazeball
+	cost = 1
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_WASTELAND
+
+/datum/gear/uniform/wasteland/raider_leather
+	name = "raider leathers"
+	path = /obj/item/clothing/under/f13/raider_leather
+	cost = 1
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_WASTELAND
+
+/datum/gear/uniform/wasteland/raiderrags
+	name = "raider rags"
+	path = /obj/item/clothing/under/f13/raiderrags
 	cost = 1
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_WASTELAND

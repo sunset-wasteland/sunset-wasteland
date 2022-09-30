@@ -49,6 +49,8 @@
 	var/base_opacity = FALSE
 	///Lazylist of movable atoms providing opacity sources.
 	var/list/atom/movable/opacity_sources
+	///whether or not this turf forces movables on it to have no gravity (unless they themselves have forced gravity)
+	var/force_no_gravity = FALSE
 
 
 /turf/vv_edit_var(var_name, var_value)
@@ -118,12 +120,9 @@
 	set_custom_materials(custom_materials)
 
 	ComponentInitialize()
-	if(isopenturf(src))
-		var/turf/open/O = src
-		__auxtools_update_turf_temp_info(isspaceturf(get_z_base_turf()) && !O.planetary_atmos)
-	else
+	if(density)
 		update_air_ref(-1)
-		__auxtools_update_turf_temp_info(isspaceturf(get_z_base_turf()))
+	__auxtools_update_turf_temp_info(FALSE)
 
 	return INITIALIZE_HINT_NORMAL
 
@@ -248,13 +247,6 @@
 
 	return FALSE
 
-/turf/CanPass(atom/movable/mover)
-	if(istype(mover)) // turf/Enter(...) will perform more advanced checks
-		return !density
-
-	stack_trace("Non movable passed to turf CanPass : [mover]")
-	return FALSE
-
 /turf/Enter(atom/movable/mover, atom/oldloc)
 	// Do not call ..()
 	// Byond's default turf/Enter() doesn't have the behaviour we want with Bump()
@@ -271,7 +263,7 @@
 				break
 			var/atom/movable/thing = i
 			if(!thing.Cross(mover))
-				if(CHECK_BITFIELD(mover.movement_type, UNSTOPPABLE))
+				if(mover.movement_type & PHASING)
 					mover.Bump(thing)
 					continue
 				else
@@ -280,24 +272,8 @@
 	if(firstbump)
 		if(!QDELETED(mover))
 			mover.Bump(firstbump)
-		return CHECK_BITFIELD(mover.movement_type, UNSTOPPABLE)
+		return mover.movement_type & PHASING
 	return TRUE
-
-/turf/Exit(atom/movable/mover, atom/newloc)
-	. = ..()
-	if(!.)
-		return FALSE
-	for(var/i in contents)
-		if(QDELETED(mover))
-			break
-		if(i == mover)
-			continue
-		var/atom/movable/thing = i
-		if(!thing.Uncross(mover, newloc))
-			if(thing.flags_1 & ON_BORDER_1)
-				mover.Bump(thing)
-			if(!CHECK_BITFIELD(mover.movement_type, UNSTOPPABLE))
-				return FALSE
 
 /turf/Entered(atom/movable/AM)
 	..()

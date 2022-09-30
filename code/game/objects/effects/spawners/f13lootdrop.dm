@@ -454,6 +454,20 @@
 				)
 
 
+/obj/effect/spawner/bundle/f13/armor/t51b_midwest
+	name = "t51b midwest power armor spawner"
+	items = list(
+			/obj/item/clothing/suit/armor/f13/power_armor/midwest,
+			/obj/item/clothing/head/helmet/f13/power_armor/midwest,
+			)
+
+/obj/effect/spawner/bundle/f13/armor/excavator
+	name = "t51b excavator power armor spawner"
+	items = list(
+		/obj/item/clothing/head/helmet/f13/power_armor/excavator,
+		/obj/item/clothing/suit/armor/f13/power_armor/excavator,
+		)
+
 /obj/effect/spawner/lootdrop/f13/armor/random
 	name = "random armor loot"
 	lootcount = 1
@@ -1281,7 +1295,7 @@
 				/obj/item/ammo_box/magazine/m556/rifle/
 				)
 
-obj/effect/spawner/bundle/f13/combat_rifle
+/obj/effect/spawner/bundle/f13/combat_rifle
 	name = "combat rifle and ammo spawner"
 	items = list(
 				/obj/item/gun/ballistic/automatic/combat,
@@ -1512,7 +1526,19 @@ obj/effect/spawner/bundle/f13/combat_rifle
 				/obj/item/ammo_box/a40mm
 	)
 
+/obj/effect/spawner/bundle/f13/medicinestick
+	name = "medicine stick and ammo spawner"
+	items = list(
+				/obj/item/gun/ballistic/rifle/repeater/brush/medistick,
+				/obj/item/ammo_box/tube/c4570
+	)
 
+/obj/effect/spawner/bundle/f13/boscombatrifle
+	name = "BoS combat rifle and ammo spawner"
+	items = list(
+				/obj/item/gun/ballistic/automatic/combat,
+				/obj/item/ammo_box/magazine/tommygunm45/stick
+	)
 
 /*	------------------------------------------------
 	------------WEAPON AMMO SPAWNERS----------------
@@ -1673,33 +1699,63 @@ obj/effect/spawner/bundle/f13/combat_rifle
 	fan_out_items = TRUE
 
 	loot = list(
+				/obj/item/trash/coal,
+				/obj/item/trash/popcorn,
+				/obj/item/trash/plate,
+				/obj/item/trash/tray,
+				/obj/item/trash/boritos,
+				/obj/item/trash/can,
+				/obj/item/trash/candle,
+				/obj/item/trash/cheesie,
+				/obj/item/trash/chips,
+				/obj/item/trash/energybar,
+				/obj/item/trash/pistachios,
+				/obj/item/trash/raisins,
+				/obj/item/trash/semki,
+				/obj/item/trash/sosjerky,
+				/obj/item/trash/syndi_cakes,
+				/obj/item/trash/waffles,
+				/obj/item/trash/f13/rotten,
+				/obj/item/trash/f13/tin,
+				/obj/item/trash/f13/dog,
+				/obj/item/trash/f13/dandyapples,
+				/obj/item/trash/f13/bubblegum,
+				/obj/item/trash/f13/bubblegum_large,
+				/obj/item/trash/f13/cram,
+				/obj/item/trash/f13/cram_large,
+				/obj/item/trash/f13/yumyum,
+				/obj/item/trash/f13/fancylads,
+				/obj/item/trash/f13/sugarbombs,
+				/obj/item/trash/f13/crisps,
+				/obj/item/trash/f13/steak,
+				/obj/item/trash/f13/specialapples,
+				/obj/item/trash/f13/blamco_large,
+				/obj/item/trash/f13/blamco,
+				/obj/item/trash/f13/mechanist,
+				/obj/item/trash/f13/instamash,
+				/obj/item/trash/f13/porknbeans,
+				/obj/item/trash/f13/borscht,
+				/obj/item/trash/f13/mre,
 				/obj/item/broken_bottle,
-				/obj/item/poster/random_official,
 				/obj/item/multitool,
 				/obj/item/cigbutt/cigarbutt,
 				/obj/item/razor,
 				/obj/item/candle,
 				/obj/item/rollingpaper,
-				/obj/item/trash/coal,
+				/obj/item/toner,
+				/obj/item/camera,
 				/obj/item/soap/homemade,
 				/obj/item/stack/cable_coil/random,
 				/obj/item/stack/medical/bruise_pack,
-				/obj/item/trash/popcorn,
 				/obj/item/valentine,
 				/obj/item/taperecorder,
 				/obj/item/tape/random,
 				/obj/item/stack/medical/gauze,
-				/obj/item/trash/plate,
 				/obj/item/storage/box/snappops,
-				/obj/item/trash/f13/rotten,
-				/obj/item/trash/f13/tin,
-				/obj/item/trash/f13/dog,
-				/obj/item/trash/f13/dandyapples,
 				/obj/item/storage/crayons,
 				/obj/item/stack/packageWrap,
 				/obj/item/storage/box/matches,
 				/obj/item/reagent_containers/food/snacks/deadmouse,
-				/obj/item/toner,
 				/obj/item/tank/internals/oxygen,
 				/obj/item/storage/box/papersack,
 				/obj/item/storage/box/lights/mixed,
@@ -1707,17 +1763,15 @@ obj/effect/spawner/bundle/f13/combat_rifle
 				/obj/item/restraints/handcuffs/cable/zipties,
 				/obj/item/storage/pill_bottle,
 				/obj/item/storage/belt/fannypack/black,
-				/obj/item/camera,
-				/obj/item/bodypart/l_arm,
 				/obj/item/toy/dummy,
 				/obj/item/toy/eightball,
 				/obj/item/toy/cards/deck,
-				/obj/item/trash/tray,
 				/obj/item/toy/xmas_cracker,
 				/obj/item/reagent_containers/glass/bowl,
 				/obj/item/reagent_containers/spray/cleaner,
 				/obj/item/reagent_containers/glass/bucket,
-				/obj/item/poster/random_contraband
+				/obj/item/poster/random_contraband,
+				/obj/item/poster/random_official
 				)
 
 /obj/effect/spawner/lootdrop/f13/seedspawner
@@ -2226,3 +2280,27 @@ obj/effect/spawner/bundle/f13/combat_rifle
 			/obj/item/storage/box/ration/ranger_lunch,
 			/obj/item/storage/box/ration/ranger_dinner,
 			)
+
+/obj/effect/spawner/lootdrop/f13/armor/bos_vault
+	name = "BoS roundstart vault loot"
+	lootcount = 1
+	loot = list(
+		/obj/effect/spawner/bundle/f13/armor/t51b_midwest = 2,
+		/obj/effect/spawner/bundle/f13/armor/excavator = 2,
+		/obj/effect/spawner/lootdrop/f13/armor/tier5 = 2,
+		/obj/effect/spawner/lootdrop/f13/weapon/melee/tier5 = 2,
+		/obj/effect/spawner/lootdrop/f13/weapon/gun/energy/mid = 25,
+		/obj/effect/spawner/lootdrop/f13/weapon/gun/energy/midhigh = 10,
+		/obj/effect/spawner/lootdrop/f13/weapon/gun/energy/high = 5,
+		/obj/effect/spawner/bundle/f13/boscombatrifle = 25,
+		)
+
+/obj/effect/spawner/lootdrop/f13/armor/bos_vault_armor
+	name = "BoS roundstart power armor loot"
+	lootcount = 1
+	loot = list(
+		/obj/effect/spawner/bundle/f13/armor/t51b_midwest = 4,
+		/obj/effect/spawner/bundle/f13/armor/excavator = 3,
+		/obj/effect/spawner/lootdrop/f13/armor/tier5 = 2,
+		)
+

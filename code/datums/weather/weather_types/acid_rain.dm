@@ -19,21 +19,19 @@
 	end_sound = 'sound/ambience/acidrain_end.ogg'
 
 	area_types = list(/area/f13/wasteland, /area/f13/desert, /area/f13/farm, /area/f13/forest, /area/f13/ruins)
-	protect_indoors = list(/area/shuttle)
-	target_trait = ZTRAIT_STATION
+	target_trait = ZTRAIT_SURFACE
 	protect_indoors = TRUE
 
 	immunity_type = "acid" // temp
 
 	barometer_predictable = TRUE
 
-	carbons_only = TRUE
-
 /datum/weather/acid_rain/weather_act(mob/living/L)
-	var/resist = L.getarmor(null, "acid")
-	if(prob(max(0,100-resist)))
-		L.acid_act(45, 10)
-	L.adjustFireLoss(4)
+//	var/resist = L.getarmor(null, "acid")
+//	if(prob(max(0,100-resist)))
+//		L.acid_act(45, 10)
+	L.adjust_bodytemperature(rand(20, 30))
+	L.adjustFireLoss(2)
 
 /datum/weather/acid_rain/weather_act_turf(turf/T)
 	SEND_SIGNAL(T, COMSIG_COMPONENT_CLEAN_ACT, CLEAN_MEDIUM)

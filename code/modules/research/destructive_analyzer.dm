@@ -87,9 +87,6 @@ Note: Must be placed within 3 tiles of the R&D Console
 	if(istype(thing, /obj/item/stack/sheet))
 		var/obj/item/stack/sheet/S = thing
 		if(S.amount > 1 && !innermode)
-			S.amount--
-			loaded_item = S
-		else
 			qdel(S)
 	else
 		qdel(thing)

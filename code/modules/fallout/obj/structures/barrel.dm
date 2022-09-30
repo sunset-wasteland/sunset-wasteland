@@ -37,6 +37,9 @@
 	for(var/mob/living/carbon/human/victim in view(src,1))
 		if(istype(victim) && victim.stat != DEAD)
 			victim.rad_act(5)
+	for(var/obj/item/geiger_counter/geiger in view(src,1))
+		if(istype(geiger))
+			geiger.rad_act(5)
 
 /obj/structure/reagent_dispensers/barrel/boom()
 	visible_message("<span class='danger'>\The [src] ruptures!</span>")
@@ -68,7 +71,7 @@
 	..() //extend the zap
 	boom()*/
 
-obj/structure/reagent_dispensers/barrel/explosive/bullet_act(obj/item/projectile/P)
+/obj/structure/reagent_dispensers/barrel/explosive/bullet_act(obj/item/projectile/P)
 	..()
 	if(!QDELETED(src)) //wasn't deleted by the projectile's effects.
 		if(!P.nodamage && ((P.damage_type == BURN) || (P.damage_type == BRUTE)))
@@ -113,7 +116,7 @@ obj/structure/reagent_dispensers/barrel/explosive/bullet_act(obj/item/projectile
 	desc = "An old barrel. Oddly enough, it stands undamaged after all this time.<br>You wonder if there is anything left in it."
 	icon_state = "one_b"
 	tank_volume = 500
-	reagent_id = /datum/reagent/water
+	reagent_id = /datum/reagent/water/dwater
 //	self_weight = 200
 
 /obj/structure/reagent_dispensers/barrel/two
@@ -121,7 +124,7 @@ obj/structure/reagent_dispensers/barrel/explosive/bullet_act(obj/item/projectile
 	desc = "A couple of old barrels. Oddly enough, they stand undamaged after all this time.<br>You wonder if there is anything left in these."
 	icon_state = "two_b"
 	tank_volume = 1000
-	reagent_id = /datum/reagent/lube
+	reagent_id = /datum/reagent/water/dwater
 	anchored = 1
 //	self_weight = 400
 
@@ -130,7 +133,7 @@ obj/structure/reagent_dispensers/barrel/explosive/bullet_act(obj/item/projectile
 	desc = "Ancient containers with something inside of them. Or are they empty? Actually, how would you know that..."
 	icon_state = "three_b"
 	tank_volume = 1500
-	reagent_id = /datum/reagent/water
+	reagent_id = /datum/reagent/water/dwater
 	anchored = 1
 //	self_weight = 600
 
@@ -138,7 +141,7 @@ obj/structure/reagent_dispensers/barrel/explosive/bullet_act(obj/item/projectile
 	name = "four old barrels"
 	desc = "Ancient containers with something inside of them. Or are they empty? Actually, that's a lot of barrels standing in a single spot..."
 	icon_state = "four_b"
-	tank_volume = 800
-	reagent_id = /datum/reagent/radium
+	tank_volume = 2000
+	reagent_id = /datum/reagent/water/dwater
 	anchored = 1
 //	self_weight = 60

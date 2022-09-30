@@ -13,6 +13,7 @@
 	build_path = /obj/item/assembly/signaler
 	category = list("initial", "T-Comm")
 
+/*
 /datum/design/radio_headset
 	name = "Radio Headset"
 	id = "radio_headset"
@@ -20,6 +21,7 @@
 	materials = list(/datum/material/iron = 75)
 	build_path = /obj/item/radio/headset
 	category = list("initial", "T-Comm")
+*/
 
 /datum/design/bounced_radio
 	name = "Station Bounced Radio"
@@ -89,6 +91,15 @@
 	build_type = AUTOLATHE | PROTOLATHE
 	materials = list(/datum/material/iron = 50, /datum/material/glass = 50)
 	build_path = /obj/item/airlock_painter/decal
+	category = list("initial","Tools","Tool Designs")
+	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SERVICE
+
+/datum/design/airlock_painter/tile
+	name = "Tile Painter"
+	id = "tile_painter"
+	build_type = AUTOLATHE | PROTOLATHE
+	materials = list(/datum/material/iron = 50, /datum/material/glass = 50)
+	build_path = /obj/item/airlock_painter/tile
 	category = list("initial","Tools","Tool Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SERVICE
 

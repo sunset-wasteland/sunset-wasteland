@@ -126,9 +126,9 @@ const ChemMasterContent = (props, context) => {
   );
 };
 
-const ChemicalBuffer = Table;
+export const ChemicalBuffer = Table;
 
-const ChemicalBufferEntry = (props, context) => {
+export const ChemicalBufferEntry = (props, context) => {
   const { act } = useBackend(context);
   const { chemical, transferTo } = props;
   return (
@@ -187,7 +187,7 @@ const ChemicalBufferEntry = (props, context) => {
   );
 };
 
-const PackagingControlsItem = props => {
+export const PackagingControlsItem = props => {
   const {
     label,
     amountUnit,
@@ -244,24 +244,15 @@ const PackagingControls = (props, context) => {
     superstimpakAmount,
     setsuperstimpakAmount,
   ] = useSharedState(context, 'setsuperstimpakAmount', 1);
-  const [
-    powderbagAmount,
-    setPowderbagAmount,
-  ] = useSharedState(context, 'setPowderbagAmount', 1);
-  const [
-    primitiveBottleAmount,
-    setprimitiveBottleAmount,
-  ] = useSharedState(context, 'setprimitiveBottleAmount', 1);
   const {
     condi,
     advanced,
-    primitive,
     chosenPillStyle,
     pillStyles = [],
   } = data;
   return (
     <LabeledList>
-      {!condi && !primitive && (
+      {!condi && (
         <LabeledList.Item label="Pill type">
           {pillStyles.map(pill => (
             <Button
@@ -276,7 +267,7 @@ const PackagingControls = (props, context) => {
           ))}
         </LabeledList.Item>
       )}
-      {!condi && !primitive && (
+      {!condi && (
         <PackagingControlsItem
           label="Pills"
           amount={pillAmount}
@@ -289,7 +280,7 @@ const PackagingControls = (props, context) => {
             volume: 'auto',
           })} />
       )}
-      {!condi && !!advanced && !primitive &&(
+      {!condi && !!advanced &&(
         <PackagingControlsItem
           label="Patches"
           amount={patchAmount}
@@ -302,7 +293,7 @@ const PackagingControls = (props, context) => {
             volume: 'auto',
           })} />
       )}
-      {!condi && !primitive &&(
+      {!condi &&(
         <PackagingControlsItem
           label="Bottles"
           amount={bottleAmount}
@@ -315,7 +306,7 @@ const PackagingControls = (props, context) => {
             volume: 'auto',
           })} />
       )}
-      {!condi && !primitive &&(
+      {!condi &&(
         <PackagingControlsItem
           label="Stimpaks"
           amount={stimpakAmount}
@@ -328,7 +319,7 @@ const PackagingControls = (props, context) => {
             volume: 'auto',
           })} />
       )}
-      {!condi && !!advanced && !primitive &&(
+      {!condi && !!advanced &&(
         <PackagingControlsItem
           label="Super Stimpaks"
           amount={superstimpakAmount}
@@ -367,37 +358,11 @@ const PackagingControls = (props, context) => {
             volume: 'auto',
           })} />
       )}
-      {!!primitive &&(
-        <PackagingControlsItem
-          label="Powder Bag"
-          amount={patchAmount}
-          amountUnit="powderbags"
-          sideNote="max 40u"
-          onChangeAmount={(e, value) => setPowderbagAmount(value)}
-          onCreate={() => act('create', {
-            type: 'bag',
-            amount: powderbagAmount,
-            volume: 'auto',
-          })} />
-      )}
-      {!!primitive && (
-        <PackagingControlsItem
-          label="Primitive Bottles"
-          amount={bottleAmount}
-          amountUnit="bottles"
-          sideNote="max 60u"
-          onChangeAmount={(e, value) => setprimitiveBottleAmount(value)}
-          onCreate={() => act('create', {
-            type: 'bottle_primitive',
-            amount: primitiveBottleAmount,
-            volume: 'auto',
-          })} />
-      )}
     </LabeledList>
   );
 };
 
-const AnalysisResults = (props, context) => {
+export const AnalysisResults = (props, context) => {
   const { act, data } = useBackend(context);
   const { fermianalyze } = props;
   const { analyzeVars } = data;

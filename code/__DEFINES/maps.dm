@@ -31,6 +31,7 @@ require only minor tweaks.
 // boolean - marks a level as having that property if present
 #define ZTRAIT_CENTCOM "CentCom"
 #define ZTRAIT_STATION "Station"
+#define ZTRAIT_SURFACE "Surface"
 #define ZTRAIT_MINING "Mining"
 #define ZTRAIT_REEBE "Reebe"
 #define ZTRAIT_RESERVED "Transit/Reserved"
@@ -54,6 +55,9 @@ require only minor tweaks.
 
 // number - default gravity if there's no gravity generators or area overrides present
 #define ZTRAIT_GRAVITY "Gravity"
+
+///boolean - does this z disable parallax?
+#define ZTRAIT_NOPARALLAX "No Parallax"
 
 // numeric offsets - e.g. {"Down": -1} means that chasms will fall to z - 1 rather than oblivion
 #define ZTRAIT_UP "Up"
@@ -120,3 +124,8 @@ require only minor tweaks.
 //Random z-levels name defines.
 #define AWAY_MISSION_NAME "Away Mission"
 #define VIRT_REALITY_NAME "Virtual Reality"
+
+#define Z_FORCE_NORTH	"Force North"
+#define Z_FORCE_SOUTH	"Force South"
+#define Z_FORCE_EAST	"Force East"
+#define Z_FORCE_WEST	"Force West"

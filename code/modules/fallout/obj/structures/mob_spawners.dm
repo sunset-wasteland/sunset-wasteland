@@ -12,118 +12,80 @@
 	var/spawn_time = 20 SECONDS
 	var/coverable = TRUE
 	var/covered = FALSE
-	var/obj/covertype
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 	var/spawn_text = "emerges from"
 	anchored = TRUE
 	layer = BELOW_OBJ_LAYER
-	var/radius = 10
+	var/radius = 7
 	var/spawnsound //specify an audio file to play when a mob emerges from the spawner
-	var/spawn_once
 	var/infinite = FALSE
 
 /obj/structure/nest/Initialize()
 	. = ..()
-	GLOB.mob_nests += src
+	// list() faction, so we don't overwrite it
+	AddComponent(/datum/component/spawner/ranged, mob_types, spawn_time, list(), spawn_text, max_mobs, _spawn_sound = spawnsound, _infinite = infinite, _range = radius)
 
 /obj/structure/nest/Destroy()
-	GLOB.mob_nests -= src
 	playsound(src, 'sound/effects/break_stone.ogg', 100, 1)
 	visible_message("[src] collapses!")
 	. = ..()
 
-/obj/structure/nest/proc/spawn_mob()
-	if(!can_fire)
-		return FALSE
-	if(covered)
-		can_fire = FALSE
-		return FALSE
-	CHECK_TICK
-	if(spawned_mobs.len >= max_mobs)
-		return FALSE
-	var/mob/living/carbon/human/H = locate(/mob/living/carbon/human) in range(radius, get_turf(src))
-	var/obj/mecha/M = locate(/obj/mecha) in range(radius, get_turf(src))
-	if(!H?.client && !M?.occupant)
-		return FALSE
-	toggle_fire(FALSE)
-	addtimer(CALLBACK(src, .proc/toggle_fire), spawn_time)
-	var/chosen_mob_type = pickweight(mob_types)
-	var/mob/living/simple_animal/L = new chosen_mob_type(src.loc)
-	L.flags_1 |= (flags_1 & ADMIN_SPAWNED_1)	//If we were admin spawned, lets have our children count as that as well.
-	spawned_mobs += L
-	L.nest = src
-	visible_message("<span class='danger'>[L] [spawn_text] [src].</span>")
-	if(spawnsound)
-		playsound(src, spawnsound, 30, 1)
-	if(!infinite)
-		if(spawned_mobs.len >= max_mobs)
-			Destroy()
-	if(spawn_once) //if the subtype has TRUE, call destroy() after we spawn our first mob
-		qdel(src)
+/obj/structure/nest/proc/cover_with(obj/item/stack/cover_stack, mob/user)
+	if(!istype(cover_stack))
 		return
-
-
-/obj/structure/nest/proc/toggle_fire(fire = TRUE)
-	can_fire = fire
+	if(!coverable)
+		to_chat(user, span_warning("You can't cover \the [src]!"))
+		return
+	if(covered)
+		to_chat(user, span_warning("\The [src] is already covered!"))
+		return
+	if(LAZYLEN(targeted_by)) // Don't let multiple people cover at the same time.
+		to_chat(user, span_warning("Someone's already covering \the [src]!"))
+		return
+	if(cover_stack.amount < 4)
+		to_chat(user, span_warning("You need four [cover_stack.singular_name]\s in order to cover \the [src]!"))
+		return
+	if(INTERACTING_WITH(user, src))
+		return
+	if(!do_after(user, 5 SECONDS, TRUE, src))
+		to_chat(user, span_warning("You must stay still to cover \the [src]!"))
+		return
+	cover_stack.use(4)
+	new /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low(drop_location())
+	to_chat(user, span_notice("You find something while covering the hole!"))
 
 /obj/structure/nest/attackby(obj/item/I, mob/living/user, params)
 	if(user.a_intent == INTENT_HARM)
 		to_chat(user, "<span class='warning'>You feel it is impossible to destroy this. Best to cover it up with something.</span>")
 		return
 
-	if(istype(I, /obj/item/stack/rods))
+	if(istype(I, /obj/item/stack))
+		var/obj/item/stack/cover_type = I
 		if(!coverable)
 			to_chat(user, "<span class='warning'>The hole is unable to be covered!</span>")
 			return
 		if(covered)
 			to_chat(user, "<span class='warning'>The hole is already covered!</span>")
 			return
-		var/obj/item/stack/rods/R = I
-		if(R.amount < 4)
-			to_chat(user, "<span class='warning'>You need four rods in order to cover the hole!</span>")
+		if(cover_type.amount < 4)
+			to_chat(user, span_warning("You need four [cover_type.singular_name]\s in order to cover the hole!"))
 			return
 		if(!do_after(user, 5 SECONDS, FALSE, src))
 			to_chat(user, "<span class='warning'>You must stand still to build the cover!</span>")
 			return
-		R.use(4)
+		cover_type.use(4)
 
 		if(!covered)
 			new /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low(src.loc)
 			to_chat(user, "<span class='warning'>You find something while covering the hole!</span>")
 
 		covered = TRUE
-		covertype = /obj/item/stack/rods
+		qdel(GetComponent(/datum/component/spawner/ranged))
 
-
-		var/image/rod_image = image(icon, icon_state = "rods")
-		add_overlay(rod_image)
-		QDEL_IN(src, 2 MINUTES)
-		return
-
-	if(istype(I, /obj/item/stack/sheet/mineral/wood))
-		if(!coverable)
-			to_chat(user, "<span class='warning'>The hole is unable to be covered!</span>")
-			return
-		if(covered)
-			to_chat(user, "<span class='warning'>The hole is already covered!</span>")
-			return
-		var/obj/item/stack/sheet/mineral/wood/W = I
-		if(W.amount < 4)
-			to_chat(user, "<span class='warning'>You need four planks of wood in order to cover the hole!</span>")
-			return
-		if(!do_after(user, 5 SECONDS, FALSE, src))
-			to_chat(user, "<span class='warning'>You must stand still to build the cover!</span>")
-			return
-		W.use(4)
-
-		if(!covered)
-			new /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low(src.loc)
-			to_chat(user, "<span class='warning'>You find something while covering the hole!</span>")
-
-		covered = TRUE
-		covertype = /obj/item/stack/sheet/mineral/wood
-		var/image/plank_image = image(icon, icon_state = "planks")
-		add_overlay(plank_image)
+		var/image/cover_image = image(icon, icon_state = "rods")
+		if(istype(cover_type, /obj/item/stack/sheet/mineral/wood))
+			cover_image = image(icon, icon_state = "planks")
+		add_overlay(cover_image)
 		QDEL_IN(src, 2 MINUTES)
 		return
 
@@ -173,30 +135,30 @@
 */
 /obj/structure/nest/ghoul
 	name = "ghoul nest"
-	max_mobs = 5
-	mob_types = list(/mob/living/simple_animal/hostile/ghoul = 5,
-					/mob/living/simple_animal/hostile/ghoul/reaver = 3,
-					/mob/living/simple_animal/hostile/ghoul/glowing = 1)
+	max_mobs = 10
+	mob_types = list(/mob/living/simple_animal/hostile/ghoul = 5)
 
 /obj/structure/nest/deathclaw
 	name = "deathclaw nest"
 	max_mobs = 1
-	spawn_once = TRUE
-	spawn_time = 60 SECONDS
+	infinite = FALSE
 	mob_types = list(/mob/living/simple_animal/hostile/deathclaw = 5)
 
 /obj/structure/nest/deathclaw/mother
 	name = "mother deathclaw nest"
-	max_mobs = 1
 	spawn_time = 120 SECONDS
 	mob_types = list(/mob/living/simple_animal/hostile/deathclaw/mother = 5)
 
 /obj/structure/nest/scorpion
 	name = "scorpion nest"
-	spawn_time = 40 SECONDS
 	max_mobs = 2
 	mob_types = list(/mob/living/simple_animal/hostile/radscorpion = 1,
 					/mob/living/simple_animal/hostile/radscorpion/black = 1)
+
+/obj/structure/nest/ant
+	name = "ant tunnel"
+	max_mobs = 5
+	mob_types = list(/mob/living/simple_animal/hostile/giantant = 5)
 
 /obj/structure/nest/radroach
 	name = "radroach nest"
@@ -204,14 +166,13 @@
 	mob_types = list(/mob/living/simple_animal/hostile/radroach = 1)
 
 /obj/structure/nest/fireant
-	name = "fireant nest"
+	name = "fireant tunnel"
 	max_mobs = 5
 	mob_types = list(/mob/living/simple_animal/hostile/fireant = 1,
 					/mob/living/simple_animal/hostile/giantant = 1)
 
 /obj/structure/nest/wanamingo
 	name = "wanamingo nest"
-	spawn_time = 40 SECONDS
 	max_mobs = 2
 	mob_types = list(/mob/living/simple_animal/hostile/alien = 1)
 
@@ -256,12 +217,12 @@
 
 /obj/structure/nest/raider/boss
 	max_mobs = 1
-	spawn_once = TRUE
+	infinite = FALSE
 	mob_types = list(/mob/living/simple_animal/hostile/raider/ranged/boss = 5)
 
 /obj/structure/nest/raider/legendary
 	max_mobs = 1
-	spawn_once = TRUE
+	infinite = FALSE
 	mob_types = list(/mob/living/simple_animal/hostile/raider/legendary = 1)
 
 /obj/structure/nest/protectron
@@ -281,7 +242,6 @@
 /obj/structure/nest/assaultron
 	name = "assaultron pod"
 	desc = "An old assaultron containment pod system. This one looks like it is connected to a storage system underground."
-	spawn_time = 40 SECONDS
 	max_mobs = 2
 	icon_state = "scanner_modified"
 	mob_types = list(/mob/living/simple_animal/hostile/handy/assaultron = 5)
@@ -290,12 +250,20 @@
 	name = "cazador nest"
 	max_mobs = 4
 	mob_types = list(/mob/living/simple_animal/hostile/cazador = 5,
-					/mob/living/simple_animal/hostile/cazador/young = 3,)
+					/mob/living/simple_animal/hostile/cazador/young = 3)
 
 /obj/structure/nest/gecko
 	name = "gecko nest"
 	max_mobs = 5
 	mob_types = list(/mob/living/simple_animal/hostile/gecko = 5)
+
+/obj/structure/nest/spider
+	name = "spider mound"
+	max_mobs = 5
+	mob_types = list(/mob/living/simple_animal/hostile/poison/giant_spider = 5,
+					/mob/living/simple_animal/hostile/poison/giant_spider/hunter = 2,
+					/mob/living/simple_animal/hostile/poison/giant_spider/nurse = 2)
+
 
 /obj/structure/nest/wolf
 	name = "wolf den"
@@ -304,10 +272,14 @@
 
 /obj/structure/nest/supermutant
 	name = "supermutant den"
-	spawn_time = 30 SECONDS
 	max_mobs = 2
 	mob_types = list(/mob/living/simple_animal/hostile/supermutant/meleemutant = 5,
 					/mob/living/simple_animal/hostile/supermutant/rangedmutant = 2)
+
+/obj/structure/nest/centaur
+	name = "centaur den"
+	max_mobs = 5
+	mob_types = list(/mob/living/simple_animal/hostile/centaur = 5)
 
 /obj/structure/nest/supermutant/melee
 	mob_types = list(/mob/living/simple_animal/hostile/supermutant/meleemutant = 5)
@@ -339,4 +311,4 @@
 	desc = "A tunnel which leads to an underground network of even more tunnels, made by the dangerous tunnelers."
 	max_mobs = 5
 	mob_types = list(/mob/living/simple_animal/hostile/trog/tunneler = 1)
-	spawn_time = 20 SECONDS
+

@@ -78,7 +78,7 @@
 	for(var/MM in watchers)
 		var/mob/M = MM
 		show_to(M, M.client)
-		RegisterSignal(M, COMSIG_MOB_CLIENT_LOGIN, .proc/show_to)
+		RegisterSignal(M, COMSIG_MOB_LOGIN, .proc/show_to)
 		//Close watcher ui's
 		SStgui.close_user_uis(M)
 
@@ -92,17 +92,17 @@
 	if(ooc_toggled)
 		toggle_ooc(TRUE)
 
-/datum/cinematic/proc/show_to(mob/M, client/C)
+/datum/cinematic/proc/show_to(mob/M)
 	//SIGNAL_HANDLER //must not wait.
 
 	if(!M.mob_transforming)
 		locked += M
 		M.mob_transforming = TRUE //Should this be done for non-global cinematics or even at all ?
-	if(!C)
+	if(!M.client)
 		return
-	watching += C
+	watching += M.client
 	//M.overlay_fullscreen("cinematic",/obj/screen/fullscreen/cinematic_backdrop)
-	C.screen += screen
+	M.client.screen += screen
 
 //Sound helper
 /datum/cinematic/proc/cinematic_sound(s)

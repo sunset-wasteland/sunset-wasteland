@@ -76,8 +76,9 @@
 		else
 			to_chat(user, "<span class='warning'>The plating is going to need some support! Place metal rods first.</span>")
 
-/turf/open/chasm/CanPass(atom/movable/mover, border_dir)
-	return 1
+/turf/open/chasm/CanAllowThrough(atom/movable/mover, border_dir)
+	SHOULD_CALL_PARENT(FALSE)
+	return TRUE
 
 // Chasms for Lavaland, with planetary atmos and lava glow
 /turf/open/chasm/lavaland

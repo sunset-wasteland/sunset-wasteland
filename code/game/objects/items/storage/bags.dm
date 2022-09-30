@@ -49,7 +49,7 @@
 	STR.max_combined_w_class = 30
 	STR.max_items = 30
 	STR.can_hold_extra = typecacheof(list(/obj/item/organ/lungs, /obj/item/organ/liver, /obj/item/organ/stomach, /obj/item/clothing/shoes)) - typesof(/obj/item/clothing/shoes/magboots, /obj/item/clothing/shoes/jackboots, /obj/item/clothing/shoes/workboots)
-	STR.cant_hold = typecacheof(list(/obj/item/disk/nuclear, /obj/item/storage/wallet, /obj/item/organ/brain))
+	CANTHOLD_STATIC(STR, typecacheof(list(/obj/item/disk/nuclear, /obj/item/storage/wallet, /obj/item/organ/brain)))
 	STR.limited_random_access = TRUE
 	STR.limited_random_access_stack_position = 3
 
@@ -121,7 +121,7 @@
 	var/datum/component/storage/concrete/stack/STR = GetComponent(/datum/component/storage/concrete/stack)
 	STR.allow_quick_empty = TRUE
 	STR.max_items = 14
-	STR.can_hold = typecacheof(list(/obj/item/stack/ore))
+	CANHOLD_STATIC(STR, typecacheof(list(/obj/item/stack/ore)))
 	STR.max_w_class = WEIGHT_CLASS_HUGE
 	STR.max_combined_stack_amount = 50
 
@@ -190,7 +190,7 @@
 	. = ..()
 	var/datum/component/storage/concrete/stack/STR = GetComponent(/datum/component/storage/concrete/stack)
 	STR.allow_quick_empty = TRUE
-	STR.can_hold = typecacheof(list(/obj/item/stack/ore))
+	CANHOLD_STATIC(STR, typecacheof(list(/obj/item/stack/ore)))
 	STR.max_w_class = WEIGHT_CLASS_HUGE
 	STR.max_combined_stack_amount = 150
 
@@ -202,7 +202,7 @@
 	. = ..()
 	var/datum/component/storage/concrete/stack/STR = GetComponent(/datum/component/storage/concrete/stack)
 	STR.allow_quick_empty = TRUE
-	STR.can_hold = typecacheof(list(/obj/item/stack/ore))
+	CANHOLD_STATIC(STR, typecacheof(list(/obj/item/stack/ore)))
 	STR.max_w_class = WEIGHT_CLASS_HUGE
 	STR.max_combined_stack_amount = 150
 
@@ -235,7 +235,7 @@
 	STR.max_w_class = WEIGHT_CLASS_NORMAL
 	STR.max_combined_w_class = 100
 	STR.max_items = 100
-	STR.can_hold = typecacheof(list(/obj/item/reagent_containers/food/snacks/grown, /obj/item/seeds, /obj/item/grown, /obj/item/reagent_containers/honeycomb))
+	CANHOLD_STATIC(STR, typecacheof(list(/obj/item/reagent_containers/food/snacks/grown, /obj/item/seeds, /obj/item/grown, /obj/item/reagent_containers/honeycomb)))
 
 ////////
 
@@ -275,8 +275,8 @@
 	. = ..()
 	var/datum/component/storage/concrete/stack/STR = GetComponent(/datum/component/storage/concrete/stack)
 	STR.allow_quick_empty = TRUE
-	STR.can_hold = typecacheof(list(/obj/item/stack/sheet))
-	STR.cant_hold = typecacheof(list(/obj/item/stack/sheet/mineral/sandstone, /obj/item/stack/sheet/mineral/wood))
+	CANHOLD_STATIC(STR, typecacheof(list(/obj/item/stack/sheet)))
+	CANTHOLD_STATIC(STR, typecacheof(list(/obj/item/stack/sheet/mineral/sandstone, /obj/item/stack/sheet/mineral/wood)))
 	STR.max_combined_stack_amount = 300
 
 // -----------------------------
@@ -312,7 +312,7 @@
 	STR.max_combined_w_class = 21
 	STR.max_items = 7
 	STR.display_numerical_stacking = FALSE
-	STR.can_hold = typecacheof(list(/obj/item/book, /obj/item/storage/book, /obj/item/spellbook))
+	CANHOLD_STATIC(STR, typecacheof(list(/obj/item/book, /obj/item/storage/book, /obj/item/spellbook)))
 
 /*
  * Trays - Agouri
@@ -335,7 +335,7 @@
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_w_class = WEIGHT_CLASS_NORMAL
-	STR.can_hold = typecacheof(list(/obj/item/reagent_containers/food, /obj/item/reagent_containers/glass, /datum/reagent/consumable, /obj/item/kitchen/knife, /obj/item/kitchen/rollingpin, /obj/item/kitchen/fork, /obj/item/storage/box)) //Should cover: Bottles, Beakers, Bowls, Booze, Glasses, Food, Kitchen Tools, and ingredient boxes.
+	CANHOLD_STATIC(STR, typecacheof(list(/obj/item/reagent_containers/food, /obj/item/reagent_containers/glass, /datum/reagent/consumable, /obj/item/kitchen/knife, /obj/item/kitchen/rollingpin, /obj/item/kitchen/fork, /obj/item/storage/box))) //Should cover: Bottles, Beakers, Bowls, Booze, Glasses, Food, Kitchen Tools, and ingredient boxes.
 	STR.insert_preposition = "on"
 	STR.max_items = max_items
 
@@ -404,11 +404,11 @@
 	STR.max_combined_w_class = 30
 	STR.max_items = 14
 	STR.insert_preposition = "in"
-	STR.can_hold = typecacheof(list(/obj/item/reagent_containers/hypospray/medipen, /obj/item/reagent_containers/syringe, /obj/item/reagent_containers/pill, /obj/item/reagent_containers/glass/beaker, /obj/item/reagent_containers/glass/bottle, /obj/item/reagent_containers/syringe/dart, /obj/item/reagent_containers/chem_pack))
+	CANHOLD_STATIC(STR, typecacheof(list(/obj/item/reagent_containers/hypospray/medipen, /obj/item/reagent_containers/syringe, /obj/item/reagent_containers/pill, /obj/item/reagent_containers/glass/beaker, /obj/item/reagent_containers/glass/bottle, /obj/item/reagent_containers/syringe/dart, /obj/item/reagent_containers/chem_pack)))
 
 /*	Now in tribal mode!*/
 
-obj/item/storage/bag/chemistry/tribal
+/obj/item/storage/bag/chemistry/tribal
 	name = "tribal medicinal bag"
 	icon = 'icons/obj/chemical.dmi'
 	icon_state = "tribal_chembag"
@@ -422,7 +422,7 @@ obj/item/storage/bag/chemistry/tribal
 	STR.max_combined_w_class = 30
 	STR.max_items = 14
 	STR.insert_preposition = "in"
-	STR.can_hold = typecacheof(list(/obj/item/reagent_containers/hypospray/medipen, /obj/item/reagent_containers/syringe, /obj/item/reagent_containers/pill, /obj/item/reagent_containers/glass/beaker, /obj/item/reagent_containers/glass/bottle, /obj/item/reagent_containers/syringe/dart, /obj/item/reagent_containers/chem_pack))
+	CANHOLD_STATIC(STR, typecacheof(list(/obj/item/reagent_containers/hypospray/medipen, /obj/item/reagent_containers/syringe, /obj/item/reagent_containers/pill, /obj/item/reagent_containers/glass/beaker, /obj/item/reagent_containers/glass/bottle, /obj/item/reagent_containers/syringe/dart, /obj/item/reagent_containers/chem_pack)))
 
 
 /*
@@ -444,8 +444,8 @@ obj/item/storage/bag/chemistry/tribal
 	STR.max_combined_w_class = 30
 	STR.max_items = 14
 	STR.insert_preposition = "in"
-	STR.can_hold = typecacheof(list(/obj/item/slime_extract, /obj/item/reagent_containers/blood, /obj/item/reagent_containers/food/snacks/deadmouse, /obj/item/reagent_containers/food/snacks/cube, /obj/item/organ, /obj/item/reagent_containers/food/snacks/meat/slab, /obj/item/bodypart))
-	STR.cant_hold = typecacheof(list(/obj/item/organ/brain, /obj/item/organ/liver/cybernetic, /obj/item/organ/heart/cybernetic, /obj/item/organ/lungs/cybernetic, /obj/item/organ/tongue/cybernetic, /obj/item/organ/ears/cybernetic, /obj/item/organ/eyes/robotic, /obj/item/organ/cyberimp))
+	CANHOLD_STATIC(STR, typecacheof(list(/obj/item/slime_extract, /obj/item/reagent_containers/blood, /obj/item/reagent_containers/food/snacks/deadmouse, /obj/item/reagent_containers/food/snacks/cube, /obj/item/organ, /obj/item/reagent_containers/food/snacks/meat/slab, /obj/item/bodypart)))
+	CANTHOLD_STATIC(STR, typecacheof(list(/obj/item/organ/brain, /obj/item/organ/liver/cybernetic, /obj/item/organ/heart/cybernetic, /obj/item/organ/lungs/cybernetic, /obj/item/organ/tongue/cybernetic, /obj/item/organ/ears/cybernetic, /obj/item/organ/eyes/robotic, /obj/item/organ/cyberimp)))
 
 /obj/item/storage/bag/bio/holding
 	name = "bio bag of holding"
@@ -476,7 +476,7 @@ obj/item/storage/bag/chemistry/tribal
 	STR.max_combined_w_class = 30
 	STR.max_items = 3
 	STR.display_numerical_stacking = FALSE
-	STR.can_hold = typecacheof(list(/obj/item/ammo_box/magazine, /obj/item/ammo_casing))
+	CANHOLD_STATIC(STR, typecacheof(list(/obj/item/ammo_box/magazine, /obj/item/ammo_casing)))
 
 /obj/item/storage/bag/material
 	name = "material pouch"
@@ -494,7 +494,7 @@ obj/item/storage/bag/chemistry/tribal
 	STR.max_combined_w_class = INFINITY
 	STR.max_items = 2
 	STR.display_numerical_stacking = TRUE
-	STR.can_hold = typecacheof(list(/obj/item/rcd_ammo, /obj/item/stack/sheet))
+	CANHOLD_STATIC(STR, typecacheof(list(/obj/item/rcd_ammo, /obj/item/stack/sheet)))
 
 /obj/item/storage/bag/salvage
 	name = "salvage sack"
@@ -513,7 +513,7 @@ obj/item/storage/bag/chemistry/tribal
 	STR.max_w_class = WEIGHT_CLASS_NORMAL
 	STR.max_combined_w_class = INFINITY
 	STR.max_items = 50
-	STR.can_hold = typecacheof(list(/obj/item/salvage))
+	CANHOLD_STATIC(STR, typecacheof(list(/obj/item/salvage)))
 
 /obj/item/storage/bag/salvagestorage
 	name = "salvage storage sack"
@@ -530,6 +530,6 @@ obj/item/storage/bag/chemistry/tribal
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_w_class = WEIGHT_CLASS_NORMAL
-	STR.max_combined_w_class = INFINITY
-	STR.max_items = INFINITY
-	STR.can_hold = typecacheof(list(/obj/item/advanced_crafting_components, /obj/item/stack/crafting, /obj/item/crafting, /obj/item/multitool/advanced, /obj/item/crowbar/hightech, /obj/item/wrench/hightech, /obj/item/weldingtool/hightech, /obj/item/screwdriver/hightech, /obj/item/wirecutters/hightech, /obj/item/blueprint/research, /obj/item/multitool/advanced))
+	STR.max_combined_w_class = WEIGHT_CLASS_NORMAL * 30
+	STR.max_items = 30
+	CANHOLD_STATIC(STR, typecacheof(list(/obj/item/advanced_crafting_components, /obj/item/stack/crafting, /obj/item/crafting, /obj/item/multitool/advanced, /obj/item/crowbar/hightech, /obj/item/wrench/hightech, /obj/item/weldingtool/hightech, /obj/item/screwdriver/hightech, /obj/item/wirecutters/hightech, /obj/item/blueprint/research, /obj/item/multitool/advanced)))

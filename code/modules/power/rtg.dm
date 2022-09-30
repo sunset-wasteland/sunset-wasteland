@@ -53,6 +53,10 @@
 	power_gen = 1250 // 2500 on T1, 10000 on T4.
 	circuit = /obj/item/circuitboard/machine/rtg/advanced
 
+/obj/machinery/power/rtg/advanced/enclave
+	desc = "An advanced RTG capable of moderating isotope decay, increasing power output but reducing lifetime."
+	power_gen = 16500
+
 // Void Core, power source for Abductor ships and bases.
 // Provides a lot of power, but tends to explode when mistreated.
 

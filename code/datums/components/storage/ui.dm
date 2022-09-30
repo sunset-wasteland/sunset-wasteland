@@ -196,7 +196,7 @@
 	else if(current_maxscreensize)
 		maxallowedscreensize = current_maxscreensize
 	// we got screen size, register signal
-	RegisterSignal(M, COMSIG_MOB_CLIENT_LOGOUT, .proc/on_logout, override = TRUE)
+	RegisterSignal(M, COMSIG_MOB_LOGOUT, .proc/on_logout, override = TRUE)
 	if(M.active_storage != src)
 		if(M.active_storage)
 			M.active_storage.ui_hide(M)
@@ -227,7 +227,7 @@
 /**
  * Proc triggered by signal to ensure logging out clients don't linger.
  */
-/datum/component/storage/proc/on_logout(datum/source, client/C)
+/datum/component/storage/proc/on_logout(datum/source)
 	ui_hide(source)
 
 /**
@@ -236,7 +236,7 @@
 /datum/component/storage/proc/ui_hide(mob/M)
 	if(!M.client)
 		return TRUE
-	UnregisterSignal(M, COMSIG_MOB_CLIENT_LOGOUT)
+	UnregisterSignal(M, COMSIG_MOB_LOGOUT)
 	M.client.screen -= list(ui_boxes, ui_close, ui_left, ui_continuous) + get_ui_item_objects_hide(M)
 	if(M.active_storage == src)
 		M.active_storage = null

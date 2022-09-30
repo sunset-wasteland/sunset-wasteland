@@ -60,6 +60,70 @@
 	name = "khan door"
 	req_access_txt = "125"
 
+//bdoor
+/obj/machinery/door/unpowered/securedoor/sheriff_door
+	name = "secure door"
+	req_access_txt = "62"
+	icon_state = "secure_steel"
+
+/obj/machinery/door/unpowered/securedoor/sheriff_door/update_icon()
+	if(density)
+		icon_state = "secure_steel"
+	else
+		icon_state = "secure_steel_open"
+
+/obj/machinery/door/unpowered/securedoor/sheriff_door/do_animate(animation)
+	switch(animation)
+		if("opening")
+			playsound(src,'sound/f13machines/doorshutter_open.ogg',40,1)
+			flick("secure_steel_opening", src)
+		if("closing")
+			playsound(src,'sound/f13machines/doorshutter_close.ogg',40,1)
+			flick("secure_steel_closing", src)
+
+//bdoor2
+/obj/machinery/door/unpowered/securedoor/mayoral_door
+	name = "secure door"
+	req_access_txt = "4"
+	icon_state = "houseclean"
+
+/obj/machinery/door/unpowered/securedoor/mayoral_door/update_icon()
+	if(density)
+		icon_state = "houseclean"
+	else
+		icon_state = "housecleanopen"
+
+/obj/machinery/door/unpowered/securedoor/mayoral_door/do_animate(animation)
+	switch(animation)
+		if("opening")
+			flick("housecleanopening", src)
+		if("closing")
+			flick("housecleanclosing", src)
+
+
+//bdoor3
+/obj/machinery/door/unpowered/securedoor/bank_door
+	name = "secure door"
+	req_access_txt = "48"
+	icon_state = "metal"
+
+/obj/machinery/door/unpowered/securedoor/bank_door/update_icon()
+	if(density)
+		icon_state = "metal"
+	else
+		icon_state = "metalopen"
+
+/obj/machinery/door/unpowered/securedoor/bank_door/do_animate(animation)
+	switch(animation)
+		if("opening")
+			flick("metalopening", src)
+		if("closing")
+			flick("metalclosing", src)
+
+//bdoor3
+/obj/machinery/door/unpowered/securedoor/bighorn_door
+	name = "secure door"
+	req_access_txt = "25"
 
 // ------------------------------------
 // NCR SECURE REINFORCED DOOR - tough airlock replacement
@@ -130,7 +194,8 @@
 	assemblytype = /obj/item/stack/rods
 	visible = FALSE
 	explosion_block = FALSE
-	pass_flags = LETPASSTHROW  // would be great but the var is not functional for some reason.
+	pass_flags_self = LETPASSTHROW
+	barricade = TRUE
 	proj_pass_rate = 95
 
 /obj/machinery/door/unpowered/celldoor/update_icon()
@@ -168,6 +233,7 @@
 	assemblytype = /obj/item/stack/rods
 	visible = FALSE
 	explosion_block = FALSE
+	barricade = TRUE
 	proj_pass_rate = 95
 	req_access_txt = "123"
 

@@ -437,7 +437,7 @@
 	time = 5
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
-/*
+
 /datum/crafting_recipe/a556uranium
 	name = "5.56mm uranium-tipped ammo box"
 	result = /obj/item/ammo_box/a556/uraniumtipped
@@ -451,7 +451,7 @@
 	time = 5
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
-*/
+
 
 /datum/crafting_recipe/a556
 	name = ".223  handloaded ammo bag"
@@ -464,7 +464,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
-/*
+
 /datum/crafting_recipe/a762boxirr
 	name = "7.62 U-235 ammo box"
 	result = /obj/item/ammo_box/a762box/uraniumtipped
@@ -478,7 +478,7 @@
 	time = 5
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
-*/
+
 
 /datum/crafting_recipe/a762boxshrap
 	name = "7.62mm micro-shrapnel ammo box"
@@ -494,7 +494,6 @@
 	subcategory = CAT_AMMO
 
 
-/*
 /datum/crafting_recipe/a50MGboxuranium
 	name = "12.7mm U-235 ammo box"
 	result = /obj/item/ammo_box/a50MGbox/uraniumtipped
@@ -508,7 +507,7 @@
 	time = 5
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
-*/
+
 
 /datum/crafting_recipe/a50MGboxcontaminated
 	name = "12.7mm contaminated ammo box"
@@ -932,9 +931,10 @@
 /datum/crafting_recipe/lmg
 	name = "R84 LMG"
 	result = /obj/item/gun/ballistic/automatic/r84
-	reqs = list(/obj/item/stack/sheet/metal = 5,
+	reqs = list(/obj/item/stack/sheet/metal = 15,
 				/obj/item/advanced_crafting_components/assembly = 1,
-				/obj/item/advanced_crafting_components/alloys = 1,
+				/obj/item/advanced_crafting_components/alloys = 2,
+				/obj/item/stack/crafting/metalparts = 10,
 				/obj/item/stack/crafting/goodparts = 5
 				)
 	tools = list(TOOL_WORKBENCH)
@@ -1122,6 +1122,20 @@
 				/obj/item/stack/crafting/electronicparts = 2
 				)
 	tools = list(TOOL_AWORKBENCH)
+	time = 120
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+	always_available = FALSE
+
+//Remnant plasma pistol
+/datum/crafting_recipe/plasmapistol_rem
+	name = "Plasma Pistol"
+	result = /obj/item/gun/energy/laser/plasma/pistol
+	reqs = list(/obj/item/stack/sheet/metal = 5,
+				/obj/item/stack/crafting/metalparts = 3,
+				/obj/item/stack/crafting/electronicparts = 3
+				)
+	tools = list(TOOL_WORKBENCH)
 	time = 120
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON

@@ -24,7 +24,7 @@
 	throw_speed = 3
 	throw_range = 7
 	grind_results = list(/datum/reagent/lye = 10)
-	var/cleanspeed = 50 //slower than mop
+	var/cleanspeed = 10 //small timer, not instant like mops
 	force_string = "robust... against germs"
 
 /obj/item/soap/Initialize()
@@ -38,17 +38,16 @@
 /obj/item/soap/homemade
 	desc = "A homemade bar of soap. Smells of... well...."
 	icon_state = "soapgibs"
-	cleanspeed = 45 // a little faster to reward chemists for going to the effort
+	cleanspeed = 20 //slower because badly made
 
 /obj/item/soap/deluxe
 	desc = "A deluxe Waffle Co. brand bar of soap. Smells of high-class luxury."
 	icon_state = "soapdeluxe"
-	cleanspeed = 40 //same speed as mop because deluxe -- captain gets one of these
+	cleanspeed = 5 //luxury soap, faster
 
 /obj/item/soap/syndie
 	desc = "An untrustworthy bar of soap made of strong chemical agents that dissolve blood faster."
 	icon_state = "soapsyndie"
-	cleanspeed = 10 //much faster than mop so it is useful for traitors who want to clean crime scenes
 
 /obj/item/soap/suicide_act(mob/user)
 	user.say(";FFFFFFFFFFFFFFFFUUUUUUUDGE!!", forced="soap suicide")

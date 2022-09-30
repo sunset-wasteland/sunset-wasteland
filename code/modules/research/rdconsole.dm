@@ -19,7 +19,8 @@ Nothing else in the console has ID requirements.
 	desc = "A console used to interface with R&D tools."
 	icon_screen = "rdcomp"
 	icon_keyboard = "rd_key"
-	var/datum/techweb/stored_research					//Reference to global science techweb.
+	var/research_id = "SCIENCE" // Our techweb's ID var. TODO: Componentize this and the next var.
+	var/datum/techweb/stored_research					//Reference to our specific science techweb.
 	var/obj/item/disk/tech_disk/t_disk	//Stores the technology disk.
 	var/obj/item/disk/design_disk/d_disk	//Stores the design disk.
 	circuit = /obj/item/circuitboard/computer/rdconsole
@@ -90,10 +91,15 @@ Nothing else in the console has ID requirements.
 
 /obj/machinery/computer/rdconsole/Initialize()
 	. = ..()
-	stored_research = SSresearch.science_tech
+	update_techweb()
 	stored_research.consoles_accessing[src] = TRUE
 	matching_design_ids = list()
 	SyncRDevices()
+
+/obj/machinery/computer/rdconsole/proc/update_techweb(new_research_id = null)
+	if(istext(new_research_id))
+		research_id = new_research_id
+	stored_research = SSresearch.get_techweb_by_id(research_id)
 
 /obj/machinery/computer/rdconsole/Destroy()
 	if(stored_research)
@@ -153,8 +159,6 @@ Nothing else in the console has ID requirements.
 	var/list/price = TN.get_price(stored_research)
 	if(stored_research.can_afford(price))
 		investigate_log("[key_name(user)] researched [id]([json_encode(price)]) on techweb id [stored_research.id].", INVESTIGATE_RESEARCH)
-		if(stored_research == SSresearch.science_tech)
-			SSblackbox.record_feedback("associative", "science_techweb_unlock", 1, list("id" = "[id]", "name" = TN.display_name, "price" = "[json_encode(price)]", "time" = SQLtime()))
 		if(stored_research.research_node_id(id))
 			say("Successfully researched [TN.display_name].")
 			var/logname = "Unknown"
@@ -1075,11 +1079,16 @@ Nothing else in the console has ID requirements.
 
 /obj/machinery/computer/rdconsole/ui_interact(mob/user)
 	. = ..()
-	var/datum/browser/popup = new(user, "rndconsole", name, 900, 600)
+
+	if(!HAS_TRAIT(user, TRAIT_RESEARCHER))
+		to_chat(user, span_warning("Try as you might, you have no clue how to work this thing."))
+		return
+
+	var/datum/browser/popup = new(user,"rndconsole", name, 900, 600)
 	var/datum/asset/spritesheet/assets = get_asset_datum(/datum/asset/spritesheet/research_designs)
 
 	popup.add_head_content("<link rel='stylesheet' type='text/css' href='[assets.css_tag()]'>")
-	popup.add_stylesheet("techwebs", 'html/browser/techwebs.css')
+	popup.add_stylesheet("techwebs",'html/browser/techwebs.css')
 	popup.set_content(generate_ui())
 	popup.open()
 
@@ -1163,31 +1172,16 @@ Nothing else in the console has ID requirements.
 	circuit = /obj/item/circuitboard/computer/rdconsole/bos
 	req_access = null
 	req_access_txt = "120"
+	research_id = "BOS"
 
 /obj/machinery/computer/rdconsole/core/vault
+	research_id = "VAULT"
 	circuit = /obj/item/circuitboard/computer/rdconsole/vault
 
 /obj/machinery/computer/rdconsole/core/followers
+	research_id = "FOLLOWERS"
 	circuit = /obj/item/circuitboard/computer/rdconsole/followers
 
-//lettern's lazy way of adding more channels
-/obj/machinery/computer/rdconsole/core/bos/Initialize()
-	. = ..()
-	stored_research = SSresearch.bos_tech //lettern, note about this
-	stored_research.consoles_accessing[src] = TRUE
-	matching_design_ids = list()
-	SyncRDevices()
-
-/obj/machinery/computer/rdconsole/core/vault/Initialize()
-	. = ..()
-	stored_research = SSresearch.science_tech //lettern, note about this
-	stored_research.consoles_accessing[src] = TRUE
-	matching_design_ids = list()
-	SyncRDevices()
-
-/obj/machinery/computer/rdconsole/core/followers/Initialize()
-	. = ..()
-	stored_research = SSresearch.followers_tech
-	stored_research.consoles_accessing[src] = TRUE
-	matching_design_ids = list()
-	SyncRDevices()
+/obj/machinery/computer/rdconsole/core/enclave
+	research_id = "ENCLAVE"
+	circuit = /obj/item/circuitboard/computer/rdconsole/enclave

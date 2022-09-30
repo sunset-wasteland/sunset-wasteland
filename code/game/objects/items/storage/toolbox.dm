@@ -275,7 +275,7 @@ GLOBAL_LIST_EMPTY(rubber_toolbox_icons)
 	STR.silent = TRUE
 	STR.max_items = 10
 	STR.max_w_class = WEIGHT_CLASS_NORMAL
-	STR.can_hold = typecacheof(list(
+	CANHOLD_STATIC(STR, typecacheof(list(
 		/obj/item/clothing/head/helmet/infiltrator,
 		/obj/item/clothing/suit/armor/vest/infiltrator,
 		/obj/item/clothing/under/syndicate/bloodred,
@@ -286,7 +286,7 @@ GLOBAL_LIST_EMPTY(rubber_toolbox_icons)
 		/obj/item/gun/ballistic/automatic/pistol,
 		/obj/item/gun/ballistic/revolver,
 		/obj/item/ammo_box
-		))
+		)))
 
 /obj/item/storage/toolbox/infiltrator/PopulateContents()
 	new /obj/item/clothing/head/helmet/infiltrator(src)

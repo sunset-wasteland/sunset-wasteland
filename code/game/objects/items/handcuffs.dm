@@ -90,10 +90,8 @@
 	else if(dispense)
 		cuffs = new type()
 
-	cuffs.forceMove(target)
-	target.handcuffed = cuffs
+	target.equip_to_slot(cuffs, SLOT_HANDCUFFED)
 
-	target.update_handcuffed()
 	if(trashtype && !dispense)
 		qdel(src)
 	if(iscyborg(user))
@@ -257,6 +255,11 @@
 /obj/item/restraints/legcuffs/beartrap/Initialize()
 	. = ..()
 	icon_state = "[initial(icon_state)][armed]"
+	
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_ENTERED = .proc/on_entered,
+	)
+	AddElement(/datum/element/connect_loc, loc_connections)
 
 /obj/item/restraints/legcuffs/beartrap/suicide_act(mob/user)
 	user.visible_message("<span class='suicide'>[user] is sticking [user.p_their()] head in the [src.name]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
@@ -270,7 +273,7 @@
 		icon_state = "[initial(icon_state)][armed]"
 		to_chat(user, "<span class='notice'>[src] is now [armed ? "armed" : "disarmed"]</span>")
 
-/obj/item/restraints/legcuffs/beartrap/Crossed(AM as mob|obj)
+/obj/item/restraints/legcuffs/beartrap/proc/handle_enter(datum/source, atom/movable/AM)
 	if(armed && isturf(src.loc))
 		if(isliving(AM))
 			var/mob/living/L = AM
@@ -300,8 +303,10 @@
 				L.visible_message("<span class='danger'>[L] triggers \the [src].</span>", \
 						"<span class='userdanger'>You trigger \the [src]!</span>")
 				L.apply_damage(trap_damage, BRUTE, def_zone)
-	..()
 
+/obj/item/restraints/legcuffs/beartrap/proc/on_entered(datum/source, AM as mob|obj)
+	SIGNAL_HANDLER
+	INVOKE_ASYNC(src, .proc/handle_enter, AM)
 /obj/item/restraints/legcuffs/beartrap/energy
 	name = "energy snare"
 	armed = TRUE
@@ -319,10 +324,6 @@
 	if(!ismob(loc))
 		do_sparks(1, TRUE, src)
 		qdel(src)
-
-/obj/item/restraints/legcuffs/beartrap/energy/on_attack_hand(mob/user, act_intent = user.a_intent, unarmed_attack_flags)
-	Crossed(user) //honk
-	. = ..()
 
 /obj/item/restraints/legcuffs/beartrap/energy/cyborg
 	breakouttime = 20 // Cyborgs shouldn't have a strong restraint

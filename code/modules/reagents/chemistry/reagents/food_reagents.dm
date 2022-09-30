@@ -16,11 +16,14 @@
 	var/max_nutrition = INFINITY
 	var/quality = 0	//affects mood, typically higher for mixed drinks with more complex recipes
 	ghoulfriendly = TRUE
+	var/water_level = 0
+	var/max_water = INFINITY
 
 /datum/reagent/consumable/on_mob_life(mob/living/carbon/M)
 	if(!HAS_TRAIT(M, TRAIT_NO_PROCESS_FOOD))
 		current_cycle++
 		M.adjust_nutrition(nutriment_factor, max_nutrition)
+		M.adjust_thirst(water_level, max_water)
 	M.CheckBloodsuckerEatFood(nutriment_factor)
 	holder?.remove_reagent(type, metabolization_rate)
 
@@ -387,6 +390,7 @@
 	nutriment_factor = 1 * REAGENTS_METABOLISM
 	color = "#302000" // rgb: 48, 32, 0
 	taste_description = "flowers"
+	water_level = 0.5
 
 /datum/reagent/consumable/brocjuice/on_mob_life(mob/living/carbon/M)
 	M.adjustOxyLoss(-1*REAGENTS_EFFECT_MULTIPLIER, 0)
@@ -398,6 +402,7 @@
 	nutriment_factor = 1 * REAGENTS_METABOLISM
 	color = "#302000" // rgb: 48, 32, 0
 	taste_description = "dirt"
+	water_level = 0.5
 
 /datum/reagent/consumable/xanderjuice/on_mob_life(mob/living/carbon/M)
 	if(M.blood_volume < BLOOD_VOLUME_NORMAL)
@@ -410,6 +415,7 @@
 	nutriment_factor = 1 * REAGENTS_METABOLISM
 	color = "#BAE3B4"
 	taste_description = "plants"
+	water_level = 0.5
 
 /datum/reagent/consumable/agavejuice/on_mob_life(mob/living/carbon/M)
 	M.adjustFireLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, 0)
@@ -421,6 +427,7 @@
 	nutriment_factor = 1 * REAGENTS_METABOLISM
 	color = "#E8E67E"
 	taste_description = "bitter"
+	water_level = 0.5
 
 /datum/reagent/consumable/ferajuice/on_mob_life(mob/living/carbon/M)
 	if(M.health > 20)
@@ -433,6 +440,7 @@
 	nutriment_factor = 1 * REAGENTS_METABOLISM
 	color = "#ACDFCE"
 	taste_description = "bitter leaves"
+	water_level = 0.5
 
 /datum/reagent/consumable/daturajuice/on_mob_life(mob/living/carbon/M)
 	M.set_drugginess(5)
@@ -445,6 +453,7 @@
 	nutriment_factor = 1 * REAGENTS_METABOLISM
 	color = "#168B64"
 	taste_description = "leaves"
+	water_level = 0.5
 
 /datum/reagent/consumable/coyotejuice/on_mob_life(mob/living/carbon/M)
 	if(prob(10))
@@ -461,6 +470,7 @@
 	nutriment_factor = 1 * REAGENTS_METABOLISM
 	color = "#274E13"
 	taste_description = "nuts"
+	water_level = 0.5
 
 /datum/reagent/consumable/cavefungusjuice/on_mob_life(mob/living/carbon/M)
 	M.adjustToxLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, 0)
@@ -498,6 +508,7 @@
 	glass_icon_state  = "chocolateglass"
 	glass_name = "glass of chocolate"
 	glass_desc = "Tasty."
+	water_level = 0.5
 
 /datum/reagent/consumable/hot_coco/on_mob_life(mob/living/carbon/M)
 	M.adjust_bodytemperature(5 * TEMPERATURE_DAMAGE_COEFFICIENT, 0, BODYTEMP_NORMAL)
@@ -733,6 +744,7 @@
 	nutriment_factor = 10 * REAGENTS_METABOLISM
 	metabolization_rate = 1 * REAGENTS_METABOLISM
 	taste_description = "sweetness"
+	water_level = 1.5
 
 /datum/reagent/consumable/honey/on_mob_life(mob/living/carbon/M)
 	M.reagents.add_reagent(/datum/reagent/consumable/sugar,3)
@@ -755,7 +767,6 @@
 	name = "Mayonnaise"
 	description = "An white and oily mixture of mixed egg yolks."
 	color = "#DFDFDF"
-	value = 5
 	taste_description = "mayonnaise"
 	value = REAGENT_VALUE_COMMON
 

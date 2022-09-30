@@ -22,6 +22,7 @@
 	var/list/last_bitcoins = list()								//Current per-second production, used for display only.
 	var/list/discovered_mutations = list()                           //Mutations discovered by genetics, this way they are shared and cant be destroyed by destroying a single console
 	var/list/tiers = list()										//Assoc list, id = number, 1 is available, 2 is all reqs are 1, so on
+	var/create_roundstart = TRUE
 
 /datum/techweb/New()
 	hidden_nodes = SSresearch.techweb_nodes_hidden.Copy()
@@ -46,6 +47,7 @@
 /datum/techweb/syndicate
 	id = "SYNDICATE"
 	organization = "Syndicate"
+	create_roundstart = FALSE
 
 /datum/techweb/syndicate/New()
 	var/datum/techweb_node/syndicate_basic/Node = new()
@@ -54,6 +56,7 @@
 /datum/techweb/abductor
 	id = "ABDUCTOR"
 	organization = "Aliens"
+	create_roundstart = FALSE
 
 /datum/techweb/abductor/New()
 	var/datum/techweb_node/alientech/Node = new()
@@ -71,9 +74,13 @@
 	id = "BOS"
 	organization = "Brotherhood of Steel"
 
-/datum/techweb/enclave	//Enclave tech "channel"
+/datum/techweb/enclave	//enclave techweb
 	id = "ENCLAVE"
 	organization = "Enclave"
+
+/datum/techweb/vault	//vault techweb
+	id = "VAULT"
+	organization = "Vault" // add number when we actually add the vault
 
 /datum/techweb/followers //Followers tech "channel"
 	id = "FOLLOWERS"
@@ -82,6 +89,7 @@
 /datum/techweb/bepis	//Should contain only 1 BEPIS tech selected at random.
 	id = "EXPERIMENTAL"
 	organization = "Nanotrasen R&D"
+	create_roundstart = FALSE
 
 /datum/techweb/bepis/New()
 	. = ..()
@@ -373,6 +381,7 @@
 
 /datum/techweb/specialized
 	var/allowed_buildtypes = ALL
+	create_roundstart = FALSE
 
 /datum/techweb/specialized/add_design(datum/design/D)
 	if(!(D.build_type & allowed_buildtypes))
@@ -434,3 +443,13 @@
 
 /datum/techweb/specialized/autounlocking/autolathe/ammo
 	design_autounlock_buildtypes = AMMOLATHE
+
+/datum/techweb/custom
+	organization = "Research @ Home"
+	create_roundstart = FALSE
+
+/datum/techweb/custom/New(_id, _org = null)
+	id = _id
+	if (istext(_org))
+		organization = _org
+	..()

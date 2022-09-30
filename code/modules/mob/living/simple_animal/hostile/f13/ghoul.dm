@@ -18,12 +18,12 @@
 	a_intent = INTENT_HARM
 	maxHealth = 60
 	health = 60
-	speed = 3
+	speed = 2.4
 	harm_intent_damage = 8
-	melee_damage_lower = 15
-	melee_damage_upper = 15
+	melee_damage_lower = 25
+	melee_damage_upper = 25
+	armour_penetration = 0.1//Making them some manner of threat.
 	attack_verb_simple = "claw"
-	attack_sound = 'sound/hallucinations/growl1.ogg'
 	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
 	unsuitable_atmos_damage = 20
 	gold_core_spawnable = HOSTILE_SPAWN
@@ -33,13 +33,26 @@
 	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/human/ghoul = 2,
 							/obj/item/stack/sheet/animalhide/human = 1,
 							/obj/item/stack/sheet/bone = 1)
-
-	emote_taunt_sound = list('sound/f13npc/ghoul/taunt.ogg')
-	emote_taunt = list("gurgles", "stares")
+	footstep_type = FOOTSTEP_MOB_BAREFOOT
+	emote_taunt = list(
+		"gurgles",
+		"stares",
+		"foams at the mouth",
+		"groans",
+		"growls",
+		"jibbers",
+		"howls madly",
+		"screeches",
+		"charges")
 	taunt_chance = 30
+
+	emote_taunt_sound = list('sound/f13npc/ghoul_new/ghoul_charge1.ogg','sound/f13npc/ghoul_new/ghoul_charge2.ogg','sound/f13npc/ghoul_new/ghoul_charge3.ogg')
 	aggrosound = list('sound/f13npc/ghoul/aggro1.ogg', 'sound/f13npc/ghoul/aggro2.ogg')
-	idlesound = list('sound/f13npc/ghoul/idle.ogg')
-	death_sound = 'sound/f13npc/ghoul/ghoul_death.ogg'
+	attack_sound = list('sound/f13npc/ghoul_new/ghoul_attack_01.ogg','sound/f13npc/ghoul_new/ghoul_attack_02.ogg','sound/f13npc/ghoul_new/ghoul_attack_03.ogg',\
+	'sound/f13npc/ghoul_new/ghoul_attack_04.ogg')
+	death_sound = list('sound/f13npc/ghoul_new/ghoul_death_01.ogg','sound/f13npc/ghoul_new/ghoul_death_02.ogg','sound/f13npc/ghoul_new/ghoul_death_03.ogg',\
+	'sound/f13npc/ghoul_new/ghoul_death_04.ogg')
+	idlesound = list('sound/f13npc/ghoul/idle.ogg','sound/f13npc/ghoul_new/ghoul_seizure_long.ogg','sound/f13npc/ghoul_new/ghoul_seizure_short.ogg')
 
 // Ghoul Reaver
 /mob/living/simple_animal/hostile/ghoul/reaver
@@ -48,12 +61,27 @@
 	icon_state = "ghoulreaver"
 	icon_living = "ghoulreaver"
 	icon_dead = "ghoulreaver_dead"
-	speed = 2
+	speed = 1.8
 	maxHealth = 120
 	health = 120
 	harm_intent_damage = 8
 	melee_damage_lower = 25
-	melee_damage_upper = 25
+	melee_damage_upper = 35
+	armour_penetration = 0.2//Making them some manner of threat.
+	ranged_message = "throws a chunk of flesh"
+	ranged_cooldown_time = 60
+	ranged = 1
+	footstep_type = FOOTSTEP_MOB_BAREFOOT
+	projectiletype = /obj/item/projectile/reaver
+	projectilesound = 'sound/f13npc/centaur/lash.ogg'
+
+/obj/item/projectile/reaver
+	name = "radioactive glob"
+	damage = 15
+	armour_penetration = 5
+	irradiate = 25//Toxic threshold is 250.
+	pass_flags = PASSTABLE | PASSGRILLE
+	icon_state = "toxin"
 
 /mob/living/simple_animal/hostile/ghoul/reaver/Initialize()
 	. = ..()
@@ -91,6 +119,8 @@
 	harm_intent_damage = 8
 	melee_damage_lower = 15
 	melee_damage_upper = 15
+	unsuitable_atmos_damage = 0//shitty hack
+	footstep_type = FOOTSTEP_MOB_BAREFOOT
 
 //Frozen Feral Ghoul
 /mob/living/simple_animal/hostile/ghoul/frozenreaver
@@ -105,6 +135,8 @@
 	harm_intent_damage = 8
 	melee_damage_lower = 15
 	melee_damage_upper = 15
+	unsuitable_atmos_damage = 0//shitty hack
+	footstep_type = FOOTSTEP_MOB_BAREFOOT
 
 //Legendary Ghoul
 /mob/living/simple_animal/hostile/ghoul/legendary
@@ -123,6 +155,7 @@
 	mob_size = 5
 	wound_bonus = 0
 	bare_wound_bonus = 0
+	footstep_type = FOOTSTEP_MOB_BAREFOOT
 
 //Glowing Ghoul
 /mob/living/simple_animal/hostile/ghoul/glowing
@@ -131,21 +164,21 @@
 	icon_state = "glowinghoul"
 	icon_living = "glowinghoul"
 	icon_dead = "glowinghoul_dead"
-	maxHealth = 100
-	health = 100
+	maxHealth = 250
+	health = 250
 	speed = 2
+	retreat_distance = 1
+	minimum_distance = 2
 	harm_intent_damage = 8
 	melee_damage_lower = 25
 	melee_damage_upper = 25
 	light_system = MOVABLE_LIGHT
 	light_range = 2
+	footstep_type = FOOTSTEP_MOB_BAREFOOT
+	var/radburst_cooldown = 6//Support mob, revives others every six seconds, provided a player is within six tiles. Previously sixty, because I thought this was deciseconds.
 
 /mob/living/simple_animal/hostile/ghoul/glowing/Initialize(mapload)
 	. = ..()
-	// we only heal BRUTELOSS because each type directly heals a simplemob's health
-	// therefore setting it to BRUTELOSS | FIRELOSS | TOXLOSS | OXYLOSS would mean healing 4x as much
-	// aka 40% of max life every tick, which is basically unkillable
-	// TODO: refactor this if simple_animals ever get damage types
 	AddComponent(/datum/component/glow_heal, chosen_targets = /mob/living/simple_animal/hostile/ghoul, allow_revival = FALSE, restrict_faction = null, type_healing = BRUTELOSS)
 
 /mob/living/simple_animal/hostile/ghoul/glowing/Aggro()
@@ -158,12 +191,44 @@
 		var/mob/living/carbon/human/H = target
 		H.apply_effect(20, EFFECT_IRRADIATE, 0)
 
+/mob/living/simple_animal/hostile/ghoul/glowing/handle_automated_action()
+	if(!..()) //AIStatus is off
+		return
+	radburst_cooldown--
+
+	if(target in range(6,src))
+//		if((health <= (0.6 * maxHealth)) && radburst_cooldown<=0)
+		if(radburst_cooldown<=0)
+			radburst_cooldown = initial(radburst_cooldown)
+			RadBurst()
+
+/mob/living/simple_animal/hostile/ghoul/glowing/proc/RadBurst()
+	visible_message("<span class='warning'>[src] growls and releases a burst of radiation from its body!</span>",
+						"<span class='notice'>You release a concentrated burst of radiation from your body!</span>")
+	playsound(src, 'sound/f13npc/ghoul_new/ghoul_radburst.ogg', 50, 0, 3)
+	radiation_pulse(src, 30)
+	for(var/mob/living/simple_animal/hostile/ghoul/glowing/L in range(7, src))
+		if(L.stat == 3)
+			L.gib()
+			visible_message("<span class='danger'>[src] detonates into a brilliant glowing cloud!</span>")
+			radiation_pulse(src, 120)
+	for(var/mob/living/simple_animal/hostile/ghoul/G in range(7, src))
+		if(G.stat == 3)
+			G.revive(1)
+		else
+			G.revive(1, 1)
+	set_light(7, 5, "#39FF14")
+	spawn(40)
+	set_light(2)
+
 /mob/living/simple_animal/hostile/ghoul/glowing/strong // FEV mutation
-	maxHealth = 320
-	health = 320
+	maxHealth = 200 //reduced. 20hp per healthtick heal
+	health = 200 //reduced further. 20hp per healthtick heal
 	speed = 1.4 // Nyooom
 	melee_damage_lower = 35
 	melee_damage_upper = 35
+	retreat_distance = 0//These ghouls don't run, unlike standard glowing ones.
+	minimum_distance = 0
 	armour_penetration = 0.1
 
 //Alive Ghoul
@@ -176,6 +241,7 @@
 	icon_gib = "syndicate_gib"
 	maxHealth = 90
 	health = 90
+	footstep_type = FOOTSTEP_MOB_BAREFOOT
 
 //Alive Ghoul
 /mob/living/simple_animal/hostile/ghoul/soldier/armored
@@ -187,6 +253,7 @@
 	icon_gib = "syndicate_gib"
 	maxHealth = 100
 	health = 100
+	footstep_type = FOOTSTEP_MOB_BAREFOOT
 
 //Alive Ghoul
 /mob/living/simple_animal/hostile/ghoul/scorched
@@ -208,6 +275,7 @@
 	aggro_vision_range = 10
 	attack_verb_simple = "punches"
 	attack_sound = "punch"
+	footstep_type = FOOTSTEP_MOB_BAREFOOT
 
 //Alive Ghoul Ranged
 /mob/living/simple_animal/hostile/ghoul/scorched/ranged
@@ -234,6 +302,7 @@
 	aggro_vision_range = 10
 	attack_verb_simple = "shoots"
 	attack_sound = "punch"
+	footstep_type = FOOTSTEP_MOB_BAREFOOT
 
 /mob/living/simple_animal/hostile/ghoul/wyomingghost
 	name = "ghost soldier"
@@ -261,6 +330,7 @@
 	faction = list("supermutant","ghoul")
 	decompose = FALSE
 	sharpness = SHARP_EDGED //They need to cut their finger nails
+	footstep_type = FOOTSTEP_MOB_BAREFOOT
 
 //Halloween Event Ghouls
 /mob/living/simple_animal/hostile/ghoul/zombie
@@ -270,6 +340,7 @@
 	stat_attack = UNCONSCIOUS
 	maxHealth = 200
 	health = 200
+	footstep_type = FOOTSTEP_MOB_BAREFOOT
 
 /mob/living/simple_animal/hostile/ghoul/zombie/AttackingTarget()
 	. = ..()
@@ -289,6 +360,7 @@
 	harm_intent_damage = 8
 	melee_damage_lower = 30
 	melee_damage_upper = 30
+	footstep_type = FOOTSTEP_MOB_BAREFOOT
 
 /mob/living/simple_animal/hostile/ghoul/zombie/glowing
 	name = "ravenous glowing feral ghoul"
@@ -304,6 +376,7 @@
 	melee_damage_upper = 30
 	light_system = MOVABLE_LIGHT
 	light_range = 2
+	footstep_type = FOOTSTEP_MOB_BAREFOOT
 
 /mob/living/simple_animal/hostile/ghoul/zombie/glowing/Initialize(mapload)
 	. = ..()
@@ -339,3 +412,5 @@
 	mob_size = 5
 	wound_bonus = 0
 	bare_wound_bonus = 0
+	footstep_type = FOOTSTEP_MOB_BAREFOOT
+

@@ -748,7 +748,7 @@
 	var/mob/dead/observer/G = get_ghost(even_if_they_cant_reenter = force)
 	. = G
 	if(G)
-		G.reenter_corpse()
+		INVOKE_ASYNC(G, /mob/dead/observer.verb/reenter_corpse)
 
 /// Sets our can_hijack to the fastest speed our antag datums allow.
 /datum/mind/proc/get_hijack_speed()
@@ -810,6 +810,7 @@
 /mob/living/silicon/robot/mind_initialize()
 	..()
 	mind.assigned_role = "Cyborg"
+	SEND_SIGNAL(src, COMSIG_SILICON_MIND_ATTACHED, src) //Sends the signal that a mind has been attached. Used when adding initial flavortext to silicon.
 
 //PAI
 /mob/living/silicon/pai/mind_initialize()

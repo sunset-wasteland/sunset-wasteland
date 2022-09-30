@@ -100,7 +100,7 @@
 	icon = 'modular_citadel/icons/mob/mam_snouts.dmi'
 	color_src = MATRIXED
 	extra = TRUE
-	extra = MUTCOLORS3
+	extra_color_src = MUTCOLORS3
 
 /datum/sprite_accessory/snouts/rodent
 	name = "Rodent"
@@ -313,6 +313,11 @@
 	icon_state = "hhorse"
 	matrixed_sections = MATRIX_RED_GREEN
 
+/datum/sprite_accessory/snouts/mam_snouts/stubby
+	name = "Stubby"
+	icon_state = "stubby"
+	color_src = MUTCOLORS
+
 /******************************************
 **************** Snouts *******************
 *************but higher up*****************/
@@ -345,7 +350,7 @@
 	name = "Horn (Top)"
 	icon_state = "frhino"
 	extra = TRUE
-	extra = MUTCOLORS3
+	extra_color_src = MUTCOLORS3
 	matrixed_sections = MATRIX_ALL
 
 /datum/sprite_accessory/snouts/mam_snouts/fhusky

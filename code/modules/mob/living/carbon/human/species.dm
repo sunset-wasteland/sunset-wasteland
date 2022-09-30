@@ -524,6 +524,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 
 	if(!hair_hidden || dynamic_hair_suffix)
 		var/mutable_appearance/hair_overlay = mutable_appearance(layer = -HAIR_LAYER)
+		var/mutable_appearance/gradient_overlay = mutable_appearance(layer = -HAIR_LAYER) // Sunset ADD: Gradient hairs!
 		if(!hair_hidden && !H.getorgan(/obj/item/organ/brain)) //Applies the debrained overlay if there is no brain
 			if(!(NOBLOOD in species_traits))
 				hair_overlay.icon = 'icons/mob/hair.dmi'
@@ -567,8 +568,22 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 					hair_overlay.pixel_x += H.dna.species.offset_features[OFFSET_HAIR][1]
 					hair_overlay.pixel_y += H.dna.species.offset_features[OFFSET_HAIR][2]
 
+// Sunset ADD: Gradient hair rendering!
+				var/icon/grad_s = null // temporary icon to apply to the MA
+				var/grad_style_ref = GLOB.hair_gradients[H.dna.features["grad_style"]]
+				if(grad_style_ref)
+					grad_s = new/icon("icon" = 'modular_citadel/icons/mob/hair_gradients.dmi', "icon_state" = grad_style_ref)
+					var/icon/hair_sprite = new/icon("icon" = hair_file, "icon_state" = hair_state)
+					grad_s.Blend(hair_sprite, ICON_AND)
+					grad_s.Blend("#[H.dna.features["grad_color"]]", ICON_MULTIPLY)
+
+				if(!isnull(grad_s))
+					gradient_overlay.icon = grad_s
+				// Sunset ADD: End
+
 		if(hair_overlay.icon)
 			standing += hair_overlay
+			standing += gradient_overlay // Sunset Add: Actual MA which renders onto the sprite!
 
 	if(standing.len)
 		H.overlays_standing[HAIR_LAYER] = standing
@@ -1275,6 +1290,9 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		hunger_rate *= H.physiology.hunger_mod
 		H.adjust_nutrition(-hunger_rate)
 
+	if ((H.water > 0 && H.stat != DEAD) && (H.client || H.water > THIRST_LEVEL_LIGHT))
+		var/thirst_rate = THIRST_FACTOR * H.transpiration_efficiency
+		H.water = max (0, H.water - thirst_rate)
 
 	if (H.nutrition > NUTRITION_LEVEL_FULL)
 		if(H.overeatduration < 600) //capped so people don't take forever to unfat
@@ -1283,17 +1301,49 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		if(H.overeatduration > 1)
 			H.overeatduration -= 2 //doubled the unfat rate
 
+	//THIRST//
+	if(H.water > THIRST_LEVEL_LIGHT)
+		if(H.transpiration_efficiency != 1.1)
+			H << "<span class='notice'>You are no longer thirsty.</span>"
+		H.transpiration_efficiency = 1.1
+	else if(H.water > THIRST_LEVEL_MIDDLE) //LITLE THIRST
+		if(H.transpiration_efficiency != 1)
+			to_chat(H, "<span class='notice'>Your mouth is incredibly dry.</span>")
+		H.transpiration_efficiency = 1
+	else if(H.water > THIRST_LEVEL_HARD) //MIDDLE THIRST
+		if(H.transpiration_efficiency != 0.9)
+			to_chat(H, "<span class='warning'>You are very thirsty, find water.</span>")
+		H.transpiration_efficiency = 0.9
+	else if(H.water > THIRST_LEVEL_DEADLY) //HARD THIRST
+		if(H.transpiration_efficiency != 0.6)
+			to_chat(H, "<span class='warning'>You are very dehydrated, find water immediately or you will perish.</span>")
+		H.transpiration_efficiency = 0.6
+		if(prob(10))//Minor annoyance, depending on luck.
+			H.adjustStaminaLoss(25)
+	else
+		if(H.transpiration_efficiency != 0.1)
+			to_chat(H, "<span class='warning'>You are extremely dehydrated, death is upon you. You must find water.</span>")
+		H.adjustOxyLoss(15)//No longer minor.
+		H.transpiration_efficiency = 0.1
+		if(prob(10))
+			H.adjustStaminaLoss(50)
+
 	//metabolism change
-	if(H.nutrition > NUTRITION_LEVEL_FAT)
+	if(H.nutrition > NUTRITION_LEVEL_FAT) //Overweight
 		H.metabolism_efficiency = 1
-	else if(H.nutrition > NUTRITION_LEVEL_FED && H.satiety > 80)
+	else if(H.nutrition > NUTRITION_LEVEL_FED && H.satiety > 80) //Well fed.
 		if(H.metabolism_efficiency != 1.25 && !HAS_TRAIT(H, TRAIT_NOHUNGER))
 			to_chat(H, "<span class='notice'>You feel vigorous.</span>")
 			H.metabolism_efficiency = 1.25
-	else if(H.nutrition < NUTRITION_LEVEL_STARVING + 50)
+	else if(H.nutrition < NUTRITION_LEVEL_STARVING + 50) //Starving.
 		if(H.metabolism_efficiency != 0.8)
 			to_chat(H, "<span class='notice'>You feel sluggish.</span>")
 		H.metabolism_efficiency = 0.8
+		if(H.getStaminaLoss() > 80)//Only screws with stamina up to a point.
+			return
+		else
+			if(prob(15)) //Eat something, nerd.
+				H.adjustStaminaLoss(25)
 	else
 		if(H.metabolism_efficiency == 1.25)
 			to_chat(H, "<span class='notice'>You no longer feel vigorous.</span>")
@@ -1312,15 +1362,43 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 			else
 				H.remove_movespeed_modifier(/datum/movespeed_modifier/hunger)
 
+
 	switch(H.nutrition)
 		if(NUTRITION_LEVEL_FULL to INFINITY)
+			SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "nutrition", /datum/mood_event/nutrition/fat)
 			H.throw_alert("nutrition", /obj/screen/alert/fat)
-		if(NUTRITION_LEVEL_HUNGRY to NUTRITION_LEVEL_FULL)
+		if(NUTRITION_LEVEL_WELL_FED to NUTRITION_LEVEL_FULL)
+			SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "nutrition", /datum/mood_event/nutrition/wellfed)
 			H.clear_alert("nutrition")
+		if( NUTRITION_LEVEL_FED to NUTRITION_LEVEL_WELL_FED)
+			SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "nutrition", /datum/mood_event/nutrition/fed)
+			H.throw_alert("nutrition", /obj/screen/alert/hunger1)
+		if(NUTRITION_LEVEL_HUNGRY to NUTRITION_LEVEL_FED)
+			SEND_SIGNAL(H, COMSIG_CLEAR_MOOD_EVENT, "nutrition")
+			H.throw_alert("nutrition", /obj/screen/alert/hunger2)
 		if(NUTRITION_LEVEL_STARVING to NUTRITION_LEVEL_HUNGRY)
-			H.throw_alert("nutrition", /obj/screen/alert/hungry)
+			SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "nutrition", /datum/mood_event/nutrition/hungry)
+			H.throw_alert("nutrition", /obj/screen/alert/hunger3)
 		if(0 to NUTRITION_LEVEL_STARVING)
-			H.throw_alert("nutrition", /obj/screen/alert/starving)
+			SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "nutrition", /datum/mood_event/nutrition/starving)
+			H.throw_alert("nutrition", /obj/screen/alert/hunger4)
+
+	switch(H.water)
+		if(THIRST_LEVEL_LIGHT to INFINITY)
+			SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "thirst", /datum/mood_event/nutrition/slaked)
+			H.clear_alert("thirst")
+		if(THIRST_LEVEL_MIDDLE to THIRST_LEVEL_LIGHT)
+			SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "thirst", /datum/mood_event/nutrition/thirsty)
+			H.throw_alert("thirst", /obj/screen/alert/thirst1)
+		if (THIRST_LEVEL_HARD to THIRST_LEVEL_MIDDLE)
+			SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "thirst", /datum/mood_event/nutrition/thirsty2)
+			H.throw_alert("thirst", /obj/screen/alert/thirst2)
+		if (THIRST_LEVEL_DEADLY to THIRST_LEVEL_HARD)
+			SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "thirst", /datum/mood_event/nutrition/thirsty3)
+			H.throw_alert("thirst", /obj/screen/alert/thirst3)
+		if(0 to THIRST_LEVEL_DEADLY)
+			SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "thirst", /datum/mood_event/nutrition/thirsty4)
+			H.throw_alert("thirst", /obj/screen/alert/thirst4)
 
 /datum/species/proc/update_health_hud(mob/living/carbon/human/H)
 	return 0
@@ -1914,6 +1992,12 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	if(!forced && hit_percent <= 0)
 		return 0
 
+	var/defenseThreshold = H.getArmorDefenseThreshold(def_zone, damagetype)
+	damage = max(0, damage-defenseThreshold)
+
+	if(damage == 0)
+		return 0
+
 	var/sharp_mod = 1 //this line of code here is meant for species to have various damage modifiers to their brute intake based on the flag of the weapon.
 	switch(sharpness)
 		if(SHARP_NONE)
@@ -1921,7 +2005,8 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		if(SHARP_EDGED)
 			sharp_mod = sharp_edged_mod
 		if(SHARP_POINTY)
-			sharp_mod = sharp_pointy_mod 
+			sharp_mod = sharp_pointy_mod
+
 	var/obj/item/bodypart/BP = null
 	if(!spread_damage)
 		if(isbodypart(def_zone))

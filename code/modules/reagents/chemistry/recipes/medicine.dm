@@ -6,7 +6,7 @@
 	required_reagents = list(/datum/reagent/silicon = 1, /datum/reagent/copper = 1)
 	required_catalysts = list(/datum/reagent/toxin/plasma = 5)
 
-datum/chemical_reaction/rezadone
+/datum/chemical_reaction/rezadone
 	name = "Rezadone"
 	id = /datum/reagent/medicine/rezadone
 	results = list(/datum/reagent/medicine/rezadone = 3)
@@ -51,6 +51,7 @@ datum/chemical_reaction/rezadone
 	required_reagents = list(/datum/reagent/consumable/sodiumchloride = 1, /datum/reagent/water = 1, /datum/reagent/consumable/sugar = 1)
 
 /datum/chemical_reaction/baked_banana_peel
+	id = "baked_banana_peel"
 	results = list(/datum/reagent/consumable/baked_banana_peel = 1)
 	required_temp = 413.15 // if it's good enough for caramel it's good enough for this
 	required_reagents = list(/datum/reagent/consumable/banana_peel = 1)
@@ -58,6 +59,7 @@ datum/chemical_reaction/rezadone
 	mob_react = FALSE
 
 /datum/chemical_reaction/coagulant_weak
+	id = "coagulant_weak"
 	results = list(/datum/reagent/medicine/coagulant/weak = 3)
 	required_reagents = list(/datum/reagent/medicine/salglu_solution = 2, /datum/reagent/consumable/baked_banana_peel = 1)
 	mob_react = FALSE
@@ -113,7 +115,7 @@ datum/chemical_reaction/rezadone
 		return
 	if(holder.chem_temp > 320)
 		var/temp_ratio = 1-(330 - holder.chem_temp)/10
-		holder.remove_reagent(id, added_volume*temp_ratio)
+		holder.remove_reagent(/datum/reagent/synthtissue, added_volume*temp_ratio)
 	if(St.purity < 1)
 		St.volume *= St.purity
 		St.purity = 1
@@ -215,13 +217,13 @@ datum/chemical_reaction/rezadone
 
 /datum/chemical_reaction/strange_reagent
 	name = "Strange Reagent"
-	id = /datum/reagent/medicine/strange_reagent
+	id = "strange_reagent_omnizine"
 	results = list(/datum/reagent/medicine/strange_reagent = 3)
 	required_reagents = list(/datum/reagent/medicine/omnizine = 1, /datum/reagent/water/holywater = 1, /datum/reagent/toxin/mutagen = 1)
 
 /datum/chemical_reaction/strange_reagent/alt
 	name = "Strange Reagent"
-	id = /datum/reagent/medicine/strange_reagent
+	id = "strange_reagent_protozine"
 	results = list(/datum/reagent/medicine/strange_reagent = 2)
 	required_reagents = list(/datum/reagent/medicine/omnizine/protozine = 1, /datum/reagent/water/holywater = 1, /datum/reagent/toxin/mutagen = 1)
 
@@ -338,112 +340,72 @@ datum/chemical_reaction/rezadone
 	required_reagents = list( /datum/reagent/medicine/mannitol = 2, /datum/reagent/water = 2, /datum/reagent/impedrezene = 1)
 
 /datum/chemical_reaction/medsuture
+	id = "medsuture"
 	required_reagents = list(/datum/reagent/cellulose = 10, /datum/reagent/toxin/formaldehyde = 20, /datum/reagent/medicine/polypyr = 10) //This might be a bit much, reagent cost should be reviewed after implementation.
 
 /datum/chemical_reaction/medsuture/on_reaction(datum/reagents/holder, created_volume)
 	var/location = get_turf(holder.my_atom)
 	for(var/i = 1, i <= created_volume, i++)
-		new /obj/item/stack/medical/suture/medicated(location)
+		new /obj/item/stack/medical/suture/medicated/five(location)
 
 /datum/chemical_reaction/medmesh
+	id = "medmesh"
 	required_reagents = list(/datum/reagent/cellulose = 10, /datum/reagent/consumable/aloejuice = 10, /datum/reagent/abraxo_cleaner/sterilizine = 10)
 
 /datum/chemical_reaction/medmesh/on_reaction(datum/reagents/holder, created_volume)
 	var/location = get_turf(holder.my_atom)
 	for(var/i = 1, i <= created_volume, i++)
-		new /obj/item/stack/medical/mesh/advanced(location)
+		new /obj/item/stack/medical/mesh/advanced/five(location)
 
 /datum/chemical_reaction/suture
+	id = "suture"
 	required_reagents = list(/datum/reagent/cellulose = 2, /datum/reagent/medicine/styptic_powder = 2)
 
 /datum/chemical_reaction/suture/on_reaction(datum/reagents/holder, created_volume)
 	var/location = get_turf(holder.my_atom)
 	for(var/i = 1, i <= created_volume, i++)
-		new /obj/item/stack/medical/suture/(location)
+		new /obj/item/stack/medical/suture/five(location)
 
 /datum/chemical_reaction/mesh
+	id = "mesh"
 	required_reagents = list(/datum/reagent/cellulose = 2, /datum/reagent/medicine/silver_sulfadiazine = 2)
 
 /datum/chemical_reaction/mesh/on_reaction(datum/reagents/holder, created_volume)
 	var/location = get_turf(holder.my_atom)
 	for(var/i = 1, i <= created_volume, i++)
-		new /obj/item/stack/medical/mesh/(location)
+		new /obj/item/stack/medical/mesh/five(location)
 
 /datum/chemical_reaction/stimpak
 	name = "Stimpak Fluid"
 	id = /datum/reagent/medicine/stimpak
 	results = list(/datum/reagent/medicine/stimpak = 1)
 	required_reagents = list(/datum/reagent/blood = 1, /datum/reagent/medicine/spaceacillin = 1)
-	OptimalTempMin 		= 500 // Lower area of bell curve for determining heat based rate reactions
-	OptimalTempMax		= 550 // Upper end for above
-	ExplodeTemp			= 9999 //Temperature at which reaction explodes
-	OptimalpHMin		= 3 // Lowest value of pH determining pH a 1 value for pH based rate reactions (Plateu phase)
-	OptimalpHMax		= 8 // Higest value for above
-	ReactpHLim			= 4 // How far out pH wil react, giving impurity place (Exponential phase)
-	CurveSharpT 		= 5 // How sharp the temperature exponential curve is (to the power of value)
-	CurveSharppH 		= 0.5 // How sharp the pH exponential curve is (to the power of value)
-	ThermicConstant		= -6 //Temperature change per 1u produced
-	HIonRelease 		= -0.1 //pH change per 1u reaction
-	RateUpLim 			= 5 //Optimal/max rate possible if all conditions are perfect
-	FermiChem 			= TRUE//If the chemical uses the Fermichem reaction mechanics
-	FermiExplode 		= FALSE //If the chemical explodes in a special way
 
-/datum/chemical_reaction/stimpak2
+/datum/chemical_reaction/stimpak_imitation
 	name = "Imitation Stimpak Fluid"
 	id = /datum/reagent/medicine/stimpakimitation
 	results = list(/datum/reagent/medicine/stimpakimitation = 2)
 	required_reagents = list(/datum/reagent/consumable/brocjuice = 1, /datum/reagent/consumable/xanderjuice = 1)
-	OptimalTempMin 		= 500 // Lower area of bell curve for determining heat based rate reactions
-	OptimalTempMax		= 650 // Upper end for above
-	ExplodeTemp			= 9999 //Temperature at which reaction explodes
-	OptimalpHMin		= 2 // Lowest value of pH determining pH a 1 value for pH based rate reactions (Plateu phase)
-	OptimalpHMax		= 8 // Higest value for above
-	ReactpHLim			= 4 // How far out pH wil react, giving impurity place (Exponential phase)
-	CurveSharpT 		= 5 // How sharp the temperature exponential curve is (to the power of value)
-	CurveSharppH 		= 0.5 // How sharp the pH exponential curve is (to the power of value)
-	ThermicConstant		= -6 //Temperature change per 1u produced
-	HIonRelease 		= -0.1 //pH change per 1u reaction
-	RateUpLim 			= 12 //Optimal/max rate possible if all conditions are perfect
-	FermiChem 			= TRUE//If the chemical uses the Fermichem reaction mechanics
-	FermiExplode 		= FALSE //If the chemical explodes in a special way
+
+/datum/chemical_reaction/stimpak/synthetic
+	id = "stimpak_synthetic"
+	required_reagents = list(/datum/reagent/blood/synthetics = 1, /datum/reagent/medicine/spaceacillin = 1)
 
 /datum/chemical_reaction/superstimpak
 	name = "Super Stimpak Fluid"
 	id = /datum/reagent/medicine/super_stimpak
-	results = list(/datum/reagent/medicine/super_stimpak = 5)
+	results = list(/datum/reagent/medicine/super_stimpak = 2)
+	required_reagents = list(/datum/reagent/blood = 1, /datum/reagent/medicine/stimpak = 1, /datum/reagent/consumable/mutjuice = 1) //1 mutfruit at 50 potency yields 6 mutfruit juice
+
+/datum/chemical_reaction/superstimpak/synthetic
+	id = "super_stimpak_synthetic"
 	required_reagents = list(/datum/reagent/blood/synthetics = 1, /datum/reagent/medicine/stimpak = 1, /datum/reagent/consumable/mutjuice = 1) //1 mutfruit at 50 potency yields 6 mutfruit juice
-	OptimalTempMin 		= 65
-	OptimalTempMax		= 95
-	ExplodeTemp			= 100
-	OptimalpHMin		= 0.5
-	OptimalpHMax		= 3
-	ReactpHLim			= 1
-	CurveSharpT 		= 1 //flat tcurve
-	CurveSharppH 		= 0.5
-	ThermicConstant		= 1.5
-	HIonRelease 		= 0.1
-	RateUpLim 			= 50 //this seems quite high but 1. runaway thermals 2. it's very slow since it's 100K
-	FermiChem 			= TRUE
-	FermiExplode 		= FALSE
 
 /datum/chemical_reaction/medx
 	name = "Med-X"
 	id = /datum/reagent/medicine/medx
 	results = list(/datum/reagent/medicine/medx = 4)
 	required_reagents = list(/datum/reagent/drug/aranesp = 1, /datum/reagent/phenol = 1, /datum/reagent/drug/heroin = 1, /datum/reagent/medicine/stimpakimitation = 1)
-	OptimalTempMin 		= 780
-	OptimalTempMax		= 821
-	ExplodeTemp			= 824
-	OptimalpHMin		= 10
-	OptimalpHMax		= 14
-	ReactpHLim			= 1
-	CurveSharpT 		= 10
-	CurveSharppH 		= 0.5
-	ThermicConstant		= 8
-	HIonRelease 		= -0.5
-	RateUpLim 			= 40
-	FermiChem 			= TRUE
-
 
 /datum/chemical_reaction/mentats
 	name = "mentats"

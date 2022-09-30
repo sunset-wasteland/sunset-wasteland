@@ -98,10 +98,10 @@
 ////////////////////////////////////////
 
 
-//Caravan shotgun							Keywords: Shotgun, Double barrel, saw-off, extra damage +1
+//Caravan shotgun							Keywords: Shotgun, Double barrel, saw-off, extra damage +3.2, extra pen 10%
 /obj/item/gun/ballistic/revolver/caravan_shotgun
 	name = "caravan shotgun"
-	desc = "An common over-under double barreled shotgun made in the post-war era."
+	desc = "A common over-under double barreled shotgun made in the post-war era."
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
@@ -115,6 +115,9 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/dual/simple
 	sawn_desc = "Short and concealable, terribly uncomfortable to fire, but worse on the other end."
 	fire_sound = 'sound/f13weapons/caravan_shotgun.ogg'
+	extra_damage = 3.2
+	extra_penetration = 0.1
+	recoil = 1.55
 
 /obj/item/gun/ballistic/revolver/caravan_shotgun/attackby(obj/item/A, mob/user, params)
 	..()
@@ -134,7 +137,7 @@
 		icon_state = "[initial(icon_state)]"
 
 
-//Widowmaker				Keywords: Shotgun, Double barrel, saw-off
+//Widowmaker				Keywords: Shotgun, Double barrel, saw-off, extra damage +2, extra pen 5%
 /obj/item/gun/ballistic/revolver/widowmaker
 	name = "Winchester Widowmaker"
 	desc = "Old-world Winchester Widowmaker double-barreled 12 gauge shotgun, with mahogany furniture"
@@ -151,6 +154,9 @@
 	force = 20
 	sawn_desc = "Someone took the time to chop the last few inches off the barrel and stock of this shotgun. Now, the wide spread of this hand-cannon's short-barreled shots makes it perfect for short-range crowd control."
 	fire_sound = 'sound/f13weapons/max_sawn_off.ogg'
+	extra_damage = 2
+	extra_penetration = 0.05
+	recoil = 0.55
 
 /obj/item/gun/ballistic/revolver/widowmaker/attackby(obj/item/A, mob/user, params)
 	..()
@@ -283,7 +289,8 @@
 /obj/item/gun/ballistic/shotgun/automatic/combat/auto5
 	name = "Browning Auto-5"
 	desc = "A semi automatic shotgun with a four round tube."
-	fire_delay = 5
+	fire_delay = 3.95
+	recoil = 2
 	icon_state = "auto5"
 	item_state = "shotgunauto5"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/com/compact
@@ -299,7 +306,9 @@
 	icon_prefix = "shotgunlever"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/trench
 	fire_delay = 4
-	recoil = 0.5
+	slowdown = 0.25
+	extra_damage = 1.4
+	recoil = 2.1
 	w_class = WEIGHT_CLASS_NORMAL
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
 	fire_sound = 'sound/f13weapons/shotgun.ogg'
@@ -316,6 +325,7 @@
 	icon_state = "neostead"
 	item_state = "shotguncity"
 	fire_delay = 5
+	recoil = 1.3
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube
 	force = 10
 	var/toggled = FALSE
@@ -352,15 +362,17 @@
 	toggle_tube(user)
 
 
-//Winchester City-Killer				Keywords: Shotgun, Semi-auto, 12 rounds internal
+//Winchester City-Killer				Keywords: Shotgun, Full-auto, 10 rounds internal
 /obj/item/gun/ballistic/shotgun/automatic/combat/citykiller
 	name = "Winchester City-Killer shotgun"
-	desc = "A semi automatic shotgun with black tactical furniture made by Winchester Arms. This particular model uses a internal tube magazine."
+	desc = "A semi automatic shotgun with black tactical furniture made by Winchester Arms. This particular model uses an internal tube magazine."
 	icon_state = "citykiller"
 	item_state = "shotguncity"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/com/citykiller
-	fire_delay = 5
-	var/semi_auto = TRUE
+	fire_delay = 4.45
+	autofire_shot_delay = 5
+	automatic = 1
+	recoil = 2.7
 	fire_sound = 'sound/f13weapons/riot_shotgun.ogg'
 
 
@@ -375,23 +387,24 @@
 	item_state = "shotgunriot"
 	w_class = WEIGHT_CLASS_BULKY
 	mag_type = /obj/item/ammo_box/magazine/d12g
-	fire_delay = 5
+	fire_delay = 4
 	burst_size = 1
-	recoil = 0.5
+	recoil = 1.1
 	automatic_burst_overlay = FALSE
 	semi_auto = TRUE
 	fire_sound = 'sound/f13weapons/riot_shotgun.ogg'
 
 /obj/item/gun/ballistic/automatic/shotgun/pancor
 	name = "Pancor Jackhammer"
-	desc = "A drum-loaded, fully automatic shotgun. The pinnacle of turning things into swiss cheese."
+	desc = "The Jackhammer, despite its name, is an easy to control shotgun, even when fired on full automatic. The popular bullpup design, which places the magazine behind the trigger, makes the weapon well balanced & easy to control." //Nod to Fallout 2 in the description :)
 	icon_state = "pancor"
 	item_state = "cshotgun1"
 	fire_sound = 'sound/f13weapons/repeater_fire.ogg'
 	mag_type = /obj/item/ammo_box/magazine/d12g
 	is_automatic = TRUE
 	autofire_shot_delay = 4
-	recoil = 1
+	fire_delay = 2.85
+	recoil = 1.35
 	automatic = 1
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY

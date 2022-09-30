@@ -82,3 +82,11 @@
 	projectile_type = /obj/item/projectile/energy/pickle
 	select_name = "pickle ray"
 	e_cost = 0
+
+/obj/item/ammo_casing/energy/flamethrower
+	select_name = "OH GOD OH FUCK"
+	fire_sound = 'sound/weapons/flamethrower.ogg'
+	projectile_type = /obj/item/projectile/incendiary/flamethrower
+	e_cost = 0//For now.
+	pellets = 3
+	variance = 20

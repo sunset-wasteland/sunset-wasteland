@@ -1,3 +1,5 @@
+// DO NOT MAP THIS IN WITHOUT A POOL CONTROLLER
+// FOR COSMETIC MAPPING, USE /obj/structure/drain
 /obj/machinery/pool/drain
 	name = "drain"
 	icon_state = "drain"

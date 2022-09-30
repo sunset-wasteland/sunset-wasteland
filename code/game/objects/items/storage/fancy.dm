@@ -76,7 +76,7 @@
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 6
-	STR.can_hold = typecacheof(list(/obj/item/reagent_containers/food/snacks/donut))
+	CANHOLD_STATIC(STR, typecacheof(list(/obj/item/reagent_containers/food/snacks/donut)))
 
 /*
  * Egg Box
@@ -97,7 +97,7 @@
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 12
-	STR.can_hold = typecacheof(list(/obj/item/reagent_containers/food/snacks/egg))
+	CANHOLD_STATIC(STR, typecacheof(list(/obj/item/reagent_containers/food/snacks/egg)))
 
 /*
  * Candle Box
@@ -159,7 +159,7 @@
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 6
-	STR.can_hold = typecacheof(list(/obj/item/clothing/mask/cigarette, /obj/item/lighter))
+	CANHOLD_STATIC(STR, typecacheof(list(/obj/item/clothing/mask/cigarette, /obj/item/lighter)))
 
 /obj/item/storage/fancy/cigarettes/examine(mob/user)
 	. = ..()
@@ -326,11 +326,14 @@
 	spawn_type = /obj/item/rollingpaper
 	custom_price = PRICE_REALLY_CHEAP
 
+/obj/item/storage/fancy/rollingpapers/makeshift
+	desc = "A pack of hand-made rolling papers."
+
 /obj/item/storage/fancy/rollingpapers/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 10
-	STR.can_hold = typecacheof(list(/obj/item/rollingpaper))
+	CANHOLD_STATIC(STR, typecacheof(list(/obj/item/rollingpaper)))
 
 ///Overrides to do nothing because fancy boxes are fucking insane.
 /obj/item/storage/fancy/rollingpapers/update_icon_state()
@@ -359,7 +362,7 @@
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 5
-	STR.can_hold = typecacheof(list(/obj/item/clothing/mask/cigarette/cigar))
+	CANHOLD_STATIC(STR, typecacheof(list(/obj/item/clothing/mask/cigarette/cigar)))
 
 /obj/item/storage/fancy/cigarettes/cigars/update_icon_state()
 	if(fancy_open)
@@ -409,7 +412,7 @@
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 8
-	STR.can_hold = typecacheof(list(/obj/item/reagent_containers/food/snacks/tinychocolate))
+	CANHOLD_STATIC(STR, typecacheof(list(/obj/item/reagent_containers/food/snacks/tinychocolate)))
 
 /obj/item/storage/fancy/nugget_box
 	name = "nugget box"
@@ -423,7 +426,7 @@
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 6
-	STR.can_hold = typecacheof(list(/obj/item/reagent_containers/food/snacks/nugget))
+	CANHOLD_STATIC(STR, typecacheof(list(/obj/item/reagent_containers/food/snacks/nugget)))
 
 /obj/item/storage/fancy/cracker_pack
 	name = "cracker pack"
@@ -437,7 +440,7 @@
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 6
-	STR.can_hold = typecacheof(list(/obj/item/reagent_containers/food/snacks/cracker))
+	CANHOLD_STATIC(STR, typecacheof(list(/obj/item/reagent_containers/food/snacks/cracker)))
 
 /*
  * Ring Box
@@ -456,7 +459,7 @@
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 1
-	STR.can_hold = typecacheof(list(/obj/item/clothing/gloves/ring))
+	CANHOLD_STATIC(STR, typecacheof(list(/obj/item/clothing/gloves/ring)))
 
 /obj/item/storage/fancy/ringbox/diamond
 	icon_state = "diamond ringbox"

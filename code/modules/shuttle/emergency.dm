@@ -293,6 +293,7 @@
 	port_direction = WEST
 	var/sound_played = 0 //If the launch sound has been sent to all players on the shuttle itself
 	var/hijack_status = NOT_BEGUN
+	var/train_whistled = FALSE
 
 /obj/docking_port/mobile/emergency/canDock(obj/docking_port/stationary/S)
 	return SHUTTLE_CAN_DOCK //If the emergency shuttle can't move, the whole game breaks, so it will force itself to land even if it has to crush a few departments in the process
@@ -405,6 +406,12 @@
 
 
 		if(SHUTTLE_DOCKED)
+			if(!train_whistled && time_left <= 60 SECONDS) // At a minute until depature, sound a train whistle
+				train_whistled = TRUE // But only once
+				for(var/mob/M in GLOB.player_list)
+					if(!isnewplayer(M) && M.can_hear() && (M.client.prefs.toggles & SOUND_ANNOUNCEMENTS))
+						SEND_SOUND(M, 'sound/f13effects/train_horn.ogg')
+
 			if(time_left <= ENGINES_START_TIME)
 				mode = SHUTTLE_IGNITING
 				SSshuttle.checkHostileEnvironment()

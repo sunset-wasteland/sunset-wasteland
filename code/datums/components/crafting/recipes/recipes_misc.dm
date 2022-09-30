@@ -17,7 +17,7 @@
 	result = /obj/machinery/door/unpowered/secure_NCR
 	reqs = list(/obj/item/stack/sheet/metal = 20,
 				/obj/item/stack/sheet/mineral/wood = 20,)
-	time = 60
+	time = 180
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
 	always_available = FALSE
@@ -26,7 +26,7 @@
 	name = "Legion iron gate"
 	result = /obj/machinery/door/unpowered/secure_legion
 	reqs = list(/obj/item/stack/sheet/metal = 25)
-	time = 60
+	time = 180
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
 	always_available = FALSE
@@ -35,17 +35,17 @@
 	name = "Brotherhood steel door"
 	result = /obj/machinery/door/unpowered/secure_bos
 	reqs = list(/obj/item/stack/sheet/metal = 35)
-	time = 60
+	time = 180
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
 	always_available = FALSE
-	
+
 /datum/crafting_recipe/gate_khanate
 	name = "Khans steel-reinforced wood door"
 	result = /obj/machinery/door/unpowered/securedoor/khandoor
 	reqs = list(/obj/item/stack/sheet/metal = 5,
 				/obj/item/stack/sheet/mineral/wood = 10,)
-	time = 60
+	time = 180
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
 	always_available = FALSE
@@ -66,7 +66,7 @@
 				/obj/item/stack/crafting/metalparts = 5)
 	time = 50
 	subcategory = CAT_MISCELLANEOUS
-	category = CAT_MISCELLANEOUS
+	category = CAT_MISC
 
 /datum/crafting_recipe/sink
 	name = "Sink"
@@ -75,7 +75,8 @@
 				/obj/item/stack/crafting/metalparts = 5)
 	time = 50
 	subcategory = CAT_MISCELLANEOUS
-	category = CAT_MISCELLANEOUS
+	category = CAT_MISC
+
 /datum/crafting_recipe/shower
 	name = "Shower"
 	result = /obj/machinery/shower
@@ -102,6 +103,7 @@
 	result = /obj/structure/curtain
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
+
 /datum/crafting_recipe/dogbed
 	name = "Dog Bed"
 	result = /obj/structure/bed/dogbed
@@ -119,6 +121,7 @@
 	time = 10
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
+
 ///////////////////////////
 //Scavenging and Tinkering//
 ///////////////////////////
@@ -185,13 +188,13 @@
 	name = "Gravemarker"
 	result = /obj/structure/statue/wood/headstonewood
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 3)
-	time = 10
+	time = 60
 
 /datum/crafting_recipe/rip/coffin
 	name = "Coffin"
 	result = /obj/structure/closet/crate/coffin
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 5)
-	time = 20
+	time = 120
 
 /datum/crafting_recipe/rip/blackcoffin
 	name = "Black Coffin"
@@ -201,7 +204,7 @@
 	reqs = list(/obj/item/stack/sheet/cloth = 1,
 				/obj/item/stack/sheet/mineral/wood = 5,
 				/obj/item/stack/sheet/metal = 1)
-	time = 20
+	time = 120
 
 /datum/crafting_recipe/rip/metalcoffin
 	name = "Metal Coffin"
@@ -209,24 +212,24 @@
 	tools = list(/obj/item/weldingtool,
 				/obj/item/screwdriver)
 	reqs = list(/obj/item/stack/sheet/metal = 5)
-	time = 20
+	time = 120
 
 /datum/crafting_recipe/rip/crossexecution
 	name = "Legion Cross"
 	result = /obj/structure/cross
-	time = 15
+	time = 60
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 10)
 
 /datum/crafting_recipe/rip/gallows
 	name = "Gallows"
 	result = /obj/structure/gallow
-	time = 15
+	time = 180
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 10)
 
 /datum/crafting_recipe/rip/guillotine
 	name = "Guillotine"
 	result = /obj/structure/guillotine
-	time = 150 // Building a functioning guillotine takes time
+	time = 180 // Building a functioning guillotine takes time
 	reqs = list(/obj/item/stack/sheet/plasteel = 3,
 				/obj/item/stack/sheet/mineral/wood = 20,
 				/obj/item/stack/cable_coil = 10)
@@ -235,7 +238,7 @@
 /datum/crafting_recipe/rip/femur_breaker
 	name = "Femur Breaker"
 	result = /obj/structure/femur_breaker
-	time = 150
+	time = 180
 	reqs = list(/obj/item/stack/sheet/metal = 20,
 				/obj/item/stack/cable_coil = 30)
 	tools = list(TOOL_SCREWDRIVER, TOOL_WRENCH, TOOL_WELDER)
@@ -249,7 +252,7 @@
 				)
 	result = /obj/machinery/door/poddoor/shutters/old/preopen
 	tools = list(TOOL_SCREWDRIVER, TOOL_MULTITOOL, TOOL_WIRECUTTER, TOOL_WELDER)
-	time = 15 SECONDS
+	time = 120 SECONDS
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
 
@@ -261,7 +264,7 @@
 				)
 	result = /obj/machinery/door/poddoor/preopen
 	tools = list(TOOL_SCREWDRIVER, TOOL_MULTITOOL, TOOL_WIRECUTTER, TOOL_WELDER)
-	time = 30 SECONDS
+	time = 160 SECONDS
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
 
@@ -274,7 +277,7 @@
 				)
 	result = /obj/machinery/door/poddoor/shutters/window/preopen
 	tools = list(TOOL_SCREWDRIVER, TOOL_MULTITOOL, TOOL_WIRECUTTER, TOOL_WELDER)
-	time = 15 SECONDS
+	time = 120 SECONDS
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
 
@@ -365,6 +368,23 @@
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
 
+/datum/crafting_recipe/rolling_paper
+	name = "Rolling Paper"
+	result = /obj/item/rollingpaper
+	reqs = list(/obj/item/paper/natural = 1)
+	time = 10
+	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
+
+/datum/crafting_recipe/rolling_paper_bulk
+	name = "Rolling Paper (Bulk)"
+	result = /obj/item/storage/fancy/rollingpapers/makeshift
+	reqs = list(/obj/item/paper/natural = 10,
+				/obj/item/stack/sheet/cardboard = 1)
+	time = 50
+	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
+
 /*
 /datum/crafting_recipe/electrochromatic_kit
 	name = "Electrochromatic Kit"
@@ -388,7 +408,7 @@
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
 	always_available = FALSE
-	always_available = FALSE
+	
 
 /datum/crafting_recipe/plunger
 	name = "Plunger"
@@ -419,42 +439,6 @@
 
 */
 
-/datum/crafting_recipe/rainbowbunchcrown
-	name = "Rainbow Flower Crown"
-	result = /obj/item/clothing/head/rainbowbunchcrown/
-	time = 20
-	reqs = list(/obj/item/reagent_containers/food/snacks/grown/rainbow_flower = 5,
-				/obj/item/stack/cable_coil = 3)
-	subcategory = CAT_MISCELLANEOUS
-	category = CAT_CLOTHING
-
-/datum/crafting_recipe/sunflowercrown
-	name = "Sunflower Crown"
-	result = /obj/item/clothing/head/sunflowercrown/
-	time = 20
-	reqs = list(/obj/item/grown/sunflower = 5,
-				/obj/item/stack/cable_coil = 3)
-	subcategory = CAT_MISCELLANEOUS
-	category = CAT_CLOTHING
-
-/datum/crafting_recipe/poppycrown
-	name = "Poppy Crown"
-	result = /obj/item/clothing/head/poppycrown/
-	time = 20
-	reqs = list(/obj/item/reagent_containers/food/snacks/grown/poppy = 5,
-				/obj/item/stack/cable_coil = 3)
-	subcategory = CAT_MISCELLANEOUS
-	category = CAT_CLOTHING
-
-/datum/crafting_recipe/lilycrown
-	name = "Lily Crown"
-	result = /obj/item/clothing/head/lilycrown/
-	time = 20
-	reqs = list(/obj/item/reagent_containers/food/snacks/grown/poppy/lily = 3,
-				/obj/item/stack/cable_coil = 3)
-	subcategory = CAT_MISCELLANEOUS
-	category = CAT_CLOTHING
-
 /datum/crafting_recipe/shock_collar
 	name = "Shock Collar"
 	result = /obj/item/electropack/shockcollar
@@ -462,6 +446,6 @@
 				/obj/item/stack/cable_coil = 1,
 				/obj/item/stack/sheet/leather = 1)
 	tools = list(TOOL_SCREWDRIVER,TOOL_WORKBENCH)
-	time = 30
+	time = 60
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC

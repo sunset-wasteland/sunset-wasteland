@@ -412,8 +412,11 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 		if(memo)
 			to_chat(src, memo)
 		adminGreet()
-	else if(!BC_IsKeyAllowedToConnect(ckey))
-		to_chat(src, "Sorry, but the server is currently only accepting whitelisted players.  Please see the discord to be whitelisted.")
+	else if((CONFIG_GET(number/border_control_style) == BORDER_CONTROL_STYLE_NO_SERVER_CONNECT) && !BC_IsKeyAllowedToConnect(ckey))
+		var/discordText = "<a href=\"[CONFIG_GET(string/discordurl)]\">[CONFIG_GET(string/discordurl)]</a>"
+		var/msg = "<b>The server is currently only accepting whitelisted players!</b><br>"
+		msg += "Sorry! Please see the discord " + discordText + " to be whitelisted.<br>"
+		src << browse(msg, "window=warning_popup")
 		log_and_message_admins("[ckey] was denied a connection due to not being whitelisted.")
 		qdel(src)
 		return 0
@@ -469,8 +472,10 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	if(!tooltips)
 		tooltips = new /datum/tooltip(src)
 
-	if (!interviewee)
+	if (!interviewee && BC_IsKeyAllowedToConnect(key))
 		initialize_menus()
+	else
+		to_chat(usr, "<span class='danger'>You are not currently whitelisted!  Please visit the discord to request whitelisting, or adminhelp for more info.</span>")
 
 	view_size = new(src, getScreenSize(prefs.widescreenpref))
 	view_size.resetFormat()
@@ -913,7 +918,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	..()
 
 /client/proc/add_verbs_from_config()
-	if (interviewee)
+	if (interviewee || !BC_IsKeyAllowedToConnect(key))
 		return
 	if(CONFIG_GET(flag/see_own_notes))
 		add_verb(src, /client/proc/self_notes)

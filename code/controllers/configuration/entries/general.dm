@@ -12,6 +12,9 @@
 /datum/config_entry/string/servertagline
 	config_entry_value = "We forgot to set the server's tagline in config.txt"
 
+/datum/config_entry/string/discordurl
+	config_entry_value = ""
+
 /datum/config_entry/string/serversqlname	// short form server name used for the DB
 
 /datum/config_entry/string/stationname	// station name (the name of the station in-game)
@@ -336,6 +339,9 @@
 /datum/config_entry/flag/panic_bunker	// prevents people the server hasn't seen before from connecting
 
 /datum/config_entry/number/border_control // If border control is enabled
+	default = 0
+/datum/config_entry/number/border_control_style // How border control operates
+	default = 0
 
 /datum/config_entry/number/panic_bunker_living // living time in minutes that a player needs to pass the panic bunker
 

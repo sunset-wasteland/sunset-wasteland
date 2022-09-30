@@ -79,8 +79,7 @@ Cyborg
 /datum/job/cyborg
 	title = "Cyborg"
 	flag = F13CYBORG
-	department_flag = VAULT
-	faction = FACTION_VAULT
+	department_flag = ENGSEC
 	total_positions = 0
 	spawn_positions = 0
 	forbids = "The Vault forbids: Disobeying the Overseer. Deserting the Vault unless it is rendered unhospitable. Killing fellow Vault Dwellers. Betraying the Vault and its people."
@@ -116,5 +115,5 @@ Mr. Handy
 	exp_requirements = 6000
 	exp_type = EXP_TYPE_CREW
 
-/datum/job/cyborg/equip(mob/living/carbon/human/H, visualsOnly = FALSE, announce = TRUE, latejoin = FALSE, datum/outfit/outfit_override = null, client/preference_source)
+/datum/job/handy/equip(mob/living/carbon/human/H, visualsOnly = FALSE, announce = TRUE, latejoin = FALSE, datum/outfit/outfit_override = null, client/preference_source)
 	return H.Robotize(FALSE, latejoin)

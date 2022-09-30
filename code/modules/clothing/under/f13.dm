@@ -644,7 +644,7 @@
 
 /obj/item/clothing/under/f13/raiderrags
 	name = "raider rags"
-	desc = "Fragments of clothing crudely stitched together, worn unanimously by raiders."
+	desc = "Fragments of clothing crudely stitched together, often worn by raiders."
 	icon_state = "raiderrags"
 	item_state = "raiderrags"
 	item_color = "raiderrags"
@@ -1327,7 +1327,7 @@
 
 /obj/item/clothing/under/f13/combat/militia
 	name = "ODF fatigues"
-	desc = "An olive-green combat uniform, issued to members of the Oasis Defense Force."
+	desc = "An olive-green combat uniform, issued to members of the Bighorn Defense Force."
 
 /obj/item/clothing/under/f13/enclave_officer
 	name = "officer uniform"
@@ -1355,7 +1355,7 @@
 
 /obj/item/clothing/under/f13/general/oasis
 	name = "dictator's overcoat"
-	desc = "A grim looking overcoat - preferable standard for the ruler of oasis.<br>It's decorated with golden stars, each one adorned with a tree."
+	desc = "A grim looking overcoat - preferable standard for the ruler of Bighorn.<br>It's decorated with golden stars, each one adorned with a tree."
 
 /obj/item/clothing/under/f13/recon
 	name = "recon armor"

@@ -46,16 +46,20 @@
 	name = "Quarry"
 	icon_state = "quarry"
 
+/area/f13/wasteland/valley
+	name = "Corocotta Valley"
+	icon_state = "valley"
+
 /area/f13/wasteland/massfusion
 	name = "Mass Fusion Exterior"
 	icon_state = "massfusionout"
 
 /area/f13/wasteland/mall
-	name = "Yuma Mall Exterior"
+	name = "Mall of Wyoming Exterior"
 	icon_state = "mallex"
 
 /area/f13/wasteland/hospital
-	name = "Yuma General Exterior"
+	name = "Sheridan County Hospital Exterior"
 	icon_state = "hospitalex"
 
 /area/f13/wasteland/museum
@@ -101,6 +105,12 @@
 /area/f13/wasteland/legion
 	name = "Legion Fortress Exterior"
 	icon_state = "legionex"
+
+/area/f13/wasteland/rocksprings
+	name = "Rock Springs"
+
+/area/f13/wasteland/warren
+	name = "Warren"
 
 /area/f13/forest
 	name = "Forest"
@@ -153,12 +163,13 @@
 	icon_state = "massfusionin"
 
 /area/f13/building/hospital
-	name = "Yuma General"
+	name = "Sheridan County Hospital"
 	icon_state = "hospital"
 
 /area/f13/building/mall
-	name = "Yuma Mall"
+	name = "Mall of Wyoming"
 	icon_state = "mall"
+	requires_power = TRUE
 
 /area/f13/building/museum
 	name = "Museum of Technology"
@@ -382,12 +393,12 @@
 	name = "South-Western Tunnel"
 	icon_state = "tunnelsw"
 
-/area/f13/tunnel/southeastoasis
-	name = "Oasis Eastern Sewers"
+/area/f13/tunnel/southeastbighorn
+	name = "Bighorn Eastern Sewers"
 	icon_state = "tunnelse"
 
-/area/f13/tunnel/southwestoasis
-	name = "Oasis Western Sewers"
+/area/f13/tunnel/southwestbighorn
+	name = "Bighorn Western Sewers"
 	icon_state = "tunnelsw"
 
 /area/f13/tunnel/sub
@@ -478,6 +489,7 @@
 	blob_allowed = 0
 	environment = 6
 	grow_chance = 5
+	requires_power = TRUE
 
 /area/f13/vault/reactor
 	name = "Reactor"
@@ -585,6 +597,7 @@
 	blob_allowed = 0
 	environment = 6
 	grow_chance = 5
+	requires_power = TRUE
 
 /area/f13/brotherhood/rnd
 	name = "Brotherhood of Steel RnD Department"//Brother Hood
@@ -652,6 +665,7 @@
 	blob_allowed = 0
 	environment = 6
 	grow_chance = 5
+	requires_power = TRUE
 
 /area/f13/ahs
 	name = "Adepts of Hubology Studies"
@@ -701,3 +715,12 @@
 /area/f13/wasteland/khans
 	name = "Great Khan Encampment"
 	icon_state = "tribe"
+
+/area/f13/mountain_area
+	name = "Unknown"
+	icon_state = "forest"
+	ambientsounds = list('sound/f13ambience/bird_1.ogg','sound/f13ambience/bird_2.ogg','sound/f13ambience/bird_3.ogg','sound/f13ambience/bird_4.ogg','sound/f13ambience/bird_5.ogg','sound/f13ambience/bird_6.ogg','sound/f13ambience/bird_7.ogg','sound/f13ambience/bird_8.ogg')
+	outdoors = 1
+	open_space = 1
+	environment = 15
+	grow_chance = 0

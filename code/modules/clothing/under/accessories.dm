@@ -408,6 +408,20 @@
 	item_color = "knight"
 	minimize_when_attached = TRUE
 
+/obj/item/clothing/accessory/bos/KnightT
+	name = "Knight Templar pins"
+	desc = "A silver pin with one device and blue coloring, worn by fully fledged Knights that have taken the duty as a Templar of the Brotherhood."
+	icon_state = "knight"
+	item_color = "knight"
+	minimize_when_attached = TRUE
+
+/obj/item/clothing/accessory/bos/KnightC
+	name = "Knight Cavalier pins"
+	desc = "A silver pin with one device and blue coloring, worn by fully fledged Knights that have taken the duty as a Cavalier of the Brotherhood."
+	icon_state = "knight"
+	item_color = "knight"
+	minimize_when_attached = TRUE
+
 /obj/item/clothing/accessory/bos/scribe
 	name = "Scribe pins"
 	desc = "A silver pin with one device and red coloring, worn by fully fledged Scribes of the Brotherhood."
@@ -636,44 +650,56 @@
 // Bunker duty
 /obj/item/clothing/accessory/enclave
 	name = "(E-2) Private rank pins"
-	desc = "A rank pin denominating its wearer as Private within United States army."
+	desc = "A rank pin denoting its wearer as a Private within the United States Army."
 	icon_state = "private"
 	minimize_when_attached = TRUE
 
 // Private
 /obj/item/clothing/accessory/enclave/private_firstclass
-	name = "(E-3) Private first class rank pins"
-	desc = "A rank pin denominating its wearer as Private first class within United States army."
+	name = "(E-3) Private First Class rank pins"
+	desc = "A rank pin denoting its wearer as a Private First Class within the United States Army."
 	icon_state = "private-firstclass"
 
 // Specialist
 /obj/item/clothing/accessory/enclave/specialist
 	name = "(E-4) Specialist rank pins"
-	desc = "A rank pin denominating its wearer as Specialist within United States army."
+	desc = "A rank pin denoting its wearer as a Specialist within the United States Army."
 	icon_state = "specialist"
 
 // Sergeant
 /obj/item/clothing/accessory/enclave/sergeant
 	name = "(E-5) Sergeant rank pins"
-	desc = "A rank pin denominating its wearer as Sergeant within United States army."
+	desc = "A rank pin denoting its wearer as a Sergeant within the United States Army."
 	icon_state = "sergeant"
+
+// Sergeant First Class
+/obj/item/clothing/accessory/enclave/sergeant_firstclass
+	name = "(E-7) Sergeant First Class rank pins"
+	desc = "A rank pin denoting its wearer as a Sergeant First Class within the United States Army."
+	icon_state = "sergeant-firstclass"
 
 // Master Sergeant
 /obj/item/clothing/accessory/enclave/master_sergeant
 	name = "(E-8) Master Sergeant rank pins"
-	desc = "A rank pin denominating its wearer as Master Sergeant within United States army."
+	desc = "A rank pin denoting its wearer as a Master Sergeant within the United States Army."
 	icon_state = "master-sergeant"
+
+// Sergeant Major
+/obj/item/clothing/accessory/enclave/sergeant_major
+	name = "(E-9) Sergeant Major rank pins"
+	desc = "A rank pin denoting its wearer as a Sergeant Major within the United States Army."
+	icon_state = "sergeant-major"
 
 // Lieutenant
 /obj/item/clothing/accessory/enclave/lieutenant
 	name = "(O-2) First Lieutenant rank pins"
-	desc = "A rank pin denominating its wearer as First Lieutenant within United States army."
+	desc = "A rank pin denoting its wearer as a First Lieutenant within the United States Army."
 	icon_state = "firstlieutenantrank"
 
-//donator
+// Internal Security - Previously a Donator Item
 /obj/item/clothing/accessory/cia_badge
 	name = "CIA Badge"
 	desc = "A strange pre-war badge, the letters 'CIA' are written at the top, a seal reading 'Central Intelligence Agency, United States of America' sits in the middle of it with the letters 'U S' flanking it, and the words 'Special Agent' are written at the bottom."
 	icon_state = "cia_badge"
 	item_state = "cia_badge"
-	minimize_when_attached = FALSE
+//	minimize_when_attached = FALSE

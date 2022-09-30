@@ -238,11 +238,15 @@ GLOBAL_LIST_INIT(available_ui_styles, list(
 	if (initial(ui_style) || ui_style == new_ui_style)
 		return
 
-	for(var/atom/item in static_inventory + toggleable_inventory + hotkeybuttons + infodisplay + screenoverlays + inv_slots)
-		if (item.icon == ui_style)
-			item.icon = new_ui_style
-
+	var/old_ui_style = ui_style // so item.update_icon can check our new ui style
+	var/cit_style = tg_ui_icon_to_cit_ui(old_ui_style) // cached for speed
 	ui_style = new_ui_style
+	for(var/atom/item in static_inventory + toggleable_inventory + hotkeybuttons + infodisplay + screenoverlays + inv_slots)
+		// todo: rewrite and datumize all of this shit
+		if (item.icon == old_ui_style || item.icon == cit_style)
+			item.icon = new_ui_style
+		item.update_icon() // if they want to use the cit icon, for example
+
 	build_hand_slots()
 	hide_actions_toggle.InitialiseIcon(src)
 

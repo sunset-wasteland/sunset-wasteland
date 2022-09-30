@@ -24,9 +24,9 @@
 	var/dense_when_open = FALSE //if it's dense when open or not
 	var/max_mob_size = MOB_SIZE_HUMAN //Biggest mob_size accepted by the container
 	var/mob_storage_capacity = 3 // how many human sized mob/living can fit together inside a closet.
-	var/storage_capacity = 8 //This is so that someone can't pack hundreds of items in a locker/crate then open it in a populated area to crash clients.
-	var/base_storage_capacity = 8 //F13: With wrenching changing storage_capacity, this is to record what the standard storage capacity is. Make it the same value as var/storage_capacity
-	var/anchored_storage_capacity = 30
+	var/storage_capacity = 16 //This is so that someone can't pack hundreds of items in a locker/crate then open it in a populated area to crash clients.
+	var/base_storage_capacity = 16 //F13: With wrenching changing storage_capacity, this is to record what the standard storage capacity is. Make it the same value as var/storage_capacity
+	var/anchored_storage_capacity = 32
 	var/cutting_tool = /obj/item/weldingtool
 	var/open_sound = 'sound/machines/click.ogg'
 	var/close_sound = 'sound/machines/click.ogg'
@@ -50,7 +50,7 @@
 	if(should_populate_contents)
 		PopulateContents()
 	if(anchored)
-		storage_capacity = 30
+		storage_capacity = 32
 	if(mapload && !opened)		// if closed, any item at the crate's loc is put in the contents
 		addtimer(CALLBACK(src, .proc/take_contents), 0)
 	if(secure)
@@ -122,10 +122,12 @@
 		. += "<span class='info'>It contains: [english_list(contents)].</span>"
 		investigate_log("had its contents examined by [user] as a ghost.", INVESTIGATE_GHOST)
 
-/obj/structure/closet/CanPass(atom/movable/mover, border_dir)
+/obj/structure/closet/CanAllowThrough(atom/movable/mover, border_dir)
+	. = ..()
+	if(.)
+		return
 	if(wall_mounted)
 		return TRUE
-	return !density
 
 /obj/structure/closet/proc/can_open(mob/living/user)
 	if(welded || locked)
@@ -640,7 +642,7 @@
 
 /obj/structure/closet/anchored //For mappers to easily placed anchored closets
 	anchored = TRUE
-	storage_capacity = 30
+	storage_capacity = 32
 
 //Fallout closets
 /obj/structure/closet/locker
@@ -657,7 +659,7 @@
 	desc = "For pills and such."
 	icon_state = "medcab"
 	wall_mounted = 1
-	storage_capacity = 10
+	storage_capacity = 16
 	mob_storage_capacity = 0
 	max_mob_size = MOB_SIZE_TINY
 

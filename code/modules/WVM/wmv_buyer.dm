@@ -55,8 +55,6 @@
 								/obj/item/export/bottle/trappist = 25,
 								/obj/item/export/bottle/minikeg = 25,
 								/obj/item/export/bottle/nukashine = 100,
-								/obj/item/reagent_containers/hypospray/medipen/stimpak = 50,
-								/obj/item/reagent_containers/hypospray/medipen/stimpak/super = 100,
 								)
 
 /obj/machinery/mineral/wasteland_trader/general
@@ -92,7 +90,6 @@
 	dat += "Cut Diamonds : 20 caps<br>"
 	dat += "Jet/Psycho/MedX : 10/20/100 caps<br>"
 	dat += "Healing Powder/Healing Paultice : 30/50 caps<br>"
-	dat += "Stimpak/Super Stimpak : 50/100 caps<br>"
 	dat += "Sealed Bottle of Alcohol: 25-100 caps<br>"
 	dat += ""
 	dat += "</div>"

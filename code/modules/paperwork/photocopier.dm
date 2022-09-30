@@ -482,14 +482,14 @@
 	icon = 'icons/obj/device.dmi'
 	icon_state = "tonercartridge"
 	grind_results = list(/datum/reagent/iodine = 40, /datum/reagent/iron = 10)
-	var/charges = 5
-	var/max_charges = 5
+	var/charges = 10
+	var/max_charges = 10
 
 /obj/item/toner/large
 	name = "large toner cartridge"
 	grind_results = list(/datum/reagent/iodine = 90, /datum/reagent/iron = 10)
-	charges = 15
-	max_charges = 15
+	charges = 30
+	max_charges = 30
 
 /obj/item/toner/extreme
 	name = "extremely large toner cartridge"

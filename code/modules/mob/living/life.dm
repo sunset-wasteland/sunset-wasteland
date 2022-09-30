@@ -6,7 +6,7 @@
 	var/SPECIAL_SET = FALSE
 
 /mob/living/proc/Life(seconds, times_fired)
-
+	set waitfor = FALSE
 	//if(!SPECIAL_SET)
 	//	src.maxHealth += (src.special_e*3)//SPECIAL Integration
 	//	src.health += (src.special_e*3)//SPECIAL Integration

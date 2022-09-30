@@ -111,6 +111,7 @@
 	for(var/obj/item/bodypart/b in C.bodyparts)
 		b.max_damage += 35
 	C.faction |= "ghoul"
+
 /datum/species/zombie/infectious/ghoul/on_species_loss(mob/living/carbon/C)
 	..()
 	C.faction -= "ghoul"

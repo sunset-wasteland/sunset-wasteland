@@ -198,7 +198,7 @@
 /obj/item/storage/secure/safe/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.cant_hold = typecacheof(list(/obj/item/storage/secure/briefcase))
+	CANTHOLD_STATIC(STR, typecacheof(list(/obj/item/storage/secure/briefcase)))
 	STR.max_w_class = 8						//??
 
 /obj/item/storage/secure/safe/PopulateContents()
@@ -210,3 +210,11 @@
 
 /obj/item/storage/secure/safe/HoS
 	name = "head of security's safe"
+
+/obj/item/storage/secure/safe/ncr_rep
+
+/obj/item/storage/secure/safe/ncr_rep/New()
+	..()
+	new /obj/item/documents/ncr_rep(src)
+	new /obj/item/stack/f13Cash/onezerozerozero(src)
+	new /obj/item/melee/baton/loaded(src)

@@ -446,10 +446,12 @@ SILICON_MAX_LAW_AMOUNT 12
 ## You probably want humans on your space station, but technically speaking you can turn them off without any ill effect
 ROUNDSTART_RACES human
 ROUNDSTART_RACES ghoul
+ROUNDSTART_RACES ghoulanthro
 
 ## Races that are strictly worse than humans that could probably be turned on without balance concerns
 ROUNDSTART_RACES lizard
 ROUNDSTART_RACES synthliz
+ROUNDSTART_RACES synthanthro
 ROUNDSTART_RACES fly
 #ROUNDSTART_RACES insect
 #ROUNDSTART_RACES plasmaman
@@ -661,17 +663,17 @@ PENIS_MIN_INCHES_PREFS 1
 PENIS_MAX_INCHES_PREFS 10
 
 ## Body size configs, the feature will be disabled if both min and max have the same value.
-BODY_SIZE_MIN 1
-BODY_SIZE_MAX 1
+BODY_SIZE_MIN 0.75
+BODY_SIZE_MAX 1.25
 
 ## Pun-Pun movement slowdown given to characters with a body size smaller than this value,
 ## to compensate for their smaller hitbox.
 ## To disable, just make sure the value is lower than 'body_size_min'
-THRESHOLD_BODY_SIZE_SLOWDOWN 0.85
+THRESHOLD_BODY_SIZE_PENALTY 1
 
 ## Multiplier used in the smaller strides slowdown calculation.
 ## Doesn't apply to floating or crawling mobs.
-BODY_SIZE_SLOWDOWN_MULTIPLIER 0.25
+BODY_SIZE_SLOWDOWN_MULTIPLIER 0
 
 ## Allows players to set a hexadecimal color of their choice as skin tone, on top of the standard ones.
 #ALLOW_CUSTOM_SKINTONES

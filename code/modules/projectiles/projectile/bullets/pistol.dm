@@ -410,13 +410,11 @@ Uranium, Contaminated
 		S.set_up(src.reagents, smoke_radius, location, 0)
 		S.start()
 
-/*
 /obj/item/projectile/bullet/mm14/uraniumtipped
 	name = "14mm uranium-tipped bullet"
 	damage = -5
 	armour_penetration = 0.1
 	irradiate = 300
-*/
 
 
 
@@ -492,7 +490,7 @@ SYNDIE AMMO
 	icon_state = "gauss"
 	name = "penetrator round"
 	damage = 60
-	movement_type = FLYING | UNSTOPPABLE
+	movement_type = FLYING | PHASING
 	dismemberment = 0 //It goes through you cleanly.
 	knockdown = 0
 	breakthings = FALSE

@@ -115,7 +115,8 @@
 	if(!client)
 		return
 
-	if(client.interviewee)
+	if(client.interviewee || !BC_IsKeyAllowedToConnect(key))
+		to_chat(usr, "<span class='danger'>You are not currently whitelisted!  Please visit the discord to request whitelisting, or adminhelp for more info.</span>")
 		return FALSE
 
 	//don't let people get to this unless they are specifically not verified
@@ -701,7 +702,6 @@
 		var/procpath/verb_path = v
 		if (!(verb_path in GLOB.stat_panel_verbs))
 			remove_verb(src, verb_path)
-
 	// Then we create the interview form and show it to the client
 	var/datum/interview/I = GLOB.interviews.interview_for_client(client)
 	if (I)

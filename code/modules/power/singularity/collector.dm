@@ -29,6 +29,8 @@
 	var/bitcoinmining = FALSE
 	rad_insulation = RAD_EXTREME_INSULATION
 	var/obj/item/radio/Radio
+	var/research_id = "SCIENCE" // TODO: Config with multitool? DCS component?
+	var/datum/techweb/linked_techweb = null
 
 /obj/machinery/power/rad_collector/anchored
 	anchored = TRUE
@@ -38,6 +40,12 @@
 	Radio = new /obj/item/radio(src)
 	Radio.listening = 0
 	Radio.set_frequency(FREQ_ENGINEERING)
+	update_techweb()
+
+/obj/machinery/power/rad_collector/proc/update_techweb(new_research_id = null)
+	if(istext(new_research_id))
+		research_id = new_research_id
+	linked_techweb = SSresearch.get_techweb_by_id(research_id)
 
 /obj/machinery/power/rad_collector/Destroy()
 	QDEL_NULL(Radio)
@@ -60,7 +68,7 @@
 			var/power_produced = RAD_COLLECTOR_OUTPUT
 			add_avail(power_produced)
 			stored_power-=power_produced
-	else if(is_station_level(z) && SSresearch.science_tech)
+	else if(is_station_level(z) && linked_techweb)
 		if(!loaded_tank.air_contents.get_moles(GAS_TRITIUM) || !loaded_tank.air_contents.get_moles(GAS_O2))
 			playsound(src, 'sound/machines/ding.ogg', 50, 1)
 			Radio.talk_into(src, "Insufficient oxygen and tritium in [get_area(src)] [src] to produce research points, ejecting \the [loaded_tank].", FREQ_ENGINEERING)
@@ -74,7 +82,8 @@
 			var/datum/bank_account/D = SSeconomy.get_dep_account(ACCOUNT_ENG)
 			if(D)
 				D.adjust_money(bitcoins_mined)
-			SSresearch.science_tech.add_point_type(TECHWEB_POINT_TYPE_DEFAULT, bitcoins_mined)
+			if(linked_techweb)
+				linked_techweb.add_point_type(TECHWEB_POINT_TYPE_DEFAULT, bitcoins_mined)
 			last_push = stored_power
 			stored_power = 0
 
@@ -160,7 +169,7 @@
 	return TRUE
 
 /obj/machinery/power/rad_collector/multitool_act(mob/living/user, obj/item/I)
-	if(!is_station_level(z) && !SSresearch.science_tech)
+	if(!is_station_level(z) && !linked_techweb)
 		to_chat(user, "<span class='warning'>[src] isn't linked to a research system!</span>")
 		return TRUE
 	if(locked)

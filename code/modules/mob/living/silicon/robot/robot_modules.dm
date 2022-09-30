@@ -8,7 +8,7 @@
 	righthand_file = 'icons/mob/inhands/misc/devices_righthand.dmi'
 	flags_1 = CONDUCT_1
 
-	var/borghealth = 100
+	var/borghealth = 150 //Slight buff, 100 -> 150
 
 	var/list/basic_modules = list() //a list of paths, converted to a list of instances on New()
 	var/list/emag_modules = list() //ditto
@@ -211,6 +211,9 @@
 	R.maxHealth = borghealth
 	R.health = min(borghealth, R.health)
 	qdel(src)
+	R.radio.extra_channels = RM.added_channels
+	R.radio.recalculateChannels()
+	R.update_dogborg() //Adds resting and resting style verbs
 	return RM
 
 /obj/item/robot_module/proc/be_transformed_to(obj/item/robot_module/old_module)
@@ -316,7 +319,6 @@
 		/obj/item/stack/medical/bone_gel/cyborg,
 		/obj/item/organ_storage,
 		/obj/item/borg/lollipop,
-		/obj/item/sensor_device,
 		/obj/item/shockpaddles/cyborg)
 	emag_modules = list(/obj/item/reagent_containers/borghypo/hacked)
 	ratvar_modules = list(
@@ -662,7 +664,8 @@
 		/obj/item/borg/cyborghug,
 		/obj/item/megaphone,
 		/obj/item/melee/classic_baton/police,
-		/obj/item/gun/energy/laser/pistol/cyborg/gutsy,
+		/obj/item/gun/energy/laser/plasma/pistol/worn/gutsy,
+		/obj/item/gun/energy/gutsy_flamethrower,
 		/obj/item/clothing/mask/gas/sechailer/cyborg,
 		/obj/item/pinpointer/crew)
 	emag_modules = list(/obj/item/gun/energy/laser/cyborg)
@@ -672,6 +675,16 @@
 	cyborg_base_icon = "gutsy"
 	moduleselect_icon = "standard"
 	hat_offset = -2
+
+/obj/item/robot_module/gutsy/rebuild_modules()
+	..()
+	var/mob/living/silicon/robot/gutsy = loc
+	gutsy.faction += "wastebots" //So other bots don't gank you for existing.
+
+/obj/item/robot_module/gutsy/remove_module(obj/item/I, delete_after)
+	..()
+	var/mob/living/silicon/robot/gutsy = loc
+	gutsy.faction -= "wastebots" //Removes the faction if the module is removed.
 
 /obj/item/robot_module/assaultron
 	name = "Assaultron"
@@ -687,8 +700,7 @@
 	emag_modules = list(/obj/item/gun/energy/laser/cyborg)
 	ratvar_modules = list(/obj/item/clockwork/slab/cyborg/security,
 		/obj/item/clockwork/weapon/ratvarian_spear)
-	hat_offset = 3 //what
-	borghealth = 450 //Assaultron health
+	borghealth = 450
 	cyborg_base_icon = "assaultron"
 	moduleselect_icon = "security"
 	hat_offset = 3
@@ -698,7 +710,7 @@
 	var/mob/living/silicon/robot/assault = loc
 	assault.faction += "wastebots" //So other assaultrons don't gank you for existing.
 
-obj/item/robot_module/assaultron/remove_module(obj/item/I, delete_after)
+/obj/item/robot_module/assaultron/remove_module(obj/item/I, delete_after)
 	..()
 	var/mob/living/silicon/robot/assault = loc
 	assault.faction -= "wastebots" //Removes the faction if the module is removed.
@@ -728,7 +740,6 @@ obj/item/robot_module/assaultron/remove_module(obj/item/I, delete_after)
 		/obj/item/stack/medical/bone_gel/cyborg,
 		/obj/item/organ_storage,
 		/obj/item/borg/lollipop,
-		/obj/item/sensor_device,
 		/obj/item/shockpaddles/cyborg,
 		/obj/item/melee/unarmed/punchdagger/cyborg
 		)
@@ -736,6 +747,7 @@ obj/item/robot_module/assaultron/remove_module(obj/item/I, delete_after)
 	ratvar_modules = list(
 		/obj/item/clockwork/slab/cyborg/medical,
 		/obj/item/clockwork/weapon/ratvarian_spear)
+	borghealth = 300
 	cyborg_base_icon = "assaultron_sase"
 
 /obj/item/robot_module/syndicate

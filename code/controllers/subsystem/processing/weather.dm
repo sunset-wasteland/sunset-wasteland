@@ -19,15 +19,12 @@ PROCESSING_SUBSYSTEM_DEF(weather)
 	// start random weather on relevant levels
 	for(var/z in eligible_zlevels)
 		var/possible_weather = eligible_zlevels[z]
-		var/datum/weather/W = pickweight(possible_weather)
-		if(weather_on_start)
-			run_weather(W, list(text2num(z)), initial(W.weather_duration_upper))
+		var/datum/weather/our_event = pickweight(possible_weather)
+		// Run weather together on all Zs in a block, from the surface upwards
+		run_weather(our_event, get_surface_zblock(text2num(z))) // Sunset change
 		eligible_zlevels -= z
-		var/randTime = rand(15000, 18000)
-		addtimer(CALLBACK(src, .proc/make_eligible, z, possible_weather), randTime + initial(W.weather_duration_upper), TIMER_UNIQUE) //Around 25-30 minutes between weathers
-		next_hit_by_zlevel["[z]"] = world.time + randTime + initial(W.telegraph_duration)
-	if(!weather_on_start)
-		weather_on_start = TRUE
+		var/randTime = rand(25 MINUTES, 30 MINUTES)
+		next_hit_by_zlevel["[z]"] = addtimer(CALLBACK(src, .proc/make_eligible, z, possible_weather), randTime + initial(our_event.weather_duration_upper), TIMER_UNIQUE|TIMER_STOPPABLE) //Around 5-10 minutes between weathers
 
 /datum/controller/subsystem/processing/weather/Initialize(start_timeofday)
 	for(var/V in subtypesof(/datum/weather))
@@ -42,7 +39,7 @@ PROCESSING_SUBSYSTEM_DEF(weather)
 				eligible_zlevels["[z]"][W] = probability
 	return ..()
 
-/datum/controller/subsystem/processing/weather/proc/run_weather(datum/weather/weather_datum_type, z_levels, duration)
+/datum/controller/subsystem/processing/weather/proc/run_weather(datum/weather/weather_datum_type, z_levels)
 	if (istext(weather_datum_type))
 		for (var/V in subtypesof(/datum/weather))
 			var/datum/weather/W = V
@@ -59,10 +56,7 @@ PROCESSING_SUBSYSTEM_DEF(weather)
 	else if (!islist(z_levels))
 		CRASH("run_weather called with invalid z_levels: [z_levels || "null"]")
 
-	if(duration && !isnum(duration))
-		CRASH("run_weather called with invalid duration: [duration || "null"]")
-
-	var/datum/weather/W = new weather_datum_type(z_levels, duration)
+	var/datum/weather/W = new weather_datum_type(z_levels)
 	W.telegraph()
 
 /datum/controller/subsystem/processing/weather/proc/make_eligible(z, possible_weather)

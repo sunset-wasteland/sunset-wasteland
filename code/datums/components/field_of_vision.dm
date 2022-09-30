@@ -82,8 +82,8 @@
 	var/mob/M = parent
 	if(M.client)
 		generate_fov_holder(M, angle)
-	RegisterSignal(M, COMSIG_MOB_CLIENT_LOGIN, .proc/on_mob_login)
-	RegisterSignal(M, COMSIG_MOB_CLIENT_LOGOUT, .proc/on_mob_logout)
+	RegisterSignal(M, COMSIG_MOB_LOGIN, .proc/on_mob_login)
+	RegisterSignal(M, COMSIG_MOB_LOGOUT, .proc/on_mob_logout)
 	RegisterSignal(M, COMSIG_MOB_GET_VISIBLE_MESSAGE, .proc/on_visible_message)
 	RegisterSignal(M, COMSIG_MOB_EXAMINATE, .proc/on_examinate)
 	RegisterSignal(M, COMSIG_MOB_FOV_VIEW, .proc/on_fov_view)
@@ -107,7 +107,7 @@
 		QDEL_NULL(adj_mask)
 	if(length(nested_locs))
 		UNREGISTER_NESTED_LOCS(nested_locs, COMSIG_MOVABLE_MOVED, 1)
-	UnregisterSignal(M, list(COMSIG_MOB_CLIENT_LOGIN, COMSIG_MOB_CLIENT_LOGOUT,
+	UnregisterSignal(M, list(COMSIG_MOB_LOGIN, COMSIG_MOB_LOGOUT,
 							COMSIG_MOB_GET_VISIBLE_MESSAGE, COMSIG_MOB_EXAMINATE,
 							COMSIG_MOB_FOV_VIEW, COMSIG_MOB_RESET_PERSPECTIVE,
 							COMSIG_MOB_CLIENT_CHANGE_VIEW, COMSIG_MOB_FOV_VIEWER))
@@ -174,10 +174,10 @@
 		return
 	visual_shadow.transform = shadow_mask.transform = shadow_mask.transform.Scale(new_size/old_size)
 
-/datum/component/field_of_vision/proc/on_mob_login(mob/source, client/client)
+/datum/component/field_of_vision/proc/on_mob_login(mob/source)
 	generate_fov_holder(source, angle)
 
-/datum/component/field_of_vision/proc/on_mob_logout(mob/source, client/client)
+/datum/component/field_of_vision/proc/on_mob_logout(mob/source)
 	UnregisterSignal(source, list(COMSIG_ATOM_DIR_CHANGE, COMSIG_MOVABLE_MOVED, COMSIG_MOB_DEATH,
 								COMSIG_LIVING_REVIVE, COMSIG_ROBOT_UPDATE_ICONS))
 	if(length(nested_locs))
@@ -339,7 +339,7 @@
 /atom/movable/fov_holder/blob_act()
 	return
 
-/atom/movable/fov_holder/onTransitZ()
+/atom/movable/fov_holder/on_changed_z_level(turf/old_turf, turf/new_turf)
 	return
 
 /// Prevents people from moving these after creation, because they shouldn't be.

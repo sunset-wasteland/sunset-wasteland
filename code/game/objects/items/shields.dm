@@ -258,7 +258,7 @@
 	return ..()
 
 //Bulletproof riot shield
-obj/item/shield/riot/bullet_proof
+/obj/item/shield/riot/bullet_proof
 	name = "bullet resistant shield"
 	desc = "Kevlar coated surface makes this riot shield a lot better for blocking projectiles."
 	icon_state = "shield_bulletproof"
@@ -424,7 +424,7 @@ obj/item/shield/riot/bullet_proof
 	throwforce = 5
 	throw_speed = 1
 	throw_range = 1
-	w_class = WEIGHT_CLASS_HUGE
+	w_class = WEIGHT_CLASS_BULKY
 	custom_materials = list(/datum/material/iron = 32000)
 	repair_material = /obj/item/stack/sheet/metal
 	shield_flags = SHIELD_FLAGS_HEAVY

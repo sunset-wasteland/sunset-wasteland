@@ -40,6 +40,7 @@
 	weight = (length(goodSuffixes) + length(badSuffixes)) * 10
 
 /datum/fantasy_affix/cosmetic_suffixes/apply(datum/component/fantasy/comp, newName)
+	. = ..()
 	if(comp.quality > 0 || (comp.quality == 0 && prob(50)))
 		return "[newName] of [pick(goodSuffixes)]"
 	else
@@ -75,7 +76,7 @@
 	// This works even with the species picks since we're only accessing the name
 
 	var/obj/item/master = comp.parent
-	comp.appliedComponents += master.AddComponent(/datum/component/bane, picked_mobtype)
+	comp.bespoke_components += master.AddComponent(/datum/component/bane, picked_mobtype)
 	return "[newName] of [initial(picked_mobtype.name)] slaying"
 
 /datum/fantasy_affix/summoning
@@ -110,8 +111,13 @@
 	var/obj/item/master = comp.parent
 	var/max_mobs = max(CEILING(comp.quality/2, 1), 1)
 	var/spawn_delay = 300 - 30 * comp.quality
-	comp.appliedComponents += master.AddComponent(/datum/component/summoning, list(picked_mobtype), 100, max_mobs, spawn_delay)
+	master.AddComponent(/datum/component/summoning, list(picked_mobtype), 100, max_mobs, spawn_delay)
 	return "[newName] of [initial(picked_mobtype.name)] summoning"
+
+/datum/fantasy_affix/summoning/remove(datum/component/fantasy/comp)
+	. = ..()
+	var/obj/item/master = comp.parent
+	qdel(master.GetComponent(/datum/component/summoning))
 
 /datum/fantasy_affix/shrapnel
 	placement = AFFIX_SUFFIX
@@ -142,8 +148,13 @@
 	var/obj/item/projectile/picked_projectiletype = pickweight(weighted_projectile_types)
 
 	var/obj/item/master = comp.parent
-	comp.appliedComponents += master.AddComponent(/datum/component/mirv, picked_projectiletype)
+	master.AddComponent(/datum/component/mirv, picked_projectiletype)
 	return "[newName] of [initial(picked_projectiletype.name)] shrapnel"
+
+/datum/fantasy_affix/shrapnel/remove(datum/component/fantasy/comp)
+	. = ..()
+	var/obj/item/master = comp.parent
+	qdel(master.GetComponent(/datum/component/mirv))
 
 /datum/fantasy_affix/strength
 	placement = AFFIX_SUFFIX
@@ -152,8 +163,13 @@
 /datum/fantasy_affix/strength/apply(datum/component/fantasy/comp, newName)
 	. = ..()
 	var/obj/item/master = comp.parent
-	comp.appliedComponents += master.AddComponent(/datum/component/knockback, CEILING(comp.quality/2, 1), FLOOR(comp.quality/10, 1))
+	master.AddComponent(/datum/component/knockback, CEILING(comp.quality/2, 1), FLOOR(comp.quality/10, 1)) // cannot be duplicated, add/remove ourselves
 	return "[newName] of strength"
+
+/datum/fantasy_affix/strength/remove(datum/component/fantasy/comp)
+	. = ..()
+	var/obj/item/master = comp.parent
+	qdel(master.GetComponent(/datum/component/knockback)) // cannot be duplicated, add/remove ourselves
 
 //////////// Bad suffixes
 
@@ -164,5 +180,10 @@
 /datum/fantasy_affix/fool/apply(datum/component/fantasy/comp, newName)
 	. = ..()
 	var/obj/item/master = comp.parent
-	comp.appliedComponents += master.AddComponent(/datum/component/squeak, list('sound/items/bikehorn.ogg'=1), 50)
+	master.AddComponent(/datum/component/squeak, list('sound/items/bikehorn.ogg'=1), 50) // cannot be duplicated, add/remove ourselves
 	return "[newName] of the fool"
+
+/datum/fantasy_affix/fool/remove(datum/component/fantasy/comp)
+	. = ..()
+	var/obj/item/master = comp.parent
+	qdel(master.GetComponent(/datum/component/squeak))

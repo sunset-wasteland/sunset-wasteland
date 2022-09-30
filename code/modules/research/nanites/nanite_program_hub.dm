@@ -9,6 +9,7 @@
 	circuit = /obj/item/circuitboard/machine/nanite_program_hub
 
 	var/obj/item/disk/nanite_program/disk
+	var/research_id = "ENCLAVE"
 	var/datum/techweb/linked_techweb
 	var/current_category = "Main"
 	var/detail_view = TRUE
@@ -24,7 +25,12 @@
 
 /obj/machinery/nanite_program_hub/Initialize()
 	. = ..()
-	linked_techweb = SSresearch.science_tech
+	update_techweb()
+
+/obj/machinery/nanite_program_hub/proc/update_techweb(new_research_id = null)
+	if(istext(new_research_id))
+		research_id = new_research_id
+	linked_techweb = SSresearch.get_techweb_by_id(research_id)
 
 /obj/machinery/nanite_program_hub/attackby(obj/item/I, mob/user)
 	if(istype(I, /obj/item/disk/nanite_program))
@@ -125,6 +131,7 @@
 			if(disk.program)
 				qdel(disk.program)
 			disk.program = new downloaded.program_type
+			disk.linked_techweb = linked_techweb
 			disk.name = "[initial(disk.name)] \[[disk.program.name]\]"
 			playsound(src, 'sound/machines/terminal_prompt.ogg', 25, FALSE)
 			. = TRUE

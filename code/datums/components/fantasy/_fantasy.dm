@@ -8,8 +8,7 @@
 
 	var/originalName
 	var/list/affixes
-	var/list/appliedComponents
-	var/list/appliedElements
+	var/list/bespoke_components // Specifically for removing components that can be duplicated.
 
 	var/static/list/affixListing
 
@@ -22,8 +21,7 @@
 	src.announce = announce
 
 	src.affixes = affixes
-	appliedComponents = list()
-	appliedElements = list()
+	bespoke_components = list()
 	randomAffixes()
 
 /datum/component/fantasy/Destroy()
@@ -118,10 +116,8 @@
 	for(var/i in affixes)
 		var/datum/fantasy_affix/affix = i
 		affix.remove(src)
-	for(var/i in appliedComponents)
-		qdel(i)
-	for(var/i in appliedElements)
-		master._RemoveElement(i)
+
+	QDEL_LIST(bespoke_components)
 
 	master.force = max(0, master.force - quality)
 	master.throwforce = max(0, master.throwforce - quality)

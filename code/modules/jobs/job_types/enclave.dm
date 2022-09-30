@@ -409,8 +409,6 @@
 	name = "Melee equipment"
 	backpack_contents = list(
 		/obj/item/melee/smith/sword/sabre = 1,
-		/obj/item/gun/energy/laser/plasma/pistol/light = 1,
-		/obj/item/stock_parts/cell/ammo/ec = 2,
 		/obj/item/melee/onehanded/knife/survival = 1,
 		/obj/item/storage/pill_bottle/chem_tin/buffout = 1,
 		/obj/item/storage/pill_bottle/chem_tin/mentats = 1,
@@ -423,8 +421,8 @@
 /datum/outfit/loadout/energyprivate
 	name = "Energy equipment"
 	backpack_contents = list(
-		/obj/item/gun/energy/laser/aer9 = 1,
-		/obj/item/stock_parts/cell/ammo/mfc = 2,
+		/obj/item/gun/energy/laser/pistol = 1,
+		/obj/item/stock_parts/cell/ammo/ec = 2,
 		/obj/item/melee/onehanded/knife/survival = 1,
 		/obj/item/storage/pill_bottle/chem_tin/buffout = 1,
 		/obj/item/storage/pill_bottle/chem_tin/mentats = 1,
@@ -437,8 +435,8 @@
 /datum/outfit/loadout/assaultprivate
 	name = "Assault equipment"
 	backpack_contents = list(
-		/obj/item/gun/ballistic/automatic/assault_carbine = 1,
-		/obj/item/ammo_box/magazine/m5mm = 2,
+		/obj/item/gun/ballistic/automatic/pistol/ninemil = 1,
+		/obj/item/ammo_box/magazine/m9mmds = 2,
 		/obj/item/melee/onehanded/knife/survival = 1,
 		/obj/item/storage/pill_bottle/chem_tin/buffout = 1,
 		/obj/item/storage/pill_bottle/chem_tin/mentats = 1,

@@ -1114,7 +1114,7 @@
 //HEAVY SERVICE RIFLE				Keywords: 5.56mm, Semi-auto, 20 (10-50) round magazine	NOW CANON!
 /obj/item/gun/ballistic/automatic/service/r82
 	name = "upgraded service rifle"
-	desc = "A fully-automatic service rifle with a heavier barrel, optics, and upgraded recoil springs. Issued to high-ranking troopers and specialized units. Chambered in 5.56."
+	desc = "A fully-automatic service rifle with a heavier barrel, and upgraded recoil springs. Issued to high-ranking troopers and specialized units. Chambered in 5.56."
 	icon_state = "m16a1"
 	item_state = "servicerifle"
 	icon_prefix = "m16a1"

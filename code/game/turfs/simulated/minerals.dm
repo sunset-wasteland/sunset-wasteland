@@ -223,8 +223,8 @@
 	canSmoothWith = list (/turf/closed)
 	defer_change = TRUE
 	environment_type = "snow"
-	turf_type = /turf/open/floor/plating/asteroid/snow/icemoon
-	baseturfs = /turf/open/floor/plating/asteroid/snow/icemoon
+	turf_type = /turf/open/indestructible/ground/outside/snow
+	baseturfs = /turf/open/indestructible/ground/outside/snow
 	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
 	mineralSpawnChanceList = list(
 		/turf/closed/mineral/uranium/ice/icemoon = 35, /turf/closed/mineral/diamond/ice/icemoon = 30, /turf/closed/mineral/gold/ice/icemoon = 45, /turf/closed/mineral/titanium/ice/icemoon = 45,
@@ -295,8 +295,8 @@
 	canSmoothWith = list (/turf/closed)
 	defer_change = TRUE
 	environment_type = "snow"
-	turf_type = /turf/open/floor/plating/asteroid/snow/icemoon
-	baseturfs = /turf/open/floor/plating/asteroid/snow/icemoon
+	turf_type = /turf/open/indestructible/ground/outside/snow
+	baseturfs = /turf/open/indestructible/ground/outside/snow
 	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
 
 	mineralChance = 10
@@ -352,8 +352,8 @@
 	canSmoothWith = list (/turf/closed)
 	defer_change = TRUE
 	environment_type = "snow"
-	turf_type = /turf/open/floor/plating/asteroid/snow/icemoon
-	baseturfs = /turf/open/floor/plating/asteroid/snow/icemoon
+	turf_type = /turf/open/indestructible/ground/outside/snow
+	baseturfs = /turf/open/indestructible/ground/outside/snow
 	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
 
 	mineralSpawnChanceList = list(
@@ -399,14 +399,14 @@
 	environment_type = "snow_cavern"
 	icon_state = "icerock_iron"
 	smooth_icon = 'icons/turf/walls/icerock_wall.dmi'
-	turf_type = /turf/open/floor/plating/asteroid/snow/ice
-	baseturfs = /turf/open/floor/plating/asteroid/snow/ice
+	turf_type = /turf/open/indestructible/ground/outside/snow
+	baseturfs = /turf/open/indestructible/ground/outside/snow
 	initial_gas_mix = FROZEN_ATMOS
 	defer_change = TRUE
 
 /turf/closed/mineral/iron/ice/icemoon
-	turf_type = /turf/open/floor/plating/asteroid/snow/ice/icemoon
-	baseturfs = /turf/open/floor/plating/asteroid/snow/ice/icemoon
+	turf_type = /turf/open/indestructible/ground/outside/snow
+	baseturfs = /turf/open/indestructible/ground/outside/snow
 	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
 
 
@@ -427,14 +427,14 @@
 	environment_type = "snow_cavern"
 	icon_state = "icerock_Uranium"
 	smooth_icon = 'icons/turf/walls/icerock_wall.dmi'
-	turf_type = /turf/open/floor/plating/asteroid/snow/ice
-	baseturfs = /turf/open/floor/plating/asteroid/snow/ice
+	turf_type = /turf/open/indestructible/ground/outside/snow
+	baseturfs = /turf/open/indestructible/ground/outside/snow
 	initial_gas_mix = FROZEN_ATMOS
 	defer_change = TRUE
 
 /turf/closed/mineral/uranium/ice/icemoon
-	turf_type = /turf/open/floor/plating/asteroid/snow/ice/icemoon
-	baseturfs = /turf/open/floor/plating/asteroid/snow/ice/icemoon
+	turf_type = /turf/open/indestructible/ground/outside/snow
+	baseturfs = /turf/open/indestructible/ground/outside/snow
 	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
 
 /turf/closed/mineral/uranium/earth_like
@@ -469,14 +469,14 @@
 	environment_type = "snow_cavern"
 	icon_state = "icerock_diamond"
 	smooth_icon = 'icons/turf/walls/icerock_wall.dmi'
-	turf_type = /turf/open/floor/plating/asteroid/snow/ice
-	baseturfs = /turf/open/floor/plating/asteroid/snow/ice
+	turf_type = /turf/open/indestructible/ground/outside/snow
+	baseturfs = /turf/open/indestructible/ground/outside/snow
 	initial_gas_mix = FROZEN_ATMOS
 	defer_change = TRUE
 
 /turf/closed/mineral/diamond/ice/icemoon
-	turf_type = /turf/open/floor/plating/asteroid/snow/ice/icemoon
-	baseturfs = /turf/open/floor/plating/asteroid/snow/ice/icemoon
+	turf_type = /turf/open/indestructible/ground/outside/snow
+	baseturfs = /turf/open/indestructible/ground/outside/snow
 	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
 
 
@@ -504,14 +504,14 @@
 	environment_type = "snow_cavern"
 	icon_state = "icerock_gold"
 	smooth_icon = 'icons/turf/walls/icerock_wall.dmi'
-	turf_type = /turf/open/floor/plating/asteroid/snow/ice
-	baseturfs = /turf/open/floor/plating/asteroid/snow/ice
+	turf_type = /turf/open/indestructible/ground/outside/snow
+	baseturfs = /turf/open/indestructible/ground/outside/snow
 	initial_gas_mix = FROZEN_ATMOS
 	defer_change = TRUE
 
 /turf/closed/mineral/gold/ice/icemoon
-	turf_type = /turf/open/floor/plating/asteroid/snow/ice/icemoon
-	baseturfs = /turf/open/floor/plating/asteroid/snow/ice/icemoon
+	turf_type = /turf/open/indestructible/ground/outside/snow
+	baseturfs = /turf/open/indestructible/ground/outside/snow
 	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
 
 /turf/closed/mineral/lead
@@ -544,14 +544,14 @@
 	environment_type = "snow_cavern"
 	icon_state = "icerock_silver"
 	smooth_icon = 'icons/turf/walls/icerock_wall.dmi'
-	turf_type = /turf/open/floor/plating/asteroid/snow/ice
-	baseturfs = /turf/open/floor/plating/asteroid/snow/ice
+	turf_type = /turf/open/indestructible/ground/outside/snow
+	baseturfs = /turf/open/indestructible/ground/outside/snow
 	initial_gas_mix = FROZEN_ATMOS
 	defer_change = TRUE
 
 /turf/closed/mineral/silver/ice/icemoon
-	turf_type = /turf/open/floor/plating/asteroid/snow/ice/icemoon
-	baseturfs = /turf/open/floor/plating/asteroid/snow/ice/icemoon
+	turf_type = /turf/open/indestructible/ground/outside/snow
+	baseturfs = /turf/open/indestructible/ground/outside/snow
 	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
 
 /turf/closed/mineral/titanium
@@ -578,14 +578,14 @@
 	environment_type = "snow_cavern"
 	icon_state = "icerock_titanium"
 	smooth_icon = 'icons/turf/walls/icerock_wall.dmi'
-	turf_type = /turf/open/floor/plating/asteroid/snow/ice
-	baseturfs = /turf/open/floor/plating/asteroid/snow/ice
+	turf_type = /turf/open/indestructible/ground/outside/snow
+	baseturfs = /turf/open/indestructible/ground/outside/snow
 	initial_gas_mix = FROZEN_ATMOS
 	defer_change = TRUE
 
 /turf/closed/mineral/titanium/ice/icemoon
-	turf_type = /turf/open/floor/plating/asteroid/snow/ice/icemoon
-	baseturfs = /turf/open/floor/plating/asteroid/snow/ice/icemoon
+	turf_type = /turf/open/indestructible/ground/outside/snow
+	baseturfs = /turf/open/indestructible/ground/outside/snow
 	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
 
 /turf/closed/mineral/plasma
@@ -612,14 +612,14 @@
 	environment_type = "snow_cavern"
 	icon_state = "icerock_plasma"
 	smooth_icon = 'icons/turf/walls/icerock_wall.dmi'
-	turf_type = /turf/open/floor/plating/asteroid/snow/ice
-	baseturfs = /turf/open/floor/plating/asteroid/snow/ice
+	turf_type = /turf/open/indestructible/ground/outside/snow
+	baseturfs = /turf/open/indestructible/ground/outside/snow
 	initial_gas_mix = FROZEN_ATMOS
 	defer_change = TRUE
 
 /turf/closed/mineral/plasma/ice/icemoon
-	turf_type = /turf/open/floor/plating/asteroid/snow/ice/icemoon
-	baseturfs = /turf/open/floor/plating/asteroid/snow/ice/icemoon
+	turf_type = /turf/open/indestructible/ground/outside/snow
+	baseturfs = /turf/open/indestructible/ground/outside/snow
 	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
 
 /turf/closed/mineral/bscrystal
@@ -647,14 +647,14 @@
 	environment_type = "snow_cavern"
 	icon_state = "icerock_BScrystal"
 	smooth_icon = 'icons/turf/walls/icerock_wall.dmi'
-	turf_type = /turf/open/floor/plating/asteroid/snow/ice
-	baseturfs = /turf/open/floor/plating/asteroid/snow/ice
+	turf_type = /turf/open/indestructible/ground/outside/snow
+	baseturfs = /turf/open/indestructible/ground/outside/snow
 	initial_gas_mix = FROZEN_ATMOS
 	defer_change = TRUE
 
 /turf/closed/mineral/bscrystal/ice/icemoon
-	turf_type = /turf/open/floor/plating/asteroid/snow/ice/icemoon
-	baseturfs = /turf/open/floor/plating/asteroid/snow/ice/icemoon
+	turf_type = /turf/open/indestructible/ground/outside/snow
+	baseturfs = /turf/open/indestructible/ground/outside/snow
 	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
 
 /turf/closed/mineral/volcanic
@@ -703,8 +703,8 @@
 	defer_change = TRUE
 
 /turf/closed/mineral/snowmountain/icemoon
-	turf_type = /turf/open/floor/plating/asteroid/snow/icemoon
-	baseturfs = /turf/open/floor/plating/asteroid/snow/icemoon
+	turf_type = /turf/open/indestructible/ground/outside/snow
+	baseturfs = /turf/open/indestructible/ground/outside/snow
 	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
 
 /turf/closed/mineral/snowmountain/cavern
@@ -714,13 +714,13 @@
 	icon_state = "icerock"
 	smooth = SMOOTH_MORE|SMOOTH_BORDER
 	canSmoothWith = list (/turf/closed)
-	baseturfs = /turf/open/floor/plating/asteroid/snow/ice
+	baseturfs = /turf/open/indestructible/ground/outside/snow
 	environment_type = "snow_cavern"
-	turf_type = /turf/open/floor/plating/asteroid/snow/ice
+	turf_type = /turf/open/indestructible/ground/outside/snow
 
 /turf/closed/mineral/snowmountain/cavern/icemoon
-	baseturfs = /turf/open/floor/plating/asteroid/snow/ice/icemoon
-	turf_type = /turf/open/floor/plating/asteroid/snow/ice/icemoon
+	baseturfs = /turf/open/indestructible/ground/outside/snow
+	turf_type = /turf/open/indestructible/ground/outside/snow
 	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
 
 //GIBTONITE
@@ -839,14 +839,14 @@
 	environment_type = "snow_cavern"
 	icon_state = "icerock_Gibtonite"
 	smooth_icon = 'icons/turf/walls/icerock_wall.dmi'
-	turf_type = /turf/open/floor/plating/asteroid/snow/ice
-	baseturfs = /turf/open/floor/plating/asteroid/snow/ice
+	turf_type = /turf/open/indestructible/ground/outside/snow
+	baseturfs = /turf/open/indestructible/ground/outside/snow
 	initial_gas_mix = FROZEN_ATMOS
 	defer_change = TRUE
 
 /turf/closed/mineral/gibtonite/ice/icemoon
-	turf_type = /turf/open/floor/plating/asteroid/snow/ice/icemoon
-	baseturfs = /turf/open/floor/plating/asteroid/snow/ice/icemoon
+	turf_type = /turf/open/indestructible/ground/outside/snow
+	baseturfs = /turf/open/indestructible/ground/outside/snow
 	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
 
 /turf/closed/mineral/strong

@@ -410,7 +410,7 @@
 	. = ..()
 
 /turf/open/indestructible/ground/outside/snow
-	initial_gas_mix = "o2=22;n2=82;TEMP=285"
+	initial_gas_mix = "o2=22;n2=82;TEMP=245"
 	name = "snow"
 	icon = 'icons/turf/snow.dmi'
 	desc = "Looks cold."
@@ -426,7 +426,7 @@
 	icon_state = "snow[rand(0,12)]"
 
 /turf/open/indestructible/ground/outside/snow_plating
-	initial_gas_mix = "o2=22;n2=82;TEMP=285"
+	initial_gas_mix = "o2=22;n2=82;TEMP=245"
 	name = "snow"
 	icon = 'icons/turf/snow.dmi'
 	desc = "Looks cold."

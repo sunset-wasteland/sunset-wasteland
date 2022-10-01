@@ -183,8 +183,8 @@
 
 /obj/item/clothing/suit/armor/f13/combat/riotpolice
 	name = "combat body armor"
-	icon_state = "desert_ranger"
-	item_state = "desert_ranger"
+	icon_state = "combat_coat"
+	item_state = "combat_coat"
 	desc = "A heavy armor with ballistic inserts, sewn into a padded riot police coat."
 	armor = list("melee" = 55, "bullet" = 55, "laser" = 45, "energy" = 35, "bomb" = 30, "bio" = 0, "rad" = 0, "fire" = 5, "acid" = 35, "wound" = 20)
 	slowdown = 0.15

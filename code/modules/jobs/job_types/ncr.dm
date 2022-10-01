@@ -825,7 +825,6 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 		
 /datum/outfit/loadout/crowdht
 	name = "Heavy Trooper Flamer"
-	back_contents = list(
 		/obj/item/m2flamethrowertank = 1,
 		/obj/item/gun/ballistic/automatic/service/r82 = 1,
 		/obj/item/ammo_box/magazine/m556/rifle = 2,

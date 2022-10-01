@@ -2087,7 +2087,6 @@
 				/obj/item/book/granter/trait/explosives = 25,
 				/obj/item/book/granter/trait/explosives_advanced = 5,
 				/obj/item/book/granter/trait/rifleman = 5,
-				/obj/item/book/granter/crafting_recipe/gunsmith_two = 25,
 				/obj/item/book/granter/crafting_recipe/gunsmith_three = 15,
 				/obj/item/book/granter/crafting_recipe/gunsmith_four = 10
 				)
@@ -2104,6 +2103,7 @@
 				/obj/item/book/granter/crafting_recipe/ODF = 10,
 				/obj/item/book/granter/action/drink_fling = 10,
 				/obj/item/book/granter/crafting_recipe/gunsmith_one = 10,
+				/obj/item/book/granter/crafting_recipe/gunsmith_two = 5
 				)
 /obj/effect/spawner/lootdrop/f13/blueprintLow
 	name = "gun comps spawner"

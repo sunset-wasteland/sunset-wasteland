@@ -356,7 +356,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	suit_store = /obj/item/gun/ballistic/automatic/service/carbine
 	head = /obj/item/clothing/head/f13/ncr
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/m556/rifle/extended = 2,
+		/obj/item/ammo_box/magazine/m556/rifle = 2,
 		/obj/item/storage/box/ration/menu_eight = 1,
 		/obj/item/attachments/scope = 1,
 		/obj/item/book/granter/trait/trekking = 1,
@@ -736,7 +736,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	belt = /obj/item/storage/belt/military/assault/ncr
 	suit_store = /obj/item/gun/ballistic/automatic/assault_rifle
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/m556/rifle/extended = 1,
+		/obj/item/ammo_box/magazine/m556/rifle = 2,
 		/obj/item/clothing/head/helmet/f13/combat/ncr_patrol = 1,
 		/obj/item/gun/ballistic/revolver/revolver44 = 1,
 		/obj/item/ammo_box/m44 = 2,
@@ -777,8 +777,9 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	exp_requirements = 375
 
 	loadout_options = list(
-		/datum/outfit/loadout/shockht,	// Minigun
+		/datum/outfit/loadout/shockht,	// BAR
 		/datum/outfit/loadout/supportht, // R84
+		/datum/outfit/loadout/crowdht, //FLAMER
 		)
 
 /datum/outfit/job/ncr/f13heavytrooper/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -786,6 +787,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	if(visualsOnly)
 		return
 	ADD_TRAIT(H, TRAIT_IRONFIST, src)
+	ADD_TRAIT(H, TRAIT_BIG_LEAGUES, src)
 	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
 	ADD_TRAIT(H, TRAIT_LIFEGIVER, src)
 
@@ -819,6 +821,14 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 		/obj/item/gun/ballistic/automatic/r84 = 1,
 		/obj/item/ammo_box/magazine/lmg = 2,
 		/obj/item/melee/onehanded/knife/bowie = 1,
+		)
+		
+/datum/outfit/loadout/crowdht
+	name = "Heavy Trooper Flamer"
+	back_contents = list(
+		/obj/item/m2flamethrowertank = 1,
+		/obj/item/gun/ballistic/automatic/service/r82 = 1,
+		/obj/item/ammo_box/magazine/m556/rifle = 2,
 		)
 
 

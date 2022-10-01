@@ -2079,7 +2079,7 @@
 	loot = list(/obj/item/book/granter/trait/lowsurgery = 10,
 				/obj/item/book/granter/trait/chemistry = 10,
 				/obj/item/book/granter/trait/trekking = 25,
-				/obj/item/book/granter/trait/techno = 25,
+				/obj/item/book/granter/trait/techno = 10,
 				/obj/item/book/granter/trait/pa_wear = 1,
 				/obj/item/book/granter/trait/gunslinger = 1,
 				/obj/item/book/granter/trait/iron_fist = 1,

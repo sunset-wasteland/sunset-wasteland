@@ -420,7 +420,16 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 		log_and_message_admins("[ckey] was denied a connection due to not being whitelisted.")
 		qdel(src)
 		return 0
-
+	else if((CONFIG_GET(number/border_control_style) == BORDER_CONTROL_STYLE_NO_ROUND_JOIN) && !BC_IsKeyAllowedToConnect(ckey))
+		check_ip_intel(1) // Wait for the IP intel to come back.
+		if(src.ip_intel >= 0.95) // VPN/Proxy 95% chance.
+			var/discordText = "<a href=\"[CONFIG_GET(string/discordurl)]\">[CONFIG_GET(string/discordurl)]</a>"
+			var/msg = "<b>Your IP is detected as having a high chance of being a VPN or Proxy!</b><br>"
+			msg += "Sorry!  You must be whitelisted first.  Please see the discord " + discordText + " to be whitelisted.<br>"
+			src << browse(msg, "window=warning_popup")
+			log_and_message_admins("[ckey] was denied a connection due to a high chance ([src.ip_intel*100]%) of being a VPN/Proxy.")
+			qdel(src)
+			return 0
 	add_verbs_from_config()
 	var/cached_player_age = set_client_age_from_db(tdata) //we have to cache this because other shit may change it and we need it's current value now down below.
 	if (isnum(cached_player_age) && cached_player_age == -1) //first connection
@@ -846,8 +855,8 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	create_message("note", key, system_ckey, message, null, null, 0, 0, null, 0, 0)
 
 
-/client/proc/check_ip_intel()
-	set waitfor = 0 //we sleep when getting the intel, no need to hold up the client connection while we sleep
+/client/proc/check_ip_intel(shouldWait = 0)
+	set waitfor = shouldWait //we sleep when getting the intel, no need to hold up the client connection while we sleep
 	if (CONFIG_GET(string/ipintel_email))
 		var/datum/ipintel/res = get_ip_intel(address)
 		if (res.intel >= CONFIG_GET(number/ipintel_rating_bad))

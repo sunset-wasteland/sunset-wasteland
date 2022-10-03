@@ -82,23 +82,26 @@ Mayor
 
 	ears = 			/obj/item/radio/headset/headset_sheriff
 	uniform =  		/obj/item/clothing/under/f13/sheriff
-	neck =			/obj/item/storage/belt/holster
+	neck =			/obj/item/storage/belt/holster/sheriff
 	shoes = 		/obj/item/clothing/shoes/f13/cowboy
-	suit = 			/obj/item/clothing/suit/armor/f13/town/chief
-	head = 			/obj/item/clothing/head/f13/town/sheriff
+	suit = 			/obj/item/clothing/suit/armor/f13/power_armor/town
+	head = 			/obj/item/clothing/head/helmet/f13/power_armor/town
 	glasses =		/obj/item/clothing/glasses/sunglasses
-	l_hand = 		/obj/item/gun/ballistic/rifle/repeater/brush
 	l_pocket =		/obj/item/storage/bag/money/small/bighorn
 
 	backpack_contents = list(
 		/obj/item/storage/box/deputy_badges=1, \
-		/obj/item/ammo_box/tube/c4570=3, \
-		/obj/item/ammo_box/m44=2, \
 		/obj/item/restraints/handcuffs=1, \
 		/obj/item/melee/classic_baton=1,
 		/obj/item/melee/onehanded/knife/survival = 1,
 		/obj/item/book/granter/crafting_recipe/ODF = 1)
 	r_pocket = /obj/item/flashlight/flare
+
+/datum/outfit/job/bos/f13sheriff/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+	ADD_TRAIT(H, TRAIT_PA_WEAR, src)
 
 /datum/outfit/job/bighorn/f13sheriff/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
@@ -107,6 +110,12 @@ Mayor
 	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
 	ADD_TRAIT(H, TRAIT_LIFEGIVER, src)
 	ADD_TRAIT(H, TRAIT_SELF_AWARE, src)
+	ADD_TRAIT(H, TRAIT_IRONFIST, src)
+	ADD_TRAIT(H, TRAIT_PA_WEAR, src)
+	if(H.mind)
+		var/obj/effect/proc_holder/spell/terrifying_presence/S = new /obj/effect/proc_holder/spell/terrifying_presence
+		H.mind.AddSpell(S)
+
 /*--------------------------------------------------------------*/
 /datum/job/bighorn/f13deputy
 	title = "Deputy"

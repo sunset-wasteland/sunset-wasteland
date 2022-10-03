@@ -18,7 +18,6 @@
 	mutantears = /obj/item/organ/ears/ipc
 	mutanttongue = /obj/item/organ/tongue/robot/ipc
 	mutant_brain = /obj/item/organ/brain/ipc
-	var/toxloss = 0
 
 	//special cybernetic organ for getting power from apcs
 	mutant_organs = list(/obj/item/organ/cyberimp/arm/power_cord)

@@ -84,8 +84,8 @@ Mayor
 	uniform =  		/obj/item/clothing/under/f13/sheriff
 	neck =			/obj/item/storage/belt/holster/sheriff
 	shoes = 		/obj/item/clothing/shoes/f13/cowboy
-	suit = 			/obj/item/clothing/suit/armor/f13/power_armor/town
-	head = 			/obj/item/clothing/head/helmet/f13/power_armor/town
+	r_hand = 		/obj/item/clothing/suit/armor/f13/power_armor/town
+	l_hand = 		/obj/item/clothing/head/helmet/f13/power_armor/town
 	glasses =		/obj/item/clothing/glasses/sunglasses
 	l_pocket =		/obj/item/storage/bag/money/small/bighorn
 
@@ -97,13 +97,7 @@ Mayor
 		/obj/item/book/granter/crafting_recipe/ODF = 1)
 	r_pocket = /obj/item/flashlight/flare
 
-/datum/outfit/job/bos/f13sheriff/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	..()
-	if(visualsOnly)
-		return
-	ADD_TRAIT(H, TRAIT_PA_WEAR, src)
-
-/datum/outfit/job/bighorn/f13sheriff/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+/datum/outfit/job/bighorn/f13sheriff/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
 		return

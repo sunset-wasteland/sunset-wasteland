@@ -284,6 +284,7 @@
 	extra_penetration = 0.3
 	extra_damage = 40
 	force = 25
+	casing_ejector = TRUE//WHAT THE FUCK IS THIS GUN? FASTEST HAND IN THE WEST BETWEEN SHOTS, THAT'S WHAT.
 	can_scope = TRUE
 	scope_state = "revolver_scope"
 	scope_x_offset = 6

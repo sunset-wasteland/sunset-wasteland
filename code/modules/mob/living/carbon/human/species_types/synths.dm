@@ -18,6 +18,7 @@
 	var/datum/species/fake_species = null //a species to do most of our work for us, unless we're damaged
 	species_language_holder = /datum/language_holder/synthetic
 	species_type = "robotic"
+	var/toxloss = 0
 
 /datum/species/synth/military
 	name = "Military Synth"

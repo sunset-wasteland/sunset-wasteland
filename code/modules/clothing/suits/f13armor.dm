@@ -578,6 +578,20 @@
 	armor = list("melee" = 72.5, "bullet" = 72.5, "laser" = 72.5, "energy" = 25, "bomb" = 65, "bio" = 75, "rad" = 80, "fire" = 85, "acid" = 30, "wound" = 50)
 	salvaged_type = /obj/item/clothing/suit/armored/heavy/salvaged_pa/t45d
 
+//////
+// Sheriff's Suit
+//////
+/obj/item/clothing/suit/armor/f13/power_armor/town
+	name = "Sheriff's power armor"
+	desc = "A suit of power armour made for the Sheriff, custom fit and stripped of specialised electronics. This appears to be coated with ablative plating, alongside having an insulated interior."
+	icon_state = "t45lawman"
+	item_state = "t45lawman"
+	slowdown = 0.10//Alongside the helmet, this is a total of 0.20
+	armor = list("melee" = 75, "bullet" = 65, "laser" = 65, "energy" = 50, "bomb" = 85, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100, "wound" = 30)
+//////
+// End of
+//////
+
 /obj/item/clothing/suit/armor/f13/power_armor/t45d/Knightcommander
 	name = "Knight-Commander's T-45d Power Armour"
 	desc = "A classic set of T-45d Power Armour only to be used in armed combat, it signifies the Knight-Commander and their place in the Brotherhood. A leader, and a beacon of structure in a place where chaos reigns. All must rally to his call, for he is the Knight-Commander  and your safety is his duty."

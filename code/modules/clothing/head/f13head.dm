@@ -370,6 +370,21 @@
 	armor = list("melee" = 72.5, "bullet" = 72.5, "laser" = 72.5, "energy" = 25, "bomb" = 65, "bio" = 75, "rad" = 80, "fire" = 85, "acid" = 30, "wound" = 40)
 	salvaged_type = /obj/item/clothing/head/helmet/f13/heavy/salvaged_pa/t45d
 
+//////
+// Sheriff's Suit
+//////
+/obj/item/clothing/head/helmet/f13/power_armor/town
+	name = "Sheriff's power helmet"
+	desc = "A helmet for the power armour of the Sheriff, custom fit and stripped of specialised electronics. This appears to be coated with ablative plating, alongside having an insulated interior."
+	icon_state = "t45lawman0"
+	item_state = "t45lawman0"
+	slowdown = 0.10//Alongside the suit, this is a total of 0.20
+	actions_types = list(/datum/action/item_action/toggle_helmet_light)
+	armor = list("melee" = 75, "bullet" = 65, "laser" = 65, "energy" = 50, "bomb" = 85, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100, "wound" = 30)
+//////
+// End of
+//////
+
 /obj/item/clothing/head/helmet/f13/power_armor/t45d/update_icon_state()
 	icon_state = "t45dhelmet[light_on]"
 	item_state = "t45dhelmet[light_on]"

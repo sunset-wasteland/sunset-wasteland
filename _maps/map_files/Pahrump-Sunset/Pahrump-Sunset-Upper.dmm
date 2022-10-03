@@ -530,14 +530,9 @@
 /turf/open/floor/wood/wood_worn,
 /area/f13/city/bighorn)
 "ace" = (
-/obj/structure/closet/crate/footlocker{
-	anchored = 1;
-	pixel_x = -7
-	},
-/obj/structure/curtain{
-	color = "#845f58";
-	pixel_y = -32
-	},
+/obj/structure/bed/wooden,
+/obj/item/bedsheet/pirate,
+/obj/effect/landmark/start/f13/sheriff,
 /turf/open/floor/wood/wood_worn,
 /area/f13/city/bighorn)
 "acf" = (
@@ -4379,6 +4374,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/ruins,
 /area/f13/building/mall)
+"jcp" = (
+/obj/structure/chair/office/dark,
+/turf/open/floor/wood/wood_worn,
+/area/f13/city/bighorn)
 "jcx" = (
 /obj/structure/dresser,
 /obj/effect/decal/cleanable/dirt,
@@ -4993,6 +4992,13 @@
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
+"kCX" = (
+/obj/structure/table/wood,
+/obj/item/flashlight/lamp{
+	pixel_y = 10
+	},
+/turf/open/floor/wood/wood_mosaic,
+/area/f13/city/bighorn)
 "kGi" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -6688,10 +6694,15 @@
 /turf/open/indestructible/ground/outside/savannah/edgesnew,
 /area/f13/city/bighorn)
 "oub" = (
-/obj/structure/bed/wooden,
-/obj/item/bedsheet/pirate,
-/obj/effect/landmark/start/f13/sheriff,
-/turf/open/floor/wood/wood_worn,
+/obj/structure/table/wood,
+/obj/machinery/computer/terminal{
+	dir = 4;
+	termtag = "Secret"
+	},
+/obj/structure/window/reinforced/spawner{
+	dir = 1
+	},
+/turf/open/floor/wood/wood_mosaic,
 /area/f13/city/bighorn)
 "ouA" = (
 /obj/structure/table,
@@ -8421,6 +8432,18 @@
 	icon_state = "floorrustysolid"
 	},
 /area/f13/building/mall)
+"sDi" = (
+/obj/structure/table/wood,
+/obj/structure/curtain{
+	color = "#845f58";
+	pixel_y = -32
+	},
+/obj/effect/spawner/lootdrop/f13/traitbooks/low,
+/obj/structure/window/reinforced/spawner{
+	dir = 4
+	},
+/turf/open/floor/wood/wood_worn,
+/area/f13/city/bighorn)
 "sDv" = (
 /obj/machinery/vending/snack,
 /obj/effect/decal/cleanable/dirt,
@@ -11239,11 +11262,11 @@ abv
 abv
 abv
 abv
-abv
-abv
-abv
-abv
-abv
+dvF
+dvF
+dvF
+dvF
+dvF
 abv
 abv
 abv
@@ -11497,10 +11520,10 @@ dvF
 dvF
 dvF
 dvF
-abv
-abv
-abv
-abv
+ace
+oub
+kCX
+dvF
 abv
 abv
 oez
@@ -11753,12 +11776,12 @@ dvF
 myk
 abH
 abR
-abw
-abv
-abv
-abv
-abv
-abv
+dvF
+abn
+jcp
+sDi
+hsp
+oez
 oez
 oez
 oez
@@ -12010,11 +12033,11 @@ dvF
 lhS
 abI
 ucW
-abw
-abv
-abv
-abv
-abv
+dvF
+wDR
+wDR
+wDR
+dvF
 oez
 oez
 oez
@@ -12267,11 +12290,11 @@ abw
 abw
 abw
 onq
-abw
-abw
-abw
-abw
-abw
+dvF
+dvF
+dvF
+ngO
+dvF
 oez
 oez
 aKa
@@ -12527,7 +12550,7 @@ qWS
 kke
 oig
 ixn
-oub
+wDR
 abw
 oez
 oez
@@ -12784,7 +12807,7 @@ wDR
 wDR
 qWS
 qWS
-ace
+acf
 hsp
 oez
 oez

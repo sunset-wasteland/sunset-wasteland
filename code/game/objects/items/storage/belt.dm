@@ -838,6 +838,12 @@
 	new /obj/item/ammo_box/c4570(src)
 	new /obj/item/ammo_box/c4570(src)
 
+/obj/item/storage/belt/holster/sheriff/PopulateContents()
+	new /obj/item/gun/ballistic/revolver/revolver44/sheriff(src)
+	new /obj/item/ammo_box/m44(src)
+	new /obj/item/ammo_box/m44(src)
+	new /obj/item/ammo_box/m44(src)
+
 /obj/item/storage/belt/holster/legholster
 	name = "leg holster"
 	desc = "A holster to carry a handgun and ammo worn on the leg."

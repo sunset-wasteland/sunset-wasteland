@@ -15,6 +15,7 @@
 	gib_types = list(/obj/effect/gibspawner/ipc, /obj/effect/gibspawner/ipc/bodypartless)
 	liked_food = MEAT | FRIED
 	disliked_food = TOXIC
+	var/toxloss = 0
 
 	//Just robo looking parts.
 	mutant_heart = /obj/item/organ/heart/ipc

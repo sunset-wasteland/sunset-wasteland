@@ -61,7 +61,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	flag = F13COLONEL
 	head_announce = list("Security")
 	supervisors = "The Republic Senate, High Command"
-	access = list(ACCESS_NCR, ACCESS_NCR_ARMORY, ACCESS_CHANGE_IDS, ACCESS_NCR_COMMAND)
+	access = list(ACCESS_NCR, ACCESS_NCR_ARMORY, ACCESS_CHANGE_IDS, ACCESS_NCRREP, ACCESS_NCR_COMMAND)
 	req_admin_notify = 1
 
 	total_positions = 0
@@ -822,7 +822,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 		/obj/item/ammo_box/magazine/lmg = 2,
 		/obj/item/melee/onehanded/knife/bowie = 1,
 		)
-		
+
 /datum/outfit/loadout/crowdht
 	name = "Heavy Trooper Flamer"
 	backpack_contents = list(

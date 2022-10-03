@@ -158,7 +158,7 @@
 		if(0)
 			return get_all_accesses()
 		if(1) //station general
-			return list(ACCESS_KITCHEN,ACCESS_BAR, ACCESS_HYDROPONICS, ACCESS_JANITOR, ACCESS_CHAPEL_OFFICE, ACCESS_CREMATORIUM, ACCESS_LIBRARY, ACCESS_THEATRE, ACCESS_LAWYER, ACCESS_NCROFFDUTY)
+			return list(ACCESS_KITCHEN,ACCESS_BAR, ACCESS_HYDROPONICS, ACCESS_JANITOR, ACCESS_CHAPEL_OFFICE, ACCESS_CREMATORIUM, ACCESS_LIBRARY, ACCESS_THEATRE, ACCESS_LAWYER, ACCESS_NCROFFDUTY, ACCESS_LEGION_SLAVE)
 		if(2) //security
 			return list(ACCESS_SEC_DOORS, ACCESS_WEAPONS, ACCESS_SECURITY, ACCESS_BRIG, ACCESS_ARMORY, ACCESS_FORENSICS_LOCKERS, ACCESS_COURT, ACCESS_HOS, ACCESS_LEGION, ACCESS_NCR, ACCESS_NCR_ARMORY, ACCESS_BOS, ACCESS_ENCLAVE)
 		if(3) //medbay
@@ -333,6 +333,8 @@
 			return "BOS Access"
 		if(ACCESS_LEGION)
 			return "Legion Access"
+		if(ACCESS_LEGION_SLAVE)
+			return "Legion Slave"
 		if(ACCESS_NCR)
 			return "NCR Military"
 		if(ACCESS_NCR_ARMORY)
@@ -380,12 +382,14 @@
 
 /* Legion */
 /proc/get_all_legion_access()
-	return list(ACCESS_LEGION)
+	return list(ACCESS_LEGION, ACCESS_LEGION_SLAVE)
 
 /proc/get_legion_access_desc(A)
 	switch(A)
 		if(ACCESS_LEGION)
 			return "Legion Access"
+		if(ACCESS_LEGION_SLAVE)
+			return "Legion Slave"
 
 /* Enclave */
 /proc/get_all_enclave_access()

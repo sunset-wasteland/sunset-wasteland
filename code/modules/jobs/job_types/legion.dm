@@ -24,8 +24,8 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 
 	exp_type = EXP_TYPE_LEGION
 
-	access = list(ACCESS_LEGION)
-	minimal_access = list(ACCESS_LEGION)
+	access = list(ACCESS_LEGION, ACCESS_LEGION_SLAVE)
+	minimal_access = list(ACCESS_LEGION, ACCESS_LEGION_SLAVE)
 
 /datum/outfit/job/CaesarsLegion
 	ears = null
@@ -94,8 +94,8 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 	total_positions = 0
 	spawn_positions = 0
 	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13legate
-	access = list(ACCESS_LEGION, ACCESS_CHANGE_IDS)
-	minimal_access = list(ACCESS_LEGION, ACCESS_CHANGE_IDS)
+	access = list(ACCESS_LEGION, ACCESS_CHANGE_IDS, ACCESS_LEGION_COMMAND, ACCESS_LEGION_SLAVE)
+	minimal_access = list(ACCESS_LEGION, ACCESS_CHANGE_IDS, ACCESS_LEGION_COMMAND, ACCESS_LEGION_SLAVE)
 
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13legate/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
@@ -139,8 +139,8 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 	spawn_positions = 1
 	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13orator
 	display_order = JOB_DISPLAY_ORDER_ORATOR
-	access = list(ACCESS_LEGION, ACCESS_CHANGE_IDS, ACCESS_LEGION_COMMAND)
-	minimal_access = list(ACCESS_LEGION, ACCESS_CHANGE_IDS, ACCESS_LEGION_COMMAND)
+	access = list(ACCESS_LEGION, ACCESS_CHANGE_IDS, ACCESS_LEGION_COMMAND, ACCESS_LEGION_SLAVE)
+	minimal_access = list(ACCESS_LEGION, ACCESS_CHANGE_IDS, ACCESS_LEGION_COMMAND, ACCESS_LEGION_SLAVE)
 	roleplay_exclusive_notify = 1
 	exp_requirements = 750
 
@@ -196,8 +196,8 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13centurion
 	exp_requirements = 750
 
-	access = list(ACCESS_LEGION, ACCESS_CHANGE_IDS, ACCESS_LEGION_COMMAND)
-	minimal_access = list(ACCESS_LEGION, ACCESS_CHANGE_IDS, ACCESS_LEGION_COMMAND)
+	access = list(ACCESS_LEGION, ACCESS_CHANGE_IDS, ACCESS_LEGION_COMMAND, ACCESS_LEGION_SLAVE)
+	minimal_access = list(ACCESS_LEGION, ACCESS_CHANGE_IDS, ACCESS_LEGION_COMMAND, ACCESS_LEGION_SLAVE)
 
 	loadout_options = list(
 		/datum/outfit/loadout/palacent,		// 10mm SMG, Goliath, CQC
@@ -296,8 +296,8 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13decanvet
 	exp_requirements = 450
 
-	access = list(ACCESS_LEGION, ACCESS_CHANGE_IDS, ACCESS_LEGION_COMMAND)
-	minimal_access = list(ACCESS_LEGION, ACCESS_CHANGE_IDS, ACCESS_LEGION_COMMAND)
+	access = list(ACCESS_LEGION, ACCESS_CHANGE_IDS, ACCESS_LEGION_COMMAND, ACCESS_LEGION_SLAVE)
+	minimal_access = list(ACCESS_LEGION, ACCESS_CHANGE_IDS, ACCESS_LEGION_COMMAND, ACCESS_LEGION_SLAVE)
 
 	loadout_options = list(
 		/datum/outfit/loadout/decvetbull,	// Supersledge, 10mm SMG, Smokebomb
@@ -403,8 +403,8 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 	supervisors = "the Veteran Decanus and the Centurion"
 	display_order = JOB_DISPLAY_ORDER_DECAN
 	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13decan
-	access = list(ACCESS_LEGION, ACCESS_LEGION_COMMAND)
-	minimal_access = list(ACCESS_LEGION,  ACCESS_LEGION_COMMAND)
+	access = list(ACCESS_LEGION, ACCESS_LEGION_COMMAND, ACCESS_LEGION_SLAVE)
+	minimal_access = list(ACCESS_LEGION,  ACCESS_LEGION_COMMAND, ACCESS_LEGION_SLAVE)
 	exp_requirements = 360
 
 	loadout_options = list(	//ALL: Gladius, Smokebomb
@@ -496,8 +496,8 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 	supervisors = "the Prime/Veteran Decanus and the Centurion"
 	display_order = JOB_DISPLAY_ORDER_DECANREC
 	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13decanrec
-	access = list(ACCESS_LEGION, ACCESS_LEGION_COMMAND)
-	minimal_access = list(ACCESS_LEGION,  ACCESS_LEGION_COMMAND)
+	access = list(ACCESS_LEGION, ACCESS_LEGION_COMMAND, ACCESS_LEGION_SLAVE)
+	minimal_access = list(ACCESS_LEGION,  ACCESS_LEGION_COMMAND, ACCESS_LEGION_SLAVE)
 	exp_requirements = 300
 
 	loadout_options = list(
@@ -578,8 +578,8 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 	supervisors = "the Veteran Decanus and Centurion"
 	display_order = JOB_DISPLAY_ORDER_VEXILLARIUS
 	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13vexillarius
-	access = list(ACCESS_LEGION, ACCESS_LEGION_COMMAND)
-	minimal_access = list(ACCESS_LEGION,  ACCESS_LEGION_COMMAND)
+	access = list(ACCESS_LEGION, ACCESS_LEGION_COMMAND, ACCESS_LEGION_SLAVE)
+	minimal_access = list(ACCESS_LEGION,  ACCESS_LEGION_COMMAND, ACCESS_LEGION_SLAVE)
 	exp_requirements = 360
 
 	loadout_options = list(
@@ -1207,6 +1207,9 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 	outfit = /datum/outfit/job/CaesarsLegion/slave
 	roleplay_exclusive_notify = 1
 	exp_type = EXP_TYPE_WASTELAND//So you can't sit on it and play Centurion. :)
+
+	access = list(ACCESS_LEGION_SLAVE)
+	minimal_access = list(ACCESS_LEGION_SLAVE)
 
 	loadout_options = list(
 		/datum/outfit/loadout/slaveservant,

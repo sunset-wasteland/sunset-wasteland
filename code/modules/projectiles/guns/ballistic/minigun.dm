@@ -13,7 +13,7 @@
 	var/overheat = 0
 	var/overheat_max = 80
 	var/heat_stage = 0
-	var/heat_diffusion = 2.5 //How much heat is lost per tick
+	var/heat_diffusion = 3 //How much heat is lost per tick
 
 /obj/item/minigunpackbal5mm/Initialize()
 	. = ..()
@@ -104,7 +104,7 @@
 	icon_state = "minigunbal_spin"
 	item_state = "minigun"
 	flags_1 = CONDUCT_1
-	slowdown = 2
+	slowdown = 1.8
 	slot_flags = null
 	w_class = WEIGHT_CLASS_HUGE
 	burst_size = 1

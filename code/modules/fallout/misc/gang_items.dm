@@ -197,7 +197,7 @@
 	new /obj/item/gun/ballistic/automatic/pistol/type17(src)
 
 /datum/gang_item/weapon/ninemil
-	name = "9mm pistol"
+	name = "9mm Pistol"
 	id = "gangninemil"
 	cost = 80
 	item_path = /obj/effect/spawner/bundle/f13/ninemil
@@ -244,19 +244,19 @@
 	name = "Unknown Good Balistic Gun"
 	id = "ganggoodbalisticgun"
 	cost = 140
-	item_path = /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low
+	item_path = /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/gang/low
 
 /datum/gang_item/weapon/gunmid
 	name = "Unknown AWESOME Balistic Gun"
 	id = "gangawesomebalisticgun"
 	cost = 180
-	item_path = /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/lowmid
+	item_path = /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/gang/lowmid
 
 /datum/gang_item/weapon/gunawesome
 	name = "Unknown EXTREMELY AWESOME Balistic Gun"
 	id = "gangextremeawesomebalisticgun"
 	cost = 280
-	item_path = /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/mid
+	item_path = /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/gang/mid
 
 /datum/gang_item/weapon/melekit
 	name = "Unknown Melee Weapon"
@@ -290,13 +290,13 @@
 	item_path = /obj/item/storage/pill_bottle/chem_tin/fixer
 
 /datum/gang_item/equipment/stimpak
-	name = "stimpak"
+	name = "Stimpak"
 	id = "stimpake"
 	cost = 95
 	item_path = /obj/item/reagent_containers/hypospray/medipen/stimpak
 
 /datum/gang_item/equipment/healingpowder
-	name = "Healing powder"
+	name = "Healing Powder"
 	id = "healingpowder"
 	cost = 55
 	item_path = /obj/item/reagent_containers/pill/patch/healingpowder
@@ -453,4 +453,31 @@
 	new /obj/item/gun/ballistic/revolver/colt357(src)
 	new /obj/item/clothing/head/f13/ranger_hat(src)
 	new /obj/item/clothing/suit/armor/f13/leather_jacket/combat/coat(src)
+
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/gang/low
+	name = "low tier gang ballistic gun"
+	loot = list(/obj/effect/spawner/bundle/f13/thatgun,
+				/obj/effect/spawner/bundle/f13/huntingshotgun,
+				/obj/effect/spawner/bundle/f13/guns/commando,
+				/obj/effect/spawner/bundle/f13/m1carbine,
+				)
+
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/gang/lowmid
+	name = "low-mid gang tier ballistic gun"
+	loot = list(/obj/effect/spawner/bundle/f13/cowboy,
+				/obj/effect/spawner/bundle/f13/hunting,
+				/obj/effect/spawner/bundle/f13/trenchshotgun,
+				/obj/effect/spawner/bundle/f13/m1carbine,
+				/obj/effect/spawner/bundle/f13/huntingshotgun,
+		)
+
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/gang/mid
+	name = "mid tier ballistic gun"
+	loot = list(/obj/effect/spawner/bundle/f13/trail,
+				/obj/effect/spawner/bundle/f13/service,
+				/obj/effect/spawner/bundle/f13/miniuzi,
+				/obj/effect/spawner/bundle/f13/auto5,
+				/obj/effect/spawner/bundle/f13/marksman,
+				/obj/effect/spawner/bundle/f13/m1garand,
+				)
 

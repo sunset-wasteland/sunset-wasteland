@@ -325,6 +325,12 @@
 	cost = 100
 	item_path = /obj/item/grenade/f13/stinger
 
+/datum/gang_item/equipment/molotov
+	name = "firebomb"
+	id = "Molotovg"
+	cost = 80
+	item_path = /obj/item/grenade/homemade/firebomb
+
 /datum/gang_item/equipment/dynamite
 	name = "Dynamite stick"
 	id = "dynamitegrenade"

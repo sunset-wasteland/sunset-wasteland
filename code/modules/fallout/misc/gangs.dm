@@ -44,10 +44,25 @@ GLOBAL_DATUM_INIT(denmob, /datum/gang/denmob, new)
 		/datum/gang_item/weapon/switchblade,
 		/datum/gang_item/weapon/slugger,
 		/datum/gang_item/weapon/type17,
+		/datum/gang_item/weapon/ninemil,
+		/datum/gang_item/weapon/caravan,
+		/datum/gang_item/weapon/varmint,
 		/datum/gang_item/weapon/uzi,
 		/datum/gang_item/weapon/type93,
+
 		/datum/gang_item/equipment/stinger,
 		/datum/gang_item/equipment/he,
+		/datum/gang_item/equipment/dynamite,
+		/datum/gang_item/equipment/c4,
+
+		/datum/gang_item/weapon/energylow,
+		/datum/gang_item/weapon/gunsuperlow,
+		/datum/gang_item/weapon/gunlow,
+		/datum/gang_item/weapon/gunmid,
+		/datum/gang_item/weapon/melekit,
+
+		/datum/gang_item/equipment/stimpak,
+		/datum/gang_item/equipment/healingpowder,
 
 		/datum/gang_item/clothing/prostitute_dress,
 		/datum/gang_item/clothing/hat,
@@ -58,7 +73,9 @@ GLOBAL_DATUM_INIT(denmob, /datum/gang/denmob, new)
 		/datum/gang_item/clothing/soviet_uniform,
 		/datum/gang_item/clothing/biker_uniform,
 		/datum/gang_item/clothing/chairmen_uniform,
-		
+
+		/datum/gang_item/equipment/chemmakingkit,
+
 		/datum/gang_item/equipment/bundleelguapo,
 		/datum/gang_item/equipment/bundleanarchist,
 		/datum/gang_item/equipment/bundlegunner,

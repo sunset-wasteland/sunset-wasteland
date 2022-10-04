@@ -183,10 +183,19 @@
 /datum/gear/donator/kits/shark
 	name ="Happy Shark Material"
 	path = /obj/item/storage/box/large/custom_kit/shark
-	ckeywhitelist = list ("mr.sanderp","mrsanderp","nothingbutcarl")//Because for some reason one wasn't working? Brute force time.
+	ckeywhitelist = list ("mr.sanderp","mrsanderp")
 
 /obj/item/storage/box/large/custom_kit/shark/PopulateContents()
 	new /obj/item/book/granter/crafting_recipe/happysharky(src)
 	new /obj/item/reagent_containers/food/snacks/sunset/happyshark/jerky(src)
 	new /obj/item/reagent_containers/food/snacks/sunset/happyshark/candybar(src)
 	new /obj/item/reagent_containers/food/drinks/sunset/happyshark/bittercola(src)
+
+/datum/gear/donator/kits/krig
+	name ="Krig's Teachings"
+	path = /obj/item/storage/box/large/custom_kit/krig
+	ckeywhitelist = list ("lia526")
+
+/obj/item/storage/box/large/custom_kit/krig/PopulateContents()
+	new /obj/item/book/granter/trait/krig(src)
+

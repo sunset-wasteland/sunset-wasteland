@@ -1067,8 +1067,8 @@
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/building)
 "bbN" = (
-/obj/structure/barricade/tentclothcorner,
-/turf/closed/wall/f13/sunset/brick_small,
+/obj/structure/reagent_dispensers/compostbin,
+/turf/open/indestructible/ground/outside/graveldirt,
 /area/f13/legion)
 "bcd" = (
 /obj/structure/flora/grass/jungle/b{
@@ -1126,7 +1126,10 @@
 /obj/item/reagent_containers/pill/patch/healingpowder,
 /obj/item/reagent_containers/pill/patch/healingpowder,
 /obj/structure/table/wood,
-/turf/open/indestructible/ground/outside/desert/harsh,
+/turf/open/indestructible/ground/outside/dirt/harsh{
+	dir = 5;
+	icon_state = "dirt"
+	},
 /area/f13/legion)
 "bfw" = (
 /obj/structure/closet/crate/footlocker{
@@ -2836,7 +2839,10 @@
 /area/f13/legion)
 "cLD" = (
 /obj/machinery/smartfridge/bottlerack/alchemy_rack,
-/turf/open/indestructible/ground/outside/desert/harsh,
+/turf/open/indestructible/ground/outside/dirt/harsh{
+	dir = 6;
+	icon_state = "dirt"
+	},
 /area/f13/legion)
 "cLZ" = (
 /obj/machinery/light/small/broken{
@@ -8474,10 +8480,8 @@
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/building)
 "ioD" = (
-/obj/structure/simple_door/metal/fence{
-	color = "#515249";
-	req_access_txt = "123"
-	},
+/obj/machinery/door/unpowered/secure_legion,
+/obj/structure/decoration/rag,
 /turf/open/indestructible/ground/outside/graveldirt,
 /area/f13/wasteland/rocksprings)
 "ioY" = (
@@ -12664,8 +12668,11 @@
 	},
 /area/f13/building)
 "mPL" = (
-/obj/structure/legion_extractor,
-/turf/open/indestructible/ground/outside/graveldirt,
+/obj/structure/barricade/tentclothedge{
+	dir = 1;
+	pixel_y = 3
+	},
+/turf/closed/wall/f13/sunset/brick_small,
 /area/f13/legion)
 "mQm" = (
 /obj/effect/turf_decal/weather/dirt{
@@ -12926,11 +12933,9 @@
 	},
 /area/f13/building)
 "nbU" = (
-/turf/open/indestructible/ground/outside/dirt/harsh{
-	dir = 8;
-	icon_state = "dirt"
-	},
-/area/f13/caves)
+/obj/structure/barricade/tentclothcorner,
+/turf/closed/wall/f13/sunset/brick_small,
+/area/f13/legion)
 "nbY" = (
 /obj/structure/car/rubbish1{
 	pixel_y = -16
@@ -14088,8 +14093,9 @@
 	},
 /area/f13/building)
 "ofa" = (
-/obj/structure/reagent_dispensers/compostbin,
-/turf/open/indestructible/ground/outside/graveldirt,
+/obj/structure/closet/crate/large,
+/obj/machinery/manned_turret/m2/unanchored,
+/turf/open/floor/plasteel/f13/stone/rugged,
 /area/f13/legion)
 "ofp" = (
 /obj/machinery/door/unpowered/celldoor,
@@ -14488,11 +14494,8 @@
 	},
 /area/f13/caves)
 "ozw" = (
-/obj/structure/barricade/tentclothedge{
-	dir = 1;
-	pixel_y = 3
-	},
-/turf/closed/wall/f13/sunset/brick_small,
+/obj/structure/legion_extractor,
+/turf/open/indestructible/ground/outside/graveldirt,
 /area/f13/legion)
 "oAf" = (
 /obj/structure/reagent_dispensers/compostbin,
@@ -17670,10 +17673,6 @@
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontaltopbordertop0"
 	},
-/area/f13/caves)
-"rEQ" = (
-/mob/living/simple_animal/hostile/supermutant/rangedmutant/heavy,
-/turf/open/indestructible/ground/outside/road,
 /area/f13/caves)
 "rFl" = (
 /obj/structure/rack,
@@ -21473,7 +21472,10 @@
 /area/f13/building)
 "vrz" = (
 /obj/structure/table/wood,
-/turf/open/indestructible/ground/outside/desert/harsh,
+/turf/open/indestructible/ground/outside/dirt/harsh{
+	dir = 4;
+	icon_state = "dirt"
+	},
 /area/f13/legion)
 "vrC" = (
 /obj/structure/destructible/tribal_torch/wall/lit{
@@ -25151,14 +25153,14 @@ gNb
 ohl
 lUg
 gNb
-ohl
+nRN
 ohl
 oeo
 gNb
 gNb
 ohl
 ohl
-ohl
+nRN
 gNb
 gNb
 wmN
@@ -25928,7 +25930,7 @@ gNb
 gNb
 ohl
 ohl
-rEQ
+lUg
 ohl
 ohl
 gNb
@@ -26415,7 +26417,7 @@ rPW
 rPW
 rPW
 rPW
-nbU
+rPW
 rPW
 rPW
 rPW
@@ -32971,9 +32973,9 @@ rPW
 gqa
 mTt
 mTt
-mPL
+mTt
 ozw
-pnE
+mPL
 hXy
 hXy
 pnE
@@ -33228,9 +33230,9 @@ rPW
 gqa
 wcL
 mIO
-ofa
-ozw
-pnE
+mTt
+bbN
+mPL
 hXy
 hXy
 qQR
@@ -33486,8 +33488,8 @@ xBy
 rzS
 rzS
 rzS
-bbN
-pnE
+rzS
+nbU
 vaW
 vaW
 upH
@@ -43032,7 +43034,7 @@ dnA
 hAL
 hDv
 hAL
-hAL
+ofa
 gtX
 rFl
 jLa

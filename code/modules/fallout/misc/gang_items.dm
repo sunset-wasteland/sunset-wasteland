@@ -458,14 +458,12 @@
 	name = "low tier gang ballistic gun"
 	loot = list(/obj/effect/spawner/bundle/f13/thatgun,
 				/obj/effect/spawner/bundle/f13/huntingshotgun,
-				/obj/effect/spawner/bundle/f13/guns/commando,
 				/obj/effect/spawner/bundle/f13/m1carbine,
 				)
 
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/gang/lowmid
 	name = "low-mid gang tier ballistic gun"
 	loot = list(/obj/effect/spawner/bundle/f13/cowboy,
-				/obj/effect/spawner/bundle/f13/hunting,
 				/obj/effect/spawner/bundle/f13/trenchshotgun,
 				/obj/effect/spawner/bundle/f13/m1carbine,
 				/obj/effect/spawner/bundle/f13/huntingshotgun,

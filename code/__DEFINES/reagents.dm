@@ -92,4 +92,9 @@ GLOBAL_LIST_INIT(blacklisted_plant_reagents, list(
 	/datum/reagent/syndicateadrenals,
 	/datum/reagent/medicine/syndicate_nanites,
 	/datum/reagent/medicine/lesser_syndicate_nanites,
+	/datum/reagent/aslimetoxin,
+	/datum/reagent/gluttonytoxin,
+	/datum/reagent/mutationtoxin/golem,
+	/datum/reagent/mutationtoxin/abductor,
+	/datum/reagent/mutationtoxin/plasma,
 	))

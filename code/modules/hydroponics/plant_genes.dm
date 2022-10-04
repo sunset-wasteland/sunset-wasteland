@@ -157,7 +157,7 @@
 /datum/plant_gene/reagent/can_add(obj/item/seeds/S)
 	if(!..())
 		return FALSE
-	if(R.type in GLOB.blacklisted_plant_reagents)
+	if(reagent_id in GLOB.blacklisted_plant_reagents)
 		return FALSE
 	for(var/datum/plant_gene/reagent/R in S.genes)
 		if(R.reagent_id == reagent_id)

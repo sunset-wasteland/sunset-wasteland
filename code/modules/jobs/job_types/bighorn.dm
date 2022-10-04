@@ -56,7 +56,8 @@ Mayor
 		/obj/item/clothing/head/f13/town/big = 1, \
 		/obj/item/storage/box/citizenship_permits = 1, \
 		/obj/item/ammo_box/a357=2, \
-		/obj/item/pen/fountain/captain = 1)
+		/obj/item/pen/fountain/captain = 1,
+		/obj/item/storage/bag/money/small/mayor = 1,)//Cash for payouts. Incredible amount, seeing as next to the Banker, he's the closest thing to a treasury keeper.
 /*--------------------------------------------------------------*/
 /datum/job/bighorn/f13sheriff
 	title = "Sheriff"

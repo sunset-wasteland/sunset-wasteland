@@ -80,3 +80,16 @@
 //Chemical reaction flags, for determining reaction specialties
 #define REACTION_CLEAR_IMPURE       (1<<0)  //Convert into impure/pure on reaction completion
 #define REACTION_CLEAR_INVERSE      (1<<1)  //Convert into inverse on reaction completion when purity is low enough
+
+//Pulled from POOL blacklist. Instead of the pool being closed due to stingraids, we'll close the plant section of the market due to Fermichem.
+GLOBAL_LIST_INIT(blacklisted_plant_reagents, list(
+	/datum/reagent/toxin/plasma, /datum/reagent/oxygen, /datum/reagent/nitrous_oxide, /datum/reagent/nitrogen,		//gases
+	/datum/reagent/fermi,				//blanket fermichem ban sorry. this also covers mkultra etc etc.
+	/datum/reagent/toxin/FEV_solution,	//lol no
+	/datum/reagent/consumable/semen,	//NO.
+	/datum/reagent/medicine/changelinghaste,
+	/datum/reagent/medicine/changelingadrenaline,
+	/datum/reagent/syndicateadrenals,
+	/datum/reagent/medicine/syndicate_nanites,
+	/datum/reagent/medicine/lesser_syndicate_nanites,
+	))

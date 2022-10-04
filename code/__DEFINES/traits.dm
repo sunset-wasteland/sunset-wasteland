@@ -259,7 +259,8 @@
 #define TRAIT_TECHNOPHOBE		"luddite" //Cannot use autolathes/biogens
 #define TRAIT_LONGPORKLOVER		"Cannibal" //guess
 #define TRAIT_TRIBAL			"Tribalistic Person" //has access to tribal crafting recipes
-#define TRAIT_BERSERKER			"berserker" //currently unused
+#define TRAIT_BERSERKER			"berserker"
+#define TRAIT_KRIGSERKER		"krigserker"
 #define TRAIT_TECHNOPHREAK		"technophreak"	//boosts salvage return
 #define TRAIT_PA_WEAR           "pa_wear" //guess
 #define TRAIT_MEDICALEXPERT		"Medicinal Expert" //Can do revival surgery
@@ -359,6 +360,7 @@
 #define ANTI_DROP_IMPLANT_TRAIT "anti-drop-implant"
 #define MARTIAL_ARTIST_TRAIT "martial_artist"
 #define BERSERKER_TRAIT "berserker"
+#define KRIGSERKER_TRAIT "krigserker"
 #define SLEEPING_CARP_TRAIT "sleeping_carp"
 #define RISING_BASS_TRAIT "rising_bass"
 #define ABDUCTOR_ANTAGONIST "abductor-antagonist"

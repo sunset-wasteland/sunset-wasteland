@@ -235,25 +235,25 @@
 	item_path = /obj/effect/spawner/lootdrop/f13/weapon/gun/energy/low
 
 /datum/gang_item/weapon/gunsuperlow
-	name = "Unknown Balistic Gun"
+	name = "Unknown Ballistic Gun"
 	id = "gangshitbalisticgun"
 	cost = 90
 	item_path = /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/superlow
 
 /datum/gang_item/weapon/gunlow
-	name = "Unknown Good Balistic Gun"
+	name = "Unknown Good Ballistic Gun"
 	id = "ganggoodbalisticgun"
 	cost = 140
 	item_path = /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/gang/low
 
 /datum/gang_item/weapon/gunmid
-	name = "Unknown AWESOME Balistic Gun"
+	name = "Unknown AWESOME Ballistic Gun"
 	id = "gangawesomebalisticgun"
 	cost = 180
 	item_path = /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/gang/lowmid
 
 /datum/gang_item/weapon/gunawesome
-	name = "Unknown EXTREMELY AWESOME Balistic Gun"
+	name = "Unknown EXTREMELY AWESOME Ballistic Gun"
 	id = "gangextremeawesomebalisticgun"
 	cost = 280
 	item_path = /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/gang/mid
@@ -328,7 +328,7 @@
 /datum/gang_item/equipment/molotov
 	name = "Firebomb"
 	id = "Molotovg"
-	cost = 80
+	cost = 70
 	item_path = /obj/item/grenade/homemade/firebomb
 
 /datum/gang_item/equipment/dynamite

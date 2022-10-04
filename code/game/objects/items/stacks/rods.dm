@@ -13,8 +13,6 @@ GLOBAL_LIST_INIT(rod_recipes, list ( \
 		new /datum/stack_recipe("fence (gate)", /obj/structure/simple_door/metal/fence, 8, time = 20, one_per_turf = 1, on_floor = 1, check_for = GLOB.blocking_structures), \
 		)),
 	null, \
-	new/datum/stack_recipe("barbed wire",/obj/structure/obstacle/barbedwire, 5, time = 10, one_per_turf = 1, on_floor = 1, check_for = GLOB.blocking_structures), \
-	new/datum/stack_recipe("barbed wire ends", /obj/structure/obstacle/barbedwire/end, 5, time = 10, one_per_turf = 1, on_floor = 1, check_for = GLOB.blocking_structures), \
 	))
 /obj/item/stack/rods
 	name = "metal rod"

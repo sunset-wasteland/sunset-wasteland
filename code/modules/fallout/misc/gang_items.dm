@@ -351,7 +351,7 @@
 /datum/gang_item/equipment/chemmakingkit
 	name = "Chem Machine Bundle"
 	id = "Chemmakingmachine"
-	cost = 850
+	cost = 655
 	item_path = /obj/item/storage/box/chemmachine
 
 /obj/item/storage/box/chemmachine

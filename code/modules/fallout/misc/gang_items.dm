@@ -237,7 +237,7 @@
 /datum/gang_item/weapon/gunsuperlow
 	name = "Unknown Balistic Gun"
 	id = "gangshitbalisticgun"
-	cost = 80
+	cost = 90
 	item_path = /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/superlow
 
 /datum/gang_item/weapon/gunlow
@@ -326,13 +326,13 @@
 	item_path = /obj/item/grenade/f13/stinger
 
 /datum/gang_item/equipment/molotov
-	name = "firebomb"
+	name = "Firebomb"
 	id = "Molotovg"
 	cost = 80
 	item_path = /obj/item/grenade/homemade/firebomb
 
 /datum/gang_item/equipment/dynamite
-	name = "Dynamite stick"
+	name = "Dynamite Stick"
 	id = "dynamitegrenade"
 	cost = 150
 	item_path = /obj/item/grenade/f13/dynamite

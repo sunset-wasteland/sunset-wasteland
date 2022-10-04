@@ -50,10 +50,10 @@ GLOBAL_DATUM_INIT(denmob, /datum/gang/denmob, new)
 		/datum/gang_item/weapon/uzi,
 		/datum/gang_item/weapon/type93,
 
+		/datum/gang_item/equipment/molotov,
 		/datum/gang_item/equipment/stinger,
 		/datum/gang_item/equipment/he,
 		/datum/gang_item/equipment/dynamite,
-		/datum/gang_item/equipment/molotov,
 
 		/datum/gang_item/weapon/energylow,
 		/datum/gang_item/weapon/gunsuperlow,

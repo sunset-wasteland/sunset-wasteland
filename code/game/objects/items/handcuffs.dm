@@ -306,7 +306,8 @@
 
 /obj/item/restraints/legcuffs/beartrap/proc/on_entered(datum/source, AM as mob|obj)
 	SIGNAL_HANDLER
-	INVOKE_ASYNC(src, .proc/handle_enter, AM)
+	INVOKE_ASYNC(src, .proc/handle_enter, source, AM)
+
 /obj/item/restraints/legcuffs/beartrap/energy
 	name = "energy snare"
 	armed = TRUE

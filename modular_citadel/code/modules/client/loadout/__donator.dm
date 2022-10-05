@@ -199,3 +199,18 @@
 /obj/item/storage/box/large/custom_kit/krig/PopulateContents()
 	new /obj/item/book/granter/trait/krig(src)
 
+/datum/gear/donator/kits/carl
+	name ="Hazard Gear"
+	path = /obj/item/storage/box/large/custom_kit/carl
+	ckeywhitelist = list ("nothingbutcarl")
+
+/obj/item/storage/box/large/custom_kit/carl/PopulateContents()
+	new /obj/item/clothing/head/helmet/f13/ncr/rangercombat/desert/carl(src)
+	new /obj/item/clothing/suit/armor/f13/rangercombat/desert/carl(src)
+	new /obj/item/card/id/rusted/brokenholodog/carl(src)
+	new /obj/item/clothing/gloves/f13/military/carl(src)
+	new /obj/item/clothing/shoes/f13/military/ncr_officer_boots/carl(src)
+	new /obj/item/clothing/under/f13/ranger/modif_ranger/carl(src)
+	new /obj/item/storage/belt/holster/regulator(src)
+	new /obj/item/nuke_core_container(src)
+	new /obj/item/screwdriver/nuke(src)

@@ -506,7 +506,7 @@
 //Followers
 
 /obj/item/clothing/suit/hooded/followerlight
-	name = "Followers labcoat"
+	name = "followers labcoat"
 	desc = "A well-kept labcoat with the insignia of the followers stitched onto the back and shoulders, provides excellent protection from chemical hazards and radiation."
 	icon = 'icons/fallout/clothing/suits_cosmetic.dmi'
 	hoodtype = /obj/item/clothing/head/hooded/followerlight
@@ -517,7 +517,7 @@
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small
 
 /obj/item/clothing/head/hooded/followerlight
-	name = "Followers labcoat hood"
+	name = "followers labcoat hood"
 	icon_state = "follower_light"
 	icon = 'icons/fallout/clothing/hats.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/head.dmi'
@@ -526,7 +526,7 @@
 	armor = list("melee" = 15, "bullet" = 15, "laser" = 15, "energy" = 15, "bomb" = 20, "bio" = 50, "rad" = 50, "fire" = 50, "acid" = 80, "wound" = 10)
 
 /obj/item/clothing/suit/hooded/followermedium
-	name = "Followers plated labcoat"
+	name = "followers plated labcoat"
 	desc = "A modified labcoat fitted with flexible plates under the surface for the doctor who might find himself privy to the dangers of the wasteland."
 	icon = 'icons/fallout/clothing/suits_cosmetic.dmi'
 	hoodtype = /obj/item/clothing/head/hooded/followermedium
@@ -538,7 +538,7 @@
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small
 
 /obj/item/clothing/head/hooded/followermedium
-	name = "Followers plated labcoat hood"
+	name = "followers plated labcoat hood"
 	icon_state = "follower_medium"
 	icon = 'icons/fallout/clothing/hats.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/head.dmi'
@@ -547,7 +547,7 @@
 	armor = list("melee" = 40, "bullet" = 50, "laser" = 35, "energy" = 35, "bomb" = 20, "bio" = 50, "rad" = 50, "fire" = 50, "acid" = 80, "wound" = 40)
 
 /obj/item/clothing/suit/hooded/followerheavy
-	name = "Followers guard heavy armor"
+	name = "followers guard heavy armor"
 	desc = "An overhauled set of armor using a mixture of treated metal plates and restitched labcoat material, built to protect those who cannot protect themselves."
 	icon = 'icons/fallout/clothing/suits_cosmetic.dmi'
 	hoodtype = /obj/item/clothing/head/hooded/followerheavy
@@ -558,7 +558,7 @@
 	slowdown = 0.20
 
 /obj/item/clothing/head/hooded/followerheavy
-	name = "Followers guard heavy armor helmet"
+	name = "followers guard heavy armor helmet"
 	icon_state = "follower_heavy"
 	icon = 'icons/fallout/clothing/hats.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/head.dmi'

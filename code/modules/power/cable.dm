@@ -560,6 +560,9 @@ By design, d1 is the smallest direction and d2 is the highest
 		var/heal_amount = 15
 		if(difference >= 0)
 			heal_amount = difference
+		if(!heal_amount)
+			to_chat(user, "<span class='notice'>[user == H ? "Your" : "[H]'s"] [affecting.name] appears to have suffered severe internal damage and requires surgery to repair further.</span>")
+			return
 		if(user == H)
 			user.visible_message("<span class='notice'>[user] starts to fix some of the wires in [H]'s [affecting.name].</span>", "<span class='notice'>You start fixing some of the wires in [H]'s [affecting.name].</span>")
 			if(!do_mob(user, H, 50))

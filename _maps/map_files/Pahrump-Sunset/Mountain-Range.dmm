@@ -301,10 +301,6 @@
 "dE" = (
 /turf/closed/wall/f13/tunnel,
 /area/f13/tunnel)
-"dF" = (
-/mob/living/simple_animal/hostile/ghoul/coldferal,
-/turf/open/indestructible/ground/outside/snow_plating,
-/area/f13/caves)
 "dH" = (
 /obj/structure/table,
 /obj/item/disk/data,
@@ -1746,15 +1742,6 @@
 /obj/item/soap,
 /turf/open/floor/plasteel/f13/vault_floor/purple/whitepurplefull,
 /area/f13/enclave)
-"rW" = (
-/obj/effect/turf_decal/weather/snow/corner{
-	dir = 4
-	},
-/mob/living/simple_animal/hostile/ghoul/coldferal,
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticalrightborderright0"
-	},
-/area/f13/mountain_area)
 "rX" = (
 /obj/machinery/light{
 	dir = 4;
@@ -1999,8 +1986,10 @@
 /turf/open/floor/f13,
 /area/f13/enclave)
 "ua" = (
-/mob/living/simple_animal/hostile/ghoul/coldferal,
-/turf/open/indestructible/ground/outside/snow,
+/obj/structure/nest/coldghouls,
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "horizontalinnermain0"
+	},
 /area/f13/mountain_area)
 "uj" = (
 /obj/structure/table/reinforced,
@@ -2471,14 +2460,6 @@
 /obj/item/circuitboard/machine/hypnochair,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/enclave)
-"yO" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 1
-	},
-/mob/living/simple_animal/hostile/ghoul/coldferal,
-/obj/effect/turf_decal/weather/snow/corner,
-/turf/open/indestructible/ground/outside/snow_plating,
-/area/f13/mountain_area)
 "yQ" = (
 /obj/effect/turf_decal/stripes,
 /obj/machinery/door/poddoor/preopen{
@@ -2645,10 +2626,6 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/enclave)
-"AE" = (
-/mob/living/simple_animal/hostile/ghoul/frozenreaver,
-/turf/open/indestructible/ground/outside/snow_plating,
-/area/f13/caves)
 "AH" = (
 /obj/effect/turf_decal/bot,
 /obj/structure/closet/crate/secure/weapon,
@@ -2785,6 +2762,12 @@
 /obj/machinery/reagentgrinder,
 /turf/open/floor/plasteel/hydrofloor,
 /area/f13/enclave)
+"Ct" = (
+/obj/effect/turf_decal/loading_area,
+/obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/ghoul/frozenreaver,
+/turf/open/indestructible/ground/outside/snow_plating,
+/area/f13/mountain_area)
 "Cv" = (
 /obj/effect/turf_decal/stripes/corner{
 	dir = 1
@@ -3133,15 +3116,6 @@
 /obj/structure/loot_pile,
 /turf/open/floor/f13,
 /area/f13/enclave)
-"Ga" = (
-/obj/effect/turf_decal/weather/snow/corner{
-	dir = 8
-	},
-/mob/living/simple_animal/hostile/ghoul/coldferal,
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticalleftborderleft0"
-	},
-/area/f13/mountain_area)
 "Gh" = (
 /obj/machinery/smoke_machine,
 /turf/open/floor/f13,
@@ -3182,10 +3156,6 @@
 /obj/effect/spawner/structure/window/plastitanium,
 /turf/open/floor/plating,
 /area/f13/enclave)
-"GK" = (
-/mob/living/simple_animal/hostile/ghoul/frozenreaver,
-/turf/open/indestructible/ground/outside/snow_plating,
-/area/f13/mountain_area)
 "GN" = (
 /obj/machinery/door/airlock/hatch{
 	req_access = null;
@@ -3389,6 +3359,10 @@
 /obj/structure/closet/athletic_mixed,
 /turf/open/floor/f13,
 /area/f13/enclave)
+"Iv" = (
+/obj/structure/nest/coldghouls,
+/turf/open/indestructible/ground/outside/snow_plating,
+/area/f13/mountain_area)
 "Ix" = (
 /obj/structure/debris/v1,
 /turf/open/indestructible/ground/outside/snow_plating,
@@ -3425,6 +3399,7 @@
 "IO" = (
 /obj/effect/turf_decal/loading_area,
 /obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/ghoul/coldferal,
 /turf/open/indestructible/ground/outside/snow_plating,
 /area/f13/mountain_area)
 "IP" = (
@@ -3682,15 +3657,14 @@
 "Lx" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/cobweb/cobweb2,
+/obj/structure/nest/radroach{
+	max_mobs = 3
+	},
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/enclave)
 "LJ" = (
 /turf/open/floor/plasteel/f13/vault_floor/red/whiteredfull,
 /area/f13/enclave)
-"LM" = (
-/mob/living/simple_animal/hostile/ghoul/frozenreaver,
-/turf/open/indestructible/ground/outside/snow,
-/area/f13/mountain_area)
 "LP" = (
 /obj/machinery/camera/autoname{
 	dir = 10
@@ -4001,6 +3975,15 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/enclave)
+"PN" = (
+/obj/effect/decal/marking{
+	icon_state = "doubleverticalcorroded"
+	},
+/obj/structure/nest/coldghouls,
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "horizontalinnermain0"
+	},
+/area/f13/mountain_area)
 "PO" = (
 /obj/structure/chair{
 	dir = 8
@@ -4147,6 +4130,10 @@
 	},
 /turf/open/floor/engine,
 /area/f13/enclave)
+"Rs" = (
+/obj/structure/nest/zombieghoul,
+/turf/closed/mineral/random/low_chance,
+/area/f13/caves)
 "Rt" = (
 /obj/effect/decal/marking{
 	icon_state = "doubleverticaldegraded"
@@ -4357,6 +4344,12 @@
 /obj/structure/flora/tree/dead,
 /turf/open/floor/grass,
 /area/f13/enclave)
+"Tm" = (
+/obj/structure/nest/radroach{
+	max_mobs = 3
+	},
+/turf/open/floor/f13,
+/area/f13/enclave)
 "To" = (
 /obj/machinery/rnd/production/circuit_imprinter,
 /turf/open/floor/plasteel/f13/vault_floor/purple/whitepurplefull,
@@ -4466,12 +4459,6 @@
 "UE" = (
 /turf/closed/mineral/random/high_chance,
 /area/f13/caves)
-"UT" = (
-/mob/living/simple_animal/hostile/ghoul/coldferal,
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontalinnermain0"
-	},
-/area/f13/mountain_area)
 "UU" = (
 /obj/structure/rack/shelf_metal,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -4748,10 +4735,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/enclave)
-"XW" = (
-/mob/living/simple_animal/hostile/ghoul/coldferal,
-/turf/open/indestructible/ground/outside/snow_plating,
-/area/f13/mountain_area)
 "Ya" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/f13/medical/vault/meds,
@@ -4864,11 +4847,12 @@
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/enclave)
 "Zt" = (
-/obj/structure/nest/radroach{
-	max_mobs = 3
+/obj/structure/nest/coldghouls{
+	max_mobs = 2;
+	spawn_time = 40
 	},
-/turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
-/area/f13/enclave)
+/turf/open/indestructible/ground/outside/snow,
+/area/f13/mountain_area)
 "Zu" = (
 /obj/structure/rack,
 /obj/effect/turf_decal/bot,
@@ -5615,7 +5599,7 @@ ez
 ez
 ez
 ez
-LM
+ez
 ez
 ez
 ez
@@ -5829,7 +5813,7 @@ ez
 ez
 ez
 ez
-ua
+ez
 ez
 ez
 ez
@@ -6388,7 +6372,7 @@ ez
 ez
 ez
 ez
-ez
+Zt
 ez
 ez
 ez
@@ -6400,7 +6384,7 @@ ez
 ez
 Ow
 Ow
-AE
+vP
 jM
 Hy
 VT
@@ -6870,7 +6854,6 @@ ez
 ez
 ez
 ez
-ua
 ez
 ez
 ez
@@ -6887,7 +6870,8 @@ ez
 ez
 ez
 ez
-ua
+ez
+ez
 ez
 ez
 ez
@@ -6947,7 +6931,7 @@ HA
 HA
 UE
 HA
-HA
+Rs
 HA
 HA
 HA
@@ -7078,7 +7062,6 @@ ez
 ez
 ez
 ez
-ua
 ez
 ez
 ez
@@ -7139,6 +7122,7 @@ ez
 ez
 ez
 ez
+Zt
 ez
 ez
 ez
@@ -7648,7 +7632,7 @@ ez
 ez
 ez
 ez
-ua
+ez
 ez
 ez
 ez
@@ -7894,7 +7878,7 @@ ez
 ez
 ez
 ez
-LM
+ez
 ez
 ez
 ez
@@ -8660,7 +8644,7 @@ ez
 ez
 ez
 ez
-ua
+ez
 ez
 ez
 ez
@@ -9884,7 +9868,7 @@ ez
 ez
 ez
 ez
-ua
+ez
 ez
 ez
 ez
@@ -10218,7 +10202,7 @@ ez
 ez
 ez
 ez
-ua
+ez
 ez
 ez
 ez
@@ -10369,7 +10353,7 @@ ez
 ez
 ez
 ez
-ua
+ez
 ez
 ez
 ez
@@ -10462,7 +10446,7 @@ ez
 ez
 ez
 ez
-ua
+ez
 ez
 ez
 ez
@@ -11762,7 +11746,7 @@ gH
 ez
 ez
 ez
-ez
+Zt
 ez
 ez
 ez
@@ -13057,7 +13041,7 @@ tt
 tt
 tt
 tt
-GK
+tt
 tt
 tt
 tt
@@ -13084,13 +13068,13 @@ HA
 HA
 iT
 AW
-TI
+Lf
 fW
 fW
 fW
 TI
 AW
-Jx
+Tm
 Jx
 Qx
 Jx
@@ -13256,7 +13240,7 @@ ez
 ez
 ez
 ez
-ez
+Zt
 ez
 ez
 ez
@@ -13310,7 +13294,7 @@ ez
 ez
 qd
 tt
-GK
+tt
 va
 tt
 tt
@@ -13349,7 +13333,7 @@ TI
 AW
 Jx
 oO
-Zt
+oO
 oO
 Jx
 AW
@@ -13541,7 +13525,7 @@ ez
 ez
 ez
 ez
-ua
+ez
 ez
 ez
 ez
@@ -13571,7 +13555,7 @@ tt
 tt
 va
 EG
-XW
+tt
 RZ
 tt
 tt
@@ -13832,7 +13816,7 @@ QU
 tt
 tt
 eo
-yO
+Ev
 ez
 ez
 ez
@@ -13857,7 +13841,7 @@ iT
 AW
 TI
 TI
-Lf
+TI
 TI
 TI
 AW
@@ -14599,7 +14583,7 @@ tt
 OX
 tt
 tt
-tt
+Iv
 tt
 tt
 tt
@@ -15109,7 +15093,7 @@ ez
 ez
 qd
 tt
-GK
+tt
 EG
 tt
 QP
@@ -15349,7 +15333,7 @@ ez
 ez
 ez
 ez
-ua
+ez
 ez
 ez
 ez
@@ -15370,7 +15354,7 @@ tt
 tt
 tt
 tt
-XW
+tt
 tt
 tt
 tt
@@ -15378,7 +15362,7 @@ dI
 bC
 tt
 lR
-XW
+tt
 tt
 EG
 lR
@@ -15595,7 +15579,7 @@ ez
 ez
 ez
 ez
-LM
+ez
 ez
 ez
 ez
@@ -15823,7 +15807,7 @@ ez
 ez
 ez
 ez
-ua
+ez
 ez
 ez
 ez
@@ -15890,15 +15874,15 @@ Ua
 Ua
 uC
 tt
-XW
 tt
 tt
+Iv
 Yk
 tt
 tt
 zO
 zO
-IO
+Ct
 eE
 Ak
 Tf
@@ -17712,7 +17696,7 @@ iT
 AW
 TI
 TI
-Lf
+TI
 TI
 TI
 AW
@@ -18121,7 +18105,7 @@ ez
 ez
 ez
 ez
-ez
+Zt
 ez
 ez
 ez
@@ -18232,7 +18216,7 @@ TI
 AW
 Jx
 oO
-Zt
+oO
 oO
 Jx
 AW
@@ -18487,7 +18471,7 @@ LU
 sa
 TI
 AW
-Jx
+Tm
 Jx
 OG
 Jx
@@ -19216,7 +19200,7 @@ Vr
 ez
 ez
 ez
-ez
+Zt
 ez
 ez
 ez
@@ -19914,7 +19898,7 @@ ez
 ez
 ez
 ez
-ua
+ez
 ez
 ez
 ez
@@ -19989,7 +19973,7 @@ ez
 ez
 ez
 ez
-ua
+ez
 ez
 ez
 ez
@@ -21287,7 +21271,7 @@ ez
 ez
 ez
 ez
-ua
+ez
 ez
 ez
 ez
@@ -21425,7 +21409,7 @@ ez
 ez
 ez
 ez
-ua
+ez
 ez
 ez
 ez
@@ -22039,7 +22023,7 @@ ez
 ez
 ez
 ez
-LM
+ez
 ez
 ez
 ez
@@ -22552,7 +22536,7 @@ ez
 ez
 ez
 ez
-ez
+Zt
 ez
 ez
 ez
@@ -22829,7 +22813,7 @@ ez
 ez
 ez
 ez
-ez
+Zt
 ez
 ez
 Vr
@@ -23781,7 +23765,7 @@ ez
 ez
 ez
 ez
-ua
+ez
 ez
 ez
 ez
@@ -24376,7 +24360,7 @@ ez
 ez
 xz
 tt
-XW
+tt
 tt
 Vr
 Vr
@@ -24830,7 +24814,7 @@ ez
 ez
 ez
 ez
-ez
+Zt
 ez
 ez
 ez
@@ -25144,12 +25128,12 @@ ez
 ez
 ez
 ez
-ua
+ez
 ez
 Ow
-AE
 vP
-dF
+vP
+vP
 jM
 Ow
 iT
@@ -26677,7 +26661,7 @@ Vr
 ez
 ez
 ez
-ez
+Zt
 ez
 ez
 ez
@@ -27161,7 +27145,7 @@ ez
 ez
 ez
 ez
-ua
+ez
 ez
 ez
 ez
@@ -27190,7 +27174,7 @@ Vr
 Vr
 Vr
 ez
-ua
+ez
 ez
 ez
 ez
@@ -27710,7 +27694,7 @@ ez
 ez
 ez
 ez
-LM
+ez
 ez
 ez
 ez
@@ -27875,7 +27859,7 @@ ez
 ez
 ez
 ez
-ez
+Zt
 ez
 ez
 ez
@@ -29485,7 +29469,7 @@ ez
 ez
 ez
 ez
-LM
+ez
 ez
 ez
 ez
@@ -30010,7 +29994,7 @@ ez
 ez
 ez
 ez
-ua
+ez
 ez
 ez
 ez
@@ -31212,7 +31196,7 @@ ez
 ez
 ez
 ez
-ua
+ez
 ez
 ez
 ez
@@ -31566,7 +31550,7 @@ ez
 ez
 ez
 ez
-ua
+ez
 ez
 ez
 ez
@@ -32052,7 +32036,7 @@ ez
 ez
 ez
 ez
-ua
+ez
 ez
 ez
 ez
@@ -32327,7 +32311,7 @@ ez
 ez
 ez
 ez
-ua
+ez
 ez
 ez
 ez
@@ -33843,7 +33827,7 @@ ez
 ez
 ez
 ez
-ua
+ez
 ez
 ez
 ez
@@ -34883,7 +34867,7 @@ ez
 ez
 ez
 ez
-LM
+ez
 ez
 ez
 ez
@@ -35401,7 +35385,7 @@ ez
 ez
 ez
 ez
-ua
+ez
 ez
 ez
 ez
@@ -36075,7 +36059,7 @@ ez
 ez
 ez
 ez
-ua
+ez
 ez
 ez
 ez
@@ -37440,7 +37424,7 @@ ez
 ez
 ez
 ez
-ez
+Zt
 ez
 ez
 ez
@@ -37663,7 +37647,7 @@ ez
 ez
 ez
 ez
-ez
+Zt
 ez
 ez
 ez
@@ -38413,7 +38397,7 @@ ez
 ez
 ez
 ez
-ua
+ez
 ez
 ez
 ez
@@ -42596,7 +42580,7 @@ ez
 ez
 ez
 ez
-ez
+Zt
 ez
 ez
 ez
@@ -45337,7 +45321,7 @@ ez
 ez
 ez
 ez
-ua
+ez
 ez
 ez
 ez
@@ -47708,7 +47692,7 @@ ez
 ez
 ez
 ez
-ez
+Zt
 ez
 ez
 ez
@@ -49985,7 +49969,7 @@ ez
 ez
 ez
 ez
-ua
+ez
 ez
 ez
 ez
@@ -50568,7 +50552,7 @@ ez
 ez
 ez
 ez
-ez
+Zt
 ez
 ez
 ez
@@ -50772,7 +50756,7 @@ ez
 ez
 ez
 ez
-ua
+ez
 ez
 ez
 ez
@@ -53575,7 +53559,7 @@ ez
 ez
 ez
 ez
-ua
+ez
 ez
 ez
 ez
@@ -57203,7 +57187,7 @@ ez
 ez
 ez
 ez
-ez
+Zt
 ez
 ez
 ez
@@ -58220,7 +58204,7 @@ ez
 ez
 ez
 ez
-ua
+ez
 ez
 ez
 ez
@@ -58796,7 +58780,7 @@ ez
 ez
 ez
 ez
-ez
+Zt
 ez
 ez
 ez
@@ -62647,7 +62631,7 @@ ez
 ez
 ez
 ez
-ua
+ez
 ez
 ez
 ez
@@ -62890,12 +62874,12 @@ ez
 ez
 ez
 ez
-ua
 ez
 ez
 ez
 ez
-ua
+ez
+ez
 ez
 ez
 ez
@@ -63180,7 +63164,7 @@ ez
 ez
 ez
 ez
-ua
+ez
 ez
 ez
 ez
@@ -63413,7 +63397,7 @@ Ry
 Ry
 Ry
 Ry
-UT
+Ry
 Ry
 Ry
 Ry
@@ -63689,7 +63673,7 @@ ez
 ez
 ez
 ez
-ua
+ez
 ez
 ez
 ez
@@ -64427,7 +64411,7 @@ ez
 ez
 ez
 ez
-ua
+ez
 ez
 ez
 ez
@@ -64436,7 +64420,7 @@ Ry
 Ry
 Ry
 iv
-UT
+Ry
 Ry
 Ry
 Ry
@@ -64698,7 +64682,7 @@ Ry
 Ry
 Ry
 Ry
-Ry
+ua
 if
 Ry
 AX
@@ -64713,7 +64697,7 @@ ez
 ez
 ez
 ez
-ua
+ez
 ez
 ez
 ez
@@ -65722,7 +65706,7 @@ mD
 mD
 mD
 mD
-rW
+mD
 mD
 FB
 Ry
@@ -65740,7 +65724,7 @@ JK
 ez
 ez
 ez
-ua
+ez
 ez
 ez
 ez
@@ -65984,7 +65968,7 @@ ez
 Zb
 Ry
 Ry
-UT
+Ry
 vf
 ez
 ez
@@ -65994,7 +65978,7 @@ ez
 ez
 ez
 ez
-ua
+ez
 ez
 ez
 ez
@@ -66766,7 +66750,7 @@ lZ
 lZ
 lZ
 lZ
-Ga
+lZ
 lZ
 lZ
 lZ
@@ -68055,7 +68039,7 @@ mV
 mV
 mV
 oT
-oT
+PN
 oT
 oT
 mV
@@ -68292,7 +68276,7 @@ Ry
 Xj
 Ry
 Ry
-UT
+Ry
 Ry
 Ry
 Ry
@@ -69332,7 +69316,7 @@ mD
 mD
 mD
 mD
-rW
+mD
 mD
 mD
 mD

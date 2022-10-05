@@ -565,3 +565,4 @@
 	flags_inv = HIDEEARS|HIDEEYES|HIDEHAIR|HIDEFACIALHAIR
 	item_state = "follower_heavy"
 	armor = list("melee" = 70, "bullet" = 70, "laser" = 50, "energy" = 35, "bomb" = 20, "bio" = 50, "rad" = 50, "fire" = 50, "acid" = 80, "wound" = 50)
+

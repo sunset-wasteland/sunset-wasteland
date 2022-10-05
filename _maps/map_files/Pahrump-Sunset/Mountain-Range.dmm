@@ -64,6 +64,16 @@
 	},
 /turf/open/indestructible/ground/outside/snow_plating,
 /area/f13/mountain_area)
+"aY" = (
+/obj/effect/turf_decal/stripes,
+/obj/machinery/door/poddoor/preopen{
+	id = 927
+	},
+/obj/machinery/door/window/brigdoor{
+	req_access_txt = "256"
+	},
+/turf/open/floor/engine,
+/area/f13/enclave)
 "ba" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -83,9 +93,20 @@
 /obj/structure/curtain,
 /turf/open/floor/f13,
 /area/f13/enclave)
+"bn" = (
+/obj/structure/chair{
+	dir = 4
+	},
+/turf/open/floor/plasteel/f13/vault_floor/dark,
+/area/f13/enclave)
 "bp" = (
 /obj/structure/sign/departments/chemistry,
 /turf/closed/wall/r_wall/f13/vault,
+/area/f13/enclave)
+"br" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/frame/machine,
+/turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/enclave)
 "bu" = (
 /obj/structure/bodycontainer/morgue,
@@ -95,6 +116,14 @@
 /obj/structure/table/glass,
 /obj/item/reagent_containers/food/drinks/soda_cans/sodawater,
 /turf/open/floor/f13,
+/area/f13/enclave)
+"bB" = (
+/obj/machinery/power/turbine{
+	dir = 8;
+	pixel_x = 20;
+	name = "Snow Machine"
+	},
+/turf/open/floor/plating/snowed/colder,
 /area/f13/enclave)
 "bC" = (
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier4,
@@ -137,6 +166,12 @@
 /obj/effect/turf_decal/weather/snow/corner,
 /turf/open/indestructible/ground/outside/snow_plating,
 /area/f13/mountain_area)
+"bR" = (
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/open/floor/plating/snowed/colder,
+/area/f13/enclave)
 "bX" = (
 /obj/structure/cable,
 /obj/effect/spawner/structure/window/plastitanium,
@@ -338,6 +373,8 @@
 "ej" = (
 /obj/structure/table/glass,
 /obj/machinery/cell_charger,
+/obj/item/clothing/glasses/meson,
+/obj/item/t_scanner/adv_mining_scanner,
 /turf/open/floor/plasteel/f13/vault_floor/purple/whitepurplefull,
 /area/f13/enclave)
 "en" = (
@@ -798,6 +835,13 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/enclave)
+"jj" = (
+/obj/machinery/computer/camera_advanced/xenobio{
+	dir = 8
+	},
+/obj/item/disk/xenobio_console_upgrade/slimebasic,
+/turf/open/floor/plasteel/f13/vault_floor/dark,
+/area/f13/enclave)
 "jl" = (
 /obj/structure/table/glass,
 /obj/item/storage/bag/ore,
@@ -1253,28 +1297,7 @@
 /obj/item/clothing/suit/hooded/wintercoat/durathread,
 /obj/item/clothing/suit/hooded/wintercoat/durathread,
 /obj/item/clothing/suit/hooded/wintercoat/durathread,
-/obj/item/clothing/suit/hooded/wintercoat/durathread,
-/obj/item/clothing/suit/hooded/wintercoat/durathread,
-/obj/item/clothing/suit/hooded/wintercoat/durathread,
-/obj/item/clothing/shoes/winterboots,
-/obj/item/clothing/shoes/winterboots,
-/obj/item/clothing/shoes/winterboots,
-/obj/item/clothing/shoes/winterboots,
-/obj/item/clothing/shoes/winterboots,
-/obj/item/clothing/shoes/winterboots,
-/obj/item/clothing/shoes/winterboots,
-/obj/item/clothing/shoes/winterboots,
-/obj/item/clothing/shoes/winterboots,
-/obj/item/clothing/shoes/winterboots,
-/obj/item/clothing/shoes/winterboots,
-/obj/item/clothing/shoes/winterboots,
-/obj/item/tank/internals/emergency_oxygen/double,
-/obj/item/tank/internals/emergency_oxygen/double,
-/obj/item/tank/internals/emergency_oxygen/double,
-/obj/item/tank/internals/emergency_oxygen/double,
-/obj/item/tank/internals/emergency_oxygen/double,
 /obj/effect/turf_decal/bot,
-/obj/item/tank/internals/emergency_oxygen/double,
 /turf/open/floor/plasteel/f13/vault_floor/red,
 /area/f13/enclave)
 "of" = (
@@ -1342,6 +1365,14 @@
 /obj/structure/timeddoor,
 /turf/closed/wall/f13/tunnel,
 /area/f13/tunnel)
+"oG" = (
+/obj/machinery/vending/wallmed{
+	name = "Emergency NanoMed";
+	use_power = 0;
+	pixel_x = -32
+	},
+/turf/open/floor/plasteel/f13/vault_floor/dark,
+/area/f13/enclave)
 "oI" = (
 /obj/item/pickaxe/mini,
 /obj/item/card/id/rusted,
@@ -1451,6 +1482,12 @@
 /area/f13/enclave)
 "pl" = (
 /turf/closed/indestructible/rock/snow,
+/area/f13/mountain_area)
+"pn" = (
+/obj/structure/car/rubbish2,
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "horizontalinnermain0"
+	},
 /area/f13/mountain_area)
 "pu" = (
 /obj/structure/disposalpipe/segment,
@@ -1667,6 +1704,7 @@
 /obj/structure/rack,
 /obj/item/stack/sheet/metal/ten,
 /obj/item/stack/sheet/glass/ten,
+/obj/item/storage/part_replacer,
 /turf/open/floor/plasteel/f13/vault_floor/purple/whitepurplefull,
 /area/f13/enclave)
 "rB" = (
@@ -1676,6 +1714,27 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/f13/vault_floor/neutral,
+/area/f13/enclave)
+"rC" = (
+/obj/machinery/light,
+/obj/structure/closet{
+	name = "Winter Clothes"
+	},
+/obj/effect/turf_decal/bot,
+/obj/item/tank/internals/emergency_oxygen/double,
+/obj/item/tank/internals/emergency_oxygen/double,
+/obj/item/tank/internals/emergency_oxygen/double,
+/obj/item/tank/internals/emergency_oxygen/double,
+/obj/item/clothing/shoes/winterboots,
+/obj/item/clothing/shoes/winterboots,
+/obj/item/clothing/shoes/winterboots,
+/obj/item/clothing/shoes/winterboots,
+/obj/item/clothing/shoes/winterboots,
+/obj/item/clothing/shoes/winterboots,
+/obj/item/clothing/shoes/winterboots,
+/obj/item/clothing/shoes/winterboots,
+/obj/item/clothing/shoes/winterboots,
+/turf/open/floor/plasteel/f13/vault_floor/red,
 /area/f13/enclave)
 "rH" = (
 /obj/structure/fermenting_barrel,
@@ -2247,6 +2306,13 @@
 /obj/item/pen,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/enclave)
+"wJ" = (
+/obj/effect/decal/marking,
+/obj/structure/car/rubbish3,
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "horizontalinnermain0"
+	},
+/area/f13/mountain_area)
 "wP" = (
 /obj/item/cultivator,
 /obj/item/reagent_containers/glass/bucket,
@@ -2517,6 +2583,15 @@
 /obj/structure/chair/office/dark,
 /turf/open/floor/plasteel/f13/vault_floor/red/whiteredfull,
 /area/f13/enclave)
+"zL" = (
+/obj/effect/turf_decal/weather/snow/corner{
+	dir = 8
+	},
+/mob/living/simple_animal/hostile/ghoul/coldferal,
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "verticalleftborderleft0"
+	},
+/area/f13/mountain_area)
 "zN" = (
 /obj/structure/barricade/wooden/snowed,
 /obj/structure/barricade/wooden/crude/snow,
@@ -2855,6 +2930,9 @@
 	},
 /turf/open/floor/f13,
 /area/f13/enclave)
+"Ea" = (
+/turf/open/floor/plating/snowed/colder,
+/area/f13/enclave)
 "Eb" = (
 /obj/structure/window/reinforced{
 	dir = 4
@@ -2963,9 +3041,6 @@
 	id = 920
 	},
 /obj/structure/table,
-/obj/machinery/camera/autoname{
-	dir = 9
-	},
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/enclave)
 "Fc" = (
@@ -3004,9 +3079,6 @@
 	id = 922
 	},
 /obj/structure/table,
-/obj/machinery/camera/autoname{
-	dir = 9
-	},
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/enclave)
 "Fz" = (
@@ -3036,9 +3108,6 @@
 	id = 924
 	},
 /obj/structure/table,
-/obj/machinery/camera/autoname{
-	dir = 9
-	},
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/enclave)
 "FF" = (
@@ -3517,9 +3586,12 @@
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/enclave)
 "KI" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/closed/wall/r_wall/f13/vault,
+/obj/structure/rack,
+/obj/item/book/granter/crafting_recipe/blueprint/aer9,
+/obj/item/book/granter/crafting_recipe/blueprint/aep7,
+/obj/item/book/granter/crafting_recipe/blueprint/lightplasmapistol,
+/obj/item/book/granter/crafting_recipe/blueprint/plasmapistol,
+/turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/enclave)
 "KQ" = (
 /obj/effect/decal/remains/human{
@@ -3561,12 +3633,10 @@
 	},
 /area/f13/mountain_area)
 "Lc" = (
-/obj/machinery/vending/wallmed{
-	name = "Emergency NanoMed";
-	pixel_y = -32;
-	use_power = 0
+/obj/machinery/camera/autoname{
+	dir = 10
 	},
-/turf/open/floor/plasteel/f13/vault_floor/dark,
+/turf/open/floor/plating/snowed/colder,
 /area/f13/enclave)
 "Ld" = (
 /obj/machinery/ammobench,
@@ -3623,8 +3693,11 @@
 /obj/machinery/camera/autoname{
 	dir = 10
 	},
-/obj/structure/table/glass,
 /obj/item/melee/baton/loaded,
+/obj/machinery/button/door{
+	id = 927
+	},
+/obj/structure/table,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/enclave)
 "LS" = (
@@ -3889,6 +3962,12 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/trash/f13/steak,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
+/area/f13/enclave)
+"Pr" = (
+/obj/machinery/camera/autoname{
+	dir = 9
+	},
+/turf/open/floor/engine,
 /area/f13/enclave)
 "Pt" = (
 /obj/structure/table/reinforced,
@@ -4417,6 +4496,13 @@
 	icon_state = "horizontalinnermain0"
 	},
 /area/f13/mountain_area)
+"Vj" = (
+/obj/effect/decal/marking,
+/obj/structure/car/rubbish1,
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "horizontalinnermain0"
+	},
+/area/f13/mountain_area)
 "Vk" = (
 /obj/effect/spawner/lootdrop/f13/weapon/gun/energy/mid,
 /obj/effect/decal/remains/human,
@@ -4539,6 +4625,10 @@
 /mob/living/simple_animal/chicken,
 /turf/open/floor/grass,
 /area/f13/enclave)
+"WJ" = (
+/obj/machinery/processor/slime,
+/turf/open/floor/plasteel/f13/vault_floor/dark,
+/area/f13/enclave)
 "WK" = (
 /obj/structure/rack,
 /obj/item/gps,
@@ -4589,6 +4679,14 @@
 /obj/item/grenade/chem_grenade/teargas,
 /obj/effect/turf_decal/bot,
 /turf/open/floor/plasteel/f13/vault_floor/red/whiteredfull,
+/area/f13/enclave)
+"Xd" = (
+/obj/structure/window/reinforced/fulltile,
+/obj/structure/grille,
+/obj/machinery/door/poddoor/preopen{
+	id = 927
+	},
+/turf/open/floor/engine,
 /area/f13/enclave)
 "Xi" = (
 /obj/machinery/light/small,
@@ -4754,8 +4852,13 @@
 /area/f13/enclave)
 "Zo" = (
 /obj/structure/table/reinforced,
-/obj/structure/frame/machine,
 /turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/enclave)
+"Zs" = (
+/obj/machinery/light/small{
+	dir = 4
+	},
+/turf/open/floor/plating/snowed/colder,
 /area/f13/enclave)
 "Zt" = (
 /obj/structure/nest/radroach{
@@ -22541,8 +22644,8 @@ SP
 kn
 SP
 SP
-kn
-SP
+CQ
+AW
 AW
 AW
 iT
@@ -22798,8 +22901,8 @@ SP
 SP
 SP
 SP
-KI
-CQ
+Bd
+br
 gg
 AW
 iT
@@ -23019,7 +23122,7 @@ zK
 tV
 FJ
 FJ
-rq
+rC
 AW
 AW
 AW
@@ -25367,7 +25470,7 @@ kv
 SP
 Lq
 Bd
-jb
+KI
 BC
 Lq
 Bf
@@ -25879,13 +25982,13 @@ sD
 Eb
 Hg
 SP
-SP
+oG
 KC
+Xd
+Ea
+bR
+Lc
 AW
-iT
-iT
-iT
-iT
 iT
 HA
 HA
@@ -26137,12 +26240,12 @@ BO
 SP
 SP
 SP
-Lc
+SP
+aY
+Ea
+Ea
+Ea
 AW
-iT
-HA
-HA
-HA
 HA
 HA
 HA
@@ -26386,20 +26489,20 @@ HA
 HA
 iT
 AW
-pC
+Pr
 pC
 pC
 vd
 EP
 SP
-SP
+bn
 SP
 Lk
+Xd
+Ea
+Zs
+bB
 AW
-iT
-HA
-HA
-HA
 HA
 HA
 HA
@@ -26649,14 +26752,14 @@ AW
 AW
 AW
 SP
-SP
+jj
 SP
 LP
 AW
-iT
-HA
-HA
-HA
+AW
+AW
+AW
+AW
 UE
 HA
 HA
@@ -27414,7 +27517,7 @@ HA
 HA
 iT
 AW
-pC
+Pr
 pC
 pC
 yb
@@ -27677,7 +27780,7 @@ AW
 AW
 AW
 SP
-SP
+WJ
 SP
 Pz
 AW
@@ -28442,7 +28545,7 @@ HA
 HA
 iT
 AW
-pC
+Pr
 pC
 pC
 zD
@@ -62784,12 +62887,12 @@ ez
 ez
 ez
 ez
+ua
 ez
 ez
 ez
 ez
-ez
-ez
+ua
 ez
 ez
 ez
@@ -63299,24 +63402,24 @@ ez
 ez
 Zb
 Ry
+AX
+Ry
+Ry
+AX
+Ry
+Ry
+Ry
+Ry
+UT
 Ry
 Ry
 Ry
 Ry
 Ry
+pn
 Ry
-Ry
-Ry
-Ry
-Ry
-Ry
-Ry
-Ry
-Ry
-Ry
-Ry
-Ry
-Ry
+AX
+AX
 vf
 ez
 ez
@@ -63557,7 +63660,7 @@ ez
 Zb
 Ry
 Ry
-Ry
+NM
 Ry
 Ry
 Ry
@@ -63571,7 +63674,7 @@ Ry
 Ry
 SZ
 Ry
-Ry
+pn
 Ry
 Ry
 vf
@@ -63583,7 +63686,7 @@ ez
 ez
 ez
 ez
-ez
+ua
 ez
 ez
 ez
@@ -63816,11 +63919,11 @@ VP
 VP
 VP
 Ry
+pn
 Ry
 Ry
 Ry
-Ry
-Ry
+AX
 Ry
 Ry
 Ry
@@ -63829,7 +63932,7 @@ Ry
 Ry
 Ry
 VP
-VP
+wJ
 VP
 vf
 ez
@@ -64070,6 +64173,7 @@ ez
 ez
 Zb
 Ry
+pn
 Ry
 Ry
 Ry
@@ -64077,8 +64181,7 @@ Ry
 Ry
 Ry
 Ry
-Ry
-Ry
+SZ
 Ry
 KQ
 Ry
@@ -64086,8 +64189,8 @@ NM
 tE
 Ry
 Ry
-Ry
-Ry
+NM
+NM
 vf
 ez
 ez
@@ -64321,7 +64424,7 @@ ez
 ez
 ez
 ez
-ez
+ua
 ez
 ez
 ez
@@ -64329,12 +64432,12 @@ Zb
 Ry
 Ry
 Ry
-Ry
+pn
 UT
 Ry
 Ry
 Ry
-Ry
+AX
 Ry
 tE
 QX
@@ -64585,7 +64688,7 @@ ez
 Zb
 Ry
 Ry
-Ry
+AX
 Ry
 Ry
 Ry
@@ -64600,14 +64703,14 @@ if
 QX
 Ry
 Ry
-Ry
-Ry
+AX
+AX
 vf
 ez
 ez
 ez
 ez
-ez
+ua
 ez
 ez
 ez
@@ -64848,7 +64951,7 @@ Ry
 Ry
 Ry
 Ry
-Ry
+AX
 Ry
 Ry
 Ry
@@ -64857,7 +64960,7 @@ Ry
 Ry
 Ry
 VP
-VP
+Vj
 VP
 vf
 ez
@@ -65098,10 +65201,10 @@ ez
 ez
 Zb
 Ry
+pn
 Ry
 Ry
-Ry
-Ry
+AX
 Ry
 Ry
 Ry
@@ -65114,7 +65217,7 @@ Ry
 Ry
 Ry
 Ry
-Ry
+SZ
 Ry
 vf
 ez
@@ -65357,7 +65460,7 @@ Zb
 Ry
 Ry
 Ry
-Ry
+pn
 Ry
 Ry
 Ry
@@ -65370,9 +65473,9 @@ Ry
 Ry
 Ry
 Ry
+SZ
 Ry
-Ry
-Ry
+SZ
 vf
 ez
 ez
@@ -65616,7 +65719,7 @@ mD
 mD
 mD
 mD
-mD
+rW
 mD
 FB
 Ry
@@ -65634,7 +65737,7 @@ JK
 ez
 ez
 ez
-ez
+ua
 ez
 ez
 ez
@@ -65878,7 +65981,7 @@ ez
 Zb
 Ry
 Ry
-Ry
+UT
 vf
 ez
 ez
@@ -66660,7 +66763,7 @@ lZ
 lZ
 lZ
 lZ
-lZ
+zL
 lZ
 lZ
 lZ

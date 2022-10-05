@@ -106,7 +106,7 @@
 	heat_protection = HANDS
 	max_heat_protection_temperature = FIRE_SUIT_MAX_TEMP_PROTECT
 
-/obj/item/clothing/shoes/f13/military/ncr_officer_boots/carl
+/obj/item/clothing/shoes/f13/military/leather/carl
 	desc = "Boots with an insulating layer for working around chemicals and in hazardous environments. These appear to be from an old army depot."
 	//Incredible utility, as it lacks almost all protection.
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100, "wound" = 0)

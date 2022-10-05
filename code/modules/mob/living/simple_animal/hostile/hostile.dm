@@ -620,7 +620,7 @@
 /mob/living/simple_animal/hostile/proc/ListTargetsLazy(_Z)//Step 1, find out what we can see
 	var/static/hostile_locs = typecacheof(list(/obj/mecha))
 	. = list()
-	for (var/mob/player as anything in SSmobs.clients_by_zlevel[_Z])
+	for (var/mob/living/player in SSmobs.clients_by_zlevel[_Z])
 		if (get_dist(player, src) < vision_range)
 			if (isturf(player.loc))
 				. += player

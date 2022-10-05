@@ -198,7 +198,7 @@
 /obj/item/storage/secure/safe/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.cant_hold = typecacheof(list(/obj/item/storage/secure/briefcase))
+	CANTHOLD_STATIC(STR, typecacheof(list(/obj/item/storage/secure/briefcase)))
 	STR.max_w_class = 8						//??
 
 /obj/item/storage/secure/safe/PopulateContents()

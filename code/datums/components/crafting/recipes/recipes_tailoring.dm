@@ -9,7 +9,7 @@
 				/obj/item/weaponcrafting/string = 1,
 				/obj/item/stack/crafting/metalparts = 1)
 	tools = list(TOOL_WORKBENCH)
-	time = 60
+	time = 80
 	category = CAT_CLOTHING
 	subcategory = CAT_ARMOR
 
@@ -42,18 +42,18 @@
 				/obj/item/stack/crafting/goodparts = 1,
 				/obj/item/stack/crafting/metalparts = 2)
 	tools = list(TOOL_WORKBENCH)
-	time = 10
+	time = 30
 	category = CAT_CLOTHING
 	subcategory = CAT_ARMOR
 
 /datum/crafting_recipe/armor_plate_plastit
 	name = "Armor Plate"
 	result = /obj/item/stack/crafting/armor_plate
-	reqs = list(/obj/item/stack/sheet/plasteel = 2,
+	reqs = list(/obj/item/stack/sheet/prewar = 2,
 				/obj/item/stack/crafting/goodparts = 1,
 				/obj/item/stack/crafting/metalparts = 2)
 	tools = list(TOOL_WORKBENCH)
-	time = 10
+	time = 30
 	category = CAT_CLOTHING
 	subcategory = CAT_ARMOR
 
@@ -119,7 +119,7 @@
 	category = CAT_CLOTHING
 	subcategory = CAT_ARMOR
 
-datum/crafting_recipe/steelbib
+/datum/crafting_recipe/steelbib
 	name = "Steel Breastplate"
 	result = /obj/item/clothing/suit/armor/f13/metalarmor/steelbib
 	reqs = list(/obj/item/stack/sheet/leather = 2,
@@ -131,7 +131,7 @@ datum/crafting_recipe/steelbib
 	category = CAT_CLOTHING
 	subcategory = CAT_ARMOR
 
-datum/crafting_recipe/steelbib/heavy
+/datum/crafting_recipe/steelbib/heavy
 	name = "Heavy Steel Breastplate"
 	result = /obj/item/clothing/suit/armor/f13/metalarmor/steelbib/oasis
 	reqs = list(/obj/item/clothing/suit/armor/f13/metalarmor/steelbib = 1,
@@ -895,6 +895,60 @@ datum/crafting_recipe/steelbib/heavy
 	category = CAT_CLOTHING
 	subcategory = CAT_MISCCLOTHING
 
+/datum/crafting_recipe/chestpatch
+	name = "Chest patch / insignia"
+	result = /obj/item/clothing/accessory/patch
+	reqs = list(/obj/item/stack/sheet/cloth = 1)
+	tools = list(TOOL_WORKBENCH)
+	time = 10
+	category = CAT_CLOTHING
+	subcategory = CAT_MISCCLOTHING
+
+/datum/crafting_recipe/armpatch
+	name = "Arm patch / insignia"
+	result = /obj/item/clothing/accessory/patch/arm
+	reqs = list(/obj/item/stack/sheet/cloth = 1)
+	tools = list(TOOL_WORKBENCH)
+	time = 15
+	category = CAT_CLOTHING
+	subcategory = CAT_MISCCLOTHING
+
+/datum/crafting_recipe/rainbowbunchcrown
+	name = "Rainbow Flower Crown"
+	result = /obj/item/clothing/head/rainbowbunchcrown/
+	time = 20
+	reqs = list(/obj/item/reagent_containers/food/snacks/grown/rainbow_flower = 5,
+				/obj/item/stack/cable_coil = 3)
+	category = CAT_CLOTHING
+	subcategory = CAT_MISCCLOTHING
+
+/datum/crafting_recipe/sunflowercrown
+	name = "Sunflower Crown"
+	result = /obj/item/clothing/head/sunflowercrown/
+	time = 20
+	reqs = list(/obj/item/grown/sunflower = 5,
+				/obj/item/stack/cable_coil = 3)
+	category = CAT_CLOTHING
+	subcategory = CAT_MISCCLOTHING
+
+/datum/crafting_recipe/poppycrown
+	name = "Poppy Crown"
+	result = /obj/item/clothing/head/poppycrown/
+	time = 20
+	reqs = list(/obj/item/reagent_containers/food/snacks/grown/poppy = 5,
+				/obj/item/stack/cable_coil = 3)
+	category = CAT_CLOTHING
+	subcategory = CAT_MISCCLOTHING
+
+/datum/crafting_recipe/lilycrown
+	name = "Lily Crown"
+	result = /obj/item/clothing/head/lilycrown/
+	time = 20
+	reqs = list(/obj/item/reagent_containers/food/snacks/grown/poppy/lily = 3,
+				/obj/item/stack/cable_coil = 3)
+	category = CAT_CLOTHING
+	subcategory = CAT_MISCCLOTHING
+
 /*
 /datum/crafting_recipe/durathread_vest
 	name = "Makeshift Vest"
@@ -1126,3 +1180,133 @@ datum/crafting_recipe/steelbib/heavy
 	category = CAT_CLOTHING
 	subcategory = CAT_GENCLOTHES
 */
+//Legion armor conversions
+/datum/crafting_recipe/legioncombatarmor
+	name = "Legion combat armor"
+	result = /obj/item/clothing/suit/armor/f13/combat/legion
+	blacklist = list(/obj/item/clothing/suit/armor/f13/combat/mk2)
+	reqs = list(/obj/item/clothing/suit/armor/f13/combat = 1,
+				/obj/item/toy/crayon/spraycan)
+	time = 30
+	category = CAT_CLOTHING
+	subcategory = CAT_ARMOR
+	always_available = FALSE
+
+/datum/crafting_recipe/legioncombathelmet
+	name = "legion combat helmet"
+	result = /obj/item/clothing/head/helmet/f13/combat/legion
+	blacklist = list(/obj/item/clothing/head/helmet/f13/combat/mk2)
+	reqs = list(/obj/item/clothing/head/helmet/f13/combat = 1,
+				/obj/item/toy/crayon/spraycan)
+	time = 30
+	category = CAT_CLOTHING
+	subcategory = CAT_ARMOR
+	always_available = FALSE
+
+/datum/crafting_recipe/legioncombatarmormk2
+	name = "reinforced legion combat armor"
+	result = /obj/item/clothing/suit/armor/f13/combat/mk2/legion
+	blacklist = list(/obj/item/clothing/suit/armor/f13/combat)
+	reqs = list(/obj/item/clothing/suit/armor/f13/combat/mk2 = 1,
+				/obj/item/toy/crayon/spraycan)
+	time = 30
+	category = CAT_CLOTHING
+	subcategory = CAT_ARMOR
+	always_available = FALSE
+
+/datum/crafting_recipe/legioncombathelmetmk2
+	name = "reinforced legion combat helmet"
+	result = /obj/item/clothing/head/helmet/f13/combat/mk2/legion
+	blacklist = list(/obj/item/clothing/head/helmet/f13/combat)
+	reqs = list(/obj/item/clothing/head/helmet/f13/combat/mk2 = 1,
+				/obj/item/toy/crayon/spraycan)
+	time = 30
+	category = CAT_CLOTHING
+	subcategory = CAT_ARMOR
+	always_available = FALSE
+
+// NCR Armor conversions
+/datum/crafting_recipe/ncrcombatarmor
+	name = "NCR combat armor"
+	result = /obj/item/clothing/suit/armor/f13/combat/ncr
+	blacklist = list(/obj/item/clothing/suit/armor/f13/combat/mk2)
+	reqs = list(/obj/item/clothing/suit/armor/f13/combat = 1,
+				/obj/item/toy/crayon/spraycan)
+	time = 30
+	category = CAT_CLOTHING
+	subcategory = CAT_ARMOR
+	always_available = FALSE
+
+/datum/crafting_recipe/ncrcombathelmet
+	name = "NCR combat helmet"
+	result = /obj/item/clothing/head/helmet/f13/combat/ncr
+	blacklist = list(/obj/item/clothing/head/helmet/f13/combat/mk2)
+	reqs = list(/obj/item/clothing/head/helmet/f13/combat = 1,
+				/obj/item/toy/crayon/spraycan)
+	time = 30
+	category = CAT_CLOTHING
+	subcategory = CAT_ARMOR
+	always_available = FALSE
+
+/datum/crafting_recipe/ncrcombatarmormk2
+	name = "reinforced NCR combat armor"
+	result = /obj/item/clothing/suit/armor/f13/combat/mk2/ncr
+	blacklist = list(/obj/item/clothing/suit/armor/f13/combat)
+	reqs = list(/obj/item/clothing/suit/armor/f13/combat/mk2 = 1,
+				/obj/item/toy/crayon/spraycan)
+	time = 30
+	category = CAT_CLOTHING
+	subcategory = CAT_ARMOR
+	always_available = FALSE
+
+/datum/crafting_recipe/ncrcombathelmetmk2
+	name = "reinforced NCR combat helmet"
+	result = /obj/item/clothing/head/helmet/f13/combat/mk2/ncr
+	blacklist = list(/obj/item/clothing/head/helmet/f13/combat)
+	reqs = list(/obj/item/clothing/head/helmet/f13/combat/mk2 = 1,
+				/obj/item/toy/crayon/spraycan)
+	time = 30
+	category = CAT_CLOTHING
+	subcategory = CAT_ARMOR
+	always_available = FALSE
+
+//Follower Armor
+
+/datum/crafting_recipe/follower_light
+	name = "Follower Insignia Stitching"
+	result = /obj/item/clothing/suit/hooded/followerlight
+	reqs = list(/obj/item/clothing/suit/toggle/labcoat,
+				/obj/item/stack/sheet/cloth = 1)
+	tools = list(TOOL_WORKBENCH)
+	time = 30
+	category = CAT_CLOTHING
+	subcategory = CAT_ARMOR
+	always_available = FALSE
+
+/datum/crafting_recipe/follower_medium
+	name = "Follower Labcoat Plating"
+	result = /obj/item/clothing/suit/hooded/followermedium
+	reqs = list(/obj/item/clothing/suit/hooded/followerlight,
+				/obj/item/stack/sheet/cloth = 1,
+				/obj/item/stack/crafting/armor_plate = 2,
+				/obj/item/stack/crafting/metalparts = 5,
+				/obj/item/stack/crafting/goodparts = 2)
+	tools = list(TOOL_WORKBENCH)
+	time = 30
+	category = CAT_CLOTHING
+	subcategory = CAT_ARMOR
+	always_available = FALSE
+
+/datum/crafting_recipe/follower_heavy
+	name = "Follower Labcoat Reforging"
+	result = /obj/item/clothing/suit/hooded/followerheavy
+	reqs = list(/obj/item/clothing/suit/hooded/followermedium,
+				/obj/item/stack/sheet/cloth = 1,
+				/obj/item/clothing/suit/armor/f13/metalarmor,
+				/obj/item/stack/crafting/metalparts = 5,
+				/obj/item/stack/crafting/goodparts = 2)
+	tools = list(TOOL_WORKBENCH)
+	time = 30
+	category = CAT_CLOTHING
+	subcategory = CAT_ARMOR
+	always_available = FALSE

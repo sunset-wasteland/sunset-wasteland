@@ -202,14 +202,14 @@
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 3
 	STR.max_w_class = WEIGHT_CLASS_NORMAL
-	STR.can_hold = typecacheof(list(
+	CANHOLD_STATIC(STR, typecacheof(list(
 		/obj/item/ammo_box/shotgun,
 		/obj/item/ammo_box/lasmusket,
 		/obj/item/reagent_containers/food/drinks/flask,
 		/obj/item/grenade/f13,
 		/obj/item/reagent_containers/food/drinks/bottle/molotov,
 		/obj/item/grenade/homemade
-		))
+		)))
 
 
 // END OF FALLOUT BELTS
@@ -234,7 +234,7 @@
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_w_class = WEIGHT_CLASS_BULKY
-	STR.can_hold = typecacheof(list(
+	CANHOLD_STATIC(STR, typecacheof(list(
 		/obj/item/healthanalyzer,
 		/obj/item/dnainjector,
 		/obj/item/reagent_containers/dropper,
@@ -284,7 +284,7 @@
 		/obj/item/weldingtool/basic,
 		/obj/item/stack/sticky_tape, //surgical tape
 		/obj/item/handsaw
-		))
+		)))
 
 
 
@@ -311,7 +311,7 @@
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 5
 	STR.max_w_class = WEIGHT_CLASS_NORMAL
-	STR.can_hold = typecacheof(list(
+	CANHOLD_STATIC(STR, typecacheof(list(
 		/obj/item/melee/baton,
 		/obj/item/melee/classic_baton,
 		/obj/item/grenade,
@@ -328,7 +328,7 @@
 		/obj/item/radio,
 		/obj/item/clothing/gloves,
 		/obj/item/restraints/legcuffs/bola
-		))
+		)))
 
 /obj/item/storage/belt/security/full/PopulateContents()
 	new /obj/item/reagent_containers/spray/pepper(src)
@@ -351,7 +351,7 @@
 	STR.max_items = 6
 	STR.max_w_class = WEIGHT_CLASS_BULKY
 	STR.max_combined_w_class = 20
-	STR.can_hold = typecacheof(list(
+	CANHOLD_STATIC(STR, typecacheof(list(
 		/obj/item/crowbar,
 		/obj/item/screwdriver,
 		/obj/item/weldingtool,
@@ -403,7 +403,7 @@
 		/obj/item/radio,
 		/obj/item/clothing/gloves,
 		/obj/item/restraints/legcuffs/bola
-		))
+		)))
 
 
 /obj/item/storage/belt/mining/vendor
@@ -464,10 +464,10 @@
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 6
 	STR.max_w_class = WEIGHT_CLASS_SMALL
-	STR.can_hold = typecacheof(list(
+	CANHOLD_STATIC(STR, typecacheof(list(
 		/obj/item/reagent_containers/food/snacks,
 		/obj/item/reagent_containers/food/drinks
-		))
+		)))
 
 	var/amount = 5
 	var/rig_snacks
@@ -554,7 +554,7 @@
 	STR.max_items = 14
 	STR.max_combined_w_class = 32
 	STR.max_w_class = WEIGHT_CLASS_NORMAL
-	STR.can_hold = typecacheof(list(
+	CANHOLD_STATIC(STR, typecacheof(list(
 		/obj/item/crowbar,
 		/obj/item/screwdriver,
 		/obj/item/weldingtool,
@@ -579,7 +579,7 @@
 		/obj/item/stack/tile/plasteel,
 		/obj/item/grenade/chem_grenade/metalfoam,
 		/obj/item/grenade/chem_grenade/smart_metal_foam
-		))
+		)))
 
 /obj/item/storage/belt/grenade
 	name = "grenadier belt"
@@ -595,14 +595,14 @@
 	STR.display_numerical_stacking = TRUE
 	STR.max_combined_w_class = 60
 	STR.max_w_class = WEIGHT_CLASS_BULKY
-	STR.can_hold = typecacheof(list(
+	CANHOLD_STATIC(STR, typecacheof(list(
 		/obj/item/grenade,
 		/obj/item/screwdriver,
 		/obj/item/lighter,
 		/obj/item/multitool,
 		/obj/item/reagent_containers/food/drinks/bottle/molotov,
 		/obj/item/grenade/plastic/c4,
-		))
+		)))
 
 /obj/item/storage/belt/grenade/full/PopulateContents()
 	new /obj/item/grenade/flashbang(src)
@@ -645,7 +645,7 @@
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 6
 	STR.max_w_class = WEIGHT_CLASS_BULKY // Set to this so the  light replacer can fit.
-	STR.can_hold = typecacheof(list(
+	CANHOLD_STATIC(STR, typecacheof(list(
 		/obj/item/grenade/chem_grenade,
 		/obj/item/lightreplacer,
 		/obj/item/flashlight,
@@ -663,7 +663,7 @@
 		/obj/item/assembly/mousetrap,
 		/obj/item/screwdriver,
 		/obj/item/stack/cable_coil
-		))
+		)))
 
 
 
@@ -688,9 +688,9 @@
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 32
 	STR.display_numerical_stacking = TRUE
-	STR.can_hold = typecacheof(list(
+	CANHOLD_STATIC(STR, typecacheof(list(
 		/obj/item/ammo_casing
-		))
+		)))
 
 //CIT QUIVER
 /*/obj/item/storage/belt/quiver
@@ -704,9 +704,9 @@
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 15
 	STR.display_numerical_stacking = TRUE
-	STR.can_hold = typecacheof(list(
+	CANHOLD_STATIC(STR, typecacheof(list(
 		/obj/item/ammo_casing/caseless/arrow
-		))
+		)))
 */
 /obj/item/storage/belt/medolier
 	name = "medolier"
@@ -722,9 +722,15 @@
 	STR.allow_quick_gather = TRUE
 	STR.allow_quick_empty = TRUE
 	STR.click_gather = TRUE
-	STR.can_hold = typecacheof(list(
-		/obj/item/reagent_containers/syringe/dart
-		))
+	CANHOLD_STATIC(STR, typecacheof(list(
+		/obj/item/reagent_containers/syringe/dart,
+		/obj/item/storage/pill_bottle,
+		/obj/item/reagent_containers/medspray,
+		/obj/item/reagent_containers/pill,
+		/obj/item/reagent_containers/glass/bottle,
+		/obj/item/reagent_containers/hypospray,
+		/obj/item/reagent_containers/syringe,
+		)))
 
 /obj/item/storage/belt/medolier/full/PopulateContents()
 	for(var/i in 1 to 16)
@@ -764,7 +770,7 @@
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 4
 	STR.max_w_class = WEIGHT_CLASS_NORMAL
-	STR.can_hold = typecacheof(list(
+	CANHOLD_STATIC(STR, typecacheof(list(
 		/obj/item/gun/ballistic/automatic/pistol,
 		/obj/item/gun/ballistic/revolver,
 		/obj/item/ammo_box/magazine,
@@ -795,7 +801,7 @@
 		/obj/item/gun/energy/laser/plasma/pistol/alien,
 		/obj/item/stock_parts/cell/ammo/ec,
 		/obj/item/stock_parts/cell/ammo/ecp,
-		))
+		)))
 
 /obj/item/storage/belt/holster/full/PopulateContents()
 	new /obj/item/gun/ballistic/revolver/detective(src)
@@ -831,6 +837,18 @@
 	new /obj/item/ammo_box/c4570(src)
 	new /obj/item/ammo_box/c4570(src)
 	new /obj/item/ammo_box/c4570(src)
+
+/obj/item/storage/belt/holster/sheriff/PopulateContents()
+	new /obj/item/gun/ballistic/revolver/revolver44/sheriff(src)
+	new /obj/item/ammo_box/m44(src)
+	new /obj/item/ammo_box/m44(src)
+	new /obj/item/ammo_box/m44(src)
+
+/obj/item/storage/belt/holster/regulator/PopulateContents()
+	new /obj/item/gun/energy/laser/complianceregulator(src)
+	new /obj/item/stock_parts/cell/ammo/ec(src)
+	new /obj/item/stock_parts/cell/ammo/ec(src)
+	new /obj/item/stock_parts/cell/ammo/ec(src)
 
 /obj/item/storage/belt/holster/legholster
 	name = "leg holster"
@@ -902,7 +920,8 @@
 		. += "<span class='notice'>Alt-click it to quickly draw the blade.</span>"
 
 /obj/item/storage/belt/sabre/PopulateContents()
-	new starting_sword(src)
+	if(ispath(starting_sword))
+		new starting_sword(src)
 
 /obj/item/storage/belt/sabre/heavy
 	name = "heavy-duty sheath"
@@ -955,7 +974,6 @@
 	content_overlays = TRUE
 	onmob_overlays = TRUE
 	var/list/fitting_swords = list(/obj/item/melee/smith/sword, /obj/item/melee/baton/stunsword)
-	var/starting_sword = null
 
 // Instead of half-assed broken weaboo stuff lets have something that works.
 /obj/item/storage/belt/sword/twin
@@ -964,7 +982,6 @@
 	icon_state = "sheath_twin"
 	item_state = "sheath_twin"
 	fitting_swords = list(/obj/item/melee/smith/wakizashi, /obj/item/melee/smith/twohand/katana, /obj/item/melee/bokken)
-	starting_sword = null
 
 /obj/item/storage/belt/sword/twin/ComponentInitialize()
 	. = ..()
@@ -1041,7 +1058,7 @@
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 8
-	STR.can_hold = typecacheof(list(/obj/item/ammo_casing/caseless/arrow))
+	CANHOLD_STATIC(STR, typecacheof(list(/obj/item/ammo_casing/caseless/arrow)))
 	STR.max_w_class = 3
 	STR.max_combined_w_class = 24
 
@@ -1088,7 +1105,7 @@
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 8
-	STR.can_hold = typecacheof(list(/obj/item/ammo_casing/caseless/arrow))
+	CANHOLD_STATIC(STR, typecacheof(list(/obj/item/ammo_casing/caseless/arrow)))
 	STR.max_w_class = 3
 	STR.max_combined_w_class = 24
 

@@ -12,7 +12,7 @@
 				/obj/item/electropack/shockcollar = 1,
 				/obj/item/stack/cable_coil = 1,
 				/obj/item/assembly/igniter = 1,)
-	time = 30
+	time = 120
 	category = CAT_EXPLOSIVE
 
 /datum/crafting_recipe/chemical_payload
@@ -24,7 +24,7 @@
 		/obj/item/grenade/chem_grenade = 2
 	)
 	parts = list(/obj/item/stock_parts/matter_bin = 1, /obj/item/grenade/chem_grenade = 2)
-	time = 30
+	time = 60
 	category = CAT_EXPLOSIVE
 
 /datum/crafting_recipe/explosive/molotov
@@ -33,7 +33,7 @@
 	reqs = list(/obj/item/reagent_containers/rag = 1,
 		/obj/item/reagent_containers/food/drinks/bottle = 1,
 		)
-	time = 2
+	time = 60
 	category = CAT_EXPLOSIVE
 
 /datum/crafting_recipe/explosive/firebomb
@@ -43,7 +43,7 @@
 				/obj/item/stack/cable_coil = 1,
 				/obj/item/assembly/igniter = 1,
 				/obj/item/reagent_containers/food/drinks/flask = 1)
-	time = 5
+	time = 60
 	category = CAT_EXPLOSIVE
 
 /datum/crafting_recipe/explosive/coffeepotbomb
@@ -53,7 +53,7 @@
 				/obj/item/stack/ore/blackpowder = 5,
 				/obj/item/stack/cable_coil = 1,
 				/obj/item/assembly/timer = 1)
-	time = 5
+	time = 120
 	category = CAT_EXPLOSIVE
 
 /datum/crafting_recipe/explosive/bottlecap_mine
@@ -64,7 +64,7 @@
 			/obj/item/assembly/prox_sensor = 1,
 			/obj/item/stack/cable_coil = 5,
 			/obj/item/stack/f13Cash/caps = 200)
-	time = 15
+	time = 150
 	category = CAT_EXPLOSIVE
 /datum/crafting_recipe/explosive/shrapnelmine
 	name = "Shrapnel Mine"
@@ -75,7 +75,7 @@
 			/obj/item/stack/ore/blackpowder = 1,
 			/obj/item/assembly/prox_sensor = 1,
 			/obj/item/stack/cable_coil = 5)
-	time = 15
+	time = 120
 	category = CAT_EXPLOSIVE
 	always_available = FALSE
 
@@ -90,7 +90,7 @@
 			/obj/item/assembly/prox_sensor = 1,
 			/obj/item/stack/cable_coil = 5
 	)
-	time = 15
+	time = 120
 	category = CAT_EXPLOSIVE
 	always_available = FALSE
 
@@ -105,7 +105,7 @@
 			/obj/item/assembly/prox_sensor = 1,
 			/obj/item/stack/cable_coil = 5
 	)
-	time = 15
+	time = 120
 	category = CAT_EXPLOSIVE
 	always_available = FALSE
 
@@ -119,7 +119,7 @@
 			/obj/item/assembly/prox_sensor = 1,
 			/obj/item/stack/cable_coil = 30
 	)
-	time = 15
+	time = 150
 	category = CAT_EXPLOSIVE
 	always_available = FALSE
 
@@ -132,7 +132,7 @@
 			/obj/item/assembly/prox_sensor = 1,
 			/obj/item/stack/cable_coil = 5
 	)
-	time = 15
+	time = 80
 	category = CAT_EXPLOSIVE
 	always_available = FALSE
 
@@ -161,8 +161,9 @@
 			/obj/item/stack/cable_coil = 5
 	)
 	tools = list(TOOL_AWORKBENCH)
-	time = 5
+	time = 60
 	always_available = FALSE
+	granting_trait = TRAIT_ADVANCED_EXPLOSIVE_CRAFTING
 
 /datum/crafting_recipe/frag_shrapnel
 	name = "Fragmentation Grenade"
@@ -178,8 +179,9 @@
 			/obj/item/stack/cable_coil = 5
 	)
 	tools = list(TOOL_AWORKBENCH)
-	time = 5
+	time = 60
 	always_available = FALSE
+	granting_trait = list(list(TRAIT_EXPLOSIVE_CRAFTING, TRAIT_ADVANCED_EXPLOSIVE_CRAFTING))
 
 /datum/crafting_recipe/incendiary
 	name = "Incendiary Grenade"
@@ -195,8 +197,9 @@
 			/obj/item/stack/cable_coil = 5
 	)
 	tools = list(TOOL_AWORKBENCH)
-	time = 5
+	time = 60
 	always_available = FALSE
+	granting_trait = TRAIT_ADVANCED_EXPLOSIVE_CRAFTING
 
 /datum/crafting_recipe/stinger
 	name = "Stinger Grenade"
@@ -211,8 +214,9 @@
 			/obj/item/stack/cable_coil = 5
 	)
 	tools = list(TOOL_AWORKBENCH)
-	time = 5
+	time = 60
 	always_available = FALSE
+	granting_trait = list(list(TRAIT_EXPLOSIVE_CRAFTING, TRAIT_ADVANCED_EXPLOSIVE_CRAFTING))
 
 /datum/crafting_recipe/radgrenade
 	name = "Radiation Grenade"
@@ -229,8 +233,9 @@
 			/obj/item/stack/cable_coil = 5
 	)
 	tools = list(TOOL_AWORKBENCH)
-	time = 5
+	time = 60
 	always_available = FALSE
+	granting_trait = TRAIT_ADVANCED_EXPLOSIVE_CRAFTING
 
 /datum/crafting_recipe/flashbang
 	name = "Flashbang"
@@ -245,8 +250,9 @@
 			/obj/item/stack/cable_coil = 5
 	)
 	tools = list(TOOL_AWORKBENCH)
-	time = 5
+	time = 40
 	always_available = FALSE
+	granting_trait = list(list(TRAIT_EXPLOSIVE_CRAFTING, TRAIT_ADVANCED_EXPLOSIVE_CRAFTING))
 
 /datum/crafting_recipe/smokebomb
 	name = "Smokebomb"
@@ -261,8 +267,9 @@
 			/obj/item/stack/cable_coil = 5
 	)
 	tools = list(TOOL_AWORKBENCH)
-	time = 5
+	time = 40
 	always_available = FALSE
+	granting_trait = list(list(TRAIT_EXPLOSIVE_CRAFTING, TRAIT_ADVANCED_EXPLOSIVE_CRAFTING))
 
 /datum/crafting_recipe/empgrenade
 	name = "Pulse Grenade"
@@ -277,8 +284,9 @@
 			/obj/item/stack/cable_coil = 200
 	)
 	tools = list(TOOL_AWORKBENCH)
-	time = 5
+	time = 80
 	always_available = FALSE
+	granting_trait = TRAIT_ADVANCED_EXPLOSIVE_CRAFTING
 
 /datum/crafting_recipe/rocket_base
 	name = "Empty rocket shell"
@@ -293,8 +301,9 @@
 				/obj/item/assembly/igniter = 1
 	)
 	tools = list(TOOL_AWORKBENCH)
-	time = 5
+	time = 15
 	always_available = FALSE
+	granting_trait = list(list(TRAIT_EXPLOSIVE_CRAFTING, TRAIT_ADVANCED_EXPLOSIVE_CRAFTING))
 
 /datum/crafting_recipe/weakrocket
 	name = "Low-yield HE rocket"
@@ -307,8 +316,9 @@
 		/obj/item/stack/ore/blackpowder = 5,
 	)
 	tools = list(TOOL_AWORKBENCH)
-	time = 5
+	time = 30
 	always_available = FALSE
+	granting_trait = list(list(TRAIT_EXPLOSIVE_CRAFTING, TRAIT_ADVANCED_EXPLOSIVE_CRAFTING))
 
 /datum/crafting_recipe/strongrocket
 	name = "High-yield HE rocket"
@@ -321,7 +331,7 @@
 		/obj/item/stack/ore/blackpowder = 15,
 	)
 	tools = list(TOOL_AWORKBENCH)
-	time = 5
+	time = 45
 	always_available = FALSE
 
 /datum/crafting_recipe/incendiaryrocket
@@ -336,5 +346,6 @@
 		/datum/reagent/phlogiston = 200
 	)
 	tools = list(TOOL_AWORKBENCH)
-	time = 5
+	time = 60
 	always_available = FALSE
+	granting_trait = TRAIT_ADVANCED_EXPLOSIVE_CRAFTING

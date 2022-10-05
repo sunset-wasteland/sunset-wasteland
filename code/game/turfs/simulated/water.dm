@@ -1,7 +1,7 @@
 /turf/open/water
 	gender = PLURAL
-	name = "water"
-	desc = "Shallow water."
+	name = "spring water"
+	desc = "Shallow, almost clear water."
 	icon = 'icons/turf/floors.dmi'
 	icon_state = "riverwater_motion"
 	baseturfs = /turf/open/indestructible/ground/inside/mountain
@@ -25,6 +25,21 @@
 /turf/open/water/Initialize()
 	. = ..()
 	update_icon()
+	// Moved from /turf/open/indestructible/ground/outside/desert to reduce lag.
+	for(var/direction in GLOB.cardinals)
+		var/turf/turf_to_check = get_step(src, direction)
+		if(turf_to_check.type == /turf/open/indestructible/ground/outside/desert) // don't do it for subtypes!
+			var/obj/effect/overlay/desert_side/DS = new /obj/effect/overlay/desert_side(turf_to_check)
+			switch(direction)
+				if(NORTH)
+					DS.pixel_y = -32
+				if(SOUTH)
+					DS.pixel_y = 32
+				if(EAST)
+					DS.pixel_x = -32
+				if(WEST)
+					DS.pixel_x = 32
+			DS.dir = direction
 
 /turf/open/water/update_icon()
 	. = ..()
@@ -47,7 +62,7 @@
 		if(L.check_submerged() <= 0)
 			return
 		if(!istype(newloc, /turf/open/water))
-			to_chat(L, "<span class='warning'>You climb out of \the [src].</span>")
+			to_chat(L, "<span class='warning'>You wade through \the [src].</span>")
 	..()
 
 /mob/living/proc/check_submerged()

@@ -142,6 +142,7 @@ GLOBAL_LIST_EMPTY(doppler_arrays)
 /obj/machinery/doppler_array/research
 	name = "tachyon-doppler research array"
 	desc = "A specialized tachyon-doppler bomb detection array that uses the results of the highest yield of explosions for research."
+	var/research_id = "SCIENCE" // TODO: Config with multitool? DCS component?
 	var/datum/techweb/linked_techweb
 
 /obj/machinery/doppler_array/research/sense_explosion(turf/epicenter, dev, heavy, light, time, orig_dev, orig_heavy, orig_light)	//probably needs a way to ignore admin explosives later on
@@ -156,24 +157,19 @@ GLOBAL_LIST_EMPTY(doppler_arrays)
 
 	/*****The Point Calculator*****/
 
-	if(orig_light < 10)
+	if(orig_light < 5)
 		say("Explosion not large enough for research calculations.")
 		return
-	else if(orig_light < 4500)
-		point_gain = (83300 * orig_light) / (orig_light + 3000)
-	else
-		point_gain = TECHWEB_BOMB_POINTCAP
+	else if(orig_light < BOMB_TARGET_SIZE) // we want to give fewer points if below the target; this curve does that
+		point_gain = (BOMB_TARGET_POINTS * orig_light ** BOMB_SUB_TARGET_EXPONENT) / (BOMB_TARGET_SIZE**BOMB_SUB_TARGET_EXPONENT)
+	else // once we're at the target, switch to a hyperbolic function so we can't go too far above it, but bigger bombs always get more points
+		point_gain = (BOMB_TARGET_POINTS * 2 * orig_light) / (orig_light + BOMB_TARGET_SIZE)
 
 	/*****The Point Capper*****/
 	if(point_gain > linked_techweb.largest_bomb_value)
-		if(point_gain <= TECHWEB_BOMB_POINTCAP || linked_techweb.largest_bomb_value < TECHWEB_BOMB_POINTCAP)
-			var/old_tech_largest_bomb_value = linked_techweb.largest_bomb_value //held so we can pull old before we do math
-			linked_techweb.largest_bomb_value = point_gain
-			point_gain -= old_tech_largest_bomb_value
-			point_gain = min(point_gain,TECHWEB_BOMB_POINTCAP)
-		else
-			linked_techweb.largest_bomb_value = TECHWEB_BOMB_POINTCAP
-			point_gain = 1000
+		var/old_tech_largest_bomb_value = linked_techweb.largest_bomb_value //held so we can pull old before we do math
+		linked_techweb.largest_bomb_value = point_gain
+		point_gain -= old_tech_largest_bomb_value
 		var/datum/bank_account/D = SSeconomy.get_dep_account(ACCOUNT_SCI)
 		if(D)
 			D.adjust_money(point_gain)
@@ -184,7 +180,11 @@ GLOBAL_LIST_EMPTY(doppler_arrays)
 		say("Data already captured. Aborting.")
 		return
 
-
-/obj/machinery/doppler_array/research/science/Initialize()
+/obj/machinery/doppler_array/research/Initialize()
 	. = ..()
-	linked_techweb = SSresearch.science_tech
+	update_techweb()
+
+/obj/machinery/doppler_array/research/proc/update_techweb(new_research_id = null)
+	if(istext(new_research_id))
+		research_id = new_research_id
+	linked_techweb = SSresearch.get_techweb_by_id(research_id)

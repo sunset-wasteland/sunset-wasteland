@@ -236,7 +236,7 @@
 	armour_penetration = 0.1
 	custom_materials = null
 
-obj/item/melee/onehanded/knife/switchblade
+/obj/item/melee/onehanded/knife/switchblade
 	name = "switchblade"
 	desc = "A sharp, concealable, spring-loaded knife."
 	icon_state = "knife_switch"
@@ -725,6 +725,21 @@ obj/item/melee/onehanded/knife/switchblade
 	force = 24
 	custom_materials = list(/datum/material/iron = 2000)
 
+// Brass knuckles	Keywords: Damage 23
+/obj/item/melee/unarmed/brass/lovetap
+	name = "Love Tap"
+	desc = "Specially made brass knuckles, designed to get the most out of your love taps."
+	icon_state = "brass"
+	item_state = "brass"
+	attack_verb = list("tapped", "punched", "jabbed", "whacked")
+	force = 28
+
+/obj/item/melee/unarmed/brass/lovetap/attack(mob/living/M, mob/living/user)
+	. = ..()
+	if(!istype(M))
+		return
+	M.apply_damage(25, STAMINA, null, 0)
+
 // Spiked knuckles	Keywords: Damage 24
 /obj/item/melee/unarmed/brass/spiked
 	name = "spiked knuckes"
@@ -795,12 +810,13 @@ obj/item/melee/onehanded/knife/switchblade
 	attack_verb = list("stabbed", "sliced", "pierced", "diced", "cut")
 	hitsound = 'sound/weapons/bladeslice.ogg'
 
-obj/item/melee/unarmed/punchdagger/cyborg
+/obj/item/melee/unarmed/punchdagger/cyborg
 	name = "assaultron claws"
 	desc = "Razor sharp blades embedded into the grippers of an assaultron. Sharp."
 	icon_state = "tiger_claw"
 	item_state = "tiger_claw"
 	force = 40 //Assaultron, so, makes sense.
+	armour_penetration = 0.5
 
 // Deathclaw Gauntlet	Keywords: Damage 28, AP 1
 /obj/item/melee/unarmed/deathclawgauntlet
@@ -845,10 +861,10 @@ obj/item/melee/unarmed/punchdagger/cyborg
 	attack_speed = CLICK_CD_MELEE * 0.7
 
 /obj/item/melee/unarmed/yaoguaigauntlet/attack(mob/living/target, mob/living/user)
-	if(isliving(target))
-		target.apply_status_effect(/datum/status_effect/stacking/saw_bleed/yaoguaigauntlet)
-	else
+	. = ..()
+	if(!isliving(target))
 		return
+	target.apply_status_effect(/datum/status_effect/stacking/saw_bleed/yaoguaigauntlet)
 
 
 ///////////
@@ -878,7 +894,7 @@ obj/item/melee/unarmed/punchdagger/cyborg
 	righthand_file = 'icons/fallout/onmob/weapons/melee1h_righthand.dmi'
 	icon_state = "entrenching_tool"
 	item_state = "trench"
-	w_class = WEIGHT_CLASS_NORMAL
+	w_class = WEIGHT_CLASS_SMALL
 	force = 30
 	throwforce = 15
 	toolspeed = 0.7

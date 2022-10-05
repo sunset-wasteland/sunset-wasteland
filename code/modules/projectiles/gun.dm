@@ -188,10 +188,10 @@ ATTACHMENTS
 	var/inaccuracy_modifier = 1
 	var/extra_speed = 0
 
-	var/obj/item/attachments/scope
-	var/obj/item/attachments/recoil_decrease
-	var/obj/item/attachments/burst_improvement
-	var/obj/item/attachments/auto_sear
+	var/obj/item/attachments/scope/scope
+	var/obj/item/attachments/recoil_decrease/recoil_decrease
+	var/obj/item/attachments/burst_improvement/burst_improvement
+	var/obj/item/attachments/auto_sear/auto_sear
 
 	lefthand_file = 'icons/mob/inhands/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/guns_righthand.dmi'
@@ -305,6 +305,32 @@ ATTACHMENTS
 			. += "<span class='info'>[gun_light] looks like it can be <b>unscrewed</b> from [src].</span>"
 	else if(can_flashlight)
 		. += "It has a mounting point for a <b>seclite</b>."
+	if(can_scope)
+		if(scope)
+			. += "It has a scope mounted on its rail."
+		else
+			. += "It has a rail, suitable for a <b>scope</b>."
+	if(can_bayonet)
+		if (bayonet)
+			. += "It has a bayonet attached at the front of its barrel."
+		else
+			. += "It has a bayonet lug, suitable for a <b>bayonet</b>."
+	if (suppressed)
+		. += "It has a [can_unsuppress ? "built-in " : ""]suppressor mounted on its muzzle."
+	else if (can_suppress)
+		. += "It has a threaded barrel exterior suitable for installing a <b>[can_unsuppress ? "permanent " : ""]suppressor</b>."
+	if (can_attachments)
+		var/free_slots = 2 // update if more are added, or refactor this to use a list of attachments
+		if(burst_improvement)
+			. += "It has a modified burst cam installed."
+			free_slots--
+		if(recoil_decrease)
+			. += "It has a recoil compensator installed."
+			free_slots--
+		if(free_slots > 0)
+			. += "It has [free_slots] empty mounting point\s for miscellaneous attachments."
+
+
 
 //called after the gun has successfully fired its chambered ammo.
 /obj/item/gun/proc/process_chamber(mob/living/user)
@@ -356,18 +382,18 @@ ATTACHMENTS
 			O.emp_act(severity)
 
 /obj/item/gun/attack(mob/living/M, mob/user)
-	. = ..()
 	if(bayonet && user.a_intent == INTENT_HARM)
 		M.attackby(bayonet, user) // handles cooldown
 		return
+	. = ..()
 	if(!(. & DISCARD_LAST_ACTION))
 		user.DelayNextAction(attack_speed)
 
 /obj/item/gun/attack_obj(obj/O, mob/user)
-	. = ..()
-	if(bayonet && user.a_intent == INTENT_HARM)
+	if(bayonet && user.a_intent == INTENT_HARM) // Must run BEFORE parent call, so we don't smack them with the gun body too.
 		O.attackby(bayonet, user) // handles cooldown
 		return
+	. = ..()
 	if(!(. & DISCARD_LAST_ACTION))
 		user.DelayNextAction(attack_speed)
 
@@ -645,7 +671,6 @@ ATTACHMENTS
 			if(!user.transferItemToLoc(I, src))
 				return
 			recoil_decrease = R
-			src.desc += " It has a recoil compensator installed."
 			if (src.spread > 10)
 				src.spread -= 4
 			else
@@ -659,7 +684,6 @@ ATTACHMENTS
 			if(!user.transferItemToLoc(I, src))
 				return
 			burst_improvement = T
-			src.desc += " It has a modified burst cam installed."
 			src.burst_size += 2
 			src.spread += 5
 			src.burst_shot_delay += 0.25
@@ -700,7 +724,7 @@ ATTACHMENTS
 		var/obj/item/attachments/scope/C = scope
 		C.forceMove(get_turf(user))
 		src.zoomable = FALSE
-		azoom.Remove(user)
+		QDEL_NULL(azoom) // removes it + stops it from being re-added until we readd the scope
 		scope = null
 		update_icon()
 		return TRUE
@@ -781,7 +805,7 @@ ATTACHMENTS
 	. = ..()
 	if(user.get_active_held_item() != src) //we can only stay zoomed in if it's in our hands	//yeah and we only unzoom if we're actually zoomed using the gun!!
 		zoom(user, FALSE)
-		if(zoomable == TRUE)
+		if(azoom)
 			azoom.Remove(user)
 
 /obj/item/gun/dropped(mob/user)

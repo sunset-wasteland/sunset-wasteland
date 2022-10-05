@@ -22,7 +22,7 @@ GLOBAL_LIST_INIT(hair_gradients, list(
 	"Wavy" = "wavy"
 	))
 
-random_features(intendedspecies, intended_gender)
+/random_features(intendedspecies, intended_gender)
 	. = ..(intendedspecies, intended_gender)
 
 	var/grad_color = random_color()
@@ -35,13 +35,13 @@ random_features(intendedspecies, intended_gender)
 
 	return output
 
-randomize_human(mob/living/carbon/human/H)
+/randomize_human(mob/living/carbon/human/H)
 //	H.dna.features["flavor_text"] = "" // I'm so tempted to put lorem ipsum in the flavor text so freaking badly please someone hold me back god.
 	H.dna.features["grad_color"] = random_color()
 	H.dna.features["grad_style"] = pick(GLOB.hair_gradients)
 	..(H)
 
-/mob/living/carbon/human/proc/change_hair_gradient(var/hair_gradient)
+/mob/living/carbon/human/proc/change_hair_gradient(hair_gradient)
 	if(dna.features["grad_style"] == "none")
 		return
 
@@ -67,16 +67,13 @@ randomize_human(mob/living/carbon/human/H)
 		return . // There's an error!!
 
 	var/savefile/S = new /savefile(path)
-	S.cd = "/"
-	slot = sanitize_integer(slot, 1, max_save_slots, initial(default_slot))
-
 	S.cd = "/character[slot]"
 
 	S["gradient_color"]		>> features_override["grad_color"]
 	S["gradient_style"]		>> features_override["grad_style"]
 
-	features_override["grad_color"]		= sanitize_hexcolor(features_override["grad_color"], 6, FALSE)
-	features_override["grad_style"]		= sanitize_inlist(features_override["grad_style"], GLOB.hair_gradients)
+	features_override["grad_color"]		= sanitize_hexcolor(features_override["grad_color"], 6, FALSE, default = COLOR_ALMOST_BLACK)
+	features_override["grad_style"]		= sanitize_inlist(features_override["grad_style"], GLOB.hair_gradients, "none")
 
 	return 1
 
@@ -107,7 +104,7 @@ randomize_human(mob/living/carbon/human/H)
 				if("grad_color")
 					var/new_grad_color = input(user, "Choose your character's fading hair colour:", "Character Preference","#"+features_override["grad_color"]) as color|null
 					if(new_grad_color)
-						features_override["grad_color"] = sanitize_hexcolor(new_grad_color, 6)
+						features_override["grad_color"] = sanitize_hexcolor(new_grad_color, 6, default = COLOR_ALMOST_BLACK)
 
 				if("grad_style")
 					var/new_grad_style

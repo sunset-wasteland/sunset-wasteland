@@ -76,7 +76,7 @@ GLOBAL_LIST_INIT(turfs_without_ground, typecacheof(list(
 #define isangel(A) (is_species(A, /datum/species/angel))
 #define isvampire(A) (is_species(A, /datum/species/vampire))
 #define ismush(A) (is_species(A, /datum/species/mush))
-#define isshadow(A) (is_species(A, /datum/species/shadow))	
+#define isshadow(A) (is_species(A, /datum/species/shadow))
 #define isskeleton(A) (is_species(A, /datum/species/skeleton))
 #define isrobotic(A) (is_species(A, /datum/species/ipc) || is_species(A, /datum/species/synthliz) || is_species(A, /datum/species/synthanthro))
 #define isethereal(A) (is_species(A, /datum/species/ethereal))
@@ -91,7 +91,7 @@ GLOBAL_LIST_INIT(turfs_without_ground, typecacheof(list(
 #define isstartjelly(A) (is_species(A, /datum/species/jelly/roundstartslime))
 
 // Fallout specific species
-#define isghoul(A) (is_species(A, /datum/species/ghoul))
+#define isghoul(A) (is_species(A, /datum/species/ghoul) || is_species(A, /datum/species/ghoul/anthropomorph))
 //#define isghoul(A) (is_species(A, /datum/species/ghoul/glowing))
 //#definte issmutant(A) (is_pecies(A, /datum/species/smutant))
 
@@ -190,6 +190,8 @@ GLOBAL_LIST_INIT(turfs_without_ground, typecacheof(list(
 #define ismovableatom(A) istype(A, /atom/movable)
 
 #define isitem(A) (istype(A, /obj/item))
+
+#define isstack(A) (istype(A, /obj/item/stack))
 
 #define isgrenade(A) (istype(A, /obj/item/grenade))
 

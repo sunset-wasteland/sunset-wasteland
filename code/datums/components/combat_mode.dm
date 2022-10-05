@@ -5,7 +5,6 @@
 /datum/component/combat_mode
 	var/mode_flags = COMBAT_MODE_INACTIVE
 	var/combatmessagecooldown
-	var/lastmousedir
 	var/obj/screen/combattoggle/hud_icon
 	var/hud_loc
 
@@ -21,7 +20,7 @@
 	RegisterSignal(L, COMSIG_DISABLE_COMBAT_MODE, .proc/safe_disable_combat_mode)
 	RegisterSignal(L, COMSIG_ENABLE_COMBAT_MODE, .proc/safe_enable_combat_mode)
 	RegisterSignal(L, COMSIG_MOB_DEATH, .proc/on_death)
-	RegisterSignal(L, COMSIG_MOB_CLIENT_LOGOUT, .proc/on_logout)
+	RegisterSignal(L, COMSIG_MOB_LOGOUT, .proc/on_logout)
 	RegisterSignal(L, COMSIG_MOB_HUD_CREATED, .proc/on_mob_hud_created)
 	RegisterSignal(L, COMSIG_COMBAT_MODE_CHECK, .proc/check_flags)
 
@@ -44,7 +43,7 @@
 	hud_icon.icon = tg_ui_icon_to_cit_ui(source.hud_used.ui_style)
 	hud_icon.screen_loc = hud_loc
 	source.hud_used.static_inventory += hud_icon
-	hud_icon.update_icon()
+	hud_icon.update_icon_state() // icon is already set to the cit version
 
 /// Combat mode can be locked out, forcibly disabled by a status trait.
 /datum/component/combat_mode/proc/update_combat_lock()
@@ -65,7 +64,7 @@
 	if(locked)
 		if(hud_icon)
 			hud_icon.combat_on = TRUE
-			hud_icon.update_icon()
+			hud_icon.update_icon_state() // call this instead of update_icon to prevent potential lag
 		return
 	if(mode_flags & COMBAT_MODE_ACTIVE)
 		return
@@ -87,11 +86,10 @@
 			to_chat(source, self_message)
 		if(playsound)
 			source.playsound_local(source, 'sound/misc/ui_toggle_vats.ogg', 50, FALSE, pressure_affected = FALSE) //Sound from interbay!
-	RegisterSignal(source, COMSIG_MOB_CLIENT_MOUSEMOVE, .proc/onMouseMove)
-	RegisterSignal(source, COMSIG_MOVABLE_MOVED, .proc/on_move)
 	if(hud_icon)
 		hud_icon.combat_on = TRUE
-		hud_icon.update_icon()
+		hud_icon.update_icon_state() // call this instead of update_icon to prevent potential lag
+	source.set_dir_on_move = FALSE
 	var/mob/living/L = source
 	L.toggle_combat_mode()
 
@@ -100,7 +98,7 @@
 	if(locked)
 		if(hud_icon)
 			hud_icon.combat_on = FALSE
-			hud_icon.update_icon()
+			hud_icon.update_icon_state() // call this instead of update_icon to prevent potential lag
 		return
 	if(!(mode_flags & COMBAT_MODE_ACTIVE))
 		return
@@ -115,27 +113,15 @@
 			to_chat(source, self_message)
 		if(playsound)
 			source.playsound_local(source, 'sound/misc/ui_toggleoff.ogg', 50, FALSE, pressure_affected = FALSE) //Slightly modified version of the toggleon sound!
-	UnregisterSignal(source, list(COMSIG_MOB_CLIENT_MOUSEMOVE, COMSIG_MOVABLE_MOVED))
 	if(hud_icon)
 		hud_icon.combat_on = FALSE
-		hud_icon.update_icon()
+		hud_icon.update_icon_state() // call this instead of update_icon to prevent potential lag
+	source.set_dir_on_move = initial(source.set_dir_on_move)
 	source.stop_active_blocking()
 	source.end_parry_sequence()
 	var/mob/living/L = source
 	L.toggle_combat_mode()
 
-///Changes the user direction to (try) keep match the pointer.
-/datum/component/combat_mode/proc/on_move(atom/movable/source, dir, atom/oldloc, forced)
-	var/mob/living/L = source
-	if((mode_flags & COMBAT_MODE_ACTIVE) && L.client)
-		L.setDir(lastmousedir, ismousemovement = TRUE)
-
-///Changes the user direction to (try) match the pointer.
-/datum/component/combat_mode/proc/onMouseMove(mob/source, object, location, control, params)
-	if(source.client.show_popup_menus)
-		return
-	source.face_atom(object, TRUE)
-	lastmousedir = source.dir
 
 /// Toggles whether the user is intentionally in combat mode. THIS should be the proc you generally use! Has built in visual/to other player feedback, as well as an audible cue to ourselves.
 /datum/component/combat_mode/proc/user_toggle_intentional_combat_mode(mob/living/source)
@@ -183,6 +169,12 @@
 	icon_state = "combat_off"
 	var/mutable_appearance/flashy
 	var/combat_on = FALSE ///Wheter combat mode is enabled or not, so we don't have to store a reference.
+
+/obj/screen/combattoggle/update_icon()
+	// todo: report back if this causes lag
+	// it probably shouldn't because this should just run when ui style is changed
+	. = ..()
+	icon = tg_ui_icon_to_cit_ui(icon) // no-op if it's already set or unsupported
 
 /obj/screen/combattoggle/Click()
 	if(hud && usr == hud.mymob)

@@ -137,7 +137,7 @@
 	M.adjustBruteLoss(30)
 	src.visible_message(text("<span class='danger'>[M] falls free of [src]!</span>"))
 	unbuckle_mob(M,force=1)
-	M.emote("scream")
+	INVOKE_ASYNC(M, /mob/proc/emote, "scream")
 	M.DefaultCombatKnockdown(20)
 
 /obj/structure/kitchenspike/Destroy()

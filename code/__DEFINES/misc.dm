@@ -84,7 +84,7 @@ Will print: "/mob/living/carbon/human/death" (you can optionally embed it in a s
 #define MANIFEST_ERROR_CONTENTS		2
 #define MANIFEST_ERROR_ITEM			4
 
-#define TRANSITIONEDGE			7 //Distance from edge to move to another z-level
+#define TRANSITIONEDGE			0 //Distance from edge to move to another z-level
 
 #define BE_CLOSE TRUE		//in the case of a silicon, to select if they need to be next to the atom
 #define NO_DEXTERY TRUE	//if other mobs (monkeys, aliens, etc) can use this
@@ -138,9 +138,9 @@ Will print: "/mob/living/carbon/human/death" (you can optionally embed it in a s
 GLOBAL_LIST_EMPTY(bloody_footprints_cache)
 
 //Bloody shoes/footprints
-#define MAX_SHOE_BLOODINESS			100
+#define MAX_SHOE_BLOODINESS			5//from 100
 #define BLOODY_FOOTPRINT_BASE_ALPHA	150
-#define BLOOD_GAIN_PER_STEP			100
+#define BLOOD_GAIN_PER_STEP			5//from 100
 #define BLOOD_LOSS_PER_STEP			5
 #define BLOOD_LOSS_IN_SPREAD		20
 

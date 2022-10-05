@@ -11,31 +11,58 @@
 	obj_integrity = 400
 	max_integrity = 400
 	armor = list(melee = 50, bullet = 40, laser = 30, energy = 30, bomb = 0, bio = 0, rad = 0, fire = 30, acid = 40)
-	var/image/cover = null
-	var/datum_type = /datum/riding/motorcycle
+	key_type = /obj/item/key/motorcycle
+	var/static/mutable_appearance/motorcycle
+//	var/datum_type = /datum/riding/motorcycle
+	engine_on_sound = 'sound/f13machines/bike_start.ogg'
+	engine_loop_sound = 'sound/f13machines/bike_loop.ogg'
 
-/obj/vehicle/ridden/fuel/motorcycle/buckle_mob()
+/obj/vehicle/ridden/fuel/motorcycle/Initialize()
 	. = ..()
-	riding_datum = new datum_type()
+	update_icon()
+
+	var/datum/component/riding/D = LoadComponent(/datum/component/riding)
+	D.vehicle_move_delay = 1
+	D.set_riding_offsets(RIDING_OFFSET_ALL, list(TEXT_NORTH = list(0, 8), TEXT_SOUTH = list(-2, 5), TEXT_EAST = list(0, 12), TEXT_WEST = list( 2, 5)))
+	D.set_vehicle_dir_offsets(NORTH, -16, -16)
+	D.set_vehicle_dir_offsets(SOUTH, -16, -16)
+	D.set_vehicle_dir_offsets(EAST, -18, 0)
+	D.set_vehicle_dir_offsets(WEST, -18, 0)
+
+/obj/vehicle/ridden/fuel/motorcycle/post_buckle_mob(mob/living/M)
+	for(var/V in M.held_items)
+		var/obj/item/I = V
+		if(istype(I))
+			if(M.dropItemToGround(I))
+				var/obj/item/handlebars/TC = new(src)
+				M.put_in_hands(TC)
+		else	//Entries in the list should only ever be items or null, so if it's not an item, we can assume it's an empty hand
+			var/obj/item/handlebars/TC = new(src)
+			M.put_in_hands(TC)
+	add_overlay(motorcycle)
+	return ..()
+
+/obj/vehicle/ridden/fuel/motorcycle/post_unbuckle_mob(mob/living/buckled_mob,force = FALSE)
+	for(var/obj/item/I in buckled_mob.held_items)
+		if(istype(I, /obj/item/handlebars))
+			qdel(I)
+	if(!has_buckled_mobs())
+		cut_overlay(motorcycle)
+	return ..()
 
 /obj/vehicle/ridden/fuel/motorcycle/relaymove(mob/user)
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
-		if(istype(H.wear_suit, /obj/item/clothing/suit/armor/f13/power_armor))
+		if(istype(H.wear_suit, /obj/item/clothing/suit/armor/f13/power_armor))//Standard PA.
 			to_chat(user, "The [name] will not move, because you are too heavy.")
 			return
+		if(istype(H.wear_suit, /obj/item/clothing/suit/armored/heavy))//Salvaged PA and misc.
+			to_chat(user, "The [name] will not move, because you are too heavy.")
+			return
+		if(H.pulling)
+			to_chat(user, "The [name] will not move, because you are attempting to pull something.")
+			return
 	..()
-
-/obj/vehicle/ridden/fuel/motorcycle/post_buckle_mob(mob/living/M)
-	if(has_buckled_mobs())
-		add_overlay(cover)
-	else
-		overlays -= cover
-
-/obj/vehicle/ridden/fuel/motorcycle/New()
-	..()
-	cover = image(icon, "[icon_state]_cover")//"bike_cover")
-	cover.layer = ABOVE_MOB_LAYER
 
 /obj/item/key/motorcycle
 	name = "motorcycle key"
@@ -52,7 +79,12 @@
 	name = "rusty motorcycle"
 	desc = "A very old, weathered motorcycle.<br>Somehow the engine is still intact."
 	icon_state = "bike_rust_med"
-	datum_type = /datum/riding/motorcycle/slow
+//	D.vehicle_move_delay = 1.2
+
+/obj/vehicle/ridden/fuel/motorcycle/rusty/Initialize()
+	. = ..()
+	var/datum/component/riding/D = LoadComponent(/datum/component/riding)
+	D.vehicle_move_delay = 1.1//only 10% slower.
 
 /obj/vehicle/ridden/fuel/motorcycle/green
 	name = "green motorcycle"
@@ -68,38 +100,24 @@
 	name = "scrambler motorbike"
 	desc = "Scrambler is an old term for a dirt bike with a powerful engine that raced on dirt tracks with low jumps.<br>Something tells you it's better not to mess around with its owner."
 	icon_state = "bike_scrambler"
-	datum_type = /datum/riding/motorcycle/fast
 
-//Motorcycle riding datum
+/obj/vehicle/ridden/fuel/motorcycle/scrambler/Initialize()
+	. = ..()
+	var/datum/component/riding/D = LoadComponent(/datum/component/riding)
+	D.vehicle_move_delay = 0.7
 
-/datum/riding/motorcycle/fast
-	vehicle_move_delay = 0.7
+/*
+ * Handlebars
+ */
 
-/datum/riding/motorcycle/slow
-	vehicle_move_delay = 1.2
+/obj/item/handlebars
+	name = "motorcycle handlebars"
+	icon = 'icons/obj/items_and_weapons.dmi'
+	icon_state = "offhand"
+	w_class = WEIGHT_CLASS_HUGE
+	item_flags = ABSTRACT | NOBLUDGEON | DROPDEL
+	resistance_flags = FIRE_PROOF | UNACIDABLE | ACID_PROOF
 
-/datum/riding/motorcycle
-	keytype = /obj/item/key/motorcycle
-	vehicle_move_delay = 1
-
-/datum/riding/motorcycle/handle_vehicle_layer()
-	return
-
-/datum/riding/motorcycle/handle_vehicle_offsets()
-	..()
-	if(ridden.has_buckled_mobs())
-		for(var/m in ridden.buckled_mobs)
-			var/mob/living/buckled_mob = m
-			switch(buckled_mob.dir)
-				if(NORTH)
-					buckled_mob.pixel_x = 0
-					buckled_mob.pixel_y = 8
-				if(EAST)
-					buckled_mob.pixel_x = -2
-					buckled_mob.pixel_y = 5
-				if(SOUTH)
-					buckled_mob.pixel_x = 0
-					buckled_mob.pixel_y = 12
-				if(WEST)
-					buckled_mob.pixel_x = 2
-					buckled_mob.pixel_y = 5
+/obj/item/handlebars/Initialize()
+	. = ..()
+	ADD_TRAIT(src, TRAIT_NODROP, TRAIT_GENERIC)

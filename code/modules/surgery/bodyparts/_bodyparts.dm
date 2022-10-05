@@ -501,7 +501,7 @@
 		. = disabled //inertia, to avoid limbs healing 0.1 damage and being re-enabled
 		if(get_damage(TRUE) >= max_damage * (HAS_TRAIT(owner, TRAIT_EASYLIMBDISABLE) ? 0.6 : 1)) //Easy limb disable disables the limb at 40% health instead of 0%
 			if(!last_maxed)
-				owner.emote("scream")
+				INVOKE_ASYNC(owner, /mob/.proc/emote, "scream")
 				last_maxed = TRUE
 			if(!is_organic_limb() || stamina_dam >= max_damage)
 				return BODYPART_DISABLED_DAMAGE
@@ -754,7 +754,7 @@
 		should_draw_gender = FALSE
 
 	var/list/markings_list = list()
-	if(is_organic_limb())
+	if(is_organic_limb() || render_like_organic == TRUE)
 		limb.icon = base_bp_icon || 'icons/mob/human_parts.dmi'
 		if(should_draw_gender)
 			limb.icon_state = "[species_id]_[body_zone]_[icon_gender]"

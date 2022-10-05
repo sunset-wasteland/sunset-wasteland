@@ -98,6 +98,12 @@
 	name = "Dragon"
 	icon_state = "dragon"
 
+/datum/sprite_accessory/deco_wings/dragonalt
+	name = "Dragon Alt"
+	icon_state = "dragon_alt"
+	color_src = MATRIXED
+	matrixed_sections = MATRIX_RED_GREEN
+
 /datum/sprite_accessory/deco_wings/dragonfly
 	name = "Dragonfly"
 	icon_state = "dragonfly"
@@ -146,6 +152,10 @@
 	name = "Mantis Arms"
 	icon_state = "mantis"
 
+/datum/sprite_accessory/deco_wings/aspen
+	name = "Moth - Aspen"
+	icon_state = "aspen"
+
 /datum/sprite_accessory/deco_wings/moth_atlas
 	name = "Moth - Atlas"
 	icon_state = "atlas"
@@ -161,6 +171,14 @@
 /datum/sprite_accessory/deco_wings/moth_deathhead
 	name = "Moth - Deathshead"
 	icon_state = "deathhead"
+
+/datum/sprite_accessory/deco_wings/delirious
+	name = "Moth - Delirious"
+	icon_state = "delirious"
+
+/datum/sprite_accessory/deco_wings/dreamhead
+	name = "Moth - Dreamhead"
+	icon_state = "dreamhead"
 
 /datum/sprite_accessory/deco_wings/moth_feathery
 	name = "Moth - Feathery"
@@ -258,6 +276,18 @@
 	name = "Sepulchre"
 	icon_state = "sepulchre"
 
+/datum/sprite_accessory/deco_wings/sepulchre
+	name = "Sepulchre Alt"
+	icon_state = "sepulchrealt"
+	color_src = MATRIXED
+	matrixed_sections = MATRIX_RED
+
+/datum/sprite_accessory/deco_wings/succubus
+	name = "Succubus"
+	icon_state = "succubus"
+	color_src = MATRIXED
+	matrixed_sections = MATRIX_RED
+
 /datum/sprite_accessory/deco_wings/succubusblack
 	name = "Succubus - Black"
 	icon_state = "succubusblack"
@@ -286,6 +316,12 @@
 	name = "Spider Legs"
 	icon_state = "spider"
 
+/datum/sprite_accessory/deco_wings/sylveonbow
+	name = "Sylveon Bow"
+	icon_state = "sylveon_bow"
+	color_src = MATRIXED
+	matrixed_sections = MATRIX_ALL
+
 /datum/sprite_accessory/deco_wings/xeno
 	name = "Xeno Backplate"
 	icon_state = "backplate"
@@ -303,6 +339,10 @@
 	icon_state = "none"
 	relevant_layers = null
 
+/datum/sprite_accessory/insect_wings/aspen
+	name = "Aspen"
+	icon_state = "aspen"
+
 /datum/sprite_accessory/insect_wings/atlas
 	name = "Atlas"
 	icon_state = "atlas"
@@ -314,6 +354,14 @@
 /datum/sprite_accessory/insect_wings/deathhead
 	name = "Deathshead"
 	icon_state = "deathhead"
+
+/datum/sprite_accessory/insect_wings/delirious
+	name = "Delirious"
+	icon_state = "delirious"
+
+/datum/sprite_accessory/insect_wings/dreamhead
+	name = "Dreamhead"
+	icon_state = "dreamhead"
 
 /datum/sprite_accessory/insect_wings/featherymoth
 	name = "Feathery Moth Wings"

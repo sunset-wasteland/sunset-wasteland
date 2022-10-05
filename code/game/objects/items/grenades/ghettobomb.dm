@@ -51,7 +51,7 @@
 
 /obj/item/grenade/homemade/coffeepotbomb/Initialize()
 	. = ..()
-	soundloop = new(list(src), FALSE)
+	soundloop = new(src, FALSE)
 
 /obj/item/grenade/homemade/coffeepotbomb/Destroy()
 	QDEL_NULL(soundloop)

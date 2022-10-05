@@ -24,7 +24,7 @@ $include policy.txt
 # SERVERNAME Sunset Wasteland
 
 ## Server tagline: This will appear right below the server's title.
-SERVERTAGLINE [18+] The first furry-friendly Fallout server!
+SERVERTAGLINE [18+] The first furry-friendly Fallout server! MRP/HRP
 
 ## Server SQL name: This is the name used to identify the server to the SQL DB, distinct from SERVERNAME as it must be at most 32 characters.
 # SERVERSQLNAME fo13sql
@@ -273,6 +273,9 @@ RULESURL https://discord.gg/xCgEwJTppx
 
 ## Github address
 # GITHUBURL https://github.com/Citadel-Station-13/Citadel-Station-13
+
+## Discord Link
+DISCORDURL https://discord.gg/F5Z2tVXVyt
 
 ## Round specific stats address
 ## Link to round specific parsed logs; IE statbus. It is appended with the RoundID automatically by ticker/Reboot()
@@ -552,3 +555,8 @@ CENTCOM_BAN_DB https://centcom.melonmesa.com/ban/search
 ## 1 Puts Border Control into 'learning mode' and will have it automatically whitelist new connections
 ## 2 Puts Border Control into 'enforcing mode' and will have it deny connections that are not already whitelisted.
 BORDER_CONTROL 0
+
+## If the server border control rejects clients entirely, or lets them into lobby only.
+## 0 Border control rejects an unauthenticated client entirely
+## 1 Border control will let the client into the lobby, but not connect.
+BORDER_CONTROL_STYLE 1

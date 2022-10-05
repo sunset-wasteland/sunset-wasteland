@@ -167,10 +167,6 @@
 	access_card.access |= ACCESS_CENT_BAR
 	ADD_TRAIT(access_card, TRAIT_NODROP, ABSTRACT_ITEM_TRAIT)
 
-/mob/living/simple_animal/hostile/alien/maid/barmaid/Destroy()
-	qdel(access_card)
-	. = ..()
-
 // Bar table, a wooden table that kicks you in a direction if you're not
 // barstaff (defined as someone who was a roundstart bartender or someone
 // with CENTCOM_BARSTAFF)
@@ -181,7 +177,17 @@
 	max_integrity = 1000
 	var/boot_dir = 1
 
-/obj/structure/table/wood/bar/Crossed(atom/movable/AM)
+/obj/structure/table/wood/bar/Initialize()
+	. = ..()
+	
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_ENTERED = .proc/on_entered,
+	)
+	AddElement(/datum/element/connect_loc, loc_connections)
+
+
+/obj/structure/table/wood/bar/proc/on_entered(datum/source, atom/movable/AM)
+	SIGNAL_HANDLER
 	if(isliving(AM) && !is_barstaff(AM))
 		// No climbing on the bar please
 		var/mob/living/M = AM
@@ -189,8 +195,6 @@
 		M.DefaultCombatKnockdown(40)
 		M.throw_at(throwtarget, 5, 1)
 		to_chat(M, "<span class='notice'>No climbing on the bar please.</span>")
-	else
-		. = ..()
 
 /obj/structure/table/wood/bar/proc/is_barstaff(mob/living/user)
 	. = FALSE
@@ -212,7 +216,8 @@
 	var/static/list/check_times = list()
 
 
-/obj/effect/forcefield/luxury_shuttle/CanPass(atom/movable/mover, border_dir)
+/obj/effect/forcefield/luxury_shuttle/CanAllowThrough(atom/movable/mover, border_dir)
+	..()
 	if(mover in approved_passengers)
 		return TRUE
 

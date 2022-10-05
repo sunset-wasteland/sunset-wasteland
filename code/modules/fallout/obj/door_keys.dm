@@ -66,7 +66,7 @@
 /obj/item/storage/keys_set/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.can_hold = typecacheof(list(/obj/item/key))
+	CANHOLD_STATIC(STR, typecacheof(list(/obj/item/key)))
 	STR.max_combined_w_class = 35
 
 /obj/item/storage/keys_set/update_icon()

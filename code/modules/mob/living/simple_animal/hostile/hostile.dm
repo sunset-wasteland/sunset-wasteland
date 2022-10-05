@@ -77,16 +77,16 @@
 	targets_from = null
 	friends = null
 	foes = null
+	GiveTarget(null)
 	return ..()
 
 /mob/living/simple_animal/hostile/BiologicalLife(seconds, times_fired)
 	if(!(. = ..()))
 		walk(src, 0) //stops walking
 		if(decompose)
-			if(prob(0.1)) // 1% chance every cycle to decompose
+			if(prob(1)) // 1% chance every cycle to decompose
 				visible_message("<span class='notice'>\The dead body of the [src] decomposes!</span>")
 				gib(FALSE, FALSE, FALSE, TRUE)
-		CHECK_TICK
 		return
 
 /mob/living/simple_animal/hostile/handle_automated_action()
@@ -171,30 +171,22 @@
 		var/static/hostile_machines = typecacheof(list(/obj/machinery/porta_turret, /obj/mecha, /obj/structure/destructible/clockwork/ocular_warden,/obj/item/electronic_assembly))
 
 		for(var/HM in typecache_filter_list(range(vision_range, targets_from), hostile_machines))
-			CHECK_TICK
 			if(can_see(targets_from, HM, vision_range))
 				. += HM
 	else
-		. = list() // The following code is only very slightly slower than just returning oview(vision_range, targets_from), but it saves us much more work down the line, particularly when bees are involved
-		for (var/obj/A in oview(vision_range, targets_from))
-			CHECK_TICK
-			. += A
-		for (var/mob/living/A in oview(vision_range, targets_from)) //mob/dead/observers arent possible targets
-			CHECK_TICK
-			. += A
+		. = oview(vision_range, targets_from)
 
 /mob/living/simple_animal/hostile/proc/FindTarget(list/possible_targets, HasTargetsList = 0)//Step 2, filter down possible targets to things we actually care about
 	. = list()
 	if (peaceful == FALSE)
 		if(!HasTargetsList)
 			possible_targets = ListTargets()
-		for(var/pos_targ in possible_targets)
-			var/atom/A = pos_targ
-			if(Found(A))//Just in case people want to override targetting
-				. = list(A)
+		for(var/atom/target_candidate as anything in possible_targets)
+			if(Found(target_candidate))//Just in case people want to override targetting
+				. = list(target_candidate)
 				break
-			if(CanAttack(A))//Can we attack it?
-				. += A
+			if(CanAttack(target_candidate))//Can we attack it?
+				. += target_candidate
 				continue
 		var/Target = PickTarget(.)
 		GiveTarget(Target)
@@ -204,13 +196,12 @@
 
 /mob/living/simple_animal/hostile/proc/PossibleThreats()
 	. = list()
-	for(var/pos_targ in ListTargets())
-		var/atom/A = pos_targ
-		if(Found(A))
-			. = list(A)
+	for(var/atom/target_candidate as anything in ListTargets())
+		if(Found(target_candidate))
+			. = list(target_candidate)
 			break
-		if(CanAttack(A))
-			. += A
+		if(CanAttack(target_candidate))
+			. += target_candidate
 			continue
 
 
@@ -220,12 +211,11 @@
 
 /mob/living/simple_animal/hostile/proc/PickTarget(list/Targets)//Step 3, pick amongst the possible, attackable targets
 	if(target != null)//If we already have a target, but are told to pick again, calculate the lowest distance between all possible, and pick from the lowest distance targets
-		for(var/pos_targ in Targets)
-			var/atom/A = pos_targ
+		for(var/atom/target_candidate as anything in Targets)
 			var/target_dist = get_dist(targets_from, target)
-			var/possible_target_distance = get_dist(targets_from, A)
+			var/possible_target_distance = get_dist(targets_from, target_candidate)
 			if(target_dist < possible_target_distance)
-				Targets -= A
+				Targets -= target_candidate
 	if(!Targets.len)//We didnt find nothin!
 		return
 	var/chosen_target = pick(Targets)//Pick the remaining targets (if any) at random
@@ -292,7 +282,7 @@
 	return FALSE
 
 /mob/living/simple_animal/hostile/proc/GiveTarget(new_target)//Step 4, give us our selected target
-	target = new_target
+	add_target(new_target)
 	LosePatience()
 	if(target != null)
 		GainPatience()
@@ -376,7 +366,7 @@
 	. = ..()
 	if(!ckey && !stat && search_objects < 3 && . > 0)//Not unconscious, and we don't ignore mobs
 		if(search_objects)//Turn off item searching and ignore whatever item we were looking at, we're more concerned with fight or flight
-			target = null
+			LoseTarget()
 			LoseSearchObjects()
 		if(AIStatus != AI_ON && AIStatus != AI_OFF)
 			toggle_ai(AI_ON)
@@ -393,7 +383,7 @@
 /mob/living/simple_animal/hostile/proc/Aggro()
 	vision_range = aggro_vision_range
 	if(target && LAZYLEN(emote_taunt) && prob(taunt_chance))
-		emote("me", EMOTE_VISIBLE, "[pick(emote_taunt)] at [target].")
+		INVOKE_ASYNC(src, .proc/emote, "me", EMOTE_VISIBLE, "[pick(emote_taunt)] at [target].")
 		taunt_chance = max(taunt_chance-7,2)
 	if(LAZYLEN(emote_taunt_sound))
 		var/taunt_choice = pick(emote_taunt_sound)
@@ -406,7 +396,7 @@
 	taunt_chance = initial(taunt_chance)
 
 /mob/living/simple_animal/hostile/proc/LoseTarget()
-	target = null
+	GiveTarget(null)
 	approaching_target = FALSE
 	in_melee = FALSE
 	walk(src, 0)
@@ -524,7 +514,7 @@
 			DestroyObjectsInDirection(direction)
 
 
-mob/living/simple_animal/hostile/proc/DestroySurroundings() // for use with megafauna destroying everything around them
+/mob/living/simple_animal/hostile/proc/DestroySurroundings() // for use with megafauna destroying everything around them
 	if(environment_smash)
 		EscapeConfinement()
 		for(var/dir in GLOB.cardinals)
@@ -549,7 +539,7 @@ mob/living/simple_animal/hostile/proc/DestroySurroundings() // for use with mega
 
 /mob/living/simple_animal/hostile/RangedAttack(atom/A, params) //Player firing
 	if(ranged && ranged_cooldown <= world.time)
-		target = A
+		GiveTarget(A)
 		OpenFire(A)
 		DelayNextAction()
 	. = ..()
@@ -574,6 +564,9 @@ mob/living/simple_animal/hostile/proc/DestroySurroundings() // for use with mega
 //These two procs handle losing our target if we've failed to attack them for
 //more than lose_patience_timeout deciseconds, which probably means we're stuck
 /mob/living/simple_animal/hostile/proc/GainPatience()
+	if(QDELETED(src))
+		return
+	
 	if(lose_patience_timeout)
 		LosePatience()
 		lose_patience_timer_id = addtimer(CALLBACK(src, .proc/LoseTarget), lose_patience_timeout, TIMER_STOPPABLE)
@@ -585,6 +578,9 @@ mob/living/simple_animal/hostile/proc/DestroySurroundings() // for use with mega
 
 //These two procs handle losing and regaining search_objects when attacked by a mob
 /mob/living/simple_animal/hostile/proc/LoseSearchObjects()
+	if(QDELETED(src))
+		return
+	
 	search_objects = 0
 	deltimer(search_objects_timer_id)
 	search_objects_timer_id = addtimer(CALLBACK(src, .proc/RegainSearchObjects), search_objects_regain_time, TIMER_STOPPABLE)
@@ -607,7 +603,9 @@ mob/living/simple_animal/hostile/proc/DestroySurroundings() // for use with mega
 		toggle_ai(AI_Z_OFF)
 		return
 
-	var/cheap_search = isturf(T) && !is_station_level(T.z)
+	// If we're on a non-station level or we've not been active in the last 2 minutes,
+	// do a less expensive check.
+	var/cheap_search = !is_station_level(T.z) || ((world.time - last_active) > 2 MINUTES)
 	if (cheap_search)
 		tlist = ListTargetsLazy(T.z)
 	else
@@ -619,12 +617,24 @@ mob/living/simple_animal/hostile/proc/DestroySurroundings() // for use with mega
 		toggle_ai(AI_ON)
 
 /mob/living/simple_animal/hostile/proc/ListTargetsLazy(_Z)//Step 1, find out what we can see
-	var/static/hostile_machines = typecacheof(list(/obj/machinery/porta_turret, /obj/mecha, /obj/structure/destructible/clockwork/ocular_warden))
+	var/static/hostile_locs = typecacheof(list(/obj/mecha))
 	. = list()
-	for (var/I in SSmobs.clients_by_zlevel[_Z])
-		var/mob/M = I
-		if (get_dist(M, src) < vision_range)
-			if (isturf(M.loc))
-				. += M
-			else if (M.loc.type in hostile_machines)
-				. += M.loc
+	for (var/mob/player as anything in SSmobs.clients_by_zlevel[_Z])
+		if (get_dist(player, src) < vision_range)
+			if (isturf(player.loc))
+				. += player
+			else if (hostile_locs[player.loc.type])
+				. += player.loc
+
+/mob/living/simple_animal/hostile/proc/handle_target_del(datum/source)
+	SIGNAL_HANDLER
+	UnregisterSignal(target, COMSIG_PARENT_QDELETING)
+	target = null
+	LoseTarget()
+
+/mob/living/simple_animal/hostile/proc/add_target(new_target)
+	if(target)
+		UnregisterSignal(target, COMSIG_PARENT_QDELETING)
+	target = new_target
+	if(target)
+		RegisterSignal(target, COMSIG_PARENT_QDELETING, .proc/handle_target_del)

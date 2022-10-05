@@ -142,7 +142,7 @@
 	else
 		death()
 
-/mob/living/simple_animal/hostile/swarmer/CanPass(atom/movable/O)
+/mob/living/simple_animal/hostile/swarmer/CanAllowThrough(atom/movable/O)
 	if(istype(O, /obj/item/projectile/beam/disabler))//Allows for swarmers to fight as a group without wasting their shots hitting each other
 		return 1
 	if(isswarmer(O))
@@ -270,11 +270,11 @@
 		var/area/A = get_area(T)
 		if(isspaceturf(T) || (!isonshuttle && (istype(A, /area/shuttle) || istype(A, /area/space))) || (isonshuttle && !istype(A, /area/shuttle)))
 			to_chat(S, "<span class='warning'>Destroying this object has the potential to cause a hull breach. Aborting.</span>")
-			S.target = null
+			S.LoseTarget()
 			return FALSE
 		else if(istype(A, /area/engine/supermatter))
 			to_chat(S, "<span class='warning'>Disrupting the containment of a supermatter crystal would not be to our benefit. Aborting.</span>")
-			S.target = null
+			S.LoseTarget()
 			return FALSE
 	S.DisIntegrate(src)
 	return TRUE
@@ -351,11 +351,11 @@
 		var/area/A = get_area(T)
 		if(isspaceturf(T) || (!isonshuttle && (istype(A, /area/shuttle) || istype(A, /area/space))) || (isonshuttle && !istype(A, /area/shuttle)))
 			to_chat(S, "<span class='warning'>Destroying this object has the potential to cause a hull breach. Aborting.</span>")
-			S.target = null
+			S.LoseTarget()
 			return TRUE
 		else if(istype(A, /area/engine/supermatter))
 			to_chat(S, "<span class='warning'>Disrupting the containment of a supermatter crystal would not be to our benefit. Aborting.</span>")
-			S.target = null
+			S.LoseTarget()
 			return TRUE
 	return ..()
 
@@ -365,11 +365,11 @@
 		var/area/A = get_area(T)
 		if(isspaceturf(T) || (!isonshuttle && (istype(A, /area/shuttle) || istype(A, /area/space))) || (isonshuttle && !istype(A, /area/shuttle)))
 			to_chat(S, "<span class='warning'>Destroying this object has the potential to cause a hull breach. Aborting.</span>")
-			S.target = null
+			S.LoseTarget()
 			return TRUE
 		else if(istype(A, /area/engine/supermatter))
 			to_chat(S, "<span class='warning'>Disrupting the containment of a supermatter crystal would not be to our benefit. Aborting.</span>")
-			S.target = null
+			S.LoseTarget()
 			return TRUE
 	return ..()
 
@@ -643,7 +643,16 @@
 	max_integrity = 10
 	density = FALSE
 
-/obj/structure/swarmer/trap/Crossed(atom/movable/AM)
+/obj/structure/swarmer/trap/Initialize(mapload)
+	. = ..()
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_ENTERED = .proc/on_entered,
+	)
+	AddElement(/datum/element/connect_loc, loc_connections)
+
+
+/obj/structure/swarmer/trap/proc/on_entered(datum/source, atom/movable/AM)
+	SIGNAL_HANDLER
 	if(isliving(AM))
 		var/mob/living/L = AM
 		if(!istype(L, /mob/living/simple_animal/hostile/swarmer))
@@ -652,7 +661,6 @@
 			if(iscyborg(L))
 				L.DefaultCombatKnockdown(100)
 			qdel(src)
-	..()
 
 /mob/living/simple_animal/hostile/swarmer/proc/CreateTrap()
 	set name = "Create trap"
@@ -685,7 +693,8 @@
 	light_range = MINIMUM_USEFUL_LIGHT_RANGE
 	max_integrity = 50
 
-/obj/structure/swarmer/blockade/CanPass(atom/movable/O)
+/obj/structure/swarmer/blockade/CanAllowThrough(atom/movable/O)
+	..()
 	if(isswarmer(O))
 		return 1
 	if(istype(O, /obj/item/projectile/beam/disabler))

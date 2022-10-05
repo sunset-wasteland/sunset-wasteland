@@ -223,11 +223,6 @@
 //	user.changeNext_move(CLICK_CD_MELEE)
 	..()
 
-/obj/structure/simple_door/CanPass(atom/movable/mover, border_dir, height=0)
-	if(mover.loc == loc)
-		return 1
-	return !density
-
 /obj/structure/simple_door/CheckExit(atom/movable/O as mob|obj, target)
 	if(!density && !manual_opened && ishuman(O))
 		var/mob/living/carbon/human/H = O
@@ -372,8 +367,9 @@
 	opacity = FALSE
 	base_opacity = FALSE
 	can_hold_padlock = TRUE
+	barricade = TRUE
 	proj_pass_rate = 95
-	pass_flags = LETPASSTHROW
+	pass_flags_self = LETPASSTHROW
 
 /obj/structure/simple_door/dirtyglass
 	desc = "The glass is dirty, you can't see a thing behind it."

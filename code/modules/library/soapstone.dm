@@ -1,6 +1,6 @@
 /obj/item/soapstone
 	name = "soapstone"
-	desc = "Leave informative messages for the crew, including the crew of future shifts!\nEven if out of uses, it can still be used to remove messages.\n(Not suitable for engraving on shuttles, off station or on cats. Side effects may include prompt beatings, psychotic clown incursions, and/or orbital bombardment.)"
+	desc = "Leave informative messages for other wasters, including those of the future!\nEven if out of uses, it can still be used to remove messages.\n(Not suitable for engraving on shuttles, off station or on cats. Side effects may include prompt beatings, psychotic clown incursions, and/or orbital bombardment.)"
 	icon = 'icons/obj/items_and_weapons.dmi'
 	icon_state = "soapstone"
 	throw_speed = 3
@@ -58,7 +58,7 @@
 	user.visible_message("<span class='notice'>[user] starts engraving a message into [T]...</span>", "<span class='notice'>You start engraving a message into [T]...</span>", "<span class='hear'>You hear a chipping sound.</span>")
 	if(can_use() && do_after(user, tool_speed, target = T) && can_use()) //This looks messy but it's actually really clever!
 		if(!locate(/obj/structure/chisel_message) in T)
-			user.visible_message("<span class='notice'>[user] leaves a message for future spacemen!</span>", "<span class='notice'>You engrave a message into [T]!</span>", "<span class='hear'>You hear a chipping sound.</span>")
+			user.visible_message("<span class='notice'>[user] leaves a message for future wasters!</span>", "<span class='notice'>You engrave a message into [T]!</span>", "<span class='italics'>You hear a chipping sound.</span>")
 			playsound(loc, 'sound/items/gavel.ogg', 50, TRUE, -1)
 			var/obj/structure/chisel_message/M = new(T)
 			M.register(user, message)
@@ -98,6 +98,9 @@
 
 /obj/item/soapstone/empty
 	remaining_uses = 0
+
+/obj/item/soapstone/trait
+	remaining_uses = 1
 
 /proc/good_chisel_message_location(turf/T)
 	if(!T)

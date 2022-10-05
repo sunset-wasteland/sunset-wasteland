@@ -23,7 +23,6 @@
 	speak_emote = list("chitters")
 	density = FALSE
 	ventcrawler = VENTCRAWLER_ALWAYS
-	mob_size = MOB_SIZE_TINY
 	gold_core_spawnable = FRIENDLY_SPAWN
 	verb_say = "chitters"
 	verb_ask = "chitters inquisitively"
@@ -37,7 +36,8 @@
 		return
 	..()
 
-/mob/living/simple_animal/cockroach/Crossed(atom/movable/AM)
+/mob/living/simple_animal/cockroach/on_entered(atom/movable/AM)
+	..()
 	if(ismob(AM))
 		if(isliving(AM))
 			var/mob/living/A = AM

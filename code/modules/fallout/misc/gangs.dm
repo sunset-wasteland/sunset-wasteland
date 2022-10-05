@@ -219,10 +219,10 @@ GLOBAL_DATUM_INIT(denmob, /datum/gang/denmob, new)
 
 	var/datum/gang/G = gang
 	if(alert(C, "[src] invites you to join the [G.name].", "Gang invitation", "Yes", "No") == "No")
-		visible_message(C, "<span class='warning'>[C.name] refused an offer to join the [G.name]!</span>")
+		C.visible_message(span_warning("[C] refused an offer to join the [G.name]!"), span_warning("You refused to join the [G.name]!"))
 		return
 	else
-		visible_message(C, "<span class='notice'>[C.name] accepted an offer to join the [G.name]!</span>")
+		C.visible_message(span_notice("[C] accepted an offer to join the [G.name]!"), span_notice("You agree to join the [G.name]!"))
 
 	G.add_member(C)
 	C.gang = G

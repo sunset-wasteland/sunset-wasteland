@@ -84,5 +84,10 @@
 	icon_state = "stamp-ce"
 	dye_color = DYE_CE
 
+/obj/item/stamp/enclave
+	name = "lieutenant's rubber stamp"
+	icon_state = "stamp-ce"
+	dye_color = DYE_CE
+
 /obj/item/stamp/attack_paw(mob/user)
 	return attack_hand(user)

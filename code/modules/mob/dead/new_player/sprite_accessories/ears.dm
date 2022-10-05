@@ -62,6 +62,7 @@
 /datum/sprite_accessory/ears/human/bigwolfdark //alphabetical sort ignored here for ease-of-use
 	name = "Dark Big Wolf"
 	icon_state = "bigwolfdark"
+	icon = 'modular_citadel/icons/mob/mam_ears.dmi'
 	matrixed_sections = MATRIX_RED_BLUE
 
 /datum/sprite_accessory/ears/human/bigwolfinnerdark
@@ -145,13 +146,27 @@
 	name = "Eevee"
 	icon_state = "eevee"
 	icon = 'modular_citadel/icons/mob/mam_ears.dmi'
+	color_src = MATRIXED
+	matrixed_sections = MATRIX_RED
 
+/datum/sprite_accessory/ears/human/eeveealt
+	name = "Eevee Alt"
+	icon_state = "eeveealt"
+	icon = 'modular_citadel/icons/mob/mam_ears.dmi'
+	color_src = MATRIXED
+	matrixed_sections = MATRIX_RED
+
+/datum/sprite_accessory/ears/human/eeveetorn
+	name = "Eeeve Torn"
+	icon_state = "eeveetorn"
+	icon = 'modular_citadel/icons/mob/mam_ears.dmi'
 	color_src = MATRIXED
 	matrixed_sections = MATRIX_RED
 
 /datum/sprite_accessory/ears/human/elf
 	name = "Elf"
 	icon_state = "elf"
+	icon = 'modular_citadel/icons/mob/mam_ears.dmi'
 	color_src = MUTCOLORS3
 
 /datum/sprite_accessory/ears/human/elephant
@@ -205,6 +220,7 @@
 /datum/sprite_accessory/ears/human/jellyfish
 	name = "Jellyfish"
 	icon_state = "jellyfish"
+	icon = 'modular_citadel/icons/mob/mam_ears.dmi'
 	color_src = HAIR
 
 /datum/sprite_accessory/ears/human/kangaroo
@@ -286,6 +302,13 @@
 
 	color_src = MATRIXED
 	matrixed_sections = MATRIX_RED_BLUE
+
+/datum/sprite_accessory/ears/human/zorgoia
+	name = "Zorgoia"
+	icon_state = "zorgoia"
+	icon = 'modular_citadel/icons/mob/mam_ears.dmi'
+	color_src = MATRIXED
+	matrixed_sections = MATRIX_RED
 
 
 /******************************************
@@ -399,6 +422,18 @@
 	icon_state = "eevee"
 	matrixed_sections = MATRIX_RED
 
+/datum/sprite_accessory/ears/mam_ears/eeveealt
+	name = "Eevee Alt"
+	icon_state = "eeveealt"
+	color_src = MATRIXED
+	matrixed_sections = MATRIX_RED
+
+/datum/sprite_accessory/ears/mam_ears/eeveetorn
+	name = "Eeeve Torn"
+	icon_state = "eeveetorn"
+	color_src = MATRIXED
+	matrixed_sections = MATRIX_RED
+
 /datum/sprite_accessory/ears/mam_ears/elf
 	name = "Elf"
 	icon_state = "elf"
@@ -488,3 +523,10 @@
 	name = "Wolf"
 	icon_state = "wolf"
 	matrixed_sections = MATRIX_RED_BLUE
+
+/datum/sprite_accessory/ears/mam_ears/zorgoia
+	name = "Zorgoia"
+	icon_state = "zorgoia"
+	color_src = MATRIXED
+	matrixed_sections = MATRIX_RED
+

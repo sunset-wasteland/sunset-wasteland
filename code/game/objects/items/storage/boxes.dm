@@ -275,7 +275,7 @@
 	for(var/i in 1 to 7)
 		new /obj/item/grenade/flashbang(src)
 
-obj/item/storage/box/stingbangs
+/obj/item/storage/box/stingbangs
 	name = "box of stingbangs (WARNING)"
 	desc = "<B>WARNING: These devices are extremely dangerous and can cause severe injuries or death in repeated use.</B>"
 	icon_state = "secbox"
@@ -447,7 +447,7 @@ obj/item/storage/box/stingbangs
 /obj/item/storage/box/donkpockets/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.can_hold = typecacheof(list(/obj/item/reagent_containers/food/snacks/donkpocket))
+	CANHOLD_STATIC(STR, typecacheof(list(/obj/item/reagent_containers/food/snacks/donkpocket)))
 
 /obj/item/storage/box/donkpockets/PopulateContents()
 	for(var/i in 1 to 6)
@@ -463,7 +463,7 @@ obj/item/storage/box/stingbangs
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 7
-	STR.can_hold = typecacheof(list(/obj/item/reagent_containers/food/snacks/cube/monkey))
+	CANHOLD_STATIC(STR, typecacheof(list(/obj/item/reagent_containers/food/snacks/cube/monkey)))
 
 /obj/item/storage/box/monkeycubes/PopulateContents()
 	for(var/i in 1 to 5)
@@ -617,7 +617,7 @@ obj/item/storage/box/stingbangs
 /obj/item/storage/box/snappops/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.can_hold = typecacheof(list(/obj/item/toy/snappop))
+	CANHOLD_STATIC(STR, typecacheof(list(/obj/item/toy/snappop)))
 	STR.max_items = 8
 
 /obj/item/storage/box/snappops/PopulateContents()
@@ -637,7 +637,7 @@ obj/item/storage/box/stingbangs
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 10
-	STR.can_hold = typecacheof(list(/obj/item/match))
+	CANHOLD_STATIC(STR, typecacheof(list(/obj/item/match)))
 
 /obj/item/storage/box/matches/PopulateContents()
 	SEND_SIGNAL(src, COMSIG_TRY_STORAGE_FILL_TYPE, /obj/item/match)
@@ -660,7 +660,7 @@ obj/item/storage/box/stingbangs
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 21
-	STR.can_hold = typecacheof(list(/obj/item/light/tube, /obj/item/light/bulb))
+	CANHOLD_STATIC(STR, typecacheof(list(/obj/item/light/tube, /obj/item/light/bulb)))
 	STR.max_combined_w_class = 21
 	STR.click_gather = TRUE
 
@@ -1162,7 +1162,7 @@ obj/item/storage/box/stingbangs
 	new /obj/item/stock_parts/matter_bin/bluespace(src)
 	new /obj/item/stock_parts/matter_bin/bluespace(src)
 	new /obj/item/stock_parts/matter_bin/bluespace(src)
-	
+
 /obj/item/storage/box/sparelimbs
 	name = "box of prosthethic limbs"
 	desc = "Contains superior prosthethic limbs, one of each type."
@@ -1174,7 +1174,7 @@ obj/item/storage/box/stingbangs
 	new /obj/item/bodypart/r_arm/robot(src)
 	new /obj/item/bodypart/l_leg/robot(src)
 	new /obj/item/bodypart/r_leg/robot(src)
-	
+
 //Colored boxes.
 /obj/item/storage/box/green
 	icon_state = "box_green"
@@ -1402,7 +1402,7 @@ obj/item/storage/box/stingbangs
 
 /obj/item/storage/box/citizenship_permits
 	name = "box of citizenship permits"
-	desc = "A box containing spare citizenship permits for Oasis. Use a mayor's ID on a citizenship permit to assign its owner."
+	desc = "A box containing spare citizenship permits for Bighorn. Use a mayor's ID on a citizenship permit to assign its owner."
 	illustration = "id"
 
 /obj/item/storage/box/citizenship_permits/PopulateContents()
@@ -1437,7 +1437,7 @@ list(/obj/item/stack/sheet/metal = 20,
 /obj/item/storage/box/shopkeeper
 	name = "Shopkeeper's blueprints"
 	desc = "a box of the shopkeeper's blueprints"
-	
+
 
 /obj/item/storage/box/shopkeeper/PopulateContents()
 	for(var/i in 1 to 4)
@@ -1453,6 +1453,6 @@ list(/obj/item/stack/sheet/metal = 20,
 							/obj/item/book/granter/crafting_recipe/blueprint/brushgun,
 							)
 		new randomgun(src)
-	
+
 
 

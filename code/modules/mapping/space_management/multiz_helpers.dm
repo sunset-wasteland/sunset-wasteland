@@ -12,7 +12,7 @@
 	var/other_z = center_z
 	var/offset
 	while((offset = SSmapping.level_trait(other_z, ZTRAIT_DOWN)))
-		other_z += offset
+		other_z -= offset
 		. += other_z
 	other_z = center_z
 	while((offset = SSmapping.level_trait(other_z, ZTRAIT_UP)))
@@ -47,3 +47,22 @@
 /turf/proc/below()
 	return get_step_multiz(src, DOWN)
 	
+/proc/get_levels_above(bottom_z) // :pleading_face:
+	. = list(bottom_z)
+	var/other_z = bottom_z
+	var/offset
+	while((offset = SSmapping.level_trait(other_z, ZTRAIT_UP)))
+		other_z += offset
+		. += other_z
+	return .
+
+GLOBAL_LIST_EMPTY(surface_zblocks)
+/proc/get_surface_zblock(surface_z)
+	if(!SSmapping.initialized) // Don't bother; it'll be invalid until maploading is done.
+		return list()
+	// this assumes we pass in a surface level
+	if (!SSmapping.level_trait(surface_z, ZTRAIT_SURFACE))
+		CRASH("Non-surface level [surface_z] passed to get_surface_zblocks!")
+	if (!GLOB.surface_zblocks["[surface_z]"])
+		GLOB.surface_zblocks["[surface_z]"] = get_levels_above(surface_z)
+	return GLOB.surface_zblocks["[surface_z]"]

@@ -1,6 +1,6 @@
 // Sunset Flags
 
-obj/item/bighorn_flag
+/obj/item/bighorn_flag
 	name = "Bighorn flag"
 	desc = "A flag depicting the head of a bighorner. It's the symbol of the town of Bighorn."
 	icon = 'modular_sunset/icons/structures/bighorn_flag.dmi'
@@ -11,9 +11,20 @@ obj/item/bighorn_flag
 	w_class = 4
 	layer = 4.1
 
+/obj/item/renegade_flag
+	name = "Renegade Corps flag"
+	desc = "A flag marking territory belonging to the Renegade Corps mercenaries."
+	icon = 'modular_sunset/icons/structures/bighorn_flag.dmi'
+	icon_state = "renegade_flag"
+	item_state = "renegade_flag"
+	density = 1
+	anchored = 1
+	w_class = 4
+	layer = 4.1
+
 // Sunset Signs - SMALL
 
-obj/item/sign/bee_warning
+/obj/item/sign/bee_warning
 	name = "Beeware, Bees"
 	desc = "Appears to be warning of a potential dangerous bee hive and that ample protection should be worn."
 	icon = 'modular_sunset/icons/structures/sunset_signs_small.dmi'
@@ -24,7 +35,7 @@ obj/item/sign/bee_warning
 	w_class = 4
 	layer = 5
 
-obj/item/highway_sign
+/obj/item/highway_sign
 	name = "highway sign"
 	desc = "A metal highway sign. This one is blank."
 	icon = 'modular_sunset/icons/structures/sunset_signs_small.dmi'
@@ -35,7 +46,7 @@ obj/item/highway_sign
 	w_class = 4
 	layer = 5
 
-obj/item/highway_sign/casper
+/obj/item/highway_sign/casper
 	name = "Casper"
 	desc = "An aged highway sign indicating the road leads to Casper."
 	icon = 'modular_sunset/icons/structures/sunset_signs_small.dmi'
@@ -46,7 +57,7 @@ obj/item/highway_sign/casper
 	w_class = 4
 	layer = 5
 
-obj/item/highway_sign/bighorn
+/obj/item/highway_sign/bighorn
 	name = "Bighorn National Park"
 	desc = "An aged highway sign indicating the road leads to the Bighorn National Park."
 	icon = 'modular_sunset/icons/structures/sunset_signs_small.dmi'
@@ -57,7 +68,7 @@ obj/item/highway_sign/bighorn
 	w_class = 4
 	layer = 5
 
-obj/item/highway_sign/gillette
+/obj/item/highway_sign/gillette
 	name = "Gillette"
 	desc = "An aged highway sign indicating the road leads to Gillette."
 	icon = 'modular_sunset/icons/structures/sunset_signs_small.dmi'
@@ -68,7 +79,7 @@ obj/item/highway_sign/gillette
 	w_class = 4
 	layer = 5
 
-obj/item/highway_sign/rocksprings
+/obj/item/highway_sign/rocksprings
 	name = "Rock Springs"
 	desc = "An aged highway sign indicating the road leads to Rock Springs."
 	icon = 'modular_sunset/icons/structures/sunset_signs_small.dmi'
@@ -79,7 +90,7 @@ obj/item/highway_sign/rocksprings
 	w_class = 4
 	layer = 5
 
-obj/item/highway_sign/warren
+/obj/item/highway_sign/warren
 	name = "Warren"
 	desc = "An aged highway sign indicating the road leads to the city of Warren."
 	icon = 'modular_sunset/icons/structures/sunset_signs_small.dmi'
@@ -92,7 +103,7 @@ obj/item/highway_sign/warren
 
 // Sunset Signs - LARGE
 
-obj/item/bighorn_sign
+/obj/item/bighorn_sign
 	name = "Bighorn sign"
 	desc = "A repurposed highway sign with the spray painted name of 'Bighorn'."
 	icon = 'modular_sunset/icons/structures/bighorn_sign.dmi'
@@ -103,7 +114,7 @@ obj/item/bighorn_sign
 	w_class = 4
 	layer = 5
 
-obj/item/trade_sign
+/obj/item/trade_sign
 	name = "Trade sign"
 	desc = "A wooden sign with seemingly hand forged lettering bolted to it."
 	icon = 'modular_sunset/icons/structures/sunset_signs.dmi'
@@ -120,3 +131,41 @@ obj/item/trade_sign
 	weather_message = "<span class='boldannounce'>The sand wafts down around you like grotesque, thick snow. The sandstorm is here...</span>"
 
 	end_message = "<span class='boldannounce'>The sandstorm slows before stopping. Adding another layer of sand to the ground beneath your feet.</span>"
+
+/*
+This is a pre-destroyed nuclear reactor for the sake of mapping special fluff stuff.
+Not actually a reactor, just uses the icon and irradiates the surrounding area a bit.
+Nowhere else to really put this. Pulled from what I had done on Hyper. - Carl
+*/
+
+/obj/structure/fluff/destroyed_nuclear_reactor
+	name = "Destroyed Nuclear Reactor"
+	desc = "What in the hell happened here?"
+	icon = 'modular_sunset/icons/obj/rbmk.dmi'
+	icon_state = "reactor_slagged"
+	pixel_x = -32
+	pixel_y = -32
+	density = FALSE
+	anchored = TRUE
+	deconstructible = FALSE
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | FREEZE_PROOF
+	light_color = LIGHT_COLOR_CYAN
+	dir = 8 //Less headache inducing :))
+
+/obj/structure/fluff/destroyed_nuclear_reactor/Initialize()
+	. = ..()
+	set_light(3)
+//	AddComponent(/datum/component/radioactive, 15000 , src)
+	START_PROCESSING(SSradiation,src)
+
+/obj/structure/fluff/destroyed_nuclear_reactor/Destroy()
+	STOP_PROCESSING(SSradiation,src)
+	..()
+
+/obj/structure/fluff/destroyed_nuclear_reactor/process()
+	if(QDELETED(src))
+		return PROCESS_KILL
+
+	for(var/mob/living/carbon/human/victim in view(src,5))
+		if(istype(victim) && victim.stat != DEAD)
+			victim.rad_act(1500)//WHY ARE YOU STANDING NEAR IT?

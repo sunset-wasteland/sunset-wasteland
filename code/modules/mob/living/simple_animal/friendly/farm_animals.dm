@@ -63,7 +63,7 @@
 			Retaliate()
 
 		if(enemies.len && prob(10))
-			enemies = list()
+			enemies.Cut()
 			LoseTarget()
 			src.visible_message("<span class='notice'>[src] calms down.</span>")
 		udder.generateMilk(milk_reagent)
@@ -144,8 +144,8 @@
 	attack_verb_continuous = "kicks"
 	attack_verb_simple = "kick"
 	attack_sound = 'sound/weapons/punch1.ogg'
-	health = 50
-	maxHealth = 50
+	health = 200
+	maxHealth = 200
 	var/obj/item/udder/udder = null
 	var/datum/reagent/milk_reagent = /datum/reagent/consumable/milk
 	var/food_type = /obj/item/reagent_containers/food/snacks/grown/wheat
@@ -471,9 +471,7 @@
 	attack_verb_simple = "kick"
 	attack_sound = 'sound/weapons/punch1.ogg'
 	young_type = /mob/living/simple_animal/cow/brahmin/calf
-	emote_hear = list("brays.")
 	var/obj/item/inventory_back
-	speak_chance = 0.4
 	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 4, /obj/item/reagent_containers/food/snacks/rawbrahminliver = 1, /obj/item/reagent_containers/food/snacks/rawbrahmintongue = 2, /obj/item/stack/sheet/animalhide/brahmin = 3, /obj/item/stack/sheet/bone = 2)
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 4, /obj/item/stack/sheet/bone = 2)
 	butcher_difficulty = 1
@@ -591,6 +589,9 @@
 /mob/living/simple_animal/cow/brahmin/attackby(obj/item/I, mob/user)
 	. = ..()
 	if(istype(I,/obj/item/brahminbags))
+		if(stat == DEAD)
+			to_chat(user, "<span class='warning'>You cannot add anything to a dead brahmin!</span>")
+			return
 		if(bags)
 			to_chat(user, "<span class='warning'>The brahmin already has bags attached!</span>")
 			return
@@ -604,6 +605,9 @@
 		return
 
 	if(istype(I,/obj/item/brahmincollar))
+		if(stat == DEAD)
+			to_chat(user, "<span class='warning'>You cannot add anything to a dead brahmin!</span>")
+			return
 		if(user != owner)
 			to_chat(user, "<span class='warning'>You need to claim the brahmin with a bridle before you can rename it!</span>")
 			return
@@ -620,6 +624,9 @@
 		return
 
 	if(istype(I,/obj/item/brahminbridle))
+		if(stat == DEAD)
+			to_chat(user, "<span class='warning'>You cannot add anything to a dead brahmin!</span>")
+			return
 		if(bridle)
 			to_chat(user, "<span class='warning'>This brahmin already has a bridle!</span>")
 			return
@@ -632,6 +639,9 @@
 		return
 
 	if(istype(I,/obj/item/brahminsaddle))
+		if(stat == DEAD)
+			to_chat(user, "<span class='warning'>You cannot add anything to a dead brahmin!</span>")
+			return
 		if(saddle)
 			to_chat(user, "<span class='warning'>This brahmin already has a saddle!</span>")
 			return
@@ -659,6 +669,14 @@
 
 		if(!brand)
 			return
+
+/mob/living/simple_animal/cow/brahmin/death(gibbed)
+	. = ..()
+	if(can_buckle)
+		can_buckle = FALSE
+	if(buckled_mobs)
+		for(var/mob/living/M in buckled_mobs)
+			unbuckle_mob(M)
 
 /datum/component/storage/concrete/brahminbag
 	max_w_class = WEIGHT_CLASS_HUGE //Allows the storage of shotguns and other two handed items.
@@ -913,7 +931,7 @@
 	onclose(user, "mob[real_name]")
 	return
 
-mob/living/simple_animal/cow/brahmin/Topic(href, href_list)
+/mob/living/simple_animal/cow/brahmin/Topic(href, href_list)
 	if(usr.stat)
 		return
 

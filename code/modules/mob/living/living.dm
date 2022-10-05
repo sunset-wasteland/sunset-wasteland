@@ -1,5 +1,10 @@
 /mob/living/Initialize()
 	. = ..()
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_ENTERED = .proc/on_entered,
+	)
+	AddElement(/datum/element/connect_loc, loc_connections)
+
 	register_init_signals()
 	if(unique_name)
 		name = "[name] ([rand(1, 1000)])"
@@ -582,6 +587,7 @@
 		updatehealth() //then we check if the mob should wake up.
 		update_sight()
 		clear_alert("not_enough_oxy")
+		water = THIRST_LEVEL_MIDDLE + 100
 		reload_fullscreen()
 		. = 1
 		if(mind)
@@ -621,6 +627,7 @@
 	ExtinguishMob()
 	fire_stacks = 0
 	confused = 0
+	water = THIRST_LEVEL_MIDDLE + 100
 	update_mobility()
 	//Heal all organs
 	if(iscarbon(src))
@@ -639,8 +646,8 @@
 /mob/living/proc/update_damage_overlays()
 	return
 
-/mob/living/Crossed(atom/movable/AM)
-	. = ..()
+/mob/living/proc/on_entered(datum/source, atom/movable/AM)
+	SIGNAL_HANDLER
 	for(var/i in get_equipped_items())
 		var/obj/item/item = i
 		SEND_SIGNAL(item, COMSIG_ITEM_WEARERCROSSED, AM)

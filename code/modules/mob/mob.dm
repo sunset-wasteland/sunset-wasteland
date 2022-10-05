@@ -18,8 +18,8 @@
 		qdel(cc)
 	client_colours = null
 	ghostize()
-	..()
-	return QDEL_HINT_HARDDEL
+
+	return ..() // Coyote Modify, Mobs wont lag the server when gibbed :o
 
 /mob/Initialize()
 	GLOB.mob_list += src
@@ -35,7 +35,7 @@
 			continue
 		var/datum/atom_hud/alternate_appearance/AA = v
 		AA.onNewMob(src)
-	set_nutrition(rand(NUTRITION_LEVEL_START_MIN, NUTRITION_LEVEL_START_MAX))
+	set_nutrition(rand(NUTRITION_LEVEL_START_MIN, NUTRITION_LEVEL_START_MAX), rand(THIRST_LEVEL_START_MIN, THIRST_LEVEL_START_MAX))
 	. = ..()
 	update_config_movespeed()
 	update_movespeed(TRUE)
@@ -158,16 +158,25 @@
 			continue
 		//This entire if/else chain could be in two lines but isn't for readabilty's sake.
 		var/msg = message
-		if(M.see_invisible<invisibility || (T != loc && T != src))//if src is invisible to us or is inside something (and isn't a turf),
+		var/msg_type = MSG_VISUAL
+		if(M.see_invisible<invisibility )//if src is invisible to us
 			msg = blind_message
-
+			msg_type = MSG_AUDIBLE
+		else if(T != loc && T != src) //or if src is inside something and not a turf.
+			if(M != loc) // Only give the blind message to hearers that aren't the location
+				msg = blind_message
+				msg_type = MSG_AUDIBLE
+		else if(SEND_SIGNAL(M, COMSIG_MOB_GET_VISIBLE_MESSAGE, src, message, vision_distance, ignored_mobs) & COMPONENT_NO_VISIBLE_MESSAGE)
+			msg = blind_message
+			msg_type = MSG_AUDIBLE
+		if(!msg)
+			continue
 		if(visible_message_flags & EMOTE_MESSAGE && runechat_prefs_check(M, visible_message_flags) && !M.is_blind())
 			M.create_chat_message(src, raw_message = raw_msg, runechat_flags = visible_message_flags)
-
-		M.show_message(msg, MSG_VISUAL, blind_message, MSG_AUDIBLE)
+		M.show_message(msg, msg_type, blind_message, MSG_AUDIBLE)
 
 ///Adds the functionality to self_message.
-mob/visible_message(message, self_message, blind_message, vision_distance = DEFAULT_MESSAGE_RANGE, list/ignored_mobs, mob/target, target_message, visible_message_flags = NONE)
+/mob/visible_message(message, self_message, blind_message, vision_distance = DEFAULT_MESSAGE_RANGE, list/ignored_mobs, mob/target, target_message, visible_message_flags = NONE)
 	. = ..()
 	if(self_message && target != src)
 		show_message(self_message, MSG_VISUAL, blind_message, MSG_AUDIBLE)
@@ -346,7 +355,7 @@ mob/visible_message(message, self_message, blind_message, vision_distance = DEFA
 	else
 		result = A.examine(src) // if a tree is examined but no client is there to see it, did the tree ever really exist?
 
-	if(!result)
+	if(!length(result))
 		return
 	else
 		to_chat(src, result.Join("\n"))
@@ -1053,6 +1062,10 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 ///Force set the mob nutrition
 /mob/proc/set_nutrition(change) //Seriously fuck you oldcoders.
 	nutrition = max(0, change)
+
+///Adjust the thirst of a mob
+/mob/proc/adjust_thirst(change, max = INFINITY)
+	water = clamp(water + change, 0, max)
 
 /mob/setMovetype(newval)
 	. = ..()

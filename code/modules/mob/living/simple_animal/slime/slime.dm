@@ -29,7 +29,6 @@
 	maxHealth = 150
 	health = 150
 	healable = 0
-	gender = NEUTER
 	blood_volume = 0 //Until someome reworks for them to have slime jelly
 	nutrition = 700
 
@@ -206,7 +205,7 @@
 						spawn(45)
 							Atkcool = 0
 
-/mob/living/simple_animal/slime/Process_Spacemove(movement_dir = 0)
+/mob/living/simple_animal/slime/Process_Spacemove(movement_dir = 0, continuous_move)
 	return 2
 
 /mob/living/simple_animal/slime/get_status_tab_items()

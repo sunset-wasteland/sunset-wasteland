@@ -1,20 +1,20 @@
 GLOBAL_LIST_INIT(rod_recipes, list ( \
-	new/datum/stack_recipe("table frame", /obj/structure/table_frame, 2, time = 10, one_per_turf = 1, on_floor = 1), \
+	new/datum/stack_recipe("table frame", /obj/structure/table_frame, 2, time = 10, one_per_turf = 1, on_floor = 1, check_for = GLOB.blocking_structures), \
 	new/datum/stack_recipe("metal bars", /obj/structure/barricade/bars, 4, time = 20, one_per_turf = 1, on_floor = 1), \
 	new/datum/stack_recipe("barred door", /obj/structure/simple_door/metal/barred, 30, time = 40, one_per_turf = 1, on_floor = 1), \
 	new/datum/stack_recipe("railing", /obj/structure/railing, 3, time = 18, window_checks = TRUE), \
-	new/datum/stack_recipe("grille", /obj/structure/grille, 2, time = 10, one_per_turf = 1, on_floor = 1), \
+	new/datum/stack_recipe("grille", /obj/structure/grille, 2, time = 10, one_per_turf = 1, on_floor = 1, check_for = GLOB.blocking_structures), \
 	new/datum/stack_recipe("flagpole", /obj/item/flag, 2, time = 8, one_per_turf = 1, on_floor = 1), \
 	null, \
 	new/datum/stack_recipe_list("fences", list( \
-		new /datum/stack_recipe("fence", /obj/structure/fence,8, time = 20, one_per_turf = 1, on_floor = 1), \
-		new /datum/stack_recipe("fence (corner)", /obj/structure/fence/corner, 8, time = 20, one_per_turf = 1, on_floor = 1), \
-		new /datum/stack_recipe("fence (end)", /obj/structure/fence/end, 8, time = 20, one_per_turf = 1, on_floor = 1), \
-		new /datum/stack_recipe("fence (gate)", /obj/structure/simple_door/metal/fence, 8, time = 20, one_per_turf = 1, on_floor = 1), \
+		new /datum/stack_recipe("fence", /obj/structure/fence,8, time = 20, one_per_turf = 1, on_floor = 1, check_for = GLOB.blocking_structures), \
+		new /datum/stack_recipe("fence (corner)", /obj/structure/fence/corner, 8, time = 20, one_per_turf = 1, on_floor = 1, check_for = GLOB.blocking_structures), \
+		new /datum/stack_recipe("fence (end)", /obj/structure/fence/end, 8, time = 20, one_per_turf = 1, on_floor = 1, check_for = GLOB.blocking_structures), \
+		new /datum/stack_recipe("fence (gate)", /obj/structure/simple_door/metal/fence, 8, time = 20, one_per_turf = 1, on_floor = 1, check_for = GLOB.blocking_structures), \
 		)),
 	null, \
-	new/datum/stack_recipe("barbed wire",/obj/structure/obstacle/barbedwire, 5, time = 10, one_per_turf = 1, on_floor = 1), \
-	new/datum/stack_recipe("barbed wire ends", /obj/structure/obstacle/barbedwire/end, 5, time = 10, one_per_turf = 1, on_floor = 1), \
+	new/datum/stack_recipe("barbed wire",/obj/structure/obstacle/barbedwire, 5, time = 10, one_per_turf = 1, on_floor = 1, check_for = GLOB.blocking_structures), \
+	new/datum/stack_recipe("barbed wire ends", /obj/structure/obstacle/barbedwire/end, 5, time = 10, one_per_turf = 1, on_floor = 1, check_for = GLOB.blocking_structures), \
 	))
 /obj/item/stack/rods
 	name = "metal rod"
@@ -29,7 +29,7 @@ GLOBAL_LIST_INIT(rod_recipes, list ( \
 	throw_speed = 3
 	throw_range = 7
 	custom_materials = list(/datum/material/iron=1000)
-	max_amount = 5000
+	max_amount = 50
 	attack_verb = list("hit", "bludgeoned", "whacked")
 	hitsound = 'sound/weapons/grenadelaunch.ogg'
 	embedding = list()
@@ -114,7 +114,7 @@ GLOBAL_LIST_INIT(rod_recipes, list ( \
 	flags_1 = CONDUCT_1
 	w_class = WEIGHT_CLASS_NORMAL
 	custom_materials = list(/datum/material/iron=1000, /datum/material/plasma=500, /datum/material/titanium=2000)
-	max_amount = 5000
+	max_amount = 50
 	resistance_flags = FIRE_PROOF | LAVA_PROOF
 	merge_type = /obj/item/stack/rods/lava
 

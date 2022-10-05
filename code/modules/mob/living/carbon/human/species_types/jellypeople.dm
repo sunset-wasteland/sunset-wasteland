@@ -470,7 +470,7 @@
 	coldmod = 3
 	heatmod = 1
 	burnmod = 1
-
+	var/toxloss = 0
 	allowed_limb_ids = list("slime","stargazer","lum")
 
 /datum/action/innate/slime_change

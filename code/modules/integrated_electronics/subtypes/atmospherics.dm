@@ -505,7 +505,7 @@
 	//Check if tank broken
 	if(!broken && tank_pressure > TANK_FAILURE_PRESSURE)
 		broken = TRUE
-		to_chat(view(2),"<span class='notice'>The [name] ruptures, releasing its gases!</span>")
+		visible_message(span_notice("[src] ruptures, releasing its gases!"), vision_distance = 2)
 	if(broken)
 		release()
 

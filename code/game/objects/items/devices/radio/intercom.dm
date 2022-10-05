@@ -165,7 +165,7 @@
 			icon_state = initial(icon_state)
 
 /obj/item/radio/intercom/retro/kebob
-	name = "Oasis intercom"
+	name = "Bighorn intercom"
 	freqlock = TRUE
 	frequency = 1369
 	channels = list(RADIO_CHANNEL_TOWN = 1)

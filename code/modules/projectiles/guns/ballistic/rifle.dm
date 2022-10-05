@@ -147,6 +147,19 @@
 	recoil = 0.15
 	fire_sound = 'sound/f13weapons/brushgunfire.ogg'
 
+//Medicine Stick						Keywords: .45-70, Lever action, 8 round internal, Long barrel, Unique
+/obj/item/gun/ballistic/rifle/repeater/brush/medistick
+	name = "medicine stick"
+	desc = "A custom-made Gun Runners brush gun with a shorter tube, featuring a sturdier frame, longer barrel, reinforced rifling, padded lever and a muzzle device. A medicine wheel is attached to one side of the stock along with two feathers."
+	icon_state = "medistick"
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube4570/medicine
+	extra_damage = 50
+	extra_penetration = 0.2
+	extra_speed = 150
+	fire_delay = 2.25
+	recoil = 0.10
+	fire_sound = 'sound/f13weapons/brushgunfire.ogg'
+
 
 ////////////////////////
 // BOLT ACTION RIFLES //
@@ -328,8 +341,8 @@
 	item_state = "amr"
 	mag_type = /obj/item/ammo_box/magazine/amr
 	fire_delay = 12 //Heavy round, tiny bit slower
-	extra_damage = 50
-	extra_penetration = 0.6
+	extra_damage = 60
+	extra_penetration = 1//Chunky munitions.
 	recoil = 1
 	spread = 0
 	force = 10 //Big clumsy and sensitive scope, makes for a poor club
@@ -338,6 +351,18 @@
 	zoom_out_amt = 13
 	fire_sound = 'sound/f13weapons/antimaterielfire.ogg'
 	pump_sound = 'sound/f13weapons/antimaterielreload.ogg'
+
+/obj/item/gun/ballistic/rifle/mag/antimateriel/shoot_live_shot(mob/living/user, pointblank = FALSE, mob/pbtarget, message = 1, stam_cost = 0)
+	..()
+	if(HAS_TRAIT(user, TRAIT_FAST_PUMP))
+		src.pump(user)
+	if((prob(95) && !zoomed))
+		var/mob/living/carbon/human/H = user
+		playsound(loc, 'sound/f13effects/surrender.ogg', 100, 1)
+		shake_camera(user, recoil + 1, recoil)
+		to_chat(user, "<span class ='danger'>You attempt to fire the rifle from the hip unprepared, tossing you to the ground!</span>")
+		H.visible_message("<span class='danger'>[H] drops to the floor from recoil as they fire unprepared!</span>")
+		user.Knockdown(60)
 
 // BETA // Obsolete
 /obj/item/gun/ballistic/rifle/rifletesting

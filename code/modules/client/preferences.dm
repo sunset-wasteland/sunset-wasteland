@@ -493,8 +493,8 @@ Records disabled until a use for them is found
 
 // Sunset ADD: Hair gradients
 				dat += "<h3>Hair Gradient</h3>"
-				dat += "<a style='display:block;width:100px' href='?_src_=prefs;preference=grad_style;task=input'>[features["grad_style"]]</a>"
-				dat += "<span style='border:1px solid #161616; background-color: #[features["grad_color"]];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=grad_color;task=input'>Change</a><BR>"
+				dat += "<a style='display:block;width:100px' href='?_src_=prefs;preference=grad_style;task=input'>[features_override["grad_style"]]</a>"
+				dat += "<span style='border:1px solid #161616; background-color: #[features_override["grad_color"]];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=grad_color;task=input'>Change</a><BR>"
 				// Sunset ADD: End
 
 				dat += "<h3>Facial Hair Style</h3>"
@@ -2429,10 +2429,10 @@ Records disabled until a use for them is found
 						markings[index_up] = first_marking
 
 				if("marking_remove")
-					// move the specified marking up
+					// remove the specified marking
 					var/index = text2num(href_list["marking_index"])
 					var/marking_type = href_list["marking_type"]
-					if(index && marking_type && features[marking_type])
+					if(index > 0 && marking_type && index < length(features[marking_type]))
 						// because linters are just absolutely awful:
 						var/list/L = features[marking_type]
 						L.Cut(index, index + 1)
@@ -2798,9 +2798,13 @@ Records disabled until a use for them is found
 					ambientocclusion = !ambientocclusion
 					if(parent && parent.screen && parent.screen.len)
 						var/obj/screen/plane_master/game_world/G = parent.mob.hud_used.plane_masters["[GAME_PLANE]"]
+						var/obj/screen/plane_master/objitem/OI = parent.mob.hud_used.plane_masters["[OBJITEM_PLANE]"]
+						var/obj/screen/plane_master/mob/M = parent.mob.hud_used.plane_masters["[MOB_PLANE]"]
 						var/obj/screen/plane_master/above_wall/A = parent.mob.hud_used.plane_masters["[ABOVE_WALL_PLANE]"]
 						var/obj/screen/plane_master/wall/W = parent.mob.hud_used.plane_masters["[WALL_PLANE]"]
 						G.backdrop(parent.mob)
+						OI.backdrop(parent.mob)
+						M.backdrop(parent.mob)
 						A.backdrop(parent.mob)
 						W.backdrop(parent.mob)
 

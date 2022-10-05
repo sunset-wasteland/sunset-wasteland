@@ -523,7 +523,7 @@ For the other part of the code, check silicon say.dm. Particularly robot talk.*/
 			else
 				transfered = TRUE
 		//All is good.
-		holo.forceMove(new_turf)
+		holo.abstract_move(new_turf)
 		if(!transfered)
 			update_holoray(user,new_turf)
 	return TRUE
@@ -675,7 +675,7 @@ For the other part of the code, check silicon say.dm. Particularly robot talk.*/
 		HC.Disconnect(HC.calling_holopad)
 	return ..()
 
-/obj/effect/overlay/holo_pad_hologram/Process_Spacemove(movement_dir = 0)
+/obj/effect/overlay/holo_pad_hologram/Process_Spacemove(movement_dir = 0, continuous_move)
 	return TRUE
 
 /obj/effect/overlay/holo_pad_hologram/examine(mob/user)

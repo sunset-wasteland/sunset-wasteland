@@ -350,7 +350,6 @@
 	attack_verb = list("beat", "smacked", "clubbed", "clobbered")
 	w_class = WEIGHT_CLASS_NORMAL
 	sharpness = SHARP_NONE
-	icon_prefix = "baseball"
 
 /obj/item/twohanded/baseball/ComponentInitialize()
 	. = ..()
@@ -499,7 +498,7 @@
 	else if(istype(A, /turf/closed))
 		playsound(loc, hitsound, 70, TRUE)
 
-// Proton axe			Keywords: Damage 20/32, AP 0.7
+// Proton axe			Keywords: Damage 20/52, AP 0.7
 /obj/item/melee/transforming/energy/axe/protonaxe
 	name = "proton axe"
 	desc = "The experimental proton axe resembles a futuristic war-axe with a glowing blue blade of electrical energy at its head."
@@ -511,10 +510,10 @@
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = null
 	force = 20
-	force_on = 32
+	force_on = 41
 	armour_penetration = 0.7
 	throwforce = 15
-	throwforce_on = 30
+	throwforce_on = 50
 
 /obj/item/melee/transforming/energy/axe/protonaxe/ComponentInitialize()
 	. = ..()
@@ -530,11 +529,11 @@
 	icon_prefix = "hammer-super"
 	force = 25
 
-obj/item/twohanded/sledgehammer/supersledge/ComponentInitialize()
+/obj/item/twohanded/sledgehammer/supersledge/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/two_handed, force_unwielded = 25, force_wielded = 60, icon_wielded="[icon_prefix]2")
 
-obj/item/twohanded/sledgehammer/supersledge/afterattack(atom/A, mob/living/user, proximity)
+/obj/item/twohanded/sledgehammer/supersledge/afterattack(atom/A, mob/living/user, proximity)
 	. = ..()
 	if(!proximity || !wielded || IS_STAMCRIT(user))
 		return
@@ -635,7 +634,7 @@ obj/item/twohanded/sledgehammer/supersledge/afterattack(atom/A, mob/living/user,
 	armour_penetration = 0.2
 	attack_verb = list("bashed", "pounded", "bludgeoned", "pummeled", "thrashed")
 
-/obj/item/twohanded/sledgehammer/atomsjudgement/ComponentInitialize()
+/obj/item/twohanded/sledgehammer/warmace/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/two_handed, force_unwielded = 25, force_wielded = 45, icon_wielded="[icon_prefix]2")
 

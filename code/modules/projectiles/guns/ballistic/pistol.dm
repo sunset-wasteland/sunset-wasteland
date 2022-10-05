@@ -215,7 +215,6 @@
 	automatic_burst_overlay = TRUE
 	can_attachments = FALSE
 	semi_auto = FALSE
-	actions_types = list(/datum/action/item_action/toggle_firemode)
 
 /obj/item/gun/ballistic/automatic/pistol/beretta/automatic/burst_select()
 	var/mob/living/carbon/human/user = usr
@@ -369,6 +368,13 @@
 	extra_damage = 50
 	fire_delay = 4
 
+/obj/item/gun/ballistic/automatic/pistol/pistol14/custom
+	name= "Custom 14mm pistol"
+	desc = "A Swiss SIG-Sauer 14mm handgun, this one is a finely tuned custom firearm. How'd this get into service?"
+	icon_state = "lildev"
+	w_class = WEIGHT_CLASS_SMALL
+	extra_damage = 50
+	fire_delay = 4
 
 /////////////////////////////////
 // TEMPORARY REMOVE AFTER BETA //

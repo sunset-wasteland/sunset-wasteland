@@ -11,6 +11,7 @@ GLOBAL_LIST_EMPTY(bos_radios)
 	desc = "A terminal used to remotely disable radios that may have been lost."
 	icon = 'icons/obj/computer.dmi'
 	icon_state = "computer"
+	density = TRUE
 	var/open = FALSE // TRUE if open
 	var/assigned_faction
 	max_integrity = 750
@@ -27,7 +28,7 @@ GLOBAL_LIST_EMPTY(bos_radios)
 
 /obj/machinery/radioterminal/ui_interact(mob/user)
 	. = ..()
-	if(open) 
+	if(open)
 		return
 	var/dat = ""
 	dat += "<head><style>body {padding: 0; margin: 15px; background-color: #062113; color: #4aed92; line-height: 170%;} a, button, a:link, a:visited, a:active, .linkOn, .linkOff {color: #4aed92; text-decoration: none; background: #062113; border: none; padding: 1px 4px 1px 4px; margin: 0 2px 0 0; cursor:default;} a:hover {color: #062113; background: #4aed92; border: 1px solid #4aed92} a.white, a.white:link, a.white:visited, a.white:active {color: #4aed92; text-decoration: none; background: #4aed92; border: 1px solid #161616; padding: 1px 4px 1px 4px; margin: 0 2px 0 0; cursor:default;} a.white:hover {color: #062113; background: #4aed92;} .linkOn, a.linkOn:link, a.linkOn:visited, a.linkOn:active, a.linkOn:hover {color: #4aed92; background: #062113; border-color: #062113;} .linkOff, a.linkOff:link, a.linkOff:visited, a.linkOff:active, a.linkOff:hover{color: #4aed92; background: #062113; border-color: #062113;}</style></head><font face='courier'>"
@@ -114,3 +115,8 @@ GLOBAL_LIST_EMPTY(bos_radios)
 	name = "Brotherhood radio control"
 	assigned_faction = FACTION_BROTHERHOOD
 	req_one_access = list(ACCESS_BROTHERHOOD_COMMAND)
+
+/obj/machinery/radioterminal/enclave
+	name = "Enclave radio control"
+	assigned_faction = FACTION_ENCLAVE
+	req_one_access = list(ACCESS_ENCLAVE_COMMAND)

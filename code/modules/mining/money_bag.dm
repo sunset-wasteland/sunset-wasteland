@@ -15,7 +15,7 @@
 	STR.max_w_class = WEIGHT_CLASS_NORMAL
 	STR.max_items = 40
 	STR.max_combined_w_class = 40
-	STR.can_hold = typecacheof(list(/obj/item/coin, /obj/item/stack/spacecash, /obj/item/holochip))
+	CANHOLD_STATIC(STR, typecacheof(list(/obj/item/coin, /obj/item/stack/spacecash, /obj/item/holochip)))
 
 /obj/item/storage/bag/money/vault/PopulateContents()
 	new /obj/item/coin/silver(src)
@@ -45,7 +45,7 @@
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_w_class = WEIGHT_CLASS_NORMAL
 	STR.max_items = 20
-	STR.can_hold = typecacheof(list(/obj/item/coin, /obj/item/stack/spacecash, /obj/item/stack/f13Cash))
+	CANHOLD_STATIC(STR, typecacheof(list(/obj/item/coin, /obj/item/stack/spacecash, /obj/item/stack/f13Cash)))
 
 // Legion reserves. Spawns with the Centurion.
 /obj/item/storage/bag/money/small/legion/PopulateContents()
@@ -88,7 +88,7 @@
 	new /obj/item/stack/f13Cash/random/ncr/med(src)
 
 // Oasis reserves. Spawns with the Mayor.
-/obj/item/storage/bag/money/small/oasis/PopulateContents()
+/obj/item/storage/bag/money/small/bighorn/PopulateContents()
 	// exactly 1000 caps, and about 200 in foreign reserves
 	new /obj/item/stack/f13Cash/caps/onezerozerozero(src)
 	new /obj/item/stack/f13Cash/random/denarius/med(src)
@@ -127,3 +127,8 @@
 	new /obj/item/stack/f13Cash/random/high(src)
 	//mob boss, reasonably wealthy
 
+// Standard Mayor money bag. They are wealthy.
+/obj/item/storage/bag/money/small/mayor/PopulateContents()
+	new /obj/item/stack/f13Cash/random/high(src)
+	new /obj/item/stack/f13Cash/random/ncr/high(src)
+	new /obj/item/stack/f13Cash/random/aureus/high(src)

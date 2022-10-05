@@ -204,6 +204,10 @@
 	name = "R&D Console (Computer Board)"
 	build_path = /obj/machinery/computer/rdconsole/core/followers
 
+/obj/item/circuitboard/computer/rdconsole/enclave
+	name = "R&D Console (Computer Board)"
+	build_path = /obj/machinery/computer/rdconsole/core/enclave
+
 /obj/item/circuitboard/computer/rdconsole/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/screwdriver))
 		if(build_path == /obj/machinery/computer/rdconsole/core)

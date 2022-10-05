@@ -30,10 +30,10 @@
 /obj/machinery/door/poddoor/gate/bunker
 	name = "bunker door"
 	icon = 'icons/fallout/structures/brotherhood_gate.dmi'
-	icon_state = "Brotherhood_gate"
+	icon_state = "closed"
 	id = 444
 
 /obj/machinery/door/poddoor/gate/bunker/preopen
-	icon_state = "Brotherhood_gate_open"
+	icon_state = "open"
 	density = FALSE
 	opacity = FALSE

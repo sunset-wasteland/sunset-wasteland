@@ -151,7 +151,7 @@
 /turf/closed/mineral/random
 	var/list/mineralSpawnChanceList = list(/turf/closed/mineral/uranium = 5, /turf/closed/mineral/diamond = 1, /turf/closed/mineral/gold = 10,
 		/turf/closed/mineral/silver = 12, /turf/closed/mineral/plasma = 20, /turf/closed/mineral/iron = 40, /turf/closed/mineral/titanium = 11,
-		/*/turf/closed/mineral/gibtonite = 4, *//turf/open/floor/plating/asteroid/airless/cave = 2, /turf/closed/mineral/bscrystal = 1)
+		/turf/closed/mineral/gibtonite = 4, /turf/open/floor/plating/asteroid/airless/cave = 2, /turf/closed/mineral/bscrystal = 1)
 		//Currently, Adamantine won't spawn as it has no uses. -Durandan
 	var/mineralChance = 13
 	var/display_icon_state = "rock"
@@ -159,7 +159,7 @@
 /turf/closed/mineral/random/more_caves
 	mineralSpawnChanceList = list(/turf/closed/mineral/uranium = 5, /turf/closed/mineral/diamond = 1, /turf/closed/mineral/gold = 10,
 		/turf/closed/mineral/silver = 12, /turf/closed/mineral/plasma = 20, /turf/closed/mineral/iron = 40, /turf/closed/mineral/titanium = 11,
-		/*/turf/closed/mineral/gibtonite = 4, *//turf/open/floor/plating/asteroid/airless/cave = 15, /turf/closed/mineral/bscrystal = 1)
+		/turf/closed/mineral/gibtonite = 4, /turf/open/floor/plating/asteroid/airless/cave = 15, /turf/closed/mineral/bscrystal = 1)
 
 /turf/closed/mineral/random/Initialize()
 
@@ -185,7 +185,7 @@
 /turf/closed/mineral/random/no_caves
 	mineralSpawnChanceList = list(/turf/closed/mineral/uranium = 5, /turf/closed/mineral/diamond = 1, /turf/closed/mineral/gold = 10,
 		/turf/closed/mineral/silver = 12, /turf/closed/mineral/plasma = 20, /turf/closed/mineral/iron = 40, /turf/closed/mineral/titanium = 11,
-		/*/turf/closed/mineral/gibtonite = 4, *//turf/closed/mineral/bscrystal = 1)
+		/turf/closed/mineral/gibtonite = 4, /turf/closed/mineral/bscrystal = 1)
 
 /turf/closed/mineral/random/no_caves/earth_like
 	icon_state = "rock_oxy"
@@ -193,7 +193,7 @@
 	baseturfs = /turf/open/floor/plating/asteroid
 	mineralSpawnChanceList = list(/turf/closed/mineral/uranium/earth_like = 5, /turf/closed/mineral/diamond/earth_like = 1, /turf/closed/mineral/gold/earth_like = 10,
 		/turf/closed/mineral/silver/earth_like = 12, /turf/closed/mineral/plasma/earth_like = 20, /turf/closed/mineral/iron/earth_like = 40,
-		/turf/closed/mineral/titanium/earth_like = 11, /*/turf/closed/mineral/gibtonite/earth_like = 4, *//turf/closed/mineral/bscrystal/earth_like = 1)
+		/turf/closed/mineral/titanium/earth_like = 11, /turf/closed/mineral/gibtonite/earth_like = 4, /turf/closed/mineral/bscrystal/earth_like = 1)
 	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
 	defer_change = TRUE
 
@@ -223,9 +223,9 @@
 	canSmoothWith = list (/turf/closed)
 	defer_change = TRUE
 	environment_type = "snow"
-	turf_type = /turf/open/floor/plating/asteroid/snow/icemoon
-	baseturfs = /turf/open/floor/plating/asteroid/snow/icemoon
-	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
+	turf_type = /turf/open/indestructible/ground/outside/snow
+	baseturfs = /turf/open/indestructible/ground/outside/snow
+	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
 	mineralSpawnChanceList = list(
 		/turf/closed/mineral/uranium/ice/icemoon = 35, /turf/closed/mineral/diamond/ice/icemoon = 30, /turf/closed/mineral/gold/ice/icemoon = 45, /turf/closed/mineral/titanium/ice/icemoon = 45,
 		/turf/closed/mineral/silver/ice/icemoon = 50, /turf/closed/mineral/plasma/ice/icemoon = 50, /turf/closed/mineral/bscrystal/ice/icemoon = 20)
@@ -248,13 +248,13 @@
 	mineralSpawnChanceList = list(
 		/turf/closed/mineral/uranium = 2, /turf/closed/mineral/diamond = 1, /turf/closed/mineral/gold = 4, /turf/closed/mineral/titanium = 4,
 		/turf/closed/mineral/silver = 6, /turf/closed/mineral/plasma = 15, /turf/closed/mineral/iron = 40, /turf/closed/mineral/lead = 30, /turf/closed/mineral/limestone = 20,
-		/*/turf/closed/mineral/gibtonite = 2, *//turf/closed/mineral/bscrystal = 1) //indestructable chance moved to child, /underground
+		/turf/closed/mineral/gibtonite = 2, /turf/closed/mineral/bscrystal = 1) //indestructable chance moved to child, /underground
 
 /turf/closed/mineral/random/low_chance/underground
 	mineralSpawnChanceList = list(
 		/turf/closed/mineral/uranium = 2, /turf/closed/mineral/diamond = 1, /turf/closed/mineral/gold = 4, /turf/closed/mineral/titanium = 4,
 		/turf/closed/mineral/silver = 6, /turf/closed/mineral/plasma = 15, /turf/closed/mineral/iron = 40, /turf/closed/mineral/lead = 30, /turf/closed/mineral/limestone = 20,
-		/*/turf/closed/mineral/gibtonite = 2, *//turf/closed/mineral/bscrystal = 1, /turf/closed/mineral/indestructible = 50) //fortuna edit, indestructible rocks added to chance list
+		/turf/closed/mineral/gibtonite = 2, /turf/closed/mineral/bscrystal = 1, /turf/closed/mineral/indestructible = 50) //fortuna edit, indestructible rocks added to chance list
 
 /turf/closed/mineral/random/low_chance/earth_like
 	icon_state = "rock_lowchance_oxy"
@@ -264,7 +264,7 @@
 	mineralSpawnChanceList = list(
 		/turf/closed/mineral/uranium/earth_like = 2, /turf/closed/mineral/diamond/earth_like = 1, /turf/closed/mineral/gold/earth_like = 4,
 		/turf/closed/mineral/titanium/earth_like = 4, /turf/closed/mineral/silver/earth_like = 6, /turf/closed/mineral/plasma/earth_like = 15,
-		/turf/closed/mineral/iron/earth_like = 40, /*/turf/closed/mineral/gibtonite/earth_like = 2, *//turf/closed/mineral/bscrystal/earth_like = 1)
+		/turf/closed/mineral/iron/earth_like = 40, /turf/closed/mineral/gibtonite/earth_like = 2, /turf/closed/mineral/bscrystal/earth_like = 1)
 	defer_change = TRUE
 
 /turf/closed/mineral/random/volcanic
@@ -278,13 +278,13 @@
 	mineralSpawnChanceList = list(
 		/turf/closed/mineral/uranium/volcanic = 5, /turf/closed/mineral/diamond/volcanic = 1, /turf/closed/mineral/gold/volcanic = 10, /turf/closed/mineral/titanium/volcanic = 11,
 		/turf/closed/mineral/silver/volcanic = 12, /turf/closed/mineral/plasma/volcanic = 20, /turf/closed/mineral/iron/volcanic = 40,
-		/*/turf/closed/mineral/gibtonite/volcanic = 4, *//turf/open/floor/plating/asteroid/airless/cave/volcanic = 1, /turf/closed/mineral/bscrystal/volcanic = 1)
+		/turf/closed/mineral/gibtonite/volcanic = 4, /turf/open/floor/plating/asteroid/airless/cave/volcanic = 1, /turf/closed/mineral/bscrystal/volcanic = 1)
 
 /turf/closed/mineral/random/volcanic/more_caves
 	mineralSpawnChanceList = list(
 		/turf/closed/mineral/uranium/volcanic = 5, /turf/closed/mineral/diamond/volcanic = 1, /turf/closed/mineral/gold/volcanic = 10, /turf/closed/mineral/titanium/volcanic = 11,
 		/turf/closed/mineral/silver/volcanic = 12, /turf/closed/mineral/plasma/volcanic = 20, /turf/closed/mineral/iron/volcanic = 40,
-		/*/turf/closed/mineral/gibtonite/volcanic = 4, *//turf/open/floor/plating/asteroid/airless/cave/volcanic = 15, /turf/closed/mineral/bscrystal/volcanic = 1)
+		/turf/closed/mineral/gibtonite/volcanic = 4, /turf/open/floor/plating/asteroid/airless/cave/volcanic = 15, /turf/closed/mineral/bscrystal/volcanic = 1)
 
 /turf/closed/mineral/random/snow
 	name = "snowy mountainside"
@@ -295,40 +295,40 @@
 	canSmoothWith = list (/turf/closed)
 	defer_change = TRUE
 	environment_type = "snow"
-	turf_type = /turf/open/floor/plating/asteroid/snow/icemoon
-	baseturfs = /turf/open/floor/plating/asteroid/snow/icemoon
-	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
+	turf_type = /turf/open/indestructible/ground/outside/snow
+	baseturfs = /turf/open/indestructible/ground/outside/snow
+	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
 
 	mineralChance = 10
 	mineralSpawnChanceList = list(
 		/turf/closed/mineral/uranium/ice/icemoon = 5, /turf/closed/mineral/diamond/ice/icemoon = 1, /turf/closed/mineral/gold/ice/icemoon = 10, /turf/closed/mineral/titanium/ice/icemoon = 11,
 		/turf/closed/mineral/silver/ice/icemoon = 12, /turf/closed/mineral/plasma/ice/icemoon = 20, /turf/closed/mineral/iron/ice/icemoon = 40,
-		/*/turf/closed/mineral/gibtonite/ice/icemoon = 4, *//turf/open/floor/plating/asteroid/airless/cave/snow = 1, /turf/closed/mineral/bscrystal/ice/icemoon = 1)
+		/turf/closed/mineral/gibtonite/ice/icemoon = 4, /turf/open/floor/plating/asteroid/airless/cave/snow = 1, /turf/closed/mineral/bscrystal/ice/icemoon = 1)
 
 /turf/closed/mineral/random/snow/no_caves
 	mineralSpawnChanceList = list(
 		/turf/closed/mineral/uranium/ice/icemoon = 5, /turf/closed/mineral/diamond/ice/icemoon = 1, /turf/closed/mineral/gold/ice/icemoon = 10, /turf/closed/mineral/titanium/ice/icemoon = 11,
 		/turf/closed/mineral/silver/ice/icemoon = 12, /turf/closed/mineral/plasma/ice/icemoon = 20, /turf/closed/mineral/iron/ice/icemoon = 40,
-		/*/turf/closed/mineral/gibtonite/ice/icemoon = 4, *//turf/closed/mineral/bscrystal/ice/icemoon = 1)
+		/turf/closed/mineral/gibtonite/ice/icemoon = 4, /turf/closed/mineral/bscrystal/ice/icemoon = 1)
 
 /turf/closed/mineral/random/labormineral
 	mineralSpawnChanceList = list(
 		/turf/closed/mineral/uranium = 3, /turf/closed/mineral/diamond = 1, /turf/closed/mineral/gold = 8, /turf/closed/mineral/titanium = 8,
-		/turf/closed/mineral/silver = 20, /turf/closed/mineral/plasma = 30, /turf/closed/mineral/iron = 95/*,
-		/turf/closed/mineral/gibtonite = 2*/)
+		/turf/closed/mineral/silver = 20, /turf/closed/mineral/plasma = 30, /turf/closed/mineral/iron = 95,
+		/turf/closed/mineral/gibtonite = 2)
 	icon_state = "rock_labor"
 
 /turf/closed/mineral/random/snow/underground
 	mineralSpawnChanceList = list(
 		/turf/closed/mineral/uranium/ice/icemoon = 5, /turf/closed/mineral/diamond/ice/icemoon = 1, /turf/closed/mineral/gold/ice/icemoon = 10, /turf/closed/mineral/titanium/ice/icemoon = 11,
 		/turf/closed/mineral/silver/ice/icemoon = 12, /turf/closed/mineral/plasma/ice/icemoon = 20, /turf/closed/mineral/iron/ice/icemoon = 40,
-		/*/turf/closed/mineral/gibtonite/ice/icemoon = 4, *//turf/open/floor/plating/asteroid/airless/cave/snow/underground = 1, /turf/closed/mineral/bscrystal/ice/icemoon = 1)
+		/turf/closed/mineral/gibtonite/ice/icemoon = 4, /turf/open/floor/plating/asteroid/airless/cave/snow/underground = 1, /turf/closed/mineral/bscrystal/ice/icemoon = 1)
 
 /turf/closed/mineral/random/snow/more_caves
 	mineralSpawnChanceList = list(
 		/turf/closed/mineral/uranium/ice/icemoon = 5, /turf/closed/mineral/diamond/ice/icemoon = 1, /turf/closed/mineral/gold/ice/icemoon = 10, /turf/closed/mineral/titanium/ice/icemoon = 11,
 		/turf/closed/mineral/silver/ice/icemoon = 12, /turf/closed/mineral/plasma/ice/icemoon = 20, /turf/closed/mineral/iron/ice/icemoon = 40,
-		/*/turf/closed/mineral/gibtonite/ice/icemoon = 4, *//turf/open/floor/plating/asteroid/airless/cave/snow = 15, /turf/closed/mineral/bscrystal/ice/icemoon = 1)
+		/turf/closed/mineral/gibtonite/ice/icemoon = 4, /turf/open/floor/plating/asteroid/airless/cave/snow = 15, /turf/closed/mineral/bscrystal/ice/icemoon = 1)
 
 
 /turf/closed/mineral/random/labormineral/volcanic
@@ -339,7 +339,7 @@
 	defer_change = TRUE
 	mineralSpawnChanceList = list(
 		/turf/closed/mineral/uranium/volcanic = 3, /turf/closed/mineral/diamond/volcanic = 1, /turf/closed/mineral/gold/volcanic = 8, /turf/closed/mineral/titanium/volcanic = 8,
-		/turf/closed/mineral/silver/volcanic = 20, /turf/closed/mineral/plasma/volcanic = 30, /turf/closed/mineral/bscrystal/volcanic = 1,// /turf/closed/mineral/gibtonite/volcanic = 2,
+		/turf/closed/mineral/silver/volcanic = 20, /turf/closed/mineral/plasma/volcanic = 30, /turf/closed/mineral/bscrystal/volcanic = 1, /turf/closed/mineral/gibtonite/volcanic = 2,
 		/turf/closed/mineral/iron/volcanic = 95)
 
 //Subtypes for placing ores manually.
@@ -352,14 +352,13 @@
 	canSmoothWith = list (/turf/closed)
 	defer_change = TRUE
 	environment_type = "snow"
-	turf_type = /turf/open/floor/plating/asteroid/snow/icemoon
-	baseturfs = /turf/open/floor/plating/asteroid/snow/icemoon
-	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
+	turf_type = /turf/open/indestructible/ground/outside/snow
+	baseturfs = /turf/open/indestructible/ground/outside/snow
+	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
 
-	defer_change = TRUE
 	mineralSpawnChanceList = list(
 		/turf/closed/mineral/uranium/ice/icemoon = 3, /turf/closed/mineral/diamond/ice/icemoon = 1, /turf/closed/mineral/gold/ice/icemoon = 8, /turf/closed/mineral/titanium/ice/icemoon = 8,
-		/turf/closed/mineral/silver/ice/icemoon = 20, /turf/closed/mineral/plasma/ice/icemoon = 30, /turf/closed/mineral/bscrystal/ice/icemoon = 1,// /turf/closed/mineral/gibtonite/ice/icemoon = 2,
+		/turf/closed/mineral/silver/ice/icemoon = 20, /turf/closed/mineral/plasma/ice/icemoon = 30, /turf/closed/mineral/bscrystal/ice/icemoon = 1, /turf/closed/mineral/gibtonite/ice/icemoon = 2,
 		/turf/closed/mineral/iron/ice/icemoon = 95)
 
 
@@ -400,15 +399,15 @@
 	environment_type = "snow_cavern"
 	icon_state = "icerock_iron"
 	smooth_icon = 'icons/turf/walls/icerock_wall.dmi'
-	turf_type = /turf/open/floor/plating/asteroid/snow/ice
-	baseturfs = /turf/open/floor/plating/asteroid/snow/ice
+	turf_type = /turf/open/indestructible/ground/outside/snow
+	baseturfs = /turf/open/indestructible/ground/outside/snow
 	initial_gas_mix = FROZEN_ATMOS
 	defer_change = TRUE
 
 /turf/closed/mineral/iron/ice/icemoon
-	turf_type = /turf/open/floor/plating/asteroid/snow/ice/icemoon
-	baseturfs = /turf/open/floor/plating/asteroid/snow/ice/icemoon
-	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
+	turf_type = /turf/open/indestructible/ground/outside/snow
+	baseturfs = /turf/open/indestructible/ground/outside/snow
+	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
 
 
 /turf/closed/mineral/uranium
@@ -428,15 +427,15 @@
 	environment_type = "snow_cavern"
 	icon_state = "icerock_Uranium"
 	smooth_icon = 'icons/turf/walls/icerock_wall.dmi'
-	turf_type = /turf/open/floor/plating/asteroid/snow/ice
-	baseturfs = /turf/open/floor/plating/asteroid/snow/ice
+	turf_type = /turf/open/indestructible/ground/outside/snow
+	baseturfs = /turf/open/indestructible/ground/outside/snow
 	initial_gas_mix = FROZEN_ATMOS
 	defer_change = TRUE
 
 /turf/closed/mineral/uranium/ice/icemoon
-	turf_type = /turf/open/floor/plating/asteroid/snow/ice/icemoon
-	baseturfs = /turf/open/floor/plating/asteroid/snow/ice/icemoon
-	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
+	turf_type = /turf/open/indestructible/ground/outside/snow
+	baseturfs = /turf/open/indestructible/ground/outside/snow
+	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
 
 /turf/closed/mineral/uranium/earth_like
 	icon_state = "rock_oxy"
@@ -470,15 +469,15 @@
 	environment_type = "snow_cavern"
 	icon_state = "icerock_diamond"
 	smooth_icon = 'icons/turf/walls/icerock_wall.dmi'
-	turf_type = /turf/open/floor/plating/asteroid/snow/ice
-	baseturfs = /turf/open/floor/plating/asteroid/snow/ice
+	turf_type = /turf/open/indestructible/ground/outside/snow
+	baseturfs = /turf/open/indestructible/ground/outside/snow
 	initial_gas_mix = FROZEN_ATMOS
 	defer_change = TRUE
 
 /turf/closed/mineral/diamond/ice/icemoon
-	turf_type = /turf/open/floor/plating/asteroid/snow/ice/icemoon
-	baseturfs = /turf/open/floor/plating/asteroid/snow/ice/icemoon
-	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
+	turf_type = /turf/open/indestructible/ground/outside/snow
+	baseturfs = /turf/open/indestructible/ground/outside/snow
+	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
 
 
 /turf/closed/mineral/gold
@@ -505,15 +504,15 @@
 	environment_type = "snow_cavern"
 	icon_state = "icerock_gold"
 	smooth_icon = 'icons/turf/walls/icerock_wall.dmi'
-	turf_type = /turf/open/floor/plating/asteroid/snow/ice
-	baseturfs = /turf/open/floor/plating/asteroid/snow/ice
+	turf_type = /turf/open/indestructible/ground/outside/snow
+	baseturfs = /turf/open/indestructible/ground/outside/snow
 	initial_gas_mix = FROZEN_ATMOS
 	defer_change = TRUE
 
 /turf/closed/mineral/gold/ice/icemoon
-	turf_type = /turf/open/floor/plating/asteroid/snow/ice/icemoon
-	baseturfs = /turf/open/floor/plating/asteroid/snow/ice/icemoon
-	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
+	turf_type = /turf/open/indestructible/ground/outside/snow
+	baseturfs = /turf/open/indestructible/ground/outside/snow
+	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
 
 /turf/closed/mineral/lead
 	mineralType = /obj/item/stack/ore/lead
@@ -545,15 +544,15 @@
 	environment_type = "snow_cavern"
 	icon_state = "icerock_silver"
 	smooth_icon = 'icons/turf/walls/icerock_wall.dmi'
-	turf_type = /turf/open/floor/plating/asteroid/snow/ice
-	baseturfs = /turf/open/floor/plating/asteroid/snow/ice
+	turf_type = /turf/open/indestructible/ground/outside/snow
+	baseturfs = /turf/open/indestructible/ground/outside/snow
 	initial_gas_mix = FROZEN_ATMOS
 	defer_change = TRUE
 
 /turf/closed/mineral/silver/ice/icemoon
-	turf_type = /turf/open/floor/plating/asteroid/snow/ice/icemoon
-	baseturfs = /turf/open/floor/plating/asteroid/snow/ice/icemoon
-	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
+	turf_type = /turf/open/indestructible/ground/outside/snow
+	baseturfs = /turf/open/indestructible/ground/outside/snow
+	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
 
 /turf/closed/mineral/titanium
 	mineralType = /obj/item/stack/ore/titanium
@@ -579,15 +578,15 @@
 	environment_type = "snow_cavern"
 	icon_state = "icerock_titanium"
 	smooth_icon = 'icons/turf/walls/icerock_wall.dmi'
-	turf_type = /turf/open/floor/plating/asteroid/snow/ice
-	baseturfs = /turf/open/floor/plating/asteroid/snow/ice
+	turf_type = /turf/open/indestructible/ground/outside/snow
+	baseturfs = /turf/open/indestructible/ground/outside/snow
 	initial_gas_mix = FROZEN_ATMOS
 	defer_change = TRUE
 
 /turf/closed/mineral/titanium/ice/icemoon
-	turf_type = /turf/open/floor/plating/asteroid/snow/ice/icemoon
-	baseturfs = /turf/open/floor/plating/asteroid/snow/ice/icemoon
-	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
+	turf_type = /turf/open/indestructible/ground/outside/snow
+	baseturfs = /turf/open/indestructible/ground/outside/snow
+	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
 
 /turf/closed/mineral/plasma
 	mineralType = /obj/item/stack/ore/plasma
@@ -613,15 +612,15 @@
 	environment_type = "snow_cavern"
 	icon_state = "icerock_plasma"
 	smooth_icon = 'icons/turf/walls/icerock_wall.dmi'
-	turf_type = /turf/open/floor/plating/asteroid/snow/ice
-	baseturfs = /turf/open/floor/plating/asteroid/snow/ice
+	turf_type = /turf/open/indestructible/ground/outside/snow
+	baseturfs = /turf/open/indestructible/ground/outside/snow
 	initial_gas_mix = FROZEN_ATMOS
 	defer_change = TRUE
 
 /turf/closed/mineral/plasma/ice/icemoon
-	turf_type = /turf/open/floor/plating/asteroid/snow/ice/icemoon
-	baseturfs = /turf/open/floor/plating/asteroid/snow/ice/icemoon
-	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
+	turf_type = /turf/open/indestructible/ground/outside/snow
+	baseturfs = /turf/open/indestructible/ground/outside/snow
+	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
 
 /turf/closed/mineral/bscrystal
 	mineralType = /obj/item/stack/ore/bluespace_crystal
@@ -648,15 +647,15 @@
 	environment_type = "snow_cavern"
 	icon_state = "icerock_BScrystal"
 	smooth_icon = 'icons/turf/walls/icerock_wall.dmi'
-	turf_type = /turf/open/floor/plating/asteroid/snow/ice
-	baseturfs = /turf/open/floor/plating/asteroid/snow/ice
+	turf_type = /turf/open/indestructible/ground/outside/snow
+	baseturfs = /turf/open/indestructible/ground/outside/snow
 	initial_gas_mix = FROZEN_ATMOS
 	defer_change = TRUE
 
 /turf/closed/mineral/bscrystal/ice/icemoon
-	turf_type = /turf/open/floor/plating/asteroid/snow/ice/icemoon
-	baseturfs = /turf/open/floor/plating/asteroid/snow/ice/icemoon
-	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
+	turf_type = /turf/open/indestructible/ground/outside/snow
+	baseturfs = /turf/open/indestructible/ground/outside/snow
+	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
 
 /turf/closed/mineral/volcanic
 	environment_type = "basalt"
@@ -704,9 +703,9 @@
 	defer_change = TRUE
 
 /turf/closed/mineral/snowmountain/icemoon
-	turf_type = /turf/open/floor/plating/asteroid/snow/icemoon
-	baseturfs = /turf/open/floor/plating/asteroid/snow/icemoon
-	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
+	turf_type = /turf/open/indestructible/ground/outside/snow
+	baseturfs = /turf/open/indestructible/ground/outside/snow
+	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
 
 /turf/closed/mineral/snowmountain/cavern
 	name = "ice cavern rock"
@@ -715,15 +714,15 @@
 	icon_state = "icerock"
 	smooth = SMOOTH_MORE|SMOOTH_BORDER
 	canSmoothWith = list (/turf/closed)
-	baseturfs = /turf/open/floor/plating/asteroid/snow/ice
+	baseturfs = /turf/open/indestructible/ground/outside/snow
 	environment_type = "snow_cavern"
-	turf_type = /turf/open/floor/plating/asteroid/snow/ice
+	turf_type = /turf/open/indestructible/ground/outside/snow
 
 /turf/closed/mineral/snowmountain/cavern/icemoon
-	baseturfs = /turf/open/floor/plating/asteroid/snow/ice/icemoon
-	turf_type = /turf/open/floor/plating/asteroid/snow/ice/icemoon
-	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
-/*
+	baseturfs = /turf/open/indestructible/ground/outside/snow
+	turf_type = /turf/open/indestructible/ground/outside/snow
+	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
+
 //GIBTONITE
 
 /turf/closed/mineral/gibtonite
@@ -840,16 +839,16 @@
 	environment_type = "snow_cavern"
 	icon_state = "icerock_Gibtonite"
 	smooth_icon = 'icons/turf/walls/icerock_wall.dmi'
-	turf_type = /turf/open/floor/plating/asteroid/snow/ice
-	baseturfs = /turf/open/floor/plating/asteroid/snow/ice
+	turf_type = /turf/open/indestructible/ground/outside/snow
+	baseturfs = /turf/open/indestructible/ground/outside/snow
 	initial_gas_mix = FROZEN_ATMOS
 	defer_change = TRUE
 
 /turf/closed/mineral/gibtonite/ice/icemoon
-	turf_type = /turf/open/floor/plating/asteroid/snow/ice/icemoon
-	baseturfs = /turf/open/floor/plating/asteroid/snow/ice/icemoon
-	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
-*/
+	turf_type = /turf/open/indestructible/ground/outside/snow
+	baseturfs = /turf/open/indestructible/ground/outside/snow
+	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
+
 /turf/closed/mineral/strong
 	name = "Very strong rock"
 	desc = "Seems to be stronger than the other rocks in the area. Only a master of mining techniques could destroy this."

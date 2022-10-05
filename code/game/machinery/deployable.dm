@@ -6,6 +6,19 @@
 #define WOOD 2
 #define SAND 3
 
+//To avoid cheesing when building defenses
+
+GLOBAL_LIST_INIT(blocking_structures, typecacheof(list(
+		/obj/structure/table,
+		/obj/structure/table_frame,
+		/obj/structure/barricade/concrete,
+		/obj/structure/barricade/sandbags,
+		/obj/structure/barricade/wooden,
+		/obj/structure/obstacle/barbedwire,
+		/obj/structure/grille,
+		/obj/structure/fence
+)))
+
 //Barricades/cover
 
 /obj/structure/barricade
@@ -13,6 +26,7 @@
 	desc = "Looks like this would make good cover."
 	anchored = TRUE
 	density = TRUE
+	barricade = TRUE
 	max_integrity = 100
 //	var/proj_pass_rate = 50 //How many projectiles will pass the cover. Lower means stronger cover
 	var/bar_material = METAL
@@ -98,17 +112,14 @@
 	return ..()
 */
 
-
-
-
 /obj/structure/barricade/sandbags
 	name = "sandbags"
 	desc = "Bags of sand. Self explanatory."
 	icon = 'icons/obj/smooth_structures/sandbags.dmi'
 	icon_state = "sandbags"
-	max_integrity = 280
-	proj_pass_rate = 20
-	pass_flags = LETPASSTHROW
+	max_integrity = 300
+	proj_pass_rate = 30
+	pass_flags_self = LETPASSTHROW
 	bar_material = SAND
 	climbable = TRUE
 	smooth = SMOOTH_TRUE
@@ -128,11 +139,6 @@
 
 /obj/structure/barricade/sandbags/make_debris()
 	new /obj/item/stack/ore/glass(get_turf(src), drop_amount)
-
-
-
-
-
 
 /obj/structure/barricade/tent
 	name = "tent wall"
@@ -162,18 +168,6 @@
 /obj/structure/barricade/tent/make_debris()
 	new /obj/item/stack/sheet/cloth(get_turf(src), drop_amount)
 
-
-
-
-
-
-
-
-
-
-
-
-
 /obj/structure/barricade/security
 	name = "security barrier"
 	desc = "A deployable barrier. Provides good cover in fire fights."
@@ -181,8 +175,8 @@
 	icon_state = "barrier0"
 	density = FALSE
 	anchored = FALSE
-	max_integrity = 180
-	proj_pass_rate = 20
+	max_integrity = 200
+	proj_pass_rate = 30
 	armor = list("melee" = 10, "bullet" = 50, "laser" = 50, "energy" = 50, "bomb" = 10, "bio" = 100, "rad" = 100, "fire" = 10, "acid" = 0)
 
 	var/deploy_time = 40
@@ -199,7 +193,6 @@
 	anchored = TRUE
 	if(deploy_message)
 		visible_message("<span class='warning'>[src] deploys!</span>")
-
 
 /obj/item/grenade/barrier
 	name = "barrier grenade"

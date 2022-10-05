@@ -72,18 +72,14 @@
 			explosion(get_step(T, aim_dir), boom_sizes[1], boom_sizes[2], boom_sizes[3])
 		else
 			explosion(location, boom_sizes[1], boom_sizes[2], boom_sizes[3])
-	if(ismob(target))
+/*	if(ismob(target))
 		var/mob/M = target
-		M.gib()
+		M.gib()*/
 	qdel(src)
 
 //assembly stuff
 /obj/item/grenade/plastic/receive_signal()
 	prime()
-
-/obj/item/grenade/plastic/Crossed(atom/movable/AM)
-	if(nadeassembly)
-		nadeassembly.Crossed(AM)
 
 /obj/item/grenade/plastic/on_found(mob/finder)
 	if(nadeassembly)

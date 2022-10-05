@@ -37,78 +37,6 @@
 	. = ..()
 	flags_2 |= GLOBAL_LIGHT_TURF_2
 
-#define GRASS_SPONTANEOUS 		2
-#define GRASS_WEIGHT 			4
-#define LUSH_PLANT_SPAWN_LIST list(/obj/structure/flora/grass/wasteland = 10, /obj/structure/flora/wasteplant/wild_broc = 7, /obj/structure/flora/wasteplant/wild_mesquite = 4, /obj/structure/flora/wasteplant/wild_feracactus = 5, /obj/structure/flora/wasteplant/wild_punga = 5, /obj/structure/flora/wasteplant/wild_coyote = 5, /obj/structure/flora/wasteplant/wild_tato = 5, /obj/structure/flora/wasteplant/wild_yucca = 5, /obj/structure/flora/wasteplant/wild_mutfruit = 5, /obj/structure/flora/wasteplant/wild_prickly = 5, /obj/structure/flora/wasteplant/wild_datura = 5, /obj/structure/flora/wasteplant/wild_buffalogourd = 5, /obj/structure/flora/wasteplant/wild_pinyon = 3, /obj/structure/flora/wasteplant/wild_xander = 5, /obj/structure/flora/wasteplant/wild_agave = 5, /obj/structure/flora/tree/joshua = 3, /obj/structure/flora/tree/cactus = 2, /obj/structure/flora/tree/wasteland = 2)
-#define DESOLATE_PLANT_SPAWN_LIST list(/obj/structure/flora/grass/wasteland = 1)
-
-/turf/open/floor/plating/f13/outside/desert
-	name = "\proper desert"
-	desc = "A stretch of desert."
-	icon = 'icons/turf/f13desert.dmi'
-	icon_state = "wasteland1"
-
-	archdrops = list(/obj/item/stack/ore/glass = list(ARCH_PROB = 100,ARCH_MAXDROP = 5)) //sand
-	var/obj/structure/flora/turfPlant = null
-	slowdown = 0
-	var/dug = FALSE				//FALSE = has not yet been dug, TRUE = has already been dug
-	var/pit_sand = 2
-	var/storedindex = 0			//amount of stored items
-	var/mob/living/gravebody	//is there a body in the pit?
-	var/obj/structure/closet/crate/coffin/gravecoffin //or maybe a coffin?
-	var/pitcontents = list()
-	var/obj/dugpit/mypit
-	var/unburylevel = 0
-
-/turf/open/floor/plating/f13/outside/desert/Initialize()
-	. = ..()
-	icon_state = "wasteland[rand(1,31)]"
-	//If no fences, machines (soil patches are machines), etc. try to plant grass
-	if(!((locate(/obj/structure) in src) || (locate(/obj/machinery) in src)))
-		plantGrass()
-
-//Pass PlantForce for admin stuff I guess?
-/turf/open/floor/plating/f13/outside/desert/proc/plantGrass(Plantforce = FALSE)
-	var/Weight = 0
-	var/randPlant = null
-
-	//spontaneously spawn grass
-	if(Plantforce || prob(GRASS_SPONTANEOUS))
-		randPlant = pickweight(LUSH_PLANT_SPAWN_LIST) //Create a new grass object at this location, and assign var
-		turfPlant = new randPlant(src)
-		. = TRUE //in case we ever need this to return if we spawned
-		return .
-
-	//loop through neighbouring desert turfs, if they have grass, then increase weight
-	for(var/turf/open/floor/plating/f13/outside/desert/T in RANGE_TURFS(3, src))
-		if(T.turfPlant)
-			Weight += GRASS_WEIGHT
-
-	//use weight to try to spawn grass
-	if(prob(Weight))
-
-		//If surrounded on 5+ sides, pick from lush
-		if(Weight == (5 * GRASS_WEIGHT))
-			randPlant = pickweight(LUSH_PLANT_SPAWN_LIST)
-		else
-			randPlant = pickweight(DESOLATE_PLANT_SPAWN_LIST)
-		turfPlant = new randPlant(src)
-		. = TRUE
-
-//Make sure we delete the plant if we ever change turfs
-/turf/open/floor/plating/f13/outside/desert/ChangeTurf(path, new_baseturf, flags)
-	if(turfPlant)
-		qdel(turfPlant)
-	. =  ..()
-
-/turf/open/floor/plating/f13/outside/desert/harsh
-	icon_state = "wasteland"
-	icon = 'icons/fallout/turfs/ground_harsh.dmi'
-
-/turf/open/floor/plating/f13/outside/desert/harsh/Initialize()
-	. = ..()
-	icon_state = "wasteland[rand(1,31)]"
-
 /turf/open/floor/plating/f13/outside/road
 	name = "\proper road"
 	desc = "A stretch of road."
@@ -554,16 +482,16 @@
 /turf/open/floor/plasteel/f13/metal/pipe/intersection
 	icon_state = "pipe_intersection"
 
-turf/open/floor/plasteel/f13/tile
+/turf/open/floor/plasteel/f13/tile
 	icon_state = "grey"
 
-turf/open/floor/plasteel/f13/tile/broken
+/turf/open/floor/plasteel/f13/tile/broken
 	icon_state = "grey_1"
 
-	New()
-		..()
-		if(icon_state == "grey_1")
-			icon_state = "grey_[rand(1,8)]"
+/turf/open/floor/plasteel/f13/tile/broken/Initialize()
+	. = ..()
+	if(icon_state == "grey_1")
+		icon_state = "grey_[rand(1,8)]"
 
 /turf/open/floor/plasteel/f13/tile/long
 	icon_state = "grey_long"
@@ -571,10 +499,10 @@ turf/open/floor/plasteel/f13/tile/broken
 /turf/open/floor/plasteel/f13/tile/long/broken
 	icon_state = "grey_long_1"
 
-	New()
-		..()
-		if(icon_state == "grey_long1")
-			icon_state = "grey_long_[rand(1,6)]"
+/turf/open/floor/plasteel/f13/tile/long/broken/Initialize()
+	. = ..()
+	if(icon_state == "grey_long1")
+		icon_state = "grey_long_[rand(1,6)]"
 
 /turf/open/floor/plasteel/f13/tile/blue
 	icon_state = "bluetile"
@@ -582,10 +510,10 @@ turf/open/floor/plasteel/f13/tile/broken
 /turf/open/floor/plasteel/f13/tile/blue/broken
 	icon_state = "blue_1"
 
-	New()
-		..()
-		if(icon_state == "blue_1")
-			icon_state = "blue_[rand(1,8)]"
+/turf/open/floor/plasteel/f13/tile/blue/broken/Initialize()
+	. = ..()
+	if(icon_state == "blue_1")
+		icon_state = "blue_[rand(1,8)]"
 
 /turf/open/floor/plasteel/f13/tile/blue_long
 	icon_state = "blue_long"
@@ -593,10 +521,10 @@ turf/open/floor/plasteel/f13/tile/broken
 /turf/open/floor/plasteel/f13/tile/blue_long/broken
 	icon_state = "blue_long_1"
 
-	New()
-		..()
-		if(icon_state == "blue_long1")
-			icon_state = "blue_long_[rand(1,6)]"
+/turf/open/floor/plasteel/f13/tile/blue_long/broken/Initialize()
+	. = ..()
+	if(icon_state == "blue_long1")
+		icon_state = "blue_long_[rand(1,6)]"
 
 /turf/open/floor/plasteel/f13/tile/navy
 	icon_state = "navy"
@@ -604,10 +532,10 @@ turf/open/floor/plasteel/f13/tile/broken
 /turf/open/floor/plasteel/f13/tile/navy/broken
 	icon_state = "navy_1"
 
-	New()
-		..()
-		if(icon_state == "navy_1")
-			icon_state = "navy_[rand(1,7)]"
+/turf/open/floor/plasteel/f13/tile/navy/broken/Initialize()
+	. = ..()
+	if(icon_state == "navy_1")
+		icon_state = "navy_[rand(1,7)]"
 
 /turf/open/floor/plasteel/f13/tile/brown
 	icon_state = "browntile"
@@ -615,10 +543,10 @@ turf/open/floor/plasteel/f13/tile/broken
 /turf/open/floor/plasteel/f13/tile/brown/broken
 	icon_state = "brown_1"
 
-	New()
-		..()
-		if(icon_state == "brown_1")
-			icon_state = "brown_[rand(1,8)]"
+/turf/open/floor/plasteel/f13/tile/brown/broken/Initialize()
+	. = ..()
+	if(icon_state == "brown_1")
+		icon_state = "brown_[rand(1,8)]"
 
 /turf/open/floor/plasteel/f13/tile/fancy
 	icon_state = "fancy"
@@ -626,10 +554,10 @@ turf/open/floor/plasteel/f13/tile/broken
 /turf/open/floor/plasteel/f13/tile/fancy/broken
 	icon_state = "fancy_1"
 
-	New()
-		..()
-		if(icon_state == "fancy_1")
-			icon_state = "fancy_[rand(1,7)]"
+/turf/open/floor/plasteel/f13/tile/fancy/broken/Initialize()
+	. = ..()
+	if(icon_state == "fancy_1")
+		icon_state = "fancy_[rand(1,7)]"
 
 
 
@@ -643,10 +571,10 @@ turf/open/floor/plasteel/f13/tile/broken
 /turf/open/floor/plasteel/f13/stone/ornate/broken
 	icon_state = "ornate_1"
 
-	New()
-		..()
-		if(icon_state == "ornate_1")
-			icon_state = "ornate_[rand(1,3)]"
+/turf/open/floor/plasteel/f13/stone/ornate/broken/Initialize()
+	. = ..()
+	if(icon_state == "ornate_1")
+		icon_state = "ornate_[rand(1,3)]"
 
 /turf/open/floor/plasteel/f13/stone/sierra
 	icon_state = "sierra"
@@ -654,10 +582,10 @@ turf/open/floor/plasteel/f13/tile/broken
 /turf/open/floor/plasteel/f13/stone/sierra/broken
 	icon_state = "sierra_1"
 
-	New()
-		..()
-		if(icon_state == "sierra_1")
-			icon_state = "ornate_[rand(1,3)]"
+/turf/open/floor/plasteel/f13/stone/sierra/broken/Initialize()
+	. = ..()
+	if(icon_state == "sierra_1")
+		icon_state = "ornate_[rand(1,3)]"
 
 /turf/open/floor/plasteel/f13/stone/ceramic
 	icon_state = "ceramic"
@@ -665,10 +593,10 @@ turf/open/floor/plasteel/f13/tile/broken
 /turf/open/floor/plasteel/f13/stone/ceramic/broken
 	icon_state = "ceramic_1"
 
-	New()
-		..()
-		if(icon_state == "ceramic_1")
-			icon_state = "ceramic_[rand(1,2)]"
+/turf/open/floor/plasteel/f13/stone/ceramic/broken/Initialize()
+	. = ..()
+	if(icon_state == "ceramic_1")
+		icon_state = "ceramic_[rand(1,2)]"
 
 /turf/open/floor/plasteel/f13/stone/brick
 	icon_state = "brick"
@@ -676,10 +604,10 @@ turf/open/floor/plasteel/f13/tile/broken
 /turf/open/floor/plasteel/f13/stone/brick/broken
 	icon_state = "brick_1"
 
-	New()
-		..()
-		if(icon_state == "brick_1")
-			icon_state = "brick_[rand(1,8)]"
+/turf/open/floor/plasteel/f13/stone/brick/broken/Initialize()
+	. = ..()
+	if(icon_state == "brick_1")
+		icon_state = "brick_[rand(1,8)]"
 
 /turf/open/floor/plasteel/f13/stone/rugged
 	icon_state = "khanstone"

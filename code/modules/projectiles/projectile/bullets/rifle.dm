@@ -75,13 +75,11 @@ heavy rifle calibers (12.7, 14mm, 7.62): Uranium, Contaminated, Incin
 	embed_falloff_tile = 0.5
 	embedding = list(embed_chance=5, fall_chance=1, jostle_chance=1, ignore_throwspeed_threshold=TRUE, pain_stam_pct=0.5, pain_mult=5, jostle_pain_mult=6, rip_time=10, embed_chance_turf_mod=100, projectile_payload = /obj/item/shrapnel/bullet/a556/microshrapnel)
 
-/*
 /obj/item/projectile/bullet/a556/uraniumtipped
 	name = "5.56 uranium-tipped bullet"
 	damage = -9
 	armour_penetration = 0
 	irradiate = 300
-*/
 
 /obj/item/projectile/bullet/a556/simple //for simple mobs, separate to allow balancing
 	name = "5.56 bullet"
@@ -121,13 +119,11 @@ heavy rifle calibers (12.7, 14mm, 7.62): Uranium, Contaminated, Incin
 	damage = 35
 	armour_penetration = 0.2
 
-/*
 /obj/item/projectile/bullet/a762/uraniumtipped
 	name = "7.62 uranium-tipped bullet"
 	damage = -10
 	armour_penetration = 0
 	irradiate = 300
-*/
 
 /obj/item/projectile/bullet/a762/microshrapnel
 	name = "7.62 microshrapnel bullet"
@@ -146,6 +142,8 @@ heavy rifle calibers (12.7, 14mm, 7.62): Uranium, Contaminated, Incin
 	damage = 0
 	pixels_per_second = 4000
 	zone_accuracy_factor = 100
+	wound_bonus = 20
+	bare_wound_bonus = 60
 
 /obj/item/projectile/bullet/a50MG/incendiary
 	damage = -10
@@ -176,15 +174,13 @@ heavy rifle calibers (12.7, 14mm, 7.62): Uranium, Contaminated, Incin
 /obj/item/projectile/bullet/a50MG/penetrator
 	name = ".50 penetrator round"
 	damage = -10
-	movement_type = FLYING | UNSTOPPABLE
+	movement_type = FLYING | PHASING
 
-/*
 /obj/item/projectile/bullet/a50MG/uraniumtipped
 	name = "12.7mm uranium-tipped bullet"
 	damage = -15
 	armour_penetration = 0.2
 	irradiate = 500
-*/
 
 /obj/item/projectile/bullet/a50MG/contam
 	name = "12.7mm contaminated bullet"
@@ -205,6 +201,13 @@ heavy rifle calibers (12.7, 14mm, 7.62): Uranium, Contaminated, Incin
 		S.set_up(src.reagents, smoke_radius, location, 0)
 		S.start()
 	..()
+
+/obj/item/projectile/bullet/a50MG/depleteduranium//Used, currently, for the emplaced MG.
+	name = ".50 DU-bullet"
+	damage = 15//Fire rate is absurd. Makes up for it.
+	armour_penetration = 1//:)
+	wound_bonus = 60//Makes up for the low damage. Not to mention that it works well with the fire rate.
+	bare_wound_bonus = 80//As above.
 
 //////////////////////
 // 4.73 MM CASELESS //
@@ -239,13 +242,11 @@ heavy rifle calibers (12.7, 14mm, 7.62): Uranium, Contaminated, Incin
 		M.adjust_fire_stacks(fire_stacks)
 		M.IgniteMob()
 
-/*
 /obj/item/projectile/bullet/a473/uraniumtipped
 	name = "4.73 U-235 bullet"
 	damage = -2
 	armour_penetration = 0.3
 	irradiate = 300
-*/
 
 /obj/item/projectile/bullet/a473/dumdum
 	name = "4.73 flat-nose bullet"
@@ -342,5 +343,5 @@ heavy rifle calibers (12.7, 14mm, 7.62): Uranium, Contaminated, Incin
 	if(isliving(target) && collats)
 		collats--
 		temporary_unstoppable_movement = TRUE
-		ENABLE_BITFIELD(movement_type, UNSTOPPABLE)
+		ENABLE_BITFIELD(movement_type, PHASING)
 	..()

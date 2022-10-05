@@ -35,6 +35,7 @@ SUBSYSTEM_DEF(idlenpcpool)
 		--currentrun.len
 		if (!SA)
 			GLOB.simple_animals[AI_IDLE] -= SA
+			stack_trace("Found a null in simple_animals deactive list [SA.type]!")
 			continue
 
 		if(!SA.ckey)

@@ -22,7 +22,7 @@
 	pixel_y = -8
 	ranged = TRUE
 	ranged_cooldown_time = 10
-	pass_flags = LETPASSTHROW
+	pass_flags_self = LETPASSTHROW
 	robust_searching = TRUE
 	stat_attack = UNCONSCIOUS
 	attack_sound = 'sound/weapons/rapierhit.ogg'
@@ -33,7 +33,7 @@
 
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
 
-/mob/living/simple_animal/hostile/jungle/mook/CanPass(atom/movable/O)
+/mob/living/simple_animal/hostile/jungle/mook/CanAllowThrough(atom/movable/O)
 	if(istype(O, /mob/living/simple_animal/hostile/jungle/mook))
 		var/mob/living/simple_animal/hostile/jungle/mook/M = O
 		if(M.attack_state == MOOK_ATTACK_ACTIVE && M.throwing)

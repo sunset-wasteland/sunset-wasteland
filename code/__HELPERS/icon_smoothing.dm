@@ -124,6 +124,7 @@
 	if(!A || !A.smooth)
 		return
 	A.smooth &= ~SMOOTH_QUEUED
+	A.flags_1 |= HTML_USE_INITAL_ICON_1
 	if (!A.z)
 		return
 	if(QDELETED(A))
@@ -436,5 +437,5 @@
 				junction |= cdir
 				break
 
-atom/proc/relative(custom_junction = junction)
+/atom/proc/relative(custom_junction = junction)
 	icon_state = "[src.icon_type_smooth][custom_junction]"

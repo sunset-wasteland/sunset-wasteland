@@ -10,20 +10,25 @@
 	var/mob/living/carbon/human/patient
 	var/obj/structure/table/optable/table
 	var/list/advanced_surgeries = list()
+	var/research_id = "SCIENCE"
 	var/datum/techweb/linked_techweb
 	light_color = LIGHT_COLOR_BLUE
 
 /obj/machinery/computer/operating/Initialize()
 	. = ..()
-	linked_techweb = SSresearch.science_tech
+	update_techweb()
 	find_table()
+
+/obj/machinery/computer/operating/proc/update_techweb(new_research_id = null)
+	if (istext(new_research_id))
+		research_id = new_research_id
+	linked_techweb = SSresearch.get_techweb_by_id(research_id)
 
 /obj/machinery/computer/operating/bos
+	research_id = "BOS"
 
-/obj/machinery/computer/operating/bos/Initialize()
-	. = ..()
-	linked_techweb = SSresearch.bos_tech
-	find_table()
+/obj/machinery/computer/operating/enclave
+	research_id = "ENCLAVE"
 
 /obj/machinery/computer/operating/attackby(obj/item/O, mob/user, params)
 	if(istype(O, /obj/item/disk/surgery))

@@ -691,7 +691,7 @@ GLOBAL_LIST_EMPTY(vending_products)
 	.["product_records"] = list()
 	for (var/datum/data/vending_product/R in product_records)
 		var/list/data = list(
-			path = replacetext(replacetext("[R.product_path]", "/obj/item/", ""), "/", "-"),
+			asset = get_spritesheet_icon_key_from_type(R.product_path),
 			name = R.name,
 			price = R.custom_price || default_price,
 			max_amount = R.max_amount,
@@ -701,7 +701,7 @@ GLOBAL_LIST_EMPTY(vending_products)
 	.["coin_records"] = list()
 	for (var/datum/data/vending_product/R in coin_records)
 		var/list/data = list(
-			path = replacetext(replacetext("[R.product_path]", "/obj/item/", ""), "/", "-"),
+			asset = get_spritesheet_icon_key_from_type(R.product_path),
 			name = R.name,
 			price = R.custom_premium_price || extra_price,
 			max_amount = R.max_amount,
@@ -712,7 +712,7 @@ GLOBAL_LIST_EMPTY(vending_products)
 	.["hidden_records"] = list()
 	for (var/datum/data/vending_product/R in hidden_records)
 		var/list/data = list(
-			path = replacetext(replacetext("[R.product_path]", "/obj/item/", ""), "/", "-"),
+			asset = get_spritesheet_icon_key_from_type(R.product_path),
 			name = R.name,
 			price = R.custom_premium_price || extra_price, //may cause breakage. please note
 			max_amount = R.max_amount,
@@ -961,7 +961,7 @@ GLOBAL_LIST_EMPTY(vending_products)
 /obj/machinery/vending/proc/canLoadItem(obj/item/I, mob/user)
 	return FALSE
 
-/obj/machinery/vending/onTransitZ()
+/obj/machinery/vending/on_changed_z_level(turf/old_turf, turf/new_turf)
 	return
 
 /obj/machinery/vending/custom

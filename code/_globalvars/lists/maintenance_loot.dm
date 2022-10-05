@@ -253,7 +253,6 @@ GLOBAL_LIST_INIT(trash_tool, list(
 ))
 
 GLOBAL_LIST_INIT(trash_misc, list(
-	/obj/item/pipe = 5,
 	/obj/item/trash/f13/electronic/toaster = 5,
 	/obj/item/reagent_containers/glass/bucket = 5,
 	/obj/item/kitchen/knife = 5,
@@ -865,9 +864,9 @@ GLOBAL_LIST_INIT(loot_t3_money, list(
 ))
 
 GLOBAL_LIST_INIT(loot_skillbook, list(
-	/obj/item/book/granter/trait/chemistry,
+//	/obj/item/book/granter/trait/chemistry,
 	/obj/item/book/granter/trait/trekking,
-	/obj/item/book/granter/trait/pa_wear,
+//	/obj/item/book/granter/trait/pa_wear,
 	/obj/item/book/granter/crafting_recipe/gunsmith_one,
 	/obj/item/book/granter/crafting_recipe/gunsmith_two,
 	/obj/item/book/granter/crafting_recipe/gunsmith_three,

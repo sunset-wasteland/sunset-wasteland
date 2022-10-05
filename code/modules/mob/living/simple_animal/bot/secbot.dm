@@ -314,7 +314,7 @@ Auto Patrol: []"},
 		to_chat(user, "<span class='warning'>\The [H] is stuck to your hand, you cannot put it on [src]'s head!</span>")
 		return
 	if(bot_accessory)
-		to_chat("<span class='warning'>\[src] already has an accessory, and the laws of physics disallow him from wearing a second!</span>")
+		to_chat(user, span_warning("[src] already has an accessory, and the laws of physics disallow \him from wearing a second!"))
 		return
 
 	if(H.beepsky_fashion)
@@ -590,14 +590,14 @@ Auto Patrol: []"},
 		target = user
 		mode = BOT_HUNT
 
-/mob/living/simple_animal/bot/secbot/Crossed(atom/movable/AM)
+/mob/living/simple_animal/bot/secbot/on_entered(atom/movable/AM)
+	..()
 	if(has_gravity() && ismob(AM) && target)
 		var/mob/living/carbon/C = AM
 		if(!istype(C) || !C || in_range(src, target))
 			return
 		knockOver(C)
 		return
-	..()
 
 /obj/machinery/bot_core/secbot
 	req_access = list(ACCESS_SECURITY)

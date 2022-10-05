@@ -210,10 +210,11 @@
 
 // called when something steps onto a human
 // this could be made more general, but for now just handle mulebot
-/mob/living/carbon/human/Crossed(atom/movable/AM)
+/mob/living/carbon/human/on_entered(atom/movable/AM)
+	..()
 	var/mob/living/simple_animal/bot/mulebot/MB = AM
 	if(istype(MB))
-		MB.RunOver(src)
+		INVOKE_ASYNC(MB, /mob/living/simple_animal/bot/mulebot/.proc/RunOver, src)
 
 	spreadFire(AM)
 
@@ -1270,8 +1271,8 @@
 /mob/living/carbon/human/species/ghoul
 	race = /datum/species/ghoul
 
-///mob/living/carbon/human/species/ghoul/glowing //might not actually be correct but it's okay because it's disabled :)
-//	race = /datum/species/ghoul/glowing
+/mob/living/carbon/human/species/ghoul/glowing //might not actually be correct but it's okay because it's disabled :)
+	race = /datum/species/ghoul/glowing
 
 /mob/living/carbon/human/species/smutant
 	race = /datum/species/smutant

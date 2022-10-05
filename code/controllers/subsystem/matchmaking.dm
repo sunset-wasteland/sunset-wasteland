@@ -21,7 +21,7 @@ SUBSYSTEM_DEF(matchmaking)
 /datum/controller/subsystem/matchmaking/proc/add_candidate_aspiration(mob/living/candidate, datum/matchmaking_pref/aspiration)
 	if(!bachelors[candidate])
 		RegisterSignal(candidate, COMSIG_PARENT_QDELETING, .proc/on_candidate_qdel)
-		RegisterSignal(candidate, COMSIG_MOB_CLIENT_LOGOUT, .proc/on_candidate_logout)
+		RegisterSignal(candidate, COMSIG_MOB_LOGOUT, .proc/on_candidate_logout)
 	LAZYADD(bachelors[candidate], aspiration)
 
 
@@ -33,7 +33,7 @@ SUBSYSTEM_DEF(matchmaking)
 
 /datum/controller/subsystem/matchmaking/proc/remove_candidate(mob/living/candidate)
 	bachelors -= candidate
-	UnregisterSignal(candidate, list(COMSIG_PARENT_QDELETING, COMSIG_MOB_CLIENT_LOGOUT))
+	UnregisterSignal(candidate, list(COMSIG_PARENT_QDELETING, COMSIG_MOB_LOGOUT))
 
 
 /datum/controller/subsystem/matchmaking/proc/on_candidate_qdel(mob/living/candidate)

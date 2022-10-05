@@ -2,7 +2,8 @@
 	name = "Synthetic Anthromorph"
 	id = "synthanthro"
 	default_color = "00FF00"
-	species_traits = list(MUTCOLORS,NOTRANSSTING,EYECOLOR,LIPS,HAIR,HORNCOLOR,WINGCOLOR,HAS_FLESH,HAS_BONE)
+	allowed_limb_ids = list("mammal","aquatic","avian")
+	species_traits = list(MUTCOLORS,NOTRANSSTING,EYECOLOR,LIPS,HAIR,HORNCOLOR,WINGCOLOR,HAS_FLESH,HAS_BONE,ROBOTIC_LIMBS)
 	inherent_traits = list(TRAIT_EASYDISMEMBER,TRAIT_LIMBATTACHMENT,TRAIT_NO_PROCESS_FOOD)
 	inherent_biotypes = MOB_ROBOTIC|MOB_HUMANOID|MOB_BEAST
 	mutant_bodyparts = list("mcolor" = "FFFFFF","mcolor2" = "FFFFFF","mcolor3" = "FFFFFF", "mam_snouts" = "Husky", "mam_tail" = "Husky", "mam_ears" = "Husky", "deco_wings" = "None",
@@ -35,12 +36,12 @@
 	wagging_type = "mam_waggingtail"
 	species_type = "robotic"
 
-	allowed_limb_ids = list("mammal","aquatic","avian")
-
-
-
 /datum/species/synthanthro/spec_life(mob/living/carbon/human/H)
 	if(H.nutrition < NUTRITION_LEVEL_FED)
 		H.nutrition = NUTRITION_LEVEL_FED
 	if(H.nutrition > NUTRITION_LEVEL_FED)
 		H.nutrition = NUTRITION_LEVEL_FED
+	if(H.water < THIRST_LEVEL_FULL)
+		H.water = THIRST_LEVEL_FULL
+	if(H.water > THIRST_LEVEL_FULL)
+		H.water = THIRST_LEVEL_FULL

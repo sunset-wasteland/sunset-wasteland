@@ -57,6 +57,7 @@
 	name = "leaper bubble"
 	icon = 'icons/obj/projectiles.dmi'
 	icon_state = "leaper_bubble_pop"
+	plane = MOB_PLANE
 	layer = ABOVE_ALL_MOB_LAYER
 	duration = 3
 
@@ -80,6 +81,12 @@
 
 /obj/structure/leaper_bubble/Initialize()
 	. = ..()
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_ENTERED = .proc/on_entered,
+	)
+	AddElement(/datum/element/connect_loc, loc_connections)
+
+
 	INVOKE_ASYNC(src, /atom/movable.proc/float, TRUE)
 	QDEL_IN(src, 100)
 
@@ -88,7 +95,8 @@
 	playsound(src,'sound/effects/snap.ogg',50, 1, -1)
 	return ..()
 
-/obj/structure/leaper_bubble/Crossed(atom/movable/AM)
+/obj/structure/leaper_bubble/proc/on_entered(datum/source, atom/movable/AM)
+	SIGNAL_HANDLER
 	if(isliving(AM))
 		var/mob/living/L = AM
 		if(!istype(L, /mob/living/simple_animal/hostile/jungle/leaper))
@@ -101,7 +109,6 @@
 				var/mob/living/simple_animal/A = L
 				A.adjustHealth(25)
 			qdel(src)
-	return ..()
 
 /datum/reagent/toxin/leaper_venom
 	name = "Leaper venom"
@@ -132,7 +139,7 @@
 
 /mob/living/simple_animal/hostile/jungle/leaper/CtrlClickOn(atom/A)
 	face_atom(A)
-	target = A
+	GiveTarget(A)
 	if(!isturf(loc))
 		return
 	if(!CheckActionCooldown())

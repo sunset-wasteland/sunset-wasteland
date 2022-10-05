@@ -22,8 +22,7 @@
 	layer = TABLE_LAYER
 	climbable = TRUE
 	obj_flags = CAN_BE_HIT|SHOVABLE_ONTO
-	pass_flags = LETPASSTHROW //You can throw objects over this, despite it's density.")
-	pass_flags_self = PASSTABLE
+	pass_flags_self = PASSTABLE | LETPASSTHROW
 	attack_hand_speed = CLICK_CD_MELEE
 	attack_hand_is_action = TRUE
 	var/frame = /obj/structure/table_frame
@@ -97,21 +96,14 @@
 /obj/structure/table/attack_tk()
 	return FALSE
 
-/obj/structure/table/CanPass(atom/movable/mover, border_dir)
-	if(istype(mover) && (mover.pass_flags & pass_flags_self))
-		return 1
-	if(mover.throwing)
-		return 1
+/obj/structure/table/CanAllowThrough(atom/movable/mover, border_dir)
+	. = ..()
+	if(.)
+		return
 	if(locate(/obj/structure/table) in get_turf(mover))
 		return 1
 	else
 		return !density
-
-/obj/structure/table/CanAStarPass(ID, dir, caller)
-	. = !density
-	if(ismovable(caller))
-		var/atom/movable/mover = caller
-		. = . || (mover.pass_flags & pass_flags_self)
 
 /obj/structure/table/proc/tableplace(mob/living/user, mob/living/pushed_mob)
 	pushed_mob.forceMove(src.loc)
@@ -256,6 +248,13 @@
 	icon_state = "rollingtable"
 	var/list/attached_items = list()
 
+/obj/structure/table/rolling/Initialize()
+	. = ..()
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_ENTERED = .proc/on_entered,
+	)
+	AddElement(/datum/element/connect_loc, loc_connections)
+
 /obj/structure/table/rolling/AfterPutItemOnTable(obj/item/I, mob/living/user)
 	. = ..()
 	attached_items += I
@@ -267,7 +266,11 @@
 	attached_items -= source
 	UnregisterSignal(source, COMSIG_MOVABLE_MOVED)
 
-/obj/structure/table/rolling/Moved(atom/OldLoc, Dir)
+/obj/structure/table/rolling/proc/on_entered(datum/source, atom/OldLoc, Dir)
+	SIGNAL_HANDLER
+	INVOKE_ASYNC(src, .proc/on_move, OldLoc, Dir)
+
+/obj/structure/table/rolling/proc/on_move(atom/OldLoc, Dir)
 	for(var/mob/M in OldLoc.contents)//Kidnap everyone on top
 		M.forceMove(loc)
 	for(var/x in attached_items)
@@ -291,6 +294,13 @@
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 80, "acid" = 100)
 	var/list/debris = list()
 
+/obj/structure/table/glass/Initialize()
+	. = ..()
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_ENTERED = .proc/on_entered,
+	)
+	AddElement(/datum/element/connect_loc, loc_connections)
+
 /obj/structure/table/glass/New()
 	. = ..()
 	debris += new frame
@@ -300,8 +310,8 @@
 	QDEL_LIST(debris)
 	. = ..()
 
-/obj/structure/table/glass/Crossed(atom/movable/AM)
-	. = ..()
+/obj/structure/table/glass/proc/on_entered(datum/source, atom/movable/AM)
+	SIGNAL_HANDLER
 	if(flags_1 & NODECONSTRUCT_1)
 		return
 	if(!isliving(AM))
@@ -675,8 +685,7 @@
 	layer = TABLE_LAYER
 	density = TRUE
 	anchored = TRUE
-	pass_flags = LETPASSTHROW
-	pass_flags_self = PASSTABLE
+	pass_flags_self = LETPASSTHROW | PASSTABLE
 	max_integrity = 30
 	attack_hand_speed = CLICK_CD_MELEE
 	attack_hand_is_action = TRUE
@@ -689,8 +698,7 @@
 	layer = TABLE_LAYER
 	density = TRUE
 	anchored = TRUE
-	pass_flags = LETPASSTHROW //You can throw objects over this, despite it's density.
-	pass_flags_self = PASSTABLE
+	pass_flags_self = PASSTABLE | LETPASSTHROW //You can throw objects over this, despite its density.
 	max_integrity = 20
 	attack_hand_speed = CLICK_CD_MELEE
 	attack_hand_is_action = TRUE
@@ -704,20 +712,6 @@
 /obj/structure/rack/examine(mob/user)
 	. = ..()
 	. += "<span class='notice'>It's held together by a couple of <b>bolts</b>.</span>"
-
-/obj/structure/rack/CanPass(atom/movable/mover, border_dir)
-	if(src.density == 0) //Because broken racks -Agouri |TODO: SPRITE!|
-		return 1
-	if(istype(mover) && (mover.pass_flags & pass_flags_self))
-		return 1
-	else
-		return 0
-
-/obj/structure/rack/CanAStarPass(ID, dir, caller)
-	. = !density
-	if(ismovable(caller))
-		var/atom/movable/mover = caller
-		. = . || (mover.pass_flags & pass_flags_self)
 
 /obj/structure/rack/MouseDrop_T(obj/O, mob/user)
 	. = ..()
@@ -807,32 +801,3 @@
 		R.add_fingerprint(user)
 		qdel(src)
 	building = FALSE
-
-
-
-/obj/structure/rack/large
-	name = "metal shelf"
-	bound_width = 64
-	icon = 'icons/obj/structures64.dmi'
-
-/obj/structure/rack/large/Initialize()
-	switch(dir)
-		if(SOUTH, NORTH)
-			bound_width = 64
-			bound_height = 32
-			bound_x = 0
-		if(EAST, WEST)
-			bound_width = 32
-			bound_height = 64
-			bound_x = 0
-	. = ..()
-
-/obj/structure/rack/large/shelf
-	name = "metal shelf"
-	desc = "An extra-large heavy-duty shelf. This could store a lot of things."
-	icon_state = "metal_shelf"
-	opacity = FALSE
-
-/obj/structure/rack/large/shelf_rust
-	desc = "An extra-large heavy-duty shelf. This could store a lot of things."
-	icon_state = "metal_shelf_rust"

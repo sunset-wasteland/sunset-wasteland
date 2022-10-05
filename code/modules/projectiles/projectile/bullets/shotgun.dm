@@ -1,10 +1,11 @@
 /obj/item/projectile/bullet/shotgun_slug
 	name = "12g shotgun slug"
-	damage = 50
+	damage = 40
 	stamina = 10 //all shotguns deal a very slight amount of stamina damage from the impact
 	sharpness = SHARP_POINTY
-	wound_bonus = 26
-	bare_wound_bonus = -26
+	wound_bonus = 35
+	bare_wound_bonus = 10
+	armour_penetration = 0.25
 	spread = 2
 
 /obj/item/projectile/bullet/shotgun_slug/executioner
@@ -111,9 +112,9 @@
 
 /obj/item/projectile/bullet/pellet/shotgun_buckshot
 	name = "buckshot pellet"
-	damage = 11
-	wound_bonus = 5
-	bare_wound_bonus = 5
+	damage = 11.3
+	wound_bonus = 10
+	bare_wound_bonus = 55
 	wound_falloff_tile = -2.5 // low damage + additional dropoff will already curb wounding potential anything past point blank
 
 /obj/item/projectile/bullet/pellet/shotgun_rubbershot

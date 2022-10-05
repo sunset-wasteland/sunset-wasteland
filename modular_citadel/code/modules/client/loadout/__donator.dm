@@ -20,16 +20,6 @@
 	path = /obj/item/clothing/accessory/cia_badge
 	ckeywhitelist = list("monke1818")
 
-// SUNSET FLUFF ITEMS
-
-/datum/gear/donator/mrsanderp
-	name = "Happy Sharky Company Cuisine Book"
-	slot = SLOT_IN_BACKPACK
-	path = /obj/item/book/granter/crafting_recipe/happysharky
-	category = LOADOUT_CATEGORY_BACKPACK
-	ckeywhitelist = list("mrsanderp")
-	cost = 0
-
 /////////////////////
 ///Loadout Boxes///// See kits.dm, use this model for loadouts that have more than one item per character.
 /////////////////////
@@ -156,18 +146,71 @@
 	new /obj/item/modkit/kemblehat(src)
 	new /obj/item/storage/belt/holster/kemble(src)
 
-/datum/gear/donator/kits/mrsanderp
-	name = "Happy Sharky Co. Business Bundle"
-	path = /obj/item/storage/box/large/custom_kit/mrsanderp
-	ckeywhitelist = list("mr.sanderp")
+/datum/gear/donator/kits/tessa
+	name ="Scourge custom whip"
+	path = /obj/item/storage/box/large/custom_kit/sadismbox
+	ckeywhitelist = list ("abelshift")
 
-/obj/item/storage/box/large/custom_kit/mrsanderp/PopulateContents()
+/obj/item/storage/box/large/custom_kit/sadismbox/PopulateContents()
+	new /obj/item/melee/onehanded/scourge(src)
+
+/datum/gear/donator/kits/abel
+	name ="modified NCRCF jacket"
+	path = /obj/item/storage/box/large/custom_kit/ncrcfbox
+	ckeywhitelist = list ("abelshift")
+
+/obj/item/storage/box/large/custom_kit/ncrcfbox/PopulateContents()
+	new /obj/item/clothing/suit/toggle/labcoat/abeljacket(src)
+
+/datum/gear/donator/kits/bella
+	name ="Bella's Fieldcoat"
+	path = /obj/item/storage/box/large/custom_kit/bellacoatbox
+	ckeywhitelist = list ("abelshift")
+
+/obj/item/storage/box/large/custom_kit/bellacoatbox/PopulateContents()
+	new /obj/item/clothing/suit/armor/f13/ncrarmor/bellacoat(src)
+
+/datum/gear/donator/kits/kemble
+	name = "Trinity Kemble's belongings"
+	path = /obj/item/storage/box/large/custom_kit/kemble
+	ckeywhitelist = list("yeehawguvnah")
+
+/obj/item/storage/box/large/custom_kit/kemble/PopulateContents()
+	new /obj/item/modkit/kemblevest(src)
+	new /obj/item/modkit/kemblehat(src)
+	new /obj/item/storage/belt/holster/kemble(src)
+
+/datum/gear/donator/kits/shark
+	name ="Happy Shark Material"
+	path = /obj/item/storage/box/large/custom_kit/shark
+	ckeywhitelist = list ("mr.sanderp","mrsanderp")
+
+/obj/item/storage/box/large/custom_kit/shark/PopulateContents()
 	new /obj/item/book/granter/crafting_recipe/happysharky(src)
+	new /obj/item/reagent_containers/food/snacks/sunset/happyshark/jerky(src)
+	new /obj/item/reagent_containers/food/snacks/sunset/happyshark/candybar(src)
+	new /obj/item/reagent_containers/food/drinks/sunset/happyshark/bittercola(src)
 
-/datum/gear/donator/kits/developerabuse
-	name ="Type 17 Strelle"
-	path = /obj/item/storage/box/large/custom_kit/developerabuse
-	ckeywhitelist = list ("apwill")
+/datum/gear/donator/kits/krig
+	name ="Krig's Teachings"
+	path = /obj/item/storage/box/large/custom_kit/krig
+	ckeywhitelist = list ("lia526")
 
-/obj/item/storage/box/large/custom_kit/developerabuse/PopulateContents()
-	new /obj/item/gun/ballistic/automatic/pistol/type17/strelle(src)
+/obj/item/storage/box/large/custom_kit/krig/PopulateContents()
+	new /obj/item/book/granter/trait/krig(src)
+
+/datum/gear/donator/kits/carl
+	name ="Hazard Gear"
+	path = /obj/item/storage/box/large/custom_kit/carl
+	ckeywhitelist = list ("nothingbutcarl")
+
+/obj/item/storage/box/large/custom_kit/carl/PopulateContents()
+	new /obj/item/clothing/head/helmet/f13/ncr/rangercombat/desert/carl(src)
+	new /obj/item/clothing/suit/armor/f13/rangercombat/desert/carl(src)
+	new /obj/item/card/id/rusted/brokenholodog/carl(src)
+	new /obj/item/clothing/gloves/f13/military/carl(src)
+	new /obj/item/clothing/shoes/f13/military/ncr_officer_boots/carl(src)
+	new /obj/item/clothing/under/f13/ranger/modif_ranger/carl(src)
+	new /obj/item/storage/belt/holster/regulator(src)
+	new /obj/item/nuke_core_container(src)
+	new /obj/item/screwdriver/nuke(src)

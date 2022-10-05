@@ -128,7 +128,10 @@
 /obj/item/book/granter/trait/onlearned(mob/living/user)
 	..()
 	if(oneuse)
-		to_chat(user, "<span class='caution'>[src] is useless to you now. You throw the book away.</span>")
+		user.visible_message(
+		message = "<span class='notice'>Just as [user] finishes reading [p_their(user)] copy of [src], the ancient book crumbles to dust!</span>",
+		self_message = "<span class='caution'>The ancient copy of [src] crumbles to dust as you finish reading it.</span>",
+		blind_message = "<span class='notice'>You hear something crumble.</span>")
 		qdel(src)
 
 /obj/item/book/granter/action/drink_fling
@@ -182,6 +185,17 @@
 	button_icon_state = "origami_off"
 	active = FALSE
 	UpdateButtonIcon()
+
+/////////
+// ADMIN FOR DEBUG
+/////////
+/obj/item/book/granter/trait/pilot
+	name = "Piloting and You"
+	desc = "An indepth look into how aircraft function, alongside your very own authorisation codes!"
+	oneuse = TRUE
+	granted_trait = TRAIT_PILOT
+	traitname = "vb_pilot"
+	remarks = list("Remember, your standard VB-02 is only as good as the pilots flying it.", "Assure you've another pilot at your side, in case of emergency.")
 
 ///SPELLS///
 
@@ -545,7 +559,10 @@
 /obj/item/book/granter/crafting_recipe/onlearned(mob/living/user)
 	..()
 	if(oneuse)
-		to_chat(user, "<span class='caution'>[src] is useless to you now. You throw it away.</span>")
+		user.visible_message(
+		message = "<span class='notice'>Just as [user] finishes reading [p_their(user)] copy of [src], the ancient document crumbles to dust!</span>",
+		self_message = "<span class='caution'>The ancient copy of [src] crumbles to dust as you finish reading it.</span>",
+		blind_message = "<span class='notice'>You hear something crumble.</span>")
 		qdel(src)
 
 
@@ -817,6 +834,11 @@
 	icon_state = "blueprint2"
 	crafting_recipe_types = list(/datum/crafting_recipe/explosive/shrapnelmine, /datum/crafting_recipe/explosive/explomine, /datum/crafting_recipe/explosive/stingmine, /datum/crafting_recipe/explosive/pulsemine, /datum/crafting_recipe/explosive/stunmine)
 
+/obj/item/book/granter/crafting_recipe/blueprint/plasmapistol_rem
+	name = "plasma pistol field blueprint"
+	icon_state = "blueprint2"
+	crafting_recipe_types = list(/datum/crafting_recipe/plasmapistol_rem)
+
 /*
 /obj/item/book/granter/crafting_recipe/blueprint/fnfal
 	name = "fn fal blueprint"
@@ -851,11 +873,11 @@
 	crafting_recipe_types = list(/datum/crafting_recipe/set_vrboard/den)
 
 /obj/item/book/granter/crafting_recipe/ODF
-	name = "Weapons of Yuma and the Oasis Defense Force"
+	name = "Weapons of Yuma and the Bighorn Defense Force"
 	desc = "a book detailing weapons used in the region and by the local town, it has lithiographed pictures of hand-drawn schematics for each weapon type"
 	oneuse = TRUE
 	crafting_recipe_types = list(/datum/crafting_recipe/policepistol, /datum/crafting_recipe/durathread_vest, /datum/crafting_recipe/policerifle, /datum/crafting_recipe/steelbib/heavy, /datum/crafting_recipe/armyhelmetheavy, /datum/crafting_recipe/huntingshotgun)
-	remarks = list("Looks like Oasis hand-crafts replicas from a pre-war police armory", "Some of these weapons are more than 200 years old....", "Duct tape really can hold it together!", "So that is how you laminate armor sheets together", "Looks like you can beat metal into just the right shape to replace the bits")
+	remarks = list("Looks like Bighorn hand-crafts replicas from a pre-war police armory", "Some of these weapons are more than 200 years old....", "Duct tape really can hold it together!", "So that is how you laminate armor sheets together", "Looks like you can beat metal into just the right shape to replace the bits")
 
 
 /obj/item/book/granter/trait/tagger
@@ -1063,7 +1085,7 @@
 		desc = "A compendium of knowledge passed down from the elders. It looks to be in poor condition."
 
 /obj/item/book/granter/trait/selection/tribal/attack_self(mob/user)
-	var/list/choices = list("Hit Them With Sticks","Technophilia","Pugilist","Padded Feet","Veteran Table Climber","Basic Surgery")
+	var/list/choices = list("Hit Them With Sticks","Pugilist","Padded Feet","Veteran Table Climber","Desert Affinity")
 	if(granted_trait == null)
 		var/choice = input("Choose a trait:") in choices
 		switch(choice)
@@ -1072,10 +1094,6 @@
 			if("Hit Them With Sticks")
 				granted_trait = TRAIT_BIG_LEAGUES
 				traitname = "fighting with melee weapons"
-			if("Technophilia")
-				granted_trait = TRAIT_TECHNOPHREAK
-				traitname = "technology and crafting"
-				crafting_recipe_types = list(/datum/crafting_recipe/ninemil, /datum/crafting_recipe/huntingrifle, /datum/crafting_recipe/n99, /datum/crafting_recipe/huntingrifle, /datum/crafting_recipe/m1911, /datum/crafting_recipe/varmintrifle, /datum/crafting_recipe/autoaxe, /datum/crafting_recipe/steelsaw, /datum/crafting_recipe/tools/forged/entrenching_tool, /datum/crafting_recipe/chainsaw, /datum/crafting_recipe/steeltower, /datum/crafting_recipe/durathread_vest)
 			if("Pugilist")
 				granted_trait = TRAIT_IRONFIST
 				traitname = "using your fists"
@@ -1085,9 +1103,6 @@
 			if("Veteran Table Climber")
 				granted_trait = TRAIT_FREERUNNING
 				traitname = "....climbing tables"
-			if("Basic Surgery")
-				granted_trait = TRAIT_SURGERY_LOW
-				traitname = "basic surgery"
 			if("Desert Affinity")
 				granted_trait = TRAIT_HARD_YARDS
 				traitname = "trekking"

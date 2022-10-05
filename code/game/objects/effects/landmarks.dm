@@ -1,4 +1,4 @@
-obj/effect/landmark
+/obj/effect/landmark
 	name = "landmark"
 	icon = 'icons/effects/landmarks_static.dmi'
 	icon_state = "x2"
@@ -42,13 +42,11 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	if(delete_after_roundstart)
 		qdel(src)
 
-/obj/effect/landmark/start/New()
+/obj/effect/landmark/start/Initialize(mapload)
+	. = ..()
 	GLOB.start_landmarks_list += src
 	if(jobspawn_override)
-		if(!GLOB.jobspawn_overrides[name])
-			GLOB.jobspawn_overrides[name] = list()
-		GLOB.jobspawn_overrides[name] += src
-	..()
+		LAZYADD(GLOB.jobspawn_overrides[name], src)
 	if(name != "start")
 		tag = "start*[name]"
 
@@ -208,8 +206,8 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	name = "department_sec"
 	icon_state = "Security Officer"
 
-/obj/effect/landmark/start/depsec/New()
-	..()
+/obj/effect/landmark/start/depsec/Initialize(mapload)
+	. = ..()
 	GLOB.department_security_spawns += src
 
 /obj/effect/landmark/start/depsec/Destroy()
@@ -422,8 +420,8 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	layer = HIGH_LANDMARK_LAYER
 
 
-/obj/effect/landmark/event_spawn/New()
-	..()
+/obj/effect/landmark/event_spawn/Initialize(mapload)
+	. = ..()
 	GLOB.generic_event_spawns += src
 
 /obj/effect/landmark/event_spawn/Destroy()
@@ -433,9 +431,9 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 /obj/effect/landmark/ruin
 	var/datum/map_template/ruin/ruin_template
 
-/obj/effect/landmark/ruin/New(loc, my_ruin_template)
+/obj/effect/landmark/ruin/Initialize(mapload, my_ruin_template)
+	. = ..()
 	name = "ruin_[GLOB.ruin_landmarks.len + 1]"
-	..(loc)
 	ruin_template = my_ruin_template
 	GLOB.ruin_landmarks |= src
 
@@ -450,8 +448,8 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	layer = BULLET_HOLE_LAYER
 	plane = ABOVE_WALL_PLANE
 
-/obj/effect/landmark/stationroom/New()
-	..()
+/obj/effect/landmark/stationroom/Initialize(mapload)
+	. = ..()
 	GLOB.stationroom_landmarks += src
 
 /obj/effect/landmark/stationroom/Destroy()
@@ -489,8 +487,8 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	templates = list("Engine SM" = 3, "Engine Singulo" = 3, "Engine Tesla" = 3)
 	icon = 'icons/rooms/box/engine.dmi'
 
-/obj/effect/landmark/stationroom/box/engine/New()
-	. = ..()
+/obj/effect/landmark/stationroom/box/engine/Initialize(mapload)
+	. = ..(mapload)
 	templates = CONFIG_GET(keyed_list/box_random_engine)
 
 // Landmark for the mining station
@@ -525,7 +523,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	name = "NCR Lieutenant"
 	icon_state = "NCR Lieutenant"
 
-obj/effect/landmark/start/f13/ncrlogisticsofficer
+/obj/effect/landmark/start/f13/ncrlogisticsofficer
 	name = "NCR Logistics Officer"
 	icon_state = "NCR Lieutenant"
 
@@ -644,11 +642,11 @@ obj/effect/landmark/start/f13/ncrlogisticsofficer
 	name = "Legion Slavemaster"
 
 /obj/effect/landmark/start/f13/explorer
-	name = "Legion Scout"
+	name = "Legion Explorer"
 	icon_state = "Legionary"
 
 /obj/effect/landmark/start/f13/venator
-	name = "Legion Explorer"
+	name = "Legion Venator"
 	icon_state = "Legionary"
 
 /obj/effect/landmark/start/f13/auxilia
@@ -666,31 +664,31 @@ obj/effect/landmark/start/f13/ncrlogisticsofficer
 // Brotherhood of Steel
 
 /obj/effect/landmark/start/f13/elder
-	name = "Elder"
+	name = "Baron"
 	icon_state = "Elder"
 
 /obj/effect/landmark/start/f13/headscribe
-	name = "Head Scribe"
+	name = "Keeper"
 	icon_state = "Scribe"
 
 /obj/effect/landmark/start/f13/seniorscribe
-	name = "Senior Scribe"
+	name = "Librarian"
 	icon_state = "Scribe"
 
 /obj/effect/landmark/start/f13/sentinel
-	name = "Head Paladin"
+	name = "Castellan"
 	icon_state = "Paladin"
 
 /obj/effect/landmark/start/f13/knightcap
-	name = "Head Knight"
+	name = "Knight-Commander"
 	icon_state = "Knight"
 
 /obj/effect/landmark/start/f13/seniorknight
-	name = "Senior Knight"
+	name = "Knight-Captain"
 	icon_state = "Knight"
 
 /obj/effect/landmark/start/f13/seniorpaladin
-	name = "Senior Paladin"
+	name = "Paladin Marshal"
 	icon_state = "Knight"
 
 /obj/effect/landmark/start/f13/paladin
@@ -754,11 +752,11 @@ obj/effect/landmark/start/f13/ncrlogisticsofficer
 	icon_state = "Lawyer"
 
 /obj/effect/landmark/start/f13/sheriff
-	name = "Chief of Police"
+	name = "Sheriff"
 	icon_state = "Chief of Police"
 
 /obj/effect/landmark/start/f13/deputy
-	name = "Officer"
+	name = "Deputy"
 	icon_state = "Officer"
 
 /obj/effect/landmark/start/f13/farmer
@@ -838,11 +836,11 @@ obj/effect/landmark/start/f13/ncrlogisticsofficer
 /obj/effect/landmark/start/f13/ussgt
 	name = "Enclave Sergeant"
 	icon_state = "ussgt"
-
+/*
 /obj/effect/landmark/start/f13/usai
 	name = "Enclave Armored Infantry"
 	icon_state = "ussgt"
-
+*/
 /obj/effect/landmark/start/f13/usspecialist
 	name = "Enclave Specialist"
 	icon_state = "usoffduty"
@@ -852,13 +850,21 @@ obj/effect/landmark/start/f13/ncrlogisticsofficer
 	icon_state = "usscientist"
 
 /obj/effect/landmark/start/f13/usgysgt
-	name = "Enclave Gunnery Sergeant"
+	name = "Enclave Platoon Sergeant"
 	icon_state = "usgunnery"
-
-
+/*
 /obj/effect/landmark/start/f13/uslightduty
 	name = "Enclave Bunker Duty"
 	icon_state = "usoffduty"
+*/
+/obj/effect/landmark/start/f13/enclave_synthetic
+	name = "Synthetic"
+	icon_state = "Cyborg"
+
+/obj/effect/landmark/start/f13/uspilot
+	name = "Enclave Pilot Officer"
+	icon_state = "uslt"
+
 //Tribal
 
 /obj/effect/landmark/start/f13/tribal
@@ -914,26 +920,17 @@ obj/effect/landmark/start/f13/ncrlogisticsofficer
 /obj/effect/landmark/start/f13/followersscientist
 	name = "Followers Scientist"
 
+/obj/effect/landmark/start/f13/followersrobot
+	name = "Followers Robot"
+	icon_state = "Cyborg"
 
+/obj/effect/landmark/start/f13/followersrobot/Initialize()
+	..()
+	GLOB.special_borg_start += loc
+	return INITIALIZE_HINT_QDEL
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//Khans
+// OLD KHAN STUFF
 /obj/effect/landmark/start/f13/noyan
 	name = "Noyan"
 	icon_state = "Pusher"
@@ -956,4 +953,13 @@ obj/effect/landmark/start/f13/ncrlogisticsofficer
 
 /obj/effect/landmark/start/f13/mangudai
 	name = "Mangudai"
+	icon_state = "Pusher"
+
+// Proper Khans
+/obj/effect/landmark/start/f13/khan
+	name = "Khan Enforcer"
+	icon_state = "Pusher"
+
+/obj/effect/landmark/start/f13/khan_chemist
+	name = "Khan Chemist"
 	icon_state = "Pusher"

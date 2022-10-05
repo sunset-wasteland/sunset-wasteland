@@ -727,6 +727,28 @@
 	blockTracking = TRUE
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 
+//bag for this
+/obj/item/storage/backpack/duffelbag/med/surgery/alien
+	name = "experiment bag"
+	desc = "A large duffel bag for holding extra medical supplies - this one seems to be designed for holding tools used in field experiments."
+
+/obj/item/storage/backpack/duffelbag/med/surgery/alien/PopulateContents()
+	new /obj/item/scalpel/alien(src)
+	new /obj/item/hemostat/alien(src)
+	new /obj/item/retractor/alien(src)
+	new /obj/item/circular_saw/alien(src)
+	new /obj/item/surgicaldrill/alien(src)
+	new /obj/item/cautery/alien(src)
+	new /obj/item/bonesetter(src)
+	new /obj/item/surgical_drapes(src)
+	new /obj/item/clothing/mask/surgical(src)
+	new /obj/item/reagent_containers/medspray/sterilizine(src)
+	new /obj/item/razor(src)
+	new /obj/item/stack/sticky_tape/surgical(src)
+	new /obj/item/stack/sticky_tape/surgical(src)
+	new /obj/item/stack/medical/bone_gel(src)
+	new /obj/item/stack/medical/bone_gel(src)
+
 // Operating Table / Beds / Lockers
 
 /obj/structure/bed/abductor
@@ -801,8 +823,17 @@
 
 	var/static/list/injected_reagents = list(/datum/reagent/medicine/corazone)
 
-/obj/structure/table/optable/abductor/Crossed(atom/movable/AM)
+/obj/structure/table/optable/abductor/Initialize()
 	. = ..()
+
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_ENTERED = .proc/on_entered,
+	)
+	AddElement(/datum/element/connect_loc, loc_connections)
+
+
+/obj/structure/table/optable/abductor/proc/on_entered(datum/source, atom/movable/AM)
+	SIGNAL_HANDLER
 	if(iscarbon(AM))
 		START_PROCESSING(SSobj, src)
 		to_chat(AM, "<span class='danger'>You feel a series of tiny pricks!</span>")

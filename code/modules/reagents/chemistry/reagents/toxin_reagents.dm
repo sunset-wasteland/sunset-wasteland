@@ -9,6 +9,8 @@
 	taste_mult = 1.2
 	value = REAGENT_VALUE_COMMON //Encouraging people to mix toxins for reasons beyond harming each other or mixing reagents such as pen acid.
 	var/toxpwr = 1.5
+	var/toxin_hurting = 0
+	var/toxin_lover_healing = -2
 	ghoulfriendly = TRUE
 
 // Are you a bad enough dude to poison your own plants?
@@ -20,6 +22,14 @@
 /datum/reagent/toxin/on_mob_life(mob/living/carbon/M)
 	if(toxpwr)
 		M.adjustToxLoss(toxpwr*REM, 0)
+	var/is_toxinlover = FALSE
+	if(HAS_TRAIT(M, TRAIT_TOXINLOVER))
+		is_toxinlover = TRUE
+	var/toxin_heal_rate = (is_toxinlover ? toxin_lover_healing : toxin_hurting) * toxpwr
+	if(!M.reagents.has_reagent(/datum/reagent/medicine/stimpak) && !M.reagents.has_reagent(/datum/reagent/medicine/healing_powder))
+		M.adjustFireLoss(toxin_heal_rate)
+		M.adjustBruteLoss(toxin_heal_rate)
+
 		. = TRUE
 	..()
 
@@ -41,7 +51,7 @@
 	overdose_threshold = 18 // So, someone drinking 20 units will FOR SURE get overdosed
 	taste_description = "horrific agony"
 	taste_mult = 0.9
-	var/datum/disease/fev_disease = /datum/disease/transformation/mutant
+	var/datum/disease/fev_disease = null
 
 /datum/reagent/toxin/FEV_solution/overdose_process(mob/living/carbon/C)
 	if(ispath(fev_disease))
@@ -51,7 +61,7 @@
 /datum/reagent/toxin/FEV_solution/one
 	name = "Unstable FEV solution"
 	description = "An incredibly lethal strain of the Forced Evolutionary Virus. Consume at your own risk."
-	fev_disease = /datum/disease/transformation/mutant/unstable
+//	fev_disease = /datum/disease/transformation/mutant/unstable
 
 /datum/reagent/toxin/FEV_solution/one/reaction_mob(mob/living/carbon/M, method=TOUCH, reac_volume)
 	if(!..())
@@ -72,8 +82,8 @@
 //FEV - II: The super mutie kind
 /datum/reagent/toxin/FEV_solution/two
 	name = "FEV-II solution"
-	description = "A version of FEV that has been modified by radiation. It is suggested that only radiation-free humans use it."
-	fev_disease = /datum/disease/transformation/mutant/super
+	description = "A version of FEV that has been modified by radiation. A biological dead-end, harmless if the subject is not exposed to radiation."
+//	fev_disease = /datum/disease/transformation/mutant/super
 
 /datum/reagent/toxin/FEV_solution/two/overdose_process(mob/living/carbon/C)
 	if(C.radiation < RAD_MOB_SAFE)
@@ -857,7 +867,7 @@
 /datum/reagent/toxin/rotatium/on_mob_life(mob/living/carbon/M)
 	if(M.hud_used)
 		if(current_cycle >= 20 && current_cycle%20 == 0)
-			var/list/screens = list(M.hud_used.plane_masters["[FLOOR_PLANE]"], M.hud_used.plane_masters["[GAME_PLANE]"],
+			var/list/screens = list(M.hud_used.plane_masters["[FLOOR_PLANE]"], M.hud_used.plane_masters["[GAME_PLANE]"], M.hud_used.plane_masters["[OBJITEM_PLANE]"],
 									M.hud_used.plane_masters["[LIGHTING_PLANE]"], M.hud_used.plane_masters["[WALL_PLANE]"],
 									M.hud_used.plane_masters["[ABOVE_WALL_PLANE]"])
 			var/rotation = min(round(current_cycle/20), 89) // By this point the player is probably puking and quitting anyway
@@ -868,7 +878,7 @@
 
 /datum/reagent/toxin/rotatium/on_mob_end_metabolize(mob/living/M)
 	if(M && M.hud_used)
-		var/list/screens = list(M.hud_used.plane_masters["[FLOOR_PLANE]"], M.hud_used.plane_masters["[GAME_PLANE]"], M.hud_used.plane_masters["[LIGHTING_PLANE]"])
+		var/list/screens = list(M.hud_used.plane_masters["[FLOOR_PLANE]"], M.hud_used.plane_masters["[GAME_PLANE]"], M.hud_used.plane_masters["[OBJITEM_PLANE]"], M.hud_used.plane_masters["[LIGHTING_PLANE]"])
 		for(var/whole_screen in screens)
 			animate(whole_screen, transform = matrix(), time = 5, easing = QUAD_EASING)
 	..()
@@ -907,7 +917,7 @@
 
 /datum/reagent/toxin/skewium/on_mob_end_metabolize(mob/living/M)
 	if(M && M.hud_used)
-		var/list/screens = list(M.hud_used.plane_masters["[FLOOR_PLANE]"], M.hud_used.plane_masters["[GAME_PLANE]"], M.hud_used.plane_masters["[LIGHTING_PLANE]"])
+		var/list/screens = list(M.hud_used.plane_masters["[FLOOR_PLANE]"], M.hud_used.plane_masters["[GAME_PLANE]"], M.hud_used.plane_masters["[OBJITEM_PLANE]"], M.hud_used.plane_masters["[LIGHTING_PLANE]"])
 		for(var/whole_screen in screens)
 			animate(whole_screen, transform = matrix(), time = 5, easing = QUAD_EASING)
 	..()

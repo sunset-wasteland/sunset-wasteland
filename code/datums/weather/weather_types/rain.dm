@@ -18,18 +18,34 @@
 	end_overlay = "rain_gathering"
 	area_types = list(/area/f13/wasteland, /area/f13/desert, /area/f13/farm, /area/f13/forest, /area/f13/ruins)
 	protected_areas = list(/area/shuttle)
-	target_trait = ZTRAIT_STATION
+	target_trait = ZTRAIT_SURFACE
 	protect_indoors = TRUE
 	immunity_type = "water"
 
 	barometer_predictable = TRUE
 
-	affects_turfs = TRUE
-	carbons_only = TRUE
+	var/list/storm_sounds = list()
 
+/datum/weather/rain/telegraph()
+	var/list/eligible_areas = list()
+	for (var/z in impacted_z_levels)
+		eligible_areas += SSmapping.areas_in_z["[z]"]
+	for(var/i in 1 to eligible_areas.len)
+		var/area/place = eligible_areas[i]
+		if(place.outdoors)
+			storm_sounds[place] = /datum/looping_sound/rain_sounds
+		else
+			storm_sounds[place] = /datum/looping_sound/indoor_rain_sounds
+		CHECK_TICK
 
-	var/datum/looping_sound/rain_sounds/sound_ao = new(list(), FALSE, TRUE)
-	var/datum/looping_sound/indoor_rain_sounds/sound_ai = new(list(), FALSE, TRUE)
+	//We modify this list instead of setting it in order to preserve things that hold a reference to it
+	//It's essentially a playlist for a bunch of components that choose what sound to loop based on the area a player is in
+	GLOB.rain_sounds += storm_sounds
+	return ..()
+
+/datum/weather/rain/end()
+	GLOB.rain_sounds -= storm_sounds
+	return ..()
 
 /datum/weather/rain/eventarea
 	area_types = list(/area/f13/wasteland/event)
@@ -95,16 +111,6 @@
 				H.update_inv_belt()
 		CHECK_TICK
 
-
-/datum/weather/rain/weather_act_turf(turf/open/T)
-	var/cleaned
-	if(!cleaned)
-		for(var/obj/effect/decal/O in T) //Clean cleanable decals in affected areas
-			if(is_cleanable(O))
-				qdel(O)
-				cleaned = 1
-				CHECK_TICK
-
 /datum/weather/rain/proc/wash_obj(obj/O)
 	. = SEND_SIGNAL(O, COMSIG_COMPONENT_CLEAN_ACT, CLEAN_WEAK)
 	O.remove_atom_colour(WASHABLE_COLOUR_PRIORITY)
@@ -112,34 +118,3 @@
 		var/obj/item/I = O
 		I.acid_level = 0
 		I.extinguish()
-
-
-
-/datum/weather/rain/telegraph()
-	. = ..()
-	var/list/inside_areas = list()
-	var/list/outside_areas = list()
-	var/list/eligible_areas = list()
-	for (var/z in impacted_z_levels)
-		eligible_areas += SSmapping.areas_in_z["[z]"]
-	for(var/i in 1 to eligible_areas.len)
-		var/area/place = eligible_areas[i]
-		if(place.outdoors)
-			outside_areas += place
-		else
-			inside_areas += place
-
-	sound_ao.output_atoms = outside_areas
-	sound_ai.output_atoms = inside_areas
-
-/datum/weather/rain/start()
-	. = ..()
-	sound_ao.start()
-	sound_ai.start()
-
-/datum/weather/rain/end()
-	. = ..()
-	sound_ao.stop()
-	sound_ai.stop()
-
-	return ..()

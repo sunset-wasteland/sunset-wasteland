@@ -47,6 +47,8 @@
 	active_power_usage = 400
 	light_color = LIGHT_COLOR_BLUE
 
+	/// ID of the techweb we want to connect to. TODO: COMPONENTIZE TECHWEB CONNECTION
+	var/research_id = "SCIENCE"
 	/// Link to the techweb's stored research. Used to retrieve stored mutations
 	var/datum/techweb/stored_research
 	/// Maximum number of mutations that DNA Consoles are able to store
@@ -213,9 +215,12 @@
 	// Set the default tgui state
 	set_default_state()
 
+/obj/machinery/computer/scan_consolenew/proc/update_techweb(new_research_id = null)
+	if (istext(new_research_id))
+		research_id = new_research_id
 	// Link machine with research techweb. Used for discovering and accessing
 	//  already discovered mutations
-	stored_research = SSresearch.science_tech
+	stored_research = SSresearch.get_techweb_by_id(research_id)
 
 /obj/machinery/computer/scan_consolenew/ui_interact(mob/user, datum/tgui/ui)
 	// Most of ui_interact is spent setting variables for passing to the tgui

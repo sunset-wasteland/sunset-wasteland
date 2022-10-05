@@ -39,7 +39,7 @@
 /obj/item/gun/energy/laser/cyborg
 	name = "integrated AER9"
 	can_charge = FALSE
-	desc = "An energy-based laser gun that draws power from the Handy's internal energy cell directly. So this is what freedom looks like?"
+	desc = "An energy-based laser gun that draws power from the robot's internal energy cell directly. So this is what freedom looks like?"
 	fire_delay = 1
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/lasgun/hitscan)
 	icon_state = "laser"
@@ -209,7 +209,7 @@
 	fire_delay = 0
 	slowdown = 0.2
 	w_class = WEIGHT_CLASS_NORMAL
-	weapon_weight = WEAPON_MEDIUM
+	weapon_weight = WEAPON_LIGHT //Can dual wield, which makes up for the meh damage. Especially so with the Magneto.
 	slot_flags = ITEM_SLOT_BELT
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/pistol/wattz/hitscan)
 	cell_type = /obj/item/stock_parts/cell/ammo/ec
@@ -235,6 +235,21 @@
 	weapon_weight = WEAPON_MEDIUM
 	slot_flags = ITEM_SLOT_BELT
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/pistol/recharger/hitscan)
+	cell_type = /obj/item/stock_parts/cell/ammo/breeder
+	equipsound = 'sound/f13weapons/equipsounds/aep7equip.ogg'
+
+/obj/item/gun/energy/laser/wattz/recharger/Walker
+	name = "Walker's Recharger Pistol"
+	desc = "A recharger pistol procured and modified by the scribes under Walker. It charges its capacitor banks over time using radioactive decay. Only a few of these weapons exist."
+	can_remove = 0
+	can_charge = 0
+	selfcharge = 1
+	icon_state = "wattz1000"
+	item_state = "laser-pistol"
+	w_class = WEIGHT_CLASS_SMALL
+	weapon_weight = WEAPON_MEDIUM
+	slot_flags = ITEM_SLOT_BELT
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/pistol/recharger/hitscan/walker)
 	cell_type = /obj/item/stock_parts/cell/ammo/breeder
 	equipsound = 'sound/f13weapons/equipsounds/aep7equip.ogg'
 
@@ -384,7 +399,6 @@
 	icon_state = "wattz2k_ext"
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
-	icon_state = "wattz2k"
 	item_state = "sniper_rifle"
 	ammo_type = list(/obj/item/ammo_casing/energy/wattz2k/extended/hitscan)
 	cell_type = /obj/item/stock_parts/cell/ammo/mfc
@@ -560,6 +574,7 @@
 	var/armed = 0 //whether the gun is attached, 0 is attached, 1 is the gun is wielded.
 	var/overheat = 0
 	var/overheat_max = 70
+	var/heat_stage = 0
 	var/heat_diffusion = 1.5 //How much heat is lost per tick
 
 /obj/item/minigunpack/Initialize()
@@ -595,6 +610,10 @@
 		user.dropItemToGround(gun, TRUE)
 	else
 		..()
+
+/obj/item/minigunpack/examine(mob/user)
+	. = ..()
+	. += "<span class='notice'>Current heat level: [overheat] / [overheat_max]"
 
 /obj/item/minigunpack/dropped(mob/user)
 	. = ..()
@@ -680,11 +699,25 @@
 
 /obj/item/gun/energy/minigun/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0, stam_cost = 0)
 	if(ammo_pack)
+		if(ammo_pack.overheat > ammo_pack.overheat_max * (1 / 3) && ammo_pack.heat_stage < 1)
+			to_chat(user, "You feel warmth from the handle of the gun.")
+			ammo_pack.heat_stage += 1
+			..()
+
+		if(ammo_pack.overheat > ammo_pack.overheat_max * (2 / 3) && ammo_pack.heat_stage < 2)
+			to_chat(user, "The gun's heat sensor beeps rapidly as it reaches its limit!")
+			ammo_pack.heat_stage += 1
+			..()
+
+		if(ammo_pack.overheat < ammo_pack.overheat_max)
+			ammo_pack.overheat += burst_size
+			..()
+
 		if(ammo_pack.overheat < ammo_pack.overheat_max)
 			ammo_pack.overheat += burst_size
 			..()
 		else
-			to_chat(user, "The gun's heat sensor locked the trigger to prevent barrel damage.")
+			to_chat(user, "The gun's heat sensor locked the trigger to prevent lens damage.")
 
 /obj/item/gun/energy/minigun/afterattack(atom/target, mob/living/user, flag, params)
 	if(!ammo_pack || ammo_pack.loc != user)

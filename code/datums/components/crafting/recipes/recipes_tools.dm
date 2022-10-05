@@ -9,7 +9,7 @@
 				/obj/item/wrench = 1,
 				/obj/item/wirecutters = 1,
 				/obj/item/stack/crafting/metalparts = 5)
-	time = 80
+	time = 100
 	category = CAT_CRAFTING
 	subcategory = CAT_TOOL
 

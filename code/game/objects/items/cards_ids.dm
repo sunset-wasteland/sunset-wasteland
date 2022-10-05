@@ -886,7 +886,6 @@
 /obj/item/card/id/dogtag/vigilante
 	name = "vigilante's badge"
 	desc = "An old silver badge."
-	assignment = "badge"
 	assignment = "Vigilante"
 	icon_state = "deputy"
 	item_state = "badge-deputy"
@@ -895,7 +894,6 @@
 /obj/item/card/id/dogtag/deputy
 	name = "deputy's badge"
 	desc = "A silver badge which shows honour and dedication."
-	assignment = "badge"
 	assignment = "Deputy"
 	icon_state = "deputy"
 	item_state = "badge-deputy"
@@ -961,7 +959,6 @@
 	desc = "A permit identifying the holder as a citizen of a nearby town."
 	icon_state = "doctor"
 	item_state = "card-doctor"
-	assignment = "citizenship permit"
 	assignment = "Settler"
 	obj_flags = UNIQUE_RENAME
 	access = list(ACCESS_BAR)
@@ -1093,13 +1090,18 @@
 	assignment = "centurion medallion"
 
 /obj/item/card/id/dogtag/legvenator
-	name = "explorer medallion"
+	name = "venator medallion"
 	desc = "A golden disc awarded to the elite hunters of the legion. If you are close enough to read the insignia you won't be alive much longer."
 	icon_state = "legionmedallioncent"
 	item_state = "card-id_leg2"
 	assignment = "venator medallion"
-	assignment = "Venator"
 
+/obj/item/card/id/dogtag/legexplorer
+	name = "explorer medallion"
+	desc = "A golden disc awarded to the scouts of the legion."
+	icon_state = "legionmedallioncent"
+	item_state = "card-id_leg2"
+	assignment = "explorer medallion"
 
 /obj/item/card/id/dogtag/legpriest
 	name = "priestess medallion"
@@ -1185,7 +1187,7 @@
 	item_state = null
 	assignment = "gang tattoo"
 	uses_overlays = FALSE
-	access = list(ACCESS_KHAN, ACCESS_BAR, ACCESS_GATEWAY, ACCESS_MINING)
+	access = list(ACCESS_KHAN)
 
 /obj/item/card/id/khantattoo/Initialize()
 	. = ..()
@@ -1237,7 +1239,7 @@
 
 /obj/item/card/id/silver/mayor
 	name = "Mayor's mayoral permit"
-	desc = "A silver encrusted identification permit reserved for the Mayor of Oasis."
+	desc = "A silver encrusted identification permit reserved for the Mayor of Bighorn."
 	icon_state = "silver"
 	item_state = "silver_id"
 	assignment = "mayoral permit"
@@ -1277,7 +1279,7 @@
 	icon_state = "enclaveofficer"
 	item_state = "card-id_leg"
 	assignment = "US dogtags"
-	access = list(ACCESS_ENCLAVE)
+	access = list(ACCESS_ENCLAVE, ACCESS_ENCLAVE_COMMAND)
 
 /obj/item/card/id/dogtag/enclave/trooper
 	name = "US dogtags"

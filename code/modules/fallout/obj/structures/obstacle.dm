@@ -16,6 +16,7 @@
 	icon = 'icons/fallout/structures/barricades.dmi'
 	anchored = TRUE
 	density = TRUE
+	barricade = TRUE
 	obj_integrity = 150
 	max_integrity = 150
 
@@ -28,7 +29,7 @@
 	obj_integrity = 500
 	max_integrity = 500
 	proj_pass_rate = 90
-	pass_flags = LETPASSTHROW
+	pass_flags_self = LETPASSTHROW
 	climbable = TRUE
 
 /obj/structure/obstacle/old_locked_door
@@ -58,7 +59,7 @@
 	var/slowdown = 40
 	var/buildstacktype = /obj/item/stack/rods
 	var/buildstackamount = 5
-	pass_flags = LETPASSTHROW
+	pass_flags_self = LETPASSTHROW
 
 /obj/structure/obstacle/barbedwire/end
 	icon_state = "barbed_end"
@@ -71,10 +72,13 @@
 	if(istype(I, /obj/item/wirecutters))
 
 		to_chat(user, span_notice("You start cutting the [src]..."))
-		if(I.use_tool(src, user, 40, volume=50))
-			playsound(src.loc, 'sound/items/deconstruct.ogg', 50, 1)
-			deconstruct(TRUE)
-			return TRUE
+		if(!I.use_tool(src, user, 4 SECONDS, volume=50) && !QDELETED(src))
+			return ..()
+		if(QDELETED(src)) // if we were deconstructed while sleeping in use_tool
+			return STOP_ATTACK_PROC_CHAIN // don't do anything to a deleted atom
+		playsound(src.loc, 'sound/items/deconstruct.ogg', 50, 1)
+		deconstruct(TRUE)
+		return STOP_ATTACK_PROC_CHAIN
 
 	return ..()
 
@@ -99,6 +103,7 @@
 	name = "razorwire"
 	icon = 'icons/fallout/structures/barricades.dmi'
 	icon_state = "barbed_single"
+	plane = MOB_PLANE
 	layer = ABOVE_ALL_MOB_LAYER
 
 /////////
@@ -317,52 +322,106 @@
 /obj/structure/barricade/wooden/attackby(obj/item/weapon/I, mob/living/user, params)
 	if(!istype(src, /obj/structure/barricade/wooden/planks) && !istype(src, /obj/structure/barricade/wooden/crude) && istype(I, /obj/item/stack/sheet/))
 		if(isfloorturf(loc) || isplatingturf(loc))
-			var/obj/item/stack/sheet/mineral/wood/W = I
-			var/obj/item/stack/sheet/cloth/C = I
-			var/obj/item/stack/sheet/leather/L = I //???
-			var/obj/item/stack/sheet/glass/G = I
-			var/obj/item/stack/sheet/rglass/M = I
-			if(W.amount >= 3)
-				to_chat(user, "<span class='notice'>You start building a wall...</span>")
-				if(do_after(user, 100, target = src) && W.use(3))
-					var/turf/open/T = loc
-					T.ChangeTurf(/turf/closed/wall/f13/wood)
-					qdel(src)
-					return TRUE
-			if(C.amount >= 3)
-				to_chat(user, "<span class='notice'>You start building an interior wall...</span>")
-				if(do_after(user, 100, target = src) && C.use(3))
-					var/turf/open/T = loc
-					T.ChangeTurf(/turf/closed/wall/f13/wood/interior)
-					qdel(src)
-					return TRUE
-			if(L.amount >= 3)
-				to_chat(user, "<span class='notice'>You start building a house wall...</span>")
-				if(do_after(user, 100, target = src) && L.use(3))
-					var/turf/open/T = loc
-					T.ChangeTurf(/turf/closed/wall/f13/wood/house)
-					qdel(src)
-					return TRUE
-			if(G.amount >= 3)
-				to_chat(user, "<span class='notice'>You start building a house window...</span>")
-				if(do_after(user, 100, target = src) && G.use(3))
-					var/turf/open/T = loc
-					new /obj/structure/window/fulltile/house(T)
-					qdel(src)
-					return TRUE
-			if(M.amount >= 3)
-				to_chat(user, "<span class='notice'>You start building a wood framed window...</span>")
-				if(do_after(user, 100, target = src) && M.use(3))
-					var/turf/open/T = loc
-					new /obj/structure/window/fulltile/wood(T)
-					qdel(src)
-					return TRUE
-			else
-				to_chat(user, "<span class='warning'>You need atleast 3 materials to build a structure!</span>")
+			if(istype(I, /obj/item/stack/sheet/mineral/wood))
+				var/obj/item/stack/sheet/mineral/wood/W = I
+				if(W.amount >= 3)
+					var/list/walls = list(
+						"Wooden Wall" = image(icon = 'icons/fallout/turfs/walls/wood.dmi', icon_state = "wood0"),
+						"Interior Wall" = image(icon = 'icons/fallout/turfs/walls/interior.dmi', icon_state = "interior0"),
+						"House Wall" = image(icon = 'icons/fallout/turfs/walls/house.dmi', icon_state = "house0")
+					)
+					var/chosen_wall = show_radial_menu(user, src, walls, custom_check = CALLBACK(src, .proc/check_menu, user, I), require_near = TRUE, tooltips = TRUE)
+					if(!check_menu(user, I))
+						return
+					switch(chosen_wall)
+						if("Wooden Wall")
+							to_chat(user, "<span class='notice'>You start building a wooden wall...</span>")
+							if(do_after(user, 100, target = src) && W.use(3))
+								var/turf/open/T = loc
+								T.ChangeTurf(/turf/closed/wall/f13/wood)
+								qdel(src)
+								return TRUE
+						if("Interior Wall")
+							to_chat(user, "<span class='notice'>You start building an interior wall...</span>")
+							if(do_after(user, 100, target = src) && W.use(3))
+								var/turf/open/T = loc
+								T.ChangeTurf(/turf/closed/wall/f13/wood/interior)
+								qdel(src)
+								return TRUE
+						if("House Wall")
+							to_chat(user, "<span class='notice'>You start building a house wall...</span>")
+							if(do_after(user, 100, target = src) && W.use(3))
+								var/turf/open/T = loc
+								T.ChangeTurf(/turf/closed/wall/f13/wood/house)
+								qdel(src)
+								return TRUE
+				else
+					to_chat(user, "<span class='warning'>You need atleast 3 wood to build a structure!</span>")
+			else if(istype(I, /obj/item/stack/sheet/glass))
+				var/obj/item/stack/sheet/glass/G = I
+				if(G.amount >= 3)
+					var/list/windows = list(
+						"House Window" = image(icon = 'icons/obj/wood_window.dmi', icon_state = "housewindow"),
+						"Wood Framed Window" = image(icon = 'icons/obj/wood_window.dmi', icon_state = "woodwindow")
+					)
+					var/chosen_window = show_radial_menu(user, src, windows, custom_check = CALLBACK(src, .proc/check_menu, user, I), require_near = TRUE, tooltips = TRUE)
+					if(!check_menu(user, I))
+						return
+					switch(chosen_window)
+						if("House Window")
+							to_chat(user, "<span class='notice'>You start building a house window...</span>")
+							if(do_after(user, 100, target = src) && G.use(3))
+								var/turf/open/T = loc
+								new /obj/structure/window/fulltile/house(T)
+								qdel(src)
+								return TRUE
+						if("Wood Framed Window")
+							to_chat(user, "<span class='notice'>You start building a wood framed window...</span>")
+							if(do_after(user, 100, target = src) && G.use(3))
+								var/turf/open/T = loc
+								new /obj/structure/window/fulltile/wood(T)
+								qdel(src)
+								return TRUE
+				else
+					to_chat(user, "<span class='warning'>You need at least 3 glass to build a structure!</span>")
+			else if(istype(I, /obj/item/stack/sheet/cloth))
+				var/obj/item/stack/sheet/cloth/C = I
+				if(C.amount >= 3)
+					var/list/tentwalls = list(
+						"Tent Wall" = image(icon = 'icons/fallout/turfs/walls/tent.dmi', icon_state = "tent0"),
+						"Tent Flaps" = image(icon = 'icons/fallout/structures/doors.dmi', icon_state = "tent")
+					)
+					var/chosen_tent = show_radial_menu(user, src, tentwalls, custom_check = CALLBACK(src, .proc/check_menu, user, I), require_near = TRUE, tooltips = TRUE)
+					if(!check_menu(user, I))
+						return
+					switch(chosen_tent)
+						if("Tent Wall")
+							to_chat(user, "<span class='notice'>You start building a tent wall...</span>")
+							if(do_after(user, 100, target = src) && C.use(3))
+								var/turf/open/T = loc
+								T.ChangeTurf(/turf/closed/wall/f13/tentwall)
+								qdel(src)
+								return TRUE
+						if("Tent Flaps")
+							to_chat(user, "<span class='notice'>You start building tent flaps...</span>")
+							if(do_after(user, 100, target = src) && C.use(3))
+								var/turf/open/T = loc
+								new /obj/structure/simple_door/tent(T)
+								qdel(src)
+								return TRUE
+				else
+					to_chat(user, "<span class='warning'>You need at least 3 cloth to build a structure!</span>")
 		else
 			to_chat(user, "<span class='warning'>You can only build the structure on a solid floor!</span>")
 	else
 		return ..()
+
+/obj/structure/barricade/wooden/proc/check_menu(mob/living/user, obj/item/I)
+	if(!istype(user))
+		return FALSE
+	if(user.incapacitated() || !user.Adjacent(src) || user.get_active_held_item() != I)
+		return FALSE
+	return TRUE
 
 /obj/structure/barricade/wooden/strong
 	name = "strong wooden barricade"
@@ -396,7 +455,7 @@
 	obj_integrity = 400
 	max_integrity = 400
 	proj_pass_rate = 90
-	pass_flags = LETPASSTHROW //Feed the prisoners, or not.
+	pass_flags_self = LETPASSTHROW //Feed the prisoners, or not.
 /*
 /obj/structure/barricade/sandbags
 	name = "sandbags"
@@ -406,7 +465,7 @@
 	obj_integrity = 300
 	max_integrity = 300
 	proj_pass_rate = 20
-	pass_flags = LETPASSTHROW
+	pass_flags_self = LETPASSTHROW
 //	material = SAND
 	climbable = TRUE
 	smooth = SMOOTH_TRUE

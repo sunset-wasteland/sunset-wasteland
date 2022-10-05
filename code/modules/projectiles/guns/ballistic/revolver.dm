@@ -277,6 +277,20 @@
 	extra_penetration = 0.1
 	extra_damage = 40
 
+//Sheriff's revolver			Keywords: .44, Single action, 6 rounds cylinder, 5 less damage than sequoia, 20% more pen
+/obj/item/gun/ballistic/revolver/revolver44/sheriff
+	name = "Biggest Iron"
+	desc = "There was forty feet between them, when they stopped to make their play..."
+	extra_penetration = 0.3
+	extra_damage = 40
+	force = 25
+	casing_ejector = TRUE//WHAT THE FUCK IS THIS GUN? FASTEST HAND IN THE WEST BETWEEN SHOTS, THAT'S WHAT.
+	can_scope = TRUE
+	scope_state = "revolver_scope"
+	scope_x_offset = 6
+	scope_y_offset = 24
+	fire_sound = 'sound/f13weapons/sequoia.ogg'
+
 
 //////////////////////
 // .45-70 REVOLVERS //

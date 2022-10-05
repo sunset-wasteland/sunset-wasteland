@@ -143,10 +143,8 @@
 	gold_core_spawnable = HOSTILE_SPAWN
 	decompose = FALSE
 	a_intent = INTENT_HARM
-	var/list/spawned_mobs = list()
 	var/max_mobs = 2
 	var/mob_types = list(/mob/living/simple_animal/hostile/giantant)
-	var/spawn_delay = 0
 	var/spawn_time = 30 SECONDS
 	var/spawn_text = "hatches from"
 	blood_volume = 0
@@ -154,14 +152,14 @@
 
 /mob/living/simple_animal/hostile/giantantqueen/Initialize()
 	. = ..()
-	GLOB.mob_nests += src
+	AddComponent(/datum/component/spawner/ranged, mob_types, spawn_time, faction, spawn_text, max_mobs, _range = 7)
 
 /mob/living/simple_animal/hostile/giantantqueen/death()
-	GLOB.mob_nests -= src
+	qdel(GetComponent(/datum/component/spawner/ranged))
 	. = ..()
 
 /mob/living/simple_animal/hostile/giantantqueen/Destroy()
-	GLOB.mob_nests -= src
+	qdel(GetComponent(/datum/component/spawner/ranged))
 	. = ..()
 
 /mob/living/simple_animal/hostile/giantantqueen/Aggro()
@@ -172,20 +170,6 @@
 	name = "spit"
 	damage = 20
 	icon_state = "toxin"
-
-/mob/living/simple_animal/hostile/giantantqueen/proc/spawn_mob()
-	if(world.time < spawn_delay)
-		return 0
-	spawn_delay = world.time + spawn_time
-	if(spawned_mobs.len >= max_mobs)
-		return FALSE
-	var/chosen_mob_type = pickweight(mob_types)
-	var/mob/living/simple_animal/L = new chosen_mob_type(get_turf(src))
-	L.flags_1 |= (flags_1 & ADMIN_SPAWNED_1)	//If we were admin spawned, lets have our children count as that as well.
-	spawned_mobs += L
-	L.nest = src
-	visible_message("<span class='danger'>[L] [spawn_text] [src].</span>")
-
 
 /////////////////
 // RADSCORPION //
@@ -263,6 +247,7 @@
 	melee_damage_lower = 10
 	melee_damage_upper = 30
 	move_to_delay = 4
+	footstep_type = FOOTSTEP_MOB_CLAW
 
 
 // BLUE RADSCORPION - a little weaker and faster
@@ -277,7 +262,7 @@
 	maxHealth = 140
 	health = 140
 	move_to_delay = 4
-
+	footstep_type = FOOTSTEP_MOB_CLAW
 
 /////////////
 // CAZADOR //
@@ -395,6 +380,13 @@
 	obj_damage = 15
 	melee_damage_lower = 5
 	melee_damage_upper = 8
+	ranged = 1
+
+
+	projectiletype = /obj/item/projectile/bloatfly
+	projectilesound = 'sound/f13npc/centaur/spit.ogg'
+	retreat_distance = 6
+	minimum_distance = 4
 
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	speak_chance = 0
@@ -424,6 +416,12 @@
 	else
 		visible_message("<span class='danger'>[src] dodges [Proj]!</span>")
 		return 0
+
+/obj/item/projectile/bloatfly
+	name = "bloatfly projectile"
+	damage = 15
+	armour_penetration = 5
+	icon_state = "toxin"
 
 //////////////
 // RADROACH //

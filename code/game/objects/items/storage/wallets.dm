@@ -13,8 +13,8 @@
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 4
-	STR.cant_hold = typecacheof(list(/obj/item/screwdriver/power))
-	STR.can_hold = typecacheof(list(
+	CANTHOLD_STATIC(STR, typecacheof(list(/obj/item/screwdriver/power)))
+	CANHOLD_STATIC(STR, typecacheof(list(
 		/obj/item/stack/spacecash,
 		/obj/item/holochip,
 		/obj/item/card,
@@ -47,7 +47,7 @@
 		/obj/item/mining_voucher,
 		/obj/item/suit_voucher,
 		/obj/item/reagent_containers/pill,
-		/obj/item/stack/f13Cash))
+		/obj/item/stack/f13Cash)))
 
 /obj/item/storage/wallet/Exited(atom/movable/AM)
 	. = ..()

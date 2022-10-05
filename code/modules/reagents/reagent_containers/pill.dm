@@ -290,3 +290,16 @@
 	icon = 'icons/fallout/objects/medicine/drugs.dmi'
 	icon_state = "pill_buff"
 	list_reagents = list(/datum/reagent/drug/buffout = 10)
+
+//Crashpoint Fallout
+/obj/item/reagent_containers/pill/waterpuretablet
+	name = "Water Purification Tablet"
+	desc = "A pill that can simply be dropped into 50u of water to make it safe for drinking."
+	icon_state = "pill8"
+	list_reagents = list(/datum/reagent/watertabletpowder = 10)
+
+/obj/item/reagent_containers/pill/foodpaste
+	name = "Nutriment Tablet"
+	desc = "A pill with all the required material needed to survive. Probably."
+	icon_state = "bandaid_chew"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 50)

@@ -44,6 +44,7 @@
 /datum/surgery/Destroy()
 	if(operated_wound)
 		operated_wound.attached_surgery = null
+		operated_wound = null
 	if(target)
 		target.surgeries -= src
 	target = null
@@ -232,8 +233,8 @@
 		if(initial(beep.requires_tech))
 			surgeries += beep
 
-/obj/item/disk/surgery/oasis
-	name = "oasis surgery disk"
+/obj/item/disk/surgery/bighorn
+	name = "bighorn surgery disk"
 	surgeries = list(	/datum/surgery/advanced/lobotomy,
 						/datum/surgery/advanced/reconstruction)
 

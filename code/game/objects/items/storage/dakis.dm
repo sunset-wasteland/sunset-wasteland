@@ -17,7 +17,7 @@
 	STR.max_w_class = WEIGHT_CLASS_SMALL
 	STR.max_combined_w_class = 21
 	STR.max_items = 3
-	STR.cant_hold = typecacheof(list(/obj/item/disk/nuclear))
+	CANTHOLD_STATIC(STR, typecacheof(list(/obj/item/disk/nuclear)))
 
 /obj/item/storage/daki/attack_self(mob/living/user)
 	var/body_choice

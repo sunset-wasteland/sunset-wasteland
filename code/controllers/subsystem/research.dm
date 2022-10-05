@@ -8,26 +8,17 @@ SUBSYSTEM_DEF(research)
 	var/list/techweb_nodes = list()				//associative id = node datum
 	var/list/techweb_designs = list()			//associative id = node datum
 	var/list/datum/techweb/techwebs = list()
-	var/datum/techweb/science/science_tech
-	var/datum/techweb/admin/admin_tech
 	var/datum/techweb_node/error_node/error_node	//These two are what you get if a node/design is deleted and somehow still stored in a console.
 	var/datum/design/error_design/error_design
-
-	var/datum/techweb/bos/bos_tech //BoS starting tech
-	var/datum/techweb/enclave/enclave_tech //Could probably be used if enclave ever gets implemented as a faction
-	var/datum/techweb/unknown/unknown_tech //Global tech; all newly built consoles, departmental crafters, imprinters and servers will use this
-	var/datum/techweb/followers/followers_tech //Followers starting tech
-
-
 
 	//ERROR LOGGING
 	var/list/invalid_design_ids = list()		//associative id = number of times
 	var/list/invalid_node_ids = list()			//associative id = number of times
 	var/list/invalid_node_boost = list()		//associative id = error message
 
+	var/list/datum/techweb/technets = list() // network key = techweb
+	var/list/obj/machinery/rnd/server/servernets = list() // network key = list of servers
 	var/list/obj/machinery/rnd/server/servers = list()
-	var/list/obj/machinery/rnd/server/VAULTservers = list()
-	var/list/obj/machinery/rnd/server/BOSservers = list()
 
 
 	var/list/techweb_nodes_starting = list()	//associative id = TRUE
@@ -298,8 +289,7 @@ SUBSYSTEM_DEF(research)
 	var/list/errored_datums = list()
 	var/list/point_types = list()				//typecache style type = TRUE list
 	//----------------------------------------------
-	var/list/BOSsingle_server_income = list(TECHWEB_POINT_TYPE_GENERIC = 7)	//citadel edit - techwebs nerf
-	var/list/VAULTsingle_server_income = list(TECHWEB_POINT_TYPE_GENERIC = 35)
+	var/list/single_server_income = list(TECHWEB_POINT_TYPE_GENERIC = 7)	//citadel edit - techwebs nerf
 	var/multiserver_calculation = FALSE
 	var/last_income
 	//^^^^^^^^ ALL OF THESE ARE PER SECOND! ^^^^^^^^
@@ -323,16 +313,17 @@ SUBSYSTEM_DEF(research)
 	point_types = TECHWEB_POINT_TYPE_LIST_ASSOCIATIVE_NAMES
 	initialize_all_techweb_designs()
 	initialize_all_techweb_nodes()
-	science_tech = new /datum/techweb/science
-	admin_tech = new /datum/techweb/admin
+	
+	for(var/techweb_type in subtypesof(/datum/techweb))
+		var/datum/techweb/candidate_techweb = techweb_type
+		if (!initial(candidate_techweb.create_roundstart))
+			continue
+		candidate_techweb = new techweb_type
+		technets[candidate_techweb.id] = candidate_techweb
+	
 	autosort_categories()
 	error_design = new
 	error_node = new
-
-	bos_tech = new /datum/techweb/bos
-	enclave_tech = new /datum/techweb/enclave
-	unknown_tech = new /datum/techweb/unknown
-	followers_tech = new /datum/techweb/followers
 
 	for(var/A in subtypesof(/obj/item/seeds))
 		var/obj/item/seeds/S = A
@@ -347,43 +338,26 @@ SUBSYSTEM_DEF(research)
 	return ..()
 
 /datum/controller/subsystem/research/fire()
-	var/list/bitcoins = list()
-	var/list/BOSbitcoins = list()
-	var/list/VAULTbitcoins = list()
-	if(multiserver_calculation)
-		var/eff = calculate_server_coefficient()
-		for(var/obj/machinery/rnd/server/miner in servers)
-			var/list/result = (miner.mine())	//SLAVE AWAY, SLAVE.
-			for(var/i in result)
-				result[i] *= eff
-				bitcoins[i] = bitcoins[i]? bitcoins[i] + result[i] : result[i]
-	else
-		for(var/obj/machinery/rnd/server/miner in BOSservers)
-			if(miner.working)
-				BOSbitcoins = BOSsingle_server_income.Copy()
-				break
-		for(var/obj/machinery/rnd/server/miner in VAULTservers)
-			if(miner.working)
-				VAULTbitcoins = VAULTsingle_server_income.Copy()
-				break	
 	var/income_time_difference = world.time - last_income
-		
-	science_tech.last_bitcoins = VAULTbitcoins  // Doesn't take tick drift into account
-	bos_tech.last_bitcoins = BOSbitcoins
-	unknown_tech.last_bitcoins = bitcoins
-	followers_tech.last_bitcoins = bitcoins
-
-	for(var/i in bitcoins)
-		bitcoins[i] *= income_time_difference / 10
-	for(var/i in BOSbitcoins)
-		BOSbitcoins[i] *= income_time_difference / 10
-	for(var/i in VAULTbitcoins)
-		VAULTbitcoins[i] *= income_time_difference / 10
-
-	science_tech.add_point_list(VAULTbitcoins)
-	bos_tech.add_point_list(BOSbitcoins)
-	unknown_tech.add_point_list(bitcoins) //tbh these guys can get a fuckton of points, because it isn't even being used
-	followers_tech.add_point_list(bitcoins)
+	for(var/network in servernets)
+		var/list/bitcoins = list()
+		if(multiserver_calculation)
+			var/eff = calculate_server_coefficient()
+			for(var/obj/machinery/rnd/server/miner in servernets[network])
+				var/list/result = (miner.mine())	//SLAVE AWAY, SLAVE.
+				for(var/i in result)
+					result[i] *= eff
+					bitcoins[i] = bitcoins[i]? bitcoins[i] + result[i] : result[i]
+		else
+			for(var/obj/machinery/rnd/server/miner in servernets[network])
+				if(miner.working)
+					bitcoins = single_server_income.Copy()
+					break			//Just need one to work.
+		var/datum/techweb/our_tech = SSresearch.get_techweb_by_id(network)
+		our_tech.last_bitcoins = bitcoins // pre tick-drift correction
+		for(var/i in bitcoins)
+			bitcoins[i] *= income_time_difference / 10 // correction for tick drift; can't use wait / 10 here
+		our_tech.add_point_list(bitcoins)
 
 	last_income = world.time
 
@@ -448,11 +422,11 @@ SUBSYSTEM_DEF(research)
 		TN.Initialize()
 	techweb_nodes = returned
 	if (!verify_techweb_nodes())	//Verify all nodes have ids and such.
-		stack_trace("Invalid techweb nodes detected")
+		stack_trace("Invalid techweb nodes detected: Nodes lack IDs.")
 	calculate_techweb_nodes()
 	calculate_techweb_boost_list()
 	if (!verify_techweb_nodes())		//Verify nodes and designs have been crosslinked properly.
-		CRASH("Invalid techweb nodes detected")
+		CRASH("Invalid techweb nodes detected: Nodes and Designs have not been crosslinked.")
 
 /datum/controller/subsystem/research/proc/initialize_all_techweb_designs(clearall = FALSE)
 	if(islist(techweb_designs) && clearall)
@@ -590,3 +564,7 @@ SUBSYSTEM_DEF(research)
 			else
 				techweb_boost_items[path] = list(node.id = node.boost_item_paths[path])
 		CHECK_TICK
+
+/datum/controller/subsystem/research/proc/get_techweb_by_id(id)
+	RETURN_TYPE(/datum/techweb)
+	return technets[id]

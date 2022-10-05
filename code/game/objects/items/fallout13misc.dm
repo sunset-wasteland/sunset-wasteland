@@ -182,12 +182,6 @@
 	item_state = "legionflag"
 	faction = FACTION_LEGION
 
-/obj/item/flag/oasis
-	name = "Oasis flag"
-	desc = "A flag depicting a stylised pink flower on a green background. It's the symbol of the town of Oasis."
-	icon_state = "oasisflag"
-	item_state = "oasisflag"
-
 /obj/item/flag/followers
 	name = "Followers of the Apocalypse flag"
 	desc = "A white flag with the black Follower's of the Apocalpyse cross on it."
@@ -248,12 +242,12 @@
 						icon_state = "legionflag"
 						item_state = "legionflag"
 						faction = FACTION_LEGION
-					if("Yuma")
+					if(FACTION_BIGHORN)
 						name = "Yuma flag"
 						desc = "A banner depicting three rivers meeting at its center, overlaid with an ear of corn."
 						icon_state = "cornflag"
 						item_state = "cornflag"
-						faction = FACTION_OASIS
+						faction = FACTION_BIGHORN
 					if(FACTION_BROTHERHOOD)
 						name = "BOS flag"
 						desc = "A red and black flag with a sword surrounded in gears and wings, in a dazzling gold."

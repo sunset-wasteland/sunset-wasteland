@@ -23,9 +23,21 @@
 	var/list/autogrant_actions_controller	//assoc list "[bitflag]" = list(typepaths)
 	var/list/mob/occupant_actions			//assoc list mob = list(type = action datum assigned to mob)
 	var/obj/vehicle/trailer
+	var/engine_on = 0
+	var/engine_on_sound = null
+	var/engine_loop_sound = null//not used.
+	var/datum/looping_sound/motorcycle/soundloop //Given we only use motorbikes, for now, we'll just use this.
+
+/obj/vehicle/New()
+	..()
+	if(engine_on)
+		src.verbs += /obj/vehicle/proc/StopEngine
+	else
+		src.verbs += /obj/vehicle/proc/StartEngine
 
 /obj/vehicle/Initialize(mapload)
 	. = ..()
+	soundloop = new(src)
 	occupants = list()
 	autogrant_actions_passenger = list()
 	autogrant_actions_controller = list()
@@ -108,6 +120,8 @@
 /obj/vehicle/proc/after_remove_occupant(mob/M)
 
 /obj/vehicle/relaymove(mob/user, direction)
+	if(!engine_on)
+		return
 	if(is_driver(user))
 		return driver_move(user, direction)
 	return FALSE
@@ -173,3 +187,58 @@
 		occupants[1].bullet_act(Proj) // driver dinkage
 		return BULLET_ACT_HIT
 	. = ..()
+
+
+/////////
+// Waste Procs
+/////////
+
+/obj/vehicle/proc/StartEngine(mob/living/M)
+	set name = "Start Engine"
+	set category = "Object"
+	set src in view(1)
+
+	start_engine()
+
+/obj/vehicle/proc/StopEngine(mob/living/M)
+	set name = "Stop Engine"
+	set category = "Object"
+	set src in view(1)
+
+	stop_engine()
+
+/obj/vehicle/proc/stop_engine(mob/living/M)
+	src.verbs += /obj/vehicle/proc/StartEngine
+	src.verbs -= /obj/vehicle/proc/StopEngine
+
+	if(usr)
+		usr.visible_message("[usr] stop engine of [src].", "You stop engine.")
+
+	engine_on = FALSE
+
+	soundloop.stop()//Double take. Don't ask me why it's required, but it is.
+
+/obj/vehicle/proc/start_engine(mob/living/M)
+	GetComponent(/datum/component/riding)
+/*
+	if(!M.buckled)
+		usr.visible_message("<span class = 'notice'>Sit on [src] to do this.</span>")
+		return
+*/
+	if(!inserted_key)
+		M.visible_message(span_notice("There is no key."))
+		return
+
+	src.verbs += /obj/vehicle/proc/StopEngine
+	src.verbs -= /obj/vehicle/proc/StartEngine
+
+	if(M)
+		M.visible_message("[M] starts the engine of [src].", "You start the engine.")
+
+	engine_on = TRUE
+	if(engine_on_sound)
+		playsound(src, engine_on_sound, 50)
+	soundloop.start()
+//	if(engine_loop_sound)
+//		BeginAmbient(engine_loop_sound)
+//		SEND_SOUND(M, sound(pick(engine_loop_sound), repeat = 1, wait = 0, volume = 100, channel = CHANNEL_BICYCLE))

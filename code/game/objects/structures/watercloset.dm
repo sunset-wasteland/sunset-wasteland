@@ -125,7 +125,7 @@
 		if (!open)
 			return
 		var/obj/item/reagent_containers/RG = I
-		RG.reagents.add_reagent(/datum/reagent/water, min(RG.volume - RG.reagents.total_volume, RG.amount_per_transfer_from_this))
+		RG.reagents.add_reagent(/datum/reagent/water/dwater, min(RG.volume - RG.reagents.total_volume, RG.amount_per_transfer_from_this))
 		to_chat(user, "<span class='notice'>You fill [RG] from [src]. Gross.</span>")
 	else
 		return ..()
@@ -252,7 +252,7 @@
 
 /obj/machinery/shower/Initialize()
 	. = ..()
-	soundloop = new(list(src), FALSE)
+	soundloop = new(src, FALSE)
 
 /obj/machinery/shower/Destroy()
 	QDEL_NULL(soundloop)
@@ -309,6 +309,15 @@
 		add_hiddenprint(user)
 	return TRUE
 
+/obj/machinery/shower/Initialize()
+	. = ..()
+
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_ENTERED = .proc/on_entered,
+	)
+	AddElement(/datum/element/connect_loc, loc_connections)
+
+
 /obj/machinery/shower/update_overlays()
 	. = ..()
 	if(on)
@@ -334,8 +343,7 @@
 	if(mist && (!on || watertemp == "freezing"))
 		qdel(mist)
 
-/obj/machinery/shower/Crossed(atom/movable/AM)
-	..()
+/obj/machinery/shower/proc/handle_enter(atom/movable/AM)
 	if(on)
 		if(isliving(AM))
 			var/mob/living/L = AM
@@ -344,6 +352,10 @@
 				C.slip(80,null,NO_SLIP_WHEN_WALKING)
 		else if(isobj(AM))
 			wash_obj(AM)
+
+/obj/machinery/shower/proc/on_entered(datum/source, atom/movable/AM)
+	SIGNAL_HANDLER
+	INVOKE_ASYNC(src, .proc/handle_enter, AM)
 
 /obj/machinery/shower/proc/wash_obj(obj/O)
 	. = SEND_SIGNAL(O, COMSIG_COMPONENT_CLEAN_ACT, CLEAN_WEAK)
@@ -483,7 +495,7 @@
 	desc = "A sink used for washing one's hands and face."
 	anchored = TRUE
 	var/busy = FALSE 	//Something's being washed at the moment
-	var/dispensedreagent = /datum/reagent/water // for whenever plumbing happens
+	var/dispensedreagent = /datum/reagent/water/dwater // for whenever plumbing happens
 	var/buildstacktype = /obj/item/stack/sheet/metal
 	var/buildstackamount = 1
 
@@ -621,12 +633,24 @@
 
 /obj/structure/sink/kitchen
 	name = "kitchen sink"
+	desc = "Looks like there's some sort of filter on this!"
 	icon_state = "sink_alt"
+	dispensedreagent = /datum/reagent/water
 
 /obj/structure/sink/well
-	name = "well"
-	desc = "A well, used to get water from an underground reservoir."
-	icon_state = "well"
+	name = "old well"
+	desc = "There's a bloated corpse at the bottom of this. Gross."
+	icon = 'icons/obj/Ritas.dmi'
+	icon_state = "old_well"
+	bound_width = 64
+
+/obj/structure/sink/well/clean
+	name = "water well"
+	desc = "A structure used to provide a source of fresh water - nothing out of the ordinary."
+	icon_state = "wellwheel"
+	icon = 'icons/obj/Ritas.dmi'
+	bound_width = 64
+	dispensedreagent = /datum/reagent/water
 
 //The making of the well
 /obj/structure/well_foundation
@@ -745,13 +769,15 @@
 	if(!open)
 		icon_state = "closed"
 		layer = WALL_OBJ_LAYER
-		density = FALSE
+		plane = MOB_PLANE
+		density = FALSE//WHY TRUE? This makes it a PITA when offset to work with.
 		open = FALSE
 		set_opacity(TRUE)
 
 	else
 		icon_state = "open"
 		layer = SIGN_LAYER
+		plane = initial(plane)
 		density = FALSE
 		open = TRUE
 		set_opacity(FALSE)

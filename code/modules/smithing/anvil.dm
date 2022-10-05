@@ -28,12 +28,12 @@
 #define RECIPE_THROWING "dbd" //draw bend draw
 
 //Tablevil specific
-#define RECIPE_MACHREFORG "fdf" //fold punch punch
+#define RECIPE_MACHREFORG "fdf" //fold draw fold
 #define RECIPE_SCRAP "udsp" //upset draw shrink punch
 #define RECIPE_UNITOOL "bbb"  //bend bend bend
 
 //Legion specific
-#define RECIPE_LANCE "ddbf" //draw draw fold fold
+#define RECIPE_LANCE "ddbf" //draw draw bend fold
 #define RECIPE_GLADIUS "fdf" //fold draw fold
 #define RECIPE_SPATHA "ffdf" // fold fold draw fold
 #define RECIPE_WARHONED "udsp" //upset draw shrink punch

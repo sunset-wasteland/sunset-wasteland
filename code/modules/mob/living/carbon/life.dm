@@ -352,14 +352,13 @@
 
 	var/turf/open/miasma_turf = deceasedturf
 
-	var/datum/gas_mixture/stank = new
+	var/static/datum/gas_mixture/stank
+	if(!stank) // Use a static mixture to avoid gas mixture churn.
+		stank = new
+		stank.set_moles(GAS_MIASMA,0.1)
+		stank.set_temperature(BODYTEMP_NORMAL)
 
-	stank.set_moles(GAS_MIASMA,0.1)
-
-	stank.set_temperature(BODYTEMP_NORMAL)
-
-	miasma_turf.assume_air(stank)
-
+	miasma_turf.air.merge(stank)
 	miasma_turf.air_update_turf()
 
 /mob/living/carbon/proc/handle_blood()
@@ -587,22 +586,7 @@ GLOBAL_LIST_INIT(ballmer_windows_me_msg, list("Yo man, what if, we like, uh, put
 				adjustBruteLoss(-0.12, FALSE)
 				adjustFireLoss(-0.06, FALSE)
 
-		if(mind && (mind.assigned_role == "Scientist" || mind.assigned_role == "Research Director"))
-			if(SSresearch.science_tech)
-				if(drunkenness >= 12.9 && drunkenness <= 13.8)
-					drunkenness = round(drunkenness, 0.01)
-					var/ballmer_percent = 0
-					if(drunkenness == 13.35) // why run math if I dont have to
-						ballmer_percent = 1
-					else
-						ballmer_percent = (-abs(drunkenness - 13.35) / 0.9) + 1
-					if(prob(5))
-						say(pick(GLOB.ballmer_good_msg), forced = "ballmer")
-					SSresearch.science_tech.add_point_list(list(TECHWEB_POINT_TYPE_GENERIC = BALLMER_POINTS * ballmer_percent))
-				if(drunkenness > 26) // by this point you're into windows ME territory
-					if(prob(5))
-						SSresearch.science_tech.remove_point_list(list(TECHWEB_POINT_TYPE_GENERIC = BALLMER_POINTS))
-						say(pick(GLOB.ballmer_windows_me_msg), forced = "ballmer")
+		// todo: reimplement ballmer peak but for non-hardcoded techwebs
 
 		if(drunkenness >= 41)
 			if(prob(25))

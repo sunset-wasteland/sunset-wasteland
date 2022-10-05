@@ -10,6 +10,7 @@
 	var/category = CAT_NONE //where it shows up in the crafting UI
 	var/subcategory = CAT_NONE
 	var/always_available = TRUE //Set to FALSE if it needs to be learned first.
+	var/granting_trait /// Trait(s) that grant this recipe automatically. Can be a single trait define OR a list of trait defines.
 
 /datum/crafting_recipe/New()
 	if(!(result in reqs))
@@ -23,3 +24,26 @@
  */
 /datum/crafting_recipe/proc/check_requirements(mob/user, list/collected_requirements)
 	return TRUE
+
+/datum/crafting_recipe/proc/check_trait(mob/user)
+	. = FALSE
+	if (islist(granting_trait))
+		. = TRUE
+		for (var/trait in granting_trait)
+			// Format: list(list(trait_1, trait_2), trait_3)
+			// will require trait 3, as well as either trait 1 or trait 2
+			if (islist(trait))
+				var/has_inner_trait = FALSE
+				for (var/inner_trait in trait)
+					if (HAS_TRAIT(user, inner_trait))
+						has_inner_trait = TRUE
+						break
+				. = has_inner_trait
+			else if (istext(granting_trait))
+				if (HAS_TRAIT(user, trait))
+					continue
+				. = FALSE
+			if (!.)
+				break
+	else if (istext(granting_trait))
+		. = HAS_TRAIT(user, granting_trait)

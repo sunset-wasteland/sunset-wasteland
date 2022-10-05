@@ -614,7 +614,8 @@
 	if(AIStatus == AI_IDLE && FindTarget(tlist, 1))
 		if(cheap_search) //Try again with full effort
 			FindTarget()
-		toggle_ai(AI_ON)
+		if(target) // Only activate if we still have a target.
+			toggle_ai(AI_ON)
 
 /mob/living/simple_animal/hostile/proc/ListTargetsLazy(_Z)//Step 1, find out what we can see
 	var/static/hostile_locs = typecacheof(list(/obj/mecha))

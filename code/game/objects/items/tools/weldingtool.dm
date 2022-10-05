@@ -115,10 +115,13 @@
 
 	if(affecting && affecting.status == BODYPART_ROBOTIC && user.a_intent != INTENT_HARM)
 		//only heal to 25 if limb is damaged to or past 25 brute, otherwise heal normally
-		var/difference = affecting.brute_dam - 0
+		var/difference = affecting.brute_dam - 25
 		var/heal_amount = 15
 		if(difference >= 0)
 			heal_amount = difference
+		if(!heal_amount)
+			to_chat(user, "<span class='notice'>[user == H ? "Your" : "[H]'s"] [affecting.name] appears to have suffered severe structural damage and requires surgery to repair further.</span>")
+			return
 		if(src.use_tool(H, user, 0, volume=50, amount=1))
 			if(user == H)
 				user.visible_message("<span class='notice'>[user] starts to fix some of the dents on [H]'s [affecting.name].</span>",

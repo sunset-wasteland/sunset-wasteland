@@ -26,7 +26,7 @@
 	AddComponent(/datum/component/spawner/ranged, mob_types, spawn_time, list(), spawn_text, max_mobs, _spawn_sound = spawnsound, _infinite = infinite, _range = radius)
 
 /obj/structure/nest/Destroy()
-	playsound(src, 'sound/effects/break_stone.ogg', 0, 1) //removed the sound, here if someone wants to enable it again.
+	playsound(src, 'sound/effects/break_stone.ogg', 50, 1) //reduced the sound
 	visible_message("[src] collapses!")
 	. = ..()
 

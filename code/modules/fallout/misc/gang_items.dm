@@ -173,7 +173,7 @@
 /datum/gang_item/weapon/greasegun
 	name = "Grease Gun"
 	id = "greasegun"
-	cost = 130
+	cost = 120
 	item_path = /obj/effect/spawner/bundle/f13/greasegun
 
 /datum/gang_item/weapon/uzi
@@ -316,7 +316,7 @@
 /datum/gang_item/equipment/c4
 	name = "C4 Explosive"
 	id = "c4"
-	cost = 130
+	cost = 150
 	item_path = /obj/item/grenade/plastic/c4
 
 /datum/gang_item/equipment/stinger

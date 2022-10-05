@@ -236,7 +236,7 @@
 	var/obj/item/clothing/head/bio_hood/f13/hazmat
 	actions_types = list(/datum/action/item_action/toggle_helmet)
 	var/helmettype = /obj/item/clothing/head/bio_hood/f13/hazmat
-	
+
 /obj/item/clothing/head/bio_hood/f13/hazmat
 	name = "hazmat hood"
 	desc = "My star, my perfect silence."
@@ -517,6 +517,7 @@
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small
 
 /obj/item/clothing/head/hooded/followerlight
+	name = "Follower's Labcoat hood"
 	icon_state = "follower_light"
 	icon = 'icons/fallout/clothing/hats.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/head.dmi'
@@ -537,6 +538,7 @@
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small
 
 /obj/item/clothing/head/hooded/followermedium
+	name = "Follower's Plated Labcoat hood"
 	icon_state = "follower_medium"
 	icon = 'icons/fallout/clothing/hats.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/head.dmi'
@@ -556,6 +558,7 @@
 	slowdown = 0.20
 
 /obj/item/clothing/head/hooded/followerheavy
+	name = "Follower's Guard Heavy Armor helmet"
 	icon_state = "follower_heavy"
 	icon = 'icons/fallout/clothing/hats.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/head.dmi'

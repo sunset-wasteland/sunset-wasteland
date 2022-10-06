@@ -14,9 +14,9 @@
 	var/updating = FALSE
 	var/obj/machinery/camera/VertiCamera
 
-/obj/vertibird/New()
-	..()
-	var/obj/item/start = new /obj/effect/landmark/vertibird()
+/obj/vertibird/Initialize()
+	. = ..()
+	var/obj/effect/landmark/vertibird/start = new
 	start.name = "Vertibird Hanger"
 	start.loc = loc
 

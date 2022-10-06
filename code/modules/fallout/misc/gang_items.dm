@@ -174,26 +174,95 @@
 	name = "Grease Gun"
 	id = "greasegun"
 	cost = 120
-	item_path = /obj/item/gun/ballistic/automatic/smg/greasegun
+	item_path = /obj/effect/spawner/bundle/f13/greasegun
 
 /datum/gang_item/weapon/uzi
 	name = "Uzi"
 	id = "uzi"
 	cost = 300
-	item_path = /obj/item/gun/ballistic/automatic/smg/mini_uzi
+	item_path = /obj/effect/spawner/bundle/f13/miniuzi
 
 /datum/gang_item/weapon/type17
 	name = "Type 17 Pistol"
 	id = "type17"
 	cost = 50
-	item_path = /obj/item/gun/ballistic/automatic/pistol/type17
+	item_path = /obj/item/storage/box/bundletype17kit
+
+/obj/item/storage/box/bundletype17kit
+	name = "Type 17 kit"
+	desc = "Imported but still great."
+
+/obj/item/storage/box/bundletype17kit/PopulateContents()
+	new /obj/item/ammo_box/magazine/m10mm_adv/simple(src)
+	new /obj/item/gun/ballistic/automatic/pistol/type17(src)
+
+/datum/gang_item/weapon/ninemil
+	name = "9mm Pistol"
+	id = "gangninemil"
+	cost = 80
+	item_path = /obj/effect/spawner/bundle/f13/ninemil
+
+/datum/gang_item/weapon/caravan
+	name = "Caravan Shotgun"
+	id = "caravanshotgun"
+	cost = 110
+	item_path = /obj/effect/spawner/bundle/f13/caravan_shotgun
+
+/datum/gang_item/weapon/varmint
+	name = "Varmint"
+	id = "varmints"
+	cost = 110
+	item_path = /obj/effect/spawner/bundle/f13/varmint
 
 /datum/gang_item/weapon/type93
 	name = "Worn Type 93"
 	id = "worntype93"
 	cost = 250
-	item_path = /obj/item/gun/ballistic/automatic/type93/worn
+	item_path = /obj/item/storage/box/bundletype93kit
 
+/obj/item/storage/box/bundletype93kit
+	name = "type 93 kit"
+	desc = "Rule the wasteland, one bullet at a time."
+
+/obj/item/storage/box/bundletype93kit/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/type93/worn(src)
+	new /obj/item/ammo_box/magazine/m556/rifle(src)
+
+/datum/gang_item/weapon/energylow
+	name = "Unknown Energy Gun"
+	id = "gangenergygun"
+	cost = 200
+	item_path = /obj/effect/spawner/lootdrop/f13/weapon/gun/energy/low
+
+/datum/gang_item/weapon/gunsuperlow
+	name = "Unknown Ballistic Gun"
+	id = "gangshitbalisticgun"
+	cost = 90
+	item_path = /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/superlow
+
+/datum/gang_item/weapon/gunlow
+	name = "Unknown Good Ballistic Gun"
+	id = "ganggoodbalisticgun"
+	cost = 140
+	item_path = /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/gang/low
+
+/datum/gang_item/weapon/gunmid
+	name = "Unknown AWESOME Ballistic Gun"
+	id = "gangawesomebalisticgun"
+	cost = 180
+	item_path = /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/gang/lowmid
+
+/datum/gang_item/weapon/gunawesome
+	name = "Unknown EXTREMELY AWESOME Ballistic Gun"
+	id = "gangextremeawesomebalisticgun"
+	cost = 280
+	item_path = /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/gang/mid
+
+/datum/gang_item/weapon/melekit
+	name = "Unknown Melee Weapon"
+	id = "gangmelee"
+	cost = 140
+	item_path = /obj/effect/spawner/lootdrop/f13/weapon/melee/tier3
 
 ///////////////////
 //EQUIPMENT
@@ -220,6 +289,18 @@
 	cost = 90
 	item_path = /obj/item/storage/pill_bottle/chem_tin/fixer
 
+/datum/gang_item/equipment/stimpak
+	name = "Stimpak"
+	id = "stimpake"
+	cost = 95
+	item_path = /obj/item/reagent_containers/hypospray/medipen/stimpak
+
+/datum/gang_item/equipment/healingpowder
+	name = "Healing Powder"
+	id = "healingpowder"
+	cost = 55
+	item_path = /obj/item/reagent_containers/pill/patch/healingpowder
+
 /datum/gang_item/equipment/emp
 	name = "EMP Grenade"
 	id = "EMP"
@@ -240,19 +321,47 @@
 
 /datum/gang_item/equipment/stinger
 	name = "Stinger"
+	id = "stingers"
 	cost = 100
 	item_path = /obj/item/grenade/f13/stinger
 
+/datum/gang_item/equipment/molotov
+	name = "Firebomb"
+	id = "Molotovg"
+	cost = 70
+	item_path = /obj/item/grenade/homemade/firebomb
+
+/datum/gang_item/equipment/dynamite
+	name = "Dynamite Stick"
+	id = "dynamitegrenade"
+	cost = 150
+	item_path = /obj/item/grenade/f13/dynamite
+
 /datum/gang_item/equipment/he
 	name = "High Explosive Grenade"
-	cost = 150
-	item_path = /obj/item/grenade/syndieminibomb/concussion
+	id = "hegrenade"
+	cost = 130
+	item_path = /obj/item/grenade/f13/frag
 
 
 ///////////////////
 //EQUIPMENT
 ///////////////////
 
+/datum/gang_item/equipment/chemmakingkit
+	name = "Chem Machine Bundle"
+	id = "Chemmakingmachine"
+	cost = 655
+	item_path = /obj/item/storage/box/chemmachine
+
+/obj/item/storage/box/chemmachine
+	name = "chem machine Bundle"
+	desc = "You made a bomb, blew up a Village, And still, you kept making the machines.. "
+
+/obj/item/storage/box/chemmachine/PopulateContents()
+	new /obj/item/circuitboard/machine/chem_dispenser(src)
+	new /obj/item/circuitboard/machine/chem_master(src)
+	new /obj/item/circuitboard/machine/chem_heater(src)
 
 ///////////////////
 //BUNDLES
@@ -305,7 +414,7 @@
 /obj/item/storage/box/bundleboss
 	name = "Big Boss"
 	desc = "For the Biggest Outlaw around"
-	
+
 /obj/item/storage/box/bundleboss/PopulateContents()
 	new /obj/item/reagent_containers/hypospray/medipen/medx(src)
 	new /obj/item/reagent_containers/hypospray/medipen/psycho(src)
@@ -350,3 +459,28 @@
 	new /obj/item/gun/ballistic/revolver/colt357(src)
 	new /obj/item/clothing/head/f13/ranger_hat(src)
 	new /obj/item/clothing/suit/armor/f13/leather_jacket/combat/coat(src)
+
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/gang/low
+	name = "low tier gang ballistic gun"
+	loot = list(/obj/effect/spawner/bundle/f13/thatgun,
+				/obj/effect/spawner/bundle/f13/huntingshotgun,
+				/obj/effect/spawner/bundle/f13/m1carbine,
+				)
+
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/gang/lowmid
+	name = "low-mid gang tier ballistic gun"
+	loot = list(/obj/effect/spawner/bundle/f13/cowboy,
+				/obj/effect/spawner/bundle/f13/trenchshotgun,
+				/obj/effect/spawner/bundle/f13/m1carbine,
+				/obj/effect/spawner/bundle/f13/huntingshotgun,
+		)
+
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/gang/mid
+	name = "mid tier ballistic gun"
+	loot = list(/obj/effect/spawner/bundle/f13/trail,
+				/obj/effect/spawner/bundle/f13/service,
+				/obj/effect/spawner/bundle/f13/miniuzi,
+				/obj/effect/spawner/bundle/f13/auto5,
+				/obj/effect/spawner/bundle/f13/marksman,
+				/obj/effect/spawner/bundle/f13/m1garand,
+				)

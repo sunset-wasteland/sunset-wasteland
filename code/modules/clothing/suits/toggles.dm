@@ -81,6 +81,7 @@
 		RemoveHood()
 
 /obj/item/clothing/head/hooded
+	name = "hood"
 	var/obj/item/clothing/suit/hooded/suit
 	dynamic_hair_suffix = ""
 

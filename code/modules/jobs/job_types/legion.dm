@@ -534,6 +534,7 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 	r_pocket = /obj/item/flashlight/lantern
 	l_pocket = /obj/item/storage/survivalkit_tribal
 	backpack_contents = list(
+		/obj/item/melee/onehanded/machete/gladius = 1,
 		/obj/item/reagent_containers/pill/patch/healpoultice = 1,
 		/obj/item/restraints/handcuffs = 1,
 		/obj/item/storage/bag/money/small/legofficers = 1,

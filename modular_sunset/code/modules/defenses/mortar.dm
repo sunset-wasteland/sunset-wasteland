@@ -104,14 +104,14 @@
 
 
 
-/obj/structure/mortar/attackby(var/obj/item/O as obj, mob/user as mob)
+/obj/structure/mortar/attackby(obj/item/O as obj, mob/user as mob)
 	var/area/A = get_area(src)
 	if(!A.outdoors)
 		to_chat(user, "<span class='warning'>You refrain from firing the [src] while indoors.</span>")
 		return
 
 	if(istype(O, /obj/item/mortar_shell))
-		var/obj/item/mortar_shell = O
+		var/obj/item/mortar_shell/mortar_shell = O
 		if(busy)
 			user << "<span class='warning'>Someone else is currently using [src].</span>"
 			return
@@ -208,8 +208,8 @@
 	icon_state = "mortar_ammo_cas"
 	w_class = 5
 
-/obj/item/mortar_shell/proc/detonate(var/turf/T)
+/obj/item/mortar_shell/proc/detonate(turf/T)
 	forceMove(T)
 
-/obj/item/mortar_shell/detonate(var/turf/T)
+/obj/item/mortar_shell/detonate(turf/T)
 	explosion(T, 2, 4, 6, 8)

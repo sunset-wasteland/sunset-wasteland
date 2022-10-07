@@ -434,17 +434,16 @@
 			return "Security"
 
 /proc/get_all_jobs()
-	return list("Centurion", "NCR Captain", "Overseer", "Sheriff",
-				"Sentinel", "Senior Paladin", "Paladin", "Knight-Captain", "Senior Knight", "Knight", "Head Scribe", "Senior Scribe", "Scribe", "Initiate",
-				"Veteran Decanus", "Vexillarius", "Decanus", "Veteran Legionnaire", "Prime Legionnaire",
-				"NCR Lieutenant", "NCR Medical Officer", "NCR Sergeant First Class", "NCR Sergeant", ,"NCR Corporal", "NCR Combat Medic", "NCR Combat Engineer", "NCR Trooper",
-				"NCR Veteran Ranger", "NCR Patrol Ranger", "NCR Recon Ranger",
-				"NCR Scout", "NCR Scout Sergeant", "NCR Scout Lieutenant",
-				"Chief of Security", "Vault-tec Doctor", "Vault-tec Scientist",
-				"Vault-tec Security", "Vault-tec Engineer", "Vault Dweller", "Settler",
-				"Enclave Lieutenant", "Enclave Platoon Sergeant", "Enclave Sergeant", "Enclave Specialist",
-				"Enclave Private", "Enclave Scientist", "Enclave Pilot Officer", "Enclave Bunker Duty",
-				"Wastelander", "Raider", "Great Khan", "Preacher", "Head Hunter", "Chief", "Shaman", "Villager", "Hunter")
+	return list("Wastelander", "Outlaw", "Tribal",
+				"Mayor", "Sheriff", "Deputy", "Banker", "Barkeep", "Shopkeeper", "Citizen", "Preacher", "Secretary",
+				"Baron", "Castellan","Keeper", "Knight-Commander", "Paladin Marshal", "Paladin", "Librarian", "Scribe", "Knight-Captain", "Knight", "Initiate", "BoS Off-Duty",
+				"Enclave Lieutenant", "Enclave Platoon Sergeant", "Enclave Sergeant", "Enclave Specialist", ,"Enclave Private", "Enclave Scientist", "Enclave Pilot Officer", "Enclave Bunker Duty",
+				"Followers Administrator", "Followers Doctor", "Followers Volunteer", "Followers Guard", "Followers Robot",
+				"Khan Enforcer", "Khan Chemist",
+				"NCR Captain", "NCR Lieutenant", "NCR Logistics Officer", "NCR Representative", "NCR Medical Officer", "NCR Heavy Trooper", "NCR Sergeant", "NCR Senior Enlisted Advisor",
+				"NCR Corporal", "NCR Combat Medic", "NCR Combat Engineer", "NCR Military Police", "NCR Trooper", "NCR Conscript", "NCR Rear Echelon", "NCR Veteran Ranger", "NCR Ranger",
+				"Legion Centurion", "Legion Orator", "Legion Recruit Decanus", "Legion Prime Decanus", "Legion Veteran Decanus", "Legion Vexillarius", "Legion Slavemaster", "Legion Explorer", "Legion Venator",
+				"Veteran Legionnaire", "Prime Legionnaire", "Recruit Legionnaire", "Legion Forgemaster", "Legion Immune", "Legion Auxilia", "Legion Slave")
 
 /proc/get_all_job_icons() //For all existing HUD icons
 	return get_all_jobs() + list("Prisoner")

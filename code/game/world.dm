@@ -66,6 +66,10 @@ GLOBAL_LIST(topic_status_cache)
 	initialize_global_loadout_items()
 	reload_custom_roundstart_items_list()//Cit change - loads donator items. Remind me to remove when I port over bay's loadout system
 
+	//Scramble the coords obsfucator
+	obfs_x = rand(-500, 500)
+	obfs_y = rand(-500, 500)
+
 	Master.Initialize(10, FALSE, TRUE)
 
 	#ifdef UNIT_TESTS

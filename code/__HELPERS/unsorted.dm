@@ -1640,3 +1640,15 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 		if(target.reagents.has_reagent(/datum/reagent/consumable/garlic))
 			return FALSE
 	return TRUE
+
+//Offuscate x for coord system
+#define obfuscate_x(x) (x + obfs_x)
+
+//Offuscate y for coord system
+#define obfuscate_y(y) (y + obfs_y)
+
+//Deoffuscate x for coord system
+#define deobfuscate_x(x) (x - obfs_x)
+
+//Deoffuscate y for coord system
+#define deobfuscate_y(y) (y - obfs_y)

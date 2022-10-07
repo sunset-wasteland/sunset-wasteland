@@ -71,24 +71,24 @@
 	if (choice == "Dial")
 		var/temp_dial_x = input("Set longitude adjustement from -10 to 10.") as num
 		if(temp_dial_x + xinput > world.maxx || temp_dial_x + xinput < 0)
-			user << "<span class='warning'>You cannot dial to this coordinate, it is outside of the area of operations.</span>"
+			to_chat(user, "<span class='warning'>You cannot dial to this coordinate, it is outside of the area of operations.</span>")
 			return
 		if(temp_dial_x < -10 || temp_dial_x > 10)
-			user << "<span class='warning'>You cannot dial to this coordinate, it is too far away. You need to set [src] up instead.</span>"
+			to_chat(user, "<span class='warning'>You cannot dial to this coordinate, it is too far away. You need to set [src] up instead.</span>")
 			return
 		var/temp_dial_y = input("Set latitude adjustement from -10 to 10.") as num
 		if(temp_dial_y + yinput > world.maxy || temp_dial_y + yinput < 0)
-			user << "<span class='warning'>You cannot dial to this coordinate, it is outside of the area of operations.</span>"
+			to_chat(user, "<span class='warning'>You cannot dial to this coordinate, it is outside of the area of operations.</span>")
 			return
 		var/turf/T = locate(xinput + temp_dial_x, yinput + temp_dial_y, z)
 		if(get_dist(loc, T) < 10)
-			user << "<span class='warning'>You cannot dial to this coordinate, it is too close to your mortar.</span>"
+			to_chat(user, "<span class='warning'>You cannot dial to this coordinate, it is too close to your mortar.</span>")
 			return
 		if(temp_dial_y < -10 || temp_dial_y > 10)
-			user << "<span class='warning'>You cannot dial to this coordinate, it is too far away. You need to set [src] up instead.</span>"
+			to_chat(user, "<span class='warning'>You cannot dial to this coordinate, it is too far away. You need to set [src] up instead.</span>")
 			return
 		if(busy)
-			user << "<span class='warning'>Someone else is currently using this mortar.</span>"
+			to_chat(user, "<span class='warning'>Someone else is currently using this mortar.</span>")
 			return
 		user.visible_message("<span class='notice'>[user] starts dialing [src]'s firing angle and distance.</span>",
 		"<span class='notice'>You start dialing [src]'s firing angle and distance to match the new coordinates.</span>")
@@ -113,17 +113,17 @@
 	if(istype(O, /obj/item/mortar_shell))
 		var/obj/item/mortar_shell/mortar_shell = O
 		if(busy)
-			user << "<span class='warning'>Someone else is currently using [src].</span>"
+			to_chat(user, "<span class='warning'>Someone else is currently using [src].</span>")
 			return
 		if(z != 1)
-			user << "<span class='warning'>You cannot fire [src] here.</span>"
+			to_chat(user, "<span class='warning'>You cannot fire [src] here.</span>")
 			return
 		if(xinput == 0 && yinput == 0) //Mortar wasn't set
-			user << "<span class='warning'>[src] needs to be aimed first.</span>"
+			to_chat(user, "<span class='warning'>[src] needs to be aimed first.</span>")
 			return
 		var/turf/T = locate(xinput + xdial + xoffset, yinput + ydial + yoffset, z)
 		if(!isturf(T))
-			user << "<span class='warning'>You cannot fire [src] to this target.</span>"
+			to_chat(user, "<span class='warning'>You cannot fire [src] to this target.</span>")
 			return
 		user.visible_message("<span class='notice'>[user] starts loading \a [mortar_shell.name] into [src].</span>",
 		"<span class='notice'>You start loading \a [mortar_shell.name] into [src].</span>")
@@ -153,10 +153,10 @@
 
 	if(istype(O, /obj/item/wrench))
 		if(busy)
-			user << "<span class='warning'>Someone else is currently using [src].</span>"
+			to_chat(user, "<span class='warning'>Someone else is currently using [src].</span>")
 			return
 		if(firing)
-			user << "<span class='warning'>The mortar is currently firing, Wait a few seconds for the barrel to cool.</span>"
+			to_chat(user, "<span class='warning'>The mortar is currently firing, Wait a few seconds for the barrel to cool.</span>")
 			return
 		playsound(loc, 'sound/items/Ratchet.ogg', 25, 1)
 		user.visible_message("<span class='notice'>[user] starts undeploying [src].",
@@ -205,7 +205,7 @@
 	name = "\improper 80mm mortar shell"
 	desc = "An unlabeled 80mm mortar shell, probably a casing."
 	icon = 'modular_sunset/icons/structures/mortar.dmi'
-	icon_state = "mortar_ammo_cas"
+	icon_state = "mortar_ammo_he"
 	w_class = 5
 
 /obj/item/mortar_shell/proc/detonate(turf/T)

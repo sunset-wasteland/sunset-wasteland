@@ -26,7 +26,7 @@
 	AddComponent(/datum/component/spawner/ranged, mob_types, spawn_time, list(), spawn_text, max_mobs, _spawn_sound = spawnsound, _infinite = infinite, _range = radius)
 
 /obj/structure/nest/Destroy()
-	playsound(src, 'sound/effects/break_stone.ogg', 100, 1)
+	playsound(src, 'sound/effects/break_stone.ogg', 50, 1) //reduced the sound
 	visible_message("[src] collapses!")
 	. = ..()
 
@@ -51,8 +51,7 @@
 		to_chat(user, span_warning("You must stay still to cover \the [src]!"))
 		return
 	cover_stack.use(4)
-	new /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low(drop_location())
-	to_chat(user, span_notice("You find something while covering the hole!"))
+	to_chat(user, span_notice("You stopped the flow of monsters, for now!"))
 
 /obj/structure/nest/attackby(obj/item/I, mob/living/user, params)
 	if(user.a_intent == INTENT_HARM)
@@ -76,8 +75,7 @@
 		cover_type.use(4)
 
 		if(!covered)
-			new /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low(src.loc)
-			to_chat(user, "<span class='warning'>You find something while covering the hole!</span>")
+			to_chat(user, "<span class='warning'>You stopped the flow of monsters, for now!</span>")
 
 		covered = TRUE
 		qdel(GetComponent(/datum/component/spawner/ranged))
@@ -312,3 +310,11 @@
 	max_mobs = 5
 	mob_types = list(/mob/living/simple_animal/hostile/trog/tunneler = 1)
 
+//Mountain range
+
+/obj/structure/nest/coldghouls
+	name = "cold ghouls tunnel"
+	desc = "A tunnel which leads to an underground network of even more tunnels, made by the dangerous tunnelers."
+	max_mobs = 5
+	mob_types = list(/mob/living/simple_animal/hostile/ghoul/coldferal = 10,
+					/mob/living/simple_animal/hostile/ghoul/frozenreaver = 2)

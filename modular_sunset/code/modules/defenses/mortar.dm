@@ -233,7 +233,7 @@
 	desc = "Specialised mortar shells."
 	icon_state = "hydrocrate"
 
-/obj/structure/closet/mortar_shells/PopulateContents()
+/obj/structure/closet/crate/mortar_shells/PopulateContents()
 	..()
 	new /obj/item/mortar_shell(src)
 	new /obj/item/mortar_shell(src)

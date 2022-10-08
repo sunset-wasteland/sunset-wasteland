@@ -19458,10 +19458,6 @@
 	icon_state = "wasteland32"
 	},
 /area/f13/caves)
-"bpS" = (
-/obj/item/storage/trash_stack,
-/turf/open/indestructible/ground/outside/sidewalk,
-/area/f13/followers)
 "bpV" = (
 /obj/structure/table/reinforced,
 /obj/structure/railing/corner{
@@ -19808,7 +19804,6 @@
 	pixel_y = 30
 	},
 /obj/effect/decal/cleanable/generic,
-/obj/machinery/recycler,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland/bighorn)
 "bsk" = (
@@ -34088,10 +34083,6 @@
 	icon_state = "darkrustysolid"
 	},
 /area/f13/building/massfusion)
-"jil" = (
-/obj/structure/wreck/trash/machinepiletwo,
-/turf/open/indestructible/ground/outside/sidewalk,
-/area/f13/followers)
 "jiJ" = (
 /obj/effect/spawner/lootdrop/f13/weapon/melee/tier5,
 /turf/open/indestructible/ground/inside/mountain,
@@ -40504,6 +40495,10 @@
 /obj/item/airlock_painter,
 /turf/open/floor/plasteel/f13/vault_floor/red/white,
 /area/f13/building/mall)
+"nul" = (
+/obj/machinery/conveyor_switch/oneway,
+/turf/open/indestructible/ground/outside/sidewalk,
+/area/f13/followers)
 "nuM" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontalbottomborderbottom2"
@@ -44198,7 +44193,6 @@
 /turf/open/floor/wood/wood_worn,
 /area/f13/city/bighorn)
 "pLY" = (
-/obj/structure/fence,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/followers)
 "pMm" = (
@@ -44262,6 +44256,10 @@
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland/west)
 "pOY" = (
+/obj/machinery/recycler,
+/obj/machinery/conveyor{
+	dir = 4
+	},
 /obj/effect/spawner/lootdrop/f13/junkspawners,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/followers)
@@ -46333,8 +46331,11 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/valley)
 "rjo" = (
-/obj/structure/simple_door/metal/fence{
-	dir = 8
+/obj/machinery/conveyor{
+	dir = 4
+	},
+/obj/structure/railing{
+	dir = 5
 	},
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/followers)
@@ -53549,7 +53550,13 @@
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland/quarry)
 "vQv" = (
-/obj/structure/wreck/trash/five_tires,
+/obj/machinery/conveyor{
+	dir = 4
+	},
+/obj/structure/railing{
+	dir = 9
+	},
+/obj/effect/spawner/lootdrop/f13/junkspawners,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/followers)
 "vQz" = (
@@ -77461,8 +77468,8 @@ dFh
 elP
 yjm
 vQv
-jil
-bpS
+pLY
+pLY
 yjm
 pat
 pat
@@ -77718,8 +77725,8 @@ uxW
 oAa
 yjm
 pOY
-pOY
-pOY
+nul
+pLY
 yjm
 eus
 pat
@@ -78747,7 +78754,7 @@ eus
 eus
 pZd
 sQw
-ydE
+wji
 ydE
 bVI
 esx

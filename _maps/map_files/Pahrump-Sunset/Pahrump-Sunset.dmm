@@ -19076,8 +19076,17 @@
 /turf/open/floor/wood/wood_worn,
 /area/f13/city/bighorn)
 "bnZ" = (
-/mob/living/simple_animal/pet/dog/mutant,
-/turf/open/indestructible/ground/outside/dirt,
+/mob/living/simple_animal/hostile/supermutant/meleemutant{
+	desc = "A large, docile supermutant. Adopted by Bighorn as a sort of watch dog for their brahmin herd.";
+	faction = list("neutral");
+	health = 1250;
+	icon_living = "hulk_brahmin_s";
+	icon_state = "hulk_brahmin_s";
+	name = "Brah-Min"
+	},
+/turf/open/indestructible/ground/outside/dirt{
+	icon_state = "dirt"
+	},
 /area/f13/city/bighorn)
 "boc" = (
 /obj/structure/rack,
@@ -76337,9 +76346,9 @@ bZL
 lUX
 blm
 pat
-tcK
-yhP
 bnZ
+yhP
+yhP
 yhP
 ssy
 eus

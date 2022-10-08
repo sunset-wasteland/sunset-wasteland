@@ -1,6 +1,6 @@
 /obj/structure/mortar
-	name = "Mortar"
-	desc = "Mortar"
+	name = "M29 Mortar"
+	desc = "A lightweight infantry portable mortar. This one would appear pristine, if it weren't for the fact that it violently rattles when handled. Is this safe?"
 	icon = 'modular_sunset/icons/structures/mortar.dmi'
 	icon_state = "mortar_m402"
 	anchored = 1
@@ -105,6 +105,7 @@
 
 
 /obj/structure/mortar/attackby(obj/item/O as obj, mob/user as mob)
+
 	var/area/A = get_area(src)
 	if(!A.outdoors)
 		to_chat(user, "<span class='warning'>You refrain from firing the [src] while indoors.</span>")
@@ -112,23 +113,29 @@
 
 	if(istype(O, /obj/item/mortar_shell))
 		var/obj/item/mortar_shell/mortar_shell = O
+
 		if(busy)
 			to_chat(user, "<span class='warning'>Someone else is currently using [src].</span>")
 			return
+/*
 		if(z != 1)
 			to_chat(user, "<span class='warning'>You cannot fire [src] here.</span>")
 			return
+*/
 		if(xinput == 0 && yinput == 0) //Mortar wasn't set
 			to_chat(user, "<span class='warning'>[src] needs to be aimed first.</span>")
 			return
+
 		var/turf/T = locate(xinput + xdial + xoffset, yinput + ydial + yoffset, z)
 		if(!isturf(T))
 			to_chat(user, "<span class='warning'>You cannot fire [src] to this target.</span>")
 			return
+
 		user.visible_message("<span class='notice'>[user] starts loading \a [mortar_shell.name] into [src].</span>",
 		"<span class='notice'>You start loading \a [mortar_shell.name] into [src].</span>")
 		playsound(loc, 'modular_sunset/sound/defenses/mortar_reload.ogg', 50, 1)
 		busy = 1
+
 		if(do_after(user, 15, src))
 			user.visible_message("<span class='notice'>[user] loads \a [mortar_shell.name] into [src].</span>",
 			"<span class='notice'>You load \a [mortar_shell.name] into [src].</span>")
@@ -146,8 +153,15 @@
 				playsound(T, 'modular_sunset/sound/defenses/mortar_long_whistle.ogg', 50, 1)
 				spawn(45) //Must go down //This should always be 45 ticks!
 					mortar_shell.detonate(T)
+
 					qdel(mortar_shell)
+					xdial = 0//Reset after each shell.
+					ydial = 0
+					xinput = 0
+					yinput = 0
+
 					firing = 0
+
 		else
 			busy = 0
 
@@ -202,8 +216,8 @@
 ////////////////////////////////////////////////////////////////////////////////////////////
 
 /obj/item/mortar_shell
-	name = "\improper 80mm mortar shell"
-	desc = "An unlabeled 80mm mortar shell, probably a casing."
+	name = "\improper 80mm mortar shell (HE)"
+	desc = "A hefty mortar shell. Looks to be an HE round."
 	icon = 'modular_sunset/icons/structures/mortar.dmi'
 	icon_state = "mortar_ammo_he"
 	w_class = 5
@@ -213,3 +227,19 @@
 
 /obj/item/mortar_shell/detonate(turf/T)
 	explosion(T, 2, 4, 6, 8)
+
+/obj/structure/closet/crate/mortar_shells
+	name = "mortar shell crate"
+	desc = "Specialised mortar shells."
+	icon_state = "hydrocrate"
+
+/obj/structure/closet/mortar_shells/PopulateContents()
+	..()
+	new /obj/item/mortar_shell(src)
+	new /obj/item/mortar_shell(src)
+	new /obj/item/mortar_shell(src)
+	new /obj/item/mortar_shell(src)
+	new /obj/item/mortar_shell(src)
+	new /obj/item/mortar_shell(src)
+	new /obj/item/mortar_shell(src)
+	new /obj/item/mortar_shell(src)

@@ -1642,8 +1642,8 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 	return TRUE
 
 //Used by the tactical binoculars and linked systems to prevent coords collection/prefiring
-GLOBAL_VAR(obfs_x) //A number between -500 and 500
-GLOBAL_VAR(obfs_y) //A number between -500 and 500
+GLOBAL_VAR(obfs_x) //A number between -2500 and 2500
+GLOBAL_VAR(obfs_y) //A number between -2500 and 2500
 
 //Offuscate x for coord system
 #define obfuscate_x(x) (x + GLOB.obfs_x)

@@ -338,7 +338,7 @@
 	if(..())
 		if(M.getStaminaLoss() > 120)//just in case
 			return
-//		M.drop_all_held_items()//HAHAHA, no. Not for now. Crit stamina is more than enough of a 'gtfo' sign.
+		M.drop_all_held_items()
 		M.adjustOxyLoss(5)
 		M.adjustStaminaLoss(10)//sitting in the cloud will bring you to just about 120stam and near 70/80 oxy. Enough for crit but won't kill most people.
 		M.emote("cough")

@@ -172,6 +172,15 @@
 		if(firing)
 			to_chat(user, "<span class='warning'>The mortar is currently firing, Wait a few seconds for the barrel to cool.</span>")
 			return
+		if(fixed)
+			to_chat(user, "<span class='warning'>The mortar is fixed in place. You're not able to move it.</span>")
+			return
+
+		xdial = 0//Reset after attempted deconstruction.
+		ydial = 0
+		xinput = 0
+		yinput = 0
+
 		playsound(loc, 'sound/items/Ratchet.ogg', 25, 1)
 		user.visible_message("<span class='notice'>[user] starts undeploying [src].",
 		"<span class='notice'>You start undeploying [src].")
@@ -243,3 +252,5 @@
 	new /obj/item/mortar_shell(src)
 	new /obj/item/mortar_shell(src)
 	new /obj/item/mortar_shell(src)
+	new /obj/item/binoculars(src)
+	new /obj/item/weapon/maptool(src)

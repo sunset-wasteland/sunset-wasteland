@@ -296,6 +296,12 @@
 	M.adjustBruteLoss(heal_rate)
 	M.adjustToxLoss(heal_rate)
 	M.hallucination = max(M.hallucination, is_tribal ? 0 : 5)
+	if(M.oxyloss > 35)
+		M.setOxyLoss(35, 0)
+	if(M.losebreath >= 4)
+		M.losebreath -= 2
+	if(M.losebreath < 0)
+		M.losebreath = 0
 	. = TRUE
 	..()
 
@@ -318,29 +324,11 @@
 
 /datum/reagent/medicine/healing_powder/poultice
 	name = "Healing poultice"
-	description = "Restores limb condition and heals rapidly. It can also help with breathing problems."
+	description = "Restores limb condition and heals rapidly."
 	color = "#C8A5DC"
 	overdose_threshold = 20
 	heal_factor = -3.0
 	heal_factor_perk = -3.5
-
-/datum/reagent/medicine/healing_powder/poultice/on_mob_life(mob/living/carbon/M)
-	if(M.oxyloss > 35)
-		M.setOxyLoss(35, 0)
-	if(M.losebreath >= 4)
-		M.losebreath -= 2
-	if(M.losebreath < 0)
-		M.losebreath = 0
-	var/is_tribal = FALSE
-	if(HAS_TRAIT(M, TRAIT_TRIBAL))
-		is_tribal = TRUE
-	var/heal_rate = (is_tribal ? heal_factor_perk : heal_factor) * REAGENTS_EFFECT_MULTIPLIER
-	M.adjustFireLoss(heal_rate)
-	M.adjustBruteLoss(heal_rate)
-	M.adjustToxLoss(heal_rate)
-	M.hallucination = max(M.hallucination, is_tribal ? 0 : 5)
-	. = TRUE
-	..()
 
 // ---------------------------
 // RAD-X REAGENT

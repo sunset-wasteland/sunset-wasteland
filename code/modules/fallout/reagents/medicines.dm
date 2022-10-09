@@ -331,6 +331,16 @@
 		M.losebreath -= 2
 	if(M.losebreath < 0)
 		M.losebreath = 0
+	var/is_tribal = FALSE
+	if(HAS_TRAIT(M, TRAIT_TRIBAL))
+		is_tribal = TRUE
+	var/heal_rate = (is_tribal ? heal_factor_perk : heal_factor) * REAGENTS_EFFECT_MULTIPLIER
+	M.adjustFireLoss(heal_rate)
+	M.adjustBruteLoss(heal_rate)
+	M.adjustToxLoss(heal_rate)
+	M.hallucination = max(M.hallucination, is_tribal ? 0 : 5)
+	. = TRUE
+	..()
 
 // ---------------------------
 // RAD-X REAGENT

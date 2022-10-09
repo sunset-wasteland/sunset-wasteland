@@ -295,13 +295,8 @@
 	M.adjustFireLoss(heal_rate)
 	M.adjustBruteLoss(heal_rate)
 	M.adjustToxLoss(heal_rate)
+	M.adjustOxyLoss(heal_rate)
 	M.hallucination = max(M.hallucination, is_tribal ? 0 : 5)
-	if(M.oxyloss > 35)
-		M.setOxyLoss(35, 0)
-	if(M.losebreath >= 4)
-		M.losebreath -= 2
-	if(M.losebreath < 0)
-		M.losebreath = 0
 	. = TRUE
 	..()
 

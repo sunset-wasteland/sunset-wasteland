@@ -323,6 +323,8 @@
 	overdose_threshold = 20
 	heal_factor = -3.0
 	heal_factor_perk = -3.5
+
+/datum/reagent/medicine/healing_powder/poultice/on_mob_life(mob/living/carbon/M)
 	if(M.oxyloss > 35)
 		M.setOxyLoss(35, 0)
 	if(M.losebreath >= 4)

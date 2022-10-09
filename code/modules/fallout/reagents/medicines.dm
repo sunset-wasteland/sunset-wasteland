@@ -318,11 +318,17 @@
 
 /datum/reagent/medicine/healing_powder/poultice
 	name = "Healing poultice"
-	description = "Restores limb condition and heals rapidly."
+	description = "Restores limb condition and heals rapidly. It can also help with breathing problems."
 	color = "#C8A5DC"
 	overdose_threshold = 20
 	heal_factor = -3.0
 	heal_factor_perk = -3.5
+	if(M.oxyloss > 35)
+		M.setOxyLoss(35, 0)
+	if(M.losebreath >= 4)
+		M.losebreath -= 2
+	if(M.losebreath < 0)
+		M.losebreath = 0
 
 // ---------------------------
 // RAD-X REAGENT

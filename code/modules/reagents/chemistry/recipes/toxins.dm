@@ -39,13 +39,13 @@
 	results = list(/datum/reagent/toxin/acid/fantiacid = 1)
 	required_reagents = list(/datum/reagent/toxin/acid/fluacid = 30, /datum/reagent/fluorine = 30, /datum/reagent/hydrogen = 30)
 	required_temp = 580
-
+/*
 /datum/chemical_reaction/sulfonal
 	name = "sulfonal"
 	id = /datum/reagent/toxin/sulfonal
 	results = list(/datum/reagent/toxin/sulfonal = 3)
 	required_reagents = list(/datum/reagent/acetone = 1, /datum/reagent/diethylamine = 1, /datum/reagent/sulfur = 1)
-
+*/
 /datum/chemical_reaction/lipolicide
 	name = "lipolicide"
 	id = /datum/reagent/toxin/lipolicide

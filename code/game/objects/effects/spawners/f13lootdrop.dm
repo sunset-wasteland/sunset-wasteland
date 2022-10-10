@@ -1299,7 +1299,7 @@
 	name = "combat rifle and ammo spawner"
 	items = list(
 				/obj/item/gun/ballistic/automatic/combat,
-				/obj/item/ammo_box/magazine/greasegun/
+				/obj/item/ammo_box/magazine/tommygunm45/stick
 				)
 
 /obj/effect/spawner/bundle/f13/rcw

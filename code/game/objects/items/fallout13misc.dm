@@ -278,7 +278,7 @@
 						desc = "A flag worn and weathered from the Casper's Snow."
 						icon_state = "enclaveflag"
 						item_state = "enclaveflag"
-						faction = FACTION_BROTHERHOOD
+						faction = FACTION_ENCLAVE
 				update_icon()
 	else
 		attack_hand(user)

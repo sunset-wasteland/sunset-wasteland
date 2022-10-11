@@ -383,12 +383,16 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	desc = "This is used by the enclave.\nTo access the enclave channel, use :z. Protects ears from flashbangs."
 	icon_state = "syndie_headset"
 	keyslot = new /obj/item/encryptionkey/headset_enclave
+	linked_faction = FACTION_ENCLAVE
+	factionized = TRUE
 
 /obj/item/radio/headset/headset_enclave/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/wearertargeting/earprotection, list(SLOT_EARS))
 
 /obj/item/radio/headset/headset_enclave/command
+	linked_faction = FACTION_ENCLAVE
+	factionized = TRUE
 	command = TRUE
 
 /obj/item/radio/headset/headset_khans

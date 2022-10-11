@@ -597,7 +597,7 @@
 	blob_allowed = 0
 	environment = 6
 	grow_chance = 5
-//	requires_power = TRUE
+	requires_power = TRUE
 
 /area/f13/brotherhood/rnd
 	name = "Brotherhood of Steel RnD Department"//Brother Hood

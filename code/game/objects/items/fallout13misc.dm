@@ -221,6 +221,13 @@
 	item_state = "khanflag"
 	faction = "Great Khans"
 
+/obj/item/flag/enclave
+	name = "Enclave flag"
+	desc = "A flag worn and weathered from the Casper's Snow."
+	icon_state = "enclaveflag"
+	item_state = "enclaveflag"
+	faction = "Enclave"
+
 /obj/item/flag/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/stack/sheet/leather) && item_state == "emptyflag")
 		visible_message("<span class='notice'>[user] begins to make a flag.</span>")

@@ -226,7 +226,7 @@
 	desc = "A flag worn and weathered from the Casper's Snow."
 	icon_state = "enclaveflag"
 	item_state = "enclaveflag"
-	faction = "Enclave"
+	faction = FACTION_ENCLAVE
 
 /obj/item/flag/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/stack/sheet/leather) && item_state == "emptyflag")
@@ -273,6 +273,12 @@
 						icon_state = "khanflag"
 						item_state = "khanflag"
 						faction = "Great Khans"
+					if(FACTION_ENCLAVE)
+						name = "Enclave flag"
+						desc = "A flag worn and weathered from the Casper's Snow."
+						icon_state = "enclaveflag"
+						item_state = "enclaveflag"
+						faction = FACTION_BROTHERHOOD
 				update_icon()
 	else
 		attack_hand(user)

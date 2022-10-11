@@ -8800,10 +8800,7 @@
 	},
 /area/f13/tunnel)
 "gwL" = (
-/obj/structure/table/reinforced,
-/obj/item/flashlight/lamp,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/pod/dark,
 /area/f13/brotherhood)
 "gxc" = (
 /obj/structure/table/reinforced,
@@ -8991,7 +8988,11 @@
 	},
 /area/f13/brotherhood/armory)
 "gGI" = (
-/obj/structure/filingcabinet/chestdrawer/wheeled,
+/obj/structure/table/reinforced,
+/obj/machinery/computer/terminal{
+	dir = 1;
+	termtag = "Business"
+	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet/black,
 /area/f13/brotherhood/offices1st)
@@ -10059,10 +10060,11 @@
 	},
 /area/f13/followers)
 "iqA" = (
-/obj/structure/chair{
-	dir = 1
+/obj/machinery/light/small{
+	dir = 8
 	},
-/turf/open/floor/plasteel/dark,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/pod/light,
 /area/f13/brotherhood)
 "irs" = (
 /obj/effect/decal/cleanable/dirt,
@@ -11341,6 +11343,13 @@
 	icon_state = "darkrustysolid"
 	},
 /area/f13/building/massfusion)
+"knT" = (
+/obj/structure/chair{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/dark,
+/area/f13/brotherhood)
 "kov" = (
 /obj/item/storage/trash_stack,
 /obj/structure/handrail/g_central{
@@ -11370,7 +11379,7 @@
 	name = "Cargo Bay";
 	width = 12
 	},
-/turf/open/floor/plasteel/elevatorshaft,
+/turf/open/floor/pod/light,
 /area/f13/brotherhood)
 "krv" = (
 /obj/structure/table/reinforced,
@@ -12451,16 +12460,16 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "lQa" = (
-/obj/machinery/conveyor{
-	dir = 9;
-	id = "garbage"
-	},
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
 	},
 /obj/structure/fence/handrail{
 	dir = 4;
 	pixel_x = -15
+	},
+/obj/machinery/conveyor{
+	dir = 9;
+	id = "QMLoad"
 	},
 /turf/open/floor/plasteel/dark,
 /area/f13/brotherhood)
@@ -14267,6 +14276,8 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/crate/mortar_shells,
+/obj/item/mortar_kit,
 /turf/open/floor/plasteel/darkred/side{
 	dir = 1
 	},
@@ -14546,6 +14557,12 @@
 /obj/item/stack/sheet/metal/fifty,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
+"oUx" = (
+/obj/structure/chair{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/f13/brotherhood)
 "oUM" = (
 /obj/structure/table/wood/settler,
 /obj/item/flashlight,
@@ -15025,7 +15042,7 @@
 /turf/open/floor/wood/wood_common,
 /area/f13/tunnel)
 "pAo" = (
-/turf/open/floor/plasteel/elevatorshaft,
+/turf/open/floor/pod/light,
 /area/f13/brotherhood)
 "pAE" = (
 /obj/structure/railing{
@@ -17028,9 +17045,8 @@
 /turf/open/floor/wood/wood_common,
 /area/f13/tunnel)
 "ssA" = (
-/obj/structure/chair{
-	dir = 1
-	},
+/obj/structure/table/reinforced,
+/obj/item/flashlight/lamp,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
 /area/f13/brotherhood)
@@ -20613,11 +20629,7 @@
 /turf/open/floor/plating,
 /area/f13/tunnel)
 "xPK" = (
-/obj/structure/table/reinforced,
-/obj/machinery/computer/terminal{
-	dir = 1;
-	termtag = "Business"
-	},
+/obj/structure/filingcabinet/chestdrawer/wheeled,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet/black,
 /area/f13/brotherhood/offices1st)
@@ -20973,6 +20985,12 @@
 	},
 /turf/open/floor/wood/wood_common,
 /area/f13/tunnel)
+"ykM" = (
+/obj/machinery/flasher/portable,
+/obj/effect/turf_decal/box,
+/obj/item/wrench,
+/turf/open/floor/plasteel/dark,
+/area/f13/brotherhood)
 "yle" = (
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
@@ -69503,18 +69521,18 @@ aae
 aae
 aae
 aae
+oVq
+oVq
+oVq
 aae
 aae
 aae
 aae
 aae
 aae
-aae
-aae
-aae
-aae
-aae
-aae
+oVq
+oVq
+oVq
 aae
 aae
 aae
@@ -69758,7 +69776,10 @@ aae
 aae
 aae
 aae
-aae
+oVq
+oVq
+oVq
+iqA
 oVq
 oVq
 oVq
@@ -69767,10 +69788,7 @@ oVq
 oVq
 oVq
 oVq
-oVq
-oVq
-oVq
-oVq
+iqA
 oVq
 oVq
 oVq
@@ -70015,8 +70033,8 @@ aae
 aae
 aae
 aae
-aae
 oVq
+uQM
 pAo
 pAo
 pAo
@@ -70272,26 +70290,26 @@ aae
 aae
 aae
 aae
-aae
 oVq
-pAo
-pAo
-pAo
-pAo
-pAo
-pAo
-pAo
-pAo
-pAo
-pAo
-pAo
-pAo
+uQM
+gwL
+gwL
+gwL
+gwL
+gwL
+gwL
+gwL
+gwL
+gwL
+gwL
+gwL
+gwL
 oVq
 onW
 xMo
-gwL
+saZ
 ssA
-onW
+knT
 onW
 wwI
 skf
@@ -70529,8 +70547,8 @@ aae
 aae
 aae
 aae
-aae
 oVq
+uQM
 pAo
 pAo
 pAo
@@ -70547,14 +70565,14 @@ oVq
 onW
 jWs
 saZ
-iqA
-ajc
+saZ
+oUx
 ajc
 wwI
 jkr
 eof
 oVq
-mpk
+rEc
 onW
 onW
 bRg
@@ -70786,8 +70804,8 @@ aae
 aae
 aae
 aae
-aae
 oVq
+uQM
 pAo
 pAo
 pAo
@@ -71043,8 +71061,8 @@ aae
 aae
 aae
 aae
-aae
 oVq
+uQM
 pAo
 pAo
 pAo
@@ -71300,20 +71318,20 @@ aae
 aae
 aae
 aae
-aae
 oVq
-pAo
-pAo
-pAo
-pAo
-pAo
-pAo
-pAo
-pAo
-pAo
-pAo
-pAo
-pAo
+uQM
+gwL
+gwL
+gwL
+gwL
+gwL
+gwL
+gwL
+gwL
+gwL
+gwL
+gwL
+gwL
 oVq
 mMU
 nDp
@@ -71557,8 +71575,8 @@ aae
 aae
 aae
 aae
-aae
 oVq
+uQM
 pAo
 pAo
 pAo
@@ -71814,7 +71832,7 @@ aae
 aae
 aae
 aae
-aae
+oVq
 oVq
 boy
 pYk
@@ -71833,7 +71851,7 @@ oIm
 oIm
 oVq
 oWD
-sZn
+ykM
 fhn
 yhd
 lCI
@@ -73368,7 +73386,7 @@ kKT
 uyb
 rGz
 bEk
-mEL
+jxG
 xPK
 uyb
 gra
@@ -75937,7 +75955,7 @@ oWD
 dNu
 dNu
 onW
-dNu
+sZn
 onW
 dNu
 dNu
@@ -76194,7 +76212,7 @@ oWD
 dNu
 dNu
 onW
-dNu
+sZn
 onW
 dNu
 dNu
@@ -81339,7 +81357,7 @@ onW
 nqe
 fta
 fta
-oVq
+uyb
 uyb
 uyb
 uyb

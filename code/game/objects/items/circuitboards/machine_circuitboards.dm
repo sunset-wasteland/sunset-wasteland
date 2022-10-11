@@ -1016,7 +1016,7 @@
 	req_components = list(
 		/obj/item/stock_parts/manipulator/femto = 20,
 		/obj/item/stack/cable_coil = 2)
-/*
+
 /obj/item/circuitboard/machine/dna_vault
 	name = "DNA Vault (Machine Board)"
 	build_path = /obj/machinery/dna_vault //No freebies!
@@ -1024,7 +1024,7 @@
 		/obj/item/stock_parts/capacitor/super = 5,
 		/obj/item/stock_parts/manipulator/pico = 5,
 		/obj/item/stack/cable_coil = 2)
-*/
+
 /obj/item/circuitboard/machine/microwave
 	name = "Microwave (Machine Board)"
 	build_path = /obj/machinery/microwave

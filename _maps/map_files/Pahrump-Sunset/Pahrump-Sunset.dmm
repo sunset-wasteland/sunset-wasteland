@@ -25826,8 +25826,8 @@
 "dNB" = (
 /obj/machinery/door/airlock/glass_large,
 /turf/open/floor/f13{
-	icon_state = "rampdowntop";
-	dir = 1
+	dir = 1;
+	icon_state = "rampdowntop"
 	},
 /area/f13/brotherhood)
 "dNH" = (
@@ -40568,7 +40568,9 @@
 /turf/open/floor/plasteel/f13/vault_floor/red/white,
 /area/f13/building/mall)
 "nul" = (
-/obj/machinery/conveyor_switch/oneway,
+/obj/machinery/conveyor_switch/oneway{
+	id = "bighornrec"
+	},
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/followers)
 "nuM" = (
@@ -41865,8 +41867,8 @@
 /area/f13/building/bighornbunker)
 "omg" = (
 /turf/open/floor/f13{
-	icon_state = "rampdowntop";
-	dir = 1
+	dir = 1;
+	icon_state = "rampdowntop"
 	},
 /area/f13/brotherhood)
 "omh" = (
@@ -44352,10 +44354,11 @@
 /area/f13/wasteland/west)
 "pOY" = (
 /obj/machinery/recycler,
-/obj/machinery/conveyor{
-	dir = 4
-	},
 /obj/effect/spawner/lootdrop/f13/junkspawners,
+/obj/machinery/conveyor{
+	dir = 4;
+	id = "bighornrec"
+	},
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/followers)
 "pPf" = (
@@ -46426,11 +46429,12 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/valley)
 "rjo" = (
-/obj/machinery/conveyor{
-	dir = 4
-	},
 /obj/structure/railing{
 	dir = 5
+	},
+/obj/machinery/conveyor{
+	dir = 4;
+	id = "bighornrec"
 	},
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/followers)
@@ -53694,7 +53698,8 @@
 /area/f13/wasteland/quarry)
 "vQv" = (
 /obj/machinery/conveyor{
-	dir = 4
+	dir = 4;
+	id = "bighornrec"
 	},
 /obj/structure/railing{
 	dir = 9

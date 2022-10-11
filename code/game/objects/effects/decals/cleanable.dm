@@ -31,14 +31,31 @@
 		COMSIG_ATOM_ENTERED = .proc/on_entered,
 	)
 	AddElement(/datum/element/connect_loc, loc_connections)
-	RegisterSignal(SSdcs, COMSIG_WEATHER_START(/datum/weather/rain), .proc/on_rain) // for cleaning
+	RegisterSignal(SSdcs, COMSIG_WEATHER_START(/datum/weather/rain), .proc/on_rain_start) // for cleaning
+	RegisterSignal(SSdcs, COMSIG_WEATHER_END(/datum/weather/rain), .proc/on_rain_end)
+	return INITIALIZE_HINT_LATELOAD
 
-	addtimer(CALLBACK(src, /datum.proc/_AddElement, list(/datum/element/beauty, beauty)), 0)
+/obj/effect/decal/cleanable/LateInitialize()
+	. = ..()
+	AddElement(/datum/element/beauty, beauty)
 
-/obj/effect/decal/cleanable/proc/on_rain()
+/obj/effect/decal/cleanable/proc/on_rain_start()
+	SIGNAL_HANDLER
 	var/area/A = get_area(src)
 	if(A?.outdoors)
-		QDEL_IN(src, rand(10 SECONDS, 60 SECONDS)) // that's a lotta timers
+		START_PROCESSING(SSobj, src)
+
+/obj/effect/decal/cleanable/proc/on_rain_end()
+	SIGNAL_HANDLER
+	STOP_PROCESSING(SSobj, src)
+
+/obj/effect/decal/cleanable/process()
+	if(prob(5)) // roughly 1/20, so we'd expect to see an average of once every 20 ticks or 40 seconds
+		qdel(src)
+
+/obj/effect/decal/cleanable/Destroy(force)
+	STOP_PROCESSING(SSobj, src)
+	return ..()
 
 /obj/effect/decal/cleanable/proc/replace_decal(obj/effect/decal/cleanable/C) // Returns true if we should give up in favor of the pre-existing decal
 	if(mergeable_decal)

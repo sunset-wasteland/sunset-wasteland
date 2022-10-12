@@ -46,7 +46,7 @@
 	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
 	ADD_TRAIT(H, TRAIT_ENCLAVE_CODES, src)
 	H.grant_language(/datum/language/codespeak, TRUE, TRUE, LANGUAGE_MIND)
-	ADD_TRAIT(H, TRAIT_ABDUCTOR_TRAINING)
+	ADD_TRAIT(H, TRAIT_ABDUCTOR_TRAINING, src)
 
 //Lieutenant
 /datum/job/enclave/enclavelt
@@ -118,7 +118,7 @@
 	ADD_TRAIT(H, TRAIT_PA_WEAR, src)
 	ADD_TRAIT(H, TRAIT_LIFEGIVER, src)
 	ADD_TRAIT(H, TRAIT_RESEARCHER, src)
-	ADD_TRAIT(H, TRAIT_ABDUCTOR_TRAINING)
+	ADD_TRAIT(H, TRAIT_ABDUCTOR_TRAINING, src)
 	ADD_TRAIT(H, TRAIT_UNETHICAL_PRACTITIONER, src)
 	ADD_TRAIT(H, TRAIT_PILOT, src)
 	ADD_TRAIT(H, TRAIT_ENCLAVE_CODES, src)
@@ -197,7 +197,7 @@
 	ADD_TRAIT(H, TRAIT_PA_WEAR, src)
 	ADD_TRAIT(H, TRAIT_LIFEGIVER, src)
 	ADD_TRAIT(H, TRAIT_RESEARCHER, src)
-	ADD_TRAIT(H, TRAIT_ABDUCTOR_TRAINING)
+	ADD_TRAIT(H, TRAIT_ABDUCTOR_TRAINING, src)
 	ADD_TRAIT(H, TRAIT_ENCLAVE_CODES, src)
 	if(H.mind)
 		var/obj/effect/proc_holder/spell/terrifying_presence/S = new /obj/effect/proc_holder/spell/terrifying_presence
@@ -264,7 +264,7 @@
 	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
 	ADD_TRAIT(H, TRAIT_PA_WEAR, src)
 	ADD_TRAIT(H, TRAIT_RESEARCHER, src)
-	ADD_TRAIT(H, TRAIT_ABDUCTOR_TRAINING)
+	ADD_TRAIT(H, TRAIT_ABDUCTOR_TRAINING, src)
 	ADD_TRAIT(H, TRAIT_ENCLAVE_CODES, src)
 	if(H.mind)
 		var/obj/effect/proc_holder/spell/terrifying_presence/S = new /obj/effect/proc_holder/spell/terrifying_presence
@@ -338,7 +338,7 @@
 	if(visualsOnly)
 		return
 	ADD_TRAIT(H, TRAIT_PA_WEAR, src)
-	ADD_TRAIT(H, TRAIT_ABDUCTOR_TRAINING)
+	ADD_TRAIT(H, TRAIT_ABDUCTOR_TRAINING, src)
 	ADD_TRAIT(H, TRAIT_ENCLAVE_CODES, src)
 
 //Private
@@ -429,7 +429,7 @@
 	ADD_TRAIT(H, TRAIT_RESEARCHER, src)
 	ADD_TRAIT(H, TRAIT_UNETHICAL_PRACTITIONER, src) // Brainwashing
 	ADD_TRAIT(H, TRAIT_PA_WEAR, src)
-	ADD_TRAIT(H, TRAIT_ABDUCTOR_TRAINING)
+	ADD_TRAIT(H, TRAIT_ABDUCTOR_TRAINING, src)
 	ADD_TRAIT(H, TRAIT_ENCLAVE_CODES, src)
 
 //Pilot
@@ -470,7 +470,7 @@
 	if(visualsOnly)
 		return
 	ADD_TRAIT(H, TRAIT_PILOT, src)
-	ADD_TRAIT(H, TRAIT_ABDUCTOR_TRAINING)
+	ADD_TRAIT(H, TRAIT_ABDUCTOR_TRAINING, src)
 	ADD_TRAIT(H, TRAIT_ENCLAVE_CODES, src)
 	if(H.mind)
 		var/obj/effect/proc_holder/spell/terrifying_presence/S = new /obj/effect/proc_holder/spell/terrifying_presence

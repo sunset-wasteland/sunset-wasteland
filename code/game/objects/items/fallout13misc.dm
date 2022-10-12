@@ -221,6 +221,19 @@
 	item_state = "khanflag"
 	faction = "Great Khans"
 
+/obj/item/flag/enclave
+	name = "Enclave flag"
+	desc = "A flag worn and weathered from the Casper's Snow."
+	icon_state = "enclaveflag"
+	item_state = "enclaveflag"
+	faction = FACTION_ENCLAVE
+
+/obj/item/flag/enclave/alt
+	name = "Enclave flag"
+	desc = "A flag torn and weathered from the Casper's Snow. Marking what was once an Enclave territory"
+	icon_state = "enclaveflag_alt"
+	item_state = "enclaveflag_alt"
+
 /obj/item/flag/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/stack/sheet/leather) && item_state == "emptyflag")
 		visible_message("<span class='notice'>[user] begins to make a flag.</span>")
@@ -266,6 +279,12 @@
 						icon_state = "khanflag"
 						item_state = "khanflag"
 						faction = "Great Khans"
+					if(FACTION_ENCLAVE)
+						name = "Enclave flag"
+						desc = "A flag worn and weathered from the Casper's Snow."
+						icon_state = "enclaveflag"
+						item_state = "enclaveflag"
+						faction = FACTION_ENCLAVE
 				update_icon()
 	else
 		attack_hand(user)

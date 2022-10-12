@@ -44,6 +44,8 @@
 		return
 	ADD_TRAIT(H, TRAIT_GENERIC, src)
 	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
+	ADD_TRAIT(H, TRAIT_ENCLAVE_CODES, src)
+	H.grant_language(/datum/language/codespeak, TRUE, TRUE, LANGUAGE_MIND)
 	ADD_TRAIT(H, TRAIT_ABDUCTOR_TRAINING)
 
 //Lieutenant

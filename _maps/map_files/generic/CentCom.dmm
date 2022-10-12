@@ -2195,7 +2195,12 @@
 	},
 /area/f13/underground/mountain)
 "gZ" = (
-/obj/machinery/computer/camera_advanced/verti,
+/obj/machinery/computer/camera_advanced/abductor{
+	networks = list("ss13","abductor", "vertibird", "secure");
+	name = "Vertibird Observation Console";
+	icon = 'icons/obj/computer.dmi';
+	icon_state = "computer"
+	},
 /turf/open/floor/f13{
 	icon_state = "floordirtysolid"
 	},

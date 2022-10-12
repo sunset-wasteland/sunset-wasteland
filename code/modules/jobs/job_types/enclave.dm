@@ -430,6 +430,7 @@
 	ADD_TRAIT(H, TRAIT_UNETHICAL_PRACTITIONER, src) // Brainwashing
 	ADD_TRAIT(H, TRAIT_PA_WEAR, src)
 	ADD_TRAIT(H, TRAIT_ABDUCTOR_TRAINING)
+	ADD_TRAIT(H, TRAIT_ENCLAVE_CODES, src)
 
 //Pilot
 /datum/job/enclave/enclavepilot
@@ -612,6 +613,7 @@
 /datum/job/enclave/encborg/after_spawn(mob/living/silicon/robot/R, mob/M)
 	. = ..()
 	ADD_TRAIT(R, TRAIT_TECHNOPHREAK, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_ENCLAVE_CODES, src)
 	R.apply_pref_name("cyborg", M.client)
 	R.gender = NEUTER
 

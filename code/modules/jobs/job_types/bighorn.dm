@@ -656,11 +656,12 @@ Mayor
 	gloves = /obj/item/clothing/gloves/botanic_leather
 	shoes = /obj/item/clothing/shoes/workboots
 	backpack_contents = list(
-		/obj/item/cultivator=1, \
+		/obj/item/cultivator=1,
 		/obj/item/hatchet=1,
-		/obj/item/shovel/spade=1, \
-		/obj/item/gun/ballistic/automatic/pistol/n99, \
-		/obj/item/ammo_box/magazine/m10mm_adv/simple=2)
+		/obj/item/shovel/spade=1,
+		/obj/item/gun/ballistic/automatic/pistol/n99 = 1,
+		/obj/item/ammo_box/magazine/m10mm_adv/simple = 1,
+		)
 
 /datum/outfit/loadout/artisan
 	name = "Artisan"

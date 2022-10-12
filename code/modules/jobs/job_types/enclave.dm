@@ -112,9 +112,13 @@
 	..()
 	if(visualsOnly)
 		return
+		user.grant_language(/datum/language/codespeak, TRUE, TRUE, LANGUAGE_MIND)
+		user.grant_language(/datum/language/tribal,TRUE, TRUE, LANGUAGE_MIND)
 	ADD_TRAIT(H, TRAIT_PA_WEAR, src)
 	ADD_TRAIT(H, TRAIT_LIFEGIVER, src)
 	ADD_TRAIT(H, TRAIT_RESEARCHER, src)
+	ADD_TRAIT(H, TRAIT_UNETHICAL_PRACTITIONER, src)//Brainwashing
+	ADD_TRAIT(H, TRAIT_PILOT, src)
 	if(H.mind)
 		var/obj/effect/proc_holder/spell/terrifying_presence/S = new /obj/effect/proc_holder/spell/terrifying_presence
 		H.mind.AddSpell(S)
@@ -187,6 +191,8 @@
 	..()
 	if(visualsOnly)
 		return
+		user.grant_language(/datum/language/codespeak, TRUE, TRUE, LANGUAGE_MIND)
+		user.grant_language(/datum/language/tribal,TRUE, TRUE, LANGUAGE_MIND)
 	ADD_TRAIT(H, TRAIT_PA_WEAR, src)
 	ADD_TRAIT(H, TRAIT_LIFEGIVER, src)
 	ADD_TRAIT(H, TRAIT_RESEARCHER, src)
@@ -252,6 +258,8 @@
 	..()
 	if(visualsOnly)
 		return
+		user.grant_language(/datum/language/codespeak, TRUE, TRUE, LANGUAGE_MIND)
+		user.grant_language(/datum/language/tribal,TRUE, TRUE, LANGUAGE_MIND)
 	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
 	ADD_TRAIT(H, TRAIT_PA_WEAR, src)
 	ADD_TRAIT(H, TRAIT_RESEARCHER, src)
@@ -326,6 +334,8 @@
 	..()
 	if(visualsOnly)
 		return
+		user.grant_language(/datum/language/codespeak, TRUE, TRUE, LANGUAGE_MIND)
+		user.grant_language(/datum/language/tribal,TRUE, TRUE, LANGUAGE_MIND)
 	ADD_TRAIT(H, TRAIT_PA_WEAR, src)
 
 //Private
@@ -408,6 +418,8 @@
 	..()
 	if(visualsOnly)
 		return
+		user.grant_language(/datum/language/codespeak, TRUE, TRUE, LANGUAGE_MIND)
+		user.grant_language(/datum/language/tribal,TRUE, TRUE, LANGUAGE_MIND)
 	ADD_TRAIT(H, TRAIT_MEDICALEXPERT, src)
 	ADD_TRAIT(H, TRAIT_CYBERNETICIST_EXPERT, src)
 	ADD_TRAIT(H, TRAIT_CYBERNETICIST, src)
@@ -455,6 +467,8 @@
 	..()
 	if(visualsOnly)
 		return
+		user.grant_language(/datum/language/codespeak, TRUE, TRUE, LANGUAGE_MIND)
+		user.grant_language(/datum/language/tribal,TRUE, TRUE, LANGUAGE_MIND)
 	ADD_TRAIT(H, TRAIT_PILOT, src)
 	if(H.mind)
 		var/obj/effect/proc_holder/spell/terrifying_presence/S = new /obj/effect/proc_holder/spell/terrifying_presence
@@ -481,6 +495,13 @@
 		/datum/outfit/loadout/bunkerduty_cook,
 		/datum/outfit/loadout/bunkerduty_is,
 		)
+
+/datum/outfit/job/enclave/noncombat/f13BDUTY/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+		user.grant_language(/datum/language/codespeak, TRUE, TRUE, LANGUAGE_MIND)
+		user.grant_language(/datum/language/tribal,TRUE, TRUE, LANGUAGE_MIND)
 
 /datum/outfit/job/enclave/noncombat/f13BDUTY
 	name = "Enclave Bunker Duty"
@@ -596,6 +617,8 @@
 
 /datum/job/enclave/encborg/after_spawn(mob/living/silicon/robot/R, mob/M)
 	. = ..()
+	user.grant_language(/datum/language/codespeak, TRUE, TRUE, LANGUAGE_MIND)
+	user.grant_language(/datum/language/tribal,TRUE, TRUE, LANGUAGE_MIND)
 	ADD_TRAIT(R, TRAIT_TECHNOPHREAK, TRAIT_GENERIC)
 	R.apply_pref_name("cyborg", M.client)
 	R.gender = NEUTER

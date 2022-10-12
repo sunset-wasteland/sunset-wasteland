@@ -599,3 +599,10 @@
 	ADD_TRAIT(R, TRAIT_TECHNOPHREAK, TRAIT_GENERIC)
 	R.apply_pref_name("cyborg", M.client)
 	R.gender = NEUTER
+
+// Rappel stuff here
+/obj/machinery/abductor/console/enclave
+	name = "vertibird rappel console"
+	desc = "Ship automatically link up to a nearby pad, should allow you to get down and back up without a hitch, should."
+
+

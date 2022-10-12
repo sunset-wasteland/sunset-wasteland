@@ -1227,11 +1227,11 @@
 	},
 /obj/machinery/computer/arcade/orion_trail{
 	desc = "A test for cadets";
-	events = list("Raiders" = 3, "Interstellar Flux" = 1, "Illness" = 3, "Breakdown" = 2, "Malfunction" = 2, "Collision" = 1, "Spaceport" = 2);
+	events = list("Raiders"=3,"Interstellar Flux"=1,"Illness"=3,"Breakdown"=2,"Malfunction"=2,"Collision"=1,"Spaceport"=2);
 	icon = 'icons/obj/machines/particle_accelerator.dmi';
 	icon_state = "control_boxp";
 	name = "Kobayashi Maru control computer";
-	prizes = list(/obj/item/paper/fluff/holodeck/trek_diploma = 1);
+	prizes = list(/obj/item/paper/fluff/holodeck/trek_diploma=1);
 	settlers = list("Kirk","Worf","Gene")
 	},
 /turf/open/floor/holofloor/plating,
@@ -1253,11 +1253,11 @@
 	},
 /obj/machinery/computer/arcade/orion_trail{
 	desc = "A test for cadets";
-	events = list("Raiders" = 3, "Interstellar Flux" = 1, "Illness" = 3, "Breakdown" = 2, "Malfunction" = 2, "Collision" = 1, "Spaceport" = 2);
+	events = list("Raiders"=3,"Interstellar Flux"=1,"Illness"=3,"Breakdown"=2,"Malfunction"=2,"Collision"=1,"Spaceport"=2);
 	icon = 'icons/obj/machines/particle_accelerator.dmi';
 	icon_state = "control_boxp";
 	name = "Kobayashi Maru control computer";
-	prizes = list(/obj/item/paper/fluff/holodeck/trek_diploma = 1);
+	prizes = list(/obj/item/paper/fluff/holodeck/trek_diploma=1);
 	settlers = list("Kirk","Worf","Gene")
 	},
 /turf/open/floor/holofloor/plating,
@@ -1268,11 +1268,11 @@
 	},
 /obj/machinery/computer/arcade/orion_trail{
 	desc = "A test for cadets";
-	events = list("Raiders" = 3, "Interstellar Flux" = 1, "Illness" = 3, "Breakdown" = 2, "Malfunction" = 2, "Collision" = 1, "Spaceport" = 2);
+	events = list("Raiders"=3,"Interstellar Flux"=1,"Illness"=3,"Breakdown"=2,"Malfunction"=2,"Collision"=1,"Spaceport"=2);
 	icon = 'icons/obj/machines/particle_accelerator.dmi';
 	icon_state = "control_boxp";
 	name = "Kobayashi Maru control computer";
-	prizes = list(/obj/item/paper/fluff/holodeck/trek_diploma = 1);
+	prizes = list(/obj/item/paper/fluff/holodeck/trek_diploma=1);
 	settlers = list("Kirk","Worf","Gene")
 	},
 /turf/open/floor/holofloor/plating,
@@ -2060,9 +2060,6 @@
 	},
 /area/vertibird_interior)
 "gc" = (
-/obj/machinery/button/vertibird{
-	pixel_x = -24
-	},
 /obj/structure/chair/comfy/shuttle{
 	dir = 1
 	},
@@ -2092,7 +2089,7 @@
 /area/vertibird_interior)
 "gf" = (
 /turf/closed/indestructible/vaultdoor{
-	desc = "One of the doors to enter and exit the aircraft. This one appears jammed, or perhaps welded shut.";
+	desc = "One of the doors to enter and exit the aircraft. This one appears to only open  from a console.";
 	icon = 'icons/obj/doors/airlocks/survival/survival.dmi';
 	icon_state = "closed";
 	name = "jammed exit hatch"
@@ -2176,6 +2173,12 @@
 "gu" = (
 /turf/closed/indestructible/splashscreen,
 /area/start)
+"gz" = (
+/obj/structure/table/optable/abductor,
+/turf/open/floor/f13{
+	icon_state = "darkdirtysolid"
+	},
+/area/vertibird_interior)
 "gV" = (
 /turf/closed/indestructible/fakedoor{
 	name = "CentCom Warehouse"
@@ -2237,6 +2240,15 @@
 /obj/effect/turf_decal/stripes/line,
 /turf/open/floor/plasteel,
 /area/centcom/evac)
+"hR" = (
+/obj/structure/closet/crate/freezer/blood,
+/obj/item/storage/firstaid,
+/obj/item/storage/firstaid/fire,
+/obj/item/storage/firstaid/brute,
+/obj/item/storage/firstaid/toxin,
+/obj/item/storage/firstaid/o2,
+/turf/open/floor/f13,
+/area/vertibird_interior)
 "hX" = (
 /turf/closed/indestructible/fakedoor{
 	name = "CentCom Cell"
@@ -6337,6 +6349,13 @@
 /obj/structure/window/reinforced,
 /turf/closed/indestructible/riveted,
 /area/f13/underground/mountain)
+"vm" = (
+/obj/machinery/abductor/pad{
+	name = "Extraction and Recovery Device";
+	desc = "Use this to transport to and from the wastelanders' habitat."
+	},
+/turf/open/floor/f13,
+/area/vertibird_interior)
 "vo" = (
 /obj/item/storage/firstaid/toxin,
 /obj/item/storage/firstaid/o2{
@@ -7311,6 +7330,13 @@
 /obj/structure/tank_dispenser/oxygen,
 /turf/open/floor/plasteel/dark,
 /area/centcom/evac)
+"BF" = (
+/obj/machinery/defibrillator_mount/loaded,
+/turf/closed/indestructible/vaultdoor{
+	desc = "A thick wall made to keep bullets out, and the passengers in.";
+	name = "Vertibird Interior Armor"
+	},
+/area/vertibird_interior)
 "BH" = (
 /obj/vehicle/ridden/secway,
 /obj/machinery/button/door{
@@ -7691,6 +7717,12 @@
 "DB" = (
 /turf/open/indestructible/ground/inside/subway,
 /area/centcom/evac)
+"DF" = (
+/obj/machinery/recharge_station,
+/turf/open/floor/f13{
+	icon_state = "darkdirtysolid"
+	},
+/area/vertibird_interior)
 "DV" = (
 /obj/machinery/light/small,
 /obj/structure/chair/bench,
@@ -7711,6 +7743,25 @@
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/centcom/evac)
+"En" = (
+/obj/structure/rack/shelf_metal,
+/obj/item/gps/mining,
+/obj/item/gps/mining,
+/obj/item/gps/mining,
+/obj/item/gps/mining,
+/obj/item/gps/mining,
+/obj/item/grenade/smokebomb,
+/obj/item/grenade/smokebomb,
+/obj/item/grenade/smokebomb,
+/obj/item/grenade/smokebomb,
+/obj/item/grenade/smokebomb,
+/obj/item/grenade/smokebomb,
+/obj/item/grenade/smokebomb,
+/obj/item/grenade/smokebomb,
+/obj/item/grenade/smokebomb,
+/obj/item/storage/box/handcuffs,
+/turf/open/floor/f13,
+/area/vertibird_interior)
 "Ep" = (
 /turf/closed/indestructible/riveted,
 /area/tdome/tdomeobserve)
@@ -7929,6 +7980,10 @@
 	},
 /turf/open/floor/plasteel,
 /area/centcom/supplypod/loading/three)
+"GJ" = (
+/obj/machinery/iv_drip/telescopic,
+/turf/open/floor/f13,
+/area/vertibird_interior)
 "GM" = (
 /turf/open/floor/plasteel/vault{
 	dir = 8
@@ -8856,6 +8911,15 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/centcom/evac)
+"Mu" = (
+/obj/machinery/abductor/console{
+	desc = "Some ssort of machinery that links up with a pad.";
+	name = "pad console"
+	},
+/turf/open/floor/f13{
+	icon_state = "darkdirtysolid"
+	},
+/area/vertibird_interior)
 "Mz" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/sign/poster/prewar/poster72{
@@ -8959,6 +9023,11 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/centcom/evac)
+"OD" = (
+/turf/open/floor/plasteel/stairs{
+	dir = 1
+	},
+/area/vertibird_interior)
 "OF" = (
 /obj/structure/sign/poster/prewar/poster72{
 	pixel_y = 32
@@ -57971,7 +58040,7 @@ fZ
 fZ
 aw
 aw
-aw
+ga
 ga
 gf
 ga
@@ -57979,7 +58048,7 @@ ga
 ga
 ga
 ga
-aw
+ga
 aw
 fZ
 fZ
@@ -58229,16 +58298,16 @@ fZ
 aw
 ga
 ga
+Mu
+vm
 ga
-gg
-ga
+DF
 gk
 gk
 hD
 ga
 ga
 aw
-fZ
 fZ
 aw
 aa
@@ -58489,13 +58558,13 @@ gb
 gc
 gh
 SU
-gg
+OD
+GJ
 gg
 lF
 gm
 ga
 aw
-fZ
 fZ
 aw
 aa
@@ -58745,14 +58814,14 @@ ga
 ga
 gd
 Zd
-gg
-gg
+En
+OD
+hR
 gg
 lF
 gn
 ga
 aw
-fZ
 fZ
 aw
 aa
@@ -59003,13 +59072,13 @@ gZ
 ge
 gh
 gg
-gg
+OD
+GJ
 gg
 lF
 gr
 ga
 aw
-fZ
 fZ
 aw
 aa
@@ -59259,14 +59328,14 @@ ga
 ga
 ga
 gi
-ga
+BF
+gz
 gl
 gl
 KA
 ga
 ga
 aw
-fZ
 fZ
 aw
 aa
@@ -59513,7 +59582,7 @@ fZ
 fZ
 aw
 aw
-aw
+ga
 ga
 gj
 ga
@@ -59521,7 +59590,7 @@ ga
 ga
 ga
 ga
-aw
+ga
 aw
 fZ
 fZ

@@ -238,10 +238,14 @@
 	},
 /area/f13/followers)
 "aaY" = (
-/obj/structure/nest/wanamingo{
-	max_mobs = 1
+/turf/closed/indestructible/rock{
+	desc = "A pre-War wall made of solid concrete.";
+	icon = 'icons/fallout/turfs/walls/tunnel.dmi';
+	icon_state = "tunnel0";
+	icon_type_smooth = "tunnel";
+	name = "utility wall";
+	smooth = 1
 	},
-/turf/open/floor/plating/tunnel,
 /area/f13/tunnel)
 "aba" = (
 /turf/open/water,
@@ -1772,7 +1776,7 @@
 /turf/open/floor/plasteel/grimy,
 /area/f13/tunnel)
 "bDi" = (
-/mob/living/simple_animal/hostile/alien,
+/obj/structure/grille/indestructable,
 /turf/open/floor/plating/tunnel,
 /area/f13/tunnel)
 "bDj" = (
@@ -7264,6 +7268,10 @@
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/building/massfusion)
+"dWR" = (
+/mob/living/simple_animal/hostile/retaliate/spaceman,
+/turf/open/floor/plating/tunnel,
+/area/f13/tunnel)
 "dXl" = (
 /obj/machinery/door/airlock/medical,
 /turf/open/floor/plasteel/freezer,
@@ -8211,8 +8219,8 @@
 	dir = 8
 	},
 /obj/structure/displaycase,
-/obj/item/gun/energy/laser/plasma/pistol/remnant,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/gun/ballistic/automatic/xl70e3,
 /turf/open/floor/f13/wood,
 /area/f13/brotherhood/offices1st)
 "frx" = (
@@ -8269,6 +8277,12 @@
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
 	icon_state = "darkdirtysolid"
 	},
+/area/f13/tunnel)
+"fuD" = (
+/obj/structure/nest/ghoul{
+	max_mobs = 7
+	},
+/turf/open/floor/plating/tunnel,
 /area/f13/tunnel)
 "fvp" = (
 /obj/structure/table,
@@ -10430,6 +10444,10 @@
 	dir = 4
 	},
 /area/f13/brotherhood/archives)
+"iQB" = (
+/mob/living/simple_animal/hostile/ghoul/glowing,
+/turf/open/floor/plating/tunnel,
+/area/f13/tunnel)
 "iRM" = (
 /obj/item/kirbyplants/random,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
@@ -13144,6 +13162,11 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/f13/brotherhood)
+"mSt" = (
+/obj/structure/simple_door/bunker,
+/obj/structure/barricade/wooden/planks/pregame,
+/turf/open/floor/plating/tunnel,
+/area/f13/tunnel)
 "mTm" = (
 /obj/structure/closet/crate/wooden,
 /obj/item/stack/ore/lead,
@@ -13377,6 +13400,10 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/followers)
+"nog" = (
+/obj/structure/bed/mattress/pregame,
+/turf/open/floor/plating/tunnel,
+/area/f13/tunnel)
 "noI" = (
 /obj/machinery/door/poddoor/shutters{
 	id = "rustedshutters";
@@ -16388,6 +16415,10 @@
 /obj/item/circuitboard/machine/plantgenes,
 /turf/open/floor/plasteel/f13/vault_floor/yellow/whiteyellowfull,
 /area/f13/brotherhood)
+"ryu" = (
+/obj/effect/gibspawner/human,
+/turf/open/floor/plating/tunnel,
+/area/f13/tunnel)
 "ryF" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
@@ -21570,19 +21601,19 @@ aae
 aae
 aae
 aae
-aab
-aab
-aab
-aab
+aaY
+aaY
+aaY
+aaY
 aae
 aae
 aae
 aae
 aae
 aab
+bJb
 bAY
-bAY
-bAY
+nog
 aab
 aae
 aae
@@ -21827,18 +21858,18 @@ aae
 aae
 aae
 aae
-aab
-bDi
-bAY
-aab
-aae
-aae
-aae
-aae
-aae
-aab
-bAY
 aaY
+bDi
+dWR
+aaY
+aae
+aae
+aae
+aae
+aae
+aab
+nog
+ryu
 bAY
 aab
 aae
@@ -22084,19 +22115,19 @@ aab
 aab
 aab
 aab
+aaY
+mSt
+aaY
+aaY
+aab
+aab
+aab
+aab
+aab
 aab
 bAY
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
-aab
 bAY
-aab
+bAY
 aab
 aab
 aab
@@ -22335,16 +22366,16 @@ aaa
 aaa
 aak
 aab
+fuD
 bAY
 bAY
 bAY
 bAY
+ryu
+bJb
 bAY
 bAY
-bAY
-bAY
-bAY
-bAY
+ryu
 bDN
 bAY
 bAY
@@ -22355,7 +22386,7 @@ bAY
 bAY
 bAY
 bAY
-bAY
+bJb
 aab
 aae
 bFx
@@ -22592,8 +22623,8 @@ aaa
 aaa
 aak
 aab
-aaY
 bAY
+iQB
 bAY
 bAY
 bAY
@@ -22849,15 +22880,15 @@ aaa
 aae
 aab
 aab
-bBm
-aab
-aab
+mSt
 aab
 aab
 aab
 aab
 aab
 bAY
+bAY
+nog
 aab
 aab
 aab
@@ -23105,16 +23136,16 @@ aaa
 aaa
 aae
 aab
-bAY
+bJb
 bAY
 aab
 aae
 aae
 aae
 aab
-bAY
-bAY
-bAY
+nog
+ryu
+bJb
 aab
 aak
 aae
@@ -23370,7 +23401,7 @@ aae
 aae
 aab
 bAY
-aaY
+bAY
 bAY
 aab
 aak
@@ -23626,8 +23657,8 @@ aae
 aae
 aae
 aab
-bAY
-bAY
+nog
+ryu
 bAY
 aab
 aae
@@ -23883,9 +23914,9 @@ aae
 aae
 aae
 aab
+bJb
 bAY
-bAY
-bAY
+nog
 aab
 aae
 aae
@@ -24155,7 +24186,7 @@ aae
 aab
 bAY
 bAY
-bDi
+bAY
 aab
 bFx
 aah
@@ -24668,7 +24699,7 @@ bFx
 bFx
 bFx
 bFx
-bBm
+mSt
 bFx
 bFx
 bFx

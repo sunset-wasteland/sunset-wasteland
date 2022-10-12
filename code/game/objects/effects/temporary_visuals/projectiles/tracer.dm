@@ -53,6 +53,10 @@
 	name = "heavy laser"
 	icon_state = "beam_heavy"
 
+/obj/effect/projectile/tracer/thirty
+	name = "overcharged laser beam"
+	icon_state = "thirty"
+
 //BEAM RIFLE
 /obj/effect/projectile/tracer/tracer/beam_rifle
 	icon_state = "tracer_beam"

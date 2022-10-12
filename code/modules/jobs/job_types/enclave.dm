@@ -44,6 +44,9 @@
 		return
 	ADD_TRAIT(H, TRAIT_GENERIC, src)
 	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
+	ADD_TRAIT(H, TRAIT_ENCLAVE_CODES, src)
+	H.grant_language(/datum/language/codespeak, TRUE, TRUE, LANGUAGE_MIND)
+
 
 //Lieutenant
 /datum/job/enclave/enclavelt
@@ -97,6 +100,7 @@
 		/obj/item/ammo_box/magazine/m473 = 3,
 		/obj/item/gun/energy/laser/plasma/glock = 1,
 		/obj/item/stock_parts/cell/ammo/ec = 2,
+		/obj/item/grenade/f13/plasma = 2,
 		)
 
 /datum/outfit/loadout/lt_plasma
@@ -106,6 +110,7 @@
 		/obj/item/stock_parts/cell/ammo/mfc = 2,
 		/obj/item/gun/ballistic/automatic/pistol/pistol14/custom = 1,
 		/obj/item/ammo_box/magazine/m14mm = 2,
+		/obj/item/grenade/f13/plasma = 2,
 		)
 
 /datum/outfit/job/enclave/peacekeeper/enclavelt/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -115,9 +120,12 @@
 	ADD_TRAIT(H, TRAIT_PA_WEAR, src)
 	ADD_TRAIT(H, TRAIT_LIFEGIVER, src)
 	ADD_TRAIT(H, TRAIT_RESEARCHER, src)
+	ADD_TRAIT(H, TRAIT_ENCLAVE_CODES, src)
 	if(H.mind)
 		var/obj/effect/proc_holder/spell/terrifying_presence/S = new /obj/effect/proc_holder/spell/terrifying_presence
 		H.mind.AddSpell(S)
+	H.grant_language(/datum/language/codespeak, TRUE, TRUE, LANGUAGE_MIND)
+
 
 
 // Gunnery Sergeant
@@ -134,8 +142,8 @@
 	exp_requirements = 1400
 
 	loadout_options = list(
-		/datum/outfit/loadout/gysgt_ballistics, // CZ53
-		/datum/outfit/loadout/gysgt_laser, // AER14
+		/datum/outfit/loadout/gysgt_ballistics, // Vindicator
+		/datum/outfit/loadout/gysgt_laser, // Multiplas
 		/datum/outfit/loadout/gysgt_minigun, // Laser gatling
 		)
 
@@ -165,20 +173,21 @@
 /datum/outfit/loadout/gysgt_ballistics
 	name = "Armored Assault Kit"
 	backpack_contents = list(
-		/obj/item/minigunpackbal5mm = 1,
-		/obj/item/ammo_box/magazine/cz53 = 2
+		/obj/item/encencminigunbal4mm = 1,
+		/obj/item/ammo_box/magazine/vindic = 2
 		)
 
 /datum/outfit/loadout/gysgt_laser
 	name = "Armored Rifleman Kit"
-	suit_store = /obj/item/gun/energy/laser/aer14
+	suit_store = /obj/item/gun/energy/laser/plasma/scatter
 	backpack_contents = list(
 		/obj/item/stock_parts/cell/ammo/mfc = 4,
+		/obj/item/grenade/f13/plasma = 2,
 		)
 
 /datum/outfit/loadout/gysgt_minigun
 	name = "Armored Support Kit"
-	suit_store = 	/obj/item/minigunpack
+	suit_store = 	/obj/item/encminigunpack
 	backpack_contents = list(
 		/obj/item/stock_parts/cell/ammo/ecp = 2,
 		)
@@ -190,9 +199,11 @@
 	ADD_TRAIT(H, TRAIT_PA_WEAR, src)
 	ADD_TRAIT(H, TRAIT_LIFEGIVER, src)
 	ADD_TRAIT(H, TRAIT_RESEARCHER, src)
+	ADD_TRAIT(H, TRAIT_ENCLAVE_CODES, src)
 	if(H.mind)
 		var/obj/effect/proc_holder/spell/terrifying_presence/S = new /obj/effect/proc_holder/spell/terrifying_presence
 		H.mind.AddSpell(S)
+	H.grant_language(/datum/language/codespeak, TRUE, TRUE, LANGUAGE_MIND)
 
 
 //Sergeant
@@ -209,7 +220,7 @@
 
 	loadout_options = list(
 		/datum/outfit/loadout/sgt_ballistics,	// G11
-		/datum/outfit/loadout/sgt_laser, 	// Wattz2k
+		/datum/outfit/loadout/sgt_laser, 	// Plasma
 		)
 
 /datum/outfit/job/enclave/peacekeeper/enclavesgt
@@ -239,13 +250,15 @@
 	suit_store = /obj/item/gun/ballistic/automatic/g11
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/m473 = 3,
+		/obj/item/grenade/f13/plasma = 2,
 		)
 
 /datum/outfit/loadout/sgt_laser
-	name = "Laser Support"
-	suit_store = /obj/item/gun/energy/laser/wattz2k
+	name = "Support Rifleman"
+	suit_store = /obj/item/gun/energy/laser/plasma
 	backpack_contents = list(
 		/obj/item/stock_parts/cell/ammo/mfc = 3,
+		/obj/item/grenade/f13/plasma = 2,
 		)
 
 /datum/outfit/job/enclave/peacekeeper/enclavesgt/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -255,9 +268,11 @@
 	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
 	ADD_TRAIT(H, TRAIT_PA_WEAR, src)
 	ADD_TRAIT(H, TRAIT_RESEARCHER, src)
+	ADD_TRAIT(H, TRAIT_ENCLAVE_CODES, src)
 	if(H.mind)
 		var/obj/effect/proc_holder/spell/terrifying_presence/S = new /obj/effect/proc_holder/spell/terrifying_presence
 		H.mind.AddSpell(S)
+	H.grant_language(/datum/language/codespeak, TRUE, TRUE, LANGUAGE_MIND)
 
 //Specialist
 
@@ -327,6 +342,9 @@
 	if(visualsOnly)
 		return
 	ADD_TRAIT(H, TRAIT_PA_WEAR, src)
+	ADD_TRAIT(H, TRAIT_ENCLAVE_CODES, src)
+	H.grant_language(/datum/language/codespeak, TRUE, TRUE, LANGUAGE_MIND)
+
 
 //Private
 /datum/job/enclave/enclavespy
@@ -358,13 +376,15 @@
 		/obj/item/clothing/mask/chameleon = 1,
 		/obj/item/card/id/syndicate/anyone =1
 		)
-/*
+
 /datum/outfit/job/enclave/peacekeeper/enclavespy/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
 		return
 	ADD_TRAIT(H, TRAIT_PA_WEAR, src)
-*/
+	ADD_TRAIT(H, TRAIT_ENCLAVE_CODES, src)
+	H.grant_language(/datum/language/codespeak, TRUE, TRUE, LANGUAGE_MIND)
+
 //NON-COMBATANTS
 
 //Scientist
@@ -416,7 +436,9 @@
 	ADD_TRAIT(H, TRAIT_RESEARCHER, src)
 	ADD_TRAIT(H, TRAIT_UNETHICAL_PRACTITIONER, src) // Brainwashing
 	ADD_TRAIT(H, TRAIT_PA_WEAR, src)
+	ADD_TRAIT(H, TRAIT_ENCLAVE_CODES, src)
 //	ADD_TRAIT(H, TRAIT_POOR_AIM, src)
+	H.grant_language(/datum/language/codespeak, TRUE, TRUE, LANGUAGE_MIND)
 
 //Pilot
 /datum/job/enclave/enclavepilot
@@ -456,9 +478,11 @@
 	if(visualsOnly)
 		return
 	ADD_TRAIT(H, TRAIT_PILOT, src)
+	ADD_TRAIT(H, TRAIT_ENCLAVE_CODES, src)
 	if(H.mind)
 		var/obj/effect/proc_holder/spell/terrifying_presence/S = new /obj/effect/proc_holder/spell/terrifying_presence
 		H.mind.AddSpell(S)
+	H.grant_language(/datum/language/codespeak, TRUE, TRUE, LANGUAGE_MIND)
 
 //Bunker Duty
 /datum/job/enclave/f13BDUTY

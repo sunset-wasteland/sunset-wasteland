@@ -35,7 +35,7 @@
 //	..()
 //	if(visualsOnly)
 //		return
-	//ADD_TRAIT(H, TRAIT_TECHNOPHREAK, TRAIT_GENERIC)
+//	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, TRAIT_GENERIC)
 
 /*
 Administrator

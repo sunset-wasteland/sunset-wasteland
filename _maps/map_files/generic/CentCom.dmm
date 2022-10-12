@@ -2174,9 +2174,19 @@
 /turf/closed/indestructible/splashscreen,
 /area/start)
 "gz" = (
-/obj/structure/table/optable/abductor,
+/obj/machinery/abductor/console{
+	desc = "Some ssort of machinery that links up with a pad.";
+	name = "pad console"
+	},
 /turf/open/floor/f13{
 	icon_state = "darkdirtysolid"
+	},
+/area/vertibird_interior)
+"gG" = (
+/obj/machinery/defibrillator_mount/loaded,
+/turf/closed/indestructible/vaultdoor{
+	desc = "A thick wall made to keep bullets out, and the passengers in.";
+	name = "Vertibird Interior Armor"
 	},
 /area/vertibird_interior)
 "gV" = (
@@ -6349,13 +6359,6 @@
 /obj/structure/window/reinforced,
 /turf/closed/indestructible/riveted,
 /area/f13/underground/mountain)
-"vm" = (
-/obj/machinery/abductor/pad{
-	name = "Extraction and Recovery Device";
-	desc = "Use this to transport to and from the wastelanders' habitat."
-	},
-/turf/open/floor/f13,
-/area/vertibird_interior)
 "vo" = (
 /obj/item/storage/firstaid/toxin,
 /obj/item/storage/firstaid/o2{
@@ -6925,6 +6928,13 @@
 	},
 /turf/open/floor/plasteel,
 /area/tdome/tdomeobserve)
+"yb" = (
+/obj/machinery/abductor/pad{
+	name = "Extraction and Recovery Device";
+	desc = "Use this to transport to and from the wastelanders' habitat."
+	},
+/turf/open/floor/f13,
+/area/vertibird_interior)
 "ye" = (
 /obj/structure/chalkboard,
 /turf/open/floor/plasteel/dark,
@@ -7330,13 +7340,6 @@
 /obj/structure/tank_dispenser/oxygen,
 /turf/open/floor/plasteel/dark,
 /area/centcom/evac)
-"BF" = (
-/obj/machinery/defibrillator_mount/loaded,
-/turf/closed/indestructible/vaultdoor{
-	desc = "A thick wall made to keep bullets out, and the passengers in.";
-	name = "Vertibird Interior Armor"
-	},
-/area/vertibird_interior)
 "BH" = (
 /obj/vehicle/ridden/secway,
 /obj/machinery/button/door{
@@ -8107,6 +8110,14 @@
 /obj/structure/wreck/trash/three_barrels,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/centcom/evac)
+"Ij" = (
+/obj/machinery/computer/operating/enclave{
+	dir = 8
+	},
+/turf/open/floor/f13{
+	icon_state = "darkdirtysolid"
+	},
+/area/vertibird_interior)
 "Il" = (
 /turf/closed/indestructible/fakeglass,
 /area/tdome/tdomeobserve)
@@ -8911,15 +8922,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/centcom/evac)
-"Mu" = (
-/obj/machinery/abductor/console{
-	desc = "Some ssort of machinery that links up with a pad.";
-	name = "pad console"
-	},
-/turf/open/floor/f13{
-	icon_state = "darkdirtysolid"
-	},
-/area/vertibird_interior)
 "Mz" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/sign/poster/prewar/poster72{
@@ -9451,6 +9453,10 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/tdome/tdomeobserve)
+"TA" = (
+/obj/structure/chair/comfy/shuttle,
+/turf/open/floor/f13,
+/area/vertibird_interior)
 "TI" = (
 /obj/effect/turf_decal/trimline/yellow/filled/corner{
 	dir = 4
@@ -9769,6 +9775,12 @@
 /obj/effect/turf_decal/vg_decals/numbers/three,
 /turf/open/floor/plasteel/dark,
 /area/centcom/supplypod/loading/three)
+"Zs" = (
+/obj/structure/table/optable/abductor,
+/turf/open/floor/f13{
+	icon_state = "darkdirtysolid"
+	},
+/area/vertibird_interior)
 "Zy" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/remains/human,
@@ -58298,8 +58310,8 @@ fZ
 aw
 ga
 ga
-Mu
-vm
+gz
+yb
 ga
 DF
 gk
@@ -58817,7 +58829,7 @@ Zd
 En
 OD
 hR
-gg
+TA
 lF
 gn
 ga
@@ -59328,9 +59340,9 @@ ga
 ga
 ga
 gi
-BF
-gz
-gl
+gG
+Zs
+Ij
 gl
 KA
 ga

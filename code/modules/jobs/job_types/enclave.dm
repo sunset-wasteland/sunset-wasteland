@@ -44,6 +44,7 @@
 		return
 	ADD_TRAIT(H, TRAIT_GENERIC, src)
 	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
+	ADD_TRAIT(H, TRAIT_ABDUCTOR_TRAINING)
 
 //Lieutenant
 /datum/job/enclave/enclavelt
@@ -115,6 +116,9 @@
 	ADD_TRAIT(H, TRAIT_PA_WEAR, src)
 	ADD_TRAIT(H, TRAIT_LIFEGIVER, src)
 	ADD_TRAIT(H, TRAIT_RESEARCHER, src)
+	ADD_TRAIT(H, TRAIT_ABDUCTOR_TRAINING)
+	ADD_TRAIT(H, TRAIT_UNETHICAL_PRACTITIONER, src)
+	ADD_TRAIT(H, TRAIT_PILOT, src)
 	if(H.mind)
 		var/obj/effect/proc_holder/spell/terrifying_presence/S = new /obj/effect/proc_holder/spell/terrifying_presence
 		H.mind.AddSpell(S)
@@ -190,6 +194,7 @@
 	ADD_TRAIT(H, TRAIT_PA_WEAR, src)
 	ADD_TRAIT(H, TRAIT_LIFEGIVER, src)
 	ADD_TRAIT(H, TRAIT_RESEARCHER, src)
+	ADD_TRAIT(H, TRAIT_ABDUCTOR_TRAINING)
 	if(H.mind)
 		var/obj/effect/proc_holder/spell/terrifying_presence/S = new /obj/effect/proc_holder/spell/terrifying_presence
 		H.mind.AddSpell(S)
@@ -255,6 +260,7 @@
 	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
 	ADD_TRAIT(H, TRAIT_PA_WEAR, src)
 	ADD_TRAIT(H, TRAIT_RESEARCHER, src)
+	ADD_TRAIT(H, TRAIT_ABDUCTOR_TRAINING)
 	if(H.mind)
 		var/obj/effect/proc_holder/spell/terrifying_presence/S = new /obj/effect/proc_holder/spell/terrifying_presence
 		H.mind.AddSpell(S)
@@ -327,6 +333,7 @@
 	if(visualsOnly)
 		return
 	ADD_TRAIT(H, TRAIT_PA_WEAR, src)
+	ADD_TRAIT(H, TRAIT_ABDUCTOR_TRAINING)
 
 //Private
 /datum/job/enclave/enclavespy
@@ -416,7 +423,7 @@
 	ADD_TRAIT(H, TRAIT_RESEARCHER, src)
 	ADD_TRAIT(H, TRAIT_UNETHICAL_PRACTITIONER, src) // Brainwashing
 	ADD_TRAIT(H, TRAIT_PA_WEAR, src)
-//	ADD_TRAIT(H, TRAIT_POOR_AIM, src)
+	ADD_TRAIT(H, TRAIT_ABDUCTOR_TRAINING)
 
 //Pilot
 /datum/job/enclave/enclavepilot
@@ -456,6 +463,7 @@
 	if(visualsOnly)
 		return
 	ADD_TRAIT(H, TRAIT_PILOT, src)
+	ADD_TRAIT(H, TRAIT_ABDUCTOR_TRAINING)
 	if(H.mind)
 		var/obj/effect/proc_holder/spell/terrifying_presence/S = new /obj/effect/proc_holder/spell/terrifying_presence
 		H.mind.AddSpell(S)
@@ -604,5 +612,4 @@
 /obj/machinery/abductor/console/enclave
 	name = "vertibird rappel console"
 	desc = "Ship automatically link up to a nearby pad, should allow you to get down and back up without a hitch, should."
-
 

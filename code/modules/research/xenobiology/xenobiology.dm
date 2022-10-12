@@ -492,8 +492,8 @@
 				do_teleport(user, get_turf(user), 6, asoundin = 'sound/weapons/emitter2.ogg', channel = TELEPORT_CHANNEL_BLUESPACE)
 				return 300
 
-		if(SLIME_ACTIVATE_MAJOR)
-			if(!teleport_ready)
+		/*if(SLIME_ACTIVATE_MAJOR)
+			if(teleport_ready)
 				to_chat(user, "<span class='notice'>You feel yourself anchoring to this spot...</span>")
 				var/turf/T = get_turf(user)
 				teleport_x = T.x
@@ -506,7 +506,7 @@
 					var/turf/T = locate(teleport_x, teleport_y, teleport_z)
 					to_chat(user, "<span class='notice'>You snap back to your anchor point!</span>")
 					do_teleport(user, T,  asoundin = 'sound/weapons/emitter2.ogg', channel = TELEPORT_CHANNEL_BLUESPACE)
-					return 450
+					return 450*/
 
 
 /obj/item/slime_extract/pyrite
@@ -836,7 +836,7 @@
 	icon_state = "potyellow"
 
 /obj/item/slimepotion/speed/afterattack(obj/C, mob/user)
-	. = ..()
+	/*. = ..()
 	if(!istype(C))
 		to_chat(user, "<span class='warning'>The potion can only be used on items or vehicles!</span>")
 		return
@@ -859,7 +859,7 @@
 	to_chat(user, "<span class='notice'>You slather the red gunk over the [C], making it faster.</span>")
 	C.remove_atom_colour(WASHABLE_COLOUR_PRIORITY)
 	C.add_atom_colour("#FF0000", FIXED_COLOUR_PRIORITY)
-	qdel(src)
+	qdel(src)*/
 
 /obj/item/slimepotion/fireproof
 	name = "slime chill potion"

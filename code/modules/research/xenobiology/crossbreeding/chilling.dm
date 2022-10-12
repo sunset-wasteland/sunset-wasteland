@@ -135,7 +135,7 @@ Chilling extracts:
 	var/active = FALSE
 
 /obj/item/slimecross/chilling/bluespace/afterattack(atom/target, mob/user, proximity)
-	if(!proximity || !isliving(target) || active)
+	/*if(!proximity || !isliving(target) || active)
 		return
 	if(target in allies)
 		allies -= target
@@ -143,7 +143,7 @@ Chilling extracts:
 	else
 		allies |= target
 		to_chat(user, "<span class='notice'>You link [src] with [target].</span>")
-	return
+	return*/
 
 /obj/item/slimecross/chilling/bluespace/do_effect(mob/user)
 	if(allies.len <= 0)

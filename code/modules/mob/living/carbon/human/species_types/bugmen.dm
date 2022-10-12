@@ -12,7 +12,7 @@
 	miss_sound = 'sound/weapons/slashmiss.ogg'
 	meat = /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/insect
 	liked_food = MEAT | FRUIT
-	disliked_food = TOXIC
+	disliked_food = NONE
 	exotic_bloodtype = "BUG"
 	exotic_blood_color = BLOOD_COLOR_BUG
 

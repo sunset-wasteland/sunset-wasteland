@@ -21,8 +21,8 @@
 	skinned_type = /obj/item/stack/sheet/animalhide/lizard
 	exotic_bloodtype = "L"
 	exotic_blood_color = BLOOD_COLOR_LIZARD
-	disliked_food = GRAIN | DAIRY
-	liked_food = GROSS | MEAT
+	disliked_food = TOXIC
+	liked_food = RAW | MEAT
 	inert_mutation = FIREBREATH
 	species_language_holder = /datum/language_holder/lizard
 

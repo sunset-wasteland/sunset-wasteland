@@ -5,6 +5,7 @@ GLOBAL_LIST_EMPTY(faction_radios)
 GLOBAL_LIST_EMPTY(ncr_radios)
 GLOBAL_LIST_EMPTY(legion_radios)
 GLOBAL_LIST_EMPTY(bos_radios)
+GLOBAL_LIST_EMPTY(enc_radios)
 
 /obj/machinery/radioterminal
 	name = "radio control"
@@ -47,6 +48,10 @@ GLOBAL_LIST_EMPTY(bos_radios)
 			for(var/obj/item/radio/radio in GLOB.bos_radios)
 				if(radio.linked_mob)
 					dat += "<a href='?src=[REF(src)];terminate=[REF(radio)]'> [radio.name] linked to [radio.linked_mob]<br>"
+		if(FACTION_ENCLAVE)
+			for(var/obj/item/radio/radio in GLOB.enc_radios)
+				if(radio.linked_mob)
+					dat += "<a href='?src=[REF(src)];terminate=[REF(radio)]'> [radio.name] linked to [radio.linked_mob]<br>"
 	var/datum/browser/popup = new(user, "radio_console", "Radio Terminal")
 	popup.set_content(dat)
 	popup.open()
@@ -70,6 +75,8 @@ GLOBAL_LIST_EMPTY(bos_radios)
 					LAZYREMOVE(GLOB.legion_radios, terminate)
 				if(FACTION_BROTHERHOOD)
 					LAZYREMOVE(GLOB.bos_radios, terminate)
+				if(FACTION_ENCLAVE)
+					LAZYREMOVE(GLOB.enc_radios, terminate)
 	updateUsrDialog()
 	return
 

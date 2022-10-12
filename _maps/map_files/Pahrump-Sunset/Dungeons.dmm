@@ -348,14 +348,7 @@
 /turf/open/floor/plasteel/floorgrime,
 /area/f13/bunker)
 "asG" = (
-/obj/item/radio/intercom{
-	frequency = 1361;
-	name = "Vault Intercom";
-	pixel_x = -32
-	},
-/turf/open/floor/plasteel/f13{
-	icon_state = "rampdowntop"
-	},
+/turf/closed/wall/f13/tunnel,
 /area/f13/vault)
 "ati" = (
 /obj/structure/chair/left{
@@ -2145,7 +2138,7 @@
 	pixel_x = 8
 	},
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
-/area/f13/tunnel)
+/area/f13/vault)
 "cIP" = (
 /obj/machinery/light/small{
 	dir = 8
@@ -2161,7 +2154,7 @@
 "cJA" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
-/area/f13/tunnel)
+/area/f13/vault)
 "cJG" = (
 /obj/machinery/door/airlock{
 	icon = 'icons/obj/doors/airlocks/station/medical.dmi';
@@ -2182,12 +2175,6 @@
 	icon_state = "yellowrustyfull"
 	},
 /area/f13/bunker)
-"cKQ" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/f13{
-	icon_state = "rampdowntop"
-	},
-/area/f13/tunnel)
 "cLi" = (
 /obj/structure/table/wood/bar,
 /obj/effect/spawner/lootdrop/f13/medical/wasteland/meds,
@@ -2353,7 +2340,7 @@
 	pixel_x = 8
 	},
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
-/area/f13/tunnel)
+/area/f13/vault)
 "cTN" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
@@ -3016,7 +3003,7 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
-/area/f13/tunnel)
+/area/f13/vault)
 "dEd" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
@@ -3550,8 +3537,11 @@
 /obj/item/pickaxe,
 /obj/item/pickaxe/drill,
 /obj/item/pickaxe/drill,
+/obj/machinery/camera/autoname{
+	dir = 1
+	},
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
-/area/f13/tunnel)
+/area/f13/vault)
 "egq" = (
 /obj/machinery/conveyor/inverted{
 	dir = 6;
@@ -3869,7 +3859,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/item/t_scanner/adv_mining_scanner/lesser,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
-/area/f13/tunnel)
+/area/f13/vault)
 "eza" = (
 /obj/structure/table,
 /obj/item/reagent_containers/food/snacks/grown/apple/gold{
@@ -4244,6 +4234,20 @@
 	icon_state = "floorgrime"
 	},
 /area/f13/bunker)
+"eWH" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/machinery/doorButtons/vaultButton,
+/obj/effect/decal/cleanable/cobweb/cobweb2,
+/obj/effect/turf_decal/stripes/box,
+/obj/item/radio/intercom{
+	frequency = 1361;
+	name = "Vault Intercom";
+	pixel_x = -32
+	},
+/turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
+/area/f13/vault)
 "eXe" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -4374,7 +4378,7 @@
 /turf/open/floor/plasteel/f13{
 	icon_state = "rampdowntop"
 	},
-/area/f13/tunnel)
+/area/f13/vault)
 "fgd" = (
 /obj/machinery/light/small{
 	dir = 8
@@ -5485,7 +5489,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/oil/slippery,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
-/area/f13/tunnel)
+/area/f13/vault)
 "gCg" = (
 /obj/structure/car/rubbish3,
 /turf/open/indestructible/ground/outside/dirt,
@@ -6905,7 +6909,7 @@
 /obj/structure/ore_box,
 /obj/effect/turf_decal/box,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
-/area/f13/tunnel)
+/area/f13/vault)
 "imZ" = (
 /obj/item/flag/legion,
 /turf/open/indestructible/ground/outside/dirt,
@@ -7352,7 +7356,7 @@
 /obj/machinery/light,
 /obj/effect/turf_decal/box,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
-/area/f13/tunnel)
+/area/f13/vault)
 "iNp" = (
 /obj/effect/decal/remains/human,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
@@ -7713,7 +7717,7 @@
 "jgN" = (
 /obj/structure/sign/warning/radiation,
 /turf/closed/wall/f13/tunnel,
-/area/f13/tunnel)
+/area/f13/vault)
 "jhJ" = (
 /obj/machinery/door/airlock/medical{
 	name = "Clinic";
@@ -8265,7 +8269,7 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
-/area/f13/tunnel)
+/area/f13/vault)
 "jPN" = (
 /mob/living/simple_animal/hostile/ghoul/glowing,
 /turf/open/indestructible/ground/inside/mountain,
@@ -10933,9 +10937,6 @@
 	icon_state = "dirt"
 	},
 /area/f13/underground/cave)
-"mWD" = (
-/turf/closed/wall/f13/tunnel,
-/area/f13/caves)
 "mWO" = (
 /obj/machinery/sleeper,
 /obj/machinery/light{
@@ -14073,7 +14074,7 @@
 /turf/open/floor/plasteel/f13{
 	icon_state = "rampdowntop"
 	},
-/area/f13/tunnel)
+/area/f13/vault)
 "qpH" = (
 /obj/structure/table,
 /obj/effect/spawner/lootdrop/f13/crafting,
@@ -14751,7 +14752,7 @@
 /area/f13/vault)
 "rgp" = (
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
-/area/f13/tunnel)
+/area/f13/vault)
 "rgx" = (
 /obj/effect/decal/remains/human,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
@@ -16227,7 +16228,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/caution/stand_clear,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
-/area/f13/tunnel)
+/area/f13/vault)
 "tcP" = (
 /obj/effect/turf_decal/stripes/line,
 /turf/open/floor/plasteel/darkred/side{
@@ -16925,15 +16926,6 @@
 /obj/item/reagent_containers/glass/bucket,
 /turf/open/floor/plasteel/f13/vault_floor/green,
 /area/f13/vault)
-"tXh" = (
-/obj/machinery/computer/cargo/request{
-	dir = 8
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/turf/open/floor/plasteel/f13/vault_floor/yellow,
-/area/f13/vault)
 "tXm" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -17022,7 +17014,7 @@
 	pixel_x = 8
 	},
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
-/area/f13/tunnel)
+/area/f13/vault)
 "ucW" = (
 /obj/machinery/light{
 	dir = 1;
@@ -17583,9 +17575,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/f13/vault)
-"uFg" = (
-/turf/closed/indestructible/rock,
-/area/f13/tunnel)
 "uFs" = (
 /obj/machinery/door/airlock/wood{
 	id_tag = "vaultd2";
@@ -17769,9 +17758,6 @@
 /area/f13/tunnel)
 "uPR" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/camera/autoname{
-	dir = 9
-	},
 /turf/open/floor/plasteel/f13{
 	icon_state = "rampdowntop"
 	},
@@ -20017,9 +20003,6 @@
 /turf/open/floor/plasteel/f13/vault_floor/yellow/whiteyellowfull,
 /area/f13/vault)
 "xvm" = (
-/obj/machinery/computer/cargo{
-	dir = 4
-	},
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
 	},
@@ -20165,7 +20148,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
-/area/f13/tunnel)
+/area/f13/vault)
 "xHp" = (
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
@@ -27852,7 +27835,7 @@ jfd
 oGD
 uQS
 tef
-tXh
+azA
 aUc
 uQS
 paq
@@ -32261,13 +32244,13 @@ hrZ
 hrZ
 hrZ
 hrZ
-vXu
-vXu
+asG
+asG
 cTL
 ucH
 cIj
-vXu
-mWD
+asG
+asG
 iba
 iba
 iba
@@ -32515,16 +32498,16 @@ vaD
 vaD
 vaD
 cEb
-uFg
-uFg
-uFg
+asG
+asG
+asG
 jgN
-cJA
+eWH
 cJA
 cJA
 cJA
 ege
-mWD
+asG
 iba
 hrZ
 iba
@@ -32770,7 +32753,7 @@ qEl
 osx
 vaD
 jGV
-asG
+cdq
 hFV
 rgp
 cJA
@@ -32781,7 +32764,7 @@ cJA
 xGO
 cJA
 ilw
-mWD
+asG
 hrZ
 iba
 hrZ
@@ -33032,13 +33015,13 @@ boB
 cJA
 tcj
 cJA
-cKQ
+uPR
 xGO
 cJA
 cJA
 xGO
 iMq
-mWD
+asG
 hrZ
 hrZ
 hrZ
@@ -33295,7 +33278,7 @@ cJA
 xGO
 cJA
 eyt
-mWD
+asG
 hrZ
 iba
 hrZ
@@ -33543,16 +33526,16 @@ vaD
 vaD
 vaD
 cEb
-uFg
-uFg
-uFg
+asG
+asG
+asG
 jgN
 cJA
 xGO
 cJA
 cJA
 eyt
-mWD
+asG
 iba
 hrZ
 iba
@@ -33803,13 +33786,13 @@ hrZ
 hrZ
 hrZ
 hrZ
-vXu
-vXu
+asG
+asG
 jPy
 jPy
 dEa
-vXu
-mWD
+asG
+asG
 hrZ
 iba
 hrZ

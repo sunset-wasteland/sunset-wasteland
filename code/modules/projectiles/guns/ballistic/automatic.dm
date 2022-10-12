@@ -1012,7 +1012,7 @@
 	zoom_out_amt = 13
 	fire_delay = 0.5
 	can_scope = FALSE
-	
+
 //HT battle rifle
 /obj/item/gun/ballistic/automatic/bar/glowie
 	name = "Colt Monitor"
@@ -1028,7 +1028,7 @@
 	zoom_out_amt = 13
 	icon_state = "MONITOR"
 	item_state = "BAR"
-	
+
 
 //SKS				Keywords: LEGION, .308, Semi-auto, 10 rounds internal, Penetration +0.1
 /obj/item/gun/ballistic/automatic/m1garand/sks
@@ -1275,6 +1275,7 @@
 	icon_state = "assault_carbine"
 	item_state = "assault_carbine"
 	icon_prefix = "assault_carbine"
+	slowdown = 0.25
 	slot_flags = 0
 	mag_type = /obj/item/ammo_box/magazine/m5mm
 	fire_delay = 2.5

@@ -468,7 +468,7 @@
 	desc = "A headwrap to help shield the face from sand and other dirt."
 	icon_state = "facewrap"
 	item_state = "facewrap"
-	flags_inv = HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
+	flags_inv = HIDEFACE|HIDEHAIR|HIDEFACIALHAIR|HIDESNOUT
 	flags_cover = MASKCOVERSMOUTH
 	visor_flags_inv = HIDEFACE
 	visor_flags_cover = MASKCOVERSMOUTH

@@ -613,7 +613,7 @@
 /datum/job/enclave/encborg/after_spawn(mob/living/silicon/robot/R, mob/M)
 	. = ..()
 	ADD_TRAIT(R, TRAIT_TECHNOPHREAK, TRAIT_GENERIC)
-	ADD_TRAIT(H, TRAIT_ENCLAVE_CODES, src)
+	ADD_TRAIT(R, TRAIT_ENCLAVE_CODES, src)
 	R.apply_pref_name("cyborg", M.client)
 	R.gender = NEUTER
 

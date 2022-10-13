@@ -7,6 +7,10 @@
 	name = "vault jumpsuit"
 	path = /obj/item/clothing/under/f13/vault
 
+/datum/gear/uniform/harn
+	name = "gear harness"
+	path = /obj/item/clothing/under/misc/gear_harness
+
 /datum/gear/uniform/caravaneer
 	name = "caravaneer outfit"
 	path = /obj/item/clothing/under/f13/caravaneer

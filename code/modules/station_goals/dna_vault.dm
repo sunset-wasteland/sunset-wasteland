@@ -132,10 +132,10 @@
 	light_power = 1.5
 	light_color = LIGHT_COLOR_CYAN
 
-	//High defaults so it's not completed automatically if there's no station goal
-	var/animals_max = 100
-	var/plants_max = 100
-	var/dna_max = 100
+	//High defaults so it's not completed automatically if there's no station goal / SUNSET EDIT - From 100 to the values there are now, as we have no station goal
+	var/animals_max = rand(15-20)
+	var/plants_max = rand(25-30)
+	var/dna_max = rand(15-20)
 	var/list/animals = list()
 	var/list/plants = list()
 	var/list/dna = list()

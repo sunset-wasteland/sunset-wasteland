@@ -108,6 +108,16 @@
 		earflaps = 1
 		to_chat(user, "<span class='notice'>You lower the ear flaps on the ushanka.</span>")
 
+/obj/item/clothing/head/blackushanka
+	name = "black ushanka"
+	desc = "A ushanka that is colored black. Perfect for cold climates."
+	icon_state = "enclave_ushanka"
+	item_state = "enclave_ushanka"
+	flags_inv = HIDEEARS
+	var/earflaps = 1
+	cold_protection = HEAD
+	min_cold_protection_temperature = FIRE_HELM_MIN_TEMP_PROTECT
+
 /*
  * Pumpkin head
  */

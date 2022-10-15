@@ -123,7 +123,6 @@
 	name = "Med-Co Advanced Surgery Tools"
 	desc = "A full set of Med-Co advanced surgery tools, this crate also comes with a spay of synth flesh as well as a can of . Requires Surgery access to open."
 	cost = 5500
-	access = ACCESS_SURGERY
 	contains = list(/obj/item/storage/belt/medical/surgery_belt_adv,
 					/obj/item/reagent_containers/medspray/synthflesh,
 					/obj/item/reagent_containers/medspray/sterilizine)

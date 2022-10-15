@@ -13,7 +13,6 @@
 	name = "Biker Gang Kit" //TUNNEL SNAKES OWN THIS TOWN
 	desc = "TUNNEL SNAKES OWN THIS TOWN. Contains an unbranded All Terrain Vehicle, two cans of spraypaint, and a complete gang outfit -- consists of black gloves, a menacing skull bandanna, and a SWEET leather overcoat!"
 	cost = 2500
-	contraband = TRUE
 	contains = list(/obj/vehicle/ridden/atv,
 					/obj/item/key,
 					/obj/item/toy/crayon/spraycan,
@@ -24,6 +23,40 @@
 					/obj/item/clothing/mask/bandana/skull)//so you can properly #cargoniabikergang
 	crate_name = "Biker Kit"
 	crate_type = /obj/structure/closet/crate/large
+//fallout changes
+
+/datum/supply_pack/emergency/ids
+	name = "ID Crate"
+	desc = "This crate holds 6 ID's for the brotherhood to use, in case that all the spares goes missing."
+	cost = 1000
+	contains = list(/obj/item/card/id/dogtag,
+					/obj/item/card/id/dogtag,
+					/obj/item/card/id/dogtag,
+					/obj/item/card/id/dogtag,
+					/obj/item/card/id/dogtag,
+					/obj/item/card/id/dogtag)
+
+/datum/supply_pack/emergency/pipboy
+	name = "PIPboy Crate"
+	desc = "3 PIP-boys, buy two and get the third for free. Made from the one of the last facto´ries that makes them."
+	cost = 1000
+	contains = list(/obj/item/pda,
+					/obj/item/pda,
+					/obj/item/pda)
+
+/datum/supply_pack/emergency/brotherhoodarmor
+	name = "Armor Crate"
+	desc = "The crate holds 1 armor kit, in case that all the spares goes missing."
+	cost = 500
+	contains = list(/obj/item/clothing/under/f13/recon,
+					/obj/item/clothing/suit/armor/f13/combat/brotherhood,
+					/obj/item/clothing/head/helmet/f13/combat/brotherhood,
+					/obj/item/storage/belt/military,
+					/obj/item/clothing/mask/gas/sechailer/swat,
+					/obj/item/clothing/shoes/jackboots,
+					/obj/item/storage/belt/military/army)
+
+//fallout changes ends here
 
 /datum/supply_pack/emergency/bio
 	name = "Biological Emergency Crate"
@@ -204,7 +237,7 @@
 					/obj/item/storage/box/mre/menu3,
 					/obj/item/storage/box/mre/menu4/safe)
 	crate_name = "MRE crate (emergency rations)"
-
+/*
 /datum/supply_pack/emergency/plasma_spacesuit
 	name = "Plasmaman Space Envirosuits"
 	desc = "Contains two space-worthy envirosuits for Plasmamen. Order now and we'll throw in two free helmets! Requires EVA access to open."
@@ -228,7 +261,7 @@
 					/obj/item/clothing/head/helmet/space/plasmaman,
 					/obj/item/clothing/head/helmet/space/plasmaman)
 	crate_name = "plasmaman supply kit"
-
+*/
 /datum/supply_pack/emergency/radiation
 	name = "Radiation Protection Crate"
 	desc = "Survive the Nuclear Apocalypse and Supermatter Engine alike with two sets of Radiation suits. Each set contains a helmet, suit, and Geiger counter. We'll even throw in a bottle of vodka and some glasses too, considering the life-expectancy of people who order this."
@@ -286,14 +319,12 @@
 */
 /datum/supply_pack/emergency/specialops
 	name = "Special Ops Supplies"
-	desc = "(*!&@#NEED SOMETHING TO DEAL WITH THE GREYTIDE, HUH OPERATIVE? WELL, THIS LITTLE ORDER CAN HELP YOU OUT IN A PINCH. CONTAINS A BOX OF FIVE EMP GRENADES, THREE SMOKEBOMBS, AN INCENDIARY GRENADE, AND A \"SLEEPY PEN\" FULL OF NICE TOXINS!#@*$"
-	hidden = TRUE
+	desc = "(*!&@#NEED SOMETHING TO DEAL WITH THE FALLOUT, HUH BROTHERHOOD? WELL, THIS LITTLE ORDER CAN HELP YOU OUT IN A PINCH. CONTAINS A BOX OF FIVE EMP GRENADES, THREE SMOKEBOMBS, AN A INCENDIARY GRENADE."
 	cost = 2200
 	contains = list(/obj/item/storage/box/emps,
 					/obj/item/grenade/smokebomb,
 					/obj/item/grenade/smokebomb,
 					/obj/item/grenade/smokebomb,
-					/obj/item/pen/sleepy,
 					/obj/item/grenade/chem_grenade/incendiary)
 	crate_name = "emergency crate"
 	crate_type = /obj/structure/closet/crate/internals

@@ -8,9 +8,18 @@
 
 /datum/supply_pack/security
 	group = "Security"
-	access = ACCESS_SECURITY
 	crate_type = /obj/structure/closet/crate/secure/gear
 	can_private_buy = FALSE
+
+//fallout changes
+
+/datum/supply_pack/security/aer9
+	name = "AER9 Crate"
+	desc = "Contains one AER9 for any brotherhood member that needs a spare."
+	cost = 2500
+	contains = list(/obj/item/gun/energy/laser/aer9)
+
+//fallout changes ends here
 
 /datum/supply_pack/security/ammo
 	name = "Ammo Crate - General Purpose"
@@ -28,7 +37,7 @@
 					/obj/item/clothing/suit/armor/vest,
 					/obj/item/clothing/suit/armor/vest)
 	crate_name = "armor crate"
-
+/*
 /datum/supply_pack/security/disabler
 	name = "Disabler Crate"
 	desc = "Three stamina-draining disabler weapons. Requires Security access to open."
@@ -37,7 +46,7 @@
 					/obj/item/gun/energy/disabler,
 					/obj/item/gun/energy/disabler)
 	crate_name = "disabler crate"
-
+*/
 /datum/supply_pack/security/forensics
 	name = "Forensics Crate"
 	desc = "Stay hot on the criminal's heels with Nanotrasen's Detective Essentials(tm). Contains a forensics scanner, six evidence bags, camera, tape recorder, white crayon, and of course, a fedora. Requires Security access to open."
@@ -60,13 +69,13 @@
 					/obj/item/clothing/head/helmet/sec)
 	crate_name = "helmet crate"
 
-/datum/supply_pack/security/laser
+/datum/supply_pack/security/laser //wattz instead
 	name = "Lasers Crate"
-	desc = "Contains three lethal, high-energy laser guns. Requires Security access to open."
+	desc = "Contains three lethal, Wattz laser pistols.."
 	cost = 1750
-	contains = list(/obj/item/gun/energy/laser,
-					/obj/item/gun/energy/laser,
-					/obj/item/gun/energy/laser)
+	contains = list(/obj/item/gun/energy/laser/wattz,
+					/obj/item/gun/energy/laser/wattz,
+					/obj/item/gun/energy/laser/wattz)
 	crate_name = "laser crate"
 
 /datum/supply_pack/security/russianclothing
@@ -152,7 +161,6 @@
 	name = "Standard Justice Enforcer Crate"
 	desc = "This is it. The Bee's Knees. The Creme of the Crop. The Pick of the Litter. The best of the best of the best. The Crown Jewel of Nanotrasen. The Alpha and the Omega of security headwear. Guaranteed to strike fear into the hearts of each and every criminal aboard the station. Also comes with a security gasmask. Requires Security access to open."
 	cost = 6000 //justice comes at a price. An expensive, noisy price.
-	contraband = TRUE
 	contains = list(/obj/item/clothing/head/helmet/justice,
 					/obj/item/clothing/mask/gas/sechailer)
 	crate_name = "security clothing crate"
@@ -167,13 +175,13 @@
 					/obj/item/melee/baton/loaded)
 	crate_name = "stun baton crate"
 
-/datum/supply_pack/security/taser
-	name = "Taser Crate"
-	desc = "From the depths of stunbased combat, this order rises above, supreme. Contains three hybrid tasers, capable of firing both electrodes and disabling shots. Requires Security access to open."
+/datum/supply_pack/security/taser //Fallout themed
+	name = "Disabler Crate"
+	desc = "Contains three disablers tasers, capable of firing disabling shots."
 	cost = 3500
-	contains = list(/obj/item/gun/energy/e_gun/advtaser,
-					/obj/item/gun/energy/e_gun/advtaser,
-					/obj/item/gun/energy/e_gun/advtaser)
+	contains = list(/obj/item/gun/energy/laser/complianceregulator,
+					/obj/item/gun/energy/laser/complianceregulator,
+					/obj/item/gun/energy/laser/complianceregulator)
 	crate_name = "taser crate"
 
 /datum/supply_pack/security/wall_flash
@@ -190,15 +198,13 @@
 	name = "Hunting Gear"
 	desc = "Even in space, we can find prey to hunt, this crate contains everthing a fine hunter needs to have a sporting time. This crate needs armory access to open. A true huntter only needs a fine bottle of cognac, a nice coat, some good o' cigars, and of cource a hunting shotgun. "
 	cost = 3500
-	contraband = TRUE
 	contains = list(/obj/item/clothing/head/flatcap,
 					/obj/item/clothing/suit/hooded/wintercoat/captain,
 					/obj/item/reagent_containers/food/drinks/bottle/cognac,
 					/obj/item/storage/fancy/cigarettes/cigars/havana,
 					/obj/item/clothing/gloves/color/white,
 					/obj/item/clothing/under/rank/civilian/curator,
-					/obj/item/gun/ballistic/shotgun/lethal)
-	access = ACCESS_ARMORY
+					/obj/item/gun/ballistic/shotgun/trench)
 	crate_name = "sporting crate"
 	crate_type = /obj/structure/closet/crate/secure // Would have liked a wooden crate but access >:(
 

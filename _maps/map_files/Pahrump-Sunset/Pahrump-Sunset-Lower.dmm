@@ -831,9 +831,10 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "aqQ" = (
-/obj/item/pda/captain,
-/obj/structure/table/reinforced,
-/turf/open/floor/f13/wood,
+/obj/structure/chair/sofa/corp/left{
+	dir = 8
+	},
+/turf/open/floor/carpet/black,
 /area/f13/brotherhood/offices1st)
 "arj" = (
 /obj/structure/rack,
@@ -856,10 +857,20 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"avf" = (
+/obj/machinery/door/airlock/hatch{
+	name = "Knight Quarters";
+	id_tag = "knights1"
+	},
+/turf/open/floor/plasteel/dark,
+/area/f13/brotherhood/dorms)
 "avx" = (
 /obj/structure/wreck/trash/three_barrels,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
+"avL" = (
+/turf/open/floor/carpet/royalblack,
+/area/f13/brotherhood/offices1st)
 "awh" = (
 /obj/item/storage/trash_stack,
 /turf/open/floor/f13/wood,
@@ -917,6 +928,11 @@
 /obj/effect/spawner/lootdrop/f13/armor/bos_vault_armor,
 /turf/open/floor/plasteel/vault/side,
 /area/f13/brotherhood)
+"aAv" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/computer/card/bos,
+/turf/open/floor/carpet/black,
+/area/f13/brotherhood/offices1st)
 "aAJ" = (
 /obj/structure/closet/crate/freezer/blood,
 /turf/open/floor/f13{
@@ -925,7 +941,9 @@
 /area/f13/followers)
 "aAX" = (
 /obj/machinery/door/airlock/hatch{
-	req_access_txt = "120"
+	name = "Knight-Commander Office";
+	req_access_txt = "120";
+	id_tag = "knightc1"
 	},
 /turf/open/floor/plasteel/dark,
 /area/f13/brotherhood/offices1st)
@@ -987,7 +1005,8 @@
 "aEf" = (
 /obj/machinery/door/airlock/hatch{
 	name = "Marshal Office";
-	req_access_txt = "120"
+	req_access_txt = "120";
+	id_tag = "Marshal1"
 	},
 /turf/open/floor/plasteel/darkred,
 /area/f13/brotherhood/offices1st)
@@ -4905,7 +4924,7 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
-/turf/open/floor/carpet/black,
+/turf/open/floor/carpet/royalblack,
 /area/f13/brotherhood/offices1st)
 "bTh" = (
 /obj/docking_port/stationary/bosaway/twelve{
@@ -5131,7 +5150,6 @@
 /obj/item/pet_carrier,
 /obj/structure/closet/secure_closet/personal/cabinet,
 /obj/item/storage/firstaid/regular,
-/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
 /area/f13/brotherhood/offices1st)
 "bZk" = (
@@ -5324,10 +5342,11 @@
 /turf/open/floor/plasteel/f13/vault_floor/yellow,
 /area/f13/tunnel)
 "ceF" = (
-/obj/structure/curtain{
-	color = "#5c131b"
-	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/airlock/hatch{
+	name = "Scribe Quarters";
+	id_tag = "scribes1"
+	},
 /turf/open/floor/plasteel/dark,
 /area/f13/brotherhood/dorms)
 "ceO" = (
@@ -6531,6 +6550,17 @@
 	dir = 8
 	},
 /area/f13/brotherhood/armory)
+"cYU" = (
+/obj/machinery/button/door{
+	name = "Knights Room 1";
+	id = "knights1";
+	normaldoorcontrol = 1;
+	specialfunctions = 4;
+	req_access_txt = "120";
+	pixel_x = 32
+	},
+/turf/open/floor/plasteel/dark,
+/area/f13/brotherhood/dorms)
 "cZw" = (
 /obj/effect/spawner/lootdrop/f13/blueprintLow,
 /turf/open/floor/plating/tunnel,
@@ -8025,6 +8055,14 @@
 	icon_state = "darkrustysolid"
 	},
 /area/f13/tunnel)
+"fcF" = (
+/obj/machinery/door/airlock/hatch{
+	name = "Keeper's Room";
+	req_access_txt = "120";
+	id_tag = "Keeper2"
+	},
+/turf/open/floor/carpet/black,
+/area/f13/brotherhood/offices1st)
 "fdG" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/drip,
@@ -8109,9 +8147,10 @@
 	},
 /area/f13/building/massfusion)
 "fjV" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/item/twohanded/required/kirbyplants/random,
-/turf/open/floor/f13/wood,
+/obj/structure/closet/crate/bin{
+	pixel_y = -10
+	},
+/turf/open/floor/carpet/black,
 /area/f13/brotherhood/offices1st)
 "fks" = (
 /obj/effect/spawner/lootdrop/f13/alcoholspawner,
@@ -8506,6 +8545,19 @@
 	name = "reactor cooling pool"
 	},
 /area/f13/building/massfusion)
+"fSP" = (
+/obj/structure/bed,
+/obj/item/bedsheet/black,
+/obj/machinery/button/door{
+	name = "Knights Room 2";
+	id = "knights2";
+	normaldoorcontrol = 1;
+	specialfunctions = 4;
+	req_access_txt = "120";
+	pixel_x = 32
+	},
+/turf/open/floor/plasteel/dark,
+/area/f13/brotherhood/dorms)
 "fTM" = (
 /obj/structure/noticeboard{
 	dir = 8;
@@ -8553,6 +8605,14 @@
 /obj/structure/junk/locker,
 /turf/open/floor/plating,
 /area/f13/tunnel)
+"fZh" = (
+/obj/machinery/door/airlock/hatch{
+	name = "Knight-Captain Bedroom";
+	req_access_txt = "120";
+	id_tag = "knightca2"
+	},
+/turf/open/floor/carpet/black,
+/area/f13/brotherhood/offices1st)
 "fZM" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light,
@@ -8770,6 +8830,13 @@
 "gsU" = (
 /obj/structure/table/reinforced,
 /obj/item/flashlight/lamp,
+/obj/machinery/button/door{
+	name = "Librarian's Office";
+	id = "librarians1";
+	normaldoorcontrol = 1;
+	specialfunctions = 4;
+	req_access_txt = "120"
+	},
 /turf/open/floor/carpet/black,
 /area/f13/brotherhood/offices1st)
 "gtG" = (
@@ -9135,6 +9202,15 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
 /area/f13/brotherhood/offices1st)
+"gUG" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small{
+	dir = 4
+	},
+/turf/open/floor/plasteel/f13{
+	icon_state = "whitebluechess"
+	},
+/area/f13/brotherhood/leisure)
 "gUU" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/fo13colored/Red{
@@ -9279,17 +9355,34 @@
 	icon_state = "darkrusty"
 	},
 /area/f13/tunnel)
+"hfP" = (
+/obj/structure/bed,
+/obj/item/bedsheet/black,
+/obj/machinery/button/door{
+	name = "Paladin Room 1";
+	id = "paladins1";
+	normaldoorcontrol = 1;
+	specialfunctions = 4;
+	req_access_txt = "120";
+	pixel_x = 32
+	},
+/turf/open/floor/carpet/royalblack,
+/area/f13/brotherhood/dorms)
 "hgJ" = (
 /obj/machinery/light/small,
 /turf/open/floor/plasteel/f13/vault_floor/yellow,
 /area/f13/brotherhood/reactor)
 "hgY" = (
 /obj/structure/table/reinforced,
-/obj/item/folder/syndicate/red{
-	desc = "A folder stamped \"Top Secret - Property of The Brotherhood.\""
-	},
 /obj/machinery/light{
 	dir = 8
+	},
+/obj/machinery/button/door{
+	name = "Castellan Office";
+	id = "Castellan2";
+	normaldoorcontrol = 1;
+	specialfunctions = 4;
+	req_access_txt = "120"
 	},
 /turf/open/floor/carpet/black,
 /area/f13/brotherhood/offices1st)
@@ -9615,7 +9708,7 @@
 /obj/item/bedsheet{
 	icon_state = "sheethos"
 	},
-/turf/open/floor/carpet/black,
+/turf/open/floor/carpet/royalblack,
 /area/f13/brotherhood/offices1st)
 "hHy" = (
 /obj/effect/decal/cleanable/dirt,
@@ -9643,7 +9736,8 @@
 "hIc" = (
 /obj/machinery/door/airlock/hatch{
 	name = "Librarian's Office";
-	req_access_txt = "120"
+	req_access_txt = "120";
+	id_tag = "librarians1"
 	},
 /obj/machinery/door/firedoor/heavy,
 /turf/open/floor/plasteel/dark,
@@ -9817,6 +9911,13 @@
 /obj/structure/table/reinforced,
 /obj/item/flashlight/lamp,
 /obj/effect/spawner/lootdrop/f13/cash_random_high,
+/obj/machinery/button/door{
+	name = "Keeper Office";
+	id = "Keeper1";
+	normaldoorcontrol = 1;
+	specialfunctions = 4;
+	req_access_txt = "120"
+	},
 /turf/open/floor/carpet/black,
 /area/f13/brotherhood/offices1st)
 "hYg" = (
@@ -9976,7 +10077,8 @@
 "iiN" = (
 /obj/machinery/door/airlock/hatch{
 	name = "Castellan Office";
-	req_access_txt = "120"
+	req_access_txt = "120";
+	id_tag = "Castellan2"
 	},
 /turf/open/floor/f13,
 /area/f13/brotherhood/offices1st)
@@ -10241,6 +10343,19 @@
 /obj/effect/decal/cleanable/blood/drip,
 /turf/open/floor/plasteel/elevatorshaft,
 /area/f13/building/massfusion)
+"iBW" = (
+/obj/machinery/light,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/button/door{
+	name = "Librarian's Office";
+	id = "librarians2";
+	normaldoorcontrol = 1;
+	specialfunctions = 4;
+	req_access_txt = "120";
+	pixel_x = -32
+	},
+/turf/open/floor/carpet/black,
+/area/f13/brotherhood/offices1st)
 "iDd" = (
 /obj/structure/bed/mattress{
 	icon_state = "mattress1"
@@ -11634,6 +11749,14 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/brotherhood/dorms)
+"kKh" = (
+/obj/machinery/door/airlock/hatch{
+	name = "Knight-Commander Office";
+	req_access_txt = "120";
+	id_tag = "knightc2"
+	},
+/turf/open/floor/carpet/black,
+/area/f13/brotherhood/offices1st)
 "kKi" = (
 /obj/structure/table/glass,
 /obj/item/storage/firstaid,
@@ -11854,6 +11977,13 @@
 /obj/machinery/door/firedoor/heavy,
 /turf/open/floor/plasteel/dark,
 /area/f13/brotherhood/armory)
+"laA" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/structure/chair/sofa/corp/corner,
+/turf/open/floor/carpet/black,
+/area/f13/brotherhood/offices1st)
 "laM" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -11940,6 +12070,18 @@
 /obj/structure/reagent_dispensers/barrel/dangerous,
 /turf/open/water,
 /area/f13/building/massfusion)
+"lgh" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/button/door{
+	name = "Knight-commanders office";
+	id = "knightc2";
+	normaldoorcontrol = 1;
+	specialfunctions = 4;
+	req_access_txt = "120";
+	pixel_x = -32
+	},
+/turf/open/floor/carpet/black,
+/area/f13/brotherhood/offices1st)
 "lhc" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/darkred/side{
@@ -12009,12 +12151,34 @@
 /obj/effect/spawner/lootdrop/f13/junkspawners,
 /turf/open/floor/plasteel/f13/vault_floor/yellow/yellowchess/yellowchess2,
 /area/f13/building/museum)
+"lmq" = (
+/obj/machinery/button/door{
+	name = "Keeper Room";
+	id = "Keeper2";
+	normaldoorcontrol = 1;
+	specialfunctions = 4;
+	req_access_txt = "120";
+	pixel_x = 32
+	},
+/turf/open/floor/carpet/black,
+/area/f13/brotherhood/offices1st)
 "lms" = (
 /obj/structure/wreck/trash/three_barrels,
 /turf/open/floor/f13{
 	icon_state = "greenrustyfull"
 	},
 /area/f13/tunnel)
+"lmM" = (
+/obj/machinery/button/door{
+	name = "Scribe Room 1";
+	id = "scribes1";
+	normaldoorcontrol = 1;
+	specialfunctions = 4;
+	req_access_txt = "120";
+	pixel_x = 32
+	},
+/turf/open/floor/plasteel/dark,
+/area/f13/brotherhood/dorms)
 "lmN" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable{
@@ -12742,7 +12906,11 @@
 	},
 /area/f13/building/massfusion)
 "mdo" = (
-/obj/machinery/door/unpowered/secure_bos,
+/obj/machinery/door/airlock/hatch{
+	name = "Paladin Room 1";
+	req_access_txt = "120";
+	id_tag = "paladins1"
+	},
 /turf/open/floor/carpet/royalblack,
 /area/f13/brotherhood/dorms)
 "mdL" = (
@@ -12979,6 +13147,18 @@
 	icon_state = "darkdirtysolid"
 	},
 /area/f13/followers)
+"mwb" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/button/door{
+	name = "Librarian's Room";
+	id = "librarians2";
+	normaldoorcontrol = 1;
+	specialfunctions = 4;
+	req_access_txt = "120";
+	pixel_x = -32
+	},
+/turf/open/floor/carpet/black,
+/area/f13/brotherhood/offices1st)
 "mwc" = (
 /obj/structure/chair/middle{
 	dir = 4
@@ -13001,6 +13181,17 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/followers)
+"myl" = (
+/obj/structure/table/wood,
+/obj/machinery/button/door{
+	name = "Baron Office";
+	id = "Baron1";
+	normaldoorcontrol = 1;
+	specialfunctions = 4;
+	req_access_txt = "120"
+	},
+/turf/open/floor/carpet/black,
+/area/f13/brotherhood/offices1st)
 "myu" = (
 /obj/structure/table,
 /obj/effect/spawner/lootdrop/f13/medical/rnd/mid,
@@ -13521,7 +13712,8 @@
 "nvm" = (
 /obj/machinery/door/airlock/hatch{
 	name = "Baron's Office";
-	req_access_txt = "120"
+	req_access_txt = "120";
+	id_tag = "Baron1"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/brotherhood/offices1st)
@@ -13612,7 +13804,10 @@
 	},
 /area/f13/tunnel)
 "nEP" = (
-/obj/structure/curtain,
+/obj/machinery/door/airlock/hatch{
+	name = "Knight Quarters";
+	id_tag = "knights2"
+	},
 /turf/open/floor/plasteel/dark,
 /area/f13/brotherhood/dorms)
 "nFR" = (
@@ -13722,6 +13917,17 @@
 /obj/item/storage/trash_stack,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/radiation)
+"nOc" = (
+/obj/structure/table/reinforced,
+/obj/machinery/button/door{
+	name = "Marshal Office";
+	id = "Marshal1";
+	normaldoorcontrol = 1;
+	specialfunctions = 4;
+	req_access_txt = "120"
+	},
+/turf/open/floor/carpet/black,
+/area/f13/brotherhood/offices1st)
 "nOj" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13{
@@ -15153,6 +15359,14 @@
 	icon_state = "darkrustysolid"
 	},
 /area/f13/building/massfusion)
+"pEf" = (
+/obj/item/pda/captain,
+/obj/structure/table/reinforced,
+/obj/item/folder/syndicate/red{
+	desc = "A folder stamped \"Top Secret - Property of The Brotherhood.\""
+	},
+/turf/open/floor/carpet/royalblack,
+/area/f13/brotherhood/offices1st)
 "pGE" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -15328,6 +15542,16 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/tunnel)
+"pOB" = (
+/obj/machinery/shower{
+	pixel_y = 27
+	},
+/obj/structure/curtain,
+/obj/item/soap,
+/turf/open/floor/f13{
+	icon_state = "white"
+	},
+/area/f13/brotherhood/offices1st)
 "pPw" = (
 /obj/structure/rack/shelf_metal,
 /obj/item/stack/f13Cash/random/ncr/high,
@@ -15339,10 +15563,11 @@
 /area/f13/tunnel)
 "pPC" = (
 /obj/machinery/door/airlock/hatch{
-	name = "Sentinel Office";
-	req_access_txt = "120"
+	name = "Castellan Room";
+	req_access_txt = "120";
+	id_tag = "Castellan1"
 	},
-/turf/open/floor/carpet/black,
+/turf/open/floor/carpet/royalblack,
 /area/f13/brotherhood/offices1st)
 "pPX" = (
 /obj/structure/sign/poster/contraband/pinup_topless{
@@ -15501,6 +15726,17 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/yellow,
 /area/f13/brotherhood/reactor)
+"qcd" = (
+/obj/machinery/button/door{
+	pixel_x = -32;
+	name = "Castellan Room";
+	id = "Castellan1";
+	normaldoorcontrol = 1;
+	specialfunctions = 4;
+	req_access_txt = "120"
+	},
+/turf/open/floor/carpet/royalblack,
+/area/f13/brotherhood/offices1st)
 "qce" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
@@ -15630,6 +15866,10 @@
 	icon_state = "whitedirtysolid"
 	},
 /area/f13/tunnel)
+"qkN" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/closed/wall/r_wall/f13/vault,
+/area/f13/brotherhood/dorms)
 "qmd" = (
 /obj/machinery/chem_dispenser/drinks/beer{
 	density = 0;
@@ -15674,7 +15914,7 @@
 "qof" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/airlock/hatch{
-	name = "Sentinel Office";
+	name = "Castellan Toilet";
 	req_access_txt = "120"
 	},
 /turf/open/floor/f13/wood,
@@ -15841,6 +16081,20 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/f13/brotherhood/archives)
+"qyY" = (
+/obj/structure/bed,
+/obj/item/bedsheet/black,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/button/door{
+	name = "Scribe Room 2";
+	id = "scribes2";
+	normaldoorcontrol = 1;
+	specialfunctions = 4;
+	req_access_txt = "120";
+	pixel_x = 32
+	},
+/turf/open/floor/plasteel/dark,
+/area/f13/brotherhood/dorms)
 "qzp" = (
 /obj/effect/turf_decal/stripes/white/line{
 	dir = 8
@@ -15952,6 +16206,17 @@
 	name = "prewar lounge chair"
 	},
 /obj/effect/decal/cleanable/dirt,
+/turf/open/floor/carpet/black,
+/area/f13/brotherhood/offices1st)
+"qGY" = (
+/obj/machinery/button/door{
+	name = "Marshal Room";
+	id = "Marshal2";
+	normaldoorcontrol = 1;
+	specialfunctions = 4;
+	req_access_txt = "120";
+	pixel_x = 32
+	},
 /turf/open/floor/carpet/black,
 /area/f13/brotherhood/offices1st)
 "qHu" = (
@@ -16292,6 +16557,15 @@
 /obj/item/circuitboard/machine/limbgrower,
 /turf/open/floor/plasteel/f13/vault_floor/yellow/whiteyellowfull,
 /area/f13/brotherhood)
+"rmR" = (
+/obj/structure/toilet{
+	dir = 1;
+	pixel_y = -2
+	},
+/turf/open/floor/f13{
+	icon_state = "white"
+	},
+/area/f13/brotherhood/offices1st)
 "rnh" = (
 /turf/closed/indestructible/rock,
 /area/f13/tunnel)
@@ -16555,6 +16829,15 @@
 	icon_state = "whitedirtysolid"
 	},
 /area/f13/tunnel)
+"rGt" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/open/floor/plasteel/f13{
+	icon_state = "whitebluechess"
+	},
+/area/f13/brotherhood/leisure)
 "rGz" = (
 /turf/open/floor/f13/wood,
 /area/f13/brotherhood/offices1st)
@@ -16912,7 +17195,8 @@
 "seX" = (
 /obj/machinery/door/airlock/hatch{
 	name = "Keeper's Office";
-	req_access_txt = "120"
+	req_access_txt = "120";
+	id_tag = "Keeper1"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/brotherhood/offices1st)
@@ -17165,7 +17449,6 @@
 	desc = "A pug handed down through many generations.";
 	name = "Paladin Ramos"
 	},
-/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
 /area/f13/brotherhood/offices1st)
 "szv" = (
@@ -17511,12 +17794,12 @@
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
 "sXj" = (
-/obj/structure/simple_door/metal/vaultreinforced{
-	icon_state = "vaultrwall3"
+/obj/machinery/door/airlock/hatch{
+	name = "Librarian's Office";
+	req_access_txt = "120";
+	id_tag = "librarians2"
 	},
-/turf/open/floor/f13{
-	icon_state = "white"
-	},
+/turf/open/floor/carpet/black,
 /area/f13/brotherhood/offices1st)
 "sXE" = (
 /obj/machinery/sleeper{
@@ -17560,6 +17843,14 @@
 	dir = 8
 	},
 /area/f13/brotherhood)
+"taI" = (
+/obj/machinery/door/airlock/hatch{
+	name = "Marshal Office";
+	req_access_txt = "120";
+	id_tag = "Marshal2"
+	},
+/turf/open/floor/f13/wood,
+/area/f13/brotherhood/offices1st)
 "tbd" = (
 /obj/effect/spawner/lootdrop/f13/junkspawners,
 /obj/effect/decal/cleanable/dirt,
@@ -17572,7 +17863,8 @@
 /obj/machinery/door/firedoor/heavy,
 /obj/machinery/door/airlock/hatch{
 	name = "Knight Captain's Office";
-	req_access_txt = "120"
+	req_access_txt = "120";
+	id_tag = "knightca1"
 	},
 /turf/open/floor/plasteel/dark,
 /area/f13/brotherhood/offices1st)
@@ -17616,6 +17908,9 @@
 /area/f13/tunnel)
 "tex" = (
 /obj/machinery/computer/card/bos,
+/obj/item/card/id/dogtag,
+/obj/item/card/id/dogtag,
+/obj/item/card/id/dogtag,
 /turf/open/floor/carpet/black,
 /area/f13/brotherhood/offices1st)
 "teF" = (
@@ -17810,6 +18105,18 @@
 /obj/structure/rack,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
+"tsu" = (
+/obj/structure/table/reinforced,
+/obj/item/flashlight/lamp,
+/obj/machinery/button/door{
+	name = "Knight-commanders office";
+	id = "knightc1";
+	normaldoorcontrol = 1;
+	specialfunctions = 4;
+	req_access_txt = "120"
+	},
+/turf/open/floor/carpet/black,
+/area/f13/brotherhood/offices1st)
 "tsF" = (
 /obj/structure/nest/scorpion,
 /turf/open/indestructible/ground/inside/mountain,
@@ -17957,8 +18264,9 @@
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
 "tGp" = (
-/obj/structure/curtain{
-	color = "#5c131b"
+/obj/machinery/door/airlock/hatch{
+	name = "Scribe Quarters";
+	id_tag = "scribes2"
 	},
 /turf/open/floor/plasteel/dark,
 /area/f13/brotherhood/dorms)
@@ -18042,8 +18350,15 @@
 	},
 /area/f13/brotherhood/medical)
 "tMu" = (
-/obj/structure/table/reinforced,
-/obj/item/card/id/dogtag,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/button/door{
+	name = "Knight-captain's room";
+	id = "knightca2";
+	normaldoorcontrol = 1;
+	specialfunctions = 4;
+	req_access_txt = "120";
+	pixel_x = -32
+	},
 /turf/open/floor/carpet/black,
 /area/f13/brotherhood/offices1st)
 "tNq" = (
@@ -18241,11 +18556,12 @@
 	},
 /area/f13/building/massfusion)
 "ueK" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/closet/crate/bin{
-	pixel_y = -10
+/obj/machinery/light/small{
+	dir = 4
 	},
-/turf/open/floor/f13/wood,
+/turf/open/floor/f13{
+	icon_state = "white"
+	},
 /area/f13/brotherhood/offices1st)
 "ufI" = (
 /obj/machinery/light/small{
@@ -18384,6 +18700,14 @@
 "utv" = (
 /obj/structure/bed,
 /obj/item/bedsheet/black,
+/obj/machinery/button/door{
+	name = "Paladin Room 2";
+	id = "paladins2";
+	normaldoorcontrol = 1;
+	specialfunctions = 4;
+	req_access_txt = "120";
+	pixel_x = 32
+	},
 /turf/open/floor/carpet/royalblack,
 /area/f13/brotherhood/dorms)
 "utC" = (
@@ -18582,7 +18906,8 @@
 /obj/machinery/door/firedoor/heavy,
 /obj/machinery/door/airlock/hatch{
 	name = "Knight-Commander Office";
-	req_access_txt = "120"
+	req_access_txt = "120";
+	id_tag = "knightc1"
 	},
 /turf/open/floor/plasteel/dark,
 /area/f13/brotherhood/offices1st)
@@ -18933,6 +19258,10 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
+"vfZ" = (
+/obj/structure/chair/sofa/corp/right,
+/turf/open/floor/carpet/black,
+/area/f13/brotherhood/offices1st)
 "vgh" = (
 /obj/structure/railing{
 	dir = 9
@@ -19071,6 +19400,10 @@
 	},
 /turf/open/floor/wood/wood_common,
 /area/f13/tunnel)
+"voJ" = (
+/obj/structure/dresser,
+/turf/open/floor/carpet/royalblack,
+/area/f13/brotherhood/offices1st)
 "vqE" = (
 /obj/structure/toilet{
 	dir = 1
@@ -19477,6 +19810,11 @@
 	icon_state = "darkdirtysolid"
 	},
 /area/f13/tunnel)
+"vVt" = (
+/obj/structure/table/reinforced,
+/obj/effect/spawner/lootdrop/f13/cash_random_high,
+/turf/open/floor/carpet/black,
+/area/f13/brotherhood/offices1st)
 "vVX" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -19950,10 +20288,8 @@
 "wHD" = (
 /obj/structure/bed,
 /obj/item/bedsheet/grey,
-/obj/item/toy/plush/lizardplushie{
-	name = "Knight Commander Souren"
-	},
 /obj/effect/landmark/start/f13/knightcap,
+/obj/item/toy/plush/lizardplushie,
 /turf/open/floor/carpet/black,
 /area/f13/brotherhood/offices1st)
 "wIn" = (
@@ -19999,9 +20335,17 @@
 	},
 /area/f13/tunnel)
 "wLq" = (
-/obj/machinery/syndicatebomb/self_destruct,
-/turf/open/floor/mineral/plastitanium,
-/area/f13/brotherhood)
+/obj/structure/table/reinforced,
+/obj/item/flashlight/lamp,
+/obj/machinery/button/door{
+	name = "Knight Captain's Office";
+	id = "knightca1";
+	normaldoorcontrol = 1;
+	specialfunctions = 4;
+	req_access_txt = "120"
+	},
+/turf/open/floor/carpet/black,
+/area/f13/brotherhood/offices1st)
 "wLH" = (
 /obj/structure/closet/fridge,
 /obj/item/storage/fancy/egg_box,
@@ -20033,6 +20377,14 @@
 	dir = 4
 	},
 /area/f13/brotherhood/armory)
+"wNJ" = (
+/obj/machinery/door/airlock/hatch{
+	name = "Paladin Room 2";
+	req_access_txt = "120";
+	id_tag = "paladins2"
+	},
+/turf/open/floor/carpet/royalblack,
+/area/f13/brotherhood/dorms)
 "wNV" = (
 /obj/structure/rack/shelf_metal,
 /obj/effect/spawner/lootdrop/f13/blueprintMid,
@@ -71168,7 +71520,7 @@ vRZ
 oVq
 oVq
 oVq
-oVq
+vRZ
 oVq
 oVq
 uyb
@@ -71690,8 +72042,8 @@ qpr
 rGz
 rGz
 rGz
-cLp
-mEL
+kKh
+lgh
 iGl
 uyb
 aae
@@ -72459,7 +72811,7 @@ fZM
 bEX
 rdL
 jov
-gsU
+tsu
 rGz
 uyb
 uyb
@@ -72714,7 +73066,7 @@ dzS
 oWD
 bRg
 uyb
-mEL
+aAv
 wUV
 eRL
 gXT
@@ -72946,7 +73298,7 @@ onW
 nfk
 oVq
 nbJ
-wLq
+gra
 oVq
 uyb
 uyb
@@ -73460,14 +73812,14 @@ jxG
 xPK
 uyb
 hHh
-jxG
-jxG
+avL
+qcd
 pPC
 jxG
 fhh
-sUJ
+vVt
 oiJ
-gXT
+rGz
 uyb
 dZP
 mKl
@@ -73489,8 +73841,8 @@ qpr
 gXT
 gXT
 gXT
-cLp
-mEL
+fZh
+tMu
 iGl
 uyb
 aae
@@ -73708,23 +74060,23 @@ onW
 onW
 uyb
 jrv
+qGY
 jxG
-jxG
-qMG
+taI
 rGz
 jxG
 qDV
 gGI
 uyb
-qfa
+voJ
 bTe
-jxG
+pEf
 uyb
 tex
-mEL
-qPd
-gXT
-gXT
+jxG
+jxG
+rGz
+rGz
 uyb
 iFV
 aTN
@@ -73969,19 +74321,19 @@ uyb
 uyb
 uyb
 gXT
-sUJ
+nOc
 jov
 xxs
 uyb
 vWC
-sXj
 uyb
 uyb
+uyb
+dSb
 rGz
-gXT
-gXT
-gXT
-ueK
+rGz
+rGz
+rGz
 uyb
 dZP
 mKl
@@ -74234,11 +74586,11 @@ vef
 otJ
 otJ
 qof
-gXT
 rGz
 rGz
-gXT
-gXT
+vfZ
+fVC
+jxG
 uyb
 dZP
 mKl
@@ -74258,7 +74610,7 @@ fZM
 bEX
 rdL
 sUJ
-gsU
+wLq
 gXT
 uyb
 uyb
@@ -74487,13 +74839,13 @@ yaj
 rGz
 tgR
 uyb
-xab
-nua
-nrx
+pOB
+ueK
+rmR
 uyb
 bYF
 szm
-yaj
+laA
 aqQ
 fjV
 uyb
@@ -75287,7 +75639,7 @@ tWa
 kzw
 gei
 gJE
-nEP
+avf
 qiR
 sAM
 qiR
@@ -75544,8 +75896,8 @@ tWa
 vFe
 pHE
 gJE
-nEP
-gdZ
+tWa
+cYU
 gdZ
 gdZ
 tWa
@@ -76315,8 +76667,8 @@ aUl
 gJE
 gJE
 gJE
-nEP
-qiR
+tWa
+fSP
 bsE
 qiR
 tWa
@@ -77086,8 +77438,8 @@ tWa
 eix
 gJE
 waD
-tGp
-gdZ
+tWa
+lmM
 gdZ
 gdZ
 tWa
@@ -77857,8 +78209,8 @@ tWa
 aBz
 xuo
 jpS
-ceF
-ffG
+qkN
+qyY
 odn
 ffG
 tWa
@@ -78372,8 +78724,8 @@ ldv
 gXT
 gXT
 gXT
-cLp
-mEL
+sXj
+mwb
 iGl
 uyb
 aak
@@ -78631,7 +78983,7 @@ rGz
 rGz
 uyb
 jxG
-pbB
+iBW
 uyb
 aak
 aak
@@ -80433,7 +80785,7 @@ rgE
 vXs
 aPj
 pmb
-ejL
+rGt
 dmc
 dmc
 dmc
@@ -81719,7 +82071,7 @@ cgy
 quH
 aew
 ejL
-ejL
+gUG
 quH
 ltf
 quH
@@ -82465,7 +82817,7 @@ xjW
 gXT
 uyb
 qrP
-fVC
+myl
 llc
 mEL
 uyb
@@ -82475,7 +82827,7 @@ mEL
 hUj
 bEX
 pvC
-tMu
+qPd
 hVT
 gXT
 uyb
@@ -83246,7 +83598,7 @@ ggS
 xui
 uyb
 uyb
-cLp
+fcF
 uyb
 uyb
 uyb
@@ -83510,7 +83862,7 @@ uyb
 tWa
 mdo
 tWa
-mdo
+wNJ
 tWa
 tWa
 aae
@@ -84018,10 +84370,10 @@ aae
 uyb
 wlK
 jxG
-jxG
+lmq
 azL
 uyb
-utv
+hfP
 dQF
 tWa
 dQF

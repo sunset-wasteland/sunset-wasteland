@@ -316,6 +316,27 @@
 	item_state = "scarecrow_sack"
 	flags_inv = HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 
+/////////
+// Start of Baghead Fluff
+/////////
+
+//Baghead
+/obj/item/clothing/mask/scarecrow/baghead
+	name = "\improper Baghead's Face"
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
+	clothing_flags = BLOCK_GAS_SMOKE_EFFECT|ALLOWINTERNALS|THICKMATERIAL|SCAN_REAGENTS
+	flags_inv = HIDEHAIR|HIDEFACIALHAIR
+
+/obj/item/clothing/mask/scarecrow/baghead/Initialize()
+	. = ..()
+	ADD_TRAIT(src, TRAIT_NODROP, CURSED_MASK_TRAIT)
+	AddComponent(/datum/component/anti_magic, TRUE, TRUE, TRUE, ITEM_SLOT_MASK, INFINITY, FALSE)
+	playsound(get_turf(src), 'sound/creatures/narsie_rises.ogg', 50, 1)
+
+/////////
+// End of Baghead Fluff
+/////////
+
 /obj/item/clothing/mask/gondola
 	name = "gondola mask"
 	desc = "Genuine gondola fur."

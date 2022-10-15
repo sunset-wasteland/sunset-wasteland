@@ -114,7 +114,6 @@
 	icon_state = "enclave_ushanka"
 	item_state = "enclave_ushanka"
 	flags_inv = HIDEEARS
-	var/earflaps = 1
 	cold_protection = HEAD
 	min_cold_protection_temperature = FIRE_HELM_MIN_TEMP_PROTECT
 

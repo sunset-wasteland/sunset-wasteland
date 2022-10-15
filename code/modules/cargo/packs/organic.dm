@@ -102,7 +102,7 @@
 					/obj/item/pizzabox/pineapple)
 	crate_name = "pizza crate"
 	var/static/anomalous_box_provided = FALSE
-
+/*
 /datum/supply_pack/organic/pizza/fill(obj/structure/closet/crate/C)
 	. = ..()
 	if(!anomalous_box_provided)
@@ -124,7 +124,7 @@
 	delivery. Please search all crates and manifests provided with the delivery and return the object if is located. The object resembles a standard <b>\[DATA EXPUNGED\]</b> and is to be \
 	considered <b>\[REDACTED\]</b> and returned at your leisure. Note that objects the anomaly produces are specifically attuned exactly to the individual opening the anomaly; regardless \
 	of species, the individual will find the object edible and it will taste great according to their personal definitions, which vary significantly based on person and species.")
-
+*/
 //////////////////////////////////////////////////////////////////////////////
 //////////////////////////// Raw Ingredients /////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////
@@ -384,7 +384,6 @@
 	name = "Surplus Valentine Crate"
 	desc = "Turns out we got warehouses of this love-y dove-y crap. We're sending out small bargain buddle of Valentine gear. This crate has two boxes of chocolate, three poppy flowers, five candy hearts, and three cards."
 	cost = 3000
-	contraband = TRUE
 	contains = list(/obj/item/storage/fancy/heart_box,
 					/obj/item/storage/fancy/heart_box,
 					/obj/item/reagent_containers/food/snacks/grown/poppy,

@@ -79,7 +79,6 @@
 /datum/supply_pack/misc/captain_pen
 	name = "Captain Pen"
 	desc = "A spare Captain fountain pen."
-	access = ACCESS_CAPTAIN
 	cost = 5000
 	contains = list(/obj/item/pen/fountain/captain)
 	crate_name = "captain pen"
@@ -116,7 +115,7 @@
 /datum/supply_pack/misc/bicycle
 	name = "Bicycle"
 	desc = "Nanotrasen reminds all employees to never toy with powers outside their control."
-	cost = 1000000
+	cost = 2500
 	contains = list(/obj/vehicle/ridden/bicycle)
 	crate_name = "Bicycle Crate"
 	crate_type = /obj/structure/closet/crate/large
@@ -178,7 +177,7 @@
 	. = ..()
 	for(var/i in 1 to 3)
 		new /obj/item/storage/lockbox/dueling/hugbox/stamina(.)
-
+/*
 /datum/supply_pack/misc/dueling_lethal
 	name = "Lethal Dueling Pistols"
 	desc = "Settle your differences the true spaceman way."
@@ -211,7 +210,7 @@
 	for(var/i in 1 to num_contained)
 		var/item = pick_n_take(L)
 		new item(C)
-
+*/
 //////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////// Misc Supplies //////////////////////////////
 //////////////////////////////////////////////////////////////////////////////
@@ -278,7 +277,6 @@
 /datum/supply_pack/misc/abandonedcrate
 	name = "Loot Box"
 	desc = "Try your luck with these highly secure loot boxes! Solve the lock, win great prizes! WARNING: EXPLOSIVE FAILURE."
-	contraband = TRUE
 	cost = 15000
 	contains = list(/obj/structure/closet/crate/secure/loot)
 	crate_name = "abandoned crate"

@@ -355,11 +355,11 @@
 /obj/item/projectile/beam/laser/gatling/betterhitscan //L30
 	name = "overcharged laser beam"
 	damage = 18
-	armour_penetration = 0.1
+	armour_penetration = 0.15
+	wound_bonus = 20
+	bare_wound_bonus = 5
 	hitscan = TRUE
-	icon_state = "thirty"
 	light_color = LIGHT_COLOR_BLOOD_MAGIC
-	tracer_type = /obj/effect/projectile/tracer/thirty
 
 /obj/item/projectile/beam/laser/pistol //AEP7
 	name = "laser beam"

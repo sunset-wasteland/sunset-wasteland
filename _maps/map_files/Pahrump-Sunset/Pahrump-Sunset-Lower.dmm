@@ -833,7 +833,7 @@
 "aqQ" = (
 /obj/item/pda/captain,
 /obj/structure/table/reinforced,
-/turf/open/floor/carpet/black,
+/turf/open/floor/f13/wood,
 /area/f13/brotherhood/offices1st)
 "arj" = (
 /obj/structure/rack,
@@ -4902,10 +4902,10 @@
 	},
 /area/f13/bunker)
 "bTe" = (
-/obj/structure/simple_door/metal/vaultreinforced{
-	icon_state = "vaultrwall3"
+/obj/machinery/light/small{
+	dir = 4
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/carpet/black,
 /area/f13/brotherhood/offices1st)
 "bTh" = (
 /obj/docking_port/stationary/bosaway/twelve{
@@ -7392,6 +7392,7 @@
 	anchored = 1;
 	name = "formal attire cabinet"
 	},
+/obj/effect/spawner/lootdrop/f13/cash_random_high,
 /turf/open/floor/carpet/black,
 /area/f13/brotherhood/offices1st)
 "eed" = (
@@ -8108,12 +8109,9 @@
 	},
 /area/f13/building/massfusion)
 "fjV" = (
-/obj/structure/bed,
-/obj/item/bedsheet{
-	icon_state = "sheethos"
-	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/carpet/black,
+/obj/item/twohanded/required/kirbyplants/random,
+/turf/open/floor/f13/wood,
 /area/f13/brotherhood/offices1st)
 "fks" = (
 /obj/effect/spawner/lootdrop/f13/alcoholspawner,
@@ -9612,6 +9610,13 @@
 	icon_state = "greenrustyfull"
 	},
 /area/f13/tunnel)
+"hHh" = (
+/obj/structure/bed,
+/obj/item/bedsheet{
+	icon_state = "sheethos"
+	},
+/turf/open/floor/carpet/black,
+/area/f13/brotherhood/offices1st)
 "hHy" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/lootdrop/f13/medical/vault/meds,
@@ -11166,6 +11171,12 @@
 	dir = 9
 	},
 /area/f13/brotherhood/armory)
+"jVN" = (
+/obj/structure/simple_door/metal/vaultreinforced{
+	icon_state = "vaultrwall3"
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/f13/brotherhood/offices1st)
 "jWf" = (
 /obj/structure/barricade/bars,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
@@ -13258,6 +13269,13 @@
 	icon_state = "darkdirtysolid"
 	},
 /area/f13/tunnel)
+"nbJ" = (
+/obj/machinery/light/small{
+	dir = 8
+	},
+/obj/machinery/syndicatebomb/self_destruct,
+/turf/open/floor/mineral/plastitanium,
+/area/f13/brotherhood)
 "ndM" = (
 /obj/structure/chair/right,
 /turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
@@ -15320,11 +15338,11 @@
 	},
 /area/f13/tunnel)
 "pPC" = (
-/obj/structure/closet/crate/bin{
-	pixel_y = 28
+/obj/machinery/door/airlock/hatch{
+	name = "Sentinel Office";
+	req_access_txt = "120"
 	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/f13/wood,
+/turf/open/floor/carpet/black,
 /area/f13/brotherhood/offices1st)
 "pPX" = (
 /obj/structure/sign/poster/contraband/pinup_topless{
@@ -15654,11 +15672,12 @@
 	},
 /area/f13/brotherhood/armory)
 "qof" = (
+/obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/airlock/hatch{
 	name = "Sentinel Office";
 	req_access_txt = "120"
 	},
-/turf/open/floor/f13,
+/turf/open/floor/f13/wood,
 /area/f13/brotherhood/offices1st)
 "qom" = (
 /obj/effect/decal/cleanable/dirt,
@@ -17492,11 +17511,12 @@
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
 "sXj" = (
-/obj/machinery/light{
-	dir = 4
+/obj/structure/simple_door/metal/vaultreinforced{
+	icon_state = "vaultrwall3"
 	},
-/obj/structure/dresser,
-/turf/open/floor/carpet/black,
+/turf/open/floor/f13{
+	icon_state = "white"
+	},
 /area/f13/brotherhood/offices1st)
 "sXE" = (
 /obj/machinery/sleeper{
@@ -18220,6 +18240,13 @@
 	icon_state = "darkrustysolid"
 	},
 /area/f13/building/massfusion)
+"ueK" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/crate/bin{
+	pixel_y = -10
+	},
+/turf/open/floor/f13/wood,
+/area/f13/brotherhood/offices1st)
 "ufI" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -18886,6 +18913,14 @@
 	},
 /turf/open/floor/wood/wood_common,
 /area/f13/tunnel)
+"vef" = (
+/obj/structure/sink{
+	pixel_y = 19
+	},
+/turf/open/floor/f13{
+	icon_state = "white"
+	},
+/area/f13/brotherhood/offices1st)
 "vei" = (
 /obj/item/kirbyplants/random,
 /turf/open/floor/f13{
@@ -19467,6 +19502,10 @@
 /turf/open/floor/f13{
 	icon_state = "white"
 	},
+/area/f13/brotherhood/offices1st)
+"vWC" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/closed/wall/r_wall/f13/vault,
 /area/f13/brotherhood/offices1st)
 "vXs" = (
 /obj/machinery/washing_machine,
@@ -72906,8 +72945,8 @@ onW
 onW
 nfk
 oVq
-gra
-gra
+nbJ
+wLq
 oVq
 uyb
 uyb
@@ -73163,9 +73202,9 @@ uyb
 uyb
 uyb
 uyb
-wLq
-gra
-gra
+uyb
+jVN
+uyb
 uyb
 edQ
 mfA
@@ -73420,10 +73459,10 @@ bEk
 jxG
 xPK
 uyb
-gra
-gra
-gra
-uyb
+hHh
+jxG
+jxG
+pPC
 jxG
 fhh
 sUJ
@@ -73677,9 +73716,9 @@ jxG
 qDV
 gGI
 uyb
-uyb
+qfa
 bTe
-uyb
+jxG
 uyb
 tex
 mEL
@@ -73934,15 +73973,15 @@ sUJ
 jov
 xxs
 uyb
-xrn
-otJ
-otJ
-qof
+vWC
+sXj
+uyb
+uyb
 rGz
 gXT
 gXT
 gXT
-gXT
+ueK
 uyb
 dZP
 mKl
@@ -74191,15 +74230,15 @@ rGz
 lvS
 gXT
 uyb
+vef
 otJ
 otJ
-otJ
-uyb
-pPC
+qof
+gXT
 rGz
-jxG
-mEL
-mEL
+rGz
+gXT
+gXT
 uyb
 dZP
 mKl
@@ -74454,7 +74493,7 @@ nrx
 uyb
 bYF
 szm
-sXj
+yaj
 aqQ
 fjV
 uyb

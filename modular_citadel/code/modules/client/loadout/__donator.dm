@@ -244,3 +244,10 @@
 	new /obj/item/clothing/under/misc/polyjumpsuit(src)
 	new /obj/item/clothing/suit/hooded/wintercoat/polychromic(src)
 
+/datum/gear/donator/kits/aim
+	name = "Baghead's Face"
+	path = /obj/item/storage/box/large/custom_kit/aim
+	ckeywhitelist = list ("anythingisme")
+
+/obj/item/storage/box/large/custom_kit/aim/PopulateContents()
+	new /obj/item/clothing/mask/scarecrow/baghead(src)

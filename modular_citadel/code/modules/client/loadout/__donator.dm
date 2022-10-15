@@ -214,3 +214,33 @@
 	new /obj/item/storage/belt/holster/regulator(src)
 	new /obj/item/nuke_core_container(src)
 	new /obj/item/screwdriver/nuke(src)
+
+/datum/gear/donator/kits/cassidy
+	name = "Cassidy's Ring"
+	path = /obj/item/storage/box/large/custom_kit/cassidy
+	ckeywhitelist = list ("nicodeimos","vaultthebeast")
+
+/obj/item/storage/box/large/custom_kit/cassidy/PopulateContents()
+	new /obj/item/clothing/gloves/ring/diamond
+
+/datum/gear/donator/kits/garner
+	name = "Garner's Equipment"
+	path = /obj/item/storage/box/large/custom_kit/garner
+	ckeywhitelist = list ("vaultthebeast")
+
+/obj/item/storage/box/large/custom_kit/garner/PopulateContents()
+	new /obj/item/clothing/suit/armor/f13/power_armor/x02/garner
+	new /obj/item/clothing/head/helmet/f13/power_armor/x02helmet/garner
+	new /obj/item/clothing/accessory/enclave/sergeant_major
+	new /obj/item/lighter/gold
+	new /obj/item/storage/box/ration/menu_seven
+
+/datum/gear/donator/kits/tzzshali
+	name = "Tzzshali's Form"
+	path = /obj/item/storage/box/large/custom_kit/tzzshali
+	ckeywhitelist = list ("irkallaepsilon","vaultthebeast")
+
+/obj/item/storage/box/large/custom_kit/tzzshali/PopulateContents()
+	new /obj/item/clothing/under/misc/polyjumpsuit
+	new /obj/item/clothing/suit/hooded/wintercoat/polychromic
+

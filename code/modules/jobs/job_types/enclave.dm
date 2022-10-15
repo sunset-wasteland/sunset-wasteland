@@ -75,7 +75,7 @@
 	head = /obj/item/clothing/head/helmet/f13/enclave/officer
 	uniform = /obj/item/clothing/under/f13/enclave/officer
 	suit = /obj/item/clothing/suit/armor/f13/enclavetrenchcoat
-	accessory = /obj/item/clothing/accessory/ncr/LT1
+	accessory = /obj/item/clothing/accessory/enclave/first_lieutenant
 	id = /obj/item/card/id/dogtag/enclave/officer
 	ears = /obj/item/radio/headset/headset_enclave/command
 	l_pocket = /obj/item/clothing/mask/chameleon
@@ -460,7 +460,7 @@
 	head = /obj/item/clothing/head/helmet/f13/enclave/usmcriot/armypilot//TEMP UNTIL WE GET A PROPER PILOT UNIFORM
 	uniform = /obj/item/clothing/under/f13/enclave/officer
 	suit = /obj/item/clothing/suit/armor/f13/usmcriot/armypilot//TEMP UNTIL WE GET A PROPER PILOT UNIFORM
-	accessory = /obj/item/clothing/accessory/ncr/LT2
+	accessory = /obj/item/clothing/accessory/enclave/second_lieutenant
 	id = /obj/item/card/id/dogtag/enclave/officer
 	ears = /obj/item/radio/headset/headset_enclave/command
 

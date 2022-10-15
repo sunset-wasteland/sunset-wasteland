@@ -111,8 +111,8 @@
 /obj/item/clothing/head/blackushanka
 	name = "black ushanka"
 	desc = "A ushanka that is colored black. Perfect for cold climates."
-	icon_state = "enclave_ushanka"
-	item_state = "enclave_ushanka"
+	icon_state = "blackush"
+	item_state = "blackush"
 	flags_inv = HIDEEARS
 	cold_protection = HEAD
 	min_cold_protection_temperature = FIRE_HELM_MIN_TEMP_PROTECT

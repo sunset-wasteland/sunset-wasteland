@@ -218,7 +218,7 @@
 /datum/gear/donator/kits/cassidy
 	name = "Cassidy's Ring"
 	path = /obj/item/storage/box/large/custom_kit/cassidy
-	ckeywhitelist = list ("nicodeimos","vaultthebeast")
+	ckeywhitelist = list ("nicodeimos")
 
 /obj/item/storage/box/large/custom_kit/cassidy/PopulateContents()
 	new /obj/item/clothing/gloves/ring/diamond(src)
@@ -238,7 +238,7 @@
 /datum/gear/donator/kits/tzzshali
 	name = "Tzzshali's Form"
 	path = /obj/item/storage/box/large/custom_kit/tzzshali
-	ckeywhitelist = list ("irkallaepsilon","vaultthebeast")
+	ckeywhitelist = list ("irkallaepsilon")
 
 /obj/item/storage/box/large/custom_kit/tzzshali/PopulateContents()
 	new /obj/item/clothing/under/misc/polyjumpsuit(src)

@@ -109,6 +109,7 @@
 "bh" = (
 /obj/structure/table/wood,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/highmid,
 /turf/open/floor/wood/wood_common,
 /area/f13/building)
 "bj" = (
@@ -349,6 +350,10 @@
 /obj/effect/turf_decal/weather/snow/corner{
 	dir = 4
 	},
+/obj/structure/barricade/wooden/strong{
+	icon_state = "boarded";
+	opacity = 1
+	},
 /turf/open/indestructible/ground/outside/graveldirt,
 /area/f13/tunnel)
 "du" = (
@@ -474,17 +479,13 @@
 /turf/open/indestructible/ground/outside/snow_plating,
 /area/f13/mountain_area)
 "ev" = (
-/obj/effect/turf_decal/weather/snow/corner{
+/obj/machinery/manned_turret/m2{
 	dir = 4
 	},
-/obj/structure/lamp_post{
-	dir = 8
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "horizontalinnermain0"
 	},
-/obj/item/flag/enclave/alt,
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticalrightborderright0"
-	},
-/area/f13/mountain_area)
+/area/f13/tunnel)
 "ew" = (
 /obj/structure/table,
 /obj/item/kitchen/rollingpin,
@@ -779,11 +780,11 @@
 /turf/open/indestructible/ground/outside/snow_plating,
 /area/f13/mountain_area)
 "gS" = (
-/obj/effect/turf_decal/weather/snow/corner{
-	dir = 8
+/obj/machinery/porta_turret/syndicate/vehicle_turret{
+	name = "automated turret"
 	},
-/obj/structure/lamp_post{
-	dir = 4
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "horizontalinnermain0"
 	},
 /obj/item/flag/enclave/alt,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -1190,7 +1191,10 @@
 	dir = 4
 	},
 /obj/machinery/light/small,
-/obj/item/storage/trash_stack,
+/obj/structure/barricade/wooden/strong{
+	icon_state = "boarded";
+	opacity = 1
+	},
 /turf/open/indestructible/ground/outside/graveldirt,
 /area/f13/tunnel)
 "jT" = (
@@ -1224,6 +1228,7 @@
 /area/f13/mountain_area)
 "kc" = (
 /obj/structure/junk/small/table,
+/obj/item/seeds/ambrosia/gaia,
 /turf/open/floor/wood/wood_fancy,
 /area/f13/building)
 "kh" = (
@@ -2728,9 +2733,12 @@
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/enclave)
 "vv" = (
-/mob/living/simple_animal/hostile/molerat,
-/turf/open/indestructible/ground/outside/ruins,
-/area/f13/enclave)
+/obj/effect/turf_decal/weather/snow/corner,
+/obj/structure/junk/locker,
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "horizontalbottomborderbottom0"
+	},
+/area/f13/tunnel)
 "vz" = (
 /obj/item/gun/energy/laser/wattz2k,
 /obj/structure/rack,
@@ -2786,6 +2794,10 @@
 "vQ" = (
 /obj/effect/turf_decal/weather/snow/corner{
 	dir = 4
+	},
+/obj/structure/barricade/wooden/strong{
+	icon_state = "boarded";
+	opacity = 1
 	},
 /turf/open/indestructible/ground/outside/graveldirt,
 /area/f13/tunnel)
@@ -3786,7 +3798,9 @@
 /turf/open/floor/plasteel/f13/vault_floor/yellow/whiteyellowfull,
 /area/f13/enclave)
 "EK" = (
-/obj/structure/nest/molerat,
+/obj/structure/nest/tunneler{
+	max_mobs = 2
+	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/enclave)
 "EL" = (
@@ -3888,10 +3902,9 @@
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/enclave)
 "Ft" = (
-/mob/living/simple_animal/hostile/ghoul/glowing,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/wood/wood_fancy,
-/area/f13/building)
+/mob/living/simple_animal/hostile/trog/tunneler,
+/turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
+/area/f13/enclave)
 "Fz" = (
 /obj/machinery/iv_drip,
 /turf/open/floor/plasteel/f13/vault_floor/neutral,
@@ -4903,7 +4916,10 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
-/obj/structure/junk/locker,
+/obj/structure/barricade/wooden/strong{
+	icon_state = "boarded";
+	opacity = 1
+	},
 /turf/open/indestructible/ground/outside/graveldirt,
 /area/f13/tunnel)
 "Oq" = (
@@ -5127,6 +5143,7 @@
 	dir = 1
 	},
 /obj/structure/junk/machinery,
+/obj/item/mortar_shell,
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontaltopbordertop0"
 	},
@@ -10034,7 +10051,7 @@ HA
 HA
 HA
 HA
-HA
+jv
 HA
 HA
 HA
@@ -13618,7 +13635,7 @@ HA
 QE
 wm
 wm
-vv
+yJ
 QE
 QE
 HA
@@ -14644,7 +14661,7 @@ hA
 Hr
 BO
 BO
-gr
+Ft
 dS
 HP
 Zx
@@ -32915,7 +32932,7 @@ HA
 HA
 HA
 HA
-HA
+jv
 HA
 HA
 HA
@@ -40879,7 +40896,7 @@ HA
 HA
 HA
 HA
-HA
+jv
 HA
 HA
 HA
@@ -47375,7 +47392,7 @@ Vr
 jZ
 hy
 WE
-Ft
+eR
 eR
 ot
 eR
@@ -49861,7 +49878,7 @@ HA
 HA
 HA
 HA
-HA
+jv
 HA
 HA
 HA
@@ -58404,7 +58421,7 @@ QS
 ie
 ie
 ie
-ZB
+vv
 fc
 Vr
 Vr
@@ -58915,7 +58932,7 @@ Vr
 Vr
 fc
 wV
-ie
+ev
 cY
 ie
 ZB
@@ -60202,7 +60219,7 @@ fc
 zo
 ie
 cY
-ie
+gS
 ZB
 fc
 Vr
@@ -67323,7 +67340,7 @@ HA
 HA
 HA
 HA
-HA
+jv
 HA
 HA
 HA
@@ -68065,7 +68082,7 @@ lZ
 Fl
 lZ
 lZ
-gS
+ov
 WS
 oF
 dE
@@ -70175,7 +70192,7 @@ HA
 UE
 HA
 HA
-HA
+jv
 HA
 HA
 HA
@@ -70635,7 +70652,7 @@ mD
 cg
 mD
 mD
-ev
+Lb
 WS
 oF
 dE

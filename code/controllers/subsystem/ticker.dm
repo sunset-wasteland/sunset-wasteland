@@ -25,6 +25,8 @@ SUBSYSTEM_DEF(ticker)
 	var/round_end_sound						//music/jingle played when the world reboots
 	var/round_end_sound_sent = TRUE			//If all clients have loaded it
 
+	var/list/client/login_music_queue = list() //clients waiting for login music to get picked. of the format list(client = volume)
+
 	var/list/datum/mind/minds = list()		//The characters in the game. Used for objective tracking.
 
 	var/list/syndicate_coalition = list()	//list of traitor-compatible factions
@@ -131,6 +133,12 @@ SUBSYSTEM_DEF(ticker)
 	else
 		login_music = "[global.config.directory]/title_music/sounds/[pick(music)]"
 
+	if(login_music)
+		for(var/client/lobby_candidate in login_music_queue)
+			if(!istype(lobby_candidate)) // may have disconnected
+				login_music_queue -= lobby_candidate
+				continue
+			lobby_candidate.playtitlemusic(login_music_queue[lobby_candidate])
 
 	if(!GLOB.syndicate_code_phrase)
 		GLOB.syndicate_code_phrase	= generate_code_phrase(return_list=TRUE)

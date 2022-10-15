@@ -221,7 +221,7 @@
 	ckeywhitelist = list ("nicodeimos","vaultthebeast")
 
 /obj/item/storage/box/large/custom_kit/cassidy/PopulateContents()
-	new /obj/item/clothing/gloves/ring/diamond
+	new /obj/item/clothing/gloves/ring/diamond(src)
 
 /datum/gear/donator/kits/garner
 	name = "Garner's Equipment"
@@ -229,11 +229,11 @@
 	ckeywhitelist = list ("vaultthebeast")
 
 /obj/item/storage/box/large/custom_kit/garner/PopulateContents()
-	new /obj/item/clothing/suit/armor/f13/power_armor/x02/garner
-	new /obj/item/clothing/head/helmet/f13/power_armor/x02helmet/garner
-	new /obj/item/clothing/accessory/enclave/sergeant_major
-	new /obj/item/lighter/gold
-	new /obj/item/storage/box/ration/menu_seven
+	new /obj/item/clothing/suit/armor/f13/power_armor/x02/garner(src)
+	new /obj/item/clothing/head/helmet/f13/power_armor/x02helmet/garner(src)
+	new /obj/item/clothing/accessory/enclave/sergeant_major(src)
+	new /obj/item/lighter/gold(src)
+	new /obj/item/storage/box/ration/menu_seven(src)
 
 /datum/gear/donator/kits/tzzshali
 	name = "Tzzshali's Form"
@@ -241,6 +241,6 @@
 	ckeywhitelist = list ("irkallaepsilon","vaultthebeast")
 
 /obj/item/storage/box/large/custom_kit/tzzshali/PopulateContents()
-	new /obj/item/clothing/under/misc/polyjumpsuit
-	new /obj/item/clothing/suit/hooded/wintercoat/polychromic
+	new /obj/item/clothing/under/misc/polyjumpsuit(src)
+	new /obj/item/clothing/suit/hooded/wintercoat/polychromic(src)
 

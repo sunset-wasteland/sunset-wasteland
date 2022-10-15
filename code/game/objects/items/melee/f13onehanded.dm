@@ -236,6 +236,9 @@
 	armour_penetration = 0.1
 	custom_materials = null
 
+/obj/item/melee/onehanded/knife/ritualdagger/baghead
+	desc = "An ancient blade used to carry out dangerous rituals."
+
 /obj/item/melee/onehanded/knife/switchblade
 	name = "switchblade"
 	desc = "A sharp, concealable, spring-loaded knife."

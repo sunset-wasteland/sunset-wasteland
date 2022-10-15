@@ -251,3 +251,5 @@
 
 /obj/item/storage/box/large/custom_kit/aim/PopulateContents()
 	new /obj/item/clothing/mask/scarecrow/baghead(src)
+	new /obj/item/melee/onehanded/knife/ritualdagger/baghead(src)
+	new /obj/item/book/granter/trait/chemistry(src)

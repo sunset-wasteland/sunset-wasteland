@@ -309,6 +309,13 @@
 /obj/machinery/computer/scan_consolenew,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/enclave)
+"df" = (
+/obj/structure/barricade/concrete,
+/obj/structure/fans/tiny/invisible,
+/turf/open/indestructible/ground/outside/snow_plating{
+	luminosity = 0
+	},
+/area/f13/building)
 "dg" = (
 /obj/structure/frame/machine,
 /turf/open/floor/plasteel/f13/vault_floor/purple/whitepurplefull,
@@ -433,8 +440,11 @@
 /obj/item/stock_parts/cell/ammo/ec,
 /obj/item/stock_parts/cell/ammo/ec,
 /obj/item/stock_parts/cell/ammo/ec,
-/turf/open/indestructible/ground/outside/snow_plating,
-/area/f13/mountain_area)
+/obj/structure/fans/tiny/invisible,
+/turf/open/indestructible/ground/outside/snow_plating{
+	luminosity = 0
+	},
+/area/f13/building)
 "dV" = (
 /turf/open/indestructible/ground/outside/ruins{
 	icon_state = "rubblepillar"
@@ -783,12 +793,9 @@
 /obj/machinery/porta_turret/syndicate/vehicle_turret{
 	name = "automated turret"
 	},
+/obj/item/flag/enclave/alt,
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "horizontalinnermain0"
-	},
-/obj/item/flag/enclave/alt,
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticalleftborderleft0"
 	},
 /area/f13/tunnel)
 "gV" = (
@@ -1080,7 +1087,9 @@
 /turf/closed/indestructible/rock,
 /area/f13/underground/cave)
 "iV" = (
-/mob/living/simple_animal/hostile/ghoul/wyomingghost,
+/mob/living/simple_animal/hostile/ghoul/wyomingghost{
+	faction = list("supermutant","ghoul","Enclave")
+	},
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "horizontalinnermain0"
 	},
@@ -1323,7 +1332,9 @@
 /obj/effect/decal/marking{
 	icon_state = "doublevertical"
 	},
-/mob/living/simple_animal/hostile/ghoul/wyomingghost,
+/mob/living/simple_animal/hostile/ghoul/wyomingghost{
+	faction = list("supermutant","ghoul","Enclave")
+	},
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "horizontalinnermain0"
 	},
@@ -1551,6 +1562,12 @@
 	icon_state = "horizontalinnermain0"
 	},
 /area/f13/tunnel)
+"mN" = (
+/obj/structure/barricade/concrete,
+/turf/open/indestructible/ground/outside/snow_plating{
+	luminosity = 0
+	},
+/area/f13/building)
 "mO" = (
 /obj/machinery/autolathe/hacked,
 /turf/open/floor/plasteel/f13/vault_floor/red/whiteredfull,
@@ -2630,8 +2647,11 @@
 /area/f13/enclave)
 "uH" = (
 /obj/effect/spawner/lootdrop/f13/ncr_c_ration,
-/turf/open/indestructible/ground/outside/snow_plating,
-/area/f13/mountain_area)
+/obj/structure/fans/tiny/invisible,
+/turf/open/indestructible/ground/outside/snow_plating{
+	luminosity = 0
+	},
+/area/f13/building)
 "uI" = (
 /obj/machinery/door/airlock/hatch{
 	req_access = null;
@@ -2742,8 +2762,11 @@
 "vz" = (
 /obj/item/gun/energy/laser/wattz2k,
 /obj/structure/rack,
-/turf/open/indestructible/ground/outside/snow_plating,
-/area/f13/mountain_area)
+/obj/structure/fans/tiny/invisible,
+/turf/open/indestructible/ground/outside/snow_plating{
+	luminosity = 0
+	},
+/area/f13/building)
 "vA" = (
 /obj/structure/table/wood,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -3262,6 +3285,17 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/indestructible/ground/outside/snow_plating,
 /area/f13/mountain_area)
+"zP" = (
+/obj/effect/turf_decal/weather/snow/corner{
+	dir = 1
+	},
+/mob/living/simple_animal/hostile/ghoul/wyomingghost{
+	faction = list("supermutant","ghoul","Enclave")
+	},
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "horizontaltopbordertop0"
+	},
+/area/f13/mountain_area)
 "zQ" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light/broken{
@@ -3274,8 +3308,10 @@
 /obj/item/clothing/head/helmet/armyhelmet/heavy,
 /obj/item/clothing/suit/armor/f13/metalarmor/steelbib/oasis,
 /obj/item/clothing/under/syndicate/coldres,
-/turf/open/indestructible/ground/outside/snow_plating,
-/area/f13/mountain_area)
+/turf/open/indestructible/ground/outside/snow_plating{
+	luminosity = 0
+	},
+/area/f13/building)
 "zU" = (
 /obj/effect/turf_decal/weather/snow/corner{
 	dir = 9
@@ -3474,6 +3510,11 @@
 	},
 /turf/open/floor/grass,
 /area/f13/enclave)
+"BJ" = (
+/turf/open/indestructible/ground/outside/snow_plating{
+	luminosity = 0
+	},
+/area/f13/building)
 "BL" = (
 /obj/structure/table,
 /obj/item/storage/backpack/duffelbag/med/surgery/alien,
@@ -4825,8 +4866,11 @@
 /obj/item/flag/enclave/alt{
 	density = 0
 	},
-/turf/open/indestructible/ground/outside/snow_plating,
-/area/f13/mountain_area)
+/obj/structure/fans/tiny/invisible,
+/turf/open/indestructible/ground/outside/snow_plating{
+	luminosity = 0
+	},
+/area/f13/building)
 "NM" = (
 /obj/structure/car/rubbish3,
 /turf/open/indestructible/ground/outside/road{
@@ -5765,6 +5809,12 @@
 	destination_z = 4
 	},
 /area/f13/tunnel)
+"VK" = (
+/obj/structure/fans/tiny/invisible,
+/turf/open/indestructible/ground/outside/snow_plating{
+	luminosity = 0
+	},
+/area/f13/building)
 "VM" = (
 /obj/structure/closet,
 /obj/structure/window/reinforced,
@@ -5868,9 +5918,13 @@
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/enclave)
 "WQ" = (
-/obj/structure/campfire,
-/turf/open/indestructible/ground/outside/snow_plating,
-/area/f13/mountain_area)
+/obj/structure/campfire{
+	luminosity = 1
+	},
+/turf/open/indestructible/ground/outside/snow_plating{
+	luminosity = 0
+	},
+/area/f13/building)
 "WR" = (
 /obj/effect/turf_decal/stripes/red/line,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
@@ -61244,7 +61298,7 @@ ez
 ez
 gH
 ez
-gT
+zP
 Ry
 Ry
 Ry
@@ -61394,8 +61448,8 @@ Uj
 Uj
 Vr
 Vr
-tt
-tt
+VK
+VK
 ez
 ez
 ez
@@ -61651,9 +61705,9 @@ Uj
 Uj
 NL
 uH
-tt
-tt
-tt
+BJ
+BJ
+VK
 ez
 ez
 ez
@@ -61906,12 +61960,12 @@ ez
 ez
 Uj
 Uj
-tt
+VK
 WQ
-tt
-tt
-tt
-hr
+BJ
+BJ
+BJ
+df
 ez
 ez
 ez
@@ -62163,12 +62217,12 @@ ez
 ez
 ez
 Uj
-tt
+VK
 zR
-tt
-tt
-tt
-hr
+BJ
+BJ
+mN
+df
 ez
 ez
 ez
@@ -62422,9 +62476,9 @@ ez
 Uj
 dT
 vz
-tt
-tt
-hr
+BJ
+mN
+df
 ez
 ez
 ez
@@ -62679,8 +62733,8 @@ Uj
 Uj
 Uj
 Uj
-hr
-hr
+df
+df
 ez
 ez
 ez
@@ -66255,7 +66309,7 @@ VP
 VP
 Ry
 Ry
-Ry
+iV
 Ry
 Ry
 AX
@@ -68302,7 +68356,7 @@ Ry
 Ry
 Ry
 Ry
-Ry
+iV
 Ry
 Ry
 Ry
@@ -69595,7 +69649,7 @@ Ry
 Ry
 Xj
 Ry
-Ry
+iV
 Ry
 Ry
 Ry

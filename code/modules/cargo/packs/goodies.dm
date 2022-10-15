@@ -19,7 +19,7 @@
 	contains = list(/obj/item/storage/box/medicine/stimpaks/imitation_stimpaks5)
 
 /datum/supply_pack/goody/musket
-	name = "Laser musket
+	name = "Laser musket"
 	desc = "Contains one laser musket, homemade, if you are to lazy to make one."
 	cost = 500
 	contains = list(/obj/item/gun/ballistic/rifle/hobo/lasmusket,

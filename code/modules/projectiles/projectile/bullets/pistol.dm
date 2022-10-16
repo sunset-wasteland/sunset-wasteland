@@ -414,7 +414,7 @@ Uranium, Contaminated
 	name = "14mm uranium-tipped bullet"
 	damage = 24
 	armour_penetration = 0.1
-	irradiate = 30
+	irradiate = 80
 
 
 

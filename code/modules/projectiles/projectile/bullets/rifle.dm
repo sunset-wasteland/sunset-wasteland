@@ -109,7 +109,7 @@ heavy rifle calibers (12.7, 14mm, 7.62): Uranium, Contaminated, Incin
 
 /obj/item/projectile/bullet/a762/rubber
 	name = "7.62 rubber bullet"
-	damage = 8
+	damage = 12
 	stamina = 30
 	sharpness = SHARP_NONE
 	armour_penetration = 0

@@ -79,7 +79,7 @@ heavy rifle calibers (12.7, 14mm, 7.62): Uranium, Contaminated, Incin
 	name = "5.56 uranium-tipped bullet"
 	damage = 24
 	armour_penetration = 0.1
-	irradiate = 30
+	irradiate = 50
 
 /obj/item/projectile/bullet/a556/simple //for simple mobs, separate to allow balancing
 	name = "5.56 bullet"

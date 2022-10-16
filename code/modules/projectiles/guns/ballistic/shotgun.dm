@@ -289,7 +289,7 @@
 /obj/item/gun/ballistic/shotgun/automatic/combat/auto5
 	name = "Browning Auto-5"
 	desc = "A semi automatic shotgun with a four round tube."
-	fire_delay = 3.95
+	fire_delay = 2.7
 	recoil = 2
 	icon_state = "auto5"
 	item_state = "shotgunauto5"
@@ -305,9 +305,8 @@
 	item_state = "shotgunlever"
 	icon_prefix = "shotgunlever"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/trench
-	fire_delay = 4
+	fire_delay = 3
 	slowdown = 0.25
-	extra_damage = 1.4
 	recoil = 2.1
 	w_class = WEIGHT_CLASS_NORMAL
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
@@ -369,10 +368,10 @@
 	icon_state = "citykiller"
 	item_state = "shotguncity"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/com/citykiller
-	fire_delay = 4.45
-	autofire_shot_delay = 5
+	fire_delay = 4
+	autofire_shot_delay = 4.15
 	automatic = 1
-	recoil = 2.7
+	recoil = 4.3
 	fire_sound = 'sound/f13weapons/riot_shotgun.ogg'
 
 
@@ -387,7 +386,7 @@
 	item_state = "shotgunriot"
 	w_class = WEIGHT_CLASS_BULKY
 	mag_type = /obj/item/ammo_box/magazine/d12g
-	fire_delay = 4
+	fire_delay = 3
 	burst_size = 1
 	recoil = 1.1
 	automatic_burst_overlay = FALSE
@@ -402,7 +401,7 @@
 	fire_sound = 'sound/f13weapons/repeater_fire.ogg'
 	mag_type = /obj/item/ammo_box/magazine/d12g
 	is_automatic = TRUE
-	autofire_shot_delay = 4
+	autofire_shot_delay = 3.55
 	fire_delay = 2.85
 	recoil = 1.35
 	automatic = 1

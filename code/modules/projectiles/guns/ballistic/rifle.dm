@@ -335,8 +335,8 @@
 
 //Anti-Material Rifle						Keywords: .50, Bolt-action, 8 round magazine
 /obj/item/gun/ballistic/rifle/mag/antimateriel
-	name = "anti-materiel rifle"
-	desc = "The Hecate II is a heavy, high-powered bolt action sniper rifle chambered in .50 caliber ammunition. Lacks an iron sight."
+	name = "\improper Hécate II AMR"
+	desc = "The Hécate II is a heavy, high-powered bolt action sniper rifle chambered in .50 caliber ammunition. Lacks an iron sight."
 	icon_state = "amr"
 	item_state = "amr"
 	mag_type = /obj/item/ammo_box/magazine/amr

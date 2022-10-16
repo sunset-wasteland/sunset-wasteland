@@ -27,6 +27,7 @@
 	var/is_automatic = FALSE
 	can_suppress = FALSE
 	equipsound = 'sound/f13weapons/equipsounds/riflequip.ogg'
+	var/set_burst_size = 1 //Added for Gun Mods System
 
 /obj/item/gun/ballistic/automatic/examine(mob/user)
 	. = ..()
@@ -110,7 +111,11 @@
 			disable_burst()
 			to_chat(user, "<span class='notice'>You switch to semi-automatic.</span>")
 		else
-			enable_burst()
+			//enable_burst()//Removed for Gun Mods System
+			if(set_burst_size != null && set_burst_size > 1)
+				burst_size = set_burst_size
+			else
+				enable_burst()
 			to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd burst.</span>")
 		playsound(user, 'sound/weapons/empty.ogg', 100, 1)
 		update_icon()

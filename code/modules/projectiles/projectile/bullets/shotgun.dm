@@ -1,12 +1,13 @@
 /obj/item/projectile/bullet/shotgun_slug
 	name = "12g shotgun slug"
 	damage = 40
-	stamina = 10 //all shotguns deal a very slight amount of stamina damage from the impact
+	stamina = 15 
 	sharpness = SHARP_POINTY
-	wound_bonus = 35
-	bare_wound_bonus = 10
-	armour_penetration = 0.25
+	wound_bonus = 45
+	bare_wound_bonus = 30
+	armour_penetration = 0.3
 	spread = 2
+	wound_falloff_tile = -7.5
 
 /obj/item/projectile/bullet/shotgun_slug/executioner
 	name = "executioner slug" // admin only, can dismember limbs
@@ -112,10 +113,10 @@
 
 /obj/item/projectile/bullet/pellet/shotgun_buckshot
 	name = "buckshot pellet"
-	damage = 11.3
-	wound_bonus = 10
-	bare_wound_bonus = 55
-	wound_falloff_tile = -2.5 // low damage + additional dropoff will already curb wounding potential anything past point blank
+	damage = 11.5
+	wound_bonus = 35
+	bare_wound_bonus = 90
+	wound_falloff_tile = -15.5 // low damage + additional dropoff will already curb wounding potential anything past point blank
 
 /obj/item/projectile/bullet/pellet/shotgun_rubbershot
 	name = "rubbershot pellet"

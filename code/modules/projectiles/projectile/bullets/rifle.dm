@@ -105,7 +105,7 @@ heavy rifle calibers (12.7, 14mm, 7.62): Uranium, Contaminated, Incin
 	name = ".308 bullet"
 	damage = 28
 	wound_bonus = 32
-	bare_wound_bonus = 24
+	bare_wound_bonus = 32
 
 /obj/item/projectile/bullet/a762/rubber
 	name = "7.62 rubber bullet"

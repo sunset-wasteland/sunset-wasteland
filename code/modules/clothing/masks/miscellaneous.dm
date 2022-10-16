@@ -427,10 +427,11 @@
 	desc = "A facewrap commonly employed by NCR troops in desert environments."
 	icon_state = "ncr_facewrap"
 	w_class = WEIGHT_CLASS_TINY
-	flags_inv = HIDEFACE|HIDEFACIALHAIR|HIDESNOUT
+	flags_inv = HIDEFACE|HIDEFACIALHAIR
 	visor_flags_inv = HIDEFACE
 	adjusted_flags = null
 	actions_types = list(/datum/action/item_action/adjust)
+	mutantrace_variation = STYLE_MUZZLE
 
 /obj/item/clothing/mask/ncr_facewrap/attack_self(mob/user)
 	adjustmask(user)
@@ -453,21 +454,25 @@
 	name = "camp duty bandana"
 	desc = "Simple black cloth intended for men on camp duty."
 	icon_state = "legaux"
+	mutantrace_variation = STYLE_MUZZLE
 
 /obj/item/clothing/mask/bandana/legion/legrecruit
 	name = "recruit bandana"
 	desc = "A coarse dark recruit bandana."
 	icon_state = "legrecruit"
+	mutantrace_variation = STYLE_MUZZLE
 
 /obj/item/clothing/mask/bandana/legion/legprime
 	name = "prime bandana"
 	desc = "A dark linen bandana worn by primes"
 	icon_state = "legdecan"
+	mutantrace_variation = STYLE_MUZZLE
 
 /obj/item/clothing/mask/bandana/legion/legvet
 	name = "veteran bandana"
 	desc = "A veterans bandana in red."
 	icon_state = "legvet"
+	mutantrace_variation = STYLE_MUZZLE
 
 /obj/item/clothing/mask/bandana/legion/legdecan
 	name = "decanus bandana"
@@ -475,11 +480,13 @@
 	icon = 'icons/fallout/clothing/masks.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/mask.dmi'
 	icon_state = "legdecan"
+	mutantrace_variation = STYLE_MUZZLE
 
 /obj/item/clothing/mask/bandana/legion/legcenturion
 	name = "centurion bandana"
 	desc = "A high quality bandana made for a centurion."
 	icon_state = "legcenturion"
+	mutantrace_variation = STYLE_MUZZLE
 
 
 //Desert facewrap
@@ -489,10 +496,11 @@
 	desc = "A headwrap to help shield the face from sand and other dirt."
 	icon_state = "facewrap"
 	item_state = "facewrap"
-	flags_inv = HIDEFACE|HIDEHAIR|HIDEFACIALHAIR|HIDESNOUT
+	flags_inv = HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 	flags_cover = MASKCOVERSMOUTH
 	visor_flags_inv = HIDEFACE
 	visor_flags_cover = MASKCOVERSMOUTH
+	mutantrace_variation = STYLE_MUZZLE
 
 //Society Mask
 

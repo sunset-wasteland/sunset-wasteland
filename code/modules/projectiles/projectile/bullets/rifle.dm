@@ -299,7 +299,7 @@ heavy rifle calibers (12.7, 14mm, 7.62): Uranium, Contaminated, Incin
 //////////////////////////
 
 /obj/item/projectile/bullet/m5mm  //for rifles// one of the only bullets to have integral AP
-	damage = 30
+	damage = 19
 	wound_bonus = 24
 	bare_wound_bonus = 10
 	armour_penetration = 0.45

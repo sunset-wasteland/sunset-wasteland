@@ -333,7 +333,7 @@ Uranium, Contaminated
 
 /obj/item/projectile/bullet/c4570
 	name = ".45-70 FMJ bullet"
-	damage = 38
+	damage = 42
 	wound_bonus = 32
 	bare_wound_bonus = -24
 

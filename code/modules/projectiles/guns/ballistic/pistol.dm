@@ -55,7 +55,6 @@
 	desc = "The silenced .22 pistol is a sporting handgun with an integrated silencer."
 	icon_state = "silenced22"
 	mag_type = /obj/item/ammo_box/magazine/m22
-	extra_damage = 18
 	weapon_weight = WEAPON_LIGHT
 	w_class = WEIGHT_CLASS_TINY
 	can_attachments = TRUE
@@ -71,7 +70,6 @@
 	desc = "A pre-war large-framed, gas-operated advanced 10mm pistol."
 	icon_state = "n99"
 	mag_type = /obj/item/ammo_box/magazine/m10mm_adv/simple
-	extra_damage = 22
 	fire_delay = 1
 	recoil = 0.05
 	can_attachments = TRUE
@@ -96,7 +94,6 @@
 	desc = "A modified N99 pistol with an accurate two-round-burst and a blue Vault-Tec finish, a status symbol for some Overseers."
 	icon_state = "executive"
 	burst_size = 2
-	extra_damage = 4
 	semi_auto = FALSE
 	can_automatic = FALSE
 
@@ -104,8 +101,6 @@
 /obj/item/gun/ballistic/automatic/pistol/n99/crusader
 	name = "\improper Crusader pistol"
 	desc = "A large-framed N99 pistol emblazoned with the colors and insignia of the Brotherhood of Steel. It feels heavy in your hand."
-	extra_penetration = 0.1
-	extra_damage = 26
 	force = 18
 	icon_state = "crusader"
 	item_state = "crusader"
@@ -120,7 +115,6 @@
 	icon_state = "chinapistol"
 	mag_type = /obj/item/ammo_box/magazine/m10mm_adv/simple
 	fire_delay = 1
-	extra_damage = 24
 	recoil = 0.1
 	spread = 3
 	can_suppress = FALSE
@@ -162,7 +156,6 @@
 	mag_type = /obj/item/ammo_box/magazine/m9mmds
 	weapon_weight = WEAPON_LIGHT
 	w_class = WEIGHT_CLASS_SMALL
-	extra_damage = 20
 	can_attachments = TRUE
 	suppressor_state = "pistol_suppressor"
 	suppressor_x_offset = 30
@@ -184,8 +177,6 @@
 	desc = "An ornately-decorated pre-war Browning Hi-power 9mm pistol with pearl grips and a polished nickel finish. The firing mechanism has been upgraded, so for anyone on the receiving end, it must seem like an eighteen-karat run of bad luck."
 	icon_state = "maria"
 	fire_delay = 2
-	extra_damage = 25
-	extra_penetration = 0.2
 
 
 //Sig Sauer P220						Keywords: 9mm, Semi-auto, 10 round magazine
@@ -196,7 +187,6 @@
 	w_class = WEIGHT_CLASS_SMALL
 	weapon_weight = WEAPON_LIGHT
 	mag_type = /obj/item/ammo_box/magazine/m9mm
-	extra_damage = 19
 	can_attachments = TRUE
 	suppressor_state = "pistol_suppressor"
 	suppressor_x_offset = 30
@@ -211,7 +201,6 @@
 	icon_state = "beretta"
 	mag_type = /obj/item/ammo_box/magazine/m9mmds
 	weapon_weight = WEAPON_LIGHT
-	extra_damage = 20
 	spread = 1
 	can_attachments = TRUE
 	can_suppress = "pistol_suppressor"
@@ -266,7 +255,6 @@
 	fire_delay = 2
 	slowdown = 0.05
 	mag_type = /obj/item/ammo_box/magazine/m45
-	extra_damage = 30
 	recoil = 0.15
 	can_attachments = TRUE
 	suppressor_state = "pistol_suppressor"
@@ -300,7 +288,6 @@
 	mag_type = /obj/item/ammo_box/magazine/m45exp
 	fire_delay = 2
 	slowdown = 0.07
-	extra_damage = 34
 	spread = 1
 	can_flashlight = TRUE
 	gunlight_state = "flight"
@@ -327,8 +314,6 @@
 	mag_type = /obj/item/ammo_box/magazine/m44
 	fire_delay = 3
 	force = 15
-	extra_damage = 38
-	extra_penetration = 0.05
 	extra_speed = 300
 	recoil = 0.2
 	can_suppress = FALSE
@@ -352,8 +337,6 @@
 	item_state = "deagle"
 	mag_type = /obj/item/ammo_box/magazine/m14mm
 	fire_delay = 0
-	extra_damage = 45
-	extra_penetration = 0.15
 	fire_sound = 'sound/f13weapons/magnum_fire.ogg'
 
 //Automag			Keywords: .44 Magnum, Semi-auto, Long barrel, 7 rounds, Heavy. Special modifiers: bullet speed +300
@@ -364,7 +347,6 @@
 	item_state = "deagle"
 	mag_type = /obj/item/ammo_box/magazine/automag
 	fire_delay = 4
-	extra_damage = 41
 	extra_speed = 300
 	recoil = 0.2
 	can_suppress = FALSE
@@ -379,8 +361,6 @@
 	icon_state = "pistol14"
 	mag_type = /obj/item/ammo_box/magazine/m14mm
 	force = 15
-	extra_damage = 44
-	extra_penetration = 0.1
 	fire_delay = 5
 	recoil = 0.25
 	can_suppress = FALSE
@@ -392,7 +372,6 @@
 	desc = "A Swiss SIG-Sauer 14mm handgun, this one is a compact model for concealed carry."
 	icon_state = "pistol14_compact"
 	w_class = WEIGHT_CLASS_SMALL
-	extra_damage = 42
 	spread = 5
 
 //Little Devil							Keywords: UNIQUE, 14mm, Semi-auto, Short barrel, 7 Rounds, Heavy. Special modifiers: damage +4, penetration +0.05, spread -3
@@ -401,7 +380,6 @@
 	desc = "A Swiss SIG-Sauer 14mm handgun, this one is a finely tuned custom firearm from the Gunrunners."
 	icon_state = "lildev"
 	w_class = WEIGHT_CLASS_SMALL
-	extra_damage = 50
 	fire_delay = 4
 
 /obj/item/gun/ballistic/automatic/pistol/pistol14/custom
@@ -409,7 +387,6 @@
 	desc = "A Swiss SIG-Sauer 14mm handgun, this one is a finely tuned custom firearm. How'd this get into service?"
 	icon_state = "lildev"
 	w_class = WEIGHT_CLASS_SMALL
-	extra_damage = 50
 	fire_delay = 4
 
 /////////////////////////////////

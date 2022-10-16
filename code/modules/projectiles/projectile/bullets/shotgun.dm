@@ -1,7 +1,7 @@
 /obj/item/projectile/bullet/shotgun_slug
 	name = "12g shotgun slug"
 	damage = 40
-	stamina = 15 
+	stamina = 15
 	sharpness = SHARP_POINTY
 	wound_bonus = 45
 	bare_wound_bonus = 30
@@ -43,6 +43,8 @@
 	light_color = LIGHT_COLOR_FIRE
 	damage_type = BURN
 	damage = 12 //slight damage on impact
+	wound_bonus = 60//Most wounds come from fire stacks, but this is insult to injury. :)
+	bare_wound_bonus = 80
 	range = 10
 
 /obj/item/projectile/incendiary/flamethrower/on_hit(atom/target)

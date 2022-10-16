@@ -115,8 +115,6 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/dual/simple
 	sawn_desc = "Short and concealable, terribly uncomfortable to fire, but worse on the other end."
 	fire_sound = 'sound/f13weapons/caravan_shotgun.ogg'
-	extra_damage = 3.2
-	extra_penetration = 0.1
 	recoil = 1.55
 
 /obj/item/gun/ballistic/revolver/caravan_shotgun/attackby(obj/item/A, mob/user, params)
@@ -154,8 +152,6 @@
 	force = 20
 	sawn_desc = "Someone took the time to chop the last few inches off the barrel and stock of this shotgun. Now, the wide spread of this hand-cannon's short-barreled shots makes it perfect for short-range crowd control."
 	fire_sound = 'sound/f13weapons/max_sawn_off.ogg'
-	extra_damage = 2
-	extra_penetration = 0.05
 	recoil = 0.55
 
 /obj/item/gun/ballistic/revolver/widowmaker/attackby(obj/item/A, mob/user, params)
@@ -271,7 +267,6 @@
 /obj/item/gun/ballistic/shotgun/automatic/combat
 	name = "semi-auto shotgun template"
 	fire_delay = 6
-	extra_damage = 0
 	recoil = 0.1
 	spread = 2
 

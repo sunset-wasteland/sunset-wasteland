@@ -118,8 +118,6 @@
 	ranged_attack_speed = CLICK_CD_RAPID
 	spread = 18
 	weapon_weight = WEAPON_HEAVY
-	extra_penetration = 0.1
-	extra_damage = 12
 	fire_sound = 'sound/f13weapons/boltfire.ogg'
 	mag_type = /obj/item/ammo_box/magazine/internal/encminigunbal4mm
 	casing_ejector = FALSE//For now.

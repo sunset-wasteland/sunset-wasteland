@@ -524,14 +524,12 @@
 
 /obj/item/projectile/f13plasma/pistol //Plasma pistol
 	damage = 18
-	wound_bonus = 20 //being hit with plasma is horrific
 
 /obj/item/projectile/f13plasma/pistol/worn
 	damage = 16
 
 /obj/item/projectile/f13plasma/pistol/glock //Glock (streamlined plasma pistol)
 	damage = 20
-	wound_bonus = 35 //being hit with plasma is horrific
 
 /obj/item/projectile/f13plasma/scatter //Multiplas, fires 3 shots, will melt you
 	damage = 25
@@ -546,7 +544,7 @@
 /obj/item/projectile/beam/laser/rcw/hitscan //RCW
 	name = "rapidfire beam"
 	icon_state = "emitter"
-	damage = 15
+	damage = 18
 	hitscan = TRUE
 	muzzle_type = /obj/effect/projectile/muzzle/laser/emitter
 	tracer_type = /obj/effect/projectile/tracer/laser/emitter

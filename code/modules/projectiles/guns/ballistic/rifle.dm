@@ -116,7 +116,6 @@
 	icon_state = "cowboyrepeater"
 	item_state = "cowboyrepeater"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube357
-	extra_damage = 35
 	extra_speed = 300
 	fire_sound = 'sound/f13weapons/cowboyrepeaterfire.ogg'
 
@@ -128,7 +127,6 @@
 	icon_state = "trailcarbine"
 	item_state = "trailcarbine"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube44
-	extra_damage = 40
 	extra_speed = 200
 	fire_sound = 'sound/f13weapons/44mag.ogg'
 
@@ -140,8 +138,6 @@
 	icon_state = "brushgun"
 	item_state = "brushgun"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube4570
-	extra_damage = 50
-	extra_penetration = 0.05
 	extra_speed = 100
 	fire_delay = 3
 	recoil = 0.15
@@ -153,8 +149,6 @@
 	desc = "A custom-made Gun Runners brush gun with a shorter tube, featuring a sturdier frame, longer barrel, reinforced rifling, padded lever and a muzzle device. A medicine wheel is attached to one side of the stock along with two feathers."
 	icon_state = "medistick"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube4570/medicine
-	extra_damage = 50
-	extra_penetration = 0.2
 	extra_speed = 150
 	fire_delay = 2.25
 	recoil = 0.10
@@ -175,8 +169,6 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/hunting
 	sawn_desc = "A hunting rifle, crudely shortened with a saw. It's far from accurate, but the short barrel makes it quite portable."
 	fire_delay = 4
-	extra_damage = 37
-	extra_penetration = 0.20
 	extra_speed = 800
 	spread = 0
 	force = 18
@@ -202,7 +194,6 @@
 	desc = "A militarized hunting rifle rechambered to 7.62. This one has had the barrel floated with shims to increase accuracy."
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/hunting/remington
 	fire_delay = 2
-	extra_damage = 39
 	extra_speed = 800
 	force = 18
 
@@ -225,8 +216,6 @@
 	item_state = "paciencia"
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/hunting/paciencia
 	fire_delay = 9
-	extra_damage = 50 //hits like an AMR
-	extra_penetration = 0.2
 	zoomable = TRUE
 	zoom_amt = 10
 	zoom_out_amt = 13
@@ -250,7 +239,6 @@
 	icon_state = "mosin"
 	item_state = "308"
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction
-	extra_damage = 37
 	extra_speed = 600
 	fire_delay = 3
 	force = 18
@@ -272,7 +260,6 @@
 	icon_state = "enfield2"
 	item_state = "308"
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction
-	extra_damage = 40
 	extra_speed = 600
 	fire_delay = 1
 	slowdown = 0.35
@@ -341,8 +328,6 @@
 	item_state = "amr"
 	mag_type = /obj/item/ammo_box/magazine/amr
 	fire_delay = 12 //Heavy round, tiny bit slower
-	extra_damage = 60
-	extra_penetration = 1//Chunky munitions.
 	recoil = 1
 	spread = 0
 	force = 10 //Big clumsy and sensitive scope, makes for a poor club

@@ -72,7 +72,6 @@
 	slowdown = 0.1
 	mag_type = /obj/item/ammo_box/magazine/zipgun
 	force = 16
-	extra_damage = 27 //unrealistically high to make up for low capacity and explode in your hands, roughly where the old 9mm used to be
 
 	spread = 8
 	fire_delay = 4
@@ -94,7 +93,6 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/improvisedpipe
 	force = 20
 	fire_delay = 0.25
-	extra_damage = 33
 	spread = 2
 	fire_sound = 'sound/weapons/Gunshot.ogg'
 
@@ -118,7 +116,6 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/improvised10mm
 	force = 20
 	fire_delay = 0.25
-	extra_damage = 28
 	spread = 7
 	fire_sound = 'sound/weapons/Gunshot.ogg'
 
@@ -145,7 +142,6 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/improvised
 	force = 26 //Good club
 	fire_delay = 0.5
-	extra_damage = 2
 	fire_sound = 'sound/f13weapons/caravan_shotgun.ogg'
 
 /obj/item/gun/ballistic/revolver/single_shotgun/update_icon_state()
@@ -164,7 +160,6 @@
 	force = 24
 	fire_delay = 0.5
 	spread = 4
-	extra_damage = 32
 	fire_sound = 'sound/weapons/Gunshot.ogg'
 
 
@@ -181,7 +176,6 @@
 	force = 24
 	fire_delay = 0.25
 	spread = 5
-	extra_damage = 32
 	fire_sound = 'sound/weapons/Gunshot.ogg'
 
 
@@ -198,8 +192,6 @@
 	weapon_weight = WEAPON_HEAVY
 	mag_type = /obj/item/ammo_box/magazine/autopipe
 	force = 20
-	extra_damage = 25 //a lot less than the .357 magnum, because OP
-	extra_penetration = 0.05 //long barrel
 	burst_size = 4
 	fire_delay = 6
 	burst_shot_delay = 6
@@ -265,7 +257,6 @@
 	icon_state = "destroyer-carbine"
 	item_state = "varmintrifle"
 	mag_type = /obj/item/ammo_box/magazine/greasegun
-	extra_damage = 30
 	fire_delay = 5
 	burst_size = 1
 	can_attachments = FALSE
@@ -309,7 +300,6 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/improvised762
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
-	extra_damage = 30
 	fire_delay = 0.25
 	force = 20
 	spread = 5

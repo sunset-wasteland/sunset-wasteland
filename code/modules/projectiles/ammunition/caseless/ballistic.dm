@@ -17,6 +17,10 @@
 	name = "4.73mm U-235 cartridge"
 	projectile_type  = /obj/item/projectile/bullet/a473/uraniumtipped
 
+/obj/item/ammo_casing/caseless/g11/minigun
+	name = "4.73mm caseless cartridge"
+	projectile_type  = /obj/item/projectile/bullet/a473/minigun
+
 /obj/item/ammo_casing/caseless/g11/dumdum
 	name = "4.73mm flat-nose cartridge"
 	projectile_type  = /obj/item/projectile/bullet/a473/dumdum

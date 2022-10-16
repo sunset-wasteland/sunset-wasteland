@@ -115,8 +115,6 @@
 	ranged_attack_speed = CLICK_CD_RAPID
 	spread = 12
 	weapon_weight = WEAPON_HEAVY
-	extra_penetration = 0.01
-	extra_damage = 10
 	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
 	mag_type = /obj/item/ammo_box/magazine/internal/minigunbal5mm
 	casing_ejector = FALSE//For now.

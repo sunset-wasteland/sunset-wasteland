@@ -302,7 +302,7 @@ heavy rifle calibers (12.7, 14mm, 7.62): Uranium, Contaminated, Incin
 	damage = 30
 	wound_bonus = 24
 	bare_wound_bonus = 10
-	armour_penetration = 0.1
+	armour_penetration = 0.45
 	var/extra_speed = 200
 
 /obj/item/projectile/bullet/m5mm/simple //for simple mobs, separate to allow balancing

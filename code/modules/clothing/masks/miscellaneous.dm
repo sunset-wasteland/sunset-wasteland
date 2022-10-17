@@ -454,24 +454,28 @@
 	name = "camp duty bandana"
 	desc = "Simple black cloth intended for men on camp duty."
 	icon_state = "legaux"
+	flags_inv = HIDESNOUT
 	mutantrace_variation = STYLE_MUZZLE
 
 /obj/item/clothing/mask/bandana/legion/legrecruit
 	name = "recruit bandana"
 	desc = "A coarse dark recruit bandana."
 	icon_state = "legrecruit"
+	flags_inv = HIDESNOUT
 	mutantrace_variation = STYLE_MUZZLE
 
 /obj/item/clothing/mask/bandana/legion/legprime
 	name = "prime bandana"
 	desc = "A dark linen bandana worn by primes"
 	icon_state = "legdecan"
+	flags_inv = HIDESNOUT
 	mutantrace_variation = STYLE_MUZZLE
 
 /obj/item/clothing/mask/bandana/legion/legvet
 	name = "veteran bandana"
 	desc = "A veterans bandana in red."
 	icon_state = "legvet"
+	flags_inv = HIDESNOUT
 	mutantrace_variation = STYLE_MUZZLE
 
 /obj/item/clothing/mask/bandana/legion/legdecan
@@ -480,12 +484,14 @@
 	icon = 'icons/fallout/clothing/masks.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/mask.dmi'
 	icon_state = "legdecan"
+	flags_inv = HIDESNOUT
 	mutantrace_variation = STYLE_MUZZLE
 
 /obj/item/clothing/mask/bandana/legion/legcenturion
 	name = "centurion bandana"
 	desc = "A high quality bandana made for a centurion."
 	icon_state = "legcenturion"
+	flags_inv = HIDESNOUT
 	mutantrace_variation = STYLE_MUZZLE
 
 

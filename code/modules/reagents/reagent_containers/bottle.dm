@@ -443,18 +443,15 @@
 // FEV
 /obj/item/reagent_containers/glass/bottle/FEV_solution
 	name = "FEV bottle"
-	point_value = 800
 	desc = "A small vial of the Forced Evolutionary Virus. You think that consuming this would be a bad idea."
 	list_reagents = list(/datum/reagent/toxin/FEV_solution/one = 30)
 
 /obj/item/reagent_containers/glass/bottle/FEV_solution/two
 	name = "FEV-II bottle"
-	point_value = 1000
 	list_reagents = list(/datum/reagent/toxin/FEV_solution/two = 30)
 
 /obj/item/reagent_containers/glass/bottle/FEV_solution/curling
 	name = "Curling-13 bottle"
-	point_value = 1200
 	list_reagents = list(/datum/reagent/toxin/FEV_solution/curling = 30)
 
 //Curling 13 vaccine

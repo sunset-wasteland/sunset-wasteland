@@ -450,6 +450,20 @@
 			icon_state = "mfc-empty"
 	. = ..()
 
+/obj/item/stock_parts/cell/ammo/mfc/overcharged
+	name = "overcharged microfusion cell"
+	maxcharge = 3000
+
+/obj/item/stock_parts/cell/ammo/mfc/overcharged/update_icon()
+	switch(charge)
+		if (1501 to 3000)
+			icon_state = "mfc-full"
+		if (51 to 1500)
+			icon_state = "mfc-half"
+		if (0 to 50)
+			icon_state = "mfc-empty"
+	. = ..()
+
 /obj/item/stock_parts/cell/ammo/ultracite
 	name = "ultracite cell"
 	desc = "An advanced ultracite cell, used as ammunition for special energy weapons."

@@ -16,7 +16,7 @@
 /datum/supply_pack/security/aer9
 	name = "AER9 Crate"
 	desc = "Contains one AER9 for any brotherhood member that needs a spare."
-	cost = 2500
+	cost = 1000
 	contains = list(/obj/item/gun/energy/laser/aer9)
 
 //fallout changes ends here

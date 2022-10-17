@@ -323,6 +323,7 @@
 	RECIPE_LANCE = /obj/item/smithing/lancehead,
 	RECIPE_JAVELIN = /obj/item/smithing/javelinhead,
 	RECIPE_THROWING = /obj/item/smithing/throwingknife,
+	RECIPE_KNUCKLE = /obj/item/smithing/knuckleduster,
 )
 
 
@@ -352,6 +353,7 @@
 	RECIPE_SCRAP = /obj/item/smithing/scrapblade,
 	RECIPE_JAVELIN = /obj/item/smithing/javelinhead,
 	RECIPE_THROWING = /obj/item/smithing/throwingknife,
+	RECIPE_KNUCKLE = /obj/item/smithing/knuckleduster,
 )
 
 /obj/structure/anvil/obtainable/table/wrench_act(mob/living/user, obj/item/I)

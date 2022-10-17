@@ -9,6 +9,31 @@
 /datum/supply_pack/engineering
 	group = "Engineering"
 	crate_type = /obj/structure/closet/crate/engineering
+//fallout changes
+
+/datum/supply_pack/engineering/mfcc
+	name = "Crate overcharged mfc"
+	desc = "Super charged mfc, that was made by one of the few gunsmiths that still knows how to make them."
+	cost = 3000
+	contains = list(/obj/item/stock_parts/cell/ammo/mfc/overcharged)
+	crate_name = "MFC experimental crate"
+
+/datum/supply_pack/engineering/mfcr
+	name = "Crate three mfc"
+	desc = "Three mfc's, that was made by one of the few gunsmiths that still knows how to make them."
+	cost = 500
+	contains = list(/obj/item/stock_parts/cell/ammo/mfc,
+					/obj/item/stock_parts/cell/ammo/mfc,
+					/obj/item/stock_parts/cell/ammo/mfc)
+	crate_name = "MFC crate"
+
+/datum/supply_pack/engineering/electrion
+	name = "Crate electron pack"
+	desc = "One electron pack, that was made by one of the few gunsmiths that still knows how to make them."
+	cost = 500
+	contains = list(/obj/item/stock_parts/cell/ammo/ecp)
+
+//fallout changes ends here
 
 /datum/supply_pack/engineering/shieldgen
 	name = "Anti-breach Shield Projector Crate"

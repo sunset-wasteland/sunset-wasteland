@@ -9,7 +9,7 @@
 /datum/supply_pack/goody/stimpaks
 	name = "Stimpak box"
 	desc = "Contains one full box of stimpaks, ready to be consumed.."
-	cost = 300
+	cost = 3000
 	contains = list(/obj/item/storage/box/medicine/stimpaks/stimpaks5)
 
 /datum/supply_pack/goody/stimpaks

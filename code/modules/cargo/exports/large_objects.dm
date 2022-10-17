@@ -88,17 +88,17 @@
 	export_types = list(/obj/item/gun/energy/minigun)
 
 /datum/export/large/fev/FEV_solution_one
-	cost = 7500
+	cost = 10000
 	unit_name = "FEV prototype"
 	export_types = list(/obj/item/reagent_containers/glass/bottle/FEV_solution)
 
 /datum/export/large/fev/FEV_solution_two
-	cost = 7500
+	cost = 10000
 	unit_name = "FEV mk2"
 	export_types = list(/obj/item/reagent_containers/glass/bottle/FEV_solution/two)
 
 /datum/export/large/fev/FEV_solution_curling
-	cost = 10000
+	cost = 20000
 	unit_name = "FEV Curling"
 	export_types = list(/obj/item/reagent_containers/glass/bottle/FEV_solution/curling)
 

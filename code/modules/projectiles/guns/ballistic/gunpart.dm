@@ -73,7 +73,7 @@
 	parttype = "receiver"
 	partlocation = "internal"
 
-obj/item/gunpart/BHP_Receiver
+/obj/item/gunpart/BHP_Receiver
 	name = "Basic High Power Receiver Kit"
 	desc = "A basic high power receiver kit."
 	icon_state = "BHP-Receiver"
@@ -87,7 +87,7 @@ obj/item/gunpart/BHP_Receiver
 	partlocation = "internal"
 	size = 0.5
 
-obj/item/gunpart/MGHS_Receiver
+/obj/item/gunpart/MGHS_Receiver
 	name = "Military Grade High Speed Receiver Kit"
 	desc = "A military grade high power receiver kit."
 	icon_state = "MGHS-Receiver"
@@ -100,7 +100,7 @@ obj/item/gunpart/MGHS_Receiver
 	parttype = "receiver"
 	partlocation = "internal"
 
-obj/item/gunpart/MGHP_Receiver
+/obj/item/gunpart/MGHP_Receiver
 	name = "Military Grade High Power Receiver Kit"
 	desc = "A military grade high power receiver kit."
 	icon_state = "MGHP-Receiver"
@@ -170,7 +170,7 @@ obj/item/gunpart/MGHP_Receiver
 	name = "Two Round Burst Cam"
 	desc = "A kit for adding a burst cam to a gun."
 	icon_state = "BurstCam"
-	burstmodifier = 1
+	burstmodifier = 2
 	w_class = WEIGHT_CLASS_NORMAL
 	parttype = "burstcam"
 	partlocation = "internal2"
@@ -181,7 +181,7 @@ obj/item/gunpart/MGHP_Receiver
 	name = "Three Round Burst Cam"
 	desc = "A kit for adding a burst cam to a gun."
 	icon_state = "BurstCam"
-	burstmodifier = 2
+	burstmodifier = 3
 	w_class = WEIGHT_CLASS_NORMAL
 	parttype = "burstcam"
 	partlocation = "internal2"

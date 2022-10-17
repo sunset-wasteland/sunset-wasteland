@@ -72,6 +72,8 @@
 	slowdown = 0.1
 	mag_type = /obj/item/ammo_box/magazine/zipgun
 	force = 16
+	extra_damage = 15
+	extra_penetration = 0.5
 
 	spread = 8
 	fire_delay = 4
@@ -95,6 +97,8 @@
 	fire_delay = 0.25
 	spread = 2
 	fire_sound = 'sound/weapons/Gunshot.ogg'
+	extra_damage = 25
+	extra_penetration = 0.5
 
 /obj/item/gun/ballistic/revolver/hobo/piperifle/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0, stam_cost = 0)
 	if(prob(1))
@@ -192,9 +196,9 @@
 	weapon_weight = WEAPON_HEAVY
 	mag_type = /obj/item/ammo_box/magazine/autopipe
 	force = 20
-	burst_size = 4
-	fire_delay = 6
-	burst_shot_delay = 6
+	is_automatic = TRUE
+	automatic = 1
+	autofire_shot_delay = 1.75
 	spread = 15
 	fire_sound = 'sound/weapons/Gunshot.ogg'
 

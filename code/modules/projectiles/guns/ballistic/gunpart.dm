@@ -153,7 +153,6 @@
 	partlocation = "south"
 	attachx = 16
 	attachy = 15
-**/
 
 /obj/item/gunpart/burstcam//TIER 1 MODS
 	name = "Burst Cam"
@@ -187,6 +186,7 @@
 	partlocation = "internal2"
 	attachx = 0
 	attachy = 0
+**/
 
 /////////
 // Loot Tables
@@ -210,12 +210,9 @@
 	var/loot3 = list(
 				/obj/item/gunpart/BHP_Receiver
 				)
-	var/loot4 = list(
-				/obj/item/gunpart/burstcam
-				)
 
 /obj/effect/spawner/lootdrop/f13/gunparts/tier1/Initialize(mapload) //on mapload, pick what shit to spawn
-	loot = pick(loot1, loot2, loot3, loot4)
+	loot = pick(loot1, loot2, loot3)
 	. = ..()
 
 
@@ -227,14 +224,11 @@
 				/obj/item/gunpart/barrel_extension_80mm
 				)
 	var/loot2 = list(
-				/obj/item/gunpart/twoburstcam
-				)
-	var/loot3 = list(
 				/obj/item/gunpart/stock
 				)
 
 /obj/effect/spawner/lootdrop/f13/gunparts/tier2/Initialize(mapload) //on mapload, pick what shit to spawn
-	loot = pick(loot1, loot2, loot3)
+	loot = pick(loot1, loot2)
 	. = ..()
 
 
@@ -249,12 +243,9 @@
 				/obj/item/gunpart/MGHP_Receiver
 				)
 	var/loot3 = list(
-				/obj/item/gunpart/threeburstcam
-				)
-	var/loot4 = list(
 				/obj/item/gunpart/scope
 				)
 
 /obj/effect/spawner/lootdrop/f13/gunparts/tier3/Initialize(mapload) //on mapload, pick what shit to spawn
-	loot = pick(loot1, loot2, loot3, loot4)
+	loot = pick(loot1, loot2, loot3)
 	. = ..()

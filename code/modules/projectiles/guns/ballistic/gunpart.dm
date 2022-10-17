@@ -26,7 +26,7 @@
 
 //Barrels
 
-/obj/item/gunpart/barrel_extension_50mm
+/obj/item/gunpart/barrel_extension_50mm//TIER 1 MODS
 	name = "50mm Barrel Extension Kit"
 	desc = "A kit for extending a gun barrel by 50mm."
 	icon_state = "Barrel50mm"
@@ -42,7 +42,7 @@
 	attachy = 17
 	size = 1
 
-/obj/item/gunpart/barrel_extension_80mm
+/obj/item/gunpart/barrel_extension_80mm//TIER 2 MODS
 	name = "80mm Barrel Extension Kit"
 	desc = "A kit for extending a gun barrel by 80mm."
 	icon_state = "Barrel80mm"
@@ -60,7 +60,7 @@
 
 //Receivers
 
-/obj/item/gunpart/BHS_Receiver
+/obj/item/gunpart/BHS_Receiver//TIER 1 MODS
 	name = "Basic High Speed Receiver Kit"
 	desc = "A basic high speed receiver kit."
 	icon_state = "BHS-Receiver"
@@ -73,7 +73,7 @@
 	parttype = "receiver"
 	partlocation = "internal"
 
-/obj/item/gunpart/BHP_Receiver
+/obj/item/gunpart/BHP_Receiver//TIER 1 MODS
 	name = "Basic High Power Receiver Kit"
 	desc = "A basic high power receiver kit."
 	icon_state = "BHP-Receiver"
@@ -87,7 +87,7 @@
 	partlocation = "internal"
 	size = 0.5
 
-/obj/item/gunpart/MGHS_Receiver
+/obj/item/gunpart/MGHS_Receiver//TIER 3 MODS
 	name = "Military Grade High Speed Receiver Kit"
 	desc = "A military grade high power receiver kit."
 	icon_state = "MGHS-Receiver"
@@ -100,7 +100,7 @@
 	parttype = "receiver"
 	partlocation = "internal"
 
-/obj/item/gunpart/MGHP_Receiver
+/obj/item/gunpart/MGHP_Receiver//TIER 3 MODS
 	name = "Military Grade High Power Receiver Kit"
 	desc = "A military grade high power receiver kit."
 	icon_state = "MGHP-Receiver"
@@ -115,7 +115,7 @@
 	size = 0.5
 
 //Stocks
-/obj/item/gunpart/stock
+/obj/item/gunpart/stock//TIER 2 MODS
 	name = "Stock Kit"
 	desc = "A kit for adding a stock to a gun."
 	icon_state = "Stock"
@@ -132,7 +132,7 @@
 
 //Misc
 
-/obj/item/gunpart/scope
+/obj/item/gunpart/scope//TIER 3 MODS
 	name = "Scope Kit"
 	desc = "A kit for adding a scope to a gun."
 	icon_state = "Scope"
@@ -155,7 +155,7 @@
 	attachy = 15
 **/
 
-/obj/item/gunpart/burstcam
+/obj/item/gunpart/burstcam//TIER 1 MODS
 	name = "Burst Cam"
 	desc = "A kit for adding a burst cam to a gun."
 	icon_state = "BurstCam"
@@ -166,7 +166,7 @@
 	attachx = 0
 	attachy = 0
 
-/obj/item/gunpart/twoburstcam
+/obj/item/gunpart/twoburstcam//TIER 2 MODS
 	name = "Two Round Burst Cam"
 	desc = "A kit for adding a burst cam to a gun."
 	icon_state = "BurstCam"
@@ -177,7 +177,7 @@
 	attachx = 0
 	attachy = 0
 
-/obj/item/gunpart/threeburstcam
+/obj/item/gunpart/threeburstcam//TIER 3 MODS
 	name = "Three Round Burst Cam"
 	desc = "A kit for adding a burst cam to a gun."
 	icon_state = "BurstCam"
@@ -187,3 +187,74 @@
 	partlocation = "internal2"
 	attachx = 0
 	attachy = 0
+
+/////////
+// Loot Tables
+/////////
+/obj/effect/spawner/lootdrop/f13/gunparts
+	name = "gun parts or something"
+	desc = "scream at Carl if you see this."
+	icon = 'icons/obj/guns/modifiableguns.dmi'
+	icon_state = "Scope"
+
+/obj/effect/spawner/lootdrop/f13/gunparts/tier1 //TIER 1 MOD LIST
+	name = "tier 1 gunparts"
+	icon_state = "BurstCam"
+	lootcount = 1
+	var/loot1 = list(
+				/obj/item/gunpart/barrel_extension_50mm
+				)
+	var/loot2 = list(
+				/obj/item/gunpart/BHS_Receiver
+				)
+	var/loot3 = list(
+				/obj/item/gunpart/BHP_Receiver
+				)
+	var/loot4 = list(
+				/obj/item/gunpart/burstcam
+				)
+
+/obj/effect/spawner/lootdrop/f13/gunparts/tier1/Initialize(mapload) //on mapload, pick what shit to spawn
+	loot = pick(loot1, loot2, loot3, loot4)
+	. = ..()
+
+
+/obj/effect/spawner/lootdrop/f13/gunparts/tier2 //TIER 2 MOD LIST
+	name = "tier 2 gunparts"
+	icon_state = "BHS-Receiver"
+	lootcount = 1
+	var/loot1 = list(
+				/obj/item/gunpart/barrel_extension_80mm
+				)
+	var/loot2 = list(
+				/obj/item/gunpart/twoburstcam
+				)
+	var/loot3 = list(
+				/obj/item/gunpart/stock
+				)
+
+/obj/effect/spawner/lootdrop/f13/gunparts/tier2/Initialize(mapload) //on mapload, pick what shit to spawn
+	loot = pick(loot1, loot2, loot3)
+	. = ..()
+
+
+/obj/effect/spawner/lootdrop/f13/gunparts/tier3 //TIER 3 MOD LIST
+	name = "tier 3 gunparts"
+	icon_state = "MGHP-Receiver"
+	lootcount = 1
+	var/loot1 = list(
+				/obj/item/gunpart/MGHS_Receiver
+				)
+	var/loot2 = list(
+				/obj/item/gunpart/MGHP_Receiver
+				)
+	var/loot3 = list(
+				/obj/item/gunpart/threeburstcam
+				)
+	var/loot4 = list(
+				/obj/item/gunpart/scope
+				)
+
+/obj/effect/spawner/lootdrop/f13/gunparts/tier3/Initialize(mapload) //on mapload, pick what shit to spawn
+	loot = pick(loot1, loot2, loot3, loot4)
+	. = ..()

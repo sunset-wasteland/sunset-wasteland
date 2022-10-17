@@ -67,6 +67,12 @@
 	desc = "One book written by the finest scribes."
 	cost = 10000
 	contains = list(/obj/effect/spawner/lootdrop/f13/traitbooks)
+
+/datum/supply_pack/emergency/medbeam
+	name = "Medbeam Crate"
+	desc = "One experimental healing gun."
+	cost = 50000
+	contains = list(/obj/item/gun/medbeam)
 //fallout changes ends here
 
 /datum/supply_pack/emergency/bio

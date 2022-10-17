@@ -478,15 +478,15 @@
 			/obj/effect/spawner/lootdrop/f13/armor/tier3 = 1,
 			)
 
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/mid
+/obj/effect/spawner/lootdrop/f13/armor/random_high
 	name = "high tier random armor loot"
 	lootcount = 1
 
 	loot = list(
 			/obj/effect/spawner/lootdrop/f13/armor/tier2 = 70,
 			/obj/effect/spawner/lootdrop/f13/armor/tier3 = 35,
-			/obj/effect/spawner/lootdrop/f13/armor/tier4 = 10
-			///obj/item/traumapack = 1 //one ring to rule them all
+			/obj/effect/spawner/lootdrop/f13/armor/tier4 = 10,
+			/obj/item/traumapack = 1
 			)
 
 /*	------------------------------------------------
@@ -770,17 +770,13 @@
 /obj/effect/spawner/lootdrop/f13/weapon/gun/energy/low
 	name = "low tier energy gun"
 	loot = list(/obj/effect/spawner/bundle/f13/wattz = 40,
-				/obj/effect/spawner/bundle/f13/wattzm = 25,
-				/obj/effect/spawner/bundle/f13/laserpistol = 35
+				/obj/effect/spawner/bundle/f13/wattzm = 25
 				)
 
 /obj/effect/spawner/lootdrop/f13/weapon/gun/energy/mid
 	name = "mid tier energy gun"
 	loot = list(/obj/effect/spawner/bundle/f13/aer9 = 26,
-				/obj/effect/spawner/bundle/f13/aer12 = 13,
-				/obj/effect/spawner/bundle/f13/wattz2k = 26,
-				/obj/effect/spawner/bundle/f13/wattz2kext = 15,
-				/obj/effect/spawner/bundle/f13/plasmapistol = 15,
+				/obj/effect/spawner/bundle/f13/laserpistol = 15,
 				/obj/effect/spawner/bundle/f13/ionrifle = 5
 				)
 
@@ -788,17 +784,16 @@
 	name = "mid-high tier energy gun"
 	loot = list(/obj/effect/spawner/bundle/f13/aer12,
 				/obj/effect/spawner/bundle/f13/plasmapistol,
-				/obj/effect/spawner/bundle/f13/wattz2kext,
 				/obj/effect/spawner/bundle/f13/ionrifle,
 				/obj/effect/spawner/bundle/f13/aer14
 				)
 /obj/effect/spawner/lootdrop/f13/weapon/gun/energy/high
 	name = "high tier energy gun"
-	loot = list(/obj/effect/spawner/bundle/f13/plasmarifle = 25,
-				/obj/effect/spawner/bundle/f13/tribeam = 10,
+	loot = list(/obj/effect/spawner/bundle/f13/tribeam = 10,
 				/obj/effect/spawner/bundle/f13/rcw = 20,
 				/obj/effect/spawner/bundle/f13/aer14 = 20,
-				/obj/effect/spawner/bundle/f13/plasmaglock = 25
+				/obj/effect/spawner/bundle/f13/wattz2k = 26,
+				/obj/effect/spawner/bundle/f13/wattz2kext = 15,
 				)
 
 /obj/effect/spawner/lootdrop/f13/weapon/gun/energy/superhigh
@@ -860,7 +855,8 @@
 				/obj/effect/spawner/bundle/f13/trenchshotgun,
 				/obj/effect/spawner/bundle/f13/m1carbine,
 				/obj/effect/spawner/bundle/f13/huntingshotgun,
-				/obj/effect/spawner/bundle/f13/revolver45
+				/obj/effect/spawner/bundle/f13/revolver45,
+				/obj/item/gun/ballistic/automatic/smg/american180
 		)
 
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/mid
@@ -873,7 +869,6 @@
 				/obj/effect/spawner/bundle/f13/m1garand,
 				/obj/effect/spawner/bundle/f13/deagle,
 				/obj/effect/spawner/bundle/f13/automag,
-				/obj/item/gun/ballistic/automatic/smg/american180
 				)
 
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/highmid
@@ -895,22 +890,17 @@
 				/obj/effect/spawner/bundle/f13/dkssniper = 15,
 				/obj/effect/spawner/bundle/f13/pistol14 = 15,
 				/obj/item/gun/ballistic/revolver/grenadelauncher = 5,
-				/obj/item/gun/ballistic/rocketlauncher = 5,
 				/obj/effect/spawner/bundle/f13/riotshotgun = 10,
-				/obj/item/gun/ballistic/shotgun/automatic/combat/citykiller = 10,
-				/obj/effect/spawner/bundle/f13/guns/p90 = 1,
-				/obj/effect/spawner/bundle/f13/fnfal = 1,
-				/obj/item/gun/ballistic/automatic/bozar = 1
 				)
 
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/superhigh
 	name = "superhigh tier ballistic gun"
-	loot = list(/obj/effect/spawner/bundle/f13/riotshotgun = 5,
-				/obj/effect/spawner/bundle/f13/amr = 10,
+	loot = list(/obj/effect/spawner/bundle/f13/amr = 10,
 				/obj/effect/spawner/bundle/f13/brushgun = 15,
 				/obj/effect/spawner/bundle/f13/rangemaster = 15,
 				/obj/effect/spawner/bundle/f13/fnfal = 10,
 				/obj/item/gun/ballistic/rocketlauncher = 10,
+				/obj/item/gun/ballistic/shotgun/automatic/combat/citykiller = 10,
 				/obj/item/gun/ballistic/automatic/bozar = 10
 				)
 

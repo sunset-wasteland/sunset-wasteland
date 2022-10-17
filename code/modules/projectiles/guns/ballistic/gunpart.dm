@@ -132,6 +132,7 @@
 
 //Misc
 
+/** Not Functional
 /obj/item/gunpart/scope//TIER 3 MODS
 	name = "Scope Kit"
 	desc = "A kit for adding a scope to a gun."
@@ -143,7 +144,6 @@
 	attachx = 16
 	attachy = 15
 
-/** Not Functional
 /obj/item/gunpart/flashlight
 	name = "Flashlight Kit"
 	desc = "A kit for adding a flashlight to a gun."
@@ -242,10 +242,7 @@
 	var/loot2 = list(
 				/obj/item/gunpart/MGHP_Receiver
 				)
-	var/loot3 = list(
-				/obj/item/gunpart/scope
-				)
 
 /obj/effect/spawner/lootdrop/f13/gunparts/tier3/Initialize(mapload) //on mapload, pick what shit to spawn
-	loot = pick(loot1, loot2, loot3)
+	loot = pick(loot1, loot2)
 	. = ..()

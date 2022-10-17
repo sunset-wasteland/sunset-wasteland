@@ -427,7 +427,7 @@
 	desc = "A facewrap commonly employed by NCR troops in desert environments."
 	icon_state = "ncr_facewrap"
 	w_class = WEIGHT_CLASS_TINY
-	flags_inv = HIDEFACE|HIDEFACIALHAIR
+	flags_inv = HIDEFACE|HIDEFACIALHAIR|HIDESNOUT
 	visor_flags_inv = HIDEFACE
 	adjusted_flags = null
 	actions_types = list(/datum/action/item_action/adjust)
@@ -502,7 +502,7 @@
 	desc = "A headwrap to help shield the face from sand and other dirt."
 	icon_state = "facewrap"
 	item_state = "facewrap"
-	flags_inv = HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
+	flags_inv = HIDEFACE|HIDEHAIR|HIDEFACIALHAIR|HIDESNOUT
 	flags_cover = MASKCOVERSMOUTH
 	visor_flags_inv = HIDEFACE
 	visor_flags_cover = MASKCOVERSMOUTH

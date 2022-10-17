@@ -24,6 +24,6 @@
 	xattachlist = list("east" = 27, "west" =  7, "south" = 19, "north" = 15) //x coordinate for attachment point
 	yattachlist = list("east" = 17, "west" = 17, "south" = 15, "north" = 20) //y coordinate for attachment point
 	//Attachment Points
-	attachableparts = list("internal" = new /obj/item/gunpart/MGHP_Receiver, "internal2" = new /obj/item/gunpart/threeburstcam, "east" = new /obj/item/gunpart/barrel_extension_50mm, "west" = new /obj/item/gunpart/stock, "south" = null, "north" = new /obj/item/gunpart/scope)
+	attachableparts = list("internal" = new /obj/item/gunpart/MGHP_Receiver, "internal2" = null, "east" = new /obj/item/gunpart/barrel_extension_50mm, "west" = new /obj/item/gunpart/stock, "south" = null, "north" = new /obj/item/gunpart/scope)
 	//Blacklisted Parts
 	blacklistedparts = list()

@@ -636,5 +636,17 @@
 	finalforreal.throwforce = finalforreal.force*1.4
 	finalitem = finalforreal
 	..()
+/obj/item/smithing/knuckleduster
+	name = "unfinished knuckleduster"
+	desc = "Add leather strips."
+	icon_state = "knuckle_smith"
+	finishingitem = /obj/item/stack/sheet/leatherstrips
+	finalitem = /obj/item/melee/smith/knuckleduster
 
-
+/obj/item/smithing/knuckleduster/startfinish()
+	var/obj/item/melee/smith/knuckleduster/finalforreal = new /obj/item/melee/smith/knuckleduster(src)
+	finalforreal.force += quality*1.1
+	finalforreal.throwforce = finalforreal.force*1.1
+	finalforreal.attack_speed = CLICK_CD_MELEE * (3 / quality)
+	finalitem = finalforreal
+	..()

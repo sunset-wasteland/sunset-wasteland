@@ -21,6 +21,7 @@
 
 #define RECIPE_MACE "upu"  //upset punch upset
 #define RECIPE_AXE "udsp" //upset draw shrink punch
+#define RECIPE_KNUCKLE "dppb"
 
 #define RECIPE_DAGGER "dfs" //draw fold shrink
 #define RECIPE_SPEAR "ddbf" //draw draw bend fold
@@ -84,6 +85,7 @@
 	RECIPE_SPEAR = /obj/item/smithing/spearhead,
 	RECIPE_JAVELIN = /obj/item/smithing/javelinhead,
 	RECIPE_THROWING = /obj/item/smithing/throwingknife,
+	RECIPE_KNUCKLE = /obj/item/smithing/knuckleduster,
 )
 
 /obj/structure/anvil/Initialize()

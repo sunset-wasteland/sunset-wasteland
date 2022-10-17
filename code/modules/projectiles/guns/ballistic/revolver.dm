@@ -137,15 +137,6 @@
 	spread = 4
 	obj_flags = UNIQUE_RENAME
 	var/list/safe_calibers
-	//Extra Modifiable Gun Vars
-	modifiablegun = TRUE
-	//Sprite Attachment Points
-	xattachlist = list("east" = 26, "west" =  9, "south" = 21, "north" = 12) //x coordinate for attachment point
-	yattachlist = list("east" = 19, "west" = 17, "south" = 17, "north" = 24) //y coordinate for attachment point
-	//Attachment Points
-	attachableparts = list("internal" = new /obj/item/gunpart/BHS_Receiver, "internal2" = null, "east" = null, "west" = null, "south" = null, "north" = null)
-	//Blacklisted Parts
-	blacklistedparts = list("stock", "scope")
 
 ///////////////////
 // .45 ACP REVOLVERS //
@@ -179,15 +170,6 @@
 	fire_delay = 4.5
 	spread = 0
 	fire_sound = 'sound/f13weapons/357magnum.ogg'
-	//Extra Modifiable Gun Vars
-	modifiablegun = TRUE
-	//Sprite Attachment Points
-	xattachlist = list("east" = 30, "west" =  9, "south" = 21, "north" = 17) //x coordinate for attachment point
-	yattachlist = list("east" = 20, "west" = 17, "south" = 17, "north" = 20) //y coordinate for attachment point
-	//Attachment Points
-	attachableparts = list("internal" = new /obj/item/gunpart/BHS_Receiver, "internal2" = null, "east" = null, "west" = null, "south" = null, "north" = null)
-	//Blacklisted Parts
-	blacklistedparts = list("stock")
 
 /obj/item/gun/ballistic/revolver/colt357/mateba //this is a skin that rigbe wanted
 	name = "\improper Unica 6 auto-revolver"
@@ -215,15 +197,6 @@
 	w_class = WEIGHT_CLASS_SMALL
 	spread = 2
 	fire_sound = 'sound/f13weapons/policepistol.ogg'
-	//Extra Modifiable Gun Vars
-	modifiablegun = TRUE
-	//Sprite Attachment Points
-	xattachlist = list("east" = 29, "west" =  9, "south" = 21, "north" = 12) //x coordinate for attachment point
-	yattachlist = list("east" = 22, "west" = 17, "south" = 17, "north" = 24) //y coordinate for attachment point
-	//Attachment Points
-	attachableparts = list("internal" = new /obj/item/gunpart/BHS_Receiver, "internal2" = null, "east" = null, "west" = null, "south" = null, "north" = null)
-	//Blacklisted Parts
-	blacklistedparts = list("stock", "scope")
 
 
 
@@ -244,15 +217,6 @@
 	scope_x_offset = 6
 	scope_y_offset = 24
 	fire_sound = 'sound/f13weapons/44mag.ogg'
-	//Extra Modifiable Gun Vars
-	modifiablegun = TRUE
-	//Sprite Attachment Points
-	xattachlist = list("east" = 32, "west" =  9, "south" = 21, "north" = 16) //x coordinate for attachment point
-	yattachlist = list("east" = 22, "west" = 17, "south" = 17, "north" = 23) //y coordinate for attachment point
-	//Attachment Points
-	attachableparts = list("internal" = new /obj/item/gunpart/BHS_Receiver, "internal2" = null, "east" = null, "west" = null, "south" = null, "north" = null)
-	//Blacklisted Parts
-	blacklistedparts = list("stock")
 
 /obj/item/gun/ballistic/revolver/m29/alt
 	desc = "Powerful handgun with a bit of a kick. This one has nickled finish and pearly grip, and has been kept in good condition by its owner."
@@ -327,15 +291,6 @@
 	fire_delay = 1
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev4570
 	fire_sound = 'sound/f13weapons/sequoia.ogg'
-	//Extra Modifiable Gun Vars
-	modifiablegun = TRUE
-	//Sprite Attachment Points
-	xattachlist = list("east" = 30, "west" =  9, "south" = 21, "north" = 17) //x coordinate for attachment point
-	yattachlist = list("east" = 20, "west" = 17, "south" = 17, "north" = 20) //y coordinate for attachment point
-	//Attachment Points
-	attachableparts = list("internal" = new /obj/item/gunpart/BHS_Receiver, "internal2" = null, "east" = null, "west" = null, "south" = null, "north" = null)
-	//Blacklisted Parts
-	blacklistedparts = list("stock")
 
 /obj/item/gun/ballistic/revolver/sequoia/scoped
 	attachableparts = list("internal" = new /obj/item/gunpart/BHS_Receiver, "internal2" = null, "east" = null, "west" = null, "south" = null, "north" = new /obj/item/gunpart/scope)

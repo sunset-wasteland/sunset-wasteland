@@ -42,11 +42,11 @@ SUBSYSTEM_DEF(research)
 	/obj/item/slime_extract/silver                 = list(TECHWEB_POINT_TYPE_GENERIC = 1000),
 	/obj/item/slime_extract/darkblue               = list(TECHWEB_POINT_TYPE_GENERIC = 1000),
 	/obj/item/slime_extract/darkpurple             = list(TECHWEB_POINT_TYPE_GENERIC = 1000),
-	/obj/item/slime_extract/bluespace              = list(TECHWEB_POINT_TYPE_GENERIC = 1250),
+//	/obj/item/slime_extract/bluespace              = list(TECHWEB_POINT_TYPE_GENERIC = 1250),
 	/obj/item/slime_extract/sepia                  = list(TECHWEB_POINT_TYPE_GENERIC = 1250),
 	/obj/item/slime_extract/cerulean               = list(TECHWEB_POINT_TYPE_GENERIC = 1250),
 	/obj/item/slime_extract/pyrite                 = list(TECHWEB_POINT_TYPE_GENERIC = 1250),
-	/obj/item/slime_extract/red                    = list(TECHWEB_POINT_TYPE_GENERIC = 1250),
+//	/obj/item/slime_extract/red                    = list(TECHWEB_POINT_TYPE_GENERIC = 1250),
 	/obj/item/slime_extract/green                  = list(TECHWEB_POINT_TYPE_GENERIC = 1250),
 	/obj/item/slime_extract/pink                   = list(TECHWEB_POINT_TYPE_GENERIC = 1250),
 	/obj/item/slime_extract/gold                   = list(TECHWEB_POINT_TYPE_GENERIC = 1250),
@@ -313,14 +313,14 @@ SUBSYSTEM_DEF(research)
 	point_types = TECHWEB_POINT_TYPE_LIST_ASSOCIATIVE_NAMES
 	initialize_all_techweb_designs()
 	initialize_all_techweb_nodes()
-	
+
 	for(var/techweb_type in subtypesof(/datum/techweb))
 		var/datum/techweb/candidate_techweb = techweb_type
 		if (!initial(candidate_techweb.create_roundstart))
 			continue
 		candidate_techweb = new techweb_type
 		technets[candidate_techweb.id] = candidate_techweb
-	
+
 	autosort_categories()
 	error_design = new
 	error_node = new

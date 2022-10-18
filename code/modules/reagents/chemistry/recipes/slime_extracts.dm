@@ -358,7 +358,7 @@
 /datum/chemical_reaction/slime/slimeplasma/on_reaction(datum/reagents/holder)
 	new /obj/item/stack/sheet/mineral/plasma(get_turf(holder.my_atom), 3)
 	..()
-
+/*
 //Red
 /datum/chemical_reaction/slime/slimemutator
 	name = "Slime Mutator"
@@ -399,7 +399,7 @@
 /datum/chemical_reaction/slime/slimespeed/on_reaction(datum/reagents/holder)
 	new /obj/item/slimepotion/speed(get_turf(holder.my_atom))
 	..()
-
+*/
 //Pink
 /datum/chemical_reaction/slime/docility
 	name = "Docility Potion"
@@ -507,7 +507,7 @@
 /datum/chemical_reaction/slime/adamantine/on_reaction(datum/reagents/holder)
 	new /obj/item/stack/sheet/mineral/adamantine(get_turf(holder.my_atom))
 	..()
-
+/*
 //Bluespace
 /datum/chemical_reaction/slime/slimefloor2
 	name = "Bluespace Floor"
@@ -543,7 +543,7 @@
 /datum/chemical_reaction/slime/slimeradio/on_reaction(datum/reagents/holder, multiplier)
 	new /obj/item/slimepotion/slime/slimeradio(get_turf(holder.my_atom))
 	..()
-
+*/
 //Cerulean
 /datum/chemical_reaction/slime/slimepsteroid2
 	name = "Slime Steroid 2"

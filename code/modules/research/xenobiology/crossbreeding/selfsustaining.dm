@@ -86,11 +86,11 @@ Self-sustaining extracts:
 /obj/item/slimecross/selfsustaining/silver
 	extract_type = /obj/item/slime_extract/silver
 	colour = "silver"
-
+/*
 /obj/item/slimecross/selfsustaining/bluespace
 	extract_type = /obj/item/slime_extract/bluespace
 	colour = "bluespace"
-
+*/
 /obj/item/slimecross/selfsustaining/sepia
 	extract_type = /obj/item/slime_extract/sepia
 	colour = "sepia"
@@ -102,11 +102,11 @@ Self-sustaining extracts:
 /obj/item/slimecross/selfsustaining/pyrite
 	extract_type = /obj/item/slime_extract/pyrite
 	colour = "pyrite"
-
+/*
 /obj/item/slimecross/selfsustaining/red
 	extract_type = /obj/item/slime_extract/red
 	colour = "red"
-
+*/
 /obj/item/slimecross/selfsustaining/green
 	extract_type = /obj/item/slime_extract/green
 	colour = "green"

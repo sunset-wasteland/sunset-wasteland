@@ -160,11 +160,11 @@
 
 // X-02
 /obj/item/clothing/suit/armored/heavy/salvaged_pa/x02
-	name = "salvaged Enclave power armor"
+	name = "/improper salvaged APA Mk II"
 	desc = "X-02 power armor with servomotors and all valuable components stripped out of it."
 	icon_state = "advanced_salvaged"
 	item_state = "advanced_salvaged"
-	armor = list("melee" = 80, "bullet" = 80, "laser" = 70, "energy" = 35, "bomb" = 60, "bio" = 70, "rad" = 65, "fire" = 85, "acid" = 45, "wound" = 50)
+	armor = list("melee" = 45, "bullet" = 45, "laser" = 85, "energy" = 85, "bomb" = 70, "bio" = 100, "rad" = 100, "fire" = 90, "acid" = 50, "wound" = 50)
 	slowdown = 0.85
 
 ////////////

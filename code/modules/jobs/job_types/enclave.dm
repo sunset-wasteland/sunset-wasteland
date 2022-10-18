@@ -63,8 +63,8 @@
 	exp_requirements = 1500
 
 	loadout_options = list(
-		/datum/outfit/loadout/lt_ballistics, // G11 and 14mm
-		/datum/outfit/loadout/lt_plasma, // Plasma Rifle and Plasma Glock
+		/datum/outfit/loadout/lt_ballistics, // G11 and Plasma Glock
+		/datum/outfit/loadout/lt_plasma, // Plasma Rifle and 14mm
 		)
 
 
@@ -144,7 +144,6 @@
 	loadout_options = list(
 		/datum/outfit/loadout/gysgt_ballistics, // Vindicator
 		/datum/outfit/loadout/gysgt_laser, // Multiplas
-		/datum/outfit/loadout/gysgt_minigun, // Laser gatling
 		)
 
 /datum/outfit/job/enclave/peacekeeper/f13gysergeant
@@ -183,13 +182,6 @@
 	backpack_contents = list(
 		/obj/item/stock_parts/cell/ammo/mfc = 4,
 		/obj/item/grenade/f13/plasma = 2,
-		)
-
-/datum/outfit/loadout/gysgt_minigun
-	name = "Armored Support Kit"
-	suit_store = 	/obj/item/encminigunpack
-	backpack_contents = list(
-		/obj/item/stock_parts/cell/ammo/ecp = 2,
 		)
 
 /datum/outfit/job/enclave/peacekeeper/f13gysergeant/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)

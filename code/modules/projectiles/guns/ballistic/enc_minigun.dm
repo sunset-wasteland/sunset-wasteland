@@ -179,7 +179,7 @@
 
 //The ammo/gun is stored in a back slot item
 /obj/item/encminigunpack
-	name = "backpack power source"
+	name = "\improper H&K L30 backpack power source"
 	desc = "The massive external power source for the laser gatling gun."
 	icon = 'icons/obj/guns/minigun.dmi'
 	icon_state = "holstered"

@@ -267,7 +267,7 @@
 
 /datum/supply_pack/organic/hydroponics/beekeeping_fullkit
 	name = "Beekeeping Starter Crate"
-	desc = "BEES BEES BEES. Contains three honey frames, a beekeeper suit & helmet, flyswatter, bee house, and, of course, a pure-bred Nanotrasen-Standardized Queen Bee!"
+	desc = "BEES BEES BEES. Contains three honey frames, a beekeeper suit & helmet, flyswatter, bee house, and, of course, a pure-bred brotherhood-Standardized Queen Bee!"
 	cost = 1800
 	contains = list(/obj/structure/beebox/unwrenched,
 					/obj/item/honey_frame,
@@ -359,7 +359,7 @@
 
 /datum/supply_pack/organic/party
 	name = "Party Equipment"
-	desc = "Celebrate both life and death on the station with Nanotrasen's Party Essentials(tm)! Contains seven colored glowsticks, four beers, two ales, a drinking shaker, and a bottle of patron & goldschlager!"
+	desc = "Celebrate both life and death on the station with brotherhood's Party Essentials(tm)! Contains seven colored glowsticks, four beers, two ales, a drinking shaker, and a bottle of patron & goldschlager!"
 	cost = 2000
 	contains = list(/obj/item/storage/box/drinkingglasses,
 					/obj/item/reagent_containers/food/drinks/shaker,

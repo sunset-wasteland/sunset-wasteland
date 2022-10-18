@@ -254,8 +254,8 @@ heavy rifle calibers (12.7, 14mm, 7.62): Uranium, Contaminated, Incin
 
 /obj/item/projectile/bullet/a473/minigun
 	name = "4.73 FMJ bullet"
-	damage = 18
-	armour_penetration = 0.1
+	damage = 14
+	armour_penetration = 0
 	wound_bonus = 24
 	bare_wound_bonus = 32
 

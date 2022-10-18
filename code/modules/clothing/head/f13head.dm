@@ -484,12 +484,12 @@
 
 //Part of the peacekeeper enclave stuff, adjust values as needed.
 /obj/item/clothing/head/helmet/f13/power_armor/x02helmet
-	name = "Enclave power armor helmet"
+	name = "/improper APA Mk II helmet"
 	desc = "The Enclave Mark II Powered Combat Armor helmet."
 	icon_state = "advanced"
 	item_state = "advanced"
 	slowdown = 0.1
-	armor = list("melee" = 85, "bullet" = 85, "laser" = 85, "energy" = 65, "bomb" = 70, "bio" = 100, "rad" = 100, "fire" = 90, "acid" = 50, "wound" = 75)
+	armor = list("melee" = 65, "bullet" = 65, "laser" = 85, "energy" = 85, "bomb" = 70, "bio" = 100, "rad" = 100, "fire" = 90, "acid" = 50, "wound" = 50)
 	actions_types = list(/datum/action/item_action/toggle_helmet_light)
 	salvaged_type = /obj/item/clothing/head/helmet/f13/heavy/salvaged_pa/x02
 

@@ -80,11 +80,11 @@ Recurring extracts:
 /obj/item/slimecross/recurring/silver
 	extract_type = /obj/item/slime_extract/silver
 	colour = "silver"
-
+/*
 /obj/item/slimecross/recurring/bluespace
 	extract_type = /obj/item/slime_extract/bluespace
 	colour = "bluespace"
-
+*/
 /obj/item/slimecross/recurring/sepia
 	extract_type = /obj/item/slime_extract/sepia
 	colour = "sepia"
@@ -97,11 +97,11 @@ Recurring extracts:
 /obj/item/slimecross/recurring/pyrite
 	extract_type = /obj/item/slime_extract/pyrite
 	colour = "pyrite"
-
+/*
 /obj/item/slimecross/recurring/red
 	extract_type = /obj/item/slime_extract/red
 	colour = "red"
-
+*/
 /obj/item/slimecross/recurring/green
 	extract_type = /obj/item/slime_extract/green
 	colour = "green"

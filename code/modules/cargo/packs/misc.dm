@@ -155,7 +155,6 @@
 /datum/supply_pack/misc/coincrate
 	name = "Coin Crate"
 	desc = "Psssst, hey, you. Yes, you. I've heard that coins can do some special things on your station, give you access to some pretty cool stuff. Here's the deal, you give me some credits, and I give so some coins. Sound like a deal? I'll give you 10 for 10000 creds."
-	contraband = TRUE
 	cost = 3000
 	contains = list(/obj/item/coin/silver) // 400 x 10 = 2 sheets of silver for 2300cr
 	crate_name = "coin crate"

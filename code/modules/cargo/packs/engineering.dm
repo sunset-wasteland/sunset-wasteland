@@ -110,7 +110,6 @@
 	name = "Industrial RCD"
 	desc = "An industrial RCD in case the station has gone through more then one meteor storm and the CE needs to bring out the somthing a bit more reliable. Does not contain spare ammo for the industrial RCD or any other RCD models."
 	cost = 4500
-	access = ACCESS_CE
 	contains = list(/obj/item/construction/rcd/industrial)
 	crate_name = "industrial rcd"
 	crate_type = /obj/structure/closet/crate/secure/engineering

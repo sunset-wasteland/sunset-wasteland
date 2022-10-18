@@ -13,11 +13,17 @@
 
 //fallout changes
 
-/datum/supply_pack/security/aer9
-	name = "AER9 Crate"
-	desc = "Contains one AER9 for any brotherhood member that needs a spare."
-	cost = 1000
-	contains = list(/obj/item/gun/energy/laser/aer9)
+/datum/supply_pack/security/energyweapons
+	name = "Energy Weapons Crate"
+	desc = "Contains one randomly selected gun from HQ for any brotherhood member that needs a spare."
+	cost = 5000
+	contains = list(/obj/effect/spawner/lootdrop/f13/weapon/gun/energy/buyable)
+
+/datum/supply_pack/security/grenadef13
+	name = "Grenade Crate"
+	desc = "Contains two randomly selected grenades from HQ for any brotherhood member that needs a spare."
+	cost = 2500
+	contains = list(/obj/effect/spawner/lootdrop/f13/bomb/tier2)
 
 //fallout changes ends here
 
@@ -81,7 +87,6 @@
 /datum/supply_pack/security/russianclothing
 	name = "Russian Surplus Clothing"
 	desc = "An old russian crate full of surplus armor that they used to use! Has two sets of bulletproff armor, a few union suits and some warm hats!"
-	contraband = TRUE
 	cost = 5750 // Its basicly sec suits, good boots/gloves
 	contains = list(/obj/item/clothing/suit/armor/navyblue/russian,
 					/obj/item/clothing/suit/armor/navyblue/russian,

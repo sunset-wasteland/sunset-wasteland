@@ -2307,3 +2307,10 @@
 		/obj/effect/spawner/lootdrop/f13/armor/tier5 = 2,
 		)
 
+/obj/effect/spawner/lootdrop/f13/weapon/gun/energy/buyable
+	name = "mid tier energy gun"
+	loot = list(/obj/effect/spawner/bundle/f13/aer9 = 63,
+				/obj/effect/spawner/bundle/f13/aer12 = 20,
+				/obj/effect/spawner/bundle/f13/wattz2k = 10,
+				/obj/effect/spawner/bundle/f13/ionrifle = 2
+				)

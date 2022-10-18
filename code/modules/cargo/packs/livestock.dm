@@ -42,7 +42,6 @@
 /datum/supply_pack/critter/butterfly
 	name = "Butterflies Crate"
 	desc = "Not a very dangerous insect, but they do give off a better image than, say, flies or cockroaches."//is that a motherfucking worm reference
-	contraband = TRUE
 	cost = 5000
 	contains = list(/mob/living/simple_animal/butterfly)
 	crate_name = "entomology samples crate"

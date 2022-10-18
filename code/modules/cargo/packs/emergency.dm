@@ -58,8 +58,8 @@
 
 /datum/supply_pack/emergency/caps
 	name = "Caps Crate"
-	desc = "One thousand points, converted to one hundred caps."
-	cost = 1000
+	desc = "Four thousand points, converted to one hundred caps."
+	cost = 4000
 	contains = list(/obj/item/stack/f13Cash/caps/onezerozero)
 
 /datum/supply_pack/emergency/trait
@@ -211,7 +211,6 @@
 	name = "Firefighting Tank Backpack"
 	desc = "Mow down fires with this high-capacity fire fighting tank backpack. Requires Atmospherics access to open."
 	cost = 1000
-	access = ACCESS_ATMOSPHERICS
 	contains = list(/obj/item/watertank/atmos)
 	crate_name = "firefighting backpack crate"
 	crate_type = /obj/structure/closet/crate/secure
@@ -350,7 +349,6 @@
 	name = "Weed Control Crate"
 	desc = "Keep those invasive species OUT. Contains a scythe, gasmask, two sprays of Plant-B-Gone, and two anti-weed chemical grenades. Warranty void if used on ambrosia. Requires Hydroponics access to open."
 	cost = 1800
-	access = ACCESS_HYDROPONICS
 	contains = list(/obj/item/scythe,
 					/obj/item/clothing/mask/gas,
 					/obj/item/grenade/chem_grenade/antiweed,

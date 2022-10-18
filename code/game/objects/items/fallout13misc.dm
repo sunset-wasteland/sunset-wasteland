@@ -185,7 +185,7 @@
 	faction = FACTION_LEGION
 	anchored = 1
 
-obj/item/flag/bighorn
+/obj/item/flag/bighorn
 	name = "Bighorn flag"
 	desc = "A flag depicting the head of a bighorner. It's the symbol of the town of Bighorn."
 	icon_state = "bighornflag"

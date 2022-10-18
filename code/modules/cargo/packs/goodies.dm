@@ -29,7 +29,7 @@
 
 /datum/supply_pack/goody/combatknives_single
 	name = "Combat Knife Single-Pack"
-	desc = "Contains one sharpened combat knive. Guaranteed to fit snugly inside any Nanotrasen-standard boot."
+	desc = "Contains one sharpened combat knive. Guaranteed to fit snugly inside any Brotherhood-standard boot."
 	cost = 800
 	contains = list(/obj/item/melee/onehanded/knife/hunting)
 
@@ -95,7 +95,7 @@
 
 /datum/supply_pack/goody/beach_ball
 	name = "Beach Ball"
-	desc = "The simple beach ball is one of Nanotrasen's most popular products. 'Why do we make beach balls? Because we can! (TM)' - Nanotrasen"
+	desc = "The simple beach ball is one of Nanotrasen's most popular products. 'Why do we make beach balls? Because we can! (TM)' - The brotherhood"
 	cost = 200
 	contains = list(/obj/item/toy/beach_ball)
 

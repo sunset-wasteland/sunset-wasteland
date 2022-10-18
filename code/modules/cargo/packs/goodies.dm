@@ -6,7 +6,7 @@
 
 //fallout changes
 
-/datum/supply_pack/goody/stimpaks
+/datum/supply_pack/goody/realstimpaks
 	name = "Stimpak box"
 	desc = "Contains one full box of stimpaks, ready to be consumed.."
 	cost = 3000

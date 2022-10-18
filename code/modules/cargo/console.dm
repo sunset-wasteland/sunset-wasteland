@@ -210,12 +210,12 @@
 				reason = stripped_input("Reason:", name, "")
 				if(isnull(reason) || ..())
 					return
-
+/*
 			if(pack.goody == PACK_GOODY_PRIVATE && !self_paid)
 				playsound(src, 'sound/machines/buzz-sigh.ogg', 50, FALSE)
 				say("ERROR: Private small crates may only be purchased by private accounts.")
 				return
-
+*/
 			var/obj/item/coupon/applied_coupon
 			for(var/i in loaded_coupons)
 				var/obj/item/coupon/coupon_check = i

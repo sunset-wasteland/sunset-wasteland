@@ -10,6 +10,15 @@
 	group = "Science"
 	crate_type = /obj/structure/closet/crate/science
 
+//fallout changes
+/datum/supply_pack/science/limbgrowerf13
+	name = "Experimental regrowing limb machine"
+	desc = "A highly experimental limb-growing machine. It's been acquired through a raid. And only a few copies have been made of the design because of the high encryption of the pattern."
+	cost = 20000
+	contains = list(/obj/item/circuitboard/machine/limbgrower)
+
+//fallout changes ends
+
 /datum/supply_pack/science/ape  //Ape out!
 	name = "Ape Cube Crate"
 	desc = "Pss what a new test subject with supper strangth, speed, and love for bananas all at the same time? Say no more... Contains a single ape cube. Dont add water!"

@@ -833,7 +833,7 @@
 	suppressor_x_offset = 31
 	suppressor_y_offset = 15
 	fire_sound = 'sound/f13weapons/marksman_rifle.ogg'
-	extra_penetration = 0.1
+	extra_penetration = 0.2
 
 /obj/item/gun/ballistic/automatic/marksman/policerifle
 	name = "Police Rifle"
@@ -1019,7 +1019,8 @@
 	can_automatic = FALSE
 	can_bayonet = FALSE
 	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
-	extra_penetration = 0.2
+	extra_penetration = 0.25
+	extra_damage = 10
 
 /obj/item/gun/ballistic/automatic/marksman/sniper/gold
 	name = "golden sniper rifle"
@@ -1039,12 +1040,10 @@
 	mob_overlay_icon = 'icons/fallout/onmob/backslot_weapon.dmi'
 	icon_state = "venator_sniper"
 	item_state = "venator_sniper"
-	fire_delay = 6
-	slowdown = 0.25
+	fire_delay = 2
+	slowdown = 0.12
 	zoom_amt = 15
 	zoom_out_amt = 17
-	extra_penetration = 0.25
-	extra_damage = 5
 
 /obj/item/gun/ballistic/automatic/marksman/sniper/sniperranger
 	name = "compact sniper rifle"
@@ -1101,6 +1100,7 @@
 	suppressor_state = "ar_suppressor"
 	actions_types = list(/datum/action/item_action/toggle_firemode)
 	fire_sound = 'sound/f13weapons/varmint_rifle.ogg'
+	extra_damage = -5
 
 
 //Infiltrator			Keywords: 5.56mm, Automatic, 20 (10-50) round magazine, Suppressed, Small scope, Pistol grip
@@ -1204,6 +1204,7 @@
 	can_scope = FALSE
 	actions_types = list(/datum/action/item_action/toggle_firemode)
 	fire_sound = 'sound/f13weapons/bozar_fire.ogg'
+	extra_damage = -3
 
 
 //Assault Carbine				Keywords: 5mm, Automatic, 30 round magazine, Flashlight, 20dmg/0.50AP

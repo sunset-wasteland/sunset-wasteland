@@ -118,6 +118,7 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube357
 	extra_speed = 300
 	fire_sound = 'sound/f13weapons/cowboyrepeaterfire.ogg'
+	extra_damage = 4
 
 
 //Trail carbine							Keywords: .44, Lever action, 12 round internal, Long barrel
@@ -129,6 +130,7 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube44
 	extra_speed = 200
 	fire_sound = 'sound/f13weapons/44mag.ogg'
+	extra_damage = 4
 
 
 //Brush gun								Keywords: .45-70, Lever action, 10 round internal, Long barrel
@@ -142,6 +144,7 @@
 	fire_delay = 3
 	recoil = 0.15
 	fire_sound = 'sound/f13weapons/brushgunfire.ogg'
+	extra_penetration = 0.12
 
 //Medicine Stick						Keywords: .45-70, Lever action, 8 round internal, Long barrel, Unique
 /obj/item/gun/ballistic/rifle/repeater/brush/medistick
@@ -153,6 +156,7 @@
 	fire_delay = 2.25
 	recoil = 0.10
 	fire_sound = 'sound/f13weapons/brushgunfire.ogg'
+	extra_penetration = 0.4
 
 
 ////////////////////////
@@ -208,7 +212,7 @@
 		..()
 
 
-//Paciencia								Keywords: UNIQUE, .308, Bolt-action, 5 rounds internal, Scoped
+//Paciencia								Keywords: UNIQUE, .308, Bolt-action, 3 rounds internal, Scoped
 /obj/item/gun/ballistic/rifle/hunting/paciencia
 	name = "Paciencia"
 	desc = "A modified .308 hunting rifle with a reduced magazine but an augmented receiver. A Mexican flag is wrapped around the stock. You only have three shots- make them count."
@@ -220,6 +224,9 @@
 	zoom_amt = 10
 	zoom_out_amt = 13
 	can_scope = FALSE
+	extra_speed = 1000
+	extra_penetration = 0.65
+	extra_damage = 5.2
 
 /obj/item/gun/ballistic/rifle/hunting/paciencia/attackby(obj/item/A, mob/user, params) //no sawing off this one
 	if(istype(A, /obj/item/circular_saw) || istype(A, /obj/item/gun/energy/plasmacutter))

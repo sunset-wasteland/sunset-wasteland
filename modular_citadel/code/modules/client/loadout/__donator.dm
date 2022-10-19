@@ -223,18 +223,6 @@
 /obj/item/storage/box/large/custom_kit/cassidy/PopulateContents()
 	new /obj/item/clothing/gloves/ring/diamond(src)
 
-/datum/gear/donator/kits/garner
-	name = "Garner's Equipment"
-	path = /obj/item/storage/box/large/custom_kit/garner
-	ckeywhitelist = list ("vaultthebeast")
-
-/obj/item/storage/box/large/custom_kit/garner/PopulateContents()
-	new /obj/item/clothing/suit/armor/f13/power_armor/x02/garner(src)
-	new /obj/item/clothing/head/helmet/f13/power_armor/x02helmet/garner(src)
-	new /obj/item/clothing/accessory/enclave/sergeant_major(src)
-	new /obj/item/lighter/gold(src)
-	new /obj/item/storage/box/ration/menu_seven(src)
-
 /datum/gear/donator/kits/tzzshali
 	name = "Tzzshali's Form"
 	path = /obj/item/storage/box/large/custom_kit/tzzshali

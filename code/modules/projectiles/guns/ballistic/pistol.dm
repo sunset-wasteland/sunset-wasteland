@@ -62,6 +62,7 @@
 	can_unsuppress = FALSE
 	suppressed = 1
 	fire_sound = 'sound/f13weapons/22pistol.ogg'
+	extra_damage = 3
 
 
 //N99  10mm								Keywords: 10mm, Semi-auto, 12/24 round magazine
@@ -87,6 +88,7 @@
 	attachableparts = list("internal" = new /obj/item/gunpart/BHS_Receiver, "internal2" = null, "east" = null, "west" = null, "south" = null, "north" = null)
 	//Blacklisted Parts
 	blacklistedparts = list("stock")
+	extra_damage = 3
 
 //the Executive							Keywords: UNIQUE, 10mm, Automatic, 12/24 round magazine. Special modifiers: damage +4
 /obj/item/gun/ballistic/automatic/pistol/n99/executive
@@ -120,34 +122,6 @@
 	can_suppress = FALSE
 	fire_sound = 'sound/f13weapons/10mm_fire_02.ogg'
 
-/obj/item/gun/ballistic/automatic/pistol/type17/strelle
-	name = "Type 17 Strelle"
-	desc = "Modification of the classic Chinese military sidearm with select fire mechanism and pearl finishing. <span class='warning'>'Zhizn' korotká.'</span>"
-	icon_state = "chinapistols"
-	actions_types = list(/datum/action/item_action/toggle_firemode)
-	automatic_burst_overlay = TRUE
-	can_attachments = FALSE
-	semi_auto = FALSE
-
-/obj/item/gun/ballistic/automatic/pistol/type17/strelle/burst_select()
-	var/mob/living/carbon/human/user = usr
-	switch(select)
-		if(0)
-			select += 1
-			burst_size = 2
-			spread = 9
-			recoil = 0.1
-			to_chat(user, "<span class='notice'>You switch to automatic fire.</span>")
-		if(1)
-			select = 0
-			burst_size = 1
-			spread = 1
-			recoil = 0
-			to_chat(user, "<span class='notice'>You switch to semi-auto.</span>")
-	playsound(user, 'sound/weapons/empty.ogg', 100, 1)
-	update_icon()
-	return
-
 //Browning Hi-power						Keywords: 9mm, Semi-auto
 /obj/item/gun/ballistic/automatic/pistol/ninemil
 	name = "Browning Hi-power"
@@ -177,6 +151,8 @@
 	desc = "An ornately-decorated pre-war Browning Hi-power 9mm pistol with pearl grips and a polished nickel finish. The firing mechanism has been upgraded, so for anyone on the receiving end, it must seem like an eighteen-karat run of bad luck."
 	icon_state = "maria"
 	fire_delay = 2
+	extra_damage = 8
+	extra_penetration = 0.05
 
 
 //Sig Sauer P220						Keywords: 9mm, Semi-auto, 10 round magazine
@@ -277,7 +253,7 @@
 	desc = "A well-maintained stainless-steel frame 1911, with genuine wooden grips."
 	icon_state = "m1911_custom"
 	recoil = 0.05
-	fire_delay = 2
+	fire_delay = 1
 
 
 //Mk. 23								Keywords: .45 ACP, Semi-auto, Long barrel (lasersight), 12 round magazine, Flashlight
@@ -315,7 +291,9 @@
 	fire_delay = 3
 	force = 15
 	extra_speed = 300
-	recoil = 0.2
+	recoil = 3
+	extra_damage = 10
+	extra_penetration = 0.05
 	can_suppress = FALSE
 	automatic_burst_overlay = FALSE
 	fire_sound = 'sound/f13weapons/44mag.ogg'
@@ -352,6 +330,7 @@
 	can_suppress = FALSE
 	automatic_burst_overlay = FALSE
 	fire_sound = 'sound/f13weapons/44mag.ogg'
+	extra_damage = 5
 
 
 //14mm Pistol		Keywords: 14mm, Semi-auto, 7 rounds, Heavy
@@ -362,7 +341,8 @@
 	mag_type = /obj/item/ammo_box/magazine/m14mm
 	force = 15
 	fire_delay = 5
-	recoil = 0.25
+	extra_damage = 11
+	recoil = 2.2
 	can_suppress = FALSE
 	fire_sound = 'sound/f13weapons/magnum_fire.ogg'
 
@@ -381,6 +361,8 @@
 	icon_state = "lildev"
 	w_class = WEIGHT_CLASS_SMALL
 	fire_delay = 4
+	extra_damage = 0
+	extra_penetration = 0.35
 
 /obj/item/gun/ballistic/automatic/pistol/pistol14/custom
 	name= "Custom 14mm pistol"

@@ -23,7 +23,7 @@
 //////////////////////////////////////////////////////////////////////////////
 
 /datum/supply_pack/organic/hungrymeatlover
-	name = "Hungry meat lover package."
+	name = "Hungry meat lover package"
 	desc = "This pack is filled with everything a HUNGRY person would eat. Eat it HOT!, or don't eat it at all!!!."
 	cost = 6960
 	contains = list(/obj/item/reagent_containers/food/snacks/bbqribs,
@@ -74,7 +74,7 @@
 					/obj/item/reagent_containers/food/snacks/soup/wingfangchu,
 					/obj/item/reagent_containers/food/snacks/soup/wish)
 
-/datum/supply_pack/organic/souplover
+/datum/supply_pack/organic/sushi
 	name = "Sushi crate"
 	desc = "Made by love."
 	cost = 6000

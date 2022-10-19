@@ -61,7 +61,7 @@
 	build_path = /obj/item/clothing/glasses/hud/security/night
 	category = list("Equipment")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
-
+/*
 /datum/design/diagnostic_hud
 	name = "Diagnostic HUD"
 	desc = "A HUD used to analyze and determine faults within robotic machinery."
@@ -91,7 +91,7 @@
 	build_path = /obj/item/clothing/glasses/hud/diagnostic/night
 	category = list("Equipment")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
-
+*/
 /datum/design/sci_goggles
 	name = "Science Goggles"
 	desc = "Goggles fitted with a portable analyzer capable of determining the research worth of an item or components of a machine."

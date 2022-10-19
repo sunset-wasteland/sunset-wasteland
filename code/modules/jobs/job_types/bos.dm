@@ -456,8 +456,6 @@ Star Paladin
 
 /datum/outfit/loadout/spaladine
 	name = "Gatling Head Paladin"
-	suit = /obj/item/clothing/suit/armor/f13/power_armor/midwest/hardened
-	head = /obj/item/clothing/head/helmet/f13/power_armor/midwest/hardened
 	backpack_contents = list(
 		/obj/item/encminigunpack=1,
 	)

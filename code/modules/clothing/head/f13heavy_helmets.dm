@@ -102,10 +102,10 @@
 
 // X-02
 /obj/item/clothing/head/helmet/f13/heavy/salvaged_pa/x02
-	name = "salvaged Enclave helmet"
+	name = "\improper salvaged APA Mk II helmet"
 	desc = "It's a salvaged X-02 power armor helmet."
 	icon_state = "advanced"
 	item_state = "advanced"
-	armor = list("melee" = 45, "bullet" = 45, "laser" = 85, "energy" = 85, "bomb" = 70, "bio" = 100, "rad" = 100, "fire" = 90, "acid" = 50, "wound" = 50)
+	armor = list("melee" = 75, "bullet" = 75, "laser" = 85, "energy" = 85, "bomb" = 70, "bio" = 100, "rad" = 100, "fire" = 90, "acid" = 50, "wound" = 50)
 	slowdown = 0.1
 	flags_inv = HIDEFACIALHAIR|HIDEFACE|HIDEEYES|HIDEEARS|HIDEHAIR|HIDESNOUT

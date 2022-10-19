@@ -686,12 +686,12 @@
 
 //Peacekeeper armor adjust as needed
 /obj/item/clothing/suit/armor/f13/power_armor/x02
-	name = "/improper APA Mk II"
+	name = "\improper APA Mk II"
 	desc = "Upgraded pre-war power armor design used by the Enclave."
 	icon_state = "advanced"
 	item_state = "advanced"
 	slowdown = 0.3
-	armor = list("melee" = 65, "bullet" = 65, "laser" = 85, "energy" = 85, "bomb" = 70, "bio" = 100, "rad" = 100, "fire" = 90, "acid" = 50, "wound" = 50)
+	armor = list("melee" = 80, "bullet" = 80, "laser" = 85, "energy" = 85, "bomb" = 70, "bio" = 100, "rad" = 100, "fire" = 90, "acid" = 50, "wound" = 50)
 	salvaged_type = /obj/item/clothing/suit/armored/heavy/salvaged_pa/x02 // Oh the misery
 
 /obj/item/clothing/suit/armor/f13/enclave/armorvest

@@ -25,6 +25,14 @@
 	cost = 2500
 	contains = list(/obj/effect/spawner/lootdrop/f13/bomb/tier2)
 
+/datum/supply_pack/security/attachmentsf13
+	name = "Attachments Crate"
+	desc = "Contains three randomly selected attachments from HQ, one of the finest and few gunsmiths have made these.."
+	cost = 2500
+	contains = list(/obj/effect/spawner/lootdrop/f13/attachments,
+					/obj/effect/spawner/lootdrop/f13/attachments,
+					/obj/effect/spawner/lootdrop/f13/attachments)
+
 //fallout changes ends here
 
 /datum/supply_pack/security/ammo

@@ -101,8 +101,8 @@
 					/obj/item/pizzabox/vegetable,
 					/obj/item/pizzabox/pineapple)
 	crate_name = "pizza crate"
-	var/static/anomalous_box_provided = FALSE
-/*
+/*	var/static/anomalous_box_provided = FALSE
+
 /datum/supply_pack/organic/pizza/fill(obj/structure/closet/crate/C)
 	. = ..()
 	if(!anomalous_box_provided)

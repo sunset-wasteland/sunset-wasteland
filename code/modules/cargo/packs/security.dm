@@ -25,13 +25,23 @@
 	cost = 2500
 	contains = list(/obj/effect/spawner/lootdrop/f13/bomb/tier2)
 
-/datum/supply_pack/security/attachmentsf13
-	name = "Attachments Crate"
+/datum/supply_pack/security/attachmentsltf13
+	name = "Low tier Attachments Crate"
 	desc = "Contains three randomly selected attachments from HQ, one of the finest and few gunsmiths have made these.."
 	cost = 2500
 	contains = list(/obj/effect/spawner/lootdrop/f13/attachments,
 					/obj/effect/spawner/lootdrop/f13/attachments,
-					/obj/effect/spawner/lootdrop/f13/attachments)
+					/obj/effect/spawner/lootdrop/f13/attachments,
+					/obj/effect/spawner/lootdrop/f13/gunparts/tier1)
+
+/datum/supply_pack/security/attachmentshtf13
+	name = "High tier Attachments Crate"
+	desc = "Contains three randomly selected attachments from HQ, one of the finest and few gunsmiths have made these.."
+	cost = 6000
+	contains = list(/obj/effect/spawner/lootdrop/f13/attachments,
+					/obj/effect/spawner/lootdrop/f13/attachments,
+					/obj/effect/spawner/lootdrop/f13/gunparts/tier2,
+					/obj/effect/spawner/lootdrop/f13/gunparts/tier3)
 
 //fallout changes ends here
 

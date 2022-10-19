@@ -25,7 +25,7 @@
 	force = 15 //Decent clubs generally speaking
 	fire_delay = 4 //Typical pump action, pretty fast.
 	spread = 2
-	recoil = 0.1
+	recoil = 1
 	can_scope = FALSE
 	flags_1 =  CONDUCT_1
 	casing_ejector = FALSE

@@ -239,9 +239,9 @@
 	mag_type = /obj/item/ammo_box/magazine/smg14
 	is_automatic = TRUE
 	automatic = 1
-	autofire_shot_delay = 3.25
-	spread = 9
-	recoil = 0.35
+	autofire_shot_delay = 2.15 //It's so awfully inaccurate now that it's more of a gimmick than a buff
+	spread = 10
+	recoil = 0.85
 	can_attachments = TRUE
 	can_suppress = FALSE
 	actions_types = list(/datum/action/item_action/toggle_firemode)
@@ -486,12 +486,14 @@
 	suppressor_x_offset = 29
 	suppressor_y_offset = 16
 	fire_sound = 'sound/f13weapons/10mm_fire_03.ogg'
+	slowdown = 0.2
 
 /obj/item/gun/ballistic/automatic/smg/p90/worn
 	name = "Worn FN P90c"
 	desc = "A FN P90 manufactured by Fabrique Nationale. This one is beat to hell but still works."
 	autofire_shot_delay = 2.25
 	spread = 16
+	slowdown = 0.35
 
 
 //MP-5 SD				Keywords: 9mm, Automatic, 32 rounds, Suppressed
@@ -702,7 +704,7 @@
 	scope_x_offset = 6
 	scope_y_offset = 14
 
-//'Verminkiller'									Keywords: 5.56, 10/20/30 round magazine, Suppressed, Scoped, 25 damage
+//'Verminkiller'									Keywords: 5.56, 10/20/30 round magazine, Suppressed, Scoped
 //Basically an obtainable ratslayer
 /obj/item/gun/ballistic/automatic/varmint/verminkiller
 	name = "verminkiller rifle"
@@ -717,8 +719,9 @@
 	can_unsuppress = FALSE
 	suppressor_state = "none"
 	fire_sound = 'sound/weapons/Gunshot_large_silenced.ogg'
+	extra_penetration = 0.05
 
-//Ratslayer									Keywords: UNIQUE, 5.56, 10/20/30 round magazine, Suppressed, Scoped, Extra damage +3
+//Ratslayer									Keywords: UNIQUE, 5.56, 10/20/30 round magazine, Suppressed, Scoped
 /obj/item/gun/ballistic/automatic/varmint/ratslayer
 	name = "Ratslayer"
 	desc = "A modified varmint rifle with better stopping power, a scope, and suppressor. Oh, don't forget the sick paint job."
@@ -729,6 +732,7 @@
 	zoom_amt = 10
 	zoom_out_amt = 13
 	fire_sound = 'sound/weapons/Gunshot_large_silenced.ogg'
+	extra_penetration = 0.15
 
 //Combat Rifle		Keywords: .45 Caliber Rifle, No Attachments (!)
 /obj/item/gun/ballistic/automatic/combat
@@ -768,26 +772,6 @@
 	knife_y_offset = 21
 	fire_sound = 'sound/f13weapons/varmint_rifle.ogg'
 
-//ALR15			Keywords: Donor, 5.56mm, Semi-auto
-/obj/item/gun/ballistic/automatic/service/alr
-	name = "ALR15"
-	desc = "A 5.56x45mm rifle custom built off of a reproduction model AR15-style weapon. Sports a fancy holographic sight picture, forward grip, and a comfortable synthetic thumbhole stock. Bang bang."
-	icon_state = "alr15"
-	item_state = "alr15"
-	mag_type = /obj/item/ammo_box/magazine/m556/rifle
-	fire_delay = 1
-	burst_size = 2
-	spread = 1
-	can_attachments = FALSE
-	automatic_burst_overlay = FALSE
-	semi_auto = TRUE
-	can_bayonet = TRUE
-	bayonet_state = "bayonet"
-	knife_x_offset = 22
-	knife_y_offset = 21
-	fire_sound = 'sound/f13weapons/varmint_rifle.ogg'
-
-
 //Scout carbine			Keywords: NCR, 5.56mm, Semi-auto, 20 (10-50) round magazine. Special modifiers: spread -1
 /obj/item/gun/ballistic/automatic/service/carbine
 	name = "scout carbine"
@@ -801,6 +785,7 @@
 	scope_y_offset = 15
 	suppressor_x_offset = 26
 	suppressor_y_offset = 28
+	extra_damage = -3
 
 
 //Police rifle			Keywords: OASIS, 5.56mm, Semi-auto, 20 (10-50) round magazine
@@ -815,7 +800,7 @@
 	item_state = "assault_carbine"
 	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle
 	spread = 1.1
-	fire_delay = 4
+	fire_delay = 2.5
 	can_suppress = FALSE
 	can_scope = TRUE
 	zoomable = FALSE
@@ -829,7 +814,7 @@
 	item_state = "marksman"
 	mag_type = /obj/item/ammo_box/magazine/m556/rifle
 	fire_delay = 2
-	slowdown = 0.2
+	slowdown = 0.3
 	burst_size = 1
 	spread = 1
 	can_attachments = TRUE
@@ -848,6 +833,7 @@
 	suppressor_x_offset = 31
 	suppressor_y_offset = 15
 	fire_sound = 'sound/f13weapons/marksman_rifle.ogg'
+	extra_penetration = 0.1
 
 /obj/item/gun/ballistic/automatic/marksman/policerifle
 	name = "Police Rifle"
@@ -874,7 +860,6 @@
 	icon_prefix = "308"
 	force = 20
 	mag_type = /obj/item/ammo_box/magazine/m762
-	extra_speed = 500
 	burst_size = 1
 	fire_delay = 4
 	slowdown = 0.3
@@ -990,6 +975,8 @@
 	zoom_out_amt = 13
 	icon_state = "MONITOR"
 	item_state = "BAR"
+	extra_damage = -5
+	extra_penetration = 0.2
 
 
 //SKS				Keywords: LEGION, .308, Semi-auto, 10 rounds internal, Penetration +0.1
@@ -1032,6 +1019,7 @@
 	can_automatic = FALSE
 	can_bayonet = FALSE
 	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
+	extra_penetration = 0.2
 
 /obj/item/gun/ballistic/automatic/marksman/sniper/gold
 	name = "golden sniper rifle"
@@ -1055,6 +1043,8 @@
 	slowdown = 0.25
 	zoom_amt = 15
 	zoom_out_amt = 17
+	extra_penetration = 0.25
+	extra_damage = 5
 
 /obj/item/gun/ballistic/automatic/marksman/sniper/sniperranger
 	name = "compact sniper rifle"
@@ -1256,7 +1246,7 @@
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	icon_state = "rifle-police"
-	autofire_shot_delay = 3.5 //not a real auto-gun, a lot slower than the assault carbine
+	autofire_shot_delay = 2.55
 	spread = 8 //more accurate than the assault carbine, its a rifle
 	can_scope = TRUE
 
@@ -1275,7 +1265,7 @@
 	icon_state = "fnfal"
 	item_state = "fnfal"
 	force = 20
-	extra_speed = 400
+	extra_speed = 100
 	fire_delay = 3.5
 	is_automatic = TRUE
 	automatic = 1
@@ -1303,6 +1293,7 @@
 	recoil = 0.85
 	actions_types = list(/datum/action/item_action/toggle_firemode)
 	fire_sound = 'sound/f13weapons/automaticrifle_BAR.ogg'
+	extra_penetration = 0.25
 
 //H&K G11				Keywords: 4.73mm, Automatic, 50 round magazine
 /obj/item/gun/ballistic/automatic/g11
@@ -1364,6 +1355,7 @@
 	can_attachments = FALSE
 	actions_types = null
 	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
+	extra_damage = -5
 
 //LSW Squad Support Weapon				Keywords: 5.56mm, Automatic, 20 (10-50) round magazine, Scoped, Damage decrease (bullethose)
 /obj/item/gun/ballistic/automatic/lsw

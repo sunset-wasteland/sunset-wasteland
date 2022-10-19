@@ -13,7 +13,6 @@
 /datum/supply_pack/science/ape  //Ape out!
 	name = "Ape Cube Crate"
 	desc = "Pss what a new test subject with supper strangth, speed, and love for bananas all at the same time? Say no more... Contains a single ape cube. Dont add water!"
-	contraband = TRUE
 	cost = 2500
 	contains = list (/obj/item/reagent_containers/food/snacks/cube/ape)
 	crate_name = "ape cube crate"
@@ -45,7 +44,6 @@
 	name = "Circuit Crate (Odysseus)"
 	desc = "Ever wanted to build your own giant medical robot? Well, now you can! Contains the Odysseus main control board and Odysseus peripherals board. Requires Robotics access to open."
 	cost = 1500
-	access = ACCESS_ROBOTICS
 	contains = list(/obj/item/circuitboard/mecha/odysseus/peripherals,
 					/obj/item/circuitboard/mecha/odysseus/main)
 	crate_name = "\improper Odysseus circuit crate"
@@ -55,7 +53,6 @@
 	name = "Circuit Crate (Ripley APLU)"
 	desc = "Rip apart rocks and xenomorphs alike with the Ripley APLU. Contains the Main Ripley control board, as well as the Ripley Peripherals board. Requires Robotics access to open."
 	cost = 1200
-	access = ACCESS_ROBOTICS
 	contains = list(/obj/item/book/manual/ripley_build_and_repair,
 					/obj/item/circuitboard/mecha/ripley/main,
 					/obj/item/circuitboard/mecha/ripley/peripherals)
@@ -122,7 +119,6 @@
 	name = "Relic Crate"
 	desc = "Ever wanted to play with old discounted toys? Look no further. Contains two relics."
 	cost = 1000
-	contraband = TRUE
 	contains = list(/obj/item/relic,
 					/obj/item/relic)
 	crate_name = "relic crate"
@@ -131,7 +127,6 @@
 	name = "Robotics Assembly Crate"
 	desc = "The tools you need to replace those finicky humans with a loyal robot army! Contains three proximity sensors, two high-powered cells, six flashes, and an electrical toolbox. Requires Robotics access to open."
 	cost = 1500
-	access = ACCESS_ROBOTICS
 	contains = list(/obj/item/assembly/prox_sensor,
 					/obj/item/assembly/prox_sensor,
 					/obj/item/assembly/prox_sensor,
@@ -153,14 +148,13 @@
 	name = "Shield Generator Crate"
 	desc = "These high powered Shield Wall Generators are guaranteed to keep any unwanted lifeforms on the outside, where they belong! Contains four shield wall generators. Requires Teleporter access to open."
 	cost = 2000
-	access = ACCESS_TELEPORTER
 	contains = list(/obj/machinery/shieldwallgen,
 					/obj/machinery/shieldwallgen,
 					/obj/machinery/shieldwallgen,
 					/obj/machinery/shieldwallgen)
 	crate_name = "shield generators crate"
 	crate_type = /obj/structure/closet/crate/secure/science
-
+/*
 /datum/supply_pack/science/slime
 	name = "Slime Core Crate"
 	desc = "Ran out of slimes? No problem, contains one gray slime core. Requires Xenobio access to open."
@@ -169,7 +163,7 @@
 	contains = list(/obj/item/slime_extract/grey)
 	crate_name = "slime core crate"
 	crate_type = /obj/structure/closet/crate/secure/science
-
+*/
 /datum/supply_pack/science/tablets
 	name = "Tablet Crate"
 	desc = "What's a computer? Contains five cargo tablets."
@@ -180,7 +174,7 @@
 					/obj/item/modular_computer/tablet/preset/cargo,
 					/obj/item/modular_computer/tablet/preset/cargo)
 	crate_name = "tablet crate"
-
+/*
 /datum/supply_pack/science/transfer_valves
 	name = "Tank Transfer Valves Crate"
 	desc = "The key ingredient for making a lot of people very angry very fast. Contains two tank transfer valves. Requires RD access to open."
@@ -191,7 +185,7 @@
 	crate_name = "tank transfer valves crate"
 	crate_type = /obj/structure/closet/crate/secure/science
 	dangerous = TRUE
-
+*/
 //////// RAW ANOMALY CORES
 /*
 /datum/supply_pack/science/raw_flux_anomaly

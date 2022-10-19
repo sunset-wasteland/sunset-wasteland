@@ -171,7 +171,7 @@
 					/obj/item/pizzabox/vegetable,
 					/obj/item/pizzabox/pineapple)
 	crate_name = "pizza crate"
-	var/static/anomalous_box_provided = FALSE
+/*	var/static/anomalous_box_provided = FALSE
 
 /datum/supply_pack/organic/pizza/fill(obj/structure/closet/crate/C)
 	. = ..()
@@ -194,7 +194,7 @@
 	delivery. Please search all crates and manifests provided with the delivery and return the object if is located. The object resembles a standard <b>\[DATA EXPUNGED\]</b> and is to be \
 	considered <b>\[REDACTED\]</b> and returned at your leisure. Note that objects the anomaly produces are specifically attuned exactly to the individual opening the anomaly; regardless \
 	of species, the individual will find the object edible and it will taste great according to their personal definitions, which vary significantly based on person and species.")
-
+*/
 //////////////////////////////////////////////////////////////////////////////
 //////////////////////////// Raw Ingredients /////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////
@@ -264,7 +264,6 @@
 	name = "Meat Crate (Fresh)"
 	desc = "Need some meat? With this do-it-yourself kit you'll be swimming in it! Contains a monkey cube, an IV drip, and some cryoxadone!"
 	cost = 2150
-	contraband = TRUE
 	contains = list(/obj/item/reagent_containers/food/snacks/cube/monkey,
 					/obj/item/restraints/handcuffs/cable,
 					/obj/machinery/iv_drip,
@@ -337,7 +336,7 @@
 
 /datum/supply_pack/organic/hydroponics/beekeeping_fullkit
 	name = "Beekeeping Starter Crate"
-	desc = "BEES BEES BEES. Contains three honey frames, a beekeeper suit & helmet, flyswatter, bee house, and, of course, a pure-bred Nanotrasen-Standardized Queen Bee!"
+	desc = "BEES BEES BEES. Contains three honey frames, a beekeeper suit & helmet, flyswatter, bee house, and, of course, a pure-bred brotherhood-Standardized Queen Bee!"
 	cost = 1800
 	contains = list(/obj/structure/beebox/unwrenched,
 					/obj/item/honey_frame,
@@ -354,7 +353,6 @@
 	name = "Hydroponics Backpack Crate"
 	desc = "Bring on the flood with this high-capacity backpack crate. Contains 500 units of life-giving H2O. Requires hydroponics access to open."
 	cost = 1200
-	access = ACCESS_HYDROPONICS
 	contains = list(/obj/item/watertank)
 	crate_name = "hydroponics backpack crate"
 	crate_type = /obj/structure/closet/crate/secure
@@ -429,7 +427,7 @@
 
 /datum/supply_pack/organic/party
 	name = "Party Equipment"
-	desc = "Celebrate both life and death on the station with Nanotrasen's Party Essentials(tm)! Contains seven colored glowsticks, four beers, two ales, a drinking shaker, and a bottle of patron & goldschlager!"
+	desc = "Celebrate both life and death on the station with brotherhood's Party Essentials(tm)! Contains seven colored glowsticks, four beers, two ales, a drinking shaker, and a bottle of patron & goldschlager!"
 	cost = 2000
 	contains = list(/obj/item/storage/box/drinkingglasses,
 					/obj/item/reagent_containers/food/drinks/shaker,
@@ -454,7 +452,6 @@
 	name = "Surplus Valentine Crate"
 	desc = "Turns out we got warehouses of this love-y dove-y crap. We're sending out small bargain buddle of Valentine gear. This crate has two boxes of chocolate, three poppy flowers, five candy hearts, and three cards."
 	cost = 3000
-	contraband = TRUE
 	contains = list(/obj/item/storage/fancy/heart_box,
 					/obj/item/storage/fancy/heart_box,
 					/obj/item/reagent_containers/food/snacks/grown/poppy,

@@ -153,6 +153,7 @@
 	fire_delay = 4.5
 	spread = 1
 	fire_sound = 'sound/f13weapons/45revolver.ogg'
+	extra_damage = 4
 
 
 
@@ -197,6 +198,7 @@
 	w_class = WEIGHT_CLASS_SMALL
 	spread = 2
 	fire_sound = 'sound/f13weapons/policepistol.ogg'
+	extra_damage = -5
 
 
 
@@ -243,6 +245,7 @@
 	icon_state = "m29_snub"
 	w_class = WEIGHT_CLASS_SMALL
 	spread = 3
+	extra_damage = -5
 
 
 //.44 single action		 			Keywords: .44, Single action, 6 rounds cylinder, Long barrel
@@ -301,13 +304,6 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev4570
 	fire_sound = 'sound/f13weapons/sequoia.ogg'
 
-/obj/item/gun/ballistic/revolver/sequoia/death
-	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev4570/death
-	fire_sound = 'sound/f13weapons/sequoia.ogg'
-	fire_delay = 0
-	spread = 0
-
-
 //Hunting revolver				Keywords: .45-70, Double action, 5 rounds cylinder, Heavy
 /obj/item/gun/ballistic/revolver/hunting
 	name = "hunting revolver"
@@ -322,6 +318,7 @@
 	scope_x_offset = 9
 	scope_y_offset = 20
 	fire_sound = 'sound/f13weapons/sequoia.ogg'
+	extra_damage = -2
 
 /obj/item/gun/ballistic/revolver/hunting/klatue
 	name = "degraded hunting revolver"

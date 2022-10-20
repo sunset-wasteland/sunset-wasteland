@@ -26,6 +26,7 @@
 	name = "Hungry meat lover package"
 	desc = "This pack is filled with everything a HUNGRY person would eat. Eat it HOT!, or don't eat it at all!!!."
 	cost = 6000
+	num_contained = 12
 	contains = list(/obj/item/reagent_containers/food/snacks/bbqribs,
 					/obj/item/reagent_containers/food/snacks/bbqribs,
 					/obj/item/reagent_containers/food/snacks/bbqribs,
@@ -53,6 +54,7 @@
 	name = "Soup crate"
 	desc = "It's just soup."
 	cost = 3500
+	num_contained = 10
 	contains = list(/obj/item/reagent_containers/food/snacks/soup/beet,
 					/obj/item/reagent_containers/food/snacks/soup/bisque,
 					/obj/item/reagent_containers/food/snacks/soup/bungocurry,
@@ -87,6 +89,7 @@
 	name = "Sushi crate"
 	desc = "Made by love."
 	cost = 6000
+	num_contained = 10
 	contains = list(/obj/item/reagent_containers/food/snacks/sushie_basic,
 					/obj/item/reagent_containers/food/snacks/sushie_basic,
 					/obj/item/reagent_containers/food/snacks/sushie_adv,

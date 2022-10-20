@@ -25,10 +25,19 @@
 /datum/supply_pack/organic/hungrymeatlover
 	name = "Hungry meat lover package"
 	desc = "This pack is filled with everything a HUNGRY person would eat. Eat it HOT!, or don't eat it at all!!!."
-	cost = 6960
+	cost = 6000
 	contains = list(/obj/item/reagent_containers/food/snacks/bbqribs,
 					/obj/item/reagent_containers/food/snacks/bbqribs,
 					/obj/item/reagent_containers/food/snacks/bbqribs,
+					/obj/item/reagent_containers/food/snacks/bbqribs,
+					/obj/item/reagent_containers/food/snacks/bbqribs,
+					/obj/item/reagent_containers/food/snacks/bbqribs,
+					/obj/item/reagent_containers/food/snacks/baconegg,
+					/obj/item/reagent_containers/food/snacks/burrito,
+					/obj/item/reagent_containers/food/snacks/chilicheesefries,
+					/obj/item/reagent_containers/food/snacks/cheesynachos,
+					/obj/item/reagent_containers/food/snacks/pizza/arnold,
+					/obj/item/reagent_containers/food/snacks/burger/baconburger,
 					/obj/item/reagent_containers/food/snacks/bearsteak,
 					/obj/item/reagent_containers/food/snacks/boiledspiderleg,
 					/obj/item/reagent_containers/food/snacks/kebab,
@@ -79,17 +88,30 @@
 	desc = "Made by love."
 	cost = 6000
 	contains = list(/obj/item/reagent_containers/food/snacks/sushie_basic,
+					/obj/item/reagent_containers/food/snacks/sushie_basic,
+					/obj/item/reagent_containers/food/snacks/sushie_adv,
 					/obj/item/reagent_containers/food/snacks/sushie_adv,
 					/obj/item/reagent_containers/food/snacks/sushie_pro,
+					/obj/item/reagent_containers/food/snacks/sushie_pro,
+					/obj/item/reagent_containers/food/snacks/tobiko,
 					/obj/item/reagent_containers/food/snacks/tobiko,
 					/obj/item/reagent_containers/food/snacks/riceball,
+					/obj/item/reagent_containers/food/snacks/riceball,
+					/obj/item/reagent_containers/food/snacks/sashimi,
 					/obj/item/reagent_containers/food/snacks/sashimi,
 					/obj/item/reagent_containers/food/snacks/fishing_sushi,
+					/obj/item/reagent_containers/food/snacks/fishing_sushi,
+					/obj/item/reagent_containers/food/snacks/fishing_sushi/sake_sushi,
 					/obj/item/reagent_containers/food/snacks/fishing_sushi/sake_sushi,
 					/obj/item/reagent_containers/food/snacks/fishing_sushi/sake_cookedsalmon,
+					/obj/item/reagent_containers/food/snacks/fishing_sushi/sake_cookedsalmon,
+					/obj/item/reagent_containers/food/snacks/fishing_sushi/ebi_sushi,
 					/obj/item/reagent_containers/food/snacks/fishing_sushi/ebi_sushi,
 					/obj/item/reagent_containers/food/snacks/fishing_sushi/ikura_sushi,
+					/obj/item/reagent_containers/food/snacks/fishing_sushi/ikura_sushi,
 					/obj/item/reagent_containers/food/snacks/fishing_sushi/maguro_sushi,
+					/obj/item/reagent_containers/food/snacks/fishing_sushi/maguro_sushi,
+					/obj/item/reagent_containers/food/snacks/fishing_sushi/masago_sushi,
 					/obj/item/reagent_containers/food/snacks/fishing_sushi/masago_sushi)
 
 /datum/supply_pack/organic/combomeal2

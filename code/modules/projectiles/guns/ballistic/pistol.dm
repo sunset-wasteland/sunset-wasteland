@@ -291,9 +291,10 @@
 	fire_delay = 3
 	force = 15
 	extra_speed = 300
-	recoil = 3
-	extra_damage = 10
-	extra_penetration = 0.05
+	recoil = 3.5 //Debilitating
+	spread = 6
+	extra_damage = 12
+	extra_penetration = 0.12
 	can_suppress = FALSE
 	automatic_burst_overlay = FALSE
 	fire_sound = 'sound/f13weapons/44mag.ogg'

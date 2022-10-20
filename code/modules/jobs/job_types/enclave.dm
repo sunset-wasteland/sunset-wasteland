@@ -1,4 +1,3 @@
-//It looks like var/faction controls what becomes visible on setup. Should likely be fixed or something, but I'm not doing it.
 /datum/job/enclave
 	department_flag = ENCLAVE
 	selection_color = "#434944"
@@ -149,8 +148,8 @@
 /datum/outfit/job/enclave/peacekeeper/f13gysergeant
 	name = "Enclave Platoon Sergeant"
 	jobtype = /datum/job/enclave/f13gysergeant
-	head = /obj/item/clothing/head/helmet/f13/power_armor/x02helmet
-	suit = /obj/item/clothing/suit/armor/f13/power_armor/x02
+	head = /obj/item/clothing/head/helmet/f13/power_armor/tesla
+	suit = /obj/item/clothing/suit/armor/f13/power_armor/tesla
 	accessory = /obj/item/clothing/accessory/enclave/sergeant_firstclass
 	ears = /obj/item/radio/headset/headset_enclave/command
 	l_pocket = /obj/item/clothing/mask/chameleon

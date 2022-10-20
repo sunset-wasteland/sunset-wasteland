@@ -10,11 +10,6 @@
 	group = "Science"
 	crate_type = /obj/structure/closet/crate/science
 
-//fallout changes
-
-
-//fallout changes ends
-
 /datum/supply_pack/science/ape  //Ape out!
 	name = "Ape Cube Crate"
 	desc = "Pss what a new test subject with supper strangth, speed, and love for bananas all at the same time? Say no more... Contains a single ape cube. Dont add water!"

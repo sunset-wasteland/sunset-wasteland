@@ -58,8 +58,8 @@
 
 /datum/supply_pack/emergency/caps
 	name = "Caps Crate"
-	desc = "Four thousand points, converted to one hundred caps."
-	cost = 4000
+	desc = "Two thousand points, converted to one hundred caps."
+	cost = 2000
 	contains = list(/obj/item/stack/f13Cash/caps/onezerozero)
 
 /datum/supply_pack/emergency/trait

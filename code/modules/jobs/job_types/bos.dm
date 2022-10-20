@@ -427,8 +427,8 @@ Star Paladin
 	name = "Senior Tactical Paladin"
 	backpack_contents = list(
 		/obj/item/melee/powerfist/f13 = 1,
-		/obj/item/gun/ballistic/automatic/combat = 1,
-		/obj/item/ammo_box/magazine/tommygunm45/stick = 5,
+		/obj/item/gun/ballistic/automatic/marksman/brotherhood = 1,
+		/obj/item/ammo_box/magazine/m556/rifle = 5,
 		/obj/item/gun/energy/laser/pistol=1,
 		/obj/item/stock_parts/cell/ammo/ec=2,
 		/obj/item/clothing/accessory/bos/paladin=1,
@@ -525,8 +525,8 @@ Paladin
 	name = "Tactical Paladin"
 	backpack_contents = list(
 		/obj/item/melee/powerfist/f13 = 1,
-		/obj/item/gun/ballistic/automatic/combat = 1,
-		/obj/item/ammo_box/magazine/tommygunm45/stick = 5,
+		/obj/item/gun/ballistic/automatic/marksman/brotherhood = 1,
+		/obj/item/ammo_box/magazine/m556/rifle = 5,
 		/obj/item/gun/energy/laser/pistol=1,
 		/obj/item/stock_parts/cell/ammo/ec=2,
 		/obj/item/clothing/accessory/bos/paladin = 1,

@@ -1522,12 +1522,20 @@
 				/obj/item/ammo_box/tube/c4570
 	)
 
-/obj/effect/spawner/bundle/f13/boscombatrifle
-	name = "BoS combat rifle and ammo spawner"
+/obj/effect/spawner/bundle/f13/scombatrifle
+	name = "Combat rifle and ammo spawner"
 	items = list(
 				/obj/item/gun/ballistic/automatic/combat,
 				/obj/item/ammo_box/magazine/tommygunm45/stick
 	)
+
+/obj/effect/spawner/bundle/f13/brotherhoodmarksmanrifle
+	name = "marksman rifle and ammo spawner"
+	items = list(
+				/obj/item/gun/ballistic/automatic/marksman/brotherhood,
+				/obj/item/ammo_box/magazine/m556/rifle
+	)
+
 
 /*	------------------------------------------------
 	------------WEAPON AMMO SPAWNERS----------------
@@ -2284,7 +2292,7 @@
 		/obj/effect/spawner/lootdrop/f13/weapon/gun/energy/mid = 25,
 		/obj/effect/spawner/lootdrop/f13/weapon/gun/energy/midhigh = 10,
 		/obj/effect/spawner/lootdrop/f13/weapon/gun/energy/high = 5,
-		/obj/effect/spawner/bundle/f13/boscombatrifle = 25,
+		/obj/effect/spawner/bundle/f13/brotherhoodmarksmanrifle = 25,
 		)
 
 /obj/effect/spawner/lootdrop/f13/armor/bos_vault_armor

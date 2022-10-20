@@ -835,6 +835,12 @@
 	fire_sound = 'sound/f13weapons/marksman_rifle.ogg'
 	extra_penetration = 0.1
 
+//Marksman carbine			Keywords: 5.56mm, Semi-auto, 20 (10-50) round magazine, Small scope, brotherhood
+/obj/item/gun/ballistic/automatic/marksman/brotherhood
+	name = "marksman carbine"
+	desc = "A marksman carbine built off the AR platform chambered in 5.56x45. Seen heavy usage in pre-war conflicts. This particular model is a military version and modified for the likin of the brotherhood. It is semi-auto only."
+	slowdown = 0.2
+
 /obj/item/gun/ballistic/automatic/marksman/policerifle
 	name = "Police Rifle"
 	desc = "A pre-war Rifle that has been constantly repaired and rebuilt by the Bighorn Police Department. Held together by duct tape and prayers, it somehow still shoots. This one has been re-chambered to 5.56"

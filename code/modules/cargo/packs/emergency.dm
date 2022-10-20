@@ -8,7 +8,7 @@
 
 /datum/supply_pack/emergency
 	group = "Emergency"
-
+/*
 /datum/supply_pack/emergency/vehicle
 	name = "Biker Gang Kit" //TUNNEL SNAKES OWN THIS TOWN
 	desc = "TUNNEL SNAKES OWN THIS TOWN. Contains an unbranded All Terrain Vehicle, two cans of spraypaint, and a complete gang outfit -- consists of black gloves, a menacing skull bandanna, and a SWEET leather overcoat!"
@@ -23,6 +23,7 @@
 					/obj/item/clothing/mask/bandana/skull)//so you can properly #cargoniabikergang
 	crate_name = "Biker Kit"
 	crate_type = /obj/structure/closet/crate/large
+*/
 //fallout changes
 
 /datum/supply_pack/emergency/ids

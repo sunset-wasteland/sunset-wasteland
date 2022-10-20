@@ -482,7 +482,7 @@
 	armor = list("melee" = 85, "bullet" = 85, "laser" = 87, "energy" = 37, "bomb" = 72, "bio" = 100, "rad" = 100, "fire" = 90, "acid" = 50, "wound" = 100)
 
 
-//Part of the peacekeeper enclave stuff, adjust values as needed.
+//Part of the Enclave stuff, adjust values as needed.
 /obj/item/clothing/head/helmet/f13/power_armor/x02helmet
 	name = "\improper APA Mk II helmet"
 	desc = "The Enclave Mark II Powered Combat Armor helmet."
@@ -493,6 +493,14 @@
 	actions_types = list(/datum/action/item_action/toggle_helmet_light)
 	salvaged_type = /obj/item/clothing/head/helmet/f13/heavy/salvaged_pa/x02
 
+/obj/item/clothing/head/helmet/f13/power_armor/tesla
+	name = "\improper APA-T Mk II helmet"
+	desc = "The Enclave Mark II Powered Combat Armor helmet, rigged with heavy electronics."
+	icon_state = "tesla"
+	item_state = "tesla"
+	slowdown = 0.1
+	armor = list("melee" = 75, "bullet" = 75, "laser" = 95, "energy" = 95, "bomb" = 70, "bio" = 100, "rad" = 100, "fire" = 90, "acid" = 50, "wound" = 50)
+	actions_types = list(/datum/action/item_action/toggle_helmet_light)
 
 //Generic Tribal - For Wayfarer specific, see f13factionhead.dm
 

@@ -1530,7 +1530,7 @@
 	)
 
 /obj/effect/spawner/bundle/f13/brotherhoodmarksmanrifle
-	name = "marksman rifle and ammo spawner"
+	name = "BoS marksman rifle and ammo spawner"
 	items = list(
 				/obj/item/gun/ballistic/automatic/marksman/brotherhood,
 				/obj/item/ammo_box/magazine/m556/rifle

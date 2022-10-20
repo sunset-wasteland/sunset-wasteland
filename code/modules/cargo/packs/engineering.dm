@@ -188,7 +188,7 @@
 					/obj/item/circuitboard/machine/bsa/back,
 					/obj/item/circuitboard/computer/bsa_control
 					)
-	crate_name= "bluespace artillery parts crate"
+	crate_name= "bluespace artillery parts crate. Disclaimer.High Elder's permission required to have this."
 
 /*
 /datum/supply_pack/engineering/dna_vault

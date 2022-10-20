@@ -47,6 +47,11 @@
 	used = 1
 	update_icon()
 
+/obj/item/sharpener/bos
+	name = "Modified whetstone"
+	desc = "A block that will make your weapon sharper than what it originally was. No matter the quality."
+	max = 200
+
 /obj/item/sharpener/super
 	name = "super whetstone"
 	desc = "A block that will make your weapon sharper than Einstein on adderall."

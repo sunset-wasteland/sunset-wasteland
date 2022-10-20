@@ -41,7 +41,7 @@
 					/obj/item/reagent_containers/food/snacks/burger/baconburger,
 					/obj/item/reagent_containers/food/snacks/bearsteak,
 					/obj/item/reagent_containers/food/snacks/boiledspiderleg,
-					/obj/item/reagent_containers/food/snacks/kebab,
+					/obj/item/reagent_containers/food/snacks/kebab/fiesta,
 					/obj/item/reagent_containers/food/snacks/meat/bacon,
 					/obj/item/reagent_containers/food/snacks/meat/steak,
 					/obj/item/reagent_containers/food/snacks/soup/hotchili,
@@ -85,6 +85,31 @@
 					/obj/item/reagent_containers/food/snacks/soup/wingfangchu,
 					/obj/item/reagent_containers/food/snacks/soup/wish)
 
+/datum/supply_pack/organic/randomized/cake
+	name = "Cake crate"
+	desc = "One randomly selected cake, for the happiness of all brotherhood people in the world."
+	cost = 2000
+	num_contained = 1
+	contains = list(/obj/item/reagent_containers/food/snacks/store/cake/apple,
+					/obj/item/reagent_containers/food/snacks/store/cake/birthday,
+					/obj/item/reagent_containers/food/snacks/store/cake/brioche,
+					/obj/item/reagent_containers/food/snacks/store/cake/bscc,
+					/obj/item/reagent_containers/food/snacks/store/cake/bsvc,
+					/obj/item/reagent_containers/food/snacks/store/cake/carrot,
+					/obj/item/reagent_containers/food/snacks/store/cake/cheese,
+					/obj/item/reagent_containers/food/snacks/store/cake/chocolate,
+					/obj/item/reagent_containers/food/snacks/store/cake/clown_cake,
+					/obj/item/reagent_containers/food/snacks/store/cake/lemon,
+					/obj/item/reagent_containers/food/snacks/store/cake/lime,
+					/obj/item/reagent_containers/food/snacks/store/cake/orange,
+					/obj/item/reagent_containers/food/snacks/store/cake/peach_cake,
+					/obj/item/reagent_containers/food/snacks/store/cake/plain,
+					/obj/item/reagent_containers/food/snacks/store/cake/pound_cake,
+					/obj/item/reagent_containers/food/snacks/store/cake/pumpkinspice,
+					/obj/item/reagent_containers/food/snacks/store/cake/slimecake,
+					/obj/item/reagent_containers/food/snacks/store/cake/trumpet,
+					/obj/item/reagent_containers/food/snacks/store/cake/vanilla_cake)
+
 /datum/supply_pack/organic/randomized/sushi
 	name = "Sushi crate"
 	desc = "Made by love."
@@ -102,8 +127,6 @@
 					/obj/item/reagent_containers/food/snacks/riceball,
 					/obj/item/reagent_containers/food/snacks/sashimi,
 					/obj/item/reagent_containers/food/snacks/sashimi,
-					/obj/item/reagent_containers/food/snacks/fishing_sushi,
-					/obj/item/reagent_containers/food/snacks/fishing_sushi,
 					/obj/item/reagent_containers/food/snacks/fishing_sushi/sake_sushi,
 					/obj/item/reagent_containers/food/snacks/fishing_sushi/sake_sushi,
 					/obj/item/reagent_containers/food/snacks/fishing_sushi/sake_cookedsalmon,

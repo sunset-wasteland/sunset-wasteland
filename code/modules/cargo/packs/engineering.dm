@@ -180,7 +180,7 @@
 
 /datum/supply_pack/engineering/bsa
 	name = "Bluespace Artillery Parts"
-	desc = "The pride of brotherhood Naval Command. The legendary Bluespace Artillery Cannon is a devastating feat of human engineering and testament to wartime determination. Highly advanced research is required for proper construction. "
+	desc = "The pride of brotherhood Naval Command. The legendary Bluespace Artillery Cannon is a devastating feat of human engineering and testament to wartime determination. Highly advanced research is required for proper construction. Buying it without a high elder's permission is grounds for immediate punishment of the individuals that bought it. "
 	cost = 100000000
 	special = TRUE
 	contains = list(/obj/item/circuitboard/machine/bsa/front,

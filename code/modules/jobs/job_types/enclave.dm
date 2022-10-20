@@ -479,8 +479,8 @@
 /datum/job/enclave/f13BDUTY
 	title = "Enclave Bunker Duty"
 	flag = F13USBDUTY
-	total_positions = 2
-	spawn_positions = 2
+	total_positions = 6
+	spawn_positions = 6
 	description = "You're a small garrison within a side entrance of a far larger complex. This complex sits within the Casper mountain range. You're a non-combatant, skilled in a field outside of exterior operations. Given your value, you aren't permitted to engage in conflict."
 	enforces = "You are not permited to leave the base. You are a non-combatant. You cannot join any raids or battles on the surface."
 	supervisors = "Everyone else."

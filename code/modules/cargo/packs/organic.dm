@@ -22,7 +22,7 @@
 //////////////////////////////// Meals ///////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////
 
-/datum/supply_pack/organic/hungrymeatlover
+/datum/supply_pack/organic/randomized/hungrymeatlover
 	name = "Hungry meat lover package"
 	desc = "This pack is filled with everything a HUNGRY person would eat. Eat it HOT!, or don't eat it at all!!!."
 	cost = 6000
@@ -50,7 +50,7 @@
 	crate_name = "combo meat lovers special."
 	crate_type = /obj/structure/closet/crate/wooden
 
-/datum/supply_pack/organic/souplover
+/datum/supply_pack/organic/randomized/souplover
 	name = "Soup crate"
 	desc = "It's just soup."
 	cost = 3500
@@ -85,10 +85,10 @@
 					/obj/item/reagent_containers/food/snacks/soup/wingfangchu,
 					/obj/item/reagent_containers/food/snacks/soup/wish)
 
-/datum/supply_pack/organic/sushi
+/datum/supply_pack/organic/randomized/sushi
 	name = "Sushi crate"
 	desc = "Made by love."
-	cost = 6000
+	cost = 4500
 	num_contained = 10
 	contains = list(/obj/item/reagent_containers/food/snacks/sushie_basic,
 					/obj/item/reagent_containers/food/snacks/sushie_basic,

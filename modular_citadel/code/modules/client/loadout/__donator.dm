@@ -247,7 +247,7 @@
 	path = /obj/item/storage/box/large/custom_kit/emma
 	ckeywhitelist = list ("potatoperson993")
 
-/obj/item/storage/box/large/custom_kit/garner/PopulateContents()
+/obj/item/storage/box/large/custom_kit/emma/PopulateContents()
 	new /obj/item/gun/energy/laser/wattz/recharger(src)
 	new /obj/item/clothing/under/f13/recon/outcast(src)
 	new /obj/item/clothing/head/f13/combat/brotherhood/outcast(src)

@@ -241,3 +241,15 @@
 	new /obj/item/clothing/mask/scarecrow/baghead(src)
 	new /obj/item/melee/onehanded/knife/ritualdagger/baghead(src)
 	new /obj/item/book/granter/trait/chemistry(src)
+	
+/datum/gear/donator/kits/emma
+	name = "Emma's Equipment"
+	path = /obj/item/storage/box/large/custom_kit/garner
+	ckeywhitelist = list ("potatoperson993")
+
+/obj/item/storage/box/large/custom_kit/garner/PopulateContents()
+	new /obj/item/gun/energy/laser/wattz/recharger(src)
+	new /obj/item/clothing/under/f13/recon/outcast(src)
+	new /obj/item/clothing/head/f13/combat/brotherhood/outcast(src)
+	new /obj/item/clothing/suit/armor/f13/combat/brotherhood/outcast(src)
+	

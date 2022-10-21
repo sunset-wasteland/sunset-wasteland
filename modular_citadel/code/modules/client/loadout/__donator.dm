@@ -244,7 +244,7 @@
 	
 /datum/gear/donator/kits/emma
 	name = "Emma's Equipment"
-	path = /obj/item/storage/box/large/custom_kit/garner
+	path = /obj/item/storage/box/large/custom_kit/emma
 	ckeywhitelist = list ("potatoperson993")
 
 /obj/item/storage/box/large/custom_kit/garner/PopulateContents()

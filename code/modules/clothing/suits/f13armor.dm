@@ -686,7 +686,7 @@
 
 //Enclave armor adjust as needed
 /obj/item/clothing/suit/armor/f13/power_armor/x02
-	name = "\improper APA Mk II"
+	name = "APA Mk II"
 	desc = "Upgraded pre-war power armor design used by the Enclave."
 	icon_state = "advanced"
 	item_state = "advanced"
@@ -695,7 +695,7 @@
 	salvaged_type = /obj/item/clothing/suit/armored/heavy/salvaged_pa/x02 // Oh the misery
 
 /obj/item/clothing/suit/armor/f13/power_armor/tesla
-	name = "\improper APA-T Mk II"
+	name = "APA-T Mk II"
 	desc = "Upgraded pre-war power armor used by the Enclave, rigged with heavy electronics."
 	icon_state = "tesla"
 	item_state = "tesla"

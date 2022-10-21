@@ -484,7 +484,7 @@
 
 //Part of the Enclave stuff, adjust values as needed.
 /obj/item/clothing/head/helmet/f13/power_armor/x02helmet
-	name = "\improper APA Mk II helmet"
+	name = "APA Mk II helmet"
 	desc = "The Enclave Mark II Powered Combat Armor helmet."
 	icon_state = "advanced"
 	item_state = "advanced"
@@ -494,7 +494,7 @@
 	salvaged_type = /obj/item/clothing/head/helmet/f13/heavy/salvaged_pa/x02
 
 /obj/item/clothing/head/helmet/f13/power_armor/tesla
-	name = "\improper APA-T Mk II helmet"
+	name = "APA-T Mk II helmet"
 	desc = "The Enclave Mark II Powered Combat Armor helmet, rigged with heavy electronics."
 	icon_state = "tesla"
 	item_state = "tesla"

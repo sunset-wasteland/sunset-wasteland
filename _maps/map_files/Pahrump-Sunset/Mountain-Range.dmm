@@ -599,7 +599,7 @@
 /area/f13/building)
 "fS" = (
 /obj/effect/decal/remains/human,
-/obj/structure/timeddoor,
+/obj/structure/timeddoor/onetwozerominutes,
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "horizontalinnermain0"
 	},
@@ -1493,7 +1493,8 @@
 	},
 /area/f13/tunnel)
 "mO" = (
-/obj/machinery/autolathe/hacked,
+/obj/structure/rack/shelf_metal,
+/obj/effect/spawner/bundle/f13/needler,
 /turf/open/floor/plasteel/f13/vault_floor/red/whiteredfull,
 /area/f13/enclave)
 "mV" = (
@@ -1725,7 +1726,7 @@
 /turf/open/indestructible/ground/outside/snow,
 /area/f13/mountain_area)
 "oF" = (
-/obj/structure/timeddoor,
+/obj/structure/timeddoor/onetwozerominutes,
 /turf/closed/wall/f13/tunnel,
 /area/f13/tunnel)
 "oG" = (
@@ -1763,7 +1764,7 @@
 	},
 /area/f13/mountain_area)
 "oU" = (
-/obj/structure/rack,
+/obj/structure/rack/shelf_metal,
 /obj/item/pda,
 /obj/item/pda,
 /obj/item/pda,
@@ -1821,7 +1822,7 @@
 "pa" = (
 /obj/machinery/door/airlock/hatch{
 	req_access = null;
-	req_access_txt = "134"
+	req_access_txt = "256"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/red/whiteredfull,
 /area/f13/enclave)
@@ -2217,7 +2218,7 @@
 	},
 /area/f13/tunnel)
 "sn" = (
-/obj/structure/timeddoor,
+/obj/structure/timeddoor/onetwozerominutes,
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "horizontalinnermain0"
 	},
@@ -2596,8 +2597,9 @@
 /turf/open/floor/f13,
 /area/f13/enclave)
 "uY" = (
+/obj/structure/rack/shelf_metal,
 /obj/effect/turf_decal/bot,
-/obj/machinery/base_dispenser/enclave,
+/obj/effect/spawner/bundle/f13/ionrifle,
 /turf/open/floor/plasteel/f13/vault_floor/red/whiteredfull,
 /area/f13/enclave)
 "va" = (
@@ -2816,6 +2818,11 @@
 /obj/machinery/light,
 /obj/structure/closet/crate/mortar_shells,
 /obj/item/mortar_kit,
+/turf/open/floor/plasteel/f13/vault_floor/red/whiteredfull,
+/area/f13/enclave)
+"wU" = (
+/obj/machinery/workbench/advanced,
+/obj/effect/turf_decal/bot,
 /turf/open/floor/plasteel/f13/vault_floor/red/whiteredfull,
 /area/f13/enclave)
 "wV" = (
@@ -3157,7 +3164,7 @@
 /area/f13/enclave)
 "zK" = (
 /obj/structure/chair/office/dark,
-/turf/open/floor/plasteel/f13/vault_floor/red/whiteredfull,
+/turf/open/floor/plasteel/f13/vault_floor/red,
 /area/f13/enclave)
 "zN" = (
 /obj/structure/barricade/wooden/snowed,
@@ -3331,7 +3338,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/turf/open/floor/plasteel/f13/vault_floor/red/whiteredfull,
+/turf/open/floor/plasteel/f13/vault_floor/red,
 /area/f13/enclave)
 "Bh" = (
 /obj/effect/turf_decal/weather/snow/corner{
@@ -3963,12 +3970,8 @@
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/enclave)
 "GZ" = (
-/obj/machinery/autolathe/ammo/unlocked,
-/obj/machinery/light{
-	dir = 4;
-	light_color = "#c1caff"
-	},
-/obj/item/gun/energy/laser/plasma/pistol/worn,
+/obj/structure/rack/shelf_metal,
+/obj/item/gun/energy/laser/plasma/pistol/remnant/is,
 /turf/open/floor/plasteel/f13/vault_floor/red/whiteredfull,
 /area/f13/enclave)
 "Hb" = (
@@ -3989,7 +3992,7 @@
 /obj/effect/decal/marking{
 	icon_state = "doublevertical"
 	},
-/obj/structure/timeddoor,
+/obj/structure/timeddoor/onetwozerominutes,
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "horizontalinnermain0"
 	},
@@ -4163,8 +4166,15 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "Ix" = (
-/obj/structure/debris/v1,
-/turf/open/indestructible/ground/outside/snow_plating,
+/obj/effect/decal/marking{
+	icon_state = "doubleverticaltop"
+	},
+/obj/effect/landmark/vertibird{
+	name = "Casper NE"
+	},
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "horizontalinnermain0"
+	},
 /area/f13/mountain_area)
 "Iy" = (
 /obj/machinery/light{
@@ -4442,6 +4452,7 @@
 /area/f13/enclave)
 "Ld" = (
 /obj/machinery/ammobench,
+/obj/effect/turf_decal/bot,
 /turf/open/floor/plasteel/f13/vault_floor/red/whiteredfull,
 /area/f13/enclave)
 "Lf" = (
@@ -4509,6 +4520,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/enclave)
 "LJ" = (
+/obj/effect/turf_decal/bot,
 /turf/open/floor/plasteel/f13/vault_floor/red/whiteredfull,
 /area/f13/enclave)
 "LN" = (
@@ -4618,12 +4630,6 @@
 /obj/structure/dresser,
 /turf/open/floor/f13,
 /area/f13/enclave)
-"MX" = (
-/obj/item/flag/enclave/alt{
-	density = 0
-	},
-/turf/open/indestructible/ground/outside/snow,
-/area/f13/mountain_area)
 "Nc" = (
 /obj/effect/decal/marking,
 /obj/structure/car/rubbish3,
@@ -4681,12 +4687,11 @@
 	},
 /turf/open/indestructible/ground/outside/snow_plating,
 /area/f13/mountain_area)
-"NL" = (
-/obj/item/flag/enclave/alt{
-	density = 0
-	},
-/turf/open/indestructible/ground/outside/snow_plating,
-/area/f13/mountain_area)
+"NE" = (
+/obj/machinery/autolathe/hacked,
+/obj/effect/turf_decal/bot,
+/turf/open/floor/plasteel/f13/vault_floor/red/whiteredfull,
+/area/f13/enclave)
 "NM" = (
 /obj/structure/car/rubbish3,
 /turf/open/indestructible/ground/outside/road{
@@ -4721,7 +4726,7 @@
 /turf/open/floor/wood/wood_fancy,
 /area/f13/building)
 "NX" = (
-/obj/structure/rack,
+/obj/structure/rack/shelf_metal,
 /obj/effect/turf_decal/bot,
 /obj/item/clothing/suit/armor/f13/combat/enclave,
 /obj/item/clothing/suit/armor/f13/combat/enclave,
@@ -4847,7 +4852,9 @@
 /turf/open/floor/f13,
 /area/f13/enclave)
 "OX" = (
-/obj/structure/debris/v3,
+/obj/effect/landmark/vertibird{
+	name = "External Landing"
+	},
 /turf/open/indestructible/ground/outside/snow_plating,
 /area/f13/mountain_area)
 "OZ" = (
@@ -4964,6 +4971,11 @@
 	},
 /turf/open/floor/f13,
 /area/f13/enclave)
+"Qz" = (
+/obj/machinery/autolathe/ammo/unlocked,
+/obj/effect/turf_decal/bot,
+/turf/open/floor/plasteel/f13/vault_floor/red/whiteredfull,
+/area/f13/enclave)
 "QA" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/frame/machine,
@@ -4993,10 +5005,6 @@
 /obj/item/clothing/under/burial,
 /turf/open/floor/plasteel/f13/vault_floor/neutral,
 /area/f13/enclave)
-"QP" = (
-/obj/structure/debris/v2,
-/turf/open/indestructible/ground/outside/snow_plating,
-/area/f13/mountain_area)
 "QS" = (
 /obj/effect/turf_decal/weather/snow/corner{
 	dir = 1
@@ -5007,10 +5015,6 @@
 	icon_state = "horizontaltopbordertop0"
 	},
 /area/f13/tunnel)
-"QU" = (
-/obj/structure/debris/v4,
-/turf/open/indestructible/ground/outside/snow_plating,
-/area/f13/mountain_area)
 "QX" = (
 /obj/effect/spawner/lootdrop/ammo/civilian,
 /turf/open/indestructible/ground/outside/road{
@@ -5128,7 +5132,7 @@
 /turf/open/floor/f13,
 /area/f13/enclave)
 "RG" = (
-/obj/structure/rack,
+/obj/structure/rack/shelf_metal,
 /obj/effect/turf_decal/bot,
 /obj/item/gun/energy/laser/complianceregulator,
 /obj/item/gun/energy/laser/complianceregulator,
@@ -5402,7 +5406,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/enclave)
 "TJ" = (
-/obj/structure/rack,
+/obj/structure/rack/shelf_metal,
 /obj/effect/turf_decal/bot,
 /obj/item/melee/baton/stunsword,
 /obj/item/melee/baton/stunsword,
@@ -5547,7 +5551,8 @@
 /turf/open/indestructible/ground/outside/snow_plating,
 /area/f13/mountain_area)
 "Vm" = (
-/obj/machinery/workbench/advanced,
+/obj/effect/turf_decal/bot,
+/obj/machinery/base_dispenser/enclave,
 /turf/open/floor/plasteel/f13/vault_floor/red/whiteredfull,
 /area/f13/enclave)
 "Vp" = (
@@ -6000,7 +6005,7 @@
 /turf/open/indestructible/ground/outside/snow,
 /area/f13/mountain_area)
 "Zu" = (
-/obj/structure/rack,
+/obj/structure/rack/shelf_metal,
 /obj/effect/turf_decal/bot,
 /obj/item/gun/ballistic/automatic/assault_carbine,
 /obj/item/gun/ballistic/automatic/assault_carbine,
@@ -14966,10 +14971,10 @@ ez
 qd
 tt
 tt
-Ix
+tt
 aA
 tt
-QU
+tt
 tt
 tt
 eo
@@ -15737,7 +15742,7 @@ ez
 qd
 tt
 tt
-OX
+tt
 tt
 tt
 Iv
@@ -16253,7 +16258,7 @@ tt
 tt
 EG
 tt
-QP
+tt
 tt
 tt
 tt
@@ -21681,10 +21686,10 @@ UE
 HA
 HA
 HA
-HA
-HA
-HA
-HA
+iT
+iT
+iT
+iT
 iT
 iT
 iT
@@ -21938,11 +21943,11 @@ HA
 UE
 HA
 HA
-HA
-HA
-HA
-HA
 iT
+mA
+mA
+mA
+mA
 mA
 mA
 mA
@@ -22195,13 +22200,13 @@ HA
 HA
 HA
 UE
-HA
-HA
-HA
-HA
 iT
 mA
-LJ
+mO
+mO
+mO
+mA
+FJ
 as
 oO
 GY
@@ -22452,11 +22457,11 @@ HA
 HA
 HA
 HA
-UE
-HA
-HA
-HA
 iT
+mA
+FJ
+FJ
+rq
 mA
 Bg
 as
@@ -22709,13 +22714,13 @@ HA
 HA
 HA
 HA
-HA
-HA
-HA
-HA
 iT
 mA
-LJ
+GZ
+GZ
+FJ
+mA
+FJ
 as
 oO
 oO
@@ -22966,11 +22971,11 @@ HA
 HA
 HA
 HA
-HA
-HA
-HA
-HA
 iT
+mA
+mA
+mA
+pa
 mA
 pa
 mA
@@ -23223,13 +23228,13 @@ HA
 HA
 HA
 HA
-HA
-HA
-HA
+iT
 iT
 iT
 AW
-LJ
+FJ
+FJ
+FJ
 jI
 NT
 Xa
@@ -23481,17 +23486,17 @@ HA
 HA
 HA
 HA
-HA
-HA
 iT
 AW
 AW
 Bg
-LJ
-LJ
-LJ
-LJ
-LJ
+FJ
+FJ
+FJ
+FJ
+FJ
+FJ
+FJ
 pa
 FJ
 FJ
@@ -23738,16 +23743,16 @@ HA
 HA
 HA
 HA
-HA
-HA
 iT
 AW
 Ld
-LJ
+FJ
+FJ
+FJ
 Zu
-LJ
+FJ
 oU
-LJ
+FJ
 DT
 LS
 FJ
@@ -23995,16 +24000,16 @@ HA
 HA
 HA
 HA
-HA
-HA
 iT
 AW
 LJ
-LJ
+FJ
+FJ
+FJ
 uY
-LJ
+FJ
 NX
-LJ
+FJ
 VZ
 TK
 FJ
@@ -24252,16 +24257,16 @@ HA
 HA
 HA
 HA
-HA
-HA
 iT
 AW
 og
-LJ
+FJ
+FJ
+FJ
 TJ
-LJ
+FJ
 RG
-LJ
+FJ
 zK
 tV
 FJ
@@ -24509,17 +24514,17 @@ HA
 HA
 HA
 HA
-HA
-HA
 iT
 AW
-mO
-LJ
-LJ
-LJ
-LJ
-LJ
-LJ
+NE
+FJ
+FJ
+FJ
+FJ
+FJ
+FJ
+FJ
+FJ
 RE
 FJ
 FJ
@@ -24766,12 +24771,12 @@ HA
 HA
 HA
 HA
-HA
-HA
 iT
 AW
-GZ
-LJ
+Qz
+FJ
+gV
+FJ
 sg
 cf
 fu
@@ -25023,10 +25028,10 @@ HA
 HA
 HA
 HA
-HA
-HA
 iT
 AW
+AW
+wU
 AW
 Vm
 AW
@@ -25280,10 +25285,10 @@ HA
 HA
 HA
 HA
-HA
-HA
 iT
 iT
+AW
+AW
 AW
 AW
 AW
@@ -25538,8 +25543,8 @@ HA
 HA
 UE
 HA
-HA
-HA
+iT
+iT
 iT
 AW
 sF
@@ -60566,13 +60571,13 @@ ez
 ez
 ez
 gH
-MX
+ez
 Zb
 Ry
 Sg
 sB
 wK
-MX
+ez
 Vr
 Vr
 Vr
@@ -61486,7 +61491,7 @@ ez
 ez
 Uj
 Uj
-NL
+Vr
 uH
 tt
 tt
@@ -69043,7 +69048,7 @@ mV
 mV
 oT
 rt
-Tj
+Ix
 oT
 mV
 mV

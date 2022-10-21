@@ -444,8 +444,8 @@ Uranium, Contaminated
 /obj/item/projectile/bullet/needle
 	name = "needle"
 	icon_state = "cbbolt"
-	damage = 0
-	armour_penetration = 0.8 //rare AP pistol ammo
+	damage = 25
+	armour_penetration = 1//Low damage, 100% pen.
 	var/piercing = FALSE
 
 

@@ -46,7 +46,7 @@
 /obj/item/projectile/bullet/dart/syringe/dart
 	name = "Smartdart"
 	icon_state = "dartproj"
-	damage = 0
+	damage = 5
 	var/emptrig = FALSE
 
 /obj/item/projectile/bullet/dart/syringe/dart/on_hit(atom/target, blocked = FALSE)

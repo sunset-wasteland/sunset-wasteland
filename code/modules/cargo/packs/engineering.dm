@@ -12,14 +12,14 @@
 //fallout changes
 
 /datum/supply_pack/engineering/mfcc
-	name = "Crate overcharged mfc"
+	name = "Overcharged mfc crate"
 	desc = "Super charged mfc, that was made by one of the few gunsmiths that still knows how to make them."
 	cost = 3000
 	contains = list(/obj/item/stock_parts/cell/ammo/mfc/overcharged)
 	crate_name = "MFC experimental crate"
 
 /datum/supply_pack/engineering/mfcr
-	name = "Crate three mfc"
+	name = "Three mfc crate"
 	desc = "Three mfc's, that was made by one of the few gunsmiths that still knows how to make them."
 	cost = 500
 	contains = list(/obj/item/stock_parts/cell/ammo/mfc,
@@ -28,7 +28,7 @@
 	crate_name = "MFC crate"
 
 /datum/supply_pack/engineering/electrion
-	name = "Crate electron pack"
+	name = "Electron pack crate"
 	desc = "One electron pack, that was made by one of the few gunsmiths that still knows how to make them."
 	cost = 500
 	contains = list(/obj/item/stock_parts/cell/ammo/ecp)
@@ -180,7 +180,7 @@
 
 /datum/supply_pack/engineering/bsa
 	name = "Bluespace Artillery Parts"
-	desc = "The pride of brotherhood Naval Command. The legendary Bluespace Artillery Cannon is a devastating feat of human engineering and testament to wartime determination. Highly advanced research is required for proper construction. "
+	desc = "The pride of brotherhood Naval Command. The legendary Bluespace Artillery Cannon is a devastating feat of human engineering and testament to wartime determination. Highly advanced research is required for proper construction. Buying it without a high elder's permission is grounds for immediate punishment of the individuals that bought it. "
 	cost = 100000000
 	special = TRUE
 	contains = list(/obj/item/circuitboard/machine/bsa/front,
@@ -188,7 +188,7 @@
 					/obj/item/circuitboard/machine/bsa/back,
 					/obj/item/circuitboard/computer/bsa_control
 					)
-	crate_name= "bluespace artillery parts crate"
+	crate_name= "bluespace artillery parts crate. Disclaimer.High Elder's permission required to have this."
 
 /*
 /datum/supply_pack/engineering/dna_vault

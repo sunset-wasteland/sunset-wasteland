@@ -22,6 +22,124 @@
 //////////////////////////////// Meals ///////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////
 
+/datum/supply_pack/organic/randomized/hungrymeatlover
+	name = "Hungry meat lover package"
+	desc = "This pack is filled with everything a HUNGRY person would eat. Eat it HOT!, or don't eat it at all!!!."
+	cost = 6000
+	num_contained = 12
+	contains = list(/obj/item/reagent_containers/food/snacks/bbqribs,
+					/obj/item/reagent_containers/food/snacks/bbqribs,
+					/obj/item/reagent_containers/food/snacks/bbqribs,
+					/obj/item/reagent_containers/food/snacks/bbqribs,
+					/obj/item/reagent_containers/food/snacks/bbqribs,
+					/obj/item/reagent_containers/food/snacks/bbqribs,
+					/obj/item/reagent_containers/food/snacks/baconegg,
+					/obj/item/reagent_containers/food/snacks/burrito,
+					/obj/item/reagent_containers/food/snacks/chilicheesefries,
+					/obj/item/reagent_containers/food/snacks/cheesynachos,
+					/obj/item/reagent_containers/food/snacks/pizza/arnold,
+					/obj/item/reagent_containers/food/snacks/burger/baconburger,
+					/obj/item/reagent_containers/food/snacks/bearsteak,
+					/obj/item/reagent_containers/food/snacks/boiledspiderleg,
+					/obj/item/reagent_containers/food/snacks/kebab/fiesta,
+					/obj/item/reagent_containers/food/snacks/meat/bacon,
+					/obj/item/reagent_containers/food/snacks/meat/steak,
+					/obj/item/reagent_containers/food/snacks/soup/hotchili,
+					/obj/item/reagent_containers/food/snacks/burger/plain,
+					/obj/item/reagent_containers/food/snacks/hotdog)
+	crate_name = "combo meat lovers special."
+	crate_type = /obj/structure/closet/crate/wooden
+
+/datum/supply_pack/organic/randomized/souplover
+	name = "Soup crate"
+	desc = "It's just soup."
+	cost = 3500
+	num_contained = 10
+	contains = list(/obj/item/reagent_containers/food/snacks/soup/beet,
+					/obj/item/reagent_containers/food/snacks/soup/bisque,
+					/obj/item/reagent_containers/food/snacks/soup/bungocurry,
+					/obj/item/reagent_containers/food/snacks/soup/coldchili,
+					/obj/item/reagent_containers/food/snacks/soup/electron,
+					/obj/item/reagent_containers/food/snacks/soup/hotchili,
+					/obj/item/reagent_containers/food/snacks/soup/longpork_stew,
+					/obj/item/reagent_containers/food/snacks/soup/macaco,
+					/obj/item/reagent_containers/food/snacks/soup/mammi,
+					/obj/item/reagent_containers/food/snacks/soup/meatball,
+					/obj/item/reagent_containers/food/snacks/soup/milo,
+					/obj/item/reagent_containers/food/snacks/soup/mirelurkstew,
+					/obj/item/reagent_containers/food/snacks/soup/moleratstew,
+					/obj/item/reagent_containers/food/snacks/soup/monkeysdelight,
+					/obj/item/reagent_containers/food/snacks/soup/mystery,
+					/obj/item/reagent_containers/food/snacks/soup/nettle,
+					/obj/item/reagent_containers/food/snacks/soup/mushroom,
+					/obj/item/reagent_containers/food/snacks/soup/onion,
+					/obj/item/reagent_containers/food/snacks/soup/peasoup,
+					/obj/item/reagent_containers/food/snacks/soup/rubycasserole,
+					/obj/item/reagent_containers/food/snacks/soup/spiral_soup,
+					/obj/item/reagent_containers/food/snacks/soup/squirrelstew,
+					/obj/item/reagent_containers/food/snacks/soup/stew,
+					/obj/item/reagent_containers/food/snacks/soup/sweetpotato,
+					/obj/item/reagent_containers/food/snacks/soup/tomato,
+					/obj/item/reagent_containers/food/snacks/soup/tomato/eyeball,
+					/obj/item/reagent_containers/food/snacks/soup/vegetable,
+					/obj/item/reagent_containers/food/snacks/soup/wingfangchu,
+					/obj/item/reagent_containers/food/snacks/soup/wish)
+
+/datum/supply_pack/organic/randomized/cake
+	name = "Cake crate"
+	desc = "One randomly selected cake, for the happiness of all brotherhood people in the world."
+	cost = 2000
+	num_contained = 1
+	contains = list(/obj/item/reagent_containers/food/snacks/store/cake/apple,
+					/obj/item/reagent_containers/food/snacks/store/cake/birthday,
+					/obj/item/reagent_containers/food/snacks/store/cake/brioche,
+					/obj/item/reagent_containers/food/snacks/store/cake/bscc,
+					/obj/item/reagent_containers/food/snacks/store/cake/bsvc,
+					/obj/item/reagent_containers/food/snacks/store/cake/carrot,
+					/obj/item/reagent_containers/food/snacks/store/cake/cheese,
+					/obj/item/reagent_containers/food/snacks/store/cake/chocolate,
+					/obj/item/reagent_containers/food/snacks/store/cake/clown_cake,
+					/obj/item/reagent_containers/food/snacks/store/cake/lemon,
+					/obj/item/reagent_containers/food/snacks/store/cake/lime,
+					/obj/item/reagent_containers/food/snacks/store/cake/orange,
+					/obj/item/reagent_containers/food/snacks/store/cake/peach_cake,
+					/obj/item/reagent_containers/food/snacks/store/cake/plain,
+					/obj/item/reagent_containers/food/snacks/store/cake/pound_cake,
+					/obj/item/reagent_containers/food/snacks/store/cake/pumpkinspice,
+					/obj/item/reagent_containers/food/snacks/store/cake/slimecake,
+					/obj/item/reagent_containers/food/snacks/store/cake/trumpet,
+					/obj/item/reagent_containers/food/snacks/store/cake/vanilla_cake)
+
+/datum/supply_pack/organic/randomized/sushi
+	name = "Sushi crate"
+	desc = "Made by love."
+	cost = 4500
+	num_contained = 10
+	contains = list(/obj/item/reagent_containers/food/snacks/sushie_basic,
+					/obj/item/reagent_containers/food/snacks/sushie_basic,
+					/obj/item/reagent_containers/food/snacks/sushie_adv,
+					/obj/item/reagent_containers/food/snacks/sushie_adv,
+					/obj/item/reagent_containers/food/snacks/sushie_pro,
+					/obj/item/reagent_containers/food/snacks/sushie_pro,
+					/obj/item/reagent_containers/food/snacks/tobiko,
+					/obj/item/reagent_containers/food/snacks/tobiko,
+					/obj/item/reagent_containers/food/snacks/riceball,
+					/obj/item/reagent_containers/food/snacks/riceball,
+					/obj/item/reagent_containers/food/snacks/sashimi,
+					/obj/item/reagent_containers/food/snacks/sashimi,
+					/obj/item/reagent_containers/food/snacks/fishing_sushi/sake_sushi,
+					/obj/item/reagent_containers/food/snacks/fishing_sushi/sake_sushi,
+					/obj/item/reagent_containers/food/snacks/fishing_sushi/sake_cookedsalmon,
+					/obj/item/reagent_containers/food/snacks/fishing_sushi/sake_cookedsalmon,
+					/obj/item/reagent_containers/food/snacks/fishing_sushi/ebi_sushi,
+					/obj/item/reagent_containers/food/snacks/fishing_sushi/ebi_sushi,
+					/obj/item/reagent_containers/food/snacks/fishing_sushi/ikura_sushi,
+					/obj/item/reagent_containers/food/snacks/fishing_sushi/ikura_sushi,
+					/obj/item/reagent_containers/food/snacks/fishing_sushi/maguro_sushi,
+					/obj/item/reagent_containers/food/snacks/fishing_sushi/maguro_sushi,
+					/obj/item/reagent_containers/food/snacks/fishing_sushi/masago_sushi,
+					/obj/item/reagent_containers/food/snacks/fishing_sushi/masago_sushi)
+
 /datum/supply_pack/organic/combomeal2
 	name = "Burger Combo #2"
 	desc = "We value our customers at the Greasy Griddle, so much so that we're willing to deliver -just for you.- This combo meal contains two burgers, a soda, fries, a toy, and some chicken nuggets."

@@ -1,6 +1,6 @@
 /datum/export/large
 	k_elasticity = 0
-
+/*
 /datum/export/large/crate
 	cost = 500
 	k_elasticity = 0
@@ -29,7 +29,7 @@
 	unit_name = "wooden crate"
 	export_types = list(/obj/structure/closet/crate/wooden)
 	exclude_types = list()
-
+*/
 //fallout changes
 
 /datum/export/large/laser/wattz2k

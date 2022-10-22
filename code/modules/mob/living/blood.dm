@@ -248,13 +248,13 @@
 		"AB+" = list("A-", "A+", "B-", "B+", "O-", "O+", "AB-", "AB+", "SY"),
 		"O-" = list("O-","SY"),
 		"O+" = list("O-", "O+","SY"),
-		"L" = list("L","SY"),
+		"L" = list("A-", "A+", "B-", "B+", "O-", "O+", "AB-", "AB+", "L","SY"),
 		"U" = list("A-", "A+", "B-", "B+", "O-", "O+", "AB-", "AB+", "L", "U","SY"),
 		"HF" = list("HF", "SY"),
 		"X*" = list("X*", "SY"),
 		"SY" = list("SY"),
 		"GEL" = list("GEL","SY"),
-		"BUG" = list("BUG", "SY")
+		"BUG" = list("A-", "A+", "B-", "B+", "O-", "O+", "AB-", "AB+", "BUG", "SY")
 	)
 
 	var/safe = bloodtypes_safe[bloodtype]

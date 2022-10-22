@@ -789,6 +789,11 @@
 	icon_state = "blueprint2"
 	crafting_recipe_types = list(/datum/crafting_recipe/city_killer)
 
+/obj/item/book/granter/crafting_recipe/blueprint/neddleammo
+	name = "needle ammo blueprint"
+	icon_state = "blueprint2"
+	crafting_recipe_types = list(/datum/crafting_recipe/needle)
+
 /obj/item/book/granter/crafting_recipe/blueprint/rangemaster
 	name = "colt rangemaster blueprint"
 	icon_state = "blueprint2"

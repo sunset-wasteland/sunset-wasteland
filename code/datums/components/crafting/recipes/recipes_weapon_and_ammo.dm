@@ -553,7 +553,19 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
-
+//Needle Ammo
+/datum/crafting_recipe/needle
+	name = "Needle Ammo"
+	result = /obj/item/ammo_box/needle
+	reqs = list(/obj/item/stack/sheet/metal = 4,
+				/obj/item/stack/sheet/prewar = 2,
+				/obj/item/stack/ore/blackpowder = 1,
+				)
+	tools = list(TOOL_AWORKBENCH)
+	time = 5
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
+	always_available = FALSE
 
 /////////////////
 ///GUN CRAFTING//

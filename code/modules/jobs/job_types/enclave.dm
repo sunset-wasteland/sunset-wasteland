@@ -407,6 +407,7 @@
 		/obj/item/grenade/chem_grenade/cleaner = 1,
 		/obj/item/pda = 1,
 		/obj/item/gun/energy/gammagun = 1,
+
 		/obj/item/stock_parts/cell/ammo/ec = 2,
 		/obj/item/storage/bag/money/small/wastelander = 1,
 		/obj/item/melee/onehanded/knife/survival = 1,
@@ -430,6 +431,9 @@
 	ADD_TRAIT(H, TRAIT_ENCLAVE_CODES, src)
 //	ADD_TRAIT(H, TRAIT_POOR_AIM, src)
 	H.grant_language(/datum/language/codespeak, TRUE, TRUE, LANGUAGE_MIND)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/needle)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/infiltrator)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/r91)
 
 //Pilot
 /datum/job/enclave/enclavepilot

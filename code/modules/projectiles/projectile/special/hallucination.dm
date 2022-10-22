@@ -1,7 +1,7 @@
 /obj/item/projectile/hallucination
 	name = "bullet"
-	icon = null
-	icon_state = null
+	icon = 'icons/obj/projectiles.dmi'
+	icon_state = "bullet"
 	hitsound = ""
 	suppressed = TRUE
 	ricochets_max = 0

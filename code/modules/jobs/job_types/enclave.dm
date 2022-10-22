@@ -391,6 +391,10 @@
 	roleplay_exclusive_notify = 1
 	access = list(ACCESS_ENCLAVE, ACCESS_ENCLAVE_COMMAND, ACCESS_SECURITY, ACCESS_AI_UPLOAD)
 
+	loadout_options = list(
+		/datum/outfit/loadout/scientist_first,	// Scientist kit
+		)
+
 /datum/outfit/job/enclave/noncombat/enclavesci
 	name = "Enclave Scientist"
 	jobtype = /datum/job/enclave/enclavesci
@@ -406,8 +410,13 @@
 		/obj/item/reagent_containers/hypospray/medipen/stimpak = 2,
 		/obj/item/grenade/chem_grenade/cleaner = 1,
 		/obj/item/pda = 1,
-		/obj/item/gun/energy/gammagun = 1,
+		)
 
+/datum/outfit/loadout/scientist_first
+	name = "Scientist Equipment"
+	backpack_contents = list(
+		/obj/item/gun/energy/gammagun = 1,
+		/obj/item/gun/energy/kinetic_accelerator/crossbow = 1,
 		/obj/item/stock_parts/cell/ammo/ec = 2,
 		/obj/item/storage/bag/money/small/wastelander = 1,
 		/obj/item/melee/onehanded/knife/survival = 1,

@@ -39,22 +39,23 @@ heavy rifle calibers (12.7, 14mm, 7.62): Uranium, Contaminated, Incin
 
 /obj/item/projectile/bullet/a556
 	name = "5.56 FMJ bullet"
-	damage = 32
-	wound_bonus = 24
-	bare_wound_bonus = 18
+	damage = 26
+	wound_bonus = 18
+	bare_wound_bonus = 24
+	var/extra_speed = 200
 
 /obj/item/projectile/bullet/a556/match
 	name = "5.56 match bullet"
-	damage = 28
-	armour_penetration = 0.21
+	damage = 20
+	armour_penetration = 0.35
 	wound_bonus = 18
 	bare_wound_bonus = 0
-	var/extra_speed = 200
+	var/extra_speed = 500
 
 /obj/item/projectile/bullet/a556/sport
 	name = ".223 FMJ bullet"
-	damage = 28
-	wound_bonus = 32
+	damage = 24
+	wound_bonus = 18
 	bare_wound_bonus = 32//Gives a reason to actually use this round.
 
 /obj/item/projectile/bullet/a556/rubber

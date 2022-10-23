@@ -734,7 +734,7 @@
 	fire_sound = 'sound/weapons/Gunshot_large_silenced.ogg'
 	extra_penetration = 0.15
 
-//Combat Rifle		Keywords: .45 Caliber Rifle, No Attachments (!)
+//Combat Rifle		Keywords: .45 Caliber Rifle, BoS rifle
 /obj/item/gun/ballistic/automatic/combat
 	name = "Combat Rifle"
 	desc = "A .45 semi-automatic combat rifle, produced pre-war for National Guard forces."
@@ -746,7 +746,7 @@
 	burst_size = 1
 	spread = 1
 	slowdown = 0.25
-	can_attachments = FALSE
+	extra_penetration = 0.1
 	automatic_burst_overlay = FALSE
 	semi_auto = TRUE
 	fire_sound = 'sound/f13weapons/combatrifle.ogg'

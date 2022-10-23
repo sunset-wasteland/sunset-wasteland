@@ -355,7 +355,7 @@
 	var/static/datum/gas_mixture/stank
 	if(!stank) // Use a static mixture to avoid gas mixture churn.
 		stank = new
-		stank.set_moles(GAS_MIASMA,0.001)
+		stank.set_moles(GAS_MIASMA,0.01)
 		stank.set_temperature(BODYTEMP_NORMAL)
 
 	miasma_turf.air.merge(stank)

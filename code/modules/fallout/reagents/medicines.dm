@@ -260,6 +260,7 @@
 		M.adjustFireLoss(heal_rate)
 		M.adjustBruteLoss(heal_rate)
 		M.adjustToxLoss(heal_rate)
+		M.adjustOxyLoss(heal_rate)
 		M.hallucination = max(M.hallucination, is_tribal ? 0 : 5)
 		M.radiation -= min(M.radiation, 8)
 		. = TRUE
@@ -295,6 +296,7 @@
 	M.adjustFireLoss(heal_rate)
 	M.adjustBruteLoss(heal_rate)
 	M.adjustToxLoss(heal_rate)
+	M.adjustOxyLoss(heal_rate)
 	M.hallucination = max(M.hallucination, is_tribal ? 0 : 5)
 	. = TRUE
 	..()

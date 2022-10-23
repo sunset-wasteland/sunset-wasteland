@@ -56,7 +56,9 @@ heavy rifle calibers (12.7, 14mm, 7.62): Uranium, Contaminated, Incin
 	name = ".223 FMJ bullet"
 	damage = 24
 	wound_bonus = 18
-	bare_wound_bonus = 32//Gives a reason to actually use this round.
+	bare_wound_bonus = 32 //Gives a reason to actually use this round.
+	supereffective_damage = 15
+	supereffective_faction = list("hostile", "ant", "deathclaw", "cazador", "china", "gecko", "radscorpion") //5.56 being effective against the Chinese is a funny code joke that someone will look at like 4 years from now on and cry about.
 
 /obj/item/projectile/bullet/a556/rubber
 	name = "5.56 rubber bullet"
@@ -107,6 +109,8 @@ heavy rifle calibers (12.7, 14mm, 7.62): Uranium, Contaminated, Incin
 	damage = 28
 	wound_bonus = 32
 	bare_wound_bonus = 32
+	supereffective_damage = 14
+	supereffective_faction = list("hostile", "ant", "deathclaw", "cazador", "gecko", "radscorpion")
 
 /obj/item/projectile/bullet/a762/rubber
 	name = "7.62 rubber bullet"
@@ -148,6 +152,8 @@ heavy rifle calibers (12.7, 14mm, 7.62): Uranium, Contaminated, Incin
 	zone_accuracy_factor = 100
 	wound_bonus = 60
 	bare_wound_bonus = 80//Same as the HMG.
+	supereffective_damage = 125
+	supereffective_faction = list("hostile", "ant", "supermutant", "deathclaw", "cazador", "raider", "china", "gecko", "wastebot", "radscorpion")
 
 /obj/item/projectile/bullet/a50MG/incendiary
 	damage = 60
@@ -305,6 +311,8 @@ heavy rifle calibers (12.7, 14mm, 7.62): Uranium, Contaminated, Incin
 	bare_wound_bonus = 10
 	armour_penetration = 0.45
 	var/extra_speed = 200
+	supereffective_damage = 10
+	supereffective_faction = list("hostile", "ant", "supermutant", "deathclaw", "cazador", "raider", "china", "gecko", "wastebot", "radscorpion")
 
 /obj/item/projectile/bullet/m5mm/simple //for simple mobs, separate to allow balancing
 	name = "5mm bullet"
@@ -338,6 +346,8 @@ heavy rifle calibers (12.7, 14mm, 7.62): Uranium, Contaminated, Incin
 	damage = 52
 	armour_penetration = 0.9
 	pixels_per_second = TILES_TO_PIXELS(100)
+	supereffective_damage = 58
+	supereffective_faction = list("hostile", "ant", "supermutant", "deathclaw", "cazador", "raider", "china", "gecko", "wastebot", "radscorpion")
 
 /obj/item/projectile/bullet/c2mm/blender //welcome to pain town
 	name = "2mm blender projectile"

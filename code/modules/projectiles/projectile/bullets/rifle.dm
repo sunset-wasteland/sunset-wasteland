@@ -50,7 +50,7 @@ heavy rifle calibers (12.7, 14mm, 7.62): Uranium, Contaminated, Incin
 	armour_penetration = 0.35
 	wound_bonus = 18
 	bare_wound_bonus = 0
-	var/extra_speed = 500
+	extra_speed = 500
 
 /obj/item/projectile/bullet/a556/sport
 	name = ".223 FMJ bullet"

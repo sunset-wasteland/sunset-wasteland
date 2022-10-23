@@ -87,9 +87,12 @@
 	unit_name = "laser gatling gun"
 	export_types = list(/obj/item/gun/energy/minigun)
 
+/datum/export/large/fev
+	include_subtypes = FALSE
+
 /datum/export/large/fev/FEV_solution_one
-	cost = 10000
-	unit_name = "FEV prototype"
+	cost = 8000
+	unit_name = "FEV mk1"
 	export_types = list(/obj/item/reagent_containers/glass/bottle/FEV_solution)
 
 /datum/export/large/fev/FEV_solution_two
@@ -98,7 +101,7 @@
 	export_types = list(/obj/item/reagent_containers/glass/bottle/FEV_solution/two)
 
 /datum/export/large/fev/FEV_solution_curling
-	cost = 20000
+	cost = 12000
 	unit_name = "FEV Curling"
 	export_types = list(/obj/item/reagent_containers/glass/bottle/FEV_solution/curling)
 

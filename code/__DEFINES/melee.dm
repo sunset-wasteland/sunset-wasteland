@@ -11,4 +11,4 @@
 #define MARTIALART_BERSERKER "berserker"
 #define MARTIALART_RISINGBASS "rising bass"
 #define MARTIALART_RANGERTAKEDOWN "ranger takedown"
-#define MARTIALART_KRIGSERKER "ranger takedown"
+#define MARTIALART_KRIGSERKER "krig takedown"

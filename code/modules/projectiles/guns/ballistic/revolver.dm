@@ -351,6 +351,8 @@
 	spread = 4
 	recoil = 0.5
 	fire_sound = 'sound/f13weapons/magnum_fire.ogg'
+	extra_damage = 9
+	extra_penetration = 0.08
 
 
 

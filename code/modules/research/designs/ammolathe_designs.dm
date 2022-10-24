@@ -233,6 +233,13 @@
 	build_path = /obj/item/ammo_box/magazine/cg45/empty
 	category = list("initial", "Basic Magazines")
 
+/datum/design/ammolathe/carl_gustafmag45
+	name = "empty carl gustaf magazine (.45 ACP)"
+	id = "carl_gustafmag_four_five"
+	materials = list(/datum/material/iron = 4500)
+	build_path = /obj/item/ammo_box/magazine/cg45_two/empty
+	category = list("initial", "Basic Magazines")
+
 /datum/design/ammolathe/pistol22mag
 	name = "empty pistol magazine (.22lr)"
 	id = "pistol22mag"

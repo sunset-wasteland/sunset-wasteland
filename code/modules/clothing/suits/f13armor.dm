@@ -578,6 +578,13 @@
 	armor = list("melee" = 72.5, "bullet" = 72.5, "laser" = 72.5, "energy" = 25, "bomb" = 65, "bio" = 75, "rad" = 80, "fire" = 85, "acid" = 30, "wound" = 50)
 	salvaged_type = /obj/item/clothing/suit/armored/heavy/salvaged_pa/t45d
 
+//Fluff Suit
+/obj/item/clothing/suit/armor/f13/power_armor/t45d/refurb
+	name = "Refurbished T-45d power armor"
+	desc = "An old, beat up suit of T-45d. This appears to have been refurbished time and again, with pockmarks all over the chasis."
+	armor = list("melee" = 45, "bullet" = 45, "laser" = 45, "energy" = 25, "bomb" = 50, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20, "wound" = 50)
+	salvaged_type = null
+
 //////
 // Sheriff's Suit
 //////
@@ -710,9 +717,21 @@
 			return BLOCK_SHOULD_REDIRECT | BLOCK_REDIRECTED | BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
 	return ..()
 
+/obj/item/clothing/suit/armor/f13/power_armor/x02/eastcoast
+	name = "X-02 power armor"
+	desc = "A very rare suit of X-02 power armor."
+	icon_state = "PA_x02"
+	item_state = "PA_x02"
+
+/obj/item/clothing/suit/armor/f13/power_armor/tesla/eastcoast
+	name = "X-02 tesla armor"
+	desc = "A very rare suit of X-02 power armor. This one has been fitted with extra electronics and tesla attraction coils to be used with energy-based weapons."
+	icon_state = "PA_x02tesla"
+	item_state = "PA_x02tesla"
+
 /obj/item/clothing/suit/armor/f13/enclave/armorvest
 	name = "armored vest"
-	desc = "Efficient prewar design issued to Enclave personell."
+	desc = "Efficient prewar design issued to Enclave personnel."
 	icon_state = "armor_enclave_peacekeeper"
 	item_state = "armor_enclave_peacekeeper"
 	armor = list("melee" = 35, "bullet" = 50, "laser" = 30, "energy" = 30, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 0, "wound" = 10)

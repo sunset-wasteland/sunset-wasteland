@@ -15,6 +15,18 @@
 /obj/item/ammo_box/magazine/cg45/empty
 	start_empty = TRUE
 
+/obj/item/ammo_box/magazine/cg45_two
+	name = "Carl Gustaf magazine (.45 ACP)"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "cg45"
+	ammo_type = /obj/item/ammo_casing/c45
+	caliber = ".45"
+	max_ammo = 36
+	multiple_sprites = 2
+
+/obj/item/ammo_box/magazine/cg45_two/empty
+	start_empty = TRUE
+
 /obj/item/ammo_box/magazine/greasegun
 	name = "Grease gun magazine (9mm)"
 	icon = 'icons/fallout/objects/guns/ammo.dmi'

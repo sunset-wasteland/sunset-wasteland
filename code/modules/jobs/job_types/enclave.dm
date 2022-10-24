@@ -469,6 +469,7 @@
 	if(visualsOnly)
 		return
 	ADD_TRAIT(H, TRAIT_PILOT, src)
+	ADD_TRAIT(H, TRAIT_RESEARCHER, src)
 	ADD_TRAIT(H, TRAIT_ENCLAVE_CODES, src)
 	if(H.mind)
 		var/obj/effect/proc_holder/spell/terrifying_presence/S = new /obj/effect/proc_holder/spell/terrifying_presence

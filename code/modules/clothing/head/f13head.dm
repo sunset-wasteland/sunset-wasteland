@@ -502,6 +502,18 @@
 	armor = list("melee" = 75, "bullet" = 75, "laser" = 95, "energy" = 95, "bomb" = 70, "bio" = 100, "rad" = 100, "fire" = 90, "acid" = 50, "wound" = 50)
 	actions_types = list(/datum/action/item_action/toggle_helmet_light)
 
+/obj/item/clothing/head/helmet/f13/power_armor/x02helmet/eastcoast
+	name = "X-02 power helmet"
+	desc = "A very rare X-02 power armor helmet."
+	icon_state = "PA_helmet_x02"
+	item_state = "PA_helmet_x02"
+
+/obj/item/clothing/head/helmet/f13/power_armor/tesla/eastcoast
+	name = "X-02 tesla helmet"
+	desc = "A very rare X-02 power armor helmet. This one is fitted with extra electronics to be used with energy-based weapons."
+	icon_state = "PA_helmet_x02"
+	item_state = "PA_helmet_x02"
+
 //Generic Tribal - For Wayfarer specific, see f13factionhead.dm
 
 /obj/item/clothing/head/helmet/f13/tribal

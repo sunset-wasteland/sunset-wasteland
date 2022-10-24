@@ -710,9 +710,21 @@
 			return BLOCK_SHOULD_REDIRECT | BLOCK_REDIRECTED | BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
 	return ..()
 
+/obj/item/clothing/suit/armor/f13/power_armor/x02/eastcoast
+	name = "X-02 power armor"
+	desc = "A very rare suit of X-02 power armor."
+	icon_state = "PA_x02"
+	item_state = "PA_x02"
+
+/obj/item/clothing/suit/armor/f13/power_armor/tesla/eastcoast
+	name = "X-02 tesla armor"
+	desc = "A very rare suit of X-02 power armor. This one has been fitted with extra electronics and tesla attraction coils to be used with energy-based weapons."
+	icon_state = "PA_x02tesla"
+	item_state = "PA_x02tesla"
+
 /obj/item/clothing/suit/armor/f13/enclave/armorvest
 	name = "armored vest"
-	desc = "Efficient prewar design issued to Enclave personell."
+	desc = "Efficient prewar design issued to Enclave personnel."
 	icon_state = "armor_enclave_peacekeeper"
 	item_state = "armor_enclave_peacekeeper"
 	armor = list("melee" = 35, "bullet" = 50, "laser" = 30, "energy" = 30, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 0, "wound" = 10)

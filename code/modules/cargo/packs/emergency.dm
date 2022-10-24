@@ -57,6 +57,21 @@
 					/obj/item/clothing/shoes/jackboots,
 					/obj/item/storage/belt/military/army)
 
+/datum/supply_pack/emergency/formalbrotherhood
+	name = "Formal Crate"
+	desc = "One crate of formal clothes, for anyone that is missing a pair.."
+	cost = 100
+	contains = list(/obj/item/clothing/head/f13/boscap,
+					/obj/item/clothing/head/f13/boscap,
+					/obj/item/clothing/under/f13/bosformsilver_f,
+					/obj/item/clothing/under/f13/bosformsilver_m,
+					/obj/item/clothing/under/f13/bosformgold_m,
+					/obj/item/clothing/under/f13/bosformgold_f,
+					/obj/item/clothing/under/f13/bosform_m,
+					/obj/item/clothing/under/f13/bosform_f,
+					/obj/item/clothing/gloves/color/white/bos,
+					/obj/item/clothing/gloves/color/white/bos)
+
 /datum/supply_pack/emergency/caps
 	name = "Caps Crate"
 	desc = "Three thousand points, converted to one hundred caps."

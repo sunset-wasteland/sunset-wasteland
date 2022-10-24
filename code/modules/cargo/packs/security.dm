@@ -52,6 +52,20 @@
 					/obj/effect/spawner/lootdrop/f13/attachments,
 					/obj/effect/spawner/lootdrop/f13/gunparts/tier3)
 
+/datum/supply_pack/security/flamethrowerf13
+	name = "Flamethrower Crate"
+	desc = "Contains one flamethrower to keep on your back, highly flameable.."
+	cost = 12000
+	contains = list(/obj/item/m2flamethrowertank)
+
+/datum/supply_pack/security/binocularsf13
+	name = "Binoculars Crate"
+	desc = "Contains three Binoculars. A must for any scouts of the brotherhood."
+	cost = 1200
+	contains = list(/obj/item/binoculars,
+					/obj/item/binoculars,
+					/obj/item/binoculars)
+
 //fallout changes ends here
 
 /datum/supply_pack/security/ammo

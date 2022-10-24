@@ -10,7 +10,7 @@
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	overdose_threshold = 35
 	addiction_threshold = 25
-	value = REAGENT_VALUE_COMMON
+	value = REAGENT_VALUE_RARE
 	ghoulfriendly = TRUE
 
 /datum/reagent/medicine/stimpak/reaction_mob(mob/living/M, method=TOUCH, reac_volume, show_message = 1)
@@ -92,6 +92,7 @@
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	overdose_threshold = 25
 	addiction_threshold = 16
+	value = REAGENT_VALUE_VERY_RARE
 	ghoulfriendly = TRUE
 
 /datum/reagent/medicine/super_stimpak/on_mob_add(mob/living/M)

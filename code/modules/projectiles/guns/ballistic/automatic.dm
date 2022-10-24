@@ -436,6 +436,22 @@
 	can_attachments = TRUE
 	fire_sound = 'sound/f13weapons/10mm_fire_03.ogg'
 
+//Carl Gustaf			Keywords: .45 ACP, Automatic, 36 rounds
+/obj/item/gun/ballistic/automatic/smg/cg45_two
+	name = "Carl Gustaf .45 ACP"
+	desc = "An odd submachine gun, designed in Phoenix and repurposed by the locals. This appears to be chambered in .45 ACP."
+	icon_state = "cg45"
+	item_state = "cg45"
+	mag_type = /obj/item/ammo_box/magazine/cg45_two
+	is_automatic = TRUE
+	automatic = 1
+	slowdown = 0.35
+	autofire_shot_delay = 3
+	spread = 18
+	fire_delay = 3.5
+	recoil = 0.2
+	can_attachments = TRUE
+	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
 
 //Tommygun			Keywords: .45 ACP, Automatic, 30/50 rounds.
 /obj/item/gun/ballistic/automatic/smg/tommygun

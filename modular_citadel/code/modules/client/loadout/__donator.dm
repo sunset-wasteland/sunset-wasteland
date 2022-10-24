@@ -241,7 +241,7 @@
 	new /obj/item/clothing/mask/scarecrow/baghead(src)
 	new /obj/item/melee/onehanded/knife/ritualdagger/baghead(src)
 	new /obj/item/book/granter/trait/chemistry(src)
-	
+
 /datum/gear/donator/kits/emma
 	name = "Emma's Equipment"
 	path = /obj/item/storage/box/large/custom_kit/emma
@@ -252,4 +252,17 @@
 	new /obj/item/clothing/under/f13/recon/outcast(src)
 	new /obj/item/clothing/head/helmet/f13/combat/brotherhood/outcast(src)
 	new /obj/item/clothing/suit/armor/f13/combat/brotherhood/outcast(src)
-	
+
+/datum/gear/donator/kits/lpohone
+	name = "Souren's Lament"
+	path = /obj/item/storage/box/large/custom_kit/lpohone
+	ckeywhitelist = list ("littleplayer0102")
+
+/obj/item/storage/box/large/custom_kit/lpohone/PopulateContents()
+	new /obj/item/card/id/rusted/brokenholodog(src)
+	new /obj/item/clothing/under/f13/recon/outcast(src)
+	new /obj/item/gun/energy/laser/aer14/refurb(src)
+	new /obj/item/clothing/accessory/bos/paladin(src)
+	new /obj/item/book/granter/trait/pa_wear(src)
+	new /obj/item/clothing/suit/armor/f13/power_armor/t45d/refurb(src)
+	new /obj/item/clothing/head/helmet/f13/power_armor/t45d/refurb(src)

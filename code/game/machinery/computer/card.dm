@@ -541,11 +541,13 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 		"Enclave Private",
 		"Enclave Bunker Duty",
 		"Enclave Pilot Officer",
+		"Enclave Internal Security",
 		"American Citizen",
 		)
 	job_req = list(
 		"Enclave Lieutenant",
 		"Enclave Platoon Sergeant",
+		"Enclave Internal Security",
 		)
 
 /obj/machinery/computer/card/bos

@@ -921,14 +921,8 @@
 	},
 /area/f13/caves)
 "aQx" = (
-/obj/machinery/power/apc,
-/turf/closed/indestructible/riveted{
-	desc = "A heavily reinforced prison wall. You doubt anything short of a nuke would break it.";
-	icon = 'icons/turf/walls/f13superstore.dmi';
-	icon_state = "supermart";
-	icon_type_smooth = "supermart";
-	name = "Reinforced prison wall"
-	},
+/obj/structure/timeddoor/sixtyminute,
+/turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/building)
 "aQB" = (
 /obj/effect/turf_decal/weather/dirt{
@@ -4833,6 +4827,7 @@
 	locked = 1;
 	name = "Riot Armory"
 	},
+/obj/structure/timeddoor,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/building)
 "eGR" = (
@@ -14791,9 +14786,7 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
-/obj/structure/timeddoor{
-	deletion_time = 36000
-	},
+/obj/structure/timeddoor/onetwozerominutes,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/building)
 "oMj" = (
@@ -15671,6 +15664,11 @@
 	},
 /turf/open/indestructible/ground/outside/desert/harsh,
 /area/f13/wasteland/rocksprings)
+"pGJ" = (
+/obj/machinery/light,
+/obj/structure/timeddoor/sixtyminute,
+/turf/open/indestructible/ground/outside/sidewalk,
+/area/f13/building)
 "pGQ" = (
 /obj/structure/spacevine{
 	name = "vines"
@@ -20169,9 +20167,7 @@
 	},
 /area/f13/wasteland/rocksprings)
 "tWO" = (
-/obj/structure/timeddoor{
-	deletion_time = 36000
-	},
+/obj/structure/timeddoor/onetwozerominutes,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/building)
 "tWX" = (
@@ -70829,9 +70825,9 @@ rPW
 rPW
 rPW
 tgY
-tWO
-tWO
-tWO
+keD
+keD
+keD
 tgY
 rPW
 rPW
@@ -84094,7 +84090,7 @@ kNa
 gGs
 uII
 arx
-aQx
+kCG
 fPb
 nIE
 bWo
@@ -84341,8 +84337,8 @@ bWo
 bWo
 bWo
 bWo
-bWo
-qfd
+aQx
+pGJ
 kCG
 kCG
 kCG
@@ -84598,7 +84594,7 @@ tFh
 vtz
 bWo
 bWo
-bWo
+aQx
 sZx
 kCG
 owb

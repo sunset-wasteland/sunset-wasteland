@@ -430,6 +430,7 @@
 	ADD_TRAIT(H, TRAIT_ENCLAVE_CODES, src)
 //	ADD_TRAIT(H, TRAIT_POOR_AIM, src)
 	H.grant_language(/datum/language/codespeak, TRUE, TRUE, LANGUAGE_MIND)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/needle)
 
 //Pilot
 /datum/job/enclave/enclavepilot
@@ -495,7 +496,6 @@
 		/datum/outfit/loadout/bunkerduty_janny,
 		/datum/outfit/loadout/bunkerduty_chaplain,
 		/datum/outfit/loadout/bunkerduty_cook,
-		/datum/outfit/loadout/bunkerduty_is,
 		)
 
 /datum/outfit/job/enclave/noncombat/f13BDUTY
@@ -564,23 +564,81 @@
 		/obj/item/kitchen/knife/butcher = 1,
 		)
 
-//Internal Security. Takes the role of general Security Detail.
-// RP loadout primarily. Gets the incredibly rare 14mm SMG and a subtype of the Enclave Remnant plasma pistol.
-// Not a big deal. This has the RP flag as a Bunker Duty loadout.
-/datum/outfit/loadout/bunkerduty_is
-	name = "Internal Security"
+// Internal Security. Takes the role of general Security Detail.
+// RP job primarily. Gets the incredibly rare and powerful plasma rifle, alongside a subtype of the Enclave Remnant plasma pistol.
+// Not a big deal. This has the RP flag
+/datum/job/enclave/enc_is
+	title = "Enclave Internal Security"
+	flag = F13USIS
+	total_positions = 3
+	spawn_positions = 3
+	description = "As Internal Security, you answer to no one, aside from high-command directly. Despite that, you're tasked to maintain order and security within the bunker. Assist the Science division with experiments when possible, and further the Lieutenant's goals."
+	enforces = "You are not permited to leave the base under any circumstance. You cannot join any raids or battles on the surface."
+	supervisors = "United States Secret Service"
+	access = list(ACCESS_ENCLAVE, ACCESS_CHANGE_IDS, ACCESS_ENCLAVE_COMMAND, ACCESS_SECURITY, ACCESS_AI_UPLOAD)
+	outfit = /datum/outfit/job/enclave/noncombat/enc_is
+	roleplay_exclusive_notify = 1
+	req_admin_notify = 1
+	exp_requirements = 2500//Well above Lieutenant for good reason. It's RP exclusive, and comes with some heavy perks.
+
+	loadout_options = list(
+		/datum/outfit/loadout/is_twolt,
+		/datum/outfit/loadout/is_lt,
+		/datum/outfit/loadout/is_cap,
+		)
+
+/datum/outfit/job/enclave/noncombat/enc_is
+	name = "Enclave Internal Security"
+	jobtype = /datum/job/enclave/enc_is
+	id = /obj/item/card/id/dogtag/enclave/officer
+	glasses = /obj/item/clothing/glasses/sunglasses/big
+	uniform = /obj/item/clothing/under/f13/enclave/peacekeeper
 	head = /obj/item/clothing/head/f13/enclave
 	suit = /obj/item/clothing/suit/armor/f13/enclavetrenchcoat
-	suit_store = /obj/item/gun/ballistic/automatic/smg/smg14
+	suit_store = /obj/item/gun/energy/laser/plasma
+
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/smg14 = 2,
+		/obj/item/stock_parts/cell/ammo/mfc = 3,
 		/obj/item/stock_parts/cell/ammo/ec = 2,
 		/obj/item/restraints/handcuffs = 1,
 		/obj/item/melee/classic_baton = 1,
 		/obj/item/melee/onehanded/knife/survival = 1,
-		/obj/item/clothing/accessory/cia_badge = 1,
 		/obj/item/gun/energy/laser/plasma/pistol/remnant/is = 1,
 		/obj/item/storage/belt/holster = 1,
+		/obj/item/reagent_containers/hypospray/medipen/stimpak = 2,
+		/obj/item/storage/survivalkit_aid_adv = 1,
+		)
+
+/datum/outfit/job/enclave/noncombat/enc_is/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+	ADD_TRAIT(H, TRAIT_PA_WEAR, src)
+	ADD_TRAIT(H, TRAIT_ENCLAVE_CODES, src)
+	if(H.mind)
+		var/obj/effect/proc_holder/spell/terrifying_presence/S = new /obj/effect/proc_holder/spell/terrifying_presence
+		H.mind.AddSpell(S)
+	H.grant_language(/datum/language/codespeak, TRUE, TRUE, LANGUAGE_MIND)
+
+/datum/outfit/loadout/is_twolt
+	name = "Second Lieutenant"
+	backpack_contents = list(
+		/obj/item/clothing/accessory/cia_badge = 1,
+		/obj/item/clothing/accessory/enclave/second_lieutenant = 1,
+		)
+
+/datum/outfit/loadout/is_lt
+	name = "First Lieutenant"
+	backpack_contents = list(
+		/obj/item/clothing/accessory/cia_badge = 1,
+		/obj/item/clothing/accessory/enclave/first_lieutenant = 1,
+		)
+
+/datum/outfit/loadout/is_cap
+	name = "Captain"
+	backpack_contents = list(
+		/obj/item/clothing/accessory/cia_badge = 1,
+		/obj/item/clothing/accessory/enclave/captain = 1
 		)
 
 // Enclave Citizen

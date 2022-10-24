@@ -1250,6 +1250,8 @@
 	autofire_shot_delay = 2.55
 	spread = 8 //more accurate than the assault carbine, its a rifle
 	can_scope = TRUE
+	extra_penetration = -0.15
+	extra_damage = -3
 
 /obj/item/gun/ballistic/automatic/assault_carbine/worn
 	name = "worn assault carbine"

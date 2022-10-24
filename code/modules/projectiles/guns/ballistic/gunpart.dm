@@ -1,4 +1,5 @@
-// This was coded by Fulminating Gold for Crashpoint3./obj/item/gunpart
+// This was coded by Fulminating Gold for Crashpoint3.
+/obj/item/gunpart
 	name = "gunpart"
 	desc = "A part for constructing a gun."
 	icon = 'icons/obj/guns/modifiableguns.dmi'

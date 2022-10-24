@@ -1,11 +1,4 @@
-//This was coded by Fulminating Gold for Crashpoint3.
-//I do not want my code to be associated with ERP, and no
-//server allowing it has my permission to use this code
-
-// An exception, after speaking with him, has been made for Sunset Wasteland. The F13 server.
-// He has not extended this to anyone else. Speak to him instead of just nabbing it if you've any respect.
-// - Carl
-
+// This was coded by Fulminating Gold for Crashpoint3.
 /obj/item/gun/ballistic
 	var/modifiable = FALSE
 	var/modifiablegun = FALSE

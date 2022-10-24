@@ -11,14 +11,16 @@
 	icon_living = "deathclaw"
 	icon_dead = "deathclaw_dead"
 	icon_gib = "deathclaw_gib"
+	robust_searching = 1
 	maxHealth = 750
-	speed = -1
 	health = 750
 	obj_damage = 200
 	armour_penetration = 0.6
 	melee_damage_lower = 40
 	melee_damage_upper = 50
 	footstep_type = FOOTSTEP_MOB_HEAVY
+	speed = -2//Actual speed handled by move_to_delay
+	move_to_delay = 0
 
 	gender = MALE
 	a_intent = INTENT_HARM //So we can not move past them.
@@ -54,7 +56,6 @@
 	aggrosound = list('sound/f13npc/deathclaw/aggro1.ogg', 'sound/f13npc/deathclaw/aggro2.ogg', )
 	idlesound = list('sound/f13npc/deathclaw/idle.ogg',)
 	death_sound = 'sound/f13npc/deathclaw/death.ogg'
-
 
 /mob/living/simple_animal/hostile/deathclaw/playable
 	emote_taunt_sound = null

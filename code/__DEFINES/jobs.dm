@@ -149,7 +149,8 @@
 #define F13USSCIENTIST	(1<<3)
 #define F13USSPECIALIST	(1<<4)
 #define F13USPRIVATE	(1<<5)
-#define F13USBDUTY      (1<<6)
+#define F13USBDUTY		(1<<6)
+#define F13USIS			(1<<7)
 
 #define FOLLOWERS		(1<<11)
 

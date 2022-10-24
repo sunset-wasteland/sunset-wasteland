@@ -578,6 +578,13 @@
 	armor = list("melee" = 72.5, "bullet" = 72.5, "laser" = 72.5, "energy" = 25, "bomb" = 65, "bio" = 75, "rad" = 80, "fire" = 85, "acid" = 30, "wound" = 50)
 	salvaged_type = /obj/item/clothing/suit/armored/heavy/salvaged_pa/t45d
 
+//Fluff Suit
+/obj/item/clothing/suit/armor/f13/power_armor/t45d/refurb
+	name = "Refurbished T-45d power armor"
+	desc = "An old, beat up suit of T-45d. This appears to have been refurbished time and again, with pockmarks all over the chasis."
+	armor = list("melee" = 45, "bullet" = 45, "laser" = 45, "energy" = 25, "bomb" = 50, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20, "wound" = 50)
+	salvaged_type = null
+
 //////
 // Sheriff's Suit
 //////

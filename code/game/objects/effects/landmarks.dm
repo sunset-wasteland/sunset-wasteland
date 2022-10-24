@@ -836,11 +836,11 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 /obj/effect/landmark/start/f13/ussgt
 	name = "Enclave Sergeant"
 	icon_state = "ussgt"
-/*
-/obj/effect/landmark/start/f13/usai
-	name = "Enclave Armored Infantry"
+
+/obj/effect/landmark/start/f13/usis
+	name = "Enclave Internal Security"
 	icon_state = "ussgt"
-*/
+
 /obj/effect/landmark/start/f13/usspecialist
 	name = "Enclave Specialist"
 	icon_state = "usoffduty"
@@ -852,11 +852,11 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 /obj/effect/landmark/start/f13/usgysgt
 	name = "Enclave Platoon Sergeant"
 	icon_state = "usgunnery"
-/*
+
 /obj/effect/landmark/start/f13/uslightduty
 	name = "Enclave Bunker Duty"
 	icon_state = "usoffduty"
-*/
+
 /obj/effect/landmark/start/f13/enclave_synthetic
 	name = "Synthetic"
 	icon_state = "Cyborg"

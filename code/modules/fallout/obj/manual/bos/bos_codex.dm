@@ -30,6 +30,6 @@
 	<h3>The orders of the blind hold no weight, but if one of our own is in immediate peril at their hands, demands should be met for the life of your kindred, and aggression must be tempered for the sake of order.</h3>
 	<p>If a member of the Brotherhood is held hostage, make every possible effort to recover them unharmed. Revenge can wait until your kindred are safe.</p>
 	<h3>Unjust violence is for lesser men. Every act of aggression must serve a clear purpose, and must not compromise the mission of our order. Retribution may be harsh and unseemly to some, but must also be measured and weighed tactfully.</h3>
-	<p>The Brotherhoods justice can be harsh and far-reaching. You are not here to make friends, but you are also not here to make yourself a target for the entire wasteland. Try not to resort to torture or mutilation unless ABSOLUTELY nessisary, and if deemed so, perform it with utmost secrecy and tact.</p>
+	<p>The Brotherhoods justice can be harsh and far-reaching. You are not here to make friends, but you are also not here to make yourself a target for the entire wasteland. Try not to resort to torture or mutilation unless ABSOLUTELY necessary, and if deemed so, perform it with utmost secrecy and tact.</p>
 </body>
 </html>"}

@@ -12,7 +12,7 @@
 <body>
 	<h1>Chain of Command</h1>
 	<p>The High Elder is the ultimate authority over the Brotherhood at large. Their word is law.</p>
-	<p>The Baron is the Elder; leader of our chapter and the interpreter of the Codex. Heed their wisdom and defer to their leadership if your own are uncertain. They are addressed as My Liegë by all of lesser station.</p>
+	<p>The Baron is the Elder; leader of our chapter and the interpreter of the Codex. Heed their wisdom and defer to their leadership if your own are uncertain. They are addressed as My Liege by all of lesser station.</p>
 	<p>The Castellan is your Head Paladin, and is the overall commander of the Black Hills garrison. It has been given to them as their fief, and they hold overall responsibility for and authority over its security, its defense, and its relations with other factions. They are to be addressed as Lord Castellan by those under their command, including the Knight-Commander.</p>
 	<p>They are considered to be the hands of the Baron, and as such As such, they are expected to handle the day-to-day operation of their fief more-or-less independently.</p>
 	<p>They are expected to leave command of Knights to the Knight-Commander, per the Chain that Binds, but may overrule the Knight-Commander in matters of diplomacy, or in the event that the Lord-Commander is absent or incompetent. This is not to be done lightly.</p>

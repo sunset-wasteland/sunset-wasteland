@@ -32,7 +32,7 @@
 	contains = list(/obj/item/sharpener/bos)
 
 /datum/supply_pack/goody/bosbooksf13
-	name = "Chain and codex"
+	name = "Chain and Codex"
 	desc = "Contains one Chain that Binds and one Codex book."
 	cost = 50
 	contains = list(/obj/item/book/manual/bos/chain,

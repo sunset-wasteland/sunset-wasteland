@@ -530,7 +530,7 @@
 			if(stun_animation)
 				user.do_attack_animation(target)
 			playsound(get_turf(src), on_stun_sound, 75, 1, -1)
-			target.adjustStaminaLoss(30)
+			target.adjustStaminaLoss(60)
 			additional_effects_carbon(target, user)
 			add_fingerprint(user)
 			target.visible_message(desc["visible"], desc["local"])

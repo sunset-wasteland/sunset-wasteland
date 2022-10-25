@@ -31,6 +31,13 @@
 	cost = 12000
 	contains = list(/obj/item/sharpener/bos)
 
+/datum/supply_pack/goody/bosbooksf13
+	name = "Chain and codex"
+	desc = "Contains one Chain that Binds and one Codex book."
+	cost = 50
+	contains = list(/obj/item/book/manual/bos/chain,
+					/obj/item/book/manual/bos/codex)
+
 //fallout changes ends here
 
 /datum/supply_pack/goody/combatknives_single

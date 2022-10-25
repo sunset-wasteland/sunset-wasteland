@@ -295,7 +295,7 @@
 	recoil = 3.5 //Debilitating
 	spread = 6
 	extra_damage = 1
-	extra_penetration = 0.12
+	extra_penetration = 0.05
 	can_suppress = FALSE
 	automatic_burst_overlay = FALSE
 	fire_sound = 'sound/f13weapons/44mag.ogg'
@@ -332,7 +332,7 @@
 	can_suppress = FALSE
 	automatic_burst_overlay = FALSE
 	fire_sound = 'sound/f13weapons/44mag.ogg'
-	extra_damage = 4
+	extra_damage = 2
 
 
 //14mm Pistol		Keywords: 14mm, Semi-auto, 7 rounds, Heavy

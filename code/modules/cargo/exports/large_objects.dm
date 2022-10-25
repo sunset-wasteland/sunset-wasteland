@@ -87,9 +87,6 @@
 	unit_name = "laser gatling gun"
 	export_types = list(/obj/item/gun/energy/minigun)
 
-/datum/export/large/fev
-	include_subtypes = FALSE
-
 /datum/export/large/fev/FEV_solution_one
 	cost = 9000
 	unit_name = "FEV solution"

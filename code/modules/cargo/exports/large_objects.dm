@@ -43,7 +43,7 @@
 	export_types = list(/obj/item/gun/energy/laser/wattz2k/extended)
 
 /datum/export/large/laser/aer9
-	cost = 500
+	cost = 850
 	unit_name = "AER9 laser rifle"
 	export_types = list(/obj/item/gun/energy/laser/aer9)
 
@@ -91,7 +91,7 @@
 	include_subtypes = FALSE
 
 /datum/export/large/fev/FEV_solution_one
-	cost = 9500
+	cost = 9000
 	unit_name = "FEV solution"
 	export_types = list(/obj/item/reagent_containers/glass/bottle/FEV_solution)
 

@@ -91,7 +91,7 @@
 	include_subtypes = FALSE
 
 /datum/export/large/fev/FEV_solution_one
-	cost = 8500
+	cost = 9500
 	unit_name = "FEV solution"
 	export_types = list(/obj/item/reagent_containers/glass/bottle/FEV_solution)
 

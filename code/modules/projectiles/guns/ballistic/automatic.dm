@@ -710,7 +710,7 @@
 	item_state = "varmintrifle"
 	mag_type = /obj/item/ammo_box/magazine/m9mmds
 	extra_damage = 1
-	extra_penetration = 0.5
+	extra_penetration = 0.05
 	slowdown = 0.05
 	fire_delay = 4
 	burst_size = 1

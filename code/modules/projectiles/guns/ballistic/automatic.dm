@@ -446,7 +446,7 @@
 	item_state = "cg45"
 	mag_type = /obj/item/ammo_box/magazine/cg45_two
 	is_automatic = TRUE
-	extra_damage = -2
+	extra_damage = -4
 	automatic = 1
 	slowdown = 0.3
 	autofire_shot_delay = 3

@@ -59,7 +59,7 @@
 
 /datum/supply_pack/emergency/formalbrotherhood
 	name = "Formal Crate"
-	desc = "One crate of formal clothes, for anyone that is missing a pair.."
+	desc = "One crate of formal clothes, for anyone that is missing a pair."
 	cost = 100
 	contains = list(/obj/item/clothing/head/f13/boscap,
 					/obj/item/clothing/head/f13/boscap,

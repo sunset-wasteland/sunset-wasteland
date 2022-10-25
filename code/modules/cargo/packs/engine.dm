@@ -50,7 +50,7 @@
 	crate_name = "emitter crate"
 	crate_type = /obj/structure/closet/crate/secure/engineering
 	dangerous = TRUE
-*/
+
 /datum/supply_pack/engine/field_gen
 	name = "Field Generator Crate"
 	desc = "Typically the only thing standing between the station and a messy death. Powered by emitters. Contains two field generators."
@@ -58,7 +58,7 @@
 	contains = list(/obj/machinery/field/generator,
 					/obj/machinery/field/generator)
 	crate_name = "field generator crate"
-
+*/
 /datum/supply_pack/engine/grounding_rods
 	name = "Grounding Rod Crate"
 	desc = "Four grounding rods guaranteed to keep any uppity tesla's lightning under control."
@@ -160,7 +160,7 @@
 					/obj/machinery/power/tesla_coil)
 	crate_name = "tesla coil crate"
 	crate_type = /obj/structure/closet/crate/engineering/electrical
-*/	
+*/
 /*
 /datum/supply_pack/engine/tesla_gen
 	name = "Tesla Generator Crate"

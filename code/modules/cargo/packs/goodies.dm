@@ -26,9 +26,9 @@
 					/obj/item/ammo_box/lasmusket)
 
 /datum/supply_pack/goody/sharpenerf13
-	name = "Weapon Sharpener."
+	name = "Weapon Sharpener"
 	desc = "Contains one whetstone that allows the weapon to be sharpened, no matter the quality of weapon."
-	cost = 15000
+	cost = 12000
 	contains = list(/obj/item/sharpener/bos)
 
 //fallout changes ends here

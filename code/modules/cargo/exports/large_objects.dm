@@ -91,19 +91,9 @@
 	include_subtypes = FALSE
 
 /datum/export/large/fev/FEV_solution_one
-	cost = 8000
-	unit_name = "FEV mk1"
+	cost = 8500
+	unit_name = "FEV solution"
 	export_types = list(/obj/item/reagent_containers/glass/bottle/FEV_solution)
-
-/datum/export/large/fev/FEV_solution_two
-	cost = 10000
-	unit_name = "FEV mk2"
-	export_types = list(/obj/item/reagent_containers/glass/bottle/FEV_solution/two)
-
-/datum/export/large/fev/FEV_solution_curling
-	cost = 12000
-	unit_name = "FEV Curling"
-	export_types = list(/obj/item/reagent_containers/glass/bottle/FEV_solution/curling)
 
 
 /*

@@ -341,6 +341,7 @@
 	desc = "A Swiss SIG-Sauer 14mm handgun, powerful but a little inaccurate"
 	icon_state = "pistol14"
 	mag_type = /obj/item/ammo_box/magazine/m14mm
+	slowdown = 0.05
 	force = 15
 	fire_delay = 5
 	extra_damage = 2
@@ -362,6 +363,7 @@
 	desc = "A Swiss SIG-Sauer 14mm handgun, this one is a finely tuned custom firearm from the Gunrunners."
 	icon_state = "lildev"
 	w_class = WEIGHT_CLASS_SMALL
+	slowdown = 0
 	fire_delay = 4
 	extra_penetration = 0.1
 

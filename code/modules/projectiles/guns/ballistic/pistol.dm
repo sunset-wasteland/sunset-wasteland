@@ -363,7 +363,7 @@
 	icon_state = "lildev"
 	w_class = WEIGHT_CLASS_SMALL
 	fire_delay = 4
-	extra_penetration = 0.35
+	extra_penetration = 0.1
 
 /obj/item/gun/ballistic/automatic/pistol/pistol14/custom
 	name= "Custom 14mm pistol"

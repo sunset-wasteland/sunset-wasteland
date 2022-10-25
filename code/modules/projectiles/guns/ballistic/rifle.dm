@@ -155,7 +155,7 @@
 	fire_delay = 2.25
 	recoil = 0.10
 	fire_sound = 'sound/f13weapons/brushgunfire.ogg'
-	extra_penetration = 0.3
+	extra_penetration = 0.1
 
 
 ////////////////////////

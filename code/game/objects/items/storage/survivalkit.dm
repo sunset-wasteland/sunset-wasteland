@@ -133,6 +133,10 @@
 	icon_state = "survivalkit"
 	w_class = WEIGHT_CLASS_SMALL
 
+/obj/item/storage/survivalkit_empty/PopulateContents()
+	. = ..()
+
+/*
 /obj/item/storage/survivalkit_triple_empty
 	name = "large survival kit"
 	desc = "A large, robust leather pouch containing the essentials for wasteland survival. Holds three times as much."
@@ -145,6 +149,4 @@
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 21
 	STR.max_combined_w_class = 42
-
-/obj/item/storage/survivalkit_empty/PopulateContents()
-	. = ..()
+*/

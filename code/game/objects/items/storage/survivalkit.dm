@@ -137,7 +137,7 @@
 	name = "large survival kit"
 	desc = "A large, robust leather pouch containing the essentials for wasteland survival. This one won't fit in your pocket, but holds three times as much."
 	icon_state = "survivalkit_triple"
-	w_class = WEIGHT_CLASS_NORMAL
+	w_class = WEIGHT_CLASS_SMALL//WHY WAS THIS NORMAL? STACK BEGONE
 
 /obj/item/storage/survivalkit_triple_empty/ComponentInitialize()
 	. = ..()

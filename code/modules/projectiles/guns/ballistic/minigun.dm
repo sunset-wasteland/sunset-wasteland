@@ -120,7 +120,7 @@
 	casing_ejector = FALSE//For now.
 	item_flags = SLOWS_WHILE_IN_HAND
 	var/obj/item/minigunpackbal5mm/ammo_pack
-	extra_damage = -7
+	extra_damage = -9
 
 /obj/item/gun/ballistic/minigunbal5mm/Initialize()
 	if(istype(loc, /obj/item/minigunpackbal5mm)) //We should spawn inside an ammo pack so let's use that one.

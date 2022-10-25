@@ -2,7 +2,7 @@
 // See gun.dm for keywords and the system used for gun balance
 
 /obj/item/gun/ballistic/revolver
-	slowdown = 0.1
+	slowdown = 0.05
 	name = "revolver template"
 	desc = "should not exist."
 	icon_state = "revolver"
@@ -138,9 +138,9 @@
 	obj_flags = UNIQUE_RENAME
 	var/list/safe_calibers
 
-///////////////////
+///////////////////////
 // .45 ACP REVOLVERS //
-///////////////////
+///////////////////////
 
 
 //S&W 45						Keywords: .45, Single action, 7 rounds cylinder, Long barrel
@@ -153,8 +153,7 @@
 	fire_delay = 4.5
 	spread = 1
 	fire_sound = 'sound/f13weapons/45revolver.ogg'
-	extra_damage = 4
-
+	extra_damage = 5
 
 
 ////////////////////
@@ -168,7 +167,7 @@
 	icon_state = "357colt"
 	item_state = "357colt"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev357
-	fire_delay = 4.5
+	fire_delay = 3.5
 	spread = 0
 	fire_sound = 'sound/f13weapons/357magnum.ogg'
 
@@ -178,6 +177,7 @@
 	icon_state = "mateba"
 	item_state = "mateba"
 	fire_sound = 'sound/f13weapons/magnum_fire.ogg'
+	armour_penetration = 0.1
 
 //Lucky							Keywords: UNIQUE, .357, Double action, 6 rounds cylinder, Block chance, Fire delay -1
 /obj/item/gun/ballistic/revolver/colt357/lucky
@@ -186,7 +186,8 @@
 	icon_state = "lucky37"
 	item_state = "lucky"
 	w_class = WEIGHT_CLASS_SMALL
-	fire_delay = 3
+	fire_delay = 2.5
+	extra_damage = 3
 	block_chance = 20
 
 //Police revolver					Keywords: .357, Double action, 6 rounds cylinder, Pocket Pistol
@@ -198,7 +199,8 @@
 	w_class = WEIGHT_CLASS_SMALL
 	spread = 2
 	fire_sound = 'sound/f13weapons/policepistol.ogg'
-	extra_damage = -5
+	slowdown = 0
+	extra_damage = -6
 
 
 
@@ -233,6 +235,7 @@
 	desc = "When you don't just need excessive force, but crave it. This .44 has a special hammer mechanism, allowing for measured powerful shots, or fanning for a flurry of inaccurate shots."
 	item_state = "m29peace"
 	icon_state = "m29peace"
+	extra_damage = 2
 	automatic = 1
 	autofire_shot_delay = 1
 	actions_types = list(/datum/action/item_action/toggle_firemode)
@@ -245,7 +248,7 @@
 	icon_state = "m29_snub"
 	w_class = WEIGHT_CLASS_SMALL
 	spread = 3
-	extra_damage = -5
+	extra_damage = -3
 
 
 //.44 single action		 			Keywords: .44, Single action, 6 rounds cylinder, Long barrel
@@ -255,6 +258,7 @@
 	item_state = "44colt"
 	icon_state = "44colt"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev44
+	extra_damage = 2
 	fire_delay = 4.5
 	spread = 0
 	fire_sound = 'sound/f13weapons/44revolver.ogg'
@@ -265,12 +269,14 @@
 	name = "desert ranger revolver"
 	desc = "I hadn't noticed, but there on his hip, was a really spiffy looking iron..."
 	fire_delay = 4
+	extra_damage = 2
 
 //Sheriff's revolver			Keywords: .44, Single action, 6 rounds cylinder, 5 less damage than sequoia, 20% more pen
 /obj/item/gun/ballistic/revolver/revolver44/sheriff
 	name = "Biggest Iron"
 	desc = "There was forty feet between them, when they stopped to make their play..."
 	force = 25
+	extra_penetration = 0.2
 	casing_ejector = TRUE//WHAT THE FUCK IS THIS GUN? FASTEST HAND IN THE WEST BETWEEN SHOTS, THAT'S WHAT.
 	can_scope = TRUE
 	scope_state = "revolver_scope"
@@ -290,6 +296,7 @@
 	icon_state = "sequoia"
 	item_state = "sequoia"
 	weapon_weight = WEAPON_MEDIUM
+	slowdown = 0.1
 	recoil = 0.2
 	fire_delay = 1
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev4570
@@ -312,13 +319,13 @@
 	weapon_weight = WEAPON_MEDIUM
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev4570
 	recoil = 0.1
+	slowdown = 0.12
 	can_scope = TRUE
 	scope_state = "revolver_scope"
 	fire_delay = 5.5
 	scope_x_offset = 9
 	scope_y_offset = 20
 	fire_sound = 'sound/f13weapons/sequoia.ogg'
-	extra_damage = -2
 
 /obj/item/gun/ballistic/revolver/hunting/klatue
 	name = "degraded hunting revolver"

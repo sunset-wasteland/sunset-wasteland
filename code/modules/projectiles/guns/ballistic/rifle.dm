@@ -118,7 +118,7 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube357
 	extra_speed = 300
 	fire_sound = 'sound/f13weapons/cowboyrepeaterfire.ogg'
-	extra_damage = 4
+	extra_damage = 1
 
 
 //Trail carbine							Keywords: .44, Lever action, 12 round internal, Long barrel
@@ -130,7 +130,7 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube44
 	extra_speed = 200
 	fire_sound = 'sound/f13weapons/44mag.ogg'
-	extra_damage = 4
+	extra_damage = 1
 
 
 //Brush gun								Keywords: .45-70, Lever action, 10 round internal, Long barrel
@@ -144,19 +144,18 @@
 	fire_delay = 3
 	recoil = 0.15
 	fire_sound = 'sound/f13weapons/brushgunfire.ogg'
-	extra_penetration = 0.12
-
+	
 //Medicine Stick						Keywords: .45-70, Lever action, 8 round internal, Long barrel, Unique
 /obj/item/gun/ballistic/rifle/repeater/brush/medistick
 	name = "medicine stick"
 	desc = "A custom-made Gun Runners brush gun with a shorter tube, featuring a sturdier frame, longer barrel, reinforced rifling, padded lever and a muzzle device. A medicine wheel is attached to one side of the stock along with two feathers."
 	icon_state = "medistick"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube4570/medicine
-	extra_speed = 150
+	extra_speed = 100
 	fire_delay = 2.25
 	recoil = 0.10
 	fire_sound = 'sound/f13weapons/brushgunfire.ogg'
-	extra_penetration = 0.4
+	extra_penetration = 0.3
 
 
 ////////////////////////

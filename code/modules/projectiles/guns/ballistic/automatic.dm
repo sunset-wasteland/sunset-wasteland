@@ -202,7 +202,7 @@
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	w_class = WEIGHT_CLASS_NORMAL
 	weapon_weight = WEAPON_HEAVY //Automatic fire and onehanded use mix poorly.
-	slowdown = 0.4
+	slowdown = 0.25
 	fire_delay = 3.75
 	burst_shot_delay = 3
 	spread = 10
@@ -215,7 +215,6 @@
 	desc = "An integrally suppressed submachinegun chambered in the common .22 long rifle. Top loaded drum magazine."
 	icon_state = "smg22"
 	item_state = "shotgun"
-	slowdown = 0.25
 	w_class = WEIGHT_CLASS_BULKY
 	mag_type = /obj/item/ammo_box/magazine/m22smg
 	can_unsuppress = FALSE
@@ -238,6 +237,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 	mag_type = /obj/item/ammo_box/magazine/smg14
 	is_automatic = TRUE
+	extra_damage = -9
 	automatic = 1
 	autofire_shot_delay = 2.15 //It's so awfully inaccurate now that it's more of a gimmick than a buff
 	spread = 10
@@ -258,6 +258,7 @@
 	slowdown = 0.3
 	burst_shot_delay = 2.75
 	is_automatic = TRUE
+	extra_damage = -1
 	automatic = 1
 	autofire_shot_delay = 2.5
 	can_attachments = TRUE
@@ -384,9 +385,9 @@
 	fire_delay = 3
 	burst_shot_delay = 2.2
 	is_automatic = TRUE
+	extra_damage = -3
 	automatic = 1
-	slowdown = 0.3
-	autofire_shot_delay = 2
+	autofire_shot_delay = 1.80
 	spread = 16
 	can_suppress = TRUE
 	can_attachments = TRUE
@@ -427,8 +428,9 @@
 	item_state = "cg45"
 	mag_type = /obj/item/ammo_box/magazine/cg45
 	is_automatic = TRUE
+	extra_damage = 2
 	automatic = 1
-	slowdown = 0.35
+	slowdown = 0.3
 	autofire_shot_delay = 2.5
 	spread = 12
 	fire_delay = 3.5
@@ -444,8 +446,9 @@
 	item_state = "cg45"
 	mag_type = /obj/item/ammo_box/magazine/cg45_two
 	is_automatic = TRUE
+	extra_damage = -2
 	automatic = 1
-	slowdown = 0.35
+	slowdown = 0.3
 	autofire_shot_delay = 3
 	spread = 18
 	fire_delay = 3.5
@@ -465,6 +468,7 @@
 	init_mag_type = /obj/item/ammo_box/magazine/tommygunm45/stick
 	fire_sound = 'sound/weapons/gunshot_smg.ogg'
 	is_automatic = TRUE
+	extra_damage = -5
 	automatic = 1
 	autofire_shot_delay = 2.25
 	burst_shot_delay = 2.75
@@ -478,8 +482,9 @@
 	desc = "A recovered ancient Thompson from an armory far up North. Commonly used by raiders of the White Legs tribe."
 	mag_type = /obj/item/ammo_box/magazine/tommygunm45
 	init_mag_type = /obj/item/ammo_box/magazine/tommygunm45/stick
-	fire_delay = 3.75
-	spread = 19
+	fire_delay = 3.9
+	spread = 20
+	extra_damage = -7
 
 //P90				Keywords: 10mm, Automatic, 50 rounds. Special modifiers: damage +1
 /obj/item/gun/ballistic/automatic/smg/p90
@@ -494,7 +499,7 @@
 	spread = 14
 	is_automatic = TRUE
 	automatic = 1
-	autofire_shot_delay = 2
+	autofire_shot_delay = 1.9
 	burst_shot_delay = 2.5
 	recoil = 0.25
 	can_suppress = TRUE
@@ -502,6 +507,7 @@
 	suppressor_x_offset = 29
 	suppressor_y_offset = 16
 	fire_sound = 'sound/f13weapons/10mm_fire_03.ogg'
+	extra_damage = -1
 	slowdown = 0.2
 
 /obj/item/gun/ballistic/automatic/smg/p90/worn
@@ -510,6 +516,7 @@
 	autofire_shot_delay = 2.25
 	spread = 16
 	slowdown = 0.35
+	extra_damage = -3
 
 
 //MP-5 SD				Keywords: 9mm, Automatic, 32 rounds, Suppressed
@@ -519,12 +526,13 @@
 	icon_state = "mp5"
 	item_state = "fnfal"
 	mag_type = /obj/item/ammo_box/magazine/uzim9mm
+	extra_damage = 1
 	spread = 6
 	fire_delay = 3.5
 	slowdown = 0.25
 	is_automatic = TRUE
 	automatic = 1
-	autofire_shot_delay = 2.15
+	autofire_shot_delay = 2.2
 	burst_shot_delay = 2
 	suppressed = 1
 	recoil = 0.05
@@ -539,6 +547,7 @@
 	name = "Ppsh-41"
 	desc = "An extremely fast firing, inaccurate submachine gun from World War 2. Low muzzle velocity. Uses 9mm rounds."
 	icon_state = "pps"
+	extra_damage = 3
 	slowdown = 0.3
 	w_class = WEIGHT_CLASS_BULKY
 	mag_type = /obj/item/ammo_box/magazine/pps9mm
@@ -569,6 +578,8 @@
 	icon_state = "m1carbine"
 	item_state = "rifle"
 	mag_type = /obj/item/ammo_box/magazine/m10mm_adv
+	extra_speed = 100
+	extra_penetration = 0.5
 	burst_size = 1
 	fire_delay = 3
 	spread = 2
@@ -600,6 +611,7 @@
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	icon_state = "ncr-m1carbine"
 	item_state = "rifle"
+	extra_damage = 2
 
 
 //M1A1 Carbine				Keywords: 10mm, Semi-auto, 12/24 rounds, Long barrel, Folding stock.
@@ -697,6 +709,8 @@
 	icon_state = "delisle"
 	item_state = "varmintrifle"
 	mag_type = /obj/item/ammo_box/magazine/m9mmds
+	extra_damage = 1
+	extra_penetration = 0.5
 	slowdown = 0.05
 	fire_delay = 4
 	burst_size = 1
@@ -713,6 +727,8 @@
 	icon_state = "commando"
 	item_state = "commando"
 	mag_type = /obj/item/ammo_box/magazine/m45exp
+	extra_damage = -5
+	extra_penetration = 0.2
 	can_scope = TRUE
 	semi_auto = TRUE
 	automatic_burst_overlay = FALSE
@@ -762,6 +778,7 @@
 	burst_size = 1
 	spread = 1
 	slowdown = 0.25
+	extra_damage = -5
 	extra_penetration = 0.1
 	automatic_burst_overlay = FALSE
 	semi_auto = TRUE

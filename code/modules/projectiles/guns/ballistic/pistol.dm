@@ -62,7 +62,7 @@
 	can_unsuppress = FALSE
 	suppressed = 1
 	fire_sound = 'sound/f13weapons/22pistol.ogg'
-	extra_damage = 3
+	extra_damage = 7
 
 
 //N99  10mm								Keywords: 10mm, Semi-auto, 12/24 round magazine
@@ -88,7 +88,6 @@
 	attachableparts = list("internal" = new /obj/item/gunpart/BHS_Receiver, "internal2" = null, "east" = null, "west" = null, "south" = null, "north" = null)
 	//Blacklisted Parts
 	blacklistedparts = list("stock")
-	extra_damage = 3
 
 //the Executive							Keywords: UNIQUE, 10mm, Automatic, 12/24 round magazine. Special modifiers: damage +4
 /obj/item/gun/ballistic/automatic/pistol/n99/executive
@@ -98,6 +97,7 @@
 	burst_size = 2
 	semi_auto = FALSE
 	can_automatic = FALSE
+	extra_damage = 1
 
 //Crusader pistol
 /obj/item/gun/ballistic/automatic/pistol/n99/crusader
@@ -121,6 +121,7 @@
 	spread = 3
 	can_suppress = FALSE
 	fire_sound = 'sound/f13weapons/10mm_fire_02.ogg'
+	extra_damage = 2
 
 //Browning Hi-power						Keywords: 9mm, Semi-auto
 /obj/item/gun/ballistic/automatic/pistol/ninemil
@@ -150,9 +151,8 @@
 	name = "Maria"
 	desc = "An ornately-decorated pre-war Browning Hi-power 9mm pistol with pearl grips and a polished nickel finish. The firing mechanism has been upgraded, so for anyone on the receiving end, it must seem like an eighteen-karat run of bad luck."
 	icon_state = "maria"
-	fire_delay = 2
-	extra_damage = 8
-	extra_penetration = 0.05
+	extra_damage = 5
+	extra_penetration = 0.2
 
 
 //Sig Sauer P220						Keywords: 9mm, Semi-auto, 10 round magazine
@@ -183,6 +183,7 @@
 	suppressor_x_offset = 30
 	suppressor_y_offset = 20
 	fire_sound = 'sound/f13weapons/9mm.ogg'
+	extra_damage = 1
 
 //Beretta M93R							Keywords: 9mm, Automatic, 15 round magazine
 /obj/item/gun/ballistic/automatic/pistol/beretta/automatic
@@ -198,6 +199,7 @@
 	automatic_burst_overlay = TRUE
 	can_attachments = FALSE
 	semi_auto = FALSE
+	extra_damage = 1
 
 /obj/item/gun/ballistic/automatic/pistol/beretta/automatic/burst_select()
 	var/mob/living/carbon/human/user = usr
@@ -229,7 +231,6 @@
 	item_state = "pistolchrome"
 	w_class = WEIGHT_CLASS_NORMAL
 	fire_delay = 2
-	slowdown = 0.05
 	mag_type = /obj/item/ammo_box/magazine/m45
 	recoil = 0.15
 	can_attachments = TRUE
@@ -262,8 +263,8 @@
 	desc = "A very tactical pistol chambered in .45 ACP with a built in laser sight and attachment point for a seclite."
 	icon_state = "mk23"
 	mag_type = /obj/item/ammo_box/magazine/m45exp
-	fire_delay = 2
-	slowdown = 0.07
+	recoil = 0.05
+	fire_delay = 1
 	spread = 1
 	can_flashlight = TRUE
 	gunlight_state = "flight"
@@ -293,7 +294,7 @@
 	extra_speed = 300
 	recoil = 3.5 //Debilitating
 	spread = 6
-	extra_damage = 12
+	extra_damage = 1
 	extra_penetration = 0.12
 	can_suppress = FALSE
 	automatic_burst_overlay = FALSE
@@ -331,7 +332,7 @@
 	can_suppress = FALSE
 	automatic_burst_overlay = FALSE
 	fire_sound = 'sound/f13weapons/44mag.ogg'
-	extra_damage = 5
+	extra_damage = 4
 
 
 //14mm Pistol		Keywords: 14mm, Semi-auto, 7 rounds, Heavy
@@ -342,7 +343,7 @@
 	mag_type = /obj/item/ammo_box/magazine/m14mm
 	force = 15
 	fire_delay = 5
-	extra_damage = 11
+	extra_damage = 2
 	recoil = 2.2
 	can_suppress = FALSE
 	fire_sound = 'sound/f13weapons/magnum_fire.ogg'
@@ -362,7 +363,6 @@
 	icon_state = "lildev"
 	w_class = WEIGHT_CLASS_SMALL
 	fire_delay = 4
-	extra_damage = 0
 	extra_penetration = 0.35
 
 /obj/item/gun/ballistic/automatic/pistol/pistol14/custom
@@ -370,7 +370,7 @@
 	desc = "A Swiss SIG-Sauer 14mm handgun, this one is a finely tuned custom firearm. How'd this get into service?"
 	icon_state = "lildev"
 	w_class = WEIGHT_CLASS_SMALL
-	fire_delay = 4
+	fire_delay = 2
 
 /////////////////////////////////
 // TEMPORARY REMOVE AFTER BETA //

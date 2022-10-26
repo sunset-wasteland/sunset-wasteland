@@ -28,7 +28,7 @@
 /datum/supply_pack/goody/sharpenerf13
 	name = "Weapon Sharpener"
 	desc = "Contains one whetstone that allows the weapon to be sharpened, no matter the quality of weapon."
-	cost = 12000
+	cost = 14000
 	contains = list(/obj/item/sharpener/bos)
 
 /datum/supply_pack/goody/bosbooksf13

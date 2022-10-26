@@ -190,7 +190,7 @@
 #define TRAIT_SKITTISH			"skittish"
 #define TRAIT_POOR_AIM			"poor_aim"
 #define TRAIT_INSANE_AIM		"insane_aim" //they don't miss. they never miss. it was all part of their immaculate plan.
-#define SPREAD_CONTROL		"spread_control"
+#define SPREAD_CONTROL			"spread_control"
 #define TRAIT_PROSOPAGNOSIA		"prosopagnosia"
 #define TRAIT_DRUNK_HEALING		"drunk_healing"
 #define TRAIT_TAGGER			"tagger"
@@ -219,14 +219,15 @@
 #define TRAIT_NO_TELEPORT		"no-teleport" //you just can't
 #define TRAIT_NO_INTERNALS		"no-internals"
 #define TRAIT_NO_ALCOHOL		"alcohol_intolerance"
-#define TRAIT_MUTATION_STASIS			"mutation_stasis" //Prevents processed genetics mutations from processing.
-#define TRAIT_FAST_PUMP				"fast_pump"
-#define TRAIT_AUTO_DRAW				"auto_draw" //can use bows good
+#define TRAIT_MUTATION_STASIS	"mutation_stasis" //Prevents processed genetics mutations from processing.
+#define TRAIT_FAST_PUMP			"fast_pump"
+#define TRAIT_AUTO_DRAW			"auto_draw" //can use bows good
 #define TRAIT_NO_PROCESS_FOOD	"no-process-food" // You don't get benefits from nutriment, nor nutrition from reagent consumables
 #define TRAIT_NICE_SHOT			"nice_shot" //hnnnnnnnggggg..... you're pretty good...
 #define TRAIT_PERFECT_ATTACKER	"perfect_attacker"
 #define TRAIT_BUFFOUT_BUFF		"buffout_buff"
 #define TRAIT_UNARMED_WEAPON	"unarmed_weapon"
+#define TRAIT_ENCLAVE_CODES		"old_world_codes" //Permits players to open the Vault.
 /// Prevents usage of manipulation appendages (picking, holding or using items, manipulating storage).
 #define TRAIT_HANDS_BLOCKED "handsblocked"
 
@@ -259,7 +260,8 @@
 #define TRAIT_TECHNOPHOBE		"luddite" //Cannot use autolathes/biogens
 #define TRAIT_LONGPORKLOVER		"Cannibal" //guess
 #define TRAIT_TRIBAL			"Tribalistic Person" //has access to tribal crafting recipes
-#define TRAIT_BERSERKER			"berserker" //currently unused
+#define TRAIT_BERSERKER			"berserker"
+#define TRAIT_KRIGSERKER		"krigserker"
 #define TRAIT_TECHNOPHREAK		"technophreak"	//boosts salvage return
 #define TRAIT_PA_WEAR           "pa_wear" //guess
 #define TRAIT_MEDICALEXPERT		"Medicinal Expert" //Can do revival surgery
@@ -359,6 +361,7 @@
 #define ANTI_DROP_IMPLANT_TRAIT "anti-drop-implant"
 #define MARTIAL_ARTIST_TRAIT "martial_artist"
 #define BERSERKER_TRAIT "berserker"
+#define KRIGSERKER_TRAIT "krigserker"
 #define SLEEPING_CARP_TRAIT "sleeping_carp"
 #define RISING_BASS_TRAIT "rising_bass"
 #define ABDUCTOR_ANTAGONIST "abductor-antagonist"

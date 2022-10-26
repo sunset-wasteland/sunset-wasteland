@@ -654,7 +654,7 @@
 	icon_state = "private"
 	minimize_when_attached = TRUE
 
-// Private
+// Private First Class
 /obj/item/clothing/accessory/enclave/private_firstclass
 	name = "(E-3) Private First Class rank pins"
 	desc = "A rank pin denoting its wearer as a Private First Class within the United States Army."
@@ -666,11 +666,23 @@
 	desc = "A rank pin denoting its wearer as a Specialist within the United States Army."
 	icon_state = "specialist"
 
+// Corporal
+/obj/item/clothing/accessory/enclave/corporal
+	name = "(E-4) Corporal rank pins"
+	desc = "A rank pin denoting its wearer as a Corporal within the United States Army."
+	icon_state = "corporal"
+
 // Sergeant
 /obj/item/clothing/accessory/enclave/sergeant
 	name = "(E-5) Sergeant rank pins"
 	desc = "A rank pin denoting its wearer as a Sergeant within the United States Army."
 	icon_state = "sergeant"
+
+// Staff Sergeant
+/obj/item/clothing/accessory/enclave/staff_sergeant
+	name = "(E-6) Staff Sergeant rank pins"
+	desc = "A rank pin denoting its wearer as a Staff Sergeant within the United States Army."
+	icon_state = "staff-sergeant"
 
 // Sergeant First Class
 /obj/item/clothing/accessory/enclave/sergeant_firstclass
@@ -690,16 +702,46 @@
 	desc = "A rank pin denoting its wearer as a Sergeant Major within the United States Army."
 	icon_state = "sergeant-major"
 
-// Lieutenant
-/obj/item/clothing/accessory/enclave/lieutenant
+// Second Lieutenant
+/obj/item/clothing/accessory/enclave/second_lieutenant
+	name = "(O-1) Second Lieutenant rank pins"
+	desc = "A rank pin denoting its wearer as a Second Lieutenant within the United States Army."
+	icon_state = "secondlieutenantrank"
+
+// First Lieutenant
+/obj/item/clothing/accessory/enclave/first_lieutenant
 	name = "(O-2) First Lieutenant rank pins"
 	desc = "A rank pin denoting its wearer as a First Lieutenant within the United States Army."
 	icon_state = "firstlieutenantrank"
 
-//donator
+// Captain
+/obj/item/clothing/accessory/enclave/captain
+	name = "(O-3) Captain rank pins"
+	desc = "A rank pin denoting its wearer as a Captain within the United States Army."
+	icon_state = "captainrank"
+
+// Major
+/obj/item/clothing/accessory/enclave/major
+	name = "(O-4) Major rank pins"
+	desc = "A rank pin denoting its wearer as a Major within the United States Army."
+	icon_state = "majorrank"
+
+// Lieutenant Colonel
+/obj/item/clothing/accessory/enclave/lieutenant_colonel
+	name = "(O-5) Lieutenant Colonel rank pins"
+	desc = "A rank pin denoting its wearer as a Lieutenant Colonel within the United States Army."
+	icon_state = "lieutenantcolonelrank"
+
+// Colonel
+/obj/item/clothing/accessory/enclave/colonel
+	name = "(O-6) Colonel rank pins"
+	desc = "A rank pin denoting its wearer as a Colonel within the United States Army."
+	icon_state = "colonelrank"
+
+// Internal Security - Previously a Donator Item
 /obj/item/clothing/accessory/cia_badge
 	name = "CIA Badge"
 	desc = "A strange pre-war badge, the letters 'CIA' are written at the top, a seal reading 'Central Intelligence Agency, United States of America' sits in the middle of it with the letters 'U S' flanking it, and the words 'Special Agent' are written at the bottom."
 	icon_state = "cia_badge"
 	item_state = "cia_badge"
-	minimize_when_attached = FALSE
+//	minimize_when_attached = FALSE

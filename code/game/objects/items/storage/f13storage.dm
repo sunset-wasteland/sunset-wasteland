@@ -399,7 +399,7 @@
 
 /obj/item/storage/box/ration/ranger_lunch/PopulateContents()
 	. = ..()
-	new /obj/item/reagent_containers/food/snacks/f13/canned/ncr/breakfast(src)
+	new /obj/item/reagent_containers/food/snacks/f13/canned/ncr/lunch(src)
 	new /obj/item/reagent_containers/food/snacks/cracker/k_ration(src)
 	new /obj/item/reagent_containers/food/snacks/cracker/k_ration(src)
 	new /obj/item/reagent_containers/food/snacks/cracker/k_ration(src)

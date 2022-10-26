@@ -10,6 +10,20 @@
 	var/mob/listeningTo
 	var/zoom_out_amt = 6
 	var/zoom_amt = 10
+	var/last_x = "UNKNOWN"
+	var/last_y = "UNKNOWN"
+
+/obj/item/binoculars/afterattack(atom/A, mob/living/user, adjacent, params) //handles coord obtaining
+	var/obj/item/weapon/maptool/mtool = locate() in user
+	if(mtool)
+		to_chat(user, "Calculating coordinates. Stand still.")
+		A = get_turf(A)
+		last_x = obfuscate_x(A.x)
+		last_y = obfuscate_y(A.y)
+		if(do_after(user, 80, src))
+			to_chat(user, "COORDINATES OF TARGET. LONGITUDE [last_x]. LATITUDE [last_y].")
+	else
+		to_chat(user, "<span class='warning'>You can't calculate coordinates without proper equipment!</span>")
 
 /obj/item/binoculars/Initialize()
 	. = ..()
@@ -33,7 +47,7 @@
 	user.regenerate_icons()
 	if(!user?.client)
 		return
-	
+
 	var/client/C = user.client
 	var/_x = 0
 	var/_y = 0
@@ -92,3 +106,11 @@
 		C.change_view(CONFIG_GET(string/default_view))
 		user.client.pixel_x = 0
 		user.client.pixel_y = 0
+
+/obj/item/weapon/maptool
+	name = "Map tools"
+	desc = "A foldable map of the sector and a bundle of cartographic untensils. Used together with binoculars to calculate coordinates."
+	icon = 'modular_sunset/icons/structures/mortar.dmi'
+	icon_state = "maptools"
+	slot_flags = ITEM_SLOT_BELT
+	w_class = WEIGHT_CLASS_SMALL

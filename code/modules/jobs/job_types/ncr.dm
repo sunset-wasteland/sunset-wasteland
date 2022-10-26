@@ -12,6 +12,8 @@ Money		Commanding Officer (LT and CAP) - "small" money bag
 Sidearm		Officers & a few specialists - 9mm pistol
 Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 			Don't use Greaseguns, Lever shotguns, Police shotguns, Berettas, Hunting knives
+			
+		GAMEPLAY: TREKKING IS NOT INTENDED TO BE A COMMON TRAIT OF THE NCR. TREKKING WAS NEVER MEANT TO BE A COMMON TRAIT OF THE NCR. THIS WAS BECAUSE FROK THOUGHT A FACTION SHOULD BE STRONG BECAUSE THE PEOPLE WHO PLAY IT ARE BAD. I PERSONALLY, DO NOT GIVE HALF A FUCK. -ALEK
 */
 
 /datum/job/ncr //do NOT use this for anything, it's just to store faction datums
@@ -61,7 +63,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	flag = F13COLONEL
 	head_announce = list("Security")
 	supervisors = "The Republic Senate, High Command"
-	access = list(ACCESS_NCR, ACCESS_NCR_ARMORY, ACCESS_CHANGE_IDS, ACCESS_NCR_COMMAND)
+	access = list(ACCESS_NCR, ACCESS_NCR_ARMORY, ACCESS_CHANGE_IDS, ACCESS_NCRREP, ACCESS_NCR_COMMAND)
 	req_admin_notify = 1
 
 	total_positions = 0
@@ -301,7 +303,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	loadout_options = list( // ALL: Bayonet, M1911 sidearm
 		/datum/outfit/loadout/sergeantrifleman,	// Worn Assault Carbine
 		/datum/outfit/loadout/sergeantrecon, // Scout Carbine, Trekking
-		/datum/outfit/loadout/sergeantcqc, // Trench Shotgun, Gas mask, Smoke bombs, Trench knife
+		/datum/outfit/loadout/sergeantcqc, // Trench Shotgun, Gas mask, Smoke bombs, Trench knife, Big leagues
 		)
 
 	matchmaking_allowed = list(
@@ -319,7 +321,6 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 		return
 	ADD_TRAIT(H, TRAIT_GENERIC, src)
 	ADD_TRAIT(H, TRAIT_SELF_AWARE, src)
-	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
 	ADD_TRAIT(H, TRAIT_LIFEGIVER, src)
 
 
@@ -356,7 +357,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	suit_store = /obj/item/gun/ballistic/automatic/service/carbine
 	head = /obj/item/clothing/head/f13/ncr
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/m556/rifle/extended = 2,
+		/obj/item/ammo_box/magazine/m556/rifle = 2,
 		/obj/item/storage/box/ration/menu_eight = 1,
 		/obj/item/attachments/scope = 1,
 		/obj/item/book/granter/trait/trekking = 1,
@@ -372,6 +373,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 		/obj/item/grenade/smokebomb = 2,
 		/obj/item/melee/onehanded/knife/bayonet = 1,
 		/obj/item/clothing/suit/armor/f13/ncrarmor/mantle/reinforced/trenchraider = 1,
+		/obj/item/book/granter/trait/bigleagues = 1,
 		)
 
 // DRILL SERGEANT
@@ -387,6 +389,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	access = list(ACCESS_NCR, ACCESS_NCR_ARMORY, ACCESS_NCR_COMMAND)
 	display_order = JOB_DISPLAY_ORDER_SERGEANT
 	outfit = /datum/outfit/job/ncr/f13drillsergeant
+	roleplay_exclusive_notify = 1
 	exp_requirements = 1000
 
 	loadout_options = list( // ALL: Bayonet
@@ -466,6 +469,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	supervisors = "The Captain and the NCR"
 	display_order = JOB_DISPLAY_ORDER_REPRESENTATIVE
 	outfit = /datum/outfit/job/ncr/f13representative
+	roleplay_exclusive_notify = 1
 	exp_requirements = 750
 
 	loadout_options = list(
@@ -482,6 +486,16 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 			/datum/job/ncr
 			)
 		)
+
+/datum/outfit/job/ncr/f13representative/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+	ADD_TRAIT(H, TRAIT_GENERIC, src)
+	ADD_TRAIT(H, TRAIT_SELF_AWARE, src)
+	if(H.mind)
+		var/obj/effect/proc_holder/spell/terrifying_presence/S = new /obj/effect/proc_holder/spell/terrifying_presence
+		H.mind.AddSpell(S)
 
 /datum/outfit/job/ncr/f13representative
 	name = "NCR Representative"
@@ -563,7 +577,6 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	ADD_TRAIT(H, TRAIT_IRONFIST, src)
 	ADD_TRAIT(H, TRAIT_SILENT_STEP, src)
 	ADD_TRAIT(H, TRAIT_INSANE_AIM, src)
-	ADD_TRAIT(H, TRAIT_FAST_PUMP, src)
 	ADD_TRAIT(H, TRAIT_GENERIC, src)
 	var/datum/martial_art/rangertakedown/RT = new
 	RT.teach(H)
@@ -605,10 +618,11 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 
 /datum/outfit/loadout/vrlite
 	name = "Rifler Veteran Ranger"
-	suit_store = /obj/item/gun/ballistic/rifle/repeater/brush
+	suit_store = /obj/item/gun/ballistic/rifle/repeater/brush/medistick
 	backpack_contents = list(
-		/obj/item/ammo_box/c4570 = 3,
-		/obj/item/gun/ballistic/revolver/sequoia = 1,
+		/obj/item/ammo_box/m44box = 2,
+		/obj/item/gun/ballistic/revolver/revolver44 = 1,
+		/obj/item/book/granter/trait/rifleman = 1,
 		)
 
 /datum/outfit/loadout/vrshotgunner
@@ -723,7 +737,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	belt = /obj/item/storage/belt/military/assault/ncr
 	suit_store = /obj/item/gun/ballistic/automatic/assault_rifle
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/m556/rifle/extended = 1,
+		/obj/item/ammo_box/magazine/m556/rifle = 2,
 		/obj/item/clothing/head/helmet/f13/combat/ncr_patrol = 1,
 		/obj/item/gun/ballistic/revolver/revolver44 = 1,
 		/obj/item/ammo_box/m44 = 2,
@@ -737,7 +751,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	belt = /obj/item/storage/belt/military/assault/ncr
 	suit_store = /obj/item/gun/ballistic/automatic/smg/smg10mm
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/m10mm_adv = 2,
+		/obj/item/ammo_box/magazine/m10mm_adv/ext = 2,
 		/obj/item/clothing/head/helmet/f13/combat/ncr_patrol = 1,
 		/obj/item/gun/ballistic/revolver/m29/snub = 1,
 		/obj/item/ammo_box/m44box = 1,
@@ -753,8 +767,8 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 /datum/job/ncr/f13heavytrooper
 	title = "NCR Heavy Trooper"
 	flag = F13HEAVYTROOPER
-	total_positions = 1
-	spawn_positions = 1
+	total_positions = 2
+	spawn_positions = 2
 	description = "You are the most elite of the enlisted, sergeant in rank but forgoing regular command roles to lead in battle only. You are expected to be on the frontlines of every engagement, and to provide firing support for the rank and file. Your power armor lacks the protection the full working sets have, but you have trained with it and can use it in battle well. You're the NCR's heaviest hitter in combat, don't be the exception."
 	supervisors = "Lieutenant and Above"
 	access = list(ACCESS_NCR, ACCESS_NCR_ARMORY, ACCESS_NCR_COMMAND)
@@ -764,8 +778,9 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	exp_requirements = 375
 
 	loadout_options = list(
-		/datum/outfit/loadout/shockht,	// Minigun
+		/datum/outfit/loadout/shockht,	// BAR
 		/datum/outfit/loadout/supportht, // R84
+		/datum/outfit/loadout/crowdht, //FLAMER
 		)
 
 /datum/outfit/job/ncr/f13heavytrooper/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -773,7 +788,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	if(visualsOnly)
 		return
 	ADD_TRAIT(H, TRAIT_IRONFIST, src)
-	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
+	ADD_TRAIT(H, TRAIT_BIG_LEAGUES, src)
 	ADD_TRAIT(H, TRAIT_LIFEGIVER, src)
 
 /datum/outfit/job/ncr/f13heavytrooper	// Mk. 23, Bayonet, Heavy armor
@@ -804,8 +819,17 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	name = "Heavy Trooper Frontliner"
 	backpack_contents = list(
 		/obj/item/gun/ballistic/automatic/r84 = 1,
+		/obj/item/book/granter/trait/trekking = 1,
 		/obj/item/ammo_box/magazine/lmg = 2,
 		/obj/item/melee/onehanded/knife/bowie = 1,
+		)
+
+/datum/outfit/loadout/crowdht
+	name = "Heavy Trooper Flamer"
+	backpack_contents = list(
+		/obj/item/m2flamethrowertank = 1,
+		/obj/item/gun/ballistic/automatic/service/r82 = 1,
+		/obj/item/ammo_box/magazine/m556/rifle = 2,
 		)
 
 
@@ -856,7 +880,6 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/huntingshotgun)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/m1carbine)
 	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
-	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
 
 /datum/outfit/job/ncr/f13combatengineer
 	name = "NCR Combat Engineer"
@@ -909,6 +932,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/m556/rifle = 2,
 		/obj/item/m2flamethrowertank = 1,
+		/obj/item/book/granter/trait/trekking = 1,
 		)
 
 /datum/outfit/loadout/combatengineerrocketeer
@@ -932,6 +956,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	selection_color = "#fff5cc"
 	display_order = JOB_DISPLAY_ORDER_TROOPER
 	outfit = /datum/outfit/job/ncr/f13mp
+	roleplay_exclusive_notify = 1
 	exp_requirements = 150
 
 /datum/outfit/job/ncr/f13mp		// .45 Pistol, Beanbag Shotgun, Military baton
@@ -960,7 +985,6 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	if(visualsOnly)
 		return
 	ADD_TRAIT(H, TRAIT_IRONFIST, src)
-	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
 
 
 // COMBAT MEDIC
@@ -1037,8 +1061,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 
 	loadout_options = list(
 		/datum/outfit/loadout/corporaldesignatedmarksman,	 // Marksman Carbine, 9mm sidearm
-		/datum/outfit/loadout/corporalrifleman,				 // R82, Large magazines
-		/datum/outfit/loadout/corporalcqc,					 // Hunting Shotgun
+		/datum/outfit/loadout/corporalrifleman,				 // R82, trekking
 		/datum/outfit/loadout/corporalcommand,				 // Intel and backline support
 		)
 
@@ -1050,12 +1073,6 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 			/datum/job/ncr,
 			),
 		)
-
-/datum/outfit/job/ncr/f13corporal/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	. = ..()
-	if(visualsOnly)
-		return
-	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
 
 /datum/outfit/job/ncr/f13corporal
 	name = "NCR Corporal"
@@ -1091,17 +1108,8 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/m556/rifle = 2,
 		/obj/item/storage/box/ration/menu_one = 1,
-		/obj/item/clothing/accessory/ncr/MCPL = 1 //Same rank, mostly for flavor and RP. - Kitsunemitsu
-		)
-
-/datum/outfit/loadout/corporalcqc		//I think this one sucks, personally.
-	name = "Squad Pointman"
-	suit = /obj/item/clothing/suit/armor/f13/ncrarmor/mantle
-	suit_store = /obj/item/gun/ballistic/shotgun/hunting
-	head = /obj/item/clothing/head/f13/ncr/steelpot_goggles
-	backpack_contents = list(
-		/obj/item/ammo_box/shotgun/buck = 2,
-		/obj/item/storage/box/ration/menu_one = 1,
+		/obj/item/clothing/accessory/ncr/MCPL = 1, //Same rank, mostly for flavor and RP. - Kitsunemitsu
+		/obj/item/book/granter/trait/trekking = 1,
 		)
 
 /datum/outfit/loadout/corporalcommand	//Has a fold out gun. It serves it's purpose in being a support role but it is primarily for RP.
@@ -1145,12 +1153,6 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 			/datum/job/ncr,
 			),
 		)
-
-/datum/outfit/job/ncr/f13trooper/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	. = ..()
-	if(visualsOnly)
-		return
-	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
 
 /datum/outfit/job/ncr/f13trooper
 	name = "NCR Trooper"
@@ -1264,6 +1266,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	access = list(ACCESS_NCR, ACCESS_NCR_ARMORY, ACCESS_NCR_COMMAND)
 	display_order = JOB_DISPLAY_ORDER_MEDICALOFFICER
 	outfit = /datum/outfit/job/ncr/f13medicalofficer
+	roleplay_exclusive_notify = 1
 	exp_requirements = 750
 	matchmaking_allowed = list(
 		/datum/matchmaking_pref/friend = list(
@@ -1322,6 +1325,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	selection_color = "#fff5cc"
 	display_order = JOB_DISPLAY_ORDER_LOGISTICSOFFICER
 	outfit = /datum/outfit/job/ncr/f13logisticsofficer
+	roleplay_exclusive_notify = 1
 	exp_requirements = 750
 
 /datum/outfit/job/ncr/f13logisticsofficer/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -1394,6 +1398,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	exp_type = EXP_TYPE_NCR
 	display_order = JOB_DISPLAY_ORDER_REAR_ECHELON
 	outfit = /datum/outfit/job/ncr/f13rearechelon
+	roleplay_exclusive_notify = 1
 	exp_requirements = 60
 
 	loadout_options = list( // ALL: Very limited blueprints

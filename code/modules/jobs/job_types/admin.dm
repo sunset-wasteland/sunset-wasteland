@@ -92,17 +92,11 @@
 	l_pocket = /obj/item/melee/onehanded/knife/hunting
 	r_pocket = /obj/item/flashlight/seclite
 	uniform = /obj/item/clothing/under/f13/merca
-	backpack = /obj/item/storage/backpack/satchel/trekker
+	backpack = /obj/item/encencminigunbal4mm
 	gloves = /obj/item/clothing/gloves/f13/military
 	head = /obj/item/clothing/head/helmet/f13/ncr/rangercombat/desert
 	suit = /obj/item/clothing/suit/armor/f13/rangercombat/desert
-	suit_store = /obj/item/gun/ballistic/revolver/sequoia/death
 	glasses = /obj/item/clothing/glasses/hud/health/night
-	backpack_contents = list(
-		/obj/item/reagent_containers/hypospray/medipen/stimpak/super=4, \
-		/obj/item/reagent_containers/pill/radx=1, \
-		/obj/item/restraints/handcuffs=2, \
-		/obj/item/ammo_box/c4570/explosive=6)
 
 /datum/outfit/job/wasteland/f13adminboos/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()

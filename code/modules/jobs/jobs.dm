@@ -86,6 +86,7 @@ GLOBAL_LIST_INIT(faction_whitelist_positions, list(
 "Librarian",
 "Scribe",
 "Initiate",
+"BoS Off-Duty",
 
 "Legion Centurion",
 "Legion Venator",
@@ -105,10 +106,11 @@ GLOBAL_LIST_INIT(faction_whitelist_positions, list(
 "Enclave Lieutenant",
 "Enclave Gunnery Sergeant",
 "Enclave Sergeant",
-"Enclave Armored Infantry",
+"Enclave Internal Security",
 "Enclave Specialist",
 "Enclave Scientist",
 "Enclave Private",
+"Enclave Pilot Officer",
 "Enclave Bunker Duty",
 "Synthetic",
 
@@ -137,6 +139,7 @@ GLOBAL_LIST_INIT(brotherhood_positions, list(
 	"Knight",
 	"Librarian",
 	"Scribe",
+	"BoS Off-Duty",
 	"Initiate",
 ))
 
@@ -233,9 +236,10 @@ GLOBAL_LIST_INIT(enclave_positions, list(
 	"Enclave Lieutenant",
 	"Enclave Platoon Sergeant",
 	"Enclave Sergeant",
-	"Enclave Armored Infantry",
+	"Enclave Internal Security",
 	"Enclave Specialist",
 	"Enclave Scientist",
+	"Enclave Pilot Officer",
 	"Enclave Private",
 	"Enclave Bunker Duty",
 	"Synthetic",
@@ -281,7 +285,7 @@ GLOBAL_LIST_INIT(exp_jobsmap, list(
 	EXP_TYPE_SILICON = list("titles" = list("AI","Cyborg")),
 	EXP_TYPE_SERVICE = list("titles" = civilian_positions),
 
-	EXP_TYPE_FALLOUT = list("titles" = brotherhood_positions | bighorn_positions | legion_positions | ncr_positions | vault_positions | wasteland_positions | followers_positions | enclave_positions),
+	EXP_TYPE_FALLOUT = list("titles" = brotherhood_positions | bighorn_positions | legion_positions | khan_positions | ncr_positions | vault_positions | wasteland_positions | followers_positions | enclave_positions),
 
 	EXP_TYPE_OUTLAW = list("titles" = list("Outlaw","Den Mob Boss","Den Mob Enforcer","Den Doctor",)),
 	EXP_TYPE_BROTHERHOOD = list("titles" = brotherhood_positions),

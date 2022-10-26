@@ -38,6 +38,10 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/plasma/pistol/worn)
 	fire_delay = 8
 
+/obj/item/gun/energy/laser/plasma/pistol/remnant/is
+	name ="custom plasma pistol"
+	desc = "An eagle is stamped to the underside of the grip. Where'd this come from?"
+
 /obj/item/gun/energy/laser/plasma/pistol/worn/gutsy
 	name ="\improper integrated plasma pistol"
 	desc = "A pistol-sized miniaturized plasma caster built by REPCONN. It fires a bolt of superhot ionized gas."
@@ -74,7 +78,6 @@
 	icon_state = "plasma"
 	armour_penetration = 0.1
 	slowdown = 0.75 //this is one of the worst slowdowns in the game
-	extra_damage = 30
 	fire_delay = 5.2
 	desc = "A miniaturized plasma caster that fires bolts of magnetically accelerated toroidal plasma towards an unlucky target."
 	ammo_type = list(/obj/item/ammo_casing/energy/plasma)
@@ -90,7 +93,6 @@
 	desc = "A burst-fire energy weapon that fires a steady stream of toroidal plasma towards an unlucky target."
 	ammo_type = list(/obj/item/ammo_casing/energy/plasmacarbine)
 	cell_type = /obj/item/stock_parts/cell/ammo/mfc
-	extra_damage = 15
 	burst_size = 2
 	burst_shot_delay = 1.5
 	actions_types = list(/datum/action/item_action/toggle_firemode)
@@ -115,7 +117,6 @@
 	item_state = "multiplas"
 	icon_state = "multiplas"
 	fire_delay = 3
-	extra_damage = 15
 	desc = "A modified A3-20 plasma caster built by REPCONN equipped with a multicasting kit that creates multiple weaker clots."
 	equipsound = 'sound/f13weapons/equipsounds/plasequip.ogg'
 	ammo_type = list(/obj/item/ammo_casing/energy/plasma/scatter)

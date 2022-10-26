@@ -870,6 +870,15 @@
 	construction_time = 100
 	category = list("Cyborg Upgrade Modules")
 
+/datum/design/borg_upgrade_radio
+	name = "Cyborg Upgrade (Radio Transceiver)"
+	id = "borg_upgrade_radio"
+	build_type = MECHFAB
+	build_path = /obj/item/borg/upgrade/radio_transceiver
+	materials = list(/datum/material/iron=1000, /datum/material/glass=500)
+	construction_time = 100
+	category = list("Cyborg Upgrade Modules")
+
 //Misc
 /datum/design/mecha_tracking
 	name = "Exosuit Tracking Beacon"

@@ -22,6 +22,12 @@
 	caliber = "m5mm"
 	max_ammo = 480
 
+/obj/item/ammo_box/magazine/internal/encminigunbal4mm
+	name = "minigun ammo pack"
+	ammo_type = /obj/item/ammo_casing/caseless/g11/minigun
+	caliber = "473mm"
+	max_ammo = 480
+
 /obj/item/ammo_box/magazine/internal/m2flamethrower
 	name = "m2 flamethower fuel tank"
 	ammo_type = /obj/item/ammo_casing/caseless/flamethrower

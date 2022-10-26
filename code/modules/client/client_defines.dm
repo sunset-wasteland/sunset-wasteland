@@ -69,7 +69,7 @@
 	var/mouse_up_icon = null
 	var/mouse_down_icon = null
 
-	var/ip_intel = "Disabled"
+	var/ip_intel = 0 // By default, everyone is assumed to be innocent and genuine.
 
 	//datum that controls the displaying and hiding of tooltips
 	var/datum/tooltip/tooltips

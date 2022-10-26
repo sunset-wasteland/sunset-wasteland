@@ -139,6 +139,18 @@ GLOBAL_LIST_INIT(reverseradiochannels, list(
 	"[FREQ_KHANS]" = RADIO_CHANNEL_KHANS
 ))
 
+GLOBAL_LIST_INIT(accesstoradio, list(
+		"[ACCESS_ENCLAVE]" = list(RADIO_CHANNEL_ENCLAVE),
+		"[ACCESS_BOS]" = list(RADIO_CHANNEL_BOS),
+		"[ACCESS_LEGION]" = list(RADIO_CHANNEL_LEGION),
+		"[ACCESS_NCR]" = list(RADIO_CHANNEL_NCR, RADIO_CHANNEL_RANGER),
+		"[ACCESS_KHAN]" = list(RADIO_CHANNEL_KHANS),
+		"[ACCESS_BAR]" = list(RADIO_CHANNEL_TOWN),
+		"[ACCESS_FOLLOWER]" = list(RADIO_CHANNEL_MEDICAL, RADIO_CHANNEL_TOWN),
+		"[ACCESS_GATEWAY]" = list(RADIO_CHANNEL_SECURITY, RADIO_CHANNEL_TOWN),
+		"[ACCESS_VAULT_F13]" = list(RADIO_CHANNEL_VAULT)
+	))
+
 /datum/radio_frequency
 	var/frequency as num
 	var/list/list/obj/devices = list()

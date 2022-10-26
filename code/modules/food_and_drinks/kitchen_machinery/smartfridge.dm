@@ -835,7 +835,6 @@
 
 /obj/machinery/smartfridge/bottlerack/lootshelf/books
 	chance_initial_contents = list(
-		/obj/item/book/granter/trait/chemistry = 1,
 		/obj/item/reagent_containers/food/snacks/deadmouse = 1,
 		/obj/item/book/granter/trait/trekking = 1,
 		/obj/item/book/granter/crafting_recipe/gunsmith_one = 1,

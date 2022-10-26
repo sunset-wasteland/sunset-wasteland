@@ -16,7 +16,7 @@ Just leaving this here for quick copy-pasting, for future contributors.
 	anthro_mob_worn_overlay = 'modular_sunset/icons/mob/clothing/suit_digi.dmi'
 	icon_state = "goner_suit"
 	item_state = "ro_suit"
-	armor = list("melee" = 25, "bullet" = 15, "laser" = 15, "energy" = 5, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = list("melee" = 25, "bullet" = 15, "laser" = 15, "energy" = 5, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0, "wound" = 10)
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 	mutantrace_variation = STYLE_DIGITIGRADE
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets

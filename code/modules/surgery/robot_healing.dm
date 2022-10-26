@@ -16,7 +16,7 @@
 	ignore_clothes = TRUE
 	var/antispam = FALSE
 	var/healing_step_type = /datum/surgery_step/robot_heal/basic
-	requires_trait = "CYBERNETICIST_1" //Intermediary surgically & mechanically skilled scribes..
+	requires_trait = "CYBERNETICIST_1"
 
 /datum/surgery/robot_healing/New(surgery_target, surgery_location, surgery_bodypart)
 	..()

@@ -204,11 +204,11 @@
 	. = ..()
 	if(!.)
 		return
-	ADD_TRAIT(H, TRAIT_NOGUNS, SLEEPING_CARP_TRAIT)
+	ADD_TRAIT(H, TRAIT_POOR_AIM, SLEEPING_CARP_TRAIT)
 
 /datum/martial_art/cqc/on_remove(mob/living/carbon/human/H)
 	. = ..()
-	REMOVE_TRAIT(H, TRAIT_NOGUNS, SLEEPING_CARP_TRAIT)
+	REMOVE_TRAIT(H, TRAIT_POOR_AIM, SLEEPING_CARP_TRAIT)
 
 /mob/living/carbon/human/proc/CQC_help()
 	set name = "Remember The Basics"

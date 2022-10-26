@@ -180,6 +180,10 @@
 /datum/gear/head/ushanka
 	name = "ushanka"
 	path = /obj/item/clothing/head/ushanka
+	
+/datum/gear/head/blackushanka
+	name = "black ushanka"
+	path = /obj/item/clothing/head/blackushanka
 
 /datum/gear/head/russobluecamohat
 	name = "Russian blue camo beret"

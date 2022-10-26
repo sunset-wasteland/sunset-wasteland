@@ -12,8 +12,13 @@
 /turf/open/floor/plasteel/dark,
 /area/shuttle/bos_foyer)
 "h" = (
-/turf/template_noop,
-/area/template_noop)
+/obj/structure/chair/comfy/shuttle{
+	desc = "A comfortable, secure seat. It has a very futuristic vouge feel.";
+	name = "prewar lounge chair";
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/shuttle/bos_foyer)
 "i" = (
 /obj/item/flag/bos,
 /turf/open/floor/plasteel/dark,
@@ -23,6 +28,22 @@
 	req_access_txt = "120"
 	},
 /obj/docking_port/mobile/elevator/bos,
+/turf/open/floor/plasteel/dark,
+/area/shuttle/bos_foyer)
+"l" = (
+/obj/structure/table/reinforced,
+/obj/structure/window/reinforced{
+	dir = 8;
+	icon_state = "twindowold"
+	},
+/turf/open/floor/plasteel/dark,
+/area/shuttle/bos_foyer)
+"p" = (
+/obj/structure/window/reinforced{
+	dir = 8;
+	icon_state = "twindowold"
+	},
+/obj/structure/table/reinforced,
 /turf/open/floor/plasteel/dark,
 /area/shuttle/bos_foyer)
 "r" = (
@@ -38,10 +59,24 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/shuttle/bos_foyer)
+"D" = (
+/obj/structure/chair/comfy/shuttle{
+	desc = "A comfortable, secure seat. It has a very futuristic vouge feel.";
+	name = "prewar lounge chair"
+	},
+/turf/open/floor/plasteel/dark,
+/area/shuttle/bos_foyer)
 "J" = (
 /obj/machinery/light{
 	dir = 4;
 	light_color = "#c1caff"
+	},
+/turf/open/floor/plasteel/dark,
+/area/shuttle/bos_foyer)
+"T" = (
+/obj/machinery/door/window/survival_pod{
+	dir = 8;
+	req_access = "120"
 	},
 /turf/open/floor/plasteel/dark,
 /area/shuttle/bos_foyer)
@@ -50,37 +85,37 @@
 a
 j
 a
-h
-h
-h
+a
+a
+a
 "}
 (2,1,1) = {"
 a
 c
+A
+c
+h
 a
-h
-h
-h
 "}
 (3,1,1) = {"
 a
+D
 c
-a
-a
-a
+c
+h
 a
 "}
 (4,1,1) = {"
 a
+D
 c
-A
 c
-c
+h
 a
 "}
 (5,1,1) = {"
 a
-c
+D
 c
 c
 c
@@ -88,10 +123,10 @@ r
 "}
 (6,1,1) = {"
 a
-c
-c
-c
-c
+p
+T
+l
+l
 a
 "}
 (7,1,1) = {"
@@ -106,7 +141,7 @@ a
 a
 i
 J
-c
+D
 e
 a
 "}

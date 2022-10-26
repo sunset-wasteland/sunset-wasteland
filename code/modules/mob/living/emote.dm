@@ -771,6 +771,18 @@
 	message = "whistles to get someones attention!"
 	sound = 'sound/f13effects/sunsetsounds/whistle-overhere.ogg'
 
+/datum/emote/peep
+	key = "peep"
+	key_third_person = "peeps like a bird"
+	message = "peeps like a bird!"
+	sound = 'sound/f13effects/sunsetsounds/peeponce.ogg'
+
+/datum/emote/peep2
+	key = "peep2"
+	key_third_person = "peeps twice like a bird"
+	message = "peeps twice like a bird!"
+	sound = 'sound/f13effects/sunsetsounds/peep.ogg'
+
 #define EMOTE_SPECIAL_STR "Strength"
 #define EMOTE_SPECIAL_PER "Perception"
 #define EMOTE_SPECIAL_END "Endurance"

@@ -236,6 +236,9 @@
 	armour_penetration = 0.1
 	custom_materials = null
 
+/obj/item/melee/onehanded/knife/ritualdagger/baghead
+	desc = "An ancient blade used to carry out dangerous rituals."
+
 /obj/item/melee/onehanded/knife/switchblade
 	name = "switchblade"
 	desc = "A sharp, concealable, spring-loaded knife."
@@ -527,7 +530,7 @@
 			if(stun_animation)
 				user.do_attack_animation(target)
 			playsound(get_turf(src), on_stun_sound, 75, 1, -1)
-			target.adjustStaminaLoss(30)
+			target.adjustStaminaLoss(60)
 			additional_effects_carbon(target, user)
 			add_fingerprint(user)
 			target.visible_message(desc["visible"], desc["local"])

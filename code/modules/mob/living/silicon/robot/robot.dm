@@ -137,7 +137,7 @@
 	"Medical" = /obj/item/robot_module/assaultron/medical
 	)
 
-	modulelist += get_cit_modules() //Citadel change - adds Citadel's borg modules.
+	//modulelist += get_cit_modules() //Citadel change - adds Citadel's borg modules.
 
 	if(!CONFIG_GET(flag/disable_peaceborg))
 		modulelist["Peacekeeper"] = /obj/item/robot_module/peacekeeper

@@ -454,6 +454,20 @@
 				)
 
 
+/obj/effect/spawner/bundle/f13/armor/t51b_midwest
+	name = "t51b midwest power armor spawner"
+	items = list(
+			/obj/item/clothing/suit/armor/f13/power_armor/midwest,
+			/obj/item/clothing/head/helmet/f13/power_armor/midwest,
+			)
+
+/obj/effect/spawner/bundle/f13/armor/excavator
+	name = "t51b excavator power armor spawner"
+	items = list(
+		/obj/item/clothing/head/helmet/f13/power_armor/excavator,
+		/obj/item/clothing/suit/armor/f13/power_armor/excavator,
+		)
+
 /obj/effect/spawner/lootdrop/f13/armor/random
 	name = "random armor loot"
 	lootcount = 1
@@ -464,15 +478,15 @@
 			/obj/effect/spawner/lootdrop/f13/armor/tier3 = 1,
 			)
 
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/mid
+/obj/effect/spawner/lootdrop/f13/armor/random_high
 	name = "high tier random armor loot"
 	lootcount = 1
 
 	loot = list(
 			/obj/effect/spawner/lootdrop/f13/armor/tier2 = 70,
 			/obj/effect/spawner/lootdrop/f13/armor/tier3 = 35,
-			/obj/effect/spawner/lootdrop/f13/armor/tier4 = 10
-			///obj/item/traumapack = 1 //one ring to rule them all
+			/obj/effect/spawner/lootdrop/f13/armor/tier4 = 10,
+			/obj/item/traumapack = 1
 			)
 
 /*	------------------------------------------------
@@ -756,35 +770,29 @@
 /obj/effect/spawner/lootdrop/f13/weapon/gun/energy/low
 	name = "low tier energy gun"
 	loot = list(/obj/effect/spawner/bundle/f13/wattz = 40,
-				/obj/effect/spawner/bundle/f13/wattzm = 25,
-				/obj/effect/spawner/bundle/f13/laserpistol = 35
+				/obj/effect/spawner/bundle/f13/wattzm = 25
 				)
 
 /obj/effect/spawner/lootdrop/f13/weapon/gun/energy/mid
 	name = "mid tier energy gun"
 	loot = list(/obj/effect/spawner/bundle/f13/aer9 = 26,
-				/obj/effect/spawner/bundle/f13/aer12 = 13,
-				/obj/effect/spawner/bundle/f13/wattz2k = 26,
-				/obj/effect/spawner/bundle/f13/wattz2kext = 15,
-				/obj/effect/spawner/bundle/f13/plasmapistol = 15,
+				/obj/effect/spawner/bundle/f13/laserpistol = 15,
 				/obj/effect/spawner/bundle/f13/ionrifle = 5
 				)
 
 /obj/effect/spawner/lootdrop/f13/weapon/gun/energy/midhigh //overlaps with midtier
 	name = "mid-high tier energy gun"
 	loot = list(/obj/effect/spawner/bundle/f13/aer12,
-				/obj/effect/spawner/bundle/f13/plasmapistol,
-				/obj/effect/spawner/bundle/f13/wattz2kext,
 				/obj/effect/spawner/bundle/f13/ionrifle,
 				/obj/effect/spawner/bundle/f13/aer14
 				)
 /obj/effect/spawner/lootdrop/f13/weapon/gun/energy/high
 	name = "high tier energy gun"
-	loot = list(/obj/effect/spawner/bundle/f13/plasmarifle = 25,
-				/obj/effect/spawner/bundle/f13/tribeam = 10,
+	loot = list(/obj/effect/spawner/bundle/f13/tribeam = 10,
 				/obj/effect/spawner/bundle/f13/rcw = 20,
 				/obj/effect/spawner/bundle/f13/aer14 = 20,
-				/obj/effect/spawner/bundle/f13/plasmaglock = 25
+				/obj/effect/spawner/bundle/f13/wattz2k = 26,
+				/obj/effect/spawner/bundle/f13/wattz2kext = 15,
 				)
 
 /obj/effect/spawner/lootdrop/f13/weapon/gun/energy/superhigh
@@ -846,7 +854,8 @@
 				/obj/effect/spawner/bundle/f13/trenchshotgun,
 				/obj/effect/spawner/bundle/f13/m1carbine,
 				/obj/effect/spawner/bundle/f13/huntingshotgun,
-				/obj/effect/spawner/bundle/f13/revolver45
+				/obj/effect/spawner/bundle/f13/revolver45,
+				/obj/item/gun/ballistic/automatic/smg/american180
 		)
 
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/mid
@@ -859,7 +868,6 @@
 				/obj/effect/spawner/bundle/f13/m1garand,
 				/obj/effect/spawner/bundle/f13/deagle,
 				/obj/effect/spawner/bundle/f13/automag,
-				/obj/item/gun/ballistic/automatic/smg/american180
 				)
 
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/highmid
@@ -881,22 +889,17 @@
 				/obj/effect/spawner/bundle/f13/dkssniper = 15,
 				/obj/effect/spawner/bundle/f13/pistol14 = 15,
 				/obj/item/gun/ballistic/revolver/grenadelauncher = 5,
-				/obj/item/gun/ballistic/rocketlauncher = 5,
 				/obj/effect/spawner/bundle/f13/riotshotgun = 10,
-				/obj/item/gun/ballistic/shotgun/automatic/combat/citykiller = 10,
-				/obj/effect/spawner/bundle/f13/guns/p90 = 1,
-				/obj/effect/spawner/bundle/f13/fnfal = 1,
-				/obj/item/gun/ballistic/automatic/bozar = 1
 				)
 
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/superhigh
 	name = "superhigh tier ballistic gun"
-	loot = list(/obj/effect/spawner/bundle/f13/riotshotgun = 5,
-				/obj/effect/spawner/bundle/f13/amr = 10,
+	loot = list(/obj/effect/spawner/bundle/f13/amr = 10,
 				/obj/effect/spawner/bundle/f13/brushgun = 15,
 				/obj/effect/spawner/bundle/f13/rangemaster = 15,
 				/obj/effect/spawner/bundle/f13/fnfal = 10,
 				/obj/item/gun/ballistic/rocketlauncher = 10,
+				/obj/item/gun/ballistic/shotgun/automatic/combat/citykiller = 10,
 				/obj/item/gun/ballistic/automatic/bozar = 10
 				)
 
@@ -1285,7 +1288,7 @@
 	name = "combat rifle and ammo spawner"
 	items = list(
 				/obj/item/gun/ballistic/automatic/combat,
-				/obj/item/ammo_box/magazine/greasegun/
+				/obj/item/ammo_box/magazine/tommygunm45/stick
 				)
 
 /obj/effect/spawner/bundle/f13/rcw
@@ -1519,7 +1522,12 @@
 				/obj/item/ammo_box/tube/c4570
 	)
 
-
+/obj/effect/spawner/bundle/f13/boscombatrifle
+	name = "BoS combat rifle and ammo spawner"
+	items = list(
+				/obj/item/gun/ballistic/automatic/combat,
+				/obj/item/ammo_box/magazine/tommygunm45/stick
+	)
 
 /*	------------------------------------------------
 	------------WEAPON AMMO SPAWNERS----------------
@@ -2059,13 +2067,15 @@
 	lootcount = 1
 	loot = list(/obj/item/book/granter/trait/lowsurgery = 10,
 				/obj/item/book/granter/trait/chemistry = 10,
-				/obj/item/book/granter/trait/trekking = 10,
-				/obj/item/book/granter/trait/techno = 10,
-				/obj/item/book/granter/trait/pa_wear = 1,
-				/obj/item/book/granter/trait/explosives = 10,
+				/obj/item/book/granter/trait/trekking = 17,
+				/obj/item/book/granter/trait/techno = 14,
+				/obj/item/book/granter/trait/pa_wear = 4,
+				/obj/item/book/granter/trait/gunslinger = 4,
+				/obj/item/book/granter/trait/iron_fist = 4,
+				/obj/item/book/granter/trait/bigleagues = 4,
+				/obj/item/book/granter/trait/explosives = 17,
 				/obj/item/book/granter/trait/explosives_advanced = 5,
 				/obj/item/book/granter/trait/rifleman = 5,
-				/obj/item/book/granter/crafting_recipe/gunsmith_two = 20,
 				/obj/item/book/granter/crafting_recipe/gunsmith_three = 10,
 				/obj/item/book/granter/crafting_recipe/gunsmith_four = 10
 				)
@@ -2073,7 +2083,7 @@
 /obj/effect/spawner/lootdrop/f13/traitbooks/low
 	name = "low trait book spawner"
 	lootcount = 1
-	loot = list(/obj/item/book/granter/trait/lowsurgery = 5,
+	loot = list(/obj/item/book/granter/trait/lowsurgery = 1,
 				/obj/item/book/granter/trait/chemistry = 1,
 				/obj/item/book/granter/trait/techno = 10,
 				/obj/item/book/granter/crafting_recipe/scav_one = 10,
@@ -2082,6 +2092,7 @@
 				/obj/item/book/granter/crafting_recipe/ODF = 10,
 				/obj/item/book/granter/action/drink_fling = 10,
 				/obj/item/book/granter/crafting_recipe/gunsmith_one = 10,
+				/obj/item/book/granter/crafting_recipe/gunsmith_two = 5
 				)
 /obj/effect/spawner/lootdrop/f13/blueprintLow
 	name = "gun comps spawner"
@@ -2173,11 +2184,11 @@
 	icon_state = "blueprint_loot"
 	lootcount = 1
 	loot = list(
-		/obj/item/book/granter/crafting_recipe/blueprint/gauss,
-		/obj/item/book/granter/crafting_recipe/blueprint/am_rifle,
+// 		/obj/item/book/granter/crafting_recipe/blueprint/gauss,
+//		/obj/item/book/granter/crafting_recipe/blueprint/am_rifle,
 		/obj/item/book/granter/crafting_recipe/blueprint/citykiller,
 		/obj/item/book/granter/crafting_recipe/blueprint/rangemaster,
-		/obj/item/book/granter/crafting_recipe/blueprint/bozar
+//		/obj/item/book/granter/crafting_recipe/blueprint/bozar
 	)
 
 /obj/effect/spawner/lootdrop/f13/blueprintVHighPartsWeighted
@@ -2261,3 +2272,34 @@
 			/obj/item/storage/box/ration/ranger_lunch,
 			/obj/item/storage/box/ration/ranger_dinner,
 			)
+
+/obj/effect/spawner/lootdrop/f13/armor/bos_vault
+	name = "BoS roundstart vault loot"
+	lootcount = 1
+	loot = list(
+		/obj/effect/spawner/bundle/f13/armor/t51b_midwest = 2,
+		/obj/effect/spawner/bundle/f13/armor/excavator = 2,
+		/obj/effect/spawner/lootdrop/f13/armor/tier5 = 2,
+		/obj/effect/spawner/lootdrop/f13/weapon/melee/tier5 = 2,
+		/obj/effect/spawner/lootdrop/f13/weapon/gun/energy/mid = 25,
+		/obj/effect/spawner/lootdrop/f13/weapon/gun/energy/midhigh = 10,
+		/obj/effect/spawner/lootdrop/f13/weapon/gun/energy/high = 5,
+		/obj/effect/spawner/bundle/f13/boscombatrifle = 25,
+		)
+
+/obj/effect/spawner/lootdrop/f13/armor/bos_vault_armor
+	name = "BoS roundstart power armor loot"
+	lootcount = 1
+	loot = list(
+		/obj/effect/spawner/bundle/f13/armor/t51b_midwest = 4,
+		/obj/effect/spawner/bundle/f13/armor/excavator = 3,
+		/obj/effect/spawner/lootdrop/f13/armor/tier5 = 2,
+		)
+
+/obj/effect/spawner/lootdrop/f13/weapon/gun/energy/buyable
+	name = "mid tier energy gun"
+	loot = list(/obj/effect/spawner/bundle/f13/aer9 = 63,
+				/obj/effect/spawner/bundle/f13/aer12 = 20,
+				/obj/effect/spawner/bundle/f13/wattz2k = 10,
+				/obj/effect/spawner/bundle/f13/ionrifle = 2
+				)

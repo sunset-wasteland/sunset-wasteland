@@ -653,12 +653,15 @@
 	var/hearing_range = 1
 
 /obj/item/integrated_circuit/input/signaler/Initialize()
+	..()
+	return INITIALIZE_HINT_LATELOAD
+
+/obj/item/integrated_circuit/input/signaler/LateInitialize()
 	. = ..()
-	spawn(40)
-		set_frequency(frequency)
-		// Set the pins so when someone sees them, they won't show as null
-		set_pin_data(IC_INPUT, 1, frequency)
-		set_pin_data(IC_INPUT, 2, code)
+	set_frequency(frequency)
+	// Set the pins so when someone sees them, they won't show as null
+	set_pin_data(IC_INPUT, 1, frequency)
+	set_pin_data(IC_INPUT, 2, code)
 
 /obj/item/integrated_circuit/input/signaler/Destroy()
 	SSradio.remove_object(src,frequency)

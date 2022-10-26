@@ -20,16 +20,6 @@
 	path = /obj/item/clothing/accessory/cia_badge
 	ckeywhitelist = list("monke1818")
 
-// SUNSET FLUFF ITEMS
-
-/datum/gear/donator/mrsanderp
-	name = "Happy Sharky Company Cuisine Book"
-	slot = SLOT_IN_BACKPACK
-	path = /obj/item/book/granter/crafting_recipe/happysharky
-	category = LOADOUT_CATEGORY_BACKPACK
-	ckeywhitelist = list("mr.sanderp")
-	cost = 0
-
 /////////////////////
 ///Loadout Boxes///// See kits.dm, use this model for loadouts that have more than one item per character.
 /////////////////////
@@ -156,14 +146,6 @@
 	new /obj/item/modkit/kemblehat(src)
 	new /obj/item/storage/belt/holster/kemble(src)
 
-/datum/gear/donator/kits/mrsanderp
-	name = "Happy Sharky Co. Business Bundle"
-	path = /obj/item/storage/box/large/custom_kit/mrsanderp
-	ckeywhitelist = list("mr.sanderp")
-
-/obj/item/storage/box/large/custom_kit/mrsanderp/PopulateContents()
-	new /obj/item/book/granter/crafting_recipe/happysharky(src)
-
 /datum/gear/donator/kits/tessa
 	name ="Scourge custom whip"
 	path = /obj/item/storage/box/large/custom_kit/sadismbox
@@ -187,3 +169,100 @@
 
 /obj/item/storage/box/large/custom_kit/bellacoatbox/PopulateContents()
 	new /obj/item/clothing/suit/armor/f13/ncrarmor/bellacoat(src)
+
+/datum/gear/donator/kits/kemble
+	name = "Trinity Kemble's belongings"
+	path = /obj/item/storage/box/large/custom_kit/kemble
+	ckeywhitelist = list("yeehawguvnah")
+
+/obj/item/storage/box/large/custom_kit/kemble/PopulateContents()
+	new /obj/item/modkit/kemblevest(src)
+	new /obj/item/modkit/kemblehat(src)
+	new /obj/item/storage/belt/holster/kemble(src)
+
+/datum/gear/donator/kits/shark
+	name ="Happy Shark Material"
+	path = /obj/item/storage/box/large/custom_kit/shark
+	ckeywhitelist = list ("mr.sanderp","mrsanderp")
+
+/obj/item/storage/box/large/custom_kit/shark/PopulateContents()
+	new /obj/item/book/granter/crafting_recipe/happysharky(src)
+	new /obj/item/reagent_containers/food/snacks/sunset/happyshark/jerky(src)
+	new /obj/item/reagent_containers/food/snacks/sunset/happyshark/candybar(src)
+	new /obj/item/reagent_containers/food/drinks/sunset/happyshark/bittercola(src)
+
+/datum/gear/donator/kits/krig
+	name ="Krig's Teachings"
+	path = /obj/item/storage/box/large/custom_kit/krig
+	ckeywhitelist = list ("lia526")
+
+/obj/item/storage/box/large/custom_kit/krig/PopulateContents()
+	new /obj/item/book/granter/trait/krig(src)
+
+/datum/gear/donator/kits/carl
+	name ="Hazard Gear"
+	path = /obj/item/storage/box/large/custom_kit/carl
+	ckeywhitelist = list ("nothingbutcarl")
+
+/obj/item/storage/box/large/custom_kit/carl/PopulateContents()
+	new /obj/item/clothing/head/helmet/f13/ncr/rangercombat/desert/carl(src)
+	new /obj/item/clothing/suit/armor/f13/rangercombat/desert/carl(src)
+	new /obj/item/card/id/rusted/brokenholodog/carl(src)
+	new /obj/item/clothing/gloves/f13/military/carl(src)
+	new /obj/item/clothing/shoes/f13/military/leather/carl(src)
+	new /obj/item/clothing/under/f13/ranger/modif_ranger/carl(src)
+	new /obj/item/storage/belt/holster/regulator(src)
+	new /obj/item/nuke_core_container(src)
+	new /obj/item/screwdriver/nuke(src)
+
+/datum/gear/donator/kits/cassidy
+	name = "Cassidy's Ring"
+	path = /obj/item/storage/box/large/custom_kit/cassidy
+	ckeywhitelist = list ("nicodeimos")
+
+/obj/item/storage/box/large/custom_kit/cassidy/PopulateContents()
+	new /obj/item/clothing/gloves/ring/diamond(src)
+
+/datum/gear/donator/kits/tzzshali
+	name = "Tzzshali's Form"
+	path = /obj/item/storage/box/large/custom_kit/tzzshali
+	ckeywhitelist = list ("irkallaepsilon")
+
+/obj/item/storage/box/large/custom_kit/tzzshali/PopulateContents()
+	new /obj/item/clothing/under/misc/polyjumpsuit(src)
+	new /obj/item/clothing/suit/hooded/wintercoat/polychromic(src)
+
+/datum/gear/donator/kits/aim
+	name = "Baghead's Face"
+	path = /obj/item/storage/box/large/custom_kit/aim
+	ckeywhitelist = list ("anythingisme")
+
+/obj/item/storage/box/large/custom_kit/aim/PopulateContents()
+	new /obj/item/clothing/mask/scarecrow/baghead(src)
+	new /obj/item/melee/onehanded/knife/ritualdagger/baghead(src)
+	new /obj/item/book/granter/trait/chemistry(src)
+
+/datum/gear/donator/kits/emma
+	name = "Emma's Equipment"
+	path = /obj/item/storage/box/large/custom_kit/emma
+	ckeywhitelist = list ("potatoperson993")
+
+/obj/item/storage/box/large/custom_kit/emma/PopulateContents()
+	new /obj/item/gun/energy/laser/wattz/recharger(src)
+	new /obj/item/clothing/under/f13/recon/outcast(src)
+	new /obj/item/clothing/head/helmet/f13/combat/brotherhood/outcast(src)
+	new /obj/item/clothing/suit/armor/f13/combat/brotherhood/outcast(src)
+
+/datum/gear/donator/kits/lpohone
+	name = "Souren's Lament"
+	path = /obj/item/storage/box/large/custom_kit/lpohone
+	ckeywhitelist = list ("littleplayer0102")
+
+/obj/item/storage/box/large/custom_kit/lpohone/PopulateContents()
+	new /obj/item/card/id/rusted/brokenholodog(src)
+	new /obj/item/clothing/under/f13/recon/outcast(src)
+	new /obj/item/gun/energy/laser/aer14/refurb(src)
+	new /obj/item/clothing/accessory/bos/paladin(src)
+	new /obj/item/book/granter/trait/pa_wear(src)
+	new /obj/item/clothing/suit/armor/f13/power_armor/t45d/refurb(src)
+	new /obj/item/clothing/head/helmet/f13/power_armor/t45d/refurb(src)

@@ -119,6 +119,7 @@
 	harm_intent_damage = 8
 	melee_damage_lower = 15
 	melee_damage_upper = 15
+	unsuitable_atmos_damage = 0//shitty hack
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
 
 //Frozen Feral Ghoul
@@ -134,6 +135,7 @@
 	harm_intent_damage = 8
 	melee_damage_lower = 15
 	melee_damage_upper = 15
+	unsuitable_atmos_damage = 0//shitty hack
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
 
 //Legendary Ghoul
@@ -173,7 +175,7 @@
 	light_system = MOVABLE_LIGHT
 	light_range = 2
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
-	var/radburst_cooldown = 6//Support mob, revives others every six seconds, provided a player is within six tiles. Previously sixty, because I thought this was deciseconds.
+	var/radburst_cooldown = 12//Support mob, revives others every six seconds, provided a player is within six tiles. Previously sixty, because I thought this was deciseconds.
 
 /mob/living/simple_animal/hostile/ghoul/glowing/Initialize(mapload)
 	. = ..()

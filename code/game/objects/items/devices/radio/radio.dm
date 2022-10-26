@@ -104,6 +104,8 @@
 				LAZYREMOVE(GLOB.legion_radios, src)
 			if(FACTION_BROTHERHOOD)
 				LAZYREMOVE(GLOB.bos_radios, src)
+			if(FACTION_ENCLAVE)
+				LAZYREMOVE(GLOB.enc_radios, src)
 	remove_radio_all(src) //Just to be sure
 	QDEL_NULL(wires)
 	QDEL_NULL(keyslot)
@@ -133,6 +135,8 @@
 				LAZYADD(GLOB.legion_radios, src)
 			if(FACTION_BROTHERHOOD)
 				LAZYADD(GLOB.bos_radios, src)
+			if(FACTION_ENCLAVE)
+				LAZYADD(GLOB.enc_radios, src)
 
 /obj/item/radio/ComponentInitialize()
 	. = ..()

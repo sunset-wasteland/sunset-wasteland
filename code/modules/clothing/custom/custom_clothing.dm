@@ -62,3 +62,64 @@
 		icon_state = "kemblecoat_green"
 		item_state = "kemblecoat_green"
 		to_chat(user, "You reverse the coat to show the green side.")
+
+// CARL //
+
+/obj/item/clothing/suit/armor/f13/rangercombat/desert/carl
+	name = "hazard combat armor"
+	desc = "An older suit used by the Rangers of the NCR, reclaimed from an army depot at some point after the war. This one appears to be specially treated. \
+	Unfortunately, this makes it unsuited to anything but the most basic of duties unrelated to hazard work."
+	//Incredible utility, alongside retaining parent flash resist and such, as it lacks almost all protection.
+	armor = list("melee" = 5, "bullet" = 5, "laser" = 5, "energy" = 65, "bomb" = 5, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100, "wound" = 15)
+	resistance_flags = FIRE_PROOF | ACID_PROOF
+	rad_flags = RAD_PROTECT_CONTENTS | RAD_NO_CONTAMINATE
+	heat_protection = CHEST|GROIN|LEGS|ARMS
+	max_heat_protection_temperature = FIRE_SUIT_MAX_TEMP_PROTECT
+
+//Probably not needed, but we'll see.
+/obj/item/clothing/suit/armor/f13/rangercombat/desert/carl/Initialize()
+	. = ..()
+	AddComponent(/datum/component/armor_plate)
+
+/obj/item/clothing/head/helmet/f13/ncr/rangercombat/desert/carl
+	name = "hazard combat helmet"
+	desc = "An older helmet used by the Rangers of the NCR, reclaimed from an army depot at some point after the war. This one appears to be specially treated and \
+	boasting advanced filters. Unfortunately, this makes it unsuited to anything but the most basic of duties unrelated to hazard work."
+	//Incredible utility, alongside retaining parent flash resist and such, as it lacks almost all protection.
+	armor = list("melee" = 5, "bullet" = 5, "laser" = 5, "energy" = 65, "bomb" = 5, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100, "wound" = 15)
+	resistance_flags = FIRE_PROOF | ACID_PROOF
+	rad_flags = RAD_PROTECT_CONTENTS | RAD_NO_CONTAMINATE
+	heat_protection = HEAD
+	max_heat_protection_temperature = FIRE_SUIT_MAX_TEMP_PROTECT
+
+//Probably not needed, but we'll see.
+/obj/item/clothing/head/helmet/f13/ncr/rangercombat/desert/carl/Initialize()
+	. = ..()
+	AddComponent(/datum/component/armor_plate)
+
+/obj/item/clothing/gloves/f13/military/carl
+	desc = "Gloves with an insulating layer for working around chemicals and in hazardous environments. These appear to be from an old army depot."
+	//Incredible utility, as it lacks almost all protection.
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100, "wound" = 0)
+	resistance_flags = FIRE_PROOF | ACID_PROOF
+	rad_flags = RAD_PROTECT_CONTENTS | RAD_NO_CONTAMINATE
+	heat_protection = HANDS
+	max_heat_protection_temperature = FIRE_SUIT_MAX_TEMP_PROTECT
+
+/obj/item/clothing/shoes/f13/military/leather/carl
+	desc = "Boots with an insulating layer for working around chemicals and in hazardous environments. These appear to be from an old army depot."
+	//Incredible utility, as it lacks almost all protection.
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100, "wound" = 0)
+	resistance_flags = FIRE_PROOF | ACID_PROOF
+	rad_flags = RAD_PROTECT_CONTENTS | RAD_NO_CONTAMINATE
+	heat_protection = FEET
+	max_heat_protection_temperature = FIRE_SUIT_MAX_TEMP_PROTECT
+
+/obj/item/clothing/under/f13/ranger/modif_ranger/carl
+	desc = "A uniform with an insulating layer for working around chemicals and in hazardous environments. These appear to be from an old army depot."
+	//No protection at all. Above should cover everything, and being naked shouldn't provide any protection as the character this is intended for.
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0, "wound" = 0)
+
+/obj/item/card/id/rusted/brokenholodog/carl
+	name = "old holotag"
+	desc = "An old advanced holographic dogtag. Kept as a reminder to something."

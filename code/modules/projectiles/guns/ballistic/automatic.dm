@@ -1054,7 +1054,7 @@
 	item_state = "gold_sniper_america"
 	slowdown = 0.19
 	fire_delay = 2.8
-	can_bayonet = FALSE
+	can_bayonet = TRUE
 	zoom_amt = 12
 	zoom_out_amt = 14
 

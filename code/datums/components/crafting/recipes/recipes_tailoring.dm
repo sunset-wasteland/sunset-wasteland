@@ -573,7 +573,7 @@
 	time = 25
 	category = CAT_CLOTHING
 	subcategory = CAT_WASTELAND
-
+/*
 /datum/crafting_recipe/triplesurvivalpouch
 	name = "empty large survival pouch"
 	result = /obj/item/storage/survivalkit_triple_empty
@@ -582,7 +582,7 @@
 	time = 25
 	category = CAT_CLOTHING
 	subcategory = CAT_WASTELAND
-
+*/
 //General clothing
 
 /datum/crafting_recipe/jeans

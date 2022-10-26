@@ -592,7 +592,7 @@
 	jobtype = /datum/job/enclave/enc_is
 	id = /obj/item/card/id/dogtag/enclave/officer
 	glasses = /obj/item/clothing/glasses/sunglasses/big
-	uniform = /obj/item/clothing/under/f13/enclave/peacekeeper
+	uniform = /obj/item/clothing/under/f13/enclave/officer
 	head = /obj/item/clothing/head/f13/enclave
 	suit = /obj/item/clothing/suit/armor/f13/enclavetrenchcoat
 	suit_store = /obj/item/gun/energy/laser/plasma

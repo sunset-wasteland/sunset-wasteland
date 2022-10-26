@@ -305,10 +305,6 @@
 "cy" = (
 /turf/open/indestructible,
 /area/f13/tcoms)
-"cD" = (
-/obj/item/flag/enclave/america,
-/turf/open/indestructible/ground/outside/snow,
-/area/f13/mountain_area)
 "cE" = (
 /obj/item/storage/trash_stack,
 /turf/open/floor/f13/wood,
@@ -605,11 +601,9 @@
 /turf/open/floor/wood/wood_fancy,
 /area/f13/building)
 "fa" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 8
-	},
-/turf/open/floor/f13,
-/area/f13/enclave)
+/obj/structure/decoration/warning,
+/turf/closed/wall/f13/tunnel,
+/area/f13/tunnel)
 "fc" = (
 /obj/structure/barricade/wooden/snowed,
 /turf/closed/mineral/random/snow,
@@ -742,15 +736,6 @@
 	},
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "horizontalinnermain0"
-	},
-/area/f13/mountain_area)
-"gg" = (
-/obj/effect/turf_decal/weather/snow/corner{
-	dir = 4
-	},
-/obj/item/highway_sign/casper,
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticalrightborderright0"
 	},
 /area/f13/mountain_area)
 "gh" = (
@@ -934,8 +919,12 @@
 /turf/closed/wall/f13/sunset/brick_small_light,
 /area/f13/building)
 "hA" = (
-/obj/effect/turf_decal/stripes/line,
-/turf/open/floor/f13,
+/obj/machinery/chem_dispenser/drinks{
+	dir = 1;
+	density = 0;
+	pixel_y = -14
+	},
+/turf/open/floor/plasteel/hydrofloor,
 /area/f13/enclave)
 "hC" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -3181,6 +3170,15 @@
 	},
 /turf/open/floor/engine,
 /area/f13/enclave)
+"wF" = (
+/obj/effect/turf_decal/weather/snow/corner{
+	dir = 4
+	},
+/obj/item/highway_sign/casper,
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "verticalrightborderright0"
+	},
+/area/f13/mountain_area)
 "wI" = (
 /obj/structure/table/reinforced,
 /obj/item/paper_bin,
@@ -3300,11 +3298,9 @@
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/enclave)
 "xu" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 4
-	},
-/turf/open/floor/f13,
-/area/f13/enclave)
+/obj/item/flag/enclave/america,
+/turf/open/indestructible/ground/outside/snow,
+/area/f13/mountain_area)
 "xy" = (
 /obj/structure/table/wood,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -4225,15 +4221,6 @@
 /obj/machinery/icecream_vat,
 /turf/open/floor/plasteel/hydrofloor,
 /area/f13/enclave)
-"Ee" = (
-/obj/effect/turf_decal/weather/snow/corner{
-	dir = 8
-	},
-/obj/item/highway_sign/casper,
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticalleftborderleft0"
-	},
-/area/f13/mountain_area)
 "Ei" = (
 /obj/effect/turf_decal/stripes/corner{
 	dir = 4
@@ -4609,6 +4596,15 @@
 	},
 /turf/open/floor/f13,
 /area/f13/enclave)
+"Hc" = (
+/obj/effect/turf_decal/weather/snow/corner{
+	dir = 8
+	},
+/obj/item/highway_sign/casper,
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "verticalleftborderleft0"
+	},
+/area/f13/mountain_area)
 "Hg" = (
 /obj/machinery/light{
 	dir = 8
@@ -5438,13 +5434,6 @@
 /obj/item/paper/guides/jobs/medical/morgue,
 /turf/open/floor/plasteel/f13/vault_floor/neutral,
 /area/f13/enclave)
-"NI" = (
-/obj/effect/turf_decal/weather/snow/corner{
-	dir = 1
-	},
-/obj/item/storage/trash_stack,
-/turf/open/indestructible/ground/outside/graveldirt,
-/area/f13/mountain_area)
 "NM" = (
 /obj/structure/car/rubbish3,
 /turf/open/indestructible/ground/outside/road{
@@ -5492,6 +5481,14 @@
 	req_access_txt = "134"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
+/area/f13/enclave)
+"Oc" = (
+/obj/machinery/chem_dispenser/drinks/beer{
+	dir = 1;
+	density = 0;
+	pixel_y = -14
+	},
+/turf/open/floor/plasteel/hydrofloor,
 /area/f13/enclave)
 "Od" = (
 /obj/structure/bed/mattress/pregame,
@@ -5716,10 +5713,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood/wood_worn,
 /area/f13/building)
-"PU" = (
-/obj/item/flag/enclave/america,
-/turf/closed/wall/r_wall/f13/vault,
-/area/f13/enclave)
 "PX" = (
 /obj/machinery/button/door{
 	id = "enc_brig_shutters";
@@ -6045,6 +6038,13 @@
 /obj/item/book/manual/chef_recipes,
 /turf/open/floor/plasteel/hydrofloor,
 /area/f13/enclave)
+"Sr" = (
+/obj/effect/turf_decal/weather/snow/corner{
+	dir = 1
+	},
+/obj/item/storage/trash_stack,
+/turf/open/indestructible/ground/outside/graveldirt,
+/area/f13/mountain_area)
 "Sw" = (
 /obj/structure/chair/office/dark{
 	dir = 1
@@ -12323,7 +12323,7 @@ Vr
 Vr
 Vr
 ez
-cD
+xu
 ez
 hr
 hr
@@ -12333,7 +12333,7 @@ hr
 hr
 ez
 ez
-cD
+xu
 pl
 iT
 HA
@@ -17007,7 +17007,7 @@ Tx
 Tx
 ew
 nG
-nG
+Oc
 AW
 yG
 yG
@@ -17264,7 +17264,7 @@ nG
 hJ
 nG
 nG
-nG
+hA
 AW
 ze
 ze
@@ -19295,9 +19295,9 @@ oO
 im
 oO
 hs
-xu
-xu
-xu
+YH
+YH
+YH
 og
 Jx
 RG
@@ -19551,7 +19551,7 @@ AW
 oO
 oO
 oO
-hA
+fq
 BO
 BO
 BO
@@ -19808,7 +19808,7 @@ AW
 oO
 ay
 oO
-hA
+fq
 BO
 BO
 BO
@@ -20065,7 +20065,7 @@ AW
 oO
 oO
 oO
-hA
+fq
 BO
 BO
 BO
@@ -20323,9 +20323,9 @@ oO
 ay
 oO
 nC
-fa
-fa
-fa
+PF
+PF
+PF
 AW
 Jx
 WU
@@ -26760,7 +26760,7 @@ gx
 Lg
 Lg
 AW
-PU
+AW
 Hb
 Jb
 yo
@@ -31584,7 +31584,7 @@ ez
 ez
 ez
 ez
-cD
+xu
 ez
 ez
 hr
@@ -31596,7 +31596,7 @@ hr
 hr
 hr
 ez
-cD
+xu
 pl
 iT
 HA
@@ -58167,7 +58167,7 @@ ez
 ez
 ez
 ez
-NI
+Sr
 Sl
 Er
 ez
@@ -58430,7 +58430,7 @@ Er
 ez
 ez
 ez
-cD
+xu
 ez
 ez
 ez
@@ -68859,12 +68859,12 @@ lZ
 lZ
 lZ
 lZ
-Ee
+Hc
 lZ
 ov
 WS
 oF
-dE
+fa
 dE
 dE
 dE
@@ -71429,12 +71429,12 @@ mD
 mD
 mD
 mD
-gg
+wF
 mD
 Lb
 WS
 oF
-dE
+fa
 dE
 dE
 dE

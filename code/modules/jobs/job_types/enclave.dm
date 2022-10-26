@@ -112,6 +112,16 @@
 		/obj/item/grenade/f13/plasma = 2,
 		)
 
+/datum/outfit/loadout/lt_rhino
+	name = "Gobi Campaign Lieutenant"
+	suit_store = /obj/item/gun/ballistic/automatic/marksman/sniper/gobicampaign
+	backpack_contents = list(
+		/obj/item/ammo_box/magazine/w308 = 2,
+		/obj/item/ammo_box/m44box = 1,
+		/obj/item/gun/ballistic/revolver/m29/rhino_america = 2,
+		/obj/item/grenade/f13/plasma = 2,
+		)
+
 /datum/outfit/job/enclave/peacekeeper/enclavelt/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)

@@ -250,7 +250,12 @@
 	desc = "A flag torn and weathered from the Casper's Snow. Marking what was once an Enclave territory"
 	icon_state = "enclaveflag_alt"
 	item_state = "enclaveflag_alt"
-	anchored = 1
+
+/obj/item/flag/enclave/america
+	name = "America flag"
+	desc = "A flag reminding us of the Old World. It fills you with an odd sense of pride as you stand at attention to it."
+	icon_state = "enclaveflag_america"
+	item_state = "enclaveflag_america"
 
 /obj/item/flag/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/stack/sheet/leather) && item_state == "emptyflag")

@@ -1047,6 +1047,13 @@
 	fire_delay = 2.60
 	can_bayonet = TRUE
 
+/obj/item/gun/ballistic/automatic/marksman/sniper/gobicampaign
+	name = "Gobi Campaign sniper rifle"
+	desc = "A Customized DKS 501, chambered in .308 Winchester. this one was made for the Gobi Campaign and exists in a very limited number"
+	slowdown = 0.19
+	fire_delay = 3
+	can_bayonet = FALSE
+
 /obj/item/gun/ballistic/automatic/marksman/sniper/snipervenator
 	name = "explorer sniper rifle"
 	desc = "The customized sniper rifle, fitted with a telescopic sight for extreme accuracy and chambered for a high-ballistic performance centerfire cartridge. It is a superior version of the regular sniper rifle and is decorated with the flag of the bull and tokens of a hunt."

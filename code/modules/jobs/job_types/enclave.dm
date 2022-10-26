@@ -64,6 +64,7 @@
 	loadout_options = list(
 		/datum/outfit/loadout/lt_ballistics, // G11 and Plasma Glock
 		/datum/outfit/loadout/lt_plasma, // Plasma Rifle and 14mm
+		/datum/outfit/loadout/lt_rhino, //Gold Sniper Rifle with slowdown and .44 Rhino
 		)
 
 
@@ -113,7 +114,7 @@
 		)
 
 /datum/outfit/loadout/lt_rhino
-	name = "Gobi Campaign Lieutenant"
+	name = "Golden Hand"
 	suit_store = /obj/item/gun/ballistic/automatic/marksman/sniper/gobicampaign
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/w308 = 2,

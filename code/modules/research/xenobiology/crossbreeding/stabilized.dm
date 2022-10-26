@@ -84,10 +84,10 @@ Stabilized extracts:
 
 /obj/item/slimecross/stabilized/pyrite
 	colour = "pyrite"
-
+/*
 /obj/item/slimecross/stabilized/red
 	colour = "red"
-
+*/
 /obj/item/slimecross/stabilized/green
 	colour = "green"
 

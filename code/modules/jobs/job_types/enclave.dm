@@ -115,7 +115,7 @@
 
 /datum/outfit/loadout/lt_rhino
 	name = "Golden Hand"
-	suit_store = /obj/item/gun/ballistic/automatic/marksman/sniper/gobicampaign
+	suit_store = /obj/item/gun/ballistic/automatic/marksman/sniper/america
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/w308 = 2,
 		/obj/item/ammo_box/m44box = 1,

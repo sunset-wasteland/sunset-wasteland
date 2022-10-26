@@ -365,7 +365,7 @@
 	w_class = WEIGHT_CLASS_SMALL
 	slowdown = 0
 	fire_delay = 4
-	extra_penetration = 0.1
+	extra_penetration = 0.05
 
 /obj/item/gun/ballistic/automatic/pistol/pistol14/custom
 	name= "Custom 14mm pistol"

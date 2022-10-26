@@ -237,6 +237,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 	mag_type = /obj/item/ammo_box/magazine/smg14
 	is_automatic = TRUE
+	slowdown 0.35
 	extra_damage = -9
 	automatic = 1
 	autofire_shot_delay = 2.15 //It's so awfully inaccurate now that it's more of a gimmick than a buff
@@ -508,7 +509,7 @@
 	suppressor_y_offset = 16
 	fire_sound = 'sound/f13weapons/10mm_fire_03.ogg'
 	extra_damage = -1
-	slowdown = 0.2
+	slowdown = 0.35
 
 /obj/item/gun/ballistic/automatic/smg/p90/worn
 	name = "Worn FN P90c"

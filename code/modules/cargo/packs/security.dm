@@ -52,13 +52,24 @@
 					/obj/effect/spawner/lootdrop/f13/attachments,
 					/obj/effect/spawner/lootdrop/f13/gunparts/tier3)
 
-/datum/supply_pack/security/binocularsf13
-	name = "Binoculars Crate"
-	desc = "Contains three Binoculars. A must for any scouts of the brotherhood."
+/datum/supply_pack/security/binocularamapf13
+	name = "Binoculars and map Crate"
+	desc = "Contains three Binoculars and a map. A must for any scouts of the brotherhood."
 	cost = 1200
 	contains = list(/obj/item/binoculars,
 					/obj/item/binoculars,
-					/obj/item/binoculars)
+					/obj/item/binoculars,
+					/obj/item/weapon/maptool)
+
+/datum/supply_pack/security/binocularamapf13
+	name = "Mortar shells Crate"
+	desc = "Contains five mortars. Make sure to aim for the enemy."
+	cost = 5000
+	contains = list(/obj/item/mortar_shell,
+					/obj/item/mortar_shell,
+					/obj/item/mortar_shell,
+					/obj/item/mortar_shell,
+					/obj/item/mortar_shell)
 
 //fallout changes ends here
 

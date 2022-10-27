@@ -72,10 +72,10 @@ Stabilized extracts:
 
 /obj/item/slimecross/stabilized/silver
 	colour = "silver"
-
+/*
 /obj/item/slimecross/stabilized/bluespace
 	colour = "bluespace"
-
+*/
 /obj/item/slimecross/stabilized/sepia
 	colour = "sepia"
 
@@ -84,10 +84,10 @@ Stabilized extracts:
 
 /obj/item/slimecross/stabilized/pyrite
 	colour = "pyrite"
-
+/*
 /obj/item/slimecross/stabilized/red
 	colour = "red"
-
+*/
 /obj/item/slimecross/stabilized/green
 	colour = "green"
 

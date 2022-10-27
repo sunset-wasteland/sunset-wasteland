@@ -502,7 +502,7 @@
 	name = "plasma stream"
 	icon_state = "plasma_clot"
 	damage_type = BURN
-	damage = 20
+	damage = 35
 	flag = "energy" //checks vs. energy protection
 	eyeblur = 0
 	is_reflectable = FALSE
@@ -511,7 +511,7 @@
 	name = "mining plasma stream"
 	icon_state = "plasma_clot"
 	damage_type = BURN
-	damage = 5
+	damage = 35
 	flag = "energy"
 	eyeblur = 0
 	is_reflectable = FALSE

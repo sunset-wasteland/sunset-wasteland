@@ -43,7 +43,7 @@
 	export_types = list(/obj/item/gun/energy/laser/wattz2k/extended)
 
 /datum/export/large/laser/aer9
-	cost = 500
+	cost = 850
 	unit_name = "AER9 laser rifle"
 	export_types = list(/obj/item/gun/energy/laser/aer9)
 
@@ -88,19 +88,9 @@
 	export_types = list(/obj/item/gun/energy/minigun)
 
 /datum/export/large/fev/FEV_solution_one
-	cost = 10000
-	unit_name = "FEV prototype"
+	cost = 9000
+	unit_name = "FEV solution"
 	export_types = list(/obj/item/reagent_containers/glass/bottle/FEV_solution)
-
-/datum/export/large/fev/FEV_solution_two
-	cost = 10000
-	unit_name = "FEV mk2"
-	export_types = list(/obj/item/reagent_containers/glass/bottle/FEV_solution/two)
-
-/datum/export/large/fev/FEV_solution_curling
-	cost = 20000
-	unit_name = "FEV Curling"
-	export_types = list(/obj/item/reagent_containers/glass/bottle/FEV_solution/curling)
 
 
 /*

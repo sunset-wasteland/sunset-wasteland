@@ -231,10 +231,10 @@ Raider
 	head_announce = list("Security")
 	faction = FACTION_WASTELAND
 	social_faction = FACTION_RAIDERS
-	total_positions = 6
-	spawn_positions = 6
+	total_positions = -1
+	spawn_positions = -1
 	description = "You are an undesirable figure of some kind- perhaps a corrupt official, or a cannibalistic bartender, or a devious conman, to name a few examples. You have more freedom than anyone else in the wastes, and are not bound by the same moral code as others, but though you may only be interested in self-gain, you still have a responsibility to make your time here interesting, fun, and engaging for others- this means that whatever path you pursue should be more nuanced and flavorful than simple highway robbery or slavery. (Adminhelp if you require help setting up your character for the round.)"
-	supervisors = "Your desire to make things interesting and fun"
+	supervisors = "Your desire to make things interesting and fun. And the fact that you are a outlaw, here to create trouble for the wasteland."
 	selection_color = "#dddddd"
 	exp_requirements = 300
 	exp_type = EXP_TYPE_WASTELAND

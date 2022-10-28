@@ -205,7 +205,7 @@
 	slowdown = 0.25
 	fire_delay = 3.75
 	burst_shot_delay = 3
-	spread = 10
+	spread = 14
 	force = 12
 	actions_types = list(/datum/action/item_action/toggle_firemode)
 
@@ -241,7 +241,7 @@
 	extra_damage = -9
 	automatic = 1
 	autofire_shot_delay = 2.15 //It's so awfully inaccurate now that it's more of a gimmick than a buff
-	spread = 10
+	spread = 17
 	recoil = 0.85
 	can_attachments = TRUE
 	can_suppress = FALSE
@@ -255,13 +255,14 @@
 	icon_state = "grease_gun"
 	item_state = "smg9mm"
 	mag_type = /obj/item/ammo_box/magazine/greasegun
-	spread = 8
+	spread = 10
+	recoil = 0.4
 	slowdown = 0.3
 	burst_shot_delay = 2.75
 	is_automatic = TRUE
-	extra_damage = -1
+	extra_damage = -2
 	automatic = 1
-	autofire_shot_delay = 2.5
+	autofire_shot_delay = 2.7
 	can_attachments = TRUE
 	suppressor_state = "uzi_suppressor"
 	suppressor_x_offset = 26
@@ -297,7 +298,7 @@
 	desc = "What was once an inexpensive, but reliable submachine gun is now an inexpensive piece of shit. It's impressive this thing still fires at all."
 	can_attachments = FALSE
 	spread = 16.5
-	recoil = 0.3
+	recoil = 0.5
 
 /obj/item/gun/ballistic/automatic/smg/greasegun/worn/auto_select()
 	var/mob/living/carbon/human/user = usr
@@ -334,10 +335,11 @@
 	init_mag_type = /obj/item/ammo_box/magazine/m10mm_adv/ext
 	is_automatic = TRUE
 	automatic = 1
-	autofire_shot_delay = 2.35
-	spread = 12
+	autofire_shot_delay = 2
+	extra_damage = -2
+	spread = 14
 	slowdown = 0.3
-	recoil = 0.5
+	recoil = 0.7
 	fire_delay = 3.25
 	can_attachments = TRUE
 	suppressor_state = "10mm_suppressor" //activate if sprited
@@ -386,10 +388,11 @@
 	fire_delay = 3
 	burst_shot_delay = 2.2
 	is_automatic = TRUE
-	extra_damage = -3
+	extra_damage = -5
 	automatic = 1
-	autofire_shot_delay = 1.80
-	spread = 16
+	autofire_shot_delay = 1.70
+	recoil - 1
+	spread = 17
 	can_suppress = TRUE
 	can_attachments = TRUE
 	suppressor_state = "uzi_suppressor"
@@ -429,10 +432,9 @@
 	item_state = "cg45"
 	mag_type = /obj/item/ammo_box/magazine/cg45
 	is_automatic = TRUE
-	extra_damage = 2
 	automatic = 1
 	slowdown = 0.3
-	autofire_shot_delay = 2.5
+	autofire_shot_delay = 2.4
 	spread = 12
 	fire_delay = 3.5
 	recoil = 0.1
@@ -469,9 +471,9 @@
 	init_mag_type = /obj/item/ammo_box/magazine/tommygunm45/stick
 	fire_sound = 'sound/weapons/gunshot_smg.ogg'
 	is_automatic = TRUE
-	extra_damage = -5
+	extra_damage = -6
 	automatic = 1
-	autofire_shot_delay = 2.25
+	autofire_shot_delay = 2.1
 	burst_shot_delay = 2.75
 	fire_delay = 3.75
 	spread = 15
@@ -485,7 +487,7 @@
 	init_mag_type = /obj/item/ammo_box/magazine/tommygunm45/stick
 	fire_delay = 3.9
 	spread = 20
-	extra_damage = -7
+	extra_damage = -9
 
 //P90				Keywords: 10mm, Automatic, 50 rounds. Special modifiers: damage +1
 /obj/item/gun/ballistic/automatic/smg/p90
@@ -497,27 +499,27 @@
 	mag_type = /obj/item/ammo_box/magazine/m10mm_p90
 	burst_size = 1
 	fire_delay = 3
-	spread = 14
+	spread = 15
 	is_automatic = TRUE
 	automatic = 1
 	autofire_shot_delay = 1.9
 	burst_shot_delay = 2.5
-	recoil = 0.25
+	recoil = 0.35
 	can_suppress = TRUE
 	suppressor_state = "pistol_suppressor"
 	suppressor_x_offset = 29
 	suppressor_y_offset = 16
 	fire_sound = 'sound/f13weapons/10mm_fire_03.ogg'
-	extra_damage = -1
+	extra_damage = -2
 	slowdown = 0.35
 
 /obj/item/gun/ballistic/automatic/smg/p90/worn
 	name = "Worn FN P90c"
 	desc = "A FN P90 manufactured by Fabrique Nationale. This one is beat to hell but still works."
 	autofire_shot_delay = 2.25
-	spread = 16
+	spread = 17
 	slowdown = 0.35
-	extra_damage = -3
+	extra_damage = -4
 
 
 //MP-5 SD				Keywords: 9mm, Automatic, 32 rounds, Suppressed
@@ -527,16 +529,15 @@
 	icon_state = "mp5"
 	item_state = "fnfal"
 	mag_type = /obj/item/ammo_box/magazine/uzim9mm
-	extra_damage = 1
 	spread = 6
 	fire_delay = 3.5
 	slowdown = 0.25
 	is_automatic = TRUE
 	automatic = 1
-	autofire_shot_delay = 2.2
+	autofire_shot_delay = 2.3
 	burst_shot_delay = 2
 	suppressed = 1
-	recoil = 0.05
+	recoil = 0.1
 	can_attachments = TRUE
 	can_suppress = FALSE
 	can_unsuppress = FALSE
@@ -548,7 +549,7 @@
 	name = "Ppsh-41"
 	desc = "An extremely fast firing, inaccurate submachine gun from World War 2. Low muzzle velocity. Uses 9mm rounds."
 	icon_state = "pps"
-	extra_damage = 3
+	extra_damage = 2
 	slowdown = 0.3
 	w_class = WEIGHT_CLASS_BULKY
 	mag_type = /obj/item/ammo_box/magazine/pps9mm

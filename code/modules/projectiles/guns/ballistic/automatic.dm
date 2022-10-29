@@ -237,7 +237,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 	mag_type = /obj/item/ammo_box/magazine/smg14
 	is_automatic = TRUE
-	slowdown 0.35
+	slowdown = 0.35
 	extra_damage = -9
 	automatic = 1
 	autofire_shot_delay = 2.15 //It's so awfully inaccurate now that it's more of a gimmick than a buff

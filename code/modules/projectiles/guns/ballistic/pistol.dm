@@ -263,6 +263,7 @@
 	desc = "A very tactical pistol chambered in .45 ACP with a built in laser sight and attachment point for a seclite."
 	icon_state = "mk23"
 	mag_type = /obj/item/ammo_box/magazine/m45exp
+	extra_damage = -3
 	recoil = 0.05
 	fire_delay = 1
 	spread = 1
@@ -332,7 +333,8 @@
 	can_suppress = FALSE
 	automatic_burst_overlay = FALSE
 	fire_sound = 'sound/f13weapons/44mag.ogg'
-	extra_damage = 2
+	extra_penetration = -0.1
+	extra_damage = 6
 
 
 //14mm Pistol		Keywords: 14mm, Semi-auto, 7 rounds, Heavy

@@ -703,7 +703,7 @@
 		var/datum/wound/W = thing
 		var/obj/item/bodypart/wounded_part = W.limb
 		if(wounded_part)
-			wounded_part.heal_damage(25, 25)//Does this even work? AAAAAAAAAAAAAAAAA Original .heal_damage(125, 125)
+			wounded_part.heal_damage(10, 10)//Does this even work? AAAAAAAAAAAAAAAAA Original .heal_damage(125, 125)
 	..()
 
 /datum/reagent/medicine/hydra/overdose_process(mob/living/M)

@@ -708,7 +708,7 @@ Scribe
 		)
 
 /*
-Knight C
+Knight Captain
 */
 
 /datum/job/bos/f13seniorknight

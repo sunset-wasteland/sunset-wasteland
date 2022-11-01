@@ -281,6 +281,11 @@
 	cell_type = /obj/item/stock_parts/cell/secborg
 	charge_delay = 3
 
+/obj/item/gun/energy/laser/pistol/cavalier
+	name = "\improper AEP7 scout pistol"
+	slowdown = 0.05
+	can_scope = TRUE
+
 /obj/item/gun/energy/laser/pistol/cyborg/gutsy
 	name = "\improper integrated laser pistol"
 	desc = "An integrated laser pistol that draws power directly from your cell."

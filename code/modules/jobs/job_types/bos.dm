@@ -708,7 +708,7 @@ Scribe
 		)
 
 /*
-Senior Knight
+Knight C
 */
 
 /datum/job/bos/f13seniorknight
@@ -917,12 +917,13 @@ Knight
 /datum/outfit/loadout/knightc
 	name = "Junior Knight-Cavalry"
 	backpack_contents = list(
-		/obj/item/clothing/accessory/bos/juniorknight=1,
-		/obj/item/melee/powered/ripper=1,
-		/obj/item/gun/energy/laser/pistol=1,
-		/obj/item/stock_parts/cell/ammo/ec=2,
-		/obj/item/clothing/accessory/bos/KnightC=1,
-		/obj/item/clothing/accessory/bos/KnightT=1,
+		/obj/item/book/granter/trait/trekking = 1,
+		/obj/item/clothing/accessory/bos/juniorknight = 1,
+		/obj/item/clothing/accessory/bos/KnightC = 1,
+		/obj/item/clothing/accessory/bos/KnightT = 1,
+		/obj/item/attachments/scope = 1,
+		/obj/item/gun/energy/laser/pistol/cavalier = 1,
+		/obj/item/stock_parts/cell/ammo/ec = 2,
 		)
 
 
@@ -953,10 +954,11 @@ Knight
 /datum/outfit/loadout/knightf
 	name = "Knight-Cavalry"
 	backpack_contents = list(
+		/obj/item/book/granter/trait/trekking = 1,
 		/obj/item/clothing/accessory/bos/knight=1,
-		/obj/item/melee/powered/ripper=1,
-		/obj/item/gun/energy/laser/pistol=1,
-		/obj/item/stock_parts/cell/ammo/ec=2,
+		/obj/item/attachments/scope = 1,
+		/obj/item/gun/energy/laser/pistol/cavalier = 1,
+		/obj/item/stock_parts/cell/ammo/ec = 2,
 		/obj/item/clothing/accessory/bos/KnightC=1,
 		/obj/item/clothing/accessory/bos/KnightT=1,
 		)

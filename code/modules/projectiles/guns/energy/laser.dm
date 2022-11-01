@@ -283,6 +283,7 @@
 
 /obj/item/gun/energy/laser/pistol/cavalier
 	name = "\improper AEP7 scout pistol"
+	desc = "A basic energy-based laser gun that fires concentrated beams of light. This one bears the mark of the Brotherhood of Steel, and has a scope mount. Most of its frame has been replaced with superlight alloy."
 	slowdown = 0.05
 	can_scope = TRUE
 

@@ -243,6 +243,7 @@ Head Scribe
 	accessory = 	/obj/item/clothing/accessory/bos/headscribe
 	glasses =       /obj/item/clothing/glasses/sunglasses
 	suit = 			/obj/item/clothing/suit/armor/f13/headscribe
+	ears = 			/obj/item/radio/headset/headset_bos/command
 	belt = 			/obj/item/storage/belt/utility/full/engi
 	id = 			/obj/item/card/id/dogtag
 	backpack_contents = list(
@@ -324,6 +325,7 @@ Head Knight
 	accessory =		/obj/item/clothing/accessory/bos/knightcaptain
 	belt =			/obj/item/storage/belt/security/full
 	neck =			/obj/item/storage/belt/holster
+	ears =			 /obj/item/radio/headset/headset_bos/command
 	mask =			/obj/item/clothing/mask/gas/sechailer
 	head =			/obj/item/clothing/head/helmet/f13/combat/brotherhood/captain
 	id =			/obj/item/card/id/dogtag

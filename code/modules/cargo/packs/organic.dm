@@ -25,7 +25,7 @@
 /datum/supply_pack/organic/randomized/hungrymeatlover
 	name = "Hungry meat lover package"
 	desc = "This pack is filled with everything a HUNGRY person would eat. Eat it HOT!, or don't eat it at all!!!."
-	cost = 6000
+	cost = 5000
 	num_contained = 12
 	contains = list(/obj/item/reagent_containers/food/snacks/bbqribs,
 					/obj/item/reagent_containers/food/snacks/bbqribs,

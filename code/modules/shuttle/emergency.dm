@@ -366,8 +366,8 @@
 	if(!SSdbcore.Connect())
 		return
 	var/datum/db_query/query_round_shuttle_name = SSdbcore.NewQuery(
-		"UPDATE [format_table_name("round")] SET shuttle_name = :shuttle_name WHERE id = [GLOB.round_id]",
-		list("shuttle_name" = name)
+		"UPDATE [format_table_name("round")] SET shuttle_name = :shuttle_name WHERE id = :id",
+		list("shuttle_name" = name, "id" = GLOB.round_id)
 	)
 	query_round_shuttle_name.Execute()
 	qdel(query_round_shuttle_name)

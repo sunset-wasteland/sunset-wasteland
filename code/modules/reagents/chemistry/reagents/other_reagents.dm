@@ -266,7 +266,7 @@
 	name = "Dirty Water"
 	description = "This has visible debris floating around in it."
 	color = "#ACBCBD"
-	taste_description = "chalky water"
+	taste_description = "foul, brackish water"
 	glass_icon_state = "glass_clear"
 	glass_name = "glass of dirty water"
 	glass_desc = "A rather foul smelling glass of water."

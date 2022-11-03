@@ -1047,6 +1047,17 @@
 	fire_delay = 2.60
 	can_bayonet = TRUE
 
+/obj/item/gun/ballistic/automatic/marksman/sniper/america
+	name = "Gobi Campaign sniper rifle"
+	desc = "A Customized DKS 501, chambered in .308 Winchester. coated in gold paint this one was made for the Gobi Campaign, There's a torn rag from a flag wrapped around its stock"
+	icon_state = "gold_sniper_america"
+	item_state = "gold_sniper_america"
+	slowdown = 0.19
+	fire_delay = 2.8
+	can_bayonet = TRUE
+	zoom_amt = 12
+	zoom_out_amt = 14
+
 /obj/item/gun/ballistic/automatic/marksman/sniper/snipervenator
 	name = "explorer sniper rifle"
 	desc = "The customized sniper rifle, fitted with a telescopic sight for extreme accuracy and chambered for a high-ballistic performance centerfire cartridge. It is a superior version of the regular sniper rifle and is decorated with the flag of the bull and tokens of a hunt."

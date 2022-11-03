@@ -19,8 +19,8 @@
 	melee_damage_lower = 40
 	melee_damage_upper = 50
 	footstep_type = FOOTSTEP_MOB_HEAVY
-	speed = -2//Actual speed handled by move_to_delay
-	move_to_delay = 2
+	speed = -1.8//Actual speed handled by move_to_delay
+	move_to_delay = 1.8
 
 	gender = MALE
 	a_intent = INTENT_HARM //So we can not move past them.

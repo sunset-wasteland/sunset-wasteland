@@ -10,7 +10,7 @@
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	overdose_threshold = 35
 	addiction_threshold = 25
-	value = REAGENT_VALUE_COMMON
+	value = REAGENT_VALUE_RARE
 	ghoulfriendly = TRUE
 
 /datum/reagent/medicine/stimpak/reaction_mob(mob/living/M, method=TOUCH, reac_volume, show_message = 1)
@@ -92,6 +92,7 @@
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	overdose_threshold = 25
 	addiction_threshold = 16
+	value = REAGENT_VALUE_VERY_RARE
 	ghoulfriendly = TRUE
 
 /datum/reagent/medicine/super_stimpak/on_mob_add(mob/living/M)
@@ -702,7 +703,7 @@
 		var/datum/wound/W = thing
 		var/obj/item/bodypart/wounded_part = W.limb
 		if(wounded_part)
-			wounded_part.heal_damage(125, 125)//Does this even work? AAAAAAAAAAAAAAAAA
+			wounded_part.heal_damage(10, 10)//Does this even work? AAAAAAAAAAAAAAAAA Original .heal_damage(125, 125)
 	..()
 
 /datum/reagent/medicine/hydra/overdose_process(mob/living/M)

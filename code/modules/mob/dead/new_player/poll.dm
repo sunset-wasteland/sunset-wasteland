@@ -48,8 +48,8 @@
 	switch(polltype)
 		if(POLLTYPE_OPTION)
 			var/datum/db_query/query_option_get_votes = SSdbcore.NewQuery(
-				"SELECT optionid FROM [format_table_name("poll_vote")] WHERE pollid = [pollid] AND ckey = :ckey",
-				list("ckey" = ckey)
+				"SELECT optionid FROM [format_table_name("poll_vote")] WHERE pollid = :pollid AND ckey = :ckey",
+				list("ckey" = ckey, "pollid" = pollid)
 			)
 			if(!query_option_get_votes.warn_execute())
 				qdel(query_option_get_votes)
@@ -96,8 +96,8 @@
 			src << browse(output,"window=playerpoll;size=500x250")
 		if(POLLTYPE_TEXT)
 			var/datum/db_query/query_text_get_votes = SSdbcore.NewQuery(
-				"SELECT replytext FROM [format_table_name("poll_textreply")] WHERE pollid = [pollid] AND ckey = :ckey",
-				list("ckey" = ckey)
+				"SELECT replytext FROM [format_table_name("poll_textreply")] WHERE pollid = :pollid AND ckey = :ckey",
+				list("ckey" = ckey, "pollid" = pollid)
 			)
 			if(!query_text_get_votes.warn_execute())
 				qdel(query_text_get_votes)
@@ -127,8 +127,8 @@
 			src << browse(output,"window=playerpoll;size=500x500")
 		if(POLLTYPE_RATING)
 			var/datum/db_query/query_rating_get_votes = SSdbcore.NewQuery(
-				"SELECT o.text, v.rating FROM [format_table_name("poll_option")] o, [format_table_name("poll_vote")] v WHERE o.pollid = [pollid] AND v. ckey = :ckey AND o.id = v.optionid",
-				list("ckey" = ckey)
+				"SELECT o.text, v.rating FROM [format_table_name("poll_option")] o, [format_table_name("poll_vote")] v WHERE o.pollid = :pollid AND v.ckey = :ckey AND o.id = v.optionid",
+				list("ckey" = ckey, "pollid" = pollid)
 			)
 			if(!query_rating_get_votes.warn_execute())
 				qdel(query_rating_get_votes)
@@ -187,8 +187,8 @@
 				src << browse(output,"window=playerpoll;size=500x500")
 		if(POLLTYPE_MULTI)
 			var/datum/db_query/query_multi_get_votes = SSdbcore.NewQuery(
-				"SELECT optionid FROM [format_table_name("poll_vote")] WHERE pollid = [pollid] AND ckey = :ckey",
-				list("ckey" = ckey)
+				"SELECT optionid FROM [format_table_name("poll_vote")] WHERE pollid = :pollid AND ckey = :ckey",
+				list("ckey" = ckey, "pollid" = pollid)
 			)
 			if(!query_multi_get_votes.warn_execute())
 				qdel(query_multi_get_votes)
@@ -245,8 +245,8 @@
 			irv_assets.send(src)
 
 			var/datum/db_query/query_irv_get_votes = SSdbcore.NewQuery(
-				"SELECT optionid FROM [format_table_name("poll_vote")] WHERE pollid = [pollid] AND ckey = :ckey",
-				list("ckey" = ckey)
+				"SELECT optionid FROM [format_table_name("poll_vote")] WHERE pollid = :pollid AND ckey = :ckey",
+				list("ckey" = ckey, "pollid" = pollid)
 			)
 			if(!query_irv_get_votes.warn_execute())
 				qdel(query_irv_get_votes)
@@ -370,8 +370,8 @@
 		to_chat(usr, "<span class='danger'>Failed to establish database connection.</span>")
 		return
 	var/datum/db_query/query_hasvoted = SSdbcore.NewQuery(
-		"SELECT id FROM `[format_table_name(table)]` WHERE pollid = [pollid] AND ckey = :ckey",
-		list("ckey" = ckey)
+		"SELECT id FROM `[format_table_name(table)]` WHERE pollid = :pollid AND ckey = :ckey",
+		list("ckey" = ckey, pollid = "pollid")
 	)
 	if(!query_hasvoted.warn_execute())
 		qdel(query_hasvoted)
@@ -592,8 +592,8 @@
 	if (!vote_valid_check(pollid, client.holder, POLLTYPE_RATING))
 		return 0
 	var/datum/db_query/query_numval_hasvoted = SSdbcore.NewQuery(
-		"SELECT id FROM [format_table_name("poll_vote")] WHERE optionid = [optionid] AND ckey = :ckey",
-		list("ckey" = ckey)
+		"SELECT id FROM [format_table_name("poll_vote")] WHERE optionid = :optionid AND ckey = :ckey",
+		list("ckey" = ckey, "optionid" = optionid)
 	)
 	if(!query_numval_hasvoted.warn_execute())
 		qdel(query_numval_hasvoted)

@@ -309,6 +309,10 @@
 /obj/item/storage/trash_stack,
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"cF" = (
+/obj/item/flag/ncr,
+/turf/open/indestructible/ground/outside/snow_plating,
+/area/f13/mountain_area)
 "cL" = (
 /obj/effect/turf_decal/stripes/red/corner,
 /obj/effect/turf_decal/stripes/red/corner{
@@ -601,11 +605,9 @@
 /turf/open/floor/wood/wood_fancy,
 /area/f13/building)
 "fa" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 8
-	},
-/turf/open/floor/f13,
-/area/f13/enclave)
+/obj/structure/decoration/warning,
+/turf/closed/wall/f13/tunnel,
+/area/f13/tunnel)
 "fc" = (
 /obj/structure/barricade/wooden/snowed,
 /turf/closed/mineral/random/snow,
@@ -806,6 +808,7 @@
 "gF" = (
 /obj/structure/rack/shelf_metal,
 /obj/effect/spawner/lootdrop/f13/traitbooks/low,
+/obj/effect/spawner/lootdrop/f13/traitbooks/low,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/enclave)
 "gG" = (
@@ -920,8 +923,12 @@
 /turf/closed/wall/f13/sunset/brick_small_light,
 /area/f13/building)
 "hA" = (
-/obj/effect/turf_decal/stripes/line,
-/turf/open/floor/f13,
+/obj/machinery/chem_dispenser/drinks{
+	dir = 1;
+	density = 0;
+	pixel_y = -14
+	},
+/turf/open/floor/plasteel/hydrofloor,
 /area/f13/enclave)
 "hC" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -981,7 +988,8 @@
 /area/f13/enclave)
 "hM" = (
 /obj/machinery/camera/autoname{
-	dir = 5
+	dir = 5;
+	network = list("ec01")
 	},
 /turf/open/floor/engine,
 /area/f13/enclave)
@@ -1136,6 +1144,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/enclave)
 "iE" = (
+/obj/item/flag/enclave/america,
 /turf/closed/wall/r_wall/f13/vault,
 /area/f13/mountain_area)
 "iH" = (
@@ -1160,7 +1169,8 @@
 /area/f13/enclave)
 "iN" = (
 /obj/machinery/camera/autoname{
-	dir = 10
+	dir = 10;
+	network = list("ec01")
 	},
 /obj/item/melee/baton/loaded,
 /obj/machinery/button/door{
@@ -1305,7 +1315,8 @@
 /area/f13/tunnel)
 "jS" = (
 /obj/machinery/camera/autoname{
-	dir = 10
+	dir = 10;
+	network = list("ec01")
 	},
 /turf/open/floor/plating/snowed/colder,
 /area/f13/enclave)
@@ -1824,7 +1835,7 @@
 /obj/effect/turf_decal/weather/snow/corner{
 	dir = 5
 	},
-/obj/item/storage/trash_stack,
+/obj/item/flag/enclave/america,
 /turf/open/indestructible/ground/outside/graveldirt,
 /area/f13/mountain_area)
 "ob" = (
@@ -2323,6 +2334,11 @@
 /obj/item/gun/ballistic/shotgun/police,
 /obj/item/gun/ballistic/shotgun/police,
 /obj/item/gun/ballistic/shotgun/police,
+/obj/item/melee/baton/stunsword,
+/obj/item/melee/baton/stunsword,
+/obj/item/melee/baton/stunsword,
+/obj/item/melee/baton/stunsword,
+/obj/item/melee/baton/stunsword,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/enclave)
 "rl" = (
@@ -2651,7 +2667,9 @@
 	},
 /area/f13/tunnel)
 "tq" = (
-/obj/machinery/camera/autoname,
+/obj/machinery/camera/autoname{
+	network = list("ec01")
+	},
 /obj/machinery/light/small{
 	dir = 4
 	},
@@ -3161,6 +3179,15 @@
 	},
 /turf/open/floor/engine,
 /area/f13/enclave)
+"wF" = (
+/obj/effect/turf_decal/weather/snow/corner{
+	dir = 4
+	},
+/obj/item/highway_sign/casper,
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "verticalrightborderright0"
+	},
+/area/f13/mountain_area)
 "wI" = (
 /obj/structure/table/reinforced,
 /obj/item/paper_bin,
@@ -3280,11 +3307,9 @@
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/enclave)
 "xu" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 4
-	},
-/turf/open/floor/f13,
-/area/f13/enclave)
+/obj/item/flag/enclave/america,
+/turf/open/indestructible/ground/outside/snow,
+/area/f13/mountain_area)
 "xy" = (
 /obj/structure/table/wood,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -3628,9 +3653,8 @@
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/enclave)
 "zR" = (
-/mob/living/simple_animal/hostile/ghoul/coldferal{
-	dir = 8
-	},
+/obj/item/clothing/under/f13/ncr/sniper,
+/obj/effect/decal/remains/human,
 /turf/open/indestructible/ground/outside/snow_plating,
 /area/f13/mountain_area)
 "zU" = (
@@ -4179,6 +4203,12 @@
 /obj/item/clothing/mask/chameleon,
 /obj/item/clothing/mask/chameleon,
 /obj/item/clothing/mask/chameleon,
+/obj/item/pda,
+/obj/item/pda,
+/obj/item/pda,
+/obj/item/pda,
+/obj/item/pda,
+/obj/item/pda,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/enclave)
 "Eb" = (
@@ -4357,6 +4387,9 @@
 "Fi" = (
 /obj/structure/table/reinforced,
 /obj/item/pda/captain,
+/obj/item/storage/lockbox/medal{
+	req_access_txt = "256"
+	},
 /turf/open/floor/f13,
 /area/f13/enclave)
 "Fj" = (
@@ -4571,6 +4604,15 @@
 	},
 /turf/open/floor/f13,
 /area/f13/enclave)
+"Hc" = (
+/obj/effect/turf_decal/weather/snow/corner{
+	dir = 8
+	},
+/obj/item/highway_sign/casper,
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "verticalleftborderleft0"
+	},
+/area/f13/mountain_area)
 "Hg" = (
 /obj/machinery/light{
 	dir = 8
@@ -5034,7 +5076,8 @@
 /area/f13/tunnel)
 "KI" = (
 /obj/machinery/camera/autoname{
-	dir = 9
+	dir = 9;
+	network = list("ec01")
 	},
 /turf/open/floor/engine,
 /area/f13/enclave)
@@ -5447,6 +5490,14 @@
 	req_access_txt = "134"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
+/area/f13/enclave)
+"Oc" = (
+/obj/machinery/chem_dispenser/drinks/beer{
+	dir = 1;
+	density = 0;
+	pixel_y = -14
+	},
+/turf/open/floor/plasteel/hydrofloor,
 /area/f13/enclave)
 "Od" = (
 /obj/structure/bed/mattress/pregame,
@@ -5996,6 +6047,13 @@
 /obj/item/book/manual/chef_recipes,
 /turf/open/floor/plasteel/hydrofloor,
 /area/f13/enclave)
+"Sr" = (
+/obj/effect/turf_decal/weather/snow/corner{
+	dir = 1
+	},
+/obj/item/storage/trash_stack,
+/turf/open/indestructible/ground/outside/graveldirt,
+/area/f13/mountain_area)
 "Sw" = (
 /obj/structure/chair/office/dark{
 	dir = 1
@@ -12274,17 +12332,17 @@ Vr
 Vr
 Vr
 ez
+xu
+ez
+hr
+hr
 ez
 ez
 hr
 hr
 ez
 ez
-hr
-hr
-ez
-ez
-ez
+xu
 pl
 iT
 HA
@@ -16958,7 +17016,7 @@ Tx
 Tx
 ew
 nG
-nG
+Oc
 AW
 yG
 yG
@@ -17215,7 +17273,7 @@ nG
 hJ
 nG
 nG
-nG
+hA
 AW
 ze
 ze
@@ -19246,9 +19304,9 @@ oO
 im
 oO
 hs
-xu
-xu
-xu
+YH
+YH
+YH
 og
 Jx
 RG
@@ -19502,7 +19560,7 @@ AW
 oO
 oO
 oO
-hA
+fq
 BO
 BO
 BO
@@ -19759,7 +19817,7 @@ AW
 oO
 ay
 oO
-hA
+fq
 BO
 BO
 BO
@@ -20016,7 +20074,7 @@ AW
 oO
 oO
 oO
-hA
+fq
 BO
 BO
 BO
@@ -20274,9 +20332,9 @@ oO
 ay
 oO
 nC
-fa
-fa
-fa
+PF
+PF
+PF
 AW
 Jx
 WU
@@ -31535,12 +31593,7 @@ ez
 ez
 ez
 ez
-ez
-ez
-ez
-hr
-hr
-hr
+xu
 ez
 ez
 hr
@@ -31548,6 +31601,11 @@ hr
 hr
 ez
 ez
+hr
+hr
+hr
+ez
+xu
 pl
 iT
 HA
@@ -58118,7 +58176,7 @@ ez
 ez
 ez
 ez
-SA
+Sr
 Sl
 Er
 ez
@@ -58381,7 +58439,7 @@ Er
 ez
 ez
 ez
-ez
+xu
 ez
 ez
 ez
@@ -62636,7 +62694,7 @@ ez
 ez
 Uj
 Uj
-tt
+cF
 WQ
 tt
 tt
@@ -68810,12 +68868,12 @@ lZ
 lZ
 lZ
 lZ
-lZ
+Hc
 lZ
 ov
 WS
 oF
-dE
+fa
 dE
 dE
 dE
@@ -71380,12 +71438,12 @@ mD
 mD
 mD
 mD
-mD
+wF
 mD
 Lb
 WS
 oF
-dE
+fa
 dE
 dE
 dE

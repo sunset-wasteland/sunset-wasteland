@@ -226,6 +226,15 @@
 	icon_state = "mysterious_m29"
 	can_scope = FALSE
 
+//Chiappa Rhino                  Keywords: Enclave, .44, Double action, 6 rounds cylinder
+/obj/item/gun/ballistic/revolver/m29/rhino_america
+	name = "Rhino America"
+	desc = "A revolver machined from a solid aluminium block, This one is coated in gold paint with its grip painted to look like the flag of America. This model has been specifically made to fire .44 magnum cartridges"
+	item_state = "rhino_america"
+	icon_state = "rhino_america"
+	can_scope = FALSE
+	extra_damage = 23 //for a combined total of 55 damage, as good as the 14mm pistol and plasma pistol.
+	fire_delay = 3.5 //it should still fire slow but not too slow
 
 //Peacekeeper					 Keywords: OASIS, .44, Double action, 6 rounds cylinder, Extra Firemode
 /obj/item/gun/ballistic/revolver/m29/peacekeeper

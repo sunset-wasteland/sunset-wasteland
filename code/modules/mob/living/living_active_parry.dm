@@ -4,13 +4,13 @@
  */
 /obj/item/proc/can_active_parry()
 	return block_parry_data && (item_flags & ITEM_CAN_PARRY)
-
+/* //Comments out parrying until it can be fixed. 120-300 damage on parries is just /not/ okay.
 /**
  * Called from keybindings.
  */
 /mob/living/proc/keybind_parry()
 	initiate_parry_sequence()
-
+*/
 /**
  * Initiates a parrying sequence.
  */

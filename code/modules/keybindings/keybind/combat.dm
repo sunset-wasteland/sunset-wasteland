@@ -36,7 +36,7 @@
 	var/mob/living/L = user.mob
 	L.keybind_toggle_active_blocking()
 	return TRUE
-
+/* //Comments out parrying coding until it can be fixed. 120-300 damage on parries is just /not/ okay.
 /datum/keybinding/living/active_parry
 	hotkey_keys = list("Insert", "G")
 	name = "active_parry"
@@ -48,3 +48,4 @@
 	var/mob/living/L = user.mob
 	L.keybind_parry()
 	return TRUE
+*/

@@ -2,8 +2,8 @@
 	department_flag = FOLLOWERS
 	selection_color = "#ffeeaa"
 	exp_type = EXP_TYPE_FOLLOWERS
-	access = list(ACCESS_FOLLOWER)
-	minimal_access = list(ACCESS_FOLLOWER)
+	access = list(ACCESS_FOLLOWER, ACCESS_ENGINE_EQUIP)
+	minimal_access = list(ACCESS_FOLLOWER, ACCESS_ENGINE_EQUIP)
 	roleplay_exclusive_notify = 1
 	forbids = "Aligning oneself with a faction exclusively. Acting in an aggressive and violent way on the offensive, not in defense. Abandoning your facility, peers, and community."
 	enforces = "Preaching humanitarianism and valuing human life. Assist and provide medical services to those in need. Provide free education for all those who are willing to learn."

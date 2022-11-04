@@ -28,8 +28,8 @@ Mayor
 	selection_color = "#d7b088"
 	exp_requirements = 1500
 	outfit = /datum/outfit/job/bighorn/f13mayor
-	access = list(ACCESS_BAR, ACCESS_GATEWAY, ACCESS_FORENSICS_LOCKERS)
-	minimal_access = list(ACCESS_BAR, ACCESS_GATEWAY, ACCESS_FORENSICS_LOCKERS)
+	access = list(ACCESS_BAR, ACCESS_GATEWAY, ACCESS_FORENSICS_LOCKERS, ACCESS_ENGINE_EQUIP)
+	minimal_access = list(ACCESS_BAR, ACCESS_GATEWAY, ACCESS_FORENSICS_LOCKERS, ACCESS_ENGINE_EQUIP)
 
 /datum/outfit/job/bighorn/f13mayor/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
@@ -70,7 +70,7 @@ Mayor
 	selection_color = "#d7b088"
 	exp_requirements = 1500
 	outfit = /datum/outfit/job/bighorn/f13sheriff
-	access = list(ACCESS_BAR, ACCESS_GATEWAY)
+	access = list(ACCESS_BAR, ACCESS_GATEWAY, ACCESS_ENGINE_EQUIP)
 	minimal_access = list(ACCESS_BAR, ACCESS_GATEWAY)
 
 /datum/outfit/job/bighorn/f13sheriff
@@ -124,7 +124,7 @@ Mayor
 	exp_requirements = 620
 	outfit = /datum/outfit/job/bighorn/f13deputy
 	access = list(ACCESS_BAR, ACCESS_GATEWAY)
-	minimal_access = list(ACCESS_BAR, ACCESS_GATEWAY)
+	minimal_access = list(ACCESS_BAR, ACCESS_GATEWAY, ACCESS_ENGINE_EQUIP)
 
 /datum/outfit/job/bighorn/f13deputy
 	name = "Deputy"
@@ -403,7 +403,7 @@ Mayor
 		/datum/outfit/loadout/militia,
 		/datum/outfit/loadout/singer,
 	)
-	access = list(ACCESS_BAR)
+	access = list(ACCESS_BAR, ACCESS_ENGINE_EQUIP)
 	minimal_access = list(ACCESS_BAR)
 	matchmaking_allowed = list(
 		/datum/matchmaking_pref/friend = list(
@@ -434,8 +434,8 @@ Mayor
 	/datum/outfit/loadout/cleanser		//Just some bombs.
 	)
 
-	access = list()		//we can expand on this and make alterations as people suggest different loadouts
-	minimal_access = list()
+	access = list(ACCESS_BAR)		//we can expand on this and make alterations as people suggest different loadouts
+	minimal_access = list(ACCESS_BAR)
 	matchmaking_allowed = list(
 		/datum/matchmaking_pref/friend = list(
 			/datum/job/wasteland/f13wastelander,

@@ -39,6 +39,7 @@
 	desc = "Heavy fireman axe from the old world, Restored to working order by legion craftsmen. Excellent for smashing doors or heads."
 	icon_state = "legionaxe"
 	icon_prefix = "legionaxe"
+	block_parry_data = /datum/block_parry_data/smith_generic //data is in finished items file
 	force = 30
 	throwforce = 15
 	wound_bonus = 10
@@ -154,6 +155,7 @@
 	wound_bonus = null
 	sharpness = SHARP_NONE
 	resistance_flags = null
+	block_parry_data = /datum/block_parry_data/smith_generic //data is in finished items file
 
 /obj/item/twohanded/fireaxe/bmprsword/afterattack(atom/A, mob/living/user, proximity)
 	. = ..()
@@ -182,6 +184,7 @@
 	icon_prefix = "spear-metal"
 	force = 10
 	throwforce = 30
+	block_parry_data = /datum/block_parry_data/smith_generic //data is in finished items file
 	throw_speed = 4
 	embedding = list("embed_chance" = 0)
 	max_reach = 2
@@ -463,6 +466,7 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	damtype = "fire"
+	block_parry_data = /datum/block_parry_data/smith_generic //data is in finished items file
 	force = 5
 	armour_penetration = 0.1
 	throwforce = 5
@@ -507,6 +511,7 @@
 	righthand_file = 'icons/fallout/onmob/weapons/melee2h_righthand.dmi'
 	icon_state = "protonaxe"
 	icon_state_on = "protonaxe_on"
+	block_parry_data = /datum/block_parry_data/smith_generic //data is in finished items file
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = null
 	force = 20
@@ -527,6 +532,7 @@
 	desc = "A heavy sledgehammer manufacted from ultra-dense materials, developed by the Brotherhood of Steel. It looks like it could crush someone's skull with ease."
 	icon_state = "hammer-super"
 	icon_prefix = "hammer-super"
+	block_parry_data = /datum/block_parry_data/smith_generic //data is in finished items file
 	force = 25
 
 /obj/item/twohanded/sledgehammer/supersledge/ComponentInitialize()
@@ -631,6 +637,7 @@
 	icon_prefix = "hammer-war"
 	force = 25
 	throwforce = 20
+	block_parry_data = /datum/block_parry_data/smith_generic //data is in finished items file
 	armour_penetration = 0.2
 	attack_verb = list("bashed", "pounded", "bludgeoned", "pummeled", "thrashed")
 

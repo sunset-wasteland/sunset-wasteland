@@ -8,6 +8,8 @@
 	armour_penetration = 0.3
 	spread = 2
 	wound_falloff_tile = -7.5
+	supereffective_damage = 50
+	supereffective_faction = list("supermutant", "deathclaw", "raider", "wastebot", "radscorpion") //Slugs HATE armor.
 
 /obj/item/projectile/bullet/shotgun_slug/executioner
 	name = "executioner slug" // admin only, can dismember limbs
@@ -30,6 +32,8 @@
 /obj/item/projectile/bullet/incendiary/shotgun
 	name = "incendiary slug"
 	damage = 20
+	supereffective_damage = 80
+	supereffective_faction = list("ant", "cazador", "radscorpion") //Bugs HATE fire.
 
 /obj/item/projectile/bullet/incendiary/shotgun/dragonsbreath
 	name = "dragonsbreath pellet"
@@ -119,6 +123,8 @@
 	wound_bonus = 35
 	bare_wound_bonus = 90
 	wound_falloff_tile = -15.5 // low damage + additional dropoff will already curb wounding potential anything past point blank
+	supereffective_damage = 9.5
+	supereffective_faction = list("hostile", "ant", "supermutant", "cazador", "raider", "gecko", "radscorpion")
 
 /obj/item/projectile/bullet/pellet/shotgun_rubbershot
 	name = "rubbershot pellet"

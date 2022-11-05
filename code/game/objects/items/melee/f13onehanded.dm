@@ -26,29 +26,6 @@
 // SWORDS //
 ////////////		-block, 34-39 damage
 
-
-/obj/item/melee/onehanded/dragonfire
-	name = "Dragonfire Katana"
-	desc = "After the world ended, seppuku rates in Japan skyrocketed, the owner of this one however is crazy enough to keep going!"
-	icon_state = "DFkatana"
-	item_state = "DFkatana"
-	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
-	flags_1 = CONDUCT_1
-	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
-	force = 30
-	throwforce = 10
-	w_class = WEIGHT_CLASS_BULKY
-	hitsound = 'sound/weapons/bladeslice.ogg'
-	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
-	sharpness = SHARP_EDGED
-	max_integrity = 200
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 50)
-	resistance_flags = FIRE_PROOF
-	total_mass = TOTAL_MASS_MEDIEVAL_WEAPON
-
-
-
 /obj/item/melee/onehanded/machete
 	name = "simple machete"
 	desc = "A makeshift machete made of a lawn mower blade."
@@ -67,6 +44,7 @@
 	force = 35
 	wound_bonus = 20
 	block_chance = 8
+	block_parry_data = /datum/block_parry_data/smith_generic //data is in finished items file
 
 /obj/item/melee/onehanded/machete/training
 	name = "training machete"
@@ -90,6 +68,7 @@
 	item_state = "gladius"
 	force = 36
 	wound_bonus = 30
+	block_parry_data = /datum/block_parry_data/smith_generic //data is in finished items file
 	block_chance = 10
 
 /obj/item/melee/onehanded/machete/spatha
@@ -212,6 +191,7 @@
 	item_state = "knife_trench"
 	desc = "This blade is designed for brutal close quarters combat."
 	force = 31
+	block_parry_data = /datum/block_parry_data/smith_generic //data is in finished items file //Also gives trench knife an actual advantage
 	custom_materials = list(/datum/material/iron=8000)
 	attack_verb = list("slashed", "stabbed", "sliced", "shanked", "ripped", "lacerated")
 

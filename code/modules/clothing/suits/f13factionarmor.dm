@@ -683,6 +683,7 @@
 	desc = "An old degraded pre war combat armor, repainted to the colour scheme of the Brotherhood of Steel."
 	icon_state = "brotherhood_armor"
 	item_state = "brotherhood_armor"
+	armor = list("melee" = 45, "bullet" = 40, "laser" = 45, "energy" = 25, "bomb" = 30, "bio" = 40, "rad" = 10, "fire" = 60, "acid" = 20, "wound" = 10)
 	slowdown = 0.13
 
 /obj/item/clothing/suit/armor/f13/combat/brotherhood/initiate/mk2

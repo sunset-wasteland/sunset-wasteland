@@ -14,14 +14,14 @@
 /datum/supply_pack/engineering/mfcc
 	name = "Overcharged mfc crate"
 	desc = "Super charged mfc, that was made by one of the few gunsmiths that still knows how to make them."
-	cost = 3000
+	cost = 30000
 	contains = list(/obj/item/stock_parts/cell/ammo/mfc/overcharged)
 	crate_name = "MFC experimental crate"
 
 /datum/supply_pack/engineering/mfcr
 	name = "Three mfc crate"
 	desc = "Three mfc's, that was made by one of the few gunsmiths that still knows how to make them."
-	cost = 500
+	cost = 5000
 	contains = list(/obj/item/stock_parts/cell/ammo/mfc,
 					/obj/item/stock_parts/cell/ammo/mfc,
 					/obj/item/stock_parts/cell/ammo/mfc)
@@ -30,7 +30,7 @@
 /datum/supply_pack/engineering/electrion
 	name = "Electron pack crate"
 	desc = "One electron pack, that was made by one of the few gunsmiths that still knows how to make them."
-	cost = 500
+	cost = 25000
 	contains = list(/obj/item/stock_parts/cell/ammo/ecp)
 
 //fallout changes ends here

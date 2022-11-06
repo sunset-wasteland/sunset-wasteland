@@ -258,3 +258,28 @@
 	new /obj/item/book/granter/trait/pa_wear(src)
 	new /obj/item/clothing/suit/armor/f13/power_armor/t45d/refurb(src)
 	new /obj/item/clothing/head/helmet/f13/power_armor/t45d/refurb(src)
+
+/datum/gear/donator/kits/ripper// basically enough to set up his own clinic/lab. when off-duty.
+	name = "Rippers Belonging"
+	path = /obj/item/storage/box/large/custom_kit/ripper
+	ckeywhitelist = list("Mottedesstriets")
+
+/obj/item/storage/box/large/custom_kit/ripper/PopulateContents()
+	new /obj/item/clothing/glasses/hud/health/eyepatch(src)// basic healthhud but cooler.
+	new /obj/item/melee/powered/surgripper(src)// easier than coding a skill-book giver for him to craft them
+	new /obj/item/clothing/suit/hooded/followerheavy(src)// crusader drip
+	new /obj/item/clothing/ears/headphones// hard to get for a fluff item
+	new /obj/item/clothing/head/f13/stalkerpelt(src)// morbid. but funny.
+	new /obj/item/storage/pill_bottle/chem_tin/fixer(src)// not craftable
+	new /obj/item/book/granter/trait/midsurgery(src)// skill level for surgery of basic doctor
+	new /obj/item/book/granter/trait/chemistry(src)// chem whiz
+	new /obj/item/stack/sheet/mineral/abductor// polymer for advanced surgery table
+	new /obj/item/stack/sheet/mineral/silver// for surgery table ^
+	new /obj/item/disk/plantgene(src)// store plant data
+	new /obj/item/disk/plantgene(src)// store plant data
+	new /obj/item/circuitboard/machine/chem_master/advanced(src)//not a dispencer. splitter. can make patches so legion dont bitch.
+	new /obj/item/circuitboard/machine/gibber(src)// fetish reason dont ask.
+	new /obj/item/circuitboard/machine/plantgenes(src)// plant manipulator
+	new /obj/item/stock_parts/manipulator/femto(src)// for gibber, works with clothes on/faster.
+	new /obj/item/stock_parts/matter_bin/bluespace(src)// for gibber. gives most meat.
+	new /obj/item/circuitboard/machine/sleeper(src)// auto-doc

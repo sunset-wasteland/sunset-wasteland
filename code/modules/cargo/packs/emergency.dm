@@ -48,7 +48,7 @@
 /datum/supply_pack/emergency/brotherhoodarmor
 	name = "Armor Crate"
 	desc = "The crate holds 1 armor kit, in case that all the spares goes missing."
-	cost = 5000
+	cost = 7500 //Honestly, the UPGRADED combat armor alone is all of this.
 	contains = list(/obj/item/clothing/under/f13/recon,
 					/obj/item/clothing/suit/armor/f13/combat/brotherhood,
 					/obj/item/clothing/head/helmet/f13/combat/brotherhood,
@@ -60,7 +60,7 @@
 /datum/supply_pack/emergency/formalbrotherhood
 	name = "Formal Crate"
 	desc = "One crate of formal clothes, for anyone that is missing a pair."
-	cost = 1000
+	cost = 500
 	contains = list(/obj/item/clothing/head/f13/boscap,
 					/obj/item/clothing/head/f13/boscap,
 					/obj/item/clothing/under/f13/bosformsilver_f,

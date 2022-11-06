@@ -41,12 +41,12 @@
 	cost = 60
 	material_id = /datum/material/uranium
 	message = "cm3 of uranium"
-
+/*
 /datum/export/material/gold
 	cost = 75
 	material_id = /datum/material/gold
 	message = "cm3 of gold"
-
+*/
 /datum/export/material/silver
 	cost = 30
 	material_id = /datum/material/silver

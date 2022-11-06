@@ -4,17 +4,14 @@
 	desc = "How do you see this? Yell at Carl."
 	var/shrapnel_type = /obj/item/projectile/bullet/shrapnel_launcher
 	var/shrapnel_magnitude = 0
-/*
+
 /obj/item/projectile/bullet/rocket/ComponentInitialize()
-	AddComponent(/datum/component/pellet_cloud, projectile_type=shrapnel_type, magnitude=shrapnel_magnitude)
-*/
-/obj/item/projectile/bullet/rocket/Initialize()
+	. = ..()
 	AddComponent(/datum/component/pellet_cloud, projectile_type=shrapnel_type, magnitude=shrapnel_magnitude)
 
 /obj/item/projectile/bullet/rocket/on_hit(atom/target, blocked=0)
 	..()
 	SEND_SIGNAL(src, COMSIG_ROCKET_IMPACT)
-//	return BULLET_ACT_HIT
 
 /obj/item/projectile/bullet/rocket/a84mm_chem
 	name ="\improper chemical payload rocket"

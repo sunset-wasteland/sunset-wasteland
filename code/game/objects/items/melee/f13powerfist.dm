@@ -155,8 +155,8 @@
 		throw_speed = 3
 		throw_range = 4
 		throwforce = 40
-		force = 40
-		armour_penetration = 0.10
+		force = 35
+		armour_penetration = 0.05
 		icon_state = "surgripper_on"
 		playsound(get_turf(user), 'sound/weapons/chainsawhit.ogg', 50, TRUE)
 		lefthand_file = 'icons/fallout/onmob/weapons/melee1h_lefthand.dmi'
@@ -169,10 +169,9 @@
 		total_mass = TOTAL_MASS_MEDIEVAL_WEAPON
 		slot_flags = ITEM_SLOT_SUITSTORE | ITEM_SLOT_BELT
 		damtype = BURN
-		force = 15
+		force = 10
 		attack_verb = list("slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 		hitsound = 'sound/weapons/bladeslice.ogg'
-		armour_penetration = 0.05
 		icon_state = "surgripper"
 		lefthand_file = 'icons/fallout/onmob/weapons/melee1h_lefthand.dmi'
 		righthand_file = 'icons/fallout/onmob/weapons/melee1h_righthand.dmi'
@@ -193,6 +192,7 @@
 	total_mass = TOTAL_MASS_MEDIEVAL_WEAPON
 	slot_flags = ITEM_SLOT_SUITSTORE | ITEM_SLOT_BELT
 	force = 10
+	armour_penetration = 0.05
 	wound_bonus = 25
 	block_chance = 15
 	throw_speed = 3

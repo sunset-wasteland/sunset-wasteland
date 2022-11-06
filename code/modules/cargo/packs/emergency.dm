@@ -78,12 +78,6 @@
 	cost = 3000
 	contains = list(/obj/item/stack/f13Cash/caps/onezerozero)
 
-/datum/supply_pack/emergency/trait
-	name = "trait book Crate"
-	desc = "One book written by the finest scribes."
-	cost = 10000
-	contains = list(/obj/effect/spawner/lootdrop/f13/traitbooks)
-
 //fallout changes ends here
 
 /datum/supply_pack/emergency/bio

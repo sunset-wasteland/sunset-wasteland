@@ -30,6 +30,7 @@
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/follower_medium)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/follower_heavy)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/rechargerpistol)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/melee/forged/surgripper)
 
 //datum/outfit/job/followers/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 //	..()

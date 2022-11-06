@@ -1,14 +1,15 @@
 // 40mm (Grenade Launcher
 
-/obj/item/projectile/bullet/a40mm
+/obj/item/projectile/bullet/rocket/a40mm
 	name ="40mm grenade"
 	desc = "Oh no."
 	icon_state= "bolter"
-	damage = 5
-	armour_penetration = 0.01
+	damage = 35
+	armour_penetration = 0.25
 	pixels_per_second = TILES_TO_PIXELS(10) //slower than bullets
+	shrapnel_magnitude = 6
 
-/obj/item/projectile/bullet/a40mm/on_hit(atom/target, blocked = FALSE)
+/obj/item/projectile/bullet/rocket/on_hit(atom/target, blocked = FALSE)
 	..()
 	explosion(target, -1, -1, 3, 3, 0, flame_range = 3)
 	new /obj/effect/temp_visual/explosion(get_turf(target))

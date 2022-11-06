@@ -74,7 +74,7 @@
 	desc = "A cased high explosive grenade that can only be activated once fired out of a grenade launcher."
 	caliber = "40mm"
 	icon_state = "40mmHE"
-	projectile_type = /obj/item/projectile/bullet/a40mm
+	projectile_type = /obj/item/projectile/bullet/rocket/a40mm
 
 /obj/item/ammo_casing/a40mmg
 	name = "40mm TG shell"

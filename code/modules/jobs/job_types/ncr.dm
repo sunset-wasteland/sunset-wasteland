@@ -12,7 +12,7 @@ Money		Commanding Officer (LT and CAP) - "small" money bag
 Sidearm		Officers & a few specialists - 9mm pistol
 Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 			Don't use Greaseguns, Lever shotguns, Police shotguns, Berettas, Hunting knives
-			
+
 		GAMEPLAY: TREKKING IS NOT INTENDED TO BE A COMMON TRAIT OF THE NCR. TREKKING WAS NEVER MEANT TO BE A COMMON TRAIT OF THE NCR. THIS WAS BECAUSE FROK THOUGHT A FACTION SHOULD BE STRONG BECAUSE THE PEOPLE WHO PLAY IT ARE BAD. I PERSONALLY, DO NOT GIVE HALF A FUCK. -ALEK
 */
 
@@ -940,7 +940,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	suit_store = /obj/item/gun/ballistic/rocketlauncher
 	backpack_contents = list(
 		/obj/item/ammo_casing/caseless/rocket = 4,
-		/obj/item/ammo_casing/caseless/rocket/big = 1,
+		/obj/item/ammo_casing/caseless/rocket/incendiary = 1,
 		/obj/item/book/granter/trait/explosives = 1,
 		)
 

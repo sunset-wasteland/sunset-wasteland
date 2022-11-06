@@ -277,7 +277,7 @@
 	name = "\improper SRM-8 missile rack"
 	desc = "A weapon for combat exosuits. Launches light explosive missiles."
 	icon_state = "mecha_missilerack"
-	projectile = /obj/item/projectile/bullet/a84mm_he
+	projectile = /obj/item/projectile/bullet/rocket/a84mm_he
 	fire_sound = 'sound/weapons/sound_weapons_mech_mortar.ogg'
 	projectiles = 8
 	projectiles_cache = 0
@@ -291,7 +291,7 @@
 	name = "\improper BRM-6 missile rack"
 	desc = "A weapon for combat exosuits. Launches low-explosive breaching missiles designed to explode only when striking a sturdy target."
 	icon_state = "mecha_missilerack_six"
-	projectile = /obj/item/projectile/bullet/a84mm_br
+	projectile = /obj/item/projectile/bullet/rocket/a84mm_br
 	projectiles = 6
 	projectiles_cache = 0
 	projectiles_cache_max = 0

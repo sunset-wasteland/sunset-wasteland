@@ -48,7 +48,7 @@
 	description = "You aren't meant to see this..?"
 	color = "#00FF00"
 	toxpwr = 0
-	overdose_threshold = 18 // So, someone drinking 20 units will FOR SURE get overdosed
+	overdose_threshold = 1 // So, someone drinking ANY will FOR SURE get overdosed. Lowered from 18.
 	taste_description = "horrific agony"
 	taste_mult = 0.9
 	var/datum/disease/fev_disease = null

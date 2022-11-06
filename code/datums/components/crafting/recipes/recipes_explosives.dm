@@ -349,3 +349,22 @@
 	time = 60
 	always_available = FALSE
 	granting_trait = TRAIT_ADVANCED_EXPLOSIVE_CRAFTING
+
+/datum/crafting_recipe/chemrocket
+	name = "Chemical rocket"
+	category = CAT_EXPLOSIVE
+	result = /obj/item/ammo_casing/caseless/rocket/chem
+	reqs = list(
+		/obj/item/rocketshell = 1,
+		/obj/item/stack/crafting/electronicparts = 25,
+		/obj/item/stack/sheet/prewar = 10,
+		/obj/item/stack/ore/blackpowder = 5,
+		/datum/reagent/toxin/anacea = 30,//actual rocket uses metabtoxin, but this is here as placeholder.
+		/datum/reagent/toxin/lexorin = 30,
+		/datum/reagent/toxin/cyanide = 30,
+		/datum/reagent/toxin/bungotoxin = 30
+	)
+	tools = list(TOOL_AWORKBENCH)
+	time = 60
+	always_available = FALSE
+	granting_trait = TRAIT_ADVANCED_EXPLOSIVE_CRAFTING

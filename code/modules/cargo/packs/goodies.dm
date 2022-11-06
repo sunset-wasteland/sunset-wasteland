@@ -9,26 +9,26 @@
 /datum/supply_pack/goody/realstimpaks
 	name = "Stimpak box"
 	desc = "Contains one full box of stimpaks, ready to be consumed.."
-	cost = 3000
+	cost = 15000
 	contains = list(/obj/item/storage/box/medicine/stimpaks/stimpaks5)
 
 /datum/supply_pack/goody/stimpaks
 	name = "Imitation Stimpak box"
 	desc = "Contains one full box of homemade stimpaks, ready to be consumed.."
-	cost = 1500
+	cost = 10500
 	contains = list(/obj/item/storage/box/medicine/stimpaks/imitation_stimpaks5)
 
 /datum/supply_pack/goody/musket
 	name = "Laser musket"
 	desc = "Contains one laser musket, homemade, if you are to lazy to make one."
-	cost = 500
+	cost = 5000
 	contains = list(/obj/item/gun/ballistic/rifle/hobo/lasmusket,
 					/obj/item/ammo_box/lasmusket)
 
 /datum/supply_pack/goody/sharpenerf13
 	name = "Weapon Sharpener"
 	desc = "Contains one whetstone that allows the weapon to be sharpened, no matter the quality of weapon."
-	cost = 14000
+	cost = 250000
 	contains = list(/obj/item/sharpener/bos)
 
 /datum/supply_pack/goody/bosbooksf13

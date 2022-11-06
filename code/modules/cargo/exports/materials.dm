@@ -43,7 +43,7 @@
 	message = "cm3 of uranium"
 
 /datum/export/material/gold
-	cost = 75
+	cost = 60
 	material_id = /datum/material/gold
 	message = "cm3 of gold"
 

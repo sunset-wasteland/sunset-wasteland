@@ -64,6 +64,7 @@
 	loadout_options = list(
 		/datum/outfit/loadout/lt_ballistics, // G11 and Plasma Glock
 		/datum/outfit/loadout/lt_plasma, // Plasma Rifle and 14mm
+		/datum/outfit/loadout/lt_rhino, //Gold Sniper Rifle with slowdown and .44 Rhino
 		)
 
 
@@ -109,6 +110,16 @@
 		/obj/item/stock_parts/cell/ammo/mfc = 2,
 		/obj/item/gun/ballistic/automatic/pistol/pistol14/custom = 1,
 		/obj/item/ammo_box/magazine/m14mm = 2,
+		/obj/item/grenade/f13/plasma = 2,
+		)
+
+/datum/outfit/loadout/lt_rhino
+	name = "Golden Hand"
+	suit_store = /obj/item/gun/ballistic/automatic/marksman/sniper/america
+	backpack_contents = list(
+		/obj/item/ammo_box/magazine/w308 = 2,
+		/obj/item/ammo_box/m44box = 1,
+		/obj/item/gun/ballistic/revolver/m29/rhino_america = 2,
 		/obj/item/grenade/f13/plasma = 2,
 		)
 
@@ -592,7 +603,7 @@
 	jobtype = /datum/job/enclave/enc_is
 	id = /obj/item/card/id/dogtag/enclave/officer
 	glasses = /obj/item/clothing/glasses/sunglasses/big
-	uniform = /obj/item/clothing/under/f13/enclave/peacekeeper
+	uniform = /obj/item/clothing/under/f13/enclave/officer
 	head = /obj/item/clothing/head/f13/enclave
 	suit = /obj/item/clothing/suit/armor/f13/enclavetrenchcoat
 	suit_store = /obj/item/gun/energy/laser/plasma

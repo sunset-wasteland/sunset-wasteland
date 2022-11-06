@@ -94,15 +94,18 @@
 
 		var/ipquery = ""
 		var/cidquery = ""
+		var/list/ban_params = list("ckey" = ckey)
 		if(address)
-			ipquery = " OR ip = INET_ATON('[address]') "
+			ipquery = " OR ip = INET_ATON(:address) "
+			ban_params["address"] = address
 
 		if(computer_id)
-			cidquery = " OR computerid = '[computer_id]' "
+			cidquery = " OR computerid = :computer_id "
+			ban_params["computer_id"] = computer_id
 
 		var/datum/db_query/query_ban_check = SSdbcore.NewQuery(
 			"SELECT IFNULL((SELECT byond_key FROM [format_table_name("player")] WHERE [format_table_name("player")].ckey = [format_table_name("ban")].ckey), ckey), IFNULL((SELECT byond_key FROM [format_table_name("player")] WHERE [format_table_name("player")].ckey = [format_table_name("ban")].a_ckey), a_ckey), reason, expiration_time, duration, bantime, bantype, id, round_id FROM [format_table_name("ban")] WHERE ( ckey = :ckey [ipquery] [cidquery]) AND (bantype = 'PERMABAN' OR bantype = 'ADMIN_PERMABAN' OR ((bantype = 'TEMPBAN' OR bantype = 'ADMIN_TEMPBAN') AND expiration_time > Now())) AND isnull(unbanned)",
-			list("ckey" = ckey)
+			ban_params
 		)
 		if(!query_ban_check.Execute(async = TRUE))
 			qdel(query_ban_check)

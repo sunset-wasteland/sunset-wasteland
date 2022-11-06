@@ -67,7 +67,9 @@
 	if (updatecache && res.intel >= 0)
 		SSipintel.cache[ip] = res
 		if(SSdbcore.Connect())
-			var/datum/db_query/query_add_ip_intel = SSdbcore.NewQuery("INSERT INTO [format_table_name("ipintel")] (ip, intel) VALUES (INET_ATON('[ip]'), [res.intel]) ON DUPLICATE KEY UPDATE intel = VALUES(intel), date = NOW()")
+			var/datum/db_query/query_add_ip_intel = SSdbcore.NewQuery(
+				"INSERT INTO [format_table_name("ipintel")] (ip, intel) VALUES (INET_ATON(:ip), :resintel) ON DUPLICATE KEY UPDATE intel = VALUES(intel), date = NOW()",
+				list("ip" = ip, "resintel" = res.intel))
 			query_add_ip_intel.Execute()
 			qdel(query_add_ip_intel)
 

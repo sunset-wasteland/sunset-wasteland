@@ -112,9 +112,6 @@
 /obj/item/storage/box/large/custom_kit/pug/PopulateContents()
 	new /obj/item/melee/transforming/cleaving_saw/old_rusty(src)
 
-/obj/item/storage/box/large/custom_kit/pug2/PopulateContents()
-	new /obj/item/melee/onehanded/dragonfire(src)
-
 /obj/item/storage/box/large/custom_kit/mutie/PopulateContents()
 	new /obj/item/clothing/shoes/f13/mutie/boots(src)
 	new /obj/item/clothing/gloves/f13/mutant/mk2(src)
@@ -124,11 +121,6 @@
 /datum/gear/donator/kits/pug
 	name = "I die to mobs"
 	path = /obj/item/storage/box/large/custom_kit/pug
-	ckeywhitelist = list("puglord777")
-
-/datum/gear/donator/kits/pug2
-	name = "I die to mobsx2"
-	path = /obj/item/storage/box/large/custom_kit/pug2
 	ckeywhitelist = list("puglord777")
 
 /datum/gear/donator/kits/mutie

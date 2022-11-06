@@ -67,6 +67,11 @@
 // Salvaged Power Armor //
 //////////////////////////
 
+//GAMEPLAY: SALVAGED POWER ARMOR IS MEANT TO BE THE ABSOLUTE BEST SUIT OF ARMOR YOU CAN ACHIEVE AS A SIMPLE SILLY LITTLE MAN. THIS COMES AT THE PRICE OF SLOWDOWN.
+//PREVIOUSLY, SALVAGED POWER ARMOR HAD /ABSOLUTELY MASSIVE/ MOVEMENT DRAWBACKS THAT MADE IT EFFECTIVELY NOT WORTH TO USE WHATSOEVER. YOU'D RATHER PICK THE MORE COMMON
+//REINFORCED COMBAT ARMOR, OR BROKEN RIOT ARMOR - BECAUSE THEY HAD LITERALLY 85 LESS SLOWDOWN THAN SAID SPA IN QUESTION WHILE BEING 10 TO 15 POINTS WEAKER.
+//NOW, SALVAGED POWER ARMOR SERVES ITS PURPOSE AS AN ACTUALLY VIABLE SET IN PROPER GAMEPLAY AND IS NO LONGER A GIMMICK. PING Dragonfruits ON DISCORD TO DISCUSS CHANGES.
+
 /obj/item/clothing/suit/armored/heavy/salvaged_pa
 	name = "salvaged power armor"
 	desc = "It's a set of early-model SS-13 power armor, except it isn't real. Stop looking at it, go ping coders or something. \
@@ -75,7 +80,7 @@
 	If you still don't understand - it's a 'master' item, basically main type/parent object or something. \
 	It isn't meant to be used, it just dictates procs and all that stuff to the subtypes, such as t45b and so on. \
 	Now begone, report this to coders. NOW!"
-	slowdown = 1
+	slowdown = 0.6
 
 // T-45B
 /obj/item/clothing/suit/armored/heavy/salvaged_pa/t45b
@@ -120,7 +125,7 @@
 	icon_state = "t45d_salvaged"
 	item_state = "t45d_salvaged"
 	armor = list("melee" = 70, "bullet" = 70, "laser" = 60, "energy" = 15, "bomb" = 45, "bio" = 65, "rad" = 40, "fire" = 70, "acid" = 25, "wound" = 50)
-	slowdown = 0.85
+	slowdown = 0.5
 
 // T-51B
 /obj/item/clothing/suit/armored/heavy/salvaged_pa/t51b
@@ -129,7 +134,7 @@
 	icon_state = "t51b_salvaged"
 	item_state = "t51b_salvaged"
 	armor = list("melee" = 70, "bullet" = 70, "laser" = 60, "energy" = 20, "bomb" = 45, "bio" = 70, "rad" = 50, "fire" = 75, "acid" = 35, "wound" = 50)
-	slowdown = 0.85
+	slowdown = 0.4
 
 // Midwest
 /obj/item/clothing/suit/armored/heavy/salvaged_pa/midwest
@@ -138,7 +143,7 @@
 	icon_state = "midwestgrey_pa_salvaged"
 	item_state = "midwestgrey_pa_salvaged"
 	armor = list("melee" = 70, "bullet" = 70, "laser" = 60, "energy" = 20, "bomb" = 45, "bio" = 70, "rad" = 50, "fire" = 75, "acid" = 35, "wound" = 50)
-	slowdown = 0.85
+	slowdown = 0.4
 
 // Hardened Midwest
 /obj/item/clothing/suit/armored/heavy/salvaged_pa/midwest/hardened
@@ -156,7 +161,7 @@
 	icon_state = "t60_salvaged"
 	item_state = "t60_salvaged"
 	armor = list("melee" = 75, "bullet" = 70, "laser" = 65, "energy" = 30, "bomb" = 55, "bio" = 70, "rad" = 60, "fire" = 80, "acid" = 35, "wound" = 50)
-	slowdown = 0.8
+	slowdown = 0.35
 
 // X-02
 /obj/item/clothing/suit/armored/heavy/salvaged_pa/x02
@@ -165,7 +170,7 @@
 	icon_state = "advanced_salvaged"
 	item_state = "advanced_salvaged"
 	armor = list("melee" = 75, "bullet" = 75, "laser" = 85, "energy" = 85, "bomb" = 70, "bio" = 100, "rad" = 100, "fire" = 90, "acid" = 50, "wound" = 50)
-	slowdown = 0.85
+	slowdown = 0.35
 
 ////////////
 // LEGION //

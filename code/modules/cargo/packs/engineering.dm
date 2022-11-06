@@ -21,7 +21,7 @@
 /datum/supply_pack/engineering/mfcr
 	name = "Three mfc crate"
 	desc = "Three mfc's, that was made by one of the few gunsmiths that still knows how to make them."
-	cost = 5000
+	cost = 3000
 	contains = list(/obj/item/stock_parts/cell/ammo/mfc,
 					/obj/item/stock_parts/cell/ammo/mfc,
 					/obj/item/stock_parts/cell/ammo/mfc)
@@ -30,7 +30,7 @@
 /datum/supply_pack/engineering/electrion
 	name = "Electron pack crate"
 	desc = "One electron pack, that was made by one of the few gunsmiths that still knows how to make them."
-	cost = 25000
+	cost = 17500
 	contains = list(/obj/item/stock_parts/cell/ammo/ecp)
 
 //fallout changes ends here

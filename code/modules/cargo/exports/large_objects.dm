@@ -88,7 +88,7 @@
 	export_types = list(/obj/item/gun/energy/minigun)
 
 /datum/export/large/fev/FEV_solution_one
-	cost = 9000
+	cost = 10000
 	unit_name = "FEV solution"
 	export_types = list(/obj/item/reagent_containers/glass/bottle/FEV_solution)
 

@@ -1,5 +1,5 @@
 /datum/export/large
-	k_elasticity = 0
+	k_elasticity = 0.01
 /*
 /datum/export/large/crate
 	cost = 500

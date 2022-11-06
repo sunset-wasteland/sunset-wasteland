@@ -1,5 +1,5 @@
 /datum/export/material
-	k_elasticity = 0
+	k_elasticity = 0.001
 	cost = 5 // Cost per MINERAL_MATERIAL_AMOUNT, which is 2000cm3 as of April 2016.
 	message = "cm3 of developer's tears. Please, report this on github"
 	var/material_id = null
@@ -41,12 +41,12 @@
 	cost = 60
 	material_id = /datum/material/uranium
 	message = "cm3 of uranium"
-/*
+
 /datum/export/material/gold
 	cost = 75
 	material_id = /datum/material/gold
 	message = "cm3 of gold"
-*/
+
 /datum/export/material/silver
 	cost = 30
 	material_id = /datum/material/silver

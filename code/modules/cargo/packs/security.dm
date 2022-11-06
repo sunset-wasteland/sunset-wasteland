@@ -22,7 +22,7 @@
 /datum/supply_pack/security/grenadef13
 	name = "Grenade Crate"
 	desc = "Contains two randomly selected grenades from HQ for any brotherhood member that needs a spare."
-	cost = 35000
+	cost = 15000
 	contains = list(/obj/effect/spawner/lootdrop/f13/bomb/tier2)
 
 /datum/supply_pack/security/attachmentslowtf13
@@ -64,7 +64,7 @@
 /datum/supply_pack/security/binocularamapf13
 	name = "Mortar shells Crate"
 	desc = "Contains five mortars. Make sure to aim for the enemy."
-	cost = 50000
+	cost = 40000
 	contains = list(/obj/item/mortar_shell,
 					/obj/item/mortar_shell,
 					/obj/item/mortar_shell,

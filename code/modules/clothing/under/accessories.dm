@@ -430,7 +430,7 @@
 	minimize_when_attached = TRUE
 
 /obj/item/clothing/accessory/bos/juniorpaladin
-	name = "Junior Paladin pins"
+	name = "Paladin Squire pins"
 	desc = "A silver pin with one device, and purple coloring. Worn by the Paladin-in-Training of the Brotherhood."
 	icon_state = "juniorpaladin"
 	item_color = "juniorpaladin"

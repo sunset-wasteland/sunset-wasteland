@@ -48,7 +48,7 @@
 /datum/supply_pack/emergency/brotherhoodarmor
 	name = "Armor Crate"
 	desc = "The crate holds 1 armor kit, in case that all the spares goes missing."
-	cost = 500
+	cost = 1000
 	contains = list(/obj/item/clothing/under/f13/recon,
 					/obj/item/clothing/suit/armor/f13/combat/brotherhood,
 					/obj/item/clothing/head/helmet/f13/combat/brotherhood,
@@ -60,7 +60,7 @@
 /datum/supply_pack/emergency/formalbrotherhood
 	name = "Formal Crate"
 	desc = "One crate of formal clothes, for anyone that is missing a pair."
-	cost = 100
+	cost = 200
 	contains = list(/obj/item/clothing/head/f13/boscap,
 					/obj/item/clothing/head/f13/boscap,
 					/obj/item/clothing/under/f13/bosformsilver_f,
@@ -77,13 +77,13 @@
 	desc = "Three thousand points, converted to one hundred caps."
 	cost = 3000
 	contains = list(/obj/item/stack/f13Cash/caps/onezerozero)
-/*
+
 /datum/supply_pack/emergency/trait
 	name = "trait book Crate"
 	desc = "One book written by the finest scribes."
 	cost = 10000
 	contains = list(/obj/effect/spawner/lootdrop/f13/traitbooks)
-*/
+
 //fallout changes ends here
 
 /datum/supply_pack/emergency/bio

@@ -16,19 +16,19 @@
 /datum/supply_pack/security/energyweapons
 	name = "Energy Weapons Crate"
 	desc = "Contains one randomly selected gun from HQ for any brotherhood member that needs a spare."
-	cost = 5000
+	cost = 25000
 	contains = list(/obj/effect/spawner/lootdrop/f13/weapon/gun/energy/buyable)
 
 /datum/supply_pack/security/grenadef13
 	name = "Grenade Crate"
 	desc = "Contains two randomly selected grenades from HQ for any brotherhood member that needs a spare."
-	cost = 2500
+	cost = 35000
 	contains = list(/obj/effect/spawner/lootdrop/f13/bomb/tier2)
 
 /datum/supply_pack/security/attachmentslowtf13
 	name = "Low tier Attachments Crate"
 	desc = "Contains three randomly selected attachments from HQ, one of the finest and few gunsmiths have made these."
-	cost = 2500
+	cost = 9000
 	contains = list(/obj/effect/spawner/lootdrop/f13/attachments,
 					/obj/effect/spawner/lootdrop/f13/attachments,
 					/obj/effect/spawner/lootdrop/f13/attachments,
@@ -37,7 +37,7 @@
 /datum/supply_pack/security/attachmentshightf13
 	name = "High tier Attachments Crate"
 	desc = "Contains three randomly selected attachments from HQ, one of the finest and few gunsmiths have made these."
-	cost = 5000
+	cost = 18000
 	contains = list(/obj/effect/spawner/lootdrop/f13/attachments,
 					/obj/effect/spawner/lootdrop/f13/attachments,
 					/obj/effect/spawner/lootdrop/f13/attachments,
@@ -46,7 +46,7 @@
 /datum/supply_pack/security/attachmentsbesttf13
 	name = "Highest tier Attachments Crate"
 	desc = "Contains three randomly selected attachments from HQ, one of the finest and few gunsmiths have made these."
-	cost = 8000
+	cost = 27000
 	contains = list(/obj/effect/spawner/lootdrop/f13/attachments,
 					/obj/effect/spawner/lootdrop/f13/attachments,
 					/obj/effect/spawner/lootdrop/f13/attachments,
@@ -55,7 +55,7 @@
 /datum/supply_pack/security/binocularamapf13
 	name = "Binoculars and map Crate"
 	desc = "Contains three Binoculars and a map. A must for any scouts of the brotherhood."
-	cost = 1200
+	cost = 10000
 	contains = list(/obj/item/binoculars,
 					/obj/item/binoculars,
 					/obj/item/binoculars,
@@ -64,7 +64,7 @@
 /datum/supply_pack/security/binocularamapf13
 	name = "Mortar shells Crate"
 	desc = "Contains five mortars. Make sure to aim for the enemy."
-	cost = 5000
+	cost = 50000
 	contains = list(/obj/item/mortar_shell,
 					/obj/item/mortar_shell,
 					/obj/item/mortar_shell,
@@ -220,7 +220,7 @@
 /datum/supply_pack/security/baton
 	name = "Stun Batons Crate"
 	desc = "Arm the Civil Protection Forces with three stun batons. Batteries included. Requires Security access to open."
-	cost = 1200
+	cost = 100000
 	contains = list(/obj/item/melee/baton/loaded,
 					/obj/item/melee/baton/loaded,
 					/obj/item/melee/baton/loaded)

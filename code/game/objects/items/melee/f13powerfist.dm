@@ -114,6 +114,72 @@
 /////////////////////
 // ADVANCED SWORDS //
 /////////////////////
+// Follower Ripper				Keywords: Damage 15/40, Wound bonus, block, surgery tool
+/obj/item/melee/powered/surgripper
+	name = "The Follower's Ripper"
+	desc = "A cobbled together Ripper made by an absolute madman. The blades have been replaced with super-heated Saturnite, allowing it to be used for more precision work as a surgical tool. Made by the Followers, if the insignia is anything to go by. Oddly enough, it smells slightly of peanut butter."
+	icon = 'icons/fallout/objects/melee/melee.dmi'
+	icon_state = "surgripper"
+	lefthand_file = 'icons/fallout/onmob/weapons/melee1h_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/melee1h_righthand.dmi'
+	w_class = WEIGHT_CLASS_NORMAL
+	total_mass = TOTAL_MASS_MEDIEVAL_WEAPON
+	slot_flags = ITEM_SLOT_SUITSTORE | ITEM_SLOT_BELT
+	force = 15
+	damtype = BURN
+	wound_bonus = 25
+	block_chance = 15
+	throw_speed = 3
+	throw_range = 4
+	throwforce = 15
+	armour_penetration = 0.05
+	hitsound = 'sound/weapons/bladeslice.ogg'
+	toolspeed = 0.5
+	light_color = LIGHT_COLOR_ORANGE
+	sharpness = SHARP_POINTY
+	light_system = MOVABLE_LIGHT
+	light_range = 0
+
+/obj/item/melee/powered/surgripper/attack_self(mob/user)
+	if(tool_behaviour == TOOL_SCALPEL)
+		tool_behaviour = TOOL_SAW
+		tool_behaviour = TOOL_CAUTERY
+		to_chat(user, "<span class='notice'>You turn on the blade rotation for [src], now it can cut bones. And do full damage.</span>")
+		attack_verb = list("sawed", "torn", "cut", "chopped", "diced")
+		set_light_range(1)
+		w_class = WEIGHT_CLASS_HUGE
+		damtype = BURN
+		hitsound = 'sound/f13npc/handy/attack.wav'
+		wound_bonus = 25
+		block_chance = 15
+		throw_speed = 3
+		throw_range = 4
+		throwforce = 40
+		force = 40
+		armour_penetration = 0.10
+		icon_state = "surgripper_on"
+		playsound(get_turf(user), 'sound/weapons/chainsawhit.ogg', 50, TRUE)
+		lefthand_file = 'icons/fallout/onmob/weapons/melee1h_lefthand.dmi'
+		righthand_file = 'icons/fallout/onmob/weapons/melee1h_righthand.dmi'
+	else
+		tool_behaviour = TOOL_SCALPEL
+		to_chat(user, "<span class='notice'>You turn off the blade rotation for [src], it can no longer cut bones. And functions as a knife.</span>")
+		set_light_range(0)
+		w_class = WEIGHT_CLASS_NORMAL
+		total_mass = TOTAL_MASS_MEDIEVAL_WEAPON
+		slot_flags = ITEM_SLOT_SUITSTORE | ITEM_SLOT_BELT
+		damtype = BURN
+		force = 15
+		attack_verb = list("slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
+		hitsound = 'sound/weapons/bladeslice.ogg'
+		armour_penetration = 0.05
+		icon_state = "surgripper"
+		lefthand_file = 'icons/fallout/onmob/weapons/melee1h_lefthand.dmi'
+		righthand_file = 'icons/fallout/onmob/weapons/melee1h_righthand.dmi'
+
+/obj/item/melee/powered/surgeripper/examine(mob/living/user)
+	. = ..()
+	. += "<span class = 'notice> It's set to [tool_behaviour == TOOL_SCALPEL ? "scalpel" : "saw"] mode. </span>"
 
 // Ripper				Keywords: Damage 10/45, Wound bonus, block
 /obj/item/melee/powered/ripper

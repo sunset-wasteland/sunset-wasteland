@@ -532,6 +532,7 @@ Paladin
 		/obj/item/gun/energy/laser/pistol=1,
 		/obj/item/stock_parts/cell/ammo/ec=2,
 		/obj/item/clothing/accessory/bos/paladin = 1,
+		/obj/item/clothing/accessory/bos/juniorpaladin = 1,
 		)
 
 /datum/outfit/loadout/paladinc
@@ -542,6 +543,7 @@ Paladin
 		/obj/item/stock_parts/cell/ammo/mfc = 2,
 		/obj/item/stock_parts/cell/ammo/ec=2,
 		/obj/item/clothing/accessory/bos/paladin = 1,
+		/obj/item/clothing/accessory/bos/juniorpaladin = 1,
 		)
 
 /datum/outfit/loadout/paladind
@@ -552,6 +554,7 @@ Paladin
 		/obj/item/gun/energy/laser/pistol=1,
 		/obj/item/stock_parts/cell/ammo/ec=2,
 		/obj/item/clothing/accessory/bos/paladin = 1,
+		/obj/item/clothing/accessory/bos/juniorpaladin = 1,
 		)
 
 /*

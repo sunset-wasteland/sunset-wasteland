@@ -389,7 +389,7 @@ Uranium, Contaminated
 /obj/item/projectile/bullet/mm14
 	name = "14mm FMJ bullet"
 	damage = 36
-	armour_penetration = 0.15
+	armour_penetration = 0.12
 	wound_bonus = 42
 	bare_wound_bonus = 28
 

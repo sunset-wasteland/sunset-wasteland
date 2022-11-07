@@ -346,7 +346,7 @@
 	slowdown = 0.05
 	force = 15
 	fire_delay = 5
-	extra_damage = 2
+	extra_damage = 8
 	recoil = 2.2
 	can_suppress = FALSE
 	fire_sound = 'sound/f13weapons/magnum_fire.ogg'
@@ -357,6 +357,8 @@
 	desc = "A Swiss SIG-Sauer 14mm handgun, this one is a compact model for concealed carry."
 	icon_state = "pistol14_compact"
 	w_class = WEIGHT_CLASS_SMALL
+	slowdown = 0
+	recoil = 2.5
 	spread = 5
 
 //Little Devil							Keywords: UNIQUE, 14mm, Semi-auto, Short barrel, 7 Rounds, Heavy. Special modifiers: damage +4, penetration +0.05, spread -3
@@ -367,7 +369,7 @@
 	w_class = WEIGHT_CLASS_SMALL
 	slowdown = 0
 	fire_delay = 4
-	extra_penetration = 0.05
+	extra_penetration = 0.08
 
 /obj/item/gun/ballistic/automatic/pistol/pistol14/custom
 	name= "Custom 14mm pistol"

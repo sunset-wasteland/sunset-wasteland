@@ -391,7 +391,7 @@
 	extra_damage = -5
 	automatic = 1
 	autofire_shot_delay = 1.70
-	recoil - 1
+	recoil = 1
 	spread = 17
 	can_suppress = TRUE
 	can_attachments = TRUE

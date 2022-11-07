@@ -19,7 +19,7 @@
 	icon_state = "missile"
 	ricochets_max = 0 //it's a ROCKET NOT A MISSILE STOP AND GET IT RIGHT AAAAAAAAAAAAAAA
 	damage = 25
-	shrapnel_magnitude = 6
+	shrapnel_magnitude = 2
 
 /obj/item/projectile/bullet/rocket/a84mm_chem/Initialize()
 	. = ..()

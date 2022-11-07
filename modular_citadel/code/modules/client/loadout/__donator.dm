@@ -262,7 +262,7 @@
 /datum/gear/donator/kits/ripper// basically enough to set up his own clinic/lab. when off-duty.
 	name = "Rippers Belonging"
 	path = /obj/item/storage/box/large/custom_kit/ripper
-	ckeywhitelist = list("Mottedesstriets")
+	ckeywhitelist = list ("mottedesstriets")
 
 /obj/item/storage/box/large/custom_kit/ripper/PopulateContents()
 	new /obj/item/clothing/glasses/hud/health/eyepatch(src)// basic healthhud but cooler.

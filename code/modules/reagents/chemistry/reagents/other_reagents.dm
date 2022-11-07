@@ -1369,11 +1369,11 @@
 		mytray.adjustToxic(round(chems.get_reagent_amount(src.type) * 2))
 
 /datum/reagent/bluespace
-	name = "Bluespace Dust"
-	description = "A dust composed of microscopic bluespace crystals, with minor space-warping properties."
+	name = "Ultracite Dust"
+	description = "A dust composed of microscopic ultracite crystals with dense unstable energy properties."
 	reagent_state = SOLID
 	color = "#0000CC"
-	taste_description = "fizzling blue"
+	taste_description = "fizzling energy"
 	pH = 12
 	value = REAGENT_VALUE_RARE
 	material = /datum/material/bluespace

@@ -4,7 +4,7 @@
 	desc = "A radioactive glass-like ore, it houses an incredibly potent source of energy."
 	icon = 'icons/obj/telescience.dmi'
 	icon_state = "bluespace_crystal"
-	singular_name = "quantum mesh"
+	singular_name = "ultracite ore"
 	w_class = WEIGHT_CLASS_TINY
 	custom_materials = list(/datum/material/bluespace=MINERAL_MATERIAL_AMOUNT)
 	points = 50
@@ -47,10 +47,10 @@
 	icon = 'icons/obj/telescience.dmi'
 	icon_state = "polycrystal"
 	item_state = "sheet-polycrystal"
-	singular_name = "bluespace polycrystal"
+	singular_name = "Stable Ultracite"
 	desc = "A stable ultracite, made of fused-together smelted ore. You could probably break one off."
 	custom_materials = list(/datum/material/bluespace=MINERAL_MATERIAL_AMOUNT)
-	attack_verb = list("bluespace polybashed", "bluespace polybattered", "bluespace polybludgeoned", "bluespace polythrashed", "bluespace polysmashed")
+	attack_verb = list("futured", "scienced", "crystalized", "empowered", "energized")
 	novariants = TRUE
 	grind_results = list(/datum/reagent/bluespace = 20)
 	point_value = 30

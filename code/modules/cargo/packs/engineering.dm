@@ -13,14 +13,14 @@
 
 /datum/supply_pack/engineering/mfcc
 	name = "Overcharged mfc crate"
-	desc = "Super charged mfc, that was made by one of the few gunsmiths that still knows how to make them."
-	cost = 30000
+	desc = "A singular super charged mfc unit."
+	cost = 30000//We want ammo to be hard to replace. Especially in the case of something like this.
 	contains = list(/obj/item/stock_parts/cell/ammo/mfc/overcharged)
 	crate_name = "MFC experimental crate"
 
 /datum/supply_pack/engineering/mfcr
 	name = "Three mfc crate"
-	desc = "Three mfc's, that was made by one of the few gunsmiths that still knows how to make them."
+	desc = "Three mfc units, pulled from storage and shipped directly to you."
 	cost = 3000
 	contains = list(/obj/item/stock_parts/cell/ammo/mfc,
 					/obj/item/stock_parts/cell/ammo/mfc,
@@ -29,7 +29,7 @@
 
 /datum/supply_pack/engineering/electrion
 	name = "Electron pack crate"
-	desc = "One electron pack, that was made by one of the few gunsmiths that still knows how to make them."
+	desc = "One electron pack, pulled from storage and shipped directly to you."
 	cost = 17500
 	contains = list(/obj/item/stock_parts/cell/ammo/ecp)
 

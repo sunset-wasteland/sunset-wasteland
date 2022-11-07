@@ -437,6 +437,7 @@
 	loot = list(
 				/obj/effect/spawner/bundle/f13/armor/t45d,
 				/obj/effect/spawner/bundle/f13/armor/t51b,
+				/obj/effect/spawner/bundle/f13/armor/t45b_salvaged = 2,
 				)
 
 /obj/effect/spawner/bundle/f13/armor/t45d

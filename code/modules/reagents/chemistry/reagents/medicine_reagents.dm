@@ -1764,10 +1764,8 @@
 	name = "Rehab"
 	description = "A potentent purger made from buffalo gourd and other herbal plants, stops toxin damage, heals the liver, purges all chems, food and liquids from the body and treats addiction...maybe do. not. take. too. much."
 	color = "#91D865"
-	taste_description = "peppered regret"
-	taste_mult = 1.2
- 	overdose_threshold = 16
-	pH = 7.0
+	metabolization_rate = 0.25 * REAGENTS_METABOLISM
+	overdose_threshold = 25
 	value = REAGENT_VALUE_COMMON
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	ghoulfriendly = TRUE
@@ -1787,7 +1785,6 @@
 		M.adjustToxLoss(-2, 0, TRUE) //heals TOXINLOVERs
 	if(M.health < 0)
 		M.setToxLoss(0, 0)
-	(prob(33))
 	for(var/datum/reagent/R in M.reagents.addiction_list)
 		M.reagents.addiction_list.Remove(R)
 		to_chat(M, "<span class='notice'>You feel like you've gotten over your need for [R.name]. was it worth it?</span>")

@@ -203,6 +203,7 @@ GLOBAL_LIST_INIT(storage_medical_can_hold, typecacheof(list(
 	)))
 
 GLOBAL_LIST_INIT(storage_shoes_can_hold, typecacheof(list(
+	/obj/item/melee/smith/dagger,
 	/obj/item/reagent_containers/syringe,
 	/obj/item/reagent_containers/hypospray/medipen,
 	/obj/item/reagent_containers/dropper,

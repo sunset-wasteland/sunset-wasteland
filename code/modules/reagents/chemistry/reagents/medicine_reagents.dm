@@ -1741,8 +1741,8 @@
 	ghoulfriendly = TRUE
 
 /datum/reagent/medicine/algae
-	name = "Sentient Algea"
-	description = "A mutated colony of sentient algea. mends the hosts wounds slightly but prefers to bond with people of the slime variety more."
+	name = "Sentient Algae"
+	description = "A mutated colony of sentient algae. mends the hosts wounds slightly but prefers to bond with people of the slime variety more."
 	color = "#91D865"
 	taste_description = "Wiggling slimey sludge...and a hint of guilt."
 	taste_mult = 1.2

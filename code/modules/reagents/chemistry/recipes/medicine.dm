@@ -425,3 +425,10 @@
 	id = "drink_neutralization"
 	results = list(/datum/reagent/water = 1)
 	required_reagents = list(/datum/reagent/medicine/bitter_drink = 1, /datum/reagent/medicine/healing_powder/poultice = 1)
+
+/datum/chemical_reaction/rehab
+	name = "Rehab"
+	id = "rehab"
+	results = list(/datum/reagent/medicine/rehab = 1)
+	required_reagents = list(/datum/reagent/medicine/stimpakimitation = 1, /datum/reagent/consumable/ethanol/pungajuice = 1, /datum/reagent/consumable/buffalojuice = 1, /datum/reagent/consumable/ferajuice = 1)
+

@@ -983,8 +983,8 @@
 	value = REAGENT_VALUE_COMMON
 
 /datum/reagent/consumable/buffalojuice
-	name = "Wendigo Juice"
-	description = "Juice of thebuffalo gourd it's mutated sentient algea has epinephrine like properties to keep the host alive and limit oxygen lose."
+	name = "Buffalo Juice"
+	description = "Juice of the buffalo gourd it's mutated sentient algae has epinephrine like properties to keep the host alive and limit oxygen lose."
 	nutriment_factor = 1 * REAGENTS_METABOLISM
 	color = "#14FF3C" // rgb: 48, 32, 0
 	taste_description = "A tingling electric sensation"

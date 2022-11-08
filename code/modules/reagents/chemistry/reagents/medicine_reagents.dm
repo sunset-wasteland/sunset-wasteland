@@ -1785,9 +1785,9 @@
 			M.reagents.remove_reagent(R.type,3)
 	if(M.health < 0)
 		M.adjustToxLoss(-2, 0, TRUE) //heals TOXINLOVERs
-	if(M.Toxloss > 35)
-		M.setToxLoss(35, 0)
-	if(prob(33))
+	if(M.health < 0)
+		M.setToxLoss(0, 0)
+	(prob(33))
 	for(var/datum/reagent/R in M.reagents.addiction_list)
 		M.reagents.addiction_list.Remove(R)
 		to_chat(M, "<span class='notice'>You feel like you've gotten over your need for [R.name]. was it worth it?</span>")

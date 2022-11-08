@@ -1726,19 +1726,6 @@
 	name = "Synthi-Sanguirite"
 	description = "A synthetic coagulant used to help bleeding wounds clot faster. Not quite as effective as name brand Sanguirite, especially on patients with lots of cuts."
 	clot_coeff_per_wound = 0.8
-/datum/reagent/medicine/algae
-	name = "Sentient Algae"
-	description = "A mutated colony of sentient algae. mends the hosts wounds slightly but prefers to bond with people of the slime variety more."
-	color = "#91D865"
-	taste_description = "Wiggling slimey sludge...and a hint of guilt."
-	taste_mult = 1.2
-	pH = 7.0
-	value = REAGENT_VALUE_COMMON
-	metabolization_rate = 0.4 * REAGENTS_METABOLISM
-	var/toxpwr = 1.5
-	var/toxin_hurting = 0
-	var/toxin_lover_healing = -3.5
-	ghoulfriendly = TRUE
 
 /datum/reagent/medicine/algae
 	name = "Sentient Algae"

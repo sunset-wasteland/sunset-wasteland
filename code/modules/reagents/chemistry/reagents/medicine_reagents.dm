@@ -1736,17 +1736,16 @@
 	pH = 7.0
 	value = REAGENT_VALUE_COMMON
 	metabolization_rate = 0.4 * REAGENTS_METABOLISM
-	var/toxpwr = 1.5
+	var/toxpwr = 2
 	var/toxin_hurting = 0
 	var/toxin_lover_healing = -3.5
 	ghoulfriendly = TRUE
 
 /datum/reagent/medicine/algae/on_mob_life(mob/living/carbon/M)
 	if(toxpwr)
-		M.adjustOxyLoss(-0.25*REM, 0)
-		M.adjustBruteLoss(-0.25*REM, 0)
-		M.adjustFireLoss(-0.25*REM, 0)
-		M.adjustToxLoss(-0.25, 0, TRUE) //heals TOXINLOVERs
+		M.adjustOxyLoss(-0.5*REM, 0)
+		M.adjustBruteLoss(-0.5*REM, 0)
+		M.adjustFireLoss(-0.5*REM, 0)
 	var/is_toxinlover = FALSE
 	if(HAS_TRAIT(M, TRAIT_TOXINLOVER))
 		is_toxinlover = TRUE
@@ -1767,12 +1766,13 @@
 	metabolization_rate = 0.25 * REAGENTS_METABOLISM
 	overdose_threshold = 25
 	value = REAGENT_VALUE_COMMON
-	metabolization_rate = 0.5 * REAGENTS_METABOLISM
+	metabolization_rate = 0.4 * REAGENTS_METABOLISM
 	ghoulfriendly = TRUE
 
 /datum/reagent/medicine/rehab/on_mob_life(mob/living/carbon/M)
-	M.adjust_nutrition(-5)
-	M.adjust_thirst(-5)
+	M.adjust_nutrition(-4)
+	M.adjust_thirst(-1.5)
+	M.adjustToxLoss(-2, 0, TRUE) //heals TOXINLOVERs
 	M.adjustOrganLoss(ORGAN_SLOT_LIVER, -2.5)
 	M.adjustOrganLoss(ORGAN_SLOT_STOMACH, -2.5)
 	if(M.radiation > 0)
@@ -1782,14 +1782,12 @@
 		if(R != src)
 			M.reagents.remove_reagent(R.type,3)
 	if(M.health < 0)
-		M.adjustToxLoss(-2, 0, TRUE) //heals TOXINLOVERs
-	if(M.health < 0)
-		M.setToxLoss(0, 0)
-	for(var/datum/reagent/R in M.reagents.addiction_list)
+		M.setToxLoss(35, 0)
+	for(var/datum/reagent/R in M.reagents.addiction_list && prob(33))
 		M.reagents.addiction_list.Remove(R)
 		to_chat(M, "<span class='notice'>You feel like you've gotten over your need for [R.name]. was it worth it?</span>")
 	M.confused = max(M.confused, 4)
-	if(ishuman(M) && prob(33))
+	if(ishuman(M) && prob(15))
 		var/mob/living/carbon/human/H = M
 		H.vomit(10)
 	

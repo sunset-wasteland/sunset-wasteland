@@ -1744,6 +1744,7 @@
 		M.adjustBruteLoss(-0.5, 0)
 		M.adjustFireLoss(-0.5, 0)
 		M.adjustToxLoss(-0.5, 0, TRUE) //heals TOXINLOVERs
+	
 		. = TRUE
 	..()
 

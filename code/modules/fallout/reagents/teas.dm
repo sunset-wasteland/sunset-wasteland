@@ -5,6 +5,7 @@
 	description = "A soothing herbal rememedy from the buffalo gourd. the sentient algae fully awaken with heat and now inhibits neural reconstituting properties in the host."
 	color = "#FFFF91"
 	nutriment_factor = 0
+	metabolization_rate = 0.25 * REAGENTS_METABOLISM
 	taste_description = "Knowledge and Unity"
 	glass_icon_state = "spiritcleanserglass"
 	glass_name = "Buffalo Tea"

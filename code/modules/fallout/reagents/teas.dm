@@ -1,8 +1,8 @@
 //fallout teas
 
 /datum/reagent/consumable/tea/buffalotea
-	name = "Wendigo Tea"
-	description = "A soothing herbal rememedy from the buffalo gourd. the sapient algea fully awaken with heat and now inhibits neural reconstituting properties in the host."
+	name = "Buffalo Tea"
+	description = "A soothing herbal rememedy from the buffalo gourd. the sentient algae fully awaken with heat and now inhibits neural reconstituting properties in the host."
 	color = "#FFFF91"
 	nutriment_factor = 0
 	taste_description = "Knowledge and Unity"

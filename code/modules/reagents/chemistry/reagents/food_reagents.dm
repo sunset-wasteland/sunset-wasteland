@@ -989,8 +989,9 @@
 	color = "#14FF3C" // rgb: 48, 32, 0
 	taste_description = "A tingling electric sensation"
 	metabolization_rate = 0.25 * REAGENTS_METABOLISM
+	glass_icon_state = "Cactus Water"
 	overdose_threshold = 30
-	water_level = 0.5
+	water_level = 1.5
 
 /datum/reagent/consumable/buffalojuice/on_mob_life(mob/living/carbon/M)
 	if(M.health < 0)

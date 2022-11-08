@@ -275,7 +275,7 @@
 	name = "dagger"
 	icon_state = "dagger_smith"
 	overlay_state = "hilt_dagger"
-	w_class = WEIGHT_CLASS_SMALL
+	w_class = WEIGHT_CLASS_TINY
 	sharpness = SHARP_EDGED
 	force = 24
 	hitsound = 'sound/weapons/rapierhit.ogg'

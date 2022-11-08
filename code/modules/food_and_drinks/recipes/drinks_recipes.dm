@@ -1429,8 +1429,8 @@
 	required_temp = 315
 
 /datum/chemical_reaction/buffalotea
-	name = "Wendigo Tea"
-	id = "wendigotea"
+	name = "Buffalo Tea"
+	id = "buffalotea"
 	results = list(/datum/reagent/consumable/tea/buffalotea = 3)
 	required_reagents = list(/datum/reagent/consumable/buffalojuice = 1, /datum/reagent/water = 2)
 	required_temp = 315

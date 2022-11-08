@@ -1,6 +1,6 @@
 /obj/item/am_containment
-	name = "antimatter containment jar"
-	desc = "Holds antimatter."
+	name = "DT fuel rod"
+	desc = "The Deuterium-Tritium fuel for a Fusion Reactor. Long lasting, 'clean' energy!"
 	icon = 'icons/obj/machines/antimatter.dmi'
 	icon_state = "jar"
 	density = FALSE

@@ -1738,6 +1738,7 @@
 	value = REAGENT_VALUE_COMMON
 	metabolization_rate = 0.4 * REAGENTS_METABOLISM
 	var/toxpwr = 2.5
+	toxin_lover_healing = -3.5
 	ghoulfriendly = TRUE
 
 /datum/reagent/medicine/algae/on_mob_life(mob/living/carbon/M)

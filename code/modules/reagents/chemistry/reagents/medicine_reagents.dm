@@ -1726,3 +1726,87 @@
 	name = "Synthi-Sanguirite"
 	description = "A synthetic coagulant used to help bleeding wounds clot faster. Not quite as effective as name brand Sanguirite, especially on patients with lots of cuts."
 	clot_coeff_per_wound = 0.8
+/datum/reagent/medicine/algae
+	name = "Sentient Algae"
+	description = "A mutated colony of sentient algae. mends the hosts wounds slightly but prefers to bond with people of the slime variety more."
+	color = "#91D865"
+	taste_description = "Wiggling slimey sludge...and a hint of guilt."
+	taste_mult = 1.2
+	pH = 7.0
+	value = REAGENT_VALUE_COMMON
+	metabolization_rate = 0.4 * REAGENTS_METABOLISM
+	var/toxpwr = 1.5
+	var/toxin_hurting = 0
+	var/toxin_lover_healing = -3.5
+	ghoulfriendly = TRUE
+
+/datum/reagent/medicine/algae
+	name = "Sentient Algea"
+	description = "A mutated colony of sentient algea. mends the hosts wounds slightly but prefers to bond with people of the slime variety more."
+	color = "#91D865"
+	taste_description = "Wiggling slimey sludge...and a hint of guilt."
+	taste_mult = 1.2
+	pH = 7.0
+	value = REAGENT_VALUE_COMMON
+	metabolization_rate = 0.4 * REAGENTS_METABOLISM
+	var/toxpwr = 1.5
+	var/toxin_hurting = 0
+	var/toxin_lover_healing = -3.5
+	ghoulfriendly = TRUE
+
+/datum/reagent/medicine/algae/on_mob_life(mob/living/carbon/M)
+	M.adjustOxyLoss(-0.25*REM, 0)
+	M.adjustBruteLoss(-0.25*REM, 0)
+	M.adjustFireLoss(-0.25*REM, 0)
+	M.adjustToxLoss(-0.25, 0, TRUE) //heals TOXINLOVERs
+	if(HAS_TRAIT(M, TRAIT_TOXINLOVER))
+		is_toxinlover = TRUE
+	var/toxin_heal_rate = (is_toxinlover ? toxin_lover_healing : toxin_hurting) * toxpwr
+	if(!M.reagents.has_reagent(/datum/reagent/medicine/stimpak) && !M.reagents.has_reagent(/datum/reagent/medicine/healing_powder))
+		M.adjustFireLoss(toxin_heal_rate)
+		M.adjustBruteLoss(toxin_heal_rate)
+		M.adjustOxyLoss(toxin_heal_rate)
+		M.adjustToxLoss(toxin_heal_rate)
+
+		. = TRUE
+	..()
+
+/datum/reagent/medicine/rehab
+	name = "Rehab"
+	description = "A potentent purger made from buffalo gourd and other herbal plants, stops toxin damage, heals the liver, purges all chems, food and liquids from the body and treats addiction...maybe do. not. take. too. much."
+	color = "#91D865"
+	taste_description = "peppered regret"
+	taste_mult = 1.2
+ 	overdose_threshold = 16
+	pH = 7.0
+	value = REAGENT_VALUE_COMMON
+	metabolization_rate = 0.5 * REAGENTS_METABOLISM
+	ghoulfriendly = TRUE
+
+/datum/reagent/medicine/rehab/on_mob_life(mob/living/carbon/M)
+if(M.nutrition > NUTRITION_LEVEL_HUNGRY)
+		M.adjust_nutrition(-5)
+		M.adjust_thirst(-5)
+	M.adjustOrganLoss(ORGAN_SLOT_LIVER, -2.5)
+	M.adjustOrganLoss(ORGAN_SLOT_STOMACH, -2.5)
+	if(M.radiation > 0)
+		M.radiation -= min(M.radiation, 8)
+	for(var/A in M.reagents.reagent_list)
+		var/datum/reagent/R = A
+		if(R != src)
+			M.reagents.remove_reagent(R.type,3)
+	if(M.health < 0)
+		M.adjustToxLoss(-2, 0, TRUE) //heals TOXINLOVERs
+	if(M.Toxloss > 35)
+		M.setToxLoss(35, 0)
+	if(prob(33))
+	for(var/datum/reagent/R in M.reagents.addiction_list)
+		M.reagents.addiction_list.Remove(R)
+		to_chat(M, "<span class='notice'>You feel like you've gotten over your need for [R.name]. was it worth it?</span>")
+	M.confused = max(M.confused, 4)
+	if(ishuman(M) && prob(33))
+		var/mob/living/carbon/human/H = M
+		H.vomit(10)
+	
+		. = TRUE
+	..()

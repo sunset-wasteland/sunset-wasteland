@@ -1755,10 +1755,12 @@
 	ghoulfriendly = TRUE
 
 /datum/reagent/medicine/algae/on_mob_life(mob/living/carbon/M)
-	M.adjustOxyLoss(-0.25*REM, 0)
-	M.adjustBruteLoss(-0.25*REM, 0)
-	M.adjustFireLoss(-0.25*REM, 0)
-	M.adjustToxLoss(-0.25, 0, TRUE) //heals TOXINLOVERs
+	if(toxpwr)
+		M.adjustOxyLoss(-0.25*REM, 0)
+		M.adjustBruteLoss(-0.25*REM, 0)
+		M.adjustFireLoss(-0.25*REM, 0)
+		M.adjustToxLoss(-0.25, 0, TRUE) //heals TOXINLOVERs
+	var/is_toxinlover = FALSE
 	if(HAS_TRAIT(M, TRAIT_TOXINLOVER))
 		is_toxinlover = TRUE
 	var/toxin_heal_rate = (is_toxinlover ? toxin_lover_healing : toxin_hurting) * toxpwr

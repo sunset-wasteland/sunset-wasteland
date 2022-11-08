@@ -1726,6 +1726,7 @@
 	name = "Synthi-Sanguirite"
 	description = "A synthetic coagulant used to help bleeding wounds clot faster. Not quite as effective as name brand Sanguirite, especially on patients with lots of cuts."
 	clot_coeff_per_wound = 0.8
+	..()
 
 /datum/reagent/medicine/algae
 	name = "Sentient Algae"
@@ -1740,10 +1741,10 @@
 	ghoulfriendly = TRUE
 
 /datum/reagent/medicine/algae/on_mob_life(mob/living/carbon/M)
-		M.adjustOxyLoss(-0.5, 0)
-		M.adjustBruteLoss(-0.5, 0)
-		M.adjustFireLoss(-0.5, 0)
-		M.adjustToxLoss(-0.5, 0, TRUE) //heals TOXINLOVERs
+	M.adjustOxyLoss(-0.5, 0)
+	M.adjustBruteLoss(-0.5, 0)
+	M.adjustFireLoss(-0.5, 0)
+	M.adjustToxLoss(-0.5, 0, TRUE) //heals TOXINLOVERs
 	
 		. = TRUE
 	..()

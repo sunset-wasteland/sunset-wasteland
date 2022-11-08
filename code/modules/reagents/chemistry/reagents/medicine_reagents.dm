@@ -1784,9 +1784,8 @@
 	ghoulfriendly = TRUE
 
 /datum/reagent/medicine/rehab/on_mob_life(mob/living/carbon/M)
-if(M.nutrition > NUTRITION_LEVEL_HUNGRY)
-		M.adjust_nutrition(-5)
-		M.adjust_thirst(-5)
+	M.adjust_nutrition(-5)
+	M.adjust_thirst(-5)
 	M.adjustOrganLoss(ORGAN_SLOT_LIVER, -2.5)
 	M.adjustOrganLoss(ORGAN_SLOT_STOMACH, -2.5)
 	if(M.radiation > 0)

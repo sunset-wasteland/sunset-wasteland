@@ -8,6 +8,15 @@ Barkeep : 28 ACCESS_KITCHEN - you jebronis made default bar for no reason bruh
 Banker : 48 ACCESS_MINING
 Mayor : 4 ACCESS_FORENSICS_LOCKERS
 here's a tip, go search DEFINES/access.dm
+
+Slowly fixing town access because FUCK, someone handed the BoS Bar/Kitchen access which gives them free access to General Town and Bighorn's bar.
+General Access : 136 ACCESS_TOWN
+Barkeep : 137 ACCESS_TOWN_BAR
+Reactor : 138 ACCESS_FUSION
+Shopkeeper : 139 ACCESS_SHOPKEEP
+
+Will probably start phasing more of this to actual custom access as we go.
+
 */
 
 /datum/job/bighorn
@@ -28,8 +37,8 @@ Mayor
 	selection_color = "#d7b088"
 	exp_requirements = 1500
 	outfit = /datum/outfit/job/bighorn/f13mayor
-	access = list(ACCESS_BAR, ACCESS_GATEWAY, ACCESS_FORENSICS_LOCKERS, ACCESS_ENGINE_EQUIP)
-	minimal_access = list(ACCESS_BAR, ACCESS_GATEWAY, ACCESS_FORENSICS_LOCKERS, ACCESS_ENGINE_EQUIP)
+	access = list(ACCESS_BAR, ACCESS_GATEWAY, ACCESS_FORENSICS_LOCKERS, ACCESS_FUSION, ACCESS_TOWN)
+	minimal_access = list(ACCESS_BAR, ACCESS_GATEWAY, ACCESS_FORENSICS_LOCKERS, ACCESS_FUSION, ACCESS_TOWN)
 
 /datum/outfit/job/bighorn/f13mayor/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
@@ -70,8 +79,8 @@ Mayor
 	selection_color = "#d7b088"
 	exp_requirements = 1500
 	outfit = /datum/outfit/job/bighorn/f13sheriff
-	access = list(ACCESS_BAR, ACCESS_GATEWAY, ACCESS_ENGINE_EQUIP)
-	minimal_access = list(ACCESS_BAR, ACCESS_GATEWAY)
+	access = list(ACCESS_BAR, ACCESS_GATEWAY, ACCESS_FUSION, ACCESS_TOWN)
+	minimal_access = list(ACCESS_BAR, ACCESS_GATEWAY, ACCESS_FUSION, ACCESS_TOWN)
 
 /datum/outfit/job/bighorn/f13sheriff
 	name = "Sheriff"
@@ -123,8 +132,8 @@ Mayor
 	selection_color = "#dcba97"
 	exp_requirements = 620
 	outfit = /datum/outfit/job/bighorn/f13deputy
-	access = list(ACCESS_BAR, ACCESS_GATEWAY)
-	minimal_access = list(ACCESS_BAR, ACCESS_GATEWAY, ACCESS_ENGINE_EQUIP)
+	access = list(ACCESS_BAR, ACCESS_GATEWAY, ACCESS_FUSION, ACCESS_TOWN)
+	minimal_access = list(ACCESS_BAR, ACCESS_GATEWAY,, ACCESS_FUSION, ACCESS_TOWN)
 
 /datum/outfit/job/bighorn/f13deputy
 	name = "Deputy"
@@ -166,8 +175,8 @@ Mayor
 	exp_requirements = 1500
 	enforces = "You are in a Job meant for encouraging roleplay with others, do not abandon your post or hoard money unless absolutely necessary. Do not use the caps provided for yourself."
 	outfit = /datum/outfit/job/bighorn/f13banker
-	access = list(ACCESS_BAR, ACCESS_FORENSICS_LOCKERS, ACCESS_MINING)
-	minimal_access = list(ACCESS_BAR, ACCESS_FORENSICS_LOCKERS, ACCESS_MINING)
+	access = list(ACCESS_BAR, ACCESS_FORENSICS_LOCKERS, ACCESS_MINING, ACCESS_TOWN)
+	minimal_access = list(ACCESS_BAR, ACCESS_FORENSICS_LOCKERS, ACCESS_MINING, ACCESS_TOWN)
 	loadout_options = list(
 	/datum/outfit/loadout/classy,
 	/datum/outfit/loadout/loanshark,
@@ -246,8 +255,8 @@ Mayor
 	/datum/outfit/loadout/richmantender,
 	/datum/outfit/loadout/diner)
 
-	access = list(ACCESS_BAR, ACCESS_KITCHEN)
-	minimal_access = list(ACCESS_BAR, ACCESS_KITCHEN)
+	access = list(ACCESS_BAR, ACCESS_KITCHEN, ACCESS_TOWN_BAR, ACCESS_TOWN)
+	minimal_access = list(ACCESS_BAR, ACCESS_KITCHEN, ACCESS_TOWN_BAR, ACCESS_TOWN)
 	matchmaking_allowed = list(
 		/datum/matchmaking_pref/friend = list(
 			/datum/job/bighorn,
@@ -325,8 +334,8 @@ Mayor
 	exp_requirements = 300
 
 	outfit = /datum/outfit/job/bighorn/f13shopkeeper
-	access = list(ACCESS_BAR, ACCESS_CARGO_BOT)
-	minimal_access = list(ACCESS_BAR, ACCESS_CARGO_BOT)
+	access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_TOWN, ACCESS_SHOPKEEP)
+	minimal_access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_TOWN, ACCESS_SHOPKEEP)
 	matchmaking_allowed = list(
 		/datum/matchmaking_pref/friend = list(
 			/datum/job/bighorn,
@@ -403,7 +412,7 @@ Mayor
 		/datum/outfit/loadout/militia,
 		/datum/outfit/loadout/singer,
 	)
-	access = list(ACCESS_BAR, ACCESS_ENGINE_EQUIP)
+	access = list(ACCESS_BAR, ACCESS_FUSION, ACCESS_TOWN)
 	minimal_access = list(ACCESS_BAR)
 	matchmaking_allowed = list(
 		/datum/matchmaking_pref/friend = list(
@@ -434,8 +443,8 @@ Mayor
 	/datum/outfit/loadout/cleanser		//Just some bombs.
 	)
 
-	access = list(ACCESS_BAR)		//we can expand on this and make alterations as people suggest different loadouts
-	minimal_access = list(ACCESS_BAR)
+	access = list(ACCESS_BAR, ACCESS_TOWN, ACCESS_CHAPEL_OFFICE)		//we can expand on this and make alterations as people suggest different loadouts
+	minimal_access = list(ACCESS_BAR, ACCESS_TOWN, ACCESS_CHAPEL_OFFICE)
 	matchmaking_allowed = list(
 		/datum/matchmaking_pref/friend = list(
 			/datum/job/wasteland/f13wastelander,
@@ -583,7 +592,7 @@ Mayor
 	jobtype = /datum/job/bighorn/f13preacher
 
 	id = /obj/item/card/id/dogtag/town
-	ears = /obj/item/radio/headset
+	ears = /obj/item/radio/headset/headset_town
 	belt = null
 	uniform = 		/obj/item/clothing/under/f13/chaplain
 	gloves =		/obj/item/clothing/gloves/fingerless

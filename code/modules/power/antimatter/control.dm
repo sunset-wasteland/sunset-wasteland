@@ -1,6 +1,6 @@
 /obj/machinery/power/am_control_unit
-	name = "antimatter control unit"
-	desc = "This device injects antimatter into connected shielding units, the more antimatter injected the more power produced.  Wrench the device to set it up."
+	name = "fusion control unit"
+	desc = "This device injects fuel into connected shielding units, the more fuel injected the more power produced.  Wrench the device to set it up."
 	icon = 'icons/obj/machines/antimatter.dmi'
 	icon_state = "control"
 	anchored = FALSE
@@ -277,7 +277,7 @@
 			return
 
 	var/dat = ""
-	dat += "AntiMatter Control Panel<BR>"
+	dat += "Fusion Control Panel<BR>"
 	dat += "<A href='?src=[REF(src)];close=1'>Close</A><BR>"
 	dat += "<A href='?src=[REF(src)];refresh=1'>Refresh</A><BR>"
 	dat += "<A href='?src=[REF(src)];refreshicons=1'>Force Shielding Update</A><BR><BR>"

@@ -1736,26 +1736,14 @@
 	pH = 7.0
 	value = REAGENT_VALUE_COMMON
 	metabolization_rate = 0.4 * REAGENTS_METABOLISM
-	var/toxpwr = 2
-	var/toxin_hurting = 0
-	var/toxin_lover_healing = -3.5
+	var/toxpwr = 2.5
 	ghoulfriendly = TRUE
 
 /datum/reagent/medicine/algae/on_mob_life(mob/living/carbon/M)
-	if(toxpwr)
-		M.adjustOxyLoss(-0.5*REM, 0)
-		M.adjustBruteLoss(-0.5*REM, 0)
-		M.adjustFireLoss(-0.5*REM, 0)
-	var/is_toxinlover = FALSE
-	if(HAS_TRAIT(M, TRAIT_TOXINLOVER))
-		is_toxinlover = TRUE
-	var/toxin_heal_rate = (is_toxinlover ? toxin_lover_healing : toxin_hurting) * toxpwr
-	if(!M.reagents.has_reagent(/datum/reagent/medicine/stimpak) && !M.reagents.has_reagent(/datum/reagent/medicine/healing_powder))
-		M.adjustFireLoss(toxin_heal_rate)
-		M.adjustBruteLoss(toxin_heal_rate)
-		M.adjustOxyLoss(toxin_heal_rate)
-		M.adjustToxLoss(toxin_heal_rate)
-
+		M.adjustOxyLoss(-0.5, 0)
+		M.adjustBruteLoss(-0.5, 0)
+		M.adjustFireLoss(-0.5, 0)
+		M.adjustToxLoss(-0.5, 0, TRUE) //heals TOXINLOVERs
 		. = TRUE
 	..()
 
@@ -1783,9 +1771,9 @@
 			M.reagents.remove_reagent(R.type,3)
 	if(M.health < 0)
 		M.setToxLoss(35, 0)
-	for(var/datum/reagent/R in M.reagents.addiction_list && prob(33))
+	for(var/datum/reagent/R in M.reagents.addiction_list)
 		M.reagents.addiction_list.Remove(R)
-		to_chat(M, "<span class='notice'>You feel like you've gotten over your need for [R.name]. was it worth it?</span>")
+		to_chat(M, "<span class='notice'>The thought of [R.name] makes you sick. was it worth it to begin with?</span>")
 	M.confused = max(M.confused, 4)
 	if(ishuman(M) && prob(15))
 		var/mob/living/carbon/human/H = M

@@ -1729,23 +1729,21 @@
 	..()
 
 /datum/reagent/medicine/algae
-	name = "Sentient Algae"
-	description = "A mutated colony of sentient algae. mends the hosts wounds slightly but prefers to bond with people of the slime variety more."
+	name = "Symbiotic Algae"
+	description = "A mutated colony of symbiotic algae. mends the hosts wounds slightly they also really like slimes!"
 	color = "#91D865"
 	taste_description = "Wiggling slimey sludge...and a hint of guilt."
 	taste_mult = 1.2
 	pH = 7.0
 	value = REAGENT_VALUE_COMMON
 	metabolization_rate = 0.4 * REAGENTS_METABOLISM
-	var/toxpwr = 2.5
-	toxin_lover_healing = -3.5
 	ghoulfriendly = TRUE
 
 /datum/reagent/medicine/algae/on_mob_life(mob/living/carbon/M)
-	M.adjustOxyLoss(-0.5, 0)
-	M.adjustBruteLoss(-0.5, 0)
-	M.adjustFireLoss(-0.5, 0)
-	M.adjustToxLoss(-0.5, 0, TRUE) //heals TOXINLOVERs
+	M.adjustBruteLoss(-0.75*REM, FALSE)
+	M.adjustFireLoss(-0.75*REM, FALSE)
+	M.adjustOxyLoss(-0.75*REM, FALSE)
+	M.adjustToxLoss(-0.75*REM, 0, TRUE) //heals TOXINLOVERs
 	..()
 
 /datum/reagent/medicine/rehab

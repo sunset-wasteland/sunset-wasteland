@@ -14,6 +14,7 @@ General Access : 136 ACCESS_TOWN
 Barkeep : 137 ACCESS_TOWN_BAR
 Reactor : 138 ACCESS_FUSION
 Shopkeeper : 139 ACCESS_SHOPKEEP
+Banker Shutters? : 52 ACCESS_MINT_VAULT
 
 Will probably start phasing more of this to actual custom access as we go.
 
@@ -175,8 +176,8 @@ Mayor
 	exp_requirements = 1500
 	enforces = "You are in a Job meant for encouraging roleplay with others, do not abandon your post or hoard money unless absolutely necessary. Do not use the caps provided for yourself."
 	outfit = /datum/outfit/job/bighorn/f13banker
-	access = list(ACCESS_BAR, ACCESS_FORENSICS_LOCKERS, ACCESS_MINING, ACCESS_TOWN)
-	minimal_access = list(ACCESS_BAR, ACCESS_FORENSICS_LOCKERS, ACCESS_MINING, ACCESS_TOWN)
+	access = list(ACCESS_BAR, ACCESS_FORENSICS_LOCKERS, ACCESS_MINING, ACCESS_TOWN, ACCESS_MINT_VAULT)
+	minimal_access = list(ACCESS_BAR, ACCESS_FORENSICS_LOCKERS, ACCESS_MINING, ACCESS_TOWN, ACCESS_MINT_VAULT)
 	loadout_options = list(
 	/datum/outfit/loadout/classy,
 	/datum/outfit/loadout/loanshark,

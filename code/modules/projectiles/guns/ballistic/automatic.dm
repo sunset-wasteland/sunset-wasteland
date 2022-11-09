@@ -804,10 +804,10 @@
 	extra_damage = -3
 
 
-//Police rifle			Keywords: OASIS, 5.56mm, Semi-auto, 20 (10-50) round magazine
-/obj/item/gun/ballistic/automatic/marksman/policerifle
-	name = "Police Rifle"
-	desc = "A pre-war Rifle that has been constantly repaired and rebuilt by the Bighorn Police Department. Held together by duct tape and prayers, it somehow still shoots."
+//Police rifle			Keywords: KHANS, 5.56mm, Semi-auto, 20 (10-50) round magazine
+/obj/item/gun/ballistic/automatic/marksman/policerifle_khans
+	name = "Kit Bashed Rifle"
+	desc = "A pre-war Rifle that has been constantly repaired and rebuilt by local Khan gunsmiths. Somehow, you feel safer holding this."
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
@@ -817,6 +817,7 @@
 	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle
 	spread = 1.1
 	fire_delay = 2.5
+	extra_damage = 6
 	can_suppress = FALSE
 	can_scope = TRUE
 	zoomable = FALSE
@@ -850,22 +851,6 @@
 	suppressor_y_offset = 15
 	fire_sound = 'sound/f13weapons/marksman_rifle.ogg'
 	extra_penetration = 0.2
-
-/obj/item/gun/ballistic/automatic/marksman/policerifle
-	name = "Police Rifle"
-	desc = "A pre-war Rifle that has been constantly repaired and rebuilt by the Bighorn Police Department. Held together by duct tape and prayers, it somehow still shoots. This one has been re-chambered to 5.56"
-	icon = 'icons/fallout/objects/guns/ballistic.dmi'
-	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
-	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
-	icon_prefix = "assault_carbine"
-	icon_state = "rifle-police"
-	item_state = "assault_carbine"
-	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle
-	spread = 1.1
-	fire_delay = 2
-	can_suppress = FALSE
-	can_scope = TRUE
-	zoomable = FALSE
 
 //Colt Rangemaster				Keywords: 7.62mm, Semi-auto, 10/20 round magazine, 35dmg
 /obj/item/gun/ballistic/automatic/rangemaster
@@ -1266,7 +1251,7 @@
 	actions_types = list(/datum/action/item_action/toggle_firemode)
 	fire_sound = 'sound/f13weapons/assault_carbine.ogg'
 
-	//Police rifle			Keywords: OASIS, 5mm, Semi-auto, 30 round magazine
+	//Police rifle			Keywords: BDF, 5mm, Semi-auto, 30 round magazine
 /obj/item/gun/ballistic/automatic/assault_carbine/policerifle
 	name = "Police Rifle"
 	desc = "A pre-war Rifle that has been constantly repaired and rebuilt by the Bighorn Police Department. Held together by duct tape and prayers, it somehow still shoots."

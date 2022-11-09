@@ -170,6 +170,7 @@
 */
 #define F13KHAN (1<<0)
 #define F13KHANCHEMIST (1<<1)
+#define F13KHANSEN (1<<2)
 
 #define JOB_AVAILABLE 0
 #define JOB_UNAVAILABLE_GENERIC 1

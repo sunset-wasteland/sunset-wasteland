@@ -122,7 +122,7 @@
 /datum/outfit/loadout/soldierb
 	name = "Light Enforcer"
 	belt = /obj/item/storage/belt/bandolier
-	r_hand = /obj/item/gun/ballistic/automatic/marksman/khans
+	r_hand = /obj/item/gun/ballistic/automatic/marksman/policerifle_khans
 	suit = /obj/item/clothing/suit/toggle/labcoat/f13/khan_jacket/armored
 	head = /obj/item/clothing/head/helmet/f13/khan/bandana
 	backpack_contents = list(

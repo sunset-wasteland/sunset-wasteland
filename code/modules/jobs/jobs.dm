@@ -65,6 +65,7 @@ GLOBAL_LIST_INIT(command_positions, list(
 
 	"Enclave Lieutenant",
 
+	"Khan Senior Enforcer",
 //	"Noyan",
 //	"Steward",
 	))
@@ -228,6 +229,7 @@ GLOBAL_LIST_INIT(khan_positions, list(
 ))
 */
 GLOBAL_LIST_INIT(khan_positions, list(
+	"Khan Senior Enforcer",
 	"Khan Enforcer",
 	"Khan Chemist",
 ))

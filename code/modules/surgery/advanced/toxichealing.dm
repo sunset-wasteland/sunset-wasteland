@@ -12,6 +12,7 @@
 				/datum/surgery_step/close)
 
 	target_mobtypes = list(/mob/living/carbon/human, /mob/living/carbon/monkey)
+	ignore_clothes = TRUE
 	possible_locs = list(BODY_ZONE_CHEST)
 	requires_bodypart_type = 0
 	requires_trait = "MEDICALGRADUATE"

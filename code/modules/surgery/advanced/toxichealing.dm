@@ -1,5 +1,5 @@
 /datum/surgery/advanced/toxichealing
-	name = "Surgically assisted rejuvenation (oxygen deprivation & toxicity)"
+	name = "Surgically assisted rejuvenation (oxygen deprivation & toxicity & purge)"
 	desc = "A surgical procedure that helps deal with oxygen  deprivation, and treats parts damaged due to toxic compounds. Works on corpses and alive alike without chemicals."
 	steps = list(/datum/surgery_step/incise,
 				/datum/surgery_step/incise,

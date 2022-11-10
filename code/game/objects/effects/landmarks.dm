@@ -958,8 +958,20 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 // Proper Khans
 /obj/effect/landmark/start/f13/khan
 	name = "Khan Enforcer"
-	icon_state = "Pusher"
+	icon_state = "Raider"
 
 /obj/effect/landmark/start/f13/khan_chemist
 	name = "Khan Chemist"
 	icon_state = "Pusher"
+
+/obj/effect/landmark/start/f13/khan_senior
+	name = "Khan Senior Enforcer"
+	icon_state = "Boss"
+
+/obj/effect/landmark/start/f13/khan_smith
+	name = "Khan Smith"
+	icon_state = "Pusher"
+
+/obj/effect/landmark/start/f13/khan_court
+	name = "Khan Courtesan"
+	icon_state = "Tribal"

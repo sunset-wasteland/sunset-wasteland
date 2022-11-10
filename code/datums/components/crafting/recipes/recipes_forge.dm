@@ -256,6 +256,20 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_MELEE
 
+/datum/crafting_recipe/scrapsabre_khan
+	name = "Honed Scrap sabre"
+	result = /obj/item/melee/onehanded/machete/scrapsabre/khan
+	reqs = list(
+		/obj/item/stack/sheet/metal = 24,
+		/obj/item/stack/sheet/leather = 2,
+		/obj/item/stack/sheet/plasteel = 2,
+	    )
+	time = 380
+	tools = list(TOOL_FORGE)
+	category = CAT_WEAPONRY
+	subcategory = CAT_MELEE
+	always_available = FALSE
+
 
 // LEGION SPECIFIC
 

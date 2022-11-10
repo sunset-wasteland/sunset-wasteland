@@ -149,6 +149,9 @@
 	new /obj/item/melee/smith/hammer/premade(src)
 	new /obj/item/twohanded/chainsaw(src)
 
+/obj/item/storage/belt/utility/waster/forgemaster/khan
+	name = "smith toolbelt"
+
 // Gardener belt. Hold farming stuff thats small, also flasks (think hip flasks, not bottles as such)
 /obj/item/storage/belt/utility/gardener
 	name = "gardeners toolbelt"

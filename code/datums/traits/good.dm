@@ -72,7 +72,7 @@
 		REMOVE_TRAIT(H, TRAIT_TRIBAL, "Former Tribal")
 		REMOVE_TRAIT(H, TRAIT_AUTO_DRAW, "Former Tribal")
 		var/list/recipes = list(
-		/datum/crafting_recipe/tribalwar/chitinarmor
+		/datum/crafting_recipe/tribalwar/chitinarmor,
 		/datum/crafting_recipe/tribalradio,
 		/datum/crafting_recipe/tribalwar/goliathcloak,
 		/datum/crafting_recipe/tribalwar/bonebow,

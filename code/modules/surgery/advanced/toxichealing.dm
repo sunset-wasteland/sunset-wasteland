@@ -30,6 +30,10 @@
 	target.heal_bodypart_damage(0,0,30) //Heals stam
 	target.adjustToxLoss(-15, 0, TRUE)
 	target.adjustOxyLoss(-20, 0)
+	for(var/A in target.reagents.reagent_list)
+		var/datum/reagent/R = A
+		if(R != src)
+			target.reagents.remove_reagent(R.type,15)
 	return TRUE
 
 /datum/surgery_step/toxichealing/failure(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)

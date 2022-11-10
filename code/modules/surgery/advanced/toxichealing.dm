@@ -31,6 +31,7 @@
 	target.heal_bodypart_damage(0,0,30) //Heals stam
 	target.adjustToxLoss(-15, 0, TRUE)
 	target.adjustOxyLoss(-20, 0)
+	target.adjustBruteLoss(0.01, 0) // this is because the game doesnt register the toxins being removed, meaning it counts there over all heal state is still negative. breaking defibs when used on them. quick fix. give light damage to brute.
 	for(var/A in target.reagents.reagent_list)
 		var/datum/reagent/R = A
 		if(R != src)

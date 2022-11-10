@@ -280,7 +280,7 @@
 	name = "knuckleduster"
 	icon_state = "knuckle_smith"
 	overlay_state = "hilt_knuckle"
-	force = 18
+	force = 12
 	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/melee/smith/machete

@@ -650,3 +650,4 @@
 	finalforreal.attack_speed = CLICK_CD_MELEE * (3 / quality)
 	finalitem = finalforreal
 	..()
+	

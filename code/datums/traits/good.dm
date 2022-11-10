@@ -34,7 +34,7 @@
 
 /datum/quirk/tribal
 	name = "Former Tribal"
-	desc = "You used to be part of one of the tribes scattered throughout the wasteland. You may have some additional skills as a result, though advanced tech still confuses you."
+	desc = "You used to be part of one of the tribes scattered throughout the wasteland. You retain some of your tribal knowledge but the ancient crafts are lost to you as you became more modern."
 	value = 3
 	gain_text = "<span class='notice'>You remember the old ways of your tribe..</span>"
 	lose_text = "<span class='notice'>You've forgotten the ways of your ancestors..</span>"

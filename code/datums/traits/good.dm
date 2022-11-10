@@ -44,25 +44,6 @@
 	ADD_TRAIT(H, TRAIT_MACHINE_SPIRITS, "Former Tribal")
 	ADD_TRAIT(H, TRAIT_TRIBAL, "Former Tribal")
 	ADD_TRAIT(H, TRAIT_TRAPPER, "Former Tribal")
-	ADD_TRAIT(H, TRAIT_AUTO_DRAW, "Former Tribal")
-	var/list/recipes = list(
-		/datum/crafting_recipe/tribalwar/chitinarmor,
-		/datum/crafting_recipe/tribalradio,
-		/datum/crafting_recipe/tribalwar/goliathcloak,
-		/datum/crafting_recipe/tribalwar/bonebow,
-		/datum/crafting_recipe/tribalwar/tribe_bow,
-		/datum/crafting_recipe/tribalwar/sturdybow,
-		/datum/crafting_recipe/tribalwar/warclub,
-		/datum/crafting_recipe/tribalwar/silverbow,
-		/datum/crafting_recipe/tribalwar/arrowbone,
-		/datum/crafting_recipe/tribalwar/bonespear,
-		/datum/crafting_recipe/tribalwar/bonecodpiece,
-		/datum/crafting_recipe/tribalwar/bracers,
-		/datum/crafting_recipe/tribal/bonetalisman,
-		/datum/crafting_recipe/tribal/bonebag
-	)
-	for(var/datum/crafting_recipe/recipe as() in recipes)
-		H.mind.teach_crafting_recipe(recipe)
 
 /datum/quirk/tribal/remove()
 	var/mob/living/carbon/human/H = quirk_holder
@@ -70,26 +51,6 @@
 		REMOVE_TRAIT(H, TRAIT_MACHINE_SPIRITS, "Former Tribal")
 		REMOVE_TRAIT(H, TRAIT_TRAPPER, "Former Tribal")
 		REMOVE_TRAIT(H, TRAIT_TRIBAL, "Former Tribal")
-		REMOVE_TRAIT(H, TRAIT_AUTO_DRAW, "Former Tribal")
-		var/list/recipes = list(
-		/datum/crafting_recipe/tribalwar/chitinarmor,
-		/datum/crafting_recipe/tribalradio,
-		/datum/crafting_recipe/tribalwar/goliathcloak,
-		/datum/crafting_recipe/tribalwar/bonebow,
-		/datum/crafting_recipe/tribalwar/tribe_bow,
-		/datum/crafting_recipe/tribalwar/sturdybow,
-		/datum/crafting_recipe/tribalwar/warclub,
-		/datum/crafting_recipe/tribalwar/silverbow,
-		/datum/crafting_recipe/tribalwar/arrowbone,
-		/datum/crafting_recipe/tribalwar/bonespear,
-		/datum/crafting_recipe/tribalwar/bonecodpiece,
-		/datum/crafting_recipe/tribalwar/bracers,
-		/datum/crafting_recipe/tribal/bonetalisman,
-		/datum/crafting_recipe/tribal/bonebag
-	)
-	for(var/datum/crafting_recipe/recipe as() in recipes)
-		H.mind.remove_crafting_recipe(recipe)
-
 
 /datum/quirk/tribespeak
 	name = "Tribal Language Comprehension"

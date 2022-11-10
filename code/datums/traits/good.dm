@@ -46,7 +46,7 @@
 	ADD_TRAIT(H, TRAIT_TRAPPER, "Former Tribal")
 	ADD_TRAIT(H, TRAIT_AUTO_DRAW, "Former Tribal")
 	var/list/recipes = list(
-		/datum/crafting_recipe/tribalwar/chitinarmor
+		/datum/crafting_recipe/tribalwar/chitinarmor,
 		/datum/crafting_recipe/tribalradio,
 		/datum/crafting_recipe/tribalwar/goliathcloak,
 		/datum/crafting_recipe/tribalwar/bonebow,

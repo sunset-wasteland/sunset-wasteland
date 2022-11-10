@@ -232,6 +232,8 @@ GLOBAL_LIST_INIT(khan_positions, list(
 	"Khan Senior Enforcer",
 	"Khan Enforcer",
 	"Khan Chemist",
+	"Khan Smith",
+	"Khan Courtesan",
 ))
 
 GLOBAL_LIST_INIT(enclave_positions, list(

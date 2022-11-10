@@ -88,7 +88,7 @@
 		/datum/crafting_recipe/tribal/bonebag
 	)
 	for(var/datum/crafting_recipe/recipe as() in recipes)
-		H.mind.learned_recipes(recipe)
+		H.mind.remove_crafting_recipe(recipe)
 
 
 /datum/quirk/tribespeak

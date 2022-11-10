@@ -35,20 +35,60 @@
 /datum/quirk/tribal
 	name = "Former Tribal"
 	desc = "You used to be part of one of the tribes scattered throughout the wasteland. You may have some additional skills as a result, though advanced tech still confuses you."
-	value = 2
+	value = 3
 	gain_text = "<span class='notice'>You remember the old ways of your tribe..</span>"
 	lose_text = "<span class='notice'>You've forgotten the ways of your ancestors..</span>"
 
 /datum/quirk/tribal/add()
 	var/mob/living/carbon/human/H = quirk_holder
-	ADD_TRAIT(H, TRAIT_TECHNOPHOBE, "Former Tribal")
+	ADD_TRAIT(H, TRAIT_MACHINE_SPIRITS, "Former Tribal")
 	ADD_TRAIT(H, TRAIT_TRIBAL, "Former Tribal")
+	ADD_TRAIT(H, TRAIT_TRAPPER, "Former Tribal")
+	ADD_TRAIT(H, TRAIT_AUTO_DRAW, "Former Tribal")
+	var/list/recipes = list(
+		/datum/crafting_recipe/tribalwar/chitinarmor
+		/datum/crafting_recipe/tribalradio,
+		/datum/crafting_recipe/tribalwar/goliathcloak,
+		/datum/crafting_recipe/tribalwar/bonebow,
+		/datum/crafting_recipe/tribalwar/tribe_bow,
+		/datum/crafting_recipe/tribalwar/sturdybow,
+		/datum/crafting_recipe/tribalwar/warclub,
+		/datum/crafting_recipe/tribalwar/silverbow,
+		/datum/crafting_recipe/tribalwar/arrowbone,
+		/datum/crafting_recipe/tribalwar/bonespear,
+		/datum/crafting_recipe/tribalwar/bonecodpiece,
+		/datum/crafting_recipe/tribalwar/bracers,
+		/datum/crafting_recipe/tribal/bonetalisman,
+		/datum/crafting_recipe/tribal/bonebag
+	)
+	for(var/datum/crafting_recipe/recipe as() in recipes)
+		H.mind.teach_crafting_recipe(recipe)
 
 /datum/quirk/tribal/remove()
 	var/mob/living/carbon/human/H = quirk_holder
 	if(!QDELETED(H))
-		REMOVE_TRAIT(H, TRAIT_TECHNOPHOBE, "Former Tribal")
+		REMOVE_TRAIT(H, TRAIT_MACHINE_SPIRITS, "Former Tribal")
+		REMOVE_TRAIT(H, TRAIT_TRAPPER, "Former Tribal")
 		REMOVE_TRAIT(H, TRAIT_TRIBAL, "Former Tribal")
+		REMOVE_TRAIT(H, TRAIT_AUTO_DRAW, "Former Tribal")
+		var/list/recipes = list(
+		/datum/crafting_recipe/tribalwar/chitinarmor
+		/datum/crafting_recipe/tribalradio,
+		/datum/crafting_recipe/tribalwar/goliathcloak,
+		/datum/crafting_recipe/tribalwar/bonebow,
+		/datum/crafting_recipe/tribalwar/tribe_bow,
+		/datum/crafting_recipe/tribalwar/sturdybow,
+		/datum/crafting_recipe/tribalwar/warclub,
+		/datum/crafting_recipe/tribalwar/silverbow,
+		/datum/crafting_recipe/tribalwar/arrowbone,
+		/datum/crafting_recipe/tribalwar/bonespear,
+		/datum/crafting_recipe/tribalwar/bonecodpiece,
+		/datum/crafting_recipe/tribalwar/bracers,
+		/datum/crafting_recipe/tribal/bonetalisman,
+		/datum/crafting_recipe/tribal/bonebag
+	)
+	for(var/datum/crafting_recipe/recipe as() in recipes)
+		H.mind.learned_recipes(recipe)
 
 
 /datum/quirk/tribespeak

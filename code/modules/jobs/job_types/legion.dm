@@ -1,16 +1,15 @@
 /*
-Legion Design notes:
-"Standard issue", AVOID identical kits and guns. Legion got spotty logistics and the hodgepodge aesthetic suits them, don't ruin it.
-Sunglasses	For vets mainly, most lower ranks should have sandstorm goggles.
-Money		Cent & Treasurer - "small" money bag (the biggest)
-			Decanus - Officer money bag
-			Rest - Enlisted money bag
-Sidearm		None.
-Melee		Officers only - Spatha
-			Vets/Officers - Gladius
-			Rest - Lawnmower machete the most common
-Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns all good, very restrictive on long barrel automatics, generally limited ammo, always good melee option.
-			Avoid Police shotguns, 5,56 semis, Desert Eagle, Survival knives etc, be creative and work within the limitations to avoid powercreep and things getting bland and same.
+WRITTEN 12/11/22 - AUTHOR: DRAGONFRUITS
+[CAESAR'S LEGION FACTION DESIGN NOTES]
+The Legion focuses on being hard-hitting melee glass cannons above all. They're expected to have weak, fast armor and usually poor choices
+of ranged equipment.
+For the sake of this, most if not all of the Legion's members come pre-equipped with trekking, iron fist, and big leagues.
+The leaders are supplied lifegiver to further encourage their gameplay style.
+They're primarily countered by long range attacks or wide defenses that force them to switch their playstyle.
+
+The exception to the Legion's forced playstyle are Explorers and their squad lead, as well as the Centurion's prioprietary Ranger counter loadout.
+
+Discuss balance and documentation changes with Dragonfruits#1913 or forward them to Carl.
 */
 
 /datum/job/CaesarsLegion
@@ -144,21 +143,24 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 	roleplay_exclusive_notify = 1
 	exp_requirements = 750
 
+	loadout_options = list(
+		/datum/outfit/loadout/oratorm,		// Armor and money
+		/datum/outfit/loadout/priestess, // Priestess robes, medical training
+		)
 
-/datum/outfit/job/CaesarsLegion/Legionnaire/f13orator	// .357 Revolver, Spatha
+
+/datum/outfit/job/CaesarsLegion/Legionnaire/f13orator	
 	name = "Orator"
 	jobtype = /datum/job/CaesarsLegion/Legionnaire/f13orator
 	neck = /obj/item/storage/belt/holster
-	shoes = /obj/item/clothing/shoes/f13/military/plated
-	suit = /obj/item/clothing/suit/armor/f13/legion/orator
-	head = /obj/item/clothing/head/helmet/f13/legion/orator
+	shoes = null
 	id = /obj/item/card/id/dogtag/legorator
 	gloves = null
 	backpack = /obj/item/storage/backpack/legionr
-	suit_store = /obj/item/gun/ballistic/revolver/colt357
+	suit_store = null
 	r_pocket = /obj/item/storage/bag/money/small/legofficers
 	l_pocket = /obj/item/flashlight/lantern
-	l_hand = /obj/item/melee/onehanded/machete/spatha
+	l_hand = null
 	backpack_contents = list(
 		/obj/item/binoculars = 1,
 		/obj/item/ammo_box/a357 = 2,
@@ -171,11 +173,37 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 		return
 	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
 	ADD_TRAIT(H, TRAIT_LIFEGIVER, src)
-	ADD_TRAIT(H, TRAIT_BIG_LEAGUES, src)
 	if(H.mind)
 		var/obj/effect/proc_holder/spell/terrifying_presence/S = new /obj/effect/proc_holder/spell/terrifying_presence
 		H.mind.AddSpell(S)
+	
+/datum/outfit/loadout/oratorm
+	name = "Orator"
+	suit = /obj/item/clothing/suit/armor/f13/legion/orator
+	head = /obj/item/clothing/head/helmet/f13/legion/orator
+	suit_store = /obj/item/gun/ballistic/automatic/pistol/pistol14/orator
+	shoes = /obj/item/clothing/shoes/f13/military/plated
+	backpack_contents = list(
+		/obj/item/book/granter/trait/iron_fist = 1,
+		/obj/item/book/granter/trait/bigleagues = 1,
+		/obj/item/stack/f13Cash/random/denarius/high = 3,
+		/obj/item/stack/f13Cash/random/aureus/high = 2,
+		
+		)
 
+/datum/outfit/loadout/priestess
+	name = "Priestess of Mars"
+	uniform = /obj/item/clothing/under/f13/pmarsrobe
+	head = /obj/item/clothing/head/helmet/f13/legion/orator
+	shoes = /obj/item/clothing/shoes/roman
+	backpack_contents = list(
+		/obj/item/gun/ballistic/automatic/pistol/pistol14/orator = 1,
+		/obj/item/book/granter/trait/midsurgery = 1,
+		/obj/item/book/granter/trait/chemistry = 1,
+		/obj/item/stack/f13Cash/random/denarius/high = 1,
+		
+		)
+	
 /////////////////
 //// Officers ///
 /////////////////

@@ -355,7 +355,7 @@
 	w_class = WEIGHT_CLASS_SMALL
 	spread = 5
 
-//Little Devil							Keywords: UNIQUE, 14mm, Semi-auto, Short barrel, 7 Rounds, Heavy. Special modifiers: damage +4, penetration +0.05, spread -3
+//Little Devil							Keywords: UNIQUE, 14mm, Semi-auto, Short barrel, 7 Rounds, Heavy.
 /obj/item/gun/ballistic/automatic/pistol/pistol14/lildevil
 	name= "Little Devil 14mm pistol"
 	desc = "A Swiss SIG-Sauer 14mm handgun, this one is a finely tuned custom firearm from the Gunrunners."
@@ -371,6 +371,19 @@
 	icon_state = "lildev"
 	w_class = WEIGHT_CLASS_SMALL
 	fire_delay = 4
+
+//Mortifer						Keywords: UNIQUE, 14mm, Semi-auto, 7 rounds, Heavy.
+/obj/item/gun/ballistic/automatic/pistol/pistol14/orator
+	name = "Mortifer"
+	desc = "A long-barreled SIG P-127 custom-built by an experienced Legion technician, used for executions. The black leather-wrapped handle has a golden laurel wreath on each side."
+	icon_state = "mortifer"
+	mag_type = /obj/item/ammo_box/magazine/m14mm
+	fire_delay = 15
+	icon_state = "nexus"
+	recoil = 5.5
+	extra_damage = 20
+	fire_sound = 'sound/f13weapons/magnum_fire.ogg'
+
 
 /////////////////////////////////
 // TEMPORARY REMOVE AFTER BETA //

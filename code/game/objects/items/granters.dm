@@ -903,7 +903,7 @@
 	oneuse = TRUE
 	granted_trait = TRAIT_MARS_TEACH
 	traitname = "legion medicine"
-	remarks = list("Sapere aude.", "Ad astra per aspera.", "Mars favors the bold.", "Ars longa, vita brevis.", "Vivamus, moriendum est.", "Sic gorgiamus allos subjectatos nunc.", "Aere perennius.", "Bis dat qui cito dat.", "Finis coronat opus.", "Nullum magnum ingenium sine mixture dementia fuit.", "Nemo mortalium omnibus horis sapit."
+	remarks = list("Sapere aude.", "Ad astra per aspera.", "Mars favors the bold.", "Ars longa, vita brevis.", "Vivamus, moriendum est.", "Sic gorgiamus allos subjectatos nunc.", "Aere perennius.", "Bis dat qui cito dat.", "Finis coronat opus.", "Nullum magnum ingenium sine mixture dementia fuit.", "Nemo mortalium omnibus horis sapit.")
 
 
 /obj/item/book/granter/trait/bigleagues

@@ -1073,3 +1073,64 @@ Off-Duty
 		/obj/item/encryptionkey/headset_bos=1,
 		/obj/item/melee/onehanded/knife/survival=1
 		)
+
+/*
+Inquisitorial Goons
+They get an absurd number of traits, a 'unique' proton axe, berserker rights and are overall very dangerous.
+They're intended to be some manner of IC police similar to how I've done IS, for Enclave. - Carl
+*/
+/datum/job/bos/acolyte
+	title = "Inquisitorial Acolyte"
+	flag = F13INQUIS
+	total_positions = 2
+	spawn_positions = 2
+	description = "<b>YOU HAVE NO TIES TO THE BUNKER. YOU'RE AN OUTSIDER IN EVERYTHING BUT POSITION.</b> <br> \
+	You're a member of the feared Inquisition, sent by the Inquisitor as their eyes and ears within this chapter. <br> \
+	As most of the equipment used here is on loan from the Midwest, it only makes sense that they'd want their interests maintained. <br> \
+	Punish blatant violations of the Codex how you see fit, but beware the wrath of the Inquisitor, should you overstep."
+	supervisors = "the Inquisitor exclusively"
+	selection_color = "#95a5a6"
+	roleplay_exclusive_notify = 1
+	req_admin_notify = 1
+	exp_requirements = 6000//Absurd for good reason.
+	outfit = /datum/outfit/job/bos/acolyte
+	access = list(ACCESS_BROTHERHOOD_COMMAND, ACCESS_ROBOTICS, ACCESS_BOS, ACCESS_ENGINE_EQUIP, ACCESS_ENGINE, ACCESS_HYDROPONICS, ACCESS_MINERAL_STOREROOM, ACCESS_KITCHEN, ACCESS_BAR, ACCESS_SEC_DOORS, ACCESS_CHANGE_IDS)
+	minimal_access = list(ACCESS_BROTHERHOOD_COMMAND, ACCESS_ROBOTICS, ACCESS_BOS, ACCESS_ENGINE_EQUIP, ACCESS_ENGINE, ACCESS_HYDROPONICS, ACCESS_MINERAL_STOREROOM, ACCESS_KITCHEN, ACCESS_BAR, ACCESS_SEC_DOORS, ACCESS_CHANGE_IDS)
+
+/datum/outfit/job/bos/acolyte/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+	ADD_TRAIT(H, TRAIT_PA_WEAR, src)
+	ADD_TRAIT(H, TRAIT_FEARLESS, src)
+	ADD_TRAIT(H, TRAIT_BIG_LEAGUES, src)
+	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
+	ADD_TRAIT(H, TRAIT_LIFEGIVER, src)
+	ADD_TRAIT(H, TRAIT_IRONFIST, src)
+	if(H.mind)
+		var/obj/effect/proc_holder/spell/terrifying_presence/S = new /obj/effect/proc_holder/spell/terrifying_presence
+		H.mind.AddSpell(S)
+	var/datum/martial_art/berserker/BT = new
+	BT.teach(H)
+
+/datum/outfit/job/bos/acolyte
+	name = "Inquisitorial Acolyte"
+	jobtype =		/datum/job/bos/acolyte
+	neck =			/obj/item/clothing/neck/mantle/bos/inquis
+	suit =			/obj/item/clothing/suit/armor/f13/power_armor/midwest_inquis
+	head =			/obj/item/clothing/head/helmet/f13/power_armor/midwest_inquis
+	ears =			/obj/item/radio/headset/headset_bos/command
+	uniform =		/obj/item/clothing/under/f13/recon
+	belt = 			/obj/item/storage/belt/military/army
+	shoes = 		/obj/item/clothing/shoes/combat
+	gloves = 		/obj/item/clothing/gloves/combat
+	suit_store = 	/obj/item/twohanded/inquis_spear
+
+	backpack_contents = list(
+		/obj/item/stock_parts/cell/ammo/ec = 3,
+		/obj/item/restraints/handcuffs = 1,
+		/obj/item/melee/classic_baton = 1,
+		/obj/item/gun/energy/laser/complianceregulator = 1,
+		/obj/item/melee/onehanded/knife/survival = 1,
+		/obj/item/storage/belt/holster = 1,
+		)

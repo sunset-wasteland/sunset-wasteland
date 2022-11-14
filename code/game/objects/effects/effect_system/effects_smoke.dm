@@ -346,3 +346,26 @@
 
 /datum/effect_system/smoke_spread/teargas
 	effect_type = /obj/effect/particle_effect/smoke/teargas
+
+/////////////////////////////////////////////
+// Willy Pete
+/////////////////////////////////////////////
+
+/obj/effect/particle_effect/smoke/willy_pete
+	color = "#F9FFFA"
+	lifetime = 6//Very short lifetime. For good reason.
+
+/obj/effect/particle_effect/smoke/willy_pete/smoke_mob(mob/living/carbon/M)
+	if(..())
+		if(M.getStaminaLoss() > 80)//just in case
+			return
+		M.drop_all_held_items()
+		M.adjust_fire_stacks(5)
+		M.IgniteMob()
+		M.adjustOxyLoss(5)
+		M.adjustStaminaLoss(10)//sitting in the cloud will bring you to just about 80stam and near 70/80 oxy. Enough for crit but won't kill most people.
+		M.emote("scream")
+		return 1
+
+/datum/effect_system/smoke_spread/willy_pete
+	effect_type = /obj/effect/particle_effect/smoke/willy_pete

@@ -646,13 +646,23 @@
 	salvaged_type = /obj/item/clothing/suit/armored/heavy/salvaged_pa/midwest
 
 /obj/item/clothing/suit/armor/f13/power_armor/midwest/hardened
-	name = "Hardened midwestern  T-51b power armor"
+	name = "Hardened midwestern T-51b power armor"
 	desc = "This set of power armor belongs to the Midwestern branch of the Brotherhood of Steel. This particular one has gone through a chemical hardening process, increasing its armor capabilities."
 	icon_state = "midwestpa"
 	item_state = "midwestpa"
 	slowdown = 0.25 //+0.05 from helmet = total 0.255
 	armor = list("melee" = 75, "bullet" = 75, "laser" = 75, "energy" = 32, "bomb" = 64, "bio" = 100, "rad" = 99, "fire" = 90, "acid" = 40, "wound" = 50)
 	salvaged_type = /obj/item/clothing/suit/armored/heavy/salvaged_pa/midwest/hardened
+
+//Inquisitor / Acolyte
+/obj/item/clothing/suit/armor/f13/power_armor/midwest_inquis
+	name = "Midwestern Inquisitorial APA"
+	desc = "This set of power armor belongs to the Midwestern branch of the Brotherhood of Steel. It appears to be painted in Inquisitorial colours."
+	icon_state = "apawbos"
+	item_state = "apawbos"
+	slowdown = 0.25 //+0.05 from helmet = total 0.255
+	armor = list("melee" = 75, "bullet" = 75, "laser" = 75, "energy" = 75, "bomb" = 62, "bio" = 100, "rad" = 100, "fire" = 90, "acid" = 40, "wound" = 50)
+	salvaged_type = null
 
 /obj/item/clothing/suit/armor/f13/power_armor/t51b/bos
 	name = "Brotherhood T-51b Power Armour"

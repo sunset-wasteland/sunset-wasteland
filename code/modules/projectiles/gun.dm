@@ -886,7 +886,7 @@ ATTACHMENTS
 
 	busy_action = TRUE
 
-	if(!bypass_timer && (!do_mob(user, target, 120) || user.zone_selected != BODY_ZONE_PRECISE_MOUTH))
+	if(!bypass_timer && (!do_mob(user, target, 20) || user.zone_selected != BODY_ZONE_PRECISE_MOUTH))
 		if(user)
 			if(user == target)
 				user.visible_message("<span class='notice'>[user] decided not to shoot.</span>")
@@ -902,7 +902,7 @@ ATTACHMENTS
 	playsound('sound/weapons/dink.ogg', 30, 1)
 
 	if(chambered && chambered.BB)
-		chambered.BB.damage *= 5
+		chambered.BB.damage *= 50//From 5
 
 	process_fire(target, user, TRUE, params, stam_cost = getstamcost(user))
 

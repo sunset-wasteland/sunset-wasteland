@@ -119,6 +119,10 @@
 	embedding = list(embed_chance=100, ignore_throwspeed_threshold=TRUE, fall_chance=0, embed_chance_turf_mod=-100, projectile_payload = /obj/item/shrapnel/launcher)
 	sharpness = SHARP_EDGED
 
+/obj/item/projectile/bullet/shrapnel_launcher/mortar
+	damage = 6//Half damage for double range.
+	range = 12//Read above.
+
 /obj/item/shrapnel/launcher
 	name = "shrapnel chunk"
 	embedding = list(embed_chance=100, fall_chance=0, jostle_chance=7, ignore_throwspeed_threshold=TRUE, pain_stam_pct=0.7, pain_mult=3, jostle_pain_mult=3)

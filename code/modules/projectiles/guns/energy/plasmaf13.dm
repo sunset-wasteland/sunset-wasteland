@@ -125,6 +125,7 @@
 
 /obj/item/gun/energy/laser/plasma/spear
 	name = "ergonomic plasmacaster"
+	desc = "An ergonomic pre-war plasmacaster designed for precision mining work. This one appears to be built into a single thick staff, with a bulbous hilt and sharp saturnite alloy blades ringing the caster assembly- strongly resembling sort of spear."
 	icon = 'icons/fallout/objects/melee/twohanded.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/melee2h_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/melee2h_righthand.dmi'
@@ -134,7 +135,6 @@
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_LIGHT //you need to wield it to fire it
 	slot_flags = ITEM_SLOT_BACK
-	desc = "An ergonomic pre-war plasmacaster designed for precision mining work. This one appears to be built into a single thick staff, with a bulbous hilt and sharp saturnite alloy blades ringing the caster assembly- strongly resembling sort of spear."
 	ammo_type = list(/obj/item/ammo_casing/energy/plasma/miner)
 	cell_type = /obj/item/stock_parts/cell/ammo/ecp
 	sharpness = SHARP_EDGED

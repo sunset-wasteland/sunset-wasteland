@@ -577,9 +577,7 @@
 "acc" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/old,
-/turf/open/floor/f13{
-	icon_state = "floorrusty"
-	},
+/turf/open/floor/f13/wood,
 /area/f13/building)
 "acd" = (
 /obj/machinery/light/broken,
@@ -610,9 +608,7 @@
 /area/f13/village)
 "ack" = (
 /obj/item/soap/homemade,
-/turf/open/floor/f13{
-	icon_state = "floorrusty"
-	},
+/turf/open/floor/f13/wood,
 /area/f13/building)
 "acl" = (
 /turf/closed/wall/f13/wood,
@@ -694,10 +690,8 @@
 	},
 /area/f13/building/bighornbunker)
 "acE" = (
-/obj/effect/decal/cleanable/generic,
-/turf/open/floor/f13{
-	icon_state = "floorrusty"
-	},
+/obj/structure/reagent_dispensers/barrel/explosive,
+/turf/open/floor/f13/wood,
 /area/f13/building)
 "acF" = (
 /obj/structure/closet/crate/large,
@@ -835,9 +829,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/bedsheetbin,
 /obj/structure/table/wood,
-/turf/open/floor/f13{
-	icon_state = "floorrusty"
-	},
+/turf/open/floor/f13/wood,
 /area/f13/building)
 "adc" = (
 /obj/structure/car/rubbish1,
@@ -21368,6 +21360,10 @@
 	},
 /turf/open/floor/wood/wood_common,
 /area/f13/city/bighorn)
+"bUn" = (
+/obj/structure/wreck/trash/halftire,
+/turf/open/indestructible/ground/outside/desert,
+/area/f13/wasteland/quarry)
 "bUy" = (
 /obj/structure/closet/fridge,
 /obj/effect/spawner/lootdrop/f13/alcoholspawner,
@@ -21389,13 +21385,10 @@
 /turf/open/floor/wood/wood_common,
 /area/f13/city/bighorn)
 "bUC" = (
-/obj/machinery/door/unpowered/securedoor{
-	name = "Bar";
-	req_one_access_txt = "139"
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood/wood_common,
-/area/f13/city/bighorn)
+/obj/structure/table/reinforced,
+/obj/item/reagent_containers/food/condiment/enzyme,
+/turf/open/floor/plasteel/freezer,
+/area/f13/brotherhood/leisure)
 "bUD" = (
 /obj/structure/table/wood,
 /obj/item/folder,
@@ -26792,9 +26785,11 @@
 	},
 /area/f13/building/museum)
 "eDQ" = (
-/obj/structure/bonfire,
-/turf/open/indestructible/ground/outside/desert,
-/area/f13/wasteland/quarry)
+/obj/vehicle/ridden/fuel/motorcycle{
+	dir = 8
+	},
+/turf/open/floor/f13/wood,
+/area/f13/building)
 "eEq" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	dir = 8;
@@ -30967,9 +30962,7 @@
 	pixel_x = 5;
 	pixel_y = 2
 	},
-/turf/open/floor/f13{
-	icon_state = "floorrusty"
-	},
+/turf/open/floor/f13/wood,
 /area/f13/building)
 "hhs" = (
 /obj/effect/spawner/lootdrop/welder_tools,
@@ -33219,16 +33212,10 @@
 	},
 /area/f13/wasteland/west)
 "iHZ" = (
-/obj/structure/chair/f13foldupchair{
-	dir = 4;
-	pixel_x = -8;
-	pixel_y = 6
-	},
-/turf/open/indestructible/ground/outside/dirt{
-	dir = 8;
-	icon_state = "dirt"
-	},
-/area/f13/wasteland/quarry)
+/obj/structure/wreck/trash/engine,
+/obj/effect/decal/cleanable/oil,
+/turf/open/floor/f13/wood,
+/area/f13/building)
 "iIm" = (
 /obj/structure/table,
 /obj/item/storage/part_replacer,
@@ -38369,8 +38356,8 @@
 /area/f13/wasteland/museum)
 "lNy" = (
 /obj/structure/tires/five,
-/turf/open/indestructible/ground/outside/desert,
-/area/f13/wasteland/quarry)
+/turf/open/floor/f13/wood,
+/area/f13/building)
 "lNB" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -39126,9 +39113,7 @@
 "mjc" = (
 /obj/structure/simple_door/tent,
 /obj/structure/decoration/rag,
-/turf/open/floor/f13{
-	icon_state = "floorrusty"
-	},
+/turf/open/floor/f13/wood,
 /area/f13/building)
 "mjw" = (
 /obj/structure/fence{
@@ -41803,13 +41788,9 @@
 	},
 /area/f13/building/mall)
 "nTn" = (
-/obj/structure/chair/f13foldupchair{
-	dir = 8;
-	pixel_x = 12;
-	pixel_y = 6
-	},
-/turf/open/indestructible/ground/outside/desert,
-/area/f13/wasteland/quarry)
+/obj/structure/wreck/trash/autoshaft,
+/turf/open/floor/f13/wood,
+/area/f13/building)
 "nTG" = (
 /obj/structure/obstacle/barbedwire/end{
 	dir = 8
@@ -44704,11 +44685,10 @@
 	},
 /area/f13/wasteland/heaven)
 "pFr" = (
-/obj/structure/chair/f13foldupchair{
-	pixel_y = 14
-	},
-/turf/open/indestructible/ground/outside/desert,
-/area/f13/wasteland/quarry)
+/obj/structure/table/wood/settler,
+/obj/item/key/motorcycle,
+/turf/open/floor/f13/wood,
+/area/f13/building)
 "pFw" = (
 /obj/item/reagent_containers/hypospray/medipen/stimpak,
 /obj/machinery/iv_drip,
@@ -45964,9 +45944,7 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
-/turf/open/floor/f13{
-	icon_state = "floorrusty"
-	},
+/turf/open/floor/f13/wood,
 /area/f13/building)
 "qwd" = (
 /obj/item/storage/trash_stack,
@@ -54855,9 +54833,7 @@
 /obj/item/reagent_containers/glass/bucket/wood{
 	pixel_y = 7
 	},
-/turf/open/floor/f13{
-	icon_state = "floorrusty"
-	},
+/turf/open/floor/f13/wood,
 /area/f13/building)
 "vTf" = (
 /obj/effect/decal/cleanable/dirt{
@@ -67694,7 +67670,7 @@ blI
 swr
 swr
 swr
-bUC
+hVN
 swr
 swr
 aTw
@@ -99366,7 +99342,7 @@ aae
 aae
 rkl
 vTa
-acp
+kVQ
 ral
 rqE
 iQb
@@ -99623,7 +99599,7 @@ aae
 aae
 abu
 qvQ
-acE
+mbr
 mjc
 xjM
 xjM
@@ -100399,7 +100375,7 @@ alE
 cpq
 hjf
 dAO
-iHZ
+dAO
 dAO
 dAO
 dAO
@@ -100655,11 +100631,11 @@ qth
 dnR
 dnR
 puj
-pFr
-eDQ
 cpq
 cpq
-puj
+cpq
+cpq
+cpq
 nrn
 xjM
 prR
@@ -100913,10 +100889,10 @@ qth
 dnR
 dnR
 cpq
-nTn
-urA
-cpq
-cpq
+acl
+xyU
+xyU
+acl
 nrn
 xjM
 iTv
@@ -101170,10 +101146,10 @@ eLP
 dnR
 dnR
 dnR
-cpq
-cpq
-cpq
-cpq
+xyU
+eDQ
+iHZ
+xyU
 nrn
 xjM
 xjM
@@ -101427,10 +101403,10 @@ eLP
 dnR
 dnR
 aiL
-cpq
-cpq
-cpq
-cpq
+acE
+xyU
+nTn
+xyU
 mUN
 dAO
 dAO
@@ -101687,8 +101663,8 @@ aiL
 aiL
 aiL
 lNy
-cpq
-cpq
+pFr
+bUn
 cpq
 cpq
 pmC
@@ -119881,7 +119857,7 @@ rcg
 cXF
 qrk
 rzz
-xVT
+bUC
 cXF
 kKN
 iga

@@ -311,3 +311,14 @@
 
 /obj/item/storage/box/large/custom_kit/transhumanism/proc/implant(player, obj/item/organ/I)
 	I.Insert(player, drop_if_replaced = FALSE)
+
+/datum/gear/donator/kits/hyro
+	name = "hyro goodies"
+	path = /obj/item/storage/box/large/custom_kit/hyro
+	ckeywhitelist = list ("hyrofox")
+
+/obj/item/storage/box/large/custom_kit/hyro/PopulateContents()
+	new /obj/item/gun/energy/laser/plasma/glock(src)
+	new /obj/item/stock_parts/cell/ammo/ec(src)
+	new /obj/item/book/granter/trait/iron_fist(src)
+	new /obj/item/clothing/head/f13/boscap/beret(src)

@@ -357,15 +357,16 @@ Follower Volunteer
 	ADD_TRAIT(H, TRAIT_CYBERNETICIST_EXPERT, src)
 	ADD_TRAIT(H, TRAIT_CYBERNETICIST, src)
 
-/datum/outfit/loadout/engineer //Upgraded tools, RCD
+/datum/outfit/loadout/engineer //Upgraded tools, Materials
 	name = "Followers Engineer"
 	belt = /obj/item/storage/belt/utility/full/engi
 	head =	/obj/item/clothing/head/hardhat
 	gloves =	/obj/item/clothing/gloves/color/yellow
 	backpack_contents = list(
-		/obj/item/construction/rcd = 1,
+		/obj/item/stack/sheet/metal/fifty = 1,
+		/obj/item/stack/sheet/glass/fifty = 1,
 		/obj/item/lightreplacer = 1,
-		/obj/item/rcd_ammo = 4,
+
 	)
 
 /datum/outfit/loadout/miner //Quick access to mining, scanner

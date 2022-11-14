@@ -525,7 +525,7 @@
 	AddComponent(/datum/component/two_handed, require_twohands=TRUE)
 	AddElement(/datum/element/update_icon_updates_onmob)
 
-// Inquisitorial axe			Keywords: Damage 5/32, AP 0.1, SPEAR REACH, BACK SLOT ENABLED
+// Inquisitorial axe			Keywords: Damage 32, AP 0.9, SPEAR REACH, BACK SLOT ENABLED
 /obj/item/twohanded/inquis_spear
 	name = "Inquisitorial polearm"
 	desc = "An odd looking spear of sorts, tipped with what appears to be a plasma chamber. In theory, this should splash the target with plasma on each hit. Does it work, however?"
@@ -539,8 +539,8 @@
 	sharpness = SHARP_POINTY
 	slot_flags = ITEM_SLOT_BACK
 	block_parry_data = /datum/block_parry_data/smith_generic //data is in finished items file
-	force = 5
-	armour_penetration = 0.1
+	force = 32
+	armour_penetration = 0.9
 	max_reach = 2
 	throwforce = 1//WHY WOULD YOU THROW THIS?
 	throw_speed = 1
@@ -564,7 +564,7 @@
 
 /obj/item/twohanded/inquis_spear/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/two_handed, force_unwielded=5, force_wielded=32, icon_wielded="[icon_prefix]2")
+	AddComponent(/datum/component/two_handed, require_twohands=TRUE)
 	AddElement(/datum/element/update_icon_updates_onmob)
 	AddElement(/datum/element/sword_point)
 

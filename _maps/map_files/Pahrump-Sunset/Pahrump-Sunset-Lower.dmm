@@ -5229,12 +5229,16 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "ccI" = (
-/obj/structure/chair/comfy/brown{
-	dir = 8
+/obj/structure/table/wood,
+/obj/item/stamp/qm{
+	pixel_x = -4
 	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/carpet/black,
-/area/f13/brotherhood/offices1st)
+/obj/item/stamp/denied{
+	pixel_x = 4
+	},
+/obj/item/stamp,
+/turf/open/floor/plasteel/dark,
+/area/f13/brotherhood)
 "ccS" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/sign/poster/prewar/poster65{
@@ -6264,6 +6268,9 @@
 	dir = 4;
 	id = "QMUnload"
 	},
+/obj/machinery/status_display/supply{
+	pixel_y = 32
+	},
 /turf/open/floor/plasteel/dark,
 /area/f13/brotherhood)
 "cAX" = (
@@ -6626,9 +6633,6 @@
 /area/f13/brotherhood/archives)
 "dee" = (
 /obj/effect/turf_decal/stripes/line,
-/obj/machinery/status_display/supply{
-	pixel_y = 32
-	},
 /obj/machinery/conveyor{
 	dir = 4;
 	id = "QMUnload"
@@ -7980,16 +7984,20 @@
 	},
 /area/f13/tunnel/bighorn)
 "eUW" = (
-/obj/structure/table/wood,
-/obj/item/stamp/qm{
-	pixel_x = -4
+/obj/machinery/light{
+	dir = 8
 	},
-/obj/item/stamp/denied{
-	pixel_x = 4
+/obj/structure/table/reinforced,
+/obj/machinery/computer/terminal{
+	dir = 4;
+	pixel_y = 5;
+	termtag = "Business"
 	},
-/obj/item/stamp,
-/turf/open/floor/plasteel/dark,
-/area/f13/brotherhood)
+/obj/structure/sign/poster/prewar/poster63{
+	pixel_y = -32
+	},
+/turf/open/floor/f13/wood,
+/area/f13/brotherhood/offices1st)
 "eVM" = (
 /obj/effect/landmark/start/f13/initiate,
 /obj/structure/railing{
@@ -8266,12 +8274,10 @@
 /turf/closed/wall/rust,
 /area/f13/tunnel)
 "frr" = (
-/obj/machinery/light{
-	dir = 8
-	},
-/obj/effect/decal/cleanable/dirt,
+/obj/structure/safe/floor,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/energy/high,
-/obj/structure/displaycase,
+/obj/item/disk/nuclear,
+/obj/item/disk/nanite_program/paralyzing,
 /turf/open/floor/f13/wood,
 /area/f13/brotherhood/offices1st)
 "frx" = (
@@ -8854,15 +8860,10 @@
 /turf/open/floor/mineral/plastitanium,
 /area/f13/brotherhood)
 "gsU" = (
-/obj/structure/table/reinforced,
-/obj/item/flashlight/lamp,
-/obj/machinery/button/door{
-	id = "librarians1";
-	name = "Librarian's Office";
-	normaldoorcontrol = 1;
-	req_access_txt = "120";
-	specialfunctions = 4
+/obj/structure/chair/comfy/brown{
+	dir = 8
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet/black,
 /area/f13/brotherhood/offices1st)
 "gtG" = (
@@ -12280,10 +12281,16 @@
 	},
 /area/f13/tunnel)
 "llc" = (
-/obj/structure/simple_door/metal/vaultreinforced{
-	icon_state = "vaultrwall3"
+/obj/structure/table/reinforced,
+/obj/item/flashlight/lamp,
+/obj/machinery/button/door{
+	id = "librarians1";
+	name = "Librarian's Office";
+	normaldoorcontrol = 1;
+	req_access_txt = "120";
+	specialfunctions = 4
 	},
-/turf/open/floor/mineral/plastitanium,
+/turf/open/floor/carpet/black,
 /area/f13/brotherhood/offices1st)
 "llt" = (
 /obj/effect/turf_decal/caution{
@@ -13642,13 +13649,6 @@
 	icon_state = "darkdirtysolid"
 	},
 /area/f13/tunnel)
-"nbJ" = (
-/obj/machinery/light/small{
-	dir = 4
-	},
-/obj/machinery/syndicatebomb/self_destruct,
-/turf/open/floor/mineral/plastitanium,
-/area/f13/brotherhood/offices1st)
 "ndM" = (
 /obj/structure/chair/right,
 /turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
@@ -18772,6 +18772,9 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/chair/comfy/black{
 	dir = 8
+	},
+/obj/structure/sign/poster/contraband/shamblers_juice{
+	pixel_y = 32
 	},
 /turf/open/floor/carpet/black,
 /area/f13/brotherhood/offices1st)
@@ -72865,7 +72868,7 @@ aae
 aae
 aae
 oVq
-oVq
+ccI
 oVq
 cAT
 tjj
@@ -73122,8 +73125,8 @@ aae
 aae
 oVq
 oVq
-eUW
-oVq
+onW
+omy
 dee
 onW
 onW
@@ -73637,7 +73640,7 @@ aae
 oVq
 plP
 onW
-omy
+onW
 ibq
 onW
 onW
@@ -79588,8 +79591,8 @@ iPf
 iFV
 fZM
 uyb
-tgR
-cZL
+rGz
+rGz
 rGz
 rGz
 uyb
@@ -79844,11 +79847,11 @@ uWb
 iPf
 hYg
 bRg
-bEX
-pvC
-sUJ
-gsU
-gXT
+uyb
+tgR
+cZL
+rGz
+rGz
 uyb
 uyb
 uyb
@@ -80101,10 +80104,10 @@ oJw
 iPf
 dZP
 bRg
-uyb
-mEL
-ccI
-eRL
+bEX
+pvC
+sUJ
+llc
 gXT
 uyb
 aae
@@ -80359,9 +80362,9 @@ iPf
 dZP
 mKl
 uyb
-lii
-pif
 mEL
+gsU
+eRL
 gXT
 uyb
 aae
@@ -80616,10 +80619,10 @@ iPf
 dZP
 mKl
 uyb
-uyb
-uyb
-uyb
-uyb
+lii
+pif
+mEL
+gXT
 uyb
 aae
 aak
@@ -80872,12 +80875,12 @@ uWb
 iPf
 dZP
 mKl
-gSv
-gSv
-aPj
-quH
-quH
-quH
+uyb
+uyb
+uyb
+uyb
+uyb
+uyb
 quH
 quH
 quH
@@ -82404,9 +82407,9 @@ jCz
 rGz
 oYs
 uyb
-rGz
-pmx
 frr
+gXT
+oGI
 pmx
 uyb
 ldv
@@ -83435,7 +83438,7 @@ uyb
 rGz
 rGz
 yaj
-rGz
+dSb
 uyb
 dbG
 sVa
@@ -85478,7 +85481,7 @@ snt
 gXT
 uyb
 rGz
-qwR
+eUW
 uyb
 qwR
 rGz
@@ -86502,7 +86505,7 @@ aae
 aae
 uyb
 jVN
-llc
+uyb
 jVN
 uyb
 uyb
@@ -86758,9 +86761,9 @@ aae
 aae
 aae
 aae
-jVN
-nbJ
-jVN
+aae
+aak
+aae
 aae
 aae
 aak
@@ -87015,9 +87018,9 @@ aae
 aae
 aae
 aae
-jVN
-jVN
-jVN
+aae
+aae
+aae
 aae
 aae
 aae

@@ -902,7 +902,7 @@ ATTACHMENTS
 	playsound('sound/weapons/dink.ogg', 30, 1)
 
 	if(chambered && chambered.BB)
-		chambered.BB.damage *= 50//From 5
+		chambered.BB.damage *= 5
 
 	process_fire(target, user, TRUE, params, stam_cost = getstamcost(user))
 

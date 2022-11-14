@@ -113,6 +113,7 @@
 #define F13SCRIBE		(1<<9)
 #define F13INITIATE		(1<<10)
 #define F13OFFDUTYBOS	(1<<11)
+#define F13INQUIS		(1<<12)
 
 #define DEP_BIGHORN (1<<6)
 

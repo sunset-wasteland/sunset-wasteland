@@ -562,10 +562,12 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 		"Knight",
 		"Initiate",
 		"BoS Off-Duty",
+		"Inquisitorial Acolyte",
 		)
 	job_req = list(
 		"Baron",
 		"Castellan",
 		"Keeper",
 		"Knight-Commander",
+		"Inquisitorial Acolyte",
 		)

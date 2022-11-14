@@ -711,6 +711,10 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	name = "BoS Off-Duty"
 	icon_state = "Off-Duty"
 
+/obj/effect/landmark/start/f13/inquis
+	name = "Inquisitorial Acolyte"
+	icon_state = "Elder"
+
 // Vault
 
 /obj/effect/landmark/start/f13/overseer

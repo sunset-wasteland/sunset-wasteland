@@ -88,6 +88,7 @@ GLOBAL_LIST_INIT(faction_whitelist_positions, list(
 "Scribe",
 "Initiate",
 "BoS Off-Duty",
+"Inquisitorial Acolyte",
 
 "Legion Centurion",
 "Legion Venator",
@@ -142,6 +143,7 @@ GLOBAL_LIST_INIT(brotherhood_positions, list(
 	"Scribe",
 	"BoS Off-Duty",
 	"Initiate",
+	"Inquisitorial Acolyte",
 ))
 
 GLOBAL_LIST_INIT(bighorn_positions, list(

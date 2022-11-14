@@ -368,3 +368,64 @@
 	time = 60
 	always_available = FALSE
 	granting_trait = TRAIT_ADVANCED_EXPLOSIVE_CRAFTING
+
+/datum/crafting_recipe/mortar_shell
+	name = "Mortar (HE)"
+	category = CAT_EXPLOSIVE
+	result = /obj/item/mortar_shell
+	reqs = list(
+		/obj/item/rocketshell = 1,
+		/obj/item/stack/crafting/electronicparts = 15,
+		/obj/item/stack/sheet/prewar = 5,
+		/obj/item/stack/ore/blackpowder = 5,
+	)
+	tools = list(TOOL_AWORKBENCH)
+	time = 60
+	always_available = FALSE
+	granting_trait = TRAIT_ADVANCED_EXPLOSIVE_CRAFTING
+
+/datum/crafting_recipe/mortar_shell_wp
+	name = "Mortar (WP)"
+	category = CAT_EXPLOSIVE
+	result = /obj/item/mortar_shell/smoke
+	reqs = list(
+		/obj/item/rocketshell = 1,
+		/obj/item/stack/crafting/electronicparts = 15,
+		/obj/item/stack/sheet/prewar = 5,
+		/obj/item/stack/ore/blackpowder = 5,
+		/datum/reagent/phlogiston = 200,
+	)
+	tools = list(TOOL_AWORKBENCH)
+	time = 60
+	always_available = FALSE
+	granting_trait = TRAIT_ADVANCED_EXPLOSIVE_CRAFTING
+
+/datum/crafting_recipe/mortar_shell_frag
+	name = "Mortar (FRAG)"
+	category = CAT_EXPLOSIVE
+	result = /obj/item/mortar_shell/frag
+	reqs = list(
+		/obj/item/rocketshell = 1,
+		/obj/item/stack/crafting/electronicparts = 15,
+		/obj/item/stack/sheet/prewar = 15,
+		/obj/item/stack/ore/blackpowder = 25,
+	)
+	tools = list(TOOL_AWORKBENCH)
+	time = 60
+	always_available = FALSE
+	granting_trait = TRAIT_ADVANCED_EXPLOSIVE_CRAFTING
+
+/datum/crafting_recipe/mortar_shell_rad
+	name = "Mortar (CNTM)"
+	category = CAT_EXPLOSIVE
+	result = /obj/item/mortar_shell/rad
+	reqs = list(
+		/obj/item/rocketshell = 1,
+		/obj/item/stack/crafting/electronicparts = 5,
+		/obj/item/stack/sheet/mineral/uranium = 5,
+		/obj/item/stack/ore/blackpowder = 5,
+	)
+	tools = list(TOOL_AWORKBENCH)
+	time = 60
+	always_available = FALSE
+	granting_trait = TRAIT_ADVANCED_EXPLOSIVE_CRAFTING

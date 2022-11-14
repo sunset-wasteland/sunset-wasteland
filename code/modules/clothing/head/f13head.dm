@@ -470,6 +470,16 @@
 	armor = list("melee" = 75, "bullet" = 75, "laser" = 75, "energy" = 27, "bomb" = 64, "bio" = 100, "rad" = 99, "fire" = 90, "acid" = 40, "wound" = 75)
 	salvaged_type = /obj/item/clothing/head/helmet/f13/heavy/salvaged_pa/midwest/hardened
 
+//Inquisitor / Acolyte
+/obj/item/clothing/head/helmet/f13/power_armor/midwest_inquis
+	name = "Midwestern Inquisitorial APA helmet"
+	desc = "This helmet belongs to the Midwestern branch of the Brotherhood of Steel. It appears to be painted in Inquisitorial colours."
+	icon_state = "t51wboshelmet"
+	item_state = "t51wboshelmet"
+	actions_types = list(/datum/action/item_action/toggle_helmet_light)
+	armor = list("melee" = 75, "bullet" = 75, "laser" = 75, "energy" = 75, "bomb" = 62, "bio" = 100, "rad" = 100, "fire" = 90, "acid" = 40, "wound" = 50)
+	salvaged_type = null
+
 /obj/item/clothing/head/helmet/f13/power_armor/excavator
 	name = "excavator power helmet"
 	desc = "The helmet of the excavator power armor suit."

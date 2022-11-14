@@ -506,6 +506,12 @@
 	item_color = "elder"
 	minimize_when_attached = TRUE
 
+/obj/item/clothing/accessory/bos/inquis_acol
+	name = "Inquisitorial Acolyte band"
+	desc = "An odd bit of fabric, denoting the wearer as someone important. How're you seeing this?"
+	icon_state = "remnant"
+	item_color = "remnant"
+
 //Ranks
 
 /obj/item/clothing/accessory/ncr

@@ -1124,13 +1124,15 @@ They're intended to be some manner of IC police similar to how I've done IS, for
 	belt = 			/obj/item/storage/belt/military/army
 	shoes = 		/obj/item/clothing/shoes/combat
 	gloves = 		/obj/item/clothing/gloves/combat
-	suit_store = 	/obj/item/twohanded/inquis_spear
+	suit_store = 	/obj/item/gun/energy/laser/plasma/inquis
 
 	backpack_contents = list(
+		/obj/item/stock_parts/cell/ammo/ecp = 1,
 		/obj/item/stock_parts/cell/ammo/ec = 3,
 		/obj/item/restraints/handcuffs = 1,
 		/obj/item/melee/classic_baton = 1,
 		/obj/item/gun/energy/laser/complianceregulator = 1,
 		/obj/item/melee/onehanded/knife/survival = 1,
 		/obj/item/storage/belt/holster = 1,
+		/obj/item/clothing/accessory/bos/inquis_acol = 1,
 		)

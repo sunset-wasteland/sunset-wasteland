@@ -296,7 +296,7 @@
 		if(istype(victim) && victim.stat != DEAD)
 			victim.rad_act(12500)//I'm sorry, little one. :(
 
-	for(var/turf/open/turf in view(src,4))
+	for(var/turf/open/turf in view(src,2))//Probably too little?
 		if(istype(turf))
 			var/obj/effect/decal/waste/WS = locate() in turf.contents
 			if(!WS)

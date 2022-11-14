@@ -168,3 +168,53 @@
 	. = ..()
 	if(!twohands)
 		return FALSE
+
+// Inquisitorial axe			Keywords: Damage 6/32, AP 0.9, SPEAR REACH, BACK SLOT ENABLED
+// Copy of plasma spear. Different for a few reasons.
+// Absurdly powerful.
+/obj/item/gun/energy/laser/plasma/inquis
+	name = "Inquisitorial polearm"
+	desc = "An odd looking spear of sorts, tipped with what appears to be a plasma chamber. \
+	In theory, this should splash the target with plasma when triggered. Does it work, however?"
+	icon = 'icons/fallout/objects/melee/twohanded.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/melee2h_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/melee2h_righthand.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/backslot_weapon.dmi'
+	item_state = "plasma"
+	icon_state = "plasma"
+	w_class = WEIGHT_CLASS_BULKY
+	weapon_weight = WEAPON_LIGHT //you need to wield it to fire it
+	slot_flags = ITEM_SLOT_BACK
+	ammo_type = list(/obj/item/ammo_casing/energy/plasma/repeater)
+	cell_type = /obj/item/stock_parts/cell/ammo/ecp
+	sharpness = SHARP_EDGED
+	attack_speed = CLICK_CD_MELEE * 1.2
+	attack_verb = list("seared","jabbed","punctured")
+	max_reach = 2
+	force = 6
+	fire_delay = 25//Long enough to make melee worthwhile.
+	equipsound = 'sound/f13weapons/equipsounds/declonequip.ogg'
+	hitsound = 'sound/f13weapons/sear.ogg'
+	var/twohands = FALSE
+
+/obj/item/gun/energy/laser/plasma/inquis/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/two_handed, force_unwielded=6, force_wielded=32, icon_wielded="[item_state]2")
+	AddElement(/datum/element/update_icon_updates_onmob)
+	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, .proc/allow_fire)
+	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, .proc/deny_fire)
+
+/obj/item/gun/energy/laser/plasma/inquis/proc/allow_fire()
+	twohands = TRUE
+/obj/item/gun/energy/laser/plasma/inquis/proc/deny_fire()
+	twohands = FALSE
+
+/obj/item/gun/energy/laser/plasma/inquis/Destroy()
+	..()
+	UnregisterSignal(src, list(COMSIG_TWOHANDED_WIELD,
+								COMSIG_TWOHANDED_UNWIELD))
+
+/obj/item/gun/energy/laser/plasma/inquis/can_shoot()
+	. = ..()
+	if(!twohands)
+		return FALSE

@@ -897,6 +897,15 @@
 	remarks = list("Always ensure a safe working environment, promptly clean any chemical mess.", "Improperly stored chemicals can quickly lead to safety hazards.", "Do not abuse chemicals for recreational use in the laboratory!", "Labcoats and goggles not only protect you from burns, but give an aura of authority.", "Keep your laboratory clean and organized, utilize cabinets and shelves.", "Potassium and water should not be mixed, or they will react violently.")
 	crafting_recipe_types = list(/datum/crafting_recipe/jet, /datum/crafting_recipe/turbo, /datum/crafting_recipe/psycho, /datum/crafting_recipe/medx, /datum/crafting_recipe/buffout)
 
+/obj/item/book/granter/trait/legionalchemy
+	name = "Teachings of Mars"
+	desc = "A crude, handmade book containing the essentials on how to work alchemy tables. The cover is stamped with a brass bull."
+	oneuse = TRUE
+	granted_trait = TRAIT_MARS_TEACH
+	traitname = "legion medicine"
+	remarks = list("Sapere aude.", "Ad astra per aspera.", "Mars favors the bold.", "Ars longa, vita brevis.", "Vivamus, moriendum est.", "Sic gorgiamus allos subjectatos nunc.", "Aere perennius.", "Bis dat qui cito dat.", "Finis coronat opus.", "Nullum magnum ingenium sine mixture dementia fuit.", "Nemo mortalium omnibus horis sapit."
+
+
 /obj/item/book/granter/trait/bigleagues
 	name = "Grognak the Barbarian"
 	desc = "A pulp fiction paperback detailing the adventures of a violent barbarian. Surprisingly, this was sold to children."

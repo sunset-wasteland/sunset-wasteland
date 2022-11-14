@@ -200,6 +200,7 @@ Discuss balance and documentation changes with Dragonfruits#1913 or forward them
 		/obj/item/gun/ballistic/automatic/pistol/pistol14/orator = 1,
 		/obj/item/book/granter/trait/midsurgery = 1,
 		/obj/item/book/granter/trait/chemistry = 1,
+		/obj/item/book/granter/trait/legionalchemy = 1,
 		/obj/item/stack/f13Cash/random/denarius/high = 1,
 		
 		)

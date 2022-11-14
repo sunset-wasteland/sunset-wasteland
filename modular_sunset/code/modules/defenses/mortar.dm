@@ -270,7 +270,7 @@
 	desc = "A hefty mortar shell. Looks to be a fragmentation round."
 	icon_state = "mortar_ammo_frag"
 	var/shrapnel_type = /obj/item/projectile/bullet/shrapnel_launcher/mortar
-	var/shrapnel_magnitude = 12//Previously 24. Way too powerful at that.
+	var/shrapnel_magnitude = 6//Previously 24. Way too powerful at that.
 
 /obj/item/mortar_shell/frag/New()
 	..()
@@ -291,9 +291,17 @@
 /obj/item/mortar_shell/rad/detonate(turf/T)
 	explosion(T, 0, 1, 2, 7)//Generic mortar explosion outside of HE shells.
 	forceMove(T) //AAAAAAAA
-	for(var/mob/living/carbon/human/victim in view(src,12))//12 range, same step as frag.
+
+	for(var/mob/living/carbon/human/victim in view(src,6))//6 range, half step of frag.
 		if(istype(victim) && victim.stat != DEAD)
 			victim.rad_act(12500)//I'm sorry, little one. :(
+
+	for(var/turf/open/turf in view(src,4))
+		if(istype(turf))
+			var/obj/effect/decal/waste/WS = locate() in turf.contents
+			if(!WS)
+				WS = new/obj/effect/decal/waste(turf)
+
 	rad_act(3500)//General rad pulse. Stacks with the above. If this even works?
 	qdel(src)
 
@@ -313,9 +321,9 @@
 	new /obj/item/mortar_shell(src)
 	new /obj/item/mortar_shell(src)
 	new /obj/item/mortar_shell(src)
-	new /obj/item/mortar_shell(src)
-	new /obj/item/mortar_shell(src)
-	new /obj/item/mortar_shell(src)
+	new /obj/item/mortar_shell/frag(src)
+	new /obj/item/mortar_shell/smoke(src)
+	new /obj/item/mortar_shell/smoke(src)
 	new /obj/item/binoculars(src)
 	new /obj/item/weapon/maptool(src)
 
@@ -337,9 +345,9 @@
 	new /obj/item/mortar_shell(src)
 	new /obj/item/mortar_shell(src)
 	new /obj/item/mortar_shell(src)
-	new /obj/item/mortar_shell(src)
-	new /obj/item/mortar_shell(src)
-	new /obj/item/mortar_shell(src)
-	new /obj/item/mortar_shell(src)
-	new /obj/item/mortar_shell(src)
-	new /obj/item/mortar_shell(src)
+	new /obj/item/mortar_shell/frag(src)
+	new /obj/item/mortar_shell/frag(src)
+	new /obj/item/mortar_shell/smoke(src)
+	new /obj/item/mortar_shell/smoke(src)
+	new /obj/item/mortar_shell/smoke(src)
+	new /obj/item/mortar_shell/smoke(src)

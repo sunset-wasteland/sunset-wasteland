@@ -402,6 +402,34 @@
 // CUSTOM //
 ////////////
 
+/obj/item/clothing/suit/armored/medium/combat/prototype
+	name = "prototype 'flatline' armor"
+	desc = "test"
+	icon_state = "combat_rusted"
+	item_state = "combat_rusted"
+	permeability_coefficient = 0.9
+	heat_protection = CHEST | GROIN | LEGS
+	cold_protection = CHEST | GROIN | LEGS
+	armor = list("melee" = 45, "bullet" = 45, "laser" = 45, "energy" = 45, "bomb" = 45, "bio" = 45, "rad" = 45, "fire" = 45, "acid" = 45, "wound" = 10)
+
+/obj/item/clothing/suit/armored/medium/combat/prototype/New()
+	..()
+	START_PROCESSING(SSobj, src)
+
+/obj/item/clothing/suit/armored/medium/combat/prototype/Destroy()
+	STOP_PROCESSING(SSobj,src)
+	. = ..()
+
+/obj/item/clothing/suit/armored/medium/combat/prototype/process()
+	if(iscarbon(loc))
+		var/mob/living/carbon/M = loc
+		if(src == M.suit)
+			if(M.health < M.maxHealth)
+				M.adjustBruteLoss(-2) 
+				M.adjustFireLoss(-2)
+				M.adjustToxLoss(-2)
+				M.adjustOxyLoss(-2)
+
 /obj/item/clothing/suit/armored/medium/combat/cloak_armored
 	name = "armored cloak"
 	desc = "A dark cloak worn over protective plating."

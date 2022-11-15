@@ -612,8 +612,8 @@
 		/obj/item/reagent_containers/glass/bottle/frostoil = 5,
 		/obj/item/book/granter/trait/midsurgery = 5,
 		/obj/item/reagent_containers/glass/bottle/FEV_solution = 20,
-		/obj/item/reagent_containers/glass/bottle/FEV_solution/two = 20,
-		/obj/item/reagent_containers/glass/bottle/FEV_solution/curling = 5,
+		/obj/item/reagent_containers/glass/bottle/FEV_solution/two = 5,
+		/obj/item/reagent_containers/glass/bottle/FEV_solution/curling = 20,
 		)
 
 /obj/effect/spawner/lootdrop/f13/medical/random_fev

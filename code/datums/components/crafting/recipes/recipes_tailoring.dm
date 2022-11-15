@@ -2,6 +2,22 @@
 //ARMOR//
 /////////
 
+/datum/crafting_recipe/Flatline
+	name = "Mk1 'flatline' armor"
+	result = /obj/item/clothing/suit/armored/medium/combat/bos_flatline
+	reqs = list(/obj/item/stack/sheet/mineral/titanium = 5,
+				/obj/item/clothing/suit/armor/f13/combat/brotherhood = 1,
+				/obj/item/stack/crafting/goodparts = 2,
+				/obj/item/stack/sheet/prewar = 2,
+				/obj/item/stack/crafting/armor_plate = 5,
+				/datum/reagent/medicine/algae = 120,
+				/obj/item/defibrillator/compact = 1)
+	tools = list(TOOL_AWORKBENCH)
+	time = 60
+	category = CAT_CLOTHING
+	subcategory = CAT_ARMOR
+	always_available = FALSE
+
 /datum/crafting_recipe/armorkit
 	name = "Armor Kit"
 	result = /obj/item/clothing/suit/armor/f13/kit

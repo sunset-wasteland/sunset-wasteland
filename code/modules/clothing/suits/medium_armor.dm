@@ -432,15 +432,21 @@
 	if(iscarbon(loc))
 		var/mob/living/carbon/M = loc
 		if(M.stat == DEAD)
+			M.adjustBruteLoss(-2) 
+			M.adjustFireLoss(-2)
+			M.adjustToxLoss(-2)
+			M.adjustOxyLoss(-2)
 			if(M.suiciding || M.hellbound) //they are never coming back
-				M.visible_message("<span class='warning'>[M]'s body does not react...</span>")
+				M.visible_message("<span class='warning'>[M]'s suit makes a long flatline noise...</span>")
+				playsound(src, 'sound/machines/defib_failed.ogg', 50, 0)
 				return
-			if(M.getBruteLoss() >= 100 || M.getFireLoss() >= 100 || HAS_TRAIT(M, TRAIT_HUSK)) //body is too damaged to be revived
-				M.visible_message("<span class='warning'>[M]'s body convulses a bit, and then falls still once more.</span>")
+			if(M.getBruteLoss() >= 200 || M.getFireLoss() >= 200 || HAS_TRAIT(M, TRAIT_HUSK)) //body is too damaged to be revived
+				playsound(src, 'sound/machines/defib_failed.ogg', 50, 0)
+				M.visible_message("<span class='warning'>[M]'s suit starts to whine and emit a charging noise, before an audiable thump, and then falls still once more.</span>")
 				M.do_jitter_animation(10)
 				return
 			else
-				M.visible_message("<span class='warning'>[M]'s body starts convulsing!</span>")
+				M.visible_message("<span class='warning'>[M]'s suit starts to whine making a charging up sound!</span>")
 				M.notify_ghost_cloning(source = M)
 				M.do_jitter_animation(10)
 				addtimer(CALLBACK(M, /mob/living/carbon.proc/do_jitter_animation, 10), 40) //jitter immediately, then again after 4 and 8 seconds
@@ -462,7 +468,9 @@
 					var/tplus = world.time - M.timeofdeath
 					if(M.revive())
 						M.grab_ghost()
-						M.emote("gasp")
+						M.visible_message("<span class='green'>[M]'s suit makes a thump! followed by [M] taking his first breaths again!</span>")
+						playsound(src,  'sound/machines/defib_zap.ogg', 50, 1, -1)
+						M.emote("coyawoo")
 						log_combat(M, M, "revived", src)
 						var/list/policies = CONFIG_GET(keyed_list/policyconfig)
 						var/timelimit = CONFIG_GET(number/defib_cmd_time_limit)
@@ -470,7 +478,7 @@
 						var/policy = late? policies[POLICYCONFIG_ON_DEFIB_LATE] : policies[POLICYCONFIG_ON_DEFIB_INTACT]
 						if(policy)
 							to_chat(M, policy)
-						M.log_message("revived using strange reagent, [tplus] deciseconds from time of death, considered [late? "late" : "memory-intact"] revival under configured policy limits.", LOG_GAME)
+						M.log_message("revived using internal defib, [tplus] deciseconds from time of death, considered [late? "late" : "memory-intact"] revival under configured policy limits.", LOG_GAME)
 	..()
 
 /obj/item/clothing/suit/armored/medium/combat/cloak_armored

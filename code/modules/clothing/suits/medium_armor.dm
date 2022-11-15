@@ -428,6 +428,47 @@
 			M.adjustFireLoss(-2)
 			M.adjustToxLoss(-2)
 			M.adjustOxyLoss(-2)
+	if(M.stat == DEAD)
+		if(M.suiciding || M.hellbound) //they are never coming back
+			M.visible_message("<span class='warning'>[M]'s body does not react...</span>")
+			return
+		if(M.getBruteLoss() >= 100 || M.getFireLoss() >= 100 || HAS_TRAIT(M, TRAIT_HUSK)) //body is too damaged to be revived
+			M.visible_message("<span class='warning'>[M]'s body convulses a bit, and then falls still once more.</span>")
+			M.do_jitter_animation(10)
+			return
+		else
+			M.visible_message("<span class='warning'>[M]'s body starts convulsing!</span>")
+			M.notify_ghost_cloning(source = M)
+			M.do_jitter_animation(10)
+			addtimer(CALLBACK(M, /mob/living/carbon.proc/do_jitter_animation, 10), 40) //jitter immediately, then again after 4 and 8 seconds
+			addtimer(CALLBACK(M, /mob/living/carbon.proc/do_jitter_animation, 10), 80)
+
+			spawn(100) //so the ghost has time to re-enter
+				if(iscarbon(M))
+					var/mob/living/carbon/C = M
+					if(!(C.dna && C.dna.species && (NOBLOOD in C.dna.species.species_traits)))
+						C.blood_volume = max(C.blood_volume, BLOOD_VOLUME_NORMAL*C.blood_ratio) //so you don't instantly re-die from a lack of blood
+					for(var/organ in C.internal_organs)
+						var/obj/item/organ/O = organ
+						if(O.damage > O.maxHealth/2)
+							O.setOrganDamage(O.maxHealth/2) //so you don't instantly die from organ damage when being revived
+
+				M.adjustOxyLoss(-20, 0)
+				M.adjustToxLoss(-20, 0)
+				M.updatehealth()
+				var/tplus = world.time - M.timeofdeath
+				if(M.revive())
+					M.grab_ghost()
+					M.emote("gasp")
+					log_combat(M, M, "revived", src)
+					var/list/policies = CONFIG_GET(keyed_list/policyconfig)
+					var/timelimit = CONFIG_GET(number/defib_cmd_time_limit)
+					var/late = timelimit && (tplus > timelimit)
+					var/policy = late? policies[POLICYCONFIG_ON_DEFIB_LATE] : policies[POLICYCONFIG_ON_DEFIB_INTACT]
+					if(policy)
+						to_chat(M, policy)
+					M.log_message("revived using strange reagent, [tplus] deciseconds from time of death, considered [late? "late" : "memory-intact"] revival under configured policy limits.", LOG_GAME)
+	..()
 
 /obj/item/clothing/suit/armored/medium/combat/cloak_armored
 	name = "armored cloak"

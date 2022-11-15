@@ -328,7 +328,7 @@
 	permeability_coefficient = 0.9
 	heat_protection = CHEST | GROIN | LEGS
 	cold_protection = CHEST | GROIN | LEGS
-	armor = list("melee" = 45, "bullet" = 45, "laser" = 45, "energy" = 45, "bomb" = 45, "bio" = 45, "rad" = 45, "fire" = 45, "acid" = 45, "wound" = 10)
+	armor = list("melee" = 35, "bullet" = 35, "laser" = 30, "energy" = 20, "bomb" = 25, "bio" = 10, "rad" = 10, "fire" = 20, "acid" = 10, "wound" = 10)
 
 /obj/item/clothing/suit/armored/medium/combat/bos_flatline/New()
 	..()
@@ -341,15 +341,7 @@
 /obj/item/clothing/suit/armored/medium/combat/bos_flatline/process()
 	if(iscarbon(loc))
 		var/mob/living/carbon/M = loc
-		if(M.health < M.maxHealth)
-			M.adjustBruteLoss(-2) 
-			M.adjustFireLoss(-2)
-			M.adjustToxLoss(-2)
-			M.adjustOxyLoss(-2)
-/obj/item/clothing/suit/armored/medium/combat/bos_flatline/process()
-	if(iscarbon(loc))
-		var/mob/living/carbon/M = loc
-		if(M.stat == DEAD)
+		if(M.stat == DEAD || M.health < M.maxhealth)
 			M.adjustBruteLoss(-2) 
 			M.adjustFireLoss(-2)
 			M.adjustToxLoss(-2)

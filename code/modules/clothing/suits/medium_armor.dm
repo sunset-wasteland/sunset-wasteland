@@ -496,15 +496,7 @@
 /obj/item/clothing/suit/armored/medium/combat/prototype/process()
 	if(iscarbon(loc))
 		var/mob/living/carbon/M = loc
-		if(M.health < M.maxHealth)
-			M.adjustBruteLoss(-2) 
-			M.adjustFireLoss(-2)
-			M.adjustToxLoss(-2)
-			M.adjustOxyLoss(-2)
-/obj/item/clothing/suit/armored/medium/combat/prototype/process()
-	if(iscarbon(loc))
-		var/mob/living/carbon/M = loc
-		if(M.stat == DEAD)
+		if(M.stat == DEAD || M.health < M.maxHealth)
 			M.adjustBruteLoss(-2) 
 			M.adjustFireLoss(-2)
 			M.adjustToxLoss(-2)

@@ -387,7 +387,7 @@
 					var/tplus = world.time - M.timeofdeath
 					if(M.revive())
 						M.grab_ghost()
-						M.visible_message("<span class='green'>[M]'s suit makes a thump! followed by [M] taking his first breaths again!</span>")
+						M.visible_message("<span class='green'>[M]'s suit makes a thump! followed by [M] taking there first breaths again!</span>")
 						playsound(src,  'sound/machines/defib_zap.ogg', 50, 1, -1)
 						M.emote("scream")
 						log_combat(M, M, "revived", src)

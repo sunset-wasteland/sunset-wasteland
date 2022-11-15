@@ -320,6 +320,87 @@
 // BROTHERHOOD OF STEEL //
 //////////////////////////
 
+/obj/item/clothing/suit/armored/medium/combat/bos_flatline
+	name = "Brotherhood 'Flatline' Armor"
+	desc = "a modified and refined self revival 'flatline' armor developed by none other than flatline himself for his pack member he cares so much for. Repainted to the colour scheme of the Brotherhood of Steel. its lining inside is a gel based refinment of the symbiotic algae found in buffalo gourds giving it flesh mending properties over time. inside of it is a regulated and biomonitor controlled self defibrilator unit to bring the host back to life after the gel has done its job."
+	icon_state = "flatline_brotherhood_armor"
+	item_state = "flatline_brotherhood_armor"
+	permeability_coefficient = 0.9
+	heat_protection = CHEST | GROIN | LEGS
+	cold_protection = CHEST | GROIN | LEGS
+	armor = list("melee" = 45, "bullet" = 45, "laser" = 45, "energy" = 45, "bomb" = 45, "bio" = 45, "rad" = 45, "fire" = 45, "acid" = 45, "wound" = 10)
+
+/obj/item/clothing/suit/armored/medium/combat/bos_flatline/New()
+	..()
+	START_PROCESSING(SSobj, src)
+
+/obj/item/clothing/suit/armored/medium/combat/bos_flatline/Destroy()
+	STOP_PROCESSING(SSobj,src)
+	. = ..()
+
+/obj/item/clothing/suit/armored/medium/combat/bos_flatline/process()
+	if(iscarbon(loc))
+		var/mob/living/carbon/M = loc
+		if(M.health < M.maxHealth)
+			M.adjustBruteLoss(-2) 
+			M.adjustFireLoss(-2)
+			M.adjustToxLoss(-2)
+			M.adjustOxyLoss(-2)
+/obj/item/clothing/suit/armored/medium/combat/bos_flatline/process()
+	if(iscarbon(loc))
+		var/mob/living/carbon/M = loc
+		if(M.stat == DEAD)
+			M.adjustBruteLoss(-2) 
+			M.adjustFireLoss(-2)
+			M.adjustToxLoss(-2)
+			M.adjustOxyLoss(-2)
+			if(M.suiciding || M.hellbound) //they are never coming back
+				M.visible_message("<span class='warning'>[M]'s suit makes a long flatline noise...</span>")
+				playsound(src, 'sound/machines/defib_failed.ogg', 50, 0)
+				return
+			if(M.getBruteLoss() >= 200 || M.getFireLoss() >= 200 || HAS_TRAIT(M, TRAIT_HUSK)) //body is too damaged to be revived
+				playsound(src, 'sound/machines/defib_failed.ogg', 50, 0)
+				M.visible_message("<span class='warning'>[M]'s suit starts to whine and emit a charging noise, before an audiable thump, and then falls still once more.</span>")
+				M.do_jitter_animation(10)
+				return
+			else
+				M.visible_message("<span class='warning'>[M]'s suit starts to whine making a charging up sound!</span>")
+				playsound(src, 'sound/machines/defib_charge.ogg', 50, 0)
+				M.notify_ghost_cloning(source = M)
+				M.do_jitter_animation(10)
+				addtimer(CALLBACK(M, /mob/living/carbon.proc/do_jitter_animation, 10), 40) //jitter immediately, then again after 4 and 8 seconds
+				addtimer(CALLBACK(M, /mob/living/carbon.proc/do_jitter_animation, 10), 80)
+
+				spawn(100) //so the ghost has time to re-enter
+					if(iscarbon(M))
+						var/mob/living/carbon/C = M
+						if(!(C.dna && C.dna.species && (NOBLOOD in C.dna.species.species_traits)))
+							C.blood_volume = max(C.blood_volume, BLOOD_VOLUME_NORMAL*C.blood_ratio) //so you don't instantly re-die from a lack of blood
+						for(var/organ in C.internal_organs)
+							var/obj/item/organ/O = organ
+							if(O.damage > O.maxHealth/2)
+								O.setOrganDamage(O.maxHealth/2) //so you don't instantly die from organ damage when being revived
+
+					M.adjustOxyLoss(-20, 0)
+					M.adjustToxLoss(-20, 0)
+					M.updatehealth()
+					var/tplus = world.time - M.timeofdeath
+					if(M.revive())
+						M.grab_ghost()
+						M.visible_message("<span class='green'>[M]'s suit makes a thump! followed by [M] taking his first breaths again!</span>")
+						playsound(src,  'sound/machines/defib_zap.ogg', 50, 1, -1)
+						M.emote("scream")
+						log_combat(M, M, "revived", src)
+						var/list/policies = CONFIG_GET(keyed_list/policyconfig)
+						var/timelimit = CONFIG_GET(number/defib_cmd_time_limit)
+						var/late = timelimit && (tplus > timelimit)
+						var/policy = late? policies[POLICYCONFIG_ON_DEFIB_LATE] : policies[POLICYCONFIG_ON_DEFIB_INTACT]
+						if(policy)
+							to_chat(M, policy)
+						M.log_message("revived using internal defib, [tplus] deciseconds from time of death, considered [late? "late" : "memory-intact"] revival under configured policy limits.", LOG_GAME)
+	..()
+
+
 /obj/item/clothing/suit/armored/medium/combat/bos
 	name = "initiate armor"
 	desc = "An old military grade pre war combat armor, repainted to the colour scheme of the Brotherhood of Steel."
@@ -404,9 +485,9 @@
 
 /obj/item/clothing/suit/armored/medium/combat/prototype
 	name = "prototype 'flatline' armor"
-	desc = "test"
-	icon_state = "combat_rusted"
-	item_state = "combat_rusted"
+	desc = "a very early model of the self revival 'flatline' armor developed by none other than flatline himself. this one is highly customized. and by customized its cobbled toghether from junk, dripping algae and has a defib unit welded and installed on the chest piece"
+	icon_state = "flatline_prototype"
+	item_state = "flatline_prototype"
 	permeability_coefficient = 0.9
 	heat_protection = CHEST | GROIN | LEGS
 	cold_protection = CHEST | GROIN | LEGS
@@ -471,7 +552,7 @@
 						M.grab_ghost()
 						M.visible_message("<span class='green'>[M]'s suit makes a thump! followed by [M] taking his first breaths again!</span>")
 						playsound(src,  'sound/machines/defib_zap.ogg', 50, 1, -1)
-						M.emote("coyawoo")
+						M.say("*cackle")
 						log_combat(M, M, "revived", src)
 						var/list/policies = CONFIG_GET(keyed_list/policyconfig)
 						var/timelimit = CONFIG_GET(number/defib_cmd_time_limit)

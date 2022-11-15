@@ -1086,9 +1086,11 @@ They're intended to be some manner of IC police similar to how I've done IS, for
 	spawn_positions = 2
 	description = "<b>YOU HAVE NO TIES TO THE BUNKER. YOU'RE AN OUTSIDER IN EVERYTHING BUT POSITION.</b> <br> \
 	You're a member of the feared Inquisition, sent by the Inquisitor as their eyes and ears within this chapter. <br> \
+	If the cooperation between the midwestern and Wyoming branches becomes damaged because of an acolyte's action then the inquisitor has to fix it. Don’t make him use his valuable time on fuck ups. <br> \
+	The baron and the leadership have power over the area. And should be respected as such. Pick your fights, and know when to act.<br> \
 	As most of the equipment used here is on loan from the Midwest, it only makes sense that they'd want their interests maintained. <br> \
 	Punish blatant violations of the Codex how you see fit, but beware the wrath of the Inquisitor, should you overstep."
-	supervisors = "the Inquisitor exclusively"
+	supervisors = "the Inquisitor and elders"
 	selection_color = "#95a5a6"
 	roleplay_exclusive_notify = 1
 	req_admin_notify = 1

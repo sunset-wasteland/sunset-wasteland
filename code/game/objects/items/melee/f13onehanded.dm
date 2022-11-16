@@ -663,12 +663,6 @@
 	playsound(loc, on_sound, 50, TRUE)
 	add_fingerprint(user)
 
-/obj/item/melee/classic_baton/telescopic_sword/proc/get_on_description()
-	. = list()
-	.["local_on"] = "<span class ='warning'>You unfold the sword.</span>"
-	.["local_off"] = "<span class ='notice'>You fold the sword.</span>"
-	return .
-
 // Slave whip
 /obj/item/melee/onehanded/slavewhip
 	name = "slave whip"

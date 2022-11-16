@@ -78,7 +78,6 @@
 	accessory = /obj/item/clothing/accessory/enclave/first_lieutenant
 	id = /obj/item/card/id/dogtag/enclave/officer
 	ears = /obj/item/radio/headset/headset_enclave/command
-	l_pocket = /obj/item/clothing/mask/chameleon
 
 	backpack_contents = list(
 		/obj/item/reagent_containers/hypospray/medipen/stimpak/super = 3,
@@ -90,6 +89,7 @@
 		/obj/item/storage/pill_bottle/chem_tin/mentats = 1,
 		/obj/item/reagent_containers/hypospray/medipen/psycho = 1,
 		/obj/item/reagent_containers/hypospray/medipen/medx = 1,
+		/obj/item/clothing/mask/chameleon = 1,
 		/obj/item/card/id/syndicate/anyone =1
 		)
 
@@ -403,6 +403,25 @@
 	roleplay_exclusive_notify = 1
 	access = list(ACCESS_ENCLAVE, ACCESS_ENCLAVE_COMMAND, ACCESS_SECURITY, ACCESS_AI_UPLOAD)
 
+	loadout_options = list(
+		/datum/outfit/loadout/infiltrator_advanced,
+		/datum/outfit/loadout/bioterror,
+		/datum/outfit/loadout/jennifer_dogma,
+		)
+
+/datum/outfit/loadout/infiltrator_advanced
+	name = "Advanced Infiltrator"
+	mask = /obj/item/clothing/mask/gas/welding
+	gloves = /obj/item/clothing/gloves/color/yellow
+	head = /obj/item/clothing/head/hardhat/orange
+	suit_store = /obj/item/gun/ballistic/automatic/smg/p90
+	backpack_contents = list(
+		/obj/item/storage/belt/utility = 1,
+		/obj/item/ammo_box/magazine/m10mm_p90 = 2,
+		/obj/item/construction/rcd/combat = 1,
+		/obj/item/metaldetector = 1
+	)
+
 /datum/outfit/job/enclave/noncombat/enclavesci
 	name = "Enclave Scientist"
 	jobtype = /datum/job/enclave/enclavesci
@@ -443,6 +462,8 @@
 //	ADD_TRAIT(H, TRAIT_POOR_AIM, src)
 	H.grant_language(/datum/language/codespeak, TRUE, TRUE, LANGUAGE_MIND)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/needle)
+
+
 
 //Pilot
 /datum/job/enclave/enclavepilot

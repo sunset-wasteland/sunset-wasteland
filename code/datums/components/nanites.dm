@@ -15,6 +15,7 @@
 	var/list/datum/nanite_program/protocol/protocols = list() ///Separate list of protocol programs, to avoid looping through the whole programs list when checking for conflicts
 	var/start_time = 0 ///Timestamp to when the nanites were first inserted in the host
 	var/stealth = FALSE //if TRUE, does not appear on HUDs and health scans
+	var/spreading = FALSE //if TRUE, this is spreading or somehow should be extra detectable
 	var/diagnostics = TRUE //if TRUE, displays program list when scanned by nanite scanners
 	var/research_id = "SCIENCE"
 
@@ -307,21 +308,22 @@
 			to_chat(user, "<span class='notice'>Saturation: [nanite_volume]/[max_nanites]</span>")
 			return TRUE
 	else
-		to_chat(user, "<span class='info'>NANITES DETECTED</span>")
-		to_chat(user, "<span class='info'>================</span>")
-		to_chat(user, "<span class='info'>Saturation: [nanite_volume]/[max_nanites]</span>")
-		to_chat(user, "<span class='info'>Safety Threshold: [safety_threshold]</span>")
-		to_chat(user, "<span class='info'>Cloud ID: [cloud_id ? cloud_id : "None"]</span>")
-		to_chat(user, "<span class='info'>Cloud Sync: [cloud_active ? "Active" : "Disabled"]</span>")
-		to_chat(user, "<span class='info'>================</span>")
-		to_chat(user, "<span class='info'>Program List:</span>")
-		if(!diagnostics)
-			to_chat(user, "<span class='alert'>Diagnostics Disabled</span>")
-		else
-			for(var/X in programs)
-				var/datum/nanite_program/NP = X
-				to_chat(user, "<span class='info'><b>[NP.name]</b> | [NP.activated ? "Active" : "Inactive"]</span>")
-		return TRUE
+		if(spreading || !stealth)
+			to_chat(user, "<span class='info'>NANITES DETECTED</span>")
+			to_chat(user, "<span class='info'>================</span>")
+			to_chat(user, "<span class='info'>Saturation: [nanite_volume]/[max_nanites]</span>")
+			to_chat(user, "<span class='info'>Safety Threshold: [safety_threshold]</span>")
+			to_chat(user, "<span class='info'>Cloud ID: [cloud_id ? cloud_id : "None"]</span>")
+			to_chat(user, "<span class='info'>Cloud Sync: [cloud_active ? "Active" : "Disabled"]</span>")
+			to_chat(user, "<span class='info'>================</span>")
+			to_chat(user, "<span class='info'>Program List:</span>")
+			if(!diagnostics)
+				to_chat(user, "<span class='alert'>Diagnostics Disabled</span>")
+			else
+				for(var/X in programs)
+					var/datum/nanite_program/NP = X
+					to_chat(user, "<span class='info'><b>[NP.name]</b> | [NP.activated ? "Active" : "Inactive"]</span>")
+			return TRUE
 
 /datum/component/nanites/proc/nanite_ui_data(datum/source, list/data, scan_level)
 	data["has_nanites"] = TRUE

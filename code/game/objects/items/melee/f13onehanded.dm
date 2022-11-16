@@ -620,7 +620,7 @@
 // Telescopic Sword, Always deal 25 damage regardless of armour and gurantee crit in 5 hits
 /obj/item/melee/classic_baton/telescopic_sword
 	name = "EL-92 Sword"
-	desc = "A self folding, sharpening sword consisting of emp resistant nanites. Can be concealed"
+	desc = "A self folding, sharpening sword consisting of emp resistant nanites. Can be either blunt or sharp, Concealable when folded"
 	icon = 'icons/obj/items_and_weapons.dmi'
 	icon_state = "telebaton_0"
 	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'

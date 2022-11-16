@@ -235,6 +235,14 @@
 	rogue_types = list(/datum/nanite_program/aggressive_replication, /datum/nanite_program/necrotic)
 	var/spread_cooldown = 0
 
+/datum/nanite_program/spreading/enable_passive_effect()
+	. = ..()
+	nanites.spreading = TRUE
+
+/datum/nanite_program/spreading/disable_passive_effect()
+	. = ..()
+	nanites.spreading = FALSE
+
 /datum/nanite_program/spreading/active_effect()
 	if(world.time < spread_cooldown)
 		return

@@ -413,10 +413,23 @@
 		)
 
 /datum/outfit/loadout/enclave_marksman
+	name = "Marksman"
+	suit_store = /obj/item/gun/ballistic/automatic/pistol/mk23
+	backpack_contents = list(
+		/obj/item/gun/energy/kinetic_accelerator/crossbow = 1,
+		/obj/item/ammo_box/magazine/m45exp = 2,
+		/obj/item/melee/classic_baton/telescopic_sword = 1,
+		/obj/item/suppressor = 1,
+		/obj/item/storage/box/syndie_kit/chameleon = 1,
+		/obj/item/chameleon = 1
+	)
 
 /datum/outfit/loadout/enclave_frontline
 
 /datum/outfit/loadout/enclave_shotgunner
+
+
+
 //NON-COMBATANTS
 //As of writing this, Scientist has been fairly active as a combatant lately and thus this is void.
 
@@ -503,6 +516,7 @@
 		/obj/item/reagent_containers/hypospray/combat/omnizine = 1,
 		/obj/item/storage/bag/plants/bioterror = 2,
 		/obj/item/storage/box/syringes = 2
+		/obj/item/melee/classic_baton/telescopic = 1,
 	)
 
 // Thats ruff pup, I hope you get well soon..

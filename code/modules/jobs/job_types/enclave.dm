@@ -414,20 +414,37 @@
 
 /datum/outfit/loadout/enclave_marksman
 	name = "Marksman"
-	suit_store = /obj/item/gun/ballistic/automatic/pistol/mk23
+	suit_store = /obj/item/gun/ballistic/automatic/marksman
 	backpack_contents = list(
-		/obj/item/gun/energy/kinetic_accelerator/crossbow = 1,
-		/obj/item/ammo_box/magazine/m45exp = 2,
-		/obj/item/melee/classic_baton/telescopic_sword = 1,
-		/obj/item/suppressor = 1,
-		/obj/item/storage/box/syndie_kit/chameleon = 1,
-		/obj/item/chameleon = 1
+		/obj/item/ammo_box/magazine/m556/rifle = 2,
+		/obj/item/gun/ballistic/automatic/pistol/n99 = 1,
+		/obj/item/clothing/under/f13/ncr_camo = 1,
+		/obj/item/clothing/suit/armor/f13/metalarmor/steelbib = 1,
+		/obj/item/clothing/head/helmet/armyhelmet = 1,
 	)
 
 /datum/outfit/loadout/enclave_frontline
+	name = "Rifleman"
+	suit_store = /obj/item/gun/ballistic/automatic/service/r82
+	backpack_contents = list(
+		/obj/item/ammo_box/magazine/m556/rifle = 2,
+		/obj/item/gun/ballistic/automatic/pistol/n99 = 1,
+		/obj/item/clothing/under/f13/ncr_camo = 1,
+		/obj/item/clothing/suit/armor/f13/metalarmor/steelbib = 1,
+		/obj/item/clothing/head/helmet/armyhelmet = 1,
+	)
+
 
 /datum/outfit/loadout/enclave_shotgunner
-
+	name = "Shotgunner"
+	suit_store = /obj/item/gun/ballistic/shotgun/automatic/combat/shotgunlever
+	backpack_contents = list(
+		/obj/item/ammo_box/shotgun/buck = 2,
+		/obj/item/gun/ballistic/automatic/pistol/n99 = 1,
+		/obj/item/clothing/under/f13/ncr_camo = 1,
+		/obj/item/clothing/suit/armor/f13/metalarmor/steelbib = 1,
+		/obj/item/clothing/head/helmet/armyhelmet = 1,
+	)
 
 
 //NON-COMBATANTS

@@ -435,7 +435,6 @@
 
 /datum/outfit/loadout/infiltrator_advanced
 	name = "Advanced Infiltrator"
-	uniform = /obj/item/clothing/f13/ncr_camo
 	mask = /obj/item/clothing/mask/gas/welding
 	suit_store = /obj/item/gun/ballistic/automatic/pistol/mk23
 	backpack_contents = list(
@@ -467,7 +466,6 @@
 
 /datum/outfit/loadout/jennifer_dogma
 	name = "Epsilon Scientist"
-	uniform = /obj/item/clothing/under/rank/medical/virologist
 	mask = /obj/item/clothing/mask/gas/welding
 	gloves = /obj/item/clothing/gloves/latex/nitrile
 	head = /obj/item/clothing/head/beret/viro

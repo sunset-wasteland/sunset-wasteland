@@ -87,8 +87,8 @@
 //It's a dogma dartgun, albeit. will probably kill your friend if you tried healing them with this.
 /obj/item/gun/syringe/syringerenclave
 	name = "EL-81E syringe gun"
-	desc = "An upgraded variant of the EL-81 syringe gun, although this one lack a scope and lost it's penetrative power, It makes up for that by being able to fire faster and holds more shot
-	icon_state = "dogma_syringer"
+	desc = "An upgraded variant of the EL-81 syringe gun, although this one lack a scope and lost it's penetrative power, It makes up for that by being able to fire faster and holds more shot"
+	icon_state = "dogmasyringer"
 	item_state = "sniper"
 	max_syringes = 6
 	fire_delay = 3.9 // Frontal Assault so it fire far faster but still relatively slow

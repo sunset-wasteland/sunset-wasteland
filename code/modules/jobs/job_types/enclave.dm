@@ -320,6 +320,7 @@
 	mask = /obj/item/clothing/mask/surgical
 	gloves = /obj/item/clothing/gloves/color/latex/nitrile
 	head = /obj/item/clothing/head/beret/enclave/science
+	suit_store = /obj/item/gun/ballistic/automatic/smg/p90	
 	backpack_contents = list(
 		/obj/item/storage/firstaid/ancient = 1,
 		/obj/item/book/granter/trait/chemistry = 1,
@@ -331,11 +332,11 @@
 	mask = /obj/item/clothing/mask/gas/welding
 	gloves = /obj/item/clothing/gloves/color/yellow
 	head = /obj/item/clothing/head/hardhat/orange
-	suit_store = /obj/item/gun/ballistic/revolver/grenadelauncher
+	suit_store = /obj/item/gun/ballistic/automatic/smg/p90
 	backpack_contents = list(
 		/obj/item/storage/belt/utility = 1,
-		/obj/item/ammo_box/a40mm = 2,
-		/obj/item/shovel/trench = 1,
+		/obj/item/ammo_box/magazine/m10mm_p90 = 2,
+		/obj/item/construction/rcd/combat = 1,
 		/obj/item/metaldetector = 1
 	)
 

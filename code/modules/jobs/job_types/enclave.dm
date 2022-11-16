@@ -435,6 +435,7 @@
 
 /datum/outfit/loadout/infiltrator_advanced
 	name = "Advanced Infiltrator"
+	under = /obj/item/clothing/f13/ncr_camo
 	mask = /obj/item/clothing/mask/gas/welding
 	suit_store = /obj/item/gun/ballistic/automatic/pistol/mk23
 	backpack_contents = list(
@@ -450,18 +451,32 @@
 
 /datum/outfit/loadout/bioterror
 	name = "Biological Terror"
-	under =
+	under = /obj/item/clothing/under/rank/medical/virologist
 	mask = /obj/item/clothing/mask/gas/welding
-	gloves = /obj/item/clothing/gloves/color/yellow
-	head = /obj/item/clothing/head/hardhat/orange
-	suit_store = /obj/item/gun/ballistic/automatic/pistol/mk23
+	gloves = /obj/item/clothing/gloves/latex/nitrile
+	head = /obj/item/clothing/head/beret/viro
+	suit_store = /obj/item/gun/energy/floragun
 	backpack_contents = list(
-		/obj/item/gun/energy/kinetic_accelerator/crossbow = 1,
-		/obj/item/ammo_box/magazine/m45exp = 2,
+		/obj/item/reagent_containers/spray/chemsprayer = 1,
 		/obj/item/melee/classic_baton/telescopic_sword = 1,
-		/obj/item/suppressor = 1,
-		/obj/item/storage/box/syndie_kit/chameleon = 1,
-		/obj/item/chameleon = 1
+		/obj/item/storage/bag/plants/bioterror = 1,
+		/obj/item/gun/syringe/rapidsyringe = 1
+	)
+
+//What was that noise? I thought I heard someone.. Who are you how did you- 
+
+/datum/outfit/loadout/jennifer_dogma
+	name = "Epsilon Scientist"
+	under = /obj/item/clothing/under/rank/medical/virologist
+	mask = /obj/item/clothing/mask/gas/welding
+	gloves = /obj/item/clothing/gloves/latex/nitrile
+	head = /obj/item/clothing/head/beret/viro
+	suit_store = /obj/item/gun/energy/floragun
+	backpack_contents = list(
+		/obj/item/reagent_containers/spray/chemsprayer = 1,
+		/obj/item/melee/classic_baton/telescopic_sword = 1,
+		/obj/item/storage/bag/plants/bioterror = 1,
+		/obj/item/gun/syringe/rapidsyringe = 1
 	)
 
 /datum/outfit/job/enclave/noncombat/enclavesci/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)

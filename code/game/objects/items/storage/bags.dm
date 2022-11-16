@@ -237,6 +237,25 @@
 	STR.max_items = 100
 	CANHOLD_STATIC(STR, typecacheof(list(/obj/item/reagent_containers/food/snacks/grown, /obj/item/seeds, /obj/item/grown, /obj/item/reagent_containers/honeycomb)))
 
+
+/obj/item/storage/bag/plants/bioterror
+	name = "Biological Research Bags"
+	icon = 'icons/fallout/farming/farming_tools.dmi'
+	icon_state = "plantbag_ext"
+	w_class = WEIGHT_CLASS_SMALL
+	resistance_flags = FLAMMABLE
+	rad_flags = RAD_PROTECT_CONTENTS | RAD_NO_CONTAMINATE
+
+/obj/item/storage/bag/bioterror/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_items = 30 //Isn't a plant bag but could still hold plant if needed, like wise it is meant to hold medical equipments
+	CANHOLD_STATIC(STR, typecacheof(list(/obj/item/reagent_containers/food/snacks/grown, /obj/item/seeds, /obj/item/grown, /obj/item/reagent_containers/honeycomb,/obj/item/slime_extract, /obj/item/reagent_containers/blood, /obj/item/reagent_containers/food/snacks/deadmouse, /obj/item/reagent_containers/food/snacks/cube, /obj/item/organ, /obj/item/reagent_containers/food/snacks/meat/slab, /obj/item/bodypart)))
+	CANTHOLD_STATIC(STR, typecacheof(list(/obj/item/organ/brain, /obj/item/organ/liver/cybernetic, /obj/item/organ/heart/cybernetic, /obj/item/organ/lungs/cybernetic, /obj/item/organ/tongue/cybernetic, /obj/item/organ/ears/cybernetic, /obj/item/organ/eyes/robotic, /obj/item/organ/cyberimp)))
+	STR.max_w_class = WEIGHT_CLASS_NORMAL //Allows you to pick up Lungs, Liver, and Stomach
+	STR.max_combined_w_class = 30 
+	STR.insert_preposition = "in"
+
 ////////
 
 /obj/item/storage/bag/plants/portaseeder

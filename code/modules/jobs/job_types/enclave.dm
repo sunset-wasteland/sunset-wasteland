@@ -525,7 +525,7 @@
 		/obj/item/reagent_containers/spray/chemsprayer = 1,
 		/obj/item/melee/classic_baton/telescopic = 1,
 		/obj/item/storage/bag/plants/bioterror = 1,
-		/obj/item/gun/syringe/syringer = 1
+		/obj/item/gun/syringe/syringer = 1,
 	)
 
 //What was that noise? I thought I heard someone.. Who are you how did you- 
@@ -538,7 +538,7 @@
 	backpack_contents = list(
 		/obj/item/reagent_containers/hypospray/combat/omnizine = 1,
 		/obj/item/storage/bag/plants/bioterror = 2,
-		/obj/item/storage/box/syringes = 2
+		/obj/item/storage/box/syringes = 2,
 		/obj/item/melee/classic_baton/telescopic = 1,
 	)
 

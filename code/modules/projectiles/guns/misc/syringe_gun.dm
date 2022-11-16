@@ -72,12 +72,17 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	throw_speed = 3
 	throw_range = 7
+	recoil = 2 //Have you ever actually fired an airgun? especially high caliber one meant to kill a buffalo? those things have actual kickback.
 	force = 25
 	extra_speed = 1000 //extremely high velocity syringe gun
-	extra_penetration = 0.5
-	extra_damage = 25 // Will absolutely fuck over some target
-	fire_delay = 4.8 //If you could spam fire syringe gun. shit would be waaaayyy too oppressive especially for how it's intended to be used
-	
+	extra_penetration = 0.6 //High velocity sharp projectile
+	extra_damage = 25 // Will absolutely fuck over some target and could be used to finish off low health players
+	fire_delay = 4.8 //If you could spam fire syringe gun. shit would be waaaayyy too oppressive considering what you can load it with.
+	zoomable = TRUE
+	zoom_amt = 7
+	zoom_out_amt = 11
+
+
 //Syringe Rifle                     Keywords: Special Weapon, 6 rounds internal, Long Barrel, Enclave
 //It's a dogma dartgun, albeit. will probably kill your friend if you tried healing them with this.
 /obj/item/gun/syringe/syringerenclave
@@ -89,10 +94,13 @@
 	fire_delay = 3.9 // Frontal Assault so it fire far faster but still relatively slow
 	recoil = 0.5
 	fire_sound = 'sound/f13weapons/bowfire.wav'
-	can_scope = FALSE
-	extra_speed = 100 //high velocity syringe gun
-	extra_penetration = -0.3
-	extra_damage = -28 // for a total of 14 damage on hit by the syringe, deals significantly less damage due to the air storage mechanism has to be reduced to make way for holding more shot, otherwise damage is not a concern
+	extra_speed = 100 //high velocity syringe gun, lose speed as less air is able to be stored
+	extra_penetration = -0.5 //lose penetration as less air is able to be stored to make room for more shot
+	extra_damage = -18 // for a total of 14 damage on hit by the syringe, deals significantly less damage due to the air storage mechanism has to be reduced to make way for holding more shot, otherwise damage is not a concern
+	zoomable = FALSE //this gun has no scope! and if it did scope it'd be waaaaay too oppressive with how fast it fires
+	zoom_amt = 0
+	zoom_out_amt = 0
+
 
 /obj/item/gun/syringe/rapidsyringe
 	name = "rapid syringe gun"

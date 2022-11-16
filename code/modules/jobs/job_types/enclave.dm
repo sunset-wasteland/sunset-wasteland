@@ -113,13 +113,13 @@
 		/obj/item/grenade/f13/plasma = 2,
 		)
 
-/datum/outfit/loadout/lt_rhino
+/datum/outfit/loadout/lt_rhino //Main focus of the loadout is actually the revolver
 	name = "Golden Hand"
 	suit_store = /obj/item/gun/ballistic/automatic/marksman/sniper/america
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/w308 = 2,
 		/obj/item/ammo_box/m44box = 1,
-		/obj/item/gun/ballistic/revolver/m29/rhino_america = 2,
+		/obj/item/gun/ballistic/revolver/m29/rhino/america = 2,
 		/obj/item/grenade/f13/plasma = 2,
 		)
 
@@ -183,6 +183,7 @@
 	name = "Armored Assault Kit"
 	backpack_contents = list(
 		/obj/item/encencminigunbal4mm = 1,
+		/obj/item/gun/ballistic/revolver/m29/rhino = 1,
 		/obj/item/ammo_box/magazine/vindic = 2
 		)
 
@@ -191,6 +192,7 @@
 	suit_store = /obj/item/gun/energy/laser/plasma/scatter
 	backpack_contents = list(
 		/obj/item/stock_parts/cell/ammo/mfc = 4,
+		/obj/item/gun/ballistic/revolver/m29/rhino = 1,
 		/obj/item/grenade/f13/plasma = 2,
 		)
 
@@ -466,7 +468,6 @@
 
 /datum/outfit/loadout/jennifer_dogma
 	name = "Epsilon Scientist"
-	mask = /obj/item/clothing/mask/gas/welding
 	gloves = /obj/item/clothing/gloves/latex/nitrile
 	head = /obj/item/clothing/head/beret/viro
 	suit_store = /obj/item/gun/syringe/syringerenclave

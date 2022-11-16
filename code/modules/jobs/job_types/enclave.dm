@@ -329,7 +329,6 @@
 /datum/outfit/loadout/combatmedic
 	name = "Combat Medic"
 	mask = /obj/item/clothing/mask/surgical
-	gloves = /obj/item/clothing/gloves/color/latex/nitrile
 	head = /obj/item/clothing/head/beret/enclave/science
 	suit_store = /obj/item/gun/ballistic/automatic/smg/p90	
 	backpack_contents = list(
@@ -384,6 +383,11 @@
 	outfit = /datum/outfit/job/enclave/peacekeeper/enclavespy
 	exp_type = EXP_TYPE_FALLOUT
 	exp_requirements = 3600//Next to a whitelist, this is the only thing to keep it bereft of you know what.
+	loadout_options = list(
+		/datum/outfit/loadout/enclave_marksman,
+		/datum/outfit/loadout/enclave_frontline,
+		/datum/outfit/loadout/enclave_shotgunner,
+		)
 
 /datum/outfit/job/enclave/peacekeeper/enclavespy
 	name = "Enclave Private"
@@ -412,11 +416,6 @@
 	ADD_TRAIT(H, TRAIT_ENCLAVE_CODES, src)
 	H.grant_language(/datum/language/codespeak, TRUE, TRUE, LANGUAGE_MIND)
 
-	loadout_options = list(
-		/datum/outfit/loadout/enclave_marksman,
-		/datum/outfit/loadout/enclave_frontline,
-		/datum/outfit/loadout/enclave_shotgunner,
-		)
 
 /datum/outfit/loadout/enclave_marksman
 	name = "Marksman"
@@ -518,7 +517,6 @@
 	name = "Biological Terror"
 	uniform = /obj/item/clothing/under/rank/medical/virologist
 	mask = /obj/item/clothing/mask/gas/welding
-	gloves = /obj/item/clothing/gloves/latex/nitrile
 	head = /obj/item/clothing/head/beret/viro
 	suit_store = /obj/item/gun/energy/floragun
 	backpack_contents = list(
@@ -532,7 +530,6 @@
 
 /datum/outfit/loadout/jennifer_dogma
 	name = "Epsilon Scientist"
-	gloves = /obj/item/clothing/gloves/latex/nitrile
 	head = /obj/item/clothing/head/beret/viro
 	suit_store = /obj/item/gun/syringe/syringerenclave
 	backpack_contents = list(

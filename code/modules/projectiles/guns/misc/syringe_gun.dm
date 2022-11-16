@@ -93,7 +93,6 @@
 	max_syringes = 6
 	fire_delay = 3.9 // Frontal Assault so it fire far faster but still relatively slow
 	recoil = 0.5
-	fire_sound = 'sound/f13weapons/bowfire.wav'
 	extra_speed = 100 //high velocity syringe gun, lose speed as less air is able to be stored
 	extra_penetration = -0.5 //lose penetration as less air is able to be stored to make room for more shot
 	extra_damage = -18 // for a total of 14 damage on hit by the syringe, deals significantly less damage due to the air storage mechanism has to be reduced to make way for holding more shot, otherwise damage is not a concern

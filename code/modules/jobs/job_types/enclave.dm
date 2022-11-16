@@ -184,7 +184,7 @@
 	backpack_contents = list(
 		/obj/item/encencminigunbal4mm = 1,
 		/obj/item/gun/ballistic/revolver/m29/rhino = 1,
-		/obj/item/ammo_box/magazine/vindic = 2
+		/obj/item/ammo_box/magazine/vindic = 2,
 		/obj/item/clothing/under/f13/ncr_camo = 1,
 		/obj/item/clothing/suit/armor/f13/metalarmor/steelbib = 1,
 		/obj/item/clothing/head/helmet/armyhelmet = 1,

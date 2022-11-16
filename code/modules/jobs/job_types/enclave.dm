@@ -435,7 +435,7 @@
 
 /datum/outfit/loadout/infiltrator_advanced
 	name = "Advanced Infiltrator"
-	under = /obj/item/clothing/f13/ncr_camo
+	uniform = /obj/item/clothing/f13/ncr_camo
 	mask = /obj/item/clothing/mask/gas/welding
 	suit_store = /obj/item/gun/ballistic/automatic/pistol/mk23
 	backpack_contents = list(
@@ -451,14 +451,14 @@
 
 /datum/outfit/loadout/bioterror
 	name = "Biological Terror"
-	under = /obj/item/clothing/under/rank/medical/virologist
+	uniform = /obj/item/clothing/under/rank/medical/virologist
 	mask = /obj/item/clothing/mask/gas/welding
 	gloves = /obj/item/clothing/gloves/latex/nitrile
 	head = /obj/item/clothing/head/beret/viro
 	suit_store = /obj/item/gun/energy/floragun
 	backpack_contents = list(
 		/obj/item/reagent_containers/spray/chemsprayer = 1,
-		/obj/item/melee/classic_baton/telescopic_sword = 1,
+		/obj/item/melee/classic_baton/telescopic = 1,
 		/obj/item/storage/bag/plants/bioterror = 1,
 		/obj/item/gun/syringe/rapidsyringe = 1
 	)
@@ -467,11 +467,11 @@
 
 /datum/outfit/loadout/jennifer_dogma
 	name = "Epsilon Scientist"
-	under = /obj/item/clothing/under/rank/medical/virologist
+	uniform = /obj/item/clothing/under/rank/medical/virologist
 	mask = /obj/item/clothing/mask/gas/welding
 	gloves = /obj/item/clothing/gloves/latex/nitrile
 	head = /obj/item/clothing/head/beret/viro
-	suit_store = /obj/item/gun/energy/floragun
+	suit_store = /obj/item/gun/ballistic/rifle/repeater/syringe
 	backpack_contents = list(
 		/obj/item/reagent_containers/spray/chemsprayer = 1,
 		/obj/item/melee/classic_baton/telescopic_sword = 1,

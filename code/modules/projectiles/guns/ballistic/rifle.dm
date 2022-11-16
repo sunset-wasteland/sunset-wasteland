@@ -146,6 +146,19 @@
 	fire_sound = 'sound/f13weapons/brushgunfire.ogg'
 	extra_penetration = 0.12
 
+//Syringe Rifle
+/obj/item/gun/ballistic/rifle/repeater/syringe
+	name = "brush gun"
+	desc = "A short lever action rifle chambered in the heavy 45-70 round. Issued to NCR Veteran Rangers in the absence of heavier weaponry."
+	icon_state = "brushgun"
+	item_state = "brushgun"
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube4570
+	extra_speed = 100
+	fire_delay = 3
+	recoil = 0.15
+	fire_sound = 'sound/f13weapons/brushgunfire.ogg'
+	extra_penetration = 0.12
+
 //Medicine Stick						Keywords: .45-70, Lever action, 8 round internal, Long barrel, Unique
 /obj/item/gun/ballistic/rifle/repeater/brush/medistick
 	name = "medicine stick"

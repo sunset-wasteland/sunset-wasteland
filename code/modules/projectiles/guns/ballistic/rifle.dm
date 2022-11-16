@@ -146,7 +146,7 @@
 	fire_sound = 'sound/f13weapons/brushgunfire.ogg'
 	extra_penetration = 0.12
 
-//Syringe Rifle
+//Syringe Rifle                     Keywords: Special Weapon, Lever Action, 6 rounds internal, Long Barrel, Enclave
 /obj/item/gun/ballistic/rifle/repeater/syringe
 	name = "syringe gun"
 	desc = "A long barrel air gun utilised by the US army for medical research or animal controls, Load up to 6 syringes."

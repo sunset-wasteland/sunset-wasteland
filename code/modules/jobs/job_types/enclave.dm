@@ -473,11 +473,12 @@
 	head = /obj/item/clothing/head/beret/viro
 	suit_store = /obj/item/gun/ballistic/rifle/repeater/syringe
 	backpack_contents = list(
-		/obj/item/reagent_containers/spray/chemsprayer = 1,
-		/obj/item/melee/classic_baton/telescopic_sword = 1,
-		/obj/item/storage/bag/plants/bioterror = 1,
-		/obj/item/gun/syringe/rapidsyringe = 1
+		/obj/item/reagent_containers/hypospray/combat/omnizine = 1,
+		/obj/item/storage/bag/plants/bioterror = 2,
+		/obj/item/storage/box/syringes = 2
 	)
+
+// Thats ruff pup, I hope you get well soon..
 
 /datum/outfit/job/enclave/noncombat/enclavesci/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()

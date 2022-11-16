@@ -104,3 +104,11 @@
 	caliber = "plasmacaster"
 	max_ammo = 2
 	multiload = 1
+
+obj/item/ammo_box/magazine/internal/shot/syringe
+	name = "syringe rifle magazine"
+	desc = "Oh god, this shouldn't be here"
+	ammo_type = /obj/item/reagent_containers/syringe
+	caliber = null
+	max_ammo = 6
+	multiload = 1

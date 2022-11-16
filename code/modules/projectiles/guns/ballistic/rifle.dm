@@ -148,16 +148,21 @@
 
 //Syringe Rifle
 /obj/item/gun/ballistic/rifle/repeater/syringe
-	name = "brush gun"
-	desc = "A short lever action rifle chambered in the heavy 45-70 round. Issued to NCR Veteran Rangers in the absence of heavier weaponry."
-	icon_state = "brushgun"
+	name = "syringe gun"
+	desc = "A long barrel air gun utilised by the US army for medical research or animal controls, Load up to 6 syringes."
+	icon_state = "syringer"
 	item_state = "brushgun"
-	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube4570
-	extra_speed = 100
-	fire_delay = 3
-	recoil = 0.15
-	fire_sound = 'sound/f13weapons/brushgunfire.ogg'
-	extra_penetration = 0.12
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/syringe
+	fire_delay = 5
+	recoil = 0.5
+	fire_sound = 'sound/f13weapons/bowfire.wav'
+	zoomable = TRUE
+	zoom_amt = 10
+	zoom_out_amt = 13
+	can_scope = FALSE
+	extra_speed = 1000 //extremely high velocity syringe gun
+	extra_penetration = 0.5
+	extra_damage = 15 // for a total of 25 damage on hit by the syringe
 
 //Medicine Stick						Keywords: .45-70, Lever action, 8 round internal, Long barrel, Unique
 /obj/item/gun/ballistic/rifle/repeater/brush/medistick
@@ -170,7 +175,7 @@
 	recoil = 0.10
 	fire_sound = 'sound/f13weapons/brushgunfire.ogg'
 	extra_penetration = 0.4
-
+	spread = 0
 
 ////////////////////////
 // BOLT ACTION RIFLES //

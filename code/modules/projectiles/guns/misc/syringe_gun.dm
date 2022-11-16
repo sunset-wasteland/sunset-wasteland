@@ -63,6 +63,37 @@
 			to_chat(user, "<span class='warning'>[src] cannot hold more syringes!</span>")
 	return FALSE
 
+/obj/item/gun/syringe/syringer
+	name = "EL-81 syringe gun"
+	desc = "A long barrel air gun utilised used by some US Army personnel, hold one syringe and fires a fast moving syringe projectile. has a scope ontop"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	icon_state = "syringer"
+	item_state = "brushgun"
+	w_class = WEIGHT_CLASS_NORMAL
+	throw_speed = 3
+	throw_range = 7
+	force = 25
+	extra_speed = 1000 //extremely high velocity syringe gun
+	extra_penetration = 0.5
+	extra_damage = 25 // Will absolutely fuck over some target
+	fire_delay = 4.8 //If you could spam fire syringe gun. shit would be waaaayyy too oppressive especially for how it's intended to be used
+	
+//Syringe Rifle                     Keywords: Special Weapon, 6 rounds internal, Long Barrel, Enclave
+//It's a dogma dartgun, albeit. will probably kill your friend if you tried healing them with this.
+/obj/item/gun/syringe/syringerenclave
+	name = "EL-81E syringe gun"
+	desc = "An upgraded variant of the EL-81 syringe gun, although this one lack a scope and lost it's penetrative power, It makes up for that by being able to fire faster and holds more shot
+	icon_state = "dogmasyringer"
+	item_state = "sniper"
+	max_syringes = 6
+	fire_delay = 3.9 // Frontal Assault so it fire far faster but still relatively slow
+	recoil = 0.5
+	fire_sound = 'sound/f13weapons/bowfire.wav'
+	can_scope = FALSE
+	extra_speed = 100 //high velocity syringe gun
+	extra_penetration = -0.3
+	extra_damage = -28 // for a total of 14 damage on hit by the syringe, deals significantly less damage due to the air storage mechanism has to be reduced to make way for holding more shot, otherwise damage is not a concern
+
 /obj/item/gun/syringe/rapidsyringe
 	name = "rapid syringe gun"
 	desc = "A modification of the syringe gun design, using a rotating cylinder to store up to six syringes."

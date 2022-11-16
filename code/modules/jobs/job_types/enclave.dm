@@ -460,7 +460,7 @@
 		/obj/item/reagent_containers/spray/chemsprayer = 1,
 		/obj/item/melee/classic_baton/telescopic = 1,
 		/obj/item/storage/bag/plants/bioterror = 1,
-		/obj/item/gun/syringe/rapidsyringe = 1
+		/obj/item/gun/syringe/syringer = 1
 	)
 
 //What was that noise? I thought I heard someone.. Who are you how did you- 
@@ -471,7 +471,7 @@
 	mask = /obj/item/clothing/mask/gas/welding
 	gloves = /obj/item/clothing/gloves/latex/nitrile
 	head = /obj/item/clothing/head/beret/viro
-	suit_store = /obj/item/gun/ballistic/rifle/repeater/syringe
+	suit_store = /obj/item/gun/syringe/syringerenclave
 	backpack_contents = list(
 		/obj/item/reagent_containers/hypospray/combat/omnizine = 1,
 		/obj/item/storage/bag/plants/bioterror = 2,

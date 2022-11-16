@@ -228,7 +228,7 @@
 
 //This one may be potentially used outside of an enclave loadout.
 /obj/item/gun/ballistic/revolver/m29/rhino
-	name = "Rhino America"
+	name = "Chiappa Rhino"
 	desc = "A revolver machined from a solid aluminium block, This model has been specifically made to fire .44 magnum cartridges"
 	item_state = "rhino"
 	icon_state = "44magnum"

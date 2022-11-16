@@ -113,7 +113,7 @@
 		/obj/item/grenade/f13/plasma = 2,
 		)
 
-/datum/outfit/loadout/lt_rhino //Main focus of the loadout is actually the revolver
+/datum/outfit/loadout/lt_rhino //Main focus of the loadout is actually the revolver, This is a loadout originally intended to be specific to me, regardless. I decided against it as it would be best everyone get to use it
 	name = "Golden Hand"
 	suit_store = /obj/item/gun/ballistic/automatic/marksman/sniper/america
 	backpack_contents = list(
@@ -255,6 +255,7 @@
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/m473 = 3,
 		/obj/item/grenade/f13/plasma = 2,
+		/obj/item/gun/ballistic/automatic/pistol/n99 = 1,
 		)
 
 /datum/outfit/loadout/sgt_laser
@@ -263,6 +264,7 @@
 	backpack_contents = list(
 		/obj/item/stock_parts/cell/ammo/mfc = 3,
 		/obj/item/grenade/f13/plasma = 2,
+		/obj/item/gun/ballistic/automatic/pistol/n99 = 1,
 		)
 
 /datum/outfit/job/enclave/peacekeeper/enclavesgt/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -292,7 +294,8 @@
 
 	loadout_options = list(
 		/datum/outfit/loadout/combatmedic, // Medical Equipment
-		/datum/outfit/loadout/combatengie, // Grenade Launcher
+		/datum/outfit/loadout/combatengie, // RCD
+		/datum/outfit/loadout/infiltrator,
 		)
 
 /datum/outfit/job/enclave/peacekeeper/f13specialist
@@ -340,6 +343,19 @@
 		/obj/item/ammo_box/magazine/m10mm_p90 = 2,
 		/obj/item/construction/rcd/combat = 1,
 		/obj/item/metaldetector = 1
+	)
+
+/datum/outfit/loadout/infiltrator
+	name = "Infiltrator"
+	mask = /obj/item/clothing/mask/gas/welding
+	suit_store = /obj/item/gun/ballistic/automatic/pistol/m1911
+	backpack_contents = list(
+		/obj/item/gun/syringe/syringer = 1,
+		/obj/item/ammo_box/magazine/m45 = 2,
+		/obj/item/melee/classic_baton/telescopic = 1,
+		/obj/item/suppressor = 1,
+		/obj/item/storage/box/syndie_kit/chameleon = 1,
+		/obj/item/chameleon = 1
 	)
 
 /datum/outfit/job/enclave/peacekeeper/f13specialist/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -390,7 +406,19 @@
 	ADD_TRAIT(H, TRAIT_ENCLAVE_CODES, src)
 	H.grant_language(/datum/language/codespeak, TRUE, TRUE, LANGUAGE_MIND)
 
+	loadout_options = list(
+		/datum/outfit/loadout/enclave_marksman,
+		/datum/outfit/loadout/enclave_frontline,
+		/datum/outfit/loadout/enclave_shotgunner,
+		)
+
+/datum/outfit/loadout/enclave_marksman
+
+/datum/outfit/loadout/enclave_frontline
+
+/datum/outfit/loadout/enclave_shotgunner
 //NON-COMBATANTS
+//As of writing this, Scientist has been fairly active as a combatant lately and thus this is void.
 
 //Scientist
 /datum/job/enclave/enclavesci
@@ -528,6 +556,7 @@
 		/obj/item/storage/bag/money/small/wastelander = 1,
 		/obj/item/melee/onehanded/knife/survival = 1,
 		/obj/item/clothing/mask/chameleon = 1,
+		/obj/item/gun/ballistic/automatic/pistol/n99 = 1,
 		/obj/item/card/id/syndicate/anyone =1
 		)
 
@@ -574,6 +603,7 @@
 
 	backpack_contents = list(
 		/obj/item/reagent_containers/hypospray/medipen/stimpak = 2,
+		/obj/item/gun/ballistic/automatic/pistol/n99 = 1,
 		/obj/item/storage/survivalkit_aid_adv = 1,
 		/obj/item/storage/bag/money/small/wastelander = 1,
 		)

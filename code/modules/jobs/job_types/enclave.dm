@@ -409,19 +409,6 @@
 		/datum/outfit/loadout/jennifer_dogma,
 		)
 
-/datum/outfit/loadout/infiltrator_advanced
-	name = "Advanced Infiltrator"
-	mask = /obj/item/clothing/mask/gas/welding
-	gloves = /obj/item/clothing/gloves/color/yellow
-	head = /obj/item/clothing/head/hardhat/orange
-	suit_store = /obj/item/gun/ballistic/automatic/pistol/mk23
-	backpack_contents = list(
-		/obj/item/gun/energy/kinetic_accelerator/crossbow = 1,
-		/obj/item/ammo_box/magazine/m45exp = 2,
-		/obj/item/construction/rcd/combat = 1,
-		/obj/item/metaldetector = 1
-	)
-
 /datum/outfit/job/enclave/noncombat/enclavesci
 	name = "Enclave Scientist"
 	jobtype = /datum/job/enclave/enclavesci
@@ -445,6 +432,37 @@
 		/obj/item/clothing/mask/chameleon = 1,
 		/obj/item/card/id/syndicate/anyone =1
 		)
+
+/datum/outfit/loadout/infiltrator_advanced
+	name = "Advanced Infiltrator"
+	mask = /obj/item/clothing/mask/gas/welding
+	suit_store = /obj/item/gun/ballistic/automatic/pistol/mk23
+	backpack_contents = list(
+		/obj/item/gun/energy/kinetic_accelerator/crossbow = 1,
+		/obj/item/ammo_box/magazine/m45exp = 2,
+		/obj/item/melee/classic_baton/telescopic_sword = 1,
+		/obj/item/suppressor = 1,
+		/obj/item/storage/box/syndie_kit/chameleon = 1,
+		/obj/item/chameleon = 1
+	)
+
+//I never really was on yourside *snort
+
+/datum/outfit/loadout/bioterror
+	name = "Biological Terror"
+	under =
+	mask = /obj/item/clothing/mask/gas/welding
+	gloves = /obj/item/clothing/gloves/color/yellow
+	head = /obj/item/clothing/head/hardhat/orange
+	suit_store = /obj/item/gun/ballistic/automatic/pistol/mk23
+	backpack_contents = list(
+		/obj/item/gun/energy/kinetic_accelerator/crossbow = 1,
+		/obj/item/ammo_box/magazine/m45exp = 2,
+		/obj/item/melee/classic_baton/telescopic_sword = 1,
+		/obj/item/suppressor = 1,
+		/obj/item/storage/box/syndie_kit/chameleon = 1,
+		/obj/item/chameleon = 1
+	)
 
 /datum/outfit/job/enclave/noncombat/enclavesci/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()

@@ -617,8 +617,57 @@
 	playsound(loc, on_sound, 50, TRUE)
 	add_fingerprint(user)
 
-// Telescopic Sword
-/obj/item/melee/classic_baton/telescopic
+// Telescopic Sword, Always deal 25 damage regardless of armour and gurantee crit in 5 hits
+/obj/item/melee/classic_baton/telescopic_sword
+	name = "EL-92 Sword"
+	desc = "A self folding, sharpening sword consisting of emp resistant nanites. Can be concealed"
+	icon = 'icons/obj/items_and_weapons.dmi'
+	icon_state = "telebaton_0"
+	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
+	item_state = null
+	slot_flags = ITEM_SLOT_BELT
+	w_class = WEIGHT_CLASS_SMALL
+	item_flags = NONE
+	force = 0
+	on = FALSE
+	on_sound = 'sound/weapons/batonextend.ogg'
+	force_on = 29
+	force_off = 10
+	weight_class_on = WEIGHT_CLASS_BULKY
+	total_mass = TOTAL_MASS_NORMAL_ITEM
+	bare_wound_bonus = 25
+	on_icon_state = "telesword_on"
+	off_icon_state = "telesword_off"
+	on_item_state = "nullrod"
+	armour_penetration = 1
+
+/obj/item/melee/classic_baton/telescopic_sword/attack_self(mob/user)
+	on = !on
+	var/list/desc = get_on_description()
+	if(on)
+		to_chat(user, desc["local_on"])
+		icon_state = on_icon_state
+		item_state = on_item_state
+		w_class = weight_class_on
+		force = force_on
+		attack_verb = list("pierced", "diced", "slashed", "sliced")
+	else
+		to_chat(user, desc["local_off"])
+		icon_state = off_icon_state
+		item_state = null //no sprite for concealment even when in hand
+		slot_flags = ITEM_SLOT_BELT
+		w_class = WEIGHT_CLASS_SMALL
+		force = force_off
+		attack_verb = list("hit", "poked")
+	playsound(loc, on_sound, 50, TRUE)
+	add_fingerprint(user)
+
+/obj/item/melee/classic_baton/telescopic_sword/proc/get_on_description()
+	. = list()
+	.["local_on"] = "<span class ='warning'>You unfold the sword.</span>"
+	.["local_off"] = "<span class ='notice'>You fold the sword.</span>"
+	return .
 
 // Slave whip
 /obj/item/melee/onehanded/slavewhip

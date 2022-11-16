@@ -414,10 +414,10 @@
 	mask = /obj/item/clothing/mask/gas/welding
 	gloves = /obj/item/clothing/gloves/color/yellow
 	head = /obj/item/clothing/head/hardhat/orange
-	suit_store = /obj/item/gun/ballistic/automatic/smg/p90
+	suit_store = /obj/item/gun/ballistic/automatic/pistol/mk23
 	backpack_contents = list(
-		/obj/item/storage/belt/utility = 1,
-		/obj/item/ammo_box/magazine/m10mm_p90 = 2,
+		/obj/item/gun/energy/kinetic_accelerator/crossbow = 1,
+		/obj/item/ammo_box/magazine/m45exp = 2,
 		/obj/item/construction/rcd/combat = 1,
 		/obj/item/metaldetector = 1
 	)

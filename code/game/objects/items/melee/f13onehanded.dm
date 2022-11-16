@@ -617,6 +617,8 @@
 	playsound(loc, on_sound, 50, TRUE)
 	add_fingerprint(user)
 
+// Telescopic Sword
+/obj/item/melee/classic_baton/telescopic
 
 // Slave whip
 /obj/item/melee/onehanded/slavewhip

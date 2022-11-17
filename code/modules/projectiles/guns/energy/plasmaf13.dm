@@ -3,6 +3,19 @@
 //PLASMA WEAPONS//
 //////////////////
 
+/obj/item/gun/energy/laser/plasma/w_glock
+	name = "refurbished glock 86"
+	desc = "A Glock 86 Plasma Pistol. Originally Designed by the Gaston Glock artificial intelligence. Shoots a small bolt of superheated plasma. this one has seen better days and has had its plasma heater replaced with one from a miner's plasma cutter. has a small egg engraved in its handle."
+	item_state = "plasma-pistol"
+	icon_state = "glock86"
+	slowdown = 0.1
+	w_class = WEIGHT_CLASS_NORMAL
+	weapon_weight = WEAPON_MEDIUM
+	slot_flags = ITEM_SLOT_BELT
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/pistol/w_glock)
+	equipsound = 'sound/f13weapons/equipsounds/pistolplasequip.ogg'
+	cell_type = /obj/item/stock_parts/cell/ammo/ec
+
 //Plasma pistol
 /obj/item/gun/energy/laser/plasma/pistol
 	name ="plasma pistol"

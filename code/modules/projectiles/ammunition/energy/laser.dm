@@ -270,6 +270,10 @@ also: most hitscan weapons have more charge than their normal projectile counter
 	fire_sound = 'sound/weapons/taser.ogg'
 	e_cost = 70 //35 shots
 
+/obj/item/ammo_casing/energy/laser/pistol/w_glock 
+	projectile_type = /obj/item/projectile/beam/laser/pistol/w_glock
+	e_cost = 100 
+
 // BETA // Obsolete
 /obj/item/ammo_casing/energy/laser/pistol/lasertest
 	projectile_type = /obj/item/projectile/beam/laser/pistol/lasertesting

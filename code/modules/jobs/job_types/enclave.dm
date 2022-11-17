@@ -113,7 +113,7 @@
 		/obj/item/grenade/f13/plasma = 2,
 		)
 
-/datum/outfit/loadout/lt_rhino //Main focus of the loadout is actually the revolver, This is a loadout originally intended to be specific to me, regardless. I decided against it as it would be best everyone get to use it
+/datum/outfit/loadout/lt_rhino //RHINO GOLD SNIPER Main focus of the loadout is actually the revolver, This is a loadout originally intended to be specific to me, regardless. I decided against it as it would be best everyone get to use it
 	name = "Golden Hand"
 	suit_store = /obj/item/gun/ballistic/automatic/marksman/sniper/america
 	backpack_contents = list(

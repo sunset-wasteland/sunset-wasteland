@@ -318,7 +318,7 @@
 	ckeywhitelist = list ("hyrofox")
 
 /obj/item/storage/box/large/custom_kit/hyro/PopulateContents()
-	new /obj/item/gun/energy/laser/plasma/glock(src)
+	new /obj/item/gun/energy/laser/plasma/w_glock(src)
 	new /obj/item/stock_parts/cell/ammo/ec(src)
 	new /obj/item/book/granter/trait/iron_fist(src)
 	new /obj/item/clothing/head/f13/boscap/beret(src)

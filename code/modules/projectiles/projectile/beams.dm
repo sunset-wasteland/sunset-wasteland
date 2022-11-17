@@ -652,6 +652,17 @@
 	damage = 40
 	armour_penetration = 0.6
 
+/obj/item/projectile/beam/laser/pistol/w_glock // slightly stronger hitscan AEP7
+	name = "plasma beam"
+	damage = 28
+	hitscan = TRUE
+	armour_penetration = 0.1
+	wound_bonus = 10
+	bare_wound_bonus = 5
+	tracer_type = /obj/effect/projectile/tracer/plasma_cutter
+	muzzle_type = /obj/effect/projectile/muzzle/plasma_cutter
+	impact_type = /obj/effect/projectile/impact/plasma_cutter
+
 
 
 // BETA // Obsolete

@@ -233,7 +233,7 @@ Head Scribe
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/AEP7)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/dks)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/R93)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/Flatline)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/flatline/armor/bos)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/medx)
 
 /datum/outfit/job/bos/f13headscribe
@@ -601,7 +601,7 @@ Senior Scribe
 	ADD_TRAIT(H, TRAIT_CYBERNETICIST, src)
 	ADD_TRAIT(H, TRAIT_RESEARCHER, src)
 //	ADD_TRAIT(H, TRAIT_POOR_AIM, src)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/Flatline)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/flatline/armor/bos)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/AER9)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/AEP7)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/dks)
@@ -694,7 +694,7 @@ Scribe
 	ADD_TRAIT(H, TRAIT_CHEMWHIZ, src)
 	ADD_TRAIT(H, TRAIT_RESEARCHER, src)
 //	ADD_TRAIT(H, TRAIT_POOR_AIM, src)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/Flatline)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/flatline/armor/bos)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/AER9)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/AEP7)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/dks)

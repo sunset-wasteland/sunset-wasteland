@@ -320,7 +320,7 @@
 // BROTHERHOOD OF STEEL //
 //////////////////////////
 
-/obj/item/clothing/suit/armored/medium/combat/flatline/bos
+/obj/item/clothing/suit/armored/medium/combat/flatline/prototype/bos
 	name = "Brotherhood 'Flatline' Armor"
 	desc = "A modified and refined self-revival 'flatline' armor developed by none other than flatline himself for his pack member he cares so much for. Repainted to the color scheme of the Brotherhood of Steel. Its lining inside is a gel-based refinement of the symbiotic algae found in buffalo gourds giving it flesh-mending properties over time. Inside it is a regulated and biomonitor-controlled self-defibrilator unit to bring the host back to life after the gel has done its job."
 	icon_state = "flatline_brotherhood_armor"

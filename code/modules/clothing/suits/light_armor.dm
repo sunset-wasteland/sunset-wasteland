@@ -361,6 +361,13 @@
 	heat_protection = CHEST | GROIN | LEGS
 	cold_protection = CHEST | GROIN | LEGS
 	armor = list("melee" = 12, "bullet" = 35, "laser" = 10, "energy" = 5, "bomb" = 5, "bio" = 10, "rad" = 10, "fire" = 15, "acid" = 0, "wound" = 10)
+	
+/obj/item/clothing/suit/armored/light/ncrarmorwarri
+	name = "NCR desert warrior vest"
+	desc = "A modified version of the utility vest with shoulder paddings and a white piece of cloth with a red stripe, to let everyone know God is on your side."
+	icon_state = "ncr_warrior_vest"
+	item_state = "ncr_warrior_vest"
+	armor = list("melee" = 30, "bullet" = 25, "laser" = 20, "energy" = 10, "bomb" = 15, "bio" = 10, "rad" = 20, "fire" = 30, "acid" = 0, "wound" = 10)
 
 /obj/item/clothing/suit/armored/light/rangerrig
 	name = "chest gear harness"

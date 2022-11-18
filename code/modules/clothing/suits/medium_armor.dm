@@ -464,6 +464,7 @@
 					var/tplus = world.time - M.timeofdeath
 					if(M.revive())
 						M.grab_ghost()
+						M.do_jitter_animation(10)
 						playsound(src,  'sound/machines/defib_zap.ogg', 50, 1, -1)
 						M.visible_message("<span class='green'>[M]'s suit makes a thump! followed by [M] taking his first breaths again!</span>")
 						M.emote("gasp")

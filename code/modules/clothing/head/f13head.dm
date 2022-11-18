@@ -603,8 +603,20 @@
 	item_state = "dethat"
 	flags_inv = HIDEMASK|HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 	mutantrace_variation = STYLE_MUZZLE
-
+	
 /obj/item/clothing/head/f13/headscarf/Initialize()
+	. = ..()
+	AddComponent(/datum/component/armor_plate)
+	
+/obj/item/clothing/head/f13/headscarfncr
+	name = "NCR headscarf"
+	desc = "A piece of cloth worn on the head for a variety of purposes. This one has a white band around it, with NCR symbolism on the front. Clearly, the purpose of this one is to make sure nobody forgets the NCR owns this sand."
+	icon_state = "headscarf_ncr"
+	item_state = "headscarf_ncr"
+	flags_inv = HIDEMASK|HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
+	mutantrace_variation = STYLE_MUZZLE
+
+/obj/item/clothing/head/f13/headscarfncr/Initialize()
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
 

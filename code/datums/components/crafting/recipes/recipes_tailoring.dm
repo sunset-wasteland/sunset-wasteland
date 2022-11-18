@@ -2,9 +2,9 @@
 //ARMOR//
 /////////
 
-/datum/crafting_recipe/Flatline
+/datum/crafting_recipe/flatline/armor/bos
 	name = "Mk1 'flatline' armor"
-	result = /obj/item/clothing/suit/armored/medium/combat/bos_flatline
+	result = /obj/item/clothing/suit/armored/medium/combat/flatline/bos
 	reqs = list(/obj/item/clothing/suit/armor/f13/combat/brotherhood = 1,
 				/obj/item/stack/sheet/prewar = 2,
 				/obj/item/stack/crafting/armor_plate = 5,

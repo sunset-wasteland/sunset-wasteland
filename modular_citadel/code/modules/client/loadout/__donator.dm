@@ -267,7 +267,7 @@
 /obj/item/storage/box/large/custom_kit/ripper/PopulateContents()
 	new /obj/item/clothing/glasses/hud/health/eyepatch(src)// basic healthhud but cooler.
 	new /obj/item/melee/powered/surgripper(src)// easier than coding a skill-book giver for him to craft them
-	new /obj/item/clothing/suit/armored/medium/combat/prototype(src)// flatlines armor prototype
+	new /obj/item/clothing/suit/armored/medium/combat/flatline/prototype(src)// flatlines armor prototype
 	new /obj/item/clothing/ears/headphones(src)// hard to get for a fluff item
 	new /obj/item/clothing/head/f13/stalkerpelt(src)// morbid. but funny.
 	new /obj/item/storage/pill_bottle/chem_tin/mentats(src)// entirely for RP reasons

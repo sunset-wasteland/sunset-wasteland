@@ -446,12 +446,7 @@
 				to_chat(M, "<span class='notice'>You feel your wounds sealing back toghether slowly!</span>")
 				return
 			else
-				M.visible_message("<span class='warning'>[M]'s suit starts to whine making a charging up sound!</span>")
-				playsound(src, 'sound/machines/defib_charge.ogg', 50, 0)
 				M.notify_ghost_cloning(source = M)
-				M.do_jitter_animation(10)
-				addtimer(CALLBACK(M, /mob/living/carbon.proc/do_jitter_animation, 10), 40) //jitter immediately, then again after 4 and 8 seconds
-				addtimer(CALLBACK(M, /mob/living/carbon.proc/do_jitter_animation, 10), 80)
 
 				spawn(100) //so the ghost has time to re-enter
 					if(iscarbon(M))
@@ -470,7 +465,6 @@
 					if(M.revive())
 						M.grab_ghost()
 						M.visible_message("<span class='green'>[M]'s suit makes a thump! followed by [M] taking his first breaths again!</span>")
-						playsound(src,  'sound/machines/defib_zap.ogg', 50, 1, -1)
 						M.emote("scream")
 						log_combat(M, M, "revived", src)
 						var/list/policies = CONFIG_GET(keyed_list/policyconfig)

@@ -464,8 +464,9 @@
 					var/tplus = world.time - M.timeofdeath
 					if(M.revive())
 						M.grab_ghost()
+						playsound(src,  'sound/machines/defib_zap.ogg', 50, 1, -1)
 						M.visible_message("<span class='green'>[M]'s suit makes a thump! followed by [M] taking his first breaths again!</span>")
-						M.emote("scream")
+						M.emote("gasp")
 						log_combat(M, M, "revived", src)
 						var/list/policies = CONFIG_GET(keyed_list/policyconfig)
 						var/timelimit = CONFIG_GET(number/defib_cmd_time_limit)

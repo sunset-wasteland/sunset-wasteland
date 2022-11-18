@@ -443,9 +443,7 @@
 				playsound(src, 'sound/machines/defib_failed.ogg', 50, 0)
 				return
 			if(M.getBruteLoss() >= 200 || M.getFireLoss() >= 200 || HAS_TRAIT(M, TRAIT_HUSK)) //body is too damaged to be revived
-				playsound(src, 'sound/machines/defib_failed.ogg', 50, 0)
-				M.visible_message("<span class='warning'>[M]'s suit starts to whine and emit a charging noise, before an audiable thump, and then falls still once more.</span>")
-				M.do_jitter_animation(10)
+				to_chat(M, "<span class='notice'>You feel your wounds sealing back toghether slowly!</span>")
 				return
 			else
 				M.visible_message("<span class='warning'>[M]'s suit starts to whine making a charging up sound!</span>")
@@ -473,7 +471,7 @@
 						M.grab_ghost()
 						M.visible_message("<span class='green'>[M]'s suit makes a thump! followed by [M] taking his first breaths again!</span>")
 						playsound(src,  'sound/machines/defib_zap.ogg', 50, 1, -1)
-						M.say("*cackle")
+						M.emote("scream")
 						log_combat(M, M, "revived", src)
 						var/list/policies = CONFIG_GET(keyed_list/policyconfig)
 						var/timelimit = CONFIG_GET(number/defib_cmd_time_limit)

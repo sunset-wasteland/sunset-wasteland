@@ -320,9 +320,9 @@
 // BROTHERHOOD OF STEEL //
 //////////////////////////
 
-/obj/item/clothing/suit/armored/medium/combat/bos_flatline
+/obj/item/clothing/suit/armored/medium/combat/flatline/bos
 	name = "Brotherhood 'Flatline' Armor"
-	desc = "a modified and refined self revival 'flatline' armor developed by none other than flatline himself for his pack member he cares so much for. Repainted to the colour scheme of the Brotherhood of Steel. its lining inside is a gel based refinment of the symbiotic algae found in buffalo gourds giving it flesh mending properties over time. inside of it is a regulated and biomonitor controlled self defibrilator unit to bring the host back to life after the gel has done its job."
+	desc = "A modified and refined self-revival 'flatline' armor developed by none other than flatline himself for his pack member he cares so much for. Repainted to the color scheme of the Brotherhood of Steel. Its lining inside is a gel-based refinement of the symbiotic algae found in buffalo gourds giving it flesh-mending properties over time. Inside it is a regulated and biomonitor-controlled self-defibrilator unit to bring the host back to life after the gel has done its job."
 	icon_state = "flatline_brotherhood_armor"
 	item_state = "flatline_brotherhood_armor"
 	permeability_coefficient = 0.9
@@ -330,15 +330,15 @@
 	cold_protection = CHEST | GROIN | LEGS
 	armor = list("melee" = 35, "bullet" = 35, "laser" = 30, "energy" = 20, "bomb" = 25, "bio" = 10, "rad" = 10, "fire" = 20, "acid" = 10, "wound" = 10)
 
-/obj/item/clothing/suit/armored/medium/combat/bos_flatline/New()
+/obj/item/clothing/suit/armored/medium/combat/flatline/bos/New()
 	..()
 	START_PROCESSING(SSobj, src)
 
-/obj/item/clothing/suit/armored/medium/combat/bos_flatline/Destroy()
+/obj/item/clothing/suit/armored/medium/combat/flatline/bos/Destroy()
 	STOP_PROCESSING(SSobj,src)
 	. = ..()
 
-/obj/item/clothing/suit/armored/medium/combat/bos_flatline/process()
+/obj/item/clothing/suit/armored/medium/combat/flatline/bos/process()
 	if(iscarbon(loc))
 		var/mob/living/carbon/M = loc
 		if(M.stat == DEAD || M.health < M.maxHealth)
@@ -475,25 +475,25 @@
 // CUSTOM //
 ////////////
 
-/obj/item/clothing/suit/armored/medium/combat/prototype
+/obj/item/clothing/suit/armored/medium/combat/flatline/prototype
 	name = "prototype 'flatline' armor"
-	desc = "a very early model of the self revival 'flatline' armor developed by none other than flatline himself. this one is highly customized. and by customized its cobbled toghether from junk, dripping algae and has a defib unit welded and installed on the chest piece"
+	desc = "A very early model of the self-revival 'flatline' armor developed by none other than flatline himself. This one is highly customized. And by customized its cobbled together from junk, dripping algae and has a defib unit welded and installed on the chest piece. It looks like a scav made it."
 	icon_state = "flatline_prototype"
 	item_state = "flatline_prototype"
 	permeability_coefficient = 0.9
 	heat_protection = CHEST | GROIN | LEGS
 	cold_protection = CHEST | GROIN | LEGS
-	armor = list("melee" = 45, "bullet" = 45, "laser" = 45, "energy" = 45, "bomb" = 45, "bio" = 45, "rad" = 45, "fire" = 45, "acid" = 45, "wound" = 10)
+	armor = list("melee" = 45, "bullet" = 35, "laser" = 35, "energy" = 35, "bomb" = 35, "bio" = 35, "rad" = 35, "fire" = 35, "acid" = 35, "wound" = 10)
 
-/obj/item/clothing/suit/armored/medium/combat/prototype/New()
+/obj/item/clothing/suit/armored/medium/combat/flatline/prototype/New()
 	..()
 	START_PROCESSING(SSobj, src)
 
-/obj/item/clothing/suit/armored/medium/combat/prototype/Destroy()
+/obj/item/clothing/suit/armored/medium/combat/flatline/prototype/Destroy()
 	STOP_PROCESSING(SSobj,src)
 	. = ..()
 
-/obj/item/clothing/suit/armored/medium/combat/prototype/process()
+/obj/item/clothing/suit/armored/medium/combat/flatline/prototype/process()
 	if(iscarbon(loc))
 		var/mob/living/carbon/M = loc
 		if(M.stat == DEAD || M.health < M.maxHealth)

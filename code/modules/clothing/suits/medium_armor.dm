@@ -330,69 +330,6 @@
 	cold_protection = CHEST | GROIN | LEGS
 	armor = list("melee" = 35, "bullet" = 35, "laser" = 30, "energy" = 20, "bomb" = 25, "bio" = 10, "rad" = 10, "fire" = 20, "acid" = 10, "wound" = 10)
 
-/obj/item/clothing/suit/armored/medium/combat/flatline/bos/New()
-	..()
-	START_PROCESSING(SSobj, src)
-
-/obj/item/clothing/suit/armored/medium/combat/flatline/bos/Destroy()
-	STOP_PROCESSING(SSobj,src)
-	. = ..()
-
-/obj/item/clothing/suit/armored/medium/combat/flatline/bos/process()
-	if(iscarbon(loc))
-		var/mob/living/carbon/M = loc
-		if(M.stat == DEAD || M.health < M.maxHealth)
-			M.adjustBruteLoss(-2) 
-			M.adjustFireLoss(-2)
-			M.adjustToxLoss(-2)
-			M.adjustOxyLoss(-2)
-			if(M.suiciding || M.hellbound) //they are never coming back
-				M.visible_message("<span class='warning'>[M]'s suit makes a long flatline noise...</span>")
-				playsound(src, 'sound/machines/defib_failed.ogg', 50, 0)
-				return
-			if(M.getBruteLoss() >= 200 || M.getFireLoss() >= 200 || HAS_TRAIT(M, TRAIT_HUSK)) //body is too damaged to be revived
-				playsound(src, 'sound/machines/defib_failed.ogg', 50, 0)
-				M.visible_message("<span class='warning'>[M]'s suit starts to whine and emit a charging noise, before an audiable thump, and then falls still once more.</span>")
-				M.do_jitter_animation(10)
-				return
-			else
-				M.visible_message("<span class='warning'>[M]'s suit starts to whine making a charging up sound!</span>")
-				playsound(src, 'sound/machines/defib_charge.ogg', 50, 0)
-				M.notify_ghost_cloning(source = M)
-				M.do_jitter_animation(10)
-				addtimer(CALLBACK(M, /mob/living/carbon.proc/do_jitter_animation, 10), 40) //jitter immediately, then again after 4 and 8 seconds
-				addtimer(CALLBACK(M, /mob/living/carbon.proc/do_jitter_animation, 10), 80)
-
-				spawn(100) //so the ghost has time to re-enter
-					if(iscarbon(M))
-						var/mob/living/carbon/C = M
-						if(!(C.dna && C.dna.species && (NOBLOOD in C.dna.species.species_traits)))
-							C.blood_volume = max(C.blood_volume, BLOOD_VOLUME_NORMAL*C.blood_ratio) //so you don't instantly re-die from a lack of blood
-						for(var/organ in C.internal_organs)
-							var/obj/item/organ/O = organ
-							if(O.damage > O.maxHealth/2)
-								O.setOrganDamage(O.maxHealth/2) //so you don't instantly die from organ damage when being revived
-
-					M.adjustOxyLoss(-20, 0)
-					M.adjustToxLoss(-20, 0)
-					M.updatehealth()
-					var/tplus = world.time - M.timeofdeath
-					if(M.revive())
-						M.grab_ghost()
-						M.visible_message("<span class='green'>[M]'s suit makes a thump! followed by [M] taking there first breaths again!</span>")
-						playsound(src,  'sound/machines/defib_zap.ogg', 50, 1, -1)
-						M.emote("scream")
-						log_combat(M, M, "revived", src)
-						var/list/policies = CONFIG_GET(keyed_list/policyconfig)
-						var/timelimit = CONFIG_GET(number/defib_cmd_time_limit)
-						var/late = timelimit && (tplus > timelimit)
-						var/policy = late? policies[POLICYCONFIG_ON_DEFIB_LATE] : policies[POLICYCONFIG_ON_DEFIB_INTACT]
-						if(policy)
-							to_chat(M, policy)
-						M.log_message("revived using internal defib, [tplus] deciseconds from time of death, considered [late? "late" : "memory-intact"] revival under configured policy limits.", LOG_GAME)
-	..()
-
-
 /obj/item/clothing/suit/armored/medium/combat/bos
 	name = "initiate armor"
 	desc = "An old military grade pre war combat armor, repainted to the colour scheme of the Brotherhood of Steel."

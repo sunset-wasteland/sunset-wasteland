@@ -144,7 +144,6 @@
 	item_state = "wastewar"
 	resistance_flags = FLAMMABLE
 	armor = list("melee" = 25, "bullet" = 5, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = -10, "acid" = 0, "wound" = 10)
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets/utility
 
 // Outlaw
 /obj/item/clothing/suit/toggle/armored/khanlight
@@ -369,6 +368,7 @@
 	icon_state = "ncr_warrior_vest"
 	item_state = "ncr_warrior_vest"
 	armor = list("melee" = 30, "bullet" = 25, "laser" = 20, "energy" = 10, "bomb" = 15, "bio" = 10, "rad" = 20, "fire" = 30, "acid" = 0, "wound" = 10)
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/utility
 
 /obj/item/clothing/suit/armored/light/rangerrig
 	name = "chest gear harness"

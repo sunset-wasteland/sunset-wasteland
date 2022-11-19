@@ -505,7 +505,8 @@ Code:
 		usr.unset_machine()
 		usr << browse(null, "window=pda")
 		return
-
+		
+	switch(href_list["choice"])
 		if("Send Signal")
 			INVOKE_ASYNC(radio, /obj/item/integrated_signaler.proc/send_activation)
 			playsound(src, 'sound/machines/terminal_select.ogg', 50, 1)

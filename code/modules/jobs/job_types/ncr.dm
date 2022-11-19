@@ -1143,6 +1143,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	loadout_options = list(
 		/datum/outfit/loadout/trooperrifleman, // Service Rifle, Bayonet
 		/datum/outfit/loadout/trooperfiresupport, // M1/n carbine, Trench tool, Sandbags
+		/datum/outfit/loadout/trooperdesertwarrior, // Machete, M1911, Trekking, NCR Headscarf, NCR Warrior Armor
 		)
 
 	matchmaking_allowed = list(
@@ -1187,7 +1188,18 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 		/obj/item/stack/sheet/mineral/sandbags = 10,
 		/obj/item/storage/box/ration/menu_eight = 1,
 		)
-
+		
+/datum/outfit/loadout/trooperdesertwarrior
+	name = "Desert Warrior"
+	suit_store = /obj/item/gun/ballistic/automatic/pistol/m1911
+	backpack_contents = list(
+		/obj/item/ammo_box/magazine/m45 = 3,
+		/obj/item/melee/onehanded/machete = 1,
+		/obj/item/book/granter/trait/trekking = 1,
+		/obj/item/storage/box/ration/menu_eight = 1,
+		/obj/item/clothing/head/f13/headscarfncr = 1,
+		/obj/item/clothing/suit/armored/light/ncrarmorwarri = 1,
+		)
 
 // CONSCRIPT
 

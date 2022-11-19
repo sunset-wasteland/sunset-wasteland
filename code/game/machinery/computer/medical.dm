@@ -5,7 +5,7 @@
 	desc = "This can be used to check medical records."
 	icon_screen = "medcomp"
 	icon_keyboard = "med_key"
-	req_one_access = list(ACCESS_MEDICAL, ACCESS_FORENSICS_LOCKERS)
+	req_one_access = list(ACCESS_CENT_CAPTAIN)
 	circuit = /obj/item/circuitboard/computer/med_data
 	var/rank = null
 	var/screen = null
@@ -215,13 +215,7 @@
 		else if(href_list["login"])
 			var/mob/M = usr
 			var/obj/item/card/id/I = M.get_idcard(TRUE)
-			if(hasSiliconAccessInArea(M))
-				active1 = null
-				active2 = null
-				authenticated = 1
-				rank = "AI"
-				screen = 1
-			else if(IsAdminGhost(M))
+			if(IsAdminGhost(M))
 				active1 = null
 				active2 = null
 				authenticated = 1

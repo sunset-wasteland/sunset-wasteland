@@ -144,6 +144,7 @@
 	item_state = "wastewar"
 	resistance_flags = FLAMMABLE
 	armor = list("melee" = 25, "bullet" = 5, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = -10, "acid" = 0, "wound" = 10)
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/utility
 
 // Outlaw
 /obj/item/clothing/suit/toggle/armored/khanlight

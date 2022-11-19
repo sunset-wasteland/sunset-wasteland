@@ -369,6 +369,13 @@
 	item_state = "ncr_warrior_vest"
 	armor = list("melee" = 30, "bullet" = 25, "laser" = 20, "energy" = 10, "bomb" = 15, "bio" = 10, "rad" = 20, "fire" = 30, "acid" = 0, "wound" = 10)
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/utility
+	
+/datum/component/storage/concrete/pockets/utility
+	max_items = 4
+
+/obj/item/clothing/suit/armored/light/ncrarmorwarri/Initialize()
+	. = ..()
+	AddComponent(/datum/component/armor_plate)
 
 /obj/item/clothing/suit/armored/light/rangerrig
 	name = "chest gear harness"

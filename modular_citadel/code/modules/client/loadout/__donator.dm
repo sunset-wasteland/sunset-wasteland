@@ -265,6 +265,8 @@
 	ckeywhitelist = list ("mottedesstriets")
 
 /obj/item/storage/box/large/custom_kit/ripper/PopulateContents()
+	new /obj/item/organ/tongue/lizard(src)// lizard tongue to have a hiss as nightstalker
+	new /obj/item/autosurgeon(src)// ^ for this because im fucking lazy
 	new /obj/item/clothing/glasses/hud/health/eyepatch(src)// basic healthhud but cooler.
 	new /obj/item/melee/powered/surgripper(src)// easier than coding a skill-book giver for him to craft them
 	new /obj/item/clothing/suit/armored/medium/combat/flatline/prototype(src)// flatlines armor prototype

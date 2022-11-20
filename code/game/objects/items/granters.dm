@@ -659,6 +659,17 @@
 	remarks = list("And it was here that I stabbed a man over a desk fan...", "The paint was chipping, but that didn't matter when he lay dead...", "A tank here, a pipe there...", "A bit of duct tape wrapped around everything...", "My flamethrower spat fire! Wait, where are my eyebrows...")
 	crafting_recipe_types = list(/datum/crafting_recipe/autoaxe)
 
+//custom fluff skill books
+
+/obj/item/book/granter/crafting_recipe/moribund
+	name = "Moribund's Black Book"
+	desc = "A medical necronomicon of sorts. wrote by a very unethical individual given to his creations to spread his teachings.....you shouldn't read this."
+	icon_state = "demonomicon"
+	oneuse = FALSE
+	crafting_recipe_types = list(/datum/crafting_recipe/melee/forged/surgripper, /datum/crafting_recipe/flatline/armor/bos)
+	pages_to_mastery = 0
+	time_per_page = 0
+
 // New Blueprints, yay! -Superballs
 /obj/item/book/granter/crafting_recipe/blueprint
 	name = "blueprint"

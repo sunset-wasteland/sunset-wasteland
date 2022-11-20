@@ -259,29 +259,51 @@
 	new /obj/item/clothing/suit/armor/f13/power_armor/t45d/refurb(src)
 	new /obj/item/clothing/head/helmet/f13/power_armor/t45d/refurb(src)
 
-/datum/gear/donator/kits/ripper// basically enough to set up his own clinic/lab. when off-duty.
-	name = "Rippers Belonging"
-	path = /obj/item/storage/box/large/custom_kit/ripper
+/datum/gear/donator/kits/stalkers
+	name = "stalkers personal effects"
+	path = /obj/item/storage/box/large/custom_kit/stalkers
 	ckeywhitelist = list ("mottedesstriets")
 
-/obj/item/storage/box/large/custom_kit/ripper/PopulateContents()
-	new /obj/item/organ/tongue/lizard(src)// lizard tongue to have a hiss as nightstalker
-	new /obj/item/autosurgeon(src)// ^ for this because im fucking lazy
-	new /obj/item/clothing/glasses/hud/health/eyepatch(src)// basic healthhud but cooler.
-	new /obj/item/melee/powered/surgripper(src)// easier than coding a skill-book giver for him to craft them
-	new /obj/item/clothing/suit/armored/medium/combat/flatline/prototype(src)// flatlines armor prototype
+/obj/item/storage/box/large/custom_kit/stalkers/PopulateContents()
+	new /obj/item/clothing/suit/armored/medium/combat/flatline/prototype(src)// prototype armor made by flatline
+	new /obj/item/book/granter/crafting_recipe/moribund(src)// crafting recipies all made by the nightstalkers in one book
 	new /obj/item/clothing/ears/headphones(src)// hard to get for a fluff item
 	new /obj/item/clothing/head/f13/stalkerpelt(src)// morbid. but funny.
-	new /obj/item/storage/pill_bottle/chem_tin/mentats(src)// entirely for RP reasons
-	new /obj/item/book/granter/trait/midsurgery(src)// skill level for surgery of basic doctor
-	new /obj/item/book/granter/trait/chemistry(src)// chem whiz
 	new /obj/item/disk/plantgene(src)// store plant data
 	new /obj/item/disk/plantgene(src)// store plant data
 	new /obj/item/circuitboard/machine/chem_master/advanced(src)//not a dispencer. splitter. can make patches so legion dont bitch.
-	new /obj/item/circuitboard/machine/gibber(src)// fetish reason dont ask.
+	new /obj/item/circuitboard/machine/gibber(src)// fetish reason dont ask. its for vore....because you asked...
 	new /obj/item/circuitboard/machine/plantgenes(src)// plant manipulator
 	new /obj/item/stock_parts/manipulator/femto(src)// for gibber, works with clothes on/faster.
 	new /obj/item/stock_parts/matter_bin/bluespace(src)// for gibber. gives most meat.
+
+datum/gear/donator/kits/moribund_skills // characters teachings from my goat
+	name = "Moribund Teachings"
+	path = /obj/item/storage/box/large/custom_kit/moribund_skills
+	ckeywhitelist = list ("mottedesstriets")
+
+/obj/item/storage/box/large/custom_kit/moribund_skills/PopulateContents()
+	var/player = get_mob_by_key("mottedesstriets") // I really like how clean this keeps things alffd so im borrowing it <3
+	if(!ishuman(player)) //This should never be true, but who knows.
+		return
+	var/mob/living/carbon/human/P = player
+	ADD_TRAIT(P, TRAIT_SURGERY_HIGH, src)// moribunds teachings to reduce the book clutter in the loadout box
+	ADD_TRAIT(P, TRAIT_UNETHICAL_PRACTITIONER, src)// ^
+	ADD_TRAIT(P, TRAIT_UNETHICAL_PRACTITIONER_BRAINWASHING, src)// ^
+	ADD_TRAIT(P, TRAIT_CYBERNETICIST, src)// ^
+	ADD_TRAIT(P, TRAIT_CYBERNETICIST_EXPERT, src)// ^
+	ADD_TRAIT(P, TRAIT_CHEMWHIZ, src)// ^
+	ADD_TRAIT(P, TRAIT_MEDICALEXPERT, src)//^
+	ADD_TRAIT(P, TRAIT_MEDICALGRADUATE, src)// ^
+	implant(player, new /obj/item/organ/cyberimp/eyes/hud/medical(src))
+	if(cmptext(P.mind.assigned_role, "Outlaw"))
+		implant(player, new /obj/item/organ/tongue(src))
+	else
+		implant(player, new /obj/item/organ/tongue/lizard(src))// for nightstalker hiss
+	qdel(src)
+	
+/obj/item/storage/box/large/custom_kit/moribund_skills/proc/implant(player, obj/item/organ/I)
+	I.Insert(player, drop_if_replaced = FALSE)
 
 /datum/gear/donator/kits/transhumanism
 	name = "Half-Synth"

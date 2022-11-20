@@ -913,8 +913,8 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	name = "Followers Doctor"
 	icon_state = "Medical Doctor"
 
-/obj/effect/landmark/start/f13/followersguard
-	name = "Followers Guard"
+/obj/effect/landmark/start/f13/followerscholar
+	name = "Followers Scholar"
 	icon_state = "Security Officer"
 
 /obj/effect/landmark/start/f13/followersvolunteer

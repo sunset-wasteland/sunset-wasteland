@@ -65,6 +65,8 @@ GLOBAL_LIST_INIT(command_positions, list(
 
 	"Enclave Lieutenant",
 
+	"Followers Administrator",
+
 	"Khan Senior Enforcer",
 //	"Noyan",
 //	"Steward",
@@ -124,7 +126,7 @@ GLOBAL_LIST_INIT(faction_whitelist_positions, list(
 
 "Followers Administrator",
 "Followers Doctor",
-"Followers Guard",
+"Followers Scholar",
 "Followers Robot",
 
 "Cyborg",
@@ -262,7 +264,7 @@ GLOBAL_LIST_INIT(silicon_positions, list(
 GLOBAL_LIST_INIT(followers_positions, list(
 	"Followers Administrator",
 	"Followers Doctor",
-	"Followers Guard",
+	"Followers Scholar",
 	"Followers Volunteer",
 	"Followers Scientist",
 	"Followers Robot",

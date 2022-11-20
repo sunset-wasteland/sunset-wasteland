@@ -58,8 +58,8 @@ Administrator
 
 	outfit = /datum/outfit/job/followers/f13leadpractitioner
 
-	access = list(ACCESS_FOLLOWER, ACCESS_COMMAND, ACCESS_MILITARY, ACCESS_ENGINE, ACCESS_ENGINE_EQUIP, ACCESS_ATMOSPHERICS)
-	minimal_access = list(ACCESS_FOLLOWER, ACCESS_COMMAND, ACCESS_MILITARY, ACCESS_ENGINE, ACCESS_ENGINE_EQUIP, ACCESS_ATMOSPHERICS)
+	access = list(ACCESS_FOLLOWER, ACCESS_COMMAND, ACCESS_MILITARY, ACCESS_ENGINE, ACCESS_ENGINE_EQUIP, ACCESS_ATMOSPHERICS, ACCESS_FUSION)
+	minimal_access = list(ACCESS_FOLLOWER, ACCESS_COMMAND, ACCESS_MILITARY, ACCESS_ENGINE, ACCESS_ENGINE_EQUIP, ACCESS_ATMOSPHERICS, ACCESS_FUSION)
 
 
 /datum/outfit/job/followers/f13leadpractitioner/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -304,38 +304,38 @@ Follower Volunteer
 	)
 
 
-// Follower Guard
+// Formerly Follower Guard - It was desperately in need of an overhaul
 
-/datum/job/followers/f13followerguard
-	title = "Followers Guard"
+/datum/job/followers/f13followerscholar
+	title = "Followers Scholar"
 	flag = F13FOLLOWERGUARD
 	department_flag = FOLLOWERS
 	faction = "Followers"
 	total_positions = 2
 	spawn_positions = 2
 	supervisors = "Followers having no strict command structure, don't report to anyone- though they will look to the Administrator for guidance and the other Doctors as well."
-	description = "You are a Follower Guard. As a Guard for the Followers of Apocalypse, you are responsible for the safety and the maintenance of order in the hospital and among your peers. Your reason for being here is to make sure the other staff can provide education and medical services to those in need, furthering research in non-military matters, as well as helping their communities get access to basic necessities. "
+	description = "You are a field agent for the Followers. As a Scholar, you are responsible for searching the wasteland for old books, documents, and other items of interest. Your reason for being here is to further research in non-military matters, as well as helping local communities get access to basic necessities, though you may be called on to defend the clinic as well. "
 	forbids = "Causing harm to others except in times of self-defense or in defense of other followers."
 	enforces = "Followers are not fond of the NCR due to their corruption, but they will help them. They dislike the Brotherhood for hoarding tech, but will make deals to work with them if it furthers the spreading of knowledge. While your goal is to assist those who need your help, you do not have to help everyone, and may turn away anyone - you are not obligated to revive a raider or Legionnaire dropped at your doorstep. Preaching humanitarianism and valuing human life. Assist and provide medical services to those in need. Provide free education for all those who are willing to learn."
 	selection_color = "#FFDDFF"
+	exp_requirements = 300
 
-	outfit = /datum/outfit/job/followers/f13followerguard
+	outfit = /datum/outfit/job/followers/f13followerscholar
 
-	loadout_options = list(/datum/outfit/loadout/guard_ranged,
-	/datum/outfit/loadout/guard_close
+	loadout_options = list(/datum/outfit/loadout/engineer, //toolbelt
+	/datum/outfit/loadout/miner, //ore-bag
+	/datum/outfit/loadout/combat //guard-on-crack
 	)
-	access = list(ACCESS_FOLLOWER, ACCESS_MILITARY)
-	minimal_access = list(ACCESS_FOLLOWER, ACCESS_MILITARY)
+	access = list(ACCESS_FOLLOWER, ACCESS_MILITARY, ACCESS_ENGINE, ACCESS_ENGINE_EQUIP, ACCESS_ATMOSPHERICS, ACCESS_FUSION)
+	minimal_access = list(ACCESS_FOLLOWER, ACCESS_MILITARY, ACCESS_ENGINE, ACCESS_ENGINE_EQUIP, ACCESS_ATMOSPHERICS, ACCESS_FUSION)
 
-/datum/outfit/job/followers/f13followerguard
-	name =	"Followers Guard"
-	jobtype =	/datum/job/followers/f13followerguard
-	belt =	/obj/item/storage/belt/military/army/military/followers
+/datum/outfit/job/followers/f13followerscholar
+	name =	"Followers Scholar"
+	jobtype =	/datum/job/followers/f13followerscholar
 	id =	/obj/item/card/id/silver
 	uniform =	/obj/item/clothing/under/f13/bodyguard
 	suit = /obj/item/clothing/suit/hooded/followermedium
-	head =	/obj/item/clothing/head/helmet/riot/vaultsec
-	glasses =	/obj/item/clothing/glasses/sunglasses
+	glasses =	/obj/item/clothing/glasses/welding
 	shoes =	/obj/item/clothing/shoes/combat
 	neck =	/obj/item/storage/belt/holster
 	backpack =	/obj/item/storage/backpack/explorer
@@ -345,23 +345,56 @@ Follower Volunteer
 		/obj/item/flashlight/seclite = 1,
 		/obj/item/storage/firstaid/ancient = 1,
 		/obj/item/stock_parts/cell/ammo/ec = 2,
+		/obj/item/melee/onehanded/knife/hunting=1,
 	)
 
-/datum/outfit/loadout/guard_ranged
-	name = "Followers Ranged Guard"
-	suit_store = /obj/item/gun/ballistic/rifle/repeater/cowboy
+/datum/outfit/job/followers/f13followerscholar/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
+	ADD_TRAIT(H, TRAIT_RESEARCHER, src)
+	ADD_TRAIT(H, TRAIT_CYBERNETICIST_EXPERT, src)
+	ADD_TRAIT(H, TRAIT_CYBERNETICIST, src)
+
+/datum/outfit/loadout/engineer //Upgraded tools, Materials
+	name = "Followers Engineer"
+	belt = /obj/item/storage/belt/utility/full/engi
+	head =	/obj/item/clothing/head/hardhat
+	gloves =	/obj/item/clothing/gloves/color/yellow
 	backpack_contents = list(
-		/obj/item/ammo_box/tube/a357 = 2,
+		/obj/item/stack/sheet/metal/fifty = 1,
+		/obj/item/stack/sheet/glass/fifty = 1,
+		/obj/item/lightreplacer = 1,
+
 	)
 
-/datum/outfit/loadout/guard_close
-	name = "Followers Close Protection Guard"
-	suit_store = /obj/item/gun/ballistic/shotgun/hunting
+/datum/outfit/loadout/miner //Quick access to mining, scanner
+	name = "Followers Miner"
+	mask = /obj/item/clothing/mask/gas/explorer
+	head =	/obj/item/clothing/head/hardhat/orange
 	backpack_contents = list(
+		/obj/item/storage/bag/ore/large = 2,
+		/obj/item/pickaxe/titanium = 1,
+		/obj/item/t_scanner/adv_mining_scanner = 1,
+	)
+
+/datum/outfit/loadout/combat //Guard, but actually good.
+	name = "Followers Crusader"
+	suit = /obj/item/clothing/suit/hooded/followerheavy
+	belt = /obj/item/storage/belt/military/army/military/
+	backpack_contents = list(
+		/obj/item/gun/energy/laser/wattz/recharger = 1,
+		/obj/item/gun/ballistic/shotgun/police = 1,
+		/obj/item/shield/riot = 1,
+		/obj/item/melee/classic_baton/telescopic = 1,
 		/obj/item/ammo_box/shotgun/bean = 1,
 		/obj/item/ammo_box/shotgun/buck = 1,
 		/obj/item/ammo_box/shotgun/slug = 1,
 	)
+
+
+
 
 // Special - 'Borg
 /datum/job/followers/f13folborg

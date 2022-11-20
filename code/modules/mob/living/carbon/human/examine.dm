@@ -411,13 +411,6 @@
 		var/obj/item/organ/cyberimp/eyes/hud/CIH = H.getorgan(/obj/item/organ/cyberimp/eyes/hud)
 		if(istype(H.glasses, /obj/item/clothing/glasses/hud) || CIH)
 			if(istype(H.glasses, /obj/item/clothing/glasses/hud/health) || istype(CIH, /obj/item/organ/cyberimp/eyes/hud/medical))
-				var/cyberimp_detect
-				for(var/obj/item/organ/cyberimp/CI in internal_organs)
-					if(CI.status == ORGAN_ROBOTIC && !CI.syndicate_implant)
-						cyberimp_detect += "[name] is modified with a [CI.name]."
-				if(cyberimp_detect)
-					. += "Detected cybernetic modifications:"
-					. += cyberimp_detect
 				if(traitstring)
 					msg += "<span class='info'>Detected physiological traits:<br></span>"
 					msg += "<span class='info'>[traitstring]</span><br>"

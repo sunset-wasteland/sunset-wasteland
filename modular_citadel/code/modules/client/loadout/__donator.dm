@@ -277,7 +277,7 @@
 	new /obj/item/stock_parts/manipulator/femto(src)// for gibber, works with clothes on/faster.
 	new /obj/item/stock_parts/matter_bin/bluespace(src)// for gibber. gives most meat.
 
-datum/gear/donator/kits/moribund_skills // characters teachings from my goat
+/datum/gear/donator/kits/moribund_skills // characters teachings from my goat
 	name = "Moribund Teachings"
 	path = /obj/item/storage/box/large/custom_kit/moribund_skills
 	ckeywhitelist = list ("mottedesstriets")

@@ -24,7 +24,7 @@ export PYTHON_VERSION=3.7.9
 export AUXMOS_REPOSITORY=Putnam3145/auxmos
 
 # Auxmos git tag
-export AUXMOS_VERSION=v1.1.1
+export AUXMOS_VERSION=v2.2.1
 
 # Extools git tag
 export EXTOOLS_VERSION=v0.0.7

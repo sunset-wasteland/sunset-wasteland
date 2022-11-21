@@ -15,6 +15,10 @@
 	//approximation of MOLES_O2STANDARD and MOLES_N2STANDARD pending byond allowing constant expressions to be embedded in constant strings
 	// If someone will place 0 of some gas there, SHIT WILL BREAK. Do not do that.
 
+/turf/closed/Initialize(mapload)
+	. = ..()
+	update_air_ref()
+
 /turf/open
 	//used for spacewind
 	var/pressure_difference = 0
@@ -34,7 +38,7 @@
 		air = new(2500,src)
 
 		air.copy_from_turf(src)
-		update_air_ref(planetary_atmos ? 1 : 2)
+		update_air_ref()
 	. = ..()
 
 /turf/open/Destroy()

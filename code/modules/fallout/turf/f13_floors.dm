@@ -12,6 +12,9 @@
 	attachment_holes = FALSE
 	planetary_atmos = TRUE
 
+/turf/open/floor/plating/f13/inside
+	planetary_atmos = FALSE
+
 /* so we can't break this */
 /turf/open/floor/plating/f13/try_replace_tile(obj/item/stack/tile/T, mob/user, params)
 	return

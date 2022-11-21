@@ -125,9 +125,6 @@
 	set_custom_materials(custom_materials)
 
 	ComponentInitialize()
-	if(density)
-		update_air_ref(-1)
-	__auxtools_update_turf_temp_info(FALSE)
 
 	return INITIALIZE_HINT_NORMAL
 

@@ -78,8 +78,8 @@
 		// (direction & (UP | DOWN)) is just "is this vertical" by the by
 		if((direction & (UP|DOWN) ? (canvpass && CANVERTICALATMOSPASS(current_turf, src)) : (canpass && CANATMOSPASS(current_turf, src))) && !(blocks_air || current_turf.blocks_air))
 			LAZYINITLIST(current_turf.atmos_adjacent_turfs)
-			atmos_adjacent_turfs[current_turf] = TRUE
-			current_turf.atmos_adjacent_turfs[src] = TRUE
+			atmos_adjacent_turfs[current_turf] = ATMOS_ADJACENT_ANY
+			current_turf.atmos_adjacent_turfs[src] = ATMOS_ADJACENT_ANY
 		else
 			atmos_adjacent_turfs -= current_turf
 			if (current_turf.atmos_adjacent_turfs)
@@ -92,7 +92,12 @@
 
 	UNSETEMPTY(atmos_adjacent_turfs)
 	src.atmos_adjacent_turfs = atmos_adjacent_turfs
-	set_sleeping(blocks_air)
+	for(var/t in atmos_adjacent_turfs)
+		var/turf/open/T = t
+		for(var/obj/machinery/door/firedoor/FD in T)
+			FD.UpdateAdjacencyFlags()
+	for(var/obj/machinery/door/firedoor/FD in src)
+		FD.UpdateAdjacencyFlags()
 	__update_auxtools_turf_adjacency_info(FALSE)
 
 /turf/proc/ImmediateCalculateAdjacentTurfs()

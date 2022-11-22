@@ -1,56 +1,28 @@
 ///Allows you to set a theme for a set of areas without tying them to looping sounds explicitly
 /datum/component/area_sound_manager
-	dupe_mode = COMPONENT_DUPE_SELECTIVE
 	///area -> looping sound type
 	var/list/area_to_looping_type = list()
 	///Current sound loop
 	var/datum/looping_sound/our_loop
 	///A list of "acceptable" z levels to be on. If you leave this, we're gonna delete ourselves
-	var/list/change_on_signals
-	var/list/remove_on_signals
-	var/list/global_change_on_signals
-	var/list/global_remove_on_signals
 	var/list/accepted_zs
 	///The timer id of our current start delay, if it exists
 	var/timerid
 
-/// Prevent components with duplicate args.
-/datum/component/area_sound_manager/CheckDupeComponent(datum/component/C, area_loop_pairs, change_on, remove_on, global_change_on, global_remove_on, acceptable_zs)
-	if(area_loop_pairs != area_to_looping_type) // Reference, not value comparison
-		return FALSE // Different areas, can always dupe!
-	if(change_on ~! change_on_signals)
-		return FALSE // Different change signals, can also always dupe!
-	if(remove_on ~! remove_on_signals)
-		return FALSE // Different remove signals, can also always dupe!
-	if(global_change_on ~! global_change_on_signals)
-		return FALSE // Different global change signals, can also always dupe!
-	if(global_remove_on ~! global_remove_on_signals)
-		return FALSE // Different global remove signals, can also always dupe!
-	return TRUE // Otherwise, we don't differ in any meaningful way.
-
-/datum/component/area_sound_manager/Initialize(area_loop_pairs, change_on, remove_on, global_change_on, global_remove_on, acceptable_zs)
+/datum/component/area_sound_manager/Initialize(area_loop_pairs, change_on, remove_on, acceptable_zs)
 	if(!ismovable(parent))
 		return
 	area_to_looping_type = area_loop_pairs
 	accepted_zs = acceptable_zs
 	change_the_track()
 
-	change_on_signals = change_on
-	remove_on_signals = remove_on
-	global_change_on_signals = global_change_on
-	global_remove_on_signals = global_remove_on
-
 	RegisterSignal(parent, COMSIG_MOVABLE_MOVED, .proc/react_to_move)
 	RegisterSignal(parent, COMSIG_MOVABLE_Z_CHANGED, .proc/react_to_z_move)
 	RegisterSignal(parent, change_on, .proc/handle_change)
 	RegisterSignal(parent, remove_on, .proc/handle_removal)
-	RegisterSignal(SSdcs, global_change_on, .proc/handle_change)
-	RegisterSignal(SSdcs, global_remove_on, .proc/handle_removal)
 
 /datum/component/area_sound_manager/Destroy(force, silent)
 	QDEL_NULL(our_loop)
-	UnregisterSignal(parent, list(COMSIG_MOVABLE_MOVED, COMSIG_MOVABLE_Z_CHANGED) + change_on_signals + remove_on_signals)
-	UnregisterSignal(SSdcs, global_change_on_signals + global_remove_on_signals)
 	. = ..()
 
 /datum/component/area_sound_manager/proc/react_to_move(datum/source, atom/oldloc, dir, forced)
@@ -62,7 +34,7 @@
 
 /datum/component/area_sound_manager/proc/react_to_z_move(datum/source, turf/old_turf, turf/new_turf)
 	SIGNAL_HANDLER
-	if(!length(accepted_zs) || (new_turf?.z in accepted_zs))
+	if(!length(accepted_zs) || (new_turf.z in accepted_zs))
 		return
 	qdel(src)
 

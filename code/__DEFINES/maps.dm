@@ -47,7 +47,6 @@ require only minor tweaks.
 #define ZTRAIT_ABOVE "Above"
 //boolean - weather types that occur on the level
 #define ZTRAIT_SNOWSTORM "Weather_Snowstorm"
-#define ZTRAIT_ASHSTORM "Weather_Ashstorm"
 #define ZTRAIT_ACIDRAIN "Weather_Acidrain"
 
 // number - bombcap is multiplied by this before being applied to bombs
@@ -81,7 +80,6 @@ require only minor tweaks.
 #define ZTRAITS_SPACE list(ZTRAIT_SPACE_RUINS = TRUE)
 #define ZTRAITS_LAVALAND list(\
 	ZTRAIT_MINING = TRUE, \
-	ZTRAIT_ASHSTORM = TRUE, \
 	ZTRAIT_LAVA_RUINS = TRUE, \
 	ZTRAIT_BOMBCAP_MULTIPLIER = 5, \
 	ZTRAIT_BASETURF = /turf/open/lava/smooth/lava_land_surface)

@@ -1727,25 +1727,6 @@
 	description = "A synthetic coagulant used to help bleeding wounds clot faster. Not quite as effective as name brand Sanguirite, especially on patients with lots of cuts."
 	clot_coeff_per_wound = 0.8
 
-/datum/reagent/medicine/algae
-	name = "Symbiotic Algae"
-	description = "A mutated colony of symbiotic algae. mends the hosts wounds slightly they also really like slimes!"
-	color = "#91D865"
-	taste_description = "Wiggling slimey sludge...and a hint of guilt."
-	taste_mult = 1.2
-	pH = 7.0
-	value = REAGENT_VALUE_COMMON
-	metabolization_rate = 0.4 * REAGENTS_METABOLISM
-	ghoulfriendly = TRUE
-
-/datum/reagent/medicine/algae/on_mob_life(mob/living/carbon/M)
-	M.adjustBruteLoss(-0.75, 0)
-	M.adjustFireLoss(-0.75, 0)
-	M.adjustOxyLoss(-0.75, 0)
-	M.adjustToxLoss(-0.75, 0, TRUE) //heals TOXINLOVERs
-	..()
-	return TRUE // update health at end of tick
-
 /datum/reagent/medicine/rehab
 	name = "Rehab"
 	description = "A potentent purger made from buffalo gourd and other herbal plants, stops toxin damage, heals the liver, purges all chems, food and liquids from the body and treats addiction...maybe do. not. take. too. much."

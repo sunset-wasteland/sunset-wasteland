@@ -42,7 +42,6 @@
 	if(M.losebreath < 0)
 		M.losebreath = 0
 	M.adjustStaminaLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, 0)
-	. = 1
 	if(prob(20))
 		M.AdjustAllImmobility(-20, 0)
 		M.AdjustUnconscious(-20, 0)
@@ -51,9 +50,9 @@
 		M.adjustFireLoss(-3*REAGENTS_EFFECT_MULTIPLIER)
 		M.AdjustStun(-2*REAGENTS_EFFECT_MULTIPLIER, 0)
 		M.AdjustKnockdown(-2*REAGENTS_EFFECT_MULTIPLIER, 0)
-		M.adjustStaminaLoss(-2*REAGENTS_EFFECT_MULTIPLIER)
-		. = TRUE
+		M.adjustStaminaLoss(-2*REAGENTS_EFFECT_MULTIPLIER, FALSE)
 	..()
+	return TRUE // update health at end of tick
 
 /datum/reagent/medicine/stimpak/overdose_process(mob/living/M)
 	M.adjustToxLoss(5*REAGENTS_EFFECT_MULTIPLIER)
@@ -74,11 +73,12 @@
 	ghoulfriendly = TRUE
 
 /datum/reagent/medicine/stimpakimitation/on_mob_life(mob/living/carbon/M)
-	M.adjustBruteLoss(-2*REAGENTS_EFFECT_MULTIPLIER)
-	M.adjustFireLoss(-1.5*REAGENTS_EFFECT_MULTIPLIER)
-	M.AdjustKnockdown(-2*REAGENTS_EFFECT_MULTIPLIER, 0)
-	M.adjustStaminaLoss(-1.7*REAGENTS_EFFECT_MULTIPLIER)
+	M.adjustBruteLoss(-2*REAGENTS_EFFECT_MULTIPLIER, FALSE)
+	M.adjustFireLoss(-1.5*REAGENTS_EFFECT_MULTIPLIER, FALSE)
+	M.AdjustKnockdown(-2*REAGENTS_EFFECT_MULTIPLIER, FALSE)
+	M.adjustStaminaLoss(-1.7*REAGENTS_EFFECT_MULTIPLIER, FALSE)
 	..()
+	return TRUE // update health and mobility at end of tick
 
 // ---------------------------
 // SUPER STIMPAK FLUID REAGENT
@@ -116,7 +116,6 @@
 	if(M.losebreath < 0)
 		M.losebreath = 0
 	M.adjustStaminaLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, 0)
-	. = 1
 	if(prob(20))
 		M.AdjustAllImmobility(-20, 0)
 		M.AdjustUnconscious(-20, 0)
@@ -125,13 +124,13 @@
 		M.adjustFireLoss(-5*REAGENTS_EFFECT_MULTIPLIER)
 		M.AdjustStun(-5*REAGENTS_EFFECT_MULTIPLIER, 0)
 		M.AdjustKnockdown(-5*REAGENTS_EFFECT_MULTIPLIER, 0)
-		M.adjustStaminaLoss(-3*REAGENTS_EFFECT_MULTIPLIER)
-		. = TRUE
+		M.adjustStaminaLoss(-3*REAGENTS_EFFECT_MULTIPLIER, 0)
 	..()
+	return TRUE // update health at end of tick
 
 /datum/reagent/medicine/super_stimpak/overdose_process(mob/living/M)
-	M.adjustToxLoss(10*REAGENTS_EFFECT_MULTIPLIER)
-	M.adjustOxyLoss(10*REAGENTS_EFFECT_MULTIPLIER)
+	M.adjustToxLoss(10*REAGENTS_EFFECT_MULTIPLIER, FALSE)
+	M.adjustOxyLoss(10*REAGENTS_EFFECT_MULTIPLIER, FALSE)
 	..()
 	. = TRUE
 
@@ -267,8 +266,8 @@
 	..()
 
 /datum/reagent/medicine/bitter_drink/overdose_process(mob/living/M)
-	M.adjustToxLoss(1*REAGENTS_EFFECT_MULTIPLIER)
-	M.adjustOxyLoss(2*REAGENTS_EFFECT_MULTIPLIER)
+	M.adjustToxLoss(1*REAGENTS_EFFECT_MULTIPLIER, FALSE)
+	M.adjustOxyLoss(2*REAGENTS_EFFECT_MULTIPLIER, FALSE)
 	..()
 	. = TRUE
 
@@ -293,12 +292,12 @@
 	if(HAS_TRAIT(M, TRAIT_TRIBAL))
 		is_tribal = TRUE
 	var/heal_rate = (is_tribal ? heal_factor_perk : heal_factor) * REAGENTS_EFFECT_MULTIPLIER
-	M.adjustFireLoss(heal_rate)
-	M.adjustBruteLoss(heal_rate)
-	M.adjustToxLoss(heal_rate)
+	M.adjustFireLoss(heal_rate, FALSE)
+	M.adjustBruteLoss(heal_rate, FALSE)
+	M.adjustToxLoss(heal_rate, FALSE)
 	M.hallucination = max(M.hallucination, is_tribal ? 0 : 5)
-	. = TRUE
 	..()
+	return TRUE // update health at end of tick
 
 /datum/reagent/medicine/healing_powder/reaction_mob(mob/living/M, method=TOUCH, reac_volume, show_message = 1)
 	if(iscarbon(M) && M.stat != DEAD)
@@ -309,10 +308,10 @@
 	..()
 
 /datum/reagent/medicine/healing_powder/overdose_process(mob/living/M)
-	M.adjustToxLoss(2*REAGENTS_EFFECT_MULTIPLIER)
-	M.adjustOxyLoss(4*REAGENTS_EFFECT_MULTIPLIER)
+	M.adjustToxLoss(2*REAGENTS_EFFECT_MULTIPLIER, FALSE)
+	M.adjustOxyLoss(4*REAGENTS_EFFECT_MULTIPLIER, FALSE)
 	..()
-	. = TRUE
+	return TRUE // update health at end of tick
 
 // ---------------------------
 // HEALING POULTICE REAGENT
@@ -340,9 +339,9 @@
 /datum/reagent/medicine/radx/on_mob_life(mob/living/carbon/M)
 	if(M.radiation > 0)
 		M.radiation -= min(M.radiation, 8)
-	M.adjustToxLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER)
-	. = TRUE
+	M.adjustToxLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, FALSE)
 	..()
+	return TRUE // update health at end of tick
 
 
 // ---------------------------
@@ -358,13 +357,13 @@
 	ghoulfriendly = TRUE
 
 /datum/reagent/medicine/radaway/on_mob_life(mob/living/carbon/M)
-	M.adjustToxLoss(-3*REAGENTS_EFFECT_MULTIPLIER)
+	M.adjustToxLoss(-3*REAGENTS_EFFECT_MULTIPLIER, FALSE)
 	M.radiation -= min(M.radiation, 16)
 	if(ishuman(M) && prob(7))
 		var/mob/living/carbon/human/H = M
 		H.confused = max(M.confused, 3)
-	. = TRUE
 	..()
+	return TRUE // update health at end of tick
 
 // ---------------------------
 // MED-X REAGENT
@@ -384,13 +383,13 @@
 	if(isliving(M))
 		to_chat(M, "<span class='notice'>You feel tougher, able to shrug off pain more easily.</span>")
 		M.maxHealth += 50
-		M.health += 50
+		M.updatehealth()
 
 /datum/reagent/medicine/medx/on_mob_delete(mob/living/carbon/human/M)
 	if(isliving(M))
 		to_chat(M, "<span class='notice'>You feel as vulnerable to pain as a normal person.</span>")
 		M.maxHealth -= 50
-		M.health -= 50
+		M.updatehealth()
 	switch(current_cycle)
 		if(1 to 40)
 			M.confused += 10
@@ -680,6 +679,7 @@
 	M.adjustBruteLoss(-0.75*REAGENTS_EFFECT_MULTIPLIER, 0)
 	M.adjustFireLoss(-0.75*REAGENTS_EFFECT_MULTIPLIER, 0)
 	..()
+	return TRUE // update health at end of tick
 
 /datum/reagent/medicine/gaia/overdose_start(mob/living/M)
 	metabolization_rate = 15 * REAGENTS_METABOLISM

@@ -61,8 +61,7 @@
 		"[user] send a powerful shock to [target]'s brain with [tool]...",
 		"[user] send a powerful shock to [target]'s brain with [tool]...")
 	playsound(get_turf(target), 'sound/magic/lightningbolt.ogg', 50, 1)
-	target.adjustOxyLoss(-50, 0)
-	target.updatehealth()
+	target.adjustOxyLoss(-50)
 	var/tplus = world.time - target.timeofdeath
 	if(target.revive())
 		user.visible_message("...[target] wakes up, alive and aware!", "<span class='notice'><b>IT'S ALIVE!</b></span>")

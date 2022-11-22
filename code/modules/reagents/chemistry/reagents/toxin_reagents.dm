@@ -22,6 +22,7 @@
 /datum/reagent/toxin/on_mob_life(mob/living/carbon/M)
 	if(toxpwr)
 		M.adjustToxLoss(toxpwr*REM, 0)
+		. = TRUE
 	var/is_toxinlover = FALSE
 	if(HAS_TRAIT(M, TRAIT_TOXINLOVER))
 		is_toxinlover = TRUE
@@ -201,6 +202,7 @@
 	if(.)
 		C.adjustOxyLoss(5, 0)
 		C.losebreath += 2
+		. = TRUE
 		if(prob(20))
 			C.emote("gasp")
 	..()
@@ -277,6 +279,7 @@
 	if(method == INGEST)
 		fakedeath_active = TRUE
 		L.fakedeath(type)
+	return TRUE // update health at end of tick
 
 /datum/reagent/toxin/zombiepowder/on_mob_life(mob/living/M)
 	..()
@@ -638,7 +641,8 @@
 		to_chat(M, "You feel horrendously weak!")
 		M.Stun(40, 0)
 		M.adjustToxLoss(2*REM, 0)
-	return ..()
+		. = TRUE
+	return ..() || .
 
 /datum/reagent/toxin/bad_food
 	name = "Bad Food"
@@ -695,11 +699,11 @@
 		var/picked_option = rand(1,3)
 		switch(picked_option)
 			if(1)
-				C.DefaultCombatKnockdown(60, 0)
+				C.DefaultCombatKnockdown(60)
 				. = TRUE
 			if(2)
 				C.losebreath += 10
-				C.adjustOxyLoss(rand(5,25), 0)
+				C.adjustOxyLoss(rand(5,25))
 				. = TRUE
 			if(3)
 				if(!C.undergoing_cardiac_arrest() && C.can_heartattack())
@@ -708,7 +712,7 @@
 						C.visible_message("<span class='userdanger'>[C] clutches at [C.p_their()] chest as if [C.p_their()] heart stopped!</span>")
 				else
 					C.losebreath += 10
-					C.adjustOxyLoss(rand(5,25), 0)
+					C.adjustOxyLoss(rand(5,25))
 					. = TRUE
 	return ..() || .
 
@@ -786,9 +790,10 @@
 /datum/reagent/toxin/lipolicide/on_mob_life(mob/living/carbon/M)
 	if(M.nutrition <= NUTRITION_LEVEL_STARVING)
 		M.adjustToxLoss(1*REM, 0)
+		. = TRUE
 	M.adjust_nutrition(-3) // making the chef more valuable, one meme trap at a time
 	M.overeatduration = 0
-	return ..()
+	return ..() || .
 
 /datum/reagent/toxin/coniine
 	name = "Coniine"
@@ -1067,7 +1072,8 @@
 				M.say("*custom " + pick(possible_mes), forced = /datum/reagent/toxin/bonehurtingjuice)
 			if(3)
 				to_chat(M, "<span class='warning'>Your bones hurt!</span>")
-	return ..()
+	..()
+	return TRUE // update health at end of tick
 
 /datum/reagent/toxin/bonehurtingjuice/overdose_process(mob/living/carbon/M)
 	if(prob(6) && iscarbon(M)) //big oof

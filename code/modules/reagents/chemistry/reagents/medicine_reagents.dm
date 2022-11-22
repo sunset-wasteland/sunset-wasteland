@@ -169,7 +169,7 @@
 			var/datum/wound/iter_wound = i
 			iter_wound.on_xadone(power)
 		REMOVE_TRAIT(M, TRAIT_DISFIGURED, TRAIT_GENERIC) //fixes common causes for disfiguration
-		. = 1
+		. = TRUE
 	metabolization_rate = REAGENTS_METABOLISM * (0.00001 * (M.bodytemperature ** 2) + 0.5)
 	..()
 
@@ -222,7 +222,7 @@
 			var/datum/wound/iter_wound = i
 			iter_wound.on_xadone(power)
 		REMOVE_TRAIT(M, TRAIT_DISFIGURED, TRAIT_GENERIC)
-		. = 1
+		. = TRUE
 	..()
 
 /datum/reagent/medicine/rezadone
@@ -936,11 +936,11 @@
 	if(M.losebreath < 0)
 		M.losebreath = 0
 	M.adjustStaminaLoss(-0.5*REM, 0)
-	. = 1
 	if(prob(20))
 		M.AdjustAllImmobility(-20, 0)
 		M.AdjustUnconscious(-20, 0)
 	..()
+	return TRUE // update health at end of tick
 
 /datum/reagent/medicine/epinephrine/overdose_process(mob/living/M)
 	if(prob(33))
@@ -988,7 +988,7 @@
 
 				M.adjustOxyLoss(-20, 0)
 				M.adjustToxLoss(-20, 0)
-				M.updatehealth()
+				M.updatehealth() // can't return true in a spawn
 				var/tplus = world.time - M.timeofdeath
 				if(M.revive())
 					M.grab_ghost()
@@ -1744,6 +1744,7 @@
 	M.adjustOxyLoss(-0.75, 0)
 	M.adjustToxLoss(-0.75, 0, TRUE) //heals TOXINLOVERs
 	..()
+	return TRUE // update health at end of tick
 
 /datum/reagent/medicine/rehab
 	name = "Rehab"

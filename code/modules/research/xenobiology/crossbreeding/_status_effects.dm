@@ -174,10 +174,10 @@
 	alert_type = /obj/screen/alert/status_effect/clone_decay
 
 /datum/status_effect/slime_clone_decay/tick()
-	owner.adjustToxLoss(1, 0)
-	owner.adjustOxyLoss(1, 0)
-	owner.adjustBruteLoss(1, 0)
-	owner.adjustFireLoss(1, 0)
+	owner.adjustToxLoss(1, FALSE)
+	owner.adjustOxyLoss(1, FALSE)
+	owner.adjustBruteLoss(1, FALSE)
+	owner.adjustFireLoss(1, TRUE)
 	owner.color = "#007BA7"
 
 /obj/screen/alert/status_effect/bloodchill
@@ -237,7 +237,7 @@
 	alert_type = null
 
 /datum/status_effect/rebreathing/tick()
-	owner.adjustOxyLoss(-6, 0) //Just a bit more than normal breathing.
+	owner.adjustOxyLoss(-6) //Just a bit more than normal breathing.
 
 ///////////////////////////////////////////////////////
 //////////////////CONSUMING EXTRACTS///////////////////

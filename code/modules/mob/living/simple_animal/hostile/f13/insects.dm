@@ -360,6 +360,7 @@
 	if(volume >= 15)
 		M.adjustToxLoss(5, 0)
 	..()
+	return TRUE // update health at end of tick
 
 
 //////////////

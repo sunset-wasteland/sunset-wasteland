@@ -122,7 +122,6 @@
 			M.reagents.remove_reagent(R.type,2.5)
 	if(M.health > 20)
 		M.adjustToxLoss(-3*REAGENTS_EFFECT_MULTIPLIER, 0)
-		. = TRUE
 	M.radiation += 0.1
 	M.dizziness = max(0,M.dizziness-2)
 	M.drowsyness = max(0,M.drowsyness-1)
@@ -132,7 +131,7 @@
 		M.adjustToxLoss(-1, 0)
 	M.adjust_bodytemperature(20 * TEMPERATURE_DAMAGE_COEFFICIENT, 0, BODYTEMP_NORMAL)
 	..()
-	. = TRUE
+	return TRUE // update health at end of tick
 
 /datum/reagent/consumable/tea/pricklytea
 	name = "Prickly Tea"

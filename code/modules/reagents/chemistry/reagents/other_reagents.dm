@@ -972,7 +972,7 @@
 			var/species_type = pick(subtypesof(/datum/species/jelly))
 			H.set_species(species_type)
 			H.reagents.del_reagent(type)
-			to_chat(H, "<span class='warning'>You've become \a jellyperson!</span>")
+			to_chat(H, "<span class='warning'>You've become a jellyperson!</span>")
 
 
 /datum/reagent/mulligan

@@ -40,5 +40,5 @@
 	filling_color = "#008000"
 	bitesize_mod = 3
 	foodtype = FRUIT | GROSS
-	juice_results = list(/datum/reagent/consumable/buffalojuice= 0)
-	distill_reagent = /datum/reagent/consumable/buffalojuice
+	juice_results = list(/datum/reagent/consumable/buffalojuice = 0)
+	distill_reagent = /datum/reagent/consumable/ethanol/buffalo

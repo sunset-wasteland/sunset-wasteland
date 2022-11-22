@@ -15,12 +15,13 @@
 	. = ..()
 	if(!weather_type)
 		weather_type = w_type
-		sound_change_signals = list(
-			COMSIG_WEATHER_TELEGRAPH(weather_type),
-			COMSIG_WEATHER_START(weather_type),
-			COMSIG_WEATHER_WINDDOWN(weather_type),
-			COMSIG_WEATHER_END(weather_type)
-		)
+		for(var/type in typesof(weather_type))
+			sound_change_signals += list(
+				COMSIG_WEATHER_TELEGRAPH(type),
+				COMSIG_WEATHER_START(type),
+				COMSIG_WEATHER_WINDDOWN(type),
+				COMSIG_WEATHER_END(type)
+			)
 		weather_trait = trait
 		playlist = weather_playlist
 
@@ -46,7 +47,8 @@
 		fitting_z_levels = trait_levels
 	if(!(new_turf?.z in fitting_z_levels))
 		return
-	source.AddComponent(/datum/component/area_sound_manager, playlist, list(), COMSIG_MOB_LOGOUT, sound_change_signals, list(), fitting_z_levels)
+	var/datum/component/our_comp = source.AddComponent(/datum/component/area_sound_manager, playlist, list(), COMSIG_MOB_LOGOUT, fitting_z_levels)
+	our_comp.RegisterSignal(SSdcs, sound_change_signals, /datum/component/area_sound_manager/proc/handle_change)
 
 /datum/element/weather_listener/proc/handle_logout(datum/source)
 	SIGNAL_HANDLER

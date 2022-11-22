@@ -59,7 +59,7 @@
 		return
 	on_start()
 
-/datum/looping_sound/proc/stop(null_parent)
+/datum/looping_sound/proc/stop(null_parent = FALSE)
 	if(null_parent)
 		set_parent(null)
 	if(!timerid)

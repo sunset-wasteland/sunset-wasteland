@@ -28,6 +28,7 @@
 	var/list/weak_sounds = list()
 	var/list/strong_sounds = list()
 
+/* Disables Ash Storm/Sandstorm sounds
 /datum/weather/ash_storm/telegraph()
 	var/list/eligible_areas = list()
 	for (var/z in impacted_z_levels)
@@ -60,6 +61,7 @@
 /datum/weather/ash_storm/end()
 	GLOB.ash_storm_sounds -= weak_sounds
 	return ..()
+*/
 
 /datum/weather/ash_storm/proc/is_ash_immune(atom/L)
 	while (L && !isturf(L))

@@ -111,12 +111,13 @@
 	. = ..()
 	if(. && ishuman(target))
 		var/mob/living/carbon/human/H = target
-		H.reagents.add_reagent(/datum/reagent/toxin/cazador_venom, 4)
+		H.reagents.add_reagent(/datum/reagent/toxin/stalker_venom, 4)
 
-/datum/reagent/toxin/cazador_venom/on_mob_life(mob/living/M)
+/datum/reagent/toxin/stalker_venom/on_mob_life(mob/living/M)
 	if(volume >= 16)
 		M.adjustToxLoss(5, 0)
 	..()
+	return TRUE // update health at end of tick
 
 /mob/living/simple_animal/hostile/stalker/playable/legion				
 	name = "legionstalker"
@@ -181,12 +182,7 @@
 	. = ..()
 	if(. && ishuman(target))
 		var/mob/living/carbon/human/H = target
-		H.reagents.add_reagent(/datum/reagent/toxin/cazador_venom, 2)
-
-/datum/reagent/toxin/cazador_venom/on_mob_life(mob/living/M)
-	if(volume >= 20)
-		M.adjustToxLoss(5, 0)
-	..()
+		H.reagents.add_reagent(/datum/reagent/toxin/stalker_venom, 2)
 
 /obj/item/clothing/head/f13/stalkerpelt
 	name = "nightstalker pelt"

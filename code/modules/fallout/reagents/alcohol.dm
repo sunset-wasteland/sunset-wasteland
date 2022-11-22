@@ -216,7 +216,7 @@
 		M.adjustToxLoss(0.5*REAGENTS_EFFECT_MULTIPLIER, 0)
 		. = TRUE
 	M.radiation += 0.1
-	return ..()
+	return ..() || .
 
 /datum/reagent/consumable/ethanol/salgam
 	name = "Şalgam"
@@ -232,11 +232,11 @@
 	if(prob(33))
 		M.adjustBruteLoss(-1*REAGENTS_EFFECT_MULTIPLIER, 0)
 		M.adjustFireLoss(-1*REAGENTS_EFFECT_MULTIPLIER, 0)
-		. = TRUE
 	M.adjustToxLoss(-2*REAGENTS_EFFECT_MULTIPLIER, 0)
 	for(var/datum/reagent/toxin/R in M.reagents.reagent_list)
 		M.reagents.remove_reagent(R.type,1)
 	..()
+	return TRUE // update health at end of tick
 
 //nuka
 
@@ -669,6 +669,7 @@
 /datum/reagent/consumable/ethanol/bbrew2/on_mob_life(mob/living/carbon/M)
 	M.adjustOxyLoss(-0.4*REAGENTS_EFFECT_MULTIPLIER, 0)
 	..()
+	return TRUE // update health at end of tick
 
 /datum/reagent/consumable/ethanol/dwastelander
 	name = "Dirty Wastelander"
@@ -683,6 +684,7 @@
 /datum/reagent/consumable/ethanol/dwastelander/on_mob_life(mob/living/carbon/M)
 	M.adjustBruteLoss(-0.3*REAGENTS_EFFECT_MULTIPLIER, 0)
 	..()
+	return TRUE // update health at end of tick
 
 /datum/reagent/consumable/ethanol/firebelly
 	name = "Fire Belly"
@@ -721,6 +723,7 @@
 	if(prob(50))
 		M.visible_message("<span class='warning'>[M] [pick("dry heaves!","coughs!","splutters!")]</span>")
 	..()
+	return TRUE // update health at end of tick
 
 /datum/reagent/consumable/ethanol/firecracker
 	name = "Firecracker"
@@ -866,6 +869,7 @@
 				M.vomit(10)
 				M.adjustToxLoss(4*REAGENTS_EFFECT_MULTIPLIER, 0)
 			..()
+	return TRUE // update health at end of tick
 
 /datum/reagent/consumable/ethanol/species_drink/strongsludge
 	name = "Strong sludge"
@@ -890,6 +894,7 @@
 				M.vomit(50)
 				M.adjustToxLoss(10*REAGENTS_EFFECT_MULTIPLIER, 0)
 		..()
+	return TRUE // update health at end of tick
 
 /datum/reagent/consumable/ethanol/sweetwater
 	name = "Sweet Water"

@@ -402,14 +402,15 @@
 
 /datum/reagent/water/purified/on_mob_life(mob/living/carbon/M) // Pure water is very, very healthy
 	M.reagents.remove_all_type(/datum/reagent/toxin, 1)
-	M.adjustBruteLoss(-0.5, 0)
-	M.adjustFireLoss(-0.5, 0)
-	M.adjustOxyLoss(-0.5, 0)
-	M.adjustToxLoss(-1, 0, TRUE)
+	M.adjustBruteLoss(-0.5, FALSE)
+	M.adjustFireLoss(-0.5, FALSE)
+	M.adjustOxyLoss(-0.5, FALSE)
+	M.adjustToxLoss(-1, FALSE, TRUE)
 	M.adjustStaminaLoss(-0.5, FALSE)
 	if(M.radiation > 0)
 		M.radiation -= min(M.radiation, 2)
 	..()
+	return TRUE // update health at end of tick
 
 /datum/reagent/water/hollowwater
 	name = "Hollow Water"
@@ -569,6 +570,7 @@
 	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 5, 150)
 	holder.remove_reagent(type, 1)
 	pH = 0.1
+	return TRUE // update health at end of tick
 
 /datum/reagent/fuel/holyoil		//Its oil
 	name = "Zelus Oil"
@@ -1174,8 +1176,8 @@
 
 /datum/reagent/fluorine/on_mob_life(mob/living/carbon/M)
 	M.adjustToxLoss(1*REM, 0)
-	. = 1
 	..()
+	return TRUE // update health at end of tick
 
 /datum/reagent/sodium
 	name = "Sodium"
@@ -2840,14 +2842,15 @@
 	ghoulfriendly = TRUE
 
 /datum/reagent/red_ichor/on_mob_life(mob/living/carbon/M)
-	M.adjustBruteLoss(-50)
-	M.adjustOxyLoss(-50)
-	M.adjustBruteLoss(-50)
-	M.adjustFireLoss(-50)
-	M.adjustToxLoss(-50, TRUE) //heals TOXINLOVERs
-	M.adjustCloneLoss(-50)
-	M.adjustStaminaLoss(-50)
+	M.adjustBruteLoss(-50, updating_health = FALSE)
+	M.adjustOxyLoss(-50, updating_health = FALSE)
+	M.adjustBruteLoss(-50, updating_health = FALSE)
+	M.adjustFireLoss(-50, updating_health = FALSE)
+	M.adjustToxLoss(-50, updating_health = FALSE, forced = TRUE) //heals TOXINLOVERs
+	M.adjustCloneLoss(-50, updating_health = FALSE)
+	M.adjustStaminaLoss(-50, updating_health = FALSE)
 	..()
+	return TRUE
 
 /datum/reagent/green_ichor
 	name = "Green Ichor"
@@ -2886,6 +2889,7 @@
 	M.confused = 0
 	M.SetSleeping(0, 0)
 	..()
+	return TRUE // update mobility and health
 
 /datum/reagent/nutracid
 	name = "Nutracid"

@@ -61,11 +61,10 @@
 
 /obj/machinery/computer/aifixer/proc/Fix()
 	use_power(1000)
-	occupier.adjustOxyLoss(-1, 0)
-	occupier.adjustFireLoss(-1, 0)
-	occupier.adjustToxLoss(-1, 0)
-	occupier.adjustBruteLoss(-1, 0)
-	occupier.updatehealth()
+	occupier.adjustOxyLoss(-1, FALSE)
+	occupier.adjustFireLoss(-1, FALSE)
+	occupier.adjustToxLoss(-1, FALSE)
+	occupier.adjustBruteLoss(-1, TRUE) // batched health update
 	if(occupier.health >= 0 && occupier.stat == DEAD)
 		occupier.revive()
 	return occupier.health < 100

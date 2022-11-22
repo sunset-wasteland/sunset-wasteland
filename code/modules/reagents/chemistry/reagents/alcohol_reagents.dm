@@ -1545,7 +1545,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 		M.adjustFireLoss(-5,0)
 		M.adjustToxLoss(-5,0)
 		. = 1
-	return ..()
+	return ..() || 1
 
 /datum/reagent/consumable/ethanol/painkiller
 	name = "Painkiller"
@@ -1828,9 +1828,10 @@ All effects don't start immediately, but rather get worse over time; the rate is
 /datum/reagent/consumable/ethanol/fernet/on_mob_life(mob/living/carbon/M)
 	if(M.nutrition <= NUTRITION_LEVEL_STARVING)
 		M.adjustToxLoss(1*REM, 0)
+		. = TRUE
 	M.adjust_nutrition(-5)
 	M.overeatduration = 0
-	return ..()
+	. = ..() || .
 
 /datum/reagent/consumable/ethanol/fernet_cola
 	name = "Fernet Cola"
@@ -1922,7 +1923,8 @@ All effects don't start immediately, but rather get worse over time; the rate is
 		M.heal_bodypart_damage(1,1,1)
 		M.adjustOxyLoss(-1,0)
 		M.adjustToxLoss(-1,0)
-	return ..()
+		. = TRUE // update health at end of tick
+	return ..() || .
 
 /datum/reagent/consumable/ethanol/bug_spray
 	name = "Bug Spray"
@@ -1939,7 +1941,8 @@ All effects don't start immediately, but rather get worse over time; the rate is
 //Bugs should not drink Bug spray.
 	if(isinsect(M) || isflyperson(M))
 		M.adjustToxLoss(1,0)
-	return ..()
+		. = TRUE
+	..()
 
 /datum/reagent/consumable/ethanol/bug_spray/on_mob_add(mob/living/carbon/M)
 	if(isinsect(M) || isflyperson(M))
@@ -2134,8 +2137,8 @@ All effects don't start immediately, but rather get worse over time; the rate is
 		M.adjustFireLoss(-3.5,0)
 		M.adjustToxLoss(-3.5,0)
 		M.radiation = max(M.radiation - 25, 0)
-		. = 1
-	return ..()
+		. = TRUE // update health at end of tick
+	return ..() || .
 
 /datum/reagent/consumable/ethanol/gunfire
 	name = "Gunfire"

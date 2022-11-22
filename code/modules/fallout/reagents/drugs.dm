@@ -43,7 +43,7 @@
 /datum/reagent/drug/jet/overdose_process(mob/living/M)
 	if(M.hallucination < volume && prob(20))
 		M.hallucination += 10
-		M.adjustToxLoss(10, 0)
+		M.adjustToxLoss(10, FALSE)
 		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 60)
 	..()
 
@@ -54,28 +54,30 @@
 
 /datum/reagent/drug/jet/addiction_act_stage2(mob/living/M)
 	M.Dizzy(5)
-	M.adjustToxLoss(1, 0)
+	M.adjustToxLoss(1, FALSE)
 	if(prob(30))
 		M.emote(pick("twitch","drool","moan"))
 	..()
+	return TRUE // update health at end of tick
 
 /datum/reagent/drug/jet/addiction_act_stage3(mob/living/M)
 	if(CHECK_MOBILITY(M, MOBILITY_MOVE) && !ismovableatom(M.loc) && !isspaceturf(M.loc))
 		for(var/i = 0, i < 4, i++)
 			step(M, pick(GLOB.cardinals))
-	M.adjustToxLoss(3, 0)
+	M.adjustToxLoss(3, FALSE)
 	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 5)
 	M.set_disgust(60)
 	M.Dizzy(10)
 	if(prob(40))
 		M.emote(pick("twitch","drool","moan"))
 	..()
+	return TRUE // update health at end of tick
 
 /datum/reagent/drug/jet/addiction_act_stage4(mob/living/carbon/human/M)
 	if(CHECK_MOBILITY(M, MOBILITY_MOVE) && !ismovableatom(M.loc) && !isspaceturf(M.loc))
 		for(var/i = 0, i < 8, i++)
 			step(M, pick(GLOB.cardinals))
-	M.adjustToxLoss(5, 0)
+	M.adjustToxLoss(5, FALSE)
 	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 10)
 	M.set_disgust(100)
 	M.Dizzy(15)
@@ -131,7 +133,7 @@
 		M.visible_message("<span class='danger'>[M]'s hands flip out and flail everywhere!</span>")
 		M.drop_all_held_items()
 	..()
-	M.adjustToxLoss(2, 0)
+	M.adjustToxLoss(2, FALSE)
 	. = TRUE
 
 /datum/reagent/drug/turbo/addiction_act_stage1(mob/living/M)
@@ -163,7 +165,7 @@
 			step(M, pick(GLOB.cardinals))
 	M.Jitter(20)
 	M.Dizzy(20)
-	M.adjustToxLoss(6, 0)
+	M.adjustToxLoss(6, FALSE)
 	if(prob(50))
 		M.emote(pick("twitch","drool","moan"))
 	..()

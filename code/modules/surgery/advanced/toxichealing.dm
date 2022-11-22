@@ -27,12 +27,13 @@
 
 /datum/surgery_step/toxichealing/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	user.visible_message("[user] fixes some of [target]'s wounds.", "<span class='notice'>You succeed in fixing some of [target]'s wounds.</span>")
-	target.heal_bodypart_damage(0,0,30) //Heals stam
-	target.adjustToxLoss(-15, 0, TRUE)
-	target.adjustOxyLoss(-20, 0)
+	target.heal_bodypart_damage(0,0,30, updating_health = FALSE) //Heals stam
+	target.adjustToxLoss(-15, updating_health = FALSE, forced = TRUE) // forced -> still heals TOXINLOVERs
+	target.adjustOxyLoss(-20, updating_health = FALSE)
+	target.updatehealth()
 	return TRUE
 
 /datum/surgery_step/toxichealing/failure(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	user.visible_message("[user] screws up!", "<span class='warning'>You screwed up!</span>")
-	target.take_bodypart_damage(25,0)
+	target.take_bodypart_damage(25)
 	return FALSE

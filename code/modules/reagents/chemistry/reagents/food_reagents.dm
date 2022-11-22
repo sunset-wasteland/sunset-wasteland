@@ -970,7 +970,7 @@
 
 /datum/reagent/consumable/bbqsauce
 	name = "BBQ Sauce"
-	description = "Sweet, Smokey, Savory, and gets everywhere. Perfect for Grilling."
+	description = "Sweet, smokey, savory, and gets everywhere. Perfect for grilling."
 	nutriment_factor = 5 * REAGENTS_METABOLISM
 	color = "#78280A" // rgb: 120 40, 10
 	taste_mult = 2.5 //sugar's 1.5, capsacin's 1.5, so a good middle ground.
@@ -988,10 +988,10 @@
 
 /datum/reagent/consumable/buffalojuice
 	name = "Buffalo Juice"
-	description = "Juice of the buffalo gourd it's mutated sentient algae has epinephrine like properties to keep the host alive and limit oxygen lose."
+	description = "Juice from the buffalo gourd, a common herbal remedy for injuries with surprisingly potent healing properties."
 	nutriment_factor = 1 * REAGENTS_METABOLISM
 	color = "#14FF3C" // rgb: 48, 32, 0
-	taste_description = "A tingling electric sensation"
+	taste_description = "tingling electricity"
 	metabolization_rate = 0.25 * REAGENTS_METABOLISM
 	glass_icon_state = "Cactus Water"
 	overdose_threshold = 30

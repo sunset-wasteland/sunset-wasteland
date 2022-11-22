@@ -119,9 +119,9 @@
 	..()
 	return TRUE // update health at end of tick
 
-/mob/living/simple_animal/hostile/stalker/playable/legion				
+/mob/living/simple_animal/hostile/stalker/playable/legion
 	name = "legionstalker"
-	desc = "A nightstalker bred specifically for the legion under the use of combat and companionship. legionstalkers have the body and loyalty of a canine but the agility and deadlyness of rattlesnake."
+	desc = "A nightstalker bred by the Legion for combat. Legionstalkers have the body of a coyote, the loyalty of a dog, and the lethality of a rattlesnake."
 	icon_state = "nightstalker-legion"
 	icon_living = "nightstalker-legion"
 	icon_dead = "nightstalker-legion-dead"

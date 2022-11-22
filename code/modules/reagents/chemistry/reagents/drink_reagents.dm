@@ -507,28 +507,6 @@
 	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, BODYTEMP_NORMAL)
 	..()
 
-/datum/reagent/consumable/nuka_cola
-	name = "Nuka Cola"
-	description = "Cola, cola never changes."
-	color = "#100800" // rgb: 16, 8, 0
-	quality = DRINK_VERYGOOD
-	taste_description = "the future"
-	glass_icon_state = "nuka_colaglass"
-	glass_name = "glass of Nuka Cola"
-	glass_desc = "Don't cry, Don't raise your eye, It's only nuclear wasteland."
-	water_level = 1.5
-	value = REAGENT_VALUE_COMMON
-
-/datum/reagent/consumable/nuka_cola/on_mob_life(mob/living/carbon/M)
-	M.Jitter(20)
-	//M.set_drugginess(30)
-	//M.dizziness +=1.5
-	M.drowsyness = 0
-	M.AdjustSleeping(-40, FALSE)
-	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, BODYTEMP_NORMAL)
-	..()
-	. = 1
-
 /datum/reagent/consumable/spacemountainwind
 	name = "SM Wind"
 	description = "Blows right through you like a space wind."

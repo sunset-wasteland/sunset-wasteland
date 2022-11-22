@@ -331,7 +331,7 @@
 	config_entry_value = "Be warned that the server is currently serving a high number of users, consider using alternative game servers."
 
 /datum/config_entry/string/hard_popcap_message
-	config_entry_value = "The server is currently serving a high number of users, You cannot currently join. You may wait for the number of living crew to decline, observe, or find alternative servers."
+	config_entry_value = "The server is currently serving a high number of users, so you cannot currently join. You may wait for the number of living crew to decline, observe, or find alternative servers."
 
 /datum/config_entry/string/extreme_popcap_message
 	config_entry_value = "The server is currently serving a high number of users, find alternative servers."

@@ -101,7 +101,7 @@
 
 //Memory Allocation: Finds a willing ghost and makes them into a clockwork guardian for the invoker.
 /datum/clockwork_scripture/memory_allocation
-	descname = "Personal Guardian, A Peice Of Your Mind."
+	descname = "Personal Guardian, A Piece Of Your Mind."
 	name = "Memory Allocation"
 	desc = "Allocates part of your consciousness to a Clockwork Guardian, a variant of Marauder that lives within you, able to be \
 	called forth by Speaking its True Name or if you become exceptionally low on health.<br>\

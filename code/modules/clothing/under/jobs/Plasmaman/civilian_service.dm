@@ -54,7 +54,7 @@
 
 /obj/item/clothing/under/plasmaman/captain
 	name = "captain's envirosuit"
-	desc = "An expensive piece of plasmaman envirosuit fashion. guaranteed to keep you cool while the station goes down in fierceful fires."
+	desc = "An expensive piece of plasmaman envirosuit fashion. Guaranteed to keep you cool while the station goes down in flames."
 	icon_state = "captain_envirosuit"
 	item_state = "captain_envirosuit"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 100, "rad" = 0, "fire" = 95, "acid" = 95, "wound" = 15)

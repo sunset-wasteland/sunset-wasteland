@@ -26,7 +26,7 @@
 	return ..()
 
 /datum/reagent/consumable/ethanol/buffalo
-	name = "buffalo juice"
+	name = "fermented buffalo juice"
 	description = "The fermented liquid of the buffalo gourd. Very bitter."
 	color = "#706A58"
 	boozepwr = 100
@@ -42,13 +42,13 @@
 
 /datum/reagent/consumable/ethanol/pungajuice
 	name = "punga juice"
-	description = "The fermented juice of the punga fruit, used to treat radiation sickness"
+	description = "The fermented juice of the punga fruit, used to treat radiation sickness."
 	color = "#1B2E24"
 	boozepwr = 80
 	taste_description = "acidic slime"
 	glass_icon_state = "Space_mountain_wind_glass"
 	glass_name = "glass of punga juice"
-	glass_desc = "The glass contain punga juice, used to treat radiation sickness"
+	glass_desc = "A glass of punga juice, used to treat radiation sickness."
 
 /datum/reagent/consumable/ethanol/pungajuice/on_mob_life(mob/living/carbon/M)
 	M.radiation = max(M.radiation-14,0)
@@ -328,13 +328,13 @@
 
 /datum/reagent/consumable/ethanol/nukafancy
 	name = "Nuka Fancy"
-	description = "The Refined mans Soda, Fit for soda royalty."
+	description = "The refined man's soda, fit for soda royalty."
 	color = "#11111E"
 	boozepwr = 30
 	taste_description = "refined soda"
 	glass_icon_state = "nukafancyglass"
 	glass_name = "Nuka Fancy"
-	glass_desc = "The Refined mans Soda, Fit for soda royalty."
+	glass_desc = "The refined man's soda, fit for soda royalty."
 
 /datum/reagent/consumable/ethanol/nukafancy/on_mob_life(mob/living/carbon/M)
 	var/high_message = pick("<br>Maybe I too need some Slaves?</b>","<br>Mutfruit for All!</b>","<br>Time to Glorify my Wasteland Castle!</b>","<brNuked, not stirred.</b>")
@@ -547,13 +547,13 @@
 
 /datum/reagent/consumable/ethanol/vimcap
 	name = "Vim Captains Blend"
-	description = "The taste of the sea, Far from here."
+	description = "The taste of the sea, far from here."
 	color = "#52849A"
 	boozepwr = 30
 	taste_description = "the sea"
 	glass_icon_state = "vimcapglass"
 	glass_name = "Vim Captains Blend"
-	glass_desc = "A glass of special vim holding the taste of the sea, Far from here."
+	glass_desc = "A glass of special vim. The taste of the sea, far from here."
 
 /datum/reagent/consumable/ethanol/vimcap/on_mob_life(mob/living/carbon/M)
 	M.drowsyness = 0
@@ -769,7 +769,7 @@
 	taste_description = "patented juice"
 	glass_icon_state = "greenbeerglass"
 	glass_name = "Jake Juice"
-	glass_desc = "Patented Jake Juice, Mixable at users own legal discretion."
+	glass_desc = "Patented Jake Juice, mixed at the user's own legal discretion."
 
 /datum/reagent/consumable/ethanol/jakejuice/on_mob_life(mob/living/carbon/M)
 	M.AdjustStun(-20, 0)
@@ -1006,13 +1006,13 @@
 
 /datum/reagent/consumable/ethanol/vaulttech
 	name = "Vault-Tech Special"
-	description = "The only brew, Certified to be drank on duty!"
+	description = "The only brew certified to drink on duty!"
 	color = "#315585"
 	boozepwr = 30
 	taste_description = "blue and yellow"
 	glass_icon_state = "vaulttechglass"
 	glass_name = "Vault-Tech Special"
-	glass_desc = "The only brew, Certified to be drank on duty!"
+	glass_desc = "The only brew certified to drink on duty!"
 
 /datum/reagent/consumable/ethanol/vaulttech/on_mob_life(mob/living/carbon/M)
 	M.dizziness = max(0,M.dizziness-5)

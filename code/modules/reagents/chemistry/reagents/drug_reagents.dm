@@ -52,7 +52,7 @@
 	SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "smoked", /datum/mood_event/smoked, name)
 	M.AdjustAllImmobility(-20, 0)
 	M.AdjustUnconscious(-20, 0)
-	M.adjustStaminaLoss(-0.5*REM, 0)
+	M.adjustStaminaLoss(-0.5*REM, updating_health = FALSE)
 	..()
 	. = 1
 
@@ -77,8 +77,8 @@
 
 /datum/reagent/drug/crank/overdose_process(mob/living/M)
 	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 2*REM)
-	M.adjustToxLoss(2*REM, 0)
-	M.adjustBruteLoss(2*REM, 0)
+	M.adjustToxLoss(2*REM, updating_health = FALSE)
+	M.adjustBruteLoss(2*REM, updating_health = FALSE)
 	..()
 	. = 1
 
@@ -87,19 +87,19 @@
 	..()
 
 /datum/reagent/drug/crank/addiction_act_stage2(mob/living/M)
-	M.adjustToxLoss(5*REM, 0)
+	M.adjustToxLoss(5*REM, updating_health = FALSE)
 	..()
 	. = 1
 
 /datum/reagent/drug/crank/addiction_act_stage3(mob/living/M)
-	M.adjustBruteLoss(5*REM, 0)
+	M.adjustBruteLoss(5*REM, updating_health = FALSE)
 	..()
 	. = 1
 
 /datum/reagent/drug/crank/addiction_act_stage4(mob/living/M)
 	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 3*REM)
-	M.adjustToxLoss(5*REM, 0)
-	M.adjustBruteLoss(5*REM, 0)
+	M.adjustToxLoss(5*REM, updating_health = FALSE)
+	M.adjustBruteLoss(5*REM, updating_health = FALSE)
 	..()
 	. = 1
 
@@ -122,13 +122,13 @@
 
 /datum/reagent/drug/krokodil/overdose_process(mob/living/M)
 	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 0.25*REM)
-	M.adjustToxLoss(0.25*REM, 0)
+	M.adjustToxLoss(0.25*REM, updating_health = FALSE)
 	..()
 	. = 1
 
 /datum/reagent/drug/krokodil/addiction_act_stage1(mob/living/M)
 	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 2*REM)
-	M.adjustToxLoss(2*REM, 0)
+	M.adjustToxLoss(2*REM, updating_health = FALSE)
 	..()
 	. = 1
 
@@ -140,7 +140,7 @@
 /datum/reagent/drug/krokodil/addiction_act_stage3(mob/living/M)
 	if(prob(25))
 		to_chat(M, "<span class='danger'>Your skin starts to peel away...</span>")
-	M.adjustBruteLoss(3*REM, 0)
+	M.adjustBruteLoss(3*REM, updating_health = FALSE)
 	..()
 	. = 1
 
@@ -148,10 +148,10 @@
 	CHECK_DNA_AND_SPECIES(M)
 	if(!istype(M.dna.species, /datum/species/krokodil_addict))
 		to_chat(M, "<span class='userdanger'>Your skin falls off easily!</span>")
-		M.adjustBruteLoss(50*REM, 0) // holy shit your skin just FELL THE FUCK OFF
+		M.adjustBruteLoss(50*REM, updating_health = FALSE) // holy shit your skin just FELL THE FUCK OFF
 		M.set_species(/datum/species/krokodil_addict)
 	else
-		M.adjustBruteLoss(5*REM, 0)
+		M.adjustBruteLoss(5*REM, updating_health = FALSE)
 	..()
 	. = 1
 
@@ -175,27 +175,27 @@
 
 /datum/reagent/drug/heroin/overdose_process(mob/living/M)
 	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 0.25*REM)
-	M.adjustToxLoss(0.25*REM, 0)
+	M.adjustToxLoss(0.25*REM, updating_health = FALSE)
 	..()
 	. = 1
 
 /datum/reagent/drug/heroin/addiction_act_stage1(mob/living/M)
 	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 2*REM)
-	M.adjustToxLoss(2*REM, 0)
+	M.adjustToxLoss(2*REM, updating_health = FALSE)
 	..()
 	. = 1
 
 /datum/reagent/drug/heroin/addiction_act_stage2(mob/living/M)
 	if(prob(25))
 		to_chat(M, "<span class='danger'>Life feels so hard</span>")
-	M.adjustToxLoss(3*REM, 0)
+	M.adjustToxLoss(3*REM, updating_health = FALSE)
 	..()
 	. = 1
 
 /datum/reagent/drug/heroin/addiction_act_stage3(mob/living/M)
 	if(prob(25))
 		to_chat(M, "<span class='danger'>YOU CAN'T TAKE THIS ANYMORE!!</span>")
-	M.adjustToxLoss(4*REM, 0)
+	M.adjustToxLoss(4*REM, updating_health = FALSE)
 	..()
 	. = 1
 
@@ -229,7 +229,7 @@
 		to_chat(M, "<span class='notice'>[high_message]</span>")
 	M.AdjustAllImmobility(-40, 0)
 	M.AdjustUnconscious(-40, 0)
-	M.adjustStaminaLoss(-7.5 * REM, 0)
+	M.adjustStaminaLoss(-7.5 * REM, updating_health = FALSE)
 	if(jitter)
 		M.Jitter(2)
 	if(brain_damage)
@@ -250,7 +250,7 @@
 		M.visible_message("<span class='danger'>[M]'s hands flip out and flail everywhere!</span>")
 		M.drop_all_held_items()
 	..()
-	M.adjustToxLoss(1, 0)
+	M.adjustToxLoss(1, updating_health = FALSE)
 	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, pick(0.5, 0.6, 0.7, 0.8, 0.9, 1))
 	. = 1
 
@@ -283,7 +283,7 @@
 			step(M, pick(GLOB.cardinals))
 	M.Jitter(20)
 	M.Dizzy(20)
-	M.adjustToxLoss(5, 0)
+	M.adjustToxLoss(5, updating_health = FALSE)
 	if(prob(50))
 		M.emote(pick("twitch","drool","moan"))
 	..()
@@ -331,7 +331,7 @@
 	var/high_message = pick("You feel amped up.", "You feel ready.", "You feel like you can push it to the limit.")
 	if(prob(5))
 		to_chat(M, "<span class='notice'>[high_message]</span>")
-	M.adjustStaminaLoss(-5, 0)
+	M.adjustStaminaLoss(-5, updating_health = FALSE)
 	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 4)
 	M.hallucination += 5
 	if(CHECK_MOBILITY(M, MOBILITY_MOVE) && !ismovable(M.loc))
@@ -393,7 +393,7 @@
 			step(M, pick(GLOB.cardinals))
 	M.Jitter(50)
 	M.Dizzy(50)
-	M.adjustToxLoss(5, 0)
+	M.adjustToxLoss(5, updating_health = FALSE)
 	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 10)
 	if(prob(50))
 		M.emote(pick("twitch","drool","moan"))
@@ -412,11 +412,11 @@
 	var/high_message = pick("You feel amped up.", "You feel ready.", "You feel like you can push it to the limit.")
 	if(prob(5))
 		to_chat(M, "<span class='notice'>[high_message]</span>")
-	M.adjustStaminaLoss(-10, 0)
-	M.adjustToxLoss(0.5, 0)
+	M.adjustStaminaLoss(-10, updating_health = FALSE)
+	M.adjustToxLoss(0.5, updating_health = FALSE)
 	if(prob(50))
 		M.losebreath++
-		M.adjustOxyLoss(1, 0)
+		M.adjustOxyLoss(1, updating_health = FALSE)
 	..()
 	. = 1
 

@@ -393,7 +393,7 @@
 	water_level = 0.5
 
 /datum/reagent/consumable/brocjuice/on_mob_life(mob/living/carbon/M)
-	M.adjustOxyLoss(-1*REAGENTS_EFFECT_MULTIPLIER, 0)
+	M.adjustOxyLoss(-1*REAGENTS_EFFECT_MULTIPLIER, updating_health = FALSE)
 	..()
 	return TRUE // update health at end of tick
 
@@ -419,7 +419,7 @@
 	water_level = 0.5
 
 /datum/reagent/consumable/agavejuice/on_mob_life(mob/living/carbon/M)
-	M.adjustFireLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, 0)
+	M.adjustFireLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, updating_health = FALSE)
 	..()
 
 /datum/reagent/consumable/ferajuice
@@ -432,7 +432,7 @@
 
 /datum/reagent/consumable/ferajuice/on_mob_life(mob/living/carbon/M)
 	if(M.health > 20)
-		M.adjustToxLoss(-1*REAGENTS_EFFECT_MULTIPLIER, 0)
+		M.adjustToxLoss(-1*REAGENTS_EFFECT_MULTIPLIER, updating_health = FALSE)
 		. = TRUE // update health at end of tick
 	..()
 
@@ -475,7 +475,7 @@
 	water_level = 0.5
 
 /datum/reagent/consumable/cavefungusjuice/on_mob_life(mob/living/carbon/M)
-	M.adjustToxLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, 0)
+	M.adjustToxLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, updating_health = FALSE)
 	..()
 	return TRUE // update health at end of tick
 
@@ -752,10 +752,10 @@
 /datum/reagent/consumable/honey/on_mob_life(mob/living/carbon/M)
 	M.reagents.add_reagent(/datum/reagent/consumable/sugar,3)
 	if(prob(55))
-		M.adjustBruteLoss(-1*REM, 0)
-		M.adjustFireLoss(-1*REM, 0)
-		M.adjustOxyLoss(-1*REM, 0)
-		M.adjustToxLoss(-1*REM, 0, TRUE) //heals TOXINLOVERs
+		M.adjustBruteLoss(-1*REM, updating_health = FALSE)
+		M.adjustFireLoss(-1*REM, updating_health = FALSE)
+		M.adjustOxyLoss(-1*REM, updating_health = FALSE)
+		M.adjustToxLoss(-1*REM, updating_health = FALSE, forced = TRUE) //heals TOXINLOVERs
 	..()
 	return TRUE // update health at end of tick
 
@@ -878,8 +878,8 @@
 
 /datum/reagent/consumable/vitfro/on_mob_life(mob/living/carbon/M)
 	if(prob(80))
-		M.adjustBruteLoss(-1*REM, 0)
-		M.adjustFireLoss(-1*REM, 0)
+		M.adjustBruteLoss(-1*REM, updating_health = FALSE)
+		M.adjustFireLoss(-1*REM, updating_health = FALSE)
 		. = TRUE
 	..()
 
@@ -999,16 +999,16 @@
 
 /datum/reagent/consumable/buffalojuice/on_mob_life(mob/living/carbon/M)
 	if(M.health < 0)
-		M.adjustToxLoss(-0.5*REM, 0)
-		M.adjustBruteLoss(-0.5*REM, 0)
-		M.adjustFireLoss(-0.5*REM, 0)
+		M.adjustToxLoss(-0.5*REM, updating_health = FALSE)
+		M.adjustBruteLoss(-0.5*REM, updating_health = FALSE)
+		M.adjustFireLoss(-0.5*REM, updating_health = FALSE)
 	if(M.oxyloss > 35)
 		M.setOxyLoss(35, 0)
 	if(M.losebreath >= 4)
 		M.losebreath -= 2
 	if(M.losebreath < 0)
 		M.losebreath = 0
-	M.adjustStaminaLoss(-0.5*REM, 0)
+	M.adjustStaminaLoss(-0.5*REM, updating_health = FALSE)
 	if(prob(20))
 		M.AdjustAllImmobility(-20, 0)
 		M.AdjustUnconscious(-20, 0)
@@ -1017,8 +1017,8 @@
 
 /datum/reagent/consumable/buffalojuice/overdose_process(mob/living/M)
 	if(prob(33))
-		M.adjustStaminaLoss(2.5*REM, 0)
-		M.adjustToxLoss(1*REM, 0)
+		M.adjustStaminaLoss(2.5*REM, updating_health = FALSE)
+		M.adjustToxLoss(1*REM, updating_health = FALSE)
 		M.losebreath++
 		. = 1
 	..()

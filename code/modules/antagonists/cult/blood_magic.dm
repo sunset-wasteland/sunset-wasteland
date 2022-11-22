@@ -716,10 +716,10 @@
 						H.visible_message("<span class='warning'>[H] is partially healed by [H==user ? "[H.p_their()]":"[user]'s"] blood magic.</span>")
 						uses = 0
 					ratio *= -1
-					H.adjustOxyLoss((overall_damage*ratio) * (H.getOxyLoss() / overall_damage), 0)
-					H.adjustToxLoss((overall_damage*ratio) * (H.getToxLoss() / overall_damage), 0)
-					H.adjustFireLoss((overall_damage*ratio) * (H.getFireLoss() / overall_damage), 0)
-					H.adjustBruteLoss((overall_damage*ratio) * (H.getBruteLoss() / overall_damage), 0)
+					H.adjustOxyLoss((overall_damage*ratio) * (H.getOxyLoss() / overall_damage), updating_health = FALSE)
+					H.adjustToxLoss((overall_damage*ratio) * (H.getToxLoss() / overall_damage), updating_health = FALSE)
+					H.adjustFireLoss((overall_damage*ratio) * (H.getFireLoss() / overall_damage), updating_health = FALSE)
+					H.adjustBruteLoss((overall_damage*ratio) * (H.getBruteLoss() / overall_damage), updating_health = FALSE)
 					H.updatehealth()
 					playsound(get_turf(H), 'sound/magic/staff_healing.ogg', 25)
 					new /obj/effect/temp_visual/cult/sparks(get_turf(H))

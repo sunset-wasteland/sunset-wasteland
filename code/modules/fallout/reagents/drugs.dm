@@ -18,7 +18,7 @@
 		M.confused += 2
 
 /datum/reagent/drug/jet/on_mob_life(mob/living/carbon/M)
-	M.adjustStaminaLoss(-20, 0)
+	M.adjustStaminaLoss(-20, updating_health = FALSE)
 	M.set_drugginess(20)
 	if(CHECK_MOBILITY(M, MOBILITY_MOVE) && !isspaceturf(M.loc) && prob(10))
 		step(M, pick(GLOB.cardinals))
@@ -43,7 +43,7 @@
 /datum/reagent/drug/jet/overdose_process(mob/living/M)
 	if(M.hallucination < volume && prob(20))
 		M.hallucination += 10
-		M.adjustToxLoss(10, FALSE)
+		M.adjustToxLoss(10, updating_health = FALSE)
 		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 60)
 	..()
 
@@ -54,7 +54,7 @@
 
 /datum/reagent/drug/jet/addiction_act_stage2(mob/living/M)
 	M.Dizzy(5)
-	M.adjustToxLoss(1, FALSE)
+	M.adjustToxLoss(1, updating_health = FALSE)
 	if(prob(30))
 		M.emote(pick("twitch","drool","moan"))
 	..()
@@ -64,7 +64,7 @@
 	if(CHECK_MOBILITY(M, MOBILITY_MOVE) && !ismovableatom(M.loc) && !isspaceturf(M.loc))
 		for(var/i = 0, i < 4, i++)
 			step(M, pick(GLOB.cardinals))
-	M.adjustToxLoss(3, FALSE)
+	M.adjustToxLoss(3, updating_health = FALSE)
 	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 5)
 	M.set_disgust(60)
 	M.Dizzy(10)
@@ -77,7 +77,7 @@
 	if(CHECK_MOBILITY(M, MOBILITY_MOVE) && !ismovableatom(M.loc) && !isspaceturf(M.loc))
 		for(var/i = 0, i < 8, i++)
 			step(M, pick(GLOB.cardinals))
-	M.adjustToxLoss(5, FALSE)
+	M.adjustToxLoss(5, updating_health = FALSE)
 	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 10)
 	M.set_disgust(100)
 	M.Dizzy(15)
@@ -133,7 +133,7 @@
 		M.visible_message("<span class='danger'>[M]'s hands flip out and flail everywhere!</span>")
 		M.drop_all_held_items()
 	..()
-	M.adjustToxLoss(2, FALSE)
+	M.adjustToxLoss(2, updating_health = FALSE)
 	. = TRUE
 
 /datum/reagent/drug/turbo/addiction_act_stage1(mob/living/M)
@@ -165,7 +165,7 @@
 			step(M, pick(GLOB.cardinals))
 	M.Jitter(20)
 	M.Dizzy(20)
-	M.adjustToxLoss(6, FALSE)
+	M.adjustToxLoss(6, updating_health = FALSE)
 	if(prob(50))
 		M.emote(pick("twitch","drool","moan"))
 	..()
@@ -190,7 +190,7 @@
 	M.AdjustStun(-25, 0)
 	M.AdjustKnockdown(-25, 0)
 	M.AdjustUnconscious(-25, 0)
-	M.adjustStaminaLoss(-5, 0)
+	M.adjustStaminaLoss(-5, updating_health = FALSE)
 	M.Jitter(2)
 	if(M.mind)
 		var/datum/job/job = SSjob.GetJob(M.mind.assigned_role)

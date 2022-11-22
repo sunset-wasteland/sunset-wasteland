@@ -496,10 +496,10 @@ All effects don't start immediately, but rather get worse over time; the rate is
 
 /datum/reagent/consumable/ethanol/cuba_libre/on_mob_life(mob/living/carbon/M)
 	if(M.mind && M.mind.has_antag_datum(/datum/antagonist/rev)) //Cuba Libre, the traditional drink of revolutions! Heals revolutionaries.
-		M.adjustBruteLoss(-1, 0)
-		M.adjustFireLoss(-1, 0)
-		M.adjustToxLoss(-1, 0)
-		M.adjustOxyLoss(-5, 0)
+		M.adjustBruteLoss(-1, updating_health = FALSE)
+		M.adjustFireLoss(-1, updating_health = FALSE)
+		M.adjustToxLoss(-1, updating_health = FALSE)
+		M.adjustOxyLoss(-5, updating_health = FALSE)
 		. = 1
 	return ..() || .
 
@@ -684,7 +684,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 /datum/reagent/consumable/ethanol/beepsky_smash/on_mob_life(mob/living/carbon/M)
 	M.Jitter(2)
 	if(HAS_TRAIT(M, TRAIT_LAW_ENFORCEMENT_METABOLISM))
-		M.adjustStaminaLoss(-10, 0)
+		M.adjustStaminaLoss(-10, updating_health = FALSE)
 		if(prob(20))
 			new /datum/hallucination/items_other(M)
 		if(prob(10))
@@ -883,7 +883,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	if(ishuman(M)) //Barefoot causes the imbiber to quickly regenerate brute trauma if they're not wearing shoes.
 		var/mob/living/carbon/human/H = M
 		if(!H.shoes || !(H.shoes.body_parts_covered & FEET))
-			H.adjustBruteLoss(-3, 0)
+			H.adjustBruteLoss(-3, updating_health = FALSE)
 			. = 1
 	return ..() || .
 
@@ -1232,11 +1232,11 @@ All effects don't start immediately, but rather get worse over time; the rate is
 
 /datum/reagent/consumable/ethanol/hearty_punch/on_mob_life(mob/living/carbon/M)
 	if(M.health <= 0)
-		M.adjustBruteLoss(-3, 0)
-		M.adjustFireLoss(-3, 0)
-		M.adjustCloneLoss(-5, 0)
-		M.adjustOxyLoss(-4, 0)
-		M.adjustToxLoss(-3, 0)
+		M.adjustBruteLoss(-3, updating_health = FALSE)
+		M.adjustFireLoss(-3, updating_health = FALSE)
+		M.adjustCloneLoss(-5, updating_health = FALSE)
+		M.adjustOxyLoss(-4, updating_health = FALSE)
+		M.adjustToxLoss(-3, updating_health = FALSE)
 		. = 1
 	return ..() || .
 
@@ -1276,7 +1276,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 			. = 1
 		if(201 to INFINITY)
 			M.AdjustSleeping(40, FALSE)
-			M.adjustToxLoss(2, 0)
+			M.adjustToxLoss(2, updating_health = FALSE)
 			. = 1
 	..()
 
@@ -1303,7 +1303,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 		if(55 to 200)
 			M.set_drugginess(55)
 		if(200 to INFINITY)
-			M.adjustToxLoss(2, 0)
+			M.adjustToxLoss(2, updating_health = FALSE)
 			. = 1
 	..()
 
@@ -1417,7 +1417,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 			if(prob(40))
 				M.emote(pick("twitch","giggle"))
 			if(prob(30))
-				M.adjustToxLoss(2, 0)
+				M.adjustToxLoss(2, updating_health = FALSE)
 				. = 1
 	..()
 
@@ -1827,7 +1827,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 
 /datum/reagent/consumable/ethanol/fernet/on_mob_life(mob/living/carbon/M)
 	if(M.nutrition <= NUTRITION_LEVEL_STARVING)
-		M.adjustToxLoss(1*REM, 0)
+		M.adjustToxLoss(1*REM, updating_health = FALSE)
 		. = TRUE
 	M.adjust_nutrition(-5)
 	M.overeatduration = 0
@@ -1846,7 +1846,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 
 /datum/reagent/consumable/ethanol/fernet_cola/on_mob_life(mob/living/carbon/M)
 	if(M.nutrition <= NUTRITION_LEVEL_STARVING)
-		M.adjustToxLoss(0.5*REM, 0)
+		M.adjustToxLoss(0.5*REM, updating_health = FALSE)
 	M.adjust_nutrition(-3)
 	M.overeatduration = 0
 	return ..()
@@ -2057,7 +2057,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 
 /datum/reagent/consumable/ethanol/trappist/on_mob_life(mob/living/carbon/M)
 	if(M.mind?.isholy)
-		M.adjustFireLoss(-2.5, 0)
+		M.adjustFireLoss(-2.5, updating_health = FALSE)
 		M.jitteriness = max(0, M.jitteriness-1)
 		M.stuttering = max(0, M.stuttering-1)
 	return ..()

@@ -557,10 +557,10 @@
 		target.adjustFireLoss(20)
 		new /obj/effect/temp_visual/eldritch_smoke(target.drop_location())
 		human_user.ExtinguishMob()
-		human_user.adjustBruteLoss(-10, FALSE)
-		human_user.adjustFireLoss(-10, FALSE)
-		human_user.adjustStaminaLoss(-10, FALSE)
-		human_user.adjustToxLoss(-10, FALSE)
+		human_user.adjustBruteLoss(-10, updating_health = FALSE)
+		human_user.adjustFireLoss(-10, updating_health = FALSE)
+		human_user.adjustStaminaLoss(-10, updating_health = FALSE)
+		human_user.adjustToxLoss(-10, updating_health = FALSE)
 		human_user.adjustOxyLoss(-10)
 
 /obj/effect/proc_holder/spell/pointed/manse_link

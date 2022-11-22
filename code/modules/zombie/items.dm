@@ -73,10 +73,10 @@
 		var/hp_gained = target.maxHealth
 		target.gib()
 		// zero as argument for no instant health update
-		user.adjustBruteLoss(-hp_gained, 0)
-		user.adjustToxLoss(-hp_gained, 0)
-		user.adjustFireLoss(-hp_gained, 0)
-		user.adjustCloneLoss(-hp_gained, 0)
+		user.adjustBruteLoss(-hp_gained, updating_health = FALSE)
+		user.adjustToxLoss(-hp_gained, updating_health = FALSE)
+		user.adjustFireLoss(-hp_gained, updating_health = FALSE)
+		user.adjustCloneLoss(-hp_gained, updating_health = FALSE)
 		user.updatehealth()
 		user.adjustOrganLoss(ORGAN_SLOT_BRAIN, -hp_gained) // Zom Bee gibbers "BRAAAAISNSs!1!"
 		user.adjust_nutrition(hp_gained, NUTRITION_LEVEL_FULL)
@@ -155,10 +155,10 @@
 		var/hp_gained = target.maxHealth
 		target.gib()
 		// zero as argument for no instant health update
-		user.adjustBruteLoss(-hp_gained, 0)
-		user.adjustToxLoss(-hp_gained, 0)
-		user.adjustFireLoss(-hp_gained, 0)
-		user.adjustCloneLoss(-hp_gained, 0)
+		user.adjustBruteLoss(-hp_gained, updating_health = FALSE)
+		user.adjustToxLoss(-hp_gained, updating_health = FALSE)
+		user.adjustFireLoss(-hp_gained, updating_health = FALSE)
+		user.adjustCloneLoss(-hp_gained, updating_health = FALSE)
 		user.updatehealth()
 		user.adjustOrganLoss(ORGAN_SLOT_BRAIN, -hp_gained) // Zom Bee gibbers "BRAAAAISNSs!1!"
 		user.adjust_nutrition(hp_gained, NUTRITION_LEVEL_FULL)

@@ -2,14 +2,14 @@
 Based and maintained from Citadel Station by way of Desert Rose, Fortuna and The Wasteland.
 
 [![CI Suite](https://isitmaintained.com/project/sunset-wasteland/sunset-wasteland/actions/workflows/ci_suite.yml/badge.svg?branch=master&event=push)](https://isitmaintained.com/project/sunset-wasteland/sunset-wasteland/actions/workflows/ci_suite.yml)
-[![Percentage of issues still open](http://isitmaintained.com/badge/open/sunset-wasteland/sunset-wasteland.svg)](https://isitmaintained.com/project/LoneStarF13/LoneStar "Percentage of issues still open")
-[![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/sunset-wasteland/sunset-wasteland.svg)](https://isitmaintained.com/project/LoneStarF13/LoneStar "Average time to resolve an issue")
+[![Percentage of issues still open](http://isitmaintained.com/badge/open/sunset-wasteland/sunset-wasteland.svg)](https://isitmaintained.com/project/sunset-wasteland/sunset-wasteland "Percentage of issues still open")
+[![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/sunset-wasteland/sunset-wasteland.svg)](https://isitmaintained.com/project/sunset-wasteland/sunset-wasteland "Average time to resolve an issue")
 
 [![forthebadge](http://forthebadge.com/images/badges/60-percent-of-the-time-works-every-time.svg)](https://forthebadge.com) [![forthebadge](http://forthebadge.com/images/badges/pretty-risque.svg)](https://forthebadge.com) [![forthebadge](http://forthebadge.com/images/badges/you-didnt-ask-for-this.svg)](http://forthebadge.com) [![forinfinityandbyond](https://user-images.githubusercontent.com/5211576/29499758-4efff304-85e6-11e7-8267-62919c3688a9.gif)](https://www.reddit.com/r/SS13/comments/5oplxp/what_is_the_main_problem_with_byond_as_an_engine/dclbu1a)
 
 **Sunset Wasteland Information**
 * **Code:** <https://github.com/sunset-wasteland/sunset-wasteland>
-* **Wiki:** <https://sunset-wasteland.fandom.com/wiki/Sunset_Wasteland_Wiki>
+* **Wiki:** <https://sunsetwasteland.com/index.php/Main_Page>
 * **Discord:** <https://discord.gg/h5UDdCMHhm>
 
 **The Wasteland Information**  
@@ -44,14 +44,15 @@ All relevant forum content takes place on the Discord!
 There are a number of ways to download the source code. Some are described here, an alternative all-inclusive guide is also located at http://www.tgstation13.org/wiki/Downloading_the_source_code
 
 Option 1:
-Follow this: http://www.tgstation13.org/wiki/Setting_up_git
+Follow this: http://www.tgstation13.org/wiki/Setting_up_git. Make sure to do
+this for Sunset Wasteland instead of TG, i.e. replace the URL for TG's
+repository with `https://github.com/sunset-wasteland/sunset-wasteland.git`
+and go to the Sunset Wasteland repo when it mentions TG's repo.
 
 Option 2: Download the source code as a zip by clicking the ZIP button in the
-code tab of https://github.com/tgstation/tgstation
+code tab of https://github.com/sunset-wasteland/sunset-wasteland
 (note: this will use a lot of bandwidth if you wish to update and is a lot of
 hassle if you want to make any changes at all, so it's not recommended.)
-
-Option 3: Download a pre-compiled nightly at https://tgstation13.download/nightlies/ (same caveats as option 2)
 
 ## INSTALLATION
 
@@ -71,7 +72,7 @@ fortune13.dmb - 0 errors, 0 warnings
 
 If you see any errors or warnings, something has gone wrong - possibly a corrupt
 download or the files extracted wrong. If problems persist, ask for assistance
-in irc://irc.rizon.net/coderbus
+in the Coderbus discord: https://discord.gg/Vh8TJp9
 
 Once that's done, open up the config folder. You'll want to edit config.txt to
 set the probabilities for different gamemodes in Secret and to set your server
@@ -82,7 +83,7 @@ so they may have unknown and bizarre bugs. Extended is essentially no mode, and
 isn't in the Secret rotation by default as it's just not very fun.
 
 You'll also want to edit config/admins.txt to remove the default admins and add
-your own. "Game Master" is the highest level of access, and probably the one
+your own. "Host" is the highest level of access, and probably the one
 you'll want to use for now. You can set up your own ranks and find out more in
 config/admin_ranks.txt
 
@@ -97,13 +98,20 @@ where the admin rank must be properly capitalised.
 This codebase also depends on a native library called rust-g. A precompiled
 Windows DLL is included in this repository, but Linux users will need to build
 and install it themselves. Directions can be found at the [rust-g
-repo](https://github.com/tgstation13/rust-g).
+repo](https://github.com/tgstation13/rust-g). Exact version info can be found
+in `dependencies.sh` in this folder.
+
+Unlike TGstation, this codebase also relies on a library called Auxmos. A
+precompiled Windows DLL is included in this repository, but Linux users will
+need to build and install it themselves. Directions can be found at the [Auxmos
+repo](https://github.com/Putnam3145/auxmos), maintained by Putnam3145. Exact
+version info can be found in `dependencies.sh` in this folder.
 
 Finally, to start the server, run Dream Daemon and enter the path to your
 compiled fortune13.dmb file. Make sure to set the port to the one you
-specified in the config.txt, and set the Security box to 'Safe'. Then press GO
-and the server should start up and be ready to join. It is also recommended that
-you set up the SQL backend (see below).
+specified in the config.txt, and set the Security box to 'Trusted'. Then press
+GO and the server should start up and be ready to join. It is also recommended
+that you set up the SQL backend (see below).
 
 ## UPDATING
 
@@ -139,7 +147,7 @@ The map that will be loaded for the upcoming round is determined by reading data
 
 If you are hosting a server, and want randomly picked maps to be played each round, you can enable map rotation in [config.txt](config/config.txt) and then set the maps to be picked in the [maps.txt](config/maps.txt) file.
 
-Anytime you want to make changes to a map it's imperative you use the [Map Merging tools](http://tgstation13.org/wiki/Map_Merger)
+**Anytime you want to make changes to a map it's imperative you use the [Map Merging tools](http://tgstation13.org/wiki/Map_Merger).**
 
 ## AWAY MISSIONS
 
@@ -161,11 +169,6 @@ Web delivery of game resources makes it quicker for players to join and reduces 
 1. Add a url to config/external_rsc_urls pointing to a .zip file containing the .rsc.
     * If you keep up to date with /tg/ you could reuse /tg/'s rsc cdn at http://tgstation13.download/byond/tgstation.zip. Otherwise you can use cdn services like CDN77 or cloudflare (requires adding a page rule to enable caching of the zip), or roll your own cdn using route 53 and vps providers.
 	* Regardless even offloading the rsc to a website without a CDN will be a massive improvement over the in game system for transferring files.
-
-## IRC BOT SETUP
-
-Included in the repository is a python3 compatible IRC bot capable of relaying adminhelps to a specified
-IRC channel/server, see the /tools/minibot folder for more
 
 ## CONTRIBUTING
 

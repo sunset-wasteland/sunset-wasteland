@@ -42,7 +42,7 @@
 
 /datum/supply_pack/misc/book_crate
 	name = "Book Crate"
-	desc = "Surplus from the Nanotrasen Archives, these five books are sure to be good reads."
+	desc = "Surplus from the Brotherhood Archives, these five books are sure to be good reads."
 	cost = 1500
 	contains = list(/obj/item/book/codex_gigas,
 					/obj/item/book/manual/random/,
@@ -79,7 +79,6 @@
 /datum/supply_pack/misc/captain_pen
 	name = "Captain Pen"
 	desc = "A spare Captain fountain pen."
-	access = ACCESS_CAPTAIN
 	cost = 5000
 	contains = list(/obj/item/pen/fountain/captain)
 	crate_name = "captain pen"
@@ -115,8 +114,8 @@
 
 /datum/supply_pack/misc/bicycle
 	name = "Bicycle"
-	desc = "Nanotrasen reminds all employees to never toy with powers outside their control."
-	cost = 1000000
+	desc = "The Brotherhood reminds all employees to never toy with powers outside their control."
+	cost = 2500
 	contains = list(/obj/vehicle/ridden/bicycle)
 	crate_name = "Bicycle Crate"
 	crate_type = /obj/structure/closet/crate/large
@@ -156,7 +155,6 @@
 /datum/supply_pack/misc/coincrate
 	name = "Coin Crate"
 	desc = "Psssst, hey, you. Yes, you. I've heard that coins can do some special things on your station, give you access to some pretty cool stuff. Here's the deal, you give me some credits, and I give so some coins. Sound like a deal? I'll give you 10 for 10000 creds."
-	contraband = TRUE
 	cost = 3000
 	contains = list(/obj/item/coin/silver) // 400 x 10 = 2 sheets of silver for 2300cr
 	crate_name = "coin crate"
@@ -178,7 +176,7 @@
 	. = ..()
 	for(var/i in 1 to 3)
 		new /obj/item/storage/lockbox/dueling/hugbox/stamina(.)
-
+/*
 /datum/supply_pack/misc/dueling_lethal
 	name = "Lethal Dueling Pistols"
 	desc = "Settle your differences the true spaceman way."
@@ -211,7 +209,7 @@
 	for(var/i in 1 to num_contained)
 		var/item = pick_n_take(L)
 		new item(C)
-
+*/
 //////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////// Misc Supplies //////////////////////////////
 //////////////////////////////////////////////////////////////////////////////
@@ -278,7 +276,6 @@
 /datum/supply_pack/misc/abandonedcrate
 	name = "Loot Box"
 	desc = "Try your luck with these highly secure loot boxes! Solve the lock, win great prizes! WARNING: EXPLOSIVE FAILURE."
-	contraband = TRUE
 	cost = 15000
 	contains = list(/obj/structure/closet/crate/secure/loot)
 	crate_name = "abandoned crate"
@@ -287,7 +284,7 @@
 
 /datum/supply_pack/misc/potted_plants
 	name = "Potted Plants Crate"
-	desc = "Spruce up the station with these lovely plants! Contains a random assortment of five potted plants from Nanotrasen's potted plant research division. Warranty void if thrown."
+	desc = "Spruce up the station with these lovely plants! Contains a random assortment of five potted plants from the Brotherhoods's potted plant research division. Warranty void if thrown."
 	cost = 730
 	contains = list(/obj/item/kirbyplants/random,
 					/obj/item/kirbyplants/random,

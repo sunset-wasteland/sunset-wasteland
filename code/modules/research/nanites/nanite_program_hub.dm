@@ -9,7 +9,7 @@
 	circuit = /obj/item/circuitboard/machine/nanite_program_hub
 
 	var/obj/item/disk/nanite_program/disk
-	var/research_id = "SCIENCE"
+	var/research_id = "ENCLAVE"
 	var/datum/techweb/linked_techweb
 	var/current_category = "Main"
 	var/detail_view = TRUE

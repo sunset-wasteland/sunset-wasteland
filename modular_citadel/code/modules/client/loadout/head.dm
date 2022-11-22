@@ -181,6 +181,10 @@
 	name = "ushanka"
 	path = /obj/item/clothing/head/ushanka
 
+/datum/gear/head/blackushanka
+	name = "black ushanka"
+	path = /obj/item/clothing/head/blackushanka
+
 /datum/gear/head/russobluecamohat
 	name = "Russian blue camo beret"
 	path = /obj/item/clothing/head/fluff/gambler
@@ -403,6 +407,29 @@
 	restricted_desc = "NCR"
 	restricted_roles = list("NCR Sergeant",
 							"NCR Heavy Trooper"
+						)
+
+//BOS
+/datum/gear/head/bos_beret
+	name = "BOS beret"
+	path = /obj/item/clothing/head/f13/boscap/beret
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_FACTIONS
+	cost = 2
+	restricted_desc = "BOS"
+	restricted_roles = list("Paladin Marshal",
+							"Paladin",
+							"Librarian",
+							"Scribe",
+							"Knight-Captain",
+							"Knight",
+							"Initiate",
+							"BoS Off-Duty",
+							"Inquisitorial Acolyte",
+							"Baron",
+							"Castellan",
+							"Keeper",
+							"Knight-Commander",
+							"Inquisitorial Acolyte",
 						)
 
 /datum/gear/head/khan_bandana

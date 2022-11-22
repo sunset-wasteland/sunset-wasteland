@@ -1,6 +1,6 @@
 /obj/item/stock_parts/cell
-	name = "power cell"
-	desc = "A rechargeable electrochemical power cell."
+	name = "Fusion cell"
+	desc = "A rechargeable fusion cell."
 	icon = 'icons/obj/power.dmi'
 	icon_state = "cell"
 	item_state = "cell"
@@ -208,8 +208,8 @@
 	start_charged = FALSE
 
 /obj/item/stock_parts/cell/crap
-	name = "\improper Nanotrasen brand rechargeable AA battery"
-	desc = "You can't top the plasma top." //TOTALLY TRADEMARK INFRINGEMENT
+	name = "\improper weak fusion battery"
+	desc = "You can't top the house top." //TOTALLY TRADEMARK INFRINGEMENT
 	maxcharge = 500
 	custom_materials = list(/datum/material/glass=40)
 
@@ -254,14 +254,14 @@
 	maxcharge = 2000
 
 /obj/item/stock_parts/cell/high
-	name = "high-capacity power cell"
+	name = "high-capacity fusion cell"
 	icon_state = "hcell"
 	maxcharge = 10000
 	custom_materials = list(/datum/material/glass=60)
 	chargerate = 1500
 
 /obj/item/stock_parts/cell/high/plus
-	name = "high-capacity power cell+"
+	name = "high-capacity fusion cell+"
 	desc = "Where did these come from?"
 	icon_state = "h+cell"
 	maxcharge = 15000
@@ -272,7 +272,7 @@
 	start_charged = FALSE
 
 /obj/item/stock_parts/cell/super
-	name = "super-capacity power cell"
+	name = "super-capacity fusion cell"
 	icon_state = "scell"
 	maxcharge = 20000
 	custom_materials = list(/datum/material/glass=300)
@@ -283,7 +283,7 @@
 	start_charged = FALSE
 
 /obj/item/stock_parts/cell/hyper
-	name = "hyper-capacity power cell"
+	name = "hyper-capacity fusion cell"
 	icon_state = "hpcell"
 	maxcharge = 30000
 	custom_materials = list(/datum/material/glass=400)
@@ -294,8 +294,8 @@
 	start_charged = FALSE
 
 /obj/item/stock_parts/cell/bluespace
-	name = "bluespace power cell"
-	desc = "A rechargeable transdimensional power cell."
+	name = "Ultracite fusion cell"
+	desc = "A rechargeable pre-war inspired fusion cell. the future, TODAY!"
 	icon_state = "bscell"
 	maxcharge = 40000
 	custom_materials = list(/datum/material/glass=600)
@@ -306,7 +306,7 @@
 	start_charged = FALSE
 
 /obj/item/stock_parts/cell/infinite
-	name = "infinite-capacity power cell!"
+	name = "infinite-capacity fusion cell!"
 	icon_state = "icell"
 	maxcharge = 30000
 	custom_materials = list(/datum/material/glass=1000)
@@ -445,6 +445,20 @@
 		if (1001 to 2000)
 			icon_state = "mfc-full"
 		if (51 to 1000)
+			icon_state = "mfc-half"
+		if (0 to 50)
+			icon_state = "mfc-empty"
+	. = ..()
+
+/obj/item/stock_parts/cell/ammo/mfc/overcharged
+	name = "overcharged microfusion cell"
+	maxcharge = 3000
+
+/obj/item/stock_parts/cell/ammo/mfc/overcharged/update_icon()
+	switch(charge)
+		if (1501 to 3000)
+			icon_state = "mfc-full"
+		if (51 to 1500)
 			icon_state = "mfc-half"
 		if (0 to 50)
 			icon_state = "mfc-empty"

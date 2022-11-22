@@ -78,11 +78,11 @@ Reproductive extracts:
 /obj/item/slimecross/reproductive/silver
 	extract_type = /obj/item/slime_extract/silver
 	colour = "silver"
-
+/*
 /obj/item/slimecross/reproductive/bluespace
 	extract_type = /obj/item/slime_extract/bluespace
 	colour = "bluespace"
-
+*/
 /obj/item/slimecross/reproductive/sepia
 	extract_type = /obj/item/slime_extract/sepia
 	colour = "sepia"
@@ -94,11 +94,11 @@ Reproductive extracts:
 /obj/item/slimecross/reproductive/pyrite
 	extract_type = /obj/item/slime_extract/pyrite
 	colour = "pyrite"
-
+/*
 /obj/item/slimecross/reproductive/red
 	extract_type = /obj/item/slime_extract/red
 	colour = "red"
-
+*/
 /obj/item/slimecross/reproductive/green
 	extract_type = /obj/item/slime_extract/green
 	colour = "green"

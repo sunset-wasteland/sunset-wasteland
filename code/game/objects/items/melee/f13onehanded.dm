@@ -26,29 +26,6 @@
 // SWORDS //
 ////////////		-block, 34-39 damage
 
-
-/obj/item/melee/onehanded/dragonfire
-	name = "Dragonfire Katana"
-	desc = "After the world ended, seppuku rates in Japan skyrocketed, the owner of this one however is crazy enough to keep going!"
-	icon_state = "DFkatana"
-	item_state = "DFkatana"
-	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
-	flags_1 = CONDUCT_1
-	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
-	force = 30
-	throwforce = 10
-	w_class = WEIGHT_CLASS_BULKY
-	hitsound = 'sound/weapons/bladeslice.ogg'
-	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
-	sharpness = SHARP_EDGED
-	max_integrity = 200
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 50)
-	resistance_flags = FIRE_PROOF
-	total_mass = TOTAL_MASS_MEDIEVAL_WEAPON
-
-
-
 /obj/item/melee/onehanded/machete
 	name = "simple machete"
 	desc = "A makeshift machete made of a lawn mower blade."
@@ -67,6 +44,7 @@
 	force = 35
 	wound_bonus = 20
 	block_chance = 8
+	block_parry_data = /datum/block_parry_data/smith_generic //data is in finished items file
 
 /obj/item/melee/onehanded/machete/training
 	name = "training machete"
@@ -90,6 +68,7 @@
 	item_state = "gladius"
 	force = 36
 	wound_bonus = 30
+	block_parry_data = /datum/block_parry_data/smith_generic //data is in finished items file
 	block_chance = 10
 
 /obj/item/melee/onehanded/machete/spatha
@@ -117,6 +96,14 @@
 	force = 37
 	block_chance = 15
 
+/obj/item/melee/onehanded/machete/scrapsabre/khan
+	name = "honed scrap sabre"
+	desc = "Made from materials found in the wastes, a skilled blacksmith has turned it into a thing of deadly beauty. This appears to have the unique Khan emblem on the hilt."
+	icon_state = "scrapsabre"
+	item_state = "scrapsabre"
+	force = 35
+	block_chance = 25
+
 /obj/item/throwing_star/spear
 	name = "throwing spear"
 	desc = "An heavy hefty ancient weapon used to this day, due to its ease of lodging itself into its victim's body parts."
@@ -128,7 +115,7 @@
 	throwforce = 35
 	armour_penetration = 0.10
 	max_reach = 2
-	embedding = list("pain_mult" = 2, "embed_chance" = 60, "fall_chance" = 20)
+	embedding = list("pain_mult" = 2, "embed_chance" = 95, "fall_chance" = 5)
 	w_class = WEIGHT_CLASS_NORMAL
 
 
@@ -212,6 +199,7 @@
 	item_state = "knife_trench"
 	desc = "This blade is designed for brutal close quarters combat."
 	force = 31
+	block_parry_data = /datum/block_parry_data/smith_generic //data is in finished items file //Also gives trench knife an actual advantage
 	custom_materials = list(/datum/material/iron=8000)
 	attack_verb = list("slashed", "stabbed", "sliced", "shanked", "ripped", "lacerated")
 
@@ -235,6 +223,9 @@
 	force = 25
 	armour_penetration = 0.1
 	custom_materials = null
+
+/obj/item/melee/onehanded/knife/ritualdagger/baghead
+	desc = "An ancient blade used to carry out dangerous rituals."
 
 /obj/item/melee/onehanded/knife/switchblade
 	name = "switchblade"
@@ -527,7 +518,7 @@
 			if(stun_animation)
 				user.do_attack_animation(target)
 			playsound(get_turf(src), on_stun_sound, 75, 1, -1)
-			target.adjustStaminaLoss(30)
+			target.adjustStaminaLoss(60)
 			additional_effects_carbon(target, user)
 			add_fingerprint(user)
 			target.visible_message(desc["visible"], desc["local"])
@@ -816,6 +807,7 @@
 	icon_state = "tiger_claw"
 	item_state = "tiger_claw"
 	force = 40 //Assaultron, so, makes sense.
+	armour_penetration = 0.5
 
 // Deathclaw Gauntlet	Keywords: Damage 28, AP 1
 /obj/item/melee/unarmed/deathclawgauntlet

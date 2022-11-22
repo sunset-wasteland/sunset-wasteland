@@ -136,7 +136,7 @@ also: most hitscan weapons have more charge than their normal projectile counter
 /obj/item/ammo_casing/energy/laser/pistol/recharger/hitscan
 	projectile_type = /obj/item/projectile/beam/laser/recharger/hitscan
 	e_cost = 100 //20 shots
-	fire_sound = 'sound/f13weapons/aep7fire.ogg'
+	fire_sound = 'sound/f13weapons/RechargerFire.ogg'
 
 /obj/item/ammo_casing/energy/laser/pistol/recharger/hitscan/walker
 	projectile_type = /obj/item/projectile/beam/laser/recharger/hitscan/walker
@@ -151,6 +151,7 @@ also: most hitscan weapons have more charge than their normal projectile counter
 /obj/item/ammo_casing/energy/laser/pistol/wattz
 	projectile_type = /obj/item/projectile/beam/laser/pistol/wattz
 	e_cost = 100 //16 shots
+	fire_sound = 'sound/f13weapons/WattzPistolFire.ogg'
 
 /obj/item/ammo_casing/energy/laser/pistol/wattz/magneto
 	projectile_type = /obj/item/projectile/beam/laser/pistol/wattz/magneto
@@ -198,6 +199,11 @@ also: most hitscan weapons have more charge than their normal projectile counter
 	projectile_type = /obj/item/projectile/beam/laser/gatling/hitscan
 	e_cost = 10 //it's actually 240 shots now, as it fires in a burst of 5
 
+/obj/item/ammo_casing/energy/laser/gatling/betterhitscan
+	projectile_type = /obj/item/projectile/beam/laser/gatling/betterhitscan
+	e_cost = 10
+	fire_sound = 'sound/f13weapons/WattzRifleFire.ogg'
+
 /obj/item/ammo_casing/energy/laser/laer
 	projectile_type = /obj/item/projectile/beam/laser/laer
 	e_cost = 125 //16 shots
@@ -233,6 +239,7 @@ also: most hitscan weapons have more charge than their normal projectile counter
 /obj/item/ammo_casing/energy/wattz2k
 	projectile_type = /obj/item/projectile/beam/laser/wattz2k
 	e_cost = 125
+	fire_sound = 'sound/f13weapons/WattzRifleFire.ogg'
 
 /obj/item/ammo_casing/energy/wattz2k/hitscan
 	projectile_type = /obj/item/projectile/beam/laser/wattz2k/hitscan

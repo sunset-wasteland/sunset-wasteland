@@ -39,6 +39,7 @@
 	desc = "Heavy fireman axe from the old world, Restored to working order by legion craftsmen. Excellent for smashing doors or heads."
 	icon_state = "legionaxe"
 	icon_prefix = "legionaxe"
+	block_parry_data = /datum/block_parry_data/smith_generic //data is in finished items file
 	force = 30
 	throwforce = 15
 	wound_bonus = 10
@@ -154,6 +155,7 @@
 	wound_bonus = null
 	sharpness = SHARP_NONE
 	resistance_flags = null
+	block_parry_data = /datum/block_parry_data/smith_generic //data is in finished items file
 
 /obj/item/twohanded/fireaxe/bmprsword/afterattack(atom/A, mob/living/user, proximity)
 	. = ..()
@@ -182,6 +184,7 @@
 	icon_prefix = "spear-metal"
 	force = 10
 	throwforce = 30
+	block_parry_data = /datum/block_parry_data/smith_generic //data is in finished items file
 	throw_speed = 4
 	embedding = list("embed_chance" = 0)
 	max_reach = 2
@@ -463,6 +466,7 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	damtype = "fire"
+	block_parry_data = /datum/block_parry_data/smith_generic //data is in finished items file
 	force = 5
 	armour_penetration = 0.1
 	throwforce = 5
@@ -498,7 +502,7 @@
 	else if(istype(A, /turf/closed))
 		playsound(loc, hitsound, 70, TRUE)
 
-// Proton axe			Keywords: Damage 20/52, AP 0.7
+// Proton axe			Keywords: Damage 20/41, AP 0.7
 /obj/item/melee/transforming/energy/axe/protonaxe
 	name = "proton axe"
 	desc = "The experimental proton axe resembles a futuristic war-axe with a glowing blue blade of electrical energy at its head."
@@ -507,6 +511,7 @@
 	righthand_file = 'icons/fallout/onmob/weapons/melee2h_righthand.dmi'
 	icon_state = "protonaxe"
 	icon_state_on = "protonaxe_on"
+	block_parry_data = /datum/block_parry_data/smith_generic //data is in finished items file
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = null
 	force = 20
@@ -519,14 +524,57 @@
 	. = ..()
 	AddComponent(/datum/component/two_handed, require_twohands=TRUE)
 	AddElement(/datum/element/update_icon_updates_onmob)
+/*
+// Inquisitorial axe			Keywords: Damage 6/32, AP 0.9, SPEAR REACH, BACK SLOT ENABLED
+/obj/item/twohanded/inquis_spear
+	name = "Inquisitorial polearm"
+	desc = "An odd looking spear of sorts, tipped with what appears to be a plasma chamber. In theory, this should splash the target with plasma on each hit. Does it work, however?"
+	icon = 'icons/fallout/objects/melee/twohanded.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/melee2h_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/melee2h_righthand.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/backslot_weapon.dmi'
+	item_state = "plasma"
+	icon_state = "plasma"
+	damtype = BURN
+	sharpness = SHARP_POINTY
+	slot_flags = ITEM_SLOT_BACK
+	block_parry_data = /datum/block_parry_data/smith_generic //data is in finished items file
+	force = 32
+	armour_penetration = 0.9
+	max_reach = 2
+	throwforce = 1//WHY WOULD YOU THROW THIS?
+	throw_speed = 1
+	throw_range = 1
+	var/equipsound = 'sound/f13weapons/equipsounds/declonequip.ogg'
+	attack_verb = list("seared","jabbed","punctured")
+	hitsound = 'sound/f13weapons/sear.ogg'
 
+/obj/item/twohanded/inquis_spear/proc/play_inquis_equip_sound(src, volume=50)
+	if(src && equipsound && volume)
+		var/played_sound = equipsound
 
+		if(islist(equipsound))
+			played_sound = pick(equipsound)
+
+		playsound(src, played_sound, volume, 1)
+
+/obj/item/twohanded/inquis_spear/pickup(mob/living/user)
+	. = ..()
+	play_inquis_equip_sound(src)
+
+/obj/item/twohanded/inquis_spear/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/two_handed, force_unwielded=6, force_wielded=32, icon_wielded="[item_state]2")
+	AddElement(/datum/element/update_icon_updates_onmob)
+	AddElement(/datum/element/sword_point)
+*/
 // Super Sledge			Keywords: Damage 25/60
 /obj/item/twohanded/sledgehammer/supersledge
 	name = "super sledge"
 	desc = "A heavy sledgehammer manufacted from ultra-dense materials, developed by the Brotherhood of Steel. It looks like it could crush someone's skull with ease."
 	icon_state = "hammer-super"
 	icon_prefix = "hammer-super"
+	block_parry_data = /datum/block_parry_data/smith_generic //data is in finished items file
 	force = 25
 
 /obj/item/twohanded/sledgehammer/supersledge/ComponentInitialize()
@@ -631,6 +679,7 @@
 	icon_prefix = "hammer-war"
 	force = 25
 	throwforce = 20
+	block_parry_data = /datum/block_parry_data/smith_generic //data is in finished items file
 	armour_penetration = 0.2
 	attack_verb = list("bashed", "pounded", "bludgeoned", "pummeled", "thrashed")
 

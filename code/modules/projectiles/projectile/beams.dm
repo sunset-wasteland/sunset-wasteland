@@ -116,7 +116,7 @@
 	flag = "energy"
 	armour_penetration = 1 //it only does 5 damage.
 	damage_type = "toxin"
-	irradiate = 200
+	irradiate = 250
 	range = 15
 	pass_flags = PASSTABLE | PASSGLASS | PASSGRILLE | PASSCLOSEDTURF
 
@@ -352,6 +352,15 @@
 	muzzle_type = /obj/effect/projectile/muzzle/laser
 	impact_type = /obj/effect/projectile/impact/laser
 
+/obj/item/projectile/beam/laser/gatling/betterhitscan //L30
+	name = "overcharged laser beam"
+	damage = 18
+	armour_penetration = 0.15
+	wound_bonus = 20
+	bare_wound_bonus = 5
+	hitscan = TRUE
+	light_color = LIGHT_COLOR_BLOOD_MAGIC
+
 /obj/item/projectile/beam/laser/pistol //AEP7
 	name = "laser beam"
 	damage = 35
@@ -493,7 +502,7 @@
 	name = "plasma stream"
 	icon_state = "plasma_clot"
 	damage_type = BURN
-	damage = 20
+	damage = 35
 	flag = "energy" //checks vs. energy protection
 	eyeblur = 0
 	is_reflectable = FALSE
@@ -502,7 +511,7 @@
 	name = "mining plasma stream"
 	icon_state = "plasma_clot"
 	damage_type = BURN
-	damage = 5
+	damage = 35
 	flag = "energy"
 	eyeblur = 0
 	is_reflectable = FALSE
@@ -515,14 +524,12 @@
 
 /obj/item/projectile/f13plasma/pistol //Plasma pistol
 	damage = 18
-	wound_bonus = 20 //being hit with plasma is horrific
 
 /obj/item/projectile/f13plasma/pistol/worn
 	damage = 16
 
 /obj/item/projectile/f13plasma/pistol/glock //Glock (streamlined plasma pistol)
 	damage = 20
-	wound_bonus = 35 //being hit with plasma is horrific
 
 /obj/item/projectile/f13plasma/scatter //Multiplas, fires 3 shots, will melt you
 	damage = 25
@@ -537,7 +544,7 @@
 /obj/item/projectile/beam/laser/rcw/hitscan //RCW
 	name = "rapidfire beam"
 	icon_state = "emitter"
-	damage = 15
+	damage = 18
 	hitscan = TRUE
 	muzzle_type = /obj/effect/projectile/muzzle/laser/emitter
 	tracer_type = /obj/effect/projectile/tracer/laser/emitter

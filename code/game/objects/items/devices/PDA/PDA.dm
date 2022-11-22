@@ -320,7 +320,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 
 				if (cartridge)
 					if (cartridge.access & CART_MANIFEST)
-						dat += "<li><a href='byond://?src=[REF(src)];choice=41'>View Crew Manifest</a></li>"
+						dat += "<li><a href='byond://?src=[REF(src)];choice=41'>View Vault Manifest</a></li>"
 					if(cartridge.access & CART_STATUS_DISPLAY)
 						dat += "<li><a href='byond://?src=[REF(src)];choice=42'>Set Status Display</a></li>"
 					dat += "</ul>"
@@ -332,13 +332,13 @@ GLOBAL_LIST_EMPTY(PDAs)
 					if (cartridge.access & CART_MEDICAL)
 						dat += "<h4>Medical Functions</h4>"
 						dat += "<ul>"
-						dat += "<li><a href='byond://?src=[REF(src)];choice=44'>Medical Records</a></li>"
+						dat += "<li><a href='byond://?src=[REF(src)];choice=44'>Vault Medical Records</a></li>"
 						dat += "<li><a href='byond://?src=[REF(src)];choice=Medical Scan'>[scanmode == 1 ? "Disable" : "Enable"] Medical Scanner</a></li>"
 						dat += "</ul>"
 					if (cartridge.access & CART_SECURITY)
 						dat += "<h4>Security Functions</h4>"
 						dat += "<ul>"
-						dat += "<li><a href='byond://?src=[REF(src)];choice=45'>Security Records</A></li>"
+						dat += "<li><a href='byond://?src=[REF(src)];choice=45'>Vault Security Records</A></li>"
 						dat += "</ul>"
 					if(cartridge.access & CART_QUARTERMASTER)
 						dat += "<h4>Quartermaster Functions:</h4>"

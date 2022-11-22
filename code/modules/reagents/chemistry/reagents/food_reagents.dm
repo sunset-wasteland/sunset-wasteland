@@ -981,3 +981,40 @@
 	taste_mult = 2
 	taste_description = "fizzy sweetness"
 	value = REAGENT_VALUE_COMMON
+
+/datum/reagent/consumable/buffalojuice
+	name = "Buffalo Juice"
+	description = "Juice of the buffalo gourd it's mutated sentient algae has epinephrine like properties to keep the host alive and limit oxygen lose."
+	nutriment_factor = 1 * REAGENTS_METABOLISM
+	color = "#14FF3C" // rgb: 48, 32, 0
+	taste_description = "A tingling electric sensation"
+	metabolization_rate = 0.25 * REAGENTS_METABOLISM
+	glass_icon_state = "Cactus Water"
+	overdose_threshold = 30
+	water_level = 1.5
+
+/datum/reagent/consumable/buffalojuice/on_mob_life(mob/living/carbon/M)
+	if(M.health < 0)
+		M.adjustToxLoss(-0.5*REM, 0)
+		M.adjustBruteLoss(-0.5*REM, 0)
+		M.adjustFireLoss(-0.5*REM, 0)
+	if(M.oxyloss > 35)
+		M.setOxyLoss(35, 0)
+	if(M.losebreath >= 4)
+		M.losebreath -= 2
+	if(M.losebreath < 0)
+		M.losebreath = 0
+	M.adjustStaminaLoss(-0.5*REM, 0)
+	. = 1
+	if(prob(20))
+		M.AdjustAllImmobility(-20, 0)
+		M.AdjustUnconscious(-20, 0)
+	..()
+
+/datum/reagent/consumable/buffalojuice/overdose_process(mob/living/M)
+	if(prob(33))
+		M.adjustStaminaLoss(2.5*REM, 0)
+		M.adjustToxLoss(1*REM, 0)
+		M.losebreath++
+		. = 1
+	..()

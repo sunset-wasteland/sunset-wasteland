@@ -261,7 +261,7 @@
 				empulse_using_range(user, 3)
 				user.visible_message("<span class='warning'>[user]'s skin flashes!</span>", "<span class='warning'>Your skin flashes as you emit an electromagnetic pulse!</span>")
 				return 600
-
+/*
 /obj/item/slime_extract/red
 	name = "red slime extract"
 	icon_state = "red slime extract"
@@ -281,7 +281,7 @@
 				slime.rabid = TRUE
 				slime.visible_message("<span class='danger'>The [slime] is driven into a frenzy!</span>")
 			return 600
-
+*/
 /obj/item/slime_extract/blue
 	name = "blue slime extract"
 	icon_state = "blue slime extract"
@@ -472,7 +472,7 @@
 /obj/item/slime_extract/adamantine/proc/reset_armor(datum/species/jelly/luminescent/species)
 	if(istype(species))
 		species.armor -= 25
-
+/*
 /obj/item/slime_extract/bluespace
 	name = "bluespace slime extract"
 	icon_state = "bluespace slime extract"
@@ -507,7 +507,7 @@
 					to_chat(user, "<span class='notice'>You snap back to your anchor point!</span>")
 					do_teleport(user, T,  asoundin = 'sound/weapons/emitter2.ogg', channel = TELEPORT_CHANNEL_BLUESPACE)
 					return 450
-
+*/
 
 /obj/item/slime_extract/pyrite
 	name = "pyrite slime extract"

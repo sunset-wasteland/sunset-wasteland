@@ -32,24 +32,24 @@
 			.++
 
 /datum/station_goal/dna_vault/get_report()
-	return {"Our long term prediction systems indicate a 99% chance of system-wide cataclysm in the near future. 
-	We need you to construct a DNA Vault aboard your station. 
+	return {"Our long term prediction systems indicate a 99% chance of system-wide cataclysm in the near future.
+	We need you to construct a DNA Vault aboard your station.
 
-	The DNA Vault needs to contain samples of: 
-	[animal_count] unique animal data 
-	[plant_count] unique non-standard plant data 
-	[human_count] unique sapient humanoid DNA data 
+	The DNA Vault needs to contain samples of:
+	[animal_count] unique animal data
+	[plant_count] unique non-standard plant data
+	[human_count] unique sapient humanoid DNA data
 
 	Base vault parts are available for shipping via cargo."}
 
-
+/*
 /datum/station_goal/dna_vault/on_report()
 	var/datum/supply_pack/P = SSshuttle.supply_packs[/datum/supply_pack/engineering/dna_vault]
 	P.special_enabled = TRUE
 
 	P = SSshuttle.supply_packs[/datum/supply_pack/engineering/dna_probes]
 	P.special_enabled = TRUE
-
+*/
 /datum/station_goal/dna_vault/check_completion()
 	if(..())
 		return TRUE
@@ -132,10 +132,10 @@
 	light_power = 1.5
 	light_color = LIGHT_COLOR_CYAN
 
-	//High defaults so it's not completed automatically if there's no station goal
-	var/animals_max = 100
-	var/plants_max = 100
-	var/dna_max = 100
+	//High defaults so it's not completed automatically if there's no station goal / SUNSET EDIT - From 100 to the values there are now, as we have no station goal
+	var/animals_max = 17
+	var/plants_max = 30
+	var/dna_max = 17
 	var/list/animals = list()
 	var/list/plants = list()
 	var/list/dna = list()
@@ -270,7 +270,7 @@
 			S.stunmod = 0.5
 		if(VAULT_ARMOUR)
 			to_chat(H, "<span class='notice'>You feel tough.</span>")
-			S.armor = 30
+			S.armor = 15
 			ADD_TRAIT(H, TRAIT_PIERCEIMMUNE, "dna_vault")
 		if(VAULT_SPEED)
 			to_chat(H, "<span class='notice'>Your legs feel faster.</span>")

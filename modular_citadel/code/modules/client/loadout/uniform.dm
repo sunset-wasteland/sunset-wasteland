@@ -7,6 +7,10 @@
 	name = "vault jumpsuit"
 	path = /obj/item/clothing/under/f13/vault
 
+/datum/gear/uniform/harn
+	name = "gear harness"
+	path = /obj/item/clothing/under/misc/gear_harness
+
 /datum/gear/uniform/caravaneer
 	name = "caravaneer outfit"
 	path = /obj/item/clothing/under/f13/caravaneer
@@ -35,7 +39,7 @@
 	name = "doctor fatigues"
 	path = /obj/item/clothing/under/f13/doctorm
 
-/datum/gear/unform/doctorfatigues/female
+/datum/gear/uniform/doctorfatigues/female
 	name = "female doctor fatigues"
 	path = /obj/item/clothing/under/f13/female/doctor
 
@@ -83,7 +87,7 @@
 	name = "merc outfit, alt"
 	path = /obj/item/clothing/under/f13/mercc
 
-/datum/gear/unform/mercf
+/datum/gear/uniform/mercf
 	name = "female merc outfit"
 	path = /obj/item/clothing/under/f13/female/mercadv
 

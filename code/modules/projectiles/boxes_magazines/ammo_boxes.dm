@@ -69,7 +69,7 @@
 	name = "ammo box (.22lr)"
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	icon_state = "ammobox"
-	multiple_sprites = 3
+	multiple_sprites = 2
 	ammo_type = /obj/item/ammo_casing/a22
 	max_ammo = 40
 	w_class = WEIGHT_CLASS_SMALL
@@ -83,7 +83,6 @@
 /obj/item/ammo_box/m22/shock
 	name = "ammo box (.22lr electroshock)"
 	icon_state = "22shockbox"
-	multiple_sprites = 1
 	desc = "A box of .22 electroshock rounds."
 	ammo_type = /obj/item/ammo_casing/a22/shock
 
@@ -511,7 +510,6 @@
 	multiple_sprites = 2
 	ammo_type = /obj/item/ammo_casing/caseless/lasermusket
 	max_ammo = 18
-	custom_materials = list(MAT_METAL = 1000)
 	w_class = WEIGHT_CLASS_NORMAL
 
 /obj/item/ammo_box/plasmamusket
@@ -521,7 +519,6 @@
 	multiple_sprites = 2
 	ammo_type = /obj/item/ammo_casing/caseless/plasmacaster
 	max_ammo = 6
-	custom_materials = list(MAT_METAL = 1000)
 	w_class = WEIGHT_CLASS_NORMAL
 
 /obj/item/ammo_box/a40mm
@@ -532,6 +529,12 @@
 	max_ammo = 4
 	multiple_sprites = 1
 
+/obj/item/ammo_box/a40mmg
+	name = "ammo box (40mm teargas grenades)"
+	icon_state = "40mmtg"
+	ammo_type = /obj/item/ammo_casing/a40mmg
+	max_ammo = 4
+	multiple_sprites = 1
 
 ////////////////
 //SPEEDLOADERS//

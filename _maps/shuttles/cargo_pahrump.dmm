@@ -24,17 +24,16 @@
 "f" = (
 /obj/machinery/conveyor{
 	dir = 4;
-	id = "QMLoad2"
+	id = "QMUnload"
 	},
-/obj/machinery/door/poddoor{
-	id = "QMLoaddoor2";
-	name = "supply dock loading door"
+/obj/machinery/door/poddoor/preopen{
+	name = "supply dock loading door";
+	id = "QMLoaddoor2"
 	},
 /turf/open/floor/plating,
 /area/shuttle/supply)
 "g" = (
 /obj/machinery/button/door{
-	dir = 2;
 	id = "QMLoaddoor2";
 	name = "Loading Doors";
 	pixel_x = 24;
@@ -60,17 +59,14 @@
 	dir = 8;
 	id = "QMLoad"
 	},
-/obj/machinery/door/poddoor{
+/obj/machinery/door/poddoor/preopen{
 	id = "QMLoaddoor";
 	name = "supply dock loading door"
 	},
 /turf/open/floor/plating,
 /area/shuttle/supply)
 "k" = (
-/obj/docking_port/mobile/supply{
-	dwidth = 5;
-	width = 12
-	},
+/obj/docking_port/mobile/supply,
 /obj/structure/simple_door/bunker,
 /turf/open/floor/plating,
 /area/shuttle/supply)

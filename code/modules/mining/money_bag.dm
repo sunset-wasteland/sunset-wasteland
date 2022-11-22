@@ -127,3 +127,8 @@
 	new /obj/item/stack/f13Cash/random/high(src)
 	//mob boss, reasonably wealthy
 
+// Standard Mayor money bag. They are wealthy.
+/obj/item/storage/bag/money/small/mayor/PopulateContents()
+	new /obj/item/stack/f13Cash/random/high(src)
+	new /obj/item/stack/f13Cash/random/ncr/high(src)
+	new /obj/item/stack/f13Cash/random/aureus/high(src)

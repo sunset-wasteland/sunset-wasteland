@@ -167,6 +167,7 @@
 	icon_state = "ncrflag"
 	item_state = "ncrflag"
 	faction = "NCR"
+	anchored = 1
 
 /obj/item/flag/bos
 	name = "Brotherhood of Steel flag"
@@ -174,6 +175,7 @@
 	icon_state = "bosflag"
 	item_state = "bosflag"
 	faction = FACTION_BROTHERHOOD
+	anchored = 1
 
 /obj/item/flag/legion
 	name = "Legion flag"
@@ -181,6 +183,15 @@
 	icon_state = "legionflag"
 	item_state = "legionflag"
 	faction = FACTION_LEGION
+	anchored = 1
+
+/obj/item/flag/bighorn
+	name = "Bighorn flag"
+	desc = "A flag depicting the head of a bighorner. It's the symbol of the town of Bighorn."
+	icon_state = "bighornflag"
+	item_state = "bighornflag"
+	faction = FACTION_BIGHORN
+	anchored = 1
 
 /obj/item/flag/followers
 	name = "Followers of the Apocalypse flag"
@@ -188,6 +199,7 @@
 	icon_state = "followersflag"
 	item_state = "followersflag"
 	faction = FACTION_FOLLOWERS
+	anchored = 1
 
 /obj/item/flag/locust
 	name = "Locust flag"
@@ -195,6 +207,7 @@
 	icon_state = "locustflag"
 	item_state = "locustflag"
 	faction = "Locust"
+	anchored = 1
 
 /obj/item/flag/yuma
 	name = "Yuma banner"
@@ -202,6 +215,7 @@
 	icon_state = "cornflag"
 	item_state = "cornflag"
 	faction = "Oasis"
+	anchored = 1
 
 /obj/item/flag/vtcc
 	name = "Vault-Tec Cityscape Coalition flag"
@@ -209,6 +223,7 @@
 	icon_state = "vtccflag"
 	item_state = "vtccflag"
 	faction = "VTCC"
+	anchored = 1
 
 /obj/item/flag/vtcc/highvhills
 	name = "High Valley Hills flag"
@@ -220,6 +235,27 @@
 	icon_state = "khanflag"
 	item_state = "khanflag"
 	faction = "Great Khans"
+	anchored = 1
+
+/obj/item/flag/enclave
+	name = "Enclave flag"
+	desc = "A flag worn and weathered from the Casper's Snow."
+	icon_state = "enclaveflag"
+	item_state = "enclaveflag"
+	faction = FACTION_ENCLAVE
+	anchored = 1
+
+/obj/item/flag/enclave/alt
+	name = "Enclave flag"
+	desc = "A flag torn and weathered from the Casper's Snow. Marking what was once an Enclave territory"
+	icon_state = "enclaveflag_alt"
+	item_state = "enclaveflag_alt"
+
+/obj/item/flag/enclave/america
+	name = "America flag"
+	desc = "A flag reminding us of the Old World. It fills you with an odd sense of pride as you stand at attention to it."
+	icon_state = "enclaveflag_america"
+	item_state = "enclaveflag_america"
 
 /obj/item/flag/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/stack/sheet/leather) && item_state == "emptyflag")
@@ -227,7 +263,7 @@
 		if(do_after(user, 60, target = src))
 			var/obj/item/stack/sheet/leather/H = I
 			if(H.use(1))
-				var/list/choices = list("NCR", "Legion", "Yuma", "BOS", "Followers", "Great Khans")
+				var/list/choices = list("NCR", "Legion", "Bighorn", "BOS", "Followers", "Great Khans")
 				var/flag = input("Please choose which faction flag you wish to create.") in choices
 				switch(flag)
 					if(FACTION_NCR)
@@ -236,36 +272,49 @@
 						icon_state = "ncrflag"
 						item_state = "ncrflag"
 						faction = "NCR"
+						anchored = 1
 					if(FACTION_LEGION)
 						name = "Legion flag"
 						desc = "A flag with a golden bull, the symbol of Caesar's Legion."
 						icon_state = "legionflag"
 						item_state = "legionflag"
 						faction = FACTION_LEGION
+						anchored = 1
 					if(FACTION_BIGHORN)
-						name = "Yuma flag"
-						desc = "A banner depicting three rivers meeting at its center, overlaid with an ear of corn."
-						icon_state = "cornflag"
-						item_state = "cornflag"
+						name = "Bighorn flag"
+						desc = "A flag depicting the head of a bighorner. It's the symbol of the town of Bighorn."
+						icon_state = "bighornflag"
+						item_state = "bighornflag"
 						faction = FACTION_BIGHORN
+						anchored = 1
 					if(FACTION_BROTHERHOOD)
 						name = "BOS flag"
 						desc = "A red and black flag with a sword surrounded in gears and wings, in a dazzling gold."
 						icon_state = "bosflag"
 						item_state = "bosflag"
 						faction = FACTION_BROTHERHOOD
+						anchored = 1
 					if("Followers")
 						name = "Followers of the Apocalypse flag"
 						desc = "A white flag with the black Follower's of the Apocalpyse cross on it."
 						icon_state = "followersflag"
 						item_state = "followersflag"
 						faction = FACTION_FOLLOWERS
+						anchored = 1
 					if("Great Khans")
 						name = "Great Khans flag"
 						desc = "A flag worn and weathered from a long cherished history. A decorated smiling skull smiles mockingly upon those who challenge it."
 						icon_state = "khanflag"
 						item_state = "khanflag"
 						faction = "Great Khans"
+						anchored = 1
+					if(FACTION_ENCLAVE)
+						name = "Enclave flag"
+						desc = "A flag worn and weathered from the Casper's Snow."
+						icon_state = "enclaveflag"
+						item_state = "enclaveflag"
+						faction = FACTION_ENCLAVE
+						anchored = 1
 				update_icon()
 	else
 		attack_hand(user)
@@ -282,9 +331,8 @@
 			faction = null
 			update_icon()
 			removing = FALSE
-	else
-		anchored = 0
-		..()
+		else
+			return removing = FALSE
 
 /obj/item/flag/dropped(mob/user)
 	..()

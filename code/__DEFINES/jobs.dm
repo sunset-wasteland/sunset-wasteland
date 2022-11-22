@@ -113,6 +113,7 @@
 #define F13SCRIBE		(1<<9)
 #define F13INITIATE		(1<<10)
 #define F13OFFDUTYBOS	(1<<11)
+#define F13INQUIS		(1<<12)
 
 #define DEP_BIGHORN (1<<6)
 
@@ -124,12 +125,14 @@
 #define F13MAYOR		(1<<5)
 #define F13BANKER		(1<<6)
 #define F13DEPUTY		(1<<7)
+#define F13SECRETARY	(1<<8)
 
 #define VAULT			(1<<7)
 
 #define F13AI			(1<<0)
 #define F13CYBORG		(1<<1)
 #define F13ENCCYBORG	(1<<2)
+#define F13FOLCYBORG	(1<<3)
 
 #define WASTELAND		(1<<8)
 
@@ -147,7 +150,8 @@
 #define F13USSCIENTIST	(1<<3)
 #define F13USSPECIALIST	(1<<4)
 #define F13USPRIVATE	(1<<5)
-#define F13USBDUTY      (1<<6)
+#define F13USBDUTY		(1<<6)
+#define F13USIS			(1<<7)
 
 #define FOLLOWERS		(1<<11)
 
@@ -167,6 +171,9 @@
 */
 #define F13KHAN (1<<0)
 #define F13KHANCHEMIST (1<<1)
+#define F13KHANSEN (1<<2)
+#define F13KHANSMITH (1<<3)
+#define F13KHANCOURT (1<<4)
 
 #define JOB_AVAILABLE 0
 #define JOB_UNAVAILABLE_GENERIC 1

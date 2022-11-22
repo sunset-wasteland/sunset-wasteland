@@ -311,6 +311,36 @@
 			</body>
 			</html>"}
 
+
+/obj/item/book/manual/fusionreactor
+	name = "Fusion and You: For the Future!"
+	icon_state ="bookNuclear"
+	author = "Mass Fusion"
+	title = "Fusion and You: For the Future!"
+	dat = {"<html>
+			<head>
+			<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+			</head>
+			<body>
+			Nuclear Fusion 101:<br>
+			We here at Mass Fusion would like to congratulate you for thinking forward.<br>
+			With resources becoming scarce, it's up to us to find a way to thrive.<br>
+			Due to the modular nature of our reactor, it's important that you follow these steps precisely.<br>
+			Activating a Fusion Reactor:<br>
+			<li>Align the control panel to be easily accessable, and bolt it down to the ground. Add wiring as needed to connect the control console with the local power grid</li>
+			<li>Unpack the reactor parts with a standard multitool. Make sure to leave enough space for you to get out, as it will be far harder once the reactor unpacks.</li>
+			<li>Load fuel into the reactor via control panel..</li>
+			<li>When everything is unpacked and set up, begin injecting fuel into the reactor. It will then begin the process of fusion. Optimal efficiency is two units of fuel for every active core.</li>
+			<li>Set up SMES units to charge from the reactor.</li>
+			<br>
+			<br>
+			<b>And there you go. Now you too have done your part to fight the energy crisis.</b><br>
+			Keep an eye on the reactor, and congratulations.<br>
+			<br>
+			For a brighter future!
+			</body>
+			</html>"}
+
 // Wiki books that are linked to the configured wiki link.
 
 // A book that links to the wiki

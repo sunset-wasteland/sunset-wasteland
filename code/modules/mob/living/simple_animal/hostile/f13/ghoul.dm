@@ -18,10 +18,11 @@
 	a_intent = INTENT_HARM
 	maxHealth = 60
 	health = 60
-	speed = 3
+	speed = 2.4
 	harm_intent_damage = 8
-	melee_damage_lower = 15
-	melee_damage_upper = 15
+	melee_damage_lower = 25
+	melee_damage_upper = 25
+	armour_penetration = 0.1//Making them some manner of threat.
 	attack_verb_simple = "claw"
 	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
 	unsuitable_atmos_damage = 20
@@ -60,13 +61,27 @@
 	icon_state = "ghoulreaver"
 	icon_living = "ghoulreaver"
 	icon_dead = "ghoulreaver_dead"
-	speed = 2
+	speed = 1.8
 	maxHealth = 120
 	health = 120
 	harm_intent_damage = 8
 	melee_damage_lower = 25
-	melee_damage_upper = 25
+	melee_damage_upper = 35
+	armour_penetration = 0.2//Making them some manner of threat.
+	ranged_message = "throws a chunk of flesh"
+	ranged_cooldown_time = 60
+	ranged = 1
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
+	projectiletype = /obj/item/projectile/reaver
+	projectilesound = 'sound/f13npc/centaur/lash.ogg'
+
+/obj/item/projectile/reaver
+	name = "radioactive glob"
+	damage = 15
+	armour_penetration = 5
+	irradiate = 25//Toxic threshold is 250.
+	pass_flags = PASSTABLE | PASSGRILLE
+	icon_state = "toxin"
 
 /mob/living/simple_animal/hostile/ghoul/reaver/Initialize()
 	. = ..()
@@ -104,6 +119,7 @@
 	harm_intent_damage = 8
 	melee_damage_lower = 15
 	melee_damage_upper = 15
+	unsuitable_atmos_damage = 0//shitty hack
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
 
 //Frozen Feral Ghoul
@@ -119,6 +135,7 @@
 	harm_intent_damage = 8
 	melee_damage_lower = 15
 	melee_damage_upper = 15
+	unsuitable_atmos_damage = 0//shitty hack
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
 
 //Legendary Ghoul
@@ -147,16 +164,18 @@
 	icon_state = "glowinghoul"
 	icon_living = "glowinghoul"
 	icon_dead = "glowinghoul_dead"
-	maxHealth = 100
-	health = 100
+	maxHealth = 250
+	health = 250
 	speed = 2
+	retreat_distance = 1
+	minimum_distance = 2
 	harm_intent_damage = 8
 	melee_damage_lower = 25
 	melee_damage_upper = 25
 	light_system = MOVABLE_LIGHT
 	light_range = 2
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
-	var/radburst_cooldown = 1200
+	var/radburst_cooldown = 12//Support mob, revives others every six seconds, provided a player is within six tiles. Previously sixty, because I thought this was deciseconds.
 
 /mob/living/simple_animal/hostile/ghoul/glowing/Initialize(mapload)
 	. = ..()
@@ -177,8 +196,9 @@
 		return
 	radburst_cooldown--
 
-	if(target in range(3,src))
-		if((health <= (0.6 * maxHealth)) && radburst_cooldown<=0)
+	if(target in range(6,src))
+//		if((health <= (0.6 * maxHealth)) && radburst_cooldown<=0)
+		if(radburst_cooldown<=0)
 			radburst_cooldown = initial(radburst_cooldown)
 			RadBurst()
 
@@ -187,16 +207,16 @@
 						"<span class='notice'>You release a concentrated burst of radiation from your body!</span>")
 	playsound(src, 'sound/f13npc/ghoul_new/ghoul_radburst.ogg', 50, 0, 3)
 	radiation_pulse(src, 30)
+	for(var/mob/living/simple_animal/hostile/ghoul/glowing/L in range(7, src))
+		if(L.stat == 3)
+			L.gib()
+			visible_message("<span class='danger'>[src] detonates into a brilliant glowing cloud!</span>")
+			radiation_pulse(src, 120)
 	for(var/mob/living/simple_animal/hostile/ghoul/G in range(7, src))
 		if(G.stat == 3)
 			G.revive(1)
 		else
 			G.revive(1, 1)
-	for(var/mob/living/simple_animal/hostile/ghoul/glowing/L in range(7, src))
-		if(L.stat == 3)
-			L.gib()
-			visible_message("<span class='warning'>[src] detonates into a brilliant glowing cloud!</span>")
-			radiation_pulse(src, 120)
 	set_light(7, 5, "#39FF14")
 	spawn(40)
 	set_light(2)
@@ -207,6 +227,8 @@
 	speed = 1.4 // Nyooom
 	melee_damage_lower = 35
 	melee_damage_upper = 35
+	retreat_distance = 0//These ghouls don't run, unlike standard glowing ones.
+	minimum_distance = 0
 	armour_penetration = 0.1
 
 //Alive Ghoul

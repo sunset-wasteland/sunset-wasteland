@@ -216,7 +216,7 @@
 	force = 25
 	sharpness = SHARP_EDGED
 	item_flags = NEEDS_PERMIT | ITEM_CAN_PARRY
-	block_parry_data = /datum/block_parry_data/captain_saber
+	block_parry_data = /datum/block_parry_data/smith_generic
 	w_class = WEIGHT_CLASS_BULKY
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/belt.dmi'
 	layer = MOB_UPPER_LAYER
@@ -240,28 +240,42 @@
 	force = 24
 	block_chance = 25
 
+/datum/block_parry_data/smith_generic
+	parry_stamina_cost = 12
+	parry_time_active = 6
+	parry_time_perfect = 3
+	parry_time_perfect_leeway = 2
+	parry_failed_stagger_duration = 6 SECONDS
+	parry_failed_clickcd_duration = 5 SECONDS
+	parry_time_windup = 0
+	parry_time_spindown = 0
+	parry_imperfect_falloff_percent = 10
+	parry_efficiency_to_counterattack = 100
+	parry_efficiency_considered_successful = 100
+	parry_efficiency_perfect = 120
+	parry_data = list(PARRY_COUNTERATTACK_MELEE_ATTACK_CHAIN = 1)
 
 /datum/block_parry_data/smithsaber
 	parry_stamina_cost = 15
 	parry_time_active = 8
-	parry_time_perfect = 2
+	parry_time_perfect = 4
 	parry_time_perfect_leeway = 2
-	parry_failed_stagger_duration = 3 SECONDS
-	parry_failed_clickcd_duration = 3 SECONDS
+	parry_failed_stagger_duration = 6 SECONDS
+	parry_failed_clickcd_duration = 5 SECONDS
 	parry_time_windup = 0
 	parry_time_spindown = 0
 	parry_imperfect_falloff_percent = 0
 	parry_efficiency_to_counterattack = 100
 	parry_efficiency_considered_successful = 100
 	parry_efficiency_perfect = 120
-	parry_data = list(PARRY_COUNTERATTACK_MELEE_ATTACK_CHAIN = 4)
+	parry_data = list(PARRY_COUNTERATTACK_MELEE_ATTACK_CHAIN = 1)
 
 // go for the eyes Boo
 /obj/item/melee/smith/dagger
 	name = "dagger"
 	icon_state = "dagger_smith"
 	overlay_state = "hilt_dagger"
-	w_class = WEIGHT_CLASS_SMALL
+	w_class = WEIGHT_CLASS_TINY
 	sharpness = SHARP_EDGED
 	force = 24
 	hitsound = 'sound/weapons/rapierhit.ogg'
@@ -279,6 +293,7 @@
 	name = "machete"
 	icon_state = "machete_smith"
 	overlay_state = "hilt_machete"
+	block_parry_data = /datum/block_parry_data/smith_generic
 	force = 24
 	sharpness = SHARP_EDGED
 	wound_bonus = 30
@@ -319,7 +334,7 @@
 	parry_efficiency_considered_successful = 80
 	parry_efficiency_perfect = 120
 	parry_failed_stagger_duration = 3 SECONDS
-	parry_data = list(PARRY_COUNTERATTACK_MELEE_ATTACK_CHAIN = 1.9)
+	parry_data = list(PARRY_COUNTERATTACK_MELEE_ATTACK_CHAIN = 1)
 
 // Mace - low damage, high AP (25, 0,4)
 /obj/item/melee/smith/mace
@@ -327,6 +342,7 @@
 	icon_state = "mace_smith"
 	overlay_state = "handle_mace"
 	force = 15
+	block_parry_data = /datum/block_parry_data/smith_generic
 
 /obj/item/melee/smith/mace/attack(mob/living/M, mob/living/user)
 	. = ..()
@@ -359,19 +375,19 @@
 	bare_wound_bonus = 40
 
 /datum/block_parry_data/smithkatana
-	parry_stamina_cost = 12 //dont miss
+	parry_stamina_cost = 24 //dont miss
 	parry_time_active = 6
 	parry_time_perfect = 3
 	parry_time_perfect_leeway = 3
-	parry_failed_stagger_duration = 3 SECONDS
-	parry_failed_clickcd_duration = 3 SECONDS
+	parry_failed_stagger_duration = 6 SECONDS
+	parry_failed_clickcd_duration = 5 SECONDS
 	parry_time_windup = 0
 	parry_time_spindown = 0
 	parry_imperfect_falloff_percent = 0
 	parry_efficiency_to_counterattack = 100
 	parry_efficiency_considered_successful = 120
 	parry_efficiency_perfect = 120
-	parry_data = list(PARRY_COUNTERATTACK_MELEE_ATTACK_CHAIN = 4)
+	parry_data = list(PARRY_COUNTERATTACK_MELEE_ATTACK_CHAIN = 0.6)
 
 // Heavy axe, 2H focused chopper 27/54. Can be worn on your back.
 /obj/item/melee/smith/twohand/axe
@@ -385,6 +401,7 @@
 	mob_overlay_icon = 'icons/fallout/onmob/backslot_weapon.dmi'
 	slot_flags = ITEM_SLOT_BACK
 	layer = MOB_UPPER_LAYER
+	block_parry_data = /datum/block_parry_data/smith_generic
 	wound_bonus = 10
 	bare_wound_bonus = 10
 
@@ -446,6 +463,7 @@
 	max_reach = 2
 	force = 10
 	sharpness = SHARP_POINTY
+	block_parry_data = /datum/block_parry_data/smith_generic
 
 /obj/item/melee/smith/twohand/spear/lance
 	name = "legion lance"

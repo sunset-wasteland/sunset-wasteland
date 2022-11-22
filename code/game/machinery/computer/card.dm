@@ -133,10 +133,7 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 			return TRUE
 
 /obj/machinery/computer/card/ui_interact(mob/user)
-	if(LAZYLEN(job_req) && !(user.mind?.assigned_role in job_req))
-		to_chat(user, "<span class='warning'>You have no idea how to use it...</span>")
-		return
-	. = ..()
+
 	var/list/dat = list()
 
 	var/list/header = list()
@@ -487,16 +484,24 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 	// The job list is here so only specific titles are allowed.
 	job_list = list(
 		"NCR Citizen",
+		"NCR Conscript",
 		"NCR Trooper",
-		"NCR Corporal",
-		"NCR Combat Medic",
+		"NCR Military Police",
 		"NCR Combat Engineer",
+		"NCR Combat Medic",
+		"NCR Corporal",
+		"NCR Senior Enlisted Advisor",
 		"NCR Sergeant",
+		"NCR Heavy Trooper",
+		"NCR Medical Officer",
+		"NCR Logistics Officer",
 		)
 	job_req = list(
 		"NCR Colonel",
 		"NCR Captain",
 		"NCR Lieutenant",
+		"NCR Veteran Ranger",
+		"NCR Representative",
 		)
 
 /obj/machinery/computer/card/legion
@@ -509,10 +514,20 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 		"Recruit Legionnaire",
 		"Prime Legionnaire",
 		"Veteran Legionnaire",
+		"Legion Recruit Decanus",
+		"Legion Prime Decanus",
+		"Legion Vexillarius",
+		"Legion Slavemaster",
+		"Legion Forgemaster",
+		"Legion Immune",
+		"Legion Auxilia",
+		"Legion Vexillarius",
 		)
 	job_req = list(
 		"Legate",
 		"Legion Centurion",
+		"Legion Veteran Decanus",
+		"Legion Orator",
 		"Legion Veteran Decanus",
 		)
 
@@ -521,29 +536,38 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 	circuit = /obj/item/circuitboard/computer/card/enclave
 	job_list = list(
 		"Enclave Sergeant",
+		"Enclave Specialist",
+		"Enclave Scientist",
 		"Enclave Private",
 		"Enclave Bunker Duty",
+		"Enclave Pilot Officer",
+		"Enclave Internal Security",
 		"American Citizen",
 		)
 	job_req = list(
 		"Enclave Lieutenant",
-		"Enclave Master Sergeant",
+		"Enclave Platoon Sergeant",
+		"Enclave Internal Security",
 		)
 
 /obj/machinery/computer/card/bos
 	name = "\improper Brotherhood of Steel identification console"
 	circuit = /obj/item/circuitboard/computer/card/bos
 	job_list = list(
+		"Paladin Marshal",
 		"Paladin",
+		"Librarian",
 		"Scribe",
-		"Junior Scribe",
+		"Knight-Captain",
 		"Knight",
-		"Junior Knight",
 		"Initiate",
+		"BoS Off-Duty",
+		"Inquisitorial Acolyte",
 		)
 	job_req = list(
-		"Elder",
-		"Head Paladin",
-		"Head Scribe",
-		"Head Knight",
+		"Baron",
+		"Castellan",
+		"Keeper",
+		"Knight-Commander",
+		"Inquisitorial Acolyte",
 		)

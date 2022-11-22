@@ -34,22 +34,23 @@
 
 /datum/quirk/tribal
 	name = "Former Tribal"
-	desc = "You used to be part of one of the tribes scattered throughout the wasteland. You may have some additional skills as a result, though advanced tech still confuses you."
-	value = 2
+	desc = "You used to be part of one of the tribes scattered throughout the wasteland. You retain some of your tribal knowledge but the ancient crafts are lost to you as you became more modern."
+	value = 3
 	gain_text = "<span class='notice'>You remember the old ways of your tribe..</span>"
 	lose_text = "<span class='notice'>You've forgotten the ways of your ancestors..</span>"
 
 /datum/quirk/tribal/add()
 	var/mob/living/carbon/human/H = quirk_holder
-	ADD_TRAIT(H, TRAIT_TECHNOPHOBE, "Former Tribal")
+	ADD_TRAIT(H, TRAIT_MACHINE_SPIRITS, "Former Tribal")
 	ADD_TRAIT(H, TRAIT_TRIBAL, "Former Tribal")
+	ADD_TRAIT(H, TRAIT_TRAPPER, "Former Tribal")
 
 /datum/quirk/tribal/remove()
 	var/mob/living/carbon/human/H = quirk_holder
 	if(!QDELETED(H))
-		REMOVE_TRAIT(H, TRAIT_TECHNOPHOBE, "Former Tribal")
+		REMOVE_TRAIT(H, TRAIT_MACHINE_SPIRITS, "Former Tribal")
+		REMOVE_TRAIT(H, TRAIT_TRAPPER, "Former Tribal")
 		REMOVE_TRAIT(H, TRAIT_TRIBAL, "Former Tribal")
-
 
 /datum/quirk/tribespeak
 	name = "Tribal Language Comprehension"

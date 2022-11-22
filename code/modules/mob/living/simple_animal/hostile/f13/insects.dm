@@ -277,6 +277,8 @@
 	icon_dead = "cazador_dead1"
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	speak_chance = 0
+	speed = -3//Actual speed handled by move_to_delay = 0
+	move_to_delay = 0
 	turns_per_move = 5
 	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/cazador_meat = 2, /obj/item/stack/sheet/sinew = 2, /obj/item/stack/sheet/animalhide/chitin = 2)
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/cazador_meat = 1, /obj/item/stack/sheet/animalhide/chitin = 1)
@@ -291,7 +293,6 @@
 	stat_attack = UNCONSCIOUS
 	robust_searching = TRUE
 	taunt_chance = 30
-	speed = -0.5
 	maxHealth = 40
 	health = 40
 	harm_intent_damage = 8
@@ -314,6 +315,7 @@
 	if(. && ishuman(target))
 		var/mob/living/carbon/human/H = target
 		H.reagents.add_reagent(/datum/reagent/toxin/cazador_venom, 5)
+		H.reagents.add_reagent(/datum/reagent/toxin/staminatoxin, 15)//5 passes real quick. 15 makes one sting a gamble.
 
 /mob/living/simple_animal/hostile/cazador/death(gibbed)
 	icon_dead = "cazador_dead[rand(1,5)]"
@@ -334,7 +336,7 @@
 	desc = "A mutated insect known for its fast speed, deadly sting, and being huge bastards. This one's little."
 	maxHealth = 40
 	health = 40
-	speed = 1
+	speed = -4.5
 	melee_damage_lower = 5
 	melee_damage_upper = 10
 	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/cazador_meat = 1, /obj/item/stack/sheet/animalhide/chitin = 1, /obj/item/stack/sheet/sinew = 1)
@@ -380,6 +382,13 @@
 	obj_damage = 15
 	melee_damage_lower = 5
 	melee_damage_upper = 8
+	ranged = 1
+
+
+	projectiletype = /obj/item/projectile/bloatfly
+	projectilesound = 'sound/f13npc/centaur/spit.ogg'
+	retreat_distance = 6
+	minimum_distance = 4
 
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	speak_chance = 0
@@ -409,6 +418,12 @@
 	else
 		visible_message("<span class='danger'>[src] dodges [Proj]!</span>")
 		return 0
+
+/obj/item/projectile/bloatfly
+	name = "bloatfly projectile"
+	damage = 15
+	armour_penetration = 5
+	icon_state = "toxin"
 
 //////////////
 // RADROACH //

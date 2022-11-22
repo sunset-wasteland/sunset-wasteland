@@ -1727,3 +1727,56 @@
 	name = "Synthi-Sanguirite"
 	description = "A synthetic coagulant used to help bleeding wounds clot faster. Not quite as effective as name brand Sanguirite, especially on patients with lots of cuts."
 	clot_coeff_per_wound = 0.8
+
+/datum/reagent/medicine/algae
+	name = "Symbiotic Algae"
+	description = "A mutated colony of symbiotic algae. mends the hosts wounds slightly they also really like slimes!"
+	color = "#91D865"
+	taste_description = "Wiggling slimey sludge...and a hint of guilt."
+	taste_mult = 1.2
+	pH = 7.0
+	value = REAGENT_VALUE_COMMON
+	metabolization_rate = 0.4 * REAGENTS_METABOLISM
+	ghoulfriendly = TRUE
+
+/datum/reagent/medicine/algae/on_mob_life(mob/living/carbon/M)
+	M.adjustBruteLoss(-0.75, 0)
+	M.adjustFireLoss(-0.75, 0)
+	M.adjustOxyLoss(-0.75, 0)
+	M.adjustToxLoss(-0.75, 0, TRUE) //heals TOXINLOVERs
+	..()
+
+/datum/reagent/medicine/rehab
+	name = "Rehab"
+	description = "A potentent purger made from buffalo gourd and other herbal plants, stops toxin damage, heals the liver, purges all chems, food and liquids from the body and treats addiction...maybe do. not. take. too. much."
+	color = "#91D865"
+	metabolization_rate = 0.25 * REAGENTS_METABOLISM
+	overdose_threshold = 25
+	value = REAGENT_VALUE_COMMON
+	metabolization_rate = 0.4 * REAGENTS_METABOLISM
+	ghoulfriendly = TRUE
+
+/datum/reagent/medicine/rehab/on_mob_life(mob/living/carbon/M)
+	M.adjust_nutrition(-4)
+	M.adjust_thirst(-1.5)
+	M.adjustToxLoss(-2, 0, TRUE) //heals TOXINLOVERs
+	M.adjustOrganLoss(ORGAN_SLOT_LIVER, -2.5)
+	M.adjustOrganLoss(ORGAN_SLOT_STOMACH, -2.5)
+	if(M.radiation > 0)
+		M.radiation -= min(M.radiation, 8)
+	for(var/A in M.reagents.reagent_list)
+		var/datum/reagent/R = A
+		if(R != src)
+			M.reagents.remove_reagent(R.type,3)
+	if(M.health < 0)
+		M.setToxLoss(35, 0)
+	for(var/datum/reagent/R in M.reagents.addiction_list)
+		M.reagents.addiction_list.Remove(R)
+		to_chat(M, "<span class='notice'>The thought of [R.name] makes you sick. was it worth it to begin with?</span>")
+	M.confused = max(M.confused, 4)
+	if(ishuman(M) && prob(15))
+		var/mob/living/carbon/human/H = M
+		H.vomit(10)
+	
+		. = TRUE
+	..()

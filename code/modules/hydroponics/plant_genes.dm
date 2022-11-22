@@ -133,10 +133,11 @@
 
 
 /datum/plant_gene/reagent/proc/set_reagent(reag_id)
+	var/datum/reagent/R = GLOB.chemical_reagents_list[reag_id]
+
 	reagent_id = reag_id
 	name = "UNKNOWN"
 
-	var/datum/reagent/R = GLOB.chemical_reagents_list[reag_id]
 	if(R && R.type == reagent_id)
 		name = R.name
 
@@ -155,6 +156,8 @@
 
 /datum/plant_gene/reagent/can_add(obj/item/seeds/S)
 	if(!..())
+		return FALSE
+	if(reagent_id in GLOB.blacklisted_plant_reagents)
 		return FALSE
 	for(var/datum/plant_gene/reagent/R in S.genes)
 		if(R.reagent_id == reagent_id)

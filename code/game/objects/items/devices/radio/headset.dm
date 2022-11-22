@@ -383,27 +383,37 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	desc = "This is used by the enclave.\nTo access the enclave channel, use :z. Protects ears from flashbangs."
 	icon_state = "syndie_headset"
 	keyslot = new /obj/item/encryptionkey/headset_enclave
+	linked_faction = FACTION_ENCLAVE
+	factionized = TRUE
 
 /obj/item/radio/headset/headset_enclave/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/wearertargeting/earprotection, list(SLOT_EARS))
 
 /obj/item/radio/headset/headset_enclave/command
+	linked_faction = FACTION_ENCLAVE
+	factionized = TRUE
 	command = TRUE
 
 /obj/item/radio/headset/headset_khans
 	name = "khan radio headset"
 	desc = "This is used by the Khans.\nTo access the Khan channel, use :h."
-	icon_state = "syndie_headset" 
+	icon_state = "syndie_headset"
 	item_state = "headset_alt"
 	keyslot = new /obj/item/encryptionkey/headset_khans
-	keyslot2 = new /obj/item/encryptionkey/headset_town
 
 /obj/item/radio/headset/headset_town
 	name = "town radio headset"
 	desc = "This is used by the town.\nTo access the town channel, use :f."
 	icon_state = "mine_headset"
 	keyslot = new /obj/item/encryptionkey/headset_town
+
+/obj/item/radio/headset/headset_sheriff
+	name = "town radio headset"
+	desc = "This is used by the Sheriff and their deputy force."
+	icon_state = "sec_headset"
+	keyslot = new /obj/item/encryptionkey/headset_sec
+	keyslot2 = new /obj/item/encryptionkey/headset_town
 
 /obj/item/radio/headset/headset_followers
 	name = "followers radio headset"

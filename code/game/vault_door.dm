@@ -130,9 +130,17 @@ GLOBAL_LIST_EMPTY(vault_doors)
 		vdoor.vaultactivate()
 
 /obj/machinery/doorButtons/vaultButton/attackby(obj/item/weapon/W, mob/user, params)
+	if(!HAS_TRAIT(user, TRAIT_ENCLAVE_CODES))
+		to_chat(user, "<span class='warning'>The panel rejects your authorization codes!</span>")
+		playsound(src, 'sound/effects/alert.ogg', 50, 1)
+		return
 	activate()
 
 /obj/machinery/doorButtons/vaultButton/attack_hand(mob/user)
+	if(!HAS_TRAIT(user, TRAIT_ENCLAVE_CODES))
+		to_chat(user, "<span class='warning'>The panel rejects your authorization codes!</span>")
+		playsound(src, 'sound/effects/alert.ogg', 50, 1)
+		return
 	activate()
 	message_admins("[ADMIN_LOOKUPFLW(user)] pressed the vault door button at [ADMIN_VERBOSEJMP(user.loc)].")
 

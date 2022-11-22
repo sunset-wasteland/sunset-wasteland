@@ -1,5 +1,32 @@
 //fallout teas
 
+/datum/reagent/consumable/tea/buffalotea
+	name = "Buffalo Tea"
+	description = "A soothing herbal rememedy from the buffalo gourd. the sentient algae fully awaken with heat and now inhibits neural reconstituting properties in the host."
+	color = "#FFFF91"
+	nutriment_factor = 0
+	metabolization_rate = 0.25 * REAGENTS_METABOLISM
+	taste_description = "Knowledge and Unity"
+	glass_icon_state = "spiritcleanserglass"
+	glass_name = "Buffalo Tea"
+	glass_desc = "A soothing herbal rememedy steeped from buffalo juice. enlightens and brings back who you where before."
+
+/datum/reagent/consumable/tea/buffalotea/on_mob_life(mob/living/carbon/M)
+	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, -3)
+	if(prob(20))
+		M.cure_trauma_type(resilience = TRAUMA_RESILIENCE_BASIC)
+	if(prob(3))
+		to_chat(M, "[pick(GLOB.wisdoms)]") //give them a random wisdom
+	M.dizziness = max(0,M.dizziness-2)
+	M.drowsyness = max(0,M.drowsyness-1)
+	M.jitteriness = max(0,M.jitteriness-3)
+	M.AdjustSleeping(-20, FALSE)
+	if(M.getToxLoss() && prob(20))
+		M.adjustToxLoss(-1, 0)
+	M.adjust_bodytemperature(20 * TEMPERATURE_DAMAGE_COEFFICIENT, 0, BODYTEMP_NORMAL)
+	..()
+	. = TRUE
+
 /datum/reagent/consumable/tea/agavetea
 	name = "Agave Tea"
 	description = "A soothing herbal rememedy steeped from the Agave Plant. Inhibits increased healing of burns and sores."

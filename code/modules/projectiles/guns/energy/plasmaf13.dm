@@ -38,6 +38,10 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/plasma/pistol/worn)
 	fire_delay = 8
 
+/obj/item/gun/energy/laser/plasma/pistol/remnant/is
+	name ="custom plasma pistol"
+	desc = "An eagle is stamped to the underside of the grip. Where'd this come from?"
+
 /obj/item/gun/energy/laser/plasma/pistol/worn/gutsy
 	name ="\improper integrated plasma pistol"
 	desc = "A pistol-sized miniaturized plasma caster built by REPCONN. It fires a bolt of superhot ionized gas."
@@ -74,7 +78,6 @@
 	icon_state = "plasma"
 	armour_penetration = 0.1
 	slowdown = 0.75 //this is one of the worst slowdowns in the game
-	extra_damage = 30
 	fire_delay = 5.2
 	desc = "A miniaturized plasma caster that fires bolts of magnetically accelerated toroidal plasma towards an unlucky target."
 	ammo_type = list(/obj/item/ammo_casing/energy/plasma)
@@ -90,7 +93,6 @@
 	desc = "A burst-fire energy weapon that fires a steady stream of toroidal plasma towards an unlucky target."
 	ammo_type = list(/obj/item/ammo_casing/energy/plasmacarbine)
 	cell_type = /obj/item/stock_parts/cell/ammo/mfc
-	extra_damage = 15
 	burst_size = 2
 	burst_shot_delay = 1.5
 	actions_types = list(/datum/action/item_action/toggle_firemode)
@@ -115,7 +117,6 @@
 	item_state = "multiplas"
 	icon_state = "multiplas"
 	fire_delay = 3
-	extra_damage = 15
 	desc = "A modified A3-20 plasma caster built by REPCONN equipped with a multicasting kit that creates multiple weaker clots."
 	equipsound = 'sound/f13weapons/equipsounds/plasequip.ogg'
 	ammo_type = list(/obj/item/ammo_casing/energy/plasma/scatter)
@@ -124,6 +125,7 @@
 
 /obj/item/gun/energy/laser/plasma/spear
 	name = "ergonomic plasmacaster"
+	desc = "An ergonomic pre-war plasmacaster designed for precision mining work. This one appears to be built into a single thick staff, with a bulbous hilt and sharp saturnite alloy blades ringing the caster assembly- strongly resembling sort of spear."
 	icon = 'icons/fallout/objects/melee/twohanded.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/melee2h_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/melee2h_righthand.dmi'
@@ -133,7 +135,6 @@
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_LIGHT //you need to wield it to fire it
 	slot_flags = ITEM_SLOT_BACK
-	desc = "An ergonomic pre-war plasmacaster designed for precision mining work. This one appears to be built into a single thick staff, with a bulbous hilt and sharp saturnite alloy blades ringing the caster assembly- strongly resembling sort of spear."
 	ammo_type = list(/obj/item/ammo_casing/energy/plasma/miner)
 	cell_type = /obj/item/stock_parts/cell/ammo/ecp
 	sharpness = SHARP_EDGED
@@ -164,6 +165,56 @@
 								COMSIG_TWOHANDED_UNWIELD))
 
 /obj/item/gun/energy/laser/plasma/spear/can_shoot()
+	. = ..()
+	if(!twohands)
+		return FALSE
+
+// Inquisitorial axe			Keywords: Damage 6/32, AP 0.9, SPEAR REACH, BACK SLOT ENABLED
+// Copy of plasma spear. Different for a few reasons.
+// Absurdly powerful.
+/obj/item/gun/energy/laser/plasma/inquis
+	name = "Inquisitorial polearm"
+	desc = "An odd looking spear of sorts, tipped with what appears to be a plasma chamber. \
+	In theory, this should splash the target with plasma when triggered. Does it work, however?"
+	icon = 'icons/fallout/objects/melee/twohanded.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/melee2h_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/melee2h_righthand.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/backslot_weapon.dmi'
+	item_state = "plasma"
+	icon_state = "plasma"
+	w_class = WEIGHT_CLASS_BULKY
+	weapon_weight = WEAPON_LIGHT //you need to wield it to fire it
+	slot_flags = ITEM_SLOT_BACK
+	ammo_type = list(/obj/item/ammo_casing/energy/plasma/repeater)
+	cell_type = /obj/item/stock_parts/cell/ammo/ecp
+	sharpness = SHARP_EDGED
+	attack_speed = CLICK_CD_MELEE * 1.2
+	attack_verb = list("seared","jabbed","punctured")
+	max_reach = 2
+	force = 6
+	fire_delay = 25//Long enough to make melee worthwhile.
+	equipsound = 'sound/f13weapons/equipsounds/declonequip.ogg'
+	hitsound = 'sound/f13weapons/sear.ogg'
+	var/twohands = FALSE
+
+/obj/item/gun/energy/laser/plasma/inquis/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/two_handed, force_unwielded=6, force_wielded=32, icon_wielded="[item_state]2")
+	AddElement(/datum/element/update_icon_updates_onmob)
+	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, .proc/allow_fire)
+	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, .proc/deny_fire)
+
+/obj/item/gun/energy/laser/plasma/inquis/proc/allow_fire()
+	twohands = TRUE
+/obj/item/gun/energy/laser/plasma/inquis/proc/deny_fire()
+	twohands = FALSE
+
+/obj/item/gun/energy/laser/plasma/inquis/Destroy()
+	..()
+	UnregisterSignal(src, list(COMSIG_TWOHANDED_WIELD,
+								COMSIG_TWOHANDED_UNWIELD))
+
+/obj/item/gun/energy/laser/plasma/inquis/can_shoot()
 	. = ..()
 	if(!twohands)
 		return FALSE

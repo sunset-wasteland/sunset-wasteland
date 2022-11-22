@@ -85,6 +85,7 @@
 /area/f13/wasteland/bighorn
 	name = "Bighorn Exterior"
 	icon_state = "bighornex"
+	requires_power = TRUE
 
 /area/f13/wasteland/khanfort
 	name = "Khan Fortress Exterior"
@@ -276,6 +277,7 @@
 /area/f13/city/bighorn
 	name = "Bighorn"
 	icon_state = "bighorn"
+	requires_power = TRUE
 
 /area/f13/citycaves
 	name = "City Caves"
@@ -408,6 +410,11 @@
 /area/f13/tunnel/khanfort
 	name = "Khan Fortress Tunnel"
 	icon_state = "tunnelkhan"
+
+/area/f13/tunnel/bighorn
+	name = "Bighorn Underground"
+	icon_state = "tunnel"
+	requires_power = TRUE
 
 /area/f13/trainstation
 	name = "Tunnel"
@@ -711,7 +718,17 @@
 	blob_allowed = 0
 	environment = 5
 	grow_chance = 5
+	requires_power = TRUE
 
 /area/f13/wasteland/khans
 	name = "Great Khan Encampment"
 	icon_state = "tribe"
+
+/area/f13/mountain_area
+	name = "Unknown"
+	icon_state = "forest"
+	ambientsounds = list('sound/f13ambience/bird_1.ogg','sound/f13ambience/bird_2.ogg','sound/f13ambience/bird_3.ogg','sound/f13ambience/bird_4.ogg','sound/f13ambience/bird_5.ogg','sound/f13ambience/bird_6.ogg','sound/f13ambience/bird_7.ogg','sound/f13ambience/bird_8.ogg')
+	outdoors = 1
+	open_space = 1
+	environment = 15
+	grow_chance = 0

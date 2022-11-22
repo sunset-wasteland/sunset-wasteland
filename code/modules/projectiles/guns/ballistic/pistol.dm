@@ -55,7 +55,6 @@
 	desc = "The silenced .22 pistol is a sporting handgun with an integrated silencer."
 	icon_state = "silenced22"
 	mag_type = /obj/item/ammo_box/magazine/m22
-	extra_damage = 18
 	weapon_weight = WEAPON_LIGHT
 	w_class = WEIGHT_CLASS_TINY
 	can_attachments = TRUE
@@ -63,6 +62,7 @@
 	can_unsuppress = FALSE
 	suppressed = 1
 	fire_sound = 'sound/f13weapons/22pistol.ogg'
+	extra_damage = 3
 
 
 //N99  10mm								Keywords: 10mm, Semi-auto, 12/24 round magazine
@@ -71,7 +71,6 @@
 	desc = "A pre-war large-framed, gas-operated advanced 10mm pistol."
 	icon_state = "n99"
 	mag_type = /obj/item/ammo_box/magazine/m10mm_adv/simple
-	extra_damage = 22
 	fire_delay = 1
 	recoil = 0.05
 	can_attachments = TRUE
@@ -80,6 +79,16 @@
 	suppressor_x_offset = 29
 	suppressor_y_offset = 15
 	fire_sound = 'sound/f13weapons/10mm_fire_02.ogg'
+	//Extra Modifiable Gun Vars
+	modifiablegun = TRUE
+	//Sprite Attachment Points
+	xattachlist = list("east" = 28, "west" =  9, "south" = 21, "north" = 14) //x coordinate for attachment point
+	yattachlist = list("east" = 18, "west" = 17, "south" = 17, "north" = 21) //y coordinate for attachment point
+	//Attachment Points
+	attachableparts = list("internal" = new /obj/item/gunpart/BHS_Receiver, "internal2" = null, "east" = null, "west" = null, "south" = null, "north" = null)
+	//Blacklisted Parts
+	blacklistedparts = list("stock")
+	extra_damage = 3
 
 //the Executive							Keywords: UNIQUE, 10mm, Automatic, 12/24 round magazine. Special modifiers: damage +4
 /obj/item/gun/ballistic/automatic/pistol/n99/executive
@@ -87,7 +96,6 @@
 	desc = "A modified N99 pistol with an accurate two-round-burst and a blue Vault-Tec finish, a status symbol for some Overseers."
 	icon_state = "executive"
 	burst_size = 2
-	extra_damage = 4
 	semi_auto = FALSE
 	can_automatic = FALSE
 
@@ -95,8 +103,6 @@
 /obj/item/gun/ballistic/automatic/pistol/n99/crusader
 	name = "\improper Crusader pistol"
 	desc = "A large-framed N99 pistol emblazoned with the colors and insignia of the Brotherhood of Steel. It feels heavy in your hand."
-	extra_penetration = 0.1
-	extra_damage = 26
 	force = 18
 	icon_state = "crusader"
 	item_state = "crusader"
@@ -111,39 +117,10 @@
 	icon_state = "chinapistol"
 	mag_type = /obj/item/ammo_box/magazine/m10mm_adv/simple
 	fire_delay = 1
-	extra_damage = 24
 	recoil = 0.1
 	spread = 3
 	can_suppress = FALSE
 	fire_sound = 'sound/f13weapons/10mm_fire_02.ogg'
-
-/obj/item/gun/ballistic/automatic/pistol/type17/strelle
-	name = "Type 17 Strelle"
-	desc = "Modification of the classic Chinese military sidearm with select fire mechanism and pearl finishing. <span class='warning'>'Zhizn' korotká.'</span>"
-	icon_state = "chinapistols"
-	actions_types = list(/datum/action/item_action/toggle_firemode)
-	automatic_burst_overlay = TRUE
-	can_attachments = FALSE
-	semi_auto = FALSE
-
-/obj/item/gun/ballistic/automatic/pistol/type17/strelle/burst_select()
-	var/mob/living/carbon/human/user = usr
-	switch(select)
-		if(0)
-			select += 1
-			burst_size = 2
-			spread = 9
-			recoil = 0.1
-			to_chat(user, "<span class='notice'>You switch to automatic fire.</span>")
-		if(1)
-			select = 0
-			burst_size = 1
-			spread = 1
-			recoil = 0
-			to_chat(user, "<span class='notice'>You switch to semi-auto.</span>")
-	playsound(user, 'sound/weapons/empty.ogg', 100, 1)
-	update_icon()
-	return
 
 //Browning Hi-power						Keywords: 9mm, Semi-auto
 /obj/item/gun/ballistic/automatic/pistol/ninemil
@@ -153,12 +130,20 @@
 	mag_type = /obj/item/ammo_box/magazine/m9mmds
 	weapon_weight = WEAPON_LIGHT
 	w_class = WEIGHT_CLASS_SMALL
-	extra_damage = 20
 	can_attachments = TRUE
 	suppressor_state = "pistol_suppressor"
 	suppressor_x_offset = 30
 	suppressor_y_offset = 19
 	fire_sound = 'sound/f13weapons/ninemil.ogg'
+	//Extra Modifiable Gun Vars
+	modifiablegun = TRUE
+	//Sprite Attachment Points
+	xattachlist = list("east" = 31, "west" =  4, "south" = 21, "north" = 16) //x coordinate for attachment point
+	yattachlist = list("east" = 21, "west" = 17, "south" = 17, "north" = 22) //y coordinate for attachment point
+	//Attachment Points
+	attachableparts = list("internal" = new /obj/item/gunpart/BHS_Receiver, "internal2" = null, "east" = null, "west" = null, "south" = null, "north" = null)
+	//Blacklisted Parts
+	blacklistedparts = list("stock")
 
 //Maria									Keywords: UNIQUE, 9mm, Semi-auto, 10 round magazine. Special modifiers: fire delay -1, damage +10, penetration +0.2
 /obj/item/gun/ballistic/automatic/pistol/ninemil/maria
@@ -166,8 +151,8 @@
 	desc = "An ornately-decorated pre-war Browning Hi-power 9mm pistol with pearl grips and a polished nickel finish. The firing mechanism has been upgraded, so for anyone on the receiving end, it must seem like an eighteen-karat run of bad luck."
 	icon_state = "maria"
 	fire_delay = 2
-	extra_damage = 25
-	extra_penetration = 0.2
+	extra_damage = 8
+	extra_penetration = 0.05
 
 
 //Sig Sauer P220						Keywords: 9mm, Semi-auto, 10 round magazine
@@ -178,7 +163,6 @@
 	w_class = WEIGHT_CLASS_SMALL
 	weapon_weight = WEAPON_LIGHT
 	mag_type = /obj/item/ammo_box/magazine/m9mm
-	extra_damage = 19
 	can_attachments = TRUE
 	suppressor_state = "pistol_suppressor"
 	suppressor_x_offset = 30
@@ -193,7 +177,6 @@
 	icon_state = "beretta"
 	mag_type = /obj/item/ammo_box/magazine/m9mmds
 	weapon_weight = WEAPON_LIGHT
-	extra_damage = 20
 	spread = 1
 	can_attachments = TRUE
 	can_suppress = "pistol_suppressor"
@@ -248,13 +231,21 @@
 	fire_delay = 2
 	slowdown = 0.05
 	mag_type = /obj/item/ammo_box/magazine/m45
-	extra_damage = 30
 	recoil = 0.15
 	can_attachments = TRUE
 	suppressor_state = "pistol_suppressor"
 	suppressor_x_offset = 30
 	suppressor_y_offset = 21
 	fire_sound = 'sound/f13weapons/45revolver.ogg'
+	//Extra Modifiable Gun Vars
+	modifiablegun = TRUE
+	//Sprite Attachment Points
+	xattachlist = list("east" = 29, "west" =  9, "south" = 21, "north" = 12) //x coordinate for attachment point
+	yattachlist = list("east" = 22, "west" = 17, "south" = 17, "north" = 24) //y coordinate for attachment point
+	//Attachment Points
+	attachableparts = list("internal" = new /obj/item/gunpart/BHS_Receiver, "internal2" = null, "east" = null, "west" = null, "south" = null, "north" = null)
+	//Blacklisted Parts
+	blacklistedparts = list("stock")
 
 //M1911	Custom							Keywords: .45 ACP, Semi-auto, 8 round magazine. Special modifiers: damage +1
 /obj/item/gun/ballistic/automatic/pistol/m1911/custom
@@ -262,7 +253,7 @@
 	desc = "A well-maintained stainless-steel frame 1911, with genuine wooden grips."
 	icon_state = "m1911_custom"
 	recoil = 0.05
-	fire_delay = 2
+	fire_delay = 1
 
 
 //Mk. 23								Keywords: .45 ACP, Semi-auto, Long barrel (lasersight), 12 round magazine, Flashlight
@@ -273,7 +264,6 @@
 	mag_type = /obj/item/ammo_box/magazine/m45exp
 	fire_delay = 2
 	slowdown = 0.07
-	extra_damage = 34
 	spread = 1
 	can_flashlight = TRUE
 	gunlight_state = "flight"
@@ -300,13 +290,23 @@
 	mag_type = /obj/item/ammo_box/magazine/m44
 	fire_delay = 3
 	force = 15
-	extra_damage = 38
-	extra_penetration = 0.05
 	extra_speed = 300
-	recoil = 0.2
+	recoil = 3.5 //Debilitating
+	spread = 6
+	extra_damage = 12
+	extra_penetration = 0.12
 	can_suppress = FALSE
 	automatic_burst_overlay = FALSE
 	fire_sound = 'sound/f13weapons/44mag.ogg'
+	//Extra Modifiable Gun Vars
+	modifiablegun = TRUE
+	//Sprite Attachment Points
+	xattachlist = list("east" = 31, "west" =  9, "south" = 21, "north" = 15) //x coordinate for attachment point
+	yattachlist = list("east" = 22, "west" = 17, "south" = 17, "north" = 23) //y coordinate for attachment point
+	//Attachment Points
+	attachableparts = list("internal" = new /obj/item/gunpart/BHS_Receiver, "internal2" = null, "east" = null, "west" = null, "south" = null, "north" = null)
+	//Blacklisted Parts
+	blacklistedparts = list("stock")
 
 //El Capitan			Keywords: 14mm, Semi-auto, 7 round magazine, Heavy. Special modifiers: damage -2
 /obj/item/gun/ballistic/automatic/pistol/deagle/elcapitan
@@ -316,8 +316,6 @@
 	item_state = "deagle"
 	mag_type = /obj/item/ammo_box/magazine/m14mm
 	fire_delay = 0
-	extra_damage = 45
-	extra_penetration = 0.15
 	fire_sound = 'sound/f13weapons/magnum_fire.ogg'
 
 //Automag			Keywords: .44 Magnum, Semi-auto, Long barrel, 7 rounds, Heavy. Special modifiers: bullet speed +300
@@ -328,12 +326,12 @@
 	item_state = "deagle"
 	mag_type = /obj/item/ammo_box/magazine/automag
 	fire_delay = 4
-	extra_damage = 41
 	extra_speed = 300
 	recoil = 0.2
 	can_suppress = FALSE
 	automatic_burst_overlay = FALSE
 	fire_sound = 'sound/f13weapons/44mag.ogg'
+	extra_damage = 5
 
 
 //14mm Pistol		Keywords: 14mm, Semi-auto, 7 rounds, Heavy
@@ -343,10 +341,9 @@
 	icon_state = "pistol14"
 	mag_type = /obj/item/ammo_box/magazine/m14mm
 	force = 15
-	extra_damage = 44
-	extra_penetration = 0.1
 	fire_delay = 5
-	recoil = 0.25
+	extra_damage = 11
+	recoil = 2.2
 	can_suppress = FALSE
 	fire_sound = 'sound/f13weapons/magnum_fire.ogg'
 
@@ -356,25 +353,37 @@
 	desc = "A Swiss SIG-Sauer 14mm handgun, this one is a compact model for concealed carry."
 	icon_state = "pistol14_compact"
 	w_class = WEIGHT_CLASS_SMALL
-	extra_damage = 42
 	spread = 5
 
-//Little Devil							Keywords: UNIQUE, 14mm, Semi-auto, Short barrel, 7 Rounds, Heavy. Special modifiers: damage +4, penetration +0.05, spread -3
+//Little Devil							Keywords: UNIQUE, 14mm, Semi-auto, Short barrel, 7 Rounds, Heavy.
 /obj/item/gun/ballistic/automatic/pistol/pistol14/lildevil
 	name= "Little Devil 14mm pistol"
 	desc = "A Swiss SIG-Sauer 14mm handgun, this one is a finely tuned custom firearm from the Gunrunners."
 	icon_state = "lildev"
 	w_class = WEIGHT_CLASS_SMALL
-	extra_damage = 50
 	fire_delay = 4
+	extra_damage = 0
+	extra_penetration = 0.35
 
 /obj/item/gun/ballistic/automatic/pistol/pistol14/custom
 	name= "Custom 14mm pistol"
 	desc = "A Swiss SIG-Sauer 14mm handgun, this one is a finely tuned custom firearm. How'd this get into service?"
 	icon_state = "lildev"
 	w_class = WEIGHT_CLASS_SMALL
-	extra_damage = 50
 	fire_delay = 4
+
+//Mortifer						Keywords: UNIQUE, 14mm, Semi-auto, 7 rounds, Heavy.
+/obj/item/gun/ballistic/automatic/pistol/pistol14/orator
+	name = "Mortifer"
+	desc = "A long-barreled SIG P-127 custom-built by an experienced Legion technician, used for executions. The black leather-wrapped handle has a golden laurel wreath on each side."
+	icon_state = "mortifer"
+	mag_type = /obj/item/ammo_box/magazine/m14mm
+	fire_delay = 15
+	icon_state = "nexus"
+	recoil = 5.5
+	extra_damage = 20
+	fire_sound = 'sound/f13weapons/magnum_fire.ogg'
+
 
 /////////////////////////////////
 // TEMPORARY REMOVE AFTER BETA //

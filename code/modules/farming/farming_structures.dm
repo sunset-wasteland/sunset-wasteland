@@ -152,7 +152,7 @@
 // COMPOST BIN //
 /////////////////
 
-// Sprite exists for empty state, just not coded. 
+// Sprite exists for empty state, just not coded.
 /obj/structure/reagent_dispensers/compostbin
 	name = "compost bin"
 	desc = "A smelly structure made of wooden slats where refuse is thrown. Dump unwanted seeds and produce in, pull usable compost out."
@@ -235,6 +235,7 @@
 	desc = "A huge metal tank with a tap on the front. Rainwater is collected on larger surfaces then poured into a tank like this for storage."
 	icon = 'icons/fallout/farming/farming_structures.dmi'
 	icon_state = "rainwater_tank"
+	reagent_id = /datum/reagent/water/dwater
 	anchored = TRUE
 
 

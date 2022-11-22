@@ -4,9 +4,45 @@
 	group = "Goodies"
 	goody = PACK_GOODY_PRIVATE
 
+//fallout changes
+
+/datum/supply_pack/goody/realstimpaks
+	name = "Stimpak box"
+	desc = "Contains one full box of stimpaks, ready to be consumed.."
+	cost = 9500
+	contains = list(/obj/item/storage/box/medicine/stimpaks/stimpaks5)
+
+/datum/supply_pack/goody/stimpaks
+	name = "Imitation Stimpak box"
+	desc = "Contains one full box of homemade stimpaks, ready to be consumed.."
+	cost = 5500
+	contains = list(/obj/item/storage/box/medicine/stimpaks/imitation_stimpaks5)
+
+/datum/supply_pack/goody/musket
+	name = "Laser musket"
+	desc = "Contains one laser musket, homemade, if you are to lazy to make one."
+	cost = 3000
+	contains = list(/obj/item/gun/ballistic/rifle/hobo/lasmusket,
+					/obj/item/ammo_box/lasmusket)
+
+/datum/supply_pack/goody/sharpenerf13
+	name = "Weapon Sharpener" //Possibly the most broken item in the entirety of cargo.
+	desc = "Contains one whetstone that allows the weapon to be sharpened, no matter the quality of weapon."
+	cost = 250000
+	contains = list(/obj/item/sharpener/bos)
+
+/datum/supply_pack/goody/bosbooksf13
+	name = "Chain and Codex"
+	desc = "Contains one Chain that Binds and one Codex book."
+	cost = 50
+	contains = list(/obj/item/book/manual/bos/chain,
+					/obj/item/book/manual/bos/codex)
+
+//fallout changes ends here
+
 /datum/supply_pack/goody/combatknives_single
 	name = "Combat Knife Single-Pack"
-	desc = "Contains one sharpened combat knive. Guaranteed to fit snugly inside any Nanotrasen-standard boot."
+	desc = "Contains one sharpened combat knive. Guaranteed to fit snugly inside any Brotherhood-standard boot."
 	cost = 800
 	contains = list(/obj/item/melee/onehanded/knife/hunting)
 
@@ -72,7 +108,7 @@
 
 /datum/supply_pack/goody/beach_ball
 	name = "Beach Ball"
-	desc = "The simple beach ball is one of Nanotrasen's most popular products. 'Why do we make beach balls? Because we can! (TM)' - Nanotrasen"
+	desc = "The simple beach ball is one of Nanotrasen's most popular products. 'Why do we make beach balls? Because we can! (TM)' - The brotherhood"
 	cost = 200
 	contains = list(/obj/item/toy/beach_ball)
 

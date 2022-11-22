@@ -149,6 +149,9 @@
 	new /obj/item/melee/smith/hammer/premade(src)
 	new /obj/item/twohanded/chainsaw(src)
 
+/obj/item/storage/belt/utility/waster/forgemaster/khan
+	name = "smith toolbelt"
+
 // Gardener belt. Hold farming stuff thats small, also flasks (think hip flasks, not bottles as such)
 /obj/item/storage/belt/utility/gardener
 	name = "gardeners toolbelt"
@@ -837,6 +840,18 @@
 	new /obj/item/ammo_box/c4570(src)
 	new /obj/item/ammo_box/c4570(src)
 	new /obj/item/ammo_box/c4570(src)
+
+/obj/item/storage/belt/holster/sheriff/PopulateContents()
+	new /obj/item/gun/ballistic/revolver/revolver44/sheriff(src)
+	new /obj/item/ammo_box/m44(src)
+	new /obj/item/ammo_box/m44(src)
+	new /obj/item/ammo_box/m44(src)
+
+/obj/item/storage/belt/holster/regulator/PopulateContents()
+	new /obj/item/gun/energy/laser/complianceregulator(src)
+	new /obj/item/stock_parts/cell/ammo/ec(src)
+	new /obj/item/stock_parts/cell/ammo/ec(src)
+	new /obj/item/stock_parts/cell/ammo/ec(src)
 
 /obj/item/storage/belt/holster/legholster
 	name = "leg holster"

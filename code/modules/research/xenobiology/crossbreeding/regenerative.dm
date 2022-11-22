@@ -130,7 +130,7 @@ Regenerative extracts:
 /obj/item/slimecross/regenerative/silver/core_effect(mob/living/target, mob/user)
 	target.set_nutrition(NUTRITION_LEVEL_FULL - 1)
 	to_chat(target, "<span class='notice'>You feel satiated.</span>")
-
+/*
 /obj/item/slimecross/regenerative/bluespace
 	colour = "bluespace"
 	var/turf/open/T
@@ -144,7 +144,7 @@ Regenerative extracts:
 /obj/item/slimecross/regenerative/bluespace/Initialize()
 	. = ..()
 	T = get_turf(src)
-
+*/
 /obj/item/slimecross/regenerative/sepia
 	colour = "sepia"
 
@@ -169,14 +169,14 @@ Regenerative extracts:
 /obj/item/slimecross/regenerative/pyrite/core_effect(mob/living/target, mob/user)
 	target.visible_message("<span class='warning'>The milky goo coating [target] leaves [target.p_them()] a different color!</span>")
 	target.add_atom_colour(rgb(rand(0,255),rand(0,255),rand(0,255)),WASHABLE_COLOUR_PRIORITY)
-
+/*
 /obj/item/slimecross/regenerative/red
 	colour = "red"
 
 /obj/item/slimecross/regenerative/red/core_effect(mob/living/target, mob/user)
 	to_chat(target, "<span class='notice'>You feel... <i>faster.</i></span>")
 	target.reagents.add_reagent(/datum/reagent/medicine/ephedrine,3)
-
+*/
 /obj/item/slimecross/regenerative/green
 	colour = "green"
 

@@ -10,7 +10,7 @@
 	value = REAGENT_VALUE_COMMON //Encouraging people to mix toxins for reasons beyond harming each other or mixing reagents such as pen acid.
 	var/toxpwr = 1.5
 	var/toxin_hurting = 0
-	var/toxin_lover_healing = -1
+	var/toxin_lover_healing = -3.5
 	ghoulfriendly = TRUE
 
 // Are you a bad enough dude to poison your own plants?
@@ -48,10 +48,10 @@
 	description = "You aren't meant to see this..?"
 	color = "#00FF00"
 	toxpwr = 0
-	overdose_threshold = 18 // So, someone drinking 20 units will FOR SURE get overdosed
+	overdose_threshold = 1 // So, someone drinking ANY will FOR SURE get overdosed. Lowered from 18.
 	taste_description = "horrific agony"
 	taste_mult = 0.9
-	var/datum/disease/fev_disease = /datum/disease/transformation/mutant
+	var/datum/disease/fev_disease = null
 
 /datum/reagent/toxin/FEV_solution/overdose_process(mob/living/carbon/C)
 	if(ispath(fev_disease))
@@ -61,7 +61,7 @@
 /datum/reagent/toxin/FEV_solution/one
 	name = "Unstable FEV solution"
 	description = "An incredibly lethal strain of the Forced Evolutionary Virus. Consume at your own risk."
-	fev_disease = /datum/disease/transformation/mutant/unstable
+//	fev_disease = /datum/disease/transformation/mutant/unstable
 
 /datum/reagent/toxin/FEV_solution/one/reaction_mob(mob/living/carbon/M, method=TOUCH, reac_volume)
 	if(!..())
@@ -82,8 +82,8 @@
 //FEV - II: The super mutie kind
 /datum/reagent/toxin/FEV_solution/two
 	name = "FEV-II solution"
-	description = "A version of FEV that has been modified by radiation. It is suggested that only radiation-free humans use it."
-	fev_disease = /datum/disease/transformation/mutant/super
+	description = "A version of FEV that has been modified by radiation. A biological dead-end, harmless if the subject is not exposed to radiation."
+//	fev_disease = /datum/disease/transformation/mutant/super
 
 /datum/reagent/toxin/FEV_solution/two/overdose_process(mob/living/carbon/C)
 	if(C.radiation < RAD_MOB_SAFE)

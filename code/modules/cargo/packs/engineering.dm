@@ -9,10 +9,35 @@
 /datum/supply_pack/engineering
 	group = "Engineering"
 	crate_type = /obj/structure/closet/crate/engineering
+//fallout changes
+
+/datum/supply_pack/engineering/mfcc
+	name = "Overcharged mfc crate"
+	desc = "A singular super charged mfc unit."
+	cost = 30000//We want ammo to be hard to replace. Especially in the case of something like this.
+	contains = list(/obj/item/stock_parts/cell/ammo/mfc/overcharged)
+	crate_name = "MFC experimental crate"
+
+/datum/supply_pack/engineering/mfcr
+	name = "Three mfc crate"
+	desc = "Three mfc units, pulled from storage and shipped directly to you."
+	cost = 3000
+	contains = list(/obj/item/stock_parts/cell/ammo/mfc,
+					/obj/item/stock_parts/cell/ammo/mfc,
+					/obj/item/stock_parts/cell/ammo/mfc)
+	crate_name = "MFC crate"
+
+/datum/supply_pack/engineering/electrion
+	name = "Electron pack crate"
+	desc = "One electron pack, pulled from storage and shipped directly to you."
+	cost = 17500
+	contains = list(/obj/item/stock_parts/cell/ammo/ecp)
+
+//fallout changes ends here
 
 /datum/supply_pack/engineering/shieldgen
 	name = "Anti-breach Shield Projector Crate"
-	desc = "Hull breaches again? Say no more with the Nanotrasen Anti-Breach Shield Projector! Uses forcefield technology to keep the air in, and the space out. Contains two shield projectors."
+	desc = "Hull breaches again? Say no more with the brotherhoods Anti-Breach Shield Projector! Uses forcefield technology to keep the air in, and the space out. Contains two shield projectors."
 	cost = 2500
 	contains = list(/obj/machinery/shieldgen,
 					/obj/machinery/shieldgen)
@@ -85,7 +110,6 @@
 	name = "Industrial RCD"
 	desc = "An industrial RCD in case the station has gone through more then one meteor storm and the CE needs to bring out the somthing a bit more reliable. Does not contain spare ammo for the industrial RCD or any other RCD models."
 	cost = 4500
-	access = ACCESS_CE
 	contains = list(/obj/item/construction/rcd/industrial)
 	crate_name = "industrial rcd"
 	crate_type = /obj/structure/closet/crate/secure/engineering
@@ -156,15 +180,16 @@
 
 /datum/supply_pack/engineering/bsa
 	name = "Bluespace Artillery Parts"
-	desc = "The pride of Nanotrasen Naval Command. The legendary Bluespace Artillery Cannon is a devastating feat of human engineering and testament to wartime determination. Highly advanced research is required for proper construction. "
-	cost = 45000
+	desc = "The pride of brotherhood Naval Command. The legendary Bluespace Artillery Cannon is a devastating feat of human engineering and testament to wartime determination. Highly advanced research is required for proper construction. Buying it without a high elder's permission is grounds for immediate punishment of the individuals that bought it. "
+	cost = 100000000
 	special = TRUE
 	contains = list(/obj/item/circuitboard/machine/bsa/front,
 					/obj/item/circuitboard/machine/bsa/middle,
 					/obj/item/circuitboard/machine/bsa/back,
 					/obj/item/circuitboard/computer/bsa_control
 					)
-	crate_name= "bluespace artillery parts crate"
+	crate_name= "bluespace artillery parts crate. Disclaimer.High Elder's permission required to have this."
+
 /*
 /datum/supply_pack/engineering/dna_vault
 	name = "DNA Vault Parts"

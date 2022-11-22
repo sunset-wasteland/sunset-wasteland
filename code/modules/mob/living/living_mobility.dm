@@ -38,9 +38,13 @@
 	if(disarm_items)
 		drop_all_held_items()
 
-/mob/living/proc/lay_down()
+/mob/living/proc/toggle_resting()
 	set name = "Rest"
 	set category = "IC"
+
+	lay_down()
+
+/mob/living/proc/lay_down()
 	if(client?.prefs?.autostand)
 		TOGGLE_BITFIELD(combat_flags, COMBAT_FLAG_INTENTIONALLY_RESTING)
 		to_chat(src, "<span class='notice'>You are now attempting to [(combat_flags & COMBAT_FLAG_INTENTIONALLY_RESTING) ? "[!resting ? "lay down and ": ""]stay down" : "[resting ? "get up and ": ""]stay up"].</span>")

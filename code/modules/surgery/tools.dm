@@ -134,7 +134,7 @@
 	item_flags = SURGICAL_TOOL
 	flags_1 = CONDUCT_1
 	force = 15
-	w_class = WEIGHT_CLASS_NORMAL
+	w_class = WEIGHT_CLASS_SMALL
 	attack_verb = list("drilled")
 	tool_behaviour = TOOL_DRILL
 	toolspeed = 1
@@ -153,6 +153,8 @@
 	hitsound = 'sound/items/welder.ogg'
 	light_system = MOVABLE_LIGHT
 	light_range = 1
+	w_class = WEIGHT_CLASS_SMALL
+
 
 /obj/item/surgicaldrill/advanced/attack_self(mob/user)
 	playsound(get_turf(user), 'sound/weapons/tap.ogg', 50, TRUE)

@@ -923,13 +923,29 @@
 
 // Fallout Stuff
 
+/datum/chemical_reaction/saltingboild
+	name = "Boiling Water to Salt"
+	id = "pure_water_to_salt"
+	results = list(/datum/reagent/consumable/sodiumchloride = 0.1)
+	required_reagents = list(/datum/reagent/water/bwater = 1)
+	mob_react = FALSE // You cannot boil water inside yourself you fucking mongoloid
+	required_temp = 500
+
+/datum/chemical_reaction/saltingpure
+	name = "Boiling Pure Water to Salt"
+	id = "boiled_water_to_salt"
+	results = list(/datum/reagent/consumable/sodiumchloride = 0.1)
+	required_reagents = list(/datum/reagent/water = 1)
+	mob_react = FALSE // You cannot boil water inside yourself you fucking mongoloid
+	required_temp = 500
+
 /datum/chemical_reaction/boilingwater
 	name = "Boiling Water"
 	id = /datum/reagent/water/bwater
 	results = list(/datum/reagent/water/bwater = 1)
 	required_reagents = list(/datum/reagent/water/dwater = 1) // ADVANCED BOILING WATER CODE URAH
 	mob_react = FALSE // You cannot boil water inside yourself you fucking mongoloid
-	required_temp = 372
+	required_temp = 375
 
 /datum/chemical_reaction/purewatera
 	name = "Purify Dirty Water"
@@ -949,7 +965,7 @@
 	results = list(/datum/reagent/water = 1)
 	required_reagents = list(/datum/reagent/water/bwater = 1, /datum/reagent/carbon = 1)
 	mob_react = FALSE
-	required_temp = 512
+	required_temp = 375
 
 /datum/chemical_reaction/purewaterd
 	name = "Iodine and Boiled Water"
@@ -957,4 +973,4 @@
 	results = list(/datum/reagent/water = 1)
 	required_reagents = list(/datum/reagent/water/bwater = 1, /datum/reagent/iodine = 1)
 	mob_react = FALSE
-	required_temp = 512
+	required_temp = 375

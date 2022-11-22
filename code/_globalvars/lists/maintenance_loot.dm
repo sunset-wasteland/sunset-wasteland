@@ -568,7 +568,6 @@ GLOBAL_LIST_INIT(loot_t4_range, list(
 	/obj/item/ammo_box/magazine/m44,
 	/obj/item/gun/energy/laser/rcw,
 	/obj/item/stock_parts/cell/ammo/ecp,
-	/obj/item/gun/energy/laser/plasma/pistol,
 	/obj/item/stock_parts/cell/ammo/ec,
 	/obj/item/gun/energy/laser/aer9,
 	/obj/item/stock_parts/cell/ammo/mfc,
@@ -585,12 +584,10 @@ GLOBAL_LIST_INIT(loot_t4_range, list(
 	/obj/item/ammo_box/magazine/d12g,
 	/obj/item/gun/energy/ionrifle,
 	/obj/item/stock_parts/cell/ammo/mfc,
-	/obj/item/gun/energy/laser/plasma/glock,
 	/obj/item/stock_parts/cell/ammo/ec,
 ))
 
 GLOBAL_LIST_INIT(loot_t5_range, list(
-	/obj/item/gun/energy/laser/plasma,
 	/obj/item/gun/ballistic/automatic/smg/tommygun,
 	/obj/item/gun/ballistic/automatic/shotgun/riot,
 	/obj/item/gun/energy/laser/scatter,
@@ -864,9 +861,9 @@ GLOBAL_LIST_INIT(loot_t3_money, list(
 ))
 
 GLOBAL_LIST_INIT(loot_skillbook, list(
-	/obj/item/book/granter/trait/chemistry,
+//	/obj/item/book/granter/trait/chemistry,
 	/obj/item/book/granter/trait/trekking,
-	/obj/item/book/granter/trait/pa_wear,
+//	/obj/item/book/granter/trait/pa_wear,
 	/obj/item/book/granter/crafting_recipe/gunsmith_one,
 	/obj/item/book/granter/crafting_recipe/gunsmith_two,
 	/obj/item/book/granter/crafting_recipe/gunsmith_three,

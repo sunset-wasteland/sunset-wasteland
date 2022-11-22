@@ -26,3 +26,8 @@
 
 /datum/weather/cold_wave/weather_act(mob/living/L)
 	L.adjust_bodytemperature(-rand(5, 15))
+
+/datum/weather/cold_wave/casper
+	name = "casper mountain cold wave"
+	area_types = list(/area/f13/mountain_area)
+	probability = 10

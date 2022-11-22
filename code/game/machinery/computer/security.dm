@@ -3,7 +3,7 @@
 	desc = "Used to view and edit personnel's security records."
 	icon_screen = "security"
 	icon_keyboard = "security_key"
-	req_one_access = list(ACCESS_SECURITY, ACCESS_FORENSICS_LOCKERS)
+	req_one_access = list(ACCESS_CENT_CAPTAIN)
 	circuit = /obj/item/circuitboard/computer/secure_data
 	var/rank = null
 	var/screen = null
@@ -298,14 +298,7 @@ What a mess.*/
 			if("Log In")
 				var/mob/M = usr
 				var/obj/item/card/id/I = M.get_idcard(TRUE)
-				if(hasSiliconAccessInArea(M))
-					var/mob/living/silicon/borg = M
-					active1 = null
-					active2 = null
-					authenticated = borg.name
-					rank = "AI"
-					screen = 1
-				else if(IsAdminGhost(M))
+				if(IsAdminGhost(M))
 					active1 = null
 					active2 = null
 					authenticated = M.client.holder.admin_signature

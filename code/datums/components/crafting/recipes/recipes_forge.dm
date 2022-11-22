@@ -2,6 +2,25 @@
 //Forging//
 ////////////
 
+//Follower Ripper, followers of the apocalypse
+/datum/crafting_recipe/melee/forged/surgripper
+	name = "Ripper's Ripper"
+	result = /obj/item/melee/powered/surgripper
+	reqs = list(/obj/item/stack/sheet/prewar = 2,
+				/datum/reagent/phosphorus = 50,
+				/datum/reagent/fuel = 50,
+				/obj/item/stack/crafting/goodparts = 2,
+				/obj/item/stack/crafting/electronicparts = 2,
+				/obj/item/stack/sheet/mineral/silver = 2,
+				/obj/item/weldingtool = 1,
+				/obj/item/circular_saw = 1,
+				)
+	tools = list(TOOL_AWORKBENCH)
+	time = 120
+	category = CAT_WEAPONRY
+	subcategory = CAT_MELEE
+	always_available = FALSE
+
 /datum/crafting_recipe/forge
 	name = "Metalworking bench"
 	result = /obj/machinery/workbench/forge
@@ -236,6 +255,20 @@
 	tools = list(TOOL_FORGE)
 	category = CAT_WEAPONRY
 	subcategory = CAT_MELEE
+
+/datum/crafting_recipe/scrapsabre_khan
+	name = "Honed Scrap sabre"
+	result = /obj/item/melee/onehanded/machete/scrapsabre/khan
+	reqs = list(
+		/obj/item/stack/sheet/metal = 24,
+		/obj/item/stack/sheet/leather = 2,
+		/obj/item/stack/sheet/plasteel = 2,
+	    )
+	time = 380
+	tools = list(TOOL_FORGE)
+	category = CAT_WEAPONRY
+	subcategory = CAT_MELEE
+	always_available = FALSE
 
 
 // LEGION SPECIFIC

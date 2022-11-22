@@ -193,21 +193,21 @@
 // Waste Procs
 /////////
 
-/obj/vehicle/proc/StartEngine()
+/obj/vehicle/proc/StartEngine(mob/living/M)
 	set name = "Start Engine"
 	set category = "Object"
 	set src in view(1)
 
 	start_engine()
 
-/obj/vehicle/proc/StopEngine()
+/obj/vehicle/proc/StopEngine(mob/living/M)
 	set name = "Stop Engine"
 	set category = "Object"
 	set src in view(1)
 
 	stop_engine()
 
-/obj/vehicle/proc/stop_engine(mob/M)
+/obj/vehicle/proc/stop_engine(mob/living/M)
 	src.verbs += /obj/vehicle/proc/StartEngine
 	src.verbs -= /obj/vehicle/proc/StopEngine
 

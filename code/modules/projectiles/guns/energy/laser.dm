@@ -39,7 +39,7 @@
 /obj/item/gun/energy/laser/cyborg
 	name = "integrated AER9"
 	can_charge = FALSE
-	desc = "An energy-based laser gun that draws power from the Handy's internal energy cell directly. So this is what freedom looks like?"
+	desc = "An energy-based laser gun that draws power from the robot's internal energy cell directly. So this is what freedom looks like?"
 	fire_delay = 1
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/lasgun/hitscan)
 	icon_state = "laser"
@@ -209,7 +209,7 @@
 	fire_delay = 0
 	slowdown = 0.2
 	w_class = WEIGHT_CLASS_NORMAL
-	weapon_weight = WEAPON_MEDIUM
+	weapon_weight = WEAPON_LIGHT //Can dual wield, which makes up for the meh damage. Especially so with the Magneto.
 	slot_flags = ITEM_SLOT_BELT
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/pistol/wattz/hitscan)
 	cell_type = /obj/item/stock_parts/cell/ammo/ec
@@ -470,7 +470,6 @@
 	scope_y_offset = 20
 	equipsound = 'sound/f13weapons/equipsounds/tribeamequip.ogg'
 
-
 //AER14 Laser rifle
 /obj/item/gun/energy/laser/aer14
 	name = "\improper AER14 laser rifle"
@@ -485,6 +484,13 @@
 	scope_y_offset = 20
 	equipsound = 'sound/f13weapons/equipsounds/aer14equip.ogg'
 
+//Fluff AER14
+/obj/item/gun/energy/laser/aer14/refurb
+	name = "\improper Refurbished AER14 laser rifle"
+	desc = "A bleeding-edge, pre-war laser rifle. Or, at least, it was at one point. \
+	This one appears to have a cracked and dirty focusing lense, requiring reconfiguration in a workshop. \
+	Additionally, it appears as if it's using a makeshift array, significantly reducing the power of each bolt, but increasing the number of available discharges."
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/lasgun/hitscan)
 
 //LAER Energy rifle
 /obj/item/gun/energy/laser/laer

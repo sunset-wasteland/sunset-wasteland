@@ -116,6 +116,13 @@
 	butcher_results = list(/obj/effect/gibspawner/robot = 1)
 	blood_volume = 0
 
+/mob/living/simple_animal/pet/dog/eyebot/dense
+	name = "\improper Paladin Dense"
+	desc = "This eyebot's weapons module has been removed and replaced with a loudspeaker. A pet project of the Librarian."
+	icon_state = "floatingeye"
+	icon_living = "floatingeye"
+	icon_dead = "floatingeye_d"
+
 /mob/living/simple_animal/pet/dog/eyebot/ComponentInitialize()
 	. = ..()
 	AddElement(/datum/element/wuv, "beeps happily!", EMOTE_AUDIBLE)

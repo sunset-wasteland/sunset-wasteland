@@ -39,9 +39,24 @@
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/uzi)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/smg10mm)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/gate_khanate)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/scrapsabre_khan)
 
-/datum/outfit/job/khan/chemist
-	jobtype = /datum/job/khan/chemist
+/datum/job/khan/senior_enforcer
+	title = "Khan Senior Enforcer"
+	flag = F13KHANSEN
+	faction = FACTION_KHAN
+	total_positions = 1
+	spawn_positions = 1
+	description = "You are a Khan, atop being the senior of all within this camp. Maintain some manner of control and assure the Chemist doesn't blow their hands off."
+	supervisors = "the Senior Enforcer"
+	selection_color = "#ff915e"
+	exp_requirements = 320
+	exp_type = EXP_TYPE_KHAN
+	outfit = /datum/outfit/job/khan/senior_enforcer
+
+	loadout_options = list(
+		/datum/outfit/loadout/senior,
+		)
 
 /datum/job/khan/enforcer
 	title = "Khan Enforcer"
@@ -49,29 +64,31 @@
 	faction = FACTION_KHAN
 	total_positions = 6
 	spawn_positions = 6
-	description = "You are a Khan, a member of the local band that the Chief has sent to scout these lands. Listen to the Chemist, and assure you've a steady supply of caps for the Chief."
-	supervisors = "the Chemist"
+	description = "You are a Khan, a member of the local band that the Chief has sent to scout these lands. Listen to the Chemist and Senior Enforcer. Assure you've a steady supply of caps for the Chief."
+	supervisors = "the Senior Enforcer"
 	selection_color = "#ff915e"
 	exp_requirements = 240
 	exp_type = EXP_TYPE_WASTELAND
-	outfit = /datum/outfit/job/khan
+	outfit = /datum/outfit/job/khan/enforcer
 
 	loadout_options = list(
-		/datum/outfit/loadout/soldier
+		/datum/outfit/loadout/soldier,
+		/datum/outfit/loadout/soldierb,
 		)
 
 /datum/job/khan/chemist
 	title = "Khan Chemist"
 	flag = F13KHANCHEMIST
 	faction = FACTION_KHAN
-	total_positions = 1
-	spawn_positions = 1
+	total_positions = 2
+	spawn_positions = 2
 	description = "You are a Chemist, one of the few Khans present in this camp that can produce those sweet, sweet chems. Keep them flowing and assure a supply of caps, so you can send them back to the Chief."
 	enforces = "You have control over the lab, a valuable asset in generating profit."
-	supervisors = "the Chief"
+	supervisors = "the Senior Enforcer"
 	selection_color = "#ff915e"
 	req_admin_notify = 1
 	exp_requirements = 750
+	roleplay_exclusive_notify = 1
 	exp_type = EXP_TYPE_KHAN
 	outfit = /datum/outfit/job/khan/chemist
 
@@ -80,21 +97,94 @@
 		/datum/outfit/loadout/quack,
 		)
 
+/datum/job/khan/smith
+	title = "Khan Smith"
+	flag = F13KHANSMITH
+	faction = FACTION_KHAN
+	total_positions = 1
+	spawn_positions = 1
+	description = "You are the smith, a mixture of an Electrician and Engineer through trial-and-error. Maintain the camp and assist the Senior Enforcer when possible."
+	enforces = "You have control over the forge, a valuable asset in maintaining your presence in the area."
+	supervisors = "the Senior Enforcer"
+	selection_color = "#ff915e"
+	req_admin_notify = 1
+	exp_requirements = 750
+	roleplay_exclusive_notify = 1
+	exp_type = EXP_TYPE_KHAN
+	outfit = /datum/outfit/job/khan/smith
+
+	loadout_options = list(
+		/datum/outfit/loadout/smith//one for now
+		)
+
+/datum/job/khan/courtesan
+	title = "Khan Courtesan"
+	flag = F13KHANCOURT
+	faction = FACTION_KHAN
+	total_positions = 3
+	spawn_positions = 3
+	description = "You are, to put it simply, a hooker. Paid company, placed into this position either by want or force. The tramp-stamp you have supports such."
+	enforces = "You staff Heaven's Night, maintaining some modicum of decency and entertaining guests. Earn your keep."
+	supervisors = "the Senior Enforcer"
+	selection_color = "#ff915e"
+	req_admin_notify = 1
+	exp_requirements = 240
+	roleplay_exclusive_notify = 1
+	exp_type = EXP_TYPE_WASTELAND
+	outfit = /datum/outfit/job/khan/courtesan
+
+	loadout_options = list(
+		/datum/outfit/loadout/courtesana,
+		/datum/outfit/loadout/courtesanb,
+		)
+
 //=========================================================== LOADOUT DATUMS ===========================================================
+
+/datum/outfit/job/khan/enforcer
+	jobtype = /datum/job/khan/enforcer
+
+/datum/outfit/job/khan/chemist
+	jobtype = /datum/job/khan/chemist
+
+/datum/outfit/job/khan/senior_enforcer
+	jobtype = /datum/job/khan/senior_enforcer
+	id = /obj/item/card/id/khanleadertattoo
+
+/datum/outfit/job/khan/smith
+	jobtype = /datum/job/khan/smith
+	gunsmith_one = TRUE
+	gunsmith_two = TRUE
+	gunsmith_three = TRUE
+	gunsmith_four = TRUE
+
+/datum/outfit/job/khan/courtesan
+	jobtype = /datum/job/khan/courtesan
+	id = /obj/item/card/id/khan_courttattoo
+	neck = /obj/item/clothing/neck/petcollar
+	uniform = /obj/item/clothing/under/f13/khan/booty
 
 //KHAN =================================================================
 
 /datum/outfit/loadout/soldier
-	name = "Soldier"
+	name = "Heavy Enforcer"
 	belt = /obj/item/storage/backpack/spearquiver
-	l_hand = /obj/item/shield/riot/tower
-	r_hand = /obj/item/melee/onehanded/machete/scrapsabre
-	suit = /obj/item/clothing/suit/toggle/labcoat/f13/khan_jacket/coat
+	l_hand = /obj/item/shield/riot/buckler/stop
+	r_hand = /obj/item/melee/onehanded/machete/scrapsabre/khan
+	suit = /obj/item/clothing/suit/toggle/labcoat/f13/khan_jacket/armored
 	head = /obj/item/clothing/head/helmet/f13/khan
 	backpack_contents = list(
 		/obj/item/reagent_containers/hypospray/medipen/stimpak = 3,
 		/obj/item/book/granter/trait/bigleagues = 1)
 
+/datum/outfit/loadout/soldierb
+	name = "Light Enforcer"
+	belt = /obj/item/storage/belt/bandolier
+	r_hand = /obj/item/gun/ballistic/automatic/marksman/policerifle_khans
+	suit = /obj/item/clothing/suit/toggle/labcoat/f13/khan_jacket/armored
+	head = /obj/item/clothing/head/helmet/f13/khan/bandana
+	backpack_contents = list(
+		/obj/item/ammo_box/magazine/m556/rifle = 3,
+		/obj/item/book/granter/trait/trekking = 1)
 
 //CHEMIST =================================================================
 
@@ -116,3 +206,88 @@
 		/obj/item/book/granter/trait/chemistry = 1,
 		/obj/item/book/granter/trait/explosives =1,
 		/obj/item/reagent_containers/hypospray/medipen/stimpak = 3)
+
+//SENIOR =================================================================
+
+/datum/outfit/loadout/senior
+	name = "True Enforcer"
+	belt = /obj/item/storage/belt/bandolier
+	r_hand = /obj/item/gun/ballistic/shotgun/automatic/combat/neostead
+	suit = /obj/item/clothing/suit/toggle/labcoat/f13/khan_jacket/coat
+	head = /obj/item/clothing/head/helmet/f13/khan/fullhelm
+	backpack_contents = list(
+		/obj/item/ammo_box/shotgun/trainshot = 3,
+		/obj/item/storage/box/medicine/stimpaks/stimpaks5 = 1,
+		/obj/item/melee/onehanded/machete/scrapsabre/khan = 1,
+		/obj/item/stack/f13Cash/caps/onezerozerozero = 3)//LOTS of caps.
+
+/datum/outfit/job/khan/senior_enforcer/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+	ADD_TRAIT(H, TRAIT_GENERIC, src)
+	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
+	ADD_TRAIT(H, TRAIT_LIFEGIVER, src)
+	ADD_TRAIT(H, TRAIT_SELF_AWARE, src)
+	if(H.mind)
+		var/obj/effect/proc_holder/spell/terrifying_presence/S = new /obj/effect/proc_holder/spell/terrifying_presence
+		H.mind.AddSpell(S)
+
+//SMITH =================================================================
+
+/datum/outfit/loadout/smith
+	name = "Khan Smith"
+	glasses = /obj/item/clothing/glasses/welding
+	belt = /obj/item/storage/belt/utility/waster/forgemaster/khan
+	neck = /obj/item/clothing/neck/apron/labor/forge/khan
+	gloves = /obj/item/clothing/gloves/f13/blacksmith
+	r_pocket = /obj/item/flashlight/lantern
+	backpack_contents = list(
+		/obj/item/stack/sheet/metal/twenty = 2,
+		/obj/item/stack/sheet/mineral/wood/twenty = 1,
+		/obj/item/stack/sheet/leather/twenty = 1,
+		/obj/item/stack/sheet/cloth/thirty = 1,
+		/obj/item/stack/sheet/prewar/twenty = 1,
+		/obj/item/book/granter/trait/explosives = 1,
+		/obj/item/book/granter/trait/explosives_advanced = 1
+		)
+
+/datum/outfit/job/khan/smith/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/dks)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/gladius)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/spatha)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/lance)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/lever_action)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/grease_gun)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/brush)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/huntingshotgun)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/concussion)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/strongrocket)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/empgrenade)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/tribalwar/xbow)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/tribalwar/cheaparrow)
+
+//COURTESAN =================================================================
+
+/datum/outfit/loadout/courtesana
+	name = "Female Courtesan"//Just the town singer loadout for now.
+	shoes = /obj/item/clothing/shoes/laceup
+	backpack_contents = list(/obj/item/clothing/under/f13/classdress = 1,
+	/obj/item/clothing/under/suit/black_really = 1,
+	/obj/item/clothing/gloves/evening = 1,
+	/obj/item/clothing/gloves/color/white = 1,
+	/obj/item/gun/ballistic/revolver/hobo/knifegun = 1,
+	)
+
+/datum/outfit/loadout/courtesanb
+	name = "Male Courtesan"//Just the town singer loadout for now..
+	shoes = /obj/item/clothing/shoes/laceup
+	backpack_contents = list(
+	/obj/item/gun/ballistic/revolver/hobo/knifegun = 1,
+	/obj/item/clothing/under/suit/black_really = 1,
+	/obj/item/clothing/gloves/color/white = 1,
+	)

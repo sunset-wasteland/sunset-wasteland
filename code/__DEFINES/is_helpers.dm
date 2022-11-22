@@ -191,6 +191,8 @@ GLOBAL_LIST_INIT(turfs_without_ground, typecacheof(list(
 
 #define isitem(A) (istype(A, /obj/item))
 
+#define isstack(A) (istype(A, /obj/item/stack))
+
 #define isgrenade(A) (istype(A, /obj/item/grenade))
 
 #define islandmine(A) (istype(A, /obj/item/mine))
@@ -214,6 +216,8 @@ GLOBAL_LIST_INIT(turfs_without_ground, typecacheof(list(
 #define isbodypart(A) (istype(A, /obj/item/bodypart))
 
 #define isprojectile(A) (istype(A, /obj/item/projectile))
+
+#define isrocket(A) (istype(A, /obj/item/projectile/bullet/rocket) || istype(A, /obj/item/mortar_shell))
 
 #define isgun(A) (istype(A, /obj/item/gun))
 

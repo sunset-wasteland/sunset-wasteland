@@ -1729,12 +1729,11 @@
 
 /datum/reagent/medicine/rehab
 	name = "Rehab"
-	description = "A potentent purger made from buffalo gourd and other herbal plants, stops toxin damage, heals the liver, purges all chems, food and liquids from the body and treats addiction...maybe do. not. take. too. much."
+	description = "A potent purgative made from the buffalo gourd and other plants. Treats poisoning, purges the body, heals the liver and stomach, and treats addiction. Dangerous in high doses."
 	color = "#91D865"
-	metabolization_rate = 0.25 * REAGENTS_METABOLISM
+	metabolization_rate = 0.4 * REAGENTS_METABOLISM
 	overdose_threshold = 25
 	value = REAGENT_VALUE_COMMON
-	metabolization_rate = 0.4 * REAGENTS_METABOLISM
 	ghoulfriendly = TRUE
 
 /datum/reagent/medicine/rehab/on_mob_life(mob/living/carbon/M)
@@ -1758,6 +1757,5 @@
 	if(ishuman(M) && prob(15))
 		var/mob/living/carbon/human/H = M
 		H.vomit(10)
-	
-		. = TRUE
 	..()
+	return TRUE // update health at end of tick

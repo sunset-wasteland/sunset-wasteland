@@ -229,7 +229,7 @@
 //Chiappa Rhino                  Keywords: Enclave, .44, Double action, 6 rounds cylinder
 /obj/item/gun/ballistic/revolver/m29/rhino_america
 	name = "Rhino America"
-	desc = "A revolver machined from a solid aluminium block, This one is coated in gold paint with its grip painted to look like the flag of America. This model has been specifically made to fire .44 magnum cartridges"
+	desc = "A revolver machined from a solid aluminium block. This one is coated in gold paint with its grip painted to look like the flag of the United States of America. This model has been specifically made to fire .44 magnum cartridges."
 	item_state = "rhino_america"
 	icon_state = "rhino_america"
 	can_scope = FALSE

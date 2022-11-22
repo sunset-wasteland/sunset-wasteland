@@ -264,7 +264,7 @@
 
 /obj/item/reagent_containers/food/snacks/soup/bungocurry
 	name = "bungo curry"
-	desc = "A spicy vegetable curry made with the humble bungo fruit, Exotic!"
+	desc = "A spicy vegetable curry made with the humble bungo fruit. Exotic!"
 	icon_state = "bungocurry"
 	bonus_reagents = list(/datum/reagent/consumable/nutriment/vitamin = 11)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/capsaicin = 5)

@@ -249,7 +249,7 @@
 		return
 	owner.adjustBruteLoss(0.1)
 	owner.adjustFireLoss(0.1)
-	owner.adjustToxLoss(0.2, TRUE, TRUE)
+	owner.adjustToxLoss(0.2, forced = TRUE)
 
 /datum/status_effect/belligerent
 	id = "belligerent"
@@ -389,7 +389,7 @@
 				owner.dizziness = min(owner.dizziness + round(severity * 0.05, 1), 50) //5% of severity per second above 10 severity
 			if(owner.confused < 25)
 				owner.confused = min(owner.confused + round(severity * 0.025, 1), 25) //2.5% of severity per second above 20 severity
-			owner.adjustToxLoss(severity * 0.02, TRUE, TRUE) //2% of severity per second
+			owner.adjustToxLoss(severity * 0.02, forced = TRUE) //2% of severity per second
 		severity--
 
 /datum/status_effect/cultghost //is a cult ghost and can't use manifest runes

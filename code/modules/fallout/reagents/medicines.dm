@@ -32,16 +32,16 @@
 
 /datum/reagent/medicine/stimpak/on_mob_life(mob/living/carbon/M)
 	if(M.health < 0)					//Functions as epinephrine.
-		M.adjustToxLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, 0)
-		M.adjustBruteLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, 0)
-		M.adjustFireLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, 0)
+		M.adjustToxLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, updating_health = FALSE)
+		M.adjustBruteLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, updating_health = FALSE)
+		M.adjustFireLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, updating_health = FALSE)
 	if(M.oxyloss > 35)
 		M.setOxyLoss(35, 0)
 	if(M.losebreath >= 4)
 		M.losebreath -= 2
 	if(M.losebreath < 0)
 		M.losebreath = 0
-	M.adjustStaminaLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, 0)
+	M.adjustStaminaLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, updating_health = FALSE)
 	if(prob(20))
 		M.AdjustAllImmobility(-20, 0)
 		M.AdjustUnconscious(-20, 0)
@@ -50,7 +50,7 @@
 		M.adjustFireLoss(-3*REAGENTS_EFFECT_MULTIPLIER)
 		M.AdjustStun(-2*REAGENTS_EFFECT_MULTIPLIER, 0)
 		M.AdjustKnockdown(-2*REAGENTS_EFFECT_MULTIPLIER, 0)
-		M.adjustStaminaLoss(-2*REAGENTS_EFFECT_MULTIPLIER, FALSE)
+		M.adjustStaminaLoss(-2*REAGENTS_EFFECT_MULTIPLIER, updating_health = FALSE)
 	..()
 	return TRUE // update health at end of tick
 
@@ -73,10 +73,10 @@
 	ghoulfriendly = TRUE
 
 /datum/reagent/medicine/stimpakimitation/on_mob_life(mob/living/carbon/M)
-	M.adjustBruteLoss(-2*REAGENTS_EFFECT_MULTIPLIER, FALSE)
-	M.adjustFireLoss(-1.5*REAGENTS_EFFECT_MULTIPLIER, FALSE)
+	M.adjustBruteLoss(-2*REAGENTS_EFFECT_MULTIPLIER, updating_health = FALSE)
+	M.adjustFireLoss(-1.5*REAGENTS_EFFECT_MULTIPLIER, updating_health = FALSE)
 	M.AdjustKnockdown(-2*REAGENTS_EFFECT_MULTIPLIER, FALSE)
-	M.adjustStaminaLoss(-1.7*REAGENTS_EFFECT_MULTIPLIER, FALSE)
+	M.adjustStaminaLoss(-1.7*REAGENTS_EFFECT_MULTIPLIER, updating_health = FALSE)
 	..()
 	return TRUE // update health and mobility at end of tick
 
@@ -106,16 +106,16 @@
 
 /datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 	if(M.health < 0)					//Functions as epinephrine.
-		M.adjustToxLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, 0)
-		M.adjustBruteLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, 0)
-		M.adjustFireLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, 0)
+		M.adjustToxLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, updating_health = FALSE)
+		M.adjustBruteLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, updating_health = FALSE)
+		M.adjustFireLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, updating_health = FALSE)
 	if(M.oxyloss > 35)
 		M.setOxyLoss(35, 0)
 	if(M.losebreath >= 4)
 		M.losebreath -= 2
 	if(M.losebreath < 0)
 		M.losebreath = 0
-	M.adjustStaminaLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, 0)
+	M.adjustStaminaLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, updating_health = FALSE)
 	if(prob(20))
 		M.AdjustAllImmobility(-20, 0)
 		M.AdjustUnconscious(-20, 0)
@@ -124,13 +124,13 @@
 		M.adjustFireLoss(-5*REAGENTS_EFFECT_MULTIPLIER)
 		M.AdjustStun(-5*REAGENTS_EFFECT_MULTIPLIER, 0)
 		M.AdjustKnockdown(-5*REAGENTS_EFFECT_MULTIPLIER, 0)
-		M.adjustStaminaLoss(-3*REAGENTS_EFFECT_MULTIPLIER, 0)
+		M.adjustStaminaLoss(-3*REAGENTS_EFFECT_MULTIPLIER, updating_health = FALSE)
 	..()
 	return TRUE // update health at end of tick
 
 /datum/reagent/medicine/super_stimpak/overdose_process(mob/living/M)
-	M.adjustToxLoss(10*REAGENTS_EFFECT_MULTIPLIER, FALSE)
-	M.adjustOxyLoss(10*REAGENTS_EFFECT_MULTIPLIER, FALSE)
+	M.adjustToxLoss(10*REAGENTS_EFFECT_MULTIPLIER, updating_health = FALSE)
+	M.adjustOxyLoss(10*REAGENTS_EFFECT_MULTIPLIER, updating_health = FALSE)
 	..()
 	. = TRUE
 
@@ -183,7 +183,7 @@
 		M.AdjustStun(-2*REAGENTS_EFFECT_MULTIPLIER, 0)
 		M.AdjustKnockdown(-5*REAGENTS_EFFECT_MULTIPLIER, 0)
 		M.AdjustUnconscious(-2*REAGENTS_EFFECT_MULTIPLIER, 0)
-		M.adjustStaminaLoss(-2*REAGENTS_EFFECT_MULTIPLIER, 0)
+		M.adjustStaminaLoss(-2*REAGENTS_EFFECT_MULTIPLIER, updating_health = FALSE)
 	else
 		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 8)
 		M.adjustToxLoss(5*REAGENTS_EFFECT_MULTIPLIER)
@@ -266,8 +266,8 @@
 	..()
 
 /datum/reagent/medicine/bitter_drink/overdose_process(mob/living/M)
-	M.adjustToxLoss(1*REAGENTS_EFFECT_MULTIPLIER, FALSE)
-	M.adjustOxyLoss(2*REAGENTS_EFFECT_MULTIPLIER, FALSE)
+	M.adjustToxLoss(1*REAGENTS_EFFECT_MULTIPLIER, updating_health = FALSE)
+	M.adjustOxyLoss(2*REAGENTS_EFFECT_MULTIPLIER, updating_health = FALSE)
 	..()
 	. = TRUE
 
@@ -292,9 +292,9 @@
 	if(HAS_TRAIT(M, TRAIT_TRIBAL))
 		is_tribal = TRUE
 	var/heal_rate = (is_tribal ? heal_factor_perk : heal_factor) * REAGENTS_EFFECT_MULTIPLIER
-	M.adjustFireLoss(heal_rate, FALSE)
-	M.adjustBruteLoss(heal_rate, FALSE)
-	M.adjustToxLoss(heal_rate, FALSE)
+	M.adjustFireLoss(heal_rate, updating_health = FALSE)
+	M.adjustBruteLoss(heal_rate, updating_health = FALSE)
+	M.adjustToxLoss(heal_rate, updating_health = FALSE)
 	M.hallucination = max(M.hallucination, is_tribal ? 0 : 5)
 	..()
 	return TRUE // update health at end of tick
@@ -308,8 +308,8 @@
 	..()
 
 /datum/reagent/medicine/healing_powder/overdose_process(mob/living/M)
-	M.adjustToxLoss(2*REAGENTS_EFFECT_MULTIPLIER, FALSE)
-	M.adjustOxyLoss(4*REAGENTS_EFFECT_MULTIPLIER, FALSE)
+	M.adjustToxLoss(2*REAGENTS_EFFECT_MULTIPLIER, updating_health = FALSE)
+	M.adjustOxyLoss(4*REAGENTS_EFFECT_MULTIPLIER, updating_health = FALSE)
 	..()
 	return TRUE // update health at end of tick
 
@@ -339,7 +339,7 @@
 /datum/reagent/medicine/radx/on_mob_life(mob/living/carbon/M)
 	if(M.radiation > 0)
 		M.radiation -= min(M.radiation, 8)
-	M.adjustToxLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, FALSE)
+	M.adjustToxLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, updating_health = FALSE)
 	..()
 	return TRUE // update health at end of tick
 
@@ -357,7 +357,7 @@
 	ghoulfriendly = TRUE
 
 /datum/reagent/medicine/radaway/on_mob_life(mob/living/carbon/M)
-	M.adjustToxLoss(-3*REAGENTS_EFFECT_MULTIPLIER, FALSE)
+	M.adjustToxLoss(-3*REAGENTS_EFFECT_MULTIPLIER, updating_health = FALSE)
 	M.radiation -= min(M.radiation, 16)
 	if(ishuman(M) && prob(7))
 		var/mob/living/carbon/human/H = M
@@ -428,7 +428,7 @@
 	M.AdjustStun(-30*REAGENTS_EFFECT_MULTIPLIER, 0)
 	M.AdjustKnockdown(-30*REAGENTS_EFFECT_MULTIPLIER, 0)
 	M.AdjustUnconscious(-30*REAGENTS_EFFECT_MULTIPLIER, 0)
-	M.adjustStaminaLoss(-5*REAGENTS_EFFECT_MULTIPLIER, 0)
+	M.adjustStaminaLoss(-5*REAGENTS_EFFECT_MULTIPLIER, updating_health = FALSE)
 	..()
 	if(M.mind)
 		var/datum/job/job = SSjob.GetJob(M.mind.assigned_role)
@@ -510,7 +510,7 @@
 	M.AdjustStun(-20*REAGENTS_EFFECT_MULTIPLIER, 0)
 	M.AdjustKnockdown(-20*REAGENTS_EFFECT_MULTIPLIER, 0)
 	M.AdjustUnconscious(-20*REAGENTS_EFFECT_MULTIPLIER, 0)
-	M.adjustStaminaLoss(-3*REAGENTS_EFFECT_MULTIPLIER, 0)
+	M.adjustStaminaLoss(-3*REAGENTS_EFFECT_MULTIPLIER, updating_health = FALSE)
 	..()
 	. = TRUE
 
@@ -674,10 +674,10 @@
 	ghoulfriendly = TRUE
 
 /datum/reagent/medicine/gaia/on_mob_life(mob/living/carbon/M)
-	M.adjustToxLoss(-0.75*REAGENTS_EFFECT_MULTIPLIER, 0)
-	M.adjustOxyLoss(-0.75*REAGENTS_EFFECT_MULTIPLIER, 0)
-	M.adjustBruteLoss(-0.75*REAGENTS_EFFECT_MULTIPLIER, 0)
-	M.adjustFireLoss(-0.75*REAGENTS_EFFECT_MULTIPLIER, 0)
+	M.adjustToxLoss(-0.75*REAGENTS_EFFECT_MULTIPLIER, updating_health = FALSE)
+	M.adjustOxyLoss(-0.75*REAGENTS_EFFECT_MULTIPLIER, updating_health = FALSE)
+	M.adjustBruteLoss(-0.75*REAGENTS_EFFECT_MULTIPLIER, updating_health = FALSE)
+	M.adjustFireLoss(-0.75*REAGENTS_EFFECT_MULTIPLIER, updating_health = FALSE)
 	..()
 	return TRUE // update health at end of tick
 

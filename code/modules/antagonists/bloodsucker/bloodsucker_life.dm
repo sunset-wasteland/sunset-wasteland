@@ -86,8 +86,8 @@
 		return FALSE
 	if(istype(owner.current.get_item_by_slot(SLOT_NECK), /obj/item/clothing/neck/garlic_necklace))
 		return FALSE
-	owner.current.adjustStaminaLoss(-1.5 + (actual_regen * -7) * mult, 0) // Humans lose stamina damage really quickly. Vamps should heal more.
-	owner.current.adjustCloneLoss(-0.1 * (actual_regen * 2) * mult, 0)
+	owner.current.adjustStaminaLoss(-1.5 + (actual_regen * -7) * mult, updating_health = FALSE) // Humans lose stamina damage really quickly. Vamps should heal more.
+	owner.current.adjustCloneLoss(-0.1 * (actual_regen * 2) * mult, updating_health = FALSE)
 	owner.current.adjustOrganLoss(ORGAN_SLOT_BRAIN, -1 * (actual_regen * 4) * mult)
 	// No Bleeding
 	/*if(ishuman(owner.current)) //NOTE Current bleeding is horrible, not to count the amount of blood ballistics delete.

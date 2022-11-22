@@ -67,10 +67,10 @@
 	if(!istype(user_loc_turf, /turf/open/floor/plating/rust) || !isliving(user))
 		return
 	var/mob/living/living_user = user
-	living_user.adjustBruteLoss(-3, FALSE)
-	living_user.adjustFireLoss(-3, FALSE)
-	living_user.adjustToxLoss(-3, FALSE)
-	living_user.adjustOxyLoss(-1, FALSE)
+	living_user.adjustBruteLoss(-3, updating_health = FALSE)
+	living_user.adjustFireLoss(-3, updating_health = FALSE)
+	living_user.adjustToxLoss(-3, updating_health = FALSE)
+	living_user.adjustOxyLoss(-1, updating_health = FALSE)
 	living_user.adjustStaminaLoss(-6)
 
 /datum/eldritch_knowledge/rust_mark
@@ -181,10 +181,10 @@
 	if(!finished)
 		return
 	var/mob/living/carbon/human/human_user = user
-	human_user.adjustBruteLoss(-6, FALSE)
-	human_user.adjustFireLoss(-6, FALSE)
-	human_user.adjustToxLoss(-6, FALSE)
-	human_user.adjustOxyLoss(-6, FALSE)
+	human_user.adjustBruteLoss(-6, updating_health = FALSE)
+	human_user.adjustFireLoss(-6, updating_health = FALSE)
+	human_user.adjustToxLoss(-6, updating_health = FALSE)
+	human_user.adjustOxyLoss(-6, updating_health = FALSE)
 	human_user.adjustStaminaLoss(-20)
 
 

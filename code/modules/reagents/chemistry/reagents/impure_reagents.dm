@@ -46,5 +46,5 @@
 
 /datum/reagent/impure/failedstimpak/on_mob_life(mob/living/carbon/C)
 	C.blood_volume -= 10
-	C.adjustCloneLoss(2, 0)
+	C.adjustCloneLoss(2, updating_health = FALSE)
 	..()

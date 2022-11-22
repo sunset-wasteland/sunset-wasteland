@@ -1125,7 +1125,7 @@
 	if(cell)
 		cell.charge = min(cell.charge + amount, cell.maxcharge)
 
-/mob/living/silicon/robot/adjustStaminaLossBuffered(amount, updating_health = 1)
+/mob/living/silicon/robot/adjustStaminaLossBuffered(amount, updating_health = TRUE)
 	if(istype(cell))
 		cell.charge -= amount * 5
 

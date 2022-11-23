@@ -20,6 +20,9 @@ export SPACEMAN_DMM_VERSION=suite-1.7.2
 # Python version for mapmerge and other tools
 export PYTHON_VERSION=3.7.9
 
+# Auxmos repository name
+export AUXMOS_REPOSITORY=Putnam3145/auxmos
+
 # Auxmos git tag
 export AUXMOS_VERSION=v1.1.1
 

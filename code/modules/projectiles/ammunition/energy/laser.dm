@@ -177,6 +177,11 @@ also: most hitscan weapons have more charge than their normal projectile counter
 	projectile_type = /obj/item/projectile/beam/laser/lasgun/hitscan/focused
 	e_cost = 400 //5 shots
 
+/obj/item/ammo_casing/energy/laser/lasgun/hitscan/recharger
+	projectile_type = /obj/item/projectile/beam/laser/lasgun/hitscan/recharger
+	e_cost = 200 //10 shots
+	fire_sound = 'sound/f13weapons/RechargerFire.ogg'
+
 /obj/item/ammo_casing/energy/laser/solar
 	projectile_type = /obj/item/projectile/beam/laser/solar
 	e_cost = 30 //basically infinite shots

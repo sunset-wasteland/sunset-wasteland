@@ -134,7 +134,7 @@ Mayor
 	exp_requirements = 620
 	outfit = /datum/outfit/job/bighorn/f13deputy
 	access = list(ACCESS_BAR, ACCESS_GATEWAY, ACCESS_FUSION, ACCESS_TOWN)
-	minimal_access = list(ACCESS_BAR, ACCESS_GATEWAY,, ACCESS_FUSION, ACCESS_TOWN)
+	minimal_access = list(ACCESS_BAR, ACCESS_GATEWAY, ACCESS_FUSION, ACCESS_TOWN)
 
 /datum/outfit/job/bighorn/f13deputy
 	name = "Deputy"
@@ -163,80 +163,85 @@ Mayor
 	if(visualsOnly)
 		return
 	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
+
 /*--------------------------------------------------------------*/
-/datum/job/bighorn/f13banker
-	title = "Banker"
+
+/datum/job/bighorn/shoprep
+	title = "Sierra Representative"
 	flag = F13BANKER
 	department_flag = DEP_BIGHORN
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the mayor"
-	description = "No matter where society lurks, profit and fortune are there to be made! It is up to you to distribute caps and earn interest while safekeeping items of value for the wastelands denizens! Ensure you make a profit and make your money back no matter the cost. You are to work alongside the Town, and should not be attempting to harm the residents of Bighorn."
+	supervisors = "the free market, Sierra Trading Company, and Bighorn laws."
+	description = "As a representative of the Sierra Trading Company, you have both the authority and the means to hire mercenaries, form trade deals with other groups in the area, and represent the trading company in local (town) matters. Your focus is not the small-scale; you have shopkeepers for that. Your focus is not to do dungeons; you have mercenaries for that. You are here to run the economical side of the company's interests, and make sure that whatever comes, the Sierra Trading Company ends up on top, both in caps, and reputation."
 	selection_color = "#dcba97"
 	exp_requirements = 1500
-	enforces = "You are in a Job meant for encouraging roleplay with others, do not abandon your post or hoard money unless absolutely necessary. Do not use the caps provided for yourself."
-	outfit = /datum/outfit/job/bighorn/f13banker
-	access = list(ACCESS_BAR, ACCESS_FORENSICS_LOCKERS, ACCESS_MINING, ACCESS_TOWN, ACCESS_MINT_VAULT)
-	minimal_access = list(ACCESS_BAR, ACCESS_FORENSICS_LOCKERS, ACCESS_MINING, ACCESS_TOWN, ACCESS_MINT_VAULT)
-	loadout_options = list(
-	/datum/outfit/loadout/classy,
-	/datum/outfit/loadout/loanshark,
-	/datum/outfit/loadout/investor,
-	)
+	enforces = "You are in a Job meant for encouraging roleplay with others, do not abandon your post or hoard money unless absolutely necessary. Do not use the caps provided for yourself. DO NOT DO DUNGEONS.."
+	outfit = /datum/outfit/job/bighorn/shoprep
+	access = list(ACCESS_BAR, ACCESS_FORENSICS_LOCKERS, ACCESS_MINING, ACCESS_MINT_VAULT, ACCESS_CARGO_BOT, ACCESS_TOWN, ACCESS_SHOPKEEP)
+	minimal_access = list(ACCESS_BAR, ACCESS_FORENSICS_LOCKERS, ACCESS_MINING, ACCESS_MINT_VAULT, ACCESS_CARGO_BOT, ACCESS_TOWN, ACCESS_SHOPKEEP)
 
-/datum/outfit/job/bighorn/f13banker
-	name = "Banker"
-	jobtype = /datum/job/bighorn/f13banker
+/datum/outfit/job/bighorn/shoprep
+	name = "Sierra Representative"
+	jobtype = /datum/job/bighorn/shoprep
 	uniform = /obj/item/clothing/under/lawyer/blacksuit
+	suit = /obj/item/clothing/suit/armor/f13/leather_jacket/combat/sierra
+	neck =	/obj/item/storage/belt/holster
 	id = /obj/item/card/id/silver
 	ears = /obj/item/radio/headset/headset_town
 	shoes = /obj/item/clothing/shoes/f13/fancy
 	backpack = /obj/item/storage/backpack/satchel/leather
 	satchel = /obj/item/storage/backpack/satchel/leather
 	backpack_contents = list(
-		/obj/item/storage/bag/money/small/banker)
-
-/datum/outfit/loadout/classy
-	name = "Classy"
-	head = /obj/item/clothing/head/collectable/tophat
-	glasses = /obj/item/clothing/glasses/monocle
-	uniform = /obj/item/clothing/under/suit_jacket/charcoal
-	suit = /obj/item/clothing/suit/f13/banker
-	gloves = /obj/item/clothing/gloves/color/white
-	shoes = /obj/item/clothing/shoes/laceup
-	backpack_contents = list(
-	/obj/item/cane=1,
-	/obj/item/storage/fancy/cigarettes/cigpack_bigboss=1,
-	/obj/item/reagent_containers/food/drinks/bottle/whiskey=1,
-	/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass=1
-	)
-
-/datum/outfit/loadout/loanshark
-	name = "Loanshark"
-	glasses = /obj/item/clothing/glasses/orange
-	mask = /obj/item/clothing/mask/cigarette/cigar
-	suit = /obj/item/clothing/suit/f13/vest
-	uniform = /obj/item/clothing/under/f13/sleazeball
-	shoes = /obj/item/clothing/shoes/sandal
-	backpack_contents = list(
-	/obj/item/reagent_containers/food/drinks/bottle/whiskey=1,
-	/obj/item/storage/box/matches=1,
-	/obj/item/gun/ballistic/automatic/smg/mini_uzi=1
-	)
-
-/datum/outfit/loadout/investor
-	name = "Investor"
-	glasses = /obj/item/clothing/glasses/sunglasses
-	suit = /obj/item/clothing/suit/toggle/lawyer/black
-	uniform = /obj/item/clothing/under/f13/bennys
-	gloves = /obj/item/clothing/gloves/fingerless
-	shoes = /obj/item/clothing/shoes/laceup
-	backpack_contents = list(
-		/obj/item/gun/ballistic/revolver/colt357=1,
-		/obj/item/storage/fancy/cigarettes/cigpack_bigboss=1,
-		/obj/item/storage/box/matches=1
+		/obj/item/storage/bag/money/small/banker = 1,
+		/obj/item/gun/ballistic/automatic/pistol/pistol14/lildevil = 1,
+		/obj/item/ammo_box/magazine/m14mm = 2,
 		)
+
 /*--------------------------------------------------------------*/
+
+/datum/job/bighorn/shopmerc
+	title = "Mercenary"
+	flag = F13MERC
+	department_flag = DEP_BIGHORN
+	total_positions = 3
+	spawn_positions = 3
+	supervisors = "the shopkeeper, representative, Sierra Trading Company"
+	description = "You're one of the mercenaries hired on behalf of the Sierra Trading Company. Help them out, guard the shop, and obtain stock for them, but remember, they aren't entitled to give you free things. Remember, you can also be hired out to others in a pinch."
+	selection_color = "#dcba97"
+	exp_requirements = 620
+	outfit = /datum/outfit/job/bighorn/shopmerc
+	access = list(ACCESS_BAR, ACCESS_TOWN)
+	minimal_access = list(ACCESS_BAR, ACCESS_TOWN)
+
+/datum/outfit/job/bighorn/shopmerc
+	name = "Mercenary"
+	jobtype = /datum/job/bighorn/shopmerc
+	ears = /obj/item/radio/headset/headset_town
+	id =   /obj/item/card/id/silver
+	backpack = /obj/item/storage/backpack/satchel/explorer
+	satchel = /obj/item/storage/backpack/satchel/explorer
+	l_pocket = /obj/item/storage/bag/money/small/settler
+	r_pocket = /obj/item/flashlight/flare
+	r_hand = /obj/item/gun/ballistic/automatic/smg/mp5
+	suit = 	/obj/item/clothing/suit/armor/f13/combat/sierra
+	belt = /obj/item/gun/ballistic/automatic/pistol/mk23
+	shoes = /obj/item/clothing/shoes/f13/explorer
+	uniform = /obj/item/clothing/under/f13/merca
+	backpack_contents = list(
+		/obj/item/ammo_box/magazine/m45exp = 2,
+		/obj/item/ammo_box/magazine/uzim9mm = 2,
+		/obj/item/melee/onehanded/knife/survival = 1,
+		)
+
+/datum/outfit/job/bighorn/shopmerc/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
+
+/*--------------------------------------------------------------*/
+
 /datum/job/bighorn/f13barkeep
 	title = "Barkeep"
 	flag = F13BARKEEP
@@ -328,8 +333,8 @@ Mayor
 	department_flag = DEP_BIGHORN
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "the free market and Bighorn laws"
-	description = "You are a Crimson Caravan affiliate based in Bighorn - a settlement typically run by the Great Khans. Your store allows you to sell all kinds of merchandise, from dandy boy apples to laser rifles. Ensure you make a profit and retain enough capital for your day-to-day operations."
+	supervisors = "the free market, Sierra Trading Company, and Bighorn laws"
+	description = "You are a Sierra Trading Company affiliate based in Bighorn - a settlement in a key area between warring factions. Your store allows you to sell all kinds of merchandise, from dandy boy apples to laser rifles. Ensure you make a profit and retain enough capital for your day-to-day operations."
 	enforces = "While you have dominion over your private business, your premium status as a citizen may be revoked if you are considered a danger to the populace or anger those in control of the town."
 	selection_color = "#dcba97"
 	exp_requirements = 300

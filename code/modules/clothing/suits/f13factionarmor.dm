@@ -1047,3 +1047,22 @@
 	icon_state = "enclave_new"
 	item_state = "enclave_new"
 	armor = list("melee" = 45, "bullet" = 45, "laser" = 45, "energy" = 20, "bomb" = 50, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20, "wound" = 10)
+
+//Town
+
+/obj/item/clothing/suit/armor/f13/combat/sierra
+	name = "mercenary combat armor"
+	desc = "An old military grade pre war combat armor, repainted to the colour scheme of the Sierra Trading Company."
+	icon = 'icons/fallout/clothing/armored_medium.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/suit.dmi'
+	icon_state = "combat_armor_sierra"
+	item_state = "combat_armor_sierra"
+
+/obj/item/clothing/suit/armor/f13/combat/mk2/sierra
+	name = "reinforced mercenary combat armor"
+	desc = "A reinforced set of bracers, greaves, and torso plating of prewar design. This one is kitted with additional plates, repainted to the colour scheme of the Sierra Trading Company."
+	icon = 'icons/fallout/clothing/armored_medium.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/suit.dmi'
+	icon_state = "combat_armor_sierra_mk2"
+	item_state = "combat_armor_sierra_mk2"
+

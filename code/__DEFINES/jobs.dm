@@ -126,6 +126,7 @@
 #define F13BANKER		(1<<6)
 #define F13DEPUTY		(1<<7)
 #define F13SECRETARY	(1<<8)
+#define F13MERC			(1<<9)
 
 #define VAULT			(1<<7)
 

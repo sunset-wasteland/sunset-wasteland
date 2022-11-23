@@ -46,6 +46,15 @@
 	desc = "A combat leather jacket, outfitted with a special armored leather coat."
 	armor = list("melee" = 35, "bullet" = 22, "laser" = 22, "energy" = 15, "bomb" = 45, "bio" = 30, "rad" = 5, "fire" = 50, "acid" = 35, "wound" = 10)
 
+/obj/item/clothing/suit/armor/f13/leather_jacket/combat/sierra
+	name = "Sierra suit jacket"
+	icon = 'icons/fallout/clothing/suits_cosmetic.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/suit.dmi'
+	icon_state = "sierrajacket"
+	item_state = "sierrajacket"
+	desc = "An armored suit jacket for the representative of the Sierra Trading Company. Lined with durable padding."
+	armor = list("melee" = 35, "bullet" = 45, "laser" = 30, "energy" = 15, "bomb" = 45, "bio" = 30, "rad" = 5, "fire" = 50, "acid" = 35, "wound" = 10)
+
 
 /obj/item/clothing/suit/armor/f13/kit
 	name = "armor kit"

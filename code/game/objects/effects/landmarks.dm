@@ -788,6 +788,14 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	name = "Barkeep"
 	icon_state = "Barkeep"
 
+/obj/effect/landmark/start/f13/shoprep
+	name = "Sierra Representative"
+	icon_state = "Banker"
+
+/obj/effect/landmark/start/f13/shopmerc
+	name = "Mercenary"
+	icon_state = "Officer"
+
 // Wasteland
 
 /obj/effect/landmark/start/f13/cultleader

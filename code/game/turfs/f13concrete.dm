@@ -70,6 +70,7 @@ Concrete = Cement 1u + Water 2u + Silicon 7u
 	M.adjustToxLoss(0.2*REAGENTS_EFFECT_MULTIPLIER, 0)
 	M.adjustFireLoss(0.2*REAGENTS_EFFECT_MULTIPLIER, 0)
 	..()
+	return TRUE // update health at end of tick
 
 //////////////////
 //Concrete Shake//
@@ -96,6 +97,7 @@ Concrete = Cement 1u + Water 2u + Silicon 7u
 	M.adjustToxLoss(0.2*REAGENTS_EFFECT_MULTIPLIER, 0)
 	M.adjustFireLoss(0.2*REAGENTS_EFFECT_MULTIPLIER, 0)
 	..()
+	return TRUE // update health at end of tick
 
 
 ////////////

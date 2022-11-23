@@ -122,6 +122,7 @@
 	if(volume >= 10)
 		M.adjustToxLoss(5, 0)
 	..()
+	return TRUE // update health at end of tick
 
 /obj/effect/temp_visual/leaper_crush
 	name = "grim tidings"

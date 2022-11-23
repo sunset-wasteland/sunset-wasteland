@@ -578,6 +578,7 @@ GLOBAL_LIST_INIT(ballmer_windows_me_msg, list("Yo man, what if, we like, uh, put
 		handle_hallucinations()
 
 	if(drunkenness)
+		var/changed_health = FALSE // to update health once at the end instead of repeatedly
 		drunkenness *= 0.96
 		if(drunkenness >= 6)
 			SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "drunk", /datum/mood_event/drunk)
@@ -585,6 +586,7 @@ GLOBAL_LIST_INIT(ballmer_windows_me_msg, list("Yo man, what if, we like, uh, put
 			if(HAS_TRAIT(src, TRAIT_DRUNK_HEALING))
 				adjustBruteLoss(-0.12, FALSE)
 				adjustFireLoss(-0.06, FALSE)
+				changed_health = TRUE
 
 		// todo: reimplement ballmer peak but for non-hardcoded techwebs
 
@@ -595,6 +597,7 @@ GLOBAL_LIST_INIT(ballmer_windows_me_msg, list("Yo man, what if, we like, uh, put
 			if(HAS_TRAIT(src, TRAIT_DRUNK_HEALING)) // effects stack with lower tiers
 				adjustBruteLoss(-0.3, FALSE)
 				adjustFireLoss(-0.15, FALSE)
+				changed_health = TRUE
 
 		if(drunkenness >= 51)
 			if(prob(5))
@@ -608,12 +611,14 @@ GLOBAL_LIST_INIT(ballmer_windows_me_msg, list("Yo man, what if, we like, uh, put
 			if(HAS_TRAIT(src, TRAIT_DRUNK_HEALING))
 				adjustBruteLoss(-0.4, FALSE)
 				adjustFireLoss(-0.2, FALSE)
+				changed_health = TRUE
 
 		if(drunkenness >= 71)
 			blur_eyes(5)
 
 		if(drunkenness >= 81)
 			adjustToxLoss(0.2)
+			changed_health = TRUE
 			if(prob(5) && !stat)
 				to_chat(src, "<span class='warning'>Maybe you should lie down for a bit...</span>")
 
@@ -628,10 +633,14 @@ GLOBAL_LIST_INIT(ballmer_windows_me_msg, list("Yo man, what if, we like, uh, put
 
 		if(drunkenness >= 101)
 			adjustToxLoss(4) //Let's be honest you shouldn't be alive by now
+			changed_health = TRUE
 		else
 			SEND_SIGNAL(src, COMSIG_CLEAR_MOOD_EVENT, "drunk")
 			clear_alert("drunk")
 			drunkenness = max(drunkenness - 0.2, 0)
+		
+		if (changed_health)
+			updatehealth()
 
 //used in human and monkey handle_environment()
 /mob/living/carbon/proc/natural_bodytemperature_stabilization()

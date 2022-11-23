@@ -164,6 +164,7 @@ IMPORTANT FACTORS TO CONSIDER WHILE BALANCING
 							M.adjustFireLoss(-1, 0)
 							M.heal_bodypart_damage(1,1)
 							M.reagents.remove_reagent(type, 1)//faster rate of loss.
+							. = TRUE // update health at end of tick
 				else //If there's no ghosts, but they've made a large amount, then proceed to make flavourful clone, where you become fat and useless until you split.
 					switch(current_cycle)
 						if(21)
@@ -314,6 +315,7 @@ IMPORTANT FACTORS TO CONSIDER WHILE BALANCING
 	M.setOrganLoss(ORGAN_SLOT_BRAIN, -1)
 	M.adjust_nutrition(10)
 	..()
+	return TRUE // update health at end of tick
 
 //Unobtainable, used if SDGF is impure but not too impure
 /datum/reagent/impure/SDGFtox
@@ -326,6 +328,7 @@ IMPORTANT FACTORS TO CONSIDER WHILE BALANCING
 	M.blood_volume -= 10
 	M.adjustCloneLoss(2, 0)
 	..()
+	return TRUE // update health at end of tick
 
 //Fail state of SDGF
 /datum/reagent/impure/SDZF
@@ -361,6 +364,7 @@ IMPORTANT FACTORS TO CONSIDER WHILE BALANCING
 				M.set_nutrition(20000) //https://www.youtube.com/watch?v=Bj_YLenOlZI
 		if(75 to 85)
 			M.adjustToxLoss(1, 0)// the warning!
+			. = TRUE // update health at end of tick
 
 		if(86)//mean clone time!
 			if (!M.reagents.has_reagent(/datum/reagent/medicine/pen_acid))//Counterplay is pent.)
@@ -371,6 +375,7 @@ IMPORTANT FACTORS TO CONSIDER WHILE BALANCING
 				M.visible_message("[M] suddenly shudders, and splits into a funky smelling copy of themselves!")
 				M.emote("scream")
 				M.adjustToxLoss(30, 0)
+				. = TRUE // update health at end of tick
 				var/mob/living/simple_animal/hostile/unemployedclone/ZI = new(get_turf(M.loc))
 				ZI.damage_coeff = list(BRUTE = ((1 / volume)**0.25) , BURN = ((1 / volume)**0.1), TOX = 1, CLONE = 1, STAMINA = 0, OXY = 1)
 				ZI.real_name = M.real_name//Give your offspring a big old kiss.
@@ -394,5 +399,6 @@ IMPORTANT FACTORS TO CONSIDER WHILE BALANCING
 
 		if(87 to INFINITY)
 			M.adjustToxLoss(2, 0)
+			. = TRUE // update health at end of tick
 			M.reagents.remove_reagent(type, 1)
 	..()

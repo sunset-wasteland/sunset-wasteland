@@ -57,7 +57,7 @@
 		M.adjustOxyLoss(-5)
 		M.adjustBruteLoss(-5)
 		M.adjustFireLoss(-5)
-		M.adjustToxLoss(-5, TRUE) //heals TOXINLOVERs
+		M.adjustToxLoss(-5, forced = TRUE) //heals TOXINLOVERs
 		M.adjustCloneLoss(-5)
 		M.adjustStaminaLoss(-5)
 		return

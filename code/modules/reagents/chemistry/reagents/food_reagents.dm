@@ -395,6 +395,7 @@
 /datum/reagent/consumable/brocjuice/on_mob_life(mob/living/carbon/M)
 	M.adjustOxyLoss(-1*REAGENTS_EFFECT_MULTIPLIER, 0)
 	..()
+	return TRUE // update health at end of tick
 
 /datum/reagent/consumable/xanderjuice
 	name = "Xander Root Juice"
@@ -432,6 +433,7 @@
 /datum/reagent/consumable/ferajuice/on_mob_life(mob/living/carbon/M)
 	if(M.health > 20)
 		M.adjustToxLoss(-1*REAGENTS_EFFECT_MULTIPLIER, 0)
+		. = TRUE // update health at end of tick
 	..()
 
 /datum/reagent/consumable/daturajuice
@@ -475,6 +477,7 @@
 /datum/reagent/consumable/cavefungusjuice/on_mob_life(mob/living/carbon/M)
 	M.adjustToxLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, 0)
 	..()
+	return TRUE // update health at end of tick
 
 /datum/reagent/consumable/tato_juice
 	name = "Tato Juice"
@@ -754,6 +757,7 @@
 		M.adjustOxyLoss(-1*REM, 0)
 		M.adjustToxLoss(-1*REM, 0, TRUE) //heals TOXINLOVERs
 	..()
+	return TRUE // update health at end of tick
 
 /datum/reagent/consumable/honey/reaction_mob(mob/living/M, method=TOUCH, reac_volume)
 	if(iscarbon(M) && (method in list(TOUCH, VAPOR, PATCH)))
@@ -1005,11 +1009,11 @@
 	if(M.losebreath < 0)
 		M.losebreath = 0
 	M.adjustStaminaLoss(-0.5*REM, 0)
-	. = 1
 	if(prob(20))
 		M.AdjustAllImmobility(-20, 0)
 		M.AdjustUnconscious(-20, 0)
 	..()
+	return TRUE // update health at end of tick
 
 /datum/reagent/consumable/buffalojuice/overdose_process(mob/living/M)
 	if(prob(33))

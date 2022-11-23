@@ -247,8 +247,8 @@
 
 /mob/camera/blob/verb/expand_blob_power()
 	set category = "Blob"
-	set name = "Expand/Attack Blob ([BLOB_SPREAD_COST])"
-	set desc = "Attempts to create a new blob in this tile. If the tile isn't clear, instead attacks it, damaging mobs and objects and refunding [BLOB_ATTACK_REFUND] points."
+	set name = "Expand/Attack Blob (" + BLOB_SPREAD_COST_TEXT + ")"
+	set desc = "Attempts to create a new blob in this tile. If the tile isn't clear, instead attacks it, damaging mobs and objects and refunding " + BLOB_ATTACK_REFUND_TEXT + " points."
 	var/turf/T = get_turf(src)
 	expand_blob(T)
 

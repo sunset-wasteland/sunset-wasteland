@@ -164,7 +164,7 @@
 			AA.remove_from_hud(src)
 
 	if(reagents)
-		qdel(reagents)
+		QDEL_NULL(reagents)
 
 	LAZYCLEARLIST(overlays)
 

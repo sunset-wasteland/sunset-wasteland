@@ -49,7 +49,7 @@
 	update_designs()
 
 /obj/machinery/rnd/production/proc/update_designs()
-	cached_designs.Cut()
+	cached_designs?.Cut()
 	for(var/i in stored_research.researched_designs)
 		var/datum/design/d = SSresearch.techweb_design_by_id(i)
 		if((isnull(allowed_department_flags) || (d.departmental_flags & allowed_department_flags)) && (d.build_type & allowed_buildtypes))

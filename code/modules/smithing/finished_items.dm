@@ -98,7 +98,7 @@
 	sharpness = SHARP_POINTY
 
 /obj/item/mining_scanner/prospector/Initialize()
-	..()
+	. = ..()
 	var/mutable_appearance/overlay
 	desc = "A handmade [name]."
 	overlay = mutable_appearance(icon, "handle_prospect")
@@ -129,7 +129,7 @@
 	sharpness = SHARP_POINTY
 
 /obj/item/pickaxe/smithed/Initialize()
-	..()
+	. = ..()
 	desc = "A handmade [name]."
 	var/mutable_appearance/overlay
 	overlay = mutable_appearance(icon, "woodrod")
@@ -153,7 +153,7 @@
 	sharpness = SHARP_EDGED //it cuts through the earth
 
 /obj/item/shovel/smithed/Initialize()
-	..()
+	. = ..()
 	desc = "A handmade [name]."
 	var/mutable_appearance/overlay
 	overlay = mutable_appearance(icon, "shovelhandle")
@@ -172,7 +172,7 @@
 	material_flags = MATERIAL_COLOR | MATERIAL_AFFECT_STATISTICS
 
 /obj/item/crowbar/smithed/Initialize()
-	..()
+	. = ..()
 	desc = "A handmade [name]."
 	var/mutable_appearance/overlay
 	overlay = mutable_appearance(icon, "handle_crowbar")
@@ -192,7 +192,7 @@
 	force = 28
 
 /obj/item/crowbar/smithedunitool/Initialize()
-	..()
+	. = ..()
 	desc = "A bizarre combination of a crowbar and some sort of knifeblade."
 	var/mutable_appearance/overlay
 	overlay = mutable_appearance(icon, "handle_unitool")

@@ -70,7 +70,7 @@
 	icon_state = "[initial(icon_state)]-empty"
 	anchored = FALSE
 	GLOB.vertibirdLandZone -= landmark
-	landmark.Destroy()
+	qdel(landmark)
 
 /obj/item/flashlight/flare/emergency/attack_hand(mob/user)
 	. = ..()

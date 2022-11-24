@@ -25,6 +25,9 @@ GLOBAL_VAR(test_log)
 	/// The top right turf of the testing zone
 	var/turf/run_loc_top_right
 
+	///The priority of the test, the larger it is the later it fires
+	var/priority = TEST_DEFAULT
+
 	/// The type of turf to allocate for the testing zone
 	var/test_turf_type = /turf/open/floor/plasteel
 
@@ -35,6 +38,9 @@ GLOBAL_VAR(test_log)
 	var/list/fail_reasons
 
 	var/static/datum/turf_reservation/turf_reservation
+
+/proc/cmp_unit_test_priority(datum/unit_test/a, datum/unit_test/b)
+	return initial(a.priority) - initial(b.priority)
 
 /datum/unit_test/New()
 	if (isnull(turf_reservation))
@@ -80,7 +86,16 @@ GLOBAL_VAR(test_log)
 /proc/RunUnitTests()
 	CHECK_TICK
 
-	for(var/I in subtypesof(/datum/unit_test))
+	var/list/tests_to_run = subtypesof(/datum/unit_test)
+	for (var/_test_to_run in tests_to_run)
+		var/datum/unit_test/test_to_run = _test_to_run
+		if (initial(test_to_run.focus))
+			tests_to_run = list(test_to_run)
+			break
+	tests_to_run = sortTim(tests_to_run, /proc/cmp_unit_test_priority)
+
+	for(var/I in tests_to_run)
+		CHECK_TICK //We check tick first because the unit test we run last may be so expensive that checking tick will lock up this loop forever
 		var/datum/unit_test/test = new I
 
 		GLOB.current_test = test
@@ -101,6 +116,6 @@ GLOBAL_VAR(test_log)
 			log_entry += "\tREASON #[J]: [fail_reasons[J]]"
 		log_test(log_entry.Join("\n"))
 
-		CHECK_TICK
-
 	SSticker.force_ending = TRUE
+	//We have to call this manually because del_text can precede us, and SSticker doesn't fire in the post game
+	SSticker.standard_reboot()

@@ -17,7 +17,7 @@
 /obj/item/paper/contract/employment
 	icon_state = "paper_words"
 
-/obj/item/paper/contract/employment/New(atom/loc, mob/living/nOwner)
+/obj/item/paper/contract/employment/Initialize(mapload, mob/living/nOwner)
 	. = ..()
 	if(!nOwner || !nOwner.mind)
 		qdel(src)
@@ -90,8 +90,8 @@
 	name = "paper- infernal contract"
 	contractType = CONTRACT_UNWILLING
 
-/obj/item/paper/contract/infernal/New(atom/loc, mob/living/nTarget, datum/mind/nOwner)
-	..()
+/obj/item/paper/contract/infernal/Initialize(mapload, mob/living/nTarget, datum/mind/nOwner)
+	. = ..()
 	owner = nOwner
 	devil_datum = owner.has_antag_datum(/datum/antagonist/devil)
 	target = nTarget

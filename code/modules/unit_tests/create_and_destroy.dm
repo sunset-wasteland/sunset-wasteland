@@ -25,7 +25,41 @@ GLOBAL_VAR_INIT(running_create_and_destroy, FALSE)
 		/obj/item/bodypart,
 		//briefcase launchpads erroring
 		/obj/machinery/launchpad/briefcase,
+		//no shuttle
+		/obj/docking_port,
+		//template type
+		/obj/item/gun/magic,
+		//template type
+		/obj/item/storage/fancy,
+		//template type + burn this code to the ground + L + ratio
+		/obj/item/locked_box,
+		/obj/item/locked_box/armor,
+		/obj/item/locked_box/medical,
+		/obj/item/locked_box/misc,
+		/obj/item/locked_box/misc/money,
+		/obj/item/locked_box/misc/money/all,
+		/obj/item/locked_box/misc/blueprints,
+		/obj/item/locked_box/weapon,
+		/obj/item/locked_box/weapon/ammo,
+		/obj/item/locked_box/weapon/melee,
+		/obj/item/locked_box/weapon/range,
+		//needs a mob passed to view it
+		/obj/screen/credit,
 	)
+	//needs to be mapped in with an id
+	ignore += typesof(/obj/effect/spawner/structure/window/reinforced/tinted/electrochromatic)
+	//these are VERY situational and need info passed
+	ignore += typesof(/obj/effect/abstract)
+	//needs a lich passed
+	ignore += typesof(/obj/item/phylactery)
+	//cba to fix hitscans erroring in Destroy, so just ignore all projectiles
+	ignore += typesof(/obj/item/projectile)
+	//needs an owner to work
+	ignore += typesof(/obj/item/paper/contract)
+	//needs a spell to work
+	ignore += typesof(/obj/item/melee/blood_magic)
+	//Doesn't work on our map setup
+	ignore += typesof(/obj/item/disk/nuclear)
 	//Say it with me now, type template
 	ignore += typesof(/obj/effect/mapping_helpers)
 	//This turf existing is an error in and of itself
@@ -42,8 +76,10 @@ GLOBAL_VAR_INIT(running_create_and_destroy, FALSE)
 	ignore += typesof(/obj/effect/abstract/eye_lighting)
 	//We have a baseturf limit of 10, adding more than 10 baseturf helpers will kill CI, so here's a future edge case to fix.
 	ignore += typesof(/obj/effect/baseturf_helper)
-	//No tauma to pass in
+	//No trauma to pass in
 	ignore += typesof(/mob/camera/imaginary_friend)
+	//No one to be friends with :(
+	ignore += typesof(/obj/effect/mob_spawn/human/demonic_friend)
 	//Hangs a ref post invoke async, which we don't support. Could put a qdeleted check but it feels hacky
 	ignore += typesof(/obj/effect/anomaly/grav/high)
 	//See above
@@ -87,7 +123,7 @@ GLOBAL_VAR_INIT(running_create_and_destroy, FALSE)
 		var/list/to_del = spawn_at.contents - cached_contents
 		if(length(to_del))
 			for(var/atom/to_kill in to_del)
-				qdel(to_kill)
+				qdel(to_kill, force = TRUE)
 
 	GLOB.running_create_and_destroy = FALSE
 	//Hell code, we're bound to have ended the round somehow so let's stop if from ending while we work

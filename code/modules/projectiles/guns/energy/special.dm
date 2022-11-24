@@ -348,7 +348,7 @@
 	selfcharge = EGUN_SELFCHARGE_BORG
 	cell_type = /obj/item/stock_parts/cell/secborg
 	charge_delay = 3
-	ammo_type = /obj/item/ammo_casing/energy/flamethrower
+	ammo_type = list(/obj/item/ammo_casing/energy/flamethrower)
 
 /obj/item/gun/energy/gutsy_flamethrower/emp_act()
 	return

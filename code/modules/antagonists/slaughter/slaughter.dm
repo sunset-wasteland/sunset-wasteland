@@ -72,7 +72,7 @@
 	var/consumed_buff = 0
 
 /mob/living/simple_animal/slaughter/Initialize()
-	..()
+	. = ..()
 	var/obj/effect/proc_holder/spell/bloodcrawl/bloodspell = new
 	AddSpell(bloodspell)
 	if(istype(loc, /obj/effect/dummy/phased_mob/slaughter))

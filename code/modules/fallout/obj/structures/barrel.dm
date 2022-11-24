@@ -27,7 +27,7 @@
 
 /obj/structure/reagent_dispensers/barrel/dangerous/Destroy()
 	STOP_PROCESSING(SSradiation,src)
-	..()
+	return ..()
 
 //Bing bang boom done
 /obj/structure/reagent_dispensers/barrel/dangerous/process()

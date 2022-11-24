@@ -353,7 +353,7 @@
 	current_skin = choice
 	return
 
-/obj/proc/check_skinnable(/mob/M)
+/obj/proc/check_skinnable(mob/M)
 	if(current_skin && !always_reskinnable)
 		return FALSE
 	return TRUE

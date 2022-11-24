@@ -31,5 +31,5 @@
  * Keep in mind the solars' max_integrity is set equal to the obj_integrity later,
  * so you won't have to do so here.
  */
-/obj/item/stack/sheet/proc/on_solar_construction(/obj/machinery/power/solar/S)
+/obj/item/stack/sheet/proc/on_solar_construction(obj/machinery/power/solar/S)
 	return

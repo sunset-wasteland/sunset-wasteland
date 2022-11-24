@@ -150,7 +150,7 @@
 		return
 	. += "<span class='warning'>You cannot read it!</span>"
 
-/obj/item/paper/ui_status(mob/user,/datum/ui_state/state)
+/obj/item/paper/ui_status(mob/user,datum/ui_state/state)
 		// Are we on fire?  Hard ot read if so
 	if(resistance_flags & ON_FIRE)
 		return UI_CLOSE

@@ -268,7 +268,7 @@
 	L.physiology.siemens_coeff *= 0.5
 
 /datum/reagent/teslium/energized_jelly
-	name = "Energized Jelly"
+	name = "Energized Cellulose"
 	description = "Electrically-charged jelly. Boosts jellypeople's nervous system, but only shocks other lifeforms."
 	reagent_state = LIQUID
 	color = "#CAFF43"

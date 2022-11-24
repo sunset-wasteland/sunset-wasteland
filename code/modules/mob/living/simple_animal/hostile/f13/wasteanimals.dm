@@ -113,6 +113,9 @@
 		var/mob/living/carbon/human/H = target
 		H.reagents.add_reagent(/datum/reagent/toxin/stalker_venom, 4)
 
+/datum/reagent/toxin/stalker_venom
+	name = "nightstalker venom"
+
 /datum/reagent/toxin/stalker_venom/on_mob_life(mob/living/M)
 	if(volume >= 16)
 		M.adjustToxLoss(5, 0)

@@ -290,7 +290,7 @@
 	. = 1
 
 /datum/reagent/drug/methamphetamine/changeling
-	name = "Changeling Adrenaline"
+	name = "Changeling Methamphetamine"
 	addiction_threshold = 35
 	overdose_threshold = 35
 	jitter = FALSE

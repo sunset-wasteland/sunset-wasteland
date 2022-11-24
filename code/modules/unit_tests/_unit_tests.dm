@@ -38,14 +38,17 @@
 #define UNIT_TEST_FAILED 1
 #define UNIT_TEST_SKIPPED 2
 
+#define TEST_DEFAULT 1
+#define TEST_CREATE_AND_DESTROY INFINITY
+
 //Keep this sorted alphabetically
 #include "anchored_mobs.dm"
 #include "binary_insert.dm"
 #include "character_saving.dm"
 #include "combat.dm"
 #include "component_tests.dm"
+#include "create_and_destroy.dm"
 #include "designs.dm"
-#include "initialize_sanity.dm"
 #include "medical_wounds.dm"
 #include "merge_type.dm"
 #include "metabolizing.dm"

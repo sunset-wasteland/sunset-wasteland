@@ -252,6 +252,7 @@
 	new /obj/item/clothing/under/f13/recon/outcast(src)
 	new /obj/item/clothing/head/helmet/f13/combat/brotherhood/outcast(src)
 	new /obj/item/clothing/suit/armor/f13/combat/brotherhood/outcast(src)
+	
 /datum/gear/donator/kits/appleplastic
 	name = "Slugger's Lootbox"
 	path = /obj/item/storage/box/large/custom_kit/appleplastic

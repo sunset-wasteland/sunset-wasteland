@@ -241,15 +241,19 @@
 	new /obj/item/clothing/mask/scarecrow/baghead(src)
 	new /obj/item/melee/onehanded/knife/ritualdagger/baghead(src)
 	new /obj/item/book/granter/trait/chemistry(src)
-	
-/datum/gear/donator/kits/emma
-	name = "Emma's Equipment"
-	path = /obj/item/storage/box/large/custom_kit/emma
-	ckeywhitelist = list ("potatoperson993")
 
-/obj/item/storage/box/large/custom_kit/emma/PopulateContents()
-	new /obj/item/gun/energy/laser/wattz/recharger(src)
-	new /obj/item/clothing/under/f13/recon/outcast(src)
-	new /obj/item/clothing/head/helmet/f13/combat/brotherhood/outcast(src)
-	new /obj/item/clothing/suit/armor/f13/combat/brotherhood/outcast(src)
-	
+/datum/gear/donator/kits/appleplastic
+	name = "Slugger's Lootbox"
+	path = /obj/item/storage/box/large/custom_kit/appleplastic
+	ckeywhitelist = list("ApplePlastic")
+
+/obj/item/storage/box/large/custom_kit/appleplastic/PopulateContents()
+	new /obj/item/clothing/under/f13/vault57(src)
+	new /obj/item/clothing/suit/suspenders
+	new /obj/item/clothing/head/helmet/f13/ballerhelm(src)
+	new /obj/item/clothing/gloves/f13/baseball(src)
+	new /obj/item/twohanded/baseball/louisville(src)
+	new /obj/item/gun/ballistic/automatic/pistol/n99(src)
+	new /obj/item/ammo_box/magazine/m10mm_adv(src)
+	new /obj/item/ammo_box/magazine/m10mm_adv(src)
+	new /obj/item/toy/tennis/baseball(src)

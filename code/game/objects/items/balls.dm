@@ -1,7 +1,7 @@
 /*		BALLS - GLORIOUS BALLS
 //
 //	Includes:-
-//		1) Tennis balls, lines 10 - 92
+//		1) Tennis balls/baseball, lines 10 - 92
 //
 //
 //
@@ -21,9 +21,10 @@
 	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/toy/tennis/alt_pre_attack(atom/A, mob/living/user, params)	//checks if it can do right click memes
+
 	altafterattack(A, user, TRUE, params)
 	return TRUE
-
+	
 /obj/item/toy/tennis/altafterattack(atom/target, mob/living/carbon/user, proximity_flag, click_parameters)	//does right click memes
 	if(istype(user))
 		user.visible_message("<span class='notice'>[user] waggles [src] at [target].</span>", "<span class='notice'>You waggle [src] at [target].</span>")
@@ -84,5 +85,9 @@
 	item_state = "tennis_purple"
 	resistance_flags = ACID_PROOF
 
-/datum/action/item_action/squeeze
-	name = "Squeak!"
+/obj/item/toy/tennis/baseball
+	name = "baseball"
+	desc = "An old, ragged baseball. It seems to be in relatively good condition."
+	icon_state = "theball_icon"
+	item_state = "theball"
+	

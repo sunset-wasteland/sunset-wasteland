@@ -638,6 +638,15 @@
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
 
+/obj/item/clothing/head/helmet/f13/ballerhelm
+	name = "baseball helmet"
+	desc = "A black baseball helmet. It's designed to keep your head intact."
+	icon_state = "morugahelm"
+	item_state = "morgsc"
+	armor = list("melee" = 35, "bullet" = 10, "laser" = 10, "energy" = 10, "bomb" = 15, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 0, "wound" = 5)
+	flags_inv = HIDEEARS
+	strip_delay = 10
+
 /obj/item/clothing/head/helmet/f13/firefighter
 	name = "firefighter helmet"
 	desc = "A firefighter's helmet worn on top of a fire-retardant covering and broken gas mask.<br>It smells heavily of sweat."

@@ -79,6 +79,15 @@
 	random_sensor = FALSE
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 30, "fire" = 20, "acid" = 50)
 
+/obj/item/clothing/under/f13/vault57
+	name = "vault 57 baseball uniform"
+	desc = "A baseball uniform with the number 57 imprinted onto it."
+	icon_state = "vaultbatter"
+	item_state = "batter"
+	can_adjust = TRUE
+	has_sensor = LOCKED_SENSORS
+	sensor_mode = SENSOR_COORDS
+	random_sensor = FALSE
 
 //NCR
 

@@ -21,10 +21,10 @@ export SPACEMAN_DMM_VERSION=suite-1.7.2
 export PYTHON_VERSION=3.7.9
 
 # Auxmos repository name
-export AUXMOS_REPOSITORY=out-of-phaze/auxmos # change back to Putnam3145/auxmos when this is merged and released
+export AUXMOS_REPOSITORY=sunset-wasteland/auxmos
 
 # Auxmos git tag
-export AUXMOS_VERSION=v2.2.1-equalize
+export AUXMOS_VERSION=v2.3.1
 
 # Extools git tag
 export EXTOOLS_VERSION=v0.0.7

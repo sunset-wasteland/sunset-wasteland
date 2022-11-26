@@ -29,12 +29,11 @@
 	if(QDELETED(src))
 		return PROCESS_KILL
 
-	for(var/mob/living/carbon/human/victim in view(src,range))
-		if(istype(victim) && victim.stat != DEAD)
-			victim.rad_act(intensity)
-	for(var/obj/item/geiger_counter/geiger in view(src,range))
-		if(istype(geiger))
-			geiger.rad_act(intensity)
+	// This is done so we can use only one view() rather than two.
+	var/static/list/types_to_irradiate = typecacheof(list(/mob/living/carbon/human, /obj/item/geiger_counter))
+	for(var/atom/movable/irradiated_thing in view(src,range))
+		if(is_type_in_typecache(irradiated_thing, types_to_irradiate))
+			irradiated_thing.rad_act(intensity)
 
 /obj/effect/decal/marking
 	name = "road marking"

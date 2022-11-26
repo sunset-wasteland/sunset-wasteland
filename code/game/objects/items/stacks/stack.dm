@@ -443,7 +443,7 @@
 	else
 		transfer = min(transfer, (limit ? limit : target_stack.max_amount) - target_stack.amount)
 	if(pulledby)
-		pulledby.start_pulling(target_stack)
+		INVOKE_ASYNC(pulledby, /atom/movable.proc/start_pulling, target_stack)
 	target_stack.copy_evidences(src)
 	use(transfer, transfer = TRUE, check = FALSE)
 	target_stack.add(transfer)

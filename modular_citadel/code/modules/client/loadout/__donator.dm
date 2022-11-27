@@ -311,3 +311,12 @@
 
 /obj/item/storage/box/large/custom_kit/transhumanism/proc/implant(player, obj/item/organ/I)
 	I.Insert(player, drop_if_replaced = FALSE)
+
+/datum/gear/donator/kits/finlayranger
+	name = "Steel Toes Ranger"
+	path = /obj/item/storage/box/large/custom_kit/finlayranger
+	ckeywhitelist = list ("metrobotic")
+
+/obj/item/storage/box/large/custom_kit/finlayranger/PopulateContents()
+	new /obj/item/clothing/glasses/hud/health/eyepatch(src)// basic healthhud but cooler.
+

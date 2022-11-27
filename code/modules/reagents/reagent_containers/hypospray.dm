@@ -84,6 +84,18 @@
 
 //MediPens
 
+/obj/item/reagent_containers/hypospray/medipen/skillpen
+	name = "experimental medipen"
+	desc = "test"
+	icon_state = "medipen"
+	item_state = "medipen"
+	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
+	amount_per_transfer_from_this = 20
+	volume = 20
+	list_reagents = list(/datum/reagent/medicine/epinephrine = 5, /datum/reagent/preservahyde = 5, /datum/reagent/medicine/neurostim = 10)
+
+
 /obj/item/reagent_containers/hypospray/medipen
 	name = "epinephrine medipen"
 	desc = "A rapid and safe way to stabilize patients in critical condition for personnel without advanced medical knowledge. Contains a powerful preservative that can delay decomposition when applied to a dead body."

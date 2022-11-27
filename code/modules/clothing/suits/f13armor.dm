@@ -1359,3 +1359,9 @@
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS|HANDS
 	slowdown = 0.05
+
+/obj/item/clothing/suit/armor/f13/rangercombat/finlayranger
+	name = "Brotherhood of Steel Ranger Armor"
+	desc = "A customized and well-worn suit of riot gear with parts of the suit reinforced with leather armor."
+	icon_state = "finlayranger"
+	item_state = "finlayranger"

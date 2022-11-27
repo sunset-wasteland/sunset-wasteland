@@ -391,6 +391,11 @@
 	extra_damage = 20
 	fire_sound = 'sound/f13weapons/magnum_fire.ogg'
 
+//Bible Dog M1911					Keywords: UNIQUE, .45, Semi-auto, 7 rounds, Heavy.
+/obj/item/gun/ballistic/automatic/pistol/m1911/bibledog
+	name = "New Canaanite .45 Auto pistol"
+	desc = "A well-maintained stainless-steel frame 1911 given to New Canaanites for their rite of passage"
+	recoil = 0.04
 
 /////////////////////////////////
 // TEMPORARY REMOVE AFTER BETA //

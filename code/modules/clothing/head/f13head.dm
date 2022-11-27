@@ -945,3 +945,9 @@
 	icon_state = "bone_dancer_helmet"
 	item_state = "bone_dancer_helmet"
 	strip_delay = 100
+
+/obj/item/clothing/head/helmet/f13/ncr/rangercombat/finlayranger
+	name = "reclaimed ranger-hunter combat helmet"
+	desc = "A modified ranger helmet now utilised by the brotherhood of steel, functionally identical to a standard helmet."
+	icon_state = "finlayhelmet"
+	item_state = "finlayhelmet"

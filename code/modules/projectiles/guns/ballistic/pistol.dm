@@ -393,10 +393,9 @@
 
 //Bible Dog M1911					Keywords: UNIQUE, .45, Semi-auto, 7 rounds, Heavy.
 /obj/item/gun/ballistic/automatic/pistol/m1911/bibledog
-	name = "New Canaanite M1911"
-	desc = "A well-maintained stainless-steel frame 1911 given to New Canaanite for their rite of passage"
+	name = "New Canaanite .45 Auto pistol"
+	desc = "A well-maintained stainless-steel frame 1911 given to New Canaanites for their rite of passage"
 	recoil = 0.04
-	fire_delay = 0.8
 
 /////////////////////////////////
 // TEMPORARY REMOVE AFTER BETA //

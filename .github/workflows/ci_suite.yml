@@ -126,6 +126,7 @@ jobs:
     if: "!contains(github.event.head_commit.message, '[ci skip]')"
     name: Integration Tests
     runs-on: ubuntu-20.04
+    timeout-minutes: 30
     services:
       mysql:
         image: mysql:latest
@@ -166,7 +167,6 @@ jobs:
       - name: Install auxmos
         run: |
           sudo apt update || true
-          sudo apt install build-essential g++-multilib libc6-i386 libstdc++6:i386
           bash tools/ci/install_auxmos.sh
       - name: Compile and run tests
         run: |

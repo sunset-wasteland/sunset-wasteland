@@ -1162,3 +1162,11 @@
 	name = "Bone Dancer traditions"
 	crafting_recipe_types = list(/datum/crafting_recipe/tribalwar/bone/lightarmour,/datum/crafting_recipe/tribalwar/bone/armour, /datum/crafting_recipe/tribalwar/bone/heavyarmour,
 								/datum/crafting_recipe/tribalwar/bone/garb,/datum/crafting_recipe/tribalwar/bone/helmet)
+
+/obj/item/book/granter/trait/bibledog
+	name = "Burned book"
+	desc = "This book doesn't seem very useful."
+	oneuse = TRUE
+	granted_trait = TRAIT_HOLY
+	traitname = "holy"
+	remarks = list("You already know everything")

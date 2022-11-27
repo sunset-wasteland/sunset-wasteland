@@ -30,6 +30,7 @@
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/follower_medium)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/follower_heavy)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/rechargerpistol)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/rechargerrifle)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/melee/forged/surgripper)
 
 //datum/outfit/job/followers/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -311,8 +312,8 @@ Follower Volunteer
 	flag = F13FOLLOWERGUARD
 	department_flag = FOLLOWERS
 	faction = "Followers"
-	total_positions = 2
-	spawn_positions = 2
+	total_positions = 3
+	spawn_positions = 3
 	supervisors = "Followers having no strict command structure, don't report to anyone- though they will look to the Administrator for guidance and the other Doctors as well."
 	description = "You are a field agent for the Followers. As a Scholar, you are responsible for searching the wasteland for old books, documents, and other items of interest. Your reason for being here is to further research in non-military matters, as well as helping local communities get access to basic necessities, though you may be called on to defend the clinic as well. "
 	forbids = "Causing harm to others except in times of self-defense or in defense of other followers."

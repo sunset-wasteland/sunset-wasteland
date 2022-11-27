@@ -255,7 +255,7 @@
 
 /obj/item/clothing/under/f13/ranger/erin
 	name = "desert pants"
-	desc = "An old pair of beat up, Pre-War BDUs. These ones are emblazoned with desert patterns, and it has been reinforced around the left knee."
+	desc = "An old pair of beat up, pre-war BDUs. These ones are emblazoned with desert patterns, and it has been reinforced around the left knee."
 	icon_state = "erin_pants"
 	item_state = "erin_pants"
 
@@ -670,7 +670,7 @@
 
 /obj/item/clothing/under/f13/khan/booty
 	name = "khan booty shorts"
-	desc = "Clothing marking the wearer as one of the the Great Khans. Most common are denim pants, But this pair doesn't seem to leave much to the imagination."
+	desc = "Clothing marking the wearer as one of the the Great Khans. Most common are denim pants, but this pair doesn't seem to leave much to the imagination."
 	icon = 'icons/fallout/clothing/khans.dmi'
 	icon_state = "khan_booty"
 	item_state = "khan_booty"
@@ -1286,7 +1286,7 @@
 
 /obj/item/clothing/under/f13/vault/v42
 	name = "Vault 42 jumpsuit"
-	desc = "The regulation clothing worn by the vault dwellers, of Vault-Tec vaults built to solve the Ultimate Question of life, Universe, and everything. It's made of sturdy leather.<br>This jumpsuit has number 42 on the back."
+	desc = "The regulation clothing worn by the vault dwellers of the Vault-Tec vault built to solve the ultimate question of life, the Universe, and everything... or something. It's made of sturdy leather.<br>This jumpsuit has number 42 on the back."
 	icon_state = "vault42"
 	item_color = "vault42"
 
@@ -1319,10 +1319,9 @@
 
 /obj/item/clothing/under/f13/gunner
 	name = "gunner combat uniform"
-	desc = "An ancient combat uniform, that went out of use around the time of the Great War. it has scratch marks and a skull painted on it to symbolize that its part of the gunners"
+	desc = "An ancient combat uniform covered in scratch marks, which went out of use around the time of the Great War. It has a skull painted on it to symbolize that it's part of the gunners."
 	icon_state = "GunnerPlates"
 	item_state = "GunnerPlates"
-	item_color = "GunnerPlates"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 20, "fire" = 20, "acid" = 40)
 
 /obj/item/clothing/under/f13/combat/militia
@@ -1653,13 +1652,6 @@
 	desc = "An ancient pre-war army combat uniform. In use by the locust mercenaries."
 	icon_state = "locust"
 	item_state = "locust"
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 20, "fire" = 20, "acid" = 40)
-
-/obj/item/clothing/under/f13/gunner
-	name = "gunner combat uniform"
-	desc = "An ancient combat uniform, that went out of use around the time of the Great War. it has scratch marks and a skull painted on it to symbolize that its part of the gunners"
-	icon_state = "GunnerPlates"
-	item_state = "GunnerPlates"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 20, "fire" = 20, "acid" = 40)
 
 /obj/item/clothing/under/f13/marlowduds

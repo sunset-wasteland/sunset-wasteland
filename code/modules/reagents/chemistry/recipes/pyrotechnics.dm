@@ -392,7 +392,7 @@
 	required_temp = 400
 
 /datum/chemical_reaction/energized_jelly
-	name = "Energized Jelly"
+	name = "Energized Cellulose"
 	id = /datum/reagent/teslium/energized_jelly
 	results = list(/datum/reagent/teslium/energized_jelly = 2)
 	required_reagents = list(/datum/reagent/celugel = 1, /datum/reagent/teslium = 1)

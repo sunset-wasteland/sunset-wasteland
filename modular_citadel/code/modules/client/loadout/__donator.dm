@@ -318,5 +318,20 @@
 	ckeywhitelist = list ("metrobotic")
 
 /obj/item/storage/box/large/custom_kit/finlayranger/PopulateContents()
-	new /obj/item/clothing/glasses/hud/health/eyepatch(src)// basic healthhud but cooler.
+	new /obj/item/clothing/glasses/hud/health(src)
+	new /obj/item/clothing/head/helmet/f13/ncr/rangercombat/finlayranger(src)
+	new /obj/item/clothing/suit/armor/f13/rangercombat/finlayranger(src)
+	new /obj/item/gun/ballistic/revolver/revolver45(src)
+/datum/gear/donator/kits/bibledog
+	name = "Bible Canid"
+	path = /obj/item/storage/box/large/custom_kit/bibledog
+	ckeywhitelist = list ("especiallystrange")
+
+/obj/item/storage/box/large/custom_kit/bibledog/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/pistol/m1911/bibledog(src)
+	new /obj/item/ammo_box/magazine/m45(src)
+	new /obj/item/ammo_box/magazine/m45(src)
+	new /obj/item/clothing/under/f13/bibledog(src)
+	new /obj/item/gunpart/BHS_Receiver(src)
+	new /obj/item/clothing/suit/armored/medium/combat/swat(src)
 

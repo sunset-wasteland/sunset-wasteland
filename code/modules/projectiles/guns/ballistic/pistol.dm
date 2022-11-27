@@ -384,6 +384,12 @@
 	extra_damage = 20
 	fire_sound = 'sound/f13weapons/magnum_fire.ogg'
 
+//
+/obj/item/gun/ballistic/automatic/pistol/m1911/bibledog
+	name = "M1911C"
+	desc = "A well-maintained stainless-steel frame 1911..."
+	recoil = 0.05
+	fire_delay = 0.7
 
 /////////////////////////////////
 // TEMPORARY REMOVE AFTER BETA //

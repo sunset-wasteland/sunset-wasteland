@@ -1760,3 +1760,30 @@
 		H.vomit(10)
 	..()
 	return TRUE // update health at end of tick
+
+/datum/reagent/medicine/neurostim
+	name = "neurostim"
+	description = "weiners"
+	color = "#91D865"
+	metabolization_rate = 0.5 * REAGENTS_METABOLISM
+	ghoulfriendly = TRUE
+
+/datum/reagent/medicine/neurostim/on_mob_life(mob/living/carbon/M)
+	ADD_TRAIT(M, TRAIT_SURGERY_HIGH)// moribunds teachings to reduce the book clutter in the loadout box
+	ADD_TRAIT(M, TRAIT_UNETHICAL_PRACTITIONER)// ^
+	ADD_TRAIT(M, TRAIT_UNETHICAL_PRACTITIONER_BRAINWASHING)// ^
+	ADD_TRAIT(M, TRAIT_CYBERNETICIST)// ^
+	ADD_TRAIT(M, TRAIT_CYBERNETICIST_EXPERT)// ^
+	ADD_TRAIT(M, TRAIT_CHEMWHIZ)// ^
+	ADD_TRAIT(M, TRAIT_MEDICALEXPERT)//^
+	ADD_TRAIT(M, TRAIT_MEDICALGRADUATE)// ^
+	M.adjust_nutrition(-4)
+	M.adjust_thirst(-1.5)
+	M.adjustOrganLoss(ORGAN_SLOT_Brain, -5)
+	to_chat(M, "<span class='notice'>The thought of [R.name] makes you sick. was it worth it to begin with?</span>")
+	M.confused = max(M.confused, 4)
+	if(ishuman(M) && prob(30))
+		var/mob/living/carbon/human/H = M
+		H.vomit(10)
+	..()
+	return TRUE

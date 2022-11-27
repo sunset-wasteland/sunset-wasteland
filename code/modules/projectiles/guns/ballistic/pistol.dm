@@ -12,7 +12,7 @@
 	slowdown = 0
 	name = "pistol template"
 	desc = "should not be here. Bugreport."
-	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	icon = 'icons/obj/guns/gunfruits2022/pistols.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	item_state = "gun"
@@ -52,7 +52,7 @@
 //.22 Sport								Keywords: .22, Semi-auto, 16 round magazine, Suppressed
 /obj/item/gun/ballistic/automatic/pistol/pistol22
 	name = ".22 pistol"
-	desc = "The silenced .22 pistol is a sporting handgun with an integrated silencer."
+	desc = "A Ruger Mk. IV competition/hunting handgun chambered for the .22LR round."
 	icon_state = "silenced22"
 	mag_type = /obj/item/ammo_box/magazine/m22
 	weapon_weight = WEAPON_LIGHT
@@ -62,13 +62,13 @@
 	can_unsuppress = FALSE
 	suppressed = 1
 	fire_sound = 'sound/f13weapons/22pistol.ogg'
-	extra_damage = 3
+	extra_damage = 5
 
 
 //N99  10mm								Keywords: 10mm, Semi-auto, 12/24 round magazine
 /obj/item/gun/ballistic/automatic/pistol/n99
 	name = "10mm pistol"
-	desc = "A pre-war large-framed, gas-operated advanced 10mm pistol."
+	desc = "The Colt N99, an easily maintained, large-framed, long-barreled combat pistol in use by the US Army before the war. Comes with an integrated laser sight module."
 	icon_state = "n99"
 	mag_type = /obj/item/ammo_box/magazine/m10mm_adv/simple
 	fire_delay = 1
@@ -88,10 +88,10 @@
 	attachableparts = list("internal" = new /obj/item/gunpart/BHS_Receiver, "internal2" = null, "east" = null, "west" = null, "south" = null, "north" = null)
 	//Blacklisted Parts
 	blacklistedparts = list("stock")
-	extra_damage = 3
+	extra_damage = 6
 
 //the Executive							Keywords: UNIQUE, 10mm, Automatic, 12/24 round magazine. Special modifiers: damage +4
-/obj/item/gun/ballistic/automatic/pistol/n99/executive
+/obj/item/gun/ballistic/automatic/pistol/n99/executive //DEPRECATED!!!!!
 	name = "the Executive"
 	desc = "A modified N99 pistol with an accurate two-round-burst and a blue Vault-Tec finish, a status symbol for some Overseers."
 	icon_state = "executive"
@@ -101,7 +101,7 @@
 
 //Crusader pistol
 /obj/item/gun/ballistic/automatic/pistol/n99/crusader
-	name = "\improper Crusader pistol"
+	name = "\improper Crusader pistol" //DEPRECATED!!!!!!!
 	desc = "A large-framed N99 pistol emblazoned with the colors and insignia of the Brotherhood of Steel. It feels heavy in your hand."
 	force = 18
 	icon_state = "crusader"
@@ -112,8 +112,8 @@
 
 //Type 17								Keywords: 10mm, Semi-auto, 12/24 round magazine. Special modifiers: damage +1, spread +1
 /obj/item/gun/ballistic/automatic/pistol/type17
-	name = "Type 17"
-	desc = "Chinese military sidearm at the time of the Great War. The ones around are old and worn, but somewhat popular due to the long barrel and rechambered in 10mm after the original ammo ran dry decades ago."
+	name = "Chinese pistol"
+	desc = "A standard issue Chinese Type-17 combat pistol, hacked apart and turned into a magazine-fed 10mm self-loader."
 	icon_state = "chinapistol"
 	mag_type = /obj/item/ammo_box/magazine/m10mm_adv/simple
 	fire_delay = 1
@@ -124,8 +124,8 @@
 
 //Browning Hi-power						Keywords: 9mm, Semi-auto
 /obj/item/gun/ballistic/automatic/pistol/ninemil
-	name = "Browning Hi-power"
-	desc = "A mass produced pre-war Browning Hi-power 9mm pistol."
+	name = "9mm pistol"
+	desc = "The gold standard of nine-millimeter pistols, the Browning Hi-Power. A single-action pistol manufactured by FN Herstal prior to the war, reliable even today."
 	icon_state = "ninemil"
 	mag_type = /obj/item/ammo_box/magazine/m9mmds
 	weapon_weight = WEAPON_LIGHT
@@ -144,19 +144,20 @@
 	attachableparts = list("internal" = new /obj/item/gunpart/BHS_Receiver, "internal2" = null, "east" = null, "west" = null, "south" = null, "north" = null)
 	//Blacklisted Parts
 	blacklistedparts = list("stock")
+	extra_damage = 5
 
 //Maria									Keywords: UNIQUE, 9mm, Semi-auto, 10 round magazine. Special modifiers: fire delay -1, damage +10, penetration +0.2
 /obj/item/gun/ballistic/automatic/pistol/ninemil/maria
 	name = "Maria"
-	desc = "An ornately-decorated pre-war Browning Hi-power 9mm pistol with pearl grips and a polished nickel finish. The firing mechanism has been upgraded, so for anyone on the receiving end, it must seem like an eighteen-karat run of bad luck."
+	desc = "An ornately-decorated pre-war Browning Hi-power 9mm pistol with a pearl grip that displays a rendition of the Virgin Mary. Prone to give someone an eighteen-karat run of bad luck."
 	icon_state = "maria"
 	fire_delay = 2
-	extra_damage = 8
-	extra_penetration = 0.05
+	extra_damage = 10
+	extra_penetration = 0.12
 
 
 //Sig Sauer P220						Keywords: 9mm, Semi-auto, 10 round magazine
-/obj/item/gun/ballistic/automatic/pistol/sig
+/obj/item/gun/ballistic/automatic/pistol/sig //DEPRECATED!!!!!!!!
 	name = "Sig P220"
 	desc = "The P220 Sig Sauer. A Swiss designed pistol that is compact and has an average rate of fire for a pistol."
 	icon_state = "sig"
@@ -170,10 +171,10 @@
 	fire_sound = 'sound/f13weapons/9mm.ogg'
 
 
-//Beretta M9FS							Keywords: 9mm, Semi-auto. Special modifiers: spread -1
+//Hi-Power+						Keywords: 9mm, Semi-auto. Special modifiers: spread -1
 /obj/item/gun/ballistic/automatic/pistol/beretta
-	name = "Beretta M9FS"
-	desc = "One of the more common 9mm pistols, the Beretta is popular due to its reliability, 15 round magazine and good looks."
+	name = "Advanced 9mm pistol"
+	desc = "A combat modification of the standard Browning Hi-Power, made for private security firms. It features a longer barrel and a heavier trigger pull."
 	icon_state = "beretta"
 	mag_type = /obj/item/ammo_box/magazine/m9mmds
 	weapon_weight = WEAPON_LIGHT
@@ -183,11 +184,12 @@
 	suppressor_x_offset = 30
 	suppressor_y_offset = 20
 	fire_sound = 'sound/f13weapons/9mm.ogg'
+	extra_damage = 8
 
 //Beretta M93R							Keywords: 9mm, Automatic, 15 round magazine
 /obj/item/gun/ballistic/automatic/pistol/beretta/automatic
-	name = "Beretta M93R"
-	desc = "A rare select fire variant of the M93R."
+	name = "Advanced 9mm autopistol"
+	desc = "Ye sons of the self-loader, weep over Browning, who clothed you in steel, with mechanical delights, who put reliability upon your designs. An utter affront to any gunsmith, a modified Browning Hi-Power that fires fully automatic - with a permanently attached muzzle brake."
 	icon_state = "m93r"
 	fire_delay = 2
 	burst_size = 2
@@ -223,8 +225,8 @@
 
 //M1911									Keywords: .45 ACP, Semi-auto, 8 round magazine. Special modifiers: damage +1
 /obj/item/gun/ballistic/automatic/pistol/m1911
-	name = "M1911"
-	desc = "A classic .45 handgun with a small magazine capacity."
+	name = ".45 Auto pistol"
+	desc = "The expertly designed, reliable Colt M1911 pistol - who pushed its might through two World Wars, and even into Vietnam - where it soon fell into irrelevancy. But as they say, they don't make a fourty-six."
 	icon_state = "m1911"
 	item_state = "pistolchrome"
 	w_class = WEIGHT_CLASS_NORMAL
@@ -246,20 +248,22 @@
 	attachableparts = list("internal" = new /obj/item/gunpart/BHS_Receiver, "internal2" = null, "east" = null, "west" = null, "south" = null, "north" = null)
 	//Blacklisted Parts
 	blacklistedparts = list("stock")
+	extra_damage = 5
 
 //M1911	Custom							Keywords: .45 ACP, Semi-auto, 8 round magazine. Special modifiers: damage +1
 /obj/item/gun/ballistic/automatic/pistol/m1911/custom
-	name = "M1911 Custom"
-	desc = "A well-maintained stainless-steel frame 1911, with genuine wooden grips."
+	name = "Customized .45 Auto pistol"
+	desc = "A heavily modified Colt M1911A1 pistol, with a scraped-down frame, reinforced slide, a checkered front strap, an enlarged front sight, a ring hammer, an extended thumb safety and slide-stop, a whittled-down trigger guard base, it has a long easy-access trigger, a filed-down magazine catch, a flat mainspring housing, stepping, and cocking serrations to the top of the slide - This is a tool made by a pro, for pros. No doubt."
 	icon_state = "m1911_custom"
 	recoil = 0.05
 	fire_delay = 1
+	extra_damage = 7
 
 
 //Mk. 23								Keywords: .45 ACP, Semi-auto, Long barrel (lasersight), 12 round magazine, Flashlight
 /obj/item/gun/ballistic/automatic/pistol/mk23
-	name = "Mk. 23"
-	desc = "A very tactical pistol chambered in .45 ACP with a built in laser sight and attachment point for a seclite."
+	name = "Tactical .45 Auto pistol"
+	desc = "The Mk. 23 SOCOM, manufactured by Heckler & Koch. A pre-war wonder, and deserving of its rightful throne among .45 combat handguns."
 	icon_state = "mk23"
 	mag_type = /obj/item/ammo_box/magazine/m45exp
 	fire_delay = 2
@@ -273,6 +277,7 @@
 	suppressor_x_offset = 28
 	suppressor_y_offset = 20
 	fire_sound = 'sound/f13weapons/45revolver.ogg'
+	extra_damage = 3
 
 
 
@@ -283,8 +288,8 @@
 
 //Desert Eagle							Keywords: .44 Magnum, Semi-auto, Long barrel, 8 round magazine, Heavy. Special modifiers: bullet speed +300, damage +1
 /obj/item/gun/ballistic/automatic/pistol/deagle
-	name = "Desert Eagle"
-	desc = "A robust .44 magnum semi-automatic handgun."
+	name = ".44 magnum pistol"
+	desc = "A MK. XIX Desert Eagle, manufactured by Magnum Research and chambered in .44 caliber. It's expensive, too heavy, and almost entirely impractical. Unrestrained exhibition - terrifying potency."
 	icon_state = "deagle"
 	item_state = "deagle"
 	mag_type = /obj/item/ammo_box/magazine/m44
@@ -311,22 +316,24 @@
 //El Capitan			Keywords: 14mm, Semi-auto, 7 round magazine, Heavy. Special modifiers: damage -2
 /obj/item/gun/ballistic/automatic/pistol/deagle/elcapitan
 	name = "El Capitan"
-	desc = "The Captain loves his gun, despite some silly gunsmith adding some gas venting to the barrel after his second visit to the surgeon for recoil-related wrist injuries."
+	desc = "An expertly modified Mk. XIX Desert Eagle, re-chambered to SIG's 14.5mm ammunition. It's chromed, with a golden trigger - and features a large muzzle brake to help mitigate the recoil."
 	icon_state = "elcapitan"
 	item_state = "deagle"
 	mag_type = /obj/item/ammo_box/magazine/m14mm
 	fire_delay = 0
 	fire_sound = 'sound/f13weapons/magnum_fire.ogg'
+	extra_damage = 7
+	extra_penetration = 0.05
 
 //Automag			Keywords: .44 Magnum, Semi-auto, Long barrel, 7 rounds, Heavy. Special modifiers: bullet speed +300
 /obj/item/gun/ballistic/automatic/pistol/automag
-	name = "Automag"
-	desc = "A long-barreled .44 magnum semi-automatic handgun."
+	name = ".44 hunting pistol"
+	desc = "An expertly made pre-war sporting handgun chambered for .44 Magnum, the AMT Automag VI is designed for long-range hunting and competition shooting." //The Automag VI doesn't exist, so we pretend it's fan-made Fallout  canon.
 	icon_state = "automag"
 	item_state = "deagle"
 	mag_type = /obj/item/ammo_box/magazine/automag
 	fire_delay = 4
-	extra_speed = 300
+	extra_speed = 600
 	recoil = 0.2
 	can_suppress = FALSE
 	automatic_burst_overlay = FALSE
@@ -337,7 +344,7 @@
 //14mm Pistol		Keywords: 14mm, Semi-auto, 7 rounds, Heavy
 /obj/item/gun/ballistic/automatic/pistol/pistol14
 	name = "14mm pistol"
-	desc = "A Swiss SIG-Sauer 14mm handgun, powerful but a little inaccurate"
+	desc = "The SIG Sauer P-127 pistol is an excellent pre-war hand cannon, chambered for the powerful 14.5mm round - and intended for use in big game hunting and competition shooting."
 	icon_state = "pistol14"
 	mag_type = /obj/item/ammo_box/magazine/m14mm
 	force = 15
@@ -350,23 +357,23 @@
 //14mm compact		Keywords: 14mm, Semi-auto, Short barrel, 7 rounds, Heavy
 /obj/item/gun/ballistic/automatic/pistol/pistol14/compact
 	name = "compact 14mm pistol"
-	desc = "A Swiss SIG-Sauer 14mm handgun, this one is a compact model for concealed carry."
+	desc = "A shortened P-127 pistol."
 	icon_state = "pistol14_compact"
 	w_class = WEIGHT_CLASS_SMALL
 	spread = 5
 
 //Little Devil							Keywords: UNIQUE, 14mm, Semi-auto, Short barrel, 7 Rounds, Heavy.
 /obj/item/gun/ballistic/automatic/pistol/pistol14/lildevil
-	name= "Little Devil 14mm pistol"
-	desc = "A Swiss SIG-Sauer 14mm handgun, this one is a finely tuned custom firearm from the Gunrunners."
+	name= "Li'l Devil"
+	desc = "An expertly tuned SIG P-127 straight from the Gun Runners. This one features a custom polymer grip and a chromed frame, along several internal modifications."
 	icon_state = "lildev"
 	w_class = WEIGHT_CLASS_SMALL
 	fire_delay = 4
-	extra_damage = 0
+	extra_damage = 6
 	extra_penetration = 0.35
 
 /obj/item/gun/ballistic/automatic/pistol/pistol14/custom
-	name= "Custom 14mm pistol"
+	name= "Custom 14mm pistol" //IDK WTF THIS IS
 	desc = "A Swiss SIG-Sauer 14mm handgun, this one is a finely tuned custom firearm. How'd this get into service?"
 	icon_state = "lildev"
 	w_class = WEIGHT_CLASS_SMALL
@@ -393,3 +400,4 @@
 	name = "pistol"
 	extra_damage = 18
 	mag_type = /obj/item/ammo_box/magazine/testbullet
+	

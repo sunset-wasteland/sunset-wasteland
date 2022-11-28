@@ -323,6 +323,7 @@
 	new /obj/item/clothing/suit/armor/f13/rangercombat/finlayranger(src)
 	new /obj/item/gun/ballistic/revolver/revolver45(src) //Doesn't come with ammo, You can print it anyway
 	new /obj/item/melee/powered/ripper(src)
+
 /datum/gear/donator/kits/bibledog
 	name = "Bible Canid"
 	path = /obj/item/storage/box/large/custom_kit/bibledog
@@ -338,4 +339,12 @@
 	new /obj/item/book/granter/trait/bibledog(src) //being able to use the bible
 	new /obj/item/storage/book/bible(src) //Would kinda defeat the point if I don't actually get a bible with it
 
+/datum/gear/donator/kits/cattlekov
+	name = "Protecting Our Cattle"
+	path = /obj/item/storage/box/large/custom_kit/cattlekov
+	ckeywhitelist = list ("karakov")
+
+
+/obj/item/storage/box/large/custom_kit/cattlekov/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/pistol/m1911/bibledog(src)
 

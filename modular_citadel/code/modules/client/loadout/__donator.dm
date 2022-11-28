@@ -346,5 +346,5 @@
 
 
 /obj/item/storage/box/large/custom_kit/cattlekov/PopulateContents()
-	new /obj/item/gun/ballistic/automatic/pistol/m1911/bibledog(src)
+	new /obj/item/gun/ballistic/automatic/assault_carbine/policerifle/karakov(src)
 

@@ -1786,7 +1786,7 @@
 
 /datum/reagent/medicine/neurostim_na
 	name = "neuro stimulant"
-	description = "A complex mixture of neuro activating chemicals and a fresh dose of a specific being DNA. the DNA seems to be that of a goat. a highly unethical mixture likely made from stem cells and other nasty bits, THERE IS ABSOLUTELY FEV IN THIS."
+	description = "A complex mixture of neuro activating chemicals and a fresh dose of a specific being DNA. the DNA seems to be that of a goat. a highly unethical mixture likely made from stem cells and other nasty bits, THERE IS ABSOLUTELY FEV IN THIS. this syrum seems...different."
 	color = "#1AF708"
 	metabolization_rate = 1.0 * REAGENTS_METABOLISM
 	ghoulfriendly = TRUE
@@ -1819,7 +1819,6 @@
 		M.adjustOrganLoss(ORGAN_SLOT_EYES, 3)
 		M.Unconscious(400)
 		M.Jitter(1000)
-//		M.set_heartattack(TRUE)
 		M.visible_message("<span class='userdanger'>[M] eye's roll back into there head, a single line of blood dribbles out there nostril and they seem to go completely catatonic</span>")
 		to_chat(M, "<span class='danger'>Your vision goes black and your heart stops beating as your brain starts to shut down its most basic of functions. you see the flash's of someone elses life before you. an entire lifetime flashing in the blink of an eye. is this the afterlife? </span>")
 	..()

@@ -1807,7 +1807,7 @@
 	if(ishuman(M) && prob(25))
 		M.drop_all_held_items()
 		M.visible_message(span_danger("[M] spaces out, and a line of drool dribbles out the corner of [M.p_their()] mouth."))
-		to_chat(M, "<span class='danger'>its too much.....its all too much....so many other thoughts. your brain can't keep up.</span>")
+		to_chat(M, span_userdanger("It's too much... it's all too much. So many other thoughts, your brain can't keep up..."))
 		var/mob/living/carbon/human/H = M
 		H.vomit(10)
 	var/obj/item/organ/brain/B = M.getorganslot(ORGAN_SLOT_BRAIN)

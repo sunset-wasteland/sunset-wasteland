@@ -1780,7 +1780,6 @@
 	M.Jitter(2)
 	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, -5)
 	M.mind.teach_crafting_recipe(/datum/crafting_recipe/melee/forged/surgripper)
-	to_chat(M, "<span class='green'>You feel stimulated and ready for the week.</span>")
 	SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "jet euphoria", /datum/mood_event/jet_euphoria, name)
 	..()
 	return TRUE
@@ -1804,7 +1803,6 @@
 	M.Jitter(8)
 	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, -5)
 	SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "jet euphoria", /datum/mood_event/jet_euphoria, name)
-	to_chat(M, "<span class='green'>An entire lifetime of different medical operations, studies, and late night theory crafting completely overwhelm your mind. </span>")
 	M.confused = max(M.confused, 9)
 	M.drop_all_held_items()
 	if(ishuman(M) && prob(25))

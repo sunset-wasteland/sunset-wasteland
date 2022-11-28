@@ -1763,8 +1763,8 @@
 
 /datum/reagent/medicine/neurostim
 	name = "neurostimulant"
-	description = "A complex mixture of neuro activating chemicals and a fresh dose of a specific being DNA. the cells can be matched to moribund. a highly unethical mixture likely made from stem cells and other nasty bits."
-	color = "#91D865"
+	description = "A complex mixture of neuro activating chemicals and a fresh dose of a specific being DNA. the DNA seems to be that of a goat. a highly unethical mixture likely made from stem cells and other nasty bits, THERE IS ABSOLUTELY FEV IN THIS."
+	color = "#1AF708"
 	metabolization_rate = 1.0 * REAGENTS_METABOLISM
 	ghoulfriendly = TRUE
 
@@ -1783,8 +1783,9 @@
 	var/MO = get_mob_by_key("mottedesstriets")
 	var/mob/living/carbon/human/MO = MO
 	if(var/mob/living/carbon/human/MO)
-		M.mind.teach_crafting_recipe(/datum/crafting_recipe/melee/forged/surgripper)
-		to_chat(M, "<span class='green'>You feel stimulated and ready for the week.</span>")
+		implant(MO, new /obj/item/organ/tongue/lizard(src))
+		MO.mind.teach_crafting_recipe(/datum/crafting_recipe/melee/forged/surgripper)
+		to_chat(MO, "<span class='green'>You feel stimulated and ready for the week.</span>")
 	else
 		to_chat(M, "<span class='green'>and entire lifetime of different medical operations, studies, late night theory crafting and philisophical disposition of wanting to further science to create something new, better, less unpredictable and violent completely overwhelm your mind. there is however the abd with all this you see murder, unethical experimentation and excessive drug use in patients untill they beg for death or die. its incredible, enlightening and the single most euphoric sensation you have experienced like you lived another seperate life and have only select memories needed from it.</span>")
 		M.confused = max(M.confused, 9)

@@ -1779,7 +1779,6 @@
 	ADD_TRAIT(M, TRAIT_MEDICALGRADUATE, src)
 	M.Jitter(2)
 	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, -5)
-	M.mind.teach_crafting_recipe(/datum/crafting_recipe/melee/forged/surgripper)
 	SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "jet euphoria", /datum/mood_event/jet_euphoria, name)
 	..()
 	return TRUE

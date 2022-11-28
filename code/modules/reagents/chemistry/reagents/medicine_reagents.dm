@@ -1801,7 +1801,7 @@
 	ADD_TRAIT(M, TRAIT_CHEMWHIZ, src)
 	ADD_TRAIT(M, TRAIT_MEDICALEXPERT, src)
 	ADD_TRAIT(M, TRAIT_MEDICALGRADUATE, src)
-	M.Jitter(2)
+	M.Jitter(8)
 	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, -5)
 	SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "jet euphoria", /datum/mood_event/jet_euphoria, name)
 	to_chat(M, "<span class='green'>An entire lifetime of different medical operations, studies, late night theory crafting and philisophical disposition of wanting to further science to create something new, better, less unpredictable and violent completely overwhelm your mind. there is however the abd with all this you see murder, unethical experimentation and excessive drug use in patients untill they beg for death or die. its incredible, enlightening and the single most euphoric sensation you have experienced like you lived another seperate life and have only select memories needed from it.</span>")

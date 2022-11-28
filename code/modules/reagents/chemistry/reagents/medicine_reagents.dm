@@ -1762,28 +1762,44 @@
 	return TRUE // update health at end of tick
 
 /datum/reagent/medicine/neurostim
-	name = "neurostim"
-	description = "weiners"
+	name = "neurostimulant"
+	description = "A complex mixture of neuro activating chemicals and a fresh dose of a specific being DNA. the cells can be matched to moribund. a highly unethical mixture likely made from stem cells and other nasty bits."
 	color = "#91D865"
-	metabolization_rate = 0.5 * REAGENTS_METABOLISM
+	metabolization_rate = 1.0 * REAGENTS_METABOLISM
 	ghoulfriendly = TRUE
 
 /datum/reagent/medicine/neurostim/on_mob_life(mob/living/carbon/M)
-	ADD_TRAIT(M, TRAIT_SURGERY_HIGH)// moribunds teachings to reduce the book clutter in the loadout box
-	ADD_TRAIT(M, TRAIT_UNETHICAL_PRACTITIONER)// ^
-	ADD_TRAIT(M, TRAIT_UNETHICAL_PRACTITIONER_BRAINWASHING)// ^
-	ADD_TRAIT(M, TRAIT_CYBERNETICIST)// ^
-	ADD_TRAIT(M, TRAIT_CYBERNETICIST_EXPERT)// ^
-	ADD_TRAIT(M, TRAIT_CHEMWHIZ)// ^
-	ADD_TRAIT(M, TRAIT_MEDICALEXPERT)//^
-	ADD_TRAIT(M, TRAIT_MEDICALGRADUATE)// ^
-	M.adjust_nutrition(-4)
-	M.adjust_thirst(-1.5)
+	ADD_TRAIT(M, TRAIT_SURGERY_HIGH, src)
+	ADD_TRAIT(M, TRAIT_UNETHICAL_PRACTITIONER, src)
+	ADD_TRAIT(M, TRAIT_UNETHICAL_PRACTITIONER_BRAINWASHING, src)
+	ADD_TRAIT(M, TRAIT_CYBERNETICIST, src)
+	ADD_TRAIT(M, TRAIT_CYBERNETICIST_EXPERT, src)
+	ADD_TRAIT(M, TRAIT_CHEMWHIZ, src)
+	ADD_TRAIT(M, TRAIT_MEDICALEXPERT, src)
+	ADD_TRAIT(M, TRAIT_MEDICALGRADUATE, src)
+	M.Jitter(2)
 	M.adjustOrganLoss(ORGAN_SLOT_Brain, -5)
-	to_chat(M, "<span class='notice'>The thought of [R.name] makes you sick. was it worth it to begin with?</span>")
-	M.confused = max(M.confused, 4)
-	if(ishuman(M) && prob(30))
-		var/mob/living/carbon/human/H = M
-		H.vomit(10)
+	SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "jet euphoria", /datum/mood_event/jet_euphoria, name)
+	var/MO = get_mob_by_key("mottedesstriets")
+	var/mob/living/carbon/human/MO = MO
+	if(var/mob/living/carbon/human/MO)
+		M.mind.teach_crafting_recipe(/datum/crafting_recipe/melee/forged/surgripper)
+		to_chat(M, "<span class='green'>You feel stimulated and ready for the week.</span>")
+	else
+		to_chat(M, "<span class='green'>and entire lifetime of different medical operations, studies, late night theory crafting and philisophical disposition of wanting to further science to create something new, better, less unpredictable and violent completely overwhelm your mind. there is however the abd with all this you see murder, unethical experimentation and excessive drug use in patients untill they beg for death or die. its incredible, enlightening and the single most euphoric sensation you have experienced like you lived another seperate life and have only select memories needed from it.</span>")
+		M.confused = max(M.confused, 9)
+		M.drop_all_held_items()
+		if(ishuman(M) && prob(25))
+			M.drop_all_held_items()
+			M.visible_message("<span class='userdanger'>[M] spaces out, and a line of drool dribbles out the corner of there mouth.</span>")
+			to_chat(M, "<span class='danger'>its too much.....its all too much....so many other thoughts. your brain can't keep up.</span>")
+			var/mob/living/carbon/human/H = M
+			H.vomit(10)
+		if(prob(25))
+			M.emote(pick("scream"))
+			M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 9)
+			M.set_heartattack(TRUE)
+			M.visible_message("<span class='userdanger'>[M] eye's roll back into there head, a single line of blood dribbles out there nostril and they seem to go completely catatonic</span>")
+			to_chat(M, "<span class='danger'>Your vision goes black and your heart stops beating as your brain starts to shut down its most basic of functions. you see the flash's of someone elses life before you. an entire lifetime flashing in the blink of an eye. is this the afterlife? </span>")
 	..()
 	return TRUE

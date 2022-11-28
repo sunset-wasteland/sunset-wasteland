@@ -1762,7 +1762,7 @@
 	return TRUE // update health at end of tick
 
 /datum/reagent/medicine/neurostim
-	name = "neurostimulant"
+	name = "neuro stimulant"
 	description = "A complex mixture of neuro activating chemicals and a fresh dose of a specific being DNA. the DNA seems to be that of a goat. a highly unethical mixture likely made from stem cells and other nasty bits, THERE IS ABSOLUTELY FEV IN THIS."
 	color = "#1AF708"
 	metabolization_rate = 1.0 * REAGENTS_METABOLISM
@@ -1785,7 +1785,7 @@
 	return TRUE
 
 /datum/reagent/medicine/neurostim_na
-	name = "neurostimulant"
+	name = "neuro stimulant"
 	description = "A complex mixture of neuro activating chemicals and a fresh dose of a specific being DNA. the DNA seems to be that of a goat. a highly unethical mixture likely made from stem cells and other nasty bits, THERE IS ABSOLUTELY FEV IN THIS."
 	color = "#1AF708"
 	metabolization_rate = 1.0 * REAGENTS_METABOLISM

@@ -1779,7 +1779,6 @@
 	ADD_TRAIT(M, TRAIT_MEDICALGRADUATE, src)
 	M.Jitter(2)
 	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, -5)
-	implant(M, new /obj/item/organ/tongue/lizard(src))
 	M.mind.teach_crafting_recipe(/datum/crafting_recipe/melee/forged/surgripper)
 	to_chat(M, "<span class='green'>You feel stimulated and ready for the week.</span>")
 	SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "jet euphoria", /datum/mood_event/jet_euphoria, name)

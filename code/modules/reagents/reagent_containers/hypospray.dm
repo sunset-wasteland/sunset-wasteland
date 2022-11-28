@@ -227,7 +227,7 @@
 
 /obj/item/reagent_containers/hypospray/medipen/skillpen
 	name = "experimental neurostimulant"
-	desc = "a curious airhypo. this one is rather advanced looking sporting a V-tec logo on it and seems to be extremly modified. the fuck is inside it?"
+	desc = "A curious medipen. This one is rather advanced-looking, sporting a V-tec logo on it, and seems to be heavily modified. It's unclear what's inside it."
 	icon_state = "neuropen"
 	item_state = "neuropen"
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'

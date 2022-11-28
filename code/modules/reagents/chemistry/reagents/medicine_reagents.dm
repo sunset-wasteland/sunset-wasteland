@@ -1806,7 +1806,7 @@
 	M.drop_all_held_items()
 	if(ishuman(M) && prob(25))
 		M.drop_all_held_items()
-		M.visible_message("<span class='userdanger'>[M] spaces out, and a line of drool dribbles out the corner of there mouth.</span>")
+		M.visible_message(span_danger("[M] spaces out, and a line of drool dribbles out the corner of [M.p_their()] mouth."))
 		to_chat(M, "<span class='danger'>its too much.....its all too much....so many other thoughts. your brain can't keep up.</span>")
 		var/mob/living/carbon/human/H = M
 		H.vomit(10)

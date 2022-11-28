@@ -259,12 +259,14 @@
 	new /obj/item/clothing/suit/armor/f13/power_armor/t45d/refurb(src)
 	new /obj/item/clothing/head/helmet/f13/power_armor/t45d/refurb(src)
 
-/datum/gear/donator/kits/ripper// basically enough to set up his own clinic/lab. when off-duty. or to Rp properly as vault dwelling moribund FEV scientist man
-	name = "Rippers Belonging"
-	path = /obj/item/storage/box/large/custom_kit/ripper
+/datum/gear/donator/kits/moribund  //basically enough to set up his own clinic/lab. when off-duty. or to Rp properly as vault dwelling moribund FEV scientist man
+	name = "moribunds supplies"
+	path = /obj/item/storage/box/large/custom_kit/moribund
 	ckeywhitelist = list ("mottedesstriets")
 
-/obj/item/storage/box/large/custom_kit/ripper/PopulateContents()
+/obj/item/storage/box/large/custom_kit/moribund/PopulateContents()
+    new /obj/item/organ/tongue/lizard(src)// nightstalker tongue, cant do in proper character create to get a good looking nightstalker.
+	new /obj/item/autosurgeon(src)// ^ for tongue
 	new /obj/item/clothing/glasses/hud/health/eyepatch(src)// basic healthhud but cooler.
 	new /obj/item/clothing/suit/armored/medium/combat/duster(src)// less faction specific armor
 	new /obj/item/clothing/ears/headphones(src)// hard to get for a fluff item

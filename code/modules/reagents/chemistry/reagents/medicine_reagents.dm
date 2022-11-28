@@ -1814,10 +1814,11 @@
 		to_chat(M, "<span class='danger'>its too much.....its all too much....so many other thoughts. your brain can't keep up.</span>")
 		var/mob/living/carbon/human/H = M
 		H.vomit(10)
+	var/obj/item/organ/brain/B = M.getorganslot(ORGAN_SLOT_BRAIN)
 	if(prob(20))
 		M.emote("scream")
-		M.applyOrganDamage(80)
-		M.applyOxyLoss(80)
+		B.applyOrganDamage(80)
+		M.adjustOxyLoss(80)
 		M.set_heartattack(TRUE)
 		M.visible_message("<span class='userdanger'>[M] eye's roll back into there head, a single line of blood dribbles out there nostril and they seem to go completely catatonic</span>")
 		to_chat(M, "<span class='danger'>Your vision goes black and your heart stops beating as your brain starts to shut down its most basic of functions. you see the flash's of someone elses life before you. an entire lifetime flashing in the blink of an eye. is this the afterlife? </span>")

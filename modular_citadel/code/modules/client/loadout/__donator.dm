@@ -271,7 +271,7 @@
 	new /obj/item/clothing/head/f13/stalkerpelt(src)// morbid. but funny.
 	new /obj/item/storage/pill_bottle/chem_tin/fixer(src)// not craftable
 	new /obj/item/reagent_containers/hypospray/medipen/skillpen(src)// custom pen for skill. all doc skills.
-	new /obj/item/reagent_containers/hypospray/medipen/skillpen(src)// custom pen for skill. second to use to teach others medicine
+	new /obj/item/reagent_containers/hypospray/medipen/skillpen_na(src)// custom pen for skill. second to use to teach others medicine. dangerous
 	new /obj/item/disk/plantgene(src)// store plant data
 	new /obj/item/disk/plantgene(src)// store plant data
 	new /obj/item/circuitboard/machine/chem_master/advanced(src)//not a dispencer. splitter. can make patches so legion dont bitch.

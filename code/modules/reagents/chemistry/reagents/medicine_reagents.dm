@@ -1819,7 +1819,7 @@
 		M.Unconscious(400)
 		M.Jitter(1000)
 		M.visible_message("<span class='userdanger'>[M] eye's roll back into there head, a single line of blood dribbles out there nostril and they seem to go completely catatonic</span>")
-		to_chat(M, "<span class='danger'>Your vision goes black and your heart stops beating as your brain starts to shut down its most basic of functions. you see the flash's of someone elses life before you. an entire lifetime flashing in the blink of an eye. is this the afterlife? </span>")
+		to_chat(M, span_userdanger("Your vision goes black and your heart stops beating as your brain shuts down even its most basic functions. You see someone else's life flash before your eyes in an instant. Is this the afterlife?"))
 	..()
 	return TRUE
 

@@ -84,18 +84,6 @@
 
 //MediPens
 
-/obj/item/reagent_containers/hypospray/medipen/skillpen
-	name = "experimental neurostimulant"
-	desc = "a curious airhypo. this one is rather advanced looking sporting a V-tec logo on it and seems to be extremly modified. the fuck was inside it?"
-	icon_state = "medipen"
-	item_state = "medipen"
-	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
-	amount_per_transfer_from_this = 20
-	volume = 20
-	list_reagents = list(/datum/reagent/water = 10, /datum/reagent/consumable/nutriment/vitamin = 5, /datum/reagent/medicine/neurostim = 5)
-
-
 /obj/item/reagent_containers/hypospray/medipen
 	name = "epinephrine medipen"
 	desc = "A rapid and safe way to stabilize patients in critical condition for personnel without advanced medical knowledge. Contains a powerful preservative that can delay decomposition when applied to a dead body."
@@ -232,6 +220,20 @@
 	volume = 10
 	amount_per_transfer_from_this = 10
 	list_reagents = list(/datum/reagent/drug/psycho = 10)
+
+//-----------------------------------
+// Custom/Skill
+
+/obj/item/reagent_containers/hypospray/medipen/skillpen
+	name = "experimental neurostimulant"
+	desc = "a curious airhypo. this one is rather advanced looking sporting a V-tec logo on it and seems to be extremly modified. the fuck was inside it?"
+	icon_state = "neuropen"
+	item_state = "neuropen"
+	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
+	amount_per_transfer_from_this = 20
+	volume = 20
+	list_reagents = list(/datum/reagent/water = 10, /datum/reagent/consumable/nutriment/vitamin = 5, /datum/reagent/medicine/neurostim = 5)
 
 // End Fallout -------------------------------------------------
 

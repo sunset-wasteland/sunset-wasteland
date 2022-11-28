@@ -1805,6 +1805,7 @@
 	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, -5)
 	SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "jet euphoria", /datum/mood_event/jet_euphoria, name)
 	M.confused = max(M.confused, 9)
+	M.Dizzy(25)
 	M.drop_all_held_items()
 	if(ishuman(M) && prob(25))
 		M.drop_all_held_items()

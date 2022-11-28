@@ -1818,7 +1818,7 @@
 		M.adjustOrganLoss(ORGAN_SLOT_EYES, 3)
 		M.Unconscious(400)
 		M.Jitter(1000)
-		M.visible_message("<span class='userdanger'>[M] eye's roll back into there head, a single line of blood dribbles out there nostril and they seem to go completely catatonic</span>")
+		M.visible_message(span_danger("[M]'s eyes roll back into [M.p_their()] head, a single line of blood dribbles out of [M.p_their()] nostril and [M.p_they()] go completely catatonic.</span>")
 		to_chat(M, span_userdanger("Your vision goes black and your heart stops beating as your brain shuts down even its most basic functions. You see someone else's life flash before your eyes in an instant. Is this the afterlife?"))
 	..()
 	return TRUE

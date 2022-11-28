@@ -232,9 +232,9 @@
 	item_state = "neuropen"
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
-	amount_per_transfer_from_this = 20
-	volume = 20
-	list_reagents = list(/datum/reagent/water = 10, /datum/reagent/consumable/nutriment/vitamin = 5, /datum/reagent/medicine/neurostim = 5)
+	amount_per_transfer_from_this = 23
+	volume = 23
+	list_reagents = list(/datum/reagent/water = 16, /datum/reagent/consumable/nutriment/vitamin = 6, /datum/reagent/medicine/neurostim = 1)
 
 /obj/item/reagent_containers/hypospray/medipen/skillpen_na
 	name = "experimental neurostimulant"
@@ -243,9 +243,9 @@
 	item_state = "neuropen"
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
-	amount_per_transfer_from_this = 20
-	volume = 20
-	list_reagents = list(/datum/reagent/water = 10, /datum/reagent/consumable/nutriment/vitamin = 5, /datum/reagent/medicine/neurostim_na = 5)
+	amount_per_transfer_from_this = 23
+	volume = 23
+	list_reagents = list(/datum/reagent/water = 16, /datum/reagent/consumable/nutriment/vitamin = 6, /datum/reagent/medicine/neurostim_na = 1)
 
 // End Fallout -------------------------------------------------
 

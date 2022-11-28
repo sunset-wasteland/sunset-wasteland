@@ -1265,6 +1265,17 @@
 	extra_penetration = -0.15
 	extra_damage = -3
 
+//Police Rifle        Keywords: Unique, 5mm, Semi-Auto, 30 round magazine
+/obj/item/gun/ballistic/automatic/assault_carbine/policerifle/karakov
+	name = "Improved Police Rifle"
+	desc = "A post-war reproduction Rifle that has been repaired and rebuilt with pre-war technology, held together with rivetting and prayers."
+	icon_state = "rifle-police-k"
+	autofire_shot_delay = 2.2
+	spread = 7 //Less Inaccurate as it's meant to be upgraded
+	extra_penetration = -0.10
+	extra_damage = 1
+
+
 /obj/item/gun/ballistic/automatic/assault_carbine/worn
 	name = "worn assault carbine"
 	desc = "The U.S. army carbine version of the R91, made by Colt and issued to special forces. This one is beat-up and falling apart."

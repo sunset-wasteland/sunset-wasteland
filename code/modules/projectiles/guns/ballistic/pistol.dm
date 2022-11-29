@@ -396,6 +396,7 @@
 	name = "New Canaanite .45 Auto pistol"
 	desc = "A well-maintained stainless-steel frame 1911 given to New Canaanites for their rite of passage"
 	recoil = 0.04
+	force = 17 //5 more damage in the pistol whipping .45
 
 /////////////////////////////////
 // TEMPORARY REMOVE AFTER BETA //

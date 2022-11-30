@@ -339,3 +339,17 @@
 	new /obj/item/book/granter/trait/bibledog(src) //being able to use the bible
 	new /obj/item/storage/book/bible(src) //Would kinda defeat the point if I don't actually get a bible with it
 
+/datum/gear/donator/kits/davusi
+	name = "Davusi's dogtags"
+	path = /obj/item/storage/box/large/custom_kit/davusi
+	ckeywhitelist = list ("angryblackmandavusi")
+
+/obj/item/card/id/dogtag/donator_davusi
+	name = "Davusi's dogtags"
+	desc = "Worn by Enclave NCOs.  This one belongs to 'Private Davusi' and smells faintly of moonshine."
+	icon_state = "enclavetrooper"
+	item_state = "card-id_leg"
+	assignment = "US dogtags"
+
+/obj/item/storage/box/large/custom_kit/davusi/PopulateContents()
+	new /obj/item/card/id/dogtag/donator_davusi(src)

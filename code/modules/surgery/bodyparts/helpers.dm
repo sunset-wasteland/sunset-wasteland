@@ -130,16 +130,16 @@
 /mob/living/carbon/get_missing_limbs()
 	RETURN_TYPE(/list)
 	var/list/full = list(BODY_ZONE_HEAD, BODY_ZONE_CHEST, BODY_ZONE_R_ARM, BODY_ZONE_L_ARM, BODY_ZONE_R_LEG, BODY_ZONE_L_LEG)
-	for(var/zone in full)
-		if(get_bodypart(zone))
-			full -= zone
+	for(var/obj/item/bodypart/L as anything in bodyparts)
+		if(L.body_zone in full)
+			full -= L.body_zone
 	return full
 
 /mob/living/carbon/alien/larva/get_missing_limbs()
 	var/list/full = list(BODY_ZONE_HEAD, BODY_ZONE_CHEST)
-	for(var/zone in full)
-		if(get_bodypart(zone))
-			full -= zone
+	for(var/obj/item/bodypart/L as anything in bodyparts)
+		if(L.body_zone in full)
+			full -= L.body_zone
 	return full
 
 /mob/living/proc/get_disabled_limbs()

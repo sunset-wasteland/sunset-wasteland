@@ -190,6 +190,7 @@
 	item_state = "knife_bowie"
 	desc = "A large clip point fighting knife."
 	force = 30
+	bayonet = TRUE
 	throwforce = 25
 	attack_verb = list("slashed", "stabbed", "sliced", "shanked", "ripped", "lacerated")
 
@@ -199,6 +200,7 @@
 	item_state = "knife_trench"
 	desc = "This blade is designed for brutal close quarters combat."
 	force = 31
+	bayonet = TRUE
 	block_parry_data = /datum/block_parry_data/smith_generic //data is in finished items file //Also gives trench knife an actual advantage
 	custom_materials = list(/datum/material/iron=8000)
 	attack_verb = list("slashed", "stabbed", "sliced", "shanked", "ripped", "lacerated")

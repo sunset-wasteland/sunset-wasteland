@@ -56,7 +56,7 @@
 	doing_move_loop = FALSE
 
 /mob/living/simple_animal/hostile/asteroid/curseblob/proc/check_for_target()
-	if(set_target.stat != CONSCIOUS || z != set_target.z)
+	if(set_target && (set_target.stat != CONSCIOUS || z != set_target.z))
 		qdel(src)
 	return QDELETED(set_target)
 

@@ -181,7 +181,8 @@
 	name = "bayonet knife"
 	icon_state = "knife_bayonet"
 	desc = "This weapon is made for stabbing, not much use for other things."
-	force = 26
+	force = 24
+	armour_penetration = 0.12
 	bayonet = TRUE
 
 /obj/item/melee/onehanded/knife/bowie

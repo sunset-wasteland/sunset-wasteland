@@ -1763,7 +1763,7 @@
 
 /datum/reagent/medicine/neurostim
 	name = "neuro stimulant"
-	description = "A complex mixture of neuro activating chemicals and a fresh dose of a specific being DNA. the DNA seems to be that of a goat. a highly unethical mixture likely made from stem cells and other nasty bits, THERE IS ABSOLUTELY FEV IN THIS."
+	description = "A complex mixture of central nervous system stimulants and a fresh dose of a specific goatlike being's DNA. A highly unethical mixture likely made from stem cells and other nasty bits, <b>There is absolutely FEV in this.</b>"
 	color = "#1AF708"
 	metabolization_rate = 1.0 * REAGENTS_METABOLISM
 	ghoulfriendly = TRUE

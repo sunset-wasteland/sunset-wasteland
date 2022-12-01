@@ -137,3 +137,38 @@
 	if(prob(0.6*severity))
 		to_chat(owner, "<span class='warning'>Your breathing tube suddenly closes!</span>")
 		owner.losebreath += 2
+
+// [[[[Custom]]]]
+
+/obj/item/organ/cyberimp/brain/neuro
+	name = "experimental neuro-editor implant"
+	desc = "This cybernetic brain implant is borderline alien; it has pre-war tech combined with experimental technology. You aren't entirely sure what it does, but it seems to almost entirely rewire the neuropaths of the brain. This must heavily tax the body."
+	var/active = 0
+	var/list/stored_items = list()
+	slot = ORGAN_SLOT_BRAIN_ANTISTUN
+	actions_types = list(/datum/action/item_action/organ_action/toggle)
+
+/obj/item/organ/cyberimp/chest/neuro/on_life()
+	ADD_TRAIT(owner, TRAIT_FEARLESS, type)
+	if(mood.sanity <= SANITY_NEUTRAL) //joywire
+		mood.setSanity(min(mood.sanity+5, SANITY_NEUTRAL))
+		to_chat(owner, "<span class='notice'>You feel more stable...</span>")
+	owner.adjustStaminaLoss(-3.5, FALSE) //CNS reboot
+	owner.HealAllImmobilityUpTo(STUN_SET_AMOUNT)
+	var/mob/living/carbon/C = M //pain editor start. surg success 80% on self
+			for(var/s in C.surgeries)
+				var/datum/surgery/S = s
+				S.success_multiplier = max(0.8, S.success_multiplier)
+	ADD_TRAIT(owner, TRAIT_IGNOREDAMAGESLOWDOWN, type)
+	owner.adjustOrganLoss(ORGAN_SLOT_BRAIN, 0.001)// it slowly kills you over time, requiring medicine.
+	owner.adjustOrganLoss(ORGAN_SLOT_HEART, 0.001)
+	
+
+/obj/item/organ/cyberimp/brain/neuro/ui_action_click()
+	active = !active
+	if(active)
+		for(mob/living/owner)
+			var/obj/item/organ/brain/B = M.getorganslot(ORGAN_SLOT_BRAIN)// synaptic burnout
+			B.applyOrganDamage(100)
+			M.visible_message("<span class='danger'>[M]'s eyes roll into the back of their head and blood flows out of their nostrils. almost as if their brain fryed.</span>")
+			

@@ -132,16 +132,15 @@
 	smooth = SMOOTH_FALSE
 	//canSmoothWith = list(/turf/closed/wall/mineral/wood, /obj/structure/falsewall/wood)
 
-/turf/closed/wall/mineral/wood/New()
-	..()
+/turf/closed/wall/mineral/wood/Initialize()
+	. = ..()
 	for(var/turf/closed/wall/mineral/wood/W in range(src,1))
 		W.relativewall()
-	..()
 
-/turf/closed/wall/mineral/wood/Del()
+/turf/closed/wall/mineral/wood/Destroy()
 	for(var/turf/closed/wall/mineral/wood/W in range(src,1))
 		W.relativewall()
-	..()
+	return ..()
 
 //Bringing back an old version of wall smoothing code because this has a bit of a special icon.
 /turf/closed/wall/mineral/wood/proc/relativewall()

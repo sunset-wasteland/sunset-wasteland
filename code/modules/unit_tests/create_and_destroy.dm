@@ -25,8 +25,6 @@ GLOBAL_VAR_INIT(running_create_and_destroy, FALSE)
 		/obj/item/bodypart,
 		//briefcase launchpads erroring
 		/obj/machinery/launchpad/briefcase,
-		//no shuttle
-		/obj/docking_port,
 		//template type
 		/obj/item/gun/magic,
 		//template type
@@ -47,6 +45,12 @@ GLOBAL_VAR_INIT(running_create_and_destroy, FALSE)
 		/obj/screen/credit,
 		//template type
 		/obj/effect/landmark/poster_spawner,
+		//not guaranteed to have a dock to ripple
+		/obj/structure/destructible/clockwork/powered/prolonging_prism,
+		//invalid without mob/living passed
+		/obj/shapeshift_holder,
+		//abstract type, should not be spawned but subtypes are okay
+		/mob/living/silicon/robot/modules,
 	)
 	//needs to be mapped in with an id
 	ignore += typesof(/obj/effect/spawner/structure/window/reinforced/tinted/electrochromatic)
@@ -80,6 +84,10 @@ GLOBAL_VAR_INIT(running_create_and_destroy, FALSE)
 	ignore += typesof(/obj/effect/baseturf_helper)
 	//No trauma to pass in
 	ignore += typesof(/mob/camera/imaginary_friend)
+	//No linked console
+	ignore += typesof(/mob/camera/aiEye/remote/base_construction)
+	//See above
+	ignore += typesof(/mob/camera/aiEye/remote/shuttle_docker)
 	//No one to be friends with :(
 	ignore += typesof(/obj/effect/mob_spawn/human/demonic_friend)
 	//Hangs a ref post invoke async, which we don't support. Could put a qdeleted check but it feels hacky
@@ -98,6 +106,8 @@ GLOBAL_VAR_INIT(running_create_and_destroy, FALSE)
 	ignore += typesof(/obj/item/toy/cards/cardhand)
 	//Needs a holodeck area linked to it which is not guarenteed to exist and technically is supposed to have a 1:1 relationship with computer anyway.
 	ignore += typesof(/obj/machinery/computer/holodeck)
+	//invalid without start and end
+	ignore += typesof(/obj/effect/immovablerod)
 
 	var/list/cached_contents = spawn_at.contents.Copy()
 	var/baseturf_count = length(spawn_at.baseturfs)

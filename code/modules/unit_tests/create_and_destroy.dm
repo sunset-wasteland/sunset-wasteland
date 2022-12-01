@@ -25,9 +25,15 @@ GLOBAL_VAR_INIT(running_create_and_destroy, FALSE)
 		/obj/item/bodypart,
 		//briefcase launchpads erroring
 		/obj/machinery/launchpad/briefcase,
-		//template type
+		//template types
 		/obj/item/gun/magic,
-		//template type
+		/obj/item/gun/magic/staff,
+		//also template types
+		/obj/effect/mob_spawn,
+		/obj/effect/mob_spawn/alien,
+		/obj/effect/mob_spawn/alien/corpse,
+		/obj/effect/mob_spawn/alien/corpse/humanoid,
+		//template type again
 		/obj/item/storage/fancy,
 		//template type + burn this code to the ground + L + ratio
 		/obj/item/locked_box,

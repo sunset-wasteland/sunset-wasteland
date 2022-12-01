@@ -65,6 +65,9 @@
 
 /obj/effect/mob_spawn/Initialize(mapload)
 	. = ..()
+	if(isnull(mob_type))
+		stack_trace("This type shouldn't be spawned in, it doesn't create anything! Use a subtype!")
+		return INITIALIZE_HINT_QDEL
 	if(instant || (roundstart && (mapload || (SSticker && SSticker.current_state > GAME_STATE_SETTING_UP))))
 		INVOKE_ASYNC(src, .proc/create)
 	else if(ghost_usable)

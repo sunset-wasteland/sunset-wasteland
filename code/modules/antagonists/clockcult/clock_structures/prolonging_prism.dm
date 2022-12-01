@@ -75,7 +75,8 @@
 	var/lowest_y
 	var/lowest_x
 	var/list/prism_turfs = list()
-	for(var/t in SSshuttle.emergency.ripple_area(SSshuttle.getDock("emergency_home")))
+	var/obj/docking_port/stationary/emerg_dock = SSshuttle.getDock("emergency_home")
+	for(var/t in SSshuttle.emergency.ripple_area(emerg_dock))
 		prism_turfs[t] = TRUE
 		var/turf/T = t
 		if(!highest_y || T.y > highest_y)

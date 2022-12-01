@@ -39,9 +39,13 @@
 	turret = new(loc)
 	turret.base = src
 
+/obj/vehicle/ridden/atv/turret/Destroy(force)
+	QDEL_NULL(turret)
+	return ..()
+
 /obj/vehicle/ridden/atv/turret/Moved()
 	. = ..()
-	if(turret)
+	if(!QDELETED(src) && turret)
 		turret.forceMove(get_turf(src))
 		switch(dir)
 			if(NORTH)
@@ -68,6 +72,8 @@
 
 /obj/vehicle/ridden/atv/snowmobile/Moved()
 	. = ..()
+	if(!loc || QDELETED(src))
+		return
 	var/static/list/snow_typecache = typecacheof(list(/turf/open/floor/plating/asteroid/snow/icemoon, /turf/open/floor/plating/snowed/smoothed/icemoon, /turf/open/floor/plating/snowed, /turf/open/floor/plating/asteroid/snow))
 	var/datum/component/riding/E = LoadComponent(/datum/component/riding)
 	if(snow_typecache[loc.type])

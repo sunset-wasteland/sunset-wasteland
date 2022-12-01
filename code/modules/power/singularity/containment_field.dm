@@ -24,8 +24,10 @@
 	AddElement(/datum/element/connect_loc, loc_connections)
 
 /obj/machinery/field/containment/Destroy()
-	FG1.fields -= src
-	FG2.fields -= src
+	if(FG1)
+		FG1.fields -= src
+	if(FG2)
+		FG2.fields -= src
 	return ..()
 
 /obj/machinery/field/containment/on_attack_hand(mob/user, act_intent = user.a_intent, unarmed_attack_flags)

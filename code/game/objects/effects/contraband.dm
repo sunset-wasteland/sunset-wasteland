@@ -797,7 +797,6 @@
 /obj/effect/landmark/poster_spawner/Initialize()
 	. = ..()
 	var/obj/structure/sign/poster/P = pick(posters)
-	world << "[P]"
 	new P(loc)
 	qdel()
 

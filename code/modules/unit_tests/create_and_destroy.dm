@@ -45,6 +45,8 @@ GLOBAL_VAR_INIT(running_create_and_destroy, FALSE)
 		/obj/item/locked_box/weapon/range,
 		//needs a mob passed to view it
 		/obj/screen/credit,
+		//template type
+		/obj/effect/landmark/poster_spawner,
 	)
 	//needs to be mapped in with an id
 	ignore += typesof(/obj/effect/spawner/structure/window/reinforced/tinted/electrochromatic)

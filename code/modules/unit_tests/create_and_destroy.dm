@@ -57,6 +57,8 @@ GLOBAL_VAR_INIT(running_create_and_destroy, FALSE)
 		/obj/shapeshift_holder,
 		//abstract type, should not be spawned but subtypes are okay
 		/mob/living/silicon/robot/modules,
+		//starts the apocalypse
+		/obj/structure/destructible/clockwork/massive/ratvar,
 	)
 	//needs to be mapped in with an id
 	ignore += typesof(/obj/effect/spawner/structure/window/reinforced/tinted/electrochromatic)

@@ -414,3 +414,6 @@
 	new /obj/item/screwdriver(src)
 	new /obj/item/stack/cable_coil(src)
 
+/obj/item/pda/reika
+	name = "worn pip-boy"
+	desc = "The RobCo Pip-Boy, This one look rather worn from usages."

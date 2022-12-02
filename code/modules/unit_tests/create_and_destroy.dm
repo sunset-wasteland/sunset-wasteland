@@ -137,11 +137,20 @@ GLOBAL_VAR_INIT(running_create_and_destroy, FALSE)
 				Fail("[type_path] changed the amount of baseturfs we have [baseturf_count] -> [length(spawn_at.baseturfs)]")
 				baseturf_count = length(spawn_at.baseturfs)
 		else
-			var/atom/creation = new type_path(spawn_at)
+			var/atom/creation
+			try
+				creation = new type_path(spawn_at)
+			catch(var/exception/e1)
+				Fail("[type_path] runtimed during creation in Create and Destroy")
+				stack_trace("[e1] on [e1.file]:[e1.line]")
 			if(QDELETED(creation))
 				continue
-			//Go all in
-			qdel(creation, force = TRUE)
+			try
+				//Go all in
+				qdel(creation, force = TRUE)
+			catch(var/exception/e2)
+				Fail("[type_path] runtimed during Destroy() in Create and Destroy")
+				stack_trace("[e2] on [e2.file]:[e2.line]")
 			//This will hold a ref to the last thing we process unless we set it to null
 			//Yes byond is fucking sinful
 			creation = null

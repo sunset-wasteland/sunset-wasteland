@@ -649,7 +649,7 @@
 
 /obj/structure/sign/poster/prewar/poster62
 	name = "old game poster"
-	desc = "Wasteland 7, Coming SOON."
+	desc = "Wasteland 7, coming SOON."
 	icon_state = "poster62"
 
 /obj/structure/sign/poster/prewar/poster63

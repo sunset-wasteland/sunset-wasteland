@@ -17,7 +17,7 @@
 	var/list/obj/structure/closet/crate/laircoffins = new list()
 
 // Called by Coffin when an area is claimed as a vamp's lair
-/area/proc/ClaimAsLair(/obj/structure/closet/crate/inClaimant)
+/area/proc/ClaimAsLair(obj/structure/closet/crate/inClaimant)
 	set waitfor = FALSE // Don't make on_gain() wait for this function to finish. This lets this code run on the side.
 
 	laircoffins += laircoffins

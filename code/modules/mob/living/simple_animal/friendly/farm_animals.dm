@@ -43,7 +43,7 @@
 
 	footstep_type = FOOTSTEP_MOB_SHOE
 
-/mob/living/simple_animal/hostile/retaliate/goat/Initialize(/datum/reagent/milk_reagent)
+/mob/living/simple_animal/hostile/retaliate/goat/Initialize(datum/reagent/milk_reagent)
 	if(milk_reagent)
 		src.milk_reagent = milk_reagent
 	udder = new (null, src.milk_reagent)

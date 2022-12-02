@@ -2,21 +2,25 @@
 	name = "Nuka Cola"
 	description = "Cola, cola never changes."
 	color = "#100800" // rgb: 16, 8, 0
+	quality = DRINK_VERYGOOD
 	taste_description = "the future"
 	glass_icon_state = "nukacolaglass"
-	glass_name = "Nuka Cola"
-	glass_desc = "Don't cry, Don't raise your eye, It's only nuclear wasteland."
+	glass_name = "glass of Nuka Cola"
+	glass_desc = "Don't cry, don't raise your eye, it's only nuclear wasteland."
 	overdose_threshold = 100
 	ghoulfriendly = TRUE
+	water_level = 1.5
+	value = REAGENT_VALUE_COMMON
 
 /datum/reagent/consumable/nuka_cola/on_mob_life(mob/living/carbon/M)
 	M.drowsyness = 0
 	M.AdjustSleeping(-40, FALSE)
 	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, BODYTEMP_NORMAL)
 	if(HAS_TRAIT(M, TRAIT_NUKA_LOVER))
-		M.adjustBruteLoss(-0.05)
-		M.adjustFireLoss(-0.05)
+		M.adjustBruteLoss(-0.05, updating_health = FALSE)
+		M.adjustFireLoss(-0.05, updating_health = FALSE)
 	..()
+	return TRUE // update health and mobility at end of tick
 
 /datum/reagent/consumable/nuka_cola/overdose_start(mob/living/M)
 	to_chat(M, "<span class='userdanger'>Too much Nuka-Cola! This cannot be good for you!</span>")

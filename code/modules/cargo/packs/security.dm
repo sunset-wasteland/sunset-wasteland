@@ -123,7 +123,7 @@
 
 /datum/supply_pack/security/laser //wattz instead
 	name = "Lasers Crate"
-	desc = "Contains three lethal, Wattz laser pistols.."
+	desc = "Contains three lethal Wattz laser pistols."
 	cost = 1750
 	contains = list(/obj/item/gun/energy/laser/wattz,
 					/obj/item/gun/energy/laser/wattz,

@@ -46,13 +46,22 @@
 	desc = "A combat leather jacket, outfitted with a special armored leather coat."
 	armor = list("melee" = 35, "bullet" = 22, "laser" = 22, "energy" = 15, "bomb" = 45, "bio" = 30, "rad" = 5, "fire" = 50, "acid" = 35, "wound" = 10)
 
+/obj/item/clothing/suit/armor/f13/leather_jacket/combat/sierra
+	name = "Sierra suit jacket"
+	icon = 'icons/fallout/clothing/suits_cosmetic.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/suit.dmi'
+	icon_state = "sierrajacket"
+	item_state = "sierrajacket"
+	desc = "An armored suit jacket for the representative of the Sierra Trading Company. Lined with durable padding."
+	armor = list("melee" = 35, "bullet" = 45, "laser" = 30, "energy" = 15, "bomb" = 45, "bio" = 30, "rad" = 5, "fire" = 50, "acid" = 35, "wound" = 10)
+
 
 /obj/item/clothing/suit/armor/f13/kit
 	name = "armor kit"
 	desc = "Separate armor parts you can wear over the clothing to get the most basic protection from the dangers of wasteland.<br>It sure is better than going into the battle without any armor at all."
 	icon_state = "armorkit"
 	item_state = "armorkit"
-	armor = list("melee" = 30, "bullet" = 30, "laser" = 30, "energy" = 20, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 0, "wound" = 10)
+	armor = list("melee" = 12.5, "bullet" = 12.5, "laser" = 7.5, "energy" = 0, "bomb" = 15, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 0, "wound" = 10)
 	strip_delay = 30
 	slowdown = 0.025
 
@@ -60,12 +69,11 @@
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
 
-/obj/item/clothing/suit/armor/f13/punk
+/obj/item/clothing/suit/armor/f13/kit/punk
 	name = "armor kit"
 	desc = "A couple of armor parts that can be worn over the clothing for moderate protection against the dangers of wasteland.<br>Do you feel lucky now? Well, do ya, punk?"
 	icon_state = "armorkit_punk"
 	item_state = "armorkit_punk"
-	armor = list("melee" = 20, "bullet" = 40, "laser" = 15, "energy" = 15, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 0, "wound" = 10)
 	strip_delay = 30
 	icon = 'icons/fallout/clothing/armored_light.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
@@ -82,8 +90,8 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
 	icon_state = "light_plates"
 	item_state = "armorkit"
-	armor = list("melee" = 33, "bullet" = 33, "laser" = 40, "energy" = 15, "bomb" = 20, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0, "wound" = 10)
-	slowdown = 0.08
+	armor = list("melee" = 25, "bullet" = 25, "laser" = 40, "energy" = 15, "bomb" = 20, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0, "wound" = 10)
+	slowdown = 0.04
 
 /obj/item/clothing/suit/armor/f13/leatherarmor
 	name = "leather armor"
@@ -1350,3 +1358,9 @@
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS|HANDS
 	slowdown = 0.05
+
+/obj/item/clothing/suit/armor/f13/rangercombat/finlayranger
+	name = "Brotherhood of Steel Ranger Armor"
+	desc = "A customized and well-worn suit of riot gear with parts of the suit reinforced with leather armor."
+	icon_state = "finlayranger"
+	item_state = "finlayranger"

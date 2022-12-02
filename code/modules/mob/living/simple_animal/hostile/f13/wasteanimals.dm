@@ -113,15 +113,18 @@
 		var/mob/living/carbon/human/H = target
 		H.reagents.add_reagent(/datum/reagent/toxin/stalker_venom, 4)
 
+/datum/reagent/toxin/stalker_venom
+	name = "nightstalker venom"
+
 /datum/reagent/toxin/stalker_venom/on_mob_life(mob/living/M)
 	if(volume >= 16)
 		M.adjustToxLoss(5, 0)
 	..()
 	return TRUE // update health at end of tick
 
-/mob/living/simple_animal/hostile/stalker/playable/legion				
+/mob/living/simple_animal/hostile/stalker/playable/legion
 	name = "legionstalker"
-	desc = "A nightstalker bred specifically for the legion under the use of combat and companionship. legionstalkers have the body and loyalty of a canine but the agility and deadlyness of rattlesnake."
+	desc = "A nightstalker bred by the Legion for combat. Legionstalkers have the body of a coyote, the loyalty of a dog, and the lethality of a rattlesnake."
 	icon_state = "nightstalker-legion"
 	icon_living = "nightstalker-legion"
 	icon_dead = "nightstalker-legion-dead"
@@ -178,11 +181,11 @@
 	melee_damage_upper = 45
 	footstep_type = FOOTSTEP_MOB_CLAW
 
-/mob/living/simple_animal/hostile/stalker/AttackingTarget()
+/mob/living/simple_animal/hostile/stalkeryoung/AttackingTarget()
 	. = ..()
 	if(. && ishuman(target))
 		var/mob/living/carbon/human/H = target
-		H.reagents.add_reagent(/datum/reagent/toxin/stalker_venom, 2)
+		H.reagents.add_reagent(/datum/reagent/toxin/stalker_venom, 4)
 
 /obj/item/clothing/head/f13/stalkerpelt
 	name = "nightstalker pelt"

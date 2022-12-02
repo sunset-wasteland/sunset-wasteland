@@ -1366,6 +1366,12 @@
 	icon_state = "finlayranger"
 	item_state = "finlayranger"
 
+/obj/item/clothing/suit/armor/f13/rangercombat/finlayranger_alt
+	name = "worn ranger armor"
+	desc = "A customized and well-worn suit of riot gear with parts of the suit reinforced with leather armor."
+	icon_state = "reshiranger"
+	item_state = "reshiranger"
+
 /obj/item/clothing/suit/armor/f13/combat/swat/bibledog
 	name = "SLPD SWAT combat armor"
 	slowdown = 0.11

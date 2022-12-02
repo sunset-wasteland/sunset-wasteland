@@ -946,11 +946,18 @@
 	item_state = "bone_dancer_helmet"
 	strip_delay = 100
 
+//fluff stuff
 /obj/item/clothing/head/helmet/f13/ncr/rangercombat/finlayranger
-	name = "reclaimed ranger-hunter combat helmet"
+	name = "reclaimed ranger combat helmet"
 	desc = "A modified ranger helmet now utilised by the brotherhood of steel, functionally identical to a standard helmet."
 	icon_state = "finlayhelmet"
 	item_state = "finlayhelmet"
+
+/obj/item/clothing/head/helmet/f13/ncr/rangercombat/finlayranger_alt
+	name = "worn ranger helmet"
+	desc = "A modified ranger helmet worn by now retired rangers, functionally identical to a standard helmet."
+	icon_state = "reshiranger"
+	item_state = "reshiranger"
 
 /obj/item/clothing/head/beret/donator_worn_beret
 	name = "worn 1st recon beret"

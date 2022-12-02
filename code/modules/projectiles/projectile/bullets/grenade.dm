@@ -24,16 +24,16 @@
 	damage = 80//If you get hit with this directly? Ouch...
 	var/datum/effect_system/smoke_spread/bad/smoke
 
-/obj/item/projectile/bullet/a40mmg/New()
-	..()
+/obj/item/projectile/bullet/a40mmg/Initialize()
+	. = ..()
 	src.smoke = new /datum/effect_system/smoke_spread/teargas
 	src.smoke.attach(src)
+	smoke.set_up(4, src)
 
 /obj/item/projectile/bullet/a40mmg/Destroy()
-	qdel(smoke)
+	QDEL_NULL(smoke)
 	return ..()
 
 /obj/item/projectile/bullet/a40mmg/on_hit(atom/target, blocked = FALSE)
 	playsound(src.loc, 'sound/effects/smoke.ogg', 50, 1, -3)
-	smoke.set_up(4, src)
 	smoke.start()

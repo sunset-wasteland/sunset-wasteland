@@ -296,3 +296,9 @@
 /obj/item/clothing/shoes/f13/tribal_sandals
 	icon_state = "tribaltreads"
 	icon_state = "tribaltreads"
+
+/obj/item/clothing/shoes/f13/military/gelatoboots
+	name = "polished service boots"
+	desc = "Tall shiny boots with kevlar layers."
+	icon_state = "gelatoboots"
+	item_state = "gelatoboots"

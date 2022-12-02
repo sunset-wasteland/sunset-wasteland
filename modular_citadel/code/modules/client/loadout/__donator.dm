@@ -380,4 +380,4 @@
 
 /obj/item/storage/box/large/custom_kit/protogen_first_recon/PopulateContents()
 	new /obj/item/clothing/head/beret/donator_worn_beret(src)
-	new /obj/item/card/id/dogtag/onelessncrrep
+	new /obj/item/clothing/shoes/f13/military/gelatoboots(src)

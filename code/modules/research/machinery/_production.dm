@@ -27,7 +27,7 @@
 	cached_designs = list()
 	stored_research = new
 	update_techweb()
-	INVOKE_ASYNC(src, .proc/update_research)
+	update_research()
 	materials = AddComponent(/datum/component/remote_materials, "lathe", mapload, _after_insert=CALLBACK(src, .proc/AfterMaterialInsert))
 	RefreshParts()
 
@@ -45,6 +45,8 @@
 	return ..()
 
 /obj/machinery/rnd/production/proc/update_research()
+	if(QDELETED(src))
+		return
 	host_research.copy_research_to(stored_research, TRUE)
 	update_designs()
 

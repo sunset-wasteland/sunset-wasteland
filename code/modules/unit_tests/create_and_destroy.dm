@@ -159,7 +159,10 @@ GLOBAL_VAR_INIT(running_create_and_destroy, FALSE)
 		var/list/to_del = spawn_at.contents - cached_contents
 		if(length(to_del))
 			for(var/atom/to_kill in to_del)
-				qdel(to_kill, force = TRUE)
+				try
+					qdel(to_kill, force = TRUE)
+				catch(var/exception/e3)
+					Fail("[to_kill.type] runtimed during deletion!")
 
 	GLOB.running_create_and_destroy = FALSE
 	//Hell code, we're bound to have ended the round somehow so let's stop if from ending while we work

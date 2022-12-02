@@ -123,7 +123,6 @@
 			custom_designs = list()
 	for(var/id in processing)
 		update_node_status(SSresearch.techweb_node_by_id(id), FALSE)
-		CHECK_TICK
 	for(var/v in consoles_accessing)
 		var/obj/machinery/computer/rdconsole/V = v
 		V.rescan_views()

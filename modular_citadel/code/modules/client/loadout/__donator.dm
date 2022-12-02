@@ -358,3 +358,17 @@
 
 /obj/item/storage/box/large/custom_kit/davusi/PopulateContents()
 	new /obj/item/card/id/dogtag/donator_davusi(src)
+
+/datum/gear/donator/kits/onelessncrrep
+	name = "My memoir"
+	path = /obj/item/storage/box/large/custom_kit/onelessncrrep
+	ckeywhitelist = list ("hanaharetsu")
+
+/obj/item/storage/box/large/custom_kit/onelessncrrep/PopulateContents()
+	new /obj/item/clothing/head/f13/ncr(src)
+	new /obj/item/card/id/dogtag/onelessncrrep
+
+/obj/item/card/id/dogtag/onelessncrrep
+	name = "Edda's tags"
+	desc = "A dog tag proving enlistment."
+	icon_state = "ncrdogtagrecruit"

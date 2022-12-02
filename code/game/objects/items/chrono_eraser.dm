@@ -148,6 +148,9 @@
 		gun = loc
 	. = ..()
 
+/obj/item/ammo_casing/energy/chrono_beam/Destroy()
+	gun = null
+	return ..()
 
 
 
@@ -189,6 +192,9 @@
 /obj/effect/chrono_field/Destroy()
 	if(gun && gun.field_check(src))
 		gun.field_disconnect(src)
+	captured = null
+	gun = null
+	mob_underlay = null
 	return ..()
 
 /obj/effect/chrono_field/update_icon()

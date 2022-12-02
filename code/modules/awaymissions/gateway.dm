@@ -177,6 +177,10 @@ GLOBAL_LIST_EMPTY(gateway_destinations)
 	update_icon()
 	return ..()
 
+/obj/machinery/gateway/Destroy()
+	deactivate()
+	return ..()
+
 /obj/machinery/gateway/proc/generate_destination()
 	destination = new destination_type
 	destination.name = destination_name

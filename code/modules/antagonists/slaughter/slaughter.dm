@@ -134,6 +134,7 @@
 		if(!T)
 			T = get_turf(src)
 		M.forceMove(T)
+	consumed_mobs.Cut()
 
 /mob/living/simple_animal/slaughter/proc/refresh_consumed_buff()
 	melee_damage_lower = 22.5 + (0.5 * consumed_buff)

@@ -343,9 +343,11 @@
 	var/player = get_mob_by_key("especiallystrange") 
 	if(!ishuman(player))
 	var/mob/living/carbon/human/P = player
-		if(p.mind)
 		ADD_TRAIT(player, new TRAIT_HOLY(src))
-			p.mind.isholy = true
+	    if(user.mind && (user.mind.isholy))
+				beacon_armor(user)
+		else
+			user.mind.isholy = TRUE
 
 /datum/gear/donator/kits/davusi
 	name = "Davusi's dogtags"

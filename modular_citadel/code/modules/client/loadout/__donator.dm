@@ -329,13 +329,6 @@
 	ckeywhitelist = list ("especiallystrange")
 
 /obj/item/storage/box/large/custom_kit/bibledog/PopulateContents()
-	var/player = get_mob_by_key("especiallystrange") 
-	if(!ishuman(player))
-	var/mob/living/carbon/human/P = player
-		if(H.mind) 
-			H.mind.isholy = TRUE //for blocking magical shit like the legion
-			return
-	
 	new /obj/item/gun/ballistic/automatic/pistol/m1911/bibledog(src) //We can't expect god do all the works
 	new /obj/item/ammo_box/magazine/m45(src)
 	new /obj/item/ammo_box/magazine/m45(src)
@@ -347,6 +340,12 @@
 	new /obj/item/book/granter/trait/bibledog(src) //being able to use the bible
 	new /obj/item/storage/book/bible(src) //Would kinda defeat the point if I don't actually get a bible 
 	new /obj/item/clothing/accessory/necklace/silvercross(src)
+	var/player = get_mob_by_key("especiallystrange") 
+	if(!ishuman(player))
+	var/mob/living/carbon/human/P = player
+		if(H.mind) 
+			H.mind.isholy = TRUE //for blocking magical shit like the legion
+			return
 
 /datum/gear/donator/kits/davusi
 	name = "Davusi's dogtags"

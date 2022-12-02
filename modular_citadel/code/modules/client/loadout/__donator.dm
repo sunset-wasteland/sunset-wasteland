@@ -338,6 +338,7 @@
 	new /obj/item/storage/belt/holster/legholster(src)
 	new /obj/item/melee/classic_baton/police(src)
 	new /obj/item/book/granter/trait/bibledog(src) //being able to use the bible
+	new /obj/item/book/granter/trait/bigleagues(src)
 	new /obj/item/storage/book/bible(src) //Would kinda defeat the point if I don't actually get a bible 
 	new /obj/item/clothing/accessory/necklace/silvercross(src)
 

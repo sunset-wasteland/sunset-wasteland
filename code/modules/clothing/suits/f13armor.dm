@@ -1384,3 +1384,11 @@
 	strip_delay = 70
 	equip_delay_other = 50
 	slowdown = 0.13
+
+/obj/item/clothing/suit/armor/f13/leather_jacket/combat/reika
+	name = "combat leather coat"
+	icon_state = "brahmin_leather_duster"
+	item_state = "brahmin_leather_duster"
+	desc = "A combat leather jacket, outfitted with a special armored leather coat."
+	armor = list("melee" = 35, "bullet" = 35, "laser" = 22, "energy" = 15, "bomb" = 45, "bio" = 30, "rad" = 5, "fire" = 50, "acid" = 35, "wound" = 10)
+

@@ -399,7 +399,7 @@
 
 /datum/gear/donator/kits/russiansurvivor
 	name = "Our escape from this hell"
-	path /obj/item/storage/box/custom_kit/russiansurvivor
+	path = /obj/item/storage/box/custom_kit/russiansurvivor
 	ckeywhitelist = list ("mishanok","skateboreding","vasyano","coolboy20") //drink?
 
 /obj/item/storage/box/custom_kit/russiansurvivor/PopulateContents()
@@ -415,16 +415,33 @@
 	new /obj/item/stack/cable_coil(src)
 
 
-/datum/gear/donator/kits/notsoveterananymore
+/datum/gear/donator/kits/notsoveterananymore //Use .44 and .357 due to me not wanting to give us literal brushgun and ranger seqouia
 	name = "Over and Done for"
-	path /obj/item/storage/box/custom_kit/notsoveterananymore
-	ckeywhitelist = list ("ZerickyraDurandal","especiallystrange")
+	path = /obj/item/storage/box/custom_kit/notsoveterananymore
+	ckeywhitelist = list ("zerickyradurandal","especiallystrange")
 
 /obj/item/storage/box/custom_kit/notsoveterananymore/PopulateContents()
 	new /obj/item/clothing/suit/armor/f13/rangercombat/finlayranger_alt(src)
 	new /obj/item/clothing/head/helmet/f13/ncr/rangercombat/finlayranger_alt(src)
 	new /obj/item/clothing/head/beret/donator_worn_beret(src)
-	new /obj/item/gun/ballistic/revolver/colt357(src)
+	new /obj/item/gun/ballistic/rifle/repeater/trail(src)
+	new /obj/item/ammo_box/m44box(src)
+	new /obj/item/ammo_box/a357box(src)
+	new /obj/item/storage/belt/holster/ranger357(src)
+	new /obj/item/melee/classic_baton/telescopic(src)
+	new /obj/item/attachments/scope(src)
+
+/datum/gear/donator/kits/reikafled
+	name = "My Memoir"
+	path = /obj/item/storage/box/custom_kit/reikafled
+	ckeywhitelist = list ("zerickyradurandal")
+
+/obj/item/storage/box/custom_kit/reikafled/PopulateContents()
+	new /obj/item/pda/reika(src)
+	new /obj/item/gun/ballistic/automatic/pistol/n99(src)
+	new /obj/item/ammo_box/magazine/m10mm_adv/simple(src)
+	new /obj/item/ammo_box/magazine/m10mm_adv/simple(src)
+	new /obj/item/clothing/suit/armor/f13/leather_jacket/combat/reika(src)
 /obj/item/pda/reika
 	name = "worn pip-boy"
 	desc = "The RobCo Pip-Boy, This one look rather worn from usages."

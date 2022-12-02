@@ -85,11 +85,14 @@
 
 /mob/living/simple_animal/pet/dog/Initialize()
 	. = ..()
-	var/dog_area = get_area(src)
-	for(var/obj/structure/bed/dogbed/D in dog_area)
-		if(!D.owner)
-			D.update_owner(src)
-			break
+	var/area/dog_area = get_area(src)
+	if(!dog_area)
+		return
+	for(var/obj/structure/bed/dogbed/D in GLOB.dogbeds)
+		if(get_area(D) != dog_area || D.owner)
+			continue
+		D.update_owner(src)
+		break
 
 /mob/living/simple_animal/pet/dog/corgi/Initialize()
 	. = ..()

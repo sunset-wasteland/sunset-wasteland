@@ -399,7 +399,7 @@
 /datum/gear/donator/kits/russiansurvivor
 	name = "Our escape from this hell"
 	path /obj/item/storage/box/custom_kit/russiansurvivor
-	ckeywhitelist = list("mishanok","skateboreding","vasyano","coolboy20") //drink?
+	ckeywhitelist = list ("mishanok","skateboreding","vasyano","coolboy20") //drink?
 
 /obj/item/storage/box/custom_kit/russiansurvivor/PopulateContents()
 	new /obj/item/circuitboard/machine/chem_dispenser/drinks/beer(src)

@@ -177,6 +177,7 @@ GLOBAL_LIST_EMPTY(blob_nodes)
 	blob_mobs = null
 	resource_blobs = null
 	blobs_legit = null
+	QDEL_NULL(blobstrain)
 
 	SSshuttle.clearHostileEnvironment(src)
 	STOP_PROCESSING(SSobj, src)

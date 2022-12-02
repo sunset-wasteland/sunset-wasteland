@@ -328,7 +328,10 @@
 /obj/machinery/power/emitter/proc/remove_gun(mob/user)
 	if(!gun)
 		return
-	user.put_in_hands(gun)
+	if(user)
+		user.put_in_hands(gun)
+	else
+		gun.forceMove(drop_location())
 	gun = null
 	playsound(src, 'sound/items/deconstruct.ogg', 50, 1)
 	gun_properties = list()

@@ -83,6 +83,10 @@
 	AddSpell(new /obj/effect/proc_holder/spell/aoe_turf/revenant/malfunction(null))
 	random_revenant_name()
 
+/mob/living/simple_animal/revenant/Destroy()
+	drained_mobs.Cut()
+	return ..()
+
 /mob/living/simple_animal/revenant/proc/random_revenant_name()
 	var/built_name = ""
 	built_name += pick(strings(REVENANT_NAME_FILE, "spirit_type"))
@@ -429,7 +433,8 @@
 /obj/item/ectoplasm/revenant/Destroy()
 	if(!QDELETED(revenant))
 		qdel(revenant)
-	..()
+	revenant = null
+	return ..()
 
 //objectives
 /datum/objective/revenant

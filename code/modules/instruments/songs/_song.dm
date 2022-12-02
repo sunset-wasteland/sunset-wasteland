@@ -408,6 +408,10 @@
 	. = ..()
 	stand = istype(parent, /mob/living/simple_animal/hostile/guardian) && parent
 
+/datum/song/holoparasite/Destroy()
+	stand = null
+	return ..()
+
 /datum/song/holoparasite/updateDialog()
 	stand.ui_interact(src)
 

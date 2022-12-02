@@ -76,8 +76,8 @@ GLOBAL_LIST_EMPTY(allTerminals)
 				GLOB.req_terminal -= terminal
 
 /obj/machinery/msgterminal/Destroy()
-	GLOB.allTerminals -= "[terminal]"
-	GLOB.req_terminal -= "[terminal]"
+	GLOB.allTerminals -= src
+	GLOB.req_terminal -= src
 	return ..()
 
 /obj/machinery/msgterminal/ui_interact(mob/user)

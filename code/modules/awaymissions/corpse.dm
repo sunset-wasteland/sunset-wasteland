@@ -8,6 +8,7 @@
 	anchored = TRUE
 	var/job_description = null
 	var/mob_type = null
+	var/is_abstract = TRUE
 	var/mob_name = ""
 	var/mob_gender = null
 	var/death = TRUE //Kill the mob
@@ -65,7 +66,7 @@
 
 /obj/effect/mob_spawn/Initialize(mapload)
 	. = ..()
-	if(isnull(mob_type))
+	if(is_abstract)
 		stack_trace("This type shouldn't be spawned in, it doesn't create anything! Use a subtype!")
 		return INITIALIZE_HINT_QDEL
 	if(instant || (roundstart && (mapload || (SSticker && SSticker.current_state > GAME_STATE_SETTING_UP))))
@@ -144,6 +145,7 @@
 // Base version - place these on maps/templates.
 /obj/effect/mob_spawn/human
 	mob_type = /mob/living/carbon/human
+	is_abstract = FALSE
 	//Human specific stuff.
 	var/mob_species = null		//Set to make them a mutant race such as lizard or skeleton. Uses the datum typepath instead of the ID.
 	var/datum/outfit/outfit = /datum/outfit	//If this is a path, it will be instanced in Initialize()
@@ -269,7 +271,10 @@
 
 //Non-human spawners
 
-/obj/effect/mob_spawn/AICorpse/create(ckey, name) //Creates a corrupted AI
+/obj/effect/mob_spawn/AICorpse //Creates a corrupted AI
+	is_abstract = FALSE
+
+/obj/effect/mob_spawn/AICorpse/create(ckey, name)
 	var/A = locate(/mob/living/silicon/ai) in loc
 	if(A)
 		return
@@ -282,6 +287,7 @@
 
 /obj/effect/mob_spawn/slime
 	mob_type = 	/mob/living/simple_animal/slime
+	is_abstract = FALSE
 	var/mobcolour = "grey"
 	icon = 'icons/mob/slimes.dmi'
 	icon_state = "grey baby slime" //sets the icon in the map editor
@@ -298,6 +304,7 @@
 /obj/effect/mob_spawn/mouse
 	name = "sleeper"
 	mob_type = 	/mob/living/simple_animal/mouse
+	is_abstract = FALSE
 	death = FALSE
 	roundstart = FALSE
 	job_description = "Mouse"
@@ -307,6 +314,7 @@
 /obj/effect/mob_spawn/cow
 	name = "sleeper"
 	mob_type = 	/mob/living/simple_animal/cow
+	is_abstract = FALSE
 	death = FALSE
 	roundstart = FALSE
 	job_description = "Cow"

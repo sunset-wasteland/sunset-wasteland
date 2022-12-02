@@ -59,6 +59,8 @@ GLOBAL_VAR_INIT(running_create_and_destroy, FALSE)
 		/mob/living/silicon/robot/modules,
 		//starts the apocalypse
 		/obj/structure/destructible/clockwork/massive/ratvar,
+		//basically starts the apocalypse too
+		/obj/structure/destructible/clockwork/massive/celestial_gateway,
 	)
 	//needs to be mapped in with an id
 	ignore += typesof(/obj/effect/spawner/structure/window/reinforced/tinted/electrochromatic)

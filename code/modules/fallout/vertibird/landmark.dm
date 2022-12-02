@@ -25,7 +25,8 @@
 	GLOB.vertibirdEnterZone = get_turf(src)
 
 /obj/effect/landmark/vertibird_enter/Destroy()
-	GLOB.vertibirdEnterZone -= get_turf(src)
+	if(GLOB.vertibirdEnterZone == src)
+		GLOB.vertibirdEnterZone = null
 	return ..()
 
 /obj/effect/landmark/vertibird/flare/Initialize()

@@ -190,7 +190,7 @@ GLOBAL_LIST_EMPTY(gateway_destinations)
 /obj/machinery/gateway/proc/deactivate()
 	var/datum/gateway_destination/dest = target
 	target = null
-	dest.deactivate(src)
+	dest?.deactivate(src)
 	QDEL_NULL(portal)
 	if(use_power == ACTIVE_POWER_USE)
 		use_power = IDLE_POWER_USE

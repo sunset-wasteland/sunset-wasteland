@@ -344,9 +344,7 @@
 	if(!ishuman(player))
 	var/mob/living/carbon/human/P = player
 		ADD_TRAIT(player, new TRAIT_HOLY(src))
-	    if(user.mind && (user.mind.isholy))
-				beacon_armor(user)
-		else
+	    if(user.mind != (user.mind.isholy))
 			user.mind.isholy = TRUE
 
 /datum/gear/donator/kits/davusi

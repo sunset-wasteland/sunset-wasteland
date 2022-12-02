@@ -536,6 +536,8 @@
 
 /obj/item/clothing/mask/gelatoscreen
 	name = "\improper Gelato Face"
+	icon_state = "gelatoscreen"
+	item_state = "gelatoscreen"
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 	clothing_flags = BLOCK_GAS_SMOKE_EFFECT|THICKMATERIAL
 

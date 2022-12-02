@@ -341,6 +341,7 @@
 	new /obj/item/clothing/mask/mummy/bibledog(src)
 	new /obj/item/clothing/suit/armor/f13/combat/swat/bibledog(src)
 	new /obj/item/storage/belt/holster/legholster(src)
+	new /obj/item/melee/classic_baton/police(src)
 	new /obj/item/book/granter/trait/bibledog(src) //being able to use the bible
 	new /obj/item/storage/book/bible(src) //Would kinda defeat the point if I don't actually get a bible 
 
@@ -381,3 +382,5 @@
 /obj/item/storage/box/large/custom_kit/protogen_first_recon/PopulateContents()
 	new /obj/item/clothing/head/beret/donator_worn_beret(src)
 	new /obj/item/clothing/shoes/f13/military/gelatoboots(src)
+	new /obj/item/clothing/mask/gelatoscreen(src)
+	new /obj/item/clothing/under/gelatosuit(src)

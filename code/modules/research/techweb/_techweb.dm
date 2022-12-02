@@ -163,6 +163,8 @@
 	modify_point_list(l)
 
 /datum/techweb/proc/copy_research_to(datum/techweb/receiver, unlock_hidden = TRUE)				//Adds any missing research to theirs.
+	if(QDELETED(receiver) || QDELETED(src))
+		return
 	if(unlock_hidden)
 		for(var/i in receiver.hidden_nodes)
 			CHECK_TICK

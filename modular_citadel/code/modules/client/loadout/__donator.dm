@@ -335,6 +335,7 @@
 		if(H.mind) 
 			H.mind.isholy = TRUE //for blocking magical shit like the legion
 			return
+	
 	new /obj/item/gun/ballistic/automatic/pistol/m1911/bibledog(src) //We can't expect god do all the works
 	new /obj/item/ammo_box/magazine/m45(src)
 	new /obj/item/ammo_box/magazine/m45(src)

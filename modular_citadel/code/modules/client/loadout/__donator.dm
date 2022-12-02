@@ -366,9 +366,18 @@
 
 /obj/item/storage/box/large/custom_kit/onelessncrrep/PopulateContents()
 	new /obj/item/clothing/head/f13/ncr(src)
-	new /obj/item/card/id/dogtag/onelessncrrep
+	new /obj/item/card/id/dogtag/onelessncrrep(src)
 
 /obj/item/card/id/dogtag/onelessncrrep
 	name = "Edda's tags"
 	desc = "A dog tag proving enlistment."
 	icon_state = "ncrdogtagrecruit"
+
+/datum/gear/donator/kits/protogen_first_recon
+	name = "1st Recon Screen"
+	path = /obj/item/storage/box/large/custom_kit/protogen_first_recon
+	ckeywhitelist = list ("googlyfox")
+
+/obj/item/storage/box/large/custom_kit/protogen_first_recon/PopulateContents()
+	new /obj/item/clothing/head/f13/ncr(src)
+	new /obj/item/card/id/dogtag/onelessncrrep

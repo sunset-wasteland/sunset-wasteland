@@ -120,6 +120,9 @@ GLOBAL_VAR_INIT(running_create_and_destroy, FALSE)
 	ignore += typesof(/obj/effect/immovablerod)
 	//invoke async + explosion in init + all sorts of nastiness on subtypes
 	ignore += typesof(/obj/effect/temp_visual/hierophant)
+	//these explode when Destroy()ed
+	ignore += typesof(/obj/machinery/vending/custom)
+
 
 	var/list/cached_contents = spawn_at.contents.Copy()
 	var/baseturf_count = length(spawn_at.baseturfs)

@@ -386,3 +386,30 @@
 	new /obj/item/clothing/under/gelatosuit(src)
 	new /obj/item/gun/energy/laser/wattz(src)
 	new /obj/item/stock_parts/cell/ammo/ec(src)
+
+/datum/gear/donator/kits/arbufy
+	name = "A temporary escape"
+	path = /obj/item/storage/box/large/custom_kit/arbufy
+	ckeywhitelist = list ("arbufy")
+
+/obj/item/storage/box/large/custom_kit/arbufy/PopulateContents()
+	new /obj/item/reagent_containers/syringe/stimulants(src)
+	new /obj/item/gun/ballistic/revolver/colt357(src)
+
+/datum/gear/donator/kits/russiansurvivor
+	name = "Our escape from this hell"
+	path /obj/item/storage/box/custom_kit/russiansurvivor
+	ckeywhitelist = list("mishanok","skateboreding","vasyano","coolboy20") //drink?
+
+/obj/item/storage/box/custom_kit/russiansurvivor/PopulateContents()
+	new /obj/item/circuitboard/machine/chem_dispenser/drinks/beer(src)
+	new /obj/item/stock_parts/matter_bin(src)
+	new /obj/item/stock_parts/matter_bin(src)
+	new /obj/item/stock_parts/capacitor(src)
+	new /obj/item/stock_parts/manipulator(src)
+	new /obj/item/stack/sheet/glass(src)
+	new /obj/item/stock_parts/cell/upgraded/plus(src)
+	new /obj/item/wrench(src)
+	new /obj/item/screwdriver(src)
+	new /obj/item/stack/cable_coil(src)
+

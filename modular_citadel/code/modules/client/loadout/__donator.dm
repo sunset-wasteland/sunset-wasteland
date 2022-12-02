@@ -384,3 +384,5 @@
 	new /obj/item/clothing/shoes/f13/military/gelatoboots(src)
 	new /obj/item/clothing/mask/gelatoscreen(src)
 	new /obj/item/clothing/under/gelatosuit(src)
+	new /obj/item/gun/energy/laser/wattz(src)
+	new /obj/item/stock_parts/cell/ammo/ec(src)

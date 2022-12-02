@@ -379,5 +379,5 @@
 	ckeywhitelist = list ("googlyfox")
 
 /obj/item/storage/box/large/custom_kit/protogen_first_recon/PopulateContents()
-	new /obj/item/clothing/head/f13/ncr(src)
+	new /obj/item/clothing/head/beret/donator_worn_beret(src)
 	new /obj/item/card/id/dogtag/onelessncrrep

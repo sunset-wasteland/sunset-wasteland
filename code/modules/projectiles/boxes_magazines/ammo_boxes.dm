@@ -354,9 +354,9 @@
 	AddComponent(/datum/component/radioactive, 5, src, 0, TRUE, TRUE) //half-life of 0 because we keep on going.
 	START_PROCESSING(SSradiation,src)
 
-/obj/item/ammo_box/a762box/uraniumtipped/Destroy()
+/obj/item/ammo_box/a556/uraniumtipped/Destroy()
 	STOP_PROCESSING(SSradiation,src)
-	..()
+	return ..()
 
 /obj/item/ammo_box/a556/sport/improvised
 	name = "bag with reloaded .223 bullets"
@@ -401,7 +401,7 @@
 
 /obj/item/ammo_box/a762box/uraniumtipped/Destroy()
 	STOP_PROCESSING(SSradiation,src)
-	..()
+	return ..()
 
 /obj/item/ammo_box/a762box/microshrapnel
 	name = "ammo box (7.62x51 microshrapnel)"

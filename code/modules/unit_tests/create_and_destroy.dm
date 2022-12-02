@@ -118,6 +118,8 @@ GLOBAL_VAR_INIT(running_create_and_destroy, FALSE)
 	ignore += typesof(/obj/machinery/computer/holodeck)
 	//invalid without start and end
 	ignore += typesof(/obj/effect/immovablerod)
+	//invoke async + explosion in init + all sorts of nastiness on subtypes
+	ignore += typesof(/obj/effect/temp_visual/hierophant)
 
 	var/list/cached_contents = spawn_at.contents.Copy()
 	var/baseturf_count = length(spawn_at.baseturfs)

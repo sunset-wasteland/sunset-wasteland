@@ -61,6 +61,10 @@ GLOBAL_VAR_INIT(running_create_and_destroy, FALSE)
 		/obj/structure/destructible/clockwork/massive/ratvar,
 		//basically starts the apocalypse too
 		/obj/structure/destructible/clockwork/massive/celestial_gateway,
+		//explodes when deleted
+		/obj/structure/checkoutmachine,
+		//spawns a bunch of swarmers that wander off and damage stuff that gets spawned
+		/mob/living/simple_animal/hostile/megafauna/swarmer_swarm_beacon,
 	)
 	//needs to be mapped in with an id
 	ignore += typesof(/obj/effect/spawner/structure/window/reinforced/tinted/electrochromatic)
@@ -122,6 +126,8 @@ GLOBAL_VAR_INIT(running_create_and_destroy, FALSE)
 	ignore += typesof(/obj/effect/temp_visual/hierophant)
 	//these explode when Destroy()ed
 	ignore += typesof(/obj/machinery/vending/custom)
+	ignore += typesof(/obj/vehicle/sealed)
+	ignore += typesof(/obj/mecha)
 
 
 	var/list/cached_contents = spawn_at.contents.Copy()

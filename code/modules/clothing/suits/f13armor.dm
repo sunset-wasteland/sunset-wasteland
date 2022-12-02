@@ -1368,4 +1368,13 @@
 
 /obj/item/clothing/suit/armor/f13/combat/swat/bibledog
 	name = "SLPD SWAT combat armor"
-	slowdown = 0.12
+	slowdown = 0.11
+
+/obj/item/clothing/suit/armor/bulletproof/gelatocoat
+	name = "worn greatcoat"
+	desc = "A heavy bulletproof greatcoat that excels in protecting the wearer against traditional projectile weaponry and explosives to a minor extent."
+	icon_state = "gelatopeacoat"
+	item_state = "gelatopeacoat"
+	strip_delay = 70
+	equip_delay_other = 50
+	slowdown = 0.13

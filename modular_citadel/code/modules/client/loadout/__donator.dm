@@ -414,6 +414,17 @@
 	new /obj/item/screwdriver(src)
 	new /obj/item/stack/cable_coil(src)
 
+
+/datum/gear/donator/kits/notsoveterananymore
+	name = "Over and Done for"
+	path /obj/item/storage/box/custom_kit/notsoveterananymore
+	ckeywhitelist = list ("ZerickyraDurandal","especiallystrange")
+
+/obj/item/storage/box/custom_kit/notsoveterananymore/PopulateContents()
+	new /obj/item/clothing/suit/armor/f13/rangercombat/finlayranger_alt(src)
+	new /obj/item/clothing/head/helmet/f13/ncr/rangercombat/finlayranger_alt(src)
+	new /obj/item/clothing/head/beret/donator_worn_beret(src)
+	new /obj/item/gun/ballistic/revolver/colt357(src)
 /obj/item/pda/reika
 	name = "worn pip-boy"
 	desc = "The RobCo Pip-Boy, This one look rather worn from usages."

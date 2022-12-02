@@ -334,7 +334,7 @@
 		if(H.mind) 
 			H.mind.isholy = TRUE //for blocking magical shit like the legion
 			return
-	new /obj/item/gun/ballistic/automatic/pistol/m1911/bibledog(src)
+	new /obj/item/gun/ballistic/automatic/pistol/m1911/bibledog(src) //We can't expect god do all the works
 	new /obj/item/ammo_box/magazine/m45(src)
 	new /obj/item/ammo_box/magazine/m45(src)
 	new /obj/item/clothing/under/f13/bibledog(src)
@@ -342,7 +342,7 @@
 	new /obj/item/clothing/suit/armor/f13/combat/swat/bibledog(src)
 	new /obj/item/storage/belt/holster/legholster(src)
 	new /obj/item/book/granter/trait/bibledog(src) //being able to use the bible
-	new /obj/item/storage/book/bible(src) //Would kinda defeat the point if I don't actually get a bible with it
+	new /obj/item/storage/book/bible(src) //Would kinda defeat the point if I don't actually get a bible 
 
 /datum/gear/donator/kits/davusi
 	name = "Davusi's dogtags"

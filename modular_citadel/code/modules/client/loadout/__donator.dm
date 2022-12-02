@@ -344,6 +344,7 @@
 	new /obj/item/melee/classic_baton/police(src)
 	new /obj/item/book/granter/trait/bibledog(src) //being able to use the bible
 	new /obj/item/storage/book/bible(src) //Would kinda defeat the point if I don't actually get a bible 
+	new /obj/item/clothing/accessory/necklace/silvercross(src)
 
 /datum/gear/donator/kits/davusi
 	name = "Davusi's dogtags"
@@ -445,3 +446,20 @@
 /obj/item/pda/reika
 	name = "worn pip-boy"
 	desc = "The RobCo Pip-Boy, This one look rather worn from usages."
+
+/datum/gear/donator/kits/shortrespirator
+	name = "Respirator Kit"
+	path = /obj/item/storage/box/custom_kit/shortrespirator
+	ckeywhitelist = list ("farsightednightlight")
+
+/obj/item/storage/box/custom_kit/shortrespirator/PopulateContents()
+	new /obj/item/clothing/mask/gas/sechailer/caligra(src)
+
+/datum/gear/donator/kits/antburger
+	name = "Dunce"
+	path = /obj/item/storage/custom_kit/antburger
+	ckeywhitelist = list ("zerantio")
+
+/obj/item/storage/custom_kit/antburger/PopulateContents()
+	new /obj/item/clothing/accessory/necklace/silvercross(src)
+	new /obj/item/clothing/head/beret/antburger(src)

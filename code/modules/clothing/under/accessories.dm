@@ -751,3 +751,10 @@
 	icon_state = "cia_badge"
 	item_state = "cia_badge"
 //	minimize_when_attached = FALSE
+
+// Silver Cross
+
+/obj/item/clothing/accessory/necklace/silvercross
+	name = "silver cross necklace"
+	desc = "A necklace for good luck."
+	icon_state = "silvercross"

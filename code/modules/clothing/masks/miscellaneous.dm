@@ -555,3 +555,8 @@
 	. = ..()
 	ADD_TRAIT(src, TRAIT_NODROP, CURSED_MASK_TRAIT)
 
+/obj/item/clothing/mask/gas/sechailer/caligra
+	name = "contractor gas mask"
+	desc = "A modified gas mask with integrated 'Compli-o-nator 3000' device. Plays over a dozen pre-recorded compliance phrases designed to get scumbags to stand still whilst you tase them. Do not tamper with the device."
+	icon_state = "caligra"
+	item_state = "caligra"

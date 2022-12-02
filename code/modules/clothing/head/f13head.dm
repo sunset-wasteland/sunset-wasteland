@@ -966,3 +966,10 @@
 	item_state = "worn_ncr_beret"
 	armor = list("melee" = 15, "bullet" = 40, "laser" = 30, "energy" = 20, "bomb" = 50, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0, "wound" = 40)
 
+/obj/item/clothing/head/beret/antburger
+	name = "armored dunce cap"
+	desc = "A dunce cap made from some stupidly durable kevlar."
+	icon_state = "dunce"
+	item_state = "dunce"
+	armor = list("melee" = 15, "bullet" = 40, "laser" = 30, "energy" = 20, "bomb" = 50, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0, "wound" = 40)
+

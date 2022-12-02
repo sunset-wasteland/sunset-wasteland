@@ -528,7 +528,16 @@
 	icon_state = "mummy_maskbc"
 	item_state = "mummy_maskbc"
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
-	flags_inv = HIDEHAIR|HIDEFACIALHAIR|HIDEEARS
+	flags_inv = HIDEHAIR|HIDEFACIALHAIR|HIDEEARS	
+	visor_flags_inv = HIDEFACE
+	visor_flags_cover = MASKCOVERSMOUTH
+	gas_transfer_coefficient = 0.9
+	permeability_coefficient = 0.01
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 25, "rad" = 0, "fire" = 30, "acid" = 10, "wound" = 30)//Literally wearing bandages for mask
+	actions_types = list(/datum/action/item_action/adjust)
+
+/obj/item/clothing/mask/mummy/bibledog/attack_self(mob/user)
+	adjustmask(user)
 
 /obj/item/clothing/mask/mummy/bibledog/Initialize()
 	. = ..()
@@ -540,6 +549,7 @@
 	item_state = "gelatoscreen"
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 	clothing_flags = BLOCK_GAS_SMOKE_EFFECT|THICKMATERIAL
+	flags_inv = null
 
 /obj/item/clothing/mask/gelatoscreen/Initialize()
 	. = ..()

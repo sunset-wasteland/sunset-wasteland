@@ -340,12 +340,6 @@
 	new /obj/item/book/granter/trait/bibledog(src) //being able to use the bible
 	new /obj/item/storage/book/bible(src) //Would kinda defeat the point if I don't actually get a bible 
 	new /obj/item/clothing/accessory/necklace/silvercross(src)
-	var/player = get_mob_by_key("especiallystrange") 
-	if(!ishuman(player))
-	var/mob/living/carbon/human/P = player
-		ADD_TRAIT(player, new TRAIT_HOLY(src))
-	    if(user.mind != (user.mind.isholy))
-			user.mind.isholy = TRUE
 
 /datum/gear/donator/kits/davusi
 	name = "Davusi's dogtags"

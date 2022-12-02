@@ -331,6 +331,7 @@
 /obj/item/storage/box/large/custom_kit/bibledog/PopulateContents()
 	var/player = get_mob_by_key("especiallystrange") 
 	if(!ishuman(player))
+	var/mob/living/carbon/human/P = player
 		if(H.mind) 
 			H.mind.isholy = TRUE //for blocking magical shit like the legion
 			return
@@ -450,7 +451,7 @@
 /datum/gear/donator/kits/shortrespirator
 	name = "Respirator Kit"
 	path = /obj/item/storage/box/custom_kit/shortrespirator
-	ckeywhitelist = list ("farsightednightlight")
+	ckeywhitelist = list ("farsightednightlight","raxraus")
 
 /obj/item/storage/box/custom_kit/shortrespirator/PopulateContents()
 	new /obj/item/clothing/mask/gas/sechailer/caligra(src)

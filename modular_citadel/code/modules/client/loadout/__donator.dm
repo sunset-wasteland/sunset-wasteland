@@ -329,6 +329,11 @@
 	ckeywhitelist = list ("especiallystrange")
 
 /obj/item/storage/box/large/custom_kit/bibledog/PopulateContents()
+	var/player = get_mob_by_key("especiallystrange") 
+	if(!ishuman(player))
+		if(H.mind) 
+			H.mind.isholy = TRUE //for blocking magical shit like the legion
+			return
 	new /obj/item/gun/ballistic/automatic/pistol/m1911/bibledog(src)
 	new /obj/item/ammo_box/magazine/m45(src)
 	new /obj/item/ammo_box/magazine/m45(src)

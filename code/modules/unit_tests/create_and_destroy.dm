@@ -151,20 +151,11 @@ GLOBAL_VAR_INIT(running_create_and_destroy, FALSE)
 				Fail("[type_path] changed the amount of baseturfs we have [baseturf_count] -> [length(spawn_at.baseturfs)]")
 				baseturf_count = length(spawn_at.baseturfs)
 		else
-			var/atom/creation
-			try
-				creation = new type_path(spawn_at)
-			catch(var/exception/e1)
-				Fail("[type_path] runtimed during creation in Create and Destroy")
-				stack_trace("[e1] on [e1.file]:[e1.line]")
+			var/atom/creation = new type_path(spawn_at)
 			if(QDELETED(creation))
 				continue
-			try
-				//Go all in
-				qdel(creation, force = TRUE)
-			catch(var/exception/e2)
-				Fail("[type_path] runtimed during Destroy() in Create and Destroy")
-				stack_trace("[e2] on [e2.file]:[e2.line]")
+			//Go all in
+			qdel(creation, force = TRUE)
 			//This will hold a ref to the last thing we process unless we set it to null
 			//Yes byond is fucking sinful
 			creation = null
@@ -173,11 +164,7 @@ GLOBAL_VAR_INIT(running_create_and_destroy, FALSE)
 		var/list/to_del = spawn_at.contents - cached_contents
 		if(length(to_del))
 			for(var/atom/to_kill in to_del)
-				try
-					qdel(to_kill, force = TRUE)
-				catch(var/exception/e3)
-					Fail("[to_kill.type] runtimed during deletion!")
-					stack_trace("[e3] on [e3.file]:[e3.line]")
+				qdel(to_kill, force = TRUE)
 
 	GLOB.running_create_and_destroy = FALSE
 	//Hell code, we're bound to have ended the round somehow so let's stop if from ending while we work

@@ -65,6 +65,8 @@ GLOBAL_VAR_INIT(running_create_and_destroy, FALSE)
 		/obj/structure/checkoutmachine,
 		//spawns a bunch of swarmers that wander off and damage stuff that gets spawned
 		/mob/living/simple_animal/hostile/megafauna/swarmer_swarm_beacon,
+		//only one can exist, which is really dumb
+		/obj/vertibird,
 	)
 	//needs to be mapped in with an id
 	ignore += typesof(/obj/effect/spawner/structure/window/reinforced/tinted/electrochromatic)
@@ -128,6 +130,12 @@ GLOBAL_VAR_INIT(running_create_and_destroy, FALSE)
 	ignore += typesof(/obj/machinery/vending/custom)
 	ignore += typesof(/obj/vehicle/sealed)
 	ignore += typesof(/obj/mecha)
+	//spawns a mech, which as above, explodes when deleted
+	ignore += typesof(/mob/living/simple_animal/hostile/syndicate/mecha_pilot)
+	//these also like to explode if anything else is on their turf or nearby
+	ignore += typesof(/obj/effect/meteor)
+	//ENDS THE FUCKING WORLD.
+	ignore += typesof(/obj/singularity/narsie)
 
 
 	var/list/cached_contents = spawn_at.contents.Copy()
@@ -169,6 +177,7 @@ GLOBAL_VAR_INIT(running_create_and_destroy, FALSE)
 					qdel(to_kill, force = TRUE)
 				catch(var/exception/e3)
 					Fail("[to_kill.type] runtimed during deletion!")
+					stack_trace("[e3] on [e3.file]:[e3.line]")
 
 	GLOB.running_create_and_destroy = FALSE
 	//Hell code, we're bound to have ended the round somehow so let's stop if from ending while we work

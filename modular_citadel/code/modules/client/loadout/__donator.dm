@@ -338,8 +338,8 @@
 	new /obj/item/ammo_box/magazine/m45(src)
 	new /obj/item/ammo_box/magazine/m45(src)
 	new /obj/item/clothing/under/f13/bibledog(src)
-	new /obj/item/ammo_box/magazine/m45(src)
-	new /obj/item/clothing/suit/armor/f13/combat/swat(src)
+	new /obj/item/clothing/mask/mummy/bibledog(src)
+	new /obj/item/clothing/suit/armor/f13/combat/swat/bibledog(src)
 	new /obj/item/storage/belt/holster/legholster(src)
 	new /obj/item/book/granter/trait/bibledog(src) //being able to use the bible
 	new /obj/item/storage/book/bible(src) //Would kinda defeat the point if I don't actually get a bible with it

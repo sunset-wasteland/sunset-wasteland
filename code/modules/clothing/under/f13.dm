@@ -1838,9 +1838,13 @@
 	fitted = FEMALE_UNIFORM_TOP
 	can_adjust = TRUE
 
+//New Canaanite Fluff
 /obj/item/clothing/under/f13/bibledog
 	name = "SLPD Uniform"
-	desc = "A uniform worn by the Salt Lake City Police Department prior to the great war."
+	desc = "A uniform worn by the Salt Lake City Police Department prior to the great war, strangely heat resistant. \n<b>We will serve as guardians of our community to preserve life</b>"
 	icon_state = "bibledog"
 	item_state = "bibledog"
 	armor = list("melee" = 5, "bullet" = 5, "laser" = 2, "energy" = 2, "bomb" = 5, "bio" = 0, "rad" = 10, "fire" = 50, "acid" = 40)
+	body_parts_covered = CHEST|GROIN|ARMS
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF
+	flags_inv = HIDEGLOVES

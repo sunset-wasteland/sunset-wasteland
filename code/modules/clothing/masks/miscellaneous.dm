@@ -519,3 +519,17 @@
 	visor_flags_inv = HIDEFACE
 	adjusted_flags = null
 	actions_types = list(/datum/action/item_action/adjust)
+
+
+//Phoenix Fluff Here
+/obj/item/clothing/mask/mummy/bibledog
+	name = "sterilised facewrap"
+	desc = "bandages fashioned into a facemask"
+	icon_state = "mummy_maskbc"
+	item_state = "mummy_maskbc"
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
+	flags_inv = HIDEHAIR|HIDEFACIALHAIR|HIDEEARS
+
+/obj/item/clothing/mask/mummy/bibledog/Initialize()
+	. = ..()
+	AddComponent(/datum/component/anti_magic, TRUE, TRUE, TRUE, ITEM_SLOT_MASK, INFINITY, FALSE)

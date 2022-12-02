@@ -754,3 +754,15 @@
 	body_parts_covered = CHEST|GROIN|ARMS
 	fitted = FEMALE_UNIFORM_TOP
 	can_adjust = FALSE
+
+//gelato fluff
+/obj/item/clothing/under/gelatosuit
+	name = "Orange Fluffs"
+	item_state = "gelatosuit"
+	icon_state = "gelatosuit"
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF
+	body_parts_covered = CHEST|GROIN|ARMS
+
+/obj/item/clothing/under/gelatosuit/Initialize()
+	. = ..()
+	ADD_TRAIT(src, TRAIT_NODROP, GLUED_ITEM_TRAIT)

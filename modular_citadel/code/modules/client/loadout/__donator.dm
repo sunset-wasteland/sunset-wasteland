@@ -343,9 +343,9 @@
 	var/player = get_mob_by_key("especiallystrange") 
 	if(!ishuman(player))
 	var/mob/living/carbon/human/P = player
-		if(H.mind) 
-			H.mind.isholy = TRUE //for blocking magical shit like the legion
-			return
+		if(h.mind)
+		ADD_TRAIT(player, new TRAIT_HOLY(src))
+			h.mind.isholy = true
 
 /datum/gear/donator/kits/davusi
 	name = "Davusi's dogtags"

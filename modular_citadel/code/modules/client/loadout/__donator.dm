@@ -478,3 +478,6 @@
 	new /obj/item/ammo_box/magazine/toy/smgm45/riot(src)
 	new /obj/item/ammo_box/magazine/toy/smgm45/riot(src)
 	new /obj/item/ammo_box/magazine/toy/smgm45/riot(src)
+	new /obj/item/bedsheet/medical(src)
+	new /obj/item/bedsheet/patriot(src)
+	new /obj/item/stack/sheet/cloth/thirty(src)

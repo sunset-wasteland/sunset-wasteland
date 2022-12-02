@@ -528,7 +528,7 @@
 	icon_state = "mummy_maskbc"
 	item_state = "mummy_maskbc"
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
-	flags_inv = HIDEHAIR|HIDEFACIALHAIR|HIDEEARS	
+	flags_inv = HIDEHAIR|HIDEFACIALHAIR|HIDEEARS|HIDESNOUT	
 	visor_flags_inv = HIDEFACE
 	visor_flags_cover = MASKCOVERSMOUTH
 	gas_transfer_coefficient = 0.9

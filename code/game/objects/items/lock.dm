@@ -15,8 +15,8 @@ GLOBAL_LIST_EMPTY(global_locks)
 	GLOB.global_locks += src
 
 /obj/item/lock_construct/Destroy()
-	..()
 	GLOB.global_locks -= src
+	return ..()
 
 /obj/item/lock_construct/attackby(obj/item/I, mob/user) // Blatantly borrowed from Baystation coders and modified for simplicity. Thanks for pointing me in that direction, Rhicora.
 	if(iskey(I))

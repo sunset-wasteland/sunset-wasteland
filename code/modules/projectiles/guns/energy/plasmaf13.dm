@@ -160,9 +160,9 @@
 	twohands = FALSE
 
 /obj/item/gun/energy/laser/plasma/spear/Destroy()
-	..()
 	UnregisterSignal(src, list(COMSIG_TWOHANDED_WIELD,
 								COMSIG_TWOHANDED_UNWIELD))
+	return ..()
 
 /obj/item/gun/energy/laser/plasma/spear/can_shoot()
 	. = ..()
@@ -210,9 +210,9 @@
 	twohands = FALSE
 
 /obj/item/gun/energy/laser/plasma/inquis/Destroy()
-	..()
 	UnregisterSignal(src, list(COMSIG_TWOHANDED_WIELD,
 								COMSIG_TWOHANDED_UNWIELD))
+	return ..()
 
 /obj/item/gun/energy/laser/plasma/inquis/can_shoot()
 	. = ..()

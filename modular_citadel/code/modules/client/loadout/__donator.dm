@@ -439,6 +439,7 @@
 	new /obj/item/ammo_box/magazine/m10mm_adv/simple(src)
 	new /obj/item/ammo_box/magazine/m10mm_adv/simple(src)
 	new /obj/item/clothing/suit/armor/f13/leather_jacket/combat/reika(src)
+
 /obj/item/pda/reika
 	name = "worn pip-boy"
 	desc = "The RobCo Pip-Boy. This one looks rather worn from heavy use."

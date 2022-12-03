@@ -119,6 +119,7 @@
 	var/cultslurring = 0
 	var/clockcultslurring = 0
 	var/derpspeech = 0
+	var/uwuslurring = 0
 
 	var/list/implants = null
 

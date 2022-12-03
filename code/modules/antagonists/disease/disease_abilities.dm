@@ -17,6 +17,7 @@ new /datum/disease_ability/symptom/medium/choking,
 new /datum/disease_ability/symptom/medium/confusion,
 new /datum/disease_ability/symptom/medium/vomit,
 new /datum/disease_ability/symptom/medium/voice_change,
+new /datum/disease_ability/symptom/medium/west_nya_virus,
 new /datum/disease_ability/symptom/medium/visionloss,
 new /datum/disease_ability/symptom/medium/deafness,
 new /datum/disease_ability/symptom/powerful/narcolepsy,
@@ -348,6 +349,12 @@ new /datum/disease_ability/symptom/powerful/youth
 	malefit = 1
 	short_desc = "Change the voice of victims."
 	long_desc = "Change the voice of victims, causing confusion in communications."
+
+/datum/disease_ability/symptom/medium/west_nya_virus
+	symptoms = list(/datum/symptom/west_nya_virus)
+	malefit = 1
+	short_desc = "OwO, whats this?"
+	long_desc = "Change the speech of victims, causing confusion in communications."
 
 /datum/disease_ability/symptom/medium/visionloss
 	symptoms = list(/datum/symptom/visionloss)

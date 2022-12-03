@@ -466,7 +466,7 @@
 	path = /obj/item/storage/custom_kit/fluffycampinglads
 	ckeywhitelist = list ("bonirus")
 
-/obj/item/storage/custom_kit/fluffycampinglads
+/obj/item/storage/custom_kit/fluffycampinglads/PopulateContents()
 	new /obj/item/clothing/shoes/sneakers/white(src)
 	new /obj/item/clothing/under/syndicate/bloodred/sleepytime(src)
 	new /obj/item/clothing/under/sweater(src)

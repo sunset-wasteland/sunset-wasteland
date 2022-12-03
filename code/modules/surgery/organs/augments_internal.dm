@@ -147,28 +147,28 @@
 	var/list/stored_items = list()
 	slot = ORGAN_SLOT_BRAIN_ANTISTUN
 	actions_types = list(/datum/action/item_action/organ_action/toggle)
+	icon_state = "neuro_implant"
+	implant_overlay = "neuro_implant_overlay"
 
-/obj/item/organ/cyberimp/chest/neuro/on_life()
-	ADD_TRAIT(owner, TRAIT_FEARLESS, type)
-	if(mood.sanity <= SANITY_NEUTRAL) //joywire
-		mood.setSanity(min(mood.sanity+5, SANITY_NEUTRAL))
-		to_chat(owner, "<span class='notice'>You feel more stable...</span>")
-	owner.adjustStaminaLoss(-3.5, FALSE) //CNS reboot
+/obj/item/organ/cyberimp/brain/neuro/on_life()
+	ADD_TRAIT(owner, TRAIT_IGNOREDAMAGESLOWDOWN, type)// pain editor
+	ADD_TRAIT(owner, TRAIT_FEARLESS, type)// joywire
+	var/datum/component/mood/mood = owner.GetComponent(/datum/component/mood)
+	if(mood.sanity <= SANITY_NEUTRAL) // only take effect if in negative sanity and then...
+		mood.setSanity(min(mood.sanity+5, SANITY_NEUTRAL)) // set minimum to prevent unwanted spiking over neutral
+		to_chat(owner, "You feel calmer.")
+	owner.adjustStaminaLoss(-5.5, FALSE) //CNS reboot
 	owner.HealAllImmobilityUpTo(STUN_SET_AMOUNT)
-	var/mob/living/carbon/C = M //pain editor start. surg success 80% on self
-			for(var/s in C.surgeries)
-				var/datum/surgery/S = s
-				S.success_multiplier = max(0.8, S.success_multiplier)
-	ADD_TRAIT(owner, TRAIT_IGNOREDAMAGESLOWDOWN, type)
-	owner.adjustOrganLoss(ORGAN_SLOT_BRAIN, 0.001)// it slowly kills you over time, requiring medicine.
-	owner.adjustOrganLoss(ORGAN_SLOT_HEART, 0.001)
-	
+	owner.adjustOrganLoss(ORGAN_SLOT_BRAIN, 0.1)// it slowly kills you over time, requiring medicine.
+	owner.adjustOrganLoss(ORGAN_SLOT_HEART, 0.1)
+
+
 
 /obj/item/organ/cyberimp/brain/neuro/ui_action_click()
 	active = !active
 	if(active)
-		for(mob/living/owner)
-			var/obj/item/organ/brain/B = M.getorganslot(ORGAN_SLOT_BRAIN)// synaptic burnout
-			B.applyOrganDamage(100)
-			M.visible_message("<span class='danger'>[M]'s eyes roll into the back of their head and blood flows out of their nostrils. almost as if their brain fryed.</span>")
+		var/obj/item/organ/brain/B = owner.getorganslot(ORGAN_SLOT_BRAIN)// synaptic burnout
+		B.applyOrganDamage(200)
+		owner.visible_message("<span class='danger'>[owner]'s eyes roll into the back of their head and blood flows out of their nostrils. almost as if their brain fryed.</span>")
+
 			

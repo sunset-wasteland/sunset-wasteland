@@ -415,7 +415,7 @@
 /datum/gear/donator/kits/notsoveterananymore //Use .44 and .357 due to me not wanting to give us literal brushgun and ranger seqouia
 	name = "Over and Done for"
 	path = /obj/item/storage/box/custom_kit/notsoveterananymore
-	ckeywhitelist = list ("zerickyradurandal","especiallystrange")
+	ckeywhitelist = list("zerickyradurandal", "especiallystrange")
 
 /obj/item/storage/box/custom_kit/notsoveterananymore/PopulateContents()
 	new /obj/item/clothing/suit/armor/f13/rangercombat/finlayranger_alt(src)

@@ -431,7 +431,7 @@
 /datum/gear/donator/kits/reikafled
 	name = "My Memoir"
 	path = /obj/item/storage/box/custom_kit/reikafled
-	ckeywhitelist = list ("zerickyradurandal")
+	ckeywhitelist = list("zerickyradurandal")
 
 /obj/item/storage/box/custom_kit/reikafled/PopulateContents()
 	new /obj/item/pda/reika(src)

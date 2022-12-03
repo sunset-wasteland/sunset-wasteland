@@ -259,20 +259,22 @@
 	new /obj/item/clothing/suit/armor/f13/power_armor/t45d/refurb(src)
 	new /obj/item/clothing/head/helmet/f13/power_armor/t45d/refurb(src)
 
-/datum/gear/donator/kits/ripper// basically enough to set up his own clinic/lab. when off-duty.
-	name = "Rippers Belonging"
-	path = /obj/item/storage/box/large/custom_kit/ripper
+/datum/gear/donator/kits/moribund  //basically enough to set up his own clinic/lab. when off-duty. or to Rp properly as vault dwelling moribund FEV scientist man
+	name = "moribunds supplies"
+	path = /obj/item/storage/box/large/custom_kit/moribund
 	ckeywhitelist = list ("mottedesstriets")
 
-/obj/item/storage/box/large/custom_kit/ripper/PopulateContents()
+/obj/item/storage/box/large/custom_kit/moribund/PopulateContents()
+	new /obj/item/organ/cyberimp/brain/neuro(src)
+	new /obj/item/organ/tongue/lizard(src)// nightstalker tongue, cant do in proper character create to get a good looking nightstalker.
+	new /obj/item/autosurgeon(src)// ^ for tongue
 	new /obj/item/clothing/glasses/hud/health/eyepatch(src)// basic healthhud but cooler.
-	new /obj/item/melee/powered/surgripper(src)// easier than coding a skill-book giver for him to craft them
-	new /obj/item/clothing/suit/hooded/followerheavy(src)// crusader drip
-	new /obj/item/clothing/ears/headphones// hard to get for a fluff item
+	new /obj/item/clothing/suit/armored/medium/combat/duster(src)// less faction specific armor
+	new /obj/item/clothing/ears/headphones(src)// hard to get for a fluff item
 	new /obj/item/clothing/head/f13/stalkerpelt(src)// morbid. but funny.
 	new /obj/item/storage/pill_bottle/chem_tin/fixer(src)// not craftable
-	new /obj/item/book/granter/trait/midsurgery(src)// skill level for surgery of basic doctor
-	new /obj/item/book/granter/trait/chemistry(src)// chem whiz
+	new /obj/item/reagent_containers/hypospray/medipen/skillpen(src)// custom pen for skill. all doc skills.
+	new /obj/item/reagent_containers/hypospray/medipen/skillpen_na(src)// custom pen for skill. second to use to teach others medicine. dangerous
 	new /obj/item/disk/plantgene(src)// store plant data
 	new /obj/item/disk/plantgene(src)// store plant data
 	new /obj/item/circuitboard/machine/chem_master/advanced(src)//not a dispencer. splitter. can make patches so legion dont bitch.

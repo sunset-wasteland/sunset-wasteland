@@ -34,6 +34,7 @@
 	log_combat(user, M, "attempted to inject", src, "([contained])")
 
 	if(reagents.total_volume && (ignore_flags || M.can_inject(user, 1))) // Ignore flag should be checked first or there will be an error message.
+		playsound(src, 'sound/items/hypospray_long.ogg', 50, 0)
 		to_chat(M, "<span class='warning'>You feel a tiny prick!</span>")
 		to_chat(user, "<span class='notice'>You inject [M] with [src].</span>")
 
@@ -220,6 +221,31 @@
 	volume = 10
 	amount_per_transfer_from_this = 10
 	list_reagents = list(/datum/reagent/drug/psycho = 10)
+
+//-----------------------------------
+// Custom/Skill
+
+/obj/item/reagent_containers/hypospray/medipen/skillpen
+	name = "experimental neurostimulant"
+	desc = "A curious medipen. This one is rather advanced-looking, sporting a V-tec logo on it, and seems to be heavily modified. It's unclear what's inside it."
+	icon_state = "neuropen"
+	item_state = "neuropen"
+	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
+	amount_per_transfer_from_this = 23
+	volume = 23
+	list_reagents = list(/datum/reagent/water = 16, /datum/reagent/consumable/nutriment/vitamin = 6, /datum/reagent/medicine/neurostim = 1)
+
+/obj/item/reagent_containers/hypospray/medipen/skillpen_na
+	name = "experimental neurostimulant"
+	desc = "A curious medipen. This one is rather advanced-looking, sporting a V-tec logo on it, and seems to be heavily modified. It's unclear what's inside it. More importantly, do you really wanna introduce this to your circulatory system?"
+	icon_state = "neuropen"
+	item_state = "neuropen"
+	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
+	amount_per_transfer_from_this = 23
+	volume = 23
+	list_reagents = list(/datum/reagent/water = 16, /datum/reagent/consumable/nutriment/vitamin = 6, /datum/reagent/medicine/neurostim_na = 1)
 
 // End Fallout -------------------------------------------------
 

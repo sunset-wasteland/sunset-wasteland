@@ -1760,3 +1760,69 @@
 		H.vomit(10)
 	..()
 	return TRUE // update health at end of tick
+
+/datum/reagent/medicine/neurostim
+	name = "neuro stimulant"
+	description = "A complex mixture of central nervous system stimulants and a fresh dose of a specific goatlike being's DNA. A highly unethical mixture likely made from stem cells and other nasty bits, <b>There is absolutely FEV in this.</b>"
+	color = "#1AF708"
+	metabolization_rate = 1.0 * REAGENTS_METABOLISM
+	ghoulfriendly = TRUE
+
+/datum/reagent/medicine/neurostim/on_mob_life(mob/living/carbon/M)
+	ADD_TRAIT(M, TRAIT_SURGERY_HIGH, src)
+	ADD_TRAIT(M, TRAIT_UNETHICAL_PRACTITIONER, src)
+	ADD_TRAIT(M, TRAIT_UNETHICAL_PRACTITIONER_BRAINWASHING, src)
+	ADD_TRAIT(M, TRAIT_CYBERNETICIST, src)
+	ADD_TRAIT(M, TRAIT_CYBERNETICIST_EXPERT, src)
+	ADD_TRAIT(M, TRAIT_CHEMWHIZ, src)
+	ADD_TRAIT(M, TRAIT_MEDICALEXPERT, src)
+	ADD_TRAIT(M, TRAIT_MEDICALGRADUATE, src)
+	if(M.mind)
+		M.mind.teach_crafting_recipe(/datum/crafting_recipe/melee/forged/surgripper)
+	M.Jitter(2)
+	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, -5)
+	SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "jet euphoria", /datum/mood_event/jet_euphoria, name)
+	..()
+	return TRUE
+
+/datum/reagent/medicine/neurostim_na
+	name = "unrefined neuro stimulant"
+	description = "A complex mixture of neuro activating chemicals and a fresh dose of a specific being DNA. the DNA seems to be that of a goat. a highly unethical mixture likely made from stem cells and other nasty bits, THERE IS ABSOLUTELY FEV IN THIS. this syrum seems...different."
+	color = "#1AF708"
+	metabolization_rate = 1.0 * REAGENTS_METABOLISM
+	ghoulfriendly = TRUE
+
+/datum/reagent/medicine/neurostim_na/on_mob_life(mob/living/carbon/M)
+	ADD_TRAIT(M, TRAIT_SURGERY_HIGH, src)
+	ADD_TRAIT(M, TRAIT_UNETHICAL_PRACTITIONER, src)
+	ADD_TRAIT(M, TRAIT_UNETHICAL_PRACTITIONER_BRAINWASHING, src)
+	ADD_TRAIT(M, TRAIT_CYBERNETICIST, src)
+	ADD_TRAIT(M, TRAIT_CYBERNETICIST_EXPERT, src)
+	ADD_TRAIT(M, TRAIT_CHEMWHIZ, src)
+	ADD_TRAIT(M, TRAIT_MEDICALEXPERT, src)
+	ADD_TRAIT(M, TRAIT_MEDICALGRADUATE, src)
+	M.Jitter(8)
+	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, -5)
+	SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "jet euphoria", /datum/mood_event/jet_euphoria, name)
+	M.confused = max(M.confused, 9)
+	M.Dizzy(25)
+	M.drop_all_held_items()
+	if(ishuman(M) && prob(25))
+		M.drop_all_held_items()
+		M.visible_message(span_danger("[M] spaces out, and a line of drool dribbles out the corner of [M.p_their()] mouth."))
+		to_chat(M, span_userdanger("It's too much... it's all too much. So many other thoughts, your brain can't keep up..."))
+		var/mob/living/carbon/human/H = M
+		H.vomit(10)
+	var/obj/item/organ/brain/B = M.getorganslot(ORGAN_SLOT_BRAIN)
+	if(prob(3))
+		M.emote("scream")
+		B.applyOrganDamage(20)
+		M.adjustOxyLoss(30)
+		M.adjustOrganLoss(ORGAN_SLOT_EYES, 3)
+		M.Unconscious(400)
+		M.Jitter(1000)
+		M.visible_message(span_danger("[M]'s eyes roll back into [M.p_their()] head, a single line of blood dribbles out of [M.p_their()] nostril and [M.p_they()] go completely catatonic."))
+		to_chat(M, span_userdanger("Your vision goes black and your heart stops beating as your brain shuts down even its most basic functions. You see someone else's life flash before your eyes in an instant. Is this the afterlife?"))
+	..()
+	return TRUE
+

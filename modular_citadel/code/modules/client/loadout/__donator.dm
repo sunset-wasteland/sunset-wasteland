@@ -265,6 +265,7 @@
 	ckeywhitelist = list ("mottedesstriets")
 
 /obj/item/storage/box/large/custom_kit/moribund/PopulateContents()
+	new /obj/item/organ/cyberimp/brain/neuro(src)
 	new /obj/item/organ/tongue/lizard(src)// nightstalker tongue, cant do in proper character create to get a good looking nightstalker.
 	new /obj/item/autosurgeon(src)// ^ for tongue
 	new /obj/item/clothing/glasses/hud/health/eyepatch(src)// basic healthhud but cooler.

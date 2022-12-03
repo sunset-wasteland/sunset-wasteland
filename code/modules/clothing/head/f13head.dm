@@ -955,7 +955,7 @@
 
 /obj/item/clothing/head/helmet/f13/ncr/rangercombat/finlayranger_alt
 	name = "worn ranger helmet"
-	desc = "A modified ranger helmet worn by now retired rangers, functionally identical to a standard helmet."
+	desc = "A modified ranger helmet worn by now-retired rangers, functionally identical to a standard helmet."
 	icon_state = "reshiranger"
 	item_state = "reshiranger"
 

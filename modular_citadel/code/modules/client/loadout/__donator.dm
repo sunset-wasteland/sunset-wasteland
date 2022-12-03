@@ -441,7 +441,7 @@
 	new /obj/item/clothing/suit/armor/f13/leather_jacket/combat/reika(src)
 /obj/item/pda/reika
 	name = "worn pip-boy"
-	desc = "The RobCo Pip-Boy, This one look rather worn from usages."
+	desc = "The RobCo Pip-Boy. This one looks rather worn from heavy use."
 
 /datum/gear/donator/kits/shortrespirator
 	name = "Respirator Kit"

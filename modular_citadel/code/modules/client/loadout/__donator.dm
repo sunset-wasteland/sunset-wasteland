@@ -388,7 +388,7 @@
 /datum/gear/donator/kits/arbufy
 	name = "A temporary escape"
 	path = /obj/item/storage/box/large/custom_kit/arbufy
-	ckeywhitelist = list ("arbufy")
+	ckeywhitelist = list("arbufy")
 
 /obj/item/storage/box/large/custom_kit/arbufy/PopulateContents()
 	new /obj/item/reagent_containers/syringe/stimulants(src)

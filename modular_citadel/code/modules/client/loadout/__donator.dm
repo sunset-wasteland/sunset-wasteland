@@ -388,7 +388,7 @@
 /datum/gear/donator/kits/arbufy
 	name = "A temporary escape"
 	path = /obj/item/storage/box/large/custom_kit/arbufy
-	ckeywhitelist = list ("arbufy")
+	ckeywhitelist = list("arbufy")
 
 /obj/item/storage/box/large/custom_kit/arbufy/PopulateContents()
 	new /obj/item/reagent_containers/syringe/stimulants(src)
@@ -397,7 +397,7 @@
 /datum/gear/donator/kits/russiansurvivor
 	name = "Our escape from this hell"
 	path = /obj/item/storage/box/custom_kit/russiansurvivor
-	ckeywhitelist = list ("mishanok")
+	ckeywhitelist = list("mishanok")
 
 /obj/item/storage/box/custom_kit/russiansurvivor/PopulateContents()
 	new /obj/item/circuitboard/machine/chem_dispenser/drinks/beer(src)
@@ -415,7 +415,7 @@
 /datum/gear/donator/kits/notsoveterananymore //Use .44 and .357 due to me not wanting to give us literal brushgun and ranger seqouia
 	name = "Over and Done for"
 	path = /obj/item/storage/box/custom_kit/notsoveterananymore
-	ckeywhitelist = list ("zerickyradurandal","especiallystrange")
+	ckeywhitelist = list("zerickyradurandal","especiallystrange")
 
 /obj/item/storage/box/custom_kit/notsoveterananymore/PopulateContents()
 	new /obj/item/clothing/suit/armor/f13/rangercombat/finlayranger_alt(src)
@@ -431,7 +431,7 @@
 /datum/gear/donator/kits/reikafled
 	name = "My Memoir"
 	path = /obj/item/storage/box/custom_kit/reikafled
-	ckeywhitelist = list ("zerickyradurandal")
+	ckeywhitelist = list("zerickyradurandal")
 
 /obj/item/storage/box/custom_kit/reikafled/PopulateContents()
 	new /obj/item/pda/reika(src)
@@ -446,7 +446,7 @@
 /datum/gear/donator/kits/shortrespirator
 	name = "Respirator Kit"
 	path = /obj/item/storage/box/custom_kit/shortrespirator
-	ckeywhitelist = list ("farsightednightlight","raxraus")
+	ckeywhitelist = list("farsightednightlight","raxraus")
 
 /obj/item/storage/box/custom_kit/shortrespirator/PopulateContents()
 	new /obj/item/clothing/mask/gas/sechailer/caligra(src)
@@ -454,7 +454,7 @@
 /datum/gear/donator/kits/antburger
 	name = "Dunce"
 	path = /obj/item/storage/custom_kit/antburger
-	ckeywhitelist = list ("zerantio")
+	ckeywhitelist = list("zerantio")
 
 /obj/item/storage/custom_kit/antburger/PopulateContents()
 	new /obj/item/clothing/accessory/necklace/silvercross(src)
@@ -463,15 +463,19 @@
 /datum/gear/donnator/kits/fluffysleepwear
 	name = "Sleeping Equipment"
 	path = /obj/item/storage/custom_kit/fluffycampinglads
-	ckeywhitelist = list ("bonirus")
+	ckeywhitelist = list("bonirus")
 
-/obj/item/storage/custom_kit/fluffycampinglads
+/obj/item/storage/custom_kit/fluffycampinglads/PopulateContents()
 	new /obj/item/clothing/shoes/sneakers/white(src)
 	new /obj/item/clothing/under/syndicate/bloodred/sleepytime(src)
+	new /obj/item/clothing/under/sweater(src)
 	new /obj/item/clothing/under/sweater/blue(src)
 	new /obj/item/clothing/under/syndicate/rus_army(src)
 	new /obj/item/clothing/under/misc/pj/red(src)
 	new /obj/item/clothing/under/misc/pj/blue(src)
 	new /obj/item/toy/plush/borgplushie/medihound(src)
+	new /obj/item/gun/ballistic/automatic/c20r/toy/unrestricted/riot(src)
+	new /obj/item/ammo_box/magazine/toy/smgm45/riot(src)
 	new /obj/item/bedsheet/medical(src)
-
+	new /obj/item/bedsheet/patriot(src)
+	new /obj/item/stack/sheet/cloth/thirty(src)

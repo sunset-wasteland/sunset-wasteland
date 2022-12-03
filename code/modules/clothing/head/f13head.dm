@@ -961,7 +961,7 @@
 
 /obj/item/clothing/head/beret/donator_worn_beret
 	name = "worn 1st recon beret"
-	desc = "A red beret, worn by 1st recon member."
+	desc = "A red beret, worn by 1st recon members."
 	icon_state = "worn_ncr_beret"
 	item_state = "worn_ncr_beret"
 	armor = list("melee" = 15, "bullet" = 40, "laser" = 30, "energy" = 20, "bomb" = 50, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0, "wound" = 40)

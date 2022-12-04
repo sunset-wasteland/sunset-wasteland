@@ -33,12 +33,6 @@
 	ckeywhitelist = list("topbirb")
 */
 
-/obj/item/storage/box/large/custom_kit/cayce/PopulateContents()
-	new /obj/item/clothing/suit/armored/medium/steelbib(src)
-	new /obj/item/clothing/head/helmet/armyhelmet/heavy(src)
-	new /obj/item/twohanded/sledgehammer/simple(src)
-	new /obj/item/pda(src)
-
 /datum/gear/donnator/kits/fluffysleepwear
 	name = "Sleeping Equipment"
 	path = /obj/item/storage/custom_kit/fluffycampinglads
@@ -58,6 +52,7 @@
 	new /obj/item/bedsheet/medical(src)
 	new /obj/item/bedsheet/patriot(src)
 	new /obj/item/stack/sheet/cloth/thirty(src)
+	new /obj/item/reagent_containers/food/snacks/f13/canned/ncr/bighorner_sausage(scr)
 
 /datum/gear/donator/kits/moribund  //basically enough to set up his own clinic/lab. when off-duty. or to Rp properly as vault dwelling moribund FEV scientist man
 	name = "moribunds supplies"
@@ -82,62 +77,84 @@
 	new /obj/item/circuitboard/machine/plantgenes(src)// plant manipulator
 	new /obj/item/stock_parts/manipulator/femto(src)// for gibber, works with clothes on/faster.
 	new /obj/item/stock_parts/matter_bin/bluespace(src)// for gibber. gives most meat.
+	new /obj/item/reagent_containers/food/snacks/f13/canned/ncr/bighorner_sausage(scr)
 
-/datum/gear/donator/kits/transhumanism
-	name = "Half-Synth"
-	path = /obj/item/storage/box/large/custom_kit/transhumanism
-	ckeywhitelist = list ("alffd")
+/datum/gear/donator/kits/junkie
+	name = "junkie box"
+	path = /obj/item/storage/box/large/custom_kit/junkie
+	ckeywhitelist = list ("metro_dweller")
 
-/obj/item/storage/box/large/custom_kit/transhumanism/PopulateContents()
-	var/player = get_mob_by_key("alffd")
-	if(!ishuman(player)) //This should never be true, but who knows.
-		return
-	var/mob/living/carbon/human/P = player
-	implant(player, new /obj/item/organ/tongue/robot/gen2synth(src)) //Robotic voice.
-	implant(player, new /obj/item/organ/ears/cybernetic(src))  //Hearing loss on EMP
-	implant(player, new /obj/item/organ/cyberimp/brain(src)) //Causes a large stun if EMPed.
-	if(cmptext(P.mind.assigned_role, "Enclave Scientist"))
-		implant(player, new /obj/item/organ/lungs/cybernetic/tier2(src)) //Lack of atmos negates any buffs, massive Oxy loss on EMP.
-		implant(player, new /obj/item/organ/liver/cybernetic/upgraded(src)) //Better at filtering toxins, but twice EMP damage.
-		implant(player, new /obj/item/organ/heart/cybernetic/upgraded(src)) //Has epinephrine, heart attack on EMP.
-		implant(player, new /obj/item/organ/cyberimp/arm/toolset(src)) //Does not work on faction doors.
-		implant(player, new /obj/item/organ/cyberimp/chest/nutriment/plus(src)) //Simulates current synth hunger mechanics.
-		implant(player, new /obj/item/organ/cyberimp/chest/reviver(src)) //Reviver implant
-		implant(player, new /obj/item/organ/eyes/robotic/shield(src)) //Welding shield eyes.
-		implant(player, new /obj/item/organ/cyberimp/eyes/hud/medical(src)) //Medical hud for testing xeno-bio monkeys
-	else
-		implant(player, new /obj/item/organ/lungs/cybernetic(src))
-		implant(player, new /obj/item/organ/liver/cybernetic(src))
-		implant(player, new /obj/item/organ/heart/cybernetic(src))
-	qdel(src)
+/obj/item/storage/box/large/custom_kit/junkie/PopulateContents()
+	new /obj/item/twohanded/baseball/golfclub(src)
+	new /obj/item/gun/ballistic/automatic/pistol/ninemil/maria(src)
+	new /obj/item/clothing/head/helmet/f13/fiend_reinforced(src)
+	new /obj/item/reagent_containers/hypospray/medipen/psycho(src)
+	new /obj/item/reagent_containers/food/snacks/f13/canned/ncr/bighorner_sausage(scr)
 
-/obj/item/storage/box/large/custom_kit/transhumanism/proc/implant(player, obj/item/organ/I)
-	I.Insert(player, drop_if_replaced = FALSE)
+/datum/gear/donator/kits/whorewolf
+	name = "whore wolf box"
+	path = /obj/item/storage/box/large/custom_kit/whorewolf
+	ckeywhitelist = list ("usuario2")
 
-/datum/gear/donator/kits/finlayranger
-	name = "Stolen Ranger"
-	path = /obj/item/storage/box/large/custom_kit/finlayranger
-	ckeywhitelist = list ("metrobotic")
+/obj/item/storage/box/large/custom_kit/whorewolf/PopulateContents()
+	new /obj/item/clothing/under/shorts/polychromic/pantsu(src)
+	new /obj/item/clothing/under/dress/skirt/polychromic(src)
+	new /obj/item/clothing/under/suit/polychromic(src)
+	new /obj/item/clothing/accessory/armband/hydro(scr)
+	new /obj/item/reagent_containers/food/snacks/f13/canned/ncr/bighorner_sausage(scr)
+	new /obj/item/kinetic_crusher/glaive(src)
 
-/obj/item/storage/box/large/custom_kit/finlayranger/PopulateContents()
-	new /obj/item/clothing/glasses/hud/health(src)
-	new /obj/item/clothing/head/helmet/f13/ncr/rangercombat/finlayranger(src)
-	new /obj/item/clothing/suit/armor/f13/rangercombat/finlayranger(src)
-	new /obj/item/gun/ballistic/revolver/revolver45(src) //Doesn't come with ammo, You can print it anyway
-	new /obj/item/melee/powered/ripper(src)
-/datum/gear/donator/kits/bibledog
-	name = "Bible Canid"
-	path = /obj/item/storage/box/large/custom_kit/bibledog
-	ckeywhitelist = list ("especiallystrange")
+/datum/gear/donator/kits/catcrown
+	name = "Cat Crown"
+	path = /obj/item/storage/box/large/custom_kit/catcrown
+	ckeywhitelist = list ("lowpowermia")
 
-/obj/item/storage/box/large/custom_kit/bibledog/PopulateContents()
-	new /obj/item/gun/ballistic/automatic/pistol/m1911/bibledog(src)
-	new /obj/item/ammo_box/magazine/m45(src)
-	new /obj/item/ammo_box/magazine/m45(src)
-	new /obj/item/clothing/under/f13/bibledog(src)
-	new /obj/item/gunpart/BHS_Receiver(src)
-	new /obj/item/clothing/suit/armored/medium/combat/swat(src)
-	new /obj/item/book/granter/trait/bibledog(src) //being able to use the bible
-	new /obj/item/storage/book/bible(src) //Would kinda defeat the point if I don't actually get a bible with it
+/obj/item/storage/box/large/custom_kit/catcrown/PopulateContents()
+	new /obj/item/clothing/head/crown(src)
+	new /obj/item/clothing/head/jester/alt(src)
+	new /obj/item/reagent_containers/food/snacks/f13/canned/ncr/bighorner_sausage(src)
+	new /obj/item/twohanded/baseball/louisville(src)
 
+/datum/gear/donator/kits/shurk
+	name = "Tribal Shurk"
+	path = /obj/item/storage/box/large/custom_kit/shurk
+	ckeywhitelist = list ("hyroFox")
+
+/obj/item/storage/box/large/custom_kit/shurk/PopulateContents()
+	new /obj/item/gun/ballistic/bow/crossbow(src)
+	new /obj/item/clothing/suit/armor/f13/combat/tribal(src)
+	new /obj/item/clothing/head/helmet/f13/combat/tribal(src)
+	new /obj/item/reagent_containers/pill/patch/hydra(src)
+	new /obj/item/reagent_containers/food/snacks/f13/canned/ncr/bighorner_sausage(scr)
+
+/datum/gear/donator/kits/goia
+	name = "Goia Soul Box"
+	path = /obj/item/storage/box/large/custom_kit/goia
+	ckeywhitelist = list ("smdytb1")
+
+/obj/item/storage/box/large/custom_kit/goia/PopulateContents()
+	new /obj/item/soulstone(src)
+	new /obj/item/pet_carrier/bluespace(src)
+	new /obj/item/reagent_containers/food/snacks/f13/canned/ncr/bighorner_sausage(scr)
+
+/datum/gear/donator/kits/mutt
+	name = "Mutt Box"
+	path = /obj/item/storage/box/large/custom_kit/mutt
+	ckeywhitelist = list ("thedarkninja207")
+
+/obj/item/storage/box/large/custom_kit/mutt/PopulateContents()
+	new /obj/item/card/id/rusted(src)
+	new /obj/item/clothing/head/beanie/black(src)
+	new /obj/item/reagent_containers/food/snacks/f13/canned/ncr/bighorner_sausage(scr)
+	new /obj/item/reagent_containers/food/snacks/f13/canned/ncr/bighorner_sausage(scr)
+	new /obj/item/reagent_containers/food/snacks/f13/canned/dog(scr)
+
+/datum/gear/donator/kits/bad
+	name = "Bad Dog Box"
+	path = /obj/item/storage/box/large/custom_kit/bad
+	ckeywhitelist = list ("jglitch")
+
+/obj/item/storage/box/large/custom_kit/bad/PopulateContents()
+	new /obj/item/reagent_containers/food/snacks/f13/canned/ncr/bighorner_sausage(scr)
+	new /obj/item/reagent_containers/food/snacks/f13/canned/dog(scr)
 

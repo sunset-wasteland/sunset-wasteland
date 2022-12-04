@@ -68,20 +68,7 @@
 	melee_damage_lower = 25
 	melee_damage_upper = 35
 	armour_penetration = 0.2//Making them some manner of threat.
-	ranged_message = "throws a chunk of flesh"
-	ranged_cooldown_time = 60
-	ranged = 1
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
-	projectiletype = /obj/item/projectile/reaver
-	projectilesound = 'sound/f13npc/centaur/lash.ogg'
-
-/obj/item/projectile/reaver
-	name = "radioactive glob"
-	damage = 15
-	armour_penetration = 5
-	irradiate = 25//Toxic threshold is 250.
-	pass_flags = PASSTABLE | PASSGRILLE
-	icon_state = "toxin"
 
 /mob/living/simple_animal/hostile/ghoul/reaver/Initialize()
 	. = ..()
@@ -175,7 +162,7 @@
 	light_system = MOVABLE_LIGHT
 	light_range = 2
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
-	var/radburst_cooldown = 12//Support mob, revives others every six seconds, provided a player is within six tiles. Previously sixty, because I thought this was deciseconds.
+	var/radburst_cooldown = 45//Support mob, revives others every six seconds, provided a player is within six tiles. Previously sixty, because I thought this was deciseconds.
 
 /mob/living/simple_animal/hostile/ghoul/glowing/Initialize(mapload)
 	. = ..()

@@ -11,16 +11,15 @@
 	icon_living = "deathclaw"
 	icon_dead = "deathclaw_dead"
 	icon_gib = "deathclaw_gib"
-	robust_searching = 1
 	maxHealth = 750
-	health = 750
+
+	speed = -1
+	health = 600
 	obj_damage = 200
-	armour_penetration = 0.6
+	armour_penetration = 0.3
 	melee_damage_lower = 40
 	melee_damage_upper = 50
 	footstep_type = FOOTSTEP_MOB_HEAVY
-	speed = -1.8//Actual speed handled by move_to_delay
-	move_to_delay = 1.8
 
 	gender = MALE
 	a_intent = INTENT_HARM //So we can not move past them.
@@ -33,12 +32,10 @@
 	speak_chance = 10
 	taunt_chance = 25
 
-	stat_attack = UNCONSCIOUS
-
 	see_in_dark = 8
 	decompose = FALSE
 	wound_bonus = 0 //This might be a TERRIBLE idea
-	bare_wound_bonus = 0
+	bare_wound_bonus = 0 
 	sharpness = SHARP_EDGED
 	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/deathclaw = 4,
 							/obj/item/stack/sheet/animalhide/deathclaw = 2,
@@ -50,14 +47,13 @@
 	attack_sound = 'sound/weapons/bladeslice.ogg'
 	faction = list("deathclaw")
 	gold_core_spawnable = HOSTILE_SPAWN
+	var/charging = FALSE
 	move_resist = MOVE_FORCE_OVERPOWERING
 	emote_taunt_sound = list('sound/f13npc/deathclaw/taunt.ogg')
 	aggrosound = list('sound/f13npc/deathclaw/aggro1.ogg', 'sound/f13npc/deathclaw/aggro2.ogg', )
 	idlesound = list('sound/f13npc/deathclaw/idle.ogg',)
 	death_sound = 'sound/f13npc/deathclaw/death.ogg'
-/*
-	var/charging = FALSE
-*/
+
 /mob/living/simple_animal/hostile/deathclaw/playable
 	emote_taunt_sound = null
 	emote_taunt = null
@@ -77,86 +73,31 @@
 	stat_attack = UNCONSCIOUS
 	melee_damage_lower = 50
 	melee_damage_upper = 55
-	armour_penetration = 0.8
+	armour_penetration = 0.35
 	footstep_type = FOOTSTEP_MOB_HEAVY
 	color = rgb(95,104,94)
 	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/deathclaw = 6,
 							/obj/item/stack/sheet/animalhide/deathclaw = 3)
 
-/mob/living/simple_animal/hostile/deathclaw/mother/AttackingTarget()
-	var/mob/living/M = target
-	if(!ishuman(M) || M.health > 20)
-		..()
-		return
-
-	if(get_dist(src, M) > 0)
-		a_intent = INTENT_GRAB
-		grab_state = GRAB_NECK
-		summon_backup(15)
-
-		start_pulling(M, 1)
-		M.grabbedby(src)
-		M.drop_all_held_items()
-		M.stop_pulling()
-
-		var/obj/item/bodypart/chest/O = M.get_bodypart(BODY_ZONE_CHEST)
-		O.force_wound_upwards(/datum/wound/pierce/critical)
-
-		visible_message("<span class='danger'>[src] growls, lifting [M] into the air and violently executing them!</span>")
-		to_chat(M, "<span class='userdanger'>[src] lifts you into the air, violently putting an end to your life!</span>")
-
-		M.adjustBruteLoss(100)//Not tanking this without abuse of a specific mechanic. Bypasses armor.
-
-	if(!ishuman(M) || M.health <= 0)
-		src.drop_all_held_items()
-		src.stop_pulling()
-
 //Legendary Deathclaw
 /mob/living/simple_animal/hostile/deathclaw/legendary
 	name = "legendary deathclaw"
 	desc = "A massive, reptilian creature with powerful muscles, razor-sharp claws, and aggression to match. This one is a legendary enemy."
-	maxHealth = 1500
-	health = 1500
+	maxHealth = 1200
+	health = 1200
 	color = "#FFFF00"
 	stat_attack = UNCONSCIOUS
 	melee_damage_lower = 55
 	melee_damage_upper = 55
-	armour_penetration = 0.9
+	armour_penetration = 0.5
 	footstep_type = FOOTSTEP_MOB_HEAVY
-	guaranteed_butcher_results = list(/obj/item/stack/sheet/animalhide/deathclaw = 6)
 
-/mob/living/simple_animal/hostile/deathclaw/legendary/Initialize()
+
+/mob/living/simple_animal/hostile/deathclaw/legendary/death(gibbed)
+	var/turf/T = get_turf(src)
+	if(prob(60))
+		new /obj/item/melee/unarmed/deathclawgauntlet(T)
 	. = ..()
-	if(prob(37))
-		guaranteed_butcher_results = list(/obj/item/melee/unarmed/deathclawgauntlet = 1)
-
-/mob/living/simple_animal/hostile/deathclaw/legendary/AttackingTarget()
-	var/mob/living/M = target
-	if(!ishuman(M) || M.health > 20)
-		..()
-		return
-
-	if(get_dist(src, M) > 0)
-		a_intent = INTENT_GRAB
-		grab_state = GRAB_NECK
-		summon_backup(15)
-
-		start_pulling(M, 1)
-		M.grabbedby(src)
-		M.drop_all_held_items()
-		M.stop_pulling()
-
-		var/obj/item/bodypart/chest/O = M.get_bodypart(BODY_ZONE_CHEST)
-		O.force_wound_upwards(/datum/wound/pierce/critical)
-
-		visible_message("<span class='danger'>[src] growls, lifting [M] into the air and violently executing them!</span>")
-		to_chat(M, "<span class='userdanger'>[src] lifts you into the air, violently putting an end to your life!</span>")
-
-		M.adjustBruteLoss(100)//Not tanking this without abuse of a specific mechanic. Bypasses armor.
-
-	if(!ishuman(M) || M.health <= 0)
-		src.drop_all_held_items()
-		src.stop_pulling()
 
 //Power Armor Deathclaw the tankest and the scariest deathclaw in the West. One mistake will end you. May the choice be with you.
 /mob/living/simple_animal/hostile/deathclaw/power_armor
@@ -170,38 +111,10 @@
 	stat_attack = UNCONSCIOUS
 	melee_damage_lower = 70
 	melee_damage_upper = 80
-	armour_penetration = 1
+	armour_penetration = 0.7
 	footstep_type = FOOTSTEP_MOB_HEAVY
 
 
-/mob/living/simple_animal/hostile/deathclaw/power_armor/AttackingTarget()
-	var/mob/living/M = target
-	if(!ishuman(M) || M.health > 20)
-		..()
-		return
-
-	if(get_dist(src, M) > 0)
-		a_intent = INTENT_GRAB
-		grab_state = GRAB_NECK
-		summon_backup(15)
-
-		start_pulling(M, 1)
-		M.grabbedby(src)
-		M.drop_all_held_items()
-		M.stop_pulling()
-
-		var/obj/item/bodypart/chest/O = M.get_bodypart(BODY_ZONE_CHEST)
-		O.force_wound_upwards(/datum/wound/pierce/critical)
-
-		visible_message("<span class='danger'>[src] growls, lifting [M] into the air and violently executing them!</span>")
-		to_chat(M, "<span class='userdanger'>[src] lifts you into the air, violently putting an end to your life!</span>")
-
-		M.adjustBruteLoss(100)//Not tanking this without abuse of a specific mechanic. Bypasses armor.
-
-	if(!ishuman(M) || M.health <= 0)
-		src.drop_all_held_items()
-		src.stop_pulling()
-/*
 /mob/living/simple_animal/hostile/deathclaw/bullet_act(obj/item/projectile/Proj)
 	if(!Proj)
 		return
@@ -277,4 +190,3 @@
 
 	charging = FALSE
 	charging = FALSE
-*/

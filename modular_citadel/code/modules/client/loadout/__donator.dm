@@ -374,7 +374,7 @@
 /datum/gear/donator/kits/protogen_first_recon
 	name = "1st Recon Screen"
 	path = /obj/item/storage/box/large/custom_kit/protogen_first_recon
-	ckeywhitelist = list ("googlyfox")
+	ckeywhitelist = list("googlyfox")
 
 /obj/item/storage/box/large/custom_kit/protogen_first_recon/PopulateContents()
 	new /obj/item/clothing/head/beret/donator_worn_beret(src)

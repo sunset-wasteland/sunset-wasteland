@@ -43,7 +43,7 @@
 
 	footstep_type = FOOTSTEP_MOB_SHOE
 
-/mob/living/simple_animal/hostile/retaliate/goat/Initialize(datum/reagent/milk_reagent)
+/mob/living/simple_animal/hostile/retaliate/goat/Initialize(mapload, datum/reagent/milk_reagent)
 	if(milk_reagent)
 		src.milk_reagent = milk_reagent
 	udder = new (null, src.milk_reagent)
@@ -418,7 +418,7 @@
 /obj/item/udder
 	name = "udder"
 
-/obj/item/udder/Initialize(loc, milk_reagent)
+/obj/item/udder/Initialize(mapload, milk_reagent)
 	if(!milk_reagent)
 		milk_reagent = /datum/reagent/consumable/milk
 	create_reagents(50, NONE, NO_REAGENTS_VALUE)

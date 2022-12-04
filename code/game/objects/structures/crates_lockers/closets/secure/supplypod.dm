@@ -84,7 +84,7 @@
 	randomdir = FALSE
 	icon_state = "supplypod_falling"
 
-/obj/effect/temp_visual/DPfall/Initialize(dropLocation, podID)
+/obj/effect/temp_visual/DPfall/Initialize(mapload, podID)
 	if (podID == POD_STANDARD)
 		icon_state = "supplypod_falling"
 		name = "Supply Drop Pod"

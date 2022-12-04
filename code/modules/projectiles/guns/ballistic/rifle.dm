@@ -226,7 +226,7 @@
 	can_scope = FALSE
 	extra_speed = 1000
 	extra_penetration = 0.7
-	extra_damage = 16 //50 damage
+	extra_damage = 10.4
 
 /obj/item/gun/ballistic/rifle/hunting/paciencia/attackby(obj/item/A, mob/user, params) //no sawing off this one
 	if(istype(A, /obj/item/circular_saw) || istype(A, /obj/item/gun/energy/plasmacutter))

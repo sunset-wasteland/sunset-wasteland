@@ -277,9 +277,7 @@
 	icon_dead = "cazador_dead1"
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	speak_chance = 0
-	speed = -3//Actual speed handled by move_to_delay = 0
-	move_to_delay = 0
-	turns_per_move = 5
+	speed = 1.2
 	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/cazador_meat = 2, /obj/item/stack/sheet/sinew = 2, /obj/item/stack/sheet/animalhide/chitin = 2)
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/cazador_meat = 1, /obj/item/stack/sheet/animalhide/chitin = 1)
 	butcher_difficulty = 1.5
@@ -293,8 +291,8 @@
 	stat_attack = UNCONSCIOUS
 	robust_searching = TRUE
 	taunt_chance = 30
-	maxHealth = 40
-	health = 40
+	maxHealth = 80
+	health = 80
 	harm_intent_damage = 8
 	obj_damage = 20
 	melee_damage_lower = 20
@@ -315,7 +313,6 @@
 	if(. && ishuman(target))
 		var/mob/living/carbon/human/H = target
 		H.reagents.add_reagent(/datum/reagent/toxin/cazador_venom, 5)
-		H.reagents.add_reagent(/datum/reagent/toxin/staminatoxin, 15)//5 passes real quick. 15 makes one sting a gamble.
 
 /mob/living/simple_animal/hostile/cazador/death(gibbed)
 	icon_dead = "cazador_dead[rand(1,5)]"
@@ -334,9 +331,9 @@
 /mob/living/simple_animal/hostile/cazador/young
 	name = "young cazador"
 	desc = "A mutated insect known for its fast speed, deadly sting, and being huge bastards. This one's little."
-	maxHealth = 40
-	health = 40
-	speed = -4.5
+	maxHealth = 80
+	health = 80
+	speed = 1.2
 	melee_damage_lower = 5
 	melee_damage_upper = 10
 	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/cazador_meat = 1, /obj/item/stack/sheet/animalhide/chitin = 1, /obj/item/stack/sheet/sinew = 1)

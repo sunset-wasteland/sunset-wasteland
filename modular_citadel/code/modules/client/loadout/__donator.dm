@@ -374,10 +374,10 @@
 /datum/gear/donator/kits/protogen_first_recon
 	name = "1st Recon Screen"
 	path = /obj/item/storage/box/large/custom_kit/protogen_first_recon
-	ckeywhitelist = list ("googlyfox")
+	ckeywhitelist = list("googlyfox")
 
 /obj/item/storage/box/large/custom_kit/protogen_first_recon/PopulateContents()
-	new /obj/item/clothing/head/beret/donator_worn_beret(src)
+	new /obj/item/clothing/head/beret/ncr/ncr_recon/worn/loadout(src)
 	new /obj/item/clothing/shoes/f13/military/gelatoboots(src)
 	new /obj/item/clothing/mask/gelatoscreen(src)
 	new /obj/item/clothing/under/gelatosuit(src)
@@ -420,7 +420,7 @@
 /obj/item/storage/box/custom_kit/notsoveterananymore/PopulateContents()
 	new /obj/item/clothing/suit/armor/f13/rangercombat/finlayranger_alt(src)
 	new /obj/item/clothing/head/helmet/f13/ncr/rangercombat/finlayranger_alt(src)
-	new /obj/item/clothing/head/beret/donator_worn_beret(src)
+	new /obj/item/clothing/head/beret/ncr/ncr_recon/worn/loadout(src)
 	new /obj/item/gun/ballistic/rifle/repeater/trail(src)
 	new /obj/item/ammo_box/m44box(src)
 	new /obj/item/ammo_box/a357box(src)

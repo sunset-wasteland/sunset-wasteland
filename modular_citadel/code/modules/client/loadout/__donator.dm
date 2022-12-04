@@ -460,7 +460,7 @@
 	new /obj/item/clothing/accessory/necklace/silvercross(src)
 	new /obj/item/clothing/head/beret/antburger(src)
 
-/datum/gear/donnator/kits/fluffysleepwear
+/datum/gear/donator/kits/fluffysleepwear
 	name = "Sleeping Equipment"
 	path = /obj/item/storage/custom_kit/fluffycampinglads
 	ckeywhitelist = list("bonirus")

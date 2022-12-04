@@ -1382,8 +1382,6 @@
 	desc = "A heavy bulletproof greatcoat that excels in protecting the wearer against traditional projectile weaponry and explosives to a minor extent."
 	icon_state = "gelatopeacoat"
 	item_state = "gelatopeacoat"
-	strip_delay = 70
-	equip_delay_other = 50
 	slowdown = 0.13
 
 /obj/item/clothing/suit/armor/f13/leather_jacket/combat/reika

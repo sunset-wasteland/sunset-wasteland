@@ -765,4 +765,4 @@
 
 /obj/item/clothing/under/gelatosuit/Initialize()
 	. = ..()
-	ADD_TRAIT(src, TRAIT_NODROP, GLUED_ITEM_TRAIT)
+	ADD_TRAIT(src, TRAIT_NODROP, INNATE_TRAIT)

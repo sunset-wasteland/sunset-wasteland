@@ -326,7 +326,7 @@
 /datum/gear/donator/kits/bibledog
 	name = "Bible Canid"
 	path = /obj/item/storage/box/large/custom_kit/bibledog
-	ckeywhitelist = list ("especiallystrange")
+	ckeywhitelist = list("especiallystrange")
 
 /obj/item/storage/box/large/custom_kit/bibledog/PopulateContents()
 	new /obj/item/gun/ballistic/automatic/pistol/m1911/bibledog(src) //We can't expect god do all the works
@@ -337,7 +337,6 @@
 	new /obj/item/clothing/suit/armor/f13/combat/swat/bibledog(src)
 	new /obj/item/storage/belt/holster/legholster(src)
 	new /obj/item/melee/classic_baton/police(src)
-	new /obj/item/book/granter/trait/bibledog(src) //being able to use the bible
 	new /obj/item/book/granter/trait/bigleagues(src)
 	new /obj/item/storage/book/bible(src) //Would kinda defeat the point if I don't actually get a bible 
 	new /obj/item/clothing/accessory/necklace/silvercross(src)
@@ -360,7 +359,7 @@
 /datum/gear/donator/kits/onelessncrrep
 	name = "My memoir"
 	path = /obj/item/storage/box/large/custom_kit/onelessncrrep
-	ckeywhitelist = list ("hanaharetsu")
+	ckeywhitelist = list("hanaharetsu")
 
 /obj/item/storage/box/large/custom_kit/onelessncrrep/PopulateContents()
 	new /obj/item/clothing/head/f13/ncr(src)

@@ -334,8 +334,8 @@
 	icon_state = "amr"
 	item_state = "amr"
 	mag_type = /obj/item/ammo_box/magazine/amr
-	fire_delay = 12 //Heavy round, tiny bit slower
-	recoil = 1
+	fire_delay = 22 //Whoever made the previous comment probably had no fucking clue what fire_delay does. It's how fast the gun fires.
+	recoil = 10
 	spread = 0
 	force = 10 //Big clumsy and sensitive scope, makes for a poor club
 	zoomable = TRUE

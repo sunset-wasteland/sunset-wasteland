@@ -383,7 +383,7 @@
 	new /obj/item/clothing/under/gelatosuit(src)
 	new /obj/item/gun/energy/laser/wattz(src)
 	new /obj/item/stock_parts/cell/ammo/ec(src)
-	new /obj/item/clothing/suit/armor/bulletproof/gelatocoat(src)
+	new /obj/item/clothing/suit/armor/f13/leather_jacket/combat/coat/gelatocoat(src)
 
 /datum/gear/donator/kits/arbufy
 	name = "A temporary escape"

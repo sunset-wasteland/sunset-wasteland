@@ -334,7 +334,7 @@
 	icon_state = "amr"
 	item_state = "amr"
 	mag_type = /obj/item/ammo_box/magazine/amr
-	fire_delay = 22 //Whoever made the previous comment probably had no fucking clue what fire_delay does. It's how fast the gun fires.
+	fire_delay = 22
 	recoil = 10
 	slowdown = 1.45 //.20 higher than the M1919 MMG.
 	spread = 0

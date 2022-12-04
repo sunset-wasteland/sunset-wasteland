@@ -1374,6 +1374,7 @@
 
 /obj/item/clothing/suit/armor/f13/combat/swat/bibledog
 	name = "SLPD SWAT combat armor"
+	armor = list("melee" = 30, "bullet" = 38, "laser" = 25, "energy" = 25, "bomb" = 60, "bio" = 60, "rad" = 15, "fire" = 60, "acid" = 30, "wound" = 10)
 	slowdown = 0.11
 
 /obj/item/clothing/suit/armor/bulletproof/gelatocoat

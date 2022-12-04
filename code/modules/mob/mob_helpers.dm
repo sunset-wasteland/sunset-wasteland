@@ -244,6 +244,17 @@ It's fairly easy to fix if dealing with single letters but not so much with comp
 			animate(pixel_x=rand(min,max), pixel_y=rand(min,max), time=1)
 	animate(pixel_x=oldx, pixel_y=oldy, time=1)
 
+/proc/uwuslur(message)
+	message = replacetext(message, "ne", "nye")
+	message = replacetext(message, "nu", "nyu")
+	message = replacetext(message, "na", "nya")
+	message = replacetext(message, "no", "nyo")
+	message = replacetext(message, "ove", "uv")
+	message = replacetext(message, "l", "w")
+	message = replacetext(message, "r", "w")
+	if(prob(50))
+		message += "[pick(" NYA~!!", " Eew Woo!!")]"
+	return message
 
 
 /proc/findname(msg)

@@ -568,6 +568,9 @@ GLOBAL_LIST_INIT(ballmer_windows_me_msg, list("Yo man, what if, we like, uh, put
 	if(clockcultslurring)
 		clockcultslurring = max(clockcultslurring-1, 0)
 
+	if(uwuslurring)
+		uwuslurring = max(uwuslurring-1, 0)
+
 	if(silent)
 		silent = max(silent-1, 0)
 

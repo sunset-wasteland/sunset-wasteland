@@ -330,6 +330,19 @@
 	new /obj/item/book/granter/trait/bibledog(src) //being able to use the bible
 	new /obj/item/storage/book/bible(src) //Would kinda defeat the point if I don't actually get a bible with it
 
+/datum/gear/donator/kits/raxraus
+	name = "Juniper's trophy"
+	path = /obj/item/storage/box/large/custom_kit/raxraus
+	ckeywhitelist = list ("raxraus")
+
+/obj/item/clothing/neck/mantle/bos/paladin/donator_raxraus
+	name = "plundered paladin cape"
+	desc = "Once a symbol for the might of the paladin caste, this cape now serves as a reminder of their failure."
+
+/obj/item/storage/box/large/custom_kit/raxraus/PopulateContents()
+	new /obj/item/clothing/neck/mantle/bos/paladin/donator_raxraus(src)
+	new /obj/item/clothing/mask/gas/sechailer(src)
+
 /datum/gear/donator/kits/davusi
 	name = "Davusi's dogtags"
 	path = /obj/item/storage/box/large/custom_kit/davusi

@@ -473,8 +473,6 @@
 	new /obj/item/clothing/under/misc/pj/red(src)
 	new /obj/item/clothing/under/misc/pj/blue(src)
 	new /obj/item/toy/plush/borgplushie/medihound(src)
-	new /obj/item/gun/ballistic/automatic/c20r/toy/unrestricted/riot(src)
-	new /obj/item/ammo_box/magazine/toy/smgm45/riot(src)
 	new /obj/item/bedsheet/medical(src)
 	new /obj/item/bedsheet/patriot(src)
 

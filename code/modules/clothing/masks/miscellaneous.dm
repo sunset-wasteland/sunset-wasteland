@@ -539,12 +539,8 @@
 /obj/item/clothing/mask/mummy/bibledog/attack_self(mob/user)
 	adjustmask(user)
 
-/obj/item/clothing/mask/mummy/bibledog/Initialize()
-	. = ..()
-	AddComponent(/datum/component/anti_magic, TRUE, TRUE, TRUE, ITEM_SLOT_MASK, INFINITY, FALSE)
-
 /obj/item/clothing/mask/gelatoscreen
-	name = "\improper Gelato Face"
+	name = "Gelato Face"
 	icon_state = "gelatoscreen"
 	item_state = "gelatoscreen"
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF

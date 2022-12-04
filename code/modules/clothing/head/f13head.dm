@@ -959,12 +959,12 @@
 	icon_state = "reshiranger"
 	item_state = "reshiranger"
 
-/obj/item/clothing/head/beret/donator_worn_beret
+/obj/item/clothing/head/beret/ncr/ncr_recon/worn/loadout
 	name = "worn 1st recon beret"
 	desc = "A red beret, worn by 1st recon members."
 	icon_state = "worn_ncr_beret"
 	item_state = "worn_ncr_beret"
-	armor = list("melee" = 15, "bullet" = 40, "laser" = 30, "energy" = 20, "bomb" = 50, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0, "wound" = 40)
+	armor = list("melee" = 15, "bullet" = 20, "laser" = 20, "energy" = 20, "bsomb" = 50, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0, "wound" = 40)
 
 /obj/item/clothing/head/beret/antburger
 	name = "armored dunce cap"

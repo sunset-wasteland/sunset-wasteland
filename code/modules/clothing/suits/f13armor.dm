@@ -1377,7 +1377,7 @@
 	armor = list("melee" = 30, "bullet" = 38, "laser" = 25, "energy" = 25, "bomb" = 60, "bio" = 60, "rad" = 15, "fire" = 60, "acid" = 30, "wound" = 10)
 	slowdown = 0.11
 
-/obj/item/clothing/suit/armor/bulletproof/gelatocoat
+/obj/item/clothing/suit/armor/f13/leather_jacket/combat/coat/gelatocoat
 	name = "worn greatcoat"
 	desc = "A heavy bulletproof greatcoat that excels in protecting the wearer against traditional projectile weaponry and explosives to a minor extent."
 	icon_state = "gelatopeacoat"

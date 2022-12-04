@@ -225,8 +225,8 @@
 	zoom_out_amt = 13
 	can_scope = FALSE
 	extra_speed = 1000
-	extra_penetration = 0.65
-	extra_damage = 5.2
+	extra_penetration = 0.7
+	extra_damage = 16 //50 damage
 
 /obj/item/gun/ballistic/rifle/hunting/paciencia/attackby(obj/item/A, mob/user, params) //no sawing off this one
 	if(istype(A, /obj/item/circular_saw) || istype(A, /obj/item/gun/energy/plasmacutter))
@@ -336,6 +336,7 @@
 	mag_type = /obj/item/ammo_box/magazine/amr
 	fire_delay = 22 //Whoever made the previous comment probably had no fucking clue what fire_delay does. It's how fast the gun fires.
 	recoil = 10
+	slowdown = 1.45 //.20 higher than the M1919 MMG.
 	spread = 0
 	force = 10 //Big clumsy and sensitive scope, makes for a poor club
 	zoomable = TRUE

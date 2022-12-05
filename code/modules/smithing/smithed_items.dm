@@ -569,7 +569,6 @@
 	finalitem.force += quality*1.5
 	..()
 
-
 /obj/item/smithing/macehead
 	name = "smithed macehead"
 	icon_state = "mace_smith"
@@ -648,9 +647,10 @@
 
 /obj/item/smithing/knuckleduster/startfinish()
 	var/obj/item/melee/smith/knuckleduster/finalforreal = new /obj/item/melee/smith/knuckleduster(src)
-	finalforreal.force += quality*.95
+	finalforreal.force += quality*1.1
 	finalforreal.throwforce = finalforreal.force*1.1
 	finalforreal.attack_speed = CLICK_CD_MELEE * (3 / quality)
 	finalitem = finalforreal
 	..()
-
+	
+		

@@ -569,6 +569,7 @@
 	finalitem.force += quality*1.5
 	..()
 
+
 /obj/item/smithing/macehead
 	name = "smithed macehead"
 	icon_state = "mace_smith"

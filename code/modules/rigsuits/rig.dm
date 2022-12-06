@@ -98,7 +98,7 @@
 		to_chat(usr, "Hardsuit systems are [offline ? "<font color='red'>offline</font>" : "<font color='green'>online</font>"].")
 
 /obj/item/rig/Initialize()
-	..()
+	. = ..()
 
 	item_state = icon_state
 	wires = new /datum/wires/rig(src)

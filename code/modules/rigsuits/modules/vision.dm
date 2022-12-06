@@ -169,7 +169,7 @@
 	return 1
 
 /obj/item/rig_module/vision/Initialize()
-	..()
+	. = ..()
 	if(!vision_modes)
 		return
 

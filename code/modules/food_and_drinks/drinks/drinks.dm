@@ -32,9 +32,9 @@
 
 	if(M.water > THIRST_LEVEL_FULL)
 		if(M == user)
-			M << "<span class='notice'>You do not want to drink.</span>"
+			to_chat(M, span_notice("You're not thirsty enough to want to drink."))
 		else
-			user << "<span class='notice'>[M] does not want to drink.</span>"
+			to_chat(user, span_notice("[M] is not thirsty enough to want to drink."))
 		return 0
 
 	if (!is_drainable())

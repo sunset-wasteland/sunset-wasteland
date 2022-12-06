@@ -215,15 +215,6 @@
 /obj/item/storage/box/large/custom_kit/cassidy/PopulateContents()
 	new /obj/item/clothing/gloves/ring/diamond(src)
 
-/datum/gear/donator/kits/tzzshali
-	name = "Tzzshali's Form"
-	path = /obj/item/storage/box/large/custom_kit/tzzshali
-	ckeywhitelist = list ("irkallaepsilon")
-
-/obj/item/storage/box/large/custom_kit/tzzshali/PopulateContents()
-	new /obj/item/clothing/under/misc/polyjumpsuit(src)
-	new /obj/item/clothing/suit/hooded/wintercoat/polychromic(src)
-
 /datum/gear/donator/kits/aim
 	name = "Baghead's Face"
 	path = /obj/item/storage/box/large/custom_kit/aim

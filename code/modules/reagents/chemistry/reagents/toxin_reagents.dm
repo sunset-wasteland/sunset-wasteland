@@ -637,22 +637,13 @@
 /datum/reagent/toxin/cyanide/on_mob_life(mob/living/carbon/M)
 	if(prob(5))
 		M.losebreath += 1
-	if(prob(8))
-		to_chat(M, "You feel horrendously weak!")
-		M.Stun(40, 0)
-		M.adjustToxLoss(2*REM, 0)
-		. = TRUE
-	/datum/reagent/toxin/cyanide/on_mob_life(mob/living/carbon/M)
-
-	if(prob(5))
-		M.losebreath += 1
-	
-	else if(prob(8) && isjellyperson(M))
+	else if(prob(5) && isjellyperson(M))
 		M.losebreath == 1
 	if(prob(8))
 		to_chat(M, "You feel horrendously weak!")
 		M.Stun(40, 0)
 		M.adjustToxLoss(2*REM, 0)
+		. = TRUE
 	else if(prob(8) && isjellyperson(M))
 		M.adjustToxLoss(2*REM, 0)
 		. = 1

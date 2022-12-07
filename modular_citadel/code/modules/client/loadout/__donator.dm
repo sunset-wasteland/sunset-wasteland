@@ -339,9 +339,23 @@
 	name = "plundered paladin cape"
 	desc = "Once a symbol for the might of the paladin caste, this cape now serves as a reminder of their failure."
 
+/obj/item/clothing/suit/armor/f13/legion/prime/decan/donator_raxrau
+	name = "Juniper's prime decanus armor"
+	desc = "Legion prime decanus armor-an extra reinforced baseball uniform.  This one has been modified aesthetically"
+	icon_state = "legion_vex"
+	item_state = "legion_vex"
+	icon = 'icons/fallout/clothing/armored_medium.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
+
 /obj/item/storage/box/large/custom_kit/raxraus/PopulateContents()
 	new /obj/item/clothing/neck/mantle/bos/paladin/donator_raxraus(src)
 	new /obj/item/clothing/mask/gas/sechailer(src)
+	var/player = get_mob_by_key("raxraus")
+	if(!ishuman(player))
+		return
+	var/mob/living/carbon/human/P = player
+	if(cmptext(P.mind.assigned_role, "Legion Prime Decanus"))
+		new /obj/item/clothing/suit/armor/f13/legion/prime/decan/donator_raxrau(src)
 
 /datum/gear/donator/kits/davusi
 	name = "Davusi's dogtags"

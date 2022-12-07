@@ -175,7 +175,7 @@
 /datum/gear/donator/kits/shark
 	name ="Happy Shark Material"
 	path = /obj/item/storage/box/large/custom_kit/shark
-	ckeywhitelist = list ("mr.sanderp","mrsanderp")
+	ckeywhitelist = list ("mrsanderp")
 
 /obj/item/storage/box/large/custom_kit/shark/PopulateContents()
 	new /obj/item/book/granter/crafting_recipe/happysharky(src)

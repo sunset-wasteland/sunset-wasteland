@@ -84,6 +84,21 @@
 				to_chat(affected_mob, "<span class='notice'>Simple, efficient, glorious...</span>")
 				var/datum/component/mood/mood = affected_mob.GetComponent(/datum/component/mood)
 				mood.setSanity(SANITY_INSANE) // You're happy, aren't you?
+// FEV - R0CK3T69
+/datum/disease/transformation/mutant/superdebug
+	agent = "FEV-R0CK3T69 toxin strain" // The unstable one.
+	desc = "A megavirus, with a protein sheath reinforced by ionized hydrogen. This variant has been mutated by radiation and will turn the affected person into something less horrifying."
+	new_form = /mob/living/carbon/human/species/smutant
+	possible_forms = list(/mob/living/carbon/human/species/smutant = 1)
+	stage5 = list("<span class='reallybig hypnophrase'>Simple! Efficient! Glorious!</span>")
+
+/datum/disease/transformation/mutantdebug/super/stage_act()
+	..()
+
+	switch(stage)
+		if(2)
+			if (prob(8))
+				to_chat(affected_mob, "<span class='notice'>Simple, efficient, glorious...</span>")
 
 // FEV - Curling 13
 /datum/disease/curling_thirteen

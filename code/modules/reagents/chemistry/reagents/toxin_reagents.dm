@@ -86,6 +86,12 @@
 	description = "A version of FEV that has been modified by radiation. A biological dead-end, harmless if the subject is not exposed to radiation."
 //	fev_disease = /datum/disease/transformation/mutant/super
 
+//FEV - R0CK3T69: The super mutie kind
+/datum/reagent/toxin/FEV_solution/R0CK3T69
+	name = "FEV-R0CK3T69 solution"
+	description = "A DEBUG VERSION of FEV that has been modified by radiation. A biological dead-end, harmless if the subject is not exposed to radiation."
+	fev_disease = /datum/disease/transformation/mutant/superdebug
+
 /datum/reagent/toxin/FEV_solution/two/overdose_process(mob/living/carbon/C)
 	if(C.radiation < RAD_MOB_SAFE)
 		C.reagents.remove_reagent(src.type,10) // Clean up

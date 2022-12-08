@@ -175,7 +175,7 @@
 /datum/gear/donator/kits/shark
 	name ="Happy Shark Material"
 	path = /obj/item/storage/box/large/custom_kit/shark
-	ckeywhitelist = list ("mr.sanderp","mrsanderp")
+	ckeywhitelist = list ("mrsanderp")
 
 /obj/item/storage/box/large/custom_kit/shark/PopulateContents()
 	new /obj/item/book/granter/crafting_recipe/happysharky(src)
@@ -214,15 +214,6 @@
 
 /obj/item/storage/box/large/custom_kit/cassidy/PopulateContents()
 	new /obj/item/clothing/gloves/ring/diamond(src)
-
-/datum/gear/donator/kits/tzzshali
-	name = "Tzzshali's Form"
-	path = /obj/item/storage/box/large/custom_kit/tzzshali
-	ckeywhitelist = list ("irkallaepsilon")
-
-/obj/item/storage/box/large/custom_kit/tzzshali/PopulateContents()
-	new /obj/item/clothing/under/misc/polyjumpsuit(src)
-	new /obj/item/clothing/suit/hooded/wintercoat/polychromic(src)
 
 /datum/gear/donator/kits/aim
 	name = "Baghead's Face"
@@ -340,6 +331,33 @@
 	new /obj/item/book/granter/trait/bigleagues(src)
 	new /obj/item/storage/book/bible(src) //Would kinda defeat the point if I don't actually get a bible 
 	new /obj/item/clothing/accessory/necklace/silvercross(src)
+
+/datum/gear/donator/kits/raxraus
+	name = "Juniper's trophy"
+	path = /obj/item/storage/box/large/custom_kit/raxraus
+	ckeywhitelist = list ("raxraus")
+
+/obj/item/clothing/neck/mantle/bos/paladin/donator_raxraus
+	name = "plundered paladin cape"
+	desc = "Once a symbol for the might of the paladin caste, this cape now serves as a reminder of their failure."
+
+/obj/item/clothing/suit/armor/f13/legion/prime/decan/donator_raxrau
+	name = "Juniper's prime decanus armor"
+	desc = "Legion prime decanus armor-an extra reinforced baseball uniform.  This one has been modified aesthetically"
+	icon_state = "legion_vex"
+	item_state = "legion_vex"
+	icon = 'icons/fallout/clothing/armored_medium.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
+
+/obj/item/storage/box/large/custom_kit/raxraus/PopulateContents()
+	new /obj/item/clothing/neck/mantle/bos/paladin/donator_raxraus(src)
+	new /obj/item/clothing/mask/gas/sechailer(src)
+	var/player = get_mob_by_key("raxraus")
+	if(!ishuman(player))
+		return
+	var/mob/living/carbon/human/P = player
+	if(cmptext(P.mind.assigned_role, "Legion Prime Decanus"))
+		new /obj/item/clothing/suit/armor/f13/legion/prime/decan/donator_raxrau(src)
 
 /datum/gear/donator/kits/davusi
 	name = "Davusi's dogtags"

@@ -225,8 +225,8 @@
 	zoom_out_amt = 13
 	can_scope = FALSE
 	extra_speed = 1000
-	extra_penetration = 0.65
-	extra_damage = 5.2
+	extra_penetration = 0.7
+	extra_damage = 10.4
 
 /obj/item/gun/ballistic/rifle/hunting/paciencia/attackby(obj/item/A, mob/user, params) //no sawing off this one
 	if(istype(A, /obj/item/circular_saw) || istype(A, /obj/item/gun/energy/plasmacutter))
@@ -334,8 +334,9 @@
 	icon_state = "amr"
 	item_state = "amr"
 	mag_type = /obj/item/ammo_box/magazine/amr
-	fire_delay = 12 //Heavy round, tiny bit slower
-	recoil = 1
+	fire_delay = 22
+	recoil = 10
+	slowdown = 1.45 //.20 higher than the M1919 MMG.
 	spread = 0
 	force = 10 //Big clumsy and sensitive scope, makes for a poor club
 	zoomable = TRUE

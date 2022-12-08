@@ -72,20 +72,6 @@
 	path = /obj/item/storage/box/large/custom_kit/klatue
 	ckeywhitelist = list("klatue9")
 
-/obj/item/storage/box/large/custom_kit/canadian/PopulateContents()
-	new /obj/item/clothing/suit/armor/f13/legion/vet/explorercanada(src)
-	new /obj/item/clothing/neck/mantle/umbo(src)
-	new /obj/item/gun/ballistic/automatic/service/carbine(src)
-	new /obj/item/ammo_box/magazine/m556/rifle/assault(src)
-	new /obj/item/ammo_box/magazine/m556/rifle/assault(src)
-	new /obj/item/toy/figure/dsquad(src)
-
-
-/datum/gear/donator/kits/canadian
-	name = "Canadian"
-	path = /obj/item/storage/box/large/custom_kit/canadian
-	ckeywhitelist = list("comradesocks")
-
 /obj/item/storage/box/large/custom_kit/vaktus/PopulateContents()
 	new /obj/item/clothing/suit/armor/f13/combat/riotpolice(src)
 	new /obj/item/clothing/head/helmet/f13/ncr/rangercombat/desert(src)

@@ -872,6 +872,13 @@
 	race = /datum/species/abductor
 	mutationtext = "<span class='danger'>The pain subsides. You feel... alien.</span>"
 
+/datum/reagent/mutationtoxin/smutant
+	name = "Abductor Mutation Toxin"
+	description = "A Mutant toxin."
+	color = "#5EFF3B" //RGB: 94, 255, 59
+	race = /datum/species/smutant
+	mutationtext = "<span class='danger'>The pain subsides. You feel... unified.</span>"
+
 /datum/reagent/mutationtoxin/android
 	name = "Android Mutation Toxin"
 	description = "A robotic toxin."

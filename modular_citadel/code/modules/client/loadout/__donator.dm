@@ -117,14 +117,10 @@
 	new /obj/item/clothing/gloves/f13/mutant/mk2(src)
 	new /obj/item/clothing/under/f13/vaultmutie(src)
 	new /obj/item/clothing/suit/armor/f13/mutant/metal(src)
+	new /obj/item/reagent_containers/pill/FEV_solution/R0CK3T69(src)
 
 /datum/gear/donator/kits/pug
-	name = "I die to mobs"
-	path = /obj/item/storage/box/large/custom_kit/pug
-	ckeywhitelist = list("puglord777")
-
-/datum/gear/donator/kits/mutie
-	name = "I die to mobsx2"
+	name = "Supa Mutant"
 	path = /obj/item/storage/box/large/custom_kit/mutie
 	ckeywhitelist = list("puglord777")
 

@@ -88,6 +88,14 @@
 	list_reagents = list(/datum/reagent/toxin = 50)
 	roundstart = TRUE
 
+/obj/item/reagent_containers/pill/FEV_solution/R0CK3T69
+	name = "R0CK3T69 pill"
+	desc = "Don't swallow this if you dont have perms."
+	icon_state = "pill5"
+	list_reagents = list(/datum/reagent/mutationtoxin/smutant = 5)
+	roundstart = TRUE
+
+
 /obj/item/reagent_containers/pill/cyanide
 	name = "cyanide pill"
 	desc = "Don't swallow this."

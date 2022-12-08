@@ -3,6 +3,7 @@
 // Unless there's a digitigrade version make sure you add mutantrace_variation = NONE to all clothing/under and shoes - Pooj
 // Digitigrade stuff is uniform_digi.dmi and digishoes.dmi in icons/mob
 
+
 /obj/item/toy/darksabre
 	name = "Kiara's Sabre"
 	desc = "This blade looks as dangerous as its owner."

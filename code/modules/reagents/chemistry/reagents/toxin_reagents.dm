@@ -86,26 +86,6 @@
 	description = "A version of FEV that has been modified by radiation. A biological dead-end, harmless if the subject is not exposed to radiation."
 //	fev_disease = /datum/disease/transformation/mutant/super
 
-//FEV - R0CK3T69: The super mutie kind
-/datum/reagent/toxin/FEV_solution/R0CK3T69
-	name = "FEV-R0CK3T69 solution"
-	description = "A DEBUG VERSION of FEV that has been modified by radiation. A biological dead-end, harmless if the subject is not exposed to radiation."
-	fev_disease = /datum/disease/transformation/mutant/superdebug
-
-/datum/reagent/toxin/FEV_solution/two/overdose_process(mob/living/carbon/C)
-	if(C.radiation < RAD_MOB_SAFE)
-		C.reagents.remove_reagent(src.type,10) // Clean up
-		return ..() // Infect with disease
-	else // You fucked up
-		if(prob(5))
-			to_chat(C, "<span class='danger'>IT BURNS!</span>")
-			C.emote("scream")
-			C.adjustFireLoss(10,0)
-		C.adjustFireLoss(5,0)
-		C.apply_effect(10,EFFECT_IRRADIATE,0) // Now the only thing you are turning into is a ghoul
-		C.Jitter(2)
-	return
-
 //FEV - Curling 13: The murderous type
 /datum/reagent/toxin/FEV_solution/curling
 	name = "Curling-13 solution"

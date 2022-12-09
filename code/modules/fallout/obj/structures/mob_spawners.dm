@@ -134,7 +134,8 @@
 /obj/structure/nest/ghoul
 	name = "ghoul nest"
 	max_mobs = 10
-	mob_types = list(/mob/living/simple_animal/hostile/ghoul = 5)
+	mob_types = list(/mob/living/simple_animal/hostile/ghoul = 5,
+					/mob/living/simple_animal/hostile/ghoul/reaver = 1)
 
 /obj/structure/nest/deathclaw
 	name = "deathclaw nest"

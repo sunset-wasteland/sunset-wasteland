@@ -1480,10 +1480,9 @@
 	},
 /area/f13/building)
 "afJ" = (
-/obj/structure/rack/shelf_metal,
-/obj/effect/spawner/lootdrop/f13/foodspawner,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small,
+/obj/machinery/base_dispenser/food,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
@@ -6157,8 +6156,11 @@
 	},
 /area/f13/wasteland/hospital)
 "axQ" = (
-/obj/machinery/mineral/wasteland_vendor/general,
-/turf/open/indestructible/ground/outside/desert,
+/mob/living/simple_animal/hostile/cazador/young{
+	faction = list("neutral");
+	name = "Bully"
+	},
+/turf/open/indestructible/ground/inside/subway,
 /area/f13/building)
 "axR" = (
 /obj/structure/barricade/wooden,
@@ -6296,12 +6298,9 @@
 	},
 /area/f13/wasteland/west)
 "ayk" = (
-/obj/machinery/light/small{
-	dir = 4
-	},
-/mob/living/simple_animal/pet/dog/protectron,
-/turf/open/floor/plating/f13/inside,
-/area/f13/building)
+/obj/structure/destructible/tribal_torch/wall/lit,
+/turf/open/indestructible/ground/outside/desert,
+/area/f13/wasteland/quarry)
 "ayl" = (
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "horizontaltopborderbottom0"
@@ -6423,9 +6422,12 @@
 	},
 /area/f13/wasteland/east)
 "ayE" = (
-/obj/machinery/mineral/wasteland_vendor/special,
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 4;
+	light_color = "#f4e3b0"
+	},
 /turf/open/indestructible/ground/outside/desert,
-/area/f13/building)
+/area/f13/wasteland/quarry)
 "ayF" = (
 /obj/effect/landmark/latejoin,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -14485,13 +14487,16 @@
 /area/f13/building)
 "aZg" = (
 /obj/structure/simple_door/metal/ventilation,
-/obj/structure/disposalpipe/broken{
-	dir = 8
+/obj/structure/disposalpipe/segment{
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/f13/tunnel)
 "aZh" = (
 /obj/effect/decal/cleanable/cobweb,
+/obj/structure/disposalpipe/broken{
+	dir = 8
+	},
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland/west)
 "aZi" = (
@@ -32007,6 +32012,12 @@
 	icon_state = "reddirtyfull"
 	},
 /area/f13/building/museum)
+"hWp" = (
+/turf/open/indestructible/ground/outside/sidewalk{
+	dir = 1;
+	icon_state = "outerpavementcorner"
+	},
+/area/f13/wasteland/heaven)
 "hWr" = (
 /obj/structure/shelf_wood,
 /obj/item/kitchen/knife/butcher,
@@ -32077,6 +32088,14 @@
 	icon_state = "horizontaloutermain1"
 	},
 /area/f13/wasteland/east)
+"hYn" = (
+/obj/structure/table,
+/obj/effect/spawner/lootdrop/f13/foodspawner,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
+/area/f13/building)
 "hYF" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -32593,6 +32612,11 @@
 "irT" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/rack/shelf_metal,
+/obj/effect/spawner/lootdrop/f13/foodspawner,
+/obj/effect/spawner/lootdrop/f13/foodspawner,
+/obj/effect/spawner/lootdrop/f13/foodspawner,
+/obj/effect/spawner/lootdrop/f13/foodspawner,
+/obj/effect/spawner/lootdrop/f13/foodspawner,
 /obj/effect/spawner/lootdrop/f13/foodspawner,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
@@ -35433,6 +35457,10 @@
 /obj/structure/camera_assembly,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vault1,
 /area/f13/building/museum)
+"kad" = (
+/obj/machinery/mineral/wasteland_vendor/ammo,
+/turf/open/floor/plating/f13/inside,
+/area/f13/building)
 "kay" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
@@ -36206,6 +36234,9 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/red/white/side,
 /area/f13/building/mall)
+"kCd" = (
+/turf/closed/indestructible/opshuttle,
+/area/f13/wasteland/heaven)
 "kCe" = (
 /obj/structure/wreck/trash/two_barrels,
 /turf/open/indestructible/ground/inside/mountain,
@@ -40375,6 +40406,12 @@
 /obj/structure/railing/handrail,
 /turf/open/floor/plasteel/white,
 /area/f13/brotherhood)
+"mZq" = (
+/turf/open/indestructible/ground/outside/sidewalk{
+	dir = 8;
+	icon_state = "outerpavementcorner"
+	},
+/area/f13/wasteland/heaven)
 "mZJ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -41390,6 +41427,10 @@
 /obj/machinery/hydroponics/soil,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
+"nHB" = (
+/obj/machinery/mineral/wasteland_vendor/general,
+/turf/open/floor/plating/f13/inside,
+/area/f13/wasteland/heaven)
 "nHC" = (
 /obj/structure/car/rubbish1,
 /turf/open/indestructible/ground/outside/dirt,
@@ -41703,6 +41744,10 @@
 	icon_state = "darkrusty"
 	},
 /area/f13/building/massfusion)
+"nRU" = (
+/obj/machinery/mineral/wasteland_vendor/advcomponents,
+/turf/open/floor/plating/f13/inside,
+/area/f13/building)
 "nRY" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	dir = 4;
@@ -42888,13 +42933,14 @@
 /turf/open/floor/wood/wood_common,
 /area/f13/village)
 "oDk" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/base_dispenser/food,
-/turf/open/floor/plasteel/barber{
-	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2"
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 1;
+	pixel_y = 12
 	},
-/area/f13/building)
+/turf/open/indestructible/ground/outside/dirt{
+	icon_state = "dirt"
+	},
+/area/f13/wasteland/quarry)
 "oDA" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontalbottomborderbottom1"
@@ -47479,6 +47525,13 @@
 	icon_state = "verticaloutermain1"
 	},
 /area/f13/wasteland/hospital)
+"rvu" = (
+/obj/machinery/light/small{
+	dir = 4
+	},
+/mob/living/simple_animal/pet/dog/protectron,
+/turf/open/floor/plating/f13/inside,
+/area/f13/building)
 "rvx" = (
 /obj/machinery/light{
 	dir = 8
@@ -51263,6 +51316,9 @@
 	icon_state = "darkrusty"
 	},
 /area/f13/building/firestation)
+"tKZ" = (
+/turf/closed/indestructible/fakeglass,
+/area/f13/wasteland/heaven)
 "tLp" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
@@ -53094,6 +53150,10 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/building)
+"uRs" = (
+/obj/machinery/mineral/wasteland_vendor/special,
+/turf/open/floor/plating/f13/inside,
+/area/f13/wasteland/heaven)
 "uRG" = (
 /obj/item/stack/sheet/mineral/wood,
 /obj/effect/decal/cleanable/dirt{
@@ -53923,6 +53983,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table,
+/obj/effect/spawner/lootdrop/f13/foodspawner,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
@@ -57342,6 +57403,9 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building/mall)
+"xwK" = (
+/turf/open/floor/plating/f13/inside,
+/area/f13/wasteland/heaven)
 "xwV" = (
 /turf/closed/indestructible/f13/matrix/transition{
 	destination_x = 245;
@@ -58332,6 +58396,13 @@
 	icon_state = "floorrustysolid"
 	},
 /area/f13/building)
+"ybH" = (
+/obj/machinery/light/small{
+	dir = 4
+	},
+/mob/living/simple_animal/pet/dog/protectron,
+/turf/open/floor/plating/f13/inside,
+/area/f13/wasteland/heaven)
 "ybU" = (
 /obj/effect/decal/cleanable/robot_debris,
 /obj/effect/decal/cleanable/dirt,
@@ -78882,13 +78953,13 @@ rbU
 rbU
 rbU
 rbU
-rbU
-rbU
-rbU
-rbU
-rbU
-rbU
-rbU
+buo
+hqc
+hqc
+hqc
+hqc
+hqc
+hXb
 rbU
 rbU
 rbU
@@ -79139,13 +79210,13 @@ nvE
 nvE
 nvE
 nvE
-nvE
-nvE
-nvE
-nvE
-nvE
-nvE
-nvE
+mZq
+kCd
+nHB
+tKZ
+uRs
+kCd
+hWp
 nvE
 drb
 dvB
@@ -79397,11 +79468,11 @@ nvE
 nvE
 nvE
 nvE
-nvE
-nvE
-nvE
-nvE
-nvE
+kCd
+xwK
+ybH
+xwK
+kCd
 nvE
 nvE
 hyv
@@ -79654,11 +79725,11 @@ nvE
 nvE
 nvE
 nvE
-nvE
-nvE
-nvE
-nvE
-nvE
+kCd
+kCd
+kCd
+kCd
+kCd
 nvE
 nvE
 hyv
@@ -90302,7 +90373,7 @@ aae
 aae
 uaU
 uaU
-bjo
+axQ
 uaU
 uaU
 uaU
@@ -93400,7 +93471,7 @@ ajF
 baj
 acC
 afc
-afc
+hYn
 ajF
 aaa
 aak
@@ -93656,7 +93727,7 @@ juz
 aex
 acC
 aXj
-afv
+hYn
 afv
 ajF
 aaa
@@ -95455,7 +95526,7 @@ prR
 ajF
 ajF
 irT
-oDk
+aXj
 afJ
 ajF
 aaa
@@ -100590,10 +100661,10 @@ dnR
 dnR
 puj
 cpq
+ayE
 cpq
 cpq
-cpq
-cpq
+ayE
 nrn
 xjM
 prR
@@ -100846,12 +100917,12 @@ aHE
 qth
 dnR
 dnR
-cpq
+ayk
 acl
 xyU
 xyU
 acl
-nrn
+oDk
 xjM
 iTv
 oGj
@@ -102146,11 +102217,11 @@ aaa
 aaa
 aae
 aae
-cpq
-mUN
-dAO
-dAO
-dAO
+hzN
+iQb
+xjM
+xjM
+dqx
 dAO
 dAO
 dAO
@@ -102403,11 +102474,11 @@ aae
 aaa
 aae
 aaa
-cpq
-cpq
-cpq
-cpq
-cpq
+aeD
+kad
+afX
+nRU
+aeD
 cpq
 cpq
 cpq
@@ -102660,11 +102731,11 @@ aaa
 aae
 aae
 aae
-aae
-aae
-aae
-aae
-aae
+aeD
+awm
+rvu
+awm
+aeD
 aae
 cpq
 dns
@@ -102917,11 +102988,11 @@ aaa
 aaa
 aaa
 aae
-aae
-aae
-aae
-aae
-aae
+aeD
+aeD
+aeD
+aeD
+aeD
 aae
 aae
 aae
@@ -120431,11 +120502,11 @@ cpx
 cpx
 cpx
 cpx
-aeD
-axQ
-afX
-ayE
-aeD
+cpx
+cpx
+cpx
+cpx
+cpx
 cpx
 cpx
 cpx
@@ -120688,11 +120759,11 @@ cpx
 cpx
 cpx
 aae
-aeD
-awm
-ayk
-awm
-aeD
+aae
+aae
+cpx
+cpx
+aae
 aae
 aae
 aae
@@ -120945,11 +121016,11 @@ cpx
 cpx
 aae
 aae
-aeD
-aeD
-aeD
-aeD
-aeD
+aae
+aae
+aae
+aae
+aae
 aae
 aae
 aae

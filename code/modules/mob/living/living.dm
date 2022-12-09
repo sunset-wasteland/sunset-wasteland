@@ -43,6 +43,7 @@
 		buckled.unbuckle_mob(src,force=1)
 
 	remove_from_all_data_huds()
+	cleanse_trait_datums()
 	GLOB.mob_living_list -= src
 	QDEL_LIST(diseases)
 	return ..()

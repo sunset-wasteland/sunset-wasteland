@@ -227,7 +227,7 @@
 	uniform = /obj/item/clothing/under/f13/exile
 	id = /obj/item/card/id/rusted
 	backpack_contents = list(
-		/obj/item/gun/ballistic/automatic/pistol/ninemil = 1
+		/obj/item/gun/ballistic/automatic/pistol/ninemil = 1,
 		/obj/item/ammo_box/magazine/m9mmds = 2,
 		/obj/item/storage/box/ration/ranger_breakfast = 1)
 

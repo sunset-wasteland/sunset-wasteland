@@ -420,7 +420,7 @@
 	clawfootstep = FOOTSTEP_SNOW
 
 /turf/open/indestructible/ground/outside/snow/Initialize()
-	..()
+	. = ..()
 	if(!((locate(/obj/structure) in src) || (locate(/obj/machinery) in src)))
 		plantGrass()
 	icon_state = "snow[rand(0,12)]"

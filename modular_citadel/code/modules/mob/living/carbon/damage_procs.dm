@@ -1,4 +1,4 @@
-/mob/living/carbon/adjustStaminaLossBuffered(amount, updating_health = 1)
+/mob/living/carbon/adjustStaminaLossBuffered(amount, updating_health = TRUE)
 	if(status_flags & GODMODE)
 		return 0
 	if(CONFIG_GET(flag/disable_stambuffer))

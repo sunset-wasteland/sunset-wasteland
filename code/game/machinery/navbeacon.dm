@@ -28,6 +28,8 @@
 
 	var/turf/T = loc
 	hide(T.intact)
+	if(!length(codes))
+		return
 	if(codes["patrol"])
 		if(!GLOB.navbeacons["[z]"])
 			GLOB.navbeacons["[z]"] = list()
@@ -40,6 +42,7 @@
 	if (GLOB.navbeacons["[z]"])
 		GLOB.navbeacons["[z]"] -= src //Remove from beacon list, if in one.
 	GLOB.deliverybeacons -= src
+	GLOB.deliverybeacontags -= location
 	return ..()
 
 /obj/machinery/navbeacon/on_changed_z_level(turf/old_turf, turf/new_turf)

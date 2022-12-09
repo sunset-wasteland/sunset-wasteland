@@ -160,7 +160,7 @@ Nowhere else to really put this. Pulled from what I had done on Hyper. - Carl
 
 /obj/structure/fluff/destroyed_nuclear_reactor/Destroy()
 	STOP_PROCESSING(SSradiation,src)
-	..()
+	return ..()
 
 /obj/structure/fluff/destroyed_nuclear_reactor/process()
 	if(QDELETED(src))

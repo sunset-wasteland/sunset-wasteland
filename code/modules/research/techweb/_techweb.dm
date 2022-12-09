@@ -123,7 +123,6 @@
 			custom_designs = list()
 	for(var/id in processing)
 		update_node_status(SSresearch.techweb_node_by_id(id), FALSE)
-		CHECK_TICK
 	for(var/v in consoles_accessing)
 		var/obj/machinery/computer/rdconsole/V = v
 		V.rescan_views()
@@ -165,14 +164,11 @@
 /datum/techweb/proc/copy_research_to(datum/techweb/receiver, unlock_hidden = TRUE)				//Adds any missing research to theirs.
 	if(unlock_hidden)
 		for(var/i in receiver.hidden_nodes)
-			CHECK_TICK
 			if(!hidden_nodes[i])
 				receiver.hidden_nodes -= i		//We can see it so let them see it too.
 	for(var/i in researched_nodes)
-		CHECK_TICK
 		receiver.research_node_id(i, TRUE, FALSE)
 	for(var/i in researched_designs)
-		CHECK_TICK
 		receiver.add_design_by_id(i)
 	receiver.recalculate_nodes()
 

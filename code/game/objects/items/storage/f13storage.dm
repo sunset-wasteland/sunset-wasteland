@@ -66,9 +66,9 @@
 		)))
 
 /obj/item/storage/belt/waistsheath/examine(mob/user)
-	..()
+	. = ..()
 	if(length(contents))
-		to_chat(user, "<span class='notice'>Alt-click it to quickly draw the blade.</span>")
+		. += span_notice("Alt-click it to quickly draw the blade.")
 
 /obj/item/storage/belt/waistsheath/AltClick(mob/user)
 	if(!iscarbon(user) || !user.canUseTopic(src, BE_CLOSE, ismonkey(user)))

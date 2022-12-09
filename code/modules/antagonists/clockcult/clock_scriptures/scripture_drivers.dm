@@ -218,7 +218,7 @@
 /*//commenting this out until its reworked to actually do random teleports
 //Abscond: Used to return to Reebe.
 /datum/clockwork_scripture/abscond
-	descname = "Safety warp, teleports you somewhere random. moderately high power cost to use."
+	descname = "Safety warp, teleports you somewhere random. Moderately high power cost to use."
 	name = "Abscond"
 	desc = "Yanks you through space, putting you in hopefully a safe location."
 	invocations = list("As we bid farewell, and return to the stars...", "...we shall find our way home.")

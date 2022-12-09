@@ -295,7 +295,7 @@
 
 /obj/item/stock_parts/cell/bluespace
 	name = "Ultracite fusion cell"
-	desc = "A rechargeable pre-war inspired fusion cell. the future, TODAY!"
+	desc = "A rechargeable fusion cell inspired by pre-war technology. The technology of the future, TODAY!"
 	icon_state = "bscell"
 	maxcharge = 40000
 	custom_materials = list(/datum/material/glass=600)

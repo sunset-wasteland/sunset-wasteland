@@ -32,6 +32,8 @@
 
 	if(delete_species)
 		QDEL_NULL(species)
+	else
+		species = null
 
 	mutations.Cut()					//This only references mutations, just dereference.
 	temporary_mutations.Cut()		//^

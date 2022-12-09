@@ -18,7 +18,7 @@
 	rogue_types = list(/datum/nanite_program/glitch)
 
 /datum/nanite_program/necrotic/active_effect()
-	host_mob.adjustBruteLoss(0.75, TRUE)
+	host_mob.adjustBruteLoss(0.75, updating_health = TRUE)
 	if(prob(1))
 		to_chat(host_mob, "<span class='warning'>You feel a mild ache from somewhere inside you.</span>")
 

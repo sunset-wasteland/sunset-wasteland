@@ -120,7 +120,7 @@
 
 /datum/reagent/toxin/leaper_venom/on_mob_life(mob/living/carbon/M)
 	if(volume >= 10)
-		M.adjustToxLoss(5, 0)
+		M.adjustToxLoss(5, updating_health = FALSE)
 	..()
 	return TRUE // update health at end of tick
 

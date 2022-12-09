@@ -8,6 +8,8 @@
 /obj/item/ammo_casing/energy/gravity/Initialize(mapload)
 	if(istype(loc,/obj/item/gun/energy/gravity_gun))
 		gun = loc
+	else
+		return INITIALIZE_HINT_QDEL
 	. = ..()
 
 /obj/item/ammo_casing/energy/gravity/Destroy()

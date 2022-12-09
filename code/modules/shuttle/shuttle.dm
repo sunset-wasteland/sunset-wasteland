@@ -131,6 +131,8 @@
 	var/list/L = return_coords()
 	var/turf/T0 = locate(L[1],L[2],z)
 	var/turf/T1 = locate(L[3],L[4],z)
+	if(!T0 || !T1)
+		return
 	for(var/turf/T in block(T0,T1))
 		T.color = _color
 		LAZYINITLIST(T.atom_colours)

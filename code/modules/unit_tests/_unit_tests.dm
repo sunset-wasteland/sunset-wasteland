@@ -38,14 +38,17 @@
 #define UNIT_TEST_FAILED 1
 #define UNIT_TEST_SKIPPED 2
 
+#define TEST_DEFAULT 1
+#define TEST_CREATE_AND_DESTROY INFINITY
+
 //Keep this sorted alphabetically
 #include "anchored_mobs.dm"
 #include "binary_insert.dm"
 #include "character_saving.dm"
 #include "combat.dm"
 #include "component_tests.dm"
+#include "create_and_destroy.dm"
 #include "designs.dm"
-#include "initialize_sanity.dm"
 #include "medical_wounds.dm"
 #include "merge_type.dm"
 #include "metabolizing.dm"
@@ -53,6 +56,7 @@
 #include "plantgrowth_tests.dm"
 #include "reagent_id_typos.dm"
 #include "reagent_mod_procs.dm"
+#include "reagent_names.dm"
 #include "reagent_recipe_collisions.dm"
 #include "resist.dm"
 #include "spawn_mobs.dm"

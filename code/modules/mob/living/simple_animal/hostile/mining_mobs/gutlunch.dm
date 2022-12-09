@@ -48,8 +48,8 @@
 	var/obj/item/udder/gutlunch/udder = null
 
 /mob/living/simple_animal/hostile/asteroid/gutlunch/Initialize()
-	udder = new()
 	. = ..()
+	udder = new()
 
 /mob/living/simple_animal/hostile/asteroid/gutlunch/CanAttack(atom/the_target) // Gutlunch-specific version of CanAttack to handle stupid stat_exclusive = true crap so we don't have to do it for literally every single simple_animal/hostile except the two that spawn in lavaland
 	if(isturf(the_target) || !the_target || the_target.type == /atom/movable/lighting_object) // bail out on invalids
@@ -96,6 +96,7 @@
 		regenerate_icons()
 		visible_message("<span class='notice'>[src] slurps up [target].</span>")
 		qdel(target)
+		LoseTarget()
 	return ..()
 
 //Male gutlunch. They're smaller and more colorful!
@@ -132,8 +133,7 @@
 
 /obj/item/udder/gutlunch/Initialize()
 	. = ..()
-	reagents = new(50)
-	reagents.my_atom = src
+	create_reagents(50)
 
 /obj/item/udder/gutlunch/generateMilk()
 	if(prob(60))

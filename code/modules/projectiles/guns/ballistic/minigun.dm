@@ -21,6 +21,7 @@
 	START_PROCESSING(SSobj, src)
 
 /obj/item/minigunpackbal5mm/Destroy()
+	gun = null // should maybe qdel_null
 	STOP_PROCESSING(SSobj, src)
 	return ..()
 

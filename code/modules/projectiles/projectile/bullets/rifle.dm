@@ -196,21 +196,24 @@ heavy rifle calibers (12.7, 14mm, 7.62): Uranium, Contaminated, Incin
 	name = "12.7mm contaminated bullet"
 	damage = 50
 	var/smoke_radius = 1
+	var/datum/effect_system/smoke_spread/chem/smoke_system
 
 /obj/item/projectile/bullet/a50MG/contam/Initialize()
 	. = ..()
 	create_reagents(15, NO_REACT, NO_REAGENTS_VALUE)
+	smoke_system = new
+	smoke_system.attach(src)
+	smoke_system.set_up(src.reagents, smoke_radius, src, 0)
 	reagents.add_reagent(/datum/reagent/toxin/metabtoxin, 15)
 
 /obj/item/projectile/bullet/a50MG/contam/on_hit(atom/target, blocked = FALSE)
-	var/location = get_turf(src)
-	var/datum/effect_system/smoke_spread/chem/S = new
-	S.attach(location)
-	playsound(location, 'sound/effects/smoke.ogg', 50, 1, -3)
-	if(S)
-		S.set_up(src.reagents, smoke_radius, location, 0)
-		S.start()
+	playsound(get_turf(src), 'sound/effects/smoke.ogg', 50, 1, -3)
+	smoke_system?.start()
 	..()
+
+/obj/item/projectile/bullet/a50MG/contam/Destroy()
+	QDEL_NULL(smoke_system)
+	return ..()
 
 /obj/item/projectile/bullet/a50MG/depleteduranium//Used, currently, for the emplaced MG.
 	name = ".50 DU-bullet"

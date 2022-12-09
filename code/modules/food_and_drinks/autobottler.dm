@@ -2,7 +2,7 @@
 	name = "auto bottler"
 	desc = "Takes glass, metal and booze to make exports."
 	icon_state = "protolathe"
-	circuit = /obj/item/circuitboard/machine/autobottler
+	circuit = /obj/item/circuitboard/machine/protolathe/autobottler
 	categories = list(
 								"Wines",
 								"Beers",

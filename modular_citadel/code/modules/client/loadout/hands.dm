@@ -83,6 +83,10 @@
 /datum/gear/hands/cane
 	name = "cane"
 	path = /obj/item/cane
+	
+/datum/gear/hands/cane
+	name = "spraycan"
+	path = /obj/item/toy/crayon/spraycan
 
 /datum/gear/hands/cigarettes
 	name = "cigarette pack"

@@ -17,7 +17,7 @@
 #define RECIPE_SABRE "ffdd" //fold fold draw draw
 #define RECIPE_SWORD "ffdf" // fold fold draw fold
 #define RECIPE_WAKI "fffd" //fold fold fold draw
-#define RECIPE_KATANA "fffff" //fold fold fold fold fold
+#define RECIPE_KATANA "ffffffffff" //fold fold fold fold fold fold fold fold fold fold (seriously)
 
 #define RECIPE_MACE "upu"  //upset punch upset
 #define RECIPE_AXE "udsp" //upset draw shrink punch

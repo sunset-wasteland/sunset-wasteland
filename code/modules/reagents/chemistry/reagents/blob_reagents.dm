@@ -345,9 +345,9 @@
 	M.apply_damage(0.2*reac_volume, BRUTE)
 
 /datum/reagent/blob/cryogenic_poison/on_mob_life(mob/living/carbon/M)
-	M.adjustBruteLoss(0.3*REM, 0)
-	M.adjustFireLoss(0.3*REM, 0)
-	M.adjustToxLoss(0.3*REM, 0)
+	M.adjustBruteLoss(0.3*REM, updating_health = FALSE)
+	M.adjustFireLoss(0.3*REM, updating_health = FALSE)
+	M.adjustToxLoss(0.3*REM, updating_health = FALSE)
 	. = 1
 	..()
 

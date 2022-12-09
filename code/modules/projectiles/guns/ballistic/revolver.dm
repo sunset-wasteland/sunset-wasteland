@@ -3,7 +3,7 @@
 
 /obj/item/gun/ballistic/revolver
 	slowdown = 0.1
-	name = "revolver template"
+	name = "revolver template" 
 	desc = "should not exist."
 	icon_state = "revolver"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder
@@ -128,8 +128,8 @@
 
 // .38 Detective					Keywords: .38, Double action, 6 rounds cylinder, Short barrel, Bootgun
 /obj/item/gun/ballistic/revolver/detective
-	name = ".38 Detective Special"
-	desc = "A small revolver thats easily concealable."
+	name = ".38 revolver"
+	desc = "An easily concealable, poorly-made .38 revolver. The manufacturer is unknown"
 	icon_state = "detective"
 	w_class = WEIGHT_CLASS_SMALL
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev38
@@ -145,15 +145,16 @@
 
 //S&W 45						Keywords: .45, Single action, 7 rounds cylinder, Long barrel
 /obj/item/gun/ballistic/revolver/revolver45
-	name = "S&W .45 ACP revolver"
-	desc = "Smith and Wesson revolver firing .45 ACP from a seven round cylinder."
+	name = ".45 Auto revolver"
+	desc = "A customized S&W Model 625 revolver chambered for .45 ACP."
 	item_state = "45revolver"
 	icon_state = "45revolver"
+	icon = 'icons/obj/guns/gunfruits2022/pistols.dmi'
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev45
 	fire_delay = 4.5
 	spread = 1
 	fire_sound = 'sound/f13weapons/45revolver.ogg'
-	extra_damage = 4
+	extra_damage = 5
 
 
 
@@ -164,13 +165,15 @@
 //357 Magnum					Keywords: .357, Single action, 6 rounds cylinder, long barrel
 /obj/item/gun/ballistic/revolver/colt357
 	name = "\improper .357 magnum revolver"
-	desc = "A no-nonsense revolver, more than likely made in some crude workshop in one of the more prosperous frontier towns."
+	desc = "A Colt Single Action Army revolver, chambered in .357 Magnum. The Gunslinger's prime choice."
 	icon_state = "357colt"
 	item_state = "357colt"
+	icon = 'icons/obj/guns/gunfruits2022/pistols.dmi'
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev357
 	fire_delay = 4.5
 	spread = 0
 	fire_sound = 'sound/f13weapons/357magnum.ogg'
+	extra_damage = 5
 
 /obj/item/gun/ballistic/revolver/colt357/mateba //this is a skin that rigbe wanted
 	name = "\improper Unica 6 auto-revolver"
@@ -182,18 +185,21 @@
 //Lucky							Keywords: UNIQUE, .357, Double action, 6 rounds cylinder, Block chance, Fire delay -1
 /obj/item/gun/ballistic/revolver/colt357/lucky
 	name = "Lucky"
-	desc = "Just holding this gun makes you feel like an ace. This revolver was handmade from pieces of other guns in some workshop after the war. A one-of-a-kind gun, it was someone's lucky gun for many a year, it's in good condition and hasn't changed hands often."
-	icon_state = "lucky37"
+	desc = "An uniquely customized Colt SAA revolver. Holding it just makes you feel lucky. "
+	icon_state = "lucky"
 	item_state = "lucky"
+	icon = 'icons/obj/guns/gunfruits2022/pistols.dmi'
 	w_class = WEIGHT_CLASS_SMALL
 	fire_delay = 3
-	block_chance = 20
+	block_chance = 35
+	extra_penetration = 0.05
 
 //Police revolver					Keywords: .357, Double action, 6 rounds cylinder, Pocket Pistol
 /obj/item/gun/ballistic/revolver/police
 	name = "police revolver"
-	desc = "Pre-war double action police revolver chambered in .357 magnum."
+	desc = "An unmarked snub-nosed double-action pre-war revolver meant for police use, phased out long ago in favor of semi-automatic pistols."
 	icon_state = "police"
+	icon = 'icons/obj/guns/gunfruits2022/pistols.dmi'
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev357
 	w_class = WEIGHT_CLASS_SMALL
 	spread = 2
@@ -209,9 +215,10 @@
 //.44 Magnum revolver		 	Keywords: .44, Double action, 6 rounds cylinder
 /obj/item/gun/ballistic/revolver/m29
 	name = ".44 magnum revolver"
-	desc = "Powerful handgun for those who want to travel the wasteland safely in style. Has a bit of a kick."
+	desc = "A robust S&W Model 29 revolver, uniquely powerful and reliable. Do you feel lucky, punk?"
 	item_state = "model29"
 	icon_state = "m29"
+	icon = 'icons/obj/guns/gunfruits2022/pistols.dmi'
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev44
 	recoil = 0.1
 	can_scope = FALSE
@@ -219,17 +226,21 @@
 	scope_x_offset = 6
 	scope_y_offset = 24
 	fire_sound = 'sound/f13weapons/44mag.ogg'
+	extra_damage = 5
 
 /obj/item/gun/ballistic/revolver/m29/alt
-	desc = "Powerful handgun with a bit of a kick. This one has nickled finish and pearly grip, and has been kept in good condition by its owner."
+	name = "modern .44 magnum revolver"
+	desc = "A custom, modernized S&W Model 29 revolver with a chrome finish and a polymer grip."
 	item_state = "44magnum"
 	icon_state = "mysterious_m29"
 	can_scope = FALSE
+	extra_damage = 5
+	extra_speed = 80
 
 //Chiappa Rhino                  Keywords: Enclave, .44, Double action, 6 rounds cylinder
 /obj/item/gun/ballistic/revolver/m29/rhino_america
 	name = "Rhino America"
-	desc = "A revolver machined from a solid aluminium block, This one is coated in gold paint with its grip painted to look like the flag of America. This model has been specifically made to fire .44 magnum cartridges"
+	desc = "A revolver machined from a solid aluminium block. This one is coated in gold paint with its grip painted to look like the flag of the United States of America. This model has been specifically made to fire .44 magnum cartridges."
 	item_state = "rhino_america"
 	icon_state = "rhino_america"
 	can_scope = FALSE
@@ -241,7 +252,8 @@
 	name = "Peacekeeper"
 	desc = "When you don't just need excessive force, but crave it. This .44 has a special hammer mechanism, allowing for measured powerful shots, or fanning for a flurry of inaccurate shots."
 	item_state = "m29peace"
-	icon_state = "m29peace"
+	icon_state = "mysterious_m29"
+	icon = 'icons/obj/guns/gunfruits2022/pistols.dmi'
 	automatic = 1
 	autofire_shot_delay = 1
 	actions_types = list(/datum/action/item_action/toggle_firemode)
@@ -249,12 +261,13 @@
 
 //.44 Snubnose						Keywords: .44, Double action, 6 rounds cylinder, Short barrel
 /obj/item/gun/ballistic/revolver/m29/snub
-	name = "snubnose .44 magnum revolver"
-	desc = "A snubnose variant of the commonplace .44 magnum. An excellent holdout weapon for self defense."
+	name = "short .44 magnum revolver"
+	desc = "A snubnose variant of the commonplace S&W Model 29 revolver. Sunshine in your pocket."
 	icon_state = "m29_snub"
+	icon = 'icons/obj/guns/gunfruits2022/pistols.dmi'
 	w_class = WEIGHT_CLASS_SMALL
 	spread = 3
-	extra_damage = -5
+	extra_damage = 0
 
 
 //.44 single action		 			Keywords: .44, Single action, 6 rounds cylinder, Long barrel
@@ -295,9 +308,10 @@
 //Sequioa					Keywords: NCR, .45-70, 6 rounds cylinder, Double action, Heavy
 /obj/item/gun/ballistic/revolver/sequoia
 	name = "ranger sequoia"
-	desc = "This large, double-action revolver is a trademark weapon of the New California Republic Rangers. It features a dark finish with intricate engravings etched all around the weapon. Engraved along the barrel are the words 'For Honorable Service,' and 'Against All Tyrants.' The hand grip bears the symbol of the NCR Rangers, a bear, and a brass plate attached to the bottom that reads '20 Years.' "
+	desc = "This customized Magnum BFR revolver is a trademark weapon of the New California Republic Rangers. It features a dark finish with intricate engravings etched all around the weapon. Engraved along the barrel are the words 'For Honorable Service,' and 'Against All Tyrants.' The hand grip bears the symbol of the NCR Rangers, a bear, and a brass plate attached to the bottom that reads '20 Years.' "
 	icon_state = "sequoia"
 	item_state = "sequoia"
+	icon = 'icons/obj/guns/gunfruits2022/pistols.dmi'
 	weapon_weight = WEAPON_MEDIUM
 	recoil = 0.2
 	fire_delay = 1
@@ -309,6 +323,7 @@
 	desc = "This heavy revolver is a trademark weapon of the New California Republic Rangers. This one has a blade attached to the handle for a painful pistolwhip."
 	icon_state = "sequoia_b"
 	item_state = "sequoia"
+	icon = 'icons/obj/guns/gunfruits2022/pistols.dmi'
 	force = 25
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev4570
 	fire_sound = 'sound/f13weapons/sequoia.ogg'
@@ -316,7 +331,7 @@
 //Hunting revolver				Keywords: .45-70, Double action, 5 rounds cylinder, Heavy
 /obj/item/gun/ballistic/revolver/hunting
 	name = "hunting revolver"
-	desc = "A scoped double action revolver chambered in 45-70."
+	desc = "An incredibly heavy, unwieldy Magnum BFR revolver chambered for the equally large .45-70 Government round."
 	icon_state = "hunting_revolver"
 	weapon_weight = WEAPON_MEDIUM
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev4570
@@ -328,6 +343,7 @@
 	scope_y_offset = 20
 	fire_sound = 'sound/f13weapons/sequoia.ogg'
 	extra_damage = -2
+	icon = 'icons/obj/guns/gunfruits2022/pistols.dmi'
 
 /obj/item/gun/ballistic/revolver/hunting/klatue
 	name = "degraded hunting revolver"
@@ -340,7 +356,7 @@
 
 //Colt Army						Keywords: .45 long colt (bouncing), Single action, 6 rounds cylinder.
 /obj/item/gun/ballistic/revolver/revolver45/gunslinger
-	name = "\improper Colt Single Action Army"
+	name = "\improper .45 long colt revolver"
 	desc = "A Colt Single Action Army, chambered in the archaic .45 long colt cartridge."
 	item_state = "coltwalker"
 	icon_state = "peacemaker"
@@ -353,8 +369,9 @@
 //.223 Pistol					Keywords: .223, Double action, 5 rounds internal, Short barrel
 /obj/item/gun/ballistic/revolver/thatgun
 	name = ".223 pistol"
-	desc = "A strange pistol firing rifle ammunition, possibly damaging the users wrist and with poor accuracy."
+	desc = "The LAPD 2019 police revolver, a pre-war mechanical wonder. Chambered in .223, and electronically assisted for easy reload. They don't advertise for killers in the newspaper."
 	icon_state = "thatgun"
+	icon = 'icons/obj/guns/gunfruits2022/pistols.dmi'
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/thatgun
 	weapon_weight = WEAPON_MEDIUM
 	spread = 4

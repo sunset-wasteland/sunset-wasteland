@@ -13,6 +13,10 @@
 	. = ..()
 	gun = wh
 
+/obj/item/ammo_casing/energy/wormhole/Destroy()
+	gun = null
+	return ..()
+
 /obj/item/ammo_casing/energy/wormhole/throw_proj()
 	. = ..()
 	if(istype(BB, /obj/item/projectile/beam/wormhole))

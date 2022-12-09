@@ -17,7 +17,7 @@
 
 /datum/reagent/consumable/orangejuice/on_mob_life(mob/living/carbon/M)
 	if(M.getOxyLoss() && prob(30))
-		M.adjustOxyLoss(-1, 0)
+		M.adjustOxyLoss(-1, updating_health = FALSE)
 		. = 1
 	..()
 
@@ -50,7 +50,7 @@
 
 /datum/reagent/consumable/limejuice/on_mob_life(mob/living/carbon/M)
 	if(M.getToxLoss() && prob(20))
-		M.adjustToxLoss(-1*REM, 0)
+		M.adjustToxLoss(-1*REM, updating_health = FALSE)
 		. = 1
 	..()
 
@@ -106,7 +106,7 @@
 	water_level = 1.5
 
 /datum/reagent/consumable/poisonberryjuice/on_mob_life(mob/living/carbon/M)
-	M.adjustToxLoss(1, 0)
+	M.adjustToxLoss(1, updating_health = FALSE)
 	. = 1
 	..()
 
@@ -330,7 +330,7 @@
 	M.jitteriness = max(0,M.jitteriness-3)
 	M.AdjustSleeping(-20, FALSE)
 	if(M.getToxLoss() && prob(20))
-		M.adjustToxLoss(-1, 0)
+		M.adjustToxLoss(-1, updating_health = FALSE)
 	M.adjust_bodytemperature(20 * TEMPERATURE_DAMAGE_COEFFICIENT, 0, BODYTEMP_NORMAL)
 	..()
 	. = 1
@@ -390,7 +390,7 @@
 
 /datum/reagent/consumable/tea/forest/on_mob_life(mob/living/carbon/M)
 	if(M.getToxLoss() && prob(40))//Two anti-toxins working here
-		M.adjustToxLoss(-1, 0, TRUE) //heals TOXINLOVERs
+		M.adjustToxLoss(-1, updating_health = FALSE, forced = TRUE) //heals TOXINLOVERs
 		//Reminder that honey heals toxin lovers
 	M.dizziness = max(0,M.dizziness-2)
 	M.drowsyness = max(0,M.drowsyness-1)
@@ -486,7 +486,7 @@
 	M.drowsyness = max(0,M.drowsyness-1)
 	M.AdjustSleeping(-40, FALSE)
 	if(M.getToxLoss() && prob(20))
-		M.adjustToxLoss(-1, 0)
+		M.adjustToxLoss(-1, updating_health = FALSE)
 	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, BODYTEMP_NORMAL)
 	..()
 	. = 1
@@ -506,28 +506,6 @@
 	M.drowsyness = max(0,M.drowsyness-5)
 	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, BODYTEMP_NORMAL)
 	..()
-
-/datum/reagent/consumable/nuka_cola
-	name = "Nuka Cola"
-	description = "Cola, cola never changes."
-	color = "#100800" // rgb: 16, 8, 0
-	quality = DRINK_VERYGOOD
-	taste_description = "the future"
-	glass_icon_state = "nuka_colaglass"
-	glass_name = "glass of Nuka Cola"
-	glass_desc = "Don't cry, Don't raise your eye, It's only nuclear wasteland."
-	water_level = 1.5
-	value = REAGENT_VALUE_COMMON
-
-/datum/reagent/consumable/nuka_cola/on_mob_life(mob/living/carbon/M)
-	M.Jitter(20)
-	//M.set_drugginess(30)
-	//M.dizziness +=1.5
-	M.drowsyness = 0
-	M.AdjustSleeping(-40, FALSE)
-	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, BODYTEMP_NORMAL)
-	..()
-	. = 1
 
 /datum/reagent/consumable/spacemountainwind
 	name = "SM Wind"
@@ -827,10 +805,10 @@
 	value = REAGENT_VALUE_COMMON
 
 /datum/reagent/consumable/doctor_delight/on_mob_life(mob/living/carbon/M)
-	M.adjustBruteLoss(-0.5, 0)
-	M.adjustFireLoss(-0.5, 0)
-	M.adjustToxLoss(-0.5, 0)
-	M.adjustOxyLoss(-0.5, 0)
+	M.adjustBruteLoss(-0.5, updating_health = FALSE)
+	M.adjustFireLoss(-0.5, updating_health = FALSE)
+	M.adjustToxLoss(-0.5, updating_health = FALSE)
+	M.adjustOxyLoss(-0.5, updating_health = FALSE)
 	if(!(M.mind && M.mind.assigned_role == "Medical Doctor")) //Drains the nutrition of the holder. Not medical doctors though, since it's the Doctor's Delight!
 		M.adjust_nutrition(-2)
 	..()
@@ -1164,7 +1142,7 @@
 
 /datum/reagent/consumable/aloejuice/on_mob_life(mob/living/M)
 	if(M.getToxLoss() && prob(30))
-		M.adjustToxLoss(-1, 0)
+		M.adjustToxLoss(-1, updating_health = FALSE)
 	..()
 	. = TRUE
 

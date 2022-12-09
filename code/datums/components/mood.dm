@@ -42,6 +42,7 @@
 /datum/component/mood/Destroy()
 	STOP_PROCESSING(SSobj, src)
 	unmodify_hud()
+	remove_temp_moods()
 	return ..()
 
 /datum/component/mood/proc/stop_processing()

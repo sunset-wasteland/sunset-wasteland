@@ -140,7 +140,7 @@
 
 /obj/structure/trap/ward
 	name = "divine ward"
-	desc = "A divine barrier, It looks like you could destroy it with enough effort, or wait for it to dissipate..."
+	desc = "A divine barrier. It looks like you could destroy it with enough effort, or wait for it to dissipate..."
 	icon_state = "ward"
 	density = TRUE
 	time_between_triggers = 1200 //Exists for 2 minutes

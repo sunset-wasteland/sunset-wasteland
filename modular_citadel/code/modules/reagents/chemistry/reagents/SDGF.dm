@@ -139,7 +139,7 @@ IMPORTANT FACTORS TO CONSIDER WHILE BALANCING
 
 				//Damage the clone
 				SM.blood_volume = (BLOOD_VOLUME_NORMAL*SM.blood_ratio)/2
-				SM.adjustCloneLoss(60, 0)
+				SM.adjustCloneLoss(60, updating_health = FALSE)
 				SM.setOrganLoss(ORGAN_SLOT_BRAIN, 40)
 				SM.set_nutrition(startHunger/2)
 
@@ -159,9 +159,9 @@ IMPORTANT FACTORS TO CONSIDER WHILE BALANCING
 							REMOVE_TRAIT(M, TRAIT_DISFIGURED, TRAIT_GENERIC)
 							log_reagent("FERMICHEM: [M] ckey: [M.key] is being healed by SDGF")
 						if(22 to INFINITY)
-							M.adjustCloneLoss(-1, 0)
-							M.adjustBruteLoss(-1, 0)
-							M.adjustFireLoss(-1, 0)
+							M.adjustCloneLoss(-1, updating_health = FALSE)
+							M.adjustBruteLoss(-1, updating_health = FALSE)
+							M.adjustFireLoss(-1, updating_health = FALSE)
 							M.heal_bodypart_damage(1,1)
 							M.reagents.remove_reagent(type, 1)//faster rate of loss.
 							. = TRUE // update health at end of tick
@@ -224,9 +224,9 @@ IMPORTANT FACTORS TO CONSIDER WHILE BALANCING
 		return
 	if (M.action_cooldown_mod == 4 && !M.has_status_effect(/datum/status_effect/chem/SGDF))//checks if they're ingested over 20u of the stuff, but fell short of the required 30u to make a clone.
 		to_chat(M, "<span class='notice'>You feel the cells begin to merge with your body, unable to reach nucleation, they instead merge with your body, healing any wounds.</span>")
-		M.adjustCloneLoss(-10, 0) //I don't want to make Rezadone obsolete.
-		M.adjustBruteLoss(-25, 0)// Note that this takes a long time to apply and makes you fat and useless when it's in you, I don't think this small burst of healing will be useful considering how long it takes to get there.
-		M.adjustFireLoss(-25, 0)
+		M.adjustCloneLoss(-10, updating_health = FALSE) //I don't want to make Rezadone obsolete.
+		M.adjustBruteLoss(-25, updating_health = FALSE)// Note that this takes a long time to apply and makes you fat and useless when it's in you, I don't think this small burst of healing will be useful considering how long it takes to get there.
+		M.adjustFireLoss(-25, updating_health = FALSE)
 		M.blood_volume += 250
 		M.heal_bodypart_damage(1,1)
 		M.action_cooldown_mod = 1
@@ -235,8 +235,8 @@ IMPORTANT FACTORS TO CONSIDER WHILE BALANCING
 	else if (unitCheck == TRUE && !M.has_status_effect(/datum/status_effect/chem/SGDF))// If they're ingested a little bit (10u minimum), then give them a little healing.
 		unitCheck = FALSE
 		to_chat(M, "<span class='notice'>the cells fail to hold enough mass to generate a clone, instead diffusing into your system.</span>")
-		M.adjustBruteLoss(-10, 0)
-		M.adjustFireLoss(-10, 0)
+		M.adjustBruteLoss(-10, updating_health = FALSE)
+		M.adjustFireLoss(-10, updating_health = FALSE)
 		M.blood_volume += 100
 		M.action_cooldown_mod = 1
 		if (M.nutrition < 1500)
@@ -268,10 +268,10 @@ IMPORTANT FACTORS TO CONSIDER WHILE BALANCING
 		M.visible_message("<span class='warning'>[M]'s body shudders, the growth factor rapidly splitting into a new clone of [M].</span>")
 
 		if(bodydamage>50)
-			SM.adjustOxyLoss(-(bodydamage/10), 0)
-			SM.adjustToxLoss(-(bodydamage/10), 0)
+			SM.adjustOxyLoss(-(bodydamage/10), updating_health = FALSE)
+			SM.adjustToxLoss(-(bodydamage/10), updating_health = FALSE)
 			SM.blood_volume = (BLOOD_VOLUME_NORMAL*SM.blood_ratio)/1.5
-			SM.adjustCloneLoss((bodydamage/10), 0)
+			SM.adjustCloneLoss((bodydamage/10), updating_health = FALSE)
 			SM.setOrganLoss(ORGAN_SLOT_BRAIN, (bodydamage/10))
 			SM.adjust_nutrition(400)
 		if(bodydamage>200)
@@ -311,7 +311,7 @@ IMPORTANT FACTORS TO CONSIDER WHILE BALANCING
 /datum/reagent/fermi/SDGFheal/on_mob_life(mob/living/carbon/M)//Used to heal the clone after splitting, the clone spawns damaged. (i.e. insentivies players to make more than required, so their clone doesn't have to be treated)
 	if(M.blood_volume < (BLOOD_VOLUME_NORMAL*M.blood_ratio))
 		M.blood_volume += 10
-	M.adjustCloneLoss(-2, 0)
+	M.adjustCloneLoss(-2, updating_health = FALSE)
 	M.setOrganLoss(ORGAN_SLOT_BRAIN, -1)
 	M.adjust_nutrition(10)
 	..()
@@ -326,7 +326,7 @@ IMPORTANT FACTORS TO CONSIDER WHILE BALANCING
 
 /datum/reagent/impure/SDGFtox/on_mob_life(mob/living/carbon/M)//Damages the taker if their purity is low. Extended use of impure chemicals will make the original die. (thus can't be spammed unless you've very good)
 	M.blood_volume -= 10
-	M.adjustCloneLoss(2, 0)
+	M.adjustCloneLoss(2, updating_health = FALSE)
 	..()
 	return TRUE // update health at end of tick
 
@@ -363,7 +363,7 @@ IMPORTANT FACTORS TO CONSIDER WHILE BALANCING
 			if (M.nutrition < 20000) //whoever knows the maxcap, please let me know, this seems a bit low.
 				M.set_nutrition(20000) //https://www.youtube.com/watch?v=Bj_YLenOlZI
 		if(75 to 85)
-			M.adjustToxLoss(1, 0)// the warning!
+			M.adjustToxLoss(1, updating_health = FALSE)// the warning!
 			. = TRUE // update health at end of tick
 
 		if(86)//mean clone time!
@@ -374,7 +374,7 @@ IMPORTANT FACTORS TO CONSIDER WHILE BALANCING
 				to_chat(M, "<span class='warning'>Your body splits away from the cell clone of yourself, your attempted clone birthing itself violently from you as it begins to shamble around, a terrifying abomination of science.</span>")
 				M.visible_message("[M] suddenly shudders, and splits into a funky smelling copy of themselves!")
 				M.emote("scream")
-				M.adjustToxLoss(30, 0)
+				M.adjustToxLoss(30, updating_health = FALSE)
 				. = TRUE // update health at end of tick
 				var/mob/living/simple_animal/hostile/unemployedclone/ZI = new(get_turf(M.loc))
 				ZI.damage_coeff = list(BRUTE = ((1 / volume)**0.25) , BURN = ((1 / volume)**0.1), TOX = 1, CLONE = 1, STAMINA = 0, OXY = 1)
@@ -398,7 +398,7 @@ IMPORTANT FACTORS TO CONSIDER WHILE BALANCING
 				SSblackbox.record_feedback("tally", "fermi_chem", 1, "Zombie clones made!")
 
 		if(87 to INFINITY)
-			M.adjustToxLoss(2, 0)
+			M.adjustToxLoss(2, updating_health = FALSE)
 			. = TRUE // update health at end of tick
 			M.reagents.remove_reagent(type, 1)
 	..()

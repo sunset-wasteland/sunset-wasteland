@@ -258,13 +258,13 @@ Difficulty: Very Hard
 		return FALSE
 	return TRUE
 
+GLOBAL_DATUM(blackbox_fridge, /obj/machinery/smartfridge/black_box)
 /obj/machinery/smartfridge/black_box/Initialize()
 	. = ..()
-	var/static/obj/machinery/smartfridge/black_box/current
-	if(current && current != src)
+	if(GLOB.blackbox_fridge && GLOB.blackbox_fridge != src)
 		qdel(src, force=TRUE)
 		return
-	current = src
+	GLOB.blackbox_fridge = src
 	ReadMemory()
 
 /obj/machinery/smartfridge/black_box/process()
@@ -311,6 +311,7 @@ Difficulty: Very Hard
 	if(force)
 		for(var/thing in src)
 			qdel(thing)
+		GLOB.blackbox_fridge = null
 		return ..()
 	else
 		return QDEL_HINT_LETMELIVE

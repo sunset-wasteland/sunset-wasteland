@@ -72,7 +72,7 @@
 	var/consumed_buff = 0
 
 /mob/living/simple_animal/slaughter/Initialize()
-	..()
+	. = ..()
 	var/obj/effect/proc_holder/spell/bloodcrawl/bloodspell = new
 	AddSpell(bloodspell)
 	if(istype(loc, /obj/effect/dummy/phased_mob/slaughter))
@@ -134,6 +134,7 @@
 		if(!T)
 			T = get_turf(src)
 		M.forceMove(T)
+	consumed_mobs.Cut()
 
 /mob/living/simple_animal/slaughter/proc/refresh_consumed_buff()
 	melee_damage_lower = 22.5 + (0.5 * consumed_buff)

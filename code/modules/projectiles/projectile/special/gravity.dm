@@ -15,6 +15,10 @@
 	if(istype(G))
 		power = min(G.gun.power, 15)
 
+/obj/item/projectile/gravity/Destroy()
+	thrown.Cut()
+	return ..()
+
 /obj/item/projectile/gravity/on_hit()
 	. = ..()
 	var/turf/T = get_turf(src)

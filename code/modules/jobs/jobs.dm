@@ -60,7 +60,7 @@ GLOBAL_LIST_INIT(command_positions, list(
 	"Legion Centurion",
 
 	"Sheriff",
-	"Banker",
+	"Sierra Representative",
 	"Mayor",
 
 	"Enclave Lieutenant",
@@ -106,6 +106,8 @@ GLOBAL_LIST_INIT(faction_whitelist_positions, list(
 "Legion Slave",
 
 "Shopkeeper",
+"Sierra Representative",
+"Mercenary",
 
 "Enclave Lieutenant",
 "Enclave Gunnery Sergeant",
@@ -149,15 +151,17 @@ GLOBAL_LIST_INIT(brotherhood_positions, list(
 ))
 
 GLOBAL_LIST_INIT(bighorn_positions, list(
-	"Shopkeeper",
-	"Sheriff",
 	"Mayor",
+	"Secretary",
+	"Sheriff",
 	"Deputy",
-	"Banker",
+	"Sierra Representative",
+	"Shopkeeper",
+	"Mercenary",
 	"Barkeep",
 	"Preacher",
 	"Citizen",
-	"Secretary",
+
 ))
 
 GLOBAL_LIST_INIT(legion_command_positions, list(

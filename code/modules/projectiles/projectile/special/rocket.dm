@@ -7,7 +7,8 @@
 
 /obj/item/projectile/bullet/rocket/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/pellet_cloud, projectile_type=shrapnel_type, magnitude=shrapnel_magnitude)
+	if (shrapnel_magnitude > 0)
+		AddComponent(/datum/component/pellet_cloud, projectile_type=shrapnel_type, magnitude=shrapnel_magnitude)
 
 /obj/item/projectile/bullet/rocket/on_hit(atom/target, blocked=0)
 	..()

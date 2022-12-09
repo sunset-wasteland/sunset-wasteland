@@ -144,6 +144,10 @@ Creating a chem with a low purity will make you permanently fall in love with so
 	can_synth = FALSE
 	value = REAGENT_VALUE_EXCEPTIONAL
 
+/datum/reagent/fermi/enthrall/Destroy()
+	creator = null
+	return ..()
+
 /datum/reagent/fermi/enthrall/on_new(list/data)
 	creatorID = data["creatorID"]
 	creatorGender = data["creatorGender"]
@@ -272,6 +276,10 @@ Creating a chem with a low purity will make you permanently fall in love with so
 	can_synth = FALSE
 	var/mob/living/carbon/love
 	var/lewd = FALSE
+
+/datum/reagent/fermi/enthrallExplo/Destroy()
+	love = null
+	return ..()
 
 /datum/reagent/fermi/enthrallExplo/on_mob_life(mob/living/carbon/M)//Love gas, only affects while it's in your system,Gives a positive moodlet if close, gives brain damagea and a negative moodlet if not close enough.
 	if(HAS_TRAIT(M, TRAIT_MINDSHIELD))

@@ -798,6 +798,10 @@
 		finalize_hitscan_and_generate_tracers()
 	cleanup_beam_segments()
 	QDEL_NULL(trajectory)
+	fired_from = null
+	firer = null
+	original = null
+	homing_target = null
 	return ..()
 
 /obj/item/projectile/proc/cleanup_beam_segments()

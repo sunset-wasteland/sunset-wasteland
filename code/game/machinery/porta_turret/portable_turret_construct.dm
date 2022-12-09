@@ -150,6 +150,7 @@
 					turret.name = finish_name
 					turret.installation = installed_gun.type
 					turret.setup(installed_gun)
+					installed_gun = null // so building it doesn't delete the gun
 					qdel(src)
 					return
 

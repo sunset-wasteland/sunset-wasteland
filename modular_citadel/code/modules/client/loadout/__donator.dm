@@ -72,20 +72,6 @@
 	path = /obj/item/storage/box/large/custom_kit/klatue
 	ckeywhitelist = list("klatue9")
 
-/obj/item/storage/box/large/custom_kit/canadian/PopulateContents()
-	new /obj/item/clothing/suit/armor/f13/legion/vet/explorercanada(src)
-	new /obj/item/clothing/neck/mantle/umbo(src)
-	new /obj/item/gun/ballistic/automatic/service/carbine(src)
-	new /obj/item/ammo_box/magazine/m556/rifle/assault(src)
-	new /obj/item/ammo_box/magazine/m556/rifle/assault(src)
-	new /obj/item/toy/figure/dsquad(src)
-
-
-/datum/gear/donator/kits/canadian
-	name = "Canadian"
-	path = /obj/item/storage/box/large/custom_kit/canadian
-	ckeywhitelist = list("comradesocks")
-
 /obj/item/storage/box/large/custom_kit/vaktus/PopulateContents()
 	new /obj/item/clothing/suit/armor/f13/combat/riotpolice(src)
 	new /obj/item/clothing/head/helmet/f13/ncr/rangercombat/desert(src)
@@ -175,7 +161,7 @@
 /datum/gear/donator/kits/shark
 	name ="Happy Shark Material"
 	path = /obj/item/storage/box/large/custom_kit/shark
-	ckeywhitelist = list ("mr.sanderp","mrsanderp")
+	ckeywhitelist = list ("mrsanderp")
 
 /obj/item/storage/box/large/custom_kit/shark/PopulateContents()
 	new /obj/item/book/granter/crafting_recipe/happysharky(src)
@@ -214,15 +200,6 @@
 
 /obj/item/storage/box/large/custom_kit/cassidy/PopulateContents()
 	new /obj/item/clothing/gloves/ring/diamond(src)
-
-/datum/gear/donator/kits/tzzshali
-	name = "Tzzshali's Form"
-	path = /obj/item/storage/box/large/custom_kit/tzzshali
-	ckeywhitelist = list ("irkallaepsilon")
-
-/obj/item/storage/box/large/custom_kit/tzzshali/PopulateContents()
-	new /obj/item/clothing/under/misc/polyjumpsuit(src)
-	new /obj/item/clothing/suit/hooded/wintercoat/polychromic(src)
 
 /datum/gear/donator/kits/aim
 	name = "Baghead's Face"
@@ -311,3 +288,72 @@
 
 /obj/item/storage/box/large/custom_kit/transhumanism/proc/implant(player, obj/item/organ/I)
 	I.Insert(player, drop_if_replaced = FALSE)
+
+/datum/gear/donator/kits/finlayranger
+	name = "Stolen Ranger"
+	path = /obj/item/storage/box/large/custom_kit/finlayranger
+	ckeywhitelist = list ("metrobotic")
+
+/obj/item/storage/box/large/custom_kit/finlayranger/PopulateContents()
+	new /obj/item/clothing/glasses/hud/health(src)
+	new /obj/item/clothing/head/helmet/f13/ncr/rangercombat/finlayranger(src)
+	new /obj/item/clothing/suit/armor/f13/rangercombat/finlayranger(src)
+	new /obj/item/gun/ballistic/revolver/revolver45(src) //Doesn't come with ammo, You can print it anyway
+	new /obj/item/melee/powered/ripper(src)
+/datum/gear/donator/kits/bibledog
+	name = "Bible Canid"
+	path = /obj/item/storage/box/large/custom_kit/bibledog
+	ckeywhitelist = list ("especiallystrange")
+
+/obj/item/storage/box/large/custom_kit/bibledog/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/pistol/m1911/bibledog(src)
+	new /obj/item/ammo_box/magazine/m45(src)
+	new /obj/item/ammo_box/magazine/m45(src)
+	new /obj/item/clothing/under/f13/bibledog(src)
+	new /obj/item/ammo_box/magazine/m45(src)
+	new /obj/item/clothing/suit/armor/f13/combat/swat(src)
+	new /obj/item/storage/belt/holster/legholster(src)
+	new /obj/item/book/granter/trait/bibledog(src) //being able to use the bible
+	new /obj/item/storage/book/bible(src) //Would kinda defeat the point if I don't actually get a bible with it
+
+/datum/gear/donator/kits/raxraus
+	name = "Juniper's trophy"
+	path = /obj/item/storage/box/large/custom_kit/raxraus
+	ckeywhitelist = list ("raxraus")
+
+/obj/item/clothing/neck/mantle/bos/paladin/donator_raxraus
+	name = "plundered paladin cape"
+	desc = "Once a symbol for the might of the paladin caste, this cape now serves as a reminder of their failure."
+
+/obj/item/clothing/suit/armor/f13/legion/prime/decan/donator_raxrau
+	name = "Juniper's prime decanus armor"
+	desc = "Legion prime decanus armor-an extra reinforced baseball uniform.  This one has been modified aesthetically"
+	icon_state = "legion_vex"
+	item_state = "legion_vex"
+	icon = 'icons/fallout/clothing/armored_medium.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
+
+/obj/item/storage/box/large/custom_kit/raxraus/PopulateContents()
+	new /obj/item/clothing/neck/mantle/bos/paladin/donator_raxraus(src)
+	new /obj/item/clothing/mask/gas/sechailer(src)
+	var/player = get_mob_by_key("raxraus")
+	if(!ishuman(player))
+		return
+	var/mob/living/carbon/human/P = player
+	if(cmptext(P.mind.assigned_role, "Legion Prime Decanus"))
+		new /obj/item/clothing/suit/armor/f13/legion/prime/decan/donator_raxrau(src)
+
+/datum/gear/donator/kits/davusi
+	name = "Davusi's dogtags"
+	path = /obj/item/storage/box/large/custom_kit/davusi
+	ckeywhitelist = list ("angryblackmandavusi")
+
+/obj/item/card/id/dogtag/donator_davusi
+	name = "Davusi's dogtags"
+	desc = "Worn by Enclave NCOs.  This one belongs to 'Private Davusi' and smells faintly of moonshine."
+	icon_state = "enclavetrooper"
+	item_state = "card-id_leg"
+	assignment = "US dogtags"
+
+/obj/item/storage/box/large/custom_kit/davusi/PopulateContents()
+	new /obj/item/card/id/dogtag/donator_davusi(src)

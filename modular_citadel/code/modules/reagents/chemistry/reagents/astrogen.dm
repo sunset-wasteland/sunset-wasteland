@@ -32,10 +32,22 @@ I'd like to point out from my calculations it'll take about 60-80 minutes to die
 	var/datum/action/chem/astral/AS = new/datum/action/chem/astral()
 	value = REAGENT_VALUE_AMAZING
 
+/datum/reagent/fermi/astral/Destroy()
+	origin = null
+	G = null
+	originalmind = null
+	QDEL_NULL(AS)
+	return ..()
+
 /datum/action/chem/astral
 	name = "Return to body"
 	var/mob/living/carbon/origin
 	var/datum/mind/originalmind
+
+/datum/action/chem/astral/Destroy()
+	origin = null
+	originalmind = null
+	return ..()
 
 /datum/action/chem/astral/Trigger()
 	if(origin.mind && origin.mind != originalmind)

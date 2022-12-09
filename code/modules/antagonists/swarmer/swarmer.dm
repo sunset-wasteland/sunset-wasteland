@@ -15,6 +15,7 @@
 	anchored = FALSE
 
 	mob_type = /mob/living/simple_animal/hostile/swarmer
+	is_abstract = FALSE
 	mob_name = "a swarmer"
 	job_description = "Swarmer"
 	death = FALSE

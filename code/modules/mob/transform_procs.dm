@@ -75,12 +75,12 @@
 	//keep damage?
 	if (tr_flags & TR_KEEPDAMAGE)
 		O.setToxLoss(getToxLoss(), 0)
-		O.adjustBruteLoss(getBruteLoss(), 0)
+		O.adjustBruteLoss(getBruteLoss(), updating_health = FALSE)
 		O.setOxyLoss(getOxyLoss(), 0)
 		O.setCloneLoss(getCloneLoss(), 0)
-		O.adjustFireLoss(getFireLoss(), 0)
+		O.adjustFireLoss(getFireLoss(), updating_health = FALSE)
 		O.setOrganLoss(ORGAN_SLOT_BRAIN, getOrganLoss(ORGAN_SLOT_BRAIN), 0)
-		O.adjustStaminaLoss(getStaminaLoss(), 0)//CIT CHANGE - makes monkey transformations inherit stamina
+		O.adjustStaminaLoss(getStaminaLoss(), updating_health = FALSE)//CIT CHANGE - makes monkey transformations inherit stamina
 		O.updatehealth()
 		O.radiation = radiation
 
@@ -237,12 +237,12 @@
 	//keep damage?
 	if (tr_flags & TR_KEEPDAMAGE)
 		O.setToxLoss(getToxLoss(), 0)
-		O.adjustBruteLoss(getBruteLoss(), 0)
+		O.adjustBruteLoss(getBruteLoss(), updating_health = FALSE)
 		O.setOxyLoss(getOxyLoss(), 0)
 		O.setCloneLoss(getCloneLoss(), 0)
-		O.adjustFireLoss(getFireLoss(), 0)
+		O.adjustFireLoss(getFireLoss(), updating_health = FALSE)
 		O.setOrganLoss(ORGAN_SLOT_BRAIN, getOrganLoss(ORGAN_SLOT_BRAIN), 0)
-		O.adjustStaminaLoss(getStaminaLoss(), 0)//CIT CHANGE - makes monkey transformations inherit stamina
+		O.adjustStaminaLoss(getStaminaLoss(), updating_health = FALSE)//CIT CHANGE - makes monkey transformations inherit stamina
 		O.updatehealth()
 		O.radiation = radiation
 

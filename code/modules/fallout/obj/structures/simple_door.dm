@@ -190,25 +190,25 @@
 
 /obj/structure/simple_door/proc/TryToSwitchState(atom/user, animate)
 	if(moving)
-		return 0
+		return FALSE
 	if(isliving(user))
 		var/mob/living/M = user
-		if(/obj/structure/barricade in src.loc)
-			M << "It won't budge!"
-			return 0
+		if(locate(/obj/structure/barricade) in get_turf(src))
+			to_chat(M, span_warning("It won't budge!"))
+			return FALSE
 		if(M.client)
 			if(iscarbon(M))
 				var/mob/living/carbon/C = M
 				if(!C.handcuffed)
 					SwitchState(animate)
-					return 1
+					return TRUE
 			else
 				SwitchState(animate)
-				return 1
+				return TRUE
 	else if(istype(user, /obj/mecha))
 		SwitchState(animate)
-		return 1
-	return 0
+		return TRUE
+	return FALSE
 
 /obj/structure/simple_door/attack_hand(mob/user)
 	if(TryToSwitchState(user, 1) && !density)

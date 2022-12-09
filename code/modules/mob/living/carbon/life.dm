@@ -568,6 +568,9 @@ GLOBAL_LIST_INIT(ballmer_windows_me_msg, list("Yo man, what if, we like, uh, put
 	if(clockcultslurring)
 		clockcultslurring = max(clockcultslurring-1, 0)
 
+	if(uwuslurring)
+		uwuslurring = max(uwuslurring-1, 0)
+
 	if(silent)
 		silent = max(silent-1, 0)
 
@@ -584,8 +587,8 @@ GLOBAL_LIST_INIT(ballmer_windows_me_msg, list("Yo man, what if, we like, uh, put
 			SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "drunk", /datum/mood_event/drunk)
 			jitteriness = max(jitteriness - 3, 0)
 			if(HAS_TRAIT(src, TRAIT_DRUNK_HEALING))
-				adjustBruteLoss(-0.12, FALSE)
-				adjustFireLoss(-0.06, FALSE)
+				adjustBruteLoss(-0.12, updating_health = FALSE)
+				adjustFireLoss(-0.06, updating_health = FALSE)
 				changed_health = TRUE
 
 		// todo: reimplement ballmer peak but for non-hardcoded techwebs
@@ -595,8 +598,8 @@ GLOBAL_LIST_INIT(ballmer_windows_me_msg, list("Yo man, what if, we like, uh, put
 				confused += 2
 			Dizzy(10)
 			if(HAS_TRAIT(src, TRAIT_DRUNK_HEALING)) // effects stack with lower tiers
-				adjustBruteLoss(-0.3, FALSE)
-				adjustFireLoss(-0.15, FALSE)
+				adjustBruteLoss(-0.3, updating_health = FALSE)
+				adjustFireLoss(-0.15, updating_health = FALSE)
 				changed_health = TRUE
 
 		if(drunkenness >= 51)
@@ -609,8 +612,8 @@ GLOBAL_LIST_INIT(ballmer_windows_me_msg, list("Yo man, what if, we like, uh, put
 			if(prob(50))
 				blur_eyes(5)
 			if(HAS_TRAIT(src, TRAIT_DRUNK_HEALING))
-				adjustBruteLoss(-0.4, FALSE)
-				adjustFireLoss(-0.2, FALSE)
+				adjustBruteLoss(-0.4, updating_health = FALSE)
+				adjustFireLoss(-0.2, updating_health = FALSE)
 				changed_health = TRUE
 
 		if(drunkenness >= 71)

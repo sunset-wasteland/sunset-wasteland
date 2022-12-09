@@ -22,7 +22,7 @@
 /obj/item/reagent_containers/food/snacks/grown/agave
 	seed = /obj/item/seeds/agave
 	name = "agave leaf"
-	desc = "A strange kind of fleshy grass often used as a primitive burn medication that rapidly depletes stored nutrients in the body."
+	desc = "A strange kind of fleshy grass, often used as a primitive burn medication that rapidly depletes stored nutrients in the body."
 	icon_state = "Agave Leaf"
 	icon = 'icons/obj/flora/wastelandflora.dmi'
 	juice_results = list(/datum/reagent/consumable/agavejuice = 0)

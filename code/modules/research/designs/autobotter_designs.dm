@@ -7,7 +7,7 @@
 	desc = "Allows for the construction of circuit boards used to build an Autobottler."
 	id = "autobottler"
 	materials = list(/datum/material/glass = 2000)
-	build_path = /obj/item/circuitboard/machine/autobottler
+	build_path = /obj/item/circuitboard/machine/protolathe/autobottler
 	category = list ("Misc. Machinery")
 	departmental_flags = DEPARTMENTAL_FLAG_CARGO | DEPARTMENTAL_FLAG_SERVICE
 

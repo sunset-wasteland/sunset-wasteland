@@ -1116,7 +1116,7 @@
 	build_path = /obj/machinery/paystand
 	req_components = list()
 
-/obj/item/circuitboard/machine/autobottler
+/obj/item/circuitboard/machine/protolathe/autobottler
 	name = "Auto-Bottler (Machine Board)"
 	build_path = /obj/machinery/rnd/production/protolathe/department/autobottler //Manips make you print things cheaper, even chems
 	req_components = list(/obj/item/stock_parts/matter_bin = 5,

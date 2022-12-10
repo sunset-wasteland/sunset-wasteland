@@ -27,6 +27,9 @@
 	update_icon()
 	wires = new /datum/wires/taperecorder(src)
 
+/obj/item/taperecorder/Destroy()
+	mytape = null
+	return ..()
 
 /obj/item/taperecorder/examine(mob/user)
 	. = ..()

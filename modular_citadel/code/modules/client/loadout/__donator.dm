@@ -281,23 +281,12 @@
 	var/player = get_mob_by_key("alffd")
 	if(!ishuman(player)) //This should never be true, but who knows.
 		return
-	var/mob/living/carbon/human/P = player
-	implant(player, new /obj/item/organ/tongue/robot/gen2synth(src)) //Robotic voice.
-	implant(player, new /obj/item/organ/ears/cybernetic(src))  //Hearing loss on EMP
-	implant(player, new /obj/item/organ/cyberimp/brain(src)) //Causes a large stun if EMPed.
-	if(cmptext(P.mind.assigned_role, "Enclave Scientist"))
-		implant(player, new /obj/item/organ/lungs/cybernetic/tier2(src)) //Lack of atmos negates any buffs, massive Oxy loss on EMP.
-		implant(player, new /obj/item/organ/liver/cybernetic/upgraded(src)) //Better at filtering toxins, but twice EMP damage.
-		implant(player, new /obj/item/organ/heart/cybernetic/upgraded(src)) //Has epinephrine, heart attack on EMP.
-		implant(player, new /obj/item/organ/cyberimp/arm/toolset(src)) //Does not work on faction doors.
-		implant(player, new /obj/item/organ/cyberimp/chest/nutriment/plus(src)) //Simulates current synth hunger mechanics.
-		implant(player, new /obj/item/organ/cyberimp/chest/reviver(src)) //Reviver implant
-		implant(player, new /obj/item/organ/eyes/robotic/shield(src)) //Welding shield eyes.
-		implant(player, new /obj/item/organ/cyberimp/eyes/hud/medical(src)) //Medical hud for testing xeno-bio monkeys
-	else
-		implant(player, new /obj/item/organ/lungs/cybernetic(src))
-		implant(player, new /obj/item/organ/liver/cybernetic(src))
-		implant(player, new /obj/item/organ/heart/cybernetic(src))
+	implant(player, new /obj/item/organ/tongue/robot/gen2synth(src))
+	implant(player, new /obj/item/organ/ears/cybernetic(src))
+	implant(player, new /obj/item/organ/cyberimp/brain(src))
+	implant(player, new /obj/item/organ/lungs/cybernetic(src))
+	implant(player, new /obj/item/organ/liver/cybernetic(src))
+	implant(player, new /obj/item/organ/heart/cybernetic(src))
 	qdel(src)
 
 /obj/item/storage/box/large/custom_kit/transhumanism/proc/implant(player, obj/item/organ/I)

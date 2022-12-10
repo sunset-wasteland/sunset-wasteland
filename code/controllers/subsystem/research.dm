@@ -288,8 +288,7 @@ SUBSYSTEM_DEF(research)
 	)
 	var/list/errored_datums = list()
 	var/list/point_types = list()				//typecache style type = TRUE list
-	//----------------------------------------------
-	var/list/single_server_income = list(TECHWEB_POINT_TYPE_GENERIC = 7)	//citadel edit - techwebs nerf
+	//----------------------------------------------	//citadel edit - techwebs nerf
 	var/multiserver_calculation = FALSE
 	var/last_income
 	//^^^^^^^^ ALL OF THESE ARE PER SECOND! ^^^^^^^^
@@ -351,7 +350,7 @@ SUBSYSTEM_DEF(research)
 		else
 			for(var/obj/machinery/rnd/server/miner in servernets[network])
 				if(miner.working)
-					bitcoins = single_server_income.Copy()
+					bitcoins = list(TECHWEB_POINT_TYPE_GENERIC = miner.base_mining_income)
 					break			//Just need one to work.
 		var/datum/techweb/our_tech = SSresearch.get_techweb_by_id(network)
 		our_tech.last_bitcoins = bitcoins // pre tick-drift correction

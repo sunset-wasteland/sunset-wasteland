@@ -8,7 +8,7 @@
 	//Code for point mining here.
 	var/working = TRUE			//temperature should break it.
 	var/server_id = 0
-	var/base_mining_income = 2
+	var/base_mining_income = 7
 
 	var/heat_gen = 1
 	var/heating_power = 40000
@@ -185,6 +185,7 @@
 
 /obj/machinery/rnd/server/enclave
 	research_id = "ENCLAVE"
+	base_mining_income = 17
 
 /* so we can link lathes and such to this server's techweb */
 /obj/machinery/rnd/server/multitool_act(mob/living/user, obj/item/I)

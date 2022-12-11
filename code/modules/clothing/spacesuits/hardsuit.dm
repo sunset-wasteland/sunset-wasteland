@@ -276,6 +276,14 @@
 	. = ..()
 	if(istype(loc, /obj/item/clothing/suit/space/hardsuit/syndi))
 		linkedsuit = loc
+		RegisterSignal(linkedsuit, COMSIG_PARENT_QDELETING, .proc/unlink_suit)
+
+/obj/item/clothing/head/helmet/space/hardsuit/syndi/proc/unlink_suit()
+	linkedsuit = null
+
+/obj/item/clothing/head/helmet/space/hardsuit/syndi/Destroy()
+	unlink_suit()
+	return ..()
 
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/attack_self(mob/user) //Toggle Helmet
 	if(!isturf(user.loc))

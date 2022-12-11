@@ -150,7 +150,7 @@
 	T.assume_air(gas)
 
 /obj/structure/disposalholder/AllowDrop()
-	return TRUE
+	return !QDELETED(src)
 
 /obj/structure/disposalholder/ex_act(severity, target)
 	return FALSE

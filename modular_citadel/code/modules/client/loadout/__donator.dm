@@ -267,13 +267,26 @@
 	var/player = get_mob_by_key("alffd")
 	if(!ishuman(player)) //This should never be true, but who knows.
 		return
-	implant(player, new /obj/item/organ/tongue/robot/gen2synth(src))
-	implant(player, new /obj/item/organ/ears/cybernetic(src))
-	implant(player, new /obj/item/organ/cyberimp/brain(src))
-	implant(player, new /obj/item/organ/lungs/cybernetic(src))
-	implant(player, new /obj/item/organ/liver/cybernetic(src))
-	implant(player, new /obj/item/organ/heart/cybernetic(src))
+	implant(player, new /obj/item/organ/tongue/robot/gen2synth(src)) //Robotic voice.
+	implant(player, new /obj/item/organ/ears/cybernetic(src))  
+	implant(player, new /obj/item/organ/cyberimp/brain/protogen(src))  //For EMP luls
+	implant(player, new /obj/item/organ/lungs/cybernetic/tier2(src)) 
+	implant(player, new /obj/item/organ/liver/cybernetic/upgraded(src)) 
+	implant(player, new /obj/item/organ/heart/cybernetic/upgraded(src)) 
+	implant(player, new /obj/item/organ/cyberimp/arm/toolset(src)) 
+	implant(player, new /obj/item/organ/cyberimp/chest/nutriment/plus(src)) //Simulates current synth hunger mechanics.
+	implant(player, new /obj/item/organ/eyes/robotic/shield(src))
 	qdel(src)
+
+/obj/item/organ/cyberimp/brain/protogen
+	name = "cybernetic brain interface"
+	desc = "A prototype MMI implanted into the brain, this one is a third generation device ."
+
+/obj/item/organ/cyberimp/brain/protogen/emp_act(severity)
+	. = ..()
+	to_chat(owner, "<span class='warning'>Failure in cerebrum interface!</span>")
+	owner.uwuslurring += 60
+	owner.Jitter(60)
 
 /obj/item/storage/box/large/custom_kit/transhumanism/proc/implant(player, obj/item/organ/I)
 	I.Insert(player, drop_if_replaced = FALSE)

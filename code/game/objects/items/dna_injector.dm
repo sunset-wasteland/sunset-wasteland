@@ -20,7 +20,7 @@
 	return attack_hand(user)
 
 /obj/item/dnainjector/proc/inject(mob/living/carbon/M, mob/user)
-	if(M.has_dna() && !HAS_TRAIT_NOT_FROM(M, TRAIT_RADIMMUNE,BLOODSUCKER_TRAIT) && !HAS_TRAIT(M, TRAIT_NOCLONE))
+	if(M.has_dna() && !HAS_TRAIT_NOT_FROM(M, TRAIT_RADIMMUNE,BLOODSUCKER_TRAIT) && !HAS_TRAIT(M, TRAIT_NOCLONE) && M.mob_biotypes & MOB_ORGANIC)
 		M.radiation += rand(20/(damage_coeff  ** 2),50/(damage_coeff  ** 2))
 		var/log_msg = "[key_name(user)] injected [key_name(M)] with the [name]"
 		for(var/HM in remove_mutations)
@@ -461,6 +461,10 @@
 /obj/item/dnainjector/timed/inject(mob/living/carbon/M, mob/user)
 	if(M.stat == DEAD)	//prevents dead people from having their DNA changed
 		to_chat(user, "<span class='notice'>You can't modify [M]'s DNA while [M.p_theyre()] dead.</span>")
+		return FALSE
+
+	if(isrobotic(M))	//Synths don't _technicaly_ have DNA
+		to_chat(user, "<span class='notice'>You can't modify [M]'s DNA as [M.p_theyre()] are a synthetic lifeform.</span>")
 		return FALSE
 
 	if(M.has_dna() && !(HAS_TRAIT(M, TRAIT_NOCLONE)))

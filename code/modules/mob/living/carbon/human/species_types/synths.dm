@@ -38,6 +38,9 @@
 	UnregisterSignal(H, COMSIG_MOB_SAY)
 
 /datum/species/synth/handle_chemicals(datum/reagent/chem, mob/living/carbon/human/H)
+	if(istype(chem) && !chem.synthfriendly)
+		H.reagents.remove_reagent(chem.type, REAGENTS_METABOLISM * 1000)
+		return TRUE
 	if(chem.type == /datum/reagent/medicine/synthflesh)
 		chem.reaction_mob(H, TOUCH, 2 ,0) //heal a little
 		H.reagents.remove_reagent(chem.type, REAGENTS_METABOLISM)
@@ -129,3 +132,15 @@
 		H.water = THIRST_LEVEL_FULL
 	if(H.water > THIRST_LEVEL_FULL)
 		H.water = THIRST_LEVEL_FULL
+	var/clone_damage = H.getCloneLoss()
+	var/toxin_damage = H.getToxLoss()
+	var/oxygen_damage = H.getOxyLoss()
+	if(clone_damage > 0)
+		H.setCloneLoss(0)
+		H.apply_damage(clone_damage, BURN)
+	if(toxin_damage > 0)
+		H.setToxLoss(0)
+		H.apply_damage(toxin_damage, TOXIC)
+	if(oxygen_damage > 0)
+		H.setToxLoss(0)
+		H.apply_damage(oxygen_damage, OXY)

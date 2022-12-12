@@ -417,6 +417,7 @@
 	description = "An ubiquitous chemical substance that is composed of hydrogen and oxygen, but it looks kinda hollow."
 	color = "#88878777"
 	taste_description = "emptyiness"
+	synthfriendly = TRUE
 
 
 /datum/reagent/water/holywater
@@ -427,6 +428,7 @@
 	glass_name = "glass of holy water"
 	glass_desc = "A glass of holy water."
 	pH = 7.5 //God is alkaline
+	synthfriendly = TRUE
 
 	// Holy water. Mostly the same as water, it also heals the plant a little with the power of the spirits. Also ALSO increases instability.
 /datum/reagent/water/holywater/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray)
@@ -523,6 +525,7 @@
 	pH = 6.5
 	value = REAGENT_VALUE_RARE
 	ghoulfriendly = TRUE
+	synthfriendly = TRUE
 
 /datum/reagent/fuel/unholywater/reaction_mob(mob/living/M, method=TOUCH, reac_volume)
 	if(method == TOUCH || method == VAPOR)
@@ -561,6 +564,7 @@
 	taste_description = "burning"
 	value = REAGENT_VALUE_VERY_RARE
 	ghoulfriendly = TRUE
+	synthfriendly = TRUE
 
 /datum/reagent/hellwater/on_mob_life(mob/living/carbon/M)
 	M.fire_stacks = min(5,M.fire_stacks + 3)
@@ -578,6 +582,7 @@
 	taste_description = "metallic oil"
 	value = REAGENT_VALUE_RARE
 	ghoulfriendly = TRUE
+	synthfriendly = TRUE
 
 /datum/reagent/fuel/holyoil/on_mob_life(mob/living/carbon/M)
 	if(is_servant_of_ratvar(M))
@@ -618,6 +623,7 @@
 	overdose_threshold = 150
 	value = REAGENT_VALUE_RARE
 	ghoulfriendly = TRUE
+	synthfriendly = TRUE
 
 /datum/reagent/lube
 	name = "Space Lube"
@@ -626,6 +632,7 @@
 	taste_description = "cherry" // by popular demand
 	var/lube_kind = TURF_WET_LUBE ///What kind of slipperiness gets added to turfs.
 	ghoulfriendly = TRUE
+	synthfriendly = TRUE
 
 /datum/reagent/lube/reaction_turf(turf/open/T, reac_volume)
 	if (!istype(T))
@@ -638,6 +645,7 @@
 	name = "Super Duper Lube"
 	description = "This \[REDACTED\] has been outlawed after the incident on \[DATA EXPUNGED\]."
 	lube_kind = TURF_WET_SUPERLUBE
+	synthfriendly = TRUE
 
 /datum/reagent/spraytan
 	name = "Spray Tan"
@@ -1164,6 +1172,7 @@
 	taste_description = "acid"
 	pH = 2
 	ghoulfriendly = TRUE
+	synthfriendly = TRUE
 
 // You're an idiot for thinking that one of the most corrosive and deadly gasses would be beneficial
 /datum/reagent/fluorine/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray, mob/user)
@@ -1349,6 +1358,7 @@
 	pH = 4
 	material = /datum/material/uranium
 	ghoulfriendly = TRUE
+	synthfriendly = TRUE
 
 /datum/reagent/uranium/on_mob_life(mob/living/carbon/M)
 	M.apply_effect(1/M.metabolism_efficiency,EFFECT_IRRADIATE,0)
@@ -1380,6 +1390,7 @@
 	value = REAGENT_VALUE_RARE
 	material = /datum/material/bluespace
 	ghoulfriendly = TRUE
+	synthfriendly = TRUE
 
 /datum/reagent/bluespace/reaction_mob(mob/living/M, method=TOUCH, reac_volume)
 	if(method == TOUCH || method == VAPOR)
@@ -1404,6 +1415,7 @@
 	color = "#660000" // rgb: 102, 0, 0.
 	taste_description = "contraband"
 	ghoulfriendly = TRUE
+	synthfriendly = TRUE
 
 /datum/reagent/aluminium
 	name = "Aluminium"
@@ -1586,6 +1598,7 @@
 	taste_description = "sludge"
 	value = REAGENT_VALUE_GLORIOUS
 	ghoulfriendly = TRUE
+	synthfriendly = TRUE
 
 /datum/reagent/nanomachines/reaction_mob(mob/living/L, method=TOUCH, reac_volume, show_message = 1, touch_protection = 0)
 	if(method==PATCH || method==INGEST || method==INJECT || (method == VAPOR && prob(min(reac_volume,100)*(1 - touch_protection))))
@@ -1749,6 +1762,7 @@
 	taste_description = "sourness"
 	value = REAGENT_VALUE_EXCEPTIONAL
 	ghoulfriendly = TRUE
+	synthfriendly = TRUE
 
 /datum/reagent/stimulum/on_mob_metabolize(mob/living/L)
 	..()
@@ -1778,6 +1792,7 @@
 	pH = 2
 	value = REAGENT_VALUE_VERY_RARE
 	ghoulfriendly = TRUE
+	synthfriendly = TRUE
 
 /datum/reagent/nitryl/on_mob_metabolize(mob/living/L)
 	..()
@@ -1971,6 +1986,7 @@
 	taste_mult = 1.5
 	pH = 1.5
 	ghoulfriendly = TRUE
+	synthfriendly = TRUE
 
 /datum/reagent/stable_plasma/on_mob_life(mob/living/carbon/C)
 	C.adjustPlasma(10)
@@ -2073,6 +2089,7 @@
 	taste_description = "sourness"
 	value = REAGENT_VALUE_RARE
 	ghoulfriendly = TRUE
+	synthfriendly = TRUE
 
 /datum/reagent/hair_dye/reaction_mob(mob/living/M, method=TOUCH, reac_volume)
 	if(method == TOUCH || method == VAPOR)
@@ -2445,6 +2462,7 @@
 	value = REAGENT_VALUE_RARE
 	pH = 15
 	ghoulfriendly = TRUE
+	synthfriendly = TRUE
 
 /datum/reagent/pax/on_mob_metabolize(mob/living/L)
 	..()
@@ -2484,6 +2502,7 @@
 	metabolization_rate = 1.5 * REAGENTS_METABOLISM
 	value = REAGENT_VALUE_COMMON
 	ghoulfriendly = TRUE
+	synthfriendly = TRUE
 
 /datum/reagent/peaceborg_confuse
 	name = "Dizzying Solution"
@@ -2492,6 +2511,7 @@
 	taste_description = "dizziness"
 	value = REAGENT_VALUE_COMMON
 	ghoulfriendly = TRUE
+	synthfriendly = TRUE
 
 /datum/reagent/peaceborg_confuse/on_mob_life(mob/living/carbon/M)
 	if(M.confused < 6)
@@ -2509,6 +2529,7 @@
 	taste_description = "tiredness"
 	value = REAGENT_VALUE_COMMON
 	ghoulfriendly = TRUE
+	synthfriendly = TRUE
 
 /datum/reagent/peaceborg_tire/on_mob_life(mob/living/carbon/M)
 	var/healthcomp = (100 - M.health)	//DOES NOT ACCOUNT FOR ADMINBUS THINGS THAT MAKE YOU HAVE MORE THAN 200/210 HEALTH, OR SOMETHING OTHER THAN A HUMAN PROCESSING THIS.
@@ -2751,6 +2772,7 @@
 	taste_description = "Ag'hsj'saje'sh"
 	color = "#1f8016"
 	ghoulfriendly = TRUE
+	synthfriendly = TRUE
 
 /datum/reagent/eldritch/on_mob_life(mob/living/carbon/M)
 	if(IS_HERETIC(M))
@@ -2840,6 +2862,7 @@
 	color = "#c10000"
 	metabolization_rate = REAGENTS_METABOLISM * 2.5
 	ghoulfriendly = TRUE
+	synthfriendly = TRUE
 
 /datum/reagent/red_ichor/on_mob_life(mob/living/carbon/M)
 	M.adjustBruteLoss(-50, updating_health = FALSE)
@@ -2859,6 +2882,7 @@
 	color = "#158c00"
 	metabolization_rate = REAGENTS_METABOLISM * 2.5
 	ghoulfriendly = TRUE
+	synthfriendly = TRUE
 
 /datum/reagent/green_ichor/on_mob_life(mob/living/carbon/M)
 	M.adjustOrganLoss(ORGAN_SLOT_LUNGS, -100)
@@ -2877,6 +2901,7 @@
 	color = "#0914e0"
 	metabolization_rate = REAGENTS_METABOLISM * 2.5
 	ghoulfriendly = TRUE
+	synthfriendly = TRUE
 
 /datum/reagent/blue_ichor/on_mob_life(mob/living/carbon/M)
 	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, -100)

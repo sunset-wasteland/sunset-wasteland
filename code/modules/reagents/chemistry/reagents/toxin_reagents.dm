@@ -159,6 +159,7 @@
 	pH = 4
 	value = REAGENT_VALUE_RARE //sheets are worth more
 	material = /datum/material/plasma
+	synthfriendly = TRUE
 
 /datum/reagent/toxin/plasma/on_mob_life(mob/living/carbon/C)
 	if(holder.has_reagent(/datum/reagent/medicine/epinephrine))
@@ -216,6 +217,7 @@
 	taste_mult = 1.3
 	pH = 10
 	value = REAGENT_VALUE_UNCOMMON
+	synthfriendly = TRUE
 
 /datum/reagent/toxin/slimejelly/on_mob_life(mob/living/carbon/M)
 	if(prob(10))
@@ -425,6 +427,7 @@
 	taste_description = "burning"
 	pH = 13
 	value = REAGENT_VALUE_VERY_RARE
+	synthfriendly = TRUE
 
 /datum/reagent/toxin/spore_burning/on_mob_life(mob/living/carbon/M)
 	M.adjust_fire_stacks(2)
@@ -535,6 +538,7 @@
 	metabolization_rate = 0.125 * REAGENTS_METABOLISM
 	toxpwr = 0
 	value = REAGENT_VALUE_VERY_RARE
+	synthfriendly = TRUE
 
 /datum/reagent/toxin/polonium/on_mob_life(mob/living/carbon/M)
 	M.radiation += 4
@@ -958,6 +962,7 @@
 	self_consuming = TRUE
 	pH = 2.75
 	value = REAGENT_VALUE_NONE
+	synthfriendly = TRUE
 
 // Sure, go ahead and pour acid on your precious plants. What's the worst that could happen?
 /datum/reagent/toxin/acid/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray, mob/user)
@@ -998,6 +1003,7 @@
 	toxpwr = 2
 	acidpwr = 42.0
 	value = REAGENT_VALUE_COMMON
+	synthfriendly = TRUE
 
 /datum/reagent/toxin/acid/fantiacid
 	name = "Fluoroantimonic acid"
@@ -1006,6 +1012,7 @@
 	toxpwr = 2
 	acidpwr = 150.0
 	value = REAGENT_VALUE_COMMON
+	synthfriendly = TRUE
 
 // ACID II: UNHEEDED WARNINGS
 /datum/reagent/toxin/acid/fluacid/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray, mob/user)

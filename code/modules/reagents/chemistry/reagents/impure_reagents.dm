@@ -13,6 +13,7 @@
 	data = "merge"
 	color = "FFFFFF"
 	can_synth = FALSE
+	synthfriendly = TRUE
 	var/potency = 1 //potency multiplies the volume when added.
 
 

@@ -7,6 +7,7 @@
 	taste_description = "sweet tasting metal"
 	value = REAGENT_VALUE_COMMON
 	ghoulfriendly = TRUE
+	synthfriendly = TRUE
 
 /datum/reagent/thermite/reaction_turf(turf/T, reac_volume)
 	if(reac_volume >= 1)
@@ -45,6 +46,7 @@
 	condensation_amount = 2
 	value = REAGENT_VALUE_COMMON
 	ghoulfriendly = TRUE
+	synthfriendly = TRUE
 
 /datum/reagent/clf3/on_mob_life(mob/living/carbon/M)
 	M.adjust_fire_stacks(2)
@@ -95,6 +97,7 @@
 	taste_description = "air and bitterness"
 	value = REAGENT_VALUE_UNCOMMON
 	ghoulfriendly = TRUE
+	synthfriendly = TRUE
 
 /datum/reagent/liquid_dark_matter
 	name = "Liquid Dark Matter"
@@ -104,6 +107,7 @@
 	value = REAGENT_VALUE_UNCOMMON
 	taste_description = "compressed bitterness"
 	ghoulfriendly = TRUE
+	synthfriendly = TRUE
 
 /datum/reagent/blackpowder
 	name = "Black Powder"
@@ -160,6 +164,7 @@
 	boiling_point = T20C-10
 	value = REAGENT_VALUE_UNCOMMON
 	ghoulfriendly = TRUE
+	synthfriendly = TRUE
 
 /datum/reagent/phlogiston/define_gas()
 	var/datum/gas/G = ..()
@@ -191,6 +196,7 @@
 	taste_description = "burning"
 	value = REAGENT_VALUE_COMMON
 	ghoulfriendly = TRUE
+	synthfriendly = TRUE
 
 /datum/reagent/napalm/on_mob_life(mob/living/carbon/M)
 	M.adjust_fire_stacks(1)
@@ -209,6 +215,7 @@
 	taste_description = "bitterness"
 	value = REAGENT_VALUE_COMMON
 	ghoulfriendly = TRUE
+	synthfriendly = TRUE
 
 /datum/reagent/cryostylane/on_mob_life(mob/living/carbon/M) //TODO: code freezing into an ice cube
 	if(M.reagents.has_reagent(/datum/reagent/oxygen))
@@ -229,6 +236,7 @@
 	taste_description = "bitterness"
 	value = REAGENT_VALUE_COMMON
 	ghoulfriendly = TRUE
+	synthfriendly = TRUE
 
 /datum/reagent/pyrosium/on_mob_life(mob/living/carbon/M)
 	if(M.reagents.has_reagent(/datum/reagent/oxygen))
@@ -246,6 +254,7 @@
 	var/shock_timer = 0
 	value = REAGENT_VALUE_VERY_RARE
 	ghoulfriendly = TRUE
+	synthfriendly = TRUE
 
 /datum/reagent/teslium/on_mob_life(mob/living/carbon/M)
 	shock_timer++
@@ -274,6 +283,7 @@
 	color = "#CAFF43"
 	taste_description = "jelly"
 	ghoulfriendly = TRUE
+	synthfriendly = TRUE
 
 /datum/reagent/teslium/energized_jelly/on_mob_life(mob/living/carbon/M)
 	if(isjellyperson(M))
@@ -295,6 +305,7 @@
 	taste_description = "the inside of a fire extinguisher"
 	value = REAGENT_VALUE_UNCOMMON
 	ghoulfriendly = TRUE
+	synthfriendly = TRUE
 
 /datum/reagent/firefighting_foam/define_gas()
 	return null

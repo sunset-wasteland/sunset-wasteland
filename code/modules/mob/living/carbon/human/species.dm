@@ -1335,7 +1335,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		if(H.metabolism_efficiency != 1.25 && !HAS_TRAIT(H, TRAIT_NOHUNGER))
 			to_chat(H, "<span class='notice'>You feel vigorous.</span>")
 			H.metabolism_efficiency = 1.25
-	else if(H.nutrition < NUTRITION_LEVEL_STARVING + 50) //Starving.
+	else if(H.nutrition < NUTRITION_LEVEL_STARVING + 50 && H.nutrition > 49 ) //Starving.
 		if(H.metabolism_efficiency != 0.8)
 			to_chat(H, "<span class='notice'>You feel sluggish.</span>")
 		H.metabolism_efficiency = 0.8
@@ -1344,6 +1344,11 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		else
 			if(prob(15)) //Eat something, nerd.
 				H.adjustStaminaLoss(25)
+	else if(H.nutrition < 49)
+		if(H.getStaminaLoss() > 100) //The time for not screwing stamina has ended
+			return
+		else
+			H.adjustStaminaLoss(10)
 	else
 		if(H.metabolism_efficiency == 1.25)
 			to_chat(H, "<span class='notice'>You no longer feel vigorous.</span>")

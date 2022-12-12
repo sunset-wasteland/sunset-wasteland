@@ -110,6 +110,11 @@
 		jetpack = new jetpack(src)
 	return ..()
 
+/obj/item/clothing/suit/space/hardsuit/Destroy()
+	jetpack = null
+	helmet = null
+	return ..()
+
 /obj/item/clothing/suit/space/hardsuit/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/tank/jetpack/suit))
 		if(jetpack)
@@ -856,7 +861,6 @@
 	armor = list(melee = 50, bullet = 10, laser = 10, energy = 10, bomb = 50, bio = 100, rad = 50, fire = 100, acid = 100, "wound" = 30)
 	light_range = 7
 	var/energy_color = "#35FFF0"
-	var/obj/item/clothing/suit/space/hardsuit/lavaknight/linkedsuit = null
 	mutantrace_variation = NONE
 
 /obj/item/clothing/head/helmet/space/hardsuit/lavaknight/Initialize()

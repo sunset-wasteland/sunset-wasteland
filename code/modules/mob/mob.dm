@@ -16,6 +16,7 @@
 	qdel(hud_used)
 	for(var/cc in client_colours)
 		qdel(cc)
+	QDEL_LIST(mob_spell_list)
 	client_colours = null
 	ghostize()
 	return ..()

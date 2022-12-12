@@ -17,10 +17,6 @@ Doesn't work on other aliens/AI.*/
 	action_icon_state = "spell_default"
 	action_background_icon_state = "bg_alien"
 
-/obj/effect/proc_holder/alien/Initialize()
-	. = ..()
-	action = new(src)
-
 /obj/effect/proc_holder/alien/Trigger(mob/living/carbon/user, skip_cost_check = FALSE)
 	if(!istype(user))
 		return TRUE
@@ -28,15 +24,6 @@ Doesn't work on other aliens/AI.*/
 		if(fire(user) && user) // Second check to prevent runtimes when evolving
 			user.adjustPlasma(-plasma_cost)
 	return TRUE
-
-/obj/effect/proc_holder/alien/on_gain(mob/living/carbon/user)
-	return
-
-/obj/effect/proc_holder/alien/on_lose(mob/living/carbon/user)
-	return
-
-/obj/effect/proc_holder/alien/fire(mob/living/carbon/user)
-	return 1
 
 /obj/effect/proc_holder/alien/get_panel_text()
 	. = ..()

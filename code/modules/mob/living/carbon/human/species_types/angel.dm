@@ -25,6 +25,10 @@
 		fly.Grant(H)
 	ADD_TRAIT(H, TRAIT_HOLY, SPECIES_TRAIT)
 
+/datum/species/angel/Destroy(force, ...)
+	QDEL_NULL(fly)
+	return ..()
+
 /datum/species/angel/on_species_loss(mob/living/carbon/human/H)
 	if(fly)
 		fly.Remove(H)

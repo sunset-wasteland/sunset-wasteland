@@ -64,7 +64,7 @@
 	SSgarbage.can_fire = TRUE
 	SSgarbage.update_nextfire(reset_time = TRUE)
 
-/datum/proc/DoSearchVar(potential_container, container_name, recursive_limit = 64, search_time = world.time)
+/datum/proc/DoSearchVar(potential_container, container_name, recursive_limit = 16, search_time = world.time)
 	#ifdef REFERENCE_TRACKING_DEBUG
 	if(SSgarbage.should_save_refs && !found_refs)
 		found_refs = list()

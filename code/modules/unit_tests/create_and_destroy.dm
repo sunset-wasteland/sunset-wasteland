@@ -182,7 +182,10 @@ GLOBAL_VAR_INIT(running_create_and_destroy, FALSE)
 	// spin until the first item in the filter queue is older than start_time
 	var/filter_queue_finished = FALSE
 	var/list/filter_queue = SSgarbage.queues[GC_QUEUE_FILTER]
-	while(!filter_queue_finished)
+	while(!filter_queue_finished || !SSgarbage.can_fire)
+		if(!SSgarbage.can_fire) // probably running find references
+			CHECK_TICK
+			continue
 		if(!length(filter_queue))
 			filter_queue_finished = TRUE
 			break
@@ -202,6 +205,7 @@ GLOBAL_VAR_INIT(running_create_and_destroy, FALSE)
 	// do the same with the check queue
 	var/garbage_queue_processed = FALSE
 	time_needed = SSgarbage.collection_timeout[GC_QUEUE_CHECK]
+	start_time = world.time
 	sleep(time_needed)
 	var/list/queue_to_check = SSgarbage.queues[GC_QUEUE_CHECK]
 	while(!garbage_queue_processed || !SSgarbage.can_fire)

@@ -1,8 +1,8 @@
 /obj/item/gun/energy/ionrifle
 	name = "YK-42b Pulse Rifle"
 	desc = "The YK42B rifle is an electrical pulse weapon that was developed by the Yuma Flats Energy Consortium. It excels in damage against heavily armored opponents, especially power armor."
-	icon_state = "ionrifle"
-	item_state = "ionrifle"	//so the human update icon uses the icon_state instead.
+	icon_state = "yk42"
+	item_state = "yk42"	//so the human update icon uses the icon_state instead.
 	can_flashlight = 1
 	w_class = WEIGHT_CLASS_BULKY
 	flags_1 =  CONDUCT_1
@@ -11,6 +11,7 @@
 	ammo_x_offset = 3
 	flight_x_offset = 17
 	flight_y_offset = 9
+	equipsound = 'sound/f13weapons/equipsounds/yk42equip.ogg'
 
 /obj/item/gun/energy/ionrifle/emp_act(severity)
 	return

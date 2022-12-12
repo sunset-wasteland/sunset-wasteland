@@ -430,11 +430,9 @@
 	ckeywhitelist = list("zerickyradurandal","especiallystrange")
 
 /obj/item/storage/box/custom_kit/notsoveterananymore/PopulateContents()
-	new /obj/item/clothing/suit/armor/f13/rangercombat/finlayranger_alt(src)
-	new /obj/item/clothing/head/helmet/f13/ncr/rangercombat/finlayranger_alt(src)
+//	new /obj/item/clothing/suit/armor/f13/rangercombat/finlayranger_alt(src)
+//	new /obj/item/clothing/head/helmet/f13/ncr/rangercombat/finlayranger_alt(src)
 	new /obj/item/clothing/head/beret/ncr/ncr_recon/worn/loadout(src)
-	new /obj/item/gun/ballistic/rifle/repeater/trail(src)
-	new /obj/item/ammo_box/m44box(src)
 	new /obj/item/ammo_box/a357box(src)
 	new /obj/item/storage/belt/holster/ranger357(src)
 	new /obj/item/melee/classic_baton/telescopic(src)

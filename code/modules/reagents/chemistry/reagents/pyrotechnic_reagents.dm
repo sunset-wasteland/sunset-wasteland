@@ -13,7 +13,7 @@
 		T.AddComponent(/datum/component/thermite, reac_volume)
 
 /datum/reagent/thermite/on_mob_life(mob/living/carbon/M)
-	M.adjustFireLoss(1, 0)
+	M.adjustFireLoss(1, updating_health = FALSE)
 	..()
 	return TRUE
 
@@ -49,7 +49,7 @@
 /datum/reagent/clf3/on_mob_life(mob/living/carbon/M)
 	M.adjust_fire_stacks(2)
 	var/burndmg = max(0.3*M.fire_stacks, 0.3)
-	M.adjustFireLoss(burndmg, 0)
+	M.adjustFireLoss(burndmg, updating_health = FALSE)
 	..()
 	return TRUE
 
@@ -172,14 +172,14 @@
 /datum/reagent/phlogiston/reaction_mob(mob/living/M, method=TOUCH, reac_volume)
 	M.adjust_fire_stacks(1)
 	var/burndmg = max(0.3*M.fire_stacks, 0.3)
-	M.adjustFireLoss(burndmg, 0)
+	M.adjustFireLoss(burndmg, updating_health = FALSE)
 	M.IgniteMob()
 	..()
 
 /datum/reagent/phlogiston/on_mob_life(mob/living/carbon/M)
 	M.adjust_fire_stacks(1)
 	var/burndmg = max(0.3*M.fire_stacks, 0.3)
-	M.adjustFireLoss(burndmg, 0)
+	M.adjustFireLoss(burndmg, updating_health = FALSE)
 	..()
 	return TRUE
 
@@ -280,7 +280,7 @@
 		shock_timer = 0 //immune to shocks
 		M.AdjustAllImmobility(-40, 0)
 		M.AdjustUnconscious(-40, 0)
-		M.adjustStaminaLoss(-2, 0)
+		M.adjustStaminaLoss(-2, updating_health = FALSE)
 		if(isluminescent(M))
 			var/mob/living/carbon/human/H = M
 			var/datum/species/jelly/luminescent/L = H.dna.species

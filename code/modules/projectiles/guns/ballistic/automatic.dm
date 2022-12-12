@@ -240,12 +240,14 @@
 	is_automatic = TRUE
 	automatic = 1
 	autofire_shot_delay = 2.15 //It's so awfully inaccurate now that it's more of a gimmick than a buff
-	spread = 10
+	spread = 16
 	recoil = 0.85
 	can_attachments = TRUE
 	can_suppress = FALSE
 	actions_types = list(/datum/action/item_action/toggle_firemode)
 	fire_sound = 'sound/f13weapons/magnum_fire.ogg'
+	extra_damage = -6
+	extra_penetration = 0.15
 
 //Greasegun				Keywords: 9mm, Automatic, 30 rounds
 /obj/item/gun/ballistic/automatic/smg/greasegun
@@ -949,6 +951,8 @@
 	name = "Old Glory"
 	desc = "This Machine kills communists!"
 	icon_state = "oldglory"
+	extra_damage = 10
+	extra_penetration = 0.12
 
 //Republics Pride			Keywords: UNIQUE, 7.62mm, Semi-auto, 8 rounds internal, Scoped, Damage +8, Penetration +0.1
 /obj/item/gun/ballistic/automatic/m1garand/republicspride
@@ -961,13 +965,17 @@
 	zoom_out_amt = 13
 	fire_delay = 0.5
 	can_scope = FALSE
+	automatic = 1
+	autofire_shot_delay = 2.15
+	extra_penetration = 0.1
+	extra_damage = -3
 
 //HT battle rifle
 /obj/item/gun/ballistic/automatic/bar/glowie
 	name = "Colt Monitor"
 	desc = "A special modified heavy battle rifle built on the BAR, featuring an added pistol grip and a Cutts recoil compensator. This one features a long-range scope and its receiver bears a red star."
 	slowdown = 1.35
-	autofire_shot_delay = 2.95
+	autofire_shot_delay = 2.45
 	spread = 8
 	recoil = 0.2
 	extra_speed = 250 //Get a load of this guy.
@@ -976,8 +984,8 @@
 	zoom_out_amt = 13
 	icon_state = "MONITOR"
 	item_state = "BAR"
-	extra_damage = -5
-	extra_penetration = 0.2
+	extra_damage = -3
+	extra_penetration = 0.17
 
 
 //SKS				Keywords: LEGION, .308, Semi-auto, 10 rounds internal, Penetration +0.1
@@ -1112,7 +1120,8 @@
 	suppressor_state = "ar_suppressor"
 	actions_types = list(/datum/action/item_action/toggle_firemode)
 	fire_sound = 'sound/f13weapons/varmint_rifle.ogg'
-	extra_damage = -5
+	extra_damage = -3
+	extra_penetration = 0.05
 
 
 //Infiltrator			Keywords: 5.56mm, Automatic, 20 (10-50) round magazine, Suppressed, Small scope, Pistol grip
@@ -1272,6 +1281,8 @@
 	fire_delay = 3.5
 	burst_shot_delay = 2.2
 	spread = 18
+	autofire_shot_delay = 1.85
+	extra_penetration = -0.05
 
 //FN-FAL				Keywords: 7.62mm, Automatic, 10/20 round magazine
 /obj/item/gun/ballistic/automatic/fnfal
@@ -1370,7 +1381,8 @@
 	can_attachments = FALSE
 	actions_types = null
 	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
-	extra_damage = -5
+	extra_damage = -7
+	extra_penetration = 0.1
 
 //LSW Squad Support Weapon				Keywords: 5.56mm, Automatic, 20 (10-50) round magazine, Scoped, Damage decrease (bullethose)
 /obj/item/gun/ballistic/automatic/lsw
@@ -1396,6 +1408,8 @@
 	can_scope = FALSE
 	actions_types = list(/datum/action/item_action/toggle_firemode)
 	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
+	extra_damage = -5
+	extra_penetration = 0.15
 
 
 //M1919 Machinegun				Keywords: LEGION, .308, Automatic, 80 round belt.
@@ -1499,7 +1513,7 @@
 	burst_shot_delay = 2
 	is_automatic = TRUE
 	automatic = 1
-	autofire_shot_delay = 2.5
+	autofire_shot_delay = 2
 	spawnwithmagazine = TRUE
 	spread = 8
 	can_attachments = TRUE
@@ -1507,3 +1521,5 @@
 	zoom_amt = 10
 	zoom_out_amt = 13
 	can_scope = FALSE
+	slowdown = 0.12
+	extra_penetration = 0.05

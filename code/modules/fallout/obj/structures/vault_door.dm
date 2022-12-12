@@ -60,12 +60,12 @@
 			src.density = 1
 			is_busy = 0
 
-/obj/structure/vault_door/proc/toggle()
+/obj/structure/vault_door/proc/toggle(mob/user)
 	if(destroyed)
-		usr << "<span class='warning'>[src] is broken.</span>"
+		to_chat(user, span_warning("[src] is broken."))
 		return
 	if(is_busy)
-		usr << "<span class='warning'>[src] is busy.</span>"
+		to_chat(user, span_warning("[src] is busy."))
 		return
 	if (density)
 		open()
@@ -83,12 +83,12 @@
 	density = 1
 	var/id = 1
 
-/obj/machinery/doorButtons/vaultButton/proc/toggle_door()
+/obj/machinery/doorButtons/vaultButton/proc/toggle_door(mob/user)
 	var/opened
 	icon_state = "lever0"
 	for(var/obj/structure/vault_door/door in GLOB.vault_doors)
 		if(door.id == id)
-			door.toggle()
+			door.toggle(user)
 			opened = !door.density
 	spawn(50)
 		if(opened)
@@ -107,4 +107,4 @@
 		var/mob/living/carbon/C = user
 		if(C.handcuffed)
 			return
-	toggle_door()
+	toggle_door(user)

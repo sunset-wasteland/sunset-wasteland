@@ -402,11 +402,11 @@
 
 /datum/reagent/water/purified/on_mob_life(mob/living/carbon/M) // Pure water is very, very healthy
 	M.reagents.remove_all_type(/datum/reagent/toxin, 1)
-	M.adjustBruteLoss(-0.5, FALSE)
-	M.adjustFireLoss(-0.5, FALSE)
-	M.adjustOxyLoss(-0.5, FALSE)
-	M.adjustToxLoss(-1, FALSE, TRUE)
-	M.adjustStaminaLoss(-0.5, FALSE)
+	M.adjustBruteLoss(-0.5, updating_health = FALSE)
+	M.adjustFireLoss(-0.5, updating_health = FALSE)
+	M.adjustOxyLoss(-0.5, updating_health = FALSE)
+	M.adjustToxLoss(-1, updating_health = FALSE, forced = TRUE)
+	M.adjustStaminaLoss(-0.5, updating_health = FALSE)
 	if(M.radiation > 0)
 		M.radiation -= min(M.radiation, 2)
 	..()
@@ -535,19 +535,19 @@
 		M.drowsyness = max(M.drowsyness-5, 0)
 		M.AdjustUnconscious(-20, FALSE)
 		M.AdjustAllImmobility(-40, FALSE)
-		M.adjustStaminaLoss(-10, FALSE)
-		M.adjustToxLoss(-2, FALSE, TRUE)
-		M.adjustOxyLoss(-2, FALSE)
-		M.adjustBruteLoss(-2, FALSE)
-		M.adjustFireLoss(-2, FALSE)
+		M.adjustStaminaLoss(-10, updating_health = FALSE)
+		M.adjustToxLoss(-2, updating_health = FALSE, forced = TRUE)
+		M.adjustOxyLoss(-2, updating_health = FALSE)
+		M.adjustBruteLoss(-2, updating_health = FALSE)
+		M.adjustFireLoss(-2, updating_health = FALSE)
 		if(ishuman(M) && M.blood_volume < (BLOOD_VOLUME_NORMAL*M.blood_ratio))
 			M.blood_volume += 3
 	else  // Will deal about 90 damage when 50 units are thrown
 		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 3, 150)
-		M.adjustToxLoss(2, FALSE)
-		M.adjustFireLoss(2, FALSE)
-		M.adjustOxyLoss(2, FALSE)
-		M.adjustBruteLoss(2, FALSE)
+		M.adjustToxLoss(2, updating_health = FALSE)
+		M.adjustFireLoss(2, updating_health = FALSE)
+		M.adjustOxyLoss(2, updating_health = FALSE)
+		M.adjustBruteLoss(2, updating_health = FALSE)
 	holder.remove_reagent(type, 1)
 	return TRUE
 
@@ -565,8 +565,8 @@
 /datum/reagent/hellwater/on_mob_life(mob/living/carbon/M)
 	M.fire_stacks = min(5,M.fire_stacks + 3)
 	M.IgniteMob()			//Only problem with igniting people is currently the commonly availible fire suits make you immune to being on fire
-	M.adjustToxLoss(1, FALSE)
-	M.adjustFireLoss(1, FALSE)		//Hence the other damages... ain't I a bastard?
+	M.adjustToxLoss(1, updating_health = FALSE)
+	M.adjustFireLoss(1, updating_health = FALSE)		//Hence the other damages... ain't I a bastard?
 	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 5, 150)
 	holder.remove_reagent(type, 1)
 	pH = 0.1
@@ -585,20 +585,20 @@
 		M.AdjustUnconscious(-60, FALSE)
 		M.AdjustAllImmobility(-30, FALSE)
 		M.AdjustKnockdown(-40, FALSE)
-		M.adjustStaminaLoss(-15, FALSE)
-		M.adjustToxLoss(-5, FALSE, TRUE)
-		M.adjustOxyLoss(-3, FALSE)
-		M.adjustBruteLoss(-3, FALSE)
-		M.adjustFireLoss(-5, FALSE)
+		M.adjustStaminaLoss(-15, updating_health = FALSE)
+		M.adjustToxLoss(-5, updating_health = FALSE, forced = TRUE)
+		M.adjustOxyLoss(-3, updating_health = FALSE)
+		M.adjustBruteLoss(-3, updating_health = FALSE)
+		M.adjustFireLoss(-5, updating_health = FALSE)
 	if(iscultist(M))
 		M.AdjustUnconscious(1, FALSE)
 		M.AdjustAllImmobility(10, FALSE)
 		M.AdjustKnockdown(10, FALSE)
-		M.adjustStaminaLoss(15, FALSE)
+		M.adjustStaminaLoss(15, updating_health = FALSE)
 	else
-		M.adjustToxLoss(3, FALSE)
-		M.adjustOxyLoss(2, FALSE)
-		M.adjustStaminaLoss(10, FALSE)
+		M.adjustToxLoss(3, updating_health = FALSE)
+		M.adjustOxyLoss(2, updating_health = FALSE)
+		M.adjustStaminaLoss(10, updating_health = FALSE)
 		holder.remove_reagent(type, 1)
 	return TRUE
 
@@ -1175,7 +1175,7 @@
 		mytray.adjustWeeds(-rand(1,4))
 
 /datum/reagent/fluorine/on_mob_life(mob/living/carbon/M)
-	M.adjustToxLoss(1*REM, 0)
+	M.adjustToxLoss(1*REM, updating_health = FALSE)
 	..()
 	return TRUE // update health at end of tick
 
@@ -1450,7 +1450,7 @@
 	..()
 
 /datum/reagent/fuel/on_mob_life(mob/living/carbon/M)
-	M.adjustToxLoss(1, 0)
+	M.adjustToxLoss(1, updating_health = FALSE)
 	..()
 	return TRUE
 
@@ -1761,7 +1761,7 @@
 	..()
 
 /datum/reagent/stimulum/on_mob_life(mob/living/carbon/M)
-	M.adjustStaminaLoss(-2*REM, 0)
+	M.adjustStaminaLoss(-2*REM, updating_health = FALSE)
 	current_cycle++
 	holder.remove_reagent(type, 0.99)		//Gives time for the next tick of life().
 	. = TRUE //Update status effects.
@@ -1879,7 +1879,7 @@
 
 /datum/reagent/plantnutriment/on_mob_life(mob/living/carbon/M)
 	if(prob(tox_prob))
-		M.adjustToxLoss(1*REM, 0)
+		M.adjustToxLoss(1*REM, updating_health = FALSE)
 		. = 1
 	..()
 
@@ -2756,19 +2756,19 @@
 	if(IS_HERETIC(M))
 		M.drowsyness = max(M.drowsyness-5, 0)
 		M.AdjustAllImmobility(-40, FALSE)
-		M.adjustStaminaLoss(-15, FALSE)
-		M.adjustToxLoss(-3, FALSE)
-		M.adjustOxyLoss(-3, FALSE)
-		M.adjustBruteLoss(-3, FALSE)
-		M.adjustFireLoss(-3, FALSE)
+		M.adjustStaminaLoss(-15, updating_health = FALSE)
+		M.adjustToxLoss(-3, updating_health = FALSE)
+		M.adjustOxyLoss(-3, updating_health = FALSE)
+		M.adjustBruteLoss(-3, updating_health = FALSE)
+		M.adjustFireLoss(-3, updating_health = FALSE)
 		if(ishuman(M) && M.blood_volume < BLOOD_VOLUME_NORMAL)
 			M.blood_volume += 3
 	else
 		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 3, 150)
-		M.adjustToxLoss(2, FALSE)
-		M.adjustFireLoss(2, FALSE)
-		M.adjustOxyLoss(2, FALSE)
-		M.adjustBruteLoss(2, FALSE)
+		M.adjustToxLoss(2, updating_health = FALSE)
+		M.adjustFireLoss(2, updating_health = FALSE)
+		M.adjustOxyLoss(2, updating_health = FALSE)
+		M.adjustBruteLoss(2, updating_health = FALSE)
 	holder.remove_reagent(type, 1)
 	return TRUE
 

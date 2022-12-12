@@ -1,5 +1,7 @@
 /// this is bad code
 /mob/living/silicon/robot/update_icons()
+	if(!module) // this is worse code
+		return
 	cut_overlays()
 	icon_state = module.cyborg_base_icon
 

@@ -48,5 +48,6 @@ All custom items with worn sprites must follow the contained sprite system: http
 		item_state = "corvo_cigarette"
 
 /obj/item/clothing/mask/fluff/corvo_cigarette/examine(mob/user)
-	if(..(user, 1))
-		user << "It is [active ? "on" : "off"]."
+	. += ..()
+	if(in_range(src, user))
+		. += span_notice("It is [active ? "on" : "off"].")

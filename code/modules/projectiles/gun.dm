@@ -266,7 +266,7 @@ ATTACHMENTS
 	build_zooming()
 
 /obj/item/gun/Destroy()
-	if(pin)
+	if(istype(pin)) // could be a typepath if qdel init hint was used before parent
 		QDEL_NULL(pin)
 	if(gun_light)
 		QDEL_NULL(gun_light)

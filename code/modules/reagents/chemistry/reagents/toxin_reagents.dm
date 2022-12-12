@@ -21,7 +21,7 @@
 
 /datum/reagent/toxin/on_mob_life(mob/living/carbon/M)
 	if(toxpwr)
-		M.adjustToxLoss(toxpwr*REM, 0)
+		M.adjustToxLoss(toxpwr*REM, updating_health = FALSE)
 		. = TRUE
 	var/is_toxinlover = FALSE
 	if(HAS_TRAIT(M, TRAIT_TOXINLOVER))
@@ -200,7 +200,7 @@
 		. = FALSE
 
 	if(.)
-		C.adjustOxyLoss(5, 0)
+		C.adjustOxyLoss(5, updating_health = FALSE)
 		C.losebreath += 2
 		. = TRUE
 		if(prob(20))
@@ -275,7 +275,7 @@
 	..()
 
 /datum/reagent/toxin/zombiepowder/reaction_mob(mob/living/L, method=TOUCH, reac_volume)
-	L.adjustOxyLoss(0.5*REM, 0)
+	L.adjustOxyLoss(0.5*REM, updating_health = FALSE)
 	if(method == INGEST)
 		fakedeath_active = TRUE
 		L.fakedeath(type)
@@ -291,7 +291,7 @@
 			M.drowsyness += 1
 			M.slurring += 3
 		if(5 to 8)
-			M.adjustStaminaLoss(40, 0)
+			M.adjustStaminaLoss(40, updating_health = FALSE)
 		if(9 to INFINITY)
 			fakedeath_active = TRUE
 			M.fakedeath(type)
@@ -315,7 +315,7 @@
 	..()
 
 /datum/reagent/toxin/ghoulpowder/on_mob_life(mob/living/carbon/M)
-	M.adjustOxyLoss(1*REM, 0)
+	M.adjustOxyLoss(1*REM, updating_health = FALSE)
 	..()
 	. = 1
 
@@ -450,7 +450,7 @@
 			. = 1
 		if(51 to INFINITY)
 			M.Sleeping(40, 0)
-			M.adjustToxLoss((current_cycle - 50)*REM, 0)
+			M.adjustToxLoss((current_cycle - 50)*REM, updating_health = FALSE)
 			. = 1
 	..()
 
@@ -472,7 +472,7 @@
 			M.Sleeping(40, 0)
 		if(51 to INFINITY)
 			M.Sleeping(40, 0)
-			M.adjustToxLoss((current_cycle - 50)*REM, 0)
+			M.adjustToxLoss((current_cycle - 50)*REM, updating_health = FALSE)
 	return ..()
 
 /datum/reagent/toxin/coffeepowder
@@ -522,7 +522,7 @@
 	value = REAGENT_VALUE_UNCOMMON
 
 /datum/reagent/toxin/staminatoxin/on_mob_life(mob/living/carbon/M)
-	M.adjustStaminaLoss(REM * data, 0)
+	M.adjustStaminaLoss(REM * data, updating_health = FALSE)
 	data = max(data - 1, 5)
 	..()
 	. = 1
@@ -563,14 +563,14 @@
 			if(4)
 				if(prob(75))
 					to_chat(M, "You scratch at an itch.")
-					M.adjustBruteLoss(2*REM, 0)
+					M.adjustBruteLoss(2*REM, updating_health = FALSE)
 					. = 1
 	..()
 
 /datum/reagent/toxin/histamine/overdose_process(mob/living/M)
-	M.adjustOxyLoss(2*REM, 0)
-	M.adjustBruteLoss(2*REM, 0)
-	M.adjustToxLoss(2*REM, 0)
+	M.adjustOxyLoss(2*REM, updating_health = FALSE)
+	M.adjustBruteLoss(2*REM, updating_health = FALSE)
+	M.adjustToxLoss(2*REM, updating_health = FALSE)
 	..()
 	. = 1
 
@@ -600,7 +600,7 @@
 
 /datum/reagent/toxin/venom/on_mob_life(mob/living/carbon/M)
 	toxpwr = 0.2*volume
-	M.adjustBruteLoss((0.3*volume)*REM, 0)
+	M.adjustBruteLoss((0.3*volume)*REM, updating_health = FALSE)
 	. = 1
 	if(prob(15))
 		M.reagents.add_reagent(/datum/reagent/toxin/histamine, pick(5,10))
@@ -619,7 +619,7 @@
 /datum/reagent/toxin/fentanyl/on_mob_life(mob/living/carbon/M)
 	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 3*REM, 150)
 	if(M.toxloss <= 60)
-		M.adjustToxLoss(1*REM, 0)
+		M.adjustToxLoss(1*REM, updating_health = FALSE)
 	if(current_cycle >= 18)
 		M.Sleeping(40, 0)
 	..()
@@ -640,7 +640,7 @@
 	if(prob(8))
 		to_chat(M, "You feel horrendously weak!")
 		M.Stun(40, 0)
-		M.adjustToxLoss(2*REM, 0)
+		M.adjustToxLoss(2*REM, updating_health = FALSE)
 		. = TRUE
 	return ..() || .
 
@@ -669,15 +669,15 @@
 /datum/reagent/toxin/itching_powder/on_mob_life(mob/living/carbon/M)
 	if(prob(15))
 		to_chat(M, "You scratch at your head.")
-		M.adjustBruteLoss(0.2*REM, 0)
+		M.adjustBruteLoss(0.2*REM, updating_health = FALSE)
 		. = 1
 	if(prob(15))
 		to_chat(M, "You scratch at your leg.")
-		M.adjustBruteLoss(0.2*REM, 0)
+		M.adjustBruteLoss(0.2*REM, updating_health = FALSE)
 		. = 1
 	if(prob(15))
 		to_chat(M, "You scratch at your arm.")
-		M.adjustBruteLoss(0.2*REM, 0)
+		M.adjustBruteLoss(0.2*REM, updating_health = FALSE)
 		. = 1
 	if(prob(3))
 		M.reagents.add_reagent(/datum/reagent/toxin/histamine,rand(1,3))
@@ -746,7 +746,7 @@
 /datum/reagent/toxin/sodium_thiopental/on_mob_life(mob/living/carbon/M)
 	if(current_cycle >= 10)
 		M.Sleeping(40, 0)
-	M.adjustStaminaLoss(10*REM, 0)
+	M.adjustStaminaLoss(10*REM, updating_health = FALSE)
 	..()
 	return TRUE
 
@@ -789,7 +789,7 @@
 
 /datum/reagent/toxin/lipolicide/on_mob_life(mob/living/carbon/M)
 	if(M.nutrition <= NUTRITION_LEVEL_STARVING)
-		M.adjustToxLoss(1*REM, 0)
+		M.adjustToxLoss(1*REM, updating_health = FALSE)
 		. = TRUE
 	M.adjust_nutrition(-3) // making the chef more valuable, one meme trap at a time
 	M.overeatduration = 0
@@ -846,7 +846,7 @@
 /datum/reagent/toxin/curare/on_mob_life(mob/living/carbon/M)
 	if(current_cycle >= 11)
 		M.DefaultCombatKnockdown(60, 0)
-	M.adjustOxyLoss(1*REM, 0)
+	M.adjustOxyLoss(1*REM, updating_health = FALSE)
 	. = 1
 	..()
 
@@ -1016,12 +1016,12 @@
 		mytray.adjustWeeds(-rand(1,4))
 
 /datum/reagent/toxin/acid/fluacid/on_mob_life(mob/living/carbon/M)
-	M.adjustFireLoss(current_cycle/10, 0)
+	M.adjustFireLoss(current_cycle/10, updating_health = FALSE)
 	. = 1
 	..()
 
 /datum/reagent/toxin/acid/fantiacid/on_mob_life(mob/living/carbon/M)
-	M.adjustFireLoss(current_cycle/10, 0)
+	M.adjustFireLoss(current_cycle/10, updating_health = FALSE)
 	. = 8
 	..()
 
@@ -1039,7 +1039,7 @@
 /datum/reagent/toxin/delayed/on_mob_life(mob/living/carbon/M)
 	if(current_cycle > delay)
 		holder.remove_reagent(type, actual_metaboliztion_rate * M.metabolism_efficiency)
-		M.adjustToxLoss(actual_toxpwr*REM, 0)
+		M.adjustToxLoss(actual_toxpwr*REM, updating_health = FALSE)
 		if(prob(10))
 			M.DefaultCombatKnockdown(20, 0)
 		. = 1
@@ -1059,9 +1059,9 @@
 	M.say("oof ouch my bones", forced = /datum/reagent/toxin/bonehurtingjuice)
 
 /datum/reagent/toxin/bonehurtingjuice/on_mob_life(mob/living/carbon/M)
-	M.adjustStaminaLoss(7.5, 0)
+	M.adjustStaminaLoss(7.5, updating_health = FALSE)
 	if(HAS_TRAIT(M, TRAIT_CALCIUM_HEALER))
-		M.adjustBruteLoss(3.5, 0)
+		M.adjustBruteLoss(3.5, updating_health = FALSE)
 	if(prob(12))
 		switch(rand(1, 3))
 			if(1)

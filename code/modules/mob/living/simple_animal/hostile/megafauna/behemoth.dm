@@ -94,16 +94,18 @@
 /mob/living/simple_animal/hostile/megafauna/behemoth/Moved(atom/oldloc, direct)
 	. = ..()
 	stored_move_dirs &= ~direct
-	if(!stored_move_dirs)
+	if(!stored_move_dirs && loc) // don't slam in nullspace
 		INVOKE_ASYNC(src, .proc/ground_slam, stomp_range, 1)
 
 /// Slams the ground around the behemoth throwing back enemies caught nearby
 /mob/living/simple_animal/hostile/megafauna/behemoth/proc/ground_slam(range, delay)
-	var/turf/orgin = get_turf(src)
-	var/list/all_turfs = RANGE_TURFS(range, orgin)
+	var/turf/origin = get_turf(src)
+	if(!origin)
+		return
+	var/list/all_turfs = RANGE_TURFS(range, origin)
 	for(var/i = 0 to range)
 		for(var/turf/T in all_turfs)
-			if(get_dist(orgin, T) > i)
+			if(get_dist(origin, T) > i)
 				continue
 			playsound(T,'sound/effects/bamf.ogg', 600, TRUE, 10)
 			new /obj/effect/temp_visual/small_smoke/halfsecond(T)

@@ -103,7 +103,7 @@
 		acidstr = 3
 	else
 		acidstr = ((5-C.reagents.pH)*2) //runtime - null.pH ?
-	C.adjustFireLoss(acidstr/2, 0)
+	C.adjustFireLoss(acidstr/2, updating_health = FALSE)
 	if((method==VAPOR) && (!C.wear_mask))
 		if(prob(20))
 			to_chat(C, "<span class='warning'>You can feel your lungs burning!</b></span>")

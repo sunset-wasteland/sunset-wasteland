@@ -56,7 +56,7 @@
 
 /obj/mecha/combat/neovgre/proc/go_critical()
 	explosion(get_turf(loc), 3, 5, 10, 20, 30)
-	Destroy(src)
+	qdel(src)
 
 /obj/mecha/combat/neovgre/container_resist(mob/living/user)
 	to_chat(user, "<span class='brass'>Neovgre requires a lifetime commitment friend, no backing out now!</span>")

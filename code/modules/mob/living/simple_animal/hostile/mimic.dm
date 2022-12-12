@@ -204,11 +204,19 @@ GLOBAL_LIST_INIT(protected_objects, list(/obj/structure/table, /obj/structure/ca
 			return 0
 	return ..()
 
+// This is awful code but I can't be assed to rewrite it.
 /mob/living/simple_animal/hostile/mimic/copy/ranged
 	var/obj/item/gun/TrueGun = null
 	var/obj/item/gun/magic/Zapstick
 	var/obj/item/gun/ballistic/Pewgun
 	var/obj/item/gun/energy/Zapgun
+
+/mob/living/simple_animal/hostile/mimic/copy/ranged/Destroy()
+	TrueGun = null
+	Zapstick = null
+	Pewgun = null
+	Zapgun = null
+	return ..()
 
 /mob/living/simple_animal/hostile/mimic/copy/ranged/CopyObject(obj/O, mob/living/creator, destroy_original = 0)
 	if(..())

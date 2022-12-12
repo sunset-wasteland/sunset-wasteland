@@ -19,5 +19,5 @@
 
 
 /obj/item/clothing/neck/undertale/Initialize()
-	..()
+	. = ..()
 	AddComponent(/datum/component/souldeath/neck)

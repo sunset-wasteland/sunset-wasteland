@@ -239,8 +239,8 @@
 				prev.AIStatus = AI_OFF
 				current_stacks = 0
 
-	adjustBruteLoss(-maxHealth * 0.5, FALSE)
-	adjustFireLoss(-maxHealth * 0.5, TRUE) // batched health update
+	adjustBruteLoss(-maxHealth * 0.5, updating_health = FALSE)
+	adjustFireLoss(-maxHealth * 0.5, updating_health = TRUE) // batched health update
 
 
 /mob/living/simple_animal/hostile/eldritch/armsy/Shoot(atom/targeted_atom)
@@ -318,8 +318,8 @@
 				matrix_transformation.Scale(1.4,1.4)
 				transform = matrix_transformation
 
-	adjustBruteLoss(-maxHealth * 0.5, FALSE)
-	adjustFireLoss(-maxHealth * 0.5, TRUE) // batched health update
+	adjustBruteLoss(-maxHealth * 0.5, updating_health = FALSE)
+	adjustFireLoss(-maxHealth * 0.5, updating_health = TRUE) // batched health update
 
 
 /mob/living/simple_animal/hostile/eldritch/rust_spirit
@@ -353,8 +353,8 @@
 		return ..()
 	var/turf/T = get_turf(src)
 	if(istype(T,/turf/open/floor/plating/rust))
-		adjustBruteLoss(-3, FALSE)
-		adjustFireLoss(-3, TRUE) // batched health update
+		adjustBruteLoss(-3, updating_health = FALSE)
+		adjustFireLoss(-3, updating_health = TRUE) // batched health update
 	return ..()
 
 /mob/living/simple_animal/hostile/eldritch/ash_spirit

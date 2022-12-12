@@ -584,7 +584,7 @@
 
 /mob/living/silicon/robot/proc/SetLockdown(state = TRUE)
 	// They stay locked down if their wire is cut.
-	if(wires.is_cut(WIRE_LOCKDOWN))
+	if(wires?.is_cut(WIRE_LOCKDOWN))
 		state = TRUE
 	if(state)
 		throw_alert("locked", /obj/screen/alert/locked)
@@ -1125,7 +1125,7 @@
 	if(cell)
 		cell.charge = min(cell.charge + amount, cell.maxcharge)
 
-/mob/living/silicon/robot/adjustStaminaLossBuffered(amount, updating_health = 1)
+/mob/living/silicon/robot/adjustStaminaLossBuffered(amount, updating_health = TRUE)
 	if(istype(cell))
 		cell.charge -= amount * 5
 

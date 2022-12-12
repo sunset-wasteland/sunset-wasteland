@@ -211,7 +211,7 @@
 	var/grace_heal = bloodlust * 0.05
 	owner.adjustBruteLoss(-grace_heal)
 	owner.adjustFireLoss(-grace_heal)
-	owner.adjustToxLoss(-grace_heal, TRUE, TRUE)
+	owner.adjustToxLoss(-grace_heal, forced = TRUE) // heals TOXINLOVERs
 	owner.adjustOxyLoss(-(grace_heal * 2))
 	owner.adjustCloneLoss(-grace_heal)
 	owner.adjustStaminaLoss(-(grace_heal * 25))
@@ -363,7 +363,7 @@
 		var/new_staminaloss = owner.getStaminaLoss()
 		if(new_staminaloss < last_staminaloss)
 			var/heal_amount = -5 // CIT CHANGE - makes blood drunk status effect not exhaust you
-			owner.adjustStaminaLoss(heal_amount, FALSE)
+			owner.adjustStaminaLoss(heal_amount, updating_health = FALSE)
 			new_staminaloss = owner.getStaminaLoss()
 			needs_health_update = TRUE
 		last_staminaloss = new_staminaloss
@@ -438,9 +438,9 @@
 		return
 	else
 		linked_alert.icon_state = "fleshmend"
-	owner.adjustBruteLoss(-10, FALSE)
-	owner.adjustFireLoss(-5, FALSE)
-	owner.adjustOxyLoss(-10)
+	owner.adjustBruteLoss(-10, updating_health = FALSE)
+	owner.adjustFireLoss(-5, updating_health = FALSE)
+	owner.adjustOxyLoss(-10, updating_health = TRUE)
 	if(!iscarbon(owner))
 		return
 	var/mob/living/carbon/C = owner

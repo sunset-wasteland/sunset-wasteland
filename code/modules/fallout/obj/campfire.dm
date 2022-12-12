@@ -26,7 +26,7 @@
 
 /obj/structure/campfire/Destroy()
 	SSobj.processing.Remove(src)
-	..()
+	return ..()
 
 /obj/structure/campfire/attackby(obj/item/P, mob/user, params)
 	if(P.get_temperature())

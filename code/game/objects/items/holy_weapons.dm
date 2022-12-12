@@ -797,7 +797,7 @@
 	if(do_after(user, 20, target = M))
 		M.reagents?.add_reagent(/datum/reagent/water/holywater, 5)
 		to_chat(M, "<span class='notice'>[user]'s prayer to [deity_name] has eased your pain!</span>")
-		M.adjustToxLoss(-5, TRUE, TRUE)
+		M.adjustToxLoss(-5, forced = TRUE)
 		M.adjustOxyLoss(-5)
 		M.adjustBruteLoss(-5)
 		M.adjustFireLoss(-5)

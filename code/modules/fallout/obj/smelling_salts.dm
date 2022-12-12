@@ -107,14 +107,14 @@
 	var/const/threshold = ((HEALTH_THRESHOLD_CRIT + HEALTH_THRESHOLD_DEAD) * 0.5)
 	var/tlimit = DEFIB_TIME_LIMIT * 10
 	if (revived_mob.health > threshold)
-		revived_mob.adjustOxyLoss(revived_mob.health - threshold, 0)
+		revived_mob.adjustOxyLoss(revived_mob.health - threshold, updating_health = FALSE)
 	else
 		var/overall_damage = total_brute + total_burn + revived_mob.getToxLoss() + revived_mob.getOxyLoss()
 		var/mobhealth = revived_mob.health
-		revived_mob.adjustOxyLoss((mobhealth - threshold) * (revived_mob.getOxyLoss() / overall_damage), 0)
-		revived_mob.adjustToxLoss((mobhealth - threshold) * (revived_mob.getToxLoss() / overall_damage), 0)
-		revived_mob.adjustFireLoss((mobhealth - threshold) * (total_burn / overall_damage), 0)
-		revived_mob.adjustBruteLoss((mobhealth - threshold) * (total_brute / overall_damage), 0)
+		revived_mob.adjustOxyLoss((mobhealth - threshold) * (revived_mob.getOxyLoss() / overall_damage), updating_health = FALSE)
+		revived_mob.adjustToxLoss((mobhealth - threshold) * (revived_mob.getToxLoss() / overall_damage), updating_health = FALSE)
+		revived_mob.adjustFireLoss((mobhealth - threshold) * (total_burn / overall_damage), updating_health = FALSE)
+		revived_mob.adjustBruteLoss((mobhealth - threshold) * (total_brute / overall_damage), updating_health = FALSE)
 	revived_mob.updatehealth() // Previous "adjust" procs don't update health, so we do it manually.
 	revived_mob.visible_message(span_notice("[revived_mob] gasps and stirs!"), span_notice("You're alive!"))
 	revived_mob.set_heartattack(FALSE) // if you can safely be revived without this, then this should be removed; smelling salts aren't a defib

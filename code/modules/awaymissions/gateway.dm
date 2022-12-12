@@ -177,6 +177,10 @@ GLOBAL_LIST_EMPTY(gateway_destinations)
 	update_icon()
 	return ..()
 
+/obj/machinery/gateway/Destroy()
+	deactivate()
+	return ..()
+
 /obj/machinery/gateway/proc/generate_destination()
 	destination = new destination_type
 	destination.name = destination_name
@@ -186,7 +190,7 @@ GLOBAL_LIST_EMPTY(gateway_destinations)
 /obj/machinery/gateway/proc/deactivate()
 	var/datum/gateway_destination/dest = target
 	target = null
-	dest.deactivate(src)
+	dest?.deactivate(src)
 	QDEL_NULL(portal)
 	if(use_power == ACTIVE_POWER_USE)
 		use_power = IDLE_POWER_USE

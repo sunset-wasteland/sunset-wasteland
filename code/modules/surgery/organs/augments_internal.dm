@@ -103,7 +103,7 @@
 	. = ..()
 	if(!. || crit_fail)
 		return
-	owner.adjustStaminaLoss(-3.5, FALSE) //Citadel edit, makes it more useful in Stamina based combat
+	owner.adjustStaminaLoss(-3.5, updating_health = FALSE) //Citadel edit, makes it more useful in Stamina based combat
 	owner.HealAllImmobilityUpTo(STUN_SET_AMOUNT)
 
 /obj/item/organ/cyberimp/brain/anti_stun/emp_act(severity)

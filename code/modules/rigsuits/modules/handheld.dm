@@ -34,7 +34,7 @@
 	to_chat(holder.wearer, "<span class='notice'>You retract \the [device].</span>")
 
 /obj/item/rig_module/handheld/Initialize()
-	..()
+	. = ..()
 	if(device_type)
 		device = new device_type(src)
 		device.item_flags |= NODROP //We don't want to drop it while it's active/inhand.

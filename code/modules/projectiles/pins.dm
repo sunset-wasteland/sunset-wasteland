@@ -13,10 +13,10 @@
 	var/pin_removeable = 0 // Can be replaced by any pin.
 	var/obj/item/gun/gun
 
-/obj/item/firing_pin/Initialize(newloc)
+/obj/item/firing_pin/Initialize(mapload)
 	. = ..()
-	if(istype(newloc, /obj/item/gun))
-		gun = newloc
+	if(istype(loc, /obj/item/gun))
+		gun = loc
 
 /obj/item/firing_pin/Destroy()
 	if(gun)

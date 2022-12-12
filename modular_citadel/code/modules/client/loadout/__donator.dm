@@ -72,20 +72,6 @@
 	path = /obj/item/storage/box/large/custom_kit/klatue
 	ckeywhitelist = list("klatue9")
 
-/obj/item/storage/box/large/custom_kit/canadian/PopulateContents()
-	new /obj/item/clothing/suit/armor/f13/legion/vet/explorercanada(src)
-	new /obj/item/clothing/neck/mantle/umbo(src)
-	new /obj/item/gun/ballistic/automatic/service/carbine(src)
-	new /obj/item/ammo_box/magazine/m556/rifle/assault(src)
-	new /obj/item/ammo_box/magazine/m556/rifle/assault(src)
-	new /obj/item/toy/figure/dsquad(src)
-
-
-/datum/gear/donator/kits/canadian
-	name = "Canadian"
-	path = /obj/item/storage/box/large/custom_kit/canadian
-	ckeywhitelist = list("comradesocks")
-
 /obj/item/storage/box/large/custom_kit/vaktus/PopulateContents()
 	new /obj/item/clothing/suit/armor/f13/combat/riotpolice(src)
 	new /obj/item/clothing/head/helmet/f13/ncr/rangercombat/desert(src)
@@ -249,7 +235,7 @@
 	new /obj/item/book/granter/trait/pa_wear(src)
 	new /obj/item/clothing/suit/armor/f13/power_armor/t45d/refurb(src)
 	new /obj/item/clothing/head/helmet/f13/power_armor/t45d/refurb(src)
-
+/*
 /datum/gear/donator/kits/ripper// basically enough to set up his own clinic/lab. when off-duty.
 	name = "Rippers Belonging"
 	path = /obj/item/storage/box/large/custom_kit/ripper
@@ -271,7 +257,7 @@
 	new /obj/item/circuitboard/machine/plantgenes(src)// plant manipulator
 	new /obj/item/stock_parts/manipulator/femto(src)// for gibber, works with clothes on/faster.
 	new /obj/item/stock_parts/matter_bin/bluespace(src)// for gibber. gives most meat.
-
+*/
 /datum/gear/donator/kits/transhumanism
 	name = "Half-Synth"
 	path = /obj/item/storage/box/large/custom_kit/transhumanism
@@ -314,6 +300,7 @@
 	new /obj/item/clothing/suit/armor/f13/rangercombat/finlayranger(src)
 	new /obj/item/gun/ballistic/revolver/revolver45(src) //Doesn't come with ammo, You can print it anyway
 	new /obj/item/melee/powered/ripper(src)
+
 /datum/gear/donator/kits/bibledog
 	name = "Bible Canid"
 	path = /obj/item/storage/box/large/custom_kit/bibledog
@@ -373,6 +360,14 @@
 
 /obj/item/storage/box/large/custom_kit/davusi/PopulateContents()
 	new /obj/item/card/id/dogtag/donator_davusi(src)
+
+/datum/gear/donator/kits/yan
+	name = "Canis' Teachings"
+	path = /obj/item/storage/box/large/custom_kit/yan
+	ckeywhitelist = list ("Yanniert")
+
+/obj/item/storage/box/large/custom_kit/yan/PopulateContents()
+	new /obj/item/book/granter/trait/yan(src)
 
 /datum/gear/donator/kits/onelessncrrep
 	name = "My memoir"

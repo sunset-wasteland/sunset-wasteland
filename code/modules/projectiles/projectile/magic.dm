@@ -462,6 +462,7 @@
 
 /obj/item/projectile/magic/aoe/lightning/Destroy()
 	qdel(chain)
+	caster = null
 	. = ..()
 
 /obj/item/projectile/magic/aoe/fireball
@@ -532,4 +533,5 @@
 /obj/item/projectile/magic/nuclear/Destroy()
 	for(var/atom/movable/AM in contents)
 		AM.forceMove(get_turf(src))
+	victim = null
 	. = ..()

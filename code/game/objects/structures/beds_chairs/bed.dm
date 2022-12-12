@@ -191,7 +191,7 @@
 		to_chat(user, "<span class='warning'>The dock is empty!</span>")
 
 //Dog bed
-
+GLOBAL_LIST_EMPTY_TYPED(dogbeds, /obj/structure/bed/dogbed)
 /obj/structure/bed/dogbed
 	name = "dog bed"
 	icon_state = "dogbed"
@@ -200,6 +200,14 @@
 	buildstacktype = /obj/item/stack/sheet/mineral/wood
 	buildstackamount = 10
 	var/mob/living/owner = null
+
+/obj/structure/bed/dogbed/Initialize()
+	. = ..()
+	GLOB.dogbeds += src
+
+/obj/structure/bed/dogbed/Destroy()
+	GLOB.dogbeds -= src
+	return ..()
 
 /obj/structure/bed/dogbed/ian
 	desc = "Ian's bed! Looks comfy."

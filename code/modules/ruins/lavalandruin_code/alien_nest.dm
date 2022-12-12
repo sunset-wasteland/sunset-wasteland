@@ -1,12 +1,14 @@
 //Aliens for the alien nest space ruin.
 /obj/effect/mob_spawn/alien/corpse/humanoid/drone
 	mob_type = /mob/living/carbon/alien/humanoid/drone
+	is_abstract = FALSE
 	death = TRUE
 	name = "alien drone"
 	mob_name = "alien drone"
 
 /obj/effect/mob_spawn/alien/corpse/humanoid/queen
 	mob_type = /mob/living/carbon/alien/humanoid/royal/queen
+	is_abstract = FALSE
 	death = TRUE
 	name = "alien queen"
 	mob_name = "alien queen"

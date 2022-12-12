@@ -3,6 +3,8 @@
 	desc = "The YK42B rifle is an electrical pulse weapon that was developed by the Yuma Flats Energy Consortium. It excels in damage against heavily armored opponents, especially power armor."
 	icon_state = "yk42"
 	item_state = "yk42"	//so the human update icon uses the icon_state instead.
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	can_flashlight = 1
 	w_class = WEIGHT_CLASS_BULKY
 	flags_1 =  CONDUCT_1

@@ -222,6 +222,7 @@
 	tank = loc
 	if (!istype(tank))
 		return INITIALIZE_HINT_QDEL
+	QDEL_NULL(reagents)
 	reagents = tank.reagents
 	max_water = tank.volume
 

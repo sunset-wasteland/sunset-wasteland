@@ -84,6 +84,17 @@
 
 /mob/living/silicon/pai/Destroy()
 	QDEL_NULL(internal_instrument)
+	QDEL_NULL(headset)
+	QDEL_NULL(cable)
+	QDEL_NULL(pda)
+	QDEL_NULL(access_card)
+	QDEL_NULL(signaler)
+	current = null
+	hackdoor = null
+	medicalActive1 = null
+	medicalActive2 = null
+	securityActive1 = null
+	securityActive2 = null
 	if (loc != card)
 		card.forceMove(drop_location())
 	card.pai = null
@@ -109,10 +120,6 @@
 
 	//PDA
 	pda = new(src)
-	spawn(5)
-		pda.ownjob = "pAI Messenger"
-		pda.owner = text("[]", src)
-		pda.name = pda.owner + " (" + pda.ownjob + ")"
 
 	possible_chassis = typelist(NAMEOF(src, possible_chassis), list("cat" = TRUE, "mouse" = TRUE, "monkey" = TRUE, "corgi" = FALSE,
 									"fox" = FALSE, "repairbot" = TRUE, "rabbit" = TRUE, "borgi" = FALSE ,
@@ -135,6 +142,13 @@
 	AL.Grant(src)
 	ALM.Grant(src)
 	emitter_next_use = world.time + 10 SECONDS
+	return INITIALIZE_HINT_LATELOAD
+
+/mob/living/silicon/pai/LateInitialize()
+	. = ..()
+	pda.ownjob = "pAI Messenger"
+	pda.owner = "[src]"
+	pda.name = pda.owner + " (" + pda.ownjob + ")"
 
 /mob/living/silicon/pai/ComponentInitialize()
 	. = ..()

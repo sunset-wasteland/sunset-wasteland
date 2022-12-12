@@ -48,6 +48,11 @@
 	var/obj/structure/legionnaire_bonfire/mypile = null
 	var/has_head = TRUE
 
+/mob/living/simple_animal/hostile/asteroid/elite/legionnaire/Destroy()
+	myhead = null
+	mypile = null
+	return ..()
+
 /datum/action/innate/elite_attack/legionnaire_charge
 	name = "Legionnaire Charge"
 	button_icon_state = "legionnaire_charge"

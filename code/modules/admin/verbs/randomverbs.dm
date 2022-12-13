@@ -484,7 +484,6 @@
 	//If desired, apply equipment.
 	if(equipment)
 		if(charjob)
-			message_admins("Calling SSjob...", 1)
 			SSjob.EquipRank(new_character, charjob, 1)
 		//equip_custom_items(new_character)
 
@@ -711,12 +710,10 @@ Traitors and the like can also be revived with the previous role mostly intact.
 		dat += "."
 	message_admins(dat)
 	log_admin(dat)
-	if(departing_mob.stat == DEAD)
-		departing_mob.visible_message("<span class='notice'>[usr] pushes the body of [departing_mob] over the border. They're someone else's problem now.</span>")
-	else
-		departing_mob.visible_message("<span class='notice'>[departing_mob == usr ? "Out of their own volition, " : "Ushered by [usr], "][departing_mob] crosses the border and departs the Sonora.</span>")
-	departing_mob.despawn()
 
+	departing_mob.visible_message("<span class='notice'>In one frame of the universe, [departing_mob] is there.  In the next, they're gone.  And in a moment, you'll forget how odd that was and move on with your day.</span>")
+
+	departing_mob.despawn()
 
 /client/proc/cmd_admin_add_freeform_ai_law()
 	set category = "Admin.Events"

@@ -123,7 +123,6 @@
 	QDEL_NULL(ion_trail)
 	QDEL_NULL(robot_suit)
 	QDEL_LIST(upgrades)
-	QDEL_NULL(laws)
 	hat = null
 	cell = null
 	return ..()

@@ -72,6 +72,7 @@
 	QDEL_NULL(radio)
 	aicamera = null
 	QDEL_NULL(builtInCamera)
+	QDEL_NULL(laws)
 	GLOB.silicon_mobs -= src
 	return ..()
 

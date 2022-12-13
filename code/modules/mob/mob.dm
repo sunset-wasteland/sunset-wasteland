@@ -17,6 +17,7 @@
 	for(var/cc in client_colours)
 		qdel(cc)
 	QDEL_LIST(mob_spell_list)
+	QDEL_LIST(actions)
 	client_colours = null
 	ghostize()
 	return ..()

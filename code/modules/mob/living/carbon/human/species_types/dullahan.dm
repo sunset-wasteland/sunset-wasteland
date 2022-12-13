@@ -48,19 +48,13 @@
 			for(var/datum/action/item_action/organ_action/OA in E.actions)
 				OA.Trigger()
 
-/datum/species/dullahan/Destroy()
-	var/obj/item/bodypart/head/head = myhead?.loc
-	if(istype(head))
-		qdel(head)
-	return ..()
-
 /datum/species/dullahan/on_species_loss(mob/living/carbon/human/H)
 	ENABLE_BITFIELD(H.flags_1, HEAR_1)
 	H.reset_perspective(H)
 	if(myhead)
-		myhead.owner = null
 		QDEL_NULL(myhead)
-	H.regenerate_limb(BODY_ZONE_HEAD,FALSE)
+	if(!QDELETED(H))
+		H.regenerate_limb(BODY_ZONE_HEAD,FALSE)
 	..()
 
 /datum/species/dullahan/spec_life(mob/living/carbon/human/H)
@@ -158,11 +152,16 @@
 		qdel(src)
 
 /obj/item/dullahan_relay/Destroy()
-	if(!QDELETED(owner))
+	if(owner)
 		var/mob/living/carbon/human/H = owner
 		if(isdullahan(H))
 			var/datum/species/dullahan/D = H.dna.species
 			D.myhead = null
-			owner.gib()
+			if(!QDELING(owner))
+				owner.gib()
+	var/obj/item/bodypart/head/head = loc
+	if(istype(head))
+		head.owner = null
+
 	owner = null
 	return ..()

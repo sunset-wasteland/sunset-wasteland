@@ -395,16 +395,13 @@
 	buttontooltipstyle = "cult"
 	button_icon_state = "cult_mark"
 	var/tracking = FALSE
-	var/mob/living/simple_animal/hostile/construct/the_construct
-
-
-/datum/action/innate/seek_master/Grant(mob/living/C)
-	the_construct = C
-	..()
 
 /datum/action/innate/seek_master/Activate()
 	var/datum/antagonist/cult/C = owner.mind.has_antag_datum(/datum/antagonist/cult)
 	if(!C)
+		return
+	var/mob/living/simple_animal/hostile/construct/harvester/the_construct = owner
+	if(!istype(the_construct))
 		return
 	if(!C.cult_team)
 		to_chat(the_construct, "<span class='cult italic'>You are alone, and have no team.</span>")
@@ -436,14 +433,12 @@
 	background_icon_state = "bg_demon"
 	buttontooltipstyle = "cult"
 	button_icon_state = "cult_mark"
-	var/mob/living/simple_animal/hostile/construct/harvester/the_construct
-
-/datum/action/innate/seek_prey/Grant(mob/living/C)
-	the_construct = C
-	..()
 
 /datum/action/innate/seek_prey/Activate()
 	if(GLOB.cult_narsie == null)
+		return
+	var/mob/living/simple_animal/hostile/construct/harvester/the_construct = owner
+	if(!istype(the_construct))
 		return
 	if(the_construct.seeking)
 		desc = "None can hide from Nar'Sie, activate to track a survivor attempting to flee the red harvest!"

@@ -121,6 +121,9 @@
 
 	//PDA
 	pda = new(src)
+	pda.ownjob = "pAI Messenger"
+	pda.owner = "[src]"
+	pda.name = pda.owner + " (" + pda.ownjob + ")"
 
 	possible_chassis = typelist(NAMEOF(src, possible_chassis), list("cat" = TRUE, "mouse" = TRUE, "monkey" = TRUE, "corgi" = FALSE,
 									"fox" = FALSE, "repairbot" = TRUE, "rabbit" = TRUE, "borgi" = FALSE ,
@@ -143,13 +146,6 @@
 	AL.Grant(src)
 	ALM.Grant(src)
 	emitter_next_use = world.time + 10 SECONDS
-	return INITIALIZE_HINT_LATELOAD
-
-/mob/living/silicon/pai/LateInitialize()
-	. = ..()
-	pda.ownjob = "pAI Messenger"
-	pda.owner = "[src]"
-	pda.name = pda.owner + " (" + pda.ownjob + ")"
 
 /mob/living/silicon/pai/ComponentInitialize()
 	. = ..()

@@ -46,7 +46,7 @@
 	var/obj/item/multitool/aiMulti
 	var/mob/living/simple_animal/bot/Bot
 	var/tracking = FALSE //this is 1 if the AI is currently tracking somebody, but the track has not yet been completed.
-	var/datum/effect_system/spark_spread/spark_system//So they can initialize sparks whenever/N
+	var/datum/effect_system/spark_spread/spark_system //So they can initialize sparks whenever/N
 
 	//MALFUNCTION
 	var/datum/module_picker/malf_picker
@@ -171,7 +171,18 @@
 	GLOB.ai_list -= src
 	GLOB.shuttle_caller_list -= src
 	SSshuttle.autoEvac()
-	qdel(eyeobj) // No AI, no Eye
+	QDEL_NULL(eyeobj) // No AI, no Eye
+	QDEL_NULL(aiPDA)
+	QDEL_NULL(aiMulti)
+	QDEL_NULL(spark_system)
+	QDEL_NULL(deploy_action)
+	QDEL_NULL(redeploy_action)
+	QDEL_NULL(master_multicam)
+	linked_core = null
+	deployed_shell = null
+	controlled_mech = null
+	Bot = null
+	parent = null
 	malfhack = null
 
 	. = ..()

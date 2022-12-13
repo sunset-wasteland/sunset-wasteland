@@ -75,6 +75,7 @@
 
 /obj/machinery/pool/controller/Destroy()
 	STOP_PROCESSING(SSprocessing, src)
+	QDEL_NULL(wires)
 	linked_drain?.controller = null
 	linked_drain = null
 	linked_filter?.controller = null

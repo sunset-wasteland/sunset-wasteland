@@ -100,6 +100,7 @@
 	card.pai = null
 	card.cut_overlays()
 	card.add_overlay("pai-off")
+	card = null
 	GLOB.pai_list -= src
 	return ..()
 

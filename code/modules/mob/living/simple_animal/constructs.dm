@@ -44,6 +44,7 @@
 	var/can_repair_constructs = FALSE
 	var/can_repair_self = FALSE
 	var/runetype
+	var/datum/action/innate/cult/create_rune/create_rune
 
 /mob/living/simple_animal/hostile/construct/Initialize()
 	. = ..()
@@ -60,11 +61,18 @@
 		S.action.button.moved = "6:[pos],4:-2"
 		spellnum++
 	if(runetype)
-		var/datum/action/innate/cult/create_rune/CR = new runetype(src)
-		CR.Grant(src)
+		create_rune = new runetype(src)
+		create_rune.Grant(src)
 		var/pos = 2+spellnum*31
-		CR.button.screen_loc = "6:[pos],4:-2"
-		CR.button.moved = "6:[pos],4:-2"
+		create_rune.button.screen_loc = "6:[pos],4:-2"
+		create_rune.button.moved = "6:[pos],4:-2"
+
+/mob/living/simple_animal/hostile/construct/Destroy()
+	if(create_rune)
+		QDEL_NULL(create_rune)
+	for(var/spell in construct_spells)
+		RemoveSpell(spell) // works with types and instances
+	return ..()
 
 /mob/living/simple_animal/hostile/construct/Login()
 	..()

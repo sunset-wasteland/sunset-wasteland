@@ -48,14 +48,18 @@
 			for(var/datum/action/item_action/organ_action/OA in E.actions)
 				OA.Trigger()
 
+/datum/species/dullahan/Destroy()
+	var/obj/item/bodypart/head/head = myhead?.loc
+	if(istype(head))
+		qdel(head)
+	return ..()
+
 /datum/species/dullahan/on_species_loss(mob/living/carbon/human/H)
 	ENABLE_BITFIELD(H.flags_1, HEAR_1)
 	H.reset_perspective(H)
 	if(myhead)
-		var/obj/item/dullahan_relay/DR = myhead
-		myhead = null
-		DR.owner = null
-		qdel(DR)
+		myhead.owner = null
+		QDEL_NULL(myhead)
 	H.regenerate_limb(BODY_ZONE_HEAD,FALSE)
 	..()
 

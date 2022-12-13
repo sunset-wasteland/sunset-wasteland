@@ -26,9 +26,9 @@
 /datum/dna/Destroy()
 	if(iscarbon(holder))
 		var/mob/living/carbon/cholder = holder
+		// We do this because a lot of stuff keeps references on species, for some reason.
+		species.on_species_loss(holder)
 		if(cholder.dna == src)
-			// We do this because a lot of stuff keeps references on species, for some reason.
-			species.on_species_loss(holder)
 			cholder.dna = null
 
 	if(delete_species)

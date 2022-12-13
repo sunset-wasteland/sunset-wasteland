@@ -134,10 +134,6 @@
 				. += "There are [get_amount()] [singular_name]\s in the stack."
 			else
 				. += "There is [get_amount()] [singular_name] in the stack."
-		if(get_amount()>1)
-			. += "There are [get_amount()] [singular_name]\s in the stack."
-		else
-			. += "There is [get_amount()] [singular_name] in the stack."
 	else if(get_amount()>1)
 		. += "There are [get_amount()] in the stack."
 	else

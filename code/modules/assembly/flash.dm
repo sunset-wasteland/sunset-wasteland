@@ -228,20 +228,20 @@
 	desc = "A high-powered photon projector implant normally used for lighting purposes, but also doubles as a flashbulb weapon. Self-repair protocols fix the flashbulb if it ever burns out."
 	var/flashcd = 20
 	var/overheat = 0
-	var/obj/item/organ/cyberimp/arm/flash/I = null
+	var/obj/item/organ/cyberimp/arm/flash/our_implant = null
 	var/active_light_strength = 7
 
 /obj/item/assembly/flash/armimplant/burn_out()
-	if(I && I.owner)
-		to_chat(I.owner, "<span class='warning'>Your photon projector implant overheats and deactivates!</span>")
-		I.Retract()
+	if(our_implant?.owner)
+		to_chat(our_implant.owner, "<span class='warning'>Your photon projector implant overheats and deactivates!</span>")
+		our_implant.Retract()
 	overheat = TRUE
 	addtimer(CALLBACK(src, .proc/cooldown), flashcd * 2)
 
 /obj/item/assembly/flash/armimplant/try_use_flash(mob/user = null)
 	if(overheat)
-		if(I && I.owner)
-			to_chat(I.owner, "<span class='warning'>Your photon projector is running too hot to be used again so quickly!</span>")
+		if(our_implant?.owner)
+			to_chat(our_implant.owner, "<span class='warning'>Your photon projector is running too hot to be used again so quickly!</span>")
 		return FALSE
 	overheat = TRUE
 	addtimer(CALLBACK(src, .proc/cooldown), flashcd)
@@ -258,6 +258,10 @@
 
 /obj/item/assembly/flash/armimplant/proc/cooldown()
 	overheat = FALSE
+
+/obj/item/assembly/flash/armimplant/Destroy()
+	our_implant = null
+	return ..()
 
 /obj/item/assembly/flash/shield
 	name = "strobe shield"

@@ -16,6 +16,11 @@
 	if(magic_flags)
 		AddElement(/datum/element/spellcasting, magic_flags, ITEM_SLOT_HEAD)
 
+/obj/item/clothing/head/wizard/Destroy()
+	if(magic_flags)
+		RemoveElement(/datum/element/spellcasting)
+	return ..()
+
 /obj/item/clothing/head/wizard/red
 	name = "red wizard hat"
 	desc = "Strange-looking red hat-wear that most certainly belongs to a real magic user."
@@ -84,6 +89,11 @@
 	. = ..()
 	if(magic_flags)
 		AddElement(/datum/element/spellcasting, magic_flags, ITEM_SLOT_OCLOTHING)
+
+/obj/item/clothing/suit/wizrobe/Destroy()
+	if(magic_flags)
+		RemoveElement(/datum/element/spellcasting)
+	return ..()
 
 /obj/item/clothing/suit/wizrobe/red
 	name = "red wizard robe"

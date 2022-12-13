@@ -32,7 +32,7 @@
 
 // Defines for the time an item has to get its reference cleaned before it fails the queue and moves to the next.
 #define GC_FILTER_QUEUE 1 SECONDS
-#define GC_CHECK_QUEUE 5 MINUTES
+#define GC_CHECK_QUEUE 3 MINUTES
 #define GC_DEL_QUEUE 10 SECONDS
 
 
@@ -44,8 +44,8 @@
 #define GC_CURRENTLY_BEING_QDELETED -2
 
 #define QDELING(X) (X.gc_destroyed)
-#define QDELETED(X) (!X || QDELING(X))
-#define QDESTROYING(X) (!X || X.gc_destroyed == GC_CURRENTLY_BEING_QDELETED)
+#define QDELETED(X) (isnull(X) || QDELING(X))
+#define QDESTROYING(X) (isnull(X) || X.gc_destroyed == GC_CURRENTLY_BEING_QDELETED)
 
 #define QDEL_IN(item, time) addtimer(CALLBACK(GLOBAL_PROC, .proc/qdel, (time) > GC_FILTER_QUEUE ? WEAKREF(item) : item), time, TIMER_STOPPABLE)
 #define QDEL_IN_CLIENT_TIME(item, time) addtimer(CALLBACK(GLOBAL_PROC, .proc/qdel, item), time, TIMER_STOPPABLE | TIMER_CLIENT_TIME)

@@ -28,6 +28,8 @@
 		LAZYREMOVE(limb.scars, src)
 	if(victim)
 		LAZYREMOVE(victim.all_scars, src)
+	limb = null
+	victim = null
 	. = ..()
 
 /**

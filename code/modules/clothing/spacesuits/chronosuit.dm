@@ -13,6 +13,10 @@
 		suit.deactivate(1, 1)
 	..()
 
+/obj/item/clothing/head/helmet/space/chronos/Destroy()
+	suit = null
+	return ..()
+
 /obj/item/clothing/suit/space/chronos
 	name = "Chronosuit"
 	desc = "An advanced spacesuit equipped with time-bluespace teleportation and anti-compression technology."
@@ -32,10 +36,14 @@
 	var/teleporting = 0
 	var/phase_timer_id
 
-/obj/item/clothing/suit/space/chronos/New()
-	..()
+/obj/item/clothing/suit/space/chronos/Initialize()
+	. = ..()
 	teleport_now.chronosuit = src
 	teleport_now.target = src
+
+/obj/item/clothing/suit/space/chronos/Destroy()
+	QDEL_NULL(teleport_now)
+	return ..()
 
 /obj/item/clothing/suit/space/chronos/proc/new_camera(mob/user)
 	if(camera)

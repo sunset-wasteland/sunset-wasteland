@@ -165,6 +165,9 @@ Nowhere else to really put this. Pulled from what I had done on Hyper. - Carl
 /obj/structure/fluff/destroyed_nuclear_reactor/process()
 	if(QDELETED(src))
 		return PROCESS_KILL
+	
+	if(!z || !SSmobs.clients_by_zlevel[z].len) // we don't care about irradiating if no one is around to see it!
+		return
 
 	for(var/mob/living/carbon/human/victim in view(src,5))
 		if(istype(victim) && victim.stat != DEAD)

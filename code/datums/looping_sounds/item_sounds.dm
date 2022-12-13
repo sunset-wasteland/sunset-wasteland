@@ -53,3 +53,9 @@
 	mid_sounds = list('sound/f13machines/bike_loop.ogg')
 	mid_length = 42
 	volume = 30
+
+//helmets
+/datum/looping_sound/helmet
+	mid_sounds = list('sound/effects/clock_tick.ogg')
+	mid_length = 3.5
+	volume = 25

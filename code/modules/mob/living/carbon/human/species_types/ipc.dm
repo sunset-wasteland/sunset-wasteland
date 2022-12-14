@@ -40,9 +40,12 @@
 		screen.Grant(C)
 	..()
 
+/datum/species/ipc/Destroy(force, ...)
+	QDEL_NULL(screen)
+	return ..()
+
 /datum/species/ipc/on_species_loss(mob/living/carbon/human/C)
-	if(screen)
-		screen.Remove(C)
+	QDEL_NULL(screen)
 	..()
 
 /datum/action/innate/monitor_change

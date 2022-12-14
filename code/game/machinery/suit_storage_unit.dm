@@ -144,6 +144,7 @@
 	update_icon()
 
 /obj/machinery/suit_storage_unit/Destroy()
+	QDEL_NULL(wires)
 	QDEL_NULL(suit)
 	QDEL_NULL(helmet)
 	QDEL_NULL(mask)

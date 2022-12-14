@@ -209,6 +209,7 @@
 /mob/living/simple_animal/hostile/asteroid/elite/herald/mirror/Destroy()
 	if(my_master != null)
 		my_master.my_mirror = null
+		my_master = null
 	. = ..()
 
 /obj/item/projectile/herald

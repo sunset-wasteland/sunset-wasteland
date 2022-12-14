@@ -162,6 +162,7 @@ Class Procs:
 			STOP_PROCESSING(SSmachines, src)
 		else
 			STOP_PROCESSING(SSfastprocess, src)
+	circuit = null
 	dropContents()
 	if(length(component_parts))
 		for(var/atom/A in component_parts)

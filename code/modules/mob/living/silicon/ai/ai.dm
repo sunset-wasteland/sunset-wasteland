@@ -46,7 +46,7 @@
 	var/obj/item/multitool/aiMulti
 	var/mob/living/simple_animal/bot/Bot
 	var/tracking = FALSE //this is 1 if the AI is currently tracking somebody, but the track has not yet been completed.
-	var/datum/effect_system/spark_spread/spark_system//So they can initialize sparks whenever/N
+	var/datum/effect_system/spark_spread/spark_system //So they can initialize sparks whenever/N
 
 	//MALFUNCTION
 	var/datum/module_picker/malf_picker
@@ -103,7 +103,7 @@
 		new/obj/structure/AIcore/deactivated(loc) //New empty terminal.
 		return INITIALIZE_HINT_QDEL //Delete AI.
 
-	ADD_TRAIT(src, TRAIT_NO_TELEPORT, src)
+	ADD_TRAIT(src, TRAIT_NO_TELEPORT, INNATE_TRAIT)
 	if(L && istype(L, /datum/ai_laws))
 		laws = L
 		laws.associate(src)
@@ -171,10 +171,20 @@
 	GLOB.ai_list -= src
 	GLOB.shuttle_caller_list -= src
 	SSshuttle.autoEvac()
-	qdel(eyeobj) // No AI, no Eye
+	QDEL_NULL(eyeobj) // No AI, no Eye
+	QDEL_NULL(aiPDA)
+	QDEL_NULL(aiMulti)
+	QDEL_NULL(spark_system)
+	QDEL_NULL(deploy_action)
+	QDEL_NULL(redeploy_action)
+	QDEL_NULL(master_multicam)
+	linked_core = null
+	deployed_shell = null
+	controlled_mech = null
+	Bot = null
+	parent = null
 	malfhack = null
-
-	. = ..()
+	return ..()
 
 /mob/living/silicon/ai/IgniteMob()
 	fire_stacks = 0
@@ -316,11 +326,11 @@
 	var/is_anchored = FALSE
 	if(move_resist == MOVE_FORCE_OVERPOWERING)
 		move_resist = MOVE_FORCE_NORMAL
-		REMOVE_TRAIT(src, TRAIT_NO_TELEPORT, src)
+		REMOVE_TRAIT(src, TRAIT_NO_TELEPORT, INNATE_TRAIT)
 	else
 		is_anchored = TRUE
 		move_resist = MOVE_FORCE_OVERPOWERING
-		ADD_TRAIT(src, TRAIT_NO_TELEPORT, src)
+		ADD_TRAIT(src, TRAIT_NO_TELEPORT, INNATE_TRAIT)
 
 	to_chat(src, "<b>You are now [is_anchored ? "" : "un"]anchored.</b>")
 	// the message in the [] will change depending whether or not the AI is anchored
@@ -997,9 +1007,9 @@
 	return
 
 /mob/living/silicon/ai/spawned/Initialize(mapload, datum/ai_laws/L, mob/target_ai)
-	. = ..()
 	if(!target_ai)
 		target_ai = src //cheat! just give... ourselves as the spawned AI, because that's technically correct
+	. = ..(mapload, L, target_ai)
 
 /mob/living/silicon/ai/proc/camera_visibility(mob/camera/aiEye/moved_eye)
 	GLOB.cameranet.visibility(moved_eye, client, all_eyes, USE_STATIC_OPAQUE)

@@ -30,6 +30,10 @@
 	. = ..()
 	GLOB.dungeon_marks += src
 
+/obj/effect/landmark/dungeon_mark/Destroy()
+	GLOB.dungeon_marks -= src
+	return ..()
+
 /obj/effect/landmark/map_load_mark
 	name = "map loader landmark"	
 	invisibility = 25
@@ -40,6 +44,10 @@
 /obj/effect/landmark/map_load_mark/Initialize()
 	. = ..()
 	LAZYADD(SSmapping.map_load_marks,src)
+
+/obj/effect/landmark/map_load_mark/Destroy()
+	LAZYREMOVE(SSmapping.map_load_marks, src)
+	return ..()
 
 /*
 /obj/effect/baseturf_helper //Set the baseturfs of every turf in the /area/ it is placed.

@@ -454,15 +454,16 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 // called when power status changes
 
 /area/proc/power_change()
-	for(var/obj/machinery/M in src)	// for each machine in the area
-		M.power_change()				// reverify power status (to update icons etc.)
+	for(var/obj/machinery/M as anything in GLOB.machines)	// for each machine in the world
+		if(get_area(M) == src) // this is faster than 'in area' because that's an implicit in-world
+			M.power_change()				// reverify power status (to update icons etc.)
 	if(sub_areas)
 		for(var/i in sub_areas)
 			var/area/A = i
 			A.power_light = power_light
 			A.power_equip = power_equip
 			A.power_environ = power_environ
-			INVOKE_ASYNC(A, .proc/power_change)
+			A.power_change()
 	update_icon()
 
 /area/proc/usage(chan)

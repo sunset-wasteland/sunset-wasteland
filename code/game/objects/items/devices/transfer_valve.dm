@@ -10,11 +10,20 @@
 	var/obj/item/tank/tank_one
 	var/obj/item/tank/tank_two
 	var/obj/item/assembly/attached_device
-	var/mob/attacher = null
+	var/datum/weakref/attacher = null
 	var/valve_open = FALSE
 	var/toggle = 1
 	var/ui_x = 310
 	var/ui_y = 320
+
+/obj/item/transfer_valve/Destroy()
+	tank_one = null
+	tank_two = null
+	if(attached_device)
+		attached_device.on_detach()
+		attached_device = null
+	attacher = null
+	return ..()
 
 /obj/item/transfer_valve/IsAssemblyHolder()
 	return TRUE
@@ -56,7 +65,7 @@
 		GLOB.bombers += "[key_name(user)] attached a [item] to a transfer valve."
 		message_admins("[ADMIN_LOOKUPFLW(user)] attached a [item] to a transfer valve.")
 		log_game("[key_name(user)] attached a [item] to a transfer valve.")
-		attacher = user
+		attacher = WEAKREF(user)
 	return
 
 //Attached device memes
@@ -196,9 +205,10 @@
 
 		var/admin_attachment_message
 		var/attachment_message
+		var/mob/real_attacher = attacher.resolve()
 		if(attachment)
-			admin_attachment_message = " with [attachment] attached by [attacher ? ADMIN_LOOKUPFLW(attacher) : "Unknown"]"
-			attachment_message = " with [attachment] attached by [attacher ? key_name_admin(attacher) : "Unknown"]"
+			admin_attachment_message = " with [attachment] attached by [real_attacher ? ADMIN_LOOKUPFLW(real_attacher) : "Unknown"]"
+			attachment_message = " with [attachment] attached by [real_attacher ? key_name_admin(real_attacher) : "Unknown"]"
 
 		var/mob/bomber = get_mob_by_key(fingerprintslast)
 		var/admin_bomber_message

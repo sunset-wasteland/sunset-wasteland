@@ -46,7 +46,9 @@
 	/datum/outfit/loadout/ncrcitizen,
 	/datum/outfit/loadout/legioncivilian,
 	/datum/outfit/loadout/wastelander_desert_ranger,
-	/datum/outfit/loadout/bos_exile)
+	/datum/outfit/loadout/bos_exile,
+	/datum/outfit/loadout/ncr_exile,
+	/datum/outfit/loadout/legion_exile)
 
 /datum/outfit/job/wasteland/f13wastelander
 	name = "Wastelander"
@@ -216,8 +218,27 @@
 	backpack_contents = list(
 		/obj/item/gun/energy/laser/pistol=1,
 		/obj/item/stock_parts/cell/ammo/ec = 2,
-		/obj/item/book/granter/crafting_recipe/blueprint/aep7 = 1,
 		/obj/item/grenade/f13/frag = 2,
+		)
+
+/datum/outfit/loadout/ncr_exile
+	name = "Transient NCR Deserter"
+	suit = /obj/item/clothing/suit/armor/f13/exile/ncrexile
+	uniform = /obj/item/clothing/under/f13/exile
+	id = /obj/item/card/id/rusted
+	backpack_contents = list(
+		/obj/item/gun/ballistic/automatic/pistol/ninemil = 1,
+		/obj/item/ammo_box/magazine/m9mmds = 2,
+		/obj/item/storage/box/ration/ranger_breakfast = 1)
+
+/datum/outfit/loadout/legion_exile
+	name = "Transient Disgraced Legionnaire"
+	suit = /obj/item/clothing/suit/armor/f13/exile/legexile
+	uniform = /obj/item/clothing/under/f13/exile/legion
+	id = /obj/item/card/id/rusted/rustedmedallion
+	backpack_contents = list(
+		/obj/item/melee/onehanded/machete = 1,
+		/obj/item/storage/backpack/spearquiver = 1
 		)
 
 /*
@@ -446,31 +467,6 @@ Raider
 		/obj/item/defibrillator/primitive=1,
 		)
 
-/datum/outfit/loadout/raider_ncr
-	name = "NCR Deserter"
-	suit = /obj/item/clothing/suit/armor/f13/exile/ncrexile
-	uniform = /obj/item/clothing/under/f13/exile
-	id = /obj/item/card/id/rusted
-	backpack_contents = list(
-		/obj/item/gun/ballistic/automatic/service = 1,
-		/obj/item/ammo_box/magazine/m556/rifle=2,
-		/obj/item/melee/onehanded/knife/bayonet = 1,
-		/obj/item/storage/box/ration/ranger_breakfast = 1,
-		/obj/item/book/granter/crafting_recipe/blueprint/r82 = 1)
-
-/datum/outfit/loadout/raider_legion
-	name = "Disgraced Legionnaire"
-	suit = /obj/item/clothing/suit/armor/f13/exile/legexile
-	uniform = /obj/item/clothing/under/f13/exile/legion
-	id = /obj/item/card/id/rusted/rustedmedallion
-	backpack_contents = list(
-		/obj/item/melee/onehanded/machete/gladius = 1,
-		/obj/item/storage/backpack/spearquiver = 1,
-		/obj/item/gun/ballistic/automatic/smg/greasegun = 1,
-		/obj/item/ammo_box/magazine/greasegun = 1,
-		/obj/item/book/granter/trait/trekking = 1
-		)
-
 /datum/outfit/loadout/raider_sheriff
 	name = "Desperado"
 	suit = /obj/item/clothing/suit/armored/light/duster/desperado
@@ -564,10 +560,34 @@ Raider
 	id = /obj/item/card/id/rusted/brokenholodog
 	backpack_contents = list(
 		/obj/item/clothing/under/f13/recon/outcast = 1,
-		/obj/item/gun/energy/laser/pistol=1,
-		/obj/item/stock_parts/cell/ammo/ec = 2,
-		/obj/item/book/granter/crafting_recipe/blueprint/aep7 = 1,
+		/obj/item/gun/energy/laser/aer9=1,
+		/obj/item/stock_parts/cell/ammo/mfc = 2,
 		/obj/item/grenade/f13/frag = 2,
+		)
+
+/datum/outfit/loadout/raider_ncr
+	name = "NCR Deserter"
+	suit = /obj/item/clothing/suit/armor/f13/exile/ncrexile
+	uniform = /obj/item/clothing/under/f13/exile
+	id = /obj/item/card/id/rusted
+	backpack_contents = list(
+		/obj/item/gun/ballistic/automatic/service = 1,
+		/obj/item/ammo_box/magazine/m556/rifle=2,
+		/obj/item/melee/onehanded/knife/bayonet = 1,
+		/obj/item/storage/box/ration/ranger_breakfast = 1,
+		/obj/item/book/granter/crafting_recipe/blueprint/r82 = 1)
+
+/datum/outfit/loadout/raider_legion
+	name = "Disgraced Legionnaire"
+	suit = /obj/item/clothing/suit/armor/f13/exile/legexile
+	uniform = /obj/item/clothing/under/f13/exile/legion
+	id = /obj/item/card/id/rusted/rustedmedallion
+	backpack_contents = list(
+		/obj/item/melee/onehanded/machete/gladius = 1,
+		/obj/item/storage/backpack/spearquiver = 1,
+		/obj/item/gun/ballistic/automatic/smg/greasegun = 1,
+		/obj/item/ammo_box/magazine/greasegun = 1,
+		/obj/item/book/granter/trait/trekking = 1
 		)
 
 //New tribal role. Replaces old tribe stuff.

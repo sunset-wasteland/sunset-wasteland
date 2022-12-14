@@ -33,10 +33,15 @@
 
 /obj/machinery/pool/drain/Destroy()
 	STOP_PROCESSING(SSfastprocess, src)
-	controller?.linked_drain = null
-	controller = null
+	unregister_controller()
 	whirling_mobs = null
 	return ..()
+
+/obj/machinery/pool/drain/proc/unregister_controller()
+	SIGNAL_HANDLER
+	if(controller)
+		controller.linked_drain = null
+		controller = null
 
 /obj/machinery/pool/drain/proc/is_in_our_pool(atom/A)
 	. = FALSE
@@ -47,6 +52,8 @@
 
 // This should probably start using move force sometime in the future but I'm lazy.
 /obj/machinery/pool/drain/process()
+	if(!controller)
+		return
 	if(!filling)
 		for(var/obj/item/I in range(min(item_suction_range, 10), src))
 			if(!I.anchored && (I.w_class <= WEIGHT_CLASS_SMALL))
@@ -130,9 +137,14 @@
 	desc = "The part of the pool where all the IDs, ATV keys, and pens, and other dangerous things get trapped."
 	var/obj/machinery/pool/controller/controller
 
+/obj/machinery/pool/filter/proc/unregister_controller()
+	SIGNAL_HANDLER
+	if(controller)
+		controller.linked_filter = null
+		controller = null
+
 /obj/machinery/pool/filter/Destroy()
-	controller?.linked_filter = null
-	controller = null
+	unregister_controller()
 	return ..()
 
 /obj/machinery/pool/filter/emag_act(mob/living/user)

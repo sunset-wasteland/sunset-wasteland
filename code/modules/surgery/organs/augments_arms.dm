@@ -24,6 +24,10 @@
 	for(var/obj/item/I in contents)
 		add_item(I)
 
+/obj/item/organ/cyberimp/arm/Destroy()
+	items_list.Cut()
+	return ..()
+
 /obj/item/organ/cyberimp/arm/proc/add_item(obj/item/I)
 	if(I in items_list)
 		return
@@ -244,9 +248,9 @@
 
 /obj/item/organ/cyberimp/arm/flash/Initialize()
 	. = ..()
-	if(locate(/obj/item/assembly/flash/armimplant) in items_list)
-		var/obj/item/assembly/flash/armimplant/F = locate(/obj/item/assembly/flash/armimplant) in items_list
-		F.I = src
+	var/obj/item/assembly/flash/armimplant/our_flash = locate(/obj/item/assembly/flash/armimplant) in items_list
+	if(our_flash)
+		our_flash.our_implant = src
 
 /obj/item/organ/cyberimp/arm/baton
 	name = "arm electrification implant"
@@ -260,9 +264,9 @@
 
 /obj/item/organ/cyberimp/arm/combat/Initialize()
 	. = ..()
-	if(locate(/obj/item/assembly/flash/armimplant) in items_list)
-		var/obj/item/assembly/flash/armimplant/F = locate(/obj/item/assembly/flash/armimplant) in items_list
-		F.I = src
+	var/obj/item/assembly/flash/armimplant/our_flash = locate(/obj/item/assembly/flash/armimplant) in items_list
+	if(our_flash in items_list)
+		our_flash.our_implant = src
 
 /obj/item/organ/cyberimp/arm/esword
 	name = "arm-mounted energy blade"
@@ -304,9 +308,9 @@
 		return
 	obj_flags |= EMAGGED
 	to_chat(usr, "<span class='notice'>You unlock [src]'s high-power flash!</span>")
-	var/obj/item/assembly/flash/armimplant/F = new(src)
-	items_list += F
-	F.I = src
+	var/obj/item/assembly/flash/armimplant/our_flash = new(src)
+	items_list += our_flash
+	our_flash.our_implant = src
 
 /////////////////
 

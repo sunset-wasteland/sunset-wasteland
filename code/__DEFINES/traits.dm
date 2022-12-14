@@ -262,6 +262,7 @@
 #define TRAIT_TRIBAL			"Tribalistic Person" //has access to tribal crafting recipes
 #define TRAIT_BERSERKER			"berserker"
 #define TRAIT_KRIGSERKER		"krigserker"
+#define TRAIT_OLDSERKER			"oldserker"
 #define TRAIT_TECHNOPHREAK		"technophreak"	//boosts salvage return
 #define TRAIT_PA_WEAR           "pa_wear" //guess
 #define TRAIT_MEDICALEXPERT		"Medicinal Expert" //Can do revival surgery
@@ -362,6 +363,7 @@
 #define MARTIAL_ARTIST_TRAIT "martial_artist"
 #define BERSERKER_TRAIT "berserker"
 #define KRIGSERKER_TRAIT "krigserker"
+#define OLDSERKER_TRAIT "oldserker"
 #define SLEEPING_CARP_TRAIT "sleeping_carp"
 #define RISING_BASS_TRAIT "rising_bass"
 #define ABDUCTOR_ANTAGONIST "abductor-antagonist"

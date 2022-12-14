@@ -30,24 +30,23 @@
 	return see
 
 /mob/living/simple_animal/hostile/retaliate/proc/Retaliate()
-	var/list/around = view(src, vision_range)
-
-	for(var/atom/movable/A in around)
-		if(A == src)
+	for(var/mob/living/living_mob in view(src, vision_range))
+		if(living_mob == src) // Ignore ourselves.
 			continue
-		if(isliving(A))
-			var/mob/living/M = A
-			if(faction_check_mob(M) && attack_same || !faction_check_mob(M))
-				enemies |= WEAKREF(M)
-		else if(ismecha(A))
-			var/obj/mecha/M = A
-			if(M.occupant)
-				enemies |= WEAKREF(M)
-				enemies |= WEAKREF(M.occupant)
+		if (faction_check_mob(living_mob)) // We're the same faction,
+			if (!attack_same) // but do we care about infighting?
+				var/mob/living/simple_animal/hostile/retaliate/comrade = living_mob
+				if(istype(comrade) && !comrade.attack_same) // Goats of the world unite! You have nothing to lose but your chains!
+					enemies |= comrade.enemies
+				continue // Same faction and we don't want to attack them.
+		// We're mad!
+		enemies |= WEAKREF(living_mob)
 
-	for(var/mob/living/simple_animal/hostile/retaliate/H in around)
-		if(faction_check_mob(H) && !attack_same && !H.attack_same)
-			H.enemies |= enemies
+	for(var/obj/mecha/mech in view(src, vision_range)) // We're also really mad at mechs.
+		if(mech.occupant) // Specifically, their drivers.
+			enemies |= WEAKREF(mech)
+			enemies |= WEAKREF(mech.occupant)
+
 	return 0
 
 /mob/living/simple_animal/hostile/retaliate/adjustHealth(amount, updating_health = TRUE, forced = FALSE)

@@ -35,6 +35,10 @@
 		var/datum/action/innate/elite_attack/attack_action = new action_type()
 		attack_action.Grant(src)
 
+/mob/living/simple_animal/hostile/asteroid/elite/Destroy()
+	owner = null
+	return ..()
+
 //Prevents elites from attacking members of their faction (can't hurt themselves either) and lets them mine rock with an attack despite not being able to smash walls.
 /mob/living/simple_animal/hostile/asteroid/elite/AttackingTarget()
 	if(istype(target, /mob/living/simple_animal/hostile))
@@ -72,17 +76,16 @@ While using this makes the system rely on OnFire, it still gives options for tim
 	icon_icon = 'icons/mob/actions/actions_elites.dmi'
 	button_icon_state = ""
 	background_icon_state = "bg_default"
-	var/mob/living/simple_animal/hostile/asteroid/elite/M
 	var/chosen_message
 	var/chosen_attack_num = 0
 
 /datum/action/innate/elite_attack/Grant(mob/living/L)
 	if(istype(L, /mob/living/simple_animal/hostile/asteroid/elite))
-		M = L
 		return ..()
 	return FALSE
 
 /datum/action/innate/elite_attack/Activate()
+	var/mob/living/simple_animal/hostile/asteroid/elite/M = owner
 	M.chosen_attack = chosen_attack_num
 	to_chat(M, chosen_message)
 
@@ -210,6 +213,7 @@ While using this makes the system rely on OnFire, it still gives options for tim
 
 /obj/structure/elite_tumor/Destroy()
 	STOP_PROCESSING(SSobj, src)
+	QDEL_NULL(internal)
 	mychild = null
 	activator = null
 	return ..()

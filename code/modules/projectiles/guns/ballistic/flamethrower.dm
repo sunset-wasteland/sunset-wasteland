@@ -20,7 +20,8 @@
 	gun = new(src)
 	START_PROCESSING(SSobj, src)
 
-/obj/item/m2flamethrower/Destroy()
+/obj/item/m2flamethrowertank/Destroy()
+	QDEL_NULL(gun)
 	STOP_PROCESSING(SSobj, src)
 	return ..()
 
@@ -118,6 +119,10 @@
 	else
 		return INITIALIZE_HINT_QDEL //No pack, no gun
 
+	return ..()
+
+/obj/item/gun/ballistic/m2flamethrower/Destroy()
+	ammo_pack = null
 	return ..()
 
 /obj/item/gun/ballistic/m2flamethrower/attack_self(mob/living/user)

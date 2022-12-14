@@ -19,7 +19,6 @@
 //#define TESTING				
 //By using the testing("message") proc you can create debug-feedback for people with this
 								//uncommented, but not visible in the release version) 
-//#define DATUMVAR_DEBUGGING_MODE	//Enables the ability to cache datum vars and retrieve later for debugging which vars changed.
 
 // Comment this out if you are debugging problems that might be obscured by custom error handling in world/Error
 #ifdef DEBUG
@@ -27,28 +26,23 @@
 #endif
 
 #ifdef TESTING
-#define DATUMVAR_DEBUGGING_MODE
 
-/*
-* Enables extools-powered reference tracking system, letting you see what is referencing objects that refuse to hard delete.
-*
-* * Requires TESTING to be defined to work.
-*/
-//#define REFERENCE_TRACKING  
+///Used to find the sources of harddels, quite laggy, don't be surpised if it freezes your client for a good while
+//#define REFERENCE_TRACKING
+#ifdef REFERENCE_TRACKING
 
+///Used for doing dry runs of the reference finder, to test for feature completeness
+///Slightly slower, higher in memory. Just not optimal
 //#define REFERENCE_TRACKING_DEBUG
 
-///Method of tracking references without using extools. Slower, kept to avoid over-reliance on extools.
-//#define LEGACY_REFERENCE_TRACKING
-#ifdef LEGACY_REFERENCE_TRACKING
-
-///Use the legacy reference on things hard deleting by default.
+///Run a lookup on things hard deleting by default.
 //#define GC_FAILURE_HARD_LOOKUP
 #ifdef GC_FAILURE_HARD_LOOKUP
+///Don't stop when searching, go till you're totally done
 #define FIND_REF_NO_CHECK_TICK
 #endif //ifdef GC_FAILURE_HARD_LOOKUP
 
-#endif //ifdef LEGACY_REFERENCE_TRACKING
+#endif //ifdef REFERENCE_TRACKING
 
 //#define VISUALIZE_ACTIVE_TURFS	//Highlights atmos active turfs in green
 
@@ -79,7 +73,7 @@
 #endif
 
 #ifdef GC_FAILURE_HARD_LOOKUP
-#define FIND_REF_NO_CHECK_TICK
+//#define FIND_REF_NO_CHECK_TICK
 #endif
 
 #ifdef CIBUILDING

@@ -28,6 +28,9 @@
 /obj/effect/decal/waste/process()
 	if(QDELETED(src))
 		return PROCESS_KILL
+	
+	if(!z || !SSmobs.clients_by_zlevel[z].len) // we don't care about irradiating if no one is around to see it!
+		return
 
 	for(var/mob/living/carbon/human/victim in view(src,range))
 		if(istype(victim) && victim.stat != DEAD)

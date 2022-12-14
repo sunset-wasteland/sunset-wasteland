@@ -91,4 +91,4 @@
 	return ..()
 
 /obj/effect/abstract/sync_holder/AllowDrop()
-	return TRUE //no dropping spaghetti out of your spacetime pocket
+	return !QDELETED(src) //no dropping spaghetti out of your spacetime pocket

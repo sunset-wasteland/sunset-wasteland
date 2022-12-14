@@ -46,6 +46,10 @@
 	smallsprite.Grant(src)
 	return ..()
 
+/mob/living/carbon/alien/humanoid/royal/queen/Destroy()
+	QDEL_NULL(smallsprite)
+	return ..()
+
 /mob/living/carbon/alien/humanoid/royal/queen/create_internal_organs()
 	internal_organs += new /obj/item/organ/alien/plasmavessel/large/queen
 	internal_organs += new /obj/item/organ/alien/resinspinner

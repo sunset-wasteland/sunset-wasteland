@@ -718,25 +718,29 @@
 	unarmed_adjusted = !unarmed_adjusted
 	to_chat(usr, "<span class='notice'>[src] is ready to be worn on another hand.</span>")
 
+/////
+// NOTE: THE DAMAGE FROM THESE DOES NOT INCLUDE THE BONUS FROM BASE PUNCH DAMAGE
+// OR FROM IRON FIST.
+/////
 
-// Brass knuckles	Keywords: Damage 23
+// Brass knuckles	Keywords: Damage 17
 /obj/item/melee/unarmed/brass
 	name = "brass knuckles"
 	desc = "Hardened knuckle grip that is actually made out of steel. They protect your hand, and do more damage, in unarmed combat."
 	icon_state = "brass"
 	item_state = "brass"
 	attack_verb = list("punched", "jabbed", "whacked")
-	force = 24
+	force = 17
 	custom_materials = list(/datum/material/iron = 2000)
 
-// Brass knuckles	Keywords: Damage 23
+// Brass knuckles	Keywords: Damage 21, Stamina
 /obj/item/melee/unarmed/brass/lovetap
 	name = "Love Tap"
 	desc = "Specially made brass knuckles, designed to get the most out of your love taps."
 	icon_state = "brass"
 	item_state = "brass"
 	attack_verb = list("tapped", "punched", "jabbed", "whacked")
-	force = 28
+	force = 21
 
 /obj/item/melee/unarmed/brass/lovetap/attack(mob/living/M, mob/living/user)
 	. = ..()
@@ -744,23 +748,23 @@
 		return
 	M.apply_damage(25, STAMINA, null, 0)
 
-// Spiked knuckles	Keywords: Damage 24
+// Spiked knuckles	Keywords: Damage 18
 /obj/item/melee/unarmed/brass/spiked
 	name = "spiked knuckes"
 	desc = "Unlike normal brass knuckles, these have a metal plate across the knuckles with four spikes on, one for each knuckle. So not only does the victim feel the force of the punch, but also the devastating effects of spikes being driven in."
 	icon_state = "spiked"
 	item_state = "spiked"
 	sharpness = SHARP_POINTY
-	force = 25
+	force = 18
 
-// Sappers			Keywords: Damage 25
+// Sappers			Keywords: Damage 18, Stamina
 /obj/item/melee/unarmed/sappers
 	name = "sappers"
 	desc = "Lead filled gloves which are ideal for beating the crap out of opponents."
 	icon_state = "sapper"
 	item_state = "sapper"
 	w_class = WEIGHT_CLASS_NORMAL
-	force = 25
+	force = 18
 
 /obj/item/melee/unarmed/sappers/attack(mob/living/M, mob/living/user)
 	. = ..()
@@ -768,7 +772,7 @@
 		return
 	M.apply_damage(15, STAMINA, "head", M.run_armor_check("head", "melee"))
 
-// Tiger claws		Keywords: Damage 31, Pointy
+// Tiger claws		Keywords: Damage 23, Pointy
 /obj/item/melee/unarmed/tigerclaw
 	name = "tiger claws"
 	desc = "Gloves with short claws built into the palms."
@@ -777,39 +781,39 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	attack_verb = list("slashed", "sliced", "torn", "ripped", "diced", "cut")
 	sharpness = SHARP_POINTY
-	force = 31
+	force = 23
 	hitsound = 'sound/weapons/bladeslice.ogg'
 
-// Lacerator		Keywords: Damage 27, Edged, Wound bonus
+// Lacerator		Keywords: Damage 20, Edged, Wound bonus
 /obj/item/melee/unarmed/lacerator
 	name = "lacerator"
 	desc = "Leather gloves with razor blades built into the back of the hand."
 	icon_state = "lacerator"
 	item_state = "lacerator"
 	w_class = WEIGHT_CLASS_NORMAL
-	force = 27
+	force = 20
 	bare_wound_bonus = 5
 	sharpness = SHARP_EDGED
 	attack_verb = list("slashed", "sliced", "torn", "ripped", "diced", "cut")
 	hitsound = 'sound/weapons/bladeslice.ogg'
 
-// Mace Glove		Keywords: Damage 30
+// Mace Glove		Keywords: Damage 23
 /obj/item/melee/unarmed/maceglove
 	name = "mace glove"
 	desc = "Weighted metal gloves that are covered in spikes.  Don't expect to grab things with this."
 	icon_state = "mace_glove"
 	item_state = "mace_glove"
 	w_class = WEIGHT_CLASS_BULKY
-	force = 30
+	force = 23
 	sharpness = SHARP_NONE
 
-// Punch Dagger		Keywords: Damage 29, Pointy
+// Punch Dagger		Keywords: Damage 22, Pointy
 /obj/item/melee/unarmed/punchdagger
 	name = "punch dagger"
 	desc = "A dagger designed to be gripped in the user�s fist with the blade protruding between the middle and ring fingers, to increase the penetration of a punch."
 	icon_state = "punch_dagger"
 	item_state = "punch_dagger"
-	force = 29
+	force = 22
 	sharpness = SHARP_POINTY
 	attack_verb = list("stabbed", "sliced", "pierced", "diced", "cut")
 	hitsound = 'sound/weapons/bladeslice.ogg'
@@ -819,10 +823,11 @@
 	desc = "Razor sharp blades embedded into the grippers of an assaultron. Sharp."
 	icon_state = "tiger_claw"
 	item_state = "tiger_claw"
+	// Staying at 40 instead of 23 since I don't think the punch code will work with borgs.
 	force = 40 //Assaultron, so, makes sense.
 	armour_penetration = 0.5
 
-// Deathclaw Gauntlet	Keywords: Damage 28, AP 1
+// Deathclaw Gauntlet	Keywords: Damage 21, AP 1
 /obj/item/melee/unarmed/deathclawgauntlet
 	name = "deathclaw gauntlet"
 	desc = "The severed hand of a mighty Deathclaw, cured, hollowed out, and given a harness to turn it into the deadliest gauntlet the wastes have ever seen."
@@ -830,13 +835,13 @@
 	item_state = "deathclaw_g"
 	slot_flags = ITEM_SLOT_GLOVES
 	w_class = WEIGHT_CLASS_NORMAL
-	force = 28
+	force = 21
 	armour_penetration = 1
 	sharpness = SHARP_EDGED
 	attack_verb = list("slashed", "sliced", "torn", "ripped", "diced", "cut")
 	hitsound = 'sound/weapons/bladeslice.ogg'
 
-// Sentient Deathclaw Gauntlet	Keywords: Damage 30, AP 1
+// Sentient Deathclaw Gauntlet	Keywords: Damage 23, AP 1
 /obj/item/melee/unarmed/sentientdeathclawgauntlet
 	name = "sentient deathclaw gauntlet"
 	desc = "This is an item created for the sentient deathclaws and is unique, DO NOT USE."
@@ -844,13 +849,13 @@
 	item_state = "sentientdeathclaw_g"
 	slot_flags = ITEM_SLOT_GLOVES
 	w_class = WEIGHT_CLASS_NORMAL
-	force = 30
+	force = 23
 	armour_penetration = 1
 	sharpness = SHARP_EDGED
 	attack_verb = list("slashed", "sliced", "torn", "ripped", "diced", "mauled")
 	hitsound = 'sound/f13npc/deathclaw/aggro2.ogg'
 
-//Yao Guai Gauntlet	Keywords: Damage 30, Fast, "Saw Bleed" Effect
+//Yao Guai Gauntlet	Keywords: Damage 13, Fast, "Saw Bleed" Effect
 /obj/item/melee/unarmed/yaoguaigauntlet
 	name = "yao guai gauntlet"
 	desc = "The severed hand of a yao guai, the hide cured, the muscles and bone removed, and given a harness to turn it into a deadly gauntlet. Usually seen around the hands of the Sorrows tribe."
@@ -858,7 +863,7 @@
 	item_state = "deathclaw_g"
 	slot_flags = ITEM_SLOT_GLOVES
 	w_class = WEIGHT_CLASS_NORMAL
-	force = 20
+	force = 13
 	sharpness = SHARP_EDGED
 	attack_verb = list("slashed", "sliced", "torn", "ripped", "diced", "cut")
 	hitsound = 'sound/weapons/bladeslice.ogg'

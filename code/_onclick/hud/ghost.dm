@@ -18,7 +18,7 @@
 
 /obj/screen/ghost/orbit/Click()
 	var/mob/dead/observer/G = usr
-	G.follow()
+	G.ghostorbit()
 
 /obj/screen/ghost/reenter_corpse
 	name = "Reenter corpse"

@@ -5,7 +5,7 @@
 
 	icon             = LIGHTING_ICON
 	icon_state       = "transparent"
-	color            = LIGHTING_BASE_MATRIX
+	color            = null //we manually set color in init instead
 	plane            = LIGHTING_PLANE
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 	invisibility     = INVISIBILITY_LIGHTING
@@ -14,9 +14,12 @@
 	var/needs_update = FALSE
 	var/turf/myturf
 
-// Inlined to avoid Initialize().
-/atom/movable/lighting_object/New(mapload)
-	flags_1 |= INITIALIZED_1
+/atom/movable/lighting_object/Initialize(mapload)
+	. = ..()
+	verbs.Cut()
+	//We avoid setting this in the base as if we do then the parent atom handling will add_atom_color it and that
+	//is totally unsuitable for this object, as we are always changing its colour manually
+	color = LIGHTING_BASE_MATRIX
 
 	myturf = loc
 	if (myturf.lighting_object)

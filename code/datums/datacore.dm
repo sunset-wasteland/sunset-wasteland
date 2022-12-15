@@ -482,15 +482,6 @@
 			continue
 		return to_check
 
-/proc/find_general_record(field, value)
-	return find_record(field, value, GLOB.data_core.general)
-
-/proc/find_medical_record(field, value)
-	return find_record(field, value, GLOB.data_core.medical)
-
-/proc/find_security_record(field, value)
-	return find_record(field, value, GLOB.data_core.security)
-
 /datum/datacore/proc/remove_record_by_name(username)
 	for(var/datacore_list in list(general, medical, security, locked))
 		for(var/j in datacore_list)

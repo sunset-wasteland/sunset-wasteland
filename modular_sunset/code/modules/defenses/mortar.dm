@@ -302,7 +302,7 @@
 			if(!WS)
 				WS = new/obj/effect/decal/waste(turf)
 
-	radiation_pulse(src, 3500) //General rad pulse. Stacks with the above.
+	rad_act(3500)//General rad pulse. Stacks with the above. If this even works?
 	qdel(src)
 
 ////////////////////////////////////////////////////////////////////////////////////////////

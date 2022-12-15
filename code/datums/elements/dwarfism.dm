@@ -29,6 +29,8 @@
 
 /datum/element/dwarfism/Detach(mob/living/L)
 	. = ..()
+	if(QDELETED(L))
+		return
 	if(L.lying != 0)
 		L.transform = L.transform.Scale(TALL, 1)
 	else

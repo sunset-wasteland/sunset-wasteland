@@ -113,3 +113,5 @@
 	var/static/list/can_ride_typecache = typecacheof(/mob/living/carbon/human)
 
 	var/cansprint = 1
+
+	var/orebox = null

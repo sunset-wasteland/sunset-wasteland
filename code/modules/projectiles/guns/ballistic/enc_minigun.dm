@@ -24,7 +24,6 @@
 	START_PROCESSING(SSobj, src)
 
 /obj/item/encencminigunbal4mm/Destroy()
-	QDEL_NULL(gun)
 	STOP_PROCESSING(SSobj, src)
 	return ..()
 
@@ -133,10 +132,6 @@
 
 	return ..()
 
-/obj/item/gun/ballistic/encminigunbal4mm/Destroy()
-	ammo_pack = null
-	return ..()
-
 /obj/item/gun/ballistic/encminigunbal4mm/attack_self(mob/living/user)
 	return
 
@@ -206,7 +201,6 @@
 	START_PROCESSING(SSobj, src)
 
 /obj/item/encminigunpack/Destroy()
-	QDEL_NULL(gun)
 	STOP_PROCESSING(SSobj, src)
 	return ..()
 
@@ -310,10 +304,6 @@
 	else
 		return INITIALIZE_HINT_QDEL //No pack, no gun
 
-	return ..()
-
-/obj/item/gun/energy/encminigun/Destroy()
-	ammo_pack = null
 	return ..()
 
 /obj/item/gun/energy/encminigun/attack_self(mob/living/user)

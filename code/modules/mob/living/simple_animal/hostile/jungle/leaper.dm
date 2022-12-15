@@ -87,7 +87,7 @@
 	AddElement(/datum/element/connect_loc, loc_connections)
 
 
-	float(TRUE)
+	INVOKE_ASYNC(src, /atom/movable.proc/float, TRUE)
 	QDEL_IN(src, 100)
 
 /obj/structure/leaper_bubble/Destroy()

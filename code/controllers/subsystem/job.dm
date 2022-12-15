@@ -490,8 +490,7 @@ SUBSYSTEM_DEF(job)
 			if(CONFIG_GET(flag/auto_deadmin_players) || (M.client.prefs?.toggles & DEADMIN_ALWAYS))
 				M.client.holder.auto_deadmin()
 			else
-				handle_auto_deadmin_roles(M.client, rank) 
-*/
+				handle_auto_deadmin_roles(M.client, rank) */
 
 	to_chat(M, "<b>You are the [rank].</b>")
 	if(job)

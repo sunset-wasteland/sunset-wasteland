@@ -505,53 +505,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	var/turf/loc = get_turf(src)
 	show_air_status_to(loc, usr)
 
-
-//Returns a list of all mobs with their name
-/proc/getmobs(ghostfollow = FALSE)
-
-	var/list/mobs = sortmobs()
-	var/list/names = list()
-	var/list/creatures = list()
-	var/list/namecounts = list()
-	for(var/mob/M in mobs)
-		if(isobserver(M) && ghostfollow && M.client?.holder && M.client.holder.fakekey /*&& M.is_preference_enabled(/datum/client_preference/holder/stealth_ghost_mode)*/)
-			continue
-		var/name = M.name
-		if (name in names)
-			namecounts[name]++
-			name = "[name] ([namecounts[name]])"
-		else
-			names.Add(name)
-			namecounts[name] = 1
-		if (M.real_name && M.real_name != M.name)
-			name += " \[[M.real_name]\]"
-		if (M.stat == 2)
-			if(istype(M, /mob/dead/observer))
-				name += " \[ghost\]"
-			else
-				name += " \[dead\]"
-		creatures[name] = M
-
-	return creatures
-
-/proc/getmobs_ghost_follow()
-	return getmobs(TRUE)
-
-/mob/dead/observer/verb/follow(input in getmobs_ghost_follow())
-	set category = "Ghost"
-	set name = "Follow" // "Haunt"
-	set desc = "Follow and haunt a mob."
-
-	if(!input)
-		input = input(usr, "Select a mob:", "Ghost Follow") as null|anything in getmobs_ghost_follow()
-	if(!input)
-		return
-
-	var/target = getmobs_ghost_follow()[input]
-	if(!target) return
-	ManualFollow(target)
-
-/mob/dead/observer/verb/ghostorbit()
+/mob/dead/observer/verb/follow()
 	set category = "Ghost"
 	set name = "Orbit" // "Haunt"
 	set desc = "Follow and orbit a mob."

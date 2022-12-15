@@ -180,10 +180,6 @@
 	)
 	AddElement(/datum/element/connect_loc, loc_connections)
 
-/obj/structure/trap/stun/hunter/Destroy()
-	stored_item = null
-	return ..()
-
 /obj/structure/trap/stun/hunter/process_entered(atom/movable/AM)
 	..()
 	if(isliving(AM))
@@ -237,7 +233,7 @@
 	forceMove(stored_trap)//moves item into trap
 
 /obj/item/bountytrap/Destroy()
-	QDEL_NULL(stored_trap)
+	qdel(stored_trap)
 	QDEL_NULL(radio)
 	QDEL_NULL(spark_system)
 	. = ..()

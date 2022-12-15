@@ -27,11 +27,6 @@
 	spark_system.set_up(5, 0, src)
 	spark_system.attach(src)
 
-/obj/item/energy_katana/Destroy()
-	QDEL_NULL(spark_system)
-	QDEL_NULL(jaunt)
-	return ..()
-
 /obj/item/energy_katana/attack_self(mob/user)
 	dash_toggled = !dash_toggled
 	to_chat(user, "<span class='notice'>You [dash_toggled ? "enable" : "disable"] the dash function on [src].</span>")

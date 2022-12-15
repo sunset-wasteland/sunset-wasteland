@@ -17,10 +17,6 @@
 	countdown()
 	hud_tick()
 
-/obj/effect/sunlight/Destroy(force)
-	cancel_me = TRUE
-	return ..()
-
 /obj/effect/sunlight/proc/countdown()
 	set waitfor = FALSE
 

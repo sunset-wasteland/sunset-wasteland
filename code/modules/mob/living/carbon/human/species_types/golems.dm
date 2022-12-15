@@ -34,10 +34,6 @@
 
 	species_type = "golem"
 
-/datum/species/golem/Destroy(force, ...)
-	owner = null
-	return ..()
-
 /datum/species/golem/random_name(gender,unique,lastname)
 	var/golem_surname = pick(GLOB.golem_names)
 	// 3% chance that our golem has a human surname, because
@@ -126,12 +122,9 @@
 		ignite = new
 		ignite.Grant(C)
 
-/datum/species/golem/plasma/Destroy(force, ...)
-	QDEL_NULL(ignite)
-	return ..()
-
 /datum/species/golem/plasma/on_species_loss(mob/living/carbon/C)
-	QDEL_NULL(ignite)
+	if(ignite)
+		ignite.Remove(C)
 	..()
 
 /datum/action/innate/ignite
@@ -453,12 +446,9 @@
 		unstable_teleport.Grant(C)
 		last_teleport = world.time
 
-/datum/species/golem/bluespace/Destroy(force, ...)
-	QDEL_NULL(unstable_teleport)
-	return ..()
-
 /datum/species/golem/bluespace/on_species_loss(mob/living/carbon/C)
-	QDEL_NULL(unstable_teleport)
+	if(unstable_teleport)
+		unstable_teleport.Remove(C)
 	..()
 
 /datum/action/innate/unstable_teleport
@@ -484,7 +474,6 @@
 /datum/action/innate/unstable_teleport/proc/teleport(mob/living/carbon/human/H)
 	H.visible_message("<span class='warning'>[H] disappears in a shower of sparks!</span>", "<span class='danger'>You teleport!</span>")
 	var/datum/effect_system/spark_spread/spark_system = new /datum/effect_system/spark_spread
-	spark_system.autocleanup = TRUE
 	spark_system.set_up(10, 0, src)
 	spark_system.attach(H)
 	spark_system.start()
@@ -902,12 +891,9 @@
 		bonechill = new
 		bonechill.Grant(C)
 
-/datum/species/golem/bone/Destroy(force, ...)
-	QDEL_NULL(bonechill)
-	return ..()
-
 /datum/species/golem/bone/on_species_loss(mob/living/carbon/C)
-	QDEL_NULL(bonechill)
+	if(bonechill)
+		bonechill.Remove(C)
 	..()
 
 /datum/action/innate/bonechill

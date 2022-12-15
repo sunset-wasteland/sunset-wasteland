@@ -6,7 +6,7 @@
 	ADD_TRAIT(puncher, TRAIT_PERFECT_ATTACKER, INNATE_TRAIT)
 
 	puncher.a_intent_change(INTENT_HARM)
-	victim.attack_hand(puncher)
+	puncher.UnarmedAttack(victim)
 
 	TEST_ASSERT(victim.getBruteLoss() > 0, "Victim took no brute damage after being punched")
 
@@ -64,3 +64,82 @@
 	TEST_ASSERT(pre_attack_hit, "Pre-attack signal was not fired")
 	TEST_ASSERT(attack_hit, "Attack signal was not fired")
 	TEST_ASSERT(post_attack_hit, "Post-attack signal was not fired")
+
+/datum/unit_test/harm_unarmed_weapon/Run()
+	var/mob/living/carbon/human/puncher = allocate(/mob/living/carbon/human)
+	var/obj/item/melee/unarmed/brass/brass_knuckles = allocate(/obj/item/melee/unarmed/brass)
+	var/mob/living/carbon/human/victim = allocate(/mob/living/carbon/human)
+
+	// Avoid all randomness in tests
+	ADD_TRAIT(puncher, TRAIT_PERFECT_ATTACKER, INNATE_TRAIT)
+	
+	puncher.equip_to_slot(brass_knuckles, SLOT_GLOVES)
+	puncher.a_intent_change(INTENT_HARM)
+	puncher.UnarmedAttack(victim)
+
+	var/expected_damage = brass_knuckles.force + puncher.dna.species.punchdamagehigh
+	TEST_ASSERT(victim.getBruteLoss() >= expected_damage, "Victim took too little damage after being punched")
+	TEST_ASSERT(victim.getBruteLoss() <= expected_damage, "Victim took too much damage after being punched")
+
+/datum/unit_test/harm_punch_ironfist/Run()
+	var/mob/living/carbon/human/puncher = allocate(/mob/living/carbon/human)
+	var/mob/living/carbon/human/victim = allocate(/mob/living/carbon/human)
+
+	// Avoid all randomness in tests
+	ADD_TRAIT(puncher, TRAIT_PERFECT_ATTACKER, INNATE_TRAIT)
+	
+	ADD_TRAIT(puncher, TRAIT_IRONFIST, INNATE_TRAIT)
+	puncher.a_intent_change(INTENT_HARM)
+	puncher.UnarmedAttack(victim)
+
+	// todo: add a getter or define for the iron fist damage modifier
+	// so we can check exact values rather than just if it's too low
+	var/expected_damage = puncher.dna.species.punchdamagehigh
+	TEST_ASSERT(victim.getBruteLoss() > expected_damage, "Victim took too little damage after being punched")
+
+/datum/unit_test/harm_punch_bigleagues/Run()
+	var/mob/living/carbon/human/puncher = allocate(/mob/living/carbon/human)
+	var/mob/living/carbon/human/victim = allocate(/mob/living/carbon/human)
+
+	// Avoid all randomness in tests
+	ADD_TRAIT(puncher, TRAIT_PERFECT_ATTACKER, INNATE_TRAIT)
+	
+	ADD_TRAIT(puncher, TRAIT_BIG_LEAGUES, INNATE_TRAIT)
+	puncher.a_intent_change(INTENT_HARM)
+	puncher.UnarmedAttack(victim)
+
+	var/expected_damage = puncher.dna.species.punchdamagehigh
+	TEST_ASSERT(victim.getBruteLoss() > expected_damage, "Victim took too much damage after being punched")
+
+/datum/unit_test/harm_unarmed_weapon_ironfist/Run()
+	var/mob/living/carbon/human/puncher = allocate(/mob/living/carbon/human)
+	var/obj/item/melee/unarmed/brass/brass_knuckles = allocate(/obj/item/melee/unarmed/brass)
+	var/mob/living/carbon/human/victim = allocate(/mob/living/carbon/human)
+
+	// Avoid all randomness in tests
+	ADD_TRAIT(puncher, TRAIT_PERFECT_ATTACKER, INNATE_TRAIT)
+	
+	ADD_TRAIT(puncher, TRAIT_IRONFIST, INNATE_TRAIT)
+	puncher.equip_to_slot(brass_knuckles, SLOT_GLOVES)
+	puncher.a_intent_change(INTENT_HARM)
+	puncher.UnarmedAttack(victim)
+
+	var/expected_damage = brass_knuckles.force + puncher.dna.species.punchdamagehigh
+	TEST_ASSERT(victim.getBruteLoss() > expected_damage, "Victim took too little damage after being punched")
+
+/datum/unit_test/harm_unarmed_weapon_bigleagues/Run()
+	var/mob/living/carbon/human/puncher = allocate(/mob/living/carbon/human)
+	var/obj/item/melee/unarmed/brass/brass_knuckles = allocate(/obj/item/melee/unarmed/brass)
+	var/mob/living/carbon/human/victim = allocate(/mob/living/carbon/human)
+
+	// Avoid all randomness in tests
+	ADD_TRAIT(puncher, TRAIT_PERFECT_ATTACKER, INNATE_TRAIT)
+	
+	ADD_TRAIT(puncher, TRAIT_BIG_LEAGUES, INNATE_TRAIT)
+	puncher.equip_to_slot(brass_knuckles, SLOT_GLOVES)
+	puncher.a_intent_change(INTENT_HARM)
+	puncher.UnarmedAttack(victim)
+
+	var/expected_damage = brass_knuckles.force + puncher.dna.species.punchdamagehigh
+	TEST_ASSERT(victim.getBruteLoss() >= expected_damage, "Victim took too little damage after being punched")
+	TEST_ASSERT(victim.getBruteLoss() <= expected_damage, "Victim took too much damage after being punched")

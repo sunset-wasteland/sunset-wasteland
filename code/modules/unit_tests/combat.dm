@@ -109,7 +109,8 @@
 	puncher.UnarmedAttack(victim)
 
 	var/expected_damage = puncher.dna.species.punchdamagehigh
-	TEST_ASSERT(victim.getBruteLoss() > expected_damage, "Victim took too much damage after being punched")
+	TEST_ASSERT(victim.getBruteLoss() >= expected_damage, "Victim took too little damage after being punched")
+	TEST_ASSERT(victim.getBruteLoss() <= expected_damage, "Victim took too much damage after being punched")
 
 /datum/unit_test/harm_unarmed_weapon_ironfist/Run()
 	var/mob/living/carbon/human/puncher = allocate(/mob/living/carbon/human)

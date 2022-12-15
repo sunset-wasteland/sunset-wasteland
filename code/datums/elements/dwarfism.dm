@@ -1,5 +1,4 @@
 #define SHORT 4/5
-#define TALL 5/4
 
 ///Very similar to squish, but for dwarves and shorties
 /datum/element/dwarfism
@@ -16,10 +15,7 @@
 	src.comsig = comsig
 
 	var/mob/living/L = target
-	if(L.lying != 0)
-		L.transform = L.transform.Scale(SHORT, 1)
-	else
-		L.transform = L.transform.Scale(1, SHORT)
+	L.resize = SHORT
 	attached_targets[target] = comsig_target
 	RegisterSignal(target, comsig, .proc/check_loss) //Second arg of the signal will be checked against the comsig_target.
 
@@ -29,12 +25,8 @@
 
 /datum/element/dwarfism/Detach(mob/living/L)
 	. = ..()
-	if(L.lying != 0)
-		L.transform = L.transform.Scale(TALL, 1)
-	else
-		L.transform = L.transform.Scale(1, TALL)
+	L.resize = RESIZE_DEFAULT_SIZE
 	UnregisterSignal(L, comsig)
 	attached_targets -= L
 
 #undef SHORT
-#undef TALL

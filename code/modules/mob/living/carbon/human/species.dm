@@ -1500,7 +1500,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	var/damage = rand(get_minimum_punch_damage(user), get_maximum_punch_damage(user))
 	//CITADEL CHANGES - makes resting and disabled combat mode reduce punch damage, makes being out of combat mode result in you taking more damage
 	if(!SEND_SIGNAL(target, COMSIG_COMBAT_MODE_CHECK, COMBAT_MODE_INACTIVE))
-		damage *= 1.2
+		damage *= 1.25 // so that if neither are in combat mode it evens out
 	if(!CHECK_MOBILITY(user, MOBILITY_STAND))
 		damage *= 0.65
 	if(SEND_SIGNAL(user, COMSIG_COMBAT_MODE_CHECK, COMBAT_MODE_INACTIVE))

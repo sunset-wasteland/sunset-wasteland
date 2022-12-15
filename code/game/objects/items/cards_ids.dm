@@ -764,6 +764,10 @@
 
 /obj/item/card/id/departmental_budget/Destroy()
 	SSeconomy.dep_cards -= src
+	registered_account = null
+	var/datum/bank_account/B = SSeconomy.get_dep_account(department_ID)
+	if(B?.bank_cards.len)
+		B.bank_cards -= src
 	return ..()
 
 /obj/item/card/id/departmental_budget/update_label()

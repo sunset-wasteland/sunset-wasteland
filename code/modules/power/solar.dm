@@ -245,7 +245,7 @@
 			to_chat(user, "<span class='warning'>You need to secure the assembly before you can add glass.</span>")
 			return
 		var/obj/item/stack/sheet/S = W
-		var/obj/item/stack/sheet/G = S.change_stack(null, 2)
+		var/obj/item/stack/sheet/G = S.split_stack(null, 2)
 		if(G)
 			glass_type = G
 			G.moveToNullspace()

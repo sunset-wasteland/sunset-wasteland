@@ -76,6 +76,16 @@ Contents:
 	cell.name = "black power cell"
 	cell.icon_state = "bscell"
 
+/obj/item/clothing/suit/space/space_ninja/Destroy()
+	QDEL_NULL(spark_system)
+	QDEL_NULL(n_hood)
+	QDEL_NULL(n_gloves)
+	QDEL_NULL(n_shoes)
+	QDEL_NULL(cell)
+	stored_research = null
+	affecting = null
+	return ..()
+
 //Simply deletes all the attachments and self, killing all related procs.
 /obj/item/clothing/suit/space/space_ninja/proc/terminate()
 	qdel(n_hood)

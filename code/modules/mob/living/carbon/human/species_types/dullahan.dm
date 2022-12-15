@@ -52,11 +52,9 @@
 	ENABLE_BITFIELD(H.flags_1, HEAR_1)
 	H.reset_perspective(H)
 	if(myhead)
-		var/obj/item/dullahan_relay/DR = myhead
-		myhead = null
-		DR.owner = null
-		qdel(DR)
-	H.regenerate_limb(BODY_ZONE_HEAD,FALSE)
+		QDEL_NULL(myhead)
+	if(!QDELETED(H))
+		H.regenerate_limb(BODY_ZONE_HEAD,FALSE)
 	..()
 
 /datum/species/dullahan/spec_life(mob/living/carbon/human/H)
@@ -154,11 +152,16 @@
 		qdel(src)
 
 /obj/item/dullahan_relay/Destroy()
-	if(!QDELETED(owner))
+	if(owner)
 		var/mob/living/carbon/human/H = owner
 		if(isdullahan(H))
 			var/datum/species/dullahan/D = H.dna.species
 			D.myhead = null
-			owner.gib()
+			if(!QDELING(owner))
+				owner.gib()
+	var/obj/item/bodypart/head/head = loc
+	if(istype(head))
+		head.owner = null
+
 	owner = null
 	return ..()

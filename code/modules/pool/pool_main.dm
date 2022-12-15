@@ -15,12 +15,16 @@
 	update_icon()
 
 /turf/open/pool/Destroy()
-	if(controller)
-		controller.linked_turfs -= src
-		controller = null
+	unregister_controller()
 	QDEL_NULL(watereffect)
 	QDEL_NULL(watertop)
 	return ..()
+
+/turf/open/pool/proc/unregister_controller()
+	SIGNAL_HANDLER
+	if(controller)
+		controller.linked_turfs -= src
+		controller = null
 
 /turf/open/pool/update_icon()
 	. = ..()
@@ -91,7 +95,7 @@
 // Exited logic
 /turf/open/pool/Exited(atom/A, atom/newLoc)
 	. = ..()
-	if(isliving(A))
+	if(isliving(A) && controller)
 		var/turf/open/pool/P = newLoc
 		if(!istype(P) || (P.controller != controller))
 			controller?.mobs_in_pool -= A
@@ -111,7 +115,7 @@
 		var/mob/living/victim = AM
 		if(!HAS_TRAIT(victim, TRAIT_SWIMMING))		//poor guy not swimming time to dunk them!
 			victim.AddElement(/datum/element/swimming)
-			controller.mobs_in_pool += victim
+			controller?.mobs_in_pool += victim
 			if(locate(/obj/structure/pool/ladder) in src)		//safe climbing
 				return
 			if(iscarbon(AM))		//FUN TIME!

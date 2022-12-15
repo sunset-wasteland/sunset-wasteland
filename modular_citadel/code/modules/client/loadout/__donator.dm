@@ -364,7 +364,7 @@
 /datum/gear/donator/kits/yan
 	name = "Canis' Teachings"
 	path = /obj/item/storage/box/large/custom_kit/yan
-	ckeywhitelist = list ("Yanniert")
+	ckeywhitelist = list ("yanniert")
 
 /obj/item/storage/box/large/custom_kit/yan/PopulateContents()
 	new /obj/item/book/granter/trait/yan(src)

@@ -26,6 +26,4 @@
 	var/mob/living/carbon/human/H = C
 	H.AddElement(/datum/element/dwarfism, COMSIG_SPECIES_LOSS, src)
 
-/datum/species/dwarf/on_species_loss(mob/living/carbon/H, datum/species/new_species)
-	. = ..()
-	H.RemoveElement(/datum/element/dwarfism)
+// No on_species_loss here; the signal handles it.

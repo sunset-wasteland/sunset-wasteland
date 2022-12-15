@@ -343,6 +343,170 @@
 	admin_ticket_log(new_xeno, msg)
 	return 1
 
+/client/proc/spawn_character()
+	set category = "Admin.Game"
+	set name = "Spawn Character"
+	set desc = "(Re)Spawn a client's loaded character."
+	if(!holder)
+		to_chat(src, "Only administrators may use this command.")
+		return
+
+	//I frontload all the questions so we don't have a half-done process while you're reading.
+	var/client/picked_client = input(src, "Please specify which client's character to spawn.", "Client", "") as null|anything in GLOB.clients
+	if(!picked_client)
+		return
+
+	var/location = alert(src,"Please specify where to spawn them.", "Location", "Right Here", "Arrivals", "Cancel")
+	if(location == "Cancel" || !location)
+		return
+
+	var/announce = alert(src,"Announce as if they had just arrived?", "Announce", "Yes", "No", "Cancel")
+	if(announce == "Cancel")
+		return
+	else if(announce == "Yes") //Too bad buttons can't just have 1/0 values and different display strings
+		announce = 1
+	else
+		announce = 0
+
+	var/inhabit = alert(src,"Put the person into the spawned mob?", "Inhabit", "Yes", "No", "Cancel")
+	if(inhabit == "Cancel")
+		return
+	else if(inhabit == "Yes")
+		inhabit = 1
+	else
+		inhabit = 0
+
+	//Name matching is ugly but mind doesn't persist to look at.
+	var/charjob
+	var/records
+	var/datum/data/record/record_found
+	record_found = find_general_record("name",picked_client.prefs.real_name)
+
+	//Found their record, they were spawned previously
+	if(record_found)
+		var/samejob = alert(src,"Found [picked_client.prefs.real_name] in data core. They were [record_found.fields["real_rank"]] this round. Assign same job? They will not be re-added to the manifest/records, either way.","Previously spawned","Yes","Assistant","No")
+		if(samejob == "Yes")
+			charjob = record_found.fields["real_rank"]
+		//else if(samejob == USELESS_JOB) //VOREStation Edit - Visitor not Assistant
+		//	charjob = USELESS_JOB //VOREStation Edit - Visitor not Assistant
+	else
+		records = alert(src,"No data core entry detected. Would you like add them to the manifest, and sec/med/HR records?","Records","Yes","No","Cancel")
+		if(records == "Cancel")
+			return
+		if(records == "Yes")
+			records = 1
+		else
+			records = 0
+
+	//Well you're not reloading their job or they never had one.
+	if(!charjob)
+		var/pickjob = input(src,"Pick a job to assign them (or none).","Job Select","-No Job-") as null|anything in SSjob.name_occupations + "-No Job-"
+		if(!pickjob)
+			return
+		if(pickjob != "-No Job-")
+			charjob = pickjob
+
+	//If you've picked a job by now, you can equip them.
+	var/equipment
+	if(charjob)
+		equipment = alert(src,"Spawn them with equipment?", "Equipment", "Yes", "No", "Cancel")
+		if(equipment == "Cancel")
+			return
+		else if(equipment == "Yes")
+			equipment = 1
+		else
+			equipment = 0
+
+	//For logging later
+	var/admin = key_name_admin(src)
+	var/player_key = picked_client.key
+
+	//VOREStation Add - Needed for persistence
+	//var/picked_ckey = picked_client.ckey
+	//var/picked_slot = picked_client.prefs.default_slot
+	//VOREStation Add End
+
+	var/mob/living/carbon/human/new_character
+	var/spawnloc
+
+	//Where did you want to spawn them?
+	switch(location)
+		if("Right Here") //Spawn them on your turf
+			if(!src.mob)
+				to_chat(src, "You can't use 'Right Here' when you are not 'Right Anywhere'!")
+				return
+
+			spawnloc = get_turf(src.mob)
+
+		if("Arrivals") //Spawn them at a latejoin spawnpoint
+			spawnloc = pick(GLOB.start_landmarks_list)
+
+		else //I have no idea how you're here
+			to_chat(src, "Invalid spawn location choice.")
+			return
+
+	//Did we actually get a loc to spawn them?
+	if(!spawnloc)
+		to_chat(src, "Couldn't get valid spawn location.")
+		return
+
+	new_character = new(spawnloc)
+
+	//We were able to spawn them, right?
+	if(!new_character)
+		to_chat(src, "Something went wrong and spawning failed.")
+		return
+
+	//Write the appearance and whatnot out to the character
+	picked_client.prefs.copy_to(new_character)
+	if(new_character.dna)
+		new_character.dna.update_dna_identity()
+		new_character.updateappearance()
+
+	if(inhabit)
+		new_character.key = player_key
+		//Were they any particular special role? If so, copy.
+
+/*
+		if(new_character.mind)
+			var/datum/antagonist/antag_data = get_antag_data(new_character.mind.special_role)
+			if(antag_data)
+				antag_data.add_antagonist(new_character.mind)
+				antag_data.place_mob(new_character)
+
+	//VOREStation Add - Required for persistence
+	if(new_character.mind)
+		new_character.mind.loaded_from_ckey = picked_ckey
+		new_character.mind.loaded_from_slot = picked_slot
+	//VOREStation Add End
+*/
+
+	//If desired, apply equipment.
+	if(equipment)
+		if(charjob)
+			SSjob.EquipRank(new_character, charjob, 1)
+		//equip_custom_items(new_character)
+
+	//If desired, add records.
+	if(records)
+		GLOB.data_core.manifest_inject(new_character)
+
+	//A redraw for good measure
+	new_character.update_icons()
+
+	//If we're announcing their arrival
+	if(announce)
+		AnnounceArrival(new_character, new_character.mind.assigned_role)
+
+	log_admin("[admin] has spawned [player_key]'s character [new_character.real_name].")
+	message_admins("[admin] has spawned [player_key]'s character [new_character.real_name].", 1)
+
+	to_chat(new_character, "You have been fully spawned. Enjoy the game.")
+
+//	feedback_add_details("admin_verb","RSPCH") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+
+	return new_character
+
 /*
 If a guy was gibbed and you want to revive him, this is a good way to do so.
 Works kind of like entering the game with a new character. Character receives a new mind if they didn't have one.
@@ -517,6 +681,39 @@ Traitors and the like can also be revived with the previous role mostly intact.
 
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Respawn Character") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 	return new_character
+
+/client/proc/despawn_character(mob/living/carbon/human/departing_mob in GLOB.human_list)
+	set name = "Matrix Player"
+	set category = "Admin.Game"
+	set desc = "Removes a player from the round as if they'd matrix'd."
+	set popup_menu = FALSE
+
+	if(!check_rights(R_ADMIN))
+		return
+
+	if(!departing_mob)
+		return
+
+	var/confirm = alert("Are you sure you want to matrix [departing_mob]?","Confirmation","No","Yes")
+	if(confirm == "No")
+		return
+
+	var/dat = "[key_name(usr)] has despawned [departing_mob == usr ? "themselves" : departing_mob], job [departing_mob.job], at [AREACOORD(departing_mob.loc)]. Contents despawned along:"
+	if(!length(departing_mob.contents))
+		dat += " none."
+	else
+		var/atom/movable/content = departing_mob.contents[1]
+		dat += " [content.name]"
+		for(var/i in 2 to length(departing_mob.contents))
+			content = departing_mob.contents[i]
+			dat += ", [content.name]"
+		dat += "."
+	message_admins(dat)
+	log_admin(dat)
+
+	departing_mob.visible_message("<span class='notice'>In one frame of the universe, [departing_mob] is there.  In the next, they're gone.  And in a moment, you'll forget how odd that was and move on with your day.</span>")
+
+	departing_mob.despawn()
 
 /client/proc/cmd_admin_add_freeform_ai_law()
 	set category = "Admin.Events"

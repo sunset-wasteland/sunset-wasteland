@@ -177,7 +177,7 @@ GLOBAL_LIST_EMPTY(explosions)
 
 	var/iteration = 0
 	var/affTurfLen = affected_turfs.len
-	var/expBlockLen = cached_exp_block.len
+	var/expBlockLen = cached_exp_block?.len
 	for(var/TI in affected_turfs)
 		var/turf/T = TI
 		++iteration
@@ -250,7 +250,7 @@ GLOBAL_LIST_EMPTY(explosions)
 
 			//update the trackers
 			affTurfLen = affected_turfs.len
-			expBlockLen = cached_exp_block.len
+			expBlockLen = cached_exp_block?.len
 
 			if(break_condition)
 				if(reactionary)
@@ -267,7 +267,7 @@ GLOBAL_LIST_EMPTY(explosions)
 
 				//update the trackers
 				affTurfLen = affected_turfs.len
-				expBlockLen = cached_exp_block.len
+				expBlockLen = cached_exp_block?.len
 
 			var/circumference = (PI * (init_dist + 4) * 2) //+4 to radius to prevent shit gaps
 			if(exploded_this_tick.len > circumference)	//only do this every revolution

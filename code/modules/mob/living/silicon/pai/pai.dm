@@ -84,11 +84,23 @@
 
 /mob/living/silicon/pai/Destroy()
 	QDEL_NULL(internal_instrument)
+	QDEL_NULL(headset)
+	QDEL_NULL(cable)
+	QDEL_NULL(pda)
+	QDEL_NULL(access_card)
+	QDEL_NULL(signaler)
+	current = null
+	hackdoor = null
+	medicalActive1 = null
+	medicalActive2 = null
+	securityActive1 = null
+	securityActive2 = null
 	if (loc != card)
 		card.forceMove(drop_location())
 	card.pai = null
 	card.cut_overlays()
 	card.add_overlay("pai-off")
+	card = null
 	GLOB.pai_list -= src
 	return ..()
 
@@ -109,10 +121,9 @@
 
 	//PDA
 	pda = new(src)
-	spawn(5)
-		pda.ownjob = "pAI Messenger"
-		pda.owner = text("[]", src)
-		pda.name = pda.owner + " (" + pda.ownjob + ")"
+	pda.ownjob = "pAI Messenger"
+	pda.owner = "[src]"
+	pda.name = pda.owner + " (" + pda.ownjob + ")"
 
 	possible_chassis = typelist(NAMEOF(src, possible_chassis), list("cat" = TRUE, "mouse" = TRUE, "monkey" = TRUE, "corgi" = FALSE,
 									"fox" = FALSE, "repairbot" = TRUE, "rabbit" = TRUE, "borgi" = FALSE ,
@@ -209,12 +220,6 @@
 /datum/action/innate/pai
 	name = "PAI Action"
 	icon_icon = 'icons/mob/actions/actions_silicon.dmi'
-	var/mob/living/silicon/pai/P
-
-/datum/action/innate/pai/Trigger()
-	if(!ispAI(owner))
-		return 0
-	P = owner
 
 /datum/action/innate/pai/software
 	name = "Software Interface"
@@ -223,7 +228,10 @@
 
 /datum/action/innate/pai/software/Trigger()
 	..()
-	P.paiInterface()
+	var/mob/living/silicon/pai/pAI = owner
+	if(!istype(pAI))
+		return
+	pAI.paiInterface()
 
 /datum/action/innate/pai/shell
 	name = "Toggle Holoform"
@@ -232,10 +240,13 @@
 
 /datum/action/innate/pai/shell/Trigger()
 	..()
-	if(P.holoform)
-		P.fold_in(FALSE)
+	var/mob/living/silicon/pai/pAI = owner
+	if(!istype(pAI))
+		return
+	if(pAI.holoform)
+		pAI.fold_in(FALSE)
 	else
-		P.fold_out()
+		pAI.fold_out()
 
 /datum/action/innate/pai/chassis
 	name = "Holochassis Appearance Composite"
@@ -244,7 +255,10 @@
 
 /datum/action/innate/pai/chassis/Trigger()
 	..()
-	P.choose_chassis()
+	var/mob/living/silicon/pai/pAI = owner
+	if(!istype(pAI))
+		return
+	pAI.choose_chassis()
 
 /datum/action/innate/pai/rest
 	name = "Rest"
@@ -253,7 +267,10 @@
 
 /datum/action/innate/pai/rest/Trigger()
 	..()
-	P.lay_down()
+	var/mob/living/silicon/pai/pAI = owner
+	if(!istype(pAI))
+		return
+	pAI.lay_down()
 
 /datum/action/innate/pai/light
 	name = "Toggle Integrated Lights"
@@ -263,7 +280,10 @@
 
 /datum/action/innate/pai/light/Trigger()
 	..()
-	P.toggle_integrated_light()
+	var/mob/living/silicon/pai/pAI = owner
+	if(!istype(pAI))
+		return
+	pAI.toggle_integrated_light()
 
 /mob/living/silicon/pai/Process_Spacemove(movement_dir = 0, continuous_move)
 	. = ..()

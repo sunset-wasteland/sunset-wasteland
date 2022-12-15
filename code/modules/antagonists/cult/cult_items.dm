@@ -137,6 +137,11 @@
 	jaunt = new(src)
 	linked_action = new(src)
 
+/obj/item/cult_bastard/Destroy()
+	QDEL_NULL(jaunt)
+	QDEL_NULL(linked_action)
+	return ..()
+
 /obj/item/cult_bastard/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/butchering, 50, 80)
@@ -248,17 +253,23 @@
 /datum/action/innate/cult/spin2win/Grant(mob/user, obj/bastard)
 	. = ..()
 	sword = bastard
-	holder = user
+
+/datum/action/innate/cult/spin2win/Destroy()
+	sword = null
+	return ..()
 
 /datum/action/innate/cult/spin2win/IsAvailable(silent = FALSE)
-	if(iscultist(holder) && cooldown <= world.time)
+	if(iscultist(owner) && cooldown <= world.time)
 		return TRUE
 	else
 		return FALSE
 
 /datum/action/innate/cult/spin2win/Activate()
 	cooldown = world.time + sword.spin_cooldown
-	holder.DelayNextAction(50)
+	owner.DelayNextAction(50)
+	var/mob/living/carbon/human/holder = owner
+	if(!istype(holder))
+		return
 	holder.apply_status_effect(/datum/status_effect/sword_spin)
 	sword.spinning = TRUE
 	sword.block_chance = 100
@@ -271,7 +282,7 @@
 	sword.block_chance = 50
 	sword.slowdown -= 1.5
 	sleep(sword.spin_cooldown)
-	holder.update_action_buttons_icon()
+	owner.update_action_buttons_icon()
 
 /obj/item/restraints/legcuffs/bola/cult
 	name = "\improper Nar'Sien bola"

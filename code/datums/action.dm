@@ -83,9 +83,10 @@
 		M.actions -= src
 		M.update_action_buttons()
 	owner = null
-	button.moved = FALSE //so the button appears in its normal position when given to another owner.
-	button.locked = FALSE
-	button.id = null
+	if(button)
+		button.moved = FALSE //so the button appears in its normal position when given to another owner.
+		button.locked = FALSE
+		button.id = null
 
 /datum/action/proc/Trigger()
 	if(!IsAvailable())
@@ -648,6 +649,13 @@
 	return TRUE
 
 /datum/action/spell_action/spell
+
+/datum/action/spell_action/spell/Destroy()
+	if(target)
+		var/obj/effect/proc_holder/spell/spell = target
+		if(owner)
+			owner.RemoveSpell(spell)
+	return ..()
 
 /datum/action/spell_action/spell/IsAvailable(silent = FALSE)
 	if(!target)

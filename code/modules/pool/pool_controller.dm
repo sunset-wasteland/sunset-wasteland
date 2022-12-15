@@ -75,6 +75,7 @@
 
 /obj/machinery/pool/controller/Destroy()
 	STOP_PROCESSING(SSprocessing, src)
+	QDEL_NULL(wires)
 	linked_drain?.controller = null
 	linked_drain = null
 	linked_filter?.controller = null
@@ -89,13 +90,16 @@
 	for(var/turf/open/pool/W in cached)
 		linked_turfs += W
 		W.controller = src
+		W.RegisterSignal(src, COMSIG_PARENT_QDELETING, /turf/open/pool.proc/unregister_controller)
 	for(var/obj/machinery/pool/drain/pooldrain in cached)
 		linked_drain = pooldrain
 		linked_drain.controller = src
+		linked_drain.RegisterSignal(src, COMSIG_PARENT_QDELETING, /obj/machinery/pool/drain.proc/unregister_controller)
 		break
 	for(var/obj/machinery/pool/filter/F in cached)
 		linked_filter = F
 		linked_filter.controller = src
+		linked_filter.RegisterSignal(src, COMSIG_PARENT_QDELETING, /obj/machinery/pool/filter.proc/unregister_controller)
 		break
 
 /obj/machinery/pool/controller/emag_act(mob/user)

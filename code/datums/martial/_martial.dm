@@ -28,6 +28,9 @@
 /datum/martial_art/proc/can_use(mob/living/carbon/human/H)
 	return TRUE
 
+/datum/martial_art/proc/check_streak(mob/living/carbon/human/A, mob/living/carbon/human/D)
+	return FALSE
+
 /datum/martial_art/proc/add_to_streak(element,mob/living/carbon/human/D)
 	if(D != current_target)
 		reset_streak(D)
@@ -41,15 +44,7 @@
 	streak = ""
 
 /datum/martial_art/proc/damage_roll(mob/living/carbon/human/A, mob/living/carbon/human/D)
-	//Here we roll for our damage to be added into the damage var in the various attack procs. This is changed depending on whether we are in combat mode, lying down, or if our target is in combat mode.
-	var/damage = rand(A.dna.species.punchdamagelow, A.dna.species.punchdamagehigh)
-	if(SEND_SIGNAL(D, COMSIG_COMBAT_MODE_CHECK, COMBAT_MODE_INACTIVE))
-		damage *= 1.2
-	if(!CHECK_MOBILITY(A, MOBILITY_STAND))
-		damage *= 0.7
-	if(SEND_SIGNAL(A, COMSIG_COMBAT_MODE_CHECK, COMBAT_MODE_INACTIVE))
-		damage *= 0.8
-	return damage
+	return A.dna.species.punch_damage_roll(A, D)
 
 /datum/martial_art/proc/teach(mob/living/carbon/human/H, make_temporary = FALSE)
 	if(!istype(H) || !H.mind)

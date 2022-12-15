@@ -32,7 +32,11 @@
 	if(. & INTERRUPT_UNARMED_ATTACK)
 		return
 
-	SEND_SIGNAL(src, COMSIG_HUMAN_MELEE_UNARMED_ATTACK, A)
+	// For things like glove weapons.
+	. |= SEND_SIGNAL(src, COMSIG_HUMAN_MELEE_UNARMED_ATTACK, A)
+	if(. & INTERRUPT_UNARMED_ATTACK)
+		return
+
 	return . | A.attack_hand(src, intent, .)
 
 /atom/proc/attack_hand(mob/user, act_intent = user.a_intent, attackchain_flags)

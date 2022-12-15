@@ -9,7 +9,7 @@
 	help_verb = /mob/living/carbon/human/proc/sleeping_carp_help
 	pugilist = TRUE
 
-/datum/martial_art/the_sleeping_carp/proc/check_streak(mob/living/carbon/human/A, mob/living/carbon/human/D)
+/datum/martial_art/the_sleeping_carp/check_streak(mob/living/carbon/human/A, mob/living/carbon/human/D)
 	if(findtext(streak,STRONG_PUNCH_COMBO))
 		streak = ""
 		strongPunch(A,D)

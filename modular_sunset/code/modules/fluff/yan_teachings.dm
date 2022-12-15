@@ -16,7 +16,7 @@
 	help_verb = /mob/living/carbon/human/proc/oldserker_blows_help
 	pugilist = TRUE
 
-/datum/martial_art/oldserker/proc/check_streak(mob/living/carbon/human/A, mob/living/carbon/human/D)
+/datum/martial_art/oldserker/check_streak(mob/living/carbon/human/A, mob/living/carbon/human/D)
 	if(findtext(streak,OLD_HARD_PUNCH_COMBO))
 		streak = ""
 		hardPunch(A,D)

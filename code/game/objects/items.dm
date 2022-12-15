@@ -483,7 +483,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 
 // called after an item is placed in an equipment slot
 // user is mob that equipped it
-// slot uses the slot_X defines found in setup.dm
+// slot uses the slot_X defines found in __DEFINES/inventory.dm
 // for items that can be placed in multiple slots
 // note this isn't called during the initial dressing of a player
 /obj/item/proc/equipped(mob/user, slot)

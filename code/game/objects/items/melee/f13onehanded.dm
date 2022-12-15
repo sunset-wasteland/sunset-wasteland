@@ -658,33 +658,46 @@
 	var/can_adjust_unarmed = TRUE
 	var/unarmed_adjusted = TRUE
 
-/obj/item/melee/unarmed/equipped(mob/user, slot)
+/obj/item/melee/unarmed/Initialize()
 	. = ..()
-	var/mob/living/carbon/human/H = user
-	if(unarmed_adjusted)
-		mob_overlay_icon = righthand_file
-	if(!unarmed_adjusted)
-		mob_overlay_icon = lefthand_file
-	if(ishuman(user) && slot == SLOT_GLOVES)
-		ADD_TRAIT(user, TRAIT_UNARMED_WEAPON, "glove")
-		if(HAS_TRAIT(user, TRAIT_UNARMED_WEAPON))
-			H.dna.species.punchdamagehigh = force + 8 //The +8 damage is what brings up your punch damage to the unarmed weapon's force fully
-			H.dna.species.punchdamagelow = force + 8
-			H.dna.species.attack_sound = hitsound
-			if(sharpness == SHARP_POINTY || sharpness ==  SHARP_EDGED)
-				H.dna.species.attack_verb = pick("slash","slice","rip","tear","cut","dice")
-			if(sharpness == SHARP_NONE)
-				H.dna.species.attack_verb = pick("punch","jab","whack")
-	if(ishuman(user) && slot != SLOT_GLOVES && !H.gloves)
-		REMOVE_TRAIT(user, TRAIT_UNARMED_WEAPON, "glove")
-		if(!HAS_TRAIT(user, TRAIT_UNARMED_WEAPON))
-			H.dna.species.punchdamagehigh = 1
-			H.dna.species.punchdamagelow = 10
-		if(HAS_TRAIT(user, TRAIT_IRONFIST))
-			H.dna.species.punchdamagehigh = 4
-			H.dna.species.punchdamagelow = 11
-		H.dna.species.attack_sound = 'sound/weapons/punch1.ogg'
-		H.dna.species.attack_verb = "punch"
+	RegisterSignal(src, COMSIG_ITEM_EQUIPPED, .proc/on_equip)
+	RegisterSignal(src, COMSIG_ITEM_DROPPED, .proc/on_drop)
+
+/obj/item/melee/unarmed/proc/do_unarmed_attack(mob/living/carbon/source, atom/target)
+	if (source.a_intent == INTENT_HARM)
+		if(ishuman(target) && source.mind?.martial_art)
+			// This code sucks.
+			// TODO: Rewrite martial arts to be less shit.
+			var/datum/martial_art/attacker_style = source.mind.martial_art
+			if(attacker_style.pacifism_check && HAS_TRAIT(source, TRAIT_PACIFISM))
+				return
+			attacker_style.add_to_streak("H",target) // H for Harm
+			if(attacker_style.check_streak(source, target)) // so that martial arts streaks still work
+				return
+	else if (!istype(target, /mob/living/simple_animal/hostile)) // so that disarming + martial arts streaks still work
+		return
+	melee_attack_chain(source, target)
+	return INTERRUPT_UNARMED_ATTACK
+
+/obj/item/melee/unarmed/proc/on_equip(source, mob/equipper, slot)
+	SIGNAL_HANDLER
+	if (slot != SLOT_GLOVES)
+		UnregisterSignal(equipper, COMSIG_HUMAN_MELEE_UNARMED_ATTACK)
+		if (HAS_TRAIT(equipper, TRAIT_UNARMED_WEAPON))
+			REMOVE_TRAIT(equipper, TRAIT_UNARMED_WEAPON, GLOVE_TRAIT)
+		return
+	if(HAS_TRAIT(equipper, TRAIT_UNARMED_WEAPON))
+		return
+	ADD_TRAIT(equipper, TRAIT_UNARMED_WEAPON, GLOVE_TRAIT)
+	RegisterSignal(equipper, COMSIG_HUMAN_MELEE_UNARMED_ATTACK, .proc/do_unarmed_attack)
+
+/obj/item/melee/unarmed/proc/on_drop(source, mob/dropper)
+	// This might remove it too early if someone has multiple,
+	// but it's better than letting them run around with the bonus and nothing equipped.
+	if(!HAS_TRAIT_FROM(dropper, TRAIT_UNARMED_WEAPON, GLOVE_TRAIT))
+		return
+	REMOVE_TRAIT(dropper, TRAIT_UNARMED_WEAPON, GLOVE_TRAIT)
+	UnregisterSignal(dropper, COMSIG_HUMAN_MELEE_UNARMED_ATTACK)
 
 /obj/item/melee/unarmed/examine(mob/user)
 	. = ..()

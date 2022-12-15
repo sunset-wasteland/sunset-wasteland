@@ -134,7 +134,7 @@
 	ADD_TRAIT(H, TRAIT_NOGUNS, OLDSERKER_TRAIT)
 	ADD_TRAIT(H, TRAIT_PIERCEIMMUNE, OLDSERKER_TRAIT)
 	ADD_TRAIT(H, TRAIT_NODISMEMBER, OLDSERKER_TRAIT)
-	ADD_TRAIT(H, TRAIT_OLDSERKER, OLDSERKER_TRAIT)
+	ADD_TRAIT(H, TRAIT_BERSERKER, OLDSERKER_TRAIT)
 	H.physiology.stamina_mod *= 0.3 //more stamina
 	H.physiology.stun_mod *= 0.3 //better stun resistance
 	H.physiology.brute_mod *= 0.9 //10% better brute resist.

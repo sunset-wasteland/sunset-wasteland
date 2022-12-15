@@ -63,15 +63,15 @@
 			mats_per_unit[SSmaterials.GetMaterialRef(i)] = in_process_mat_list[i]
 			custom_materials[i] *= amount
 	. = ..()
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_ENTERED = .proc/on_entered,
+	)
+	AddElement(/datum/element/connect_loc, loc_connections)
 
 	if(merge)
-		for(var/obj/item/stack/item_stack in loc)
-			if(item_stack == src)
-				continue
-			if(can_merge(item_stack))
-				merge_without_del(item_stack)
-				if(is_zero_amount(delete_if_zero = FALSE))
-					return INITIALIZE_HINT_QDEL
+		for(var/obj/item/stack/S in loc)
+			if(S.merge_type == merge_type)
+				INVOKE_ASYNC(src, .proc/merge, S)
 	var/list/temp_recipes = get_main_recipes()
 	recipes = temp_recipes.Copy()
 	if(material_type)
@@ -83,10 +83,6 @@
 					recipes += temp
 	update_weight()
 	update_icon()
-	var/static/list/loc_connections = list(
-		COMSIG_ATOM_ENTERED = .proc/on_movable_entered_occupied_turf,
-	)
-	AddElement(/datum/element/connect_loc, loc_connections)
 
 /obj/item/stack/proc/get_main_recipes()
 	return list()//empty list
@@ -134,6 +130,10 @@
 				. += "There are [get_amount()] [singular_name]\s in the stack."
 			else
 				. += "There is [get_amount()] [singular_name] in the stack."
+		if(get_amount()>1)
+			. += "There are [get_amount()] [singular_name]\s in the stack."
+		else
+			. += "There is [get_amount()] [singular_name] in the stack."
 	else if(get_amount()>1)
 		. += "There are [get_amount()] in the stack."
 	else
@@ -342,14 +342,14 @@
 	return TRUE
 
 /obj/item/stack/use(used, transfer = FALSE, check = TRUE) // return 0 = borked; return 1 = had enough
-	if(check && is_zero_amount(delete_if_zero = TRUE))
+	if(check && zero_amount())
 		return FALSE
 	if (is_cyborg)
 		return source.use_charge(used * cost)
 	if (amount < used)
 		return FALSE
 	amount -= used
-	if(check && is_zero_amount(delete_if_zero = TRUE))
+	if(check && zero_amount())
 		return TRUE
 	if(length(mats_per_unit))
 		var/temp_materials = custom_materials.Copy()
@@ -374,20 +374,13 @@
 
 	return TRUE
 
-/**
- * Returns TRUE if the item stack is the equivalent of a 0 amount item.
- *
- * Also deletes the item if delete_if_zero is TRUE and the stack does not have
- * is_cyborg set to true.
- */
-/obj/item/stack/proc/is_zero_amount(delete_if_zero = TRUE)
+/obj/item/stack/proc/zero_amount()
 	if(is_cyborg)
 		return source.energy < cost
 	if(amount < 1)
-		if(delete_if_zero)
-			qdel(src)
-		return TRUE
-	return FALSE
+		qdel(src)
+		return 1
+	return 0
 
 /obj/item/stack/proc/add(amount)
 	if (is_cyborg)
@@ -402,87 +395,36 @@
 	update_icon()
 	update_weight()
 
-/** Checks whether this stack can merge itself into another stack.
- *
- * Arguments:
- * - [check][/obj/item/stack]: The stack to check for mergeability.
- * - [inhand][boolean]: Whether or not the stack to check should act like it's in a mob's hand.
- */
-/obj/item/stack/proc/can_merge(obj/item/stack/check, inhand = FALSE)
-	if(!istype(check, merge_type))
-		return FALSE
-	if(mats_per_unit ~! check.mats_per_unit) // ~! in case of lists this operator checks only keys, but not values
-		return FALSE
-	if(is_cyborg) // No merging cyborg stacks into other stacks
-		return FALSE
-	if(ismob(loc) && !inhand) // no merging with items that are on the mob
-		return FALSE
-	return TRUE
-
-/**
- * Merges as much of src into target_stack as possible. If present, the limit arg overrides target_stack.max_amount for transfer.
- *
- * This calls use() without check = FALSE, preventing the item from qdeling itself if it reaches 0 stack size.
- *
- * As a result, this proc can leave behind a 0 amount stack.
- */
-/obj/item/stack/proc/merge_without_del(obj/item/stack/target_stack, limit)
-	// Cover edge cases where multiple stacks are being merged together and haven't been deleted properly.
-	// Also cover edge case where a stack is being merged into itself, which is supposedly possible.
-	if(QDELETED(target_stack))
-		CRASH("Stack merge attempted on qdeleted target stack.")
-	if(QDELETED(src))
-		CRASH("Stack merge attempted on qdeleted source stack.")
-	if(target_stack == src)
-		CRASH("Stack attempted to merge into itself.")
-
+/obj/item/stack/proc/merge(obj/item/stack/S) //Merge src into S, as much as possible
+	if(QDELETED(S) || QDELETED(src) || S == src) //amusingly this can cause a stack to consume itself, let's not allow that.
+		return
 	var/transfer = get_amount()
-	if(target_stack.is_cyborg)
-		transfer = min(transfer, round((target_stack.source.max_energy - target_stack.source.energy) / target_stack.cost))
+	if(S.is_cyborg)
+		transfer = min(transfer, round((S.source.max_energy - S.source.energy) / S.cost))
 	else
-		transfer = min(transfer, (limit ? limit : target_stack.max_amount) - target_stack.amount)
+		transfer = min(transfer, S.max_amount - S.amount)
 	if(pulledby)
-		INVOKE_ASYNC(pulledby, /atom/movable.proc/start_pulling, target_stack)
-	target_stack.copy_evidences(src)
-	use(transfer, transfer = TRUE, check = FALSE)
-	target_stack.add(transfer)
-	if(target_stack.mats_per_unit != mats_per_unit) // We get the average value of mats_per_unit between two stacks getting merged
-		var/list/temp_mats_list = list() // mats_per_unit is passed by ref into this coil, and that same ref is used in other places. If we didn't make a new list here we'd end up contaminating those other places, which leads to batshit behavior
-		for(var/mat_type in target_stack.mats_per_unit)
-			temp_mats_list[mat_type] = (target_stack.mats_per_unit[mat_type] * (target_stack.amount - transfer) + mats_per_unit[mat_type] * transfer) / target_stack.amount
-		target_stack.mats_per_unit = temp_mats_list
+		INVOKE_ASYNC(pulledby, /atom/movable.proc/start_pulling, S)
+	S.copy_evidences(src)
+	use(transfer, TRUE)
+	S.add(transfer)
 	return transfer
 
-/**
- * Merges as much of src into target_stack as possible. If present, the limit arg overrides target_stack.max_amount for transfer.
- *
- * This proc deletes src if the remaining amount after the transfer is 0.
- */
-/obj/item/stack/proc/merge(obj/item/stack/target_stack, limit)
-	. = merge_without_del(target_stack, limit)
-	is_zero_amount(delete_if_zero = TRUE)
-
-/// Signal handler for connect_loc element. Called when a movable enters the turf we're currently occupying. Merges if possible.
-/obj/item/stack/proc/on_movable_entered_occupied_turf(datum/source, atom/movable/arrived)
+/obj/item/stack/proc/on_entered(datum/source, obj/o)
 	SIGNAL_HANDLER
+	if(istype(o, merge_type) && !o.throwing)
+		merge(o)
 
-	// Edge case. This signal will also be sent when src has entered the turf. Don't want to merge with ourselves.
-	if(arrived == src)
-		return
-
-	if(!arrived.throwing && can_merge(arrived))
-		merge(arrived)
-
-/obj/item/stack/hitby(atom/movable/hitting, skipcatch, hitpush, blocked, datum/thrownthing/throwingdatum)
-	if(can_merge(hitting, inhand = TRUE))
-		merge(hitting)
+/obj/item/stack/hitby(atom/movable/AM, skipcatch, hitpush, blocked, datum/thrownthing/throwingdatum)
+	if(istype(AM, merge_type))
+		merge(AM)
 	. = ..()
 
 /obj/item/stack/on_attack_hand(mob/user, act_intent = user.a_intent, unarmed_attack_flags)
 	if(user.get_inactive_held_item() == src)
-		if(is_zero_amount(delete_if_zero = TRUE))
+		if(zero_amount())
 			return
-		return split_stack(user,1)
+		return change_stack(user,1)
 	else
 		. = ..()
 
@@ -493,7 +435,7 @@
 	if(is_cyborg)
 		return
 	else
-		if(is_zero_amount(delete_if_zero = TRUE))
+		if(zero_amount())
 			return
 		//get amount from user
 		var/max = get_amount()
@@ -503,17 +445,11 @@
 		if(stackmaterial == null || stackmaterial <= 0 || !user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
 			return TRUE
 		else
-			split_stack(user, stackmaterial)
+			change_stack(user, stackmaterial)
 			to_chat(user, "<span class='notice'>You take [stackmaterial] sheets out of the stack</span>")
 		return TRUE
 
-/** Splits the stack into two stacks.
- *
- * Arguments:
- * - [user][/mob]: The mob splitting the stack.
- * - amount: The number of units to split from this stack.
- */
-/obj/item/stack/proc/split_stack(mob/user, amount)
+/obj/item/stack/proc/change_stack(mob/user, amount)
 	if(!use(amount, TRUE, FALSE))
 		return FALSE
 	var/obj/item/stack/F = new type(user? user : drop_location(), amount, FALSE)
@@ -524,11 +460,10 @@
 			F.forceMove(user.drop_location())
 		add_fingerprint(user)
 		F.add_fingerprint(user)
-
-	is_zero_amount(delete_if_zero = TRUE)
+	zero_amount()
 
 /obj/item/stack/attackby(obj/item/W, mob/user, params)
-	if(can_merge(W, inhand = TRUE))
+	if(istype(W, merge_type))
 		var/obj/item/stack/S = W
 		if(merge(S))
 			to_chat(user, "<span class='notice'>Your [S.name] stack now contains [S.get_amount()] [S.singular_name]\s.</span>")

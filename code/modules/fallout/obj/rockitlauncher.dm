@@ -32,7 +32,6 @@
 	START_PROCESSING(SSobj, src)
 
 /obj/item/rockitlauncher_pack/Destroy()
-	QDEL_NULL(gun)
 	STOP_PROCESSING(SSobj, src)
 	return ..()
 
@@ -236,10 +235,6 @@ Possible solution: Only add the minimum weight class of a stack (which is basica
 	else
 		return INITIALIZE_HINT_QDEL //No pack, no gun
 
-	return ..()
-
-/obj/item/pneumatic_cannon/rockitlauncher/Destroy()
-	ammo_pack = null
 	return ..()
 
 /obj/item/pneumatic_cannon/rockitlauncher/ComponentInitialize()

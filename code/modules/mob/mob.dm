@@ -16,8 +16,6 @@
 	qdel(hud_used)
 	for(var/cc in client_colours)
 		qdel(cc)
-	QDEL_LIST(mob_spell_list)
-	QDEL_LIST(actions)
 	client_colours = null
 	ghostize()
 	return ..()
@@ -797,8 +795,7 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 		var/obj/effect/proc_holder/spell/S = X
 		if(istype(S, spell))
 			mob_spell_list -= S
-			if(!QDELETED(S))
-				qdel(S)
+			qdel(S)
 	if(client)
 		client << output(null, "statbrowser:check_spells")
 

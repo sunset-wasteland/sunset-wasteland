@@ -9,7 +9,7 @@
 	icon_state = ""
 	layer = BELOW_MOB_LAYER //so it isn't hidden behind objects when on the floor
 	var/mob/living/carbon/owner = null
-	var/datum/weakref/original_owner = null
+	var/mob/living/carbon/original_owner = null
 	var/status = BODYPART_ORGANIC
 	var/needs_processing = FALSE
 
@@ -575,8 +575,8 @@
 	if(source)
 		C = source
 		if(!original_owner)
-			original_owner = WEAKREF(source)
-	else if(original_owner && WEAKREF(owner) != original_owner) //Foreign limb
+			original_owner = source
+	else if(original_owner && owner != original_owner) //Foreign limb
 		no_update = TRUE
 	else
 		C = owner

@@ -96,8 +96,6 @@
 			if(vs.plane == EMISSIVE_BLOCKER_PLANE)
 				SSvis_overlays.remove_vis_overlay(src, list(vs))
 				break
-	if(!isturf(loc) && !length(vis_locs))
-		return
 	SSvis_overlays.add_vis_overlay(src, icon, icon_state, EMISSIVE_BLOCKER_LAYER, EMISSIVE_BLOCKER_PLANE, dir)
 
 /atom/movable/proc/can_zFall(turf/source, levels = 1, turf/target, direction)
@@ -401,9 +399,7 @@
 	moveToNullspace()
 
 	vis_locs = null //clears this atom out of all viscontents
-	// Checking length(vis_contents) before cutting has significant speed benefits
-	if (length(vis_contents))
-		vis_contents.Cut()
+	vis_contents.Cut()
 
 /atom/movable/proc/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
 	set waitfor = 0
@@ -649,7 +645,6 @@
 
 //TODO: Better floating
 /atom/movable/proc/float(on)
-	set waitfor = FALSE
 	if(throwing)
 		return
 	if(on && (!(movement_type & FLOATING) || floating_need_update))

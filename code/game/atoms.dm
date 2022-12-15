@@ -166,8 +166,7 @@
 	if(reagents)
 		QDEL_NULL(reagents)
 
-	if (length(overlays))
-		overlays.Cut()
+	LAZYCLEARLIST(overlays)
 
 	for(var/i in targeted_by)
 		var/mob/M = i

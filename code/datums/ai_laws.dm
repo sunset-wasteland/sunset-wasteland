@@ -18,10 +18,6 @@
 	var/list/devillaws = list()
 	var/id = DEFAULT_AI_LAWID
 
-/datum/ai_laws/Destroy(force, ...)
-	owner = null
-	return ..()
-
 /datum/ai_laws/proc/lawid_to_type(lawid)
 	var/all_ai_laws = subtypesof(/datum/ai_laws)
 	for(var/al in all_ai_laws)

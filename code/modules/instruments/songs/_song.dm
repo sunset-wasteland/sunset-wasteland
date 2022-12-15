@@ -146,7 +146,7 @@
 	stop_playing()
 	SSinstruments.on_song_del(src)
 	lines = null
-	set_instrument(null)
+	using_instrument = null
 	allowed_instrument_ids = null
 	parent = null
 	return ..()

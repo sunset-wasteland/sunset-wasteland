@@ -28,4 +28,4 @@
 
 /datum/species/dwarf/on_species_loss(mob/living/carbon/H, datum/species/new_species)
 	. = ..()
-	H.RemoveElement(/datum/element/dwarfism)
+

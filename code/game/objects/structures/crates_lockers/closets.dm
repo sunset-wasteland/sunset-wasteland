@@ -612,7 +612,7 @@
 	..()
 
 /obj/structure/closet/AllowDrop()
-	return !QDELETED(src)
+	return TRUE
 
 
 /obj/structure/closet/return_temperature()

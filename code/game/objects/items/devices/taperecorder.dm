@@ -27,12 +27,6 @@
 	update_icon()
 	wires = new /datum/wires/taperecorder(src)
 
-/obj/item/taperecorder/Destroy()
-	if(mytape && !QDELETED(mytape))
-		qdel(mytape)
-	mytape = null
-	QDEL_NULL(wires)
-	return ..()
 
 /obj/item/taperecorder/examine(mob/user)
 	. = ..()
@@ -342,7 +336,7 @@
 /obj/item/tape/random
 	icon_state = "random_tape"
 
-/obj/item/tape/random/Initialize()
+/obj/item/tape/random/New()
 	icon_state = "tape_[pick("white", "blue", "red", "yellow", "purple")]"
-	return ..()
+	..()
 

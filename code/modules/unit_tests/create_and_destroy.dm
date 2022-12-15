@@ -175,43 +175,13 @@ GLOBAL_VAR_INIT(running_create_and_destroy, FALSE)
 	cached_contents.Cut()
 
 	//Now that we've qdel'd everything, let's sleep until the gc has processed all the shit we care about
-	var/time_needed = SSgarbage.collection_timeout[GC_QUEUE_FILTER]
+	var/time_needed = SSgarbage.collection_timeout[GC_QUEUE_CHECK]
 	var/start_time = world.time
-	sleep(time_needed)
-
-	// spin until the first item in the filter queue is older than start_time
-	var/filter_queue_finished = FALSE
-	var/list/filter_queue = SSgarbage.queues[GC_QUEUE_FILTER]
-	while(!filter_queue_finished || !SSgarbage.can_fire)
-		if(!SSgarbage.can_fire) // probably running find references
-			CHECK_TICK
-			continue
-		if(!length(filter_queue))
-			filter_queue_finished = TRUE
-			break
-		var/list/oldest_packet = filter_queue[1]
-		//Pull out the time we deld at
-		var/qdeld_at = oldest_packet[1]
-		if(qdeld_at > start_time) // Everything is in the check queue now!
-			filter_queue_finished = TRUE
-			break
-		if(world.time > start_time + 2 MINUTES)
-			Fail("Something has gone horribly wrong, the filter queue has been processing for well over 2 minutes. What the hell did you do??")
-			break
-		// We want to fire every time.
-		SSgarbage.next_fire = 1
-		sleep(2 SECONDS)
-
-	// do the same with the check queue
 	var/garbage_queue_processed = FALSE
-	time_needed = SSgarbage.collection_timeout[GC_QUEUE_CHECK]
-	start_time = world.time
+
 	sleep(time_needed)
-	var/list/queue_to_check = SSgarbage.queues[GC_QUEUE_CHECK]
-	while(!garbage_queue_processed || !SSgarbage.can_fire)
-		if(!SSgarbage.can_fire) // probably running find references
-			CHECK_TICK
-			continue
+	while(!garbage_queue_processed)
+		var/list/queue_to_check = SSgarbage.queues[GC_QUEUE_CHECK]
 		//How the hell did you manage to empty this? Good job!
 		if(!length(queue_to_check))
 			garbage_queue_processed = TRUE

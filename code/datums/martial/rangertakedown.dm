@@ -36,7 +36,7 @@
 	if(check_streak(A,D))
 		return TRUE
 
-/datum/martial_art/rangertakedown/proc/check_streak(mob/living/carbon/human/A, mob/living/carbon/human/D)
+/datum/martial_art/rangertakedown/check_streak(mob/living/carbon/human/A, mob/living/carbon/human/D)
 	switch(streak)
 		if("ranger_takedown")
 			streak = ""

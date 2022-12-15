@@ -89,26 +89,34 @@
 		to_chat(user, "<span class='warning'>You don't want to harm other living beings!</span>")
 		return
 
-	var/bigleagues = 10 //flat additive
-	var/buffout = force*0.25
-	var/smutant = force*0.25
-	var/ghoulmelee = force*0.25 //negative trait, this will cut 25% of the damage done by melee
+	// This code used to modify the force of the weapon directly, which is bad.
+	// It also had a lot of code duplication (many if statements with 'force >= 5' in them).
+	// Let this be a lesson not to do that. When in doubt, remember:
+	// Don't Repeat Yourself!
 
-	//var/regular = force*(user.special_s/100)//SPECIAL integration
+	//damage_multiplier += (user.special_s/100)//SPECIAL integration
 
-	//force += regular//SPECIAL integration
+	var/bonus_damage = 0
+	if (force >= 5)
+		if(istype(src, /obj/item/melee/unarmed))
+			if(HAS_TRAIT(user, TRAIT_UNARMED_WEAPON) && iscarbon(user))
+				var/mob/living/carbon/carbon_user = user
+				if(carbon_user.gloves == src) // if worn
+					bonus_damage += carbon_user.dna.species.punch_damage_roll(user, M)
+		else if(HAS_TRAIT(user, TRAIT_BIG_LEAGUES))
+			bonus_damage += 10 //flat additive
 
-	if (force >= 5 && HAS_TRAIT(user, TRAIT_BIG_LEAGUES))
-		force += bigleagues
+		if(HAS_TRAIT(user, TRAIT_BUFFOUT_BUFF))
+			damage_multiplier += 0.25
 
-	if (force >= 5 && HAS_TRAIT(user, TRAIT_BUFFOUT_BUFF))
-		force += buffout
+		if (HAS_TRAIT(user, TRAIT_SMUTANT))
+			damage_multiplier += 0.25
 
-	if (force >= 5 && HAS_TRAIT(user, TRAIT_SMUTANT))
-		force += smutant
+		if (HAS_TRAIT(user, TRAIT_GHOULMELEE)) //negative trait
+			damage_multiplier -= 0.25 // reduces the damage done by melee by 25% of the base damage
 
-	if (force >= 5 && HAS_TRAIT(user, TRAIT_GHOULMELEE)) //negative trait
-		force -= ghoulmelee
+	damage_multiplier = max(0, damage_multiplier)
+	bonus_damage = max(-force * damage_multiplier, bonus_damage)
 
 	if(!force)
 		playsound(loc, 'sound/weapons/tap.ogg', get_clamped_volume(), 1, -1)
@@ -119,24 +127,10 @@
 	M.lastattackerckey = user.ckey
 
 	user.do_attack_animation(M)
-	M.attacked_by(src, user, attackchain_flags, damage_multiplier)
+	M.attacked_by(src, user, attackchain_flags, damage_multiplier, bonus_damage)
 
 	log_combat(user, M, "attacked", src.name, "(INTENT: [uppertext(user.a_intent)]) (DAMTYPE: [uppertext(damtype)])")
 	add_fingerprint(user)
-
-	//force -= regular//SPECIAL integration
-
-	if (force >= 5 && HAS_TRAIT(user, TRAIT_BIG_LEAGUES))
-		force -= bigleagues
-
-	if (force >= 5 && HAS_TRAIT(user, TRAIT_BUFFOUT_BUFF))
-		force -= buffout
-
-	if (force >= 5 && HAS_TRAIT(user, TRAIT_SMUTANT))
-		force -= smutant
-
-	if (force >= 5 && HAS_TRAIT(user, TRAIT_GHOULMELEE))
-		force += ghoulmelee
 
 //the equivalent of the standard version of attack() but for object targets.
 /obj/item/proc/attack_obj(obj/O, mob/living/user)
@@ -177,9 +171,9 @@
 		log_combat(user, src, "attacked", I)
 	take_damage(totitemdamage, I.damtype, "melee", 1)
 
-/mob/living/attacked_by(obj/item/I, mob/living/user, attackchain_flags = NONE, damage_multiplier = 1)
+/mob/living/attacked_by(obj/item/I, mob/living/user, attackchain_flags = NONE, damage_multiplier = 1, damage_bonus = 0)
 	var/list/block_return = list()
-	var/totitemdamage = pre_attacked_by(I, user) * damage_multiplier
+	var/totitemdamage = pre_attacked_by(I, user) * damage_multiplier + damage_bonus
 	if((user != src) && mob_run_block(I, totitemdamage, "the [I.name]", ((attackchain_flags & ATTACK_IS_PARRY_COUNTERATTACK)? ATTACK_IS_PARRY_COUNTERATTACK : NONE) | ATTACK_TYPE_MELEE, I.armour_penetration, user, null, block_return) & BLOCK_SUCCESS)
 		return FALSE
 	totitemdamage = block_calculate_resultant_damage(totitemdamage, block_return)
@@ -196,7 +190,7 @@
 					user.add_mob_blood(src)
 		return TRUE //successful attack
 
-/mob/living/simple_animal/attacked_by(obj/item/I, mob/living/user, attackchain_flags = NONE, damage_multiplier = 1)
+/mob/living/simple_animal/attacked_by(obj/item/I, mob/living/user, attackchain_flags = NONE, damage_multiplier = 1, damage_bonus = 0)
 	if(I.force < force_threshold || I.damtype == STAMINA)
 		playsound(src, 'sound/weapons/tap.ogg', I.get_clamped_volume(), 1, -1)
 	else

@@ -369,11 +369,6 @@
 	lose_text = "<span class='danger'>Your fists feel calm again.</span>"
 	locked = TRUE
 
-/datum/quirk/iron_fist/on_spawn()
-	var/mob/living/carbon/human/mob_tar = quirk_holder
-	mob_tar.dna.species.punchdamagelow = 4
-	mob_tar.dna.species.punchdamagehigh = 11
-
 /datum/quirk/light_step
 	name = "Light Step"
 	desc = "You walk with a gentle step, making stepping on sharp objects quieter and less painful."

@@ -20,6 +20,7 @@ INITIALIZE_IMMEDIATE(/mob/living/carbon/human/dummy)
 /mob/living/carbon/human/dummy/proc/wipe_state()
 	delete_equipment()
 	icon_render_key = null
+	transform = matrix()
 	cut_overlays()
 
 //Inefficient pooling/caching way.

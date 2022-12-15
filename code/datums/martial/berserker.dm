@@ -9,7 +9,7 @@
 	help_verb = /mob/living/carbon/human/proc/berserker_blows_help
 	pugilist = TRUE
 
-/datum/martial_art/berserker/proc/check_streak(mob/living/carbon/human/A, mob/living/carbon/human/D)
+/datum/martial_art/berserker/check_streak(mob/living/carbon/human/A, mob/living/carbon/human/D)
 	if(findtext(streak,HARD_PUNCH_COMBO))
 		streak = ""
 		hardPunch(A,D)

@@ -36,7 +36,7 @@
 	if(check_streak(A,D))
 		return TRUE
 
-/datum/martial_art/krigserker/proc/check_streak(mob/living/carbon/human/A, mob/living/carbon/human/D)
+/datum/martial_art/krigserker/check_streak(mob/living/carbon/human/A, mob/living/carbon/human/D)
 	switch(streak)
 		if("krigserker")
 			streak = ""

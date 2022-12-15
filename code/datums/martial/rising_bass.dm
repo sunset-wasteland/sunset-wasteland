@@ -14,7 +14,7 @@
 	var/datum/action/risingbassmove/deftswitch = new/datum/action/risingbassmove/deftswitch()
 	var/repulsecool = 0
 
-/datum/martial_art/the_rising_bass/proc/check_streak(mob/living/carbon/human/A, mob/living/carbon/human/D)
+/datum/martial_art/the_rising_bass/check_streak(mob/living/carbon/human/A, mob/living/carbon/human/D)
 	if(findtext(streak,SIDE_KICK_COMBO))
 		streak = ""
 		sideKick(A,D)

@@ -175,7 +175,7 @@
 	ckeywhitelist = list ("lia526")
 
 /obj/item/storage/box/large/custom_kit/krig/PopulateContents()
-	new /obj/item/book/granter/trait/krig(src)
+	new /obj/item/book/granter/martial/krig(src)
 
 /datum/gear/donator/kits/carl
 	name ="Hazard Gear"
@@ -367,4 +367,4 @@
 	ckeywhitelist = list ("yanniert")
 
 /obj/item/storage/box/large/custom_kit/yan/PopulateContents()
-	new /obj/item/book/granter/trait/yan(src)
+	new /obj/item/book/granter/martial/yan(src)

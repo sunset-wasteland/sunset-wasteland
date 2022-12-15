@@ -67,7 +67,7 @@
 	ADD_TRAIT(H, TRAIT_PIERCEIMMUNE, KRIGSERKER_TRAIT)
 	ADD_TRAIT(H, TRAIT_NODISMEMBER, KRIGSERKER_TRAIT)
 	ADD_TRAIT(H, TRAIT_NOHARDCRIT, KRIGSERKER_TRAIT)
-	ADD_TRAIT(H, TRAIT_KRIGSERKER, KRIGSERKER_TRAIT)
+	ADD_TRAIT(H, TRAIT_BERSERKER, KRIGSERKER_TRAIT)
 	H.physiology.stamina_mod *= 0.3 //more stamina
 	H.physiology.stun_mod *= 0.3 //better stun resistance
 	H.sprint_stamina_cost = 0 //Infinite sprint. The character that uses this isn't able to engage in combat.
@@ -79,7 +79,7 @@
 	REMOVE_TRAIT(H, TRAIT_PIERCEIMMUNE, KRIGSERKER_TRAIT)
 	REMOVE_TRAIT(H, TRAIT_NODISMEMBER, KRIGSERKER_TRAIT)
 	REMOVE_TRAIT(H, TRAIT_NOHARDCRIT, KRIGSERKER_TRAIT)
-	REMOVE_TRAIT(H, TRAIT_KRIGSERKER, KRIGSERKER_TRAIT)
+	REMOVE_TRAIT(H, TRAIT_BERSERKER, KRIGSERKER_TRAIT)
 	H.physiology.stamina_mod = initial(H.physiology.stamina_mod)
 	H.physiology.stun_mod = initial(H.physiology.stun_mod)
 	H.sprint_stamina_cost = initial(H.sprint_stamina_cost)

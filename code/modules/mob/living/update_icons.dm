@@ -3,6 +3,17 @@
 	var/matrix/ntransform = matrix(transform) //aka transform.Copy()
 	var/final_pixel_y = pixel_y
 	var/changed = 0
+
+	// These are one axis only, so must be done before we apply lying.
+	if(resize_x != RESIZE_DEFAULT_SIZE)
+		changed++
+		ntransform.Scale(resize_x, 1)
+		resize_x = RESIZE_DEFAULT_SIZE
+	if(resize_y != RESIZE_DEFAULT_SIZE)
+		changed++
+		ntransform.Scale(1, resize_y)
+		resize_y = RESIZE_DEFAULT_SIZE
+
 	if(lying != lying_prev && rotate_on_lying)
 		changed++
 		ntransform.TurnTo(lying_prev,lying)

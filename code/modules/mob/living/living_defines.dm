@@ -11,7 +11,9 @@
 
 	var/last_click_move = 0 // Stores the previous next_move value.
 
-	var/resize = 1 //Badminnery resize
+	var/resize = RESIZE_DEFAULT_SIZE   //Badminnery resize
+	var/resize_x = RESIZE_DEFAULT_SIZE //Badminnery resize, but only on the X axis
+	var/resize_y = RESIZE_DEFAULT_SIZE //Badminnery resize, but only on the Y axis
 	var/lastattacker = null
 	var/lastattackerckey = null
 

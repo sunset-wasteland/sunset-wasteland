@@ -144,36 +144,38 @@
 			flags_inv ^= visor_flags_inv
 			flags_cover ^= visor_flags_cover
 			icon_state = "[initial(icon_state)][up ? "up" : ""]"
-			to_chat(user, "[up ? alt_toggle_message : toggle_message] \the [src]")
+			to_chat(user, "[up ? alt_toggle_message : toggle_message] \the [src].")
 
 			user.update_inv_head()
 			if(iscarbon(user))
 				var/mob/living/carbon/C = user
 				C.head_update(src, forced = 1)
 
+// TODO: CONVERT TO USE LOOPING SOUNDS
+/*
 			if(active_sound)
-				while(up)
+				while(up) // <-- NEVER DO THIS
 					playsound(src.loc, "[active_sound]", 100, 0, 4)
-					sleep(15)
+					sleep(15) // <-- ESPECIALLY NOT WITH THIS
+*/
 
 /obj/item/clothing/head/helmet/justice
 	name = "helmet of justice"
 	desc = "WEEEEOOO. WEEEEEOOO. WEEEEOOOO."
 	icon_state = "justice"
-	toggle_message = "You turn off the lights on"
-	alt_toggle_message = "You turn on the lights on"
+	toggle_message = "You turn off the light of"
+	alt_toggle_message = "You turn on the light of"
 	actions_types = list(/datum/action/item_action/toggle_helmet_light)
 	can_toggle = 1
 	toggle_cooldown = 20
-	active_sound = 'sound/items/weeoo1.ogg'
+	// TODO: CONVERT TO USE LOOPING SOUNDS
+	//active_sound = 'sound/items/weeoo1.ogg'
 	dog_fashion = null
 
 /obj/item/clothing/head/helmet/justice/escape
 	name = "alarm helmet"
 	desc = "WEEEEOOO. WEEEEEOOO. STOP THAT MONKEY. WEEEOOOO."
 	icon_state = "justice2"
-	toggle_message = "You turn off the light on"
-	alt_toggle_message = "You turn on the light on"
 
 /obj/item/clothing/head/helmet/swat
 	name = "\improper SWAT helmet"

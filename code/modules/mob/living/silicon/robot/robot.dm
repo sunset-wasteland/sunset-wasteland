@@ -78,6 +78,8 @@
 
 //If there's an MMI in the robot, have it ejected when the mob goes away. --NEO
 /mob/living/silicon/robot/Destroy()
+	undeploy()
+	uneq_all()
 	var/atom/T = drop_location()//To hopefully prevent run time errors.
 	if(mmi && mind)//Safety for when a cyborg gets dust()ed. Or there is no MMI inside.
 		if(T)
@@ -107,12 +109,21 @@
 		if(T && istype(radio) && istype(radio.keyslot))
 			radio.keyslot.forceMove(T)
 			radio.keyslot = null
-	qdel(wires)
-	qdel(module)
-	qdel(eye_lights)
-	wires = null
-	module = null
-	eye_lights = null
+	QDEL_NULL(wires)
+	QDEL_NULL(module)
+	QDEL_NULL(eye_lights)
+	QDEL_NULL(inv1)
+	QDEL_NULL(inv2)
+	QDEL_NULL(inv3)
+	QDEL_NULL(hands)
+	QDEL_NULL(lamp_button)
+	QDEL_NULL(thruster_button)
+	QDEL_NULL(robot_modules_background)
+	QDEL_NULL(spark_system)
+	QDEL_NULL(ion_trail)
+	QDEL_NULL(robot_suit)
+	QDEL_LIST(upgrades)
+	hat = null
 	cell = null
 	return ..()
 
@@ -1042,7 +1053,7 @@
 	mind.transfer_to(mainframe)
 	deployed = FALSE
 	mainframe.deployed_shell = null
-	undeployment_action.Remove(src)
+	QDEL_NULL(undeployment_action)
 	if(radio) //Return radio to normal
 		radio.recalculateChannels()
 	if(!QDELETED(builtInCamera))

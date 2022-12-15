@@ -69,9 +69,10 @@
 	return //we use a different hud
 
 /mob/living/silicon/Destroy()
-	radio = null
+	QDEL_NULL(radio)
 	aicamera = null
 	QDEL_NULL(builtInCamera)
+	QDEL_NULL(laws)
 	GLOB.silicon_mobs -= src
 	return ..()
 

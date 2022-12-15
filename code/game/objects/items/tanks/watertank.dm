@@ -222,9 +222,13 @@
 	tank = loc
 	if (!istype(tank))
 		return INITIALIZE_HINT_QDEL
+	QDEL_NULL(reagents)
 	reagents = tank.reagents
 	max_water = tank.volume
 
+/obj/item/extinguisher/mini/nozzle/Destroy()
+	tank = null
+	return ..()
 
 /obj/item/extinguisher/mini/nozzle/doMove(atom/destination)
 	if(destination && (destination != tank.loc || !ismob(destination)))

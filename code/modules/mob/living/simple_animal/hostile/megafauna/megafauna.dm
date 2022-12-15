@@ -165,16 +165,15 @@
 	name = "Megafauna Attack"
 	icon_icon = 'icons/mob/actions/actions_animal.dmi'
 	button_icon_state = ""
-	var/mob/living/simple_animal/hostile/megafauna/M
 	var/chosen_message
 	var/chosen_attack_num = 0
 
 /datum/action/innate/megafauna_attack/Grant(mob/living/L)
 	if(istype(L, /mob/living/simple_animal/hostile/megafauna))
-		M = L
 		return ..()
 	return FALSE
 
 /datum/action/innate/megafauna_attack/Activate()
+	var/mob/living/simple_animal/hostile/megafauna/M = owner
 	M.chosen_attack = chosen_attack_num
 	to_chat(M, chosen_message)

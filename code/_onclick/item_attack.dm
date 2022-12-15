@@ -107,7 +107,7 @@
 			bonus_damage += 10 //flat additive
 
 		if(HAS_TRAIT(user, TRAIT_BUFFOUT_BUFF))
-			damage_multiplier += 0.25
+			damage_multiplier += 0.4
 
 		if (HAS_TRAIT(user, TRAIT_SMUTANT))
 			damage_multiplier += 0.25

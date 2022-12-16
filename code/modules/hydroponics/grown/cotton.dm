@@ -33,26 +33,27 @@
 	var/cotton_name = "raw cotton"
 
 /obj/item/grown/cotton/attack_self(mob/user)
-	user.show_message("<span class='notice'>You pull some [cotton_name] out of the [name]!</span>", MSG_VISUAL)
+	user.show_message(span_notice("You pull some [cotton_name] out of the [name]!"), MSG_VISUAL)
 	var/seed_modifier = 0
 	if(seed)
 		seed_modifier = round(seed.potency / 25)
-	var/obj/item/stack/cotton = new cotton_type(user.loc, 1 + seed_modifier)
-	var/old_cotton_amount = cotton.amount
 	// We do this so that other stuff merges with this, not the other way around.
 	// That way we know we always have a reference to a stack of the largest possible size.
-	for(var/obj/item/stack/potential_stack in user.loc)
-		if(QDELETED(potential_stack)) // don't merge with deleted things
+	var/obj/item/stack/cotton = new cotton_type(null, 1 + seed_modifier) // created in nullspace to avoid deletion via merging on turf entered
+	var/old_cotton_amount = cotton.amount
+	for(var/obj/item/stack/potential_stack in get_turf(user)) 
+		if(QDELETED(potential_stack))
 			continue
-		if(potential_stack == cotton) // don't merge with ourselves
+		if(potential_stack == cotton)
 			continue
-		if(potential_stack.amount >= potential_stack.max_amount) // don't steal from full stacks
+		if(potential_stack.amount >= potential_stack.max_amount) // don't steal from already full stacks
 			continue
-		if(!potential_stack.can_merge(cotton)) // don't merge with other types
+		if(!potential_stack.can_merge(cotton))
 			continue
-		potential_stack.merge(cotton) // merge the other stack into the one we have a ref to
+		potential_stack.merge(cotton)
+	cotton.forceMove(get_turf(user))
 	if(cotton.amount > old_cotton_amount)
-		to_chat(user, "<span class='notice'>You add the newly-formed [cotton_name] to the stack. It now contains [cotton.amount] [cotton_name].</span>")
+		to_chat(user, span_notice("You add the newly-formed [cotton_name] to the stack. It now contains [cotton.amount] [cotton_name]."))
 	qdel(src)
 
 //reinforced mutated variant

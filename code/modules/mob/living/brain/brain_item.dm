@@ -69,7 +69,7 @@
 		BT.on_lose(TRUE)
 		BT.owner = null
 
-	if((!QDELETED(src) || C) && !no_id_transfer)
+	if((!QDELETED(src) || !QDELETED(C)) && !no_id_transfer)
 		transfer_identity(C)
 	if(C)
 		REMOVE_SKILL_MODIFIER_BODY(/datum/skill_modifier/brain_damage, null, C)

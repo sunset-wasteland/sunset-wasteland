@@ -330,6 +330,7 @@
 // Examining more a plant will yield a rough estimation of it's stats.
 // Intended for use by Wayfarer's and Legion to allow their farmers to gauge roughly how it's going.
 /obj/machinery/hydroponics/examine_more(user)
+	. = ..()
 	if(myseed && (in_range(user, src) || isobserver(user)))
 		. += span_info("You examine the plant to get a better view of its harvest...")
 		switch(src.myseed.potency)	// Check potency
@@ -416,6 +417,7 @@
 		. += span_notice("... nothing seems to be growing there.")
 	else
 		. += span_notice("... You can't see anything in particular. Maybe you need to get closer to examine it closely?")
+
 /obj/machinery/hydroponics/proc/weedinvasion() // If a weed growth is sufficient, this happens.
 	dead = 0
 	var/oldPlantName

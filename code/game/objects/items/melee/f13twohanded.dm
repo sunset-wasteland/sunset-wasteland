@@ -322,14 +322,14 @@
 	AddComponent(/datum/component/two_handed, force_unwielded=18, force_wielded=30, icon_wielded="[icon_prefix]2")
 
 
-// Deathclaw Spear		Keywords: TRIBAL, Damage 20/45, Armor-piercing +0.3, Reach
+// Deathclaw Spear		Keywords: TRIBAL, Damage 20/45, Armor-piercing +0.09, Reach
 /obj/item/twohanded/spear/bonespear/deathclaw
 	name = "deathclaw spear"
 	desc = "A finely crafted spear with a shaft wrapped in deathclaw leather. It is tipped with a claw from a beast that must have been terrifying in size."
 	icon_state = "spear-claw"
 	icon_prefix = "spear-claw"
 	force = 20
-	armour_penetration = 0.15
+	armour_penetration = 0.09//From 0.15
 	sharpness = SHARP_EDGED
 
 /obj/item/twohanded/spear/bonespear/deathclaw/ComponentInitialize()

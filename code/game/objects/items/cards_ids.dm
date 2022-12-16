@@ -1219,7 +1219,7 @@
 	item_state = null
 	assignment = "gang tattoo"
 	uses_overlays = FALSE
-	access = list(ACCESS_KHAN, ACCESS_BAR, ACCESS_CLINIC, ACCESS_GATEWAY, ACCESS_MINT_VAULT, ACCESS_MINING, ACCESS_FORENSICS_LOCKERS, ACCESS_CLONING)
+	access = list(ACCESS_KHAN)
 
 /obj/item/card/id/khan_courttattoo/Initialize()
 	. = ..()
@@ -1234,6 +1234,32 @@
 	uses_overlays = FALSE
 
 /obj/item/card/id/outcasttattoo/Initialize()
+	. = ..()
+	ADD_TRAIT(src, TRAIT_NODROP, TRAIT_GENERIC)
+
+/obj/item/card/id/raider_tags
+	name = "faded gang tattoos"
+	desc = "Tattoos marking the wearer as a raider, worn and faded colors."
+	icon_state = "skin"
+	item_state = "skin"
+	assignment = "gang tattoo"
+	uses_overlays = FALSE
+	access = list(ACCESS_RAIDER)
+
+/obj/item/card/id/raider_tags/Initialize()
+	. = ..()
+	ADD_TRAIT(src, TRAIT_NODROP, TRAIT_GENERIC)
+
+/obj/item/card/id/boss_raider_tags
+	name = "faded gang tattoos"
+	desc = "Tattoos marking the wearer as a raider, worn and faded colors."
+	icon_state = "skin"
+	item_state = "skin"
+	assignment = "gang tattoo"
+	uses_overlays = FALSE
+	access = list(ACCESS_RAIDER, ACCESS_RAIDER_BOSS)
+
+/obj/item/card/id/boss_raider_tags/Initialize()
 	. = ..()
 	ADD_TRAIT(src, TRAIT_NODROP, TRAIT_GENERIC)
 

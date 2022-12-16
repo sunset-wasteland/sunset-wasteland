@@ -220,6 +220,12 @@
 	name = "Prison door"
 	req_access_txt = "123"
 
+// CELL DOOR - RAIDER
+
+/obj/machinery/door/unpowered/celldoor/outlaw
+	name = "Prison door"
+	req_access_txt = "141"
+
 
 // ------------------------------------
 // LEGION SECURE REINFORCED DOOR - tough airlock replacement
@@ -279,3 +285,45 @@
 		if("closing")
 			playsound(src,'sound/machines/door_close.ogg',40,1)
 			flick("secure_bos_closing", src)
+
+
+// ------------------------------------
+// TRIBALS & OUTLAWS
+/obj/machinery/door/unpowered/securedoor/tribal
+	name = "secure door"
+	req_access_txt = "140"
+	icon_state = "metal"
+
+/obj/machinery/door/unpowered/securedoor/tribal/update_icon()
+	if(density)
+		icon_state = "metal"
+	else
+		icon_state = "metalopen"
+
+/obj/machinery/door/unpowered/securedoor/tribal/do_animate(animation)
+	switch(animation)
+		if("opening")
+			flick("metalopening", src)
+		if("closing")
+			flick("metalclosing", src)
+
+/obj/machinery/door/unpowered/securedoor/outlaw
+	name = "secure door"
+	req_access_txt = "141"
+	icon_state = "metal"
+
+/obj/machinery/door/unpowered/securedoor/outlaw/update_icon()
+	if(density)
+		icon_state = "metal"
+	else
+		icon_state = "metalopen"
+
+/obj/machinery/door/unpowered/securedoor/outlaw/do_animate(animation)
+	switch(animation)
+		if("opening")
+			flick("metalopening", src)
+		if("closing")
+			flick("metalclosing", src)
+
+/obj/machinery/door/unpowered/securedoor/outlaw/boss
+	req_access_txt = "142"

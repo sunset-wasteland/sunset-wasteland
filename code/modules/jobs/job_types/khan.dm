@@ -212,11 +212,11 @@
 /datum/outfit/loadout/senior
 	name = "True Enforcer"
 	belt = /obj/item/storage/belt/bandolier
-	r_hand = /obj/item/gun/ballistic/shotgun/automatic/combat/neostead
+	r_hand = /obj/item/gun/ballistic/automatic/shotgun/riot
 	suit = /obj/item/clothing/suit/toggle/labcoat/f13/khan_jacket/coat
 	head = /obj/item/clothing/head/helmet/f13/khan/fullhelm
 	backpack_contents = list(
-		/obj/item/ammo_box/shotgun/trainshot = 3,
+		/obj/item/ammo_box/magazine/d12g = 3,
 		/obj/item/storage/box/medicine/stimpaks/stimpaks5 = 1,
 		/obj/item/melee/onehanded/machete/scrapsabre/khan = 1,
 		/obj/item/stack/f13Cash/caps/onezerozerozero = 3)//LOTS of caps.

@@ -390,6 +390,14 @@
 	semi_auto = TRUE
 	fire_sound = 'sound/f13weapons/riot_shotgun.ogg'
 
+//Boss' unique riot shotgun.
+/obj/item/gun/ballistic/automatic/shotgun/riot/boss
+	name = "Left Hand"
+	desc = "A compact riot shotgun with a large ammo drum and semi-automatic fire, designed to fight in close quarters. \
+	This one has engravings, dedicated to a 'Captain' of some sort. Odd."
+	fire_delay = 2
+	recoil = 1
+
 /obj/item/gun/ballistic/automatic/shotgun/pancor
 	name = "Pancor Jackhammer"
 	desc = "The Jackhammer, despite its name, is an easy to control shotgun, even when fired on full automatic. The popular bullpup design, which places the magazine behind the trigger, makes the weapon well balanced & easy to control." //Nod to Fallout 2 in the description :)

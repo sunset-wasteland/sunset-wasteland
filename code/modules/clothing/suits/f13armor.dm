@@ -594,6 +594,16 @@
 	salvaged_type = null
 
 //////
+// Raider Boss
+//////
+/obj/item/clothing/suit/armor/f13/power_armor/t45d/raider
+	name = "Raider Captain's power armor"
+	desc = "The Raider Captain's set of refurbished T-45d power armor. How'd you get your hands on this?"
+	icon_state = "raider_salvaged"
+	item_state = "raider_salvaged"
+	salvaged_type = /obj/item/clothing/suit/armored/heavy/salvaged_pa/t45b/raider
+
+//////
 // Sheriff's Suit
 //////
 /obj/item/clothing/suit/armor/f13/power_armor/town

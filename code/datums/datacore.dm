@@ -155,6 +155,12 @@
 		if(rank in GLOB.wasteland_positions)
 			was[name] = rank
 			department = 1
+		if(rank in GLOB.tribal_positions)
+			tri[name] = rank
+			department = 1
+		if(rank in GLOB.outlaw_positions)
+			out[name] = rank
+			department = 1
 		if(!department && !(name in command))
 			misc[name] = rank
 	if(length(command))

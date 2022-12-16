@@ -56,9 +56,18 @@
 			seed_modifier = round(seed.potency / 25)
 		var/obj/item/stack/plank = new plank_type(user.loc, 1 + seed_modifier)
 		var/old_plank_amount = plank.amount
-		for(var/obj/item/stack/ST in user.loc)
-			if(ST != plank && istype(ST, plank_type) && ST.amount < ST.max_amount)
-				ST.attackby(plank, user) //we try to transfer all old unfinished stacks to the new stack we created.
+		// We do this so that other stuff merges with this, not the other way around.
+		// That way we know we always have a reference to a stack of the largest possible size.
+		for(var/obj/item/stack/potential_stack in user.loc)
+			if(QDELETED(potential_stack)) // don't merge with deleted things
+				continue
+			if(potential_stack == plank) // don't merge with ourselves
+				continue
+			if(potential_stack.amount >= potential_stack.max_amount) // don't steal from full stacks
+				continue
+			if(!potential_stack.can_merge(plank)) // don't merge with other types
+				continue
+			potential_stack.merge(plank) // merge the other stack into the one we have a ref to
 		if(plank.amount > old_plank_amount)
 			to_chat(user, "<span class='notice'>You add the newly-formed [plank_name] to the stack. It now contains [plank.amount] [plank_name].</span>")
 		qdel(src)

@@ -217,9 +217,9 @@
 			G.revive(1)
 		else
 			G.revive(1, 1)
-	set_light(7, 5, "#39FF14")
+	set_light_range_power_color(7, 5, "#39FF14")
 	spawn(40)
-	set_light(2)
+	set_light_range(2)
 
 /mob/living/simple_animal/hostile/ghoul/glowing/strong // FEV mutation
 	maxHealth = 200 //reduced. 20hp per healthtick heal

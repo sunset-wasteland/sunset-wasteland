@@ -401,7 +401,6 @@
 /area/f13/wasteland/warren)
 "api" = (
 /obj/structure/chair/stool/retro/backed,
-/obj/effect/landmark/start/f13/raider,
 /turf/open/floor/f13/wood,
 /area/f13/raiders)
 "apj" = (
@@ -1315,6 +1314,10 @@
 	icon_state = "redmark"
 	},
 /area/f13/ncr)
+"bga" = (
+/obj/machinery/door/unpowered/securedoor/outlaw/boss,
+/turf/open/floor/f13/wood,
+/area/f13/raiders)
 "bgq" = (
 /obj/effect/decal/marking{
 	icon_state = "doublehorizontalcorroded"
@@ -2125,6 +2128,7 @@
 "bVl" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/dresser,
+/obj/item/card/id/selfassign,
 /turf/open/floor/f13/wood,
 /area/f13/raiders)
 "bVp" = (
@@ -3961,6 +3965,11 @@
 /obj/structure/flora/grass/jungle,
 /turf/open/indestructible/ground/outside/water,
 /area/f13/city)
+"dGC" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/landmark/start/f13/raider_boss,
+/turf/open/floor/f13/wood,
+/area/f13/raiders)
 "dHl" = (
 /obj/machinery/light{
 	dir = 1
@@ -4563,12 +4572,6 @@
 /obj/effect/landmark/start/f13/ncrsergeant,
 /turf/open/floor/plasteel/vault,
 /area/f13/ncr)
-"erx" = (
-/obj/structure/barricade/wooden/planks{
-	icon_state = "board-1"
-	},
-/turf/closed/wall/rust,
-/area/f13/raiders)
 "erM" = (
 /obj/structure/chair/f13chair2{
 	dir = 4
@@ -4765,7 +4768,6 @@
 /obj/structure/chair/office/dark{
 	dir = 8
 	},
-/obj/effect/landmark/start/f13/raider,
 /turf/open/floor/f13/wood,
 /area/f13/raiders)
 "eCt" = (
@@ -5027,7 +5029,6 @@
 "eNd" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/chair/stool/retro/backed,
-/obj/effect/landmark/start/f13/raider,
 /turf/open/floor/f13/wood,
 /area/f13/raiders)
 "eOx" = (
@@ -7065,14 +7066,19 @@
 "gFW" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/rack,
-/obj/item/gun/ballistic/revolver/russian,
+/obj/item/ammo_box/magazine/d12g,
+/obj/item/ammo_box/magazine/d12g,
+/obj/item/ammo_box/magazine/d12g,
+/obj/item/gun/ballistic/automatic/shotgun/riot/boss,
 /turf/open/floor/f13/wood,
 /area/f13/raiders)
 "gHK" = (
-/obj/structure/window/fulltile/house,
-/obj/structure/barricade/bars,
-/obj/structure/decoration/rag,
-/turf/open/floor/f13/wood,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/table,
+/turf/open/floor/f13{
+	icon_state = "yellowdirtyfull"
+	},
 /area/f13/raiders)
 "gHV" = (
 /obj/structure/decoration/smokeold,
@@ -8421,7 +8427,6 @@
 /obj/structure/chair/wood{
 	dir = 4
 	},
-/obj/effect/landmark/start/f13/raider,
 /turf/open/indestructible/ground/outside/graveldirt{
 	dir = 8;
 	icon_state = "graveldirtedge"
@@ -8654,13 +8659,9 @@
 	},
 /area/f13/wasteland/warren)
 "ikC" = (
-/obj/structure/simple_door/metal/barred{
-	req_access_txt = "87"
-	},
-/obj/structure/decoration/rag,
-/obj/structure/barricade/wooden/planks{
-	icon_state = "board-2"
-	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/table,
+/obj/item/paper/bitterdrink,
 /turf/open/floor/f13{
 	icon_state = "yellowdirtyfull"
 	},
@@ -11169,7 +11170,6 @@
 /area/f13/city)
 "kNv" = (
 /obj/structure/chair/stool/retro/tan,
-/obj/effect/landmark/start/f13/raider,
 /turf/open/floor/f13/wood,
 /area/f13/raiders)
 "kNG" = (
@@ -12879,10 +12879,10 @@
 	},
 /area/f13/city)
 "muq" = (
+/obj/machinery/light/small{
+	dir = 1
+	},
 /obj/structure/table,
-/obj/structure/barricade/bars,
-/obj/structure/decoration/rag,
-/obj/item/paper/bitterdrink,
 /turf/open/floor/f13{
 	icon_state = "yellowdirtyfull"
 	},
@@ -12893,6 +12893,7 @@
 	pixel_y = 12
 	},
 /obj/item/shield/riot/buckler/stop,
+/obj/structure/rack,
 /turf/open/floor/f13/wood,
 /area/f13/raiders)
 "muY" = (
@@ -15622,10 +15623,9 @@
 	},
 /area/f13/wasteland/ncr)
 "paZ" = (
-/obj/structure/barricade/wooden/planks{
-	icon_state = "board-2"
-	},
-/turf/closed/wall/rust,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/unpowered/celldoor/outlaw,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/raiders)
 "pbp" = (
 /turf/open/indestructible/ground/outside/road{
@@ -17805,12 +17805,6 @@
 	},
 /turf/open/indestructible/ground/outside/savannah,
 /area/f13/wasteland/warren)
-"rdF" = (
-/obj/structure/simple_door/metal/iron{
-	req_access_txt = "87"
-	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/raiders)
 "rdN" = (
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/lowmid,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
@@ -19792,7 +19786,6 @@
 /obj/structure/chair/wood{
 	dir = 4
 	},
-/obj/effect/landmark/start/f13/raider,
 /turf/open/floor/f13/wood,
 /area/f13/raiders)
 "sUl" = (
@@ -20375,10 +20368,6 @@
 	icon_state = "horizontaloutermain1"
 	},
 /area/f13/wasteland/warren)
-"tDL" = (
-/obj/structure/simple_door/dirtyglass,
-/turf/open/floor/f13/wood,
-/area/f13/raiders)
 "tDZ" = (
 /obj/structure/barricade/tentclothcorner{
 	dir = 4;
@@ -21725,10 +21714,6 @@
 	icon_state = "bluerustysolid"
 	},
 /area/f13/city)
-"uJO" = (
-/obj/structure/simple_door/brokenglass,
-/turf/open/floor/f13/wood,
-/area/f13/raiders)
 "uKe" = (
 /obj/structure/closet/crate/freezer/blood,
 /turf/open/floor/f13,
@@ -21849,10 +21834,6 @@
 "uPk" = (
 /turf/open/floor/wood/wood_wide,
 /area/f13/city)
-"uPq" = (
-/obj/effect/landmark/start/f13/raider,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/raiders)
 "uPI" = (
 /obj/structure/window/fulltile/house{
 	dir = 2;
@@ -22821,7 +22802,6 @@
 /area/f13/wasteland/warren)
 "vEx" = (
 /obj/structure/chair/stool/retro/black,
-/obj/effect/landmark/start/f13/raider,
 /turf/open/floor/f13/wood,
 /area/f13/raiders)
 "vEK" = (
@@ -24653,14 +24633,6 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/raiders)
-"xot" = (
-/obj/structure/table,
-/obj/structure/barricade/bars,
-/obj/structure/decoration/rag,
-/turf/open/floor/f13{
-	icon_state = "yellowdirtyfull"
-	},
-/area/f13/raiders)
 "xoX" = (
 /obj/structure/window/fulltile/house{
 	dir = 2;
@@ -24734,14 +24706,6 @@
 /obj/effect/spawner/lootdrop/f13/alcoholspawner,
 /turf/open/indestructible/ground/outside/graveldirt,
 /area/f13/city)
-"xrg" = (
-/obj/structure/window/fulltile/house,
-/obj/structure/barricade/bars,
-/obj/structure/decoration/rag{
-	icon_state = "skin"
-	},
-/turf/open/floor/f13/wood,
-/area/f13/raiders)
 "xrt" = (
 /obj/structure/noticeboard{
 	pixel_x = 32
@@ -24817,7 +24781,7 @@
 	},
 /area/f13/city)
 "xuB" = (
-/obj/structure/simple_door/brokenglass,
+/obj/machinery/door/unpowered/securedoor/outlaw,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/raiders)
 "xuH" = (
@@ -25211,7 +25175,7 @@
 	},
 /area/f13/ncr)
 "xNK" = (
-/obj/structure/decoration/rag,
+/obj/machinery/door/unpowered/securedoor/outlaw,
 /turf/open/floor/f13{
 	icon_state = "yellowdirtyfull"
 	},
@@ -25299,7 +25263,6 @@
 "xSc" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/chair/stool/retro/black,
-/obj/effect/landmark/start/f13/raider,
 /turf/open/floor/f13/wood,
 /area/f13/raiders)
 "xSq" = (
@@ -53594,7 +53557,7 @@ jLg
 qZx
 xqa
 keO
-uPq
+unF
 unF
 unF
 qKh
@@ -54112,7 +54075,7 @@ unF
 unF
 unF
 unF
-tIx
+xuB
 wUT
 sBE
 sBE
@@ -54885,11 +54848,11 @@ lZv
 dso
 vVX
 ayJ
-gHK
-uJO
-tDL
-xrg
-gHK
+vVX
+vVX
+vVX
+vVX
+vVX
 vVX
 tKp
 wOg
@@ -55404,7 +55367,7 @@ nxO
 swo
 ajd
 pdT
-wOg
+xNK
 wOg
 alt
 rVq
@@ -56175,7 +56138,7 @@ snh
 snh
 snh
 fRH
-paZ
+vVX
 unX
 tKp
 wOg
@@ -56432,7 +56395,7 @@ kyn
 snh
 swo
 ajd
-xot
+vVX
 wOg
 tKp
 wOg
@@ -56946,8 +56909,8 @@ uMi
 snh
 nxO
 lRa
-muq
-cPJ
+vVX
+gHK
 tKp
 wOg
 eIZ
@@ -57203,8 +57166,8 @@ lkP
 swo
 snh
 fRH
+vVX
 ikC
-tKp
 wOg
 uZU
 vZe
@@ -57460,8 +57423,8 @@ lgQ
 swo
 nxO
 fRH
-erx
-unX
+vVX
+muq
 tKp
 wOg
 wLp
@@ -60289,7 +60252,7 @@ eQt
 wzx
 yln
 vVX
-oum
+paZ
 wCg
 yln
 vVX
@@ -61316,7 +61279,7 @@ wUT
 sNb
 wUT
 wUT
-rdF
+xuB
 oum
 iPT
 dpW
@@ -62852,7 +62815,7 @@ yln
 yln
 jiC
 yln
-hBB
+bga
 jiC
 yln
 yln
@@ -63363,7 +63326,7 @@ unF
 unF
 vVX
 ntf
-sNb
+dGC
 wUT
 aaf
 wUT

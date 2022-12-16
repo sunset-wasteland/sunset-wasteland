@@ -135,6 +135,35 @@
 /obj/item/radio/intercom/add_blood_DNA(list/blood_dna)
 	return FALSE
 
+/obj/item/radio/intercom/kebob
+	name = "Bighorn intercom"
+	freqlock = TRUE
+	frequency = 1369
+	channels = list(RADIO_CHANNEL_TOWN = 1)
+
+/obj/item/radio/intercom/kebob/mayor
+	name = "Mayor's intercom"
+	use_command = TRUE
+	command = TRUE
+
+/obj/item/radio/intercom/foa
+	name = "Clinic intercom"
+	freqlock = TRUE
+	frequency = 1355
+	channels = list(RADIO_CHANNEL_MEDICAL = 1)
+
+/obj/item/radio/intercom/pirate
+	name = "Pirate Radio Broadcaster"
+	desc = "A radio that has been hacked to send and recieve from any frequency."
+	freerange = TRUE
+	canhear_range = 1
+
+/obj/item/radio/intercom/bear
+	name = "NCR intercom"
+	freqlock = TRUE
+	frequency = 1363
+	channels = list(RADIO_CHANNEL_NCR = 1)
+
 //Created through the autolathe or through deconstructing intercoms. Can be applied to wall to make a new intercom on it!
 /obj/item/wallframe/intercom
 	name = "intercom frame"

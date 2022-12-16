@@ -442,7 +442,7 @@
 			return "Security"
 
 /proc/get_all_jobs()
-	return list("Wastelander", "Outlaw", "Tribal",
+	return list("Wastelander", "Raider", "Outsider", "Raider Captain", "Tribal Hunter", "Tribal Gatherer", "Tribal Shaman",
 				"Mayor", "Sheriff", "Deputy", "Banker", "Barkeep", "Shopkeeper", "Citizen", "Preacher", "Secretary",
 				"Baron", "Castellan","Keeper", "Knight-Commander", "Paladin Marshal", "Paladin", "Librarian", "Scribe", "Knight-Captain", "Knight", "Initiate", "BoS Off-Duty", "Inquisitorial Acolyte",
 				"Enclave Internal Security", "Enclave Lieutenant", "Enclave Platoon Sergeant", "Enclave Sergeant", "Enclave Specialist", ,"Enclave Private", "Enclave Scientist", "Enclave Pilot Officer", "Enclave Bunker Duty",

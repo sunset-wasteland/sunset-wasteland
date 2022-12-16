@@ -810,8 +810,16 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	icon_state = "Wastelander"
 
 /obj/effect/landmark/start/f13/raider
-	name = "Outlaw"
+	name = "Raider"
 	icon_state = "Raider"
+
+/obj/effect/landmark/start/f13/outsider
+	name = "Outsider"
+	icon_state = "Detective"
+
+/obj/effect/landmark/start/f13/raider_boss
+	name = "Raider Captain"
+	icon_state = "Enforcer"
 
 /obj/effect/landmark/start/f13/enforcer
 	name = "Den Mob Enforcer"
@@ -831,6 +839,10 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 /obj/effect/landmark/start/f13/faithful
 	name = "Faithful"
 	icon_state = "Preacher"
+
+/obj/effect/landmark/start/f13/detective
+	name = "Detective"
+	icon_state = "Detective"
 
 /obj/effect/landmark/start/f13/detective
 	name = "Detective"
@@ -879,37 +891,16 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 
 //Tribal
 
-/obj/effect/landmark/start/f13/tribal
-	name = "Tribal"
+/obj/effect/landmark/start/f13/tribal_hunter
+	name = "Tribal Hunter"
 	icon_state = "Tribal"
 
-/obj/effect/landmark/start/f13/chief
-	name = "Chief"
+/obj/effect/landmark/start/f13/tribal_gatherer
+	name = "Tribal Gatherer"
 	icon_state = "Tribal"
 
-/obj/effect/landmark/start/f13/shaman
-	name = "Shaman"
-	icon_state = "Tribal"
-
-/obj/effect/landmark/start/f13/villager
-	name = "Villager"
-	icon_state = "Tribal"
-
-/obj/effect/landmark/start/f13/hunter
-	name = "Hunter"
-	icon_state = "Tribal"
-
-/obj/effect/landmark/start/f13/Hhunter
-	name = "Head Hunter"
-	icon_state = "Tribal"
-
-/obj/effect/landmark/start/f13/druid
-	icon_state = "Tribal"
-
-/obj/effect/landmark/start/f13/spiritpledged
-	icon_state = "Tribal"
-
-/obj/effect/landmark/start/f13/guardian
+/obj/effect/landmark/start/f13/tribal_shaman
+	name = "Tribal Shaman"
 	icon_state = "Tribal"
 
 //Followers of the Apocalypse

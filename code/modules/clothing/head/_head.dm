@@ -29,6 +29,8 @@
 ///Special throw_impact for hats to frisbee hats at people to place them on their heads.
 /obj/item/clothing/head/throw_impact(atom/hit_atom, datum/thrownthing/thrownthing)
 	. = ..()
+	if(!thrownthing)
+		return
 	///if the thrown object's target zone isn't the head
 	if(thrownthing.target_zone != BODY_ZONE_HEAD)
 		return

@@ -187,9 +187,7 @@ GLOBAL_LIST_INIT(concrete_recipes, list ( \
 		to_chat(user, "<span class='notice'>You start adding [I] to [src]...</span>")
 		if(do_after(user, 50, target=src))
 			C.use(3)
-			var/turf/T = get_turf(src)
-			T.PlaceOnTop(/turf/closed/wall/mineral/concrete/blastproof)
-			qdel(src)
+			PlaceOnTop(/turf/closed/wall/mineral/concrete/blastproof)
 		return
 	else if(istype(I, /obj/item/weldingtool))
 		if(!I.tool_start_check(user, amount=0))
@@ -198,7 +196,7 @@ GLOBAL_LIST_INIT(concrete_recipes, list ( \
 		if(I.use_tool(src, user, 60, volume=50))
 			user.visible_message("[user] welds the [src] apart.", "You start to weld the [src] apart...")
 			to_chat(user, "<span class='notice'>You weld the [src] apart.</span>")
-			qdel(src)
+			ScrapeAway()
 			return
 	return ..()
 

@@ -104,6 +104,8 @@
 	var/list/tribe = list()
 	var/list/was = list()
 	var/list/misc = list()
+	var/list/tri = list()
+	var/list/out = list()
 	var/dat = {"
 	<head><style>
 		.manifest {border-collapse:collapse;}

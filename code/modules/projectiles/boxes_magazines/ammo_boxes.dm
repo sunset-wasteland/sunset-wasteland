@@ -64,6 +64,12 @@
 	ammo_type = /obj/item/ammo_casing/shotgun/trainshot
 	icon_state = "trainshotbox"
 
+/obj/item/ammo_box/shotgun/flechette
+	name = "flechette shotshell ammo box"
+	desc = "A box full of flechette shells. Point at wall."
+	ammo_type = /obj/item/ammo_casing/shotgun/flechette
+	icon_state = "trainshotbox"
+
 //.22 LR
 /obj/item/ammo_box/m22
 	name = "ammo box (.22lr)"

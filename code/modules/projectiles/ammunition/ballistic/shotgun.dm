@@ -183,6 +183,14 @@
 	pellets = 3
 	variance = 15
 
+/obj/item/ammo_casing/shotgun/flechette
+	name = "12 gauge flechette shell"
+	desc = "It's a 12-gauge flechette shell."
+	icon_state = "magshell"
+	projectile_type = /obj/item/projectile/bullet/pellet/flechette
+	pellets = 24
+	variance = 24
+
 
 // BETA STUFF // Obsolete
 /obj/item/ammo_casing/shotgun/buckshot/test

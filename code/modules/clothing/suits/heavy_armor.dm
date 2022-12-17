@@ -91,8 +91,8 @@
 	armor = list("melee" = 65, "bullet" = 65, "laser" = 55, "energy" = 15, "bomb" = 45, "bio" = 60, "rad" = 30, "fire" = 60, "acid" = 20, "wound" = 20)
 
 /obj/item/clothing/suit/armored/heavy/salvaged_pa/t45b/raider
-	name = "salvaged raider power armor"
-	desc = "A destroyed T-45b power armor has been brought back to life with the help of a welder and lots of scrap metal."
+	name = "raider T-45b power armor"
+	desc = "A salvaged set of T-45b power armor has been brought back to life with the help of a welder and lots of scrap metal."
 	icon_state = "raider_salvaged"
 	item_state = "raider_salvaged"
 	armor = list("melee" = 60, "bullet" = 60, "laser" = 50, "energy" = 15, "bomb" = 40, "bio" = 55, "rad" = 25, "fire" = 55, "acid" = 15, "wound" = 20)

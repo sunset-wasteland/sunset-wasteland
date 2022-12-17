@@ -195,7 +195,7 @@
 	time = 5
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
-
+/*
 /datum/crafting_recipe/shotgunammo3p
 	name = "12g 3p trainshot box"
 	result = /obj/item/ammo_box/shotgun/trainshot
@@ -208,7 +208,32 @@
 	time = 5
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
+	always_available = FALSE
+*/
+/datum/crafting_recipe/shotgunammoflechette
+	name = "12g flechette box"
+	result = /obj/item/ammo_box/shotgun/flechette
+	reqs = list(/obj/item/stack/crafting/metalparts = 1,
+	/obj/item/stack/sheet/prewar = 2,
+	/obj/item/stack/sheet/metal = 1,
+	/obj/item/stack/ore/blackpowder = 1
+	)
+	tools = list(TOOL_AWORKBENCH)
+	time = 5
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
 
+/datum/crafting_recipe/shotgunammomagnum
+	name = "12g magnum shot box"
+	result = /obj/item/ammo_box/shotgun/magnum
+	reqs = list(/obj/item/stack/crafting/metalparts = 2,
+	/obj/item/stack/sheet/metal = 2,
+	/obj/item/stack/ore/blackpowder = 2
+	)
+	tools = list(TOOL_AWORKBENCH)
+	time = 5
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
 
 /datum/crafting_recipe/m22
 	name = ".22 Long Rifle ammo box"

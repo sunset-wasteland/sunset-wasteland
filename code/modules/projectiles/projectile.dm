@@ -862,29 +862,6 @@
 	var/obj/item/projectile/P = A
 	return istype(P) && P.armour_penetration
 
-/obj/item/projectile/bullet/F13
-	name = "bullet"
-//Bullets library
-/obj/item/projectile/bullet/F13/spear
-	damage = 40
-	icon_state = "spear"
-	icon = 'icons/fallout/objects/guns/projectiles.dmi'
-
-//other
-
-/obj/item/projectile/bullet/F13/c38mmBullet
-	damage = 4
-
-
-/obj/item/projectile/bullet/F13/bbBullet
-	damage = 9
-
-/obj/item/projectile/bullet/F13/musketball
-	damage = 60
-	armour_penetration = 0.3
-
-
-
 #undef MOVES_HITSCAN
 #undef MINIMUM_PIXELS_TO_ANIMATE
 #undef MUZZLE_EFFECT_PIXEL_INCREMENT

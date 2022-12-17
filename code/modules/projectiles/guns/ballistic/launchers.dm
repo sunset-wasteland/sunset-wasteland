@@ -3,7 +3,7 @@
 
 /obj/item/gun/ballistic/revolver/grenadelauncher
 	desc = "A break-operated grenade rifle. Projectiles travel slowly."
-	name = "grenade rifle"
+	name = "M79 grenade launcher"
 	icon_state = "dshotgun-sawn"
 	item_state = "gun"
 	inaccuracy_modifier = 0.5

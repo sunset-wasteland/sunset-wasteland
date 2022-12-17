@@ -18,7 +18,7 @@
 
 /obj/item/clothing/head/helmet/f13/heavy/salvaged_pa/t45b/raider
 	name = "raider T-45b power helmet"
-	desc = "a raider's attempt to duplicate a power armor helmet. The result is a fuzed mass of metal and ceramic that nonetheless provides protection"
+	desc = "A heavily modified, almost bastardised T-45b power armor helmet."
 	icon_state = "raiderpa_helm"
 	item_state = "raiderpa_helm"
 	armor = list("melee" = 60, "bullet" = 60, "laser" = 50, "energy" = 15, "bomb" = 40, "bio" = 55, "rad" = 25, "fire" = 55, "acid" = 15, "wound" = 25)

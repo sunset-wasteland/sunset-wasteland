@@ -173,6 +173,18 @@
 		var/atom/throw_target = get_edge_target_turf(M, get_dir(src, get_step_away(M, src)))
 		M.safe_throw_at(throw_target, 2, 3)
 
+/obj/item/projectile/bullet/pellet/flechette
+	name = "flechette"
+	damage = 2
+	stamina = 2
+	armour_penetration = 0.95
+	wound_bonus = 15
+	bare_wound_bonus = 15
+	sharpness = SHARP_POINTY //whoosh
+	tile_dropoff = 0
+	tile_dropoff_s = 0
+	hitsound = 'sound/effects/wounds/pierce1.ogg'
+
 // Mech Scattershots
 
 /obj/item/projectile/bullet/scattershot

@@ -390,6 +390,7 @@
 	icon_state = "raiderpa_helm"
 	item_state = "raiderpa_helm"
 	salvaged_type = /obj/item/clothing/head/helmet/f13/heavy/salvaged_pa/t45b/raider
+	actions_types = null
 
 //////
 // Sheriff's Suit

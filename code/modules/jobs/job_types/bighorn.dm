@@ -33,6 +33,7 @@ Mayor
 	department_flag = DEP_BIGHORN
 	total_positions = 1
 	spawn_positions = 1
+	roleplay_exclusive_notify = 1
 	supervisors = "Yourself"
 	description = "You are the benevolent tyrant of Bighorn, chosen by the people to represent and lead them. Pass laws to protect your citizens, distribute town funds and make deals with the powers present within the Region to better the people, and yourself, of course."
 	selection_color = "#d7b088"
@@ -172,6 +173,7 @@ Mayor
 	department_flag = DEP_BIGHORN
 	total_positions = 1
 	spawn_positions = 1
+	roleplay_exclusive_notify = 1
 	supervisors = "the free market, Sierra Trading Company, and Bighorn laws."
 	description = "As a representative of the Sierra Trading Company, you have both the authority and the means to hire mercenaries, form trade deals with other groups in the area, and represent the trading company in local (town) matters. Your focus is not the small-scale; you have shopkeepers for that. Your focus is not to do dungeons; you have mercenaries for that. You are here to run the economical side of the company's interests, and make sure that whatever comes, the Sierra Trading Company ends up on top, both in caps, and reputation."
 	selection_color = "#dcba97"
@@ -248,6 +250,7 @@ Mayor
 	department_flag = DEP_BIGHORN
 	total_positions = 2
 	spawn_positions = 2
+	roleplay_exclusive_notify = 1
 	supervisors = "the free market and Bighorn laws"
 	description = "As a proprietor of the Blue Oyster, you are responsible for ensuring both citizens and travellers in Bighorn can get some food, drink and rest. This town is usually run by the Great Khans, and the farm within their compound could provide fresh supplies for your business, so try negotiating with them if they are present."
 	enforces = "While you have dominion over your private business, your premium status as a citizen may be revoked if you are considered a danger to the populace or anger those in control of the town."
@@ -333,6 +336,7 @@ Mayor
 	department_flag = DEP_BIGHORN
 	total_positions = 2
 	spawn_positions = 2
+	roleplay_exclusive_notify = 1
 	supervisors = "the free market, Sierra Trading Company, and Bighorn laws"
 	description = "You are a Sierra Trading Company affiliate based in Bighorn - a settlement in a key area between warring factions. Your store allows you to sell all kinds of merchandise, from dandy boy apples to laser rifles. Ensure you make a profit and retain enough capital for your day-to-day operations."
 	enforces = "While you have dominion over your private business, your premium status as a citizen may be revoked if you are considered a danger to the populace or anger those in control of the town."
@@ -402,6 +406,7 @@ Mayor
 	department_flag = DEP_BIGHORN
 	total_positions = -1
 	spawn_positions = -1
+	roleplay_exclusive_notify = 1
 	supervisors = "Bighorn laws"
 	description = "You are a citizen living in Bighorn - a settlement typically run by the Great Khans. Take good care of your town, and consider picking up a trade to support the settlement - farming, hunting, or something more particular. One of the local businesses or the Khans themselves may have work if you require funds."
 	enforces = "Your premium status as a citizen may be revoked if you are considered a danger to the populace or anger those in control of the town."
@@ -436,6 +441,7 @@ Mayor
 	faction = FACTION_WASTELAND
 	total_positions = 1
 	spawn_positions = 1
+	roleplay_exclusive_notify = 1
 	supervisors = "your faith and Bighorn laws"
 	description = "You are a preacher based in Bighorn - a settlement typically run by the Great Khans. As a bastion of faith, spread the good word and bring hope to the needy. The divine may not protect from the harsh realities of the wasteland, but surely offers some solace."
 	enforces = "Your premium status as a citizen may be revoked if you are considered a danger to the populace or anger those in control of the town."
@@ -730,6 +736,7 @@ Mayor
 	department_flag = DEP_BIGHORN
 	total_positions = 1
 	spawn_positions = 1
+	roleplay_exclusive_notify = 1
 	supervisors = "the mayor"
 	description = "Working alongside the Mayor, you've known them for a while. Your duties mainly consist of handling appointments and managing mundane tasks."
 	selection_color = "#dcba97"

@@ -2097,7 +2097,9 @@
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
 "bHw" = (
-/obj/structure/nest/deathclaw,
+/obj/structure/nest/radroach{
+	max_mobs = 2
+	},
 /turf/open/floor/plasteel/f13/vault_floor/yellow,
 /area/f13/tunnel)
 "bHx" = (
@@ -6484,6 +6486,12 @@
 	dir = 8
 	},
 /area/f13/brotherhood/armory)
+"cTM" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/rack/shelf_metal,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/energy/low,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/tunnel/bighorn)
 "cTY" = (
 /obj/machinery/light{
 	dir = 8
@@ -6649,6 +6657,18 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet/black,
 /area/f13/brotherhood/offices1st)
+"dgM" = (
+/obj/structure/rack/shelf_metal,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/stack/rods/fifty,
+/obj/item/stack/rods/fifty,
+/obj/item/stack/rods/fifty,
+/obj/item/stack/rods/fifty,
+/obj/item/stack/rods/fifty,
+/obj/item/stack/rods/fifty,
+/obj/machinery/light/floor,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/tunnel/bighorn)
 "dhP" = (
 /obj/structure/window/fulltile/house{
 	dir = 2;
@@ -6766,6 +6786,14 @@
 /obj/structure/wreck/trash/engine,
 /turf/open/floor/plasteel/f13/vault_floor/yellow,
 /area/f13/tunnel)
+"dnJ" = (
+/obj/structure/rack/shelf_metal,
+/obj/item/stack/sheet/plastic/fifty,
+/obj/item/stack/sheet/plastic/fifty,
+/obj/item/stack/sheet/plastic/fifty,
+/obj/item/stack/sheet/plastic/fifty,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/tunnel/bighorn)
 "doy" = (
 /obj/structure/sign/poster/prewar/poster79{
 	pixel_y = -32
@@ -8207,6 +8235,12 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/f13/brotherhood/archives)
+"fpO" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/rack/shelf_metal,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/superlow,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/tunnel/bighorn)
 "fpU" = (
 /obj/machinery/door/unpowered/secure_bos{
 	name = "Morgue"
@@ -10411,7 +10445,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
 "iDZ" = (
-/obj/structure/closet,
+/obj/structure/closet/secure_closet/goodies,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
 /obj/effect/spawner/lootdrop/f13/blueprintMid,
 /obj/effect/spawner/lootdrop/f13/blueprintMid,
@@ -11318,6 +11352,12 @@
 /obj/effect/decal/cleanable/vomit,
 /turf/closed/mineral/random/low_chance,
 /area/f13/caves)
+"jNX" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/rack/shelf_metal,
+/obj/effect/spawner/bundle/f13/fnfal,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/tunnel/bighorn)
 "jOo" = (
 /obj/item/flag/bos{
 	density = 0
@@ -12251,14 +12291,6 @@
 /obj/structure/filingcabinet,
 /turf/open/floor/carpet/black,
 /area/f13/brotherhood/offices1st)
-"ljp" = (
-/obj/structure/rack/shelf_metal,
-/obj/item/stack/sheet/plastic/fifty,
-/obj/item/stack/sheet/plastic/fifty,
-/obj/item/stack/sheet/plastic/fifty,
-/obj/item/stack/sheet/plastic/fifty,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/tunnel/bighorn)
 "ljv" = (
 /obj/effect/spawner/structure/window/plastitanium,
 /obj/structure/cable{
@@ -12423,16 +12455,12 @@
 	},
 /area/f13/brotherhood/armory)
 "lpF" = (
-/obj/structure/rack/shelf_metal,
-/obj/effect/decal/cleanable/dirt,
-/obj/item/stack/sheet/mineral/sandstone/thirty,
-/obj/item/stack/sheet/mineral/sandstone/thirty,
-/obj/item/stack/sheet/mineral/sandstone/thirty,
-/obj/item/stack/sheet/mineral/sandstone/thirty,
-/obj/item/stack/sheet/mineral/sandstone/thirty,
-/obj/machinery/light/floor,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/tunnel/bighorn)
+/obj/structure/closet/secure_closet/goodies,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/highmid,
+/turf/open/floor/f13{
+	icon_state = "reddirtyfull"
+	},
+/area/f13/bunker)
 "lqA" = (
 /obj/structure/table,
 /obj/item/integrated_circuit_printer,
@@ -12654,7 +12682,9 @@
 /area/f13/brotherhood/medical)
 "lEZ" = (
 /obj/structure/rack/shelf_metal,
-/obj/effect/spawner/lootdrop/f13/armor/tier4,
+/obj/item/gun/ballistic/rifle/mosin,
+/obj/item/gun/ballistic/rifle/mosin,
+/obj/item/gun/ballistic/rifle/mosin,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel/bighorn)
 "lGi" = (
@@ -12980,6 +13010,7 @@
 /area/f13/building/museum)
 "lZe" = (
 /obj/structure/table,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/energy/low,
 /turf/open/floor/f13{
 	icon_state = "reddirtyfull"
 	},
@@ -14320,6 +14351,15 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
 /area/f13/brotherhood/dorms)
+"odu" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small{
+	dir = 8
+	},
+/obj/structure/rack/shelf_metal,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/superlow,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/tunnel/bighorn)
 "oew" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier1,
@@ -15027,7 +15067,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
 "pal" = (
-/obj/structure/closet,
+/obj/structure/closet/secure_closet/goodies,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/mid,
 /turf/open/floor/f13{
 	icon_state = "reddirtyfull"
@@ -16633,9 +16673,8 @@
 /area/f13/tunnel/bighorn)
 "rdE" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/small{
-	dir = 8
-	},
+/obj/structure/rack/shelf_metal,
+/obj/effect/spawner/bundle/f13/infiltrator,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel/bighorn)
 "rdK" = (
@@ -17331,22 +17370,15 @@
 /turf/open/floor/plasteel/dark,
 /area/f13/brotherhood)
 "sbd" = (
-/obj/structure/rack/shelf_metal,
-/obj/effect/decal/cleanable/dirt,
-/obj/item/stack/rods/fifty,
-/obj/item/stack/rods/fifty,
-/obj/item/stack/rods/fifty,
-/obj/item/stack/rods/fifty,
-/obj/item/stack/rods/fifty,
-/obj/item/stack/rods/fifty,
-/obj/machinery/light/floor,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/tunnel/bighorn)
-"sbk" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/closed/indestructible/f13vaultrusted{
 	name = "rusty reinforced wall"
 	},
+/area/f13/tunnel/bighorn)
+"sbk" = (
+/obj/structure/rack/shelf_metal,
+/obj/effect/spawner/lootdrop/f13/armor/tier4,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel/bighorn)
 "sbr" = (
 /obj/effect/decal/cleanable/dirt,
@@ -18538,6 +18570,11 @@
 	icon_state = "darkrusty"
 	},
 /area/f13/tunnel)
+"tCj" = (
+/obj/structure/rack/shelf_metal,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/energy/low,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/tunnel/bighorn)
 "tEr" = (
 /obj/structure/table,
 /turf/open/floor/f13/wood,
@@ -18680,7 +18717,12 @@
 "tQC" = (
 /obj/structure/rack/shelf_metal,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/mid,
+/obj/item/stack/sheet/mineral/sandstone/thirty,
+/obj/item/stack/sheet/mineral/sandstone/thirty,
+/obj/item/stack/sheet/mineral/sandstone/thirty,
+/obj/item/stack/sheet/mineral/sandstone/thirty,
+/obj/item/stack/sheet/mineral/sandstone/thirty,
+/obj/machinery/light/floor,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel/bighorn)
 "tRK" = (
@@ -40468,7 +40510,7 @@ aqv
 wid
 fDv
 uXv
-dFQ
+tQC
 dFQ
 oGo
 dFQ
@@ -40725,7 +40767,7 @@ aqw
 aZt
 aqw
 uXv
-dFQ
+dnJ
 dFQ
 oqJ
 dFQ
@@ -40982,7 +41024,7 @@ bWv
 aZt
 bWv
 uXv
-dFQ
+dgM
 dFQ
 wid
 dFQ
@@ -41239,12 +41281,12 @@ aqw
 aZt
 aqw
 uXv
-lpF
-ljp
-wid
-wid
-sbd
 uXv
+sbd
+pcA
+sbd
+sbd
+sbd
 uIg
 uXv
 uXv
@@ -41496,12 +41538,12 @@ fyq
 fyq
 uXv
 uXv
-uXv
-sbk
-pcA
 sbk
 sbk
-sbk
+wid
+odu
+fpO
+fpO
 wid
 xns
 xns
@@ -41753,10 +41795,10 @@ wid
 dFQ
 uXv
 gYM
-lEZ
-lEZ
+dFQ
+dFQ
 wid
-rdE
+wid
 wid
 wid
 wid
@@ -42009,13 +42051,13 @@ wid
 wid
 dFQ
 uXv
+lEZ
 dFQ
-dFQ
-dFQ
+tCj
+cTM
+cTM
 wid
-wid
-tQC
-wid
+vmA
 xns
 dFQ
 aqP
@@ -42271,8 +42313,8 @@ wid
 wid
 wid
 wid
-tQC
 wid
+vmA
 xns
 dFQ
 tlk
@@ -42527,9 +42569,9 @@ xqM
 wid
 ahM
 oUp
-wid
-xns
+jNX
 dFQ
+xns
 vmA
 dFQ
 dFQ
@@ -42780,7 +42822,7 @@ dFQ
 dFQ
 wid
 uXv
-wid
+rdE
 wid
 wid
 wid
@@ -65340,7 +65382,7 @@ aak
 aak
 aae
 sGn
-pal
+lpF
 pTK
 bPs
 sgV

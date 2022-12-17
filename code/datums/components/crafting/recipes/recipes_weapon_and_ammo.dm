@@ -1048,7 +1048,7 @@
 
 /datum/crafting_recipe/neostead
 	name = "Neostead 2000"
-	result = /obj/item/gun/ballistic/shotgun/automatic/combat/neostead
+	result = /obj/item/gun/ballistic/shotgun/automatic/combat/neostead_noalt
 	reqs = list(/obj/item/stack/sheet/metal = 10,
 				/obj/item/advanced_crafting_components/assembly = 1,
 				/obj/item/advanced_crafting_components/alloys = 1,

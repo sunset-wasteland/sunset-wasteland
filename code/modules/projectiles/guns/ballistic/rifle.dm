@@ -239,7 +239,7 @@
 		..()
 
 
-//Mosin-Nagant							Keywords: 7.62, Bolt-action, 5 rounds internal
+//Mosin-Nagant							Keywords: 7.62, Bolt-action, 5 rounds internal. Better pen than the Enfield, lower damage.
 /obj/item/gun/ballistic/rifle/mosin
 	name = "Mosin-Nagant m38"
 	desc = "A rusty old Russian bolt action chambered in 7.62."
@@ -249,6 +249,8 @@
 	extra_speed = 600
 	fire_delay = 3
 	force = 18
+	extra_penetration = 0.8
+	extra_damage = 6
 	can_scope = TRUE
 	scope_state = "scope_mosin"
 	scope_x_offset = 3
@@ -260,17 +262,19 @@
 	pump_sound = 'sound/weapons/boltpump.ogg'
 	fire_sound = 'sound/f13weapons/boltfire.ogg'
 
-//Lee-Enfield,SMLE 						Keywords: 7.62, Bolt-action, 5 rounds internal, very fast firing rate, high stamina cost on working bolt
+//Lee-Enfield,SMLE 						Keywords: 7.62, Bolt-action, 10 rounds internal, very fast firing rate, high stamina cost on working bolt
 /obj/item/gun/ballistic/rifle/enfield
 	name = "Lee-Enfield rifle"
 	desc = "A british rifle sometimes known as the SMLE. It seems to have been re-chambered in .308."
 	icon_state = "enfield2"
 	item_state = "308"
-	mag_type = /obj/item/ammo_box/magazine/internal/boltaction
+	mag_type = /obj/item/ammo_box/magazine/internal/boltaction_enfield
 	extra_speed = 600
 	fire_delay = 1
 	slowdown = 0.35
 	force = 16
+	extra_penetration = 0.6
+	extra_damage = 12
 	can_scope = TRUE
 	scope_state = "scope_mosin"
 	scope_x_offset = 3

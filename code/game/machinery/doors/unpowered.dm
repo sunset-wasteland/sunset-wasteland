@@ -291,7 +291,7 @@
 // TRIBALS & OUTLAWS
 /obj/machinery/door/unpowered/securedoor/tribal
 	name = "secure door"
-	req_access_txt = "140"
+	req_access_txt = "131"
 	icon_state = "metal"
 
 /obj/machinery/door/unpowered/securedoor/tribal/update_icon()
@@ -303,8 +303,10 @@
 /obj/machinery/door/unpowered/securedoor/tribal/do_animate(animation)
 	switch(animation)
 		if("opening")
+			playsound(src,'sound/machines/door_open.ogg',40,1)
 			flick("metalopening", src)
 		if("closing")
+			playsound(src,'sound/machines/door_close.ogg',40,1)
 			flick("metalclosing", src)
 
 /obj/machinery/door/unpowered/securedoor/outlaw
@@ -321,8 +323,10 @@
 /obj/machinery/door/unpowered/securedoor/outlaw/do_animate(animation)
 	switch(animation)
 		if("opening")
+			playsound(src,'sound/machines/door_open.ogg',40,1)
 			flick("metalopening", src)
 		if("closing")
+			playsound(src,'sound/machines/door_close.ogg',40,1)
 			flick("metalclosing", src)
 
 /obj/machinery/door/unpowered/securedoor/outlaw/boss

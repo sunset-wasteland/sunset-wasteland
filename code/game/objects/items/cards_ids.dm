@@ -1268,9 +1268,9 @@
 
 /obj/item/card/id/tribetattoo
 	name = "Tattoo of the machine spirits"
-	desc = "A tattoo depicting the five machine spirits in harmony."
-	icon_state = "talisman"
-	item_state = "talisman"
+	desc = "A tattoo depicting machine spirits in harmony."
+	icon_state = "skin"
+	item_state = "skin"
 	assignment = "tribe tattoo"
 	uses_overlays = FALSE
 

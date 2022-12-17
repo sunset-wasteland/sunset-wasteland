@@ -1112,9 +1112,6 @@
 			if("Veteran Table Climber")
 				granted_trait = TRAIT_FREERUNNING
 				traitname = "....climbing tables"
-			if("Desert Affinity")
-				granted_trait = TRAIT_HARD_YARDS
-				traitname = "trekking"
 			if("Spiritual Mending")
 				granted_trait = TRAIT_SURGERY_LOW
 				traitname = "minor surgery"
@@ -1162,6 +1159,27 @@
 	name = "Bone Dancer traditions"
 	crafting_recipe_types = list(/datum/crafting_recipe/tribalwar/bone/lightarmour,/datum/crafting_recipe/tribalwar/bone/armour, /datum/crafting_recipe/tribalwar/bone/heavyarmour,
 								/datum/crafting_recipe/tribalwar/bone/garb,/datum/crafting_recipe/tribalwar/bone/helmet)
+
+/obj/item/book/granter/crafting_recipe/tribal/all
+	name = "Lost traditions"
+	crafting_recipe_types = list(/datum/crafting_recipe/tribalwar/lighttribe, /datum/crafting_recipe/tribalwar/heavytribe, /datum/crafting_recipe/warmace,
+	/datum/crafting_recipe/tribalwar/bone/lightarmour,/datum/crafting_recipe/tribalwar/bone/armour, /datum/crafting_recipe/tribalwar/bone/heavyarmour,
+								/datum/crafting_recipe/tribalwar/bone/garb,/datum/crafting_recipe/tribalwar/bone/helmet,
+								/datum/crafting_recipe/tribalwar/sorrows/armour, /datum/crafting_recipe/tribalwar/sorrows/garb,
+								/datum/crafting_recipe/tribalwar/sorrows/femalegarb,
+								/datum/crafting_recipe/tribalwar/sorrows/yaoguaigauntlet,
+								/datum/crafting_recipe/tribalwar/eighties/lightarmour, /datum/crafting_recipe/tribalwar/eighties/armour,
+								/datum/crafting_recipe/tribalwar/eighties/garb,
+								/datum/crafting_recipe/tribalwar/eighties/femalegarb, /datum/crafting_recipe/tribalwar/eighties/heavyarmour,
+								/datum/crafting_recipe/tribalwar/rustwalkers/lightarmour, /datum/crafting_recipe/tribalwar/rustwalkers/armour, /datum/crafting_recipe/tribalwar/rustwalkers/garb,
+								/datum/crafting_recipe/tribalwar/rustwalkers/femalegarb, /datum/crafting_recipe/tribalwar/rustwalkers/heavyarmour,
+								/datum/crafting_recipe/tribalwar/deadhorses/lightarmour, /datum/crafting_recipe/tribalwar/deadhorses/armour,
+								/datum/crafting_recipe/tribalwar/deadhorses/garb,
+								/datum/crafting_recipe/tribalwar/deadhorses/femalegarb, /datum/crafting_recipe/tribalwar/deadhorses/heavyarmour,
+								/datum/crafting_recipe/tribalwar/whitelegs/lightarmour, /datum/crafting_recipe/tribalwar/whitelegs/armour,
+								/datum/crafting_recipe/tribalwar/whitelegs/garb,
+								/datum/crafting_recipe/tribalwar/whitelegs/femalegarb, /datum/crafting_recipe/tribalwar/whitelegs/heavyarmour
+								)
 
 /obj/item/book/granter/trait/bibledog
 	name = "Burned book"

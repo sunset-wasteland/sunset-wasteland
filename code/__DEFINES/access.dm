@@ -108,7 +108,6 @@ also be like that but I can't be arsed to go back and change them all*/
 #define ACCESS_FUSION		138 //town reactor access
 #define ACCESS_SHOPKEEP		139 //town Shopkeeper access
 
-#define ACCESS_TRIBAL		140 //tribal door access
 #define ACCESS_RAIDER		141 //raider door access
 #define ACCESS_RAIDER_BOSS		142 //raider boss door access
 

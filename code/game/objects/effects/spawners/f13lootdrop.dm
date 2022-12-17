@@ -1245,8 +1245,8 @@
 /obj/effect/spawner/bundle/f13/neostead
 	name = "Neostead 2000 shotgun and ammo spawner"
 	items = list(
-				/obj/item/gun/ballistic/shotgun/automatic/combat/neostead,
-				/obj/item/ammo_box/shotgun/trainshot
+				/obj/item/gun/ballistic/shotgun/automatic/combat/neostead_noalt,
+				/obj/item/ammo_box/shotgun/flechette
 	)
 
 /obj/effect/spawner/bundle/f13/auto5

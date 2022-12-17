@@ -357,6 +357,16 @@
 		return
 	toggle_tube(user)
 
+//Neostead 2000 NO TUBE SWAP							Keywords: Khan, Shotgun, Semi-auto, 12 rounds internal
+/obj/item/gun/ballistic/shotgun/automatic/combat/neostead_noalt
+	name = "Neostead 2000"
+	desc = "An advanced shotgun with two separate magazine tubes."
+	icon_state = "neostead"
+	item_state = "shotguncity"
+	fire_delay = 5
+	recoil = 1.3
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube_noalt
+	force = 10
 
 //Winchester City-Killer				Keywords: Shotgun, Full-auto, 10 rounds internal
 /obj/item/gun/ballistic/shotgun/automatic/combat/citykiller

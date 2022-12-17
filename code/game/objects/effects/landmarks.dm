@@ -844,10 +844,6 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	name = "Detective"
 	icon_state = "Detective"
 
-/obj/effect/landmark/start/f13/detective
-	name = "Detective"
-	icon_state = "Detective"
-
 // Enclave
 /obj/effect/landmark/start/f13/usspy
 	name = "Enclave Private"

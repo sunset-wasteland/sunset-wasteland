@@ -68,7 +68,11 @@ GLOBAL_LIST_INIT(command_positions, list(
 	"Followers Administrator",
 
 	"Khan Senior Enforcer",
+
 	"Tribal Shaman",
+
+	"Raider Captain",
+
 //	"Noyan",
 //	"Steward",
 	))

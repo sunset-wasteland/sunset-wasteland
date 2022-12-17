@@ -93,7 +93,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/building)
 "aam" = (
-/obj/structure/simple_door/interior,
+/obj/machinery/door/unpowered/securedoor/tribal,
 /turf/open/floor/plasteel/f13/stone/rugged,
 /area/f13/building)
 "aan" = (
@@ -972,6 +972,11 @@
 	},
 /turf/open/floor/wood/wood_wide/wood_wide_light,
 /area/f13/wasteland/rocksprings)
+"aTo" = (
+/obj/structure/simple_door/bunker,
+/obj/structure/barricade/wooden/planks/pregame,
+/turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
+/area/f13/building)
 "aTA" = (
 /obj/structure/window/fulltile/house{
 	dir = 2
@@ -10797,11 +10802,8 @@
 /turf/open/indestructible/ground/outside/dirt/harsh,
 /area/f13/building)
 "kPU" = (
-/obj/effect/spawner/lootdrop/f13/junkspawners,
-/obj/effect/decal/fakelattice,
-/turf/open/floor/plasteel/barber{
-	icon_state = "plating"
-	},
+/obj/machinery/door/unpowered/securedoor/tribal,
+/turf/open/floor/wood/wood_common,
 /area/f13/building)
 "kQA" = (
 /obj/structure/table/wood,
@@ -10961,7 +10963,7 @@
 /turf/open/floor/wood/wood_wide,
 /area/f13/caves)
 "lah" = (
-/obj/structure/simple_door/interior,
+/obj/machinery/door/unpowered/securedoor/tribal,
 /turf/open/floor/wood/wood_wide,
 /area/f13/building)
 "lam" = (
@@ -11357,7 +11359,10 @@
 	},
 /area/f13/building)
 "lwU" = (
-/mob/living/simple_animal/hostile/radroach,
+/obj/structure/barricade/wooden/strong{
+	icon_state = "boarded";
+	opacity = 1
+	},
 /turf/open/floor/plasteel/barber{
 	icon_state = "plating"
 	},
@@ -11536,6 +11541,10 @@
 "lGf" = (
 /obj/machinery/vending/cola/random,
 /turf/open/indestructible/ground/outside/sidewalk,
+/area/f13/building)
+"lGJ" = (
+/obj/structure/debris/v3,
+/turf/open/indestructible/ground/outside/ruins,
 /area/f13/building)
 "lHh" = (
 /obj/effect/decal/marking,
@@ -11927,6 +11936,13 @@
 	icon_state = "horizontalinnermain2right"
 	},
 /area/f13/caves)
+"mdG" = (
+/obj/structure/barricade/wooden/strong{
+	icon_state = "boarded";
+	opacity = 1
+	},
+/turf/open/indestructible/ground/outside/ruins,
+/area/f13/building)
 "meE" = (
 /obj/item/storage/briefcase,
 /turf/open/indestructible/ground/outside/road{
@@ -14139,7 +14155,7 @@
 	},
 /area/f13/building)
 "oeb" = (
-/obj/structure/simple_door/interior,
+/obj/machinery/door/unpowered/securedoor/tribal,
 /turf/open/floor/wood/wood_worn,
 /area/f13/caves)
 "oed" = (
@@ -14164,10 +14180,9 @@
 	},
 /area/f13/building)
 "ofa" = (
-/obj/structure/closet/crate/large,
-/obj/machinery/manned_turret/m2/unanchored,
-/turf/open/floor/plasteel/f13/stone/rugged,
-/area/f13/legion)
+/obj/machinery/door/unpowered/securedoor/tribal,
+/turf/open/floor/plasteel/cult,
+/area/f13/building)
 "ofp" = (
 /obj/machinery/door/unpowered/celldoor,
 /obj/machinery/door/poddoor/shutters/old/preopen{
@@ -17501,7 +17516,8 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/lootdrop/f13/junkspawners,
 /obj/machinery/light/small/broken,
-/turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
+/obj/effect/decal/fakelattice,
+/turf/open/indestructible/ground/outside/dirt/harsh,
 /area/f13/building)
 "rsc" = (
 /obj/machinery/button/door{
@@ -20666,6 +20682,10 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/rocksprings)
+"uvw" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/indestructible/ground/outside/ruins,
+/area/f13/building)
 "uvX" = (
 /obj/machinery/shower{
 	dir = 4
@@ -21132,6 +21152,7 @@
 	req_one_access_txt = "150"
 	},
 /obj/effect/spawner/lootdrop/f13/weapon/gun/energy/midhigh,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/superhigh,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/building)
 "uSd" = (
@@ -21727,10 +21748,10 @@
 /turf/open/indestructible/ground/outside/dirt/harsh,
 /area/f13/wasteland/rocksprings)
 "vvH" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/table/reinforced,
-/obj/effect/spawner/lootdrop/f13/weapon/melee/tier5,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/superhigh,
+/obj/structure/barricade/wooden/strong{
+	icon_state = "boarded";
+	opacity = 1
+	},
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/building)
 "vvZ" = (
@@ -21757,10 +21778,8 @@
 /area/f13/building)
 "vwN" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/grille,
-/turf/open/floor/plasteel/barber{
-	icon_state = "plating"
-	},
+/obj/effect/decal/fakelattice,
+/turf/open/indestructible/ground/outside/dirt/harsh,
 /area/f13/building)
 "vwV" = (
 /obj/structure/wreck/trash/machinepile,
@@ -21813,6 +21832,11 @@
 	},
 /turf/open/floor/plasteel/f13/stone/rugged,
 /area/f13/legion)
+"vBS" = (
+/turf/open/indestructible/ground/outside/ruins{
+	icon_state = "rubbleplate"
+	},
+/area/f13/building)
 "vCg" = (
 /obj/effect/spawner/lootdrop/f13/junkspawners,
 /turf/open/indestructible/ground/outside/river{
@@ -22022,6 +22046,9 @@
 "vId" = (
 /obj/machinery/smartfridge/bottlerack/gardentool,
 /turf/open/indestructible/ground/outside/dirt/harsh,
+/area/f13/building)
+"vIJ" = (
+/turf/open/indestructible/ground/outside/ruins,
 /area/f13/building)
 "vJd" = (
 /obj/structure/bonfire,
@@ -24038,6 +24065,7 @@
 	},
 /obj/effect/turf_decal/bot,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/high,
+/obj/effect/spawner/lootdrop/f13/weapon/melee/tier5,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/building)
 "xFG" = (
@@ -24292,6 +24320,11 @@
 /obj/structure/rack/shelf_metal,
 /turf/open/floor/plasteel/f13{
 	icon_state = "greendirtysolid"
+	},
+/area/f13/building)
+"xTg" = (
+/turf/open/indestructible/ground/outside/ruins{
+	icon_state = "rubblepillar"
 	},
 /area/f13/building)
 "xTq" = (
@@ -28985,7 +29018,7 @@ cxz
 ccc
 hZH
 hZH
-aar
+ofa
 hZH
 hZH
 ccc
@@ -28995,7 +29028,7 @@ ccc
 ccc
 hZH
 hZH
-aar
+ofa
 hZH
 pGQ
 ccc
@@ -31533,10 +31566,10 @@ rPW
 hZH
 xoy
 cuR
-jzh
+kPU
 wgU
 wgU
-jzh
+kPU
 eXm
 vFR
 pGQ
@@ -33330,7 +33363,7 @@ rPW
 hZH
 hez
 ovp
-jzh
+kPU
 wgU
 wgU
 hQF
@@ -35386,13 +35419,13 @@ rfA
 rfA
 rPW
 hZH
-jzh
+kPU
 nBU
 nBU
 hZH
 gSN
 hZH
-jzh
+kPU
 nBU
 nBU
 hZH
@@ -43219,7 +43252,7 @@ dnA
 hAL
 hDv
 hAL
-ofa
+gtX
 gtX
 rFl
 jLa
@@ -73459,7 +73492,7 @@ drm
 drm
 drm
 drm
-lzs
+aTo
 drm
 drm
 drm
@@ -80129,8 +80162,8 @@ tgY
 xsC
 drm
 drm
-vhd
-vhd
+vvH
+vvH
 drm
 drm
 drm
@@ -80390,7 +80423,7 @@ vhd
 vSA
 mNB
 foH
-fLq
+lHr
 fgA
 xsC
 qiB
@@ -80647,7 +80680,7 @@ vSA
 vSA
 vhd
 bPS
-xsC
+aru
 fgA
 xsC
 qiB
@@ -80902,12 +80935,12 @@ ylu
 kOI
 hYI
 kOI
-vhd
+aru
 rri
+aru
+xMp
 xsC
-vwN
-xsC
-qiB
+tgY
 qiB
 qiB
 xsC
@@ -81160,11 +81193,11 @@ eai
 vSA
 vhd
 eai
-vSA
-xsC
-kPU
-xsC
-qiB
+vwN
+vwN
+lHr
+qTr
+tgY
 qiB
 qiB
 xsC
@@ -81418,10 +81451,10 @@ wOr
 vhd
 vhd
 wOr
-xsC
-fLq
-xsC
-qiB
+aru
+fgA
+xTg
+tgY
 qiB
 qiB
 xsC
@@ -81677,9 +81710,9 @@ xsC
 xsC
 xsC
 lwU
-xsC
-qiB
-qiB
+mdG
+tgY
+tgY
 qiB
 xsC
 rhf
@@ -81934,9 +81967,9 @@ tgY
 tgY
 iXU
 coP
-xsC
-qiB
-qiB
+vIJ
+xTg
+tgY
 qiB
 xsC
 vEe
@@ -82190,10 +82223,10 @@ rPW
 rPW
 tgY
 xsC
-fLq
-xsC
-qiB
-qiB
+fgA
+vIJ
+vIJ
+tgY
 qiB
 xsC
 dLE
@@ -82446,11 +82479,11 @@ rPW
 rPW
 rPW
 tgY
-xsC
+xTg
 uqV
-xsC
-qiB
-qiB
+vIJ
+vIJ
+tgY
 qiB
 xsC
 uxE
@@ -82703,11 +82736,11 @@ rPW
 rPW
 rPW
 tgY
-xsC
-cxK
-xsC
-qiB
-qiB
+vIJ
+fgA
+vBS
+vIJ
+tgY
 qiB
 xsC
 vhd
@@ -82960,11 +82993,11 @@ rPW
 rPW
 rPW
 tgY
-drm
+vIJ
 lHr
-xsC
-qiB
-qiB
+vIJ
+xTg
+tgY
 qiB
 xsC
 vhd
@@ -83217,10 +83250,10 @@ rPW
 rPW
 rPW
 tgY
-drm
-evx
-xsC
-qiB
+vIJ
+fgA
+vIJ
+tgY
 wXQ
 qaI
 jFJ
@@ -83474,9 +83507,9 @@ rPW
 rPW
 rPW
 tgY
-drm
-fLq
-msX
+vBS
+fgA
+uvw
 eLv
 tmN
 mbM
@@ -83731,7 +83764,7 @@ rPW
 rPW
 rPW
 tgY
-drm
+lGJ
 vSA
 sKA
 vhd
@@ -85022,7 +85055,7 @@ fgA
 vhd
 pDu
 wDW
-vvH
+kOU
 vhd
 xsC
 tgY

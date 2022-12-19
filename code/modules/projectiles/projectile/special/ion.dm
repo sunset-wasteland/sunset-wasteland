@@ -1,8 +1,8 @@
 /obj/item/projectile/ion
-	name = "ion bolt"
+	name = "electromagnetic pulse"
 	icon_state = "ion"
-	damage = 28
-	armour_penetration = 0.75
+	damage = 24
+	armour_penetration = 1
 	damage_type = BURN
 	flag = "energy"
 	impact_effect_type = /obj/effect/temp_visual/impact_effect/ion

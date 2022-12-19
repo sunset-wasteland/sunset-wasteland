@@ -12,6 +12,8 @@
 	slot_flags = ITEM_SLOT_BACK
 	ammo_type = list(/obj/item/ammo_casing/energy/ion)
 	shaded_charge = 1
+	weapon_weight = WEAPON_HEAVY
+	slowdown = 0.25
 	flight_x_offset = 17
 	flight_y_offset = 9
 	equipsound = 'sound/f13weapons/equipsounds/yk42equip.ogg'
@@ -34,7 +36,7 @@
 				//else
 				//	to_chat(user, "<span class='notice'>You insert the cell into \the [src].</span>")
 
-				//playsound(src, 'sound/weapons/autoguninsert.ogg', 60, TRUE)
+				playsound(src, 'sound/f13weapons/yk42reload.ogg', 60, TRUE)
 				//chamber_round()
 				A.update_icon()
 				update_icon()

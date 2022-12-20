@@ -43,6 +43,20 @@
 	icon = 'modular_citadel/icons/mob/mam_tails.dmi'
 	matrixed_sections = MATRIX_RED
 
+/datum/sprite_accessory/tails/lizard/furdragon
+	name = "Furred Dragon"
+	icon_state = "fluffydragon"
+	color_src = MATRIXED
+	icon = 'modular_citadel/icons/mob/mam_tails.dmi'
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/tails_animated/lizard/furdragon
+	name = "Furred Dragon"
+	icon_state = "fluffydragon"
+	color_src = MATRIXED
+	icon = 'modular_citadel/icons/mob/mam_tails.dmi'
+	matrixed_sections = MATRIX_RED_GREEN
+
 /datum/sprite_accessory/tails/lizard/dtiger
 	name = "Dark Tiger"
 	icon_state = "dtiger"
@@ -88,6 +102,28 @@
 /datum/sprite_accessory/tails_animated/lizard/spikes
 	name = "Spikes"
 	icon_state = "spikes"
+
+/datum/sprite_accessory/tails/lizard/seviper
+	name = "Seviper"
+	icon = 'modular_citadel/icons/mob/mam_tails.dmi'
+	icon_state = "seviper"
+	color_src = MATRIXED
+	matrixed_sections = MATRIX_ALL
+
+/datum/sprite_accessory/tails_animated/lizard/seviper
+	name = "Seviper"
+	icon = 'modular_citadel/icons/mob/mam_tails.dmi'
+	icon_state = "seviper"
+	color_src = MATRIXED
+	matrixed_sections = MATRIX_ALL
+
+/datum/sprite_accessory/tails/lizard/thick
+	name = "Thick"
+	icon_state = "thick"
+
+/datum/sprite_accessory/tails_animated/lizard/thick
+	name = "Thick"
+	icon_state = "thick"
 
 /******************************************
 ************** Human Tails ****************

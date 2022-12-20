@@ -23,3 +23,11 @@
 /datum/sprite_accessory/frills/short
 	name = "Short"
 	icon_state = "short"
+
+/datum/sprite_accessory/frills/drake
+	name = "Drake"
+	icon_state = "drake"
+
+/datum/sprite_accessory/frills/axolotl
+	name = "Axolotl"
+	icon_state = "axolotl"

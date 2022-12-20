@@ -16,6 +16,18 @@
 	name = "Curled"
 	icon_state = "curled"
 
+/datum/sprite_accessory/horns/curledbig
+	name = "Curled Big"
+	icon_state = "curledbig"
+
+/datum/sprite_accessory/horns/lifted
+	name = "Lifted"
+	icon_state = "lifted"
+
+/datum/sprite_accessory/horns/demon
+	name = "Demon"
+	icon_state = "demon"
+
 /datum/sprite_accessory/horns/angler
 	name = "Angeler"
 	icon_state = "angler"
@@ -33,6 +45,10 @@
 	name = "Ram"
 	icon_state = "ram"
 
+/datum/sprite_accessory/horns/ram2
+	name = "Ram 2"
+	icon_state = "ram2"
+
 /datum/sprite_accessory/horns/simple
 	name = "Simple"
 	icon_state = "simple"
@@ -40,3 +56,19 @@
 /datum/sprite_accessory/horns/short
 	name = "Short"
 	icon_state = "short"
+
+/datum/sprite_accessory/horns/deathclaw
+	name = "Deathclaw"
+	icon_state = "deathclaw"
+
+/datum/sprite_accessory/horns/deathclawinverted
+	name = "Deathclaw Inverted"
+	icon_state = "deathclawinverted"
+
+/datum/sprite_accessory/horns/deathclawshort
+	name = "Deathclaw Short"
+	icon_state = "deathclawshort"
+
+/datum/sprite_accessory/horns/dragon
+	name = "Dragon"
+	icon_state = "dragon"

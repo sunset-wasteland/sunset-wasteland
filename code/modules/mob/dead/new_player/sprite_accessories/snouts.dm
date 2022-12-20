@@ -318,6 +318,26 @@
 	icon_state = "stubby"
 	color_src = MUTCOLORS
 
+/datum/sprite_accessory/snouts/mam_snouts/hyena
+	name = "Hyena"
+	icon_state = "hspots"
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/snouts/mam_snouts/jackal
+	name = "Jackal"
+	icon_state = "hjackal"
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/snouts/mam_snouts/anubis
+	name = "Anubis"
+	icon_state = "hanubus"
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/snouts/mam_snouts/panda
+	name = "Panda"
+	icon_state = "hpanda"
+	matrixed_sections = MATRIX_RED_GREEN
+
 /******************************************
 **************** Snouts *******************
 *************but higher up*****************/

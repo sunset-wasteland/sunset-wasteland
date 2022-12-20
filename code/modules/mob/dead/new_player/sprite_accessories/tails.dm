@@ -156,6 +156,20 @@
 	color_src = MATRIXED
 	matrixed_sections = MATRIX_RED
 
+/datum/sprite_accessory/tails/human/furdragon
+	name = "Furred Dragon"
+	icon_state = "fluffydragon"
+	color_src = MATRIXED
+	icon = 'modular_citadel/icons/mob/mam_tails.dmi'
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/tails_animated/human/furdragon
+	name = "Furred Dragon"
+	icon_state = "fluffydragon"
+	color_src = MATRIXED
+	icon = 'modular_citadel/icons/mob/mam_tails.dmi'
+	matrixed_sections = MATRIX_RED_GREEN
+
 /datum/sprite_accessory/tails/human/bee
 	name = "Bee"
 	icon_state = "bee"
@@ -774,6 +788,20 @@
 	name = "Axolotl"
 	icon_state = "axolotl"
 	matrixed_sections = MATRIX_RED
+
+/datum/sprite_accessory/tails/mam_tails/furdragon
+	name = "Furred Dragon"
+	icon_state = "fluffydragon"
+	color_src = MATRIXED
+	icon = 'modular_citadel/icons/mob/mam_tails.dmi'
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/tails_animated/mam_tails_animated/furdragon
+	name = "Furred Dragon"
+	icon_state = "fluffydragon"
+	color_src = MATRIXED
+	icon = 'modular_citadel/icons/mob/mam_tails.dmi'
+	matrixed_sections = MATRIX_RED_GREEN
 
 /datum/sprite_accessory/tails/mam_tails/batl
 	name = "Bat (Long)"

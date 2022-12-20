@@ -31,3 +31,18 @@
 /datum/sprite_accessory/frills/axolotl
 	name = "Axolotl"
 	icon_state = "axolotl"
+
+/datum/sprite_accessory/frills/cobrahoodears
+	name = "Cobra Hood with Ears"
+	icon = 'modular_citadel/icons/mob/frills.dmi'
+	icon_state = "cobraears"
+	color_src = MATRIXED
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/frills/cobrahood
+	name = "Cobra Hood"
+	icon = 'modular_citadel/icons/mob/frills.dmi'
+	icon_state = "cobrahood"
+	color_src = MATRIXED
+	matrixed_sections = MATRIX_RED_GREEN
+

@@ -68,7 +68,3 @@
 /datum/sprite_accessory/horns/deathclawshort
 	name = "Deathclaw Short"
 	icon_state = "deathclawshort"
-
-/datum/sprite_accessory/horns/dragon
-	name = "Dragon"
-	icon_state = "dragon"

@@ -16,6 +16,10 @@
 	name = "Curled"
 	icon_state = "curled"
 
+/datum/sprite_accessory/horns/curledback
+	name = "Curled Back"
+	icon_state = "bunhorns"
+
 /datum/sprite_accessory/horns/curledbig
 	name = "Curled Big"
 	icon_state = "curledbig"
@@ -68,3 +72,27 @@
 /datum/sprite_accessory/horns/deathclawshort
 	name = "Deathclaw Short"
 	icon_state = "deathclawshort"
+
+/datum/sprite_accessory/horns/outstretched
+	name = "Outstretched"
+	icon_state = "outstretched"
+
+/datum/sprite_accessory/horns/halo
+	name = "Halo"
+	icon_state = "halo"
+
+/datum/sprite_accessory/horns/marauder
+	name = "Marauder"
+	icon_state = "murauder"
+
+/datum/sprite_accessory/horns/greathorns
+	name = "Greathorns"
+	icon_state = "greathorns"
+
+/datum/sprite_accessory/horns/sheephorns
+	name = "Sheep"
+	icon_state = "sheephorn"
+
+/datum/sprite_accessory/horns/faceguard
+	name = "Faceguard"
+	icon_state = "faceguard"

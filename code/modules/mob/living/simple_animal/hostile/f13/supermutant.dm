@@ -468,13 +468,13 @@
 	maxHealth = 640
 	health = 640
 	retreat_distance = 8
-	minimum_distance = 8
+	minimum_distance = 6
 	stop_automated_movement = 1
 	see_in_dark = 6//Semi-avoidable.
 	projectiletype = /obj/item/projectile/bullet/F13/sm_hmg
 	projectilesound = 'sound/f13weapons/antimaterielfire.ogg'
 	extra_projectiles = 4 //5 projectiles
-	ranged_cooldown_time = 60//From 120, - 'Long cooldown due to damage output.' | Changed due to it being an on-map mob.
+	ranged_cooldown_time = 30//From 120, and then 60, - 'Long cooldown due to damage output.'
 	loot = list(/obj/machinery/manned_turret/m2/unanchored)
 
 /mob/living/simple_animal/hostile/supermutant/rangedmutant/heavy/death(gibbed)
@@ -486,7 +486,7 @@
 /mob/living/simple_animal/hostile/supermutant/rangedmutant/heavy/bullet_act(obj/item/projectile/Proj)
 	if(!Proj)
 		CRASH("[src] heavy supermutant invoked bullet_act() without a projectile")
-	if(prob(75) || Proj.damage > 26)
+	if(prob(15) || Proj.damage > 30)
 		return ..()
 	else
 		visible_message("<span class='danger'>\The [Proj] bounces off \the [src]'s armor plating!</span>")
@@ -494,4 +494,4 @@
 
 /obj/item/projectile/bullet/F13/sm_hmg
 	damage = 15//from 35
-	armour_penetration = 45
+	armour_penetration = 0.8//from... 45(?!?!)

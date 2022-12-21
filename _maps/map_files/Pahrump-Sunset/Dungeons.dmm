@@ -477,12 +477,14 @@
 	},
 /area/f13/bunker)
 "aBy" = (
-/mob/living/simple_animal/hostile/handy/assaultron{
-	color = "#75705a";
-	health = 600;
-	name = "assaultron dominator"
+/obj/machinery/light/small{
+	dir = 8
 	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/vault1,
+/mob/living/simple_animal/hostile/supermutant/meleemutant,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
 /area/f13/bunker)
 "aBL" = (
 /obj/effect/decal/cleanable/dirt,
@@ -1307,13 +1309,6 @@
 /obj/effect/spawner/lootdrop/crate_spawner,
 /turf/open/floor/plasteel/f13/vault_floor/yellow/yellowchess/yellowchess2,
 /area/f13/vault)
-"bJD" = (
-/mob/living/simple_animal/hostile/handy,
-/turf/open/floor/plasteel/barber{
-	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2"
-	},
-/area/f13/bunker)
 "bJL" = (
 /obj/structure/table/reinforced,
 /obj/item/storage/fancy/cigarettes/cigpack_bigboss,
@@ -1363,9 +1358,7 @@
 	light_color = "#ad1b1b"
 	},
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/handy/robobrain{
-	name = "Conscripted Engineer"
-	},
+/mob/living/simple_animal/hostile/supermutant/rangedmutant/heavy,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vault1,
 /area/f13/bunker)
 "bNo" = (
@@ -2536,13 +2529,8 @@
 /turf/open/floor/plasteel/dark,
 /area/f13/vault)
 "dgM" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/handy/protectron{
-	health = 260;
-	name = "protectron guardian"
-	},
-/turf/open/floor/plasteel/f13/vault_floor/green/greenchess/greenchess2,
+/mob/living/simple_animal/hostile/supermutant/rangedmutant,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vault1,
 /area/f13/bunker)
 "dhl" = (
 /obj/machinery/iv_drip,
@@ -2919,7 +2907,7 @@
 /area/f13/vault)
 "dEa" = (
 /obj/structure/barricade/wooden/strong,
-/obj/structure/barricade/wooden/planks,
+/obj/structure/barricade/wooden/planks/pregame,
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
 	},
@@ -3470,13 +3458,13 @@
 /turf/open/floor/f13/wood,
 /area/f13/city)
 "egK" = (
+/obj/effect/decal/cleanable/oil/slippery,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/robot_debris,
-/mob/living/simple_animal/hostile/handy/protectron{
-	health = 260;
-	name = "protectron guardian"
+/obj/effect/decal/marking,
+/mob/living/simple_animal/hostile/supermutant/rangedmutant,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
+	name = "metal plating"
 	},
-/turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/bunker)
 "egN" = (
 /obj/effect/decal/cleanable/oil/slippery,
@@ -4415,9 +4403,6 @@
 	},
 /area/f13/underground/cave)
 "frb" = (
-/obj/effect/turf_decal/loading_area{
-	dir = 8
-	},
 /obj/structure/railing{
 	dir = 1
 	},
@@ -4539,7 +4524,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/bunker)
 "fyi" = (
-/obj/effect/turf_decal/loading_area,
+/mob/living/simple_animal/hostile/supermutant/meleemutant,
 /turf/open/floor/plasteel/f13/vault_floor/green/greenchess/greenchess2,
 /area/f13/bunker)
 "fyr" = (
@@ -4637,6 +4622,7 @@
 "fEB" = (
 /obj/effect/decal/cleanable/oil/slippery,
 /obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/supermutant/rangedmutant,
 /turf/open/floor/plasteel/f13/vault_floor/green/greenchess/greenchess2,
 /area/f13/bunker)
 "fFa" = (
@@ -7110,11 +7096,6 @@
 /area/f13/bunker)
 "iFb" = (
 /obj/effect/turf_decal/bot,
-/mob/living/simple_animal/hostile/handy/assaultron{
-	color = "#75705a";
-	health = 600;
-	name = "assaultron dominator"
-	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vault1,
 /area/f13/bunker)
 "iFr" = (
@@ -7664,10 +7645,11 @@
 	},
 /area/f13/underground/cave)
 "jma" = (
-/obj/structure/chair{
-	dir = 8
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/supermutant/rangedmutant,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
+	name = "metal plating"
 	},
-/turf/open/floor/plasteel/f13/vault_floor/green/whitegreenfull,
 /area/f13/bunker)
 "jmS" = (
 /obj/effect/decal/remains/human,
@@ -7702,7 +7684,9 @@
 	},
 /area/f13/bunker)
 "jrL" = (
-/obj/effect/decal/cleanable/oil/slippery,
+/obj/effect/turf_decal/loading_area{
+	dir = 8
+	},
 /turf/open/floor/plasteel/f13/vault_floor/green/greenchess/greenchess2,
 /area/f13/bunker)
 "jrR" = (
@@ -8133,7 +8117,7 @@
 "jPy" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/barricade/wooden/strong,
-/obj/structure/barricade/wooden/planks,
+/obj/structure/barricade/wooden/planks/pregame,
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
 	},
@@ -9003,12 +8987,14 @@
 	},
 /area/f13/underground/cave)
 "kPG" = (
-/obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/handy/protectron{
-	health = 260;
-	name = "protectron guardian"
+/obj/machinery/light/small{
+	dir = 1
 	},
-/turf/open/floor/plasteel/f13/vault_floor/floor,
+/mob/living/simple_animal/hostile/centaur,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
 /area/f13/bunker)
 "kQf" = (
 /obj/item/stack/sheet/prewar/five,
@@ -10216,8 +10202,10 @@
 /turf/open/floor/f13/wood,
 /area/f13/city)
 "mnZ" = (
-/mob/living/simple_animal/hostile/handy/gutsy,
-/turf/open/floor/plasteel/f13/vault_floor/green/greenchess/greenchess2,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/supermutant/rangedmutant,
+/turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/bunker)
 "mow" = (
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/lowmid,
@@ -10732,9 +10720,7 @@
 	},
 /area/f13/bunker)
 "mUX" = (
-/obj/structure/chair{
-	dir = 8
-	},
+/obj/effect/decal/cleanable/oil/slippery,
 /turf/open/floor/plasteel/f13/vault_floor/green/greenchess/greenchess2,
 /area/f13/bunker)
 "mVb" = (
@@ -11293,7 +11279,7 @@
 /area/f13/vault)
 "nCA" = (
 /obj/structure/barricade/wooden,
-/obj/structure/barricade/wooden/planks,
+/obj/structure/barricade/wooden/planks/pregame,
 /obj/structure/sign/warning,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
@@ -12684,7 +12670,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/yellow/yellowchess/yellowchess2,
 /area/f13/vault)
 "pcw" = (
-/mob/living/simple_animal/hostile/radscorpion/black,
+/mob/living/simple_animal/hostile/centaur,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
@@ -14857,7 +14843,7 @@
 /area/f13/ahs)
 "rJI" = (
 /obj/structure/barricade/wooden,
-/obj/structure/barricade/wooden/planks,
+/obj/structure/barricade/wooden/planks/pregame,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "rKV" = (
@@ -14936,10 +14922,6 @@
 "rPb" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/handy/protectron{
-	health = 260;
-	name = "protectron guardian"
-	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
 	name = "metal plating"
 	},
@@ -16105,13 +16087,10 @@
 /turf/open/floor/plasteel/f13/vault_floor/green/white/whitegreenchess,
 /area/f13/bunker)
 "tot" = (
-/mob/living/simple_animal/hostile/handy/gutsy/flamer{
-	health = 500;
-	name = "The Grill Sergeant"
+/obj/effect/turf_decal/loading_area{
+	dir = 4
 	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
-	name = "metal plating"
-	},
+/turf/open/floor/plasteel/f13/vault_floor/green/greenchess/greenchess2,
 /area/f13/bunker)
 "toH" = (
 /obj/effect/decal/cleanable/dirt,
@@ -16510,9 +16489,8 @@
 	},
 /area/f13/mountain_bunker)
 "tNM" = (
-/obj/machinery/door/poddoor/shutters{
+/obj/machinery/door/poddoor/shutters/preopen{
 	id = "stockpilebunker";
-	max_integrity = 1000;
 	name = "Military Stockpile Shutters"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
@@ -17418,6 +17396,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/lootdrop/cig_packs,
+/mob/living/simple_animal/hostile/supermutant/meleemutant,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/bunker)
 "uLV" = (
@@ -18880,13 +18859,8 @@
 	},
 /area/f13/legion)
 "wyI" = (
-/obj/structure/chair{
-	dir = 8
-	},
-/obj/machinery/light/small{
-	dir = 4;
-	light_color = "#ad1b1b"
-	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/oil/slippery,
 /turf/open/floor/plasteel/f13/vault_floor/green/greenchess/greenchess2,
 /area/f13/bunker)
 "wyQ" = (
@@ -25408,7 +25382,7 @@ eeI
 oqm
 cTQ
 kVk
-bJD
+pcw
 kVk
 hyK
 oqm
@@ -26434,9 +26408,9 @@ oqm
 eJj
 mbB
 oqm
-cTQ
+kPG
 gDP
-bJD
+kVk
 kVk
 hyK
 oqm
@@ -28225,7 +28199,7 @@ hVn
 oqm
 fYH
 kVk
-pcw
+kVk
 kcC
 kVk
 oqm
@@ -28990,9 +28964,9 @@ sZx
 smS
 rxL
 oqm
-mrP
+aBy
 gDP
-cQU
+kVk
 oqm
 sZx
 kVk
@@ -29247,12 +29221,12 @@ kVk
 aRv
 kVk
 kcC
-cQU
-pcw
+kVk
+kVk
 aRv
 kcC
 kVk
-cQU
+uuZ
 kVk
 oqm
 shC
@@ -30019,9 +29993,9 @@ hAx
 qIK
 bha
 mrP
-kVk
+uuZ
 oVy
-pcw
+kVk
 kVk
 vDO
 aRv
@@ -30277,7 +30251,7 @@ kuk
 mum
 anv
 aRv
-cQU
+kVk
 kVk
 kVk
 kVk
@@ -31049,7 +31023,7 @@ oqm
 jBP
 pcw
 smS
-pcw
+kVk
 kVk
 kVk
 kVk
@@ -31306,7 +31280,7 @@ oqm
 kVk
 kVk
 kVk
-pcw
+kVk
 kVk
 kVk
 anv
@@ -31561,7 +31535,7 @@ sla
 sla
 oqm
 cTQ
-pcw
+kVk
 anv
 jBP
 kVk
@@ -32080,7 +32054,7 @@ afJ
 oqm
 kVk
 kVk
-cQU
+kVk
 tED
 ugX
 ugX
@@ -32336,7 +32310,7 @@ hHL
 oqm
 oqm
 kVk
-cQU
+kVk
 kVk
 jNS
 jNS
@@ -32850,7 +32824,7 @@ fur
 qer
 oqm
 gKm
-kVk
+pcw
 jBP
 oqm
 shC
@@ -33364,7 +33338,7 @@ etj
 nFX
 oqm
 jBP
-pcw
+kVk
 gKm
 oqm
 shC
@@ -51100,10 +51074,10 @@ shC
 shC
 oqm
 wOd
-cDz
+dgM
 oqm
 sye
-aBy
+cDz
 oqm
 uJZ
 cDz
@@ -52137,7 +52111,7 @@ qzI
 cDz
 dtz
 igQ
-pwG
+aSH
 oqm
 shC
 shC
@@ -52650,7 +52624,7 @@ oqm
 ybR
 cDz
 oqm
-egK
+koy
 fFC
 oqm
 shC
@@ -53159,7 +53133,7 @@ jjZ
 cDz
 oqm
 vRd
-cDz
+dgM
 oqm
 vkx
 cDz
@@ -53421,7 +53395,7 @@ oqm
 oqm
 oqm
 oqm
-aOJ
+mnZ
 fFC
 mua
 pzi
@@ -53672,7 +53646,7 @@ oqm
 ymd
 rgx
 cvV
-lUY
+jma
 lUY
 uMw
 sLB
@@ -53938,7 +53912,7 @@ kAw
 rtk
 oex
 oOI
-dgM
+qZq
 poI
 fEB
 vbp
@@ -54184,7 +54158,7 @@ shC
 shC
 oqm
 hFv
-dLP
+egK
 sub
 aBY
 dLP
@@ -54200,7 +54174,7 @@ ilb
 qHs
 oqm
 oqm
-kPG
+wKJ
 oqm
 shC
 shC
@@ -54699,7 +54673,7 @@ shC
 oqm
 sLB
 fGu
-tot
+sLB
 lUY
 lUY
 eoo
@@ -54710,9 +54684,9 @@ uLR
 dQk
 jrL
 pcV
-mnZ
 ujN
-pcV
+tot
+wyI
 eQJ
 jZk
 oqm
@@ -54965,11 +54939,11 @@ oqm
 oqm
 aSH
 npZ
-jma
+qIY
 mUX
-wyI
-mUX
-jma
+oOI
+ujN
+qIY
 oqm
 oqm
 oqm
@@ -55220,7 +55194,7 @@ lMn
 lMn
 oqm
 oqm
-qVn
+umF
 umF
 oqm
 oqm

@@ -19,6 +19,7 @@
 	melee_damage_lower = 40
 	melee_damage_upper = 50
 	footstep_type = FOOTSTEP_MOB_HEAVY
+	environment_smash = ENVIRONMENT_SMASH_RWALLS
 	speed = -1.8//Actual speed handled by move_to_delay
 	move_to_delay = 1.8
 
@@ -64,7 +65,6 @@
 	aggrosound = null
 	idlesound = null
 	see_in_dark = 8
-	environment_smash = 2 //can smash walls
 	wander = FALSE
 
 // Mother death claw
@@ -77,7 +77,7 @@
 	stat_attack = UNCONSCIOUS
 	melee_damage_lower = 50
 	melee_damage_upper = 55
-	armour_penetration = 0.8
+	armour_penetration = 0.7
 	footstep_type = FOOTSTEP_MOB_HEAVY
 	color = rgb(95,104,94)
 	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/deathclaw = 6,
@@ -121,7 +121,7 @@
 	stat_attack = UNCONSCIOUS
 	melee_damage_lower = 55
 	melee_damage_upper = 55
-	armour_penetration = 0.9
+	armour_penetration = 0.8
 	footstep_type = FOOTSTEP_MOB_HEAVY
 	guaranteed_butcher_results = list(/obj/item/stack/sheet/animalhide/deathclaw = 6)
 
@@ -170,7 +170,7 @@
 	stat_attack = UNCONSCIOUS
 	melee_damage_lower = 70
 	melee_damage_upper = 80
-	armour_penetration = 1
+	armour_penetration = 0.9
 	footstep_type = FOOTSTEP_MOB_HEAVY
 
 

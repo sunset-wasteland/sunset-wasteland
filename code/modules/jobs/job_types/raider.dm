@@ -243,10 +243,10 @@ Within this file is the material to turn the previous odd-inclusion into a prope
 	flag = F13RAIDER_OUTSIDER
 	faction = FACTION_RAIDERS
 	social_faction = FACTION_RAIDERS
-	exp_requirements = 300
+	exp_requirements = 60
 	exp_type = EXP_TYPE_OUTLAW
-	total_positions = 2
-	spawn_positions = 2
+	total_positions = -1
+	spawn_positions = -1
 	description = "You're an outcast. Someone even the lowest of the low hates. \
 	You have more freedom than anyone else in the wastes. \
 	You're not held by the same moral code as others, but though you may only be interested in self-gain, you still have a responsibility to make your time here interesting. \
@@ -274,8 +274,55 @@ Within this file is the material to turn the previous odd-inclusion into a prope
 	/datum/outfit/loadout/raider_ncr,
 	/datum/outfit/loadout/raider_legion,
 	/datum/outfit/loadout/raider_bos,
-	/datum/outfit/loadout/raider_enclave
+	/datum/outfit/loadout/raider_enclave,
+	/datum/outfit/loadout/raider_highway,
 	)
+
+/datum/outfit/job/raider/outsiders/pre_equip(mob/living/carbon/human/H)
+	. = ..()
+	uniform = pick(
+		/obj/item/clothing/under/f13/merca, \
+		/obj/item/clothing/under/f13/mercc, \
+		/obj/item/clothing/under/f13/cowboyb, \
+		/obj/item/clothing/under/f13/cowboyg, \
+		/obj/item/clothing/under/f13/raider_leather, \
+		/obj/item/clothing/under/f13/raiderrags, \
+		/obj/item/clothing/under/pants/f13/ghoul, \
+		/obj/item/clothing/under/jabroni)
+	suit = pick(
+		/obj/item/clothing/suit/armor/f13/raider/supafly,\
+		/obj/item/clothing/suit/armor/f13/raider/yankee, \
+		/obj/item/clothing/suit/armor/f13/raider/sadist, \
+		/obj/item/clothing/suit/armor/f13/raider/blastmaster, \
+		/obj/item/clothing/suit/armor/f13/raider/badlands, \
+		/obj/item/clothing/suit/armor/f13/raider/painspike)
+	if(prob(10))
+		mask = pick(
+			/obj/item/clothing/mask/bandana/red,\
+			/obj/item/clothing/mask/bandana/blue,\
+			/obj/item/clothing/mask/bandana/green,\
+			/obj/item/clothing/mask/bandana/gold,\
+			/obj/item/clothing/mask/bandana/black,\
+			/obj/item/clothing/mask/bandana/skull)
+	head = pick(
+		/obj/item/clothing/head/sombrero,\
+		/obj/item/clothing/head/helmet/f13/raider,\
+		/obj/item/clothing/head/helmet/f13/raider/eyebot,\
+		/obj/item/clothing/head/helmet/f13/raider/arclight,\
+		/obj/item/clothing/head/helmet/f13/raider/blastmaster,\
+		/obj/item/clothing/head/helmet/f13/raider/yankee,\
+		/obj/item/clothing/head/helmet/f13/raider/psychotic,\
+		/obj/item/clothing/head/helmet/f13/fiend)
+	shoes = pick(
+			/obj/item/clothing/shoes/jackboots,\
+			/obj/item/clothing/shoes/f13/raidertreads)
+
+	suit_store = pick(
+		/obj/item/gun/ballistic/revolver/detective, \
+		/obj/item/gun/ballistic/automatic/pistol/ninemil,\
+		/obj/item/gun/ballistic/automatic/pistol/m1911, \
+		/obj/item/gun/ballistic/automatic/pistol/type17, \
+		)
 
 /datum/outfit/job/raider/outsiders
 	name = "Outsider"
@@ -294,6 +341,17 @@ Within this file is the material to turn the previous odd-inclusion into a prope
 		/obj/item/reagent_containers/hypospray/medipen/stimpak = 1,
 		/obj/item/storage/bag/money/small/raider = 1,
 		)
+
+/datum/outfit/loadout/raider_highway
+	name = "Highwayman"
+	uniform = /obj/item/clothing/under/f13/combat
+	shoes = /obj/item/clothing/shoes/f13/cowboy
+	head = /obj/item/clothing/head/f13/cowboy
+	gloves = /obj/item/clothing/gloves/color/brown
+	backpack_contents = list(
+		/obj/item/binoculars=1,
+		/obj/item/radio=1,
+		/obj/item/weapon/maptool=1)
 
 /datum/outfit/loadout/raider_vault
 	name = "Vault Renegade"

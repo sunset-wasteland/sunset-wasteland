@@ -167,6 +167,7 @@ Within this file is the material to turn the previous odd-inclusion into a prope
 		/obj/item/clothing/head/helmet/f13/wayfarer/hunter = 1,
 		/obj/item/twohanded/spear/bonespear = 1,
 		/obj/item/reagent_containers/pill/patch/bitterdrink = 1,
+		/obj/item/book/granter/crafting_recipe/tribal/all = 1,
 	)
 
 /datum/outfit/loadout/wayfarerranged
@@ -179,6 +180,7 @@ Within this file is the material to turn the previous odd-inclusion into a prope
 		/obj/item/storage/belt/tribe_quiver/bone = 1,
 		/obj/item/binoculars = 1,
 		/obj/item/melee/onehanded/club/warclub = 1,
+		/obj/item/book/granter/crafting_recipe/tribal/all = 1,
 		)
 
 /datum/outfit/loadout/wayfarershaman

@@ -27,7 +27,7 @@
 	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
 	unsuitable_atmos_damage = 20
 	gold_core_spawnable = HOSTILE_SPAWN
-	faction = list("hostile")
+	faction = list("hostile", "ghoul")
 	decompose = TRUE
 	sharpness = SHARP_EDGED //They need to cut their finger nails
 	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/human/ghoul = 2,
@@ -90,21 +90,27 @@
 	..()
 	summon_backup(10)
 
-/mob/living/simple_animal/hostile/ghoul/reaver/ncr
+/mob/living/simple_animal/hostile/ghoul/ncr
 	name = "feral ghoul soldier"
 	desc = "A former NCR combatant, now ghoulified and insane. The armor that failed it in life still packs some good defense."
-	maxHealth = 160
+	icon_state = "ghoulncr"
+	icon_living = "ghoulncr"
+	icon_dead = "ghoulncr_dead"
+	maxHealth = 80
 
-/mob/living/simple_animal/hostile/ghoul/reaver/ncr_helmet
-	name = "feral ghoul soldier"
-	desc = "A former NCR combatant, now ghoulified and insane. The armor that failed it in life still packs some good defense."
-	maxHealth = 180
+/mob/living/simple_animal/hostile/ghoul/ncr/helmet
+	icon_state = "ghoulncrh"
+	icon_living = "ghoulncrh"
+	icon_dead = "ghoulncrh_dead"
+	maxHealth = 120
 
-/mob/living/simple_animal/hostile/ghoul/reaver/ncr_officer
+/mob/living/simple_animal/hostile/ghoul/ncr/officer
 	name = "feral ghoul officer"
 	desc = "A former NCR officer, now ghoulified and insane. The armor that failed it in life still packs some good defense."
-	maxHealth = 250
-	speed = 3
+	icon_state = "ghoulncrc"
+	icon_living = "ghoulncrc"
+	icon_dead = "ghoulncrc_dead"
+	maxHealth = 160
 
 //Cold Feral Ghoul
 /mob/living/simple_animal/hostile/ghoul/coldferal
@@ -231,6 +237,36 @@
 	minimum_distance = 0
 	armour_penetration = 0.1
 
+/mob/living/simple_animal/hostile/ghoul/rotting
+	name = "bloated feral ghoul"
+	desc = "A ghoul that has lost its mind and become aggressive. This one appears to be full of some manner of fluid."
+	icon_state = "ghoulrotter"
+	icon_living = "ghoulrotter"
+	icon_dead = "ghoulrotter_dead"
+	move_to_delay = 6
+	maxHealth = 620
+	health = 620
+	harm_intent_damage = 8
+	melee_damage_lower = 35
+	melee_damage_upper = 45
+	armour_penetration = 0.4//Making them some manner of threat.
+	footstep_type = FOOTSTEP_MOB_BAREFOOT
+
+/mob/living/simple_animal/hostile/ghoul/rotting/Initialize()
+	. = ..()
+	resize = 1.2
+	update_transform()
+
+/mob/living/simple_animal/hostile/ghoul/rotting/bullet_act(obj/item/projectile/Proj)
+	if(!Proj)
+		CRASH("[src] ghoul invoked bullet_act() without a projectile")
+	if(prob(5) || Proj.damage > 15) //prob(x) = chance for proj to actually do something, adjust depending on how OP you want it to be.
+		return ..()
+	else
+		visible_message(span_danger("\The [Proj] is absorbed on \the [src]'s fat hide!"))
+		return 0
+
+/*
 //Alive Ghoul
 /mob/living/simple_animal/hostile/ghoul/soldier
 	name = "ghoul soldier"
@@ -413,4 +449,4 @@
 	wound_bonus = 0
 	bare_wound_bonus = 0
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
-
+*/

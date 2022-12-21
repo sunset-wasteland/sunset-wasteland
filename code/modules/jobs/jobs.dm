@@ -131,6 +131,10 @@ GLOBAL_LIST_INIT(faction_whitelist_positions, list(
 "Khorchin",
 "Kipchak",
 
+"Raider",
+"Outsider",
+"Raider Captain",
+
 "Followers Administrator",
 "Followers Doctor",
 "Followers Scholar",

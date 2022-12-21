@@ -427,7 +427,9 @@
 			if(HM && HM.timed)
 				dna.remove_mutation(HM.type)
 
-	//radiation -= min(radiation, RAD_LOSS_PER_TICK) nope, you need radx or radaway. small change to make rads *more*
+	if(HAS_TRAIT(src, TRAIT_GHOULMELEE))//Only process radiation on ghouls, so they can't stack it.
+		radiation -= min(radiation, RAD_LOSS_PER_TICK)
+
 	if(radiation > RAD_MOB_SAFE)
 		adjustToxLoss(log(radiation-RAD_MOB_SAFE)*RAD_TOX_COEFFICIENT)
 
@@ -641,7 +643,7 @@ GLOBAL_LIST_INIT(ballmer_windows_me_msg, list("Yo man, what if, we like, uh, put
 			SEND_SIGNAL(src, COMSIG_CLEAR_MOOD_EVENT, "drunk")
 			clear_alert("drunk")
 			drunkenness = max(drunkenness - 0.2, 0)
-		
+
 		if (changed_health)
 			updatehealth()
 

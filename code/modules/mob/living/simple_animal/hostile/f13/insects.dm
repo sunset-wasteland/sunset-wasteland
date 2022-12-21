@@ -277,8 +277,8 @@
 	icon_dead = "cazador_dead1"
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	speak_chance = 0
-	speed = -3//Actual speed handled by move_to_delay = 0
-	move_to_delay = 0
+	speed = -3//Actual speed handled by move_to_delay = 0.5
+	move_to_delay = 0.5
 	turns_per_move = 5
 	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/cazador_meat = 2, /obj/item/stack/sheet/sinew = 2, /obj/item/stack/sheet/animalhide/chitin = 2)
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/cazador_meat = 1, /obj/item/stack/sheet/animalhide/chitin = 1)
@@ -334,8 +334,8 @@
 /mob/living/simple_animal/hostile/cazador/young
 	name = "young cazador"
 	desc = "A mutated insect known for its fast speed, deadly sting, and being huge bastards. This one's little."
-	maxHealth = 40
-	health = 40
+	maxHealth = 25
+	health = 25
 	speed = -4.5
 	melee_damage_lower = 5
 	melee_damage_upper = 10

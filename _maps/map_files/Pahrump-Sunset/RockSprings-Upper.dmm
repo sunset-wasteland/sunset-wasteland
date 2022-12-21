@@ -39,14 +39,10 @@
 	},
 /area/f13/building)
 "af" = (
-/obj/machinery/shower{
-	dir = 4
-	},
-/obj/structure/drain,
-/mob/living/simple_animal/hostile/vault/security{
-	desc = "Imagine being a criminal and dressing as a guard. What a joke.";
-	faction = list("powder");
-	name = "Powder Ganger Guard"
+/obj/structure/nest/protectron{
+	layer = 3;
+	max_mobs = 1;
+	pixel_y = 20
 	},
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/building)
@@ -56,18 +52,8 @@
 /turf/open/floor/wood/wood_common/wood_common_light,
 /area/f13/building)
 "ah" = (
-/obj/machinery/door/poddoor/shutters/old/preopen{
-	id = 23000;
-	name = "Prison Lockdown"
-	},
-/mob/living/simple_animal/hostile/vault/security{
-	desc = "Imagine being a criminal and dressing as a guard. What a joke.";
-	faction = list("powder");
-	name = "Powder Ganger rGuard"
-	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite/rarecyan{
-	baseturfs = /turf/open/indestructible/ground/outside/sidewalk
-	},
+/mob/living/simple_animal/hostile/handy/protectron,
+/turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/building)
 "ak" = (
 /obj/machinery/door/unpowered/securedoor{
@@ -912,6 +898,17 @@
 	dir = 9
 	},
 /area/f13/legion)
+"gw" = (
+/obj/structure/railing/corner{
+	color = "#A47449";
+	dir = 1
+	},
+/obj/structure/railing/corner{
+	color = "#A47449";
+	dir = 4
+	},
+/turf/open/transparent/openspace,
+/area/f13/wasteland/rocksprings)
 "gy" = (
 /obj/item/kirbyplants/random,
 /obj/structure/railing{
@@ -1404,6 +1401,16 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/cult,
 /area/f13/building)
+"jo" = (
+/obj/structure/railing/corner{
+	color = "#A47449"
+	},
+/obj/structure/railing/corner{
+	color = "#A47449";
+	dir = 8
+	},
+/turf/open/transparent/openspace,
+/area/f13/wasteland/rocksprings)
 "jt" = (
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 8
@@ -1413,11 +1420,6 @@
 "jx" = (
 /obj/structure/chair/wood/dining{
 	dir = 8
-	},
-/mob/living/simple_animal/hostile/vault/security{
-	desc = "Imagine being a criminal and dressing as a guard. What a joke.";
-	faction = list("powder");
-	name = "Powder Ganger Guard"
 	},
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/building)
@@ -1749,12 +1751,13 @@
 /turf/open/floor/wood/wood_common,
 /area/f13/building)
 "lA" = (
-/mob/living/simple_animal/hostile/vault/security{
-	desc = "Imagine being a criminal and dressing as a guard. What a joke.";
-	faction = list("powder");
-	name = "Powder Ganger Guard"
+/obj/structure/camera_assembly,
+/obj/structure/nest/protectron{
+	layer = 3;
+	max_mobs = 1;
+	pixel_y = 20
 	},
-/turf/open/floor/carpet/black,
+/turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/building)
 "lF" = (
 /obj/structure/fluff/railing/corner{
@@ -1796,14 +1799,12 @@
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/building)
 "lO" = (
-/mob/living/simple_animal/hostile/renegade/engie{
-	desc = "Demolitions and engineering expert.";
-	faction = list("powder");
-	name = "Powder Ganger demoltionist"
+/obj/effect/decal/cleanable/dirt{
+	color = "000000"
 	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
-	baseturfs = /turf/open/indestructible/ground/outside/sidewalk;
-	name = "metal plating"
+/mob/living/simple_animal/hostile/handy/protectron,
+/turf/open/floor/plasteel/showroomfloor{
+	baseturfs = /turf/open/indestructible/ground/outside/sidewalk
 	},
 /area/f13/building)
 "lR" = (
@@ -2140,6 +2141,17 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"nX" = (
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 8
+	},
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 4
+	},
+/turf/open/transparent/openspace,
+/area/f13/wasteland/rocksprings)
 "oc" = (
 /obj/structure/chair/wood,
 /obj/effect/decal/cleanable/dirt,
@@ -2327,11 +2339,14 @@
 	},
 /area/f13/building)
 "pt" = (
-/mob/living/simple_animal/hostile/raider/ranged/boss{
-	faction = list("powder");
-	name = "Powder Ganger enforcer"
+/obj/structure/nest/protectron{
+	layer = 3;
+	max_mobs = 1;
+	pixel_y = 20
 	},
-/turf/open/indestructible/ground/outside/sidewalk,
+/turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite/rarecyan{
+	baseturfs = /turf/open/indestructible/ground/outside/sidewalk
+	},
 /area/f13/building)
 "py" = (
 /obj/structure/simple_door/glass,
@@ -2742,6 +2757,10 @@
 	icon_state = "yellowdirtyfull"
 	},
 /area/f13/building)
+"se" = (
+/obj/structure/wreck/trash/engine,
+/turf/open/floor/f13/wood,
+/area/f13/wasteland/rocksprings)
 "sg" = (
 /obj/structure/chair/comfy/brown{
 	dir = 1
@@ -2757,6 +2776,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/red/white,
 /area/f13/legion)
+"sq" = (
+/obj/structure/wreck/trash/machinepiletwo,
+/turf/open/floor/f13/wood,
+/area/f13/wasteland/rocksprings)
 "sy" = (
 /obj/effect/turf_decal/trimline/neutral/line{
 	dir = 4
@@ -3078,12 +3101,10 @@
 /turf/open/floor/plasteel/f13/vault_floor/red/white,
 /area/f13/legion)
 "uL" = (
-/mob/living/simple_animal/hostile/renegade/engie{
-	desc = "Demolitions and engineering expert.";
-	faction = list("powder");
-	name = "Powder Ganger demoltionist"
+/mob/living/simple_animal/hostile/handy/protectron,
+/turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite/rarecyan{
+	baseturfs = /turf/open/indestructible/ground/outside/sidewalk
 	},
-/turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/building)
 "uM" = (
 /obj/effect/decal/remains/human,
@@ -3112,6 +3133,10 @@
 /obj/item/paper_bin,
 /turf/open/floor/wood/wood_mosaic,
 /area/f13/legion)
+"uT" = (
+/obj/effect/spawner/lootdrop/trash,
+/turf/open/floor/f13/wood,
+/area/f13/wasteland/rocksprings)
 "uW" = (
 /obj/structure/railing/corner,
 /turf/open/transparent/openspace,
@@ -3367,6 +3392,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"wE" = (
+/obj/structure/lattice/catwalk,
+/turf/open/transparent/openspace,
+/area/f13/wasteland/rocksprings)
 "wH" = (
 /obj/structure/table/glass,
 /obj/effect/decal/cleanable/dirt{
@@ -3427,6 +3456,14 @@
 	},
 /turf/open/transparent/openspace,
 /area/f13/wasteland/rocksprings)
+"wS" = (
+/obj/structure/lattice,
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 1
+	},
+/turf/open/transparent/openspace,
+/area/f13/wasteland/rocksprings)
 "wT" = (
 /obj/structure/table/glass,
 /obj/effect/decal/cleanable/dirt{
@@ -3449,11 +3486,6 @@
 	},
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
-	},
-/mob/living/simple_animal/hostile/renegade/doc{
-	desc = "A veteran sawbones. He's not particular about where those bones come from.";
-	faction = list("powder");
-	name = "Powder Ganger Doc"
 	},
 /turf/open/floor/plasteel/showroomfloor{
 	baseturfs = /turf/open/indestructible/ground/outside/sidewalk
@@ -3492,6 +3524,25 @@
 /obj/item/bedsheet/hos,
 /turf/open/floor/wood/wood_mosaic,
 /area/f13/legion)
+"xd" = (
+/obj/structure/lattice/catwalk,
+/obj/structure/railing/corner{
+	color = "#A47449";
+	dir = 1
+	},
+/obj/structure/railing/corner{
+	color = "#A47449";
+	dir = 4
+	},
+/obj/structure/railing/corner{
+	color = "#A47449";
+	dir = 8
+	},
+/obj/structure/railing/corner{
+	color = "#A47449"
+	},
+/turf/open/transparent/openspace,
+/area/f13/wasteland/rocksprings)
 "xf" = (
 /obj/structure/chair/wood/fancy,
 /obj/structure/destructible/tribal_torch/wall/lit{
@@ -3562,6 +3613,10 @@
 	baseturfs = /turf/open/indestructible/ground/outside/sidewalk
 	},
 /area/f13/building)
+"xy" = (
+/obj/structure/wreck/trash/brokenvendor,
+/turf/open/floor/f13/wood,
+/area/f13/wasteland/rocksprings)
 "xz" = (
 /obj/structure/table/wood,
 /obj/machinery/microwave,
@@ -3621,6 +3676,17 @@
 	},
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/building)
+"xR" = (
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 4
+	},
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 8
+	},
+/turf/open/transparent/openspace,
+/area/f13/wasteland/rocksprings)
 "ye" = (
 /obj/structure/railing{
 	color = "#A47449";
@@ -3787,12 +3853,15 @@
 /turf/open/floor/plasteel/cult,
 /area/f13/building)
 "zj" = (
-/mob/living/simple_animal/hostile/vault/security{
-	desc = "Imagine being a criminal and dressing as a guard. What a joke.";
-	faction = list("powder");
-	name = "Powder Ganger rGuard"
+/obj/structure/nest/protectron{
+	layer = 3;
+	max_mobs = 1;
+	pixel_y = 20
 	},
-/turf/open/indestructible/ground/outside/sidewalk,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
+	baseturfs = /turf/open/indestructible/ground/outside/sidewalk;
+	name = "metal plating"
+	},
 /area/f13/building)
 "zk" = (
 /obj/effect/decal/cleanable/blood/old{
@@ -3908,6 +3977,7 @@
 /area/f13/wasteland/rocksprings)
 "Ai" = (
 /obj/machinery/camera,
+/mob/living/simple_animal/hostile/handy/protectron,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/building)
 "Ak" = (
@@ -4057,11 +4127,6 @@
 /area/f13/building)
 "Bq" = (
 /obj/effect/decal/cleanable/blood/tracks,
-/mob/living/simple_animal/hostile/vault/security{
-	desc = "Imagine being a criminal and dressing as a guard. What a joke.";
-	faction = list("powder");
-	name = "Powder Ganger rGuard"
-	},
 /turf/open/floor/wood/wood_fancy/wood_fancy_dark{
 	baseturfs = /turf/open/indestructible/ground/outside/sidewalk
 	},
@@ -4933,6 +4998,10 @@
 /mob/living/simple_animal/hostile/renegade/grunt,
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"Kw" = (
+/obj/structure/wreck/trash/machinepile,
+/turf/open/floor/f13/wood,
+/area/f13/wasteland/rocksprings)
 "Ky" = (
 /obj/structure/bed/wooden,
 /obj/effect/spawner/lootdrop/bedsheet,
@@ -5107,11 +5176,11 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "Lm" = (
-/mob/living/simple_animal/hostile/raider/ranged/sulphiteranged{
-	faction = list("powder");
-	name = "Powder Ganger gangmaster"
+/mob/living/simple_animal/hostile/handy/protectron,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
+	baseturfs = /turf/open/indestructible/ground/outside/sidewalk;
+	name = "metal plating"
 	},
-/turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/building)
 "Lo" = (
 /obj/item/kirbyplants/random,
@@ -5217,12 +5286,8 @@
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/building)
 "LU" = (
-/mob/living/simple_animal/hostile/renegade/engie{
-	desc = "Demolitions and engineering expert.";
-	faction = list("powder");
-	name = "Powder Ganger demoltionist"
-	},
-/turf/open/floor/plasteel/showroomfloor{
+/mob/living/simple_animal/hostile/handy/gutsy,
+/turf/open/floor/wood/wood_fancy/wood_fancy_dark{
 	baseturfs = /turf/open/indestructible/ground/outside/sidewalk
 	},
 /area/f13/building)
@@ -5652,6 +5717,14 @@
 /obj/machinery/light/small/broken,
 /turf/open/floor/wood/wood_wide,
 /area/f13/building)
+"PE" = (
+/obj/structure/lattice,
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 8
+	},
+/turf/open/transparent/openspace,
+/area/f13/wasteland/rocksprings)
 "PH" = (
 /obj/structure/fence/wooden{
 	density = 0;
@@ -5745,6 +5818,11 @@
 /area/f13/building)
 "Qp" = (
 /turf/closed/indestructible/riveted,
+/area/f13/wasteland/rocksprings)
+"Qr" = (
+/obj/structure/lattice/catwalk,
+/obj/structure/lattice/catwalk,
+/turf/open/transparent/openspace,
 /area/f13/wasteland/rocksprings)
 "Qs" = (
 /obj/machinery/door/unpowered/celldoor,
@@ -5991,10 +6069,24 @@
 /mob/living/simple_animal/hostile/radroach,
 /turf/open/floor/wood/wood_wide,
 /area/f13/building)
+"Sg" = (
+/obj/structure/lattice,
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 4
+	},
+/turf/open/transparent/openspace,
+/area/f13/wasteland/rocksprings)
 "Sl" = (
 /obj/structure/toilet/secret/low_loot,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/building)
+"Sr" = (
+/obj/structure/simple_door/metal/barred{
+	name = "Slave Keep"
+	},
+/turf/open/floor/f13/wood,
+/area/f13/wasteland/rocksprings)
 "Ss" = (
 /turf/closed/indestructible/rock{
 	desc = "A pre-War wall made of solid concrete.";
@@ -6613,6 +6705,18 @@
 /obj/structure/dresser,
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"WW" = (
+/obj/structure/lattice,
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 4
+	},
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 8
+	},
+/turf/open/transparent/openspace,
+/area/f13/wasteland/rocksprings)
 "Xe" = (
 /obj/structure/bookshelf{
 	density = 1;
@@ -6907,6 +7011,18 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
+/area/f13/wasteland/rocksprings)
+"Zf" = (
+/obj/structure/lattice,
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 8
+	},
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 4
+	},
+/turf/open/transparent/openspace,
 /area/f13/wasteland/rocksprings)
 "Zl" = (
 /mob/living/simple_animal/hostile/ghoul/glowing/strong,
@@ -18880,7 +18996,7 @@ AI
 AI
 AI
 AI
-AI
+UL
 DH
 DH
 DH
@@ -19137,7 +19253,7 @@ AI
 AI
 LS
 LS
-LS
+Sr
 LS
 LS
 LS
@@ -19393,19 +19509,19 @@ AI
 AI
 AI
 LS
-DH
-DH
-DH
+CA
+wE
+AR
 DH
 DH
 LS
-DH
-DH
-DH
-DH
-DH
-DH
-DH
+eN
+Dd
+Sg
+Dd
+Sg
+Dd
+cn
 LS
 UL
 UL
@@ -19650,19 +19766,19 @@ AI
 AI
 AI
 LS
-DH
-DH
-DH
-DH
-DH
-DH
-DH
-DH
-DH
-DH
-DH
-DH
-DH
+CA
+wE
+cy
+Dd
+Dd
+Dd
+wW
+uT
+UL
+sq
+se
+Kw
+AR
 LS
 UL
 UL
@@ -19907,19 +20023,19 @@ AI
 AI
 AI
 LS
-DH
-DH
-DH
-DH
-DH
-DH
-DH
-DH
-DH
-DH
-DH
-DH
-DH
+CA
+wE
+Qr
+wE
+wE
+wE
+wE
+UL
+uT
+Kw
+uT
+xy
+wS
 LS
 UL
 UL
@@ -20164,19 +20280,19 @@ AI
 AI
 AI
 LS
-DH
-DH
-DH
-DH
-DH
-DH
-DH
-DH
-DH
-DH
-DH
-DH
-DH
+fi
+lH
+lH
+lH
+lH
+lH
+no
+UL
+uT
+UL
+UL
+uT
+AR
 LS
 UL
 UL
@@ -20427,13 +20543,13 @@ DH
 DH
 DH
 LS
-DH
-DH
-DH
-DH
-DH
-DH
-DH
+jo
+xR
+WW
+xd
+Zf
+nX
+gw
 LS
 UL
 UL
@@ -20684,13 +20800,13 @@ DH
 DH
 DH
 DH
-DH
-DH
-DH
-DH
-DH
-DH
-DH
+CA
+sq
+uT
+UL
+uT
+Kw
+AR
 LS
 UL
 UL
@@ -20941,13 +21057,13 @@ DH
 DH
 DH
 DH
-DH
-DH
-DH
-DH
-DH
-DH
-DH
+CA
+Kw
+UL
+UL
+uT
+xy
+AR
 LS
 UL
 UL
@@ -21198,13 +21314,13 @@ DH
 DH
 DH
 LS
-DH
-DH
-DH
-DH
-DH
-DH
-DH
+jo
+xR
+WW
+xd
+Zf
+nX
+gw
 LS
 UL
 UL
@@ -21455,13 +21571,13 @@ DH
 DH
 DH
 DH
-DH
-DH
-DH
-DH
-DH
-DH
-DH
+CA
+sq
+uT
+UL
+UL
+uT
+AR
 LS
 UL
 UL
@@ -21712,13 +21828,13 @@ DH
 DH
 DH
 DH
-DH
-DH
-DH
-DH
-DH
-DH
-DH
+CA
+xy
+UL
+uT
+UL
+UL
+wS
 LS
 UL
 UL
@@ -21969,13 +22085,13 @@ DH
 DH
 DH
 DH
-DH
-DH
-DH
-DH
-DH
-DH
-DH
+CA
+uT
+UL
+uT
+UL
+uT
+AR
 LS
 UL
 UL
@@ -22226,13 +22342,13 @@ LS
 LS
 LS
 LS
-DH
-DH
-DH
-DH
-DH
-DH
-DH
+fi
+lH
+PE
+lH
+PE
+lH
+tj
 LS
 UL
 UL
@@ -61136,7 +61252,7 @@ oI
 De
 Td
 oI
-oI
+ah
 PP
 DH
 DH
@@ -61647,7 +61763,7 @@ DH
 DH
 PP
 Ai
-uL
+oI
 oI
 oI
 oI
@@ -63455,14 +63571,14 @@ PP
 Sl
 Zn
 RU
-oI
+ah
 oI
 hK
 lJ
 lJ
 hK
 oI
-oI
+ah
 RU
 oI
 Qi
@@ -63716,7 +63832,7 @@ oI
 oI
 hK
 lJ
-lA
+lJ
 hK
 oI
 oI
@@ -64987,9 +65103,9 @@ oI
 oI
 OI
 PP
-sL
+lA
 oI
-oI
+ah
 oI
 oI
 oI
@@ -65248,7 +65364,7 @@ oI
 oI
 SF
 oI
-Lm
+oI
 oI
 oI
 oI
@@ -65257,7 +65373,7 @@ oI
 oI
 PP
 PP
-oI
+af
 oI
 PP
 vk
@@ -65767,14 +65883,14 @@ tv
 tv
 oI
 PP
+ah
 oI
-zj
 XH
 oI
 oI
 xH
 PP
-zC
+zj
 zC
 zC
 zC
@@ -66289,8 +66405,8 @@ zC
 zC
 dR
 zC
-lO
 zC
+Lm
 Qx
 PP
 av
@@ -66534,7 +66650,7 @@ OI
 PP
 oI
 lM
-af
+lM
 lM
 gN
 PP
@@ -66779,9 +66895,9 @@ DH
 DH
 OI
 ax
+ah
 oI
 oI
-pt
 hf
 OI
 oI
@@ -67056,7 +67172,7 @@ ch
 DM
 rv
 PP
-eU
+pt
 eU
 PP
 pb
@@ -67549,7 +67665,7 @@ DH
 DH
 DH
 lq
-oI
+af
 nq
 Yg
 oI
@@ -68071,7 +68187,7 @@ oI
 TI
 Qg
 Qg
-LU
+Qg
 fm
 od
 JX
@@ -68083,13 +68199,13 @@ aC
 ng
 nV
 ng
-ah
+qD
 eU
 eU
 PP
 UX
 Uw
-UX
+LU
 Xe
 PP
 kD
@@ -68332,7 +68448,7 @@ Qg
 fm
 hN
 Qg
-fm
+lO
 fm
 Qg
 IE
@@ -68341,7 +68457,7 @@ fA
 aC
 sF
 PP
-eU
+uL
 eU
 PP
 LN

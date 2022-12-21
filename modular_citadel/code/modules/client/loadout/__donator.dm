@@ -368,3 +368,12 @@
 
 /obj/item/storage/box/large/custom_kit/yan/PopulateContents()
 	new /obj/item/book/granter/martial/yan(src)
+
+/datum/gear/donator/kits/valentine
+	name = "USMC riot gear"
+	path = /obj/item/storage/box/large/custom_kit/valentine
+	ckeywhitelist = list ("jackkindred")
+
+/obj/item/storage/box/large/custom_kit/valentine/PopulateContents()
+	new /obj/item/clothing/suit/armor/f13/rangercombat/valentine(src)
+	new /obj/item/clothing/head/helmet/f13/ncr/rangercombat/valentine(src)

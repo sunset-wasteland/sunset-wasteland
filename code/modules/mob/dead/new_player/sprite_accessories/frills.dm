@@ -32,6 +32,14 @@
 	name = "Axolotl"
 	icon_state = "axolotl"
 
+/datum/sprite_accessory/frills/marauder
+	name = "Marauder"
+	icon_state = "murauder"
+
+/datum/sprite_accessory/frills/faceguard
+	name = "Faceguard"
+	icon_state = "faceguard"
+
 /datum/sprite_accessory/frills/cobrahoodears
 	name = "Cobra Hood with Ears"
 	icon = 'modular_citadel/icons/mob/frills.dmi'

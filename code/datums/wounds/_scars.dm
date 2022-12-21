@@ -47,6 +47,7 @@
 		qdel(src)
 		return
 	limb = BP
+	RegisterSignal(limb, COMSIG_PARENT_QDELETING, .proc/limb_gone)
 	severity = W.severity
 	if(limb.owner)
 		victim = limb.owner
@@ -86,6 +87,7 @@
 		return
 
 	limb = BP
+	RegisterSignal(limb, COMSIG_PARENT_QDELETING, .proc/limb_gone)
 	src.severity = severity
 	LAZYADD(limb.scars, src)
 	if(BP.owner)
@@ -103,6 +105,10 @@
 		if(WOUND_SEVERITY_LOSS)
 			visibility = 7
 	return TRUE
+
+/datum/scar/proc/limb_gone()
+	SIGNAL_HANDLER
+	qdel(src)
 
 /// What will show up in examine_more() if this scar is visible
 /datum/scar/proc/get_examine_description(mob/viewer)

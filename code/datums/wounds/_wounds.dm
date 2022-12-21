@@ -129,6 +129,7 @@
 			return
 
 	victim = L.owner
+	RegisterSignal(victim, COMSIG_PARENT_QDELETING, .proc/null_victim)
 	limb = L
 	LAZYADD(victim.all_wounds, src)
 	LAZYADD(limb.wounds, src)
@@ -161,6 +162,14 @@
 	if(!demoted)
 		wound_injury(old_wound)
 		second_wind()
+
+/datum/wound/proc/null_victim()
+	SIGNAL_HANDLER
+	victim = null
+
+/datum/wound/proc/source_died()
+	SIGNAL_HANDLER
+	qdel(src)
 
 /// Remove the wound from whatever it's afflicting, and cleans up whateverstatus effects it had or modifiers it had on interaction times. ignore_limb is used for detachments where we only want to forget the victim
 /datum/wound/proc/remove_wound(ignore_limb, replaced = FALSE)

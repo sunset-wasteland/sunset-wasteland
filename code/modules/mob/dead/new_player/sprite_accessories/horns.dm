@@ -20,10 +20,6 @@
 	name = "Curled Back"
 	icon_state = "bunhorns"
 
-/datum/sprite_accessory/horns/curledbig
-	name = "Curled Big"
-	icon_state = "curledbig"
-
 /datum/sprite_accessory/horns/lifted
 	name = "Lifted"
 	icon_state = "lifted"
@@ -38,8 +34,12 @@
 	color_src = MUTCOLORS
 
 /datum/sprite_accessory/horns/antler
-	name = "Deer Antlers"
-	icon_state = "deer"
+	name = "Big Antlers"
+	icon_state = "antlers"
+
+/datum/sprite_accessory/horns/smallantler
+	name = "Small Antlers"
+	icon_state = "smallantlers"
 
 /datum/sprite_accessory/horns/guilmon
 	name = "Guilmon"
@@ -68,10 +68,6 @@
 /datum/sprite_accessory/horns/deathclawinverted
 	name = "Deathclaw Inverted"
 	icon_state = "deathclawinverted"
-
-/datum/sprite_accessory/horns/deathclawshort
-	name = "Deathclaw Short"
-	icon_state = "deathclawshort"
 
 /datum/sprite_accessory/horns/outstretched
 	name = "Outstretched"

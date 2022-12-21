@@ -125,6 +125,18 @@
 	name = "Thick"
 	icon_state = "thick"
 
+datum/sprite_accessory/tails/lizard/nightstalker
+	name = "Nightstalker"
+	icon_state = "nightstalker"
+	color_src = MATRIXED
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/tails_animated/lizard/nightstalker
+	name = "Nightstalker"
+	icon_state = "nightstalker"
+	color_src = MATRIXED
+	matrixed_sections = MATRIX_RED_GREEN
+
 /******************************************
 ************** Human Tails ****************
 *******************************************/
@@ -417,6 +429,12 @@
 	matrixed_sections = MATRIX_GREEN
 
 /datum/sprite_accessory/tails/human/nightstalker
+	name = "Nightstalker"
+	icon_state = "nightstalker"
+	color_src = MATRIXED
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/tails_animated/human/nightstalker
 	name = "Nightstalker"
 	icon_state = "nightstalker"
 	color_src = MATRIXED
@@ -1044,6 +1062,12 @@
 	matrixed_sections = MATRIX_GREEN
 
 /datum/sprite_accessory/tails/mam_tails/nightstalker
+	name = "Nightstalker"
+	icon_state = "nightstalker"
+	color_src = MATRIXED
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/tails_animated/mam_tails_animated/nightstalker
 	name = "Nightstalker"
 	icon_state = "nightstalker"
 	color_src = MATRIXED

@@ -125,7 +125,7 @@
 	name = "Thick"
 	icon_state = "thick"
 
-datum/sprite_accessory/tails/lizard/nightstalker
+/datum/sprite_accessory/tails/lizard/nightstalker
 	name = "Nightstalker"
 	icon_state = "nightstalker"
 	color_src = MATRIXED

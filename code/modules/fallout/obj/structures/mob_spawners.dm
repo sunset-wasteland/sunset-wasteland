@@ -296,7 +296,7 @@
 	max_mobs = 2
 	mob_types = list(/mob/living/simple_animal/hostile/stalker = 5,
 					/mob/living/simple_animal/hostile/stalkeryoung = 5)
-
+/*
 //Event Nests
 /obj/structure/nest/zombieghoul
 	name = "ravenous ghoul nest"
@@ -304,7 +304,7 @@
 	mob_types = list(/mob/living/simple_animal/hostile/ghoul/zombie = 5,
 					/mob/living/simple_animal/hostile/ghoul/zombie/reaver = 3,
 					/mob/living/simple_animal/hostile/ghoul/zombie/glowing = 1)
-
+*/
 /obj/structure/nest/tunneler
 	name = "tunneler tunnel"
 	desc = "A tunnel which leads to an underground network of even more tunnels, made by the dangerous tunnelers."

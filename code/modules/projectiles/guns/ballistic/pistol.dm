@@ -80,7 +80,7 @@
 	suppressor_y_offset = 15
 	fire_sound = 'sound/f13weapons/10mm_fire_02.ogg'
 	//Extra Modifiable Gun Vars
-	modifiablegun = FALSE
+	modifiablegun = TRUE
 	//Sprite Attachment Points
 	xattachlist = list("east" = 28, "west" =  9, "south" = 21, "north" = 14) //x coordinate for attachment point
 	yattachlist = list("east" = 18, "west" = 17, "south" = 17, "north" = 21) //y coordinate for attachment point
@@ -136,7 +136,7 @@
 	suppressor_y_offset = 19
 	fire_sound = 'sound/f13weapons/ninemil.ogg'
 	//Extra Modifiable Gun Vars
-	modifiablegun = FALSE
+	modifiablegun = TRUE
 	//Sprite Attachment Points
 	xattachlist = list("east" = 31, "west" =  4, "south" = 21, "north" = 16) //x coordinate for attachment point
 	yattachlist = list("east" = 21, "west" = 17, "south" = 17, "north" = 22) //y coordinate for attachment point
@@ -240,7 +240,7 @@
 	suppressor_y_offset = 21
 	fire_sound = 'sound/f13weapons/45revolver.ogg'
 	//Extra Modifiable Gun Vars
-	modifiablegun = FALSE
+	modifiablegun = TRUE
 	//Sprite Attachment Points
 	xattachlist = list("east" = 29, "west" =  9, "south" = 21, "north" = 12) //x coordinate for attachment point
 	yattachlist = list("east" = 22, "west" = 17, "south" = 17, "north" = 24) //y coordinate for attachment point
@@ -300,14 +300,11 @@
 	spread = 6
 	extra_damage = 12
 	extra_penetration = 0.12
-	can_suppress = TRUE
-	suppressor_state = "pistol_suppressor"
-	suppressor_x_offset = 30
-	suppressor_y_offset = 21
+	can_suppress = FALSE
 	automatic_burst_overlay = FALSE
 	fire_sound = 'sound/f13weapons/44mag.ogg'
 	//Extra Modifiable Gun Vars
-	modifiablegun = FALSE
+	modifiablegun = TRUE
 	//Sprite Attachment Points
 	xattachlist = list("east" = 31, "west" =  9, "south" = 21, "north" = 15) //x coordinate for attachment point
 	yattachlist = list("east" = 22, "west" = 17, "south" = 17, "north" = 23) //y coordinate for attachment point
@@ -338,10 +335,7 @@
 	fire_delay = 4
 	extra_speed = 600
 	recoil = 0.2
-	can_suppress = TRUE
-	suppressor_state = "pistol_suppressor"
-	suppressor_x_offset = 30
-	suppressor_y_offset = 21
+	can_suppress = FALSE
 	automatic_burst_overlay = FALSE
 	fire_sound = 'sound/f13weapons/44mag.ogg'
 	extra_damage = 5
@@ -357,10 +351,7 @@
 	fire_delay = 5
 	extra_damage = 11
 	recoil = 2.2
-	can_suppress = TRUE
-	suppressor_state = "pistol_suppressor"
-	suppressor_x_offset = 30
-	suppressor_y_offset = 21
+	can_suppress = FALSE
 	fire_sound = 'sound/f13weapons/magnum_fire.ogg'
 
 //14mm compact		Keywords: 14mm, Semi-auto, Short barrel, 7 rounds, Heavy
@@ -415,4 +406,4 @@
 	name = "pistol"
 	extra_damage = 18
 	mag_type = /obj/item/ammo_box/magazine/testbullet
-
+	

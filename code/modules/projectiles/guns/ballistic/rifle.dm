@@ -182,10 +182,6 @@
 	scope_y_offset = 12
 	pump_sound = 'sound/weapons/boltpump.ogg'
 	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
-	can_suppress = TRUE
-	suppressor_state = "rifle_suppressor"
-	suppressor_x_offset = 27
-	suppressor_y_offset = 31
 
 /obj/item/gun/ballistic/rifle/hunting/attackby(obj/item/A, mob/user, params)
 	..()

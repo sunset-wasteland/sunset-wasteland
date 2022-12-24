@@ -214,10 +214,6 @@
 	gunlight_state = "flightangle"
 	flight_x_offset = 23
 	flight_y_offset = 21
-	can_suppress = TRUE
-	suppressor_state = "rifle_suppressor"
-	suppressor_x_offset = 27
-	suppressor_y_offset = 31
 
 /obj/item/gun/ballistic/shotgun/police/AltClick(mob/living/user)
 	. = ..()
@@ -261,10 +257,6 @@
 	bayonet_state = "bayonet"
 	knife_x_offset = 24
 	knife_y_offset = 22
-	can_suppress = TRUE
-	suppressor_state = "rifle_suppressor"
-	suppressor_x_offset = 27
-	suppressor_y_offset = 31
 
 /obj/item/gun/ballistic/shotgun/trench/update_icon_state()
 	if(!magazine || !magazine.ammo_count(0))
@@ -324,10 +316,6 @@
 	bayonet_state = "bayonet"
 	knife_x_offset = 23
 	knife_y_offset = 23
-	can_suppress = TRUE
-	suppressor_state = "rifle_suppressor"
-	suppressor_x_offset = 27
-	suppressor_y_offset = 31
 
 
 //Neostead 2000							Keywords: BOS, Shotgun, Semi-auto, 12 rounds internal
@@ -415,10 +403,6 @@
 	automatic_burst_overlay = FALSE
 	semi_auto = TRUE
 	fire_sound = 'sound/f13weapons/riot_shotgun.ogg'
-	can_suppress = TRUE
-	suppressor_state = "rifle_suppressor"
-	suppressor_x_offset = 27
-	suppressor_y_offset = 31
 
 //Boss' unique riot shotgun.
 /obj/item/gun/ballistic/automatic/shotgun/riot/boss

@@ -3,7 +3,7 @@
 
 /obj/item/gun/ballistic/revolver
 	slowdown = 0.1
-	name = "revolver template"
+	name = "revolver template" 
 	desc = "should not exist."
 	icon_state = "revolver"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder
@@ -135,10 +135,6 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev38
 	force = 10
 	spread = 4
-	can_suppress = TRUE
-	suppressor_state = "pistol_suppressor"
-	suppressor_x_offset = 30
-	suppressor_y_offset = 21
 	obj_flags = UNIQUE_RENAME
 	var/list/safe_calibers
 
@@ -159,10 +155,7 @@
 	spread = 1
 	fire_sound = 'sound/f13weapons/45revolver.ogg'
 	extra_damage = 5
-	can_suppress = TRUE
-	suppressor_state = "pistol_suppressor"
-	suppressor_x_offset = 30
-	suppressor_y_offset = 21
+
 
 
 ////////////////////
@@ -181,20 +174,14 @@
 	spread = 0
 	fire_sound = 'sound/f13weapons/357magnum.ogg'
 	extra_damage = 5
-	can_suppress = TRUE
-	suppressor_state = "pistol_suppressor"
-	suppressor_x_offset = 30
-	suppressor_y_offset = 21
+
 /obj/item/gun/ballistic/revolver/colt357/mateba //this is a skin that rigbe wanted
 	name = "\improper Unica 6 auto-revolver"
 	desc = "A pre-war high-power autorevolver commonly used by people who think they look cool."
 	icon_state = "mateba"
 	item_state = "mateba"
 	fire_sound = 'sound/f13weapons/magnum_fire.ogg'
-	can_suppress = TRUE
-	suppressor_state = "pistol_suppressor"
-	suppressor_x_offset = 30
-	suppressor_y_offset = 21
+
 //Lucky							Keywords: UNIQUE, .357, Double action, 6 rounds cylinder, Block chance, Fire delay -1
 /obj/item/gun/ballistic/revolver/colt357/lucky
 	name = "Lucky"
@@ -206,10 +193,7 @@
 	fire_delay = 3
 	block_chance = 35
 	extra_penetration = 0.05
-	can_suppress = TRUE
-	suppressor_state = "pistol_suppressor"
-	suppressor_x_offset = 30
-	suppressor_y_offset = 21
+
 //Police revolver					Keywords: .357, Double action, 6 rounds cylinder, Pocket Pistol
 /obj/item/gun/ballistic/revolver/police
 	name = "police revolver"
@@ -221,10 +205,7 @@
 	spread = 2
 	fire_sound = 'sound/f13weapons/policepistol.ogg'
 	extra_damage = -5
-	can_suppress = TRUE
-	suppressor_state = "pistol_suppressor"
-	suppressor_x_offset = 30
-	suppressor_y_offset = 21
+
 
 
 ///////////////////
@@ -246,10 +227,7 @@
 	scope_y_offset = 24
 	fire_sound = 'sound/f13weapons/44mag.ogg'
 	extra_damage = 5
-	can_suppress = TRUE
-	suppressor_state = "pistol_suppressor"
-	suppressor_x_offset = 30
-	suppressor_y_offset = 21
+
 /obj/item/gun/ballistic/revolver/m29/alt
 	name = "modern .44 magnum revolver"
 	desc = "A custom, modernized S&W Model 29 revolver with a chrome finish and a polymer grip."
@@ -258,10 +236,7 @@
 	can_scope = FALSE
 	extra_damage = 5
 	extra_speed = 80
-	can_suppress = TRUE
-	suppressor_state = "pistol_suppressor"
-	suppressor_x_offset = 30
-	suppressor_y_offset = 21
+
 //Chiappa Rhino                  Keywords: Enclave, .44, Double action, 6 rounds cylinder
 /obj/item/gun/ballistic/revolver/m29/rhino_america
 	name = "Rhino America"
@@ -271,10 +246,7 @@
 	can_scope = FALSE
 	extra_damage = 23 //for a combined total of 55 damage, as good as the 14mm pistol and plasma pistol.
 	fire_delay = 3.5 //it should still fire slow but not too slow
-	can_suppress = TRUE
-	suppressor_state = "pistol_suppressor"
-	suppressor_x_offset = 30
-	suppressor_y_offset = 21
+
 //Peacekeeper					 Keywords: OASIS, .44, Double action, 6 rounds cylinder, Extra Firemode
 /obj/item/gun/ballistic/revolver/m29/peacekeeper
 	name = "Peacekeeper"
@@ -286,10 +258,7 @@
 	autofire_shot_delay = 1
 	actions_types = list(/datum/action/item_action/toggle_firemode)
 	can_scope = FALSE
-	can_suppress = TRUE
-	suppressor_state = "pistol_suppressor"
-	suppressor_x_offset = 30
-	suppressor_y_offset = 21
+
 //.44 Snubnose						Keywords: .44, Double action, 6 rounds cylinder, Short barrel
 /obj/item/gun/ballistic/revolver/m29/snub
 	name = "short .44 magnum revolver"
@@ -299,10 +268,7 @@
 	w_class = WEIGHT_CLASS_SMALL
 	spread = 3
 	extra_damage = 0
-	can_suppress = TRUE
-	suppressor_state = "pistol_suppressor"
-	suppressor_x_offset = 30
-	suppressor_y_offset = 21
+
 
 //.44 single action		 			Keywords: .44, Single action, 6 rounds cylinder, Long barrel
 /obj/item/gun/ballistic/revolver/revolver44
@@ -314,20 +280,14 @@
 	fire_delay = 4.5
 	spread = 0
 	fire_sound = 'sound/f13weapons/44revolver.ogg'
-	can_suppress = TRUE
-	suppressor_state = "pistol_suppressor"
-	suppressor_x_offset = 30
-	suppressor_y_offset = 21
+
 
 //Desert Ranger revolver			Keywords: .44, Single action, 6 rounds cylinder,
 /obj/item/gun/ballistic/revolver/revolver44/desert_ranger
 	name = "desert ranger revolver"
 	desc = "I hadn't noticed, but there on his hip, was a really spiffy looking iron..."
 	fire_delay = 4
-	can_suppress = TRUE
-	suppressor_state = "pistol_suppressor"
-	suppressor_x_offset = 30
-	suppressor_y_offset = 21
+
 //Sheriff's revolver			Keywords: .44, Single action, 6 rounds cylinder, 5 less damage than sequoia, 20% more pen
 /obj/item/gun/ballistic/revolver/revolver44/sheriff
 	name = "Biggest Iron"
@@ -339,10 +299,7 @@
 	scope_x_offset = 6
 	scope_y_offset = 24
 	fire_sound = 'sound/f13weapons/sequoia.ogg'
-	can_suppress = TRUE
-	suppressor_state = "pistol_suppressor"
-	suppressor_x_offset = 30
-	suppressor_y_offset = 21
+
 
 //////////////////////
 // .45-70 REVOLVERS //
@@ -360,10 +317,7 @@
 	fire_delay = 1
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev4570
 	fire_sound = 'sound/f13weapons/sequoia.ogg'
-	can_suppress = TRUE
-	suppressor_state = "pistol_suppressor"
-	suppressor_x_offset = 30
-	suppressor_y_offset = 21
+
 /obj/item/gun/ballistic/revolver/sequoia/bayonet
 	name = "bladed ranger sequoia"
 	desc = "This heavy revolver is a trademark weapon of the New California Republic Rangers. This one has a blade attached to the handle for a painful pistolwhip."
@@ -390,10 +344,7 @@
 	fire_sound = 'sound/f13weapons/sequoia.ogg'
 	extra_damage = -2
 	icon = 'icons/obj/guns/gunfruits2022/pistols.dmi'
-	can_suppress = TRUE
-	suppressor_state = "pistol_suppressor"
-	suppressor_x_offset = 30
-	suppressor_y_offset = 21
+
 /obj/item/gun/ballistic/revolver/hunting/klatue
 	name = "degraded hunting revolver"
 	desc = "A scoped double action revolver chambered in 45-70. This one is very worn."
@@ -413,10 +364,7 @@
 	fire_delay = 4.5
 	fire_sound = 'sound/f13weapons/45revolver.ogg'
 	spread = 0 //Your reward for the slower fire rate is less spread anddd
-	can_suppress = TRUE
-	suppressor_state = "pistol_suppressor"
-	suppressor_x_offset = 30
-	suppressor_y_offset = 21
+
 
 //.223 Pistol					Keywords: .223, Double action, 5 rounds internal, Short barrel
 /obj/item/gun/ballistic/revolver/thatgun
@@ -431,10 +379,7 @@
 	fire_sound = 'sound/f13weapons/magnum_fire.ogg'
 	extra_damage = 9
 	extra_penetration = 0.08
-	can_suppress = TRUE
-	suppressor_state = "pistol_suppressor"
-	suppressor_x_offset = 30
-	suppressor_y_offset = 21
+
 
 
 /////////////

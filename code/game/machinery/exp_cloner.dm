@@ -299,7 +299,7 @@
 		var/mob/living/brain/B = mob_occupant
 		dna = B.stored_dna
 
-	if(!istype(dna))
+	if(!istype(dna) || isrobotic(mob_occupant))
 		scantemp = "<font class='bad'>Unable to locate valid genetic data.</font>"
 		playsound(src, 'sound/machines/terminal_prompt_deny.ogg', 50, 0)
 		return

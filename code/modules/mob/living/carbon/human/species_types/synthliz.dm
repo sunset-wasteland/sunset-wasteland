@@ -3,12 +3,19 @@
 	id = "synthliz"
 	say_mod = "beeps"
 	default_color = "00FF00"
-	species_traits = list(MUTCOLORS,NOTRANSSTING,EYECOLOR,LIPS,HAIR,HAS_FLESH,HAS_BONE,ROBOTIC_LIMBS)
-	inherent_traits = list(TRAIT_EASYDISMEMBER,TRAIT_LIMBATTACHMENT,TRAIT_NO_PROCESS_FOOD)
+	species_traits = list(MUTCOLORS,NOTRANSSTING,EYECOLOR,LIPS,HAIR,HAS_FLESH,HAS_BONE,ROBOTIC_LIMBS,NO_DNA_COPY,NOAPPENDIX)
+	inherent_traits = list(TRAIT_VIRUSIMMUNE,TRAIT_EASYDISMEMBER,TRAIT_LIMBATTACHMENT,TRAIT_NO_PROCESS_FOOD,TRAIT_NOBREATH,TRAIT_MUTATION_STASIS)
 	inherent_biotypes = MOB_ROBOTIC|MOB_HUMANOID|MOB_REPTILE|MOB_SYNTH
 	mutant_bodyparts = list("ipc_antenna" = "Synthetic Lizard - Antennae","mam_tail" = "Synthetic Lizard", "mam_snouts" = "Synthetic Lizard - Snout", "legs" = "Digitigrade", "mam_body_markings" = "Synthetic Lizard - Plates", "taur" = "None")
+	attack_verb = "claw"
+	attack_sound = 'sound/weapons/slash.ogg'
+	miss_sound = 'sound/weapons/slashmiss.ogg'
 	meat = /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/ipc
 	gib_types = list(/obj/effect/gibspawner/ipc, /obj/effect/gibspawner/ipc/bodypartless)
+	liked_food = MEAT | FRIED
+	disliked_food = TOXIC
+	
+	
 	//Just robo looking parts.
 	mutant_heart = /obj/item/organ/heart/ipc
 	mutantlungs = /obj/item/organ/lungs/ipc
@@ -29,12 +36,26 @@
 	wagging_type = "mam_waggingtail"
 	species_type = "robotic"
 
+/datum/species/synthliz/handle_chemicals(datum/reagent/chem, mob/living/carbon/human/H)
+	if(istype(chem) && !chem.synthfriendly)
+		H.reagents.remove_reagent(chem.type, REAGENTS_METABOLISM * 1000)
+		return TRUE
+	return ..()
+
 /datum/species/synthliz/spec_life(mob/living/carbon/human/H)
-	if(H.nutrition < NUTRITION_LEVEL_FED)
-		H.nutrition = NUTRITION_LEVEL_FED
-	if(H.nutrition > NUTRITION_LEVEL_FED)
-		H.nutrition = NUTRITION_LEVEL_FED
 	if(H.water < THIRST_LEVEL_FULL)
 		H.water = THIRST_LEVEL_FULL
 	if(H.water > THIRST_LEVEL_FULL)
 		H.water = THIRST_LEVEL_FULL
+	var/clone_damage = H.getCloneLoss()
+	var/toxin_damage = H.getToxLoss()
+	var/oxygen_damage = H.getOxyLoss()
+	if(clone_damage > 0)
+		H.setCloneLoss(0)
+		H.apply_damage(clone_damage, BURN)
+	if(toxin_damage > 0)
+		H.setToxLoss(0)
+		H.apply_damage(toxin_damage, BURN)
+	if(oxygen_damage > 0)
+		H.setToxLoss(0)
+		H.apply_damage(oxygen_damage, BURN)

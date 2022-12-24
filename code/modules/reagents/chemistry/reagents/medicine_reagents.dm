@@ -100,6 +100,7 @@
 	name = "Quantum Medicine"
 	description = "Rare and experimental particles, that apparently swap the user's body with one from an alternate dimension where it's completely healthy."
 	taste_description = "science"
+	synthfriendly = TRUE
 
 /datum/reagent/medicine/synaptizine
 	name = "Synaptizine"
@@ -535,6 +536,7 @@
 	taste_description = "ash"
 	pH = 5
 	ghoulfriendly = TRUE
+	synthfriendly = TRUE
 
 /datum/reagent/medicine/charcoal/on_mob_life(mob/living/carbon/M)
 	M.adjustToxLoss(-2*REM, updating_health = FALSE)
@@ -606,6 +608,7 @@
 	color = "#14FF3C"
 	metabolization_rate = 2 * REAGENTS_METABOLISM
 	pH = 12 //It's a reducing agent
+	synthfriendly = TRUE
 
 /datum/reagent/medicine/potass_iodide/on_mob_life(mob/living/carbon/M)
 	if(M.radiation > 0)
@@ -960,6 +963,7 @@
 	taste_description = "magnets"
 	pH = 0
 	value = REAGENT_VALUE_RARE
+	synthfriendly = TRUE
 
 /datum/reagent/medicine/strange_reagent/reaction_mob(mob/living/M, method=TOUCH, reac_volume)
 	if(M.stat == DEAD)
@@ -1283,6 +1287,7 @@
 	pH = 11
 	value = REAGENT_VALUE_EXCEPTIONAL
 	ghoulfriendly = TRUE
+	synthfriendly = TRUE
 
 /datum/reagent/medicine/syndicate_nanites/on_mob_life(mob/living/carbon/M)
 	M.adjustBruteLoss(-5*REM, updating_health = FALSE) //A ton of healing - this is a 50 telecrystal investment.
@@ -1304,6 +1309,7 @@
 	color = "#555555"
 	pH = 11
 	value = REAGENT_VALUE_VERY_RARE
+	synthfriendly = TRUE
 
 /datum/reagent/medicine/lesser_syndicate_nanites/on_mob_life(mob/living/carbon/M)
 	M.adjustBruteLoss(-2*REM, updating_health = FALSE)

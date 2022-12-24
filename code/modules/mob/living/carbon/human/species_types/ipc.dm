@@ -7,10 +7,10 @@
 	default_color = "00FF00"
 	blacklisted = 0
 	sexes = 0
-	inherent_traits = list(TRAIT_EASYDISMEMBER,TRAIT_LIMBATTACHMENT,TRAIT_NO_PROCESS_FOOD)
-	species_traits = list(MUTCOLORS,NOEYES,NOTRANSSTING,HAS_FLESH,HAS_BONE,HAIR,ROBOTIC_LIMBS)
+	species_traits = list(MUTCOLORS,NOEYES,NOTRANSSTING,HAS_FLESH,HAS_BONE,HAIR,ROBOTIC_LIMBS,NO_DNA_COPY,NOAPPENDIX)
+	inherent_traits = list(TRAIT_VIRUSIMMUNE,TRAIT_EASYDISMEMBER,TRAIT_LIMBATTACHMENT,TRAIT_NO_PROCESS_FOOD,TRAIT_NOBREATH,TRAIT_MUTATION_STASIS)
 	hair_alpha = 210
-	inherent_biotypes = MOB_ROBOTIC|MOB_HUMANOID
+	inherent_biotypes = MOB_ROBOTIC|MOB_HUMANOID|MOB_SYNTH
 	mutant_bodyparts = list("ipc_screen" = "Blank", "ipc_antenna" = "None")
 	meat = /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/ipc
 	gib_types = list(/obj/effect/gibspawner/ipc, /obj/effect/gibspawner/ipc/bodypartless)
@@ -62,13 +62,26 @@
 	H.dna.features["ipc_screen"] = new_ipc_screen
 	H.update_body()
 
+/datum/species/ipc/handle_chemicals(datum/reagent/chem, mob/living/carbon/human/H)
+	if(istype(chem) && !chem.synthfriendly)
+		H.reagents.remove_reagent(chem.type, REAGENTS_METABOLISM * 1000)
+		return TRUE
+	return ..()
+
 /datum/species/ipc/spec_life(mob/living/carbon/human/H)
-	if(H.nutrition < NUTRITION_LEVEL_FED)
-		H.nutrition = NUTRITION_LEVEL_FED
-	if(H.nutrition > NUTRITION_LEVEL_FED)
-		H.nutrition = NUTRITION_LEVEL_FED
 	if(H.water < THIRST_LEVEL_FULL)
 		H.water = THIRST_LEVEL_FULL
 	if(H.water > THIRST_LEVEL_FULL)
 		H.water = THIRST_LEVEL_FULL
-
+	var/clone_damage = H.getCloneLoss()
+	var/toxin_damage = H.getToxLoss()
+	var/oxygen_damage = H.getOxyLoss()
+	if(clone_damage > 0)
+		H.setCloneLoss(0)
+		H.apply_damage(clone_damage, BURN)
+	if(toxin_damage > 0)
+		H.setToxLoss(0)
+		H.apply_damage(toxin_damage, BURN)
+	if(oxygen_damage > 0)
+		H.setToxLoss(0)
+		H.apply_damage(oxygen_damage, BURN)

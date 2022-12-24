@@ -488,6 +488,9 @@
 	if(!has_dna())
 		return
 
+	if(isrobotic(src))
+		return
+
 	for(var/mutation in dna.mutation_index)
 		if(ismob(dna.check_block(mutation)))
 			return //we got monkeyized/humanized, this mob will be deleted, no need to continue.

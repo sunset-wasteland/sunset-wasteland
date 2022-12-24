@@ -1,16 +1,19 @@
 /datum/emote/silicon
-	mob_type_allowed_typecache = list(/mob/living/silicon)
-	emote_type = EMOTE_AUDIBLE
-
-/datum/emote/silicon
-	mob_type_allowed_typecache = list(/mob/living/silicon) // Fortuna edit: removed /mob/living/carbon/human from allowed mobs, because humans should not be beeping and pinging
+	mob_type_allowed_typecache = list(/mob/living/silicon, /mob/living/carbon/human) 
 	emote_type = EMOTE_AUDIBLE
 	var/unrestricted = TRUE
 
 /datum/emote/silicon/run_emote(mob/user, params)
-	if(!unrestricted && !(issilicon(user) || isipcperson(user)))
+	if(!unrestricted && !(issilicon(user) || isipcperson(user) || issynthanthro(user) || issynthliz(user)))
 		return
 	return ..()
+
+/datum/emote/silicon/dwoop
+	key = "dwoop"
+	key_third_person = "dwoops"
+	message = "chirps happily!"
+	sound_vary = TRUE
+	sound = 'modular_sunset/sound/emotes/dwoop.ogg'
 
 /datum/emote/silicon/boop
 	key = "boop"

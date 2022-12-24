@@ -570,7 +570,7 @@
 		playsound(src, 'sound/machines/terminal_prompt_confirm.ogg', 50, 0)
 
 /obj/machinery/computer/cloning/proc/can_scan(datum/dna/dna, mob/living/mob_occupant, experimental = FALSE, datum/bank_account/account)
-	if(!istype(dna))
+	if(!istype(dna) || isrobotic(mob_occupant))
 		scantemp = "<font class='bad'>Unable to locate valid genetic data.</font>"
 		playsound(src, 'sound/machines/terminal_prompt_deny.ogg', 50, 0)
 		return

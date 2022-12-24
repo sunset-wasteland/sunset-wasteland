@@ -41,7 +41,7 @@ Bonus
 	if(!..())
 		return
 	var/mob/living/carbon/C = A.affected_mob
-	if(!C.has_dna())
+	if(!C.has_dna()|| isrobotic(C))
 		return
 	switch(A.stage)
 		if(4, 5)
@@ -64,7 +64,7 @@ Bonus
 	possible_mutations = (GLOB.bad_mutations | GLOB.not_good_mutations) - GLOB.all_mutations[RACEMUT]
 	var/mob/living/carbon/M = A.affected_mob
 	if(M)
-		if(!M.has_dna())
+		if(!M.has_dna() || !isrobotic(M))
 			return
 		archived_dna = M.dna.mutation_index
 
@@ -75,7 +75,7 @@ Bonus
 	if(!no_reset)
 		var/mob/living/carbon/M = A.affected_mob
 		if(M && archived_dna)
-			if(!M.has_dna())
+			if(!M.has_dna() || !isrobotic(M))
 				return
 			M.dna.mutation_index = archived_dna
 			M.domutcheck()

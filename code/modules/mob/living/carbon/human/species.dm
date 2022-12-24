@@ -207,7 +207,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	var/should_have_brain = TRUE
 	var/should_have_heart = TRUE
 	var/should_have_lungs = !(TRAIT_NOBREATH in inherent_traits)
-	var/should_have_appendix = !(TRAIT_NOHUNGER in inherent_traits)
+	var/should_have_appendix = !((TRAIT_NOHUNGER in inherent_traits) || (NOAPPENDIX in species_traits))
 	var/should_have_eyes = TRUE
 	var/should_have_ears = TRUE
 	var/should_have_tongue = TRUE
@@ -1422,17 +1422,17 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		H.DefaultCombatKnockdown(RAD_MOB_KNOCKDOWN_AMOUNT)
 		to_chat(H, "<span class='danger'>You feel weak.</span>")
 
-	if(radiation > RAD_MOB_VOMIT && prob(RAD_MOB_VOMIT_PROB))
+	if(radiation > RAD_MOB_VOMIT && prob(RAD_MOB_VOMIT_PROB) && !isrobotic(H))
 		H.vomit(10, TRUE)
 
-	if(radiation > RAD_MOB_MUTATE)
+	if(radiation > RAD_MOB_MUTATE && !isrobotic(H))
 		if(prob(1))
 			to_chat(H, "<span class='danger'>You mutate!</span>")
 			H.easy_randmut(NEGATIVE+MINOR_NEGATIVE)
 			H.emote("gasp")
 			H.domutcheck()
 
-	if(radiation > RAD_MOB_HAIRLOSS)
+	if(radiation > RAD_MOB_HAIRLOSS && !isrobotic(H))
 		if(prob(15) && !(H.hair_style == "Bald") && (HAIR in species_traits))
 			to_chat(H, "<span class='danger'>Your hair starts to fall out in clumps...</span>")
 			addtimer(CALLBACK(src, .proc/go_bald, H), 50)

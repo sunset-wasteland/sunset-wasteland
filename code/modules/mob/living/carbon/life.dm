@@ -431,7 +431,10 @@
 		radiation -= min(radiation, RAD_LOSS_PER_TICK)
 
 	if(radiation > RAD_MOB_SAFE)
-		adjustToxLoss(log(radiation-RAD_MOB_SAFE)*RAD_TOX_COEFFICIENT)
+		if(isrobotic(src)) //Synthetics take burn damage
+			adjustFireLoss(log(radiation-RAD_MOB_SAFE)*RAD_TOX_COEFFICIENT)
+		else
+			adjustToxLoss(log(radiation-RAD_MOB_SAFE)*RAD_TOX_COEFFICIENT)
 
 /mob/living/carbon/handle_stomach()
 	set waitfor = 0

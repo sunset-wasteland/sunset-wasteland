@@ -783,6 +783,31 @@
 	message = "peeps twice like a bird!"
 	sound = 'sound/f13effects/sunsetsounds/peep.ogg'
 
+/datum/emote/buzz
+	key = "buzz"
+	key_third_person = "buzzes"
+	message = "buzzes."
+	message_param = "buzzes at %t."
+	sound = 'sound/machines/buzz-sigh.ogg'
+
+/datum/emote/buzz2
+	key = "buzz2"
+	message = "buzzes twice."
+	sound = 'sound/machines/buzz-two.ogg'
+
+/datum/emote/ping
+	key = "ping"
+	key_third_person = "pings"
+	message = "pings."
+	message_param = "pings at %t."
+	sound = 'sound/machines/ping.ogg'
+
+/datum/emote/chime
+	key = "chime"
+	key_third_person = "chimes"
+	message = "chimes."
+	sound = 'sound/machines/chime.ogg'
+
 #define EMOTE_SPECIAL_STR "Strength"
 #define EMOTE_SPECIAL_PER "Perception"
 #define EMOTE_SPECIAL_END "Endurance"

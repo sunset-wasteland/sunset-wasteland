@@ -323,6 +323,11 @@
 	name = "Juniper's trophy"
 	path = /obj/item/storage/box/large/custom_kit/raxraus
 	ckeywhitelist = list ("raxraus")
+	
+/datum/gear/donator/plundered_cape
+	name = "Plundered Brotherhood cape"
+	path = /obj/item/clothing/neck/mantle/bos/paladin/donator_raxraus
+	ckeywhitelist = list ("mrsaxyman", "oshibka", )
 
 /obj/item/clothing/neck/mantle/bos/paladin/donator_raxraus
 	name = "plundered paladin cape"

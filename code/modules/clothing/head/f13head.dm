@@ -517,8 +517,8 @@
 /obj/item/clothing/head/helmet/f13/power_armor/x02helmet
 	name = "APA Mk II helmet"
 	desc = "The Enclave Mark II Powered Combat Armor helmet."
-	icon_state = "advanced"
-	item_state = "advanced"
+	icon_state = "x-01PA"
+	item_state = "x-01PA"
 	slowdown = 0.1
 	armor = list("melee" = 80, "bullet" = 80, "laser" = 85, "energy" = 85, "bomb" = 70, "bio" = 100, "rad" = 100, "fire" = 90, "acid" = 50, "wound" = 50)
 	actions_types = list(/datum/action/item_action/toggle_helmet_light)
@@ -527,8 +527,8 @@
 /obj/item/clothing/head/helmet/f13/power_armor/tesla
 	name = "APA-T Mk II helmet"
 	desc = "The Enclave Mark II Powered Combat Armor helmet, rigged with heavy electronics."
-	icon_state = "tesla"
-	item_state = "tesla"
+	icon_state = "x-01tesla"
+	item_state = "x-01tesla"
 	slowdown = 0.1
 	armor = list("melee" = 75, "bullet" = 75, "laser" = 95, "energy" = 95, "bomb" = 70, "bio" = 100, "rad" = 100, "fire" = 90, "acid" = 50, "wound" = 50)
 	actions_types = list(/datum/action/item_action/toggle_helmet_light)

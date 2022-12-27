@@ -705,8 +705,8 @@
 /obj/item/clothing/suit/armor/f13/power_armor/x02
 	name = "APA Mk II"
 	desc = "Upgraded pre-war power armor design used by the Enclave."
-	icon_state = "x-01PA"
-	item_state = "x-01PA"
+	icon_state = "x01PA"
+	item_state = "x01PA"
 	slowdown = 0.3//Worst slowdown of all combat sets.
 	armor = list("melee" = 80, "bullet" = 80, "laser" = 85, "energy" = 85, "bomb" = 70, "bio" = 100, "rad" = 100, "fire" = 90, "acid" = 50, "wound" = 50)
 	salvaged_type = /obj/item/clothing/suit/armored/heavy/salvaged_pa/x02 // Oh the misery
@@ -714,8 +714,8 @@
 /obj/item/clothing/suit/armor/f13/power_armor/tesla
 	name = "APA-T Mk II"
 	desc = "Upgraded pre-war power armor used by the Enclave, rigged with heavy electronics."
-	icon_state = "x-01tesla"
-	item_state = "x-01tesla"
+	icon_state = "x01tesla"
+	item_state = "x01tesla"
 	slowdown = 0.3//Worst slowdown of all combat sets.
 	armor = list("melee" = 75, "bullet" = 75, "laser" = 95, "energy" = 95, "bomb" = 70, "bio" = 100, "rad" = 100, "fire" = 90, "acid" = 50, "wound" = 50)
 	var/hit_reflect_chance = 35

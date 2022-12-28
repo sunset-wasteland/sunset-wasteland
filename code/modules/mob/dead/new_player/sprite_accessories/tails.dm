@@ -1039,6 +1039,16 @@
 	icon_state = "lab"
 	matrixed_sections = MATRIX_RED
 
+/datum/sprite_accessory/tails/mam_tails/leopard
+	name = "Leopard"
+	icon_state = "leopard"
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/tails_animated/mam_tails_animated/leopard
+	name = "Leopard"
+	icon_state = "leopard"
+	matrixed_sections = MATRIX_RED_GREEN
+
 /datum/sprite_accessory/tails/mam_tails/ltiger
 	name = "Light Tiger"
 	icon_state = "ltiger"
@@ -1230,6 +1240,16 @@
 	icon_state = "spikes"
 	color_src = MUTCOLORS
 	icon = 'icons/mob/mutant_bodyparts.dmi'
+
+/datum/sprite_accessory/tails/mam_tails/spade
+	name = "Spade"
+	icon_state = "spade"
+	matrixed_sections = MATRIX_RED
+
+/datum/sprite_accessory/tails_animated/mam_tails_animated/spade
+	name = "Spade"
+	icon_state = "spade"
+	matrixed_sections = MATRIX_RED
 
 /datum/sprite_accessory/tails/mam_tails/straighttail
 	name = "Straight Tail"

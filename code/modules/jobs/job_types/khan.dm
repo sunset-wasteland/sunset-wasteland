@@ -212,11 +212,11 @@
 /datum/outfit/loadout/senior
 	name = "True Enforcer"
 	belt = /obj/item/storage/belt/bandolier
-	r_hand = /obj/item/gun/ballistic/automatic/shotgun/riot
+	r_hand = /obj/item/gun/ballistic/shotgun/automatic/combat/neostead_noalt/khan
 	suit = /obj/item/clothing/suit/toggle/labcoat/f13/khan_jacket/coat
 	head = /obj/item/clothing/head/helmet/f13/khan/fullhelm
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/d12g = 3,
+		/obj/item/ammo_box/clip/shotgun/loaded/flechette = 3,
 		/obj/item/storage/box/medicine/stimpaks/stimpaks5 = 1,
 		/obj/item/melee/onehanded/machete/scrapsabre/khan = 1,
 		/obj/item/stack/f13Cash/caps/onezerozerozero = 3)//LOTS of caps.
@@ -226,7 +226,6 @@
 	if(visualsOnly)
 		return
 	ADD_TRAIT(H, TRAIT_GENERIC, src)
-	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
 	ADD_TRAIT(H, TRAIT_LIFEGIVER, src)
 	ADD_TRAIT(H, TRAIT_SELF_AWARE, src)
 	if(H.mind)
@@ -270,6 +269,8 @@
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/empgrenade)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/tribalwar/xbow)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/tribalwar/cheaparrow)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/shotgunammoflechette)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/shotgunammomagnum)
 
 //COURTESAN =================================================================
 

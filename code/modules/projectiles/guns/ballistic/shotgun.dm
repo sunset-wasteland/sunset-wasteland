@@ -372,6 +372,13 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube_noalt
 	force = 10
 
+/obj/item/gun/ballistic/shotgun/automatic/combat/neostead_noalt/khan
+	name = "Cold Water"
+	desc = "Cold Water, the personalised friend of the Senior Enforcer."
+	fire_delay = 3.5
+	recoil = 1
+	force = 12
+
 //Winchester City-Killer				Keywords: Shotgun, Full-auto, 10 rounds internal
 /obj/item/gun/ballistic/shotgun/automatic/combat/citykiller
 	name = "Winchester City-Killer shotgun"

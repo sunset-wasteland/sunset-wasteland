@@ -890,7 +890,6 @@
 				/obj/effect/spawner/bundle/f13/r84 = 10,
 				/obj/effect/spawner/bundle/f13/dkssniper = 15,
 				/obj/effect/spawner/bundle/f13/pistol14 = 15,
-				/obj/item/gun/ballistic/revolver/grenadelauncher = 5,
 				/obj/effect/spawner/bundle/f13/riotshotgun = 10,
 				)
 

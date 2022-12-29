@@ -149,7 +149,7 @@ Discuss balance and documentation changes with Dragonfruits#1913 or forward them
 		)
 
 
-/datum/outfit/job/CaesarsLegion/Legionnaire/f13orator	
+/datum/outfit/job/CaesarsLegion/Legionnaire/f13orator
 	name = "Orator"
 	jobtype = /datum/job/CaesarsLegion/Legionnaire/f13orator
 	neck = /obj/item/storage/belt/holster
@@ -176,7 +176,7 @@ Discuss balance and documentation changes with Dragonfruits#1913 or forward them
 	if(H.mind)
 		var/obj/effect/proc_holder/spell/terrifying_presence/S = new /obj/effect/proc_holder/spell/terrifying_presence
 		H.mind.AddSpell(S)
-	
+
 /datum/outfit/loadout/oratorm
 	name = "Orator"
 	suit = /obj/item/clothing/suit/armor/f13/legion/orator
@@ -188,7 +188,7 @@ Discuss balance and documentation changes with Dragonfruits#1913 or forward them
 		/obj/item/book/granter/trait/bigleagues = 1,
 		/obj/item/stack/f13Cash/random/denarius/high = 3,
 		/obj/item/stack/f13Cash/random/aureus/high = 2,
-		
+
 		)
 
 /datum/outfit/loadout/priestess
@@ -202,9 +202,9 @@ Discuss balance and documentation changes with Dragonfruits#1913 or forward them
 		/obj/item/book/granter/trait/chemistry = 1,
 		/obj/item/book/granter/trait/legionalchemy = 1,
 		/obj/item/stack/f13Cash/random/denarius/high = 1,
-		
+
 		)
-	
+
 /////////////////
 //// Officers ///
 /////////////////
@@ -503,14 +503,12 @@ Discuss balance and documentation changes with Dragonfruits#1913 or forward them
 		)
 
 /datum/outfit/loadout/decprimboom
-	name = "Loud Prime Decanus"
-	suit_store = /obj/item/gun/ballistic/revolver/grenadelauncher
+	name = "Demolition Prime Decanus"
 	backpack_contents = list(
-		/obj/item/ammo_box/a40mm = 2,
+		/obj/item/grenade/plastic/c4 = 1,
 		/obj/item/gun/ballistic/revolver/m29 = 1,
 		/obj/item/ammo_box/m44 = 3,
-		/obj/item/grenade/f13/frag = 2,
-		/obj/item/grenade/homemade/coffeepotbomb = 1,
+		/obj/item/grenade/f13/frag = 3,
 		)
 
 
@@ -1119,6 +1117,8 @@ Discuss balance and documentation changes with Dragonfruits#1913 or forward them
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/empgrenade)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/tribalwar/xbow)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/tribalwar/cheaparrow)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/shotgunammoflechette)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/shotgunammomagnum)
 
 
 

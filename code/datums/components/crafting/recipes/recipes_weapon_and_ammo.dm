@@ -214,7 +214,35 @@
 	name = "12g flechette box"
 	result = /obj/item/ammo_box/shotgun/flechette
 	reqs = list(/obj/item/stack/crafting/metalparts = 1,
-	/obj/item/stack/sheet/prewar = 2,
+	/obj/item/stack/sheet/prewar = 50,//Yes, really.
+	/obj/item/stack/sheet/metal = 1,
+	/obj/item/stack/ore/blackpowder = 1
+	)
+	tools = list(TOOL_AWORKBENCH)
+	time = 5
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
+	always_available = FALSE
+
+/datum/crafting_recipe/shotgunammomagnum
+	name = "12g magnum shot box"
+	result = /obj/item/ammo_box/shotgun/magnum
+	reqs = list(/obj/item/stack/crafting/metalparts = 2,
+	/obj/item/stack/sheet/prewar = 30,
+	/obj/item/stack/sheet/metal = 2,
+	/obj/item/stack/ore/blackpowder = 2
+	)
+	tools = list(TOOL_AWORKBENCH)
+	time = 5
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
+	always_available = FALSE
+
+/datum/crafting_recipe/shotgunammoflechette_clip
+	name = "12g flechette clip"
+	result = /obj/item/ammo_box/clip/shotgun/loaded/flechette
+	reqs = list(/obj/item/stack/crafting/metalparts = 1,
+	/obj/item/stack/sheet/prewar = 25,//Not viable if you have the actual box recipe. Intended.
 	/obj/item/stack/sheet/metal = 1,
 	/obj/item/stack/ore/blackpowder = 1
 	)
@@ -223,10 +251,11 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
-/datum/crafting_recipe/shotgunammomagnum
-	name = "12g magnum shot box"
-	result = /obj/item/ammo_box/shotgun/magnum
+/datum/crafting_recipe/shotgunammomagnum_clip
+	name = "12g magnum shot clip"
+	result = /obj/item/ammo_box/clip/shotgun/loaded/magnum
 	reqs = list(/obj/item/stack/crafting/metalparts = 2,
+	/obj/item/stack/sheet/prewar = 15,//As above.
 	/obj/item/stack/sheet/metal = 2,
 	/obj/item/stack/ore/blackpowder = 2
 	)

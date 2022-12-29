@@ -804,6 +804,7 @@
 	suppressor_x_offset = 26
 	suppressor_y_offset = 28
 	extra_damage = -3
+	extra_penetration = 0.1
 
 
 //Police rifle			Keywords: KHANS, 5.56mm, Semi-auto, 20 (10-50) round magazine
@@ -819,7 +820,6 @@
 	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle
 	spread = 1.1
 	fire_delay = 2.5
-	extra_damage = 6
 	can_suppress = FALSE
 	can_scope = TRUE
 	zoomable = FALSE

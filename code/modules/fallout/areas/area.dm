@@ -732,3 +732,12 @@
 	open_space = 1
 	environment = 15
 	grow_chance = 0
+
+//special
+/area/f13/vault_elevator
+	name = "elevator shaft"
+	icon_state = "error"
+
+/area/f13/enc_elevator
+	name = "elevator shaft"
+	icon_state = "error"

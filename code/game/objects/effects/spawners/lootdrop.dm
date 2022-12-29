@@ -696,9 +696,9 @@
 	lootcount = 1
 	spawn_on_turf = FALSE
 	loot = list("" = 50,
-		/obj/item/ammo_box/shotgun/loaded/buckshot = 5,
-		/obj/item/ammo_box/shotgun/loaded/beanbag = 5,
-		/obj/item/ammo_box/shotgun/loaded/incendiary = 5,
+		/obj/item/ammo_box/clip/shotgun/loaded/buckshot = 5,
+		/obj/item/ammo_box/clip/shotgun/loaded/beanbag = 5,
+		/obj/item/ammo_box/clip/shotgun/loaded/incendiary = 5,
 		/obj/item/ammo_casing/shotgun/buckshot = 8,
 		/obj/item/ammo_casing/shotgun/rubbershot = 9,
 		/obj/item/ammo_casing/shotgun = 8,

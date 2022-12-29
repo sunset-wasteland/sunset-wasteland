@@ -779,7 +779,6 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	loadout_options = list(
 		/datum/outfit/loadout/shockht,	// BAR
 		/datum/outfit/loadout/supportht, // R84
-		/datum/outfit/loadout/crowdht, //FLAMER
 		)
 
 /datum/outfit/job/ncr/f13heavytrooper/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -823,15 +822,6 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 		/obj/item/melee/onehanded/knife/bowie = 1,
 		)
 
-/datum/outfit/loadout/crowdht
-	name = "Heavy Trooper Flamer"
-	backpack_contents = list(
-		/obj/item/m2flamethrowertank = 1,
-		/obj/item/gun/ballistic/automatic/service/r82 = 1,
-		/obj/item/ammo_box/magazine/m556/rifle = 2,
-		)
-
-
 // COMBAT ENGINEER
 
 /datum/job/ncr/f13combatengineer
@@ -851,7 +841,6 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 		/datum/outfit/loadout/combatengineerbuilder, // R82, X4 explosive, Extra materials
 		/datum/outfit/loadout/combatengineertrapper, // 10mm SMG, Minelaying, Explosive Crafting
 		/datum/outfit/loadout/combatengineerflamethrower, // Flamer, R82
-		/datum/outfit/loadout/combatengineerrocketeer, // Rocket launcher, Explosive Crafting
 		)
 
 	matchmaking_allowed = list(
@@ -932,15 +921,6 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 		/obj/item/ammo_box/magazine/m556/rifle = 2,
 		/obj/item/m2flamethrowertank = 1,
 		/obj/item/book/granter/trait/trekking = 1,
-		)
-
-/datum/outfit/loadout/combatengineerrocketeer
-	name = "Rocket Engineer"
-	suit_store = /obj/item/gun/ballistic/rocketlauncher
-	backpack_contents = list(
-		/obj/item/ammo_casing/caseless/rocket = 4,
-		/obj/item/ammo_casing/caseless/rocket/incendiary = 1,
-		/obj/item/book/granter/trait/explosives = 1,
 		)
 
 // MILITARY POLICE
@@ -1342,6 +1322,8 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/concussion)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/incendiaryrocket)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/empgrenade)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/shotgunammoflechette)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/shotgunammomagnum)
 	//guns
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/dks)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/a180)

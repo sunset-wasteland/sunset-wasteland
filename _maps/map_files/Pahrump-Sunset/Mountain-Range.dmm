@@ -903,6 +903,7 @@
 /area/f13/mountain_area)
 "hs" = (
 /obj/effect/turf_decal/stripes/corner,
+/obj/structure/railing/corner,
 /turf/open/floor/f13,
 /area/f13/enclave)
 "hu" = (
@@ -1007,12 +1008,13 @@
 /turf/open/floor/plasteel/f13/vault_floor/neutral,
 /area/f13/enclave)
 "hT" = (
-/obj/effect/turf_decal/stripes/line{
+/obj/structure/railing/corner{
 	dir = 8
 	},
-/turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
-	icon_state = "darkdirtysolid"
+/obj/effect/turf_decal/stripes/corner{
+	dir = 1
 	},
+/turf/open/floor/f13,
 /area/f13/enclave)
 "hV" = (
 /obj/structure/window/fulltile/house{
@@ -1285,11 +1287,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood/wood_common,
 /area/f13/building)
-"jE" = (
-/obj/structure/closet/secure_closet/personal,
-/obj/effect/turf_decal/bot,
-/turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
-/area/f13/enclave)
 "jH" = (
 /obj/structure/sign/plaques,
 /turf/closed/wall/r_wall/f13/vault,
@@ -1396,6 +1393,15 @@
 /obj/machinery/light{
 	dir = 8;
 	light_color = "#e8eaff"
+	},
+/turf/open/floor/f13,
+/area/f13/enclave)
+"ks" = (
+/obj/structure/railing/corner{
+	dir = 1
+	},
+/obj/effect/turf_decal/stripes/corner{
+	dir = 4
 	},
 /turf/open/floor/f13,
 /area/f13/enclave)
@@ -1674,9 +1680,9 @@
 	},
 /area/f13/mountain_area)
 "mH" = (
+/obj/structure/railing,
+/obj/effect/turf_decal/stripes/line,
 /obj/machinery/light/floor,
-/obj/effect/turf_decal/stripes/corner,
-/obj/structure/railing/corner,
 /turf/open/floor/f13,
 /area/f13/enclave)
 "mJ" = (
@@ -1719,9 +1725,15 @@
 /turf/open/floor/plasteel/f13/vault_floor/neutral,
 /area/f13/enclave)
 "nb" = (
+/obj/structure/railing/corner{
+	dir = 8
+	},
+/obj/effect/turf_decal/stripes/corner{
+	dir = 1
+	},
+/obj/structure/railing/corner,
+/obj/effect/turf_decal/stripes/corner,
 /obj/machinery/light/floor,
-/obj/effect/turf_decal/stripes/line,
-/obj/structure/railing,
 /turf/open/floor/f13,
 /area/f13/enclave)
 "ne" = (
@@ -1791,6 +1803,9 @@
 "nC" = (
 /obj/effect/turf_decal/stripes/corner{
 	dir = 1
+	},
+/obj/structure/railing/corner{
+	dir = 8
 	},
 /turf/open/floor/f13,
 /area/f13/enclave)
@@ -2746,14 +2761,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/enclave)
 "tI" = (
-/obj/machinery/light/floor,
-/obj/effect/turf_decal/stripes/line{
-	dir = 4
-	},
-/obj/structure/railing{
-	dir = 4
-	},
-/turf/open/floor/f13,
+/turf/open/floor/plating/f13,
 /area/f13/enclave)
 "tO" = (
 /obj/machinery/light/small,
@@ -2934,12 +2942,6 @@
 /area/f13/enclave)
 "uT" = (
 /obj/machinery/light/floor,
-/obj/effect/turf_decal/stripes/line{
-	dir = 8
-	},
-/obj/structure/railing{
-	dir = 8
-	},
 /turf/open/floor/f13,
 /area/f13/enclave)
 "uY" = (
@@ -3019,12 +3021,9 @@
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/enclave)
 "vG" = (
-/obj/machinery/door/airlock/hatch{
-	locked = 1;
-	req_access_txt = "134"
-	},
-/obj/structure/barricade/wooden/planks/pregame,
-/turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
+/obj/structure/railing,
+/obj/effect/turf_decal/stripes/line,
+/turf/open/floor/f13,
 /area/f13/enclave)
 "vH" = (
 /obj/machinery/shower{
@@ -3493,13 +3492,19 @@
 /turf/open/floor/grass,
 /area/f13/enclave)
 "yJ" = (
+/obj/structure/railing/corner{
+	dir = 1
+	},
+/obj/effect/turf_decal/stripes/corner{
+	dir = 4
+	},
+/obj/structure/railing/corner{
+	dir = 4
+	},
+/obj/effect/turf_decal/stripes/corner{
+	dir = 8
+	},
 /obj/machinery/light/floor,
-/obj/effect/turf_decal/stripes/line{
-	dir = 1
-	},
-/obj/structure/railing{
-	dir = 1
-	},
 /turf/open/floor/f13,
 /area/f13/enclave)
 "yK" = (
@@ -3586,6 +3591,15 @@
 	icon_state = "horizontaltopbordertop0"
 	},
 /area/f13/tunnel)
+"zq" = (
+/obj/structure/railing{
+	dir = 1
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/turf/open/floor/f13,
+/area/f13/enclave)
 "zt" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/structure/grille,
@@ -3635,6 +3649,15 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/red,
+/area/f13/enclave)
+"zL" = (
+/obj/effect/turf_decal/stripes/corner{
+	dir = 8
+	},
+/obj/structure/railing/corner{
+	dir = 4
+	},
+/turf/open/floor/f13,
 /area/f13/enclave)
 "zN" = (
 /obj/structure/barricade/wooden/snowed,
@@ -3787,6 +3810,12 @@
 /obj/machinery/light/floor,
 /turf/open/floor/engine,
 /area/f13/enclave)
+"AT" = (
+/obj/structure/railing/corner{
+	dir = 8
+	},
+/turf/open/floor/f13,
+/area/f13/enclave)
 "AV" = (
 /obj/structure/window/reinforced{
 	dir = 1
@@ -3825,10 +3854,19 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "Bf" = (
-/obj/machinery/light/floor,
-/turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
-	icon_state = "darkrustysolid"
+/obj/structure/railing{
+	dir = 8
 	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/obj/structure/railing{
+	dir = 4
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 4
+	},
+/turf/open/floor/f13,
 /area/f13/enclave)
 "Bg" = (
 /obj/structure/rack/shelf_metal,
@@ -4083,11 +4121,6 @@
 /obj/machinery/vending/hydronutrients,
 /turf/open/floor/plasteel/f13/vault_floor/green,
 /area/f13/enclave)
-"Dn" = (
-/turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
-	icon_state = "darkdirtysolid"
-	},
-/area/f13/enclave)
 "Do" = (
 /obj/structure/window/reinforced{
 	dir = 4
@@ -4139,13 +4172,16 @@
 /turf/open/floor/f13,
 /area/f13/enclave)
 "DJ" = (
-/obj/machinery/door/airlock/survival_pod/glass{
-	locked = 1;
-	req_access_txt = "134"
+/obj/structure/railing/corner{
+	dir = 1
 	},
-/turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
-	icon_state = "darkdirtysolid"
+/obj/effect/turf_decal/stripes/corner{
+	dir = 4
 	},
+/obj/structure/railing/corner{
+	dir = 4
+	},
+/turf/open/floor/f13,
 /area/f13/enclave)
 "DL" = (
 /obj/item/cautery,
@@ -4306,14 +4342,6 @@
 /obj/machinery/power/smes/engineering,
 /turf/open/floor/plasteel/f13/vault_floor/yellow/whiteyellowfull,
 /area/f13/enclave)
-"EK" = (
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
-/obj/structure/closet/secure_closet/personal,
-/obj/effect/turf_decal/bot,
-/turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
-/area/f13/enclave)
 "EL" = (
 /obj/structure/rack/shelf_metal,
 /obj/item/storage/box/flashbangs,
@@ -4398,9 +4426,8 @@
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/enclave)
 "Fm" = (
-/obj/machinery/light,
-/obj/structure/cable{
-	icon_state = "4-8"
+/obj/structure/railing{
+	dir = 1
 	},
 /turf/open/floor/f13,
 /area/f13/enclave)
@@ -4431,9 +4458,6 @@
 "FC" = (
 /obj/machinery/light,
 /obj/effect/turf_decal/stripes/corner,
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
 /turf/open/floor/f13,
 /area/f13/enclave)
 "FD" = (
@@ -4749,9 +4773,6 @@
 /area/f13/enclave)
 "Id" = (
 /obj/effect/turf_decal/stripes/line,
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
 /turf/open/floor/f13,
 /area/f13/enclave)
 "Ie" = (
@@ -4861,9 +4882,6 @@
 "IE" = (
 /obj/effect/turf_decal/stripes/corner{
 	dir = 1
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
 	},
 /turf/open/floor/f13,
 /area/f13/enclave)
@@ -5019,21 +5037,19 @@
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/enclave)
 "Kl" = (
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
+/obj/structure/railing/corner{
+	dir = 1
 	},
 /turf/open/floor/f13,
 /area/f13/enclave)
 "Ko" = (
-/obj/structure/sign/warning/radiation/rad_area{
-	pixel_x = -32
+/obj/machinery/computer/shuttle/bosentryelevator{
+	dir = 4
 	},
-/turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
-	icon_state = "darkdirtysolid"
+/obj/structure/railing{
+	dir = 8
 	},
+/turf/open/floor/f13,
 /area/f13/enclave)
 "Kp" = (
 /obj/structure/bodycontainer/crematorium{
@@ -5161,11 +5177,6 @@
 	icon_state = "verticalrightborderright0"
 	},
 /area/f13/mountain_area)
-"Lc" = (
-/turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
-	icon_state = "darkrustysolid"
-	},
-/area/f13/enclave)
 "Ld" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -5174,20 +5185,6 @@
 	icon_state = "2-4"
 	},
 /turf/open/floor/f13,
-/area/f13/enclave)
-"Lf" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
-/obj/structure/closet/secure_closet/personal,
-/obj/effect/turf_decal/bot,
-/turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/enclave)
 "Lg" = (
 /obj/effect/spawner/structure/window/reinforced,
@@ -5263,14 +5260,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood/wood_fancy,
 /area/f13/building)
-"LP" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/structure/closet/secure_closet/personal,
-/obj/effect/turf_decal/bot,
-/turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
-/area/f13/enclave)
 "LS" = (
 /obj/structure/table/glass,
 /obj/structure/barricade/bars{
@@ -5622,22 +5611,25 @@
 /turf/open/indestructible/ground/outside/snow_plating,
 /area/f13/mountain_area)
 "OZ" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 4
+/obj/docking_port/stationary{
+	dir = 8;
+	dwidth = 1;
+	height = 4;
+	id = "bos_level_1";
+	name = "Level 1";
+	roundstart_template = /datum/map_template/shuttle/entrance_elevator;
+	width = 5
 	},
-/obj/machinery/light/floor,
-/turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
-	icon_state = "darkdirtysolid"
-	},
+/turf/open/floor/plating/f13,
 /area/f13/enclave)
 "Pa" = (
-/obj/machinery/light{
-	dir = 4;
-	light_color = "#c1caff"
+/obj/structure/railing/corner{
+	dir = 8
 	},
-/obj/structure/cable{
-	icon_state = "1-8"
+/obj/effect/turf_decal/stripes/corner{
+	dir = 1
 	},
+/obj/structure/railing/corner,
 /turf/open/floor/f13,
 /area/f13/enclave)
 "Pb" = (
@@ -5673,10 +5665,8 @@
 /turf/open/floor/plasteel/f13/vault_floor/neutral,
 /area/f13/enclave)
 "Pz" = (
-/obj/effect/turf_decal/stripes/corner,
-/turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
-	icon_state = "darkdirtysolid"
-	},
+/obj/structure/railing,
+/turf/open/floor/f13,
 /area/f13/enclave)
 "PC" = (
 /obj/effect/decal/cleanable/dirt,
@@ -5775,12 +5765,6 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/red{
 	icon_state = "reddirtyfull"
-	},
-/area/f13/enclave)
-"QE" = (
-/obj/effect/turf_decal/stripes/line,
-/turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
-	icon_state = "darkdirtysolid"
 	},
 /area/f13/enclave)
 "QF" = (
@@ -5949,14 +5933,6 @@
 	},
 /turf/open/floor/plating,
 /area/f13/enclave)
-"RJ" = (
-/obj/effect/turf_decal/stripes/corner{
-	dir = 1
-	},
-/turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
-	icon_state = "darkdirtysolid"
-	},
-/area/f13/enclave)
 "RK" = (
 /obj/structure/table/glass,
 /obj/item/storage/box/teargas,
@@ -5988,13 +5964,13 @@
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/enclave)
 "RW" = (
+/obj/structure/railing{
+	dir = 1
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
 /obj/machinery/light/floor,
-/obj/effect/turf_decal/stripes/corner{
-	dir = 8
-	},
-/obj/structure/railing/corner{
-	dir = 4
-	},
 /turf/open/floor/f13,
 /area/f13/enclave)
 "RY" = (
@@ -6031,9 +6007,7 @@
 /turf/open/indestructible/ground/outside/graveldirt,
 /area/f13/mountain_area)
 "Sm" = (
-/turf/open/floor/plasteel/f13{
-	icon_state = "catwalk"
-	},
+/turf/open/chasm/elevator_enc,
 /area/f13/enclave)
 "Sn" = (
 /obj/effect/turf_decal/stripes/red/line{
@@ -6076,12 +6050,9 @@
 /turf/open/floor/f13,
 /area/f13/enclave)
 "Sx" = (
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
 /obj/structure/closet/secure_closet/personal,
 /obj/effect/turf_decal/bot,
-/turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
+/turf/open/floor/f13,
 /area/f13/enclave)
 "Sy" = (
 /obj/structure/chair{
@@ -6666,9 +6637,6 @@
 	pixel_y = -32
 	},
 /obj/effect/turf_decal/stripes/line,
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
 /turf/open/floor/f13,
 /area/f13/enclave)
 "WY" = (
@@ -15194,18 +15162,18 @@ Jx
 Jx
 AW
 mH
-YH
-YH
 tI
-YH
-YH
+tI
+tI
+tI
+tI
 RW
 mA
-Bf
-Dn
-Ko
-Pz
-OZ
+Jx
+Jx
+Jx
+Jx
+Jx
 mA
 mA
 mA
@@ -15450,19 +15418,19 @@ oO
 oO
 Jx
 AW
-fq
-Sm
-Sm
-Sm
-Sm
-Sm
-HP
+hT
+tI
+tI
+tI
+tI
+tI
+ks
 mA
-Dn
-Dn
-Dn
-QE
-Jw
+Jx
+Sx
+Sx
+Sx
+Jx
 SB
 of
 mA
@@ -15707,19 +15675,19 @@ UX
 JE
 Jx
 AW
-fq
-Sm
-Sm
-Sm
-Sm
-Sm
-HP
+hs
+tI
+tI
+tI
+tI
+tI
+zL
 mA
-Dn
-Dn
-Dn
-QE
-Jw
+Jx
+Jx
+Jx
+Jx
+Jx
 Jw
 of
 mA
@@ -15964,22 +15932,22 @@ Pt
 zG
 Jx
 AW
-fq
-Sm
-Sm
-Sm
-Sm
-Sm
-HP
+vG
+tI
+tI
+tI
+OZ
+tI
+zq
 mA
-Dn
-Dn
-Lc
-RJ
-hT
+Jx
+Sx
+Sx
+Sx
+Jx
 mA
 mA
-AW
+mA
 AW
 AW
 MJ
@@ -16222,18 +16190,18 @@ oO
 Jx
 AW
 nb
-Sm
-Sm
-Sm
-Sm
-Sm
+Bf
+DJ
+Jx
+Pa
+Bf
 yJ
 mA
-DJ
-RI
-RI
-RI
-DJ
+Jx
+Jx
+Jx
+Jx
+Jx
 mA
 uo
 cl
@@ -16480,15 +16448,15 @@ Jx
 AW
 fq
 Sm
-Sm
-Sm
-Sm
+Fm
+Ko
+Pz
 Sm
 HP
 mA
 Jx
-EK
-Lf
+Sx
+Sx
 Sx
 Jx
 mA
@@ -16737,15 +16705,15 @@ AW
 AW
 fq
 Sm
-Sm
-Sm
-Sm
+Fm
+Jx
+Pz
 Sm
 HP
 mA
 Jx
 Jx
-RG
+Jx
 Jx
 Jx
 mA
@@ -16994,16 +16962,16 @@ FX
 AW
 fq
 Sm
-Sm
-Sm
-Sm
+Fm
+Jx
+Pz
 Sm
 HP
 mA
 Jx
-jE
-LP
-jE
+Sx
+Sx
+Sx
 Jx
 mA
 Ny
@@ -17251,15 +17219,15 @@ Ih
 AW
 pz
 PF
-PF
+Kl
 uT
-PF
+AT
 PF
 zE
 mA
 DU
 Jx
-RG
+Jx
 Jx
 DU
 mA
@@ -17509,7 +17477,7 @@ AW
 AW
 AW
 AW
-vG
+Aa
 AW
 AW
 AW
@@ -17770,10 +17738,10 @@ Jx
 wm
 Jx
 Jx
-GN
+Aa
 Jx
 wm
-RG
+Jx
 wm
 Jx
 Jx
@@ -18029,8 +17997,8 @@ Jx
 Jx
 AW
 Jx
-lu
-Pa
+Jx
+DU
 Jx
 Jx
 Jx
@@ -18284,9 +18252,9 @@ Jx
 Jx
 Jx
 Jx
-GN
+Aa
 Jx
-RG
+Jx
 AW
 AW
 AW
@@ -18537,13 +18505,13 @@ AW
 AW
 AW
 AW
-GN
+Aa
 AW
 AW
 AW
 AW
 Jx
-RG
+Jx
 AW
 vH
 Jx
@@ -18800,7 +18768,7 @@ qI
 lk
 AW
 wZ
-Fm
+hq
 AW
 vH
 Xi
@@ -19057,7 +19025,7 @@ kh
 bw
 AW
 Jx
-RG
+Jx
 AW
 vH
 Jx
@@ -19314,7 +19282,7 @@ YH
 YH
 og
 Jx
-RG
+Jx
 AW
 vH
 Jx
@@ -19571,7 +19539,7 @@ BO
 BO
 AW
 Jx
-RG
+Jx
 mA
 mA
 mA
@@ -21113,7 +21081,7 @@ AW
 AW
 AW
 Jx
-RG
+Jx
 mA
 mA
 mA
@@ -21370,7 +21338,7 @@ Nj
 Af
 AW
 wZ
-Fm
+hq
 AW
 Ue
 Qq
@@ -21627,7 +21595,7 @@ Js
 rq
 AW
 Jx
-RG
+Jx
 AW
 Jw
 Jw
@@ -21884,7 +21852,7 @@ VM
 ph
 AW
 Jx
-RG
+Jx
 AW
 Bw
 Jw
@@ -22141,7 +22109,7 @@ RG
 ib
 tF
 Jx
-RG
+Jx
 ff
 Jw
 Jw
@@ -22398,7 +22366,7 @@ UT
 Ne
 tF
 Jx
-RG
+Jx
 AW
 uK
 fY
@@ -22655,7 +22623,7 @@ RG
 Dv
 tF
 Jx
-Fm
+hq
 AW
 AW
 og
@@ -22912,7 +22880,7 @@ Rp
 lz
 AW
 lH
-RG
+Jx
 nk
 iI
 iI
@@ -23169,7 +23137,7 @@ KW
 rq
 AW
 Jx
-RG
+Jx
 nm
 iI
 iI
@@ -23426,7 +23394,7 @@ cb
 TJ
 AW
 Jx
-RG
+Jx
 gp
 iI
 iI
@@ -23683,7 +23651,7 @@ AW
 AW
 AW
 Jx
-RG
+Jx
 gp
 iI
 iI
@@ -23940,7 +23908,7 @@ Jx
 Jx
 Jj
 Jx
-RG
+Jx
 nm
 dg
 iI
@@ -24197,7 +24165,7 @@ KY
 WJ
 gm
 Hs
-Kl
+CT
 AW
 EI
 iI

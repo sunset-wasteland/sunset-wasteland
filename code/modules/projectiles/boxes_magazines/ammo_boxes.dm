@@ -707,10 +707,7 @@
 //STRIPPER CLIPS//
 //////////////////
 
-
-//Shotgun clips (sort out with the box versio if implemented)
-/*
-/obj/item/ammo_box/shotgun
+/obj/item/ammo_box/clip/shotgun
 	name = "stripper clip (shotgun shells)"
 	desc = "A stripper clip, designed to help with loading a shotgun slightly faster."
 	icon = 'icons/obj/ammo.dmi'
@@ -719,25 +716,53 @@
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_POCKET
 	w_class = WEIGHT_CLASS_NORMAL
 	w_volume = ITEM_VOLUME_STRIPPER_CLIP
-	ammo_type = /obj/item/ammo_casing/shotgun
+	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
 	max_ammo = 4
 	var/pixeloffsetx = 4
 	start_empty = TRUE
-*/
-/obj/item/ammo_box/shotgun/loaded
+
+/obj/item/ammo_box/clip/shotgun/update_overlays()
+	. = ..()
+	if(stored_ammo.len)
+		var/offset = -4
+		for(var/A in stored_ammo)
+			var/obj/item/ammo_casing/shotgun/C = A
+			offset += pixeloffsetx
+			var/mutable_appearance/shell_overlay = mutable_appearance(icon, "[initial(C.icon_state)]-clip")
+			shell_overlay.pixel_x += offset
+			shell_overlay.appearance_flags = RESET_COLOR
+			. += shell_overlay
+
+/obj/item/ammo_box/clip/shotgun/loaded
 	start_empty = FALSE
 
-/obj/item/ammo_box/shotgun/loaded/rubbershot
+/obj/item/ammo_box/clip/shotgun/loaded/flechette
+	name = "stripper clip (flechette)"
+	ammo_type = /obj/item/ammo_casing/shotgun/flechette
+
+/obj/item/ammo_box/clip/shotgun/loaded/magnum
+	name = "stripper clip (magnum)"
+	ammo_type = /obj/item/ammo_casing/shotgun/magnumshot
+
+/obj/item/ammo_box/clip/shotgun/loaded/rubbershot
+	name = "stripper clip (rubbershot)"
 	ammo_type = /obj/item/ammo_casing/shotgun/rubbershot
 
-/obj/item/ammo_box/shotgun/loaded/buckshot
+/obj/item/ammo_box/clip/shotgun/loaded/buckshot
+	name = "stripper clip (buckshot)"
 	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
 
-/obj/item/ammo_box/shotgun/loaded/beanbag
+/obj/item/ammo_box/clip/shotgun/loaded/beanbag
+	name = "stripper clip (beanbag)"
 	ammo_type = /obj/item/ammo_casing/shotgun/beanbag
 
-/obj/item/ammo_box/shotgun/loaded/incendiary
+/obj/item/ammo_box/clip/shotgun/loaded/incendiary
+	name = "stripper clip (incendiary)"
 	ammo_type = /obj/item/ammo_casing/shotgun/incendiary
+
+/////////////////////////
+//END OF STRIPPER CLIPS//
+/////////////////////////
 
 /obj/item/ammo_box/musketbag/
 	name = "Bag of Musket Cartridges"

@@ -331,10 +331,8 @@
 	mask = /obj/item/clothing/mask/gas/welding
 	gloves = /obj/item/clothing/gloves/color/yellow
 	head = /obj/item/clothing/head/hardhat/orange
-	suit_store = /obj/item/gun/ballistic/revolver/grenadelauncher
 	backpack_contents = list(
 		/obj/item/storage/belt/utility = 1,
-		/obj/item/ammo_box/a40mm = 2,
 		/obj/item/shovel/trench = 1,
 		/obj/item/metaldetector = 1
 	)

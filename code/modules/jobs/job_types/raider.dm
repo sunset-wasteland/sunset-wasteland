@@ -440,8 +440,6 @@ Within this file is the material to turn the previous odd-inclusion into a prope
 	ADD_TRAIT(H, TRAIT_SELF_AWARE, src)
 	ADD_TRAIT(H, TRAIT_IRONFIST, src)
 	ADD_TRAIT(H, TRAIT_PA_WEAR, src)
-	if(H.mind)
-		var/obj/effect/proc_holder/spell/terrifying_presence/S = new /obj/effect/proc_holder/spell/terrifying_presence
-		H.mind.AddSpell(S)
+	H.AddSpell(new /obj/effect/proc_holder/spell/terrifying_presence)
 	add_verb(H, /mob/living/proc/creategang)
 	H.social_faction = FACTION_RAIDERS//Probably not needed twice, but may as well.

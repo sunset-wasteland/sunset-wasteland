@@ -228,9 +228,7 @@
 	ADD_TRAIT(H, TRAIT_GENERIC, src)
 	ADD_TRAIT(H, TRAIT_LIFEGIVER, src)
 	ADD_TRAIT(H, TRAIT_SELF_AWARE, src)
-	if(H.mind)
-		var/obj/effect/proc_holder/spell/terrifying_presence/S = new /obj/effect/proc_holder/spell/terrifying_presence
-		H.mind.AddSpell(S)
+	H.AddSpell(new /obj/effect/proc_holder/spell/terrifying_presence)
 
 //SMITH =================================================================
 

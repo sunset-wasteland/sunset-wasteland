@@ -374,7 +374,7 @@
 
 /obj/item/gun/ballistic/shotgun/automatic/combat/neostead_noalt/khan
 	name = "Cold Water"
-	desc = "Cold Water, the personalised friend of the Senior Enforcer."
+	desc = "A personalized Neostead shotgun belonging to a Senior Enforce of the Great Khans."
 	fire_delay = 3.5
 	recoil = 1
 	force = 12

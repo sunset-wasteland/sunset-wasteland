@@ -193,26 +193,26 @@
 // Waste Procs
 /////////
 
-/obj/vehicle/proc/StartEngine(mob/living/M)
+/obj/vehicle/proc/StartEngine()
 	set name = "Start Engine"
 	set category = "Object"
 	set src in view(1)
 
-	start_engine()
+	start_engine(usr)
 
-/obj/vehicle/proc/StopEngine(mob/living/M)
+/obj/vehicle/proc/StopEngine()
 	set name = "Stop Engine"
 	set category = "Object"
 	set src in view(1)
 
-	stop_engine()
+	stop_engine(usr)
 
 /obj/vehicle/proc/stop_engine(mob/living/M)
 	src.verbs += /obj/vehicle/proc/StartEngine
 	src.verbs -= /obj/vehicle/proc/StopEngine
 
-	if(usr)
-		usr.visible_message("[usr] stop engine of [src].", "You stop engine.")
+	if(M)
+		M.visible_message("[M] stops the engine of [src].", "You stop the engine.")
 
 	engine_on = FALSE
 
@@ -226,14 +226,15 @@
 		return
 */
 	if(!inserted_key)
-		M.visible_message(span_notice("There is no key."))
+		if(M)
+			to_chat(M, span_notice("There is no key."))
 		return
 
 	src.verbs += /obj/vehicle/proc/StopEngine
 	src.verbs -= /obj/vehicle/proc/StartEngine
 
 	if(M)
-		M.visible_message("[M] starts the engine of [src].", "You start the engine.")
+		visible_message("[M] starts the engine of [src].", "You start the engine.")
 
 	engine_on = TRUE
 	if(engine_on_sound)

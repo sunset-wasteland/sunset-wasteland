@@ -670,7 +670,7 @@
 	metabolization_rate = 0.25 * REAGENTS_METABOLISM
 	taste_description = "deliciousness"
 	overdose_threshold = 30
-	color = "##DBCE18"
+	color = "#DBCE18"
 	ghoulfriendly = TRUE
 
 /datum/reagent/medicine/gaia/on_mob_life(mob/living/carbon/M)

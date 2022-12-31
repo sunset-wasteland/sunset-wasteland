@@ -655,8 +655,8 @@
 		var/obj/effect/proc_holder/spell/spell = target
 		if(owner)
 			owner.RemoveSpell(spell)
-		if(owner.mind)
-			owner.mind.RemoveSpell(spell)
+			if(owner.mind)
+				owner.mind.RemoveSpell(spell)
 	return ..()
 
 /datum/action/spell_action/spell/IsAvailable(silent = FALSE)

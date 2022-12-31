@@ -277,7 +277,7 @@
 	name = "\improper SRM-8 missile rack"
 	desc = "A weapon for combat exosuits. Launches light explosive missiles."
 	icon_state = "mecha_missilerack"
-	projectile = /obj/item/projectile/bullet/rocket/a84mm_he
+	projectile = /obj/item/projectile/bullet/rocket/a84mm
 	fire_sound = 'sound/weapons/sound_weapons_mech_mortar.ogg'
 	projectiles = 8
 	projectiles_cache = 0

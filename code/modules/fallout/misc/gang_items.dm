@@ -338,7 +338,7 @@
 	item_path = /obj/item/grenade/f13/dynamite
 
 /datum/gang_item/equipment/he
-	name = "High Explosive Grenade"
+	name = "Frag Grenade"
 	id = "hegrenade"
 	cost = 130
 	item_path = /obj/item/grenade/f13/frag

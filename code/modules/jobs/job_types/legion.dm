@@ -505,10 +505,9 @@ Discuss balance and documentation changes with Dragonfruits#1913 or forward them
 /datum/outfit/loadout/decprimboom
 	name = "Demolition Prime Decanus"
 	backpack_contents = list(
-		/obj/item/grenade/plastic/c4 = 1,
 		/obj/item/gun/ballistic/revolver/m29 = 1,
 		/obj/item/ammo_box/m44 = 3,
-		/obj/item/grenade/f13/frag = 3,
+		/obj/item/grenade/f13/he_grenade = 3,
 		)
 
 

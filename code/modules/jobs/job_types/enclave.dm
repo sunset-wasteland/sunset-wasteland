@@ -235,7 +235,7 @@
 
 	backpack_contents = list(
 		/obj/item/reagent_containers/hypospray/medipen/stimpak = 2,
-		/obj/item/grenade/frag = 1,
+		/obj/item/grenade/f13/frag = 1,
 		/obj/item/pda = 1,
 		/obj/item/storage/bag/money/small/wastelander = 1,
 		/obj/item/melee/onehanded/knife/survival = 1,

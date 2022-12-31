@@ -115,7 +115,6 @@ Head Paladin
 	exp_requirements = 2400
 
 	loadout_options = list(
-	/datum/outfit/loadout/sentstand, //Tribeam laser + Hardened T-51
 	/datum/outfit/loadout/sentheavy, //Gauss + Hardened T-51
 	/datum/outfit/loadout/sentlaser //Wattz laser + Hardened T-51
 	)
@@ -159,15 +158,6 @@ Head Paladin
 		/obj/item/ammo_box/magazine/m10mm_adv/simple = 2,
 		/obj/item/reagent_containers/hypospray/medipen/stimpak = 3,
 		)
-
-/datum/outfit/loadout/sentstand
-	name = "Shock Laser Head Paladin"
-	suit = /obj/item/clothing/suit/armor/f13/power_armor/midwest/hardened
-	head = /obj/item/clothing/head/helmet/f13/power_armor/midwest/hardened
-	l_hand = /obj/item/gun/energy/laser/scatter
-	backpack_contents = list(
-		/obj/item/stock_parts/cell/ammo/mfc = 3,
-	)
 
 /datum/outfit/loadout/sentheavy
 	name = "Heavy Head Paladin"
@@ -381,7 +371,6 @@ Star Paladin
 		/datum/outfit/loadout/spaladinb, //Combat Rifle + Powerfist
 		/datum/outfit/loadout/spaladinc,  //AER14, no powerfist given strength of rifle.
 		/datum/outfit/loadout/spaladind, //Sledge + Powerfist
-		/datum/outfit/loadout/spaladine, //L30, no powerfist given strength of weapon.
 		)
 
 	outfit = /datum/outfit/job/bos/f13seniorpaladin
@@ -456,11 +445,6 @@ Star Paladin
 		/obj/item/clothing/accessory/bos/paladin=1,
 		)
 
-/datum/outfit/loadout/spaladine
-	name = "Gatling Head Paladin"
-	backpack_contents = list(
-		/obj/item/encminigunpack=1,
-	)
 
 /*
 Paladin

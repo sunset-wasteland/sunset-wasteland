@@ -40,6 +40,15 @@
 	shrapnel_type = /obj/item/projectile/bullet/shrapnel
 	shrapnel_radius = 6
 
+/obj/item/grenade/f13/he_grenade
+	name = "high explosive grenade"
+	desc = "A prewar military-grade grenade with short fuse. Unlike its cousin, the frag grenade, it is worth using against armor."
+	icon_state = "he_incendinary"
+	ex_dev = 1
+	ex_heavy = 3
+	ex_light = 4
+	ex_flame = 0
+
 /obj/item/grenade/f13/plasma
 	name = "plasma grenade"
 	desc = "A prewar military-grade plasma grenade, used for permanent riot suppression pre-war."

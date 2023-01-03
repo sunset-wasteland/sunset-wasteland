@@ -556,25 +556,16 @@
 			var/obj/item/reagent_containers/syringe/syr = reagent_source
 			if(syr.mode != 1)
 				to_chat(user, "<span class='warning'>You can't get any extract out of this plant.</span>"		)
-				return
+				return TRUE
 
 		if(!reagent_source.reagents.total_volume)
 			to_chat(user, "<span class='notice'>[reagent_source] is empty.</span>")
-			return 1
+			return TRUE
 
-		if(reagents.total_volume >= reagents.maximum_volume && !reagent_source.reagents.has_reagent(/datum/reagent/water, 1))
+		if(reagents.total_volume >= reagents.maximum_volume && !reagent_source.reagents.has_reagent_or_subtype(/datum/reagent/water, 1))
 			to_chat(user, "<span class='notice'>[src] is full.</span>")
-			return
+			return TRUE
 
-		if(reagents.total_volume >= reagents.maximum_volume && !reagent_source.reagents.has_reagent(/datum/reagent/water/bwater, 1))
-			to_chat(user, "<span class='notice'>[src] is full.</span>")
-			return
-
-		if(reagents.total_volume >= reagents.maximum_volume && !reagent_source.reagents.has_reagent(/datum/reagent/water/dwater, 1))
-			to_chat(user, "<span class='notice'>[src] is full.</span>")
-			return
-
-		var/list/trays = list(src)//makes the list just this in cases of syringes and compost etc
 		var/target = myseed ? myseed.plantname : src
 		var/visi_msg = ""
 		var/transfer_amount
@@ -592,7 +583,7 @@
 				var/obj/item/reagent_containers/syringe/syr = reagent_source
 				visi_msg="[user] injects [target] with [syr]"
 				if(syr.reagents.total_volume <= syr.amount_per_transfer_from_this)
-					syr.mode = 0
+					syr.mode = SYRINGE_DRAW
 			// Beakers, bottles, buckets, etc.
 			if(reagent_source.is_drainable())
 				playsound(loc, 'sound/effects/slosh.ogg', 25, TRUE)
@@ -600,33 +591,25 @@
 		if(visi_msg)
 			visible_message("<span class='notice'>[visi_msg].</span>")
 
+		//This was originally in apply_chemicals, but due to apply_chemicals only holding nutrients, we handle it here now.
+		// Always transfer the exact amount, which handles things mixed with water properly.
+		var/datum/reagents/temp_reagents = new /datum/reagents(transfer_amount)
+		reagent_source.reagents.trans_to(temp_reagents, transfer_amount)
+		// Remove water from the temporary holder.
+		if(temp_reagents.has_reagent_or_subtype(/datum/reagent/water))
+			var/water_amt = temp_reagents.get_amount_of_type(/datum/reagent/water)
+			adjustWater(water_amt)
+			temp_reagents.del_reagents_of_subtypes(/datum/reagent/water) // We know we only have the amount used anyway.
+		// Move the rest to our actual holder and clean up.
+		temp_reagents.trans_to(reagents, transfer_amount)
+		qdel(temp_reagents)
 
-		for(var/obj/machinery/hydroponics/H in trays)
-		//cause I don't want to feel like im juggling 15 tamagotchis and I can get to my real work of ripping flooring apart in hopes of validating my life choices of becoming a space-gardener
-			//This was originally in apply_chemicals, but due to apply_chemicals only holding nutrients, we handle it here now.
-
-			if(reagent_source.reagents.has_reagent(/datum/reagent/water, 1))
-				var/water_amt = reagent_source.reagents.get_reagent_amount(/datum/reagent/water) * transfer_amount / reagent_source.reagents.total_volume
-				H.adjustWater(round(water_amt))
-				reagent_source.reagents.remove_reagent(/datum/reagent/water, water_amt)
-
-			if(reagent_source.reagents.has_reagent(/datum/reagent/water/bwater, 1))
-				var/water_amt = reagent_source.reagents.get_reagent_amount(/datum/reagent/water/bwater) * transfer_amount / reagent_source.reagents.total_volume
-				H.adjustWater(round(water_amt))
-				reagent_source.reagents.remove_reagent(/datum/reagent/water/bwater, water_amt)
-
-			if(reagent_source.reagents.has_reagent(/datum/reagent/water/dwater, 1))
-				var/water_amt = reagent_source.reagents.get_reagent_amount(/datum/reagent/water/dwater) * transfer_amount / reagent_source.reagents.total_volume
-				H.adjustWater(round(water_amt))
-				reagent_source.reagents.remove_reagent(/datum/reagent/water/dwater, water_amt)
-
-			reagent_source.reagents.trans_to(H.reagents, transfer_amount)
-			if(istype(reagent_source, /obj/item/reagent_containers/food/snacks) || istype(reagent_source, /obj/item/reagent_containers/pill))
-				qdel(reagent_source)
-				lastuser = user
-				H.update_icon()
-				return 1
-			H.update_icon()
+		if(istype(reagent_source, /obj/item/reagent_containers/food/snacks) || istype(reagent_source, /obj/item/reagent_containers/pill))
+			qdel(reagent_source)
+			lastuser = user
+			update_icon()
+			return 1
+		update_icon()
 		if(reagent_source) // If the source wasn't composted and destroyed
 			reagent_source.update_icon()
 		return 1

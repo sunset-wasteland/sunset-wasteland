@@ -192,6 +192,7 @@ as performing this in action() will cause the upgrade to end up in the borg inst
 	icon_state = "cyborg_upgrade3"
 	require_module = 1
 	module_type = list(/obj/item/robot_module/miner)
+	module_flags = BORG_MODULE_MINER
 
 /obj/item/borg/upgrade/advcutter/action(mob/living/silicon/robot/R, user = usr)
 	. = ..()
@@ -326,16 +327,15 @@ as performing this in action() will cause the upgrade to end up in the borg inst
 	var/datum/action/toggle_action
 
 /obj/item/borg/upgrade/selfrepair/action(mob/living/silicon/robot/R, user = usr)
-	. = ..()
-	if(.)
-		var/obj/item/borg/upgrade/selfrepair/U = locate() in R
-		if(U)
-			to_chat(user, "<span class='warning'>This unit is already equipped with a self-repair module.</span>")
-			return FALSE
-
-		icon_state = "selfrepair_off"
-		toggle_action = new /datum/action/item_action/toggle(src)
-		toggle_action.Grant(R)
+    . = ..()
+    if(.)
+        for(var/obj/item/borg/upgrade/U in R.upgrades)
+            if(U.type == /obj/item/borg/upgrade/selfrepair)
+                to_chat(user, "<span class='warning'>This unit is already equipped with a self-repair module.</span>")
+                return FALSE
+        icon_state = "selfrepair_off"
+        toggle_action = new /datum/action/item_action/toggle(src)
+        toggle_action.Grant(R)
 
 /obj/item/borg/upgrade/selfrepair/deactivate(mob/living/silicon/robot/R, user = usr)
 	. = ..()
@@ -460,6 +460,7 @@ as performing this in action() will cause the upgrade to end up in the borg inst
 	desc = "An upgrade to a cyborg's hypospray, allowing it to \
 		pierce armor and thick material."
 	icon_state = "cyborg_upgrade3"
+	module_flags = BORG_MODULE_MEDICAL //added line so it appears correctly in the Exo fab 
 
 /obj/item/borg/upgrade/piercing_hypospray/action(mob/living/silicon/robot/R, user = usr)
 	. = ..()
@@ -485,10 +486,10 @@ as performing this in action() will cause the upgrade to end up in the borg inst
 		R.module.remove_module(S, TRUE)
 
 /obj/item/borg/upgrade/processor
-	name = "medical cyborg surgical processor"
+	name = "General Atomics International surgical processor" //changed name to fit in the theme
 	desc = "An upgrade to the Medical module, installing a processor \
 		capable of scanning surgery disks and carrying \
-		out procedures"
+		out research procedures" // added one word to better hint to players what the added traits do
 	icon_state = "cyborg_upgrade3"
 	require_module = 1
 	module_type = list(/obj/item/robot_module/medical,
@@ -503,6 +504,12 @@ as performing this in action() will cause the upgrade to end up in the borg inst
 		var/obj/item/surgical_processor/SP = new(R.module)
 		R.module.basic_modules += SP
 		R.module.add_module(SP, FALSE, TRUE)
+
+		ADD_TRAIT(R, TRAIT_CHEMWHIZ, src) // Added traits to medical proccessor so that Medical borgs can do medical stuff
+		ADD_TRAIT(R, TRAIT_RESEARCHER, src)
+		ADD_TRAIT(R, TRAIT_MEDICALEXPERT, src)
+		ADD_TRAIT(R, TRAIT_SURGERY_HIGH, src)
+		ADD_TRAIT(R, TRAIT_RESEARCHER, src) // Why is this in here twice? Saw it in followers.dm and didn't want to break it. That's why
 
 /obj/item/borg/upgrade/processor/deactivate(mob/living/silicon/robot/R, user = usr)
 	. = ..()
@@ -521,6 +528,7 @@ as performing this in action() will cause the upgrade to end up in the borg inst
 		/obj/item/robot_module/syndicate_medical,
 		/obj/item/robot_module/medihound,
 		/obj/item/robot_module/assaultron/medical)
+	module_flags = BORG_MODULE_MEDICAL
 
 /obj/item/borg/upgrade/advhealth/action(mob/living/silicon/robot/R, user = usr)
 	. = ..()

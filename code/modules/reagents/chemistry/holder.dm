@@ -772,6 +772,25 @@
 				my_atom.on_reagent_change(DEL_REAGENT)
 	return 1
 
+/datum/reagents/proc/del_reagents_of_subtypes(reagent)
+	var/list/cached_reagents = reagent_list
+	for(var/datum/reagent/candidate_reagent as anything in cached_reagents)
+		if(istype(candidate_reagent.type, reagent))
+			if(my_atom && isliving(my_atom))
+				var/mob/living/M = my_atom
+				if(candidate_reagent.metabolizing)
+					candidate_reagent.metabolizing = FALSE
+					candidate_reagent.on_mob_end_metabolize(M)
+				candidate_reagent.on_mob_delete(M)
+			//Clear from relevant lists
+			addiction_list -= candidate_reagent
+			qdel(candidate_reagent)
+			reagent_list -= candidate_reagent
+			update_total()
+			if(my_atom)
+				my_atom.on_reagent_change(DEL_REAGENT)
+	return 1
+
 /datum/reagents/proc/update_total()
 	var/list/cached_reagents = reagent_list
 	total_volume = 0
@@ -1010,6 +1029,20 @@
 
 	return 0
 
+/datum/reagents/proc/has_reagent_or_subtype(reagent, amount = -1)
+	var/list/cached_reagents = reagent_list
+	for(var/datum/reagent/candidate_reagent as anything in cached_reagents)
+		if (istype(candidate_reagent, reagent))
+			if(amount <= 0)
+				return candidate_reagent
+			else
+				if(round(candidate_reagent.volume, CHEMICAL_QUANTISATION_LEVEL) >= amount)
+					return candidate_reagent
+				else
+					amount -= round(candidate_reagent.volume, CHEMICAL_QUANTISATION_LEVEL)
+
+	return 0
+
 /datum/reagents/proc/get_reagent_amount(reagent)
 	var/list/cached_reagents = reagent_list
 	for(var/_reagent in cached_reagents)
@@ -1018,6 +1051,13 @@
 			return round(R.volume, CHEMICAL_QUANTISATION_LEVEL)
 
 	return 0
+
+/datum/reagents/proc/get_amount_of_type(reagent)
+	var/list/cached_reagents = reagent_list
+	. = 0
+	for(var/datum/reagent/candidate in cached_reagents)
+		if(istype(candidate, reagent))
+			. += round(candidate.volume, CHEMICAL_QUANTISATION_LEVEL)
 
 /datum/reagents/proc/get_reagents()
 	var/list/names = list()
@@ -1028,26 +1068,25 @@
 
 	return jointext(names, ",")
 
-/datum/reagents/proc/remove_all_type(reagent_type, amount, strict = 0, safety = 1) // Removes all reagent of X type. @strict set to 1 determines whether the childs of the type are included.
-	if(!isnum(amount))
-		return 1
+/datum/reagents/proc/remove_all_type(reagent_type, amount, strict = 0, safety = 1) // Removes @amount of all reagents of X type. @strict set to 1 determines whether the childs of the type are included.
+	if(amount <= 0)
+		return TRUE
 	var/list/cached_reagents = reagent_list
-	var/has_removed_reagent = 0
+	var/has_removed_reagent = FALSE
 
-	for(var/reagent in cached_reagents)
-		var/datum/reagent/R = reagent
-		var/matches = 0
+	for(var/datum/reagent/candidate_reagent as anything in cached_reagents)
+		var/matches = FALSE
 		// Switch between how we check the reagent type
 		if(strict)
-			if(R.type == reagent_type)
-				matches = 1
+			if(candidate_reagent.type == reagent_type)
+				matches = TRUE
 		else
-			if(istype(R, reagent_type))
-				matches = 1
+			if(istype(candidate_reagent, reagent_type))
+				matches = TRUE
 		// We found a match, proceed to remove the reagent.	Keep looping, we might find other reagents of the same type.
 		if(matches)
-			// Have our other proc handle removement
-			has_removed_reagent = remove_reagent(R.type, amount, safety)
+			// Have our other proc handle removal
+			has_removed_reagent = remove_reagent(candidate_reagent.type, amount, safety)
 
 	return has_removed_reagent
 

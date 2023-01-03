@@ -80,7 +80,7 @@
 	suppressor_y_offset = 15
 	fire_sound = 'sound/f13weapons/10mm_fire_02.ogg'
 	//Extra Modifiable Gun Vars
-	modifiablegun = TRUE
+	modifiablegun = FALSE//TEMP
 	//Sprite Attachment Points
 	xattachlist = list("east" = 28, "west" =  9, "south" = 21, "north" = 14) //x coordinate for attachment point
 	yattachlist = list("east" = 18, "west" = 17, "south" = 17, "north" = 21) //y coordinate for attachment point
@@ -136,7 +136,7 @@
 	suppressor_y_offset = 19
 	fire_sound = 'sound/f13weapons/ninemil.ogg'
 	//Extra Modifiable Gun Vars
-	modifiablegun = TRUE
+	modifiablegun = FALSE//TEMP
 	//Sprite Attachment Points
 	xattachlist = list("east" = 31, "west" =  4, "south" = 21, "north" = 16) //x coordinate for attachment point
 	yattachlist = list("east" = 21, "west" = 17, "south" = 17, "north" = 22) //y coordinate for attachment point
@@ -240,7 +240,7 @@
 	suppressor_y_offset = 21
 	fire_sound = 'sound/f13weapons/45revolver.ogg'
 	//Extra Modifiable Gun Vars
-	modifiablegun = TRUE
+	modifiablegun = FALSE//TEMP
 	//Sprite Attachment Points
 	xattachlist = list("east" = 29, "west" =  9, "south" = 21, "north" = 12) //x coordinate for attachment point
 	yattachlist = list("east" = 22, "west" = 17, "south" = 17, "north" = 24) //y coordinate for attachment point
@@ -304,7 +304,7 @@
 	automatic_burst_overlay = FALSE
 	fire_sound = 'sound/f13weapons/44mag.ogg'
 	//Extra Modifiable Gun Vars
-	modifiablegun = TRUE
+	modifiablegun = FALSE//TEMP
 	//Sprite Attachment Points
 	xattachlist = list("east" = 31, "west" =  9, "south" = 21, "north" = 15) //x coordinate for attachment point
 	yattachlist = list("east" = 22, "west" = 17, "south" = 17, "north" = 23) //y coordinate for attachment point
@@ -406,4 +406,4 @@
 	name = "pistol"
 	extra_damage = 18
 	mag_type = /obj/item/ammo_box/magazine/testbullet
-	
+

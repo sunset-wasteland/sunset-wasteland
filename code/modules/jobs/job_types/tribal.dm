@@ -11,7 +11,7 @@ Within this file is the material to turn the previous odd-inclusion into a prope
 	access = list(ACCESS_TRIBE)
 	social_faction = "Tribal"
 	description = "You're a member of one of many tribes, all brought together in a singular goal after the arrival of the Legion and NCR. Survival. \
-	Who you were no longer matters. What you do is prime. Especially so in the newfound faith, that of the machine spirits. They surround you. \
+	Who you were no longer matters. What you do is prime. Especially so in the newfound faith, that of the machine spirits. Should you follow it. They surround you. \
 	Are you worthy of their attention?"
 	supervisors = "the stars above"
 

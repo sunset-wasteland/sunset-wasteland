@@ -574,7 +574,6 @@
 	burst_size = 1
 	fire_delay = 3
 	spread = 2
-
 	slowdown = 0.05
 	automatic_burst_overlay = FALSE
 	can_bayonet = TRUE
@@ -593,6 +592,7 @@
 	suppressor_x_offset = 26
 	suppressor_y_offset = 31
 	fire_sound = 'sound/f13weapons/varmint_rifle.ogg'
+	extra_damage = 6
 
 
 //M1/n Carbine				Keywords: NCR, 10mm, Semi-auto, 12/24 rounds, Long barrel, Damage +1

@@ -1237,48 +1237,38 @@
 	. = ..()
 	ADD_TRAIT(src, TRAIT_NODROP, TRAIT_GENERIC)
 
+/*
+KEYS AND STUFF AAAAAAAAA
+*/
 /obj/item/card/id/raider_tags
-	name = "faded gang tattoos"
-	desc = "Tattoos marking the wearer as a raider, worn and faded colors."
-	icon_state = "skin"
-	item_state = "skin"
-	assignment = "gang tattoo"
+	name = "frail rusted keychain"
+	desc = "A set of keys, each marked with odd pins. They feel like they could fall apart."
+	icon_state = "keys"
+	item_state = "keys"
+	assignment = "old keys"
 	uses_overlays = FALSE
 	access = list(ACCESS_RAIDER)
 
-/obj/item/card/id/raider_tags/Initialize()
-	. = ..()
-	ADD_TRAIT(src, TRAIT_NODROP, TRAIT_GENERIC)
-
 /obj/item/card/id/boss_raider_tags
-	name = "faded gang tattoos"
-	desc = "Tattoos marking the wearer as a raider, worn and faded colors."
-	icon_state = "skin"
-	item_state = "skin"
-	assignment = "gang tattoo"
+	name = "hardened rusted keychain"
+	desc = "A set of keys, each marked with odd pins. They feel sturdy."
+	icon_state = "keys"
+	item_state = "keys"
+	assignment = "old keys"
 	uses_overlays = FALSE
 	access = list(ACCESS_RAIDER, ACCESS_RAIDER_BOSS)
 
-/obj/item/card/id/boss_raider_tags/Initialize()
-	. = ..()
-	ADD_TRAIT(src, TRAIT_NODROP, TRAIT_GENERIC)
-
-/* Tribal Tags
-*/
-
 /obj/item/card/id/tribetattoo
-	name = "Tattoo of the machine spirits"
-	desc = "A tattoo depicting machine spirits in harmony."
-	icon_state = "skin"
-	item_state = "skin"
-	assignment = "tribe tattoo"
+	name = "rusted keychain"
+	desc = "A set of keys. This one smells of agave."
+	icon_state = "keys"
+	item_state = "keys"
+	assignment = "old keys"
 	uses_overlays = FALSE
-
 	access = list(ACCESS_TRIBE)
-
-/obj/item/card/id/tribetattoo/Initialize()
-	. = ..()
-	ADD_TRAIT(src, TRAIT_NODROP, TRAIT_GENERIC)
+/*
+end of
+*/
 
 /obj/item/card/id/silver/mayor
 	name = "Mayor's mayoral permit"

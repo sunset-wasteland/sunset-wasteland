@@ -252,7 +252,6 @@ Within this file is the material to turn the previous odd-inclusion into a prope
 	You're not held by the same moral code as others, but though you may only be interested in self-gain, you still have a responsibility to make your time here interesting. \
 	(Adminhelp if you require help setting up your character for the round.)"
 	supervisors = "Your desire to make things interesting and fun"
-	exp_requirements = 650
 
 	matchmaking_allowed = list(
 		/datum/matchmaking_pref/patron = list(

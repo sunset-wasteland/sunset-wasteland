@@ -899,6 +899,10 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	name = "Tribal Shaman"
 	icon_state = "Tribal"
 
+/obj/effect/landmark/start/f13/tribal_temp
+	name = "Tribal"
+	icon_state = "Tribal"
+
 //Followers of the Apocalypse
 /obj/effect/landmark/start/f13/followersadministrator
 	name = "Followers Administrator"

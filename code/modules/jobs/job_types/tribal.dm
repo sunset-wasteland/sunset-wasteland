@@ -24,7 +24,6 @@ Within this file is the material to turn the previous odd-inclusion into a prope
 	ADD_TRAIT(H, TRAIT_TRAPPER, src)
 	ADD_TRAIT(H, TRAIT_MACHINE_SPIRITS, src)
 	ADD_TRAIT(H, TRAIT_AUTO_DRAW, src)
-	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
 	H.grant_language(/datum/language/tribal)
 	var/list/recipes = list(
 		/datum/crafting_recipe/tribal_pa,
@@ -58,7 +57,7 @@ Within this file is the material to turn the previous odd-inclusion into a prope
 	H.social_faction = FACTION_WASTELAND
 	add_verb(H, /mob/living/proc/create_tribe)
 
-
+/*
 /datum/job/tribal/hunter
 	title = "Tribal Hunter"
 	flag = F13TRIBAL
@@ -196,8 +195,67 @@ Within this file is the material to turn the previous odd-inclusion into a prope
 		/obj/item/reagent_containers/pill/patch/healingpowder = 1,
 		/obj/item/book/granter/crafting_recipe/tribal/all = 1,
 	)
-
+*/
 /*
+------------
+Below are the original loadouts and the temporarily used Tribal. Pending rework into the above.
+------------
+*/
+
+
+/datum/job/tribal/temp
+	title = "Tribal"
+	flag = F13TRIBAL
+	total_positions = -1
+	spawn_positions = -1
+	exp_type = EXP_TYPE_WASTELAND
+	exp_requirements = 300
+
+	outfit = /datum/outfit/job/tribal/temp
+
+	loadout_options = list(
+	/datum/outfit/loadout/brawler,
+	/datum/outfit/loadout/spearman,
+	/datum/outfit/loadout/shaman,
+	/datum/outfit/loadout/wayfarermelee,
+	/datum/outfit/loadout/wayfarerranged,
+	/datum/outfit/loadout/wayfarershaman,
+	/datum/outfit/loadout/whitelegsmelee,
+	/datum/outfit/loadout/whitelegsranged,
+	/datum/outfit/loadout/whitelegsshaman,
+	/datum/outfit/loadout/deadhorsesmelee,
+	/datum/outfit/loadout/deadhorsesranged,
+	/datum/outfit/loadout/deadhorsesshaman,
+	/datum/outfit/loadout/sorrowshunter,
+	/datum/outfit/loadout/sorrowsshaman,
+	/datum/outfit/loadout/eightiesmelee,
+	/datum/outfit/loadout/eightiesranged,
+	/datum/outfit/loadout/eightiesshaman,
+	/datum/outfit/loadout/rustwalkersscipher,
+	/datum/outfit/loadout/rustwalkersscrapper,
+	/datum/outfit/loadout/rustwalkersshaman,
+	/datum/outfit/loadout/bonedancerexile
+	)
+
+/datum/outfit/job/tribal/temp
+	name = "Tribal"
+	jobtype = /datum/job/tribal/temp
+
+	id = /obj/item/card/id/tribetattoo
+	ears = null
+	belt = /obj/item/melee/onehanded/knife/bone
+	uniform =     /obj/item/clothing/under/f13/settler
+	box =         /obj/item/storage/survivalkit_tribal
+	shoes =     /obj/item/clothing/shoes/sandal
+	gloves =    /obj/item/clothing/gloves/f13/handwraps
+	r_hand = /obj/item/book/granter/trait/selection/tribal
+	backpack = /obj/item/storage/backpack/satchel/explorer
+	satchel = /obj/item/storage/backpack/satchel/explorer
+	backpack_contents = list(
+		/obj/item/reagent_containers/pill/patch/healingpowder = 2,
+		/obj/item/flashlight/lantern = 1,
+		)
+
 //Generic Tribals
 /datum/outfit/loadout/brawler
 	name = "Tribal Brawler"
@@ -233,6 +291,45 @@ Within this file is the material to turn the previous odd-inclusion into a prope
 		/obj/item/stack/medical/gauze/improvised = 1,
 		/obj/item/reagent_containers/pill/patch/healingpowder = 1,
 		/obj/item/book/granter/crafting_recipe/tribal = 1,
+	)
+
+//Wayfarers
+/datum/outfit/loadout/wayfarermelee
+	name = "Wayfarer Warrior"
+	suit = /obj/item/clothing/suit/armor/f13/lightcloak
+	backpack_contents = list(
+		/obj/item/clothing/under/f13/wayfarer = 1,
+		/obj/item/clothing/head/helmet/f13/wayfarer/hunter = 1,
+		/obj/item/twohanded/spear/bonespear = 1,
+		/obj/item/reagent_containers/pill/patch/bitterdrink = 1,
+		/obj/item/book/granter/crafting_recipe/tribal/all = 1,
+	)
+
+/datum/outfit/loadout/wayfarerranged
+	name = "Wayfarer Archer"
+	suit = /obj/item/clothing/suit/armor/f13/kit
+	head = /obj/item/clothing/head/helmet/f13/wayfarer/antler
+	neck = /obj/item/clothing/neck/mantle/brown
+	backpack_contents = list(
+		/obj/item/gun/ballistic/bow/sturdy = 1,
+		/obj/item/storage/belt/tribe_quiver/bone = 1,
+		/obj/item/binoculars = 1,
+		/obj/item/melee/onehanded/club/warclub = 1,
+		/obj/item/book/granter/crafting_recipe/tribal/all = 1,
+		)
+
+/datum/outfit/loadout/wayfarershaman
+	name = "Wayfarer Shaman"
+	suit = /obj/item/clothing/suit/armor/f13/lightcloak
+	backpack_contents = list(
+		/obj/item/storage/bag/plants=1,
+		/obj/item/cultivator=1,
+		/obj/item/reagent_containers/glass/bucket/wood=1,
+		/obj/item/warpaint_bowl=1,
+		/obj/item/melee/onehanded/knife/ritualdagger = 1,
+		/obj/item/stack/medical/gauze/improvised = 1,
+		/obj/item/reagent_containers/pill/patch/healingpowder = 1,
+		/obj/item/book/granter/crafting_recipe/tribal/all = 1,
 	)
 
 //White Legs
@@ -425,4 +522,4 @@ Within this file is the material to turn the previous odd-inclusion into a prope
 		/obj/item/warpaint_bowl=1,
 		/obj/item/reagent_containers/pill/patch/healpoultice = 2
 
-	)*/
+	)

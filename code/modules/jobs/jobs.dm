@@ -235,6 +235,7 @@ GLOBAL_LIST_INIT(wasteland_positions, list(
 ))
 
 GLOBAL_LIST_INIT(tribal_positions, list(
+	"Tribal",
 	"Tribal Hunter",
 	"Tribal Gatherer",
 	"Tribal Shaman",

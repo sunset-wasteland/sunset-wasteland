@@ -327,15 +327,16 @@ as performing this in action() will cause the upgrade to end up in the borg inst
 	var/datum/action/toggle_action
 
 /obj/item/borg/upgrade/selfrepair/action(mob/living/silicon/robot/R, user = usr)
-    . = ..()
-    if(.)
-        for(var/obj/item/borg/upgrade/U in R.upgrades)
-            if(U.type == /obj/item/borg/upgrade/selfrepair)
-                to_chat(user, "<span class='warning'>This unit is already equipped with a self-repair module.</span>")
-                return FALSE
-        icon_state = "selfrepair_off"
-        toggle_action = new /datum/action/item_action/toggle(src)
-        toggle_action.Grant(R)
+	. = ..()
+	if(.)
+		var/obj/item/borg/upgrade/selfrepair/U = locate() in R.upgrades
+		if(U)
+			to_chat(user, "<span class='warning'>This unit is already equipped with a self-repair module.</span>")
+			return FALSE
+
+		icon_state = "selfrepair_off"
+		toggle_action = new /datum/action/item_action/toggle(src)
+		toggle_action.Grant(R)
 
 /obj/item/borg/upgrade/selfrepair/deactivate(mob/living/silicon/robot/R, user = usr)
 	. = ..()
@@ -509,7 +510,6 @@ as performing this in action() will cause the upgrade to end up in the borg inst
 		ADD_TRAIT(R, TRAIT_RESEARCHER, src)
 		ADD_TRAIT(R, TRAIT_MEDICALEXPERT, src)
 		ADD_TRAIT(R, TRAIT_SURGERY_HIGH, src)
-		ADD_TRAIT(R, TRAIT_RESEARCHER, src) // Why is this in here twice? Saw it in followers.dm and didn't want to break it. That's why
 
 /obj/item/borg/upgrade/processor/deactivate(mob/living/silicon/robot/R, user = usr)
 	. = ..()

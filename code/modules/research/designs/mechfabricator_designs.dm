@@ -799,7 +799,7 @@
 	category = list("Cyborg Upgrade Modules")
 
 /datum/design/borg_upgrade_surgicalprocessor
-	name = "Cyborg Upgrade (Surgical Processor)"
+	name = "Cyborg Upgrade (General Atomics International surgical processor)"
 	id = "borg_upgrade_surgicalprocessor"
 	build_type = MECHFAB
 	build_path = /obj/item/borg/upgrade/processor

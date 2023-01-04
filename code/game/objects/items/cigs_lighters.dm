@@ -294,21 +294,6 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	desc = "A Xeno Filtered brand cigarette."
 	list_reagents = list (/datum/reagent/drug/nicotine = 20, /datum/reagent/medicine/regen_jelly = 15, /datum/reagent/drug/krokodil = 4)
 
-/obj/item/clothing/mask/cigarette/bigboss
-	name = "Big Boss Cigarette"
-	desc = "A Big Boss brand cigarette."
-	list_reagents = list(/datum/reagent/drug/nicotine = 15, /datum/reagent/medicine/synaptizine = 5)
-
-/obj/item/clothing/mask/cigarette/pyramid
-	name = "Pyramid Smokes Cigarette"
-	desc = "A Pyramid brand cigarette."
-	list_reagents = list(/datum/reagent/drug/nicotine = 15, /datum/reagent/gold = 3)
-
-/obj/item/clothing/mask/cigarette/greytort
-	name = "Grey Tortoise Cigarette"
-	desc = "A Grey Tortoise brand cigarette."
-	list_reagents = list(/datum/reagent/drug/nicotine = 15, /datum/reagent/medicine/omnizine = 5)
-
 // Rollies.
 
 /obj/item/clothing/mask/cigarette/rollie
@@ -700,14 +685,6 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	light_color = LIGHT_COLOR_CYAN
 	overlay_state = "slime"
 	grind_results = list(/datum/reagent/iron = 1, /datum/reagent/fuel = 5, /datum/reagent/medicine/pyroxadone = 5)
-
-/obj/item/lighter/fusion
-	name = "fusion zippo"
-	desc = "A specialty zippo made from a microfusion cell and dedication. Has a much hotter flame than normal."
-	icon_state = "slighter"
-	heat = 3500
-	light_color = LIGHT_COLOR_CYAN
-	grind_results = list(/datum/reagent/iron = 1, /datum/reagent/fuel = 5, /datum/reagent/radium = 5)
 
 ///////////
 //ROLLING//

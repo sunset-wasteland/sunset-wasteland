@@ -432,24 +432,6 @@
 	if(!total_override)
 		..()
 
-/obj/structure/table/wood/junk
-	name = "makeshift bar table"
-	desc = "An improvised table made from a wooden plank and as barrel. Try not to lean on it."
-	icon = 'icons/fallout/objects/structures/junk_table.dmi'
-	icon_state = "bar"
-	canSmoothWith = list(/obj/structure/table/wood/junk)
-	buildstack = null
-	max_integrity = 100
-
-/obj/structure/table/wood/club
-	name = "wooden table"
-	desc = "A stylish wooden table with a circular design."
-	icon = 'icons/obj/structures.dmi'
-	icon_state = "club"
-	canSmoothWith = null
-	buildstack = null
-	max_integrity = 70
-
 /obj/structure/table/wood/poker //No specialties, Just a mapping object.
 	name = "gambling table"
 	desc = "A seedy table for seedy dealings in seedy places."
@@ -675,21 +657,6 @@
 /*
  * Racks
  */
-
-// Wooden shelf. Construct by crafting, not rack parts.
-/obj/structure/shelf_wood
-	name = "wooden shelf"
-	desc = "For storage."
-	icon = 'icons/fallout/objects/furniture/stationary.dmi'
-	icon_state = "shelf_wood"
-	layer = TABLE_LAYER
-	density = TRUE
-	anchored = TRUE
-	pass_flags_self = LETPASSTHROW | PASSTABLE
-	max_integrity = 30
-	attack_hand_speed = CLICK_CD_MELEE
-	attack_hand_is_action = TRUE
-
 /obj/structure/rack
 	name = "rack"
 	desc = "Different from the Medieval version."
@@ -702,12 +669,6 @@
 	max_integrity = 20
 	attack_hand_speed = CLICK_CD_MELEE
 	attack_hand_is_action = TRUE
-
-// Metal shelf, made with rack parts.
-/obj/structure/rack/shelf_metal
-	name = "metal shelf"
-	desc = "Metal shelf."
-	icon_state = "shelf"
 
 /obj/structure/rack/examine(mob/user)
 	. = ..()

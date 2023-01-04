@@ -17,27 +17,27 @@
 	var/soundLength = 50
 	var/soundFile = 'sound/f13music/mysterious_stranger.ogg'
 
-/obj/item/weapon/holodisk/New()
-		src.name = "holodisk #[rand(1,999)]"
-		return ..()
+/obj/item/weapon/holodisk/Initialize(mapload)
+	name = "holodisk #[rand(1,999)]"
+	return ..()
 
 /obj/item/weapon/holodisk/attack(mob/living/carbon/M as mob, mob/living/carbon/user as mob)
-	src.playAudio(user)
+	playAudio(user)
 	return ..()
 
 /obj/item/weapon/holodisk/attack_self(mob/user as mob)
-	src.playAudio(user)
+	playAudio(user)
 	return
 
 /obj/item/weapon/holodisk/proc/playAudio(mob/user)
-	if(!src.busy)
-		src.busy = 1
-		playsound(get_turf(src),src.soundFile,50)
-		src.add_fingerprint(user)
-		src.icon_state = "[initial(src.icon_state)]anim"
-		spawn(src.soundLength)
-			src.icon_state = initial(src.icon_state)
-			src.busy = 0
+	if(!busy)
+		busy = TRUE
+		playsound(get_turf(src),soundFile,50)
+		add_fingerprint(user)
+		icon_state = "[initial(icon_state)]anim"
+		spawn(soundLength)
+			icon_state = initial(icon_state)
+			busy = FALSE
 	return
 
 //Here we get any holodisks we want, using the basic mechanics.

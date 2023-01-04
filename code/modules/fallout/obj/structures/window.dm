@@ -83,3 +83,11 @@
 				return TRUE
 		else
 			return ..()
+
+/obj/structure/window/fulltile/wood_window
+	icon = 'icons/obj/wood_window.dmi'
+	icon_state = "housewindow"
+	density = TRUE
+	smooth = SMOOTH_FALSE
+	level = 3
+	glass_amount = 2

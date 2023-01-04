@@ -1,7 +1,6 @@
 //wip: fishing to fishtanks
 /obj/item/fishy
-	name = "parent fish"
-	desc = "debug, report to Jake"
+	name = "fish"
 	icon = 'icons/obj/fish/fish_items.dmi'
 	//the type of meat it drops
 	var/meat_type

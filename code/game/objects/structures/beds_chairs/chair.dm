@@ -388,31 +388,7 @@
 	color = COLOR_PURPLE_GRAY
 
 
-///Material chair
-/obj/structure/chair/greyscale
-	icon = 'icons/obj/chairs.dmi'
-	icon_state = "chair_greyscale"
-	material_flags = MATERIAL_ADD_PREFIX | MATERIAL_COLOR | MATERIAL_AFFECT_STATISTICS
-	item_chair = /obj/item/chair/greyscale
-	buildstacktype = null //Custom mats handle this
 
-/obj/structure/chair/wood/narsie_act()
-	return
-
-/obj/structure/chair/f13foldupchair
-	icon = 'icons/obj/chairs.dmi'
-	icon_state = "f13foldupchair"
-	item_chair = null
-
-/obj/structure/chair/f13chair1
-	icon = 'icons/obj/chairs.dmi'
-	icon_state = "f13chair1"
-	item_chair = null
-
-/obj/structure/chair/f13chair2
-	icon = 'icons/obj/chairs.dmi'
-	icon_state = "f13chair2"
-	item_chair = null
 
 //Stool
 
@@ -447,20 +423,6 @@
 	desc = "It has some unsavory stains on it..."
 	icon_state = "bar"
 	item_chair = /obj/item/chair/stool/bar
-
-/obj/structure/chair/stool/f13stool
-	name = "bar stool"
-	desc = "It has some unsavory stains on it..."
-	icon_state = "f13stool"
-	item_chair = /obj/item/chair/stool/bar
-
-/obj/item/chair/stool/bar
-	name = "bar stool"
-	icon_state = "bar_toppled"
-	item_state = "stool_bar"
-	origin_type = /obj/structure/chair/stool/bar
-
-/obj/item/chair/wood/modern
 
 /obj/item/chair
 	name = "chair"
@@ -757,129 +719,3 @@
 	. = ..()
 	if(has_gravity())
 		playsound(src, 'sound/machines/clockcult/integration_cog_install.ogg', 50, TRUE)
-
-
-
-/obj/structure/chair/booth
-	name = "single booth"
-	desc = "A lone-some diner-styled booth."
-	icon = 'icons/obj/chairs.dmi'
-	icon_state = "booth_single"
-	resistance_flags = FLAMMABLE
-	max_integrity = 70
-	item_chair = null
-	var/mutable_appearance/overlay
-
-/obj/structure/chair/booth/proc/update_overlay()
-		add_overlay(overlay)
-
-/obj/structure/chair/booth/Initialize()
-	overlay = GetOverlay()
-	overlay.layer = ABOVE_ALL_MOB_LAYER
-	overlay.plane = MOB_PLANE
-	return ..()
-
-/obj/structure/chair/booth/Destroy()
-	QDEL_NULL(overlay)
-	return ..()
-
-/obj/structure/chair/booth/proc/GetOverlay()
-	return mutable_appearance('icons/obj/chairs.dmi', "booth_single_overlay")
-
-/obj/structure/chair/left
-	name = "booth"
-	desc = "A diner-styled end booth."
-	icon = 'icons/obj/chairs.dmi'
-	icon_state = "booth_leftend"
-	resistance_flags = FLAMMABLE
-	max_integrity = 70
-	item_chair = null
-	var/mutable_appearance/overlay
-
-/obj/structure/chair/left/proc/update_overlay()
-		add_overlay(overlay)
-
-/obj/structure/chair/left/Initialize()
-	overlay = GetOverlay()
-	overlay.layer = ABOVE_ALL_MOB_LAYER
-	overlay.plane = MOB_PLANE
-	return ..()
-
-/obj/structure/chair/left/Destroy()
-	QDEL_NULL(overlay)
-	return ..()
-
-/obj/structure/chair/left/proc/GetOverlay()
-	return mutable_appearance('icons/obj/chairs.dmi', "booth_leftend_overlay")
-
-/obj/structure/chair/west_middle
-	name = "booth"
-	desc = "A diner-styled end booth."
-	icon = 'icons/obj/chairs.dmi'
-	icon_state = "booth_west_middle"
-	resistance_flags = FLAMMABLE
-	max_integrity = 70
-	item_chair = null
-	var/mutable_appearance/overlay
-
-/obj/structure/chair/left/Initialize()
-	overlay = GetOverlay()
-	overlay.layer = ABOVE_ALL_MOB_LAYER
-	overlay.plane = MOB_PLANE
-	return ..()
-
-/obj/structure/chair/left/Destroy()
-	QDEL_NULL(overlay)
-	return ..()
-
-/obj/structure/chair/middle
-	name = "booth"
-	desc = "A diner-styled middle booth."
-	icon = 'icons/obj/chairs.dmi'
-	icon_state = "booth_middle"
-	resistance_flags = FLAMMABLE
-	max_integrity = 70
-	item_chair = null
-	var/mutable_appearance/overlay
-
-/obj/structure/chair/middle/proc/update_overlay()
-		add_overlay(overlay)
-
-/obj/structure/chair/middle/Initialize()
-	overlay = GetOverlay()
-	overlay.layer = ABOVE_ALL_MOB_LAYER
-	overlay.plane = MOB_PLANE
-	return ..()
-
-/obj/structure/chair/middle/Destroy()
-	QDEL_NULL(overlay)
-	return ..()
-
-/obj/structure/chair/middle/proc/GetOverlay()
-	return mutable_appearance('icons/obj/chairs.dmi', "booth_middle_overlay")
-
-/obj/structure/chair/right
-	name = "booth"
-	desc = "A diner-styled end booth."
-	icon = 'icons/obj/chairs.dmi'
-	icon_state = "booth_rightend"
-	resistance_flags = FLAMMABLE
-	max_integrity = 70
-	item_chair = null
-	var/mutable_appearance/overlay
-
-/obj/structure/chair/right/proc/update_overlay()
-		add_overlay(overlay)
-
-/obj/structure/chair/right/Initialize()
-	overlay = GetOverlay()
-	overlay.layer = ABOVE_ALL_MOB_LAYER
-	overlay.plane = MOB_PLANE
-	return ..()
-
-/obj/structure/chair/right/Destroy()
-	QDEL_NULL(overlay)
-	return ..()
-
-/obj/structure/chair/right/proc/GetOverlay()
-	return mutable_appearance('icons/obj/chairs.dmi', "booth_rightend_overlay")

@@ -135,3 +135,112 @@
 				</body>
 				</html>
 				"}
+
+///////////////////////
+// NUKA COLA RECIPES //
+///////////////////////
+
+/obj/item/book/manual/nuka_recipes
+	name = "Nuka-Cola Recipes"
+	icon_state = "barbook"
+	author = "Lord Frenrir Cageth"
+	title = "Nuka-Cola Recipes"
+	dat = {"<html>
+				<head>
+				<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+				<style>
+				h1 {font-size: 18px; margin: 15px 0px 5px;}
+				h2 {font-size: 15px; margin: 15px 0px 5px;}
+				li {margin: 2px 0px 2px 15px;}
+				ul {list-style: none; margin: 5px; padding: 0px;}
+				ol {margin: 5px; padding: 0px 15px;}
+				</style>
+				</head>
+				<body>
+
+				<h1>Nuka for Dummies</h1>
+				Here is a list of all of the secret recipes to America's favorite soft drink! (Other, inferior drink recipes included.)
+
+
+				<h2>Nuka Recipes:</h2>
+
+				<b>Nuka Float:</b> Nuka Cola 5u + Sugar 5u + Cream 5u.<br>
+				<b>Nuka Shine:</b> Nuka Cola 5u + Beer 5u.<br>
+				<b>Nuka Victory:</b> Nuka Cola 5u + Thirteen Loko 5u.<br>
+				<b>Nuka Quartz:</b> Nuka Cola 5u + Sugar 5u + Silicon 5u.<br>
+				<b>Nuka Cherry:</b> Nuka Cola 3u + Cherry Jelly 1u<br>
+				<b>Nuka Love:</b> Nuka Cherry 5u + Nuka Quartz 5u<br>
+				<b>Nuka Quantum:</b> Nuka Cola 2u + Uranium 1u + Bluespace Dust 1u + Blue Cherry Jelly 1u<br>
+				<b>Nuka Grape:</b> Nuka Cola 5u + Grape Juice 5u<br>
+				<b>Nuka Dark:</b> Nuka Cola 5u + Rum 5u<br>
+				<b>Nuka Orange:</b> Nuka Cola 5u + Orange Juice 5u<br>
+				<b>Nuka Wild:</b> Nuka Cola 5u + Sunset Sasparilla 5u<br>
+				<b>Nuka with ice:</b> Nuka Cola 5u + some ice<br>
+				<b>Newka Cola:</b> Nuka Cherry 5u + Nuka Wild 5u + Ice 5u<br>
+				<b>Nuka Berry:</b> Nuka Grape 5u + Nuka Cherry 5u + Ice 5u<br>
+				<b>Nuka Bombdrop:</b> Nuka Dark 5u + Alcohol Z 5u + Sugar 5u<br>
+				<b>Industrial Strength Drain Cleaner (NOT FIT FOR HUMAN CONSUMPTION):</b> Nuka Bombdrop 5u + Nuka Quantum 5u + Ice 5u<br>
+				<b>Nuka Cooler:</b> Nuka Iced 5u + more ice + some water<br>
+				<b>Diet Nuka:</b> Nuka Cola 5u + salt + water<br>
+				<b>Nuka Frutti:</b> Nuka Berry 5u + Nuka Orange 5u + Ice 5u<br>
+				<b>Nuka Punch:</b> Nuka Dark 5u + Distilled Tobacco (deathroach) 5u + Punga Juice 5u<br>
+				<b>Nuka X-TREME:</b>  <li>A cartoon drawing of a nuclear warhead.</li> 5u + Nuka Quantum 5u + Ice 5u<br>
+
+
+				<h2>Vim Drinks (Midwestern favorite!):</h2>
+				<b>Vim Captain's Blend:</b> Vim 10u + Fermented Broc flower (broc brew) 10u + Gold 10u<br>
+				<b>Vim Quartz:</b> Nuka Cola 5u + Soy Milk 5u + Sugar 5u<br>
+				<b>Vim Refresh:</b> Vim 5u + Lime Juice 5u + Ice 5u<br>
+				<b>Vim Ice:</b> Nuka Cola 5u + Ice 5u + Water 5u<br>
+
+
+				<h2>Assorted Drinks:</h2>
+				<b>Alcohol-Z:</b> Whiskey 5u + Vodka 5u + Rum 5u<br>
+				<b>Ballistic Bock:</b> Blackpowder 5u + Radium 5u + Water 5u<br>
+				<b>BATTLE BREW:</b> Med-X 5u + Vodka 5u<br>
+				<b>Blackwater Brew:</b> Water 5u + Charcoal 5u + Beer 5u<br>
+				<b>Dirty Wastelander:</b> Mutfruit Juice 5u + Whiskey 10u + Water 10u<br>
+				<b>Fire Belly:</b> Vodka 5u + Soy Sauce 5u + Salt 5u<br>
+				<b>Firecracker:</b> Fermented Xander Root (Salgam) 5u + Yucca Juice 5u<br>
+				<b>Hard Lemonade:</b> Lemonade 5u + Vodka 5u + radium for some godforsaken reason<br>
+				<b>Jake Juice:</b> Whiskey 5u + Beer 5u + more fucking radium<br>
+				<b>Wasteland Tequila</b>: Tequila 5u + Mutfruit Juice 5u<br>
+				<b>Resilient Sludge (for ghouls!):</b> 5u radium + 5u sugar + 5u water<br>
+				<b>Strong Sludge (for ghouls!):</b> Uranium 5u + Resilient Sludge 15u<br>
+				<b>Sunset Float:</b>Sunset Sasparilla 5u + Ice 5u + Cream 5u<br>
+				</body>
+				</html>
+			"}
+
+///////////////////////////////
+// ADVICE FOR FUSION ROOKIES //
+///////////////////////////////
+
+/obj/item/book/manual/fusionreactor
+	name = "Fusion and You: For the Future!"
+	icon_state ="bookNuclear"
+	author = "Mass Fusion"
+	title = "Fusion and You: For the Future!"
+	dat = {"<html>
+			<head>
+			<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+			</head>
+			<body>
+			Nuclear Fusion 101:<br>
+			We here at Mass Fusion would like to congratulate you for thinking forward.<br>
+			With resources becoming scarce, it's up to us to find a way to thrive.<br>
+			Due to the modular nature of our reactor, it's important that you follow these steps precisely.<br>
+			Activating a Fusion Reactor:<br>
+			<li>Align the control panel to be easily accessable, and bolt it down to the ground. Add wiring as needed to connect the control console with the local power grid</li>
+			<li>Unpack the reactor parts with a standard multitool. Make sure to leave enough space for you to get out, as it will be far harder once the reactor unpacks.</li>
+			<li>Load fuel into the reactor via control panel..</li>
+			<li>When everything is unpacked and set up, begin injecting fuel into the reactor. It will then begin the process of fusion. Optimal efficiency is two units of fuel for every active core.</li>
+			<li>Set up SMES units to charge from the reactor.</li>
+			<br>
+			<br>
+			<b>And there you go. Now you too have done your part to fight the energy crisis.</b><br>
+			Keep an eye on the reactor, and congratulations.<br>
+			<br>
+			For a brighter future!
+			</body>
+			</html>"}

@@ -78,13 +78,10 @@
 /obj/item/projectile/reaver
 	name = "radioactive glob"
 	damage = 15
-	armour_penetration = 5
+	armour_penetration = 0.5
 	irradiate = 25//Toxic threshold is 250.
 	pass_flags = PASSTABLE | PASSGRILLE
 	icon_state = "toxin"
-
-/mob/living/simple_animal/hostile/ghoul/reaver/Initialize()
-	. = ..()
 
 /mob/living/simple_animal/hostile/ghoul/reaver/Aggro()
 	..()

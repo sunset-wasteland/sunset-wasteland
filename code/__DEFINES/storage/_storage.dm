@@ -34,7 +34,7 @@
 #define WEIGHT_CLASS_SMALL    2
 /// Standard backpacks can carry tiny, small & normal items, ex: Fire extinguisher, Stunbaton, Gas Mask, Metal Sheets
 #define WEIGHT_CLASS_NORMAL   3
-/// Items that can be weilded or equipped but not stored in a normal bag, ex: Defibrillator, Backpack, Space Suits
+/// Items that can be wielded or equipped but not stored in a normal bag, ex: Defibrillator, Backpack, Space Suits
 #define WEIGHT_CLASS_BULKY    4
 /// Usually represents objects that require two hands to operate, ex: Shotgun, Two Handed Melee Weapons - Can not fit in Boh
 #define WEIGHT_CLASS_HUGE     5

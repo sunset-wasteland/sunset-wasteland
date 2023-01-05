@@ -796,22 +796,54 @@
 
 /obj/effect/landmark/poster_spawner/Initialize()
 	. = ..()
-	var/obj/structure/sign/poster/P = pick(posters)
-	new P(loc)
-	qdel()
+	var/poster_type = pick(posters)
+	var/obj/structure/sign/poster/P = new poster_type(loc)
+	P.pixel_x = pixel_x
+	P.pixel_y = pixel_y
+	qdel(src)
 
 /obj/effect/landmark/poster_spawner/ncr
-	posters = list(/obj/structure/sign/poster/ncr/keep_to_myself, /obj/structure/sign/poster/ncr/democracy, /obj/structure/sign/poster/ncr/irradiated_food, /obj/structure/sign/poster/ncr/loaded)
+	posters = list(
+		/obj/structure/sign/poster/ncr/keep_to_myself, /obj/structure/sign/poster/ncr/democracy,
+		/obj/structure/sign/poster/ncr/irradiated_food, /obj/structure/sign/poster/ncr/loaded
+	)
 
 /obj/effect/landmark/poster_spawner/prewar
 	posters = list(
-		/obj/structure/sign/poster/prewar/corporate_espionage,
-		/obj/structure/sign/poster/prewar/protectron,
-		/obj/structure/sign/poster/prewar/vault_tec,
+		/obj/structure/sign/poster/prewar/poster61, /obj/structure/sign/poster/prewar/poster62,
+		/obj/structure/sign/poster/prewar/poster63, /obj/structure/sign/poster/prewar/poster65,
+		/obj/structure/sign/poster/prewar/poster66, /obj/structure/sign/poster/prewar/poster68,
+		/obj/structure/sign/poster/prewar/poster69, /obj/structure/sign/poster/prewar/poster70,
+		/obj/structure/sign/poster/prewar/poster71, /obj/structure/sign/poster/prewar/poster72,
+		/obj/structure/sign/poster/prewar/poster73, /obj/structure/sign/poster/prewar/poster74,
+		/obj/structure/sign/poster/prewar/poster75, /obj/structure/sign/poster/prewar/poster79,
+		/obj/structure/sign/poster/prewar/poster80, /obj/structure/sign/poster/prewar/poster81,
+		/obj/structure/sign/poster/prewar/poster82, /obj/structure/sign/poster/prewar/poster93,
+		/obj/structure/sign/poster/prewar/poster94, /obj/structure/sign/poster/prewar/corporate_espionage,
+		/obj/structure/sign/poster/prewar/protectron, /obj/structure/sign/poster/prewar/vault_tec,
+		// SUNSET PREWAR POSTERS
+		/obj/structure/sign/poster/sunset/corporate/eyes, /obj/structure/sign/poster/sunset/enlist,
+		/obj/structure/sign/poster/sunset/dean, /obj/structure/sign/poster/sunset/corporate,
+		/obj/structure/sign/poster/sunset/nukagirl, /obj/structure/sign/poster/sunset/ralphie,
+		/obj/structure/sign/poster/sunset/sarsaparilla, /obj/structure/sign/poster/sunset/pebbles
 	)
 
 /obj/effect/landmark/poster_spawner/pinup
-	posters = list(/obj/structure/sign/poster/contraband/pinup_ride, /obj/structure/sign/poster/contraband/pinup_couch,
+	posters = list(
+		/obj/structure/sign/poster/contraband/pinup_ride, /obj/structure/sign/poster/contraband/pinup_couch,
 		/obj/structure/sign/poster/contraband/pinup_bed, /obj/structure/sign/poster/contraband/pinup_pink,
 		/obj/structure/sign/poster/contraband/pinup_funk, /obj/structure/sign/poster/contraband/pinup_topless,
-		/obj/structure/sign/poster/contraband/pinup_shower, /obj/structure/sign/poster/contraband/pinup_vixen)
+		/obj/structure/sign/poster/contraband/pinup_shower, /obj/structure/sign/poster/contraband/pinup_vixen,
+		// SUNSET PINUP POSTERS
+		/obj/structure/sign/poster/contraband/pinup_assaultron, /obj/structure/sign/poster/contraband/pinup_assaultron2,
+		/obj/structure/sign/poster/contraband/pinup_claw1, /obj/structure/sign/poster/contraband/pinup_claw2,
+		/obj/structure/sign/poster/contraband/pinup_claw3, /obj/structure/sign/poster/contraband/pinup_claw4,
+		/obj/structure/sign/poster/contraband/pinup_anthro1, /obj/structure/sign/poster/contraband/pinup_anthro2,
+		/obj/structure/sign/poster/contraband/pinup_anthro3, /obj/structure/sign/poster/contraband/pinup_anthro4,
+		/obj/structure/sign/poster/contraband/pinup_anthro5, /obj/structure/sign/poster/contraband/pinup_anthro6,
+		/obj/structure/sign/poster/contraband/pinup_anthro7, /obj/structure/sign/poster/contraband/pinup_anthro8,
+		/obj/structure/sign/poster/contraband/pinup_anthro9, /obj/structure/sign/poster/contraband/pinup_anthro10,
+		/obj/structure/sign/poster/contraband/pinup_anthro11, /obj/structure/sign/poster/contraband/pinup_anthro12,
+		/obj/structure/sign/poster/contraband/pinup_anthro13, /obj/structure/sign/poster/contraband/pinup_anthro14,
+		/obj/structure/sign/poster/contraband/pinup_anthro15, /obj/structure/sign/poster/contraband/pinup_anthro16
+		)

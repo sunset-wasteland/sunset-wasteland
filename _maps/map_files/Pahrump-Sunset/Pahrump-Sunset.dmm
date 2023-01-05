@@ -1953,7 +1953,7 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "ahE" = (
-/mob/living/simple_animal/hostile/cazador,
+/mob/living/simple_animal/hostile/bloatfly,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland/west)
 "ahF" = (
@@ -7579,6 +7579,10 @@
 "aCJ" = (
 /obj/structure/bed/mattress/pregame,
 /obj/item/storage/backpack/satchel/leather,
+/obj/effect/landmark/poster_spawner/pinup{
+	pixel_x = 15;
+	pixel_y = 32
+	},
 /turf/open/floor/f13/wood,
 /area/f13/caves)
 "aCK" = (
@@ -10438,7 +10442,7 @@
 	pixel_y = 1
 	},
 /obj/item/pen,
-/obj/structure/sign/poster/prewar/poster62{
+/obj/effect/landmark/poster_spawner/prewar{
 	pixel_y = 32
 	},
 /turf/open/floor/f13{
@@ -10449,7 +10453,7 @@
 /obj/structure/table,
 /obj/item/clothing/glasses/regular,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/sign/poster/prewar/poster65{
+/obj/effect/landmark/poster_spawner/prewar{
 	pixel_y = 32
 	},
 /turf/open/floor/f13{
@@ -12794,6 +12798,10 @@
 /obj/structure/closet,
 /obj/effect/spawner/lootdrop/f13/weapon/melee/random,
 /obj/effect/spawner/lootdrop/f13/armor/random,
+/obj/effect/landmark/poster_spawner/prewar{
+	pixel_x = -32;
+	pixel_y = 15
+	},
 /turf/open/floor/f13/wood,
 /area/f13/village)
 "aUd" = (
@@ -20357,6 +20365,13 @@
 	},
 /turf/open/floor/wood/wood_common,
 /area/f13/village)
+"bEv" = (
+/obj/effect/landmark/poster_spawner/pinup{
+	pixel_x = 15;
+	pixel_y = 32
+	},
+/turf/open/floor/f13/wood,
+/area/f13/caves)
 "bEB" = (
 /obj/structure/stairs/north{
 	color = "#A47449"
@@ -20655,6 +20670,9 @@
 	icon_state = "sheethos"
 	},
 /obj/structure/bed/old,
+/obj/effect/landmark/poster_spawner/prewar{
+	pixel_x = 32
+	},
 /turf/open/floor/f13,
 /area/f13/building)
 "bMM" = (
@@ -22884,10 +22902,10 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "csW" = (
-/obj/structure/sign/poster/contraband/space_cola{
+/obj/structure/camera_assembly,
+/obj/effect/landmark/poster_spawner/prewar{
 	pixel_y = 32
 	},
-/obj/structure/camera_assembly,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -23016,7 +23034,7 @@
 /turf/open/floor/plasteel/f13,
 /area/f13/building/museum)
 "cuu" = (
-/mob/living/simple_animal/hostile/cazador,
+/mob/living/simple_animal/hostile/bloatfly,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland/east)
 "cuK" = (
@@ -23696,6 +23714,13 @@
 	icon_state = "verticalrightborderleft0"
 	},
 /area/f13/wasteland/bighornbunker)
+"cNy" = (
+/obj/effect/landmark/poster_spawner/pinup{
+	pixel_x = 15;
+	pixel_y = -32
+	},
+/turf/open/floor/f13/wood,
+/area/f13/caves)
 "cNF" = (
 /obj/structure/chair{
 	dir = 4
@@ -24895,10 +24920,10 @@
 /area/f13/bar/heaven)
 "dCD" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/sign/poster/contraband/pinup_vixen{
+/obj/item/bot_assembly/cleanbot,
+/obj/effect/landmark/poster_spawner/pinup{
 	pixel_y = 32
 	},
-/obj/item/bot_assembly/cleanbot,
 /turf/open/floor/plasteel/f13{
 	icon_state = "plating"
 	},
@@ -25684,7 +25709,8 @@
 /area/f13/building/mall)
 "ecn" = (
 /obj/structure/bed/mattress/pregame,
-/obj/structure/sign/poster/contraband/pinup_claw3{
+/obj/effect/landmark/poster_spawner/pinup{
+	pixel_x = 15;
 	pixel_y = -32
 	},
 /turf/open/floor/f13/wood,
@@ -26012,11 +26038,11 @@
 	},
 /area/f13/building)
 "eoG" = (
-/obj/structure/sign/poster/official/high_class_martini{
-	pixel_y = -32
-	},
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
+	},
+/obj/effect/landmark/poster_spawner/prewar{
+	pixel_y = -32
 	},
 /turf/open/floor/f13{
 	icon_state = "hydrofloor"
@@ -29239,6 +29265,12 @@
 /obj/item/stack/sheet/metal/fifty,
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"goK" = (
+/obj/effect/landmark/poster_spawner/prewar{
+	pixel_x = -32
+	},
+/turf/open/floor/f13/wood,
+/area/f13/village)
 "goZ" = (
 /obj/effect/decal/remains/human,
 /turf/open/indestructible/ground/outside/road{
@@ -30218,7 +30250,7 @@
 /obj/structure/table,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/weldingtool,
-/obj/structure/sign/poster/contraband/the_griffin{
+/obj/effect/landmark/poster_spawner/pinup{
 	pixel_y = 32
 	},
 /turf/open/floor/f13{
@@ -31342,13 +31374,6 @@
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/hobo,
 /turf/open/floor/f13/wood,
 /area/f13/village)
-"hII" = (
-/obj/structure/bed/mattress/pregame,
-/obj/structure/sign/poster/contraband/pinup_claw1{
-	pixel_y = 32
-	},
-/turf/open/floor/f13/wood,
-/area/f13/caves)
 "hIS" = (
 /obj/structure/fence{
 	dir = 4
@@ -34172,11 +34197,11 @@
 	},
 /area/f13/brotherhood)
 "jlL" = (
-/obj/structure/sign/poster/prewar/poster73{
-	pixel_x = -30
-	},
 /obj/machinery/light{
 	dir = 8
+	},
+/obj/effect/landmark/poster_spawner/prewar{
+	pixel_x = -32
 	},
 /turf/open/floor/wood/wood_worn,
 /area/f13/city/bighorn)
@@ -35795,9 +35820,6 @@
 /area/f13/building/massfusion)
 "ktf" = (
 /obj/structure/bed/mattress/pregame,
-/obj/structure/sign/poster/contraband/pinup_claw4{
-	pixel_y = -32
-	},
 /turf/open/floor/f13/wood,
 /area/f13/caves)
 "kti" = (
@@ -40516,7 +40538,7 @@
 /turf/open/indestructible/ground/outside/water,
 /area/f13/caves)
 "nkl" = (
-/mob/living/simple_animal/hostile/cazador,
+/mob/living/simple_animal/hostile/bloatfly,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland/nanotrasen)
 "nkB" = (
@@ -42735,7 +42757,8 @@
 "oBY" = (
 /obj/structure/table/wood,
 /obj/item/mining_scanner,
-/obj/structure/sign/poster/contraband/pinup_claw2{
+/obj/effect/landmark/poster_spawner/pinup{
+	pixel_x = 15;
 	pixel_y = 32
 	},
 /turf/open/floor/f13/wood,
@@ -43770,6 +43793,10 @@
 /area/f13/wasteland/bighorn)
 "pgg" = (
 /obj/machinery/light/small,
+/obj/effect/landmark/poster_spawner/pinup{
+	pixel_x = 15;
+	pixel_y = -32
+	},
 /turf/open/floor/f13/wood,
 /area/f13/caves)
 "pgy" = (
@@ -44820,13 +44847,13 @@
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland/followers)
 "pPV" = (
-/obj/structure/sign/poster/prewar/poster61{
-	pixel_x = 30
-	},
 /obj/structure/chair/wood{
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/landmark/poster_spawner/pinup{
+	pixel_x = 32
+	},
 /turf/open/floor/wood/wood_worn,
 /area/f13/city/bighorn)
 "pQn" = (
@@ -46315,6 +46342,16 @@
 	icon_state = "horizontaloutermain2"
 	},
 /area/f13/wasteland/west)
+"qNA" = (
+/obj/structure/table/wood/settler,
+/obj/machinery/computer/terminal{
+	pixel_y = 3
+	},
+/obj/effect/landmark/poster_spawner/prewar{
+	pixel_y = 32
+	},
+/turf/open/floor/f13/wood,
+/area/f13/village)
 "qNH" = (
 /obj/structure/table,
 /turf/open/floor/f13{
@@ -47580,6 +47617,13 @@
 	icon_state = "horizontalbottombordertopright"
 	},
 /area/f13/wasteland/massfusion)
+"rzQ" = (
+/obj/effect/landmark/poster_spawner/prewar{
+	pixel_x = -32;
+	pixel_y = 15
+	},
+/turf/open/floor/f13/wood,
+/area/f13/village)
 "rzW" = (
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "horizontaltopborderbottom2left"
@@ -47740,6 +47784,13 @@
 	icon_state = "bluedirtychess"
 	},
 /area/f13/building/mall)
+"rGO" = (
+/obj/effect/landmark/poster_spawner/pinup{
+	pixel_x = 15;
+	pixel_y = 32
+	},
+/turf/open/floor/f13/wood,
+/area/f13/village)
 "rGQ" = (
 /obj/structure/sink/well,
 /turf/open/indestructible/ground/outside/dirt,
@@ -50797,6 +50848,13 @@
 	icon_state = "dirt"
 	},
 /area/f13/wasteland/museum)
+"tyO" = (
+/obj/effect/landmark/poster_spawner/prewar{
+	pixel_x = 32;
+	pixel_y = 15
+	},
+/turf/open/floor/f13/wood,
+/area/f13/village)
 "tyU" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13{
@@ -51219,7 +51277,7 @@
 	},
 /area/f13/building/museum)
 "tKJ" = (
-/mob/living/simple_animal/hostile/cazador,
+/mob/living/simple_animal/hostile/bloatfly,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland/heaven)
 "tKP" = (
@@ -52583,7 +52641,7 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/obj/structure/sign/poster/prewar/poster62{
+/obj/effect/landmark/poster_spawner/prewar{
 	pixel_x = 32
 	},
 /turf/open/floor/wood/wood_worn,
@@ -52761,6 +52819,14 @@
 	icon_state = "greenrustychess"
 	},
 /area/f13/building/massfusion)
+"uGQ" = (
+/obj/structure/bed,
+/obj/item/bedsheet,
+/obj/effect/landmark/poster_spawner/prewar{
+	pixel_y = 32
+	},
+/turf/open/floor/f13/wood,
+/area/f13/village)
 "uGX" = (
 /turf/open/indestructible/ground/outside/desert{
 	icon_state = "wasteland33"
@@ -52983,8 +53049,8 @@
 /turf/open/floor/f13/wood,
 /area/f13/village)
 "uOl" = (
-/obj/structure/sign/poster/prewar/poster60{
-	pixel_y = 33
+/obj/effect/landmark/poster_spawner/prewar{
+	pixel_y = 32
 	},
 /turf/open/transparent/openspace,
 /area/f13/city/bighorn)
@@ -53279,7 +53345,7 @@
 /turf/open/floor/plating,
 /area/f13/caves)
 "uWc" = (
-/obj/structure/sign/poster/prewar/poster82{
+/obj/effect/landmark/poster_spawner/prewar{
 	pixel_y = -32
 	},
 /turf/open/floor/f13/wood,
@@ -53615,6 +53681,15 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"vgm" = (
+/obj/structure/bed,
+/obj/item/bedsheet,
+/obj/effect/landmark/poster_spawner/pinup{
+	pixel_x = -32;
+	pixel_y = 8
+	},
+/turf/open/floor/f13/wood,
+/area/f13/village)
 "vgq" = (
 /obj/structure/table/glass,
 /obj/item/storage/box/pillbottles{
@@ -56491,11 +56566,11 @@
 	},
 /area/f13/building/massfusion)
 "wTb" = (
-/obj/structure/sign/poster/prewar/poster60{
-	pixel_y = 32
-	},
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
+	},
+/obj/effect/landmark/poster_spawner/prewar{
+	pixel_y = 32
 	},
 /turf/open/floor/f13{
 	icon_state = "hydrofloor"
@@ -58217,6 +58292,12 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/east)
+"xXk" = (
+/obj/effect/landmark/poster_spawner/prewar{
+	pixel_y = 32
+	},
+/turf/open/floor/f13/wood,
+/area/f13/village)
 "xXG" = (
 /obj/structure/simple_door/house{
 	name = "Sheridan County Hospital"
@@ -84499,7 +84580,7 @@ kdH
 cQh
 qOl
 aaQ
-oUj
+goK
 aIt
 aAf
 aCA
@@ -84512,7 +84593,7 @@ aaQ
 aBS
 brV
 aAL
-aHu
+vgm
 aAf
 aHK
 aAL
@@ -85260,7 +85341,7 @@ aaQ
 azY
 azF
 aaQ
-oUj
+xXk
 csZ
 oUj
 aCN
@@ -90934,7 +91015,7 @@ aCN
 oLT
 wEd
 aaQ
-aHu
+uGQ
 aMh
 aHt
 cmh
@@ -94023,7 +94104,7 @@ aHK
 aHL
 aHa
 aAf
-aLH
+qNA
 aAa
 cmh
 aaQ
@@ -94519,7 +94600,7 @@ aes
 ify
 pCy
 aaQ
-oUj
+rGO
 oUj
 aHO
 oUj
@@ -100216,7 +100297,7 @@ oUj
 aCN
 oUj
 oUj
-oUj
+rzQ
 aCN
 oUj
 aaQ
@@ -101244,7 +101325,7 @@ oUj
 aaQ
 oUj
 oUj
-oUj
+tyO
 oUj
 oUj
 aaQ
@@ -104434,11 +104515,11 @@ oWd
 oWd
 aae
 ahz
-aRb
+bEv
 aRb
 bzq
 aRb
-aRb
+cNy
 ahz
 aae
 aae
@@ -104691,7 +104772,7 @@ aae
 aae
 aae
 ahz
-hII
+ktf
 ndc
 aRb
 aRb

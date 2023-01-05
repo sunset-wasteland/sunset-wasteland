@@ -101,6 +101,17 @@
 	w_class = 4
 	layer = 5
 
+/obj/item/minefield_sign
+	name = "Minefield Warning"
+	desc = "Appears to be warning that there is a minefield in the area. Watch your step."
+	icon = 'modular_sunset/icons/structures/sunset_signs_small.dmi'
+	icon_state = "sign_minefield"
+	item_state = "sign_minefield"
+	density = TRUE
+	anchored = TRUE
+	w_class = WEIGHT_CLASS_BULKY
+	layer = ABOVE_MOB_LAYER
+
 // Sunset Signs - LARGE
 
 /obj/item/bighorn_sign

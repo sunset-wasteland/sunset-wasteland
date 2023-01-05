@@ -487,7 +487,7 @@ as performing this in action() will cause the upgrade to end up in the borg inst
 		R.module.remove_module(S, TRUE)
 
 /obj/item/borg/upgrade/processor
-	name = "General Atomics International surgical processor" //changed name to fit in the theme
+	name = "\improper General Atomics International surgical processor" //changed name to fit in the theme
 	desc = "An upgrade to the Medical module, installing a processor \
 		capable of scanning surgery disks and carrying \
 		out research procedures" // added one word to better hint to players what the added traits do
@@ -506,10 +506,10 @@ as performing this in action() will cause the upgrade to end up in the borg inst
 		R.module.basic_modules += SP
 		R.module.add_module(SP, FALSE, TRUE)
 
-		ADD_TRAIT(R, TRAIT_CHEMWHIZ, src) // Added traits to medical proccessor so that Medical borgs can do medical stuff
-		ADD_TRAIT(R, TRAIT_RESEARCHER, src)
-		ADD_TRAIT(R, TRAIT_MEDICALEXPERT, src)
-		ADD_TRAIT(R, TRAIT_SURGERY_HIGH, src)
+		ADD_TRAIT(R, TRAIT_CHEMWHIZ, CYBORG_ITEM_TRAIT) // Added traits to medical proccessor so that Medical borgs can do medical stuff
+		ADD_TRAIT(R, TRAIT_RESEARCHER, CYBORG_ITEM_TRAIT)
+		ADD_TRAIT(R, TRAIT_MEDICALEXPERT, CYBORG_ITEM_TRAIT)
+		ADD_TRAIT(R, TRAIT_SURGERY_HIGH, CYBORG_ITEM_TRAIT)
 
 /obj/item/borg/upgrade/processor/deactivate(mob/living/silicon/robot/R, user = usr)
 	. = ..()

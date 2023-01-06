@@ -20,72 +20,65 @@
 	var/spawnsound //specify an audio file to play when a mob emerges from the spawner
 	var/infinite = FALSE
 
+/obj/structure/nest/proc/get_covering_icon_state(obj/item/stack/cover_stack)
+	if(!istype(cover_stack))
+		return null
+	// This uses merge_type to avoid having to run istype for everything in the list,
+	// but means that to support other types of rods/wood that don't merge with the normal type
+	// (like a new type of wood) you will need to add another entry.
+	var/static/list/usable_stacks = list(
+		/obj/item/stack/sheet/mineral/wood = "planks",
+		/obj/item/stack/rods = "rods",
+	)
+	return usable_stacks[cover_stack.merge_type]
+
 /obj/structure/nest/Initialize()
 	. = ..()
 	// list() faction, so we don't overwrite it
 	AddComponent(/datum/component/spawner/ranged, mob_types, spawn_time, list(), spawn_text, max_mobs, _spawn_sound = spawnsound, _infinite = infinite, _range = radius)
 
-/obj/structure/nest/Destroy()
-	playsound(src, 'sound/effects/break_stone.ogg', 50, 1) //reduced the sound
-	visible_message("[src] collapses!")
-	. = ..()
-
-/obj/structure/nest/proc/cover_with(obj/item/stack/cover_stack, mob/user)
+/obj/structure/nest/proc/try_cover_with(obj/item/stack/cover_stack, mob/user)
 	if(!istype(cover_stack))
-		return
+		return FALSE
 	if(!coverable)
 		to_chat(user, span_warning("You can't cover \the [src]!"))
-		return
+		return TRUE
+	var/covering_icon_state = get_covering_icon_state(cover_stack)
+	if(!covering_icon_state)
+		to_chat(user, span_warning("You can't cover \the [src] with \the [cover_stack]!"))
+		return TRUE
 	if(covered)
 		to_chat(user, span_warning("\The [src] is already covered!"))
-		return
+		return TRUE
 	if(LAZYLEN(targeted_by)) // Don't let multiple people cover at the same time.
 		to_chat(user, span_warning("Someone's already covering \the [src]!"))
-		return
+		return TRUE
 	if(cover_stack.amount < 4)
 		to_chat(user, span_warning("You need four [cover_stack.singular_name]\s in order to cover \the [src]!"))
-		return
+		return TRUE
 	if(INTERACTING_WITH(user, src))
-		return
+		return FALSE
 	if(!do_after(user, 5 SECONDS, TRUE, src))
 		to_chat(user, span_warning("You must stay still to cover \the [src]!"))
-		return
+		return TRUE
 	cover_stack.use(4)
 	to_chat(user, span_notice("You stopped the flow of monsters, for now!"))
+	covered = TRUE
+	qdel(GetComponent(/datum/component/spawner/ranged))
+	add_overlay(covering_icon_state) // add_overlay handles text as icon states
+	addtimer(CALLBACK(src, /obj/structure/nest/proc/collapse), 2 MINUTES)
+	return TRUE
+
+/obj/structure/nest/proc/collapse()
+	playsound(src, 'sound/effects/break_stone.ogg', 50, 1) //reduced the sound
+	visible_message("[src] collapses!")
+	qdel(src)
 
 /obj/structure/nest/attackby(obj/item/I, mob/living/user, params)
 	if(user.a_intent == INTENT_HARM)
 		to_chat(user, "<span class='warning'>You feel it is impossible to destroy this. Best to cover it up with something.</span>")
 		return
-
-	if(istype(I, /obj/item/stack))
-		var/obj/item/stack/cover_type = I
-		if(!coverable)
-			to_chat(user, "<span class='warning'>The hole is unable to be covered!</span>")
-			return
-		if(covered)
-			to_chat(user, "<span class='warning'>The hole is already covered!</span>")
-			return
-		if(cover_type.amount < 4)
-			to_chat(user, span_warning("You need four [cover_type.singular_name]\s in order to cover the hole!"))
-			return
-		if(!do_after(user, 5 SECONDS, FALSE, src))
-			to_chat(user, "<span class='warning'>You must stand still to build the cover!</span>")
-			return
-		cover_type.use(4)
-
-		if(!covered)
-			to_chat(user, "<span class='warning'>You stopped the flow of monsters, for now!</span>")
-
-		covered = TRUE
-		qdel(GetComponent(/datum/component/spawner/ranged))
-
-		var/image/cover_image = image(icon, icon_state = "rods")
-		if(istype(cover_type, /obj/item/stack/sheet/mineral/wood))
-			cover_image = image(icon, icon_state = "planks")
-		add_overlay(cover_image)
-		QDEL_IN(src, 2 MINUTES)
-		return
+	return try_cover_with(I, user)
 
 //the nests themselves
 /*

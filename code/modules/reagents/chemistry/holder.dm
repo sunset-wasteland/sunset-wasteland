@@ -775,7 +775,7 @@
 /datum/reagents/proc/del_reagents_of_subtypes(reagent)
 	var/list/cached_reagents = reagent_list
 	for(var/datum/reagent/candidate_reagent as anything in cached_reagents)
-		if(istype(candidate_reagent.type, reagent))
+		if(istype(candidate_reagent, reagent))
 			if(my_atom && isliving(my_atom))
 				var/mob/living/M = my_atom
 				if(candidate_reagent.metabolizing)

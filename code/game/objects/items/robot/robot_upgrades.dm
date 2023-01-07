@@ -517,6 +517,11 @@ as performing this in action() will cause the upgrade to end up in the borg inst
 		var/obj/item/surgical_processor/SP = locate() in R.module
 		R.module.remove_module(SP, TRUE)
 
+		REMOVE_TRAIT(R, TRAIT_CHEMWHIZ, CYBORG_ITEM_TRAIT) // Remove traits once board is removed
+		REMOVE_TRAIT(R, TRAIT_RESEARCHER, CYBORG_ITEM_TRAIT)
+		REMOVE_TRAIT(R, TRAIT_MEDICALEXPERT, CYBORG_ITEM_TRAIT)
+		REMOVE_TRAIT(R, TRAIT_SURGERY_HIGH, CYBORG_ITEM_TRAIT)
+
 /obj/item/borg/upgrade/advhealth
 	name = "advanced cyborg health scanner"
 	desc = "An upgrade to the Medical modules, installing a built-in \

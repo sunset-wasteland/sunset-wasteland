@@ -132,7 +132,7 @@
 	if(categories)
 		// Handle some special cases to build up sub-categories for the fab interface.
 		// Start with checking if this design builds a cyborg module.
-		if(built_item in typesof(/obj/item/borg/upgrade))
+		if(ispath(built_item, /obj/item/borg/upgrade))
 			var/obj/item/borg/upgrade/U = built_item
 			var/module_types = initial(U.module_flags)
 			sub_category = list()

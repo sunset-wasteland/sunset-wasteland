@@ -76,6 +76,7 @@
 	return ..()
 
 /datum/status_effect/slimerecall/proc/resistField()
+	SIGNAL_HANDLER
 	interrupted = TRUE
 	owner.remove_status_effect(src)
 
@@ -113,6 +114,7 @@
 		owner.remove_status_effect(src)
 
 /datum/status_effect/frozenstasis/proc/breakCube()
+	SIGNAL_HANDLER
 	owner.remove_status_effect(src)
 
 /datum/status_effect/frozenstasis/on_remove()

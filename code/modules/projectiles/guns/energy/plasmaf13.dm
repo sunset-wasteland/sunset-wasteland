@@ -155,8 +155,10 @@
 	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, .proc/deny_fire)
 
 /obj/item/gun/energy/laser/plasma/spear/proc/allow_fire()
+	SIGNAL_HANDLER
 	twohands = TRUE
 /obj/item/gun/energy/laser/plasma/spear/proc/deny_fire()
+	SIGNAL_HANDLER
 	twohands = FALSE
 
 /obj/item/gun/energy/laser/plasma/spear/Destroy()
@@ -205,8 +207,10 @@
 	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, .proc/deny_fire)
 
 /obj/item/gun/energy/laser/plasma/inquis/proc/allow_fire()
+	SIGNAL_HANDLER
 	twohands = TRUE
 /obj/item/gun/energy/laser/plasma/inquis/proc/deny_fire()
+	SIGNAL_HANDLER
 	twohands = FALSE
 
 /obj/item/gun/energy/laser/plasma/inquis/Destroy()

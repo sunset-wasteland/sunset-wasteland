@@ -187,9 +187,11 @@
 		to_chat(M, "<span class='notice'>Transfer failed! virtual reality data likely corrupted!</span>")
 
 /obj/machinery/vr_sleeper/proc/unset_vr_mob(datum/component/virtual_reality/VR)
+	SIGNAL_HANDLER
 	vr_mob = null
 
 /obj/machinery/vr_sleeper/proc/set_vr_mob(datum/component/virtual_reality/VR)
+	SIGNAL_HANDLER
 	vr_mob = VR.parent
 
 /obj/machinery/vr_sleeper/proc/cleanup_vr_mob()

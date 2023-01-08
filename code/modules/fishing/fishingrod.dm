@@ -75,6 +75,7 @@ GLOBAL_LIST_INIT(fish_rates, list(
 	current_turf = get_turf(current_user)
 
 /obj/item/fishingrod/proc/falsify_inuse()
+	SIGNAL_HANDLER
 	inuse = FALSE
 
 /obj/item/fishingrod/proc/play_readysound()

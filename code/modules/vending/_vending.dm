@@ -520,7 +520,7 @@ GLOBAL_LIST_EMPTY(vending_products)
 							var/obj/item/shard/shard = new /obj/item/shard(get_turf(C))
 							shard.embedding = list(embed_chance = 100, ignore_throwspeed_threshold = TRUE, impact_pain_mult=1, pain_chance=5)
 							shard.updateEmbedding()
-							C.hitby(shard, skipcatch = TRUE, hitpush = FALSE)
+							INVOKE_ASYNC(C, /atom/proc/hitby, shard, TRUE, FALSE)
 							shard.embedding = list()
 							shard.updateEmbedding()
 					if(4) // paralyze this binch
@@ -561,7 +561,7 @@ GLOBAL_LIST_EMPTY(vending_products)
 					L.apply_damage(squish_damage, forced=TRUE)
 
 			L.Paralyze(60)
-			L.emote("scream")
+			INVOKE_ASYNC(L, /mob/proc/emote, "scream")
 			playsound(L, 'sound/effects/blobattack.ogg', 40, TRUE)
 			playsound(L, 'sound/effects/splat.ogg', 50, TRUE)
 

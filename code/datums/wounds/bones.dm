@@ -84,6 +84,7 @@
 
 /// If we're a human who's punching something with a broken arm, we might hurt ourselves doing so
 /datum/wound/blunt/proc/attack_with_hurt_hand(mob/M, atom/target, proximity)
+	SIGNAL_HANDLER
 	if(victim.get_active_hand() != limb || victim.a_intent == INTENT_HELP || !ismob(target) || severity <= WOUND_SEVERITY_MODERATE)
 		return
 
@@ -96,7 +97,7 @@
 		else
 			victim.visible_message("<span class='danger'>[victim] weakly strikes [target] with [victim.p_their()] broken [limb.name], recoiling from pain!</span>", \
 			"<span class='userdanger'>You fail to strike [target] as the fracture in your [limb.name] lights up in unbearable pain!</span>", vision_distance=COMBAT_MESSAGE_RANGE)
-			victim.emote("scream")
+			INVOKE_ASYNC(victim, /mob/proc/emote, "scream")
 			victim.Stun(0.5 SECONDS)
 			limb.receive_damage(brute=rand(3,7))
 			return COMPONENT_NO_ATTACK_HAND

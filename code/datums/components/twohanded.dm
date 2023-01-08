@@ -89,6 +89,7 @@
 
 /// Triggered on equip of the item containing the component
 /datum/component/two_handed/proc/on_equip(datum/source, mob/user, slot)
+	SIGNAL_HANDLER
 	if(require_twohands && slot == SLOT_HANDS) // force equip the item
 		wield(user)
 	if(!user.is_holding(parent) && wielded && !require_twohands)
@@ -96,6 +97,7 @@
 
 /// Triggered on drop of item containing the component
 /datum/component/two_handed/proc/on_drop(datum/source, mob/user)
+	SIGNAL_HANDLER
 	if(require_twohands)
 		unwield(user, show_message=TRUE)
 	if(wielded)
@@ -111,6 +113,7 @@
 
 /// Triggered on attack self of the item containing the component
 /datum/component/two_handed/proc/on_attack_self(datum/source, mob/user)
+	SIGNAL_HANDLER
 	if(!user.is_holding(parent))
 		return			//give no quarter to telekinesis powergaemrs (telekinetic wielding will desync the offhand and result in all sorts of bugs so no until someone codes it properly)
 	if(wielded)
@@ -260,6 +263,7 @@
  * Updates the icon using icon_wielded if set
  */
 /datum/component/two_handed/proc/on_update_icon(datum/source)
+	SIGNAL_HANDLER
 	if(icon_wielded && wielded)
 		var/obj/item/parent_item = parent
 		if(parent_item)
@@ -270,12 +274,14 @@
  * on_moved Triggers on item moved
  */
 /datum/component/two_handed/proc/on_moved(datum/source, mob/user, dir)
+	SIGNAL_HANDLER
 	unwield(user)
 
 /**
  * on_swap_hands Triggers on swapping hands, blocks swap if the other hand is busy
  */
 /datum/component/two_handed/proc/on_swap_hands(mob/user, obj/item/held_item)
+	SIGNAL_HANDLER
 	if(!held_item)
 		return
 	if(held_item == parent)
@@ -285,6 +291,7 @@
  * on_sharpen Triggers on usage of a sharpening stone on the item
  */
 /datum/component/two_handed/proc/on_sharpen(obj/item/item, amount, max_amount)
+	SIGNAL_HANDLER
 	if(!item)
 		return COMPONENT_BLOCK_SHARPEN_BLOCKED
 	if(sharpened_increase)

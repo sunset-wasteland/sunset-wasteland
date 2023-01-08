@@ -78,6 +78,7 @@
 	desc = "Normal looking magboots that are altered to increase magnetic pull to crush anything underfoot."
 
 /obj/item/clothing/shoes/magboots/crushing/proc/crush(mob/living/user)
+	SIGNAL_HANDLER
 	if (!isturf(user.loc) || !magpulse)
 		return
 	var/turf/T = user.loc
@@ -85,7 +86,7 @@
 		if (A != user && A.lying)
 			A.adjustBruteLoss(rand(10,13))
 			to_chat(A,"<span class='userdanger'>[user]'s magboots press down on you, crushing you!</span>")
-			A.emote("scream")
+			INVOKE_ASYNC(A, /mob/proc/emote, "scream")
 
 /obj/item/clothing/shoes/magboots/crushing/attack_self(mob/user)
 	. = ..()

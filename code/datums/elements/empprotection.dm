@@ -15,4 +15,5 @@
 	return ..()
 
 /datum/element/empprotection/proc/getEmpFlags(datum/source, severity)
+	SIGNAL_HANDLER
 	return flags

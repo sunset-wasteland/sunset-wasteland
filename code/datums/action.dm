@@ -175,6 +175,7 @@
 	M.ghostize(can_reenter_corpse = TRUE, voluntary = TRUE)
 
 /datum/action/proc/OnUpdatedIcon()
+	SIGNAL_HANDLER
 	UpdateButtonIcon()
 
 //Presets for item actions

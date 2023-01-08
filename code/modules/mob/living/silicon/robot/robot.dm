@@ -1128,6 +1128,7 @@
 			aicamera.stored[i] = TRUE
 
 /mob/living/silicon/robot/proc/charge(datum/source, amount, repairs)
+	SIGNAL_HANDLER
 	if(module)
 		var/coeff = amount * 0.005
 		module.respawn_consumable(src, coeff)

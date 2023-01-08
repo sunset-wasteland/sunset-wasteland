@@ -29,6 +29,7 @@
 // When on help intent: attack simplemobs only
 // When not on help intent: attack structures, turfs, and all mobs
 /obj/item/melee/unarmed/proc/do_unarmed_attack(mob/living/carbon/source, atom/target)
+	SIGNAL_HANDLER
 	if (istype(target, /obj/item))
 		return
 	if (source.a_intent == INTENT_HARM)
@@ -59,6 +60,7 @@
 	RegisterSignal(equipper, COMSIG_HUMAN_MELEE_UNARMED_ATTACK, .proc/do_unarmed_attack)
 
 /obj/item/melee/unarmed/proc/on_drop(source, mob/dropper)
+	SIGNAL_HANDLER
 	// This might remove it too early if someone has multiple,
 	// but it's better than letting them run around with the bonus and nothing equipped.
 	if(!HAS_TRAIT_FROM(dropper, TRAIT_UNARMED_WEAPON, GLOVE_TRAIT))

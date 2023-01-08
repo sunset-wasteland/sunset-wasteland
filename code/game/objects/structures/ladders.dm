@@ -135,6 +135,7 @@
 
 
 /obj/structure/ladder/proc/on_connected_ladder_clicked(atom/source, location, control, params, mob/user)
+	SIGNAL_HANDLER
 	if((user in (LAZYACCESS(ladder_watchers, "[UP]"))) || (user in (LAZYACCESS(ladder_watchers, "[DOWN]"))))
 		stop_peeking(user)
 

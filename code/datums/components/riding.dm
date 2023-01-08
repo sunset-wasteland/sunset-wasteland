@@ -30,14 +30,16 @@
 	RegisterSignal(parent, COMSIG_MOVABLE_MOVED, .proc/vehicle_moved)
 
 /datum/component/riding/proc/vehicle_mob_unbuckle(datum/source, mob/living/M, force = FALSE)
+	SIGNAL_HANDLER
 	var/atom/movable/AM = parent
-	restore_position(M)
+	INVOKE_ASYNC(src, .proc/restore_position, M)
 	unequip_buckle_inhands(M)
 	M.updating_glide_size = TRUE
 	if(del_on_unbuckle_all && !AM.has_buckled_mobs())
 		qdel(src)
 
 /datum/component/riding/proc/vehicle_mob_buckle(datum/source, mob/living/M, force = FALSE)
+	SIGNAL_HANDLER
 	var/atom/movable/movable_parent = parent
 	M.set_glide_size(movable_parent.glide_size)
 	M.updating_glide_size = FALSE
@@ -57,6 +59,7 @@
 	directional_vehicle_layers["[dir]"] = layer
 
 /datum/component/riding/proc/vehicle_moved(datum/source, dir)
+	SIGNAL_HANDLER
 	var/atom/movable/movable_parent = parent
 	if (isnull(dir))
 		dir = movable_parent.dir
@@ -234,6 +237,7 @@
 		ADD_TRAIT(M, TRAIT_MOBILITY_NOUSE, src)
 
 /datum/component/riding/human/proc/on_host_unarmed_melee(atom/target)
+	SIGNAL_HANDLER
 	var/mob/living/carbon/human/H = parent
 	if(H.a_intent == INTENT_DISARM && (target in H.buckled_mobs))
 		force_dismount(target)

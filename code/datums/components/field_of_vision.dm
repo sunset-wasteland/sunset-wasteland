@@ -175,9 +175,11 @@
 	visual_shadow.transform = shadow_mask.transform = shadow_mask.transform.Scale(new_size/old_size)
 
 /datum/component/field_of_vision/proc/on_mob_login(mob/source)
+	SIGNAL_HANDLER
 	generate_fov_holder(source, angle)
 
 /datum/component/field_of_vision/proc/on_mob_logout(mob/source)
+	SIGNAL_HANDLER
 	UnregisterSignal(source, list(COMSIG_ATOM_DIR_CHANGE, COMSIG_MOVABLE_MOVED, COMSIG_MOB_DEATH,
 								COMSIG_LIVING_REVIVE, COMSIG_ROBOT_UPDATE_ICONS))
 	if(length(nested_locs))
@@ -196,6 +198,7 @@
 
 /// Hides the shadow when looking through other items, shows it otherwise.
 /datum/component/field_of_vision/proc/on_reset_perspective(mob/source, atom/target)
+	SIGNAL_HANDLER
 	if(source.client.eye == source || source.client.eye == source.loc)
 		fov.alpha = 255
 	else
@@ -203,6 +206,7 @@
 
 /// Called when the client view size is changed.
 /datum/component/field_of_vision/proc/on_change_view(mob/source, client, list/old_view, list/view)
+	SIGNAL_HANDLER
 	resize_fov(old_view, view)
 
 /**
@@ -210,6 +214,7 @@
  * As well as modify the owner mask to match the topmost item.
  */
 /datum/component/field_of_vision/proc/on_mob_moved(mob/source, atom/oldloc, dir, forced)
+	SIGNAL_HANDLER
 	var/turf/T
 	if(!isturf(source.loc)) //Recalculate all nested locations.
 		UNREGISTER_NESTED_LOCS( nested_locs, COMSIG_MOVABLE_MOVED, 1)
@@ -242,6 +247,7 @@
 
 /// A hacky comsig proc for things that somehow decide to change icon on the go. may make a change_icon_file() proc later but...
 /datum/component/field_of_vision/proc/manual_centered_render_source(mob/source, old_icon)
+	SIGNAL_HANDLER
 	if(!isturf(source.loc))
 		return
 	CENTERED_RENDER_SOURCE(owner_mask, source, src)
@@ -289,14 +295,17 @@
 	}
 
 /datum/component/field_of_vision/proc/on_examinate(mob/source, atom/target)
+	SIGNAL_HANDLER
 	if(fov.alpha)
 		FOV_ANGLE_CHECK(source, target, return, return COMPONENT_DENY_EXAMINATE|COMPONENT_EXAMINATE_BLIND)
 
 /datum/component/field_of_vision/proc/on_visible_message(mob/source, atom/target, message, range, list/ignored_mobs)
+	SIGNAL_HANDLER
 	if(fov.alpha)
 		FOV_ANGLE_CHECK(source, target, return, return COMPONENT_NO_VISIBLE_MESSAGE)
 
 /datum/component/field_of_vision/proc/on_fov_view(mob/source, list/atoms)
+	SIGNAL_HANDLER
 	if(!fov.alpha)
 		return
 	for(var/k in atoms)
@@ -304,6 +313,7 @@
 		FOV_ANGLE_CHECK(source, A, continue, atoms -= A)
 
 /datum/component/field_of_vision/proc/is_viewer(mob/source, atom/center, depth, list/viewers_list)
+	SIGNAL_HANDLER
 	if(fov.alpha)
 		FOV_ANGLE_CHECK(source, center, return, viewers_list -= source)
 

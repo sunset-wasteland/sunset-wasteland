@@ -468,6 +468,7 @@
 	return ..()
 
 /datum/status_effect/eldritch/proc/update_owner_underlay(atom/source, list/overlays)
+	SIGNAL_HANDLER
 	overlays += marked_underlay
 
 /datum/status_effect/eldritch/Destroy()
@@ -994,6 +995,7 @@
 	return ..()
 
 /datum/status_effect/trance/proc/hypnotize(datum/source, list/hearing_args)
+	SIGNAL_HANDLER
 	if(!owner.can_hear())
 		return
 	if(hearing_args[HEARING_SPEAKER] == owner)

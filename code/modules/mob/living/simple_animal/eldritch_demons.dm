@@ -89,6 +89,7 @@
 	return TRUE
 
 /mob/living/simple_animal/hostile/eldritch/raw_prophet/proc/unlink_mob(mob/living/mob_linked)
+	SIGNAL_HANDLER
 	if(!linked_mobs[mob_linked])
 		return
 	UnregisterSignal(mob_linked, list(COMSIG_MOB_DEATH, COMSIG_PARENT_QDELETING))
@@ -96,7 +97,7 @@
 	action.Remove(mob_linked)
 	qdel(action)
 	to_chat(mob_linked, "<span class='notice'>Your mind shatters as the [src]'s Mansus Link leaves your mind.</span>")
-	mob_linked.emote("Scream")
+	INVOKE_ASYNC(mob_linked, /mob/proc/emote, "Scream")
 	//micro stun
 	mob_linked.AdjustParalyzed(0.5 SECONDS)
 	linked_mobs -= mob_linked
@@ -194,6 +195,7 @@
 
 ///Updates the next mob in the chain to move to our last location, fixed the worm if somehow broken.
 /mob/living/simple_animal/hostile/eldritch/armsy/proc/update_chain_links()
+	SIGNAL_HANDLER
 	gib_trail()
 	if(back && back.loc != oldloc)
 		back.Move(oldloc)

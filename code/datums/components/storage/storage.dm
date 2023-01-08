@@ -187,12 +187,14 @@
 
 
 /datum/component/storage/proc/attack_self(datum/source, mob/M)
+	SIGNAL_HANDLER
 	if(check_locked(source, M, TRUE))
 		return FALSE
 	if((M.get_active_held_item() == parent) && allow_quick_empty)
-		quick_empty(M)
+		INVOKE_ASYNC(src, .proc/quick_empty, M)
 
 /datum/component/storage/proc/preattack_intercept(datum/source, obj/O, mob/M, params)
+	SIGNAL_HANDLER
 	if(!isitem(O) || !click_gather || SEND_SIGNAL(O, COMSIG_CONTAINS_STORAGE))
 		return FALSE
 	. = COMPONENT_NO_ATTACK
@@ -207,19 +209,23 @@
 		return
 	if(!isturf(I.loc))
 		return
-	var/list/things = I.loc.contents.Copy()
+	INVOKE_ASYNC(src, .proc/async_preattack_intercept, I, M)
+
+/datum/component/storage/proc/async_preattack_intercept(obj/item/attack_item, mob/pre_attack_mob)
+	var/list/things = attack_item.loc.contents.Copy()
 	if(collection_mode == COLLECT_SAME)
-		things = typecache_filter_list(things, typecacheof(I.type))
+		things = typecache_filter_list(things, typecacheof(attack_item.type))
 	var/len = length(things)
 	if(!len)
-		to_chat(M, "<span class='notice'>You failed to pick up anything with [parent].</span>")
+		to_chat(pre_attack_mob, span_notice("You failed to pick up anything with [parent]."))
 		return
-	var/datum/progressbar/progress = new(M, len, I.loc)
+	var/datum/progressbar/progress = new(pre_attack_mob, len, attack_item.loc)
 	var/list/rejections = list()
-	while(do_after(M, 10, TRUE, parent, FALSE, CALLBACK(src, .proc/handle_mass_pickup, things, I.loc, rejections, progress)))
+	while(do_after(pre_attack_mob, 1 SECONDS, TRUE, parent, FALSE, CALLBACK(src, .proc/handle_mass_pickup, things, attack_item.loc, rejections, progress)))
 		stoplag(1)
-	qdel(progress)
-	to_chat(M, "<span class='notice'>You put everything you could [insert_preposition] [parent].</span>")
+	progress.end_progress()
+	to_chat(pre_attack_mob, span_notice("You put everything you could [insert_preposition] [parent]."))
+	var/atom/A = parent
 	A.do_squish(1.4, 0.4)
 
 /datum/component/storage/proc/handle_mass_item_insertion(list/things, datum/component/storage/src_object, mob/user, datum/progressbar/progress)
@@ -308,6 +314,7 @@
 	return TRUE
 
 /datum/component/storage/proc/set_locked(datum/source, new_state)
+	SIGNAL_HANDLER
 	locked = new_state
 	if(check_locked())
 		close_all()
@@ -316,17 +323,20 @@
 	ui_hide(M)
 
 /datum/component/storage/proc/close_all()
+	SIGNAL_HANDLER
 	. = FALSE
 	for(var/mob/M in can_see_contents())
 		close(M)
 		. = TRUE //returns TRUE if any mobs actually got a close(M) call
 
 /datum/component/storage/proc/check_views()
+	SIGNAL_HANDLER
 	for(var/mob/M in can_see_contents())
 		if(!isobserver(M) && !M.can_reach(parent, STORAGE_VIEW_DEPTH))
 			close(M)
 
 /datum/component/storage/proc/emp_act(datum/source, severity)
+	SIGNAL_HANDLER
 	if(emp_shielded)
 		return
 	var/datum/component/storage/concrete/master = master()
@@ -342,6 +352,7 @@
 	return master._removal_reset(thing)
 
 /datum/component/storage/proc/_remove_and_refresh(datum/source, atom/movable/thing)
+	SIGNAL_HANDLER
 	if(LAZYACCESS(ui_item_blocks, thing))
 		var/obj/screen/storage/volumetric_box/center/C = ui_item_blocks[thing]
 		for(var/i in can_see_contents())		//runtimes result if mobs can access post deletion.
@@ -362,6 +373,7 @@
 	return master.remove_from_storage(AM, new_location)
 
 /datum/component/storage/proc/refresh_mob_views()
+	SIGNAL_HANDLER
 	var/list/seeing = can_see_contents()
 	for(var/i in seeing)
 		ui_show(i)
@@ -422,12 +434,14 @@
 
 //Abuses the fact that lists are just references, or something like that.
 /datum/component/storage/proc/signal_return_inv(datum/source, list/interface, recursive = TRUE)
+	SIGNAL_HANDLER
 	if(!islist(interface))
 		return FALSE
 	interface |= return_inv(recursive)
 	return TRUE
 
 /datum/component/storage/proc/mousedrop_onto(datum/source, atom/over_object, mob/M)
+	SIGNAL_HANDLER
 	set waitfor = FALSE
 	. = COMPONENT_NO_MOUSEDROP
 	var/atom/A = parent
@@ -442,7 +456,7 @@
 			user_show_to_mob(M)
 		if(!M.incapacitated())
 			if(!istype(over_object, /obj/screen))
-				dump_content_at(over_object, M)
+				INVOKE_ASYNC(src, .proc/dump_content_at, over_object, M)
 				return
 			if(A.loc != M)
 				return
@@ -464,6 +478,7 @@
 	ui_show(M, !ghost)
 
 /datum/component/storage/proc/mousedrop_receive(datum/source, atom/movable/O, mob/M)
+	SIGNAL_HANDLER
 	if(isitem(O))
 		var/obj/item/I = O
 		if(iscarbon(M) || isdrone(M))
@@ -575,28 +590,35 @@
 		O.update_icon()
 
 /datum/component/storage/proc/signal_insertion_attempt(datum/source, obj/item/I, mob/M, silent = FALSE, force = FALSE)
+	SIGNAL_HANDLER
 	if((!force && !can_be_inserted(I, TRUE, M)) || (I == parent))
 		return FALSE
 	return handle_item_insertion(I, silent, M)
 
 /datum/component/storage/proc/signal_can_insert(datum/source, obj/item/I, mob/M, silent = FALSE)
+	SIGNAL_HANDLER
 	return can_be_inserted(I, silent, M)
 
 /datum/component/storage/proc/show_to_ghost(datum/source, mob/dead/observer/M)
+	SIGNAL_HANDLER
 	return user_show_to_mob(M, TRUE, TRUE)
 
 /datum/component/storage/proc/signal_show_attempt(datum/source, mob/showto, force = FALSE)
+	SIGNAL_HANDLER
 	return user_show_to_mob(showto, force)
 
 /datum/component/storage/proc/on_check()
+	SIGNAL_HANDLER
 	return TRUE
 
 /datum/component/storage/proc/check_locked(datum/source, mob/user, message = FALSE)
+	SIGNAL_HANDLER
 	. = locked
 	if(message && . && user)
 		to_chat(user, "<span class='warning'>[parent] seems to be locked!</span>")
 
 /datum/component/storage/proc/signal_take_type(datum/source, type, atom/destination, amount = INFINITY, check_adjacent = FALSE, force = FALSE, mob/user, list/inserted)
+	SIGNAL_HANDLER
 	if(!force)
 		if(check_adjacent)
 			if(!user || !user.can_reach(destination) || !user.can_reach(parent))
@@ -631,6 +653,7 @@
 	return TRUE
 
 /datum/component/storage/proc/on_attack_hand(datum/source, mob/user)
+	SIGNAL_HANDLER
 	var/atom/A = parent
 	if(!attack_hand_interact)
 		return
@@ -655,6 +678,7 @@
 			A.do_jiggle()
 
 /datum/component/storage/proc/signal_on_pickup(datum/source, mob/user)
+	SIGNAL_HANDLER
 	var/atom/A = parent
 	update_actions()
 	for(var/mob/M in range(1, A))
@@ -662,17 +686,21 @@
 			close(M)
 
 /datum/component/storage/proc/signal_take_obj(datum/source, atom/movable/AM, new_loc, force = FALSE)
+	SIGNAL_HANDLER
 	if(!(AM in real_location()))
 		return FALSE
 	return remove_from_storage(AM, new_loc)
 
 /datum/component/storage/proc/signal_quick_empty(datum/source, atom/loctarget)
+	SIGNAL_HANDLER
 	return do_quick_empty(loctarget)
 
 /datum/component/storage/proc/signal_hide_attempt(datum/source, mob/target)
+	SIGNAL_HANDLER
 	return ui_hide(target)
 
 /datum/component/storage/proc/on_alt_click(datum/source, mob/user)
+	SIGNAL_HANDLER
 	if(!isliving(user) || !user.can_reach(parent))
 		return
 	if(check_locked(source, user, TRUE))

@@ -69,6 +69,7 @@
 	user.remove_movespeed_modifier(/datum/movespeed_modifier/jetpack/fullspeed)
 
 /obj/item/tank/jetpack/proc/move_react(mob/user)
+	SIGNAL_HANDLER
 	allow_thrust(0.01, user)
 
 /obj/item/tank/jetpack/proc/allow_thrust(num, mob/living/user)

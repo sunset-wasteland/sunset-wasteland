@@ -104,6 +104,7 @@ SUBSYSTEM_DEF(matchmaking)
 
 
 /datum/matchmaking_pref/proc/on_candidate_qdel(mob/living/source, force)
+	SIGNAL_HANDLER
 	qdel(src)
 
 

@@ -26,6 +26,7 @@
 	var/additional_regen                // How much additional blood regen we gain from bonuses such as high blood.
 	var/feed_amount = 15				// Amount of blood drawn from a target per tick.
 	var/max_blood_volume = 600			// Maximum blood a Vamp can hold via feeding.
+	var/masquerade_warning_timerid		// Used to prevent message spam.
 	// OBJECTIVES
 	var/list/datum/objective/objectives_given = list()	// For removal if needed.
 	var/area/lair

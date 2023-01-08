@@ -462,6 +462,7 @@
 	return ..()
 
 /datum/status_effect/chem/enthrall/proc/owner_hear(datum/source, list/hearing_args)
+	SIGNAL_HANDLER
 	if(lewd == FALSE)
 		return
 	if (cTriggered > 0)
@@ -522,6 +523,7 @@
 	return
 
 /datum/status_effect/chem/enthrall/proc/owner_resist()
+	SIGNAL_HANDLER
 	var/mob/living/carbon/M = owner
 	to_chat(owner, "<span class='notice'><i>You attempt to fight against [master]'s influence!</i></span>")
 
@@ -571,7 +573,7 @@
 
 
 	if(prob(5))
-		M.emote("me",1,"squints, shaking their head for a moment.")//shows that you're trying to resist sometimes
+		INVOKE_ASYNC(M, /mob/proc/emote, "me",1,"squints, shaking their head for a moment.")//shows that you're trying to resist sometimes
 		deltaResist *= 1.5
 
 	//chemical resistance, brain and annaphros are the key to undoing, but the subject has to to be willing to resist.

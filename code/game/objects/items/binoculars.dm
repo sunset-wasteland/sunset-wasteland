@@ -39,6 +39,7 @@
 	return ..()
 
 /obj/item/binoculars/proc/on_wield(obj/item/source, mob/user)
+	SIGNAL_HANDLER
 	RegisterSignal(user, COMSIG_MOVABLE_MOVED, .proc/unwield)
 	RegisterSignal(user, COMSIG_ATOM_DIR_CHANGE, .proc/rotate)
 	listeningTo = user
@@ -74,9 +75,11 @@
 	C.pixel_y = world.icon_size*_y
 
 /obj/item/binoculars/proc/on_unwield(obj/item/source, mob/user)
+	SIGNAL_HANDLER
 	unwield(user)
 
 /obj/item/binoculars/proc/rotate(mob/living/user, old_dir, direction = FALSE)
+	SIGNAL_HANDLER
 	var/_x = 0
 	var/_y = 0
 	switch(direction)
@@ -93,6 +96,7 @@
 	user.client.pixel_y = world.icon_size*_y
 
 /obj/item/binoculars/proc/unwield(mob/user)
+	SIGNAL_HANDLER
 	if(listeningTo)
 		UnregisterSignal(user, COMSIG_MOVABLE_MOVED)
 		UnregisterSignal(user, COMSIG_ATOM_DIR_CHANGE)

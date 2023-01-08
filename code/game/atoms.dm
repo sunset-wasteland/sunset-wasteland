@@ -454,6 +454,7 @@
 
 /// Updates the icon of the atom
 /atom/proc/update_icon()
+	SIGNAL_HANDLER
 	// I expect we're going to need more return flags and options in this proc
 	var/signalOut = SEND_SIGNAL(src, COMSIG_ATOM_UPDATE_ICON)
 	. = FALSE
@@ -647,6 +648,7 @@
 	return (blood_DNA && blood_DNA["color"]) || BLOOD_COLOR_HUMAN
 
 /atom/proc/clean_blood()
+	SIGNAL_HANDLER
 	. = blood_DNA? TRUE : FALSE
 	blood_DNA = null
 

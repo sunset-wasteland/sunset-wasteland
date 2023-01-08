@@ -36,6 +36,7 @@
 	RegisterSignal(living_owner, COMSIG_LIVING_REVIVE, .proc/restart_process)
 
 /datum/component/glow_heal/proc/restart_process()
+	SIGNAL_HANDLER
 	START_PROCESSING(SSobj, src)
 
 /datum/component/glow_heal/process()

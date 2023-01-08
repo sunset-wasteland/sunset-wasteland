@@ -153,6 +153,7 @@
 
 	loadout_options = list(
 		/datum/outfit/loadout/gysgt_ballistics, // Vindicator
+		/datum/outfit/loadout/gysgt_gatlas, // L30
 		/datum/outfit/loadout/gysgt_laser, // Multiplas
 		)
 
@@ -184,6 +185,13 @@
 	backpack_contents = list(
 		/obj/item/encencminigunbal4mm = 1,
 		/obj/item/ammo_box/magazine/vindic = 2
+		)
+
+/datum/outfit/loadout/gysgt_gatlas
+	name = "Armored Support Kit"
+	backpack_contents = list(
+		/obj/item/encminigunpack = 1,
+		/obj/item/stock_parts/cell/ammo/ecp = 2
 		)
 
 /datum/outfit/loadout/gysgt_laser

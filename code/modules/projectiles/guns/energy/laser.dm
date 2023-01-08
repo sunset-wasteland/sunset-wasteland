@@ -584,8 +584,8 @@
 
 //The ammo/gun is stored in a back slot item
 /obj/item/minigunpack
-	name = "backpack power source"
-	desc = "The massive external power source for the laser gatling gun."
+	name = "XM30 backpack power source"
+	desc = "The massive external power source for the XM30 laser gatling gun. A direct grandfather to the much superior L30."
 	icon = 'icons/obj/guns/minigun.dmi'
 	icon_state = "holstered"
 	item_state = "backpack"
@@ -680,8 +680,8 @@
 	user.update_inv_back()
 
 /obj/item/gun/energy/minigun
-	name = "laser gatling gun"
-	desc = "An advanced laser cannon with an incredible rate of fire. Requires a bulky backpack power source to use."
+	name = "XM30 laser gatling gun"
+	desc = "An advanced laser cannon with an incredible rate of fire. Requires a bulky backpack power source to use. A direct grandfather to the much superior L30."
 	icon = 'icons/obj/guns/minigun.dmi'
 	icon_state = "minigun_spin"
 	item_state = "minigun"

@@ -662,7 +662,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	icon_state = "Wastelander"
 
 // Brotherhood of Steel
-
+/*
 /obj/effect/landmark/start/f13/elder
 	name = "Baron"
 	icon_state = "Elder"
@@ -714,6 +714,31 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 /obj/effect/landmark/start/f13/inquis
 	name = "Inquisitorial Acolyte"
 	icon_state = "Elder"
+*/
+
+/obj/effect/landmark/start/f13/paladin_commander
+	name = "Paladin Commander"
+	icon_state = "Paladin"
+
+/obj/effect/landmark/start/f13/paladin
+	name = "Paladin"
+	icon_state = "Paladin"
+
+/obj/effect/landmark/start/f13/knight
+	name = "Knight"
+	icon_state = "Knight"
+
+/obj/effect/landmark/start/f13/initiate
+	name = "Initiate"
+	icon_state = "Initiate"
+
+/obj/effect/landmark/start/f13/senior_scribe
+	name = "Senior Scribe"
+	icon_state = "Elder"
+
+/obj/effect/landmark/start/f13/scribe
+	name = "Scribe"
+	icon_state = "Scribe"
 
 // Vault
 
@@ -933,6 +958,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	return INITIALIZE_HINT_QDEL
 
 //Khans
+/*
 // OLD KHAN STUFF
 /obj/effect/landmark/start/f13/noyan
 	name = "Noyan"
@@ -957,7 +983,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 /obj/effect/landmark/start/f13/mangudai
 	name = "Mangudai"
 	icon_state = "Pusher"
-
+*/
 // Proper Khans
 /obj/effect/landmark/start/f13/khan
 	name = "Khan Enforcer"

@@ -685,6 +685,18 @@
 	armor = list("melee" = 50, "bullet" = 50, "laser" = 55, "energy" = 50, "bomb" = 50, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20, "wound" = 20)
 	slowdown = 0.15
 
+/obj/item/clothing/suit/armored/light/conscript_rig
+	name = "conscript tactical rig"
+	desc = "A handmade tactical rig, used by conscripts of the Midwest Brotherhood. \
+	The actual rig is made of a black, fiberous cloth, being attached to a dusty desert-colored belt. \
+	A flask and two ammo pouches hang from the belt. Despite the storage and freedom of movement, you doubt this'll protect you."
+	icon_state = "r_gear_rig"
+	item_state = "r_gear_rig"
+	armor = list("melee" = 5, "bullet" = 5, "laser" = 5, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0, "wound" = 0)
+//	slowdown = -0.25
+	strip_delay = 30//buckles
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/bulletbelt/ncr
+
 /obj/item/clothing/suit/armor/f13/combat/brotherhood/outcast
 	name = "brotherhood armor" //unused?
 	desc = "A superior combat armor set made by the Brotherhood of Steel, bearing a series of red markings."

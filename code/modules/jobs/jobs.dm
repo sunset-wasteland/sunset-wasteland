@@ -49,10 +49,12 @@ GLOBAL_LIST_INIT(nonhuman_positions, list(
 	))
 
 GLOBAL_LIST_INIT(command_positions, list(
-	"Baron",
+/*	"Baron",
 	"Castellan",
 	"Knight-Commander",
 	"Keeper",
+*/
+	"Paladin Commander",
 
 	"NCR Captain",
 	"NCR Veteran Ranger",
@@ -83,19 +85,12 @@ GLOBAL_LIST_INIT(silicon_whitelist_positions, list(
 //NCR Assistant and Legion Camp Follower re-added to whitelisting.  BoS Initiate removed from whitelist.
 
 GLOBAL_LIST_INIT(faction_whitelist_positions, list(
-"Baron",
-"Castellan",
-"Knight-Commander",
-"Keeper",
-"Paladin Marshal",
+"Paladin Commander",
 "Paladin",
-"Knight-Captain",
 "Knight",
-"Librarian",
-"Scribe",
 "Initiate",
-"BoS Off-Duty",
-"Inquisitorial Acolyte",
+"Senior Scribe",
+"Scribe",
 
 "Legion Centurion",
 "Legion Venator",
@@ -144,7 +139,14 @@ GLOBAL_LIST_INIT(faction_whitelist_positions, list(
 ))
 
 GLOBAL_LIST_INIT(brotherhood_positions, list(
-	"Baron",
+	"Paladin Commander",
+	"Paladin",
+	"Knight",
+	"Initiate",
+	"Senior Scribe",
+	"Scribe",
+
+/*	"Baron",
 	"Castellan",
 	"Knight-Commander",
 	"Keeper",
@@ -156,7 +158,7 @@ GLOBAL_LIST_INIT(brotherhood_positions, list(
 	"Scribe",
 	"BoS Off-Duty",
 	"Initiate",
-	"Inquisitorial Acolyte",
+	"Inquisitorial Acolyte",*/
 ))
 
 GLOBAL_LIST_INIT(bighorn_positions, list(

@@ -387,6 +387,20 @@
 
 //BOSRanks
 
+/obj/item/clothing/accessory/bos/initiate_squire
+	name = "Squire pin"
+	desc = "A silver pin with blue cloth, worn by Initiates who've proved themselves in combat."
+	icon_state = "initiateK"
+	item_color = "initiateK"
+	minimize_when_attached = TRUE
+
+/obj/item/clothing/accessory/bos/initiate_conscript
+	name = "Conscript pin"
+	desc = "A silver pin with blue cloth, worn by Initiates yet to prove themselves."
+	icon_state = "initiateK"
+	item_color = "initiateK"
+	minimize_when_attached = TRUE
+
 /obj/item/clothing/accessory/bos/initiateK
 	name = "Knight-Aspirant pin"
 	desc = "A silver pin with blue cloth, worn by Initiates aspiring to be Knights."

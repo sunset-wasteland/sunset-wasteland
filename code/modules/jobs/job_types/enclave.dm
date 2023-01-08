@@ -298,7 +298,7 @@
 
 	loadout_options = list(
 		/datum/outfit/loadout/combatmedic, // Medical Equipment
-		/datum/outfit/loadout/combatengie, // Grenade Launcher
+		/datum/outfit/loadout/combatengie, // M2 Flamethrower
 		)
 
 /datum/outfit/job/enclave/peacekeeper/f13specialist
@@ -342,6 +342,7 @@
 	backpack_contents = list(
 		/obj/item/storage/belt/utility = 1,
 		/obj/item/shovel/trench = 1,
+		/obj/item/m2flamethrowertank = 1,
 		/obj/item/metaldetector = 1
 	)
 
@@ -389,7 +390,6 @@
 	..()
 	if(visualsOnly)
 		return
-	ADD_TRAIT(H, TRAIT_PA_WEAR, src)
 	ADD_TRAIT(H, TRAIT_ENCLAVE_CODES, src)
 	H.grant_language(/datum/language/codespeak, TRUE, TRUE, LANGUAGE_MIND)
 

@@ -2071,7 +2071,6 @@
 				/obj/item/book/granter/trait/chemistry = 10,
 				/obj/item/book/granter/trait/trekking = 17,
 				/obj/item/book/granter/trait/techno = 14,
-				/obj/item/book/granter/trait/pa_wear = 4,
 				/obj/item/book/granter/trait/gunslinger = 4,
 				/obj/item/book/granter/trait/iron_fist = 4,
 				/obj/item/book/granter/trait/bigleagues = 4,

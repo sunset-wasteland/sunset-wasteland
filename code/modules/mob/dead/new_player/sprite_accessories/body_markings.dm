@@ -286,7 +286,7 @@
 	covered_limbs = list("Chest" = MATRIX_ALL, "Left Leg" = MATRIX_ALL, "Right Leg" = MATRIX_ALL, "Left Arm" = MATRIX_ALL, "Right Arm" = MATRIX_ALL)
 
 /datum/sprite_accessory/mam_body_markings/harlequin_reversed
-	name = "Harlequin"
+	name = "Harlequin (Reversed)"
 	icon_state = "harlequin_reversed"
 	covered_limbs = list("Chest" = MATRIX_ALL, "Left Leg" = MATRIX_ALL, "Right Leg" = MATRIX_ALL, "Left Arm" = MATRIX_ALL, "Right Arm" = MATRIX_ALL)
 

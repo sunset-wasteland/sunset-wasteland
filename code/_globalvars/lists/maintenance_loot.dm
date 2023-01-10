@@ -181,7 +181,7 @@ GLOBAL_LIST_INIT(trash_clothing, list(
 	/obj/item/clothing/gloves/f13/military = 5,
 	/obj/item/clothing/gloves/f13/leather/fingerless = 5,
 	/obj/item/clothing/shoes/f13/tan = 5,
-	/obj/item/clothing/suit/armor/f13/punk = 5,
+	/obj/item/clothing/suit/armor/f13/kit/punk = 5,
 	/obj/item/clothing/suit/armor/f13/kit = 5,
 	/obj/item/clothing/head/welding = 5
 ))

@@ -79,7 +79,7 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
 	slowdown = 0.025
 
-/obj/item/clothing/suit/armor/f13/punk/Initialize()
+/obj/item/clothing/suit/armor/f13/kit/punk/Initialize()
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
 

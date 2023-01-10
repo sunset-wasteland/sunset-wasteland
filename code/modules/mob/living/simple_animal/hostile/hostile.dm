@@ -232,6 +232,8 @@
 		if(M.status_flags & GODMODE)
 			return FALSE
 
+	if(!can_see(src, the_target, src.aggro_vision_range)) // Can't see it, ignore it.
+		return FALSE
 	if(see_invisible < the_target.invisibility)//Target's invisible to us, forget it
 		return FALSE
 	if(search_objects < 2)

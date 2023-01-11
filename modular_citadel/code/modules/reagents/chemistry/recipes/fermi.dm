@@ -348,7 +348,7 @@
 	HIonRelease 	= 0.01
 	RateUpLim 		= 15
 	FermiChem 		= TRUE
-
+/*
 /datum/chemical_reaction/fermi/eigenstate
 	name = "Eigenstasium"
 	id = /datum/reagent/fermi/eigenstate
@@ -417,7 +417,7 @@
 	if(!Fb)
 		return
 	Fb.data = 14
-	
+
 /datum/chemical_reaction/fermi/furranium
 	name = "Furranium"
 	id = /datum/reagent/fermi/furranium
@@ -439,3 +439,4 @@
 	RateUpLim 		= 2
 	FermiChem 		= TRUE
 	PurityMin		= 0.3
+/*

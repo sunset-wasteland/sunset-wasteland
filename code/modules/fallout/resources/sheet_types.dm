@@ -22,9 +22,8 @@ GLOBAL_LIST_INIT(hay_recipes, list ( \
 	hitsound = 'sound/weapons/grenadelaunch.ogg'
 	merge_type = /obj/item/stack/sheet/hay
 
-/obj/item/stack/sheet/hay/Initialize(mapload, new_amount, merge = TRUE)
-	recipes = GLOB.hay_recipes
-	return ..()
+/obj/item/stack/sheet/hay/get_main_recipes()
+	return GLOB.hay_recipes
 
 /obj/item/stack/sheet/hay/suicide_act(mob/living/carbon/user)
 	user.visible_message("<span class='suicide'>[user] begins shoving hay up [user.p_their()] arse! It looks like [user.p_theyre()] trying to commit suicide!</span>")

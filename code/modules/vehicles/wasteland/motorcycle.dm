@@ -69,8 +69,8 @@
 	desc = "A keyring with a small steel key.<br>By the look of the key cuts it likely belongs to a motorcycle."
 	icon = 'icons/fallout/vehicles/small_vehicles.dmi'
 
-/obj/item/key/motorcycle/New()
-	..()
+/obj/item/key/motorcycle/Initialize()
+	. = ..()
 	icon_state = pick("key-bike-r","key-bike-y","key-bike-g","key-bike-b")
 
 //Motorcycle subtypes with different skins

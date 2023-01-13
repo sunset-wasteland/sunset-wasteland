@@ -11,8 +11,8 @@
 	var/idle_wasting = 0.5
 	var/move_wasting = 0.1
 
-/obj/vehicle/ridden/fuel/New()
-	..()
+/obj/vehicle/ridden/fuel/Initialize()
+	. = ..()
 	fuel_holder = new(max_fuel, fuel)
 
 /obj/vehicle/ridden/fuel/attackby(obj/item/weapon/W, mob/user, params) //Refueling
@@ -58,29 +58,29 @@
 	..()
 	STOP_PROCESSING(SSobj, src)
 
-/obj/vehicle/ridden/fuel/verb/ToogleFuelTank()
-	set name = "Toogle Fuel Tank"
+/obj/vehicle/ridden/fuel/verb/ToggleFuelTank()
+	set name = "Toggle Fuel Tank"
 	set category = "Object"
 	set src in view(1)
 	fuel_holder.inside = !fuel_holder.inside
 	to_chat(usr, "<span class='notice'>You changed transfer type.</span>")
 
 /obj/vehicle/ridden/fuel/examine(mob/user)
-	..()
+	. = ..()
 	if(fuel_holder)
 		var/fuel_percent = round(fuel_holder.reagents.total_volume / fuel_holder.reagents.maximum_volume * 100)
-		to_chat(user, "<span class='notice'>The fuel meter is at [fuel_percent]%.</span>")
+		. += span_notice("The fuel meter is at [fuel_percent]%.")
 		switch(fuel_percent)
 			if(95 to INFINITY)
-				to_chat(user, "<span class='notice'>The fuel tank is full to the top. Let's ride!</span>")
+				. += span_notice("The fuel tank is full to the top. Let's ride!")
 			if(60 to 95)
-				to_chat(user, "<span class='notice'>Not so full, but it'll still last a while.</span>")
+				. += span_notice("Not so full, but it'll still last a while.")
 			if(25 to 60)
-				to_chat(user, "<span class='notice'>That should be just enough to find more fuel.</span>")
+				. += span_notice("That should be just enough to find more fuel.")
 			if(1 to 25)
-				to_chat(user, "<span class='warning'>It's almost out of fuel!</span>")
+				. += span_warning("It's almost out of fuel!")
 			else
-				to_chat(user, "<span class='danger'>There is no fuel left!</span>")
+				. += span_danger("There is no fuel left!")
 
 
 
@@ -90,10 +90,10 @@
 	amount_per_transfer_from_this = 25
 	var/inside = 1
 
-/obj/item/reagent_containers/fuel_tank/New(volume, fuel)
+/obj/item/reagent_containers/fuel_tank/Initialize(volume, fuel)
 	src.volume = volume
 	list_reagents = list(/datum/reagent/fuel = fuel)
-	..()
+	. = ..()
 
 /obj/item/reagent_containers/fuel_tank/attackby(obj/item/weapon/W, mob/user, params)
 	if(W.is_open_container() && W.reagents)

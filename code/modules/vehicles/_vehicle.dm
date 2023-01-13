@@ -198,12 +198,18 @@
 	set category = "Object"
 	set src in view(1)
 
+	if(!ismob(usr) || !usr?.canUseTopic(src, BE_CLOSE, ismonkey(usr)))
+		return
+
 	start_engine(usr)
 
 /obj/vehicle/proc/StopEngine()
 	set name = "Stop Engine"
 	set category = "Object"
 	set src in view(1)
+
+	if(!ismob(usr) || !usr?.canUseTopic(src, BE_CLOSE, ismonkey(usr)))
+		return
 
 	stop_engine(usr)
 

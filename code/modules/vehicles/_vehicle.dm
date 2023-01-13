@@ -128,7 +128,7 @@
 
 /obj/vehicle/proc/driver_move(mob/user, direction)
 	if(key_type && !is_key(inserted_key))
-		to_chat(user, "<span class='warning'>[src] has no key inserted!</span>")
+		to_chat(user, span_warning("\The [src] has no key inserted!"))
 		return FALSE
 	if(!default_driver_move)
 		return
@@ -213,34 +213,33 @@
 
 	stop_engine(usr)
 
-/obj/vehicle/proc/stop_engine(mob/living/M)
-	src.verbs += /obj/vehicle/proc/StartEngine
-	src.verbs -= /obj/vehicle/proc/StopEngine
+/obj/vehicle/proc/stop_engine(mob/living/user)
+	verbs += /obj/vehicle/proc/StartEngine
+	verbs -= /obj/vehicle/proc/StopEngine
 
-	if(M)
-		M.visible_message("[M] stops the engine of [src].", "You stop the engine.")
+	if(user)
+		user.visible_message("[user] stops the engine of [src].", "You stop the engine.")
 
 	engine_on = FALSE
 
 	soundloop.stop()//Double take. Don't ask me why it's required, but it is.
 
-/obj/vehicle/proc/start_engine(mob/living/M)
-	GetComponent(/datum/component/riding)
+/obj/vehicle/proc/start_engine(mob/living/user)
 /*
 	if(!M.buckled)
 		usr.visible_message("<span class = 'notice'>Sit on [src] to do this.</span>")
 		return
 */
 	if(!inserted_key)
-		if(M)
-			to_chat(M, span_notice("There is no key."))
+		if(user)
+			to_chat(user, span_notice("There is no key."))
 		return
 
-	src.verbs += /obj/vehicle/proc/StopEngine
-	src.verbs -= /obj/vehicle/proc/StartEngine
+	verbs += /obj/vehicle/proc/StopEngine
+	verbs -= /obj/vehicle/proc/StartEngine
 
-	if(M)
-		visible_message("[M] starts the engine of [src].", "You start the engine.")
+	if(user)
+		visible_message("[user] starts up \the [src].", "You start the engine.")
 
 	engine_on = TRUE
 	if(engine_on_sound)

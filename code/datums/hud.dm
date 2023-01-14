@@ -53,6 +53,7 @@ GLOBAL_LIST_INIT(huds, list(
 	return ..()
 
 /datum/atom_hud/proc/remove_hud_from(mob/M)
+	SIGNAL_HANDLER
 	if(!M || !hudusers[M])
 		return
 	if (!--hudusers[M])
@@ -67,6 +68,7 @@ GLOBAL_LIST_INIT(huds, list(
 				remove_from_single_hud(M, A)
 
 /datum/atom_hud/proc/remove_from_hud(atom/A)
+	SIGNAL_HANDLER
 	if(!A)
 		return FALSE
 	if(!(hudusers[A])) // don't unregister if it's also a mob in our users list

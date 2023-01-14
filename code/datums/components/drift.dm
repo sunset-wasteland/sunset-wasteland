@@ -186,6 +186,7 @@
 	RegisterSignal(parent, COMSIG_MOB_CLIENT_PRE_MOVE, .proc/allow_final_movement)
 
 /datum/component/drift/proc/allow_final_movement(datum/source)
+	SIGNAL_HANDLER
 	// Some things want to allow movement out of spacedrift, we should let them
 	if(SEND_SIGNAL(parent, COMSIG_MOVABLE_DRIFT_BLOCK_INPUT) & DRIFT_ALLOW_INPUT)
 		return

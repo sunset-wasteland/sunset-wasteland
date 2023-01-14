@@ -10,6 +10,9 @@
 /// Every proc you pass to RegisterSignal must have this.
 #define SIGNAL_HANDLER SHOULD_NOT_SLEEP(TRUE)
 
+/// Used exclusively to mark procs that have not been refactored to not sleep yet.
+#define SIGNAL_HANDLER_DOES_SLEEP
+
 /// A wrapper for _AddElement that allows us to pretend we're using normal named arguments
 #define AddElement(arguments...) _AddElement(list(##arguments))
 

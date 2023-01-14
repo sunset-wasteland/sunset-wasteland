@@ -284,6 +284,7 @@
 		RegisterSignal(linkedsuit, COMSIG_PARENT_QDELETING, .proc/unlink_suit)
 
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/proc/unlink_suit()
+	SIGNAL_HANDLER
 	linkedsuit = null
 
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/Destroy()
@@ -660,6 +661,7 @@
 		REMOVE_TRAIT(user, TRAIT_TESLA_SHOCKIMMUNE, "mason_hardsuit")
 
 /obj/item/clothing/suit/space/hardsuit/ancient/proc/on_mob_move()
+	SIGNAL_HANDLER
 	var/mob/living/carbon/human/H = loc
 	if(!istype(H) || H.wear_suit != src)
 		return

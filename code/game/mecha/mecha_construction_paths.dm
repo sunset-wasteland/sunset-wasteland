@@ -519,9 +519,6 @@
 
 	)
 
-/datum/component/construction/mecha/gygax/action(datum/source, atom/used_atom, mob/user)
-	return check_step(used_atom,user)
-
 /datum/component/construction/mecha/gygax/custom_action(obj/item/I, mob/living/user, diff)
 	if(!..())
 		return FALSE
@@ -815,9 +812,6 @@
 		),
 
 	)
-
-/datum/component/construction/mecha/medigax/action(datum/source, atom/used_atom, mob/user)
-	return check_step(used_atom,user)
 
 /datum/component/construction/mecha/medigax/custom_action(obj/item/I, mob/living/user, diff)
 	if(!..())
@@ -2580,9 +2574,6 @@
 		),
 
 	)
-
-/datum/component/construction/mecha/marauder/action(datum/source, atom/used_atom, mob/user)
-	return check_step(used_atom,user)
 
 /datum/component/construction/mecha/marauder/custom_action(obj/item/I, mob/living/user, diff)
 	if(!..())

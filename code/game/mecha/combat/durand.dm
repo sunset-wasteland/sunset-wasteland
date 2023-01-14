@@ -56,6 +56,7 @@
 
 ///Relays the signal from the action button to the shield, and creates a new shield if the old one is MIA.
 /obj/mecha/combat/durand/proc/relay(datum/source, list/signal_args)
+	SIGNAL_HANDLER
 	if(!shield) //if the shield somehow got deleted
 		shield = new/obj/durand_shield
 		shield.chassis = src
@@ -66,6 +67,7 @@
 
 //Redirects projectiles to the shield if defense_check decides they should be blocked and returns true.
 /obj/mecha/combat/durand/proc/prehit(obj/item/projectile/source, list/signal_args)
+	SIGNAL_HANDLER
 	if(defense_check(source.loc) && shield)
 		signal_args[2] = shield
 
@@ -157,6 +159,7 @@ and relayed by the mech itself. The "forced" variabe, signal_args[1], will skip 
 the shield is disabled by means other than the action button (like running out of power)*/
 
 /obj/durand_shield/proc/activate(datum/source, datum/action/innate/mecha/mech_defense_mode/button, list/signal_args)
+	SIGNAL_HANDLER
 	if(!chassis || !chassis.occupant)
 		return
 	if(switching && !signal_args[1])
@@ -179,15 +182,20 @@ the shield is disabled by means other than the action button (like running out o
 		flick("shield_raise", src)
 		playsound(src, 'sound/mecha/mech_shield_raise.ogg', 50, FALSE)
 		set_light(l_range = MINIMUM_USEFUL_LIGHT_RANGE	, l_power = 5, l_color = "#00FFFF")
-		sleep(3)
-		icon_state = "shield"
+		addtimer(CALLBACK(src, .proc/reset_defense), 0.3 SECONDS)
 	else
 		flick("shield_drop", src)
 		playsound(src, 'sound/mecha/mech_shield_drop.ogg', 50, FALSE)
-		sleep(5)
-		set_light(0)
-		icon_state = "shield_null"
-		invisibility = INVISIBILITY_MAXIMUM //no showing on right-click
+		addtimer(CALLBACK(src, .proc/reset_normal), 0.5 SECONDS)
+
+/obj/durand_shield/proc/reset_defense()
+	icon_state = "shield"
+	switching = FALSE
+
+/obj/durand_shield/proc/reset_normal()
+	set_light(0)
+	icon_state = "shield_null"
+	invisibility = INVISIBILITY_MAXIMUM //no showing on right-click
 	switching = FALSE
 
 /obj/durand_shield/take_damage()

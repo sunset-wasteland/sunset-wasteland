@@ -58,6 +58,7 @@
 		qdel(GetComponent(/datum/component/connect_loc_behalf))
 
 /datum/component/squeak/proc/play_squeak()
+	SIGNAL_HANDLER
 	do_play_squeak()
 
 /datum/component/squeak/proc/do_play_squeak(bypass_cooldown = FALSE)
@@ -73,6 +74,7 @@
 	return FALSE
 
 /datum/component/squeak/proc/step_squeak()
+	SIGNAL_HANDLER
 	if(steps > step_delay)
 		do_play_squeak(TRUE)
 		steps = 0
@@ -80,6 +82,7 @@
 		steps++
 
 /datum/component/squeak/proc/play_squeak_crossed(datum/source, atom/movable/AM)
+	SIGNAL_HANDLER
 	if(isitem(AM))
 		var/obj/item/I = AM
 		if(I.item_flags & ABSTRACT)
@@ -99,21 +102,26 @@
 		play_squeak()
 
 /datum/component/squeak/proc/delay_squeak()
+	SIGNAL_HANDLER
 	if(prob(cross_squeak_delay_chance))
 		last_squeak = world.time
 
 /datum/component/squeak/proc/on_equip(datum/source, mob/equipper, slot)
+	SIGNAL_HANDLER
 	RegisterSignal(equipper, COMSIG_MOVABLE_DISPOSING, .proc/disposing_react, TRUE)
 
 /datum/component/squeak/proc/on_drop(datum/source, mob/user)
+	SIGNAL_HANDLER
 	UnregisterSignal(user, COMSIG_MOVABLE_DISPOSING)
 
 // Disposal pipes related shit
 /datum/component/squeak/proc/disposing_react(datum/source, obj/structure/disposalholder/holder, obj/machinery/disposal/disposal_source)
+	SIGNAL_HANDLER
 	//We don't need to worry about unregistering this signal as it will happen for us automaticaly when the holder is qdeleted
 	RegisterSignal(holder, COMSIG_ATOM_DIR_CHANGE, .proc/holder_dir_change)
 
 /datum/component/squeak/proc/holder_dir_change(datum/source, old_dir, new_dir)
+	SIGNAL_HANDLER
 	//If the dir changes it means we're going through a bend in the pipes, let's pretend we bumped the wall
 	if(old_dir != new_dir)
 		play_squeak()

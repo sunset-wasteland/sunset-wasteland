@@ -11,6 +11,7 @@
 // Show as dead when...
 
 /datum/antagonist/bloodsucker/proc/LifeTick()  //Runs from BiologicalLife, handles all the bloodsucker constant proccesses
+	SIGNAL_HANDLER
 	if(!owner || AmFinalDeath())
 		return
 	if(owner.current.stat == CONSCIOUS && !poweron_feed && !HAS_TRAIT(owner.current, TRAIT_FAKEDEATH)) // Deduct Blood
@@ -221,9 +222,8 @@
 	if(owner.current.stat >= DEAD)
 		Torpor_Begin()
 		to_chat(owner, "<span class='danger'>Your immortal body will not yet relinquish your soul to the abyss. You enter Torpor.</span>")
-		sleep(30) //To avoid spam
-		if(poweron_masquerade)
-			to_chat(owner, "<span class='warning'>Your wounds will not heal until you disable the <span class='boldnotice'>Masquerade</span> power.</span>")
+		if(!timeleft(masquerade_warning_timerid))
+			masquerade_warning_timerid = addtimer(CALLBACK(src, .proc/masquerade_warn), 3 SECONDS, TIMER_UNIQUE | TIMER_STOPPABLE)
 	// End Torpor:
 	else	// No damage, OR toxin healed AND brute healed and NOT in coffin (since you cannot heal burn)
 		if(total_damage <= 0 || total_toxloss <= 0 && total_brute <= 0 && !istype(owner.current.loc, /obj/structure/closet/crate/coffin))
@@ -233,6 +233,10 @@
 		// Fake Unconscious
 		if(poweron_masquerade && total_damage >= owner.current.getMaxHealth() - HEALTH_THRESHOLD_FULLCRIT)
 			owner.current.Unconscious(20, 1)
+
+/datum/antagonist/bloodsucker/proc/masquerade_warn()
+	if(poweron_masquerade)
+		to_chat(owner, "<span class='warning'>Your wounds will not heal until you disable the <span class='boldnotice'>Masquerade</span> power.</span>")
 
 /datum/antagonist/bloodsucker/proc/Torpor_Begin(amInCoffin = FALSE)
 	owner.current.apply_status_effect(STATUS_EFFECT_UNCONSCIOUS)
@@ -294,8 +298,9 @@
 		owner.current.visible_message("<span class='warning'>[owner.current]'s skin crackles and dries, their skin and bones withering to dust. A hollow cry whips from what is now a sandy pile of remains.</span>", \
 			"<span class='userdanger'>Your soul escapes your withering body as the abyss welcomes you to your Final Death.</span>", \
 			"<span class='italics'>You hear a dry, crackling sound.</span>")
-		sleep(50)
-		owner.current.dust()
+		addtimer(CALLBACK(GLOBAL_PROC, /proc/playsound, owner.current, 'sound/effects/tendril_destroyed.ogg', 40, TRUE), 5 SECONDS)
+		addtimer(CALLBACK(owner.current, /mob/proc/dust), 5 SECONDS)
+		return
 	// Fledglings get Gibbed
 	else
 		owner.current.visible_message("<span class='warning'>[owner.current]'s skin bursts forth in a spray of gore and detritus. A horrible cry echoes from what is now a wet pile of decaying meat.</span>", \

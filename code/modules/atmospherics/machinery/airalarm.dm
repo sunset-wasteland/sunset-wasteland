@@ -114,6 +114,7 @@
 	)
 
 /obj/machinery/airalarm/proc/regenerate_TLV()
+	SIGNAL_HANDLER
 	var/list/TLVs = GLOB.gas_data.TLVs
 	for(var/g in TLVs)
 		TLV[g] = TLVs[g]

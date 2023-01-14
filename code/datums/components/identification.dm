@@ -39,6 +39,7 @@
 	UnregisterSignal(parent, unregister)
 
 /datum/component/identification/proc/on_examine(datum/source, mob/user, list/returnlist)
+	SIGNAL_HANDLER
 	if(check_knowledge(user) != ID_COMPONENT_KNOWLEDGE_FULL)
 		return
 	if(!additional_examine_text)
@@ -55,6 +56,7 @@
 		RegisterWithParent()
 
 /datum/component/identification/proc/on_equip(datum/source, mob/user)
+	SIGNAL_HANDLER
 	if(check_knowledge(user) == ID_COMPONENT_KNOWLEDGE_FULL)
 		return
 	if(identification_method_flags & ID_COMPONENT_EFFECT_NO_ACTIONS)
@@ -68,6 +70,7 @@
 		qdel(src)
 
 /datum/component/identification/proc/on_deconstructor_deepscan(datum/source, obj/machinery/rnd/destructive_analyzer/analyzer, mob/user, list/information = list())
+	SIGNAL_HANDLER
 	if((identification_method_flags & ID_COMPONENT_IDENTIFY_WITH_DECONSTRUCTOR) && !(identification_flags & ID_COMPONENT_DECONSTRUCTOR_DEEPSCANNED))
 		identification_flags |= ID_COMPONENT_DECONSTRUCTOR_DEEPSCANNED
 		on_identify(user)

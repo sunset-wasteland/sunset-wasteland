@@ -36,15 +36,18 @@ GLOBAL_LIST_EMPTY(GPS_list)
 
 ///Called on COMSIG_ITEM_ATTACK_SELF
 /datum/component/gps/item/proc/interact(datum/source, mob/user)
+	SIGNAL_HANDLER
 	if(user)
 		ui_interact(user)
 
 ///Called on COMSIG_PARENT_EXAMINE
 /datum/component/gps/item/proc/on_examine(datum/source, mob/user, list/examine_list)
+	SIGNAL_HANDLER
 	examine_list += "<span class='notice'>Alt-click to switch it [tracking ? "off":"on"].</span>"
 
 ///Called on COMSIG_ATOM_EMP_ACT
 /datum/component/gps/item/proc/on_emp_act(datum/source, severity)
+	SIGNAL_HANDLER
 	emped = TRUE
 	var/atom/A = parent
 	A.cut_overlay("working")
@@ -61,6 +64,7 @@ GLOBAL_LIST_EMPTY(GPS_list)
 
 ///Calls toggletracking
 /datum/component/gps/item/proc/on_AltClick(datum/source, mob/user)
+	SIGNAL_HANDLER
 	toggletracking(user)
 
 ///Toggles the tracking for the gps
@@ -87,7 +91,7 @@ GLOBAL_LIST_EMPTY(GPS_list)
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
 		ui = new(user, src, "Gps")
-		ui.open()
+		INVOKE_ASYNC(ui, /datum/tgui/proc/open)
 	ui.set_autoupdate(updating)
 
 /datum/component/gps/item/ui_data(mob/user)

@@ -97,6 +97,7 @@
 	return min(stun_cost, lethal_cost)
 
 /obj/item/electrostaff/proc/turn_on(obj/item/source, mob/user)
+	SIGNAL_HANDLER
 	wielded = TRUE
 	item_flags |= (ITEM_CAN_BLOCK|ITEM_CAN_PARRY)
 	if(!cell)
@@ -114,6 +115,7 @@
 		to_chat(user, "<span class='warning'>You turn [src] on.</span>")
 
 /obj/item/electrostaff/proc/turn_off(obj/item/source, mob/user)
+	SIGNAL_HANDLER
 	wielded = FALSE
 	item_flags &= ~(ITEM_CAN_BLOCK|ITEM_CAN_PARRY)
 	if(user)

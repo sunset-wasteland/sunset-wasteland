@@ -164,6 +164,7 @@
 
 
 /obj/item/storage/bag/casings/proc/Pickup_casings(mob/living/user)
+	SIGNAL_HANDLER
 	var/show_message = FALSE
 	var/turf/tile = user.loc
 	var/obj/item/ammo_casing/B

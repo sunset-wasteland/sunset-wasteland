@@ -7,4 +7,5 @@
 	return ..()
 
 /datum/element/bsa_blocker/proc/block_bsa()
+	SIGNAL_HANDLER
 	return COMSIG_ATOM_BLOCKS_BSA_BEAM

@@ -79,9 +79,11 @@
 	makeItemActive()
 
 /obj/screen/storage/volumetric_box/proc/on_item_mouse_enter()
+	SIGNAL_HANDLER
 	makeItemActive()
 
 /obj/screen/storage/volumetric_box/proc/on_item_mouse_exit()
+	SIGNAL_HANDLER
 	makeItemInactive()
 
 /obj/screen/storage/volumetric_box/proc/makeItemInactive()

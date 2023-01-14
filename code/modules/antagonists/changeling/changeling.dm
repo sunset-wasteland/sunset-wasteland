@@ -217,6 +217,7 @@
 
 //Called in life()
 /datum/antagonist/changeling/proc/regenerate()
+	SIGNAL_HANDLER
 	var/mob/living/carbon/the_ling = owner.current
 	if(istype(the_ling))
 		emporium_action.Grant(the_ling)

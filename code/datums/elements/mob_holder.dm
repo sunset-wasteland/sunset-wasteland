@@ -32,10 +32,12 @@
 	UnregisterSignal(source, COMSIG_PARENT_EXAMINE)
 
 /datum/element/mob_holder/proc/on_examine(mob/living/source, mob/user, list/examine_list)
+	SIGNAL_HANDLER
 	if(ishuman(user) && !istype(source.loc, /obj/item/clothing/head/mob_holder))
 		examine_list += "<span class='notice'>Looks like [source.p_they(TRUE)] can be picked up with <b>Alt+Click</b>!</span>"
 
 /datum/element/mob_holder/proc/mob_try_pickup(mob/living/source, mob/user)
+	SIGNAL_HANDLER
 	if(!ishuman(user) || !user.Adjacent(source) || user.incapacitated())
 		return FALSE
 	if(user.get_active_held_item())
@@ -49,7 +51,10 @@
 		return FALSE
 	source.visible_message("<span class='warning'>[user] starts picking up [source].</span>", \
 					"<span class='userdanger'>[user] starts picking you up!</span>")
-	if(!do_after(user, 20, target = source) || source.buckled)
+	INVOKE_ASYNC(src, .proc/try_scoop, source, user)
+
+/datum/element/mob_holder/proc/try_scoop(mob/living/source, mob/user)
+	if(source.buckled || !do_after(user, 20, target = source))
 		return FALSE
 
 	source.visible_message("<span class='warning'>[user] picks up [source]!</span>", \

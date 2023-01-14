@@ -115,6 +115,7 @@
 /// Triggered on wield of two handed item
 /// Specific hulk checks due to reflection chance for balance issues and switches hitsounds.
 /obj/item/dualsaber/proc/on_wield(obj/item/source, mob/living/carbon/user)
+	SIGNAL_HANDLER
 	if(user.has_dna() && user.dna.check_mutation(HULK))
 		to_chat(user, "<span class='warning'>You lack the grace to wield this!</span>")
 		return COMPONENT_TWOHANDED_BLOCK_WIELD
@@ -132,6 +133,7 @@
 /// Triggered on unwield of two handed item
 /// switch hitsounds
 /obj/item/dualsaber/proc/on_unwield(obj/item/source, mob/living/carbon/user)
+	SIGNAL_HANDLER
 	sharpness = initial(sharpness)
 	w_class = initial(w_class)
 	total_mass = initial(total_mass)

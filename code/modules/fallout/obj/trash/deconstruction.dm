@@ -2,14 +2,14 @@
 
 /obj/item/attackby(obj/item/W, mob/user, params)
 	if(istype(components) && istype(W, /obj/item/screwdriver))
-		if(alert(user, "Disassemble [src]?",,"Yes","No") == "Yes")
-			if(do_after(user, 4 SECONDS * W.toolspeed, 1, target = src))
-				for(var/comp in components)
-					for(var/i=0, i<components[comp], i++)
-						new comp(get_turf(src))
-				qdel(src)
-				return TRUE
-			return FALSE
+		user.visible_message(span_notice("[user] starts disassembling \the [src] with \the [W]."), span_notice("You start disassembling \the [src] with \the [W]."))
+		if(do_after(user, 4 SECONDS * W.toolspeed, 1, target = src))
+			for(var/comp in components)
+				for(var/i=0, i<components[comp], i++)
+					new comp(get_turf(src))
+			qdel(src)
+			return TRUE
+		return FALSE
 	. = ..()
 
 /obj/item/examine(mob/user)

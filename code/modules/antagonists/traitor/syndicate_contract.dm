@@ -71,6 +71,7 @@
 	new /obj/effect/abstract/DPtarget(empty_pod_turf, empty_pod)
 
 /datum/syndicate_contract/proc/enter_check(datum/source, sent_mob)
+	SIGNAL_HANDLER
 	if(istype(source, /obj/structure/closet/supplypod/extractionpod))
 		if(isliving(sent_mob))
 			var/mob/living/M = sent_mob
@@ -111,35 +112,35 @@
 			var/obj/structure/closet/supplypod/extractionpod/pod = source
 
 			// Handle the pod returning
-			pod.send_up(pod)
+			INVOKE_ASYNC(pod, /obj/structure/closet/supplypod/extractionpod/proc/send_up)
 
 			if(ishuman(M))
 				var/mob/living/carbon/human/target = M
 
 				// After we remove items, at least give them what they need to live.
 				target.dna.species.give_important_for_life(target)
-			handleVictimExperience(M)	// After pod is sent we start the victim narrative/heal.
+			INVOKE_ASYNC(src, .proc/handleVictimExperience, M)	// After pod is sent we start the victim narrative/heal.
 			var/datum/bank_account/D = SSeconomy.get_dep_account(ACCOUNT_CAR)
 			var/points_to_check = min(D.account_balance, ransom)
 			D.adjust_money(min(points_to_check, ransom))
 			priority_announce("One of your crew was captured by a rival organisation - we've needed to pay their ransom to bring them back. \
 							As is policy we've taken a portion of the station's funds to offset the overall cost.", null, "attention", null, "Nanotrasen Asset Protection")
+			addtimer(CALLBACK(src, .proc/pay_ransom, points_to_check * 0.35), 3 SECONDS)
 
-			sleep(30)
+/datum/syndicate_contract/proc/pay_ransom(ransom_amount)
+	// Pay contractor their portion of ransom
+	if (status == CONTRACT_STATUS_COMPLETE)
+		var/mob/living/carbon/human/H
+		var/obj/item/card/id/C
+		if(ishuman(contract.owner.current))
+			H = contract.owner.current
+			C = H.get_idcard(TRUE)
 
-			// Pay contractor their portion of ransom
-			if (status == CONTRACT_STATUS_COMPLETE)
-				var/mob/living/carbon/human/H
-				var/obj/item/card/id/C
-				if(ishuman(contract.owner.current))
-					H = contract.owner.current
-					C = H.get_idcard(TRUE)
+		if(C && C.registered_account)
+			C.registered_account.adjust_money(ransom_amount)
 
-				if(C && C.registered_account)
-					C.registered_account.adjust_money(points_to_check * 0.35)
-
-					C.registered_account.bank_card_talk("We've processed the ransom, agent. Here's your cut - your balance is now \
-					[C.registered_account.account_balance] cr.", TRUE)
+			C.registered_account.bank_card_talk("We've processed the ransom, agent. Here's your cut - your balance is now \
+			[C.registered_account.account_balance] cr.", TRUE)
 
 /datum/syndicate_contract/proc/handleVictimExperience(mob/living/M)	// They're off to holding - handle the return timer and give some text about what's going on.
 	addtimer(CALLBACK(src, .proc/returnVictim, M), 4 MINUTES)	// Ship 'em back - dead or alive... 4 minutes wait.

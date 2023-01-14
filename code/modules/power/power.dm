@@ -107,6 +107,7 @@
 /obj/machinery/proc/power_change()		// called whenever the power settings of the containing area change
 										// by default, check equipment channel & set flag
 										// can override if needed
+	SIGNAL_HANDLER
 	if(powered(power_channel))
 		stat &= ~NOPOWER
 	else

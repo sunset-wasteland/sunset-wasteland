@@ -96,6 +96,7 @@ would spawn and follow the beaker, even if it is carried or thrown.
 	RegisterSignal(loop, COMSIG_PARENT_QDELETING, .proc/decrement_total_effect)
 
 /datum/effect_system/proc/decrement_total_effect()
+	SIGNAL_HANDLER
 	total_effects--
 	if(autocleanup && total_effects <= 0)
 		qdel(src)

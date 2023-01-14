@@ -138,6 +138,7 @@
 	to_chat(user,"equipped")
 
 /obj/item/geiger_counter/proc/redirect_rad_act(datum/source, amount)
+	SIGNAL_HANDLER
 	rad_act(amount)
 
 /obj/item/geiger_counter/dropped(mob/user)

@@ -157,6 +157,7 @@
 
 /// Called every time a carbon with a harmful embed moves, rolling a chance for the item to cause pain. The chance is halved if the carbon is crawling or walking.
 /datum/component/embedded/proc/jostleCheck()
+	SIGNAL_HANDLER
 	var/mob/living/carbon/victim = parent
 
 	var/damage = weapon.w_class * jostle_pain_mult
@@ -190,6 +191,10 @@
 
 /// Called when a carbon with an object embedded/stuck to them inspects themselves and clicks the appropriate link to begin ripping the item out. This handles the ripping attempt, descriptors, and dealing damage, then calls safe_remove()
 /datum/component/embedded/proc/ripOutCarbon(datum/source, obj/item/I, obj/item/bodypart/limb)
+	SIGNAL_HANDLER
+	INVOKE_ASYNC(src, .proc/ripOutCarbonAsync, source, I, limb)
+
+/datum/component/embedded/proc/ripOutCarbonAsync(datum/source, obj/item/I, obj/item/bodypart/limb)
 	if(I != weapon || src.limb != limb)
 		return
 
@@ -205,7 +210,7 @@
 		if(harmful)
 			var/damage = weapon.w_class * remove_pain_mult
 			limb.receive_damage(brute=(1-pain_stam_pct) * damage, stamina=pain_stam_pct * damage, wound_bonus = CANT_WOUND) //It hurts to rip it out, get surgery you dingus.
-			victim.emote("scream")
+			INVOKE_ASYNC(victim, /mob/proc/emote, "scream")
 			victim.visible_message("<span class='notice'>[victim] successfully rips [weapon] out of [victim.p_their()] [limb.name]!</span>", "<span class='notice'>You successfully remove [weapon] from your [limb.name].</span>")
 		else
 			victim.visible_message("<span class='notice'>[victim] successfully rips [weapon] off of [victim.p_their()] [limb.name]!</span>", "<span class='notice'>You successfully remove [weapon] from your [limb.name].</span>")
@@ -216,6 +221,7 @@
 /// This proc handles the final step and actual removal of an embedded/stuck item from a carbon, whether or not it was actually removed safely.
 /// Pass TRUE for to_hands if we want it to go to the victim's hands when they pull it out
 /datum/component/embedded/proc/safeRemoveCarbon(to_hands)
+	SIGNAL_HANDLER
 	var/mob/living/carbon/victim = parent
 	limb.embedded_objects -= weapon
 
@@ -249,6 +255,7 @@
 
 /// Something deleted or moved our weapon while it was embedded, how rude!
 /datum/component/embedded/proc/byeItemCarbon()
+	SIGNAL_HANDLER
 	var/mob/living/carbon/victim = parent
 	limb.embedded_objects -= weapon
 	UnregisterSignal(weapon, list(COMSIG_MOVABLE_MOVED, COMSIG_PARENT_QDELETING))
@@ -341,6 +348,7 @@
 		hit.visible_message("<span class='danger'>[weapon] sticks itself to [hit]!</span>")
 
 /datum/component/embedded/proc/apply_overlay(atom/source, list/overlay_list)
+	SIGNAL_HANDLER
 	overlay_list += overlay
 
 /datum/component/embedded/proc/examineTurf(datum/source, mob/user, list/examine_list)
@@ -367,6 +375,7 @@
 
 /// This proc handles if something knocked the invisible item loose from the turf somehow (probably an explosion). Just make it visible and say it fell loose, then get outta here.
 /datum/component/embedded/proc/itemMoved()
+	SIGNAL_HANDLER
 	weapon.invisibility = initial(weapon.invisibility)
 	weapon.visible_message("<span class='notice'>[weapon] falls loose from [parent].</span>")
 	weapon.unembedded()

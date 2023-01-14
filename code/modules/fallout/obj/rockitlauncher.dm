@@ -247,9 +247,11 @@ Possible solution: Only add the minimum weight class of a stack (which is basica
 	AddComponent(/datum/component/two_handed, force_unwielded=5, force_wielded=5) //Force values may need to be changed, but this is OK for now
 
 /obj/item/pneumatic_cannon/rockitlauncher/proc/on_wield(obj/item/source, mob/user)
+	SIGNAL_HANDLER
 	wielded = TRUE
 
 /obj/item/pneumatic_cannon/rockitlauncher/proc/on_unwield(obj/item/source, mob/user)
+	SIGNAL_HANDLER
 	wielded = FALSE
 
 /obj/item/pneumatic_cannon/rockitlauncher/dropped(mob/user)

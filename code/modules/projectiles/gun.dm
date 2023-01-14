@@ -981,12 +981,14 @@ ATTACHMENTS
 		RegisterSignal(user, COMSIG_MOVABLE_MOVED, .proc/on_walk) //Extra proc to make sure your zoom resets for bug where you don't unzoom when toggling while moving
 
 /obj/item/gun/proc/on_walk(mob/living/user)
+	SIGNAL_HANDLER
 	UnregisterSignal(user, COMSIG_MOVABLE_MOVED)
 	user.client.change_view(CONFIG_GET(string/default_view))
 	user.client.pixel_x = 0
 	user.client.pixel_y = 0
 
 /obj/item/gun/proc/rotate(mob/living/user, old_dir, direction = FALSE)
+	SIGNAL_HANDLER
 	var/_x = 0
 	var/_y = 0
 	switch(direction)
@@ -998,7 +1000,7 @@ ATTACHMENTS
 			_y = -zoom_amt
 		if(WEST)
 			_x = -zoom_amt
-	user.client.change_view(zoom_out_amt)
+	INVOKE_ASYNC(user.client, /client/proc/change_view, zoom_out_amt)
 	user.client.pixel_x = world.icon_size*_x
 	user.client.pixel_y = world.icon_size*_y
 

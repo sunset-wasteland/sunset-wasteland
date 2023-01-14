@@ -88,6 +88,7 @@ handles linking back and forth.
 		_MakeLocal()
 
 /datum/component/remote_materials/proc/OnAttackBy(datum/source, obj/item/I, mob/user)
+	SIGNAL_HANDLER
 	if (istype(I, /obj/item/multitool))
 		var/obj/item/multitool/M = I
 		if (!QDELETED(M.buffer) && istype(M.buffer, /obj/machinery/ore_silo))

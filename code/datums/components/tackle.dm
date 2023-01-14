@@ -61,11 +61,13 @@
 
 ///Store the thrownthing datum for later use
 /datum/component/tackler/proc/registerTackle(mob/living/carbon/user, datum/thrownthing/TT)
+	SIGNAL_HANDLER
 	tackle = TT
 	tackle.thrower = user
 
 ///See if we can tackle or not. If we can, leap!
 /datum/component/tackler/proc/checkTackle(mob/living/carbon/user, atom/A, params)
+	SIGNAL_HANDLER
 	if(!user.in_throw_mode || user.get_active_held_item() || user.pulling || user.buckling)
 		return
 
@@ -136,6 +138,7 @@
  * Finally, we return a bitflag to [COMSIG_MOVABLE_IMPACT] that forces the hitpush to false so that we don't knock them away.
 */
 /datum/component/tackler/proc/sack(mob/living/carbon/user, atom/hit)
+	SIGNAL_HANDLER
 	if(!user.tackling || !tackle)
 		return
 
@@ -197,7 +200,7 @@
 			target.Paralyze(3) //Otherwise the victim can just instantly get out of the grab.
 			target.DefaultCombatKnockdown(20) //So they cant get up instantly.
 			if(ishuman(target) && iscarbon(user))
-				target.grabbedby(user)
+				INVOKE_ASYNC(target, /mob/living/proc/grabbedby, user)
 
 		if(5 to INFINITY) // absolutely BODIED
 			user.visible_message("<span class='warning'>[user] lands a monster [tackle_word] on [target], knocking [target.p_them()] senseless and applying an aggressive pin!</span>", "<span class='userdanger'>You land a monster [tackle_word] on [target], knocking [target.p_them()] senseless and applying an aggressive pin!</span>", target)
@@ -210,8 +213,8 @@
 			target.Paralyze(10)
 			target.DefaultCombatKnockdown(20)
 			if(ishuman(target) && iscarbon(user))
-				target.grabbedby(user)
-				target.grippedby(user, instant = TRUE)
+				INVOKE_ASYNC(target, /mob/living/proc/grabbedby, user)
+				INVOKE_ASYNC(target, /mob/living/proc/grippedby, user, TRUE)
 
 	SEND_SIGNAL(user, COMSIG_CARBON_TACKLED, roll)
 	return COMPONENT_MOVABLE_IMPACT_FLIP_HITPUSH
@@ -354,7 +357,7 @@
 			user.adjustBruteLoss(30)
 			playsound(user, 'sound/effects/blobattack.ogg', 60, TRUE)
 			playsound(user, 'sound/effects/splat.ogg', 70, TRUE)
-			user.emote("scream")
+			INVOKE_ASYNC(user, /mob/proc/emote, "scream")
 			user.gain_trauma(/datum/brain_trauma/severe/paralysis/spinesnapped) // oopsie indeed!
 			shake_camera(user, 7, 7)
 			user.overlay_fullscreen("flash", /obj/screen/fullscreen/flash)
@@ -417,7 +420,7 @@
 			var/obj/item/shard/shard = new /obj/item/shard(get_turf(user))
 			//shard.embedding = list(embed_chance = 100, ignore_throwspeed_threshold = TRUE, impact_pain_mult=3, pain_chance=5)
 			shard.updateEmbedding()
-			user.hitby(shard, skipcatch = TRUE, hitpush = FALSE)
+			INVOKE_ASYNC(user, /atom/proc/hitby, shard, TRUE, FALSE)
 			shard.embedding = list()
 			shard.updateEmbedding()
 		W.obj_destruction()
@@ -441,6 +444,7 @@
 
 ///Check to see if we hit a table, and if so, make a big mess!
 /datum/component/tackler/proc/checkObstacle(mob/living/carbon/owner)
+	SIGNAL_HANDLER
 	if(!owner.tackling)
 		return
 

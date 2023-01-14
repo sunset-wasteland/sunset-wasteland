@@ -23,6 +23,7 @@
 		RegisterSignal(parent, COMSIG_ITEM_ATTACK, .proc/onItemAttack)
 
 /datum/component/butchering/proc/onItemAttack(obj/item/source, mob/living/M, mob/living/user)
+	SIGNAL_HANDLER
 	if(user.a_intent != INTENT_HARM)
 		return
 	if(M.stat == DEAD && (M.butcher_results || M.guaranteed_butcher_results)) //can we butcher it?
@@ -137,6 +138,7 @@
 		RegisterSignal(get_turf(parent), COMSIG_ATOM_ENTERED, .proc/on_entered)
 
 /datum/component/butchering/recycler/proc/on_entered(datum/source, mob/living/L)
+	SIGNAL_HANDLER
 	if(!istype(L))
 		return
 	var/obj/machinery/recycler/eater = parent

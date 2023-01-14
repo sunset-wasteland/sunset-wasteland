@@ -48,9 +48,11 @@
 	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, .proc/on_unwield)
 
 /obj/item/melee/smith/twohand/proc/on_wield(obj/item/source, mob/user)
+	SIGNAL_HANDLER
 	wielded = TRUE
 
 /obj/item/melee/smith/twohand/proc/on_unwield(obj/item/source, mob/user)
+	SIGNAL_HANDLER
 	wielded = FALSE
 
 /obj/item/melee/smith/twohand/update_icon_state()

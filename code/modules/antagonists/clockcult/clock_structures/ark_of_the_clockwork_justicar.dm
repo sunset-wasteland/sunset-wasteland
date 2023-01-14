@@ -181,9 +181,13 @@
 			make_glow()
 			glow.icon_state = "clockwork_gateway_disrupted"
 			resistance_flags |= INDESTRUCTIBLE
-			sleep(27)
-			explosion(src, 1, 3, 8, 8)
-			sound_to_playing_players('sound/effects/explosion_distant.ogg', volume = 50)
+			addtimer(CALLBACK(src, .proc/do_explode), 2.7 SECONDS)
+			return
+	qdel(src)
+
+/obj/structure/destructible/clockwork/massive/celestial_gateway/proc/do_explode()
+	explosion(src, 1, 3, 8, 8)
+	sound_to_playing_players('sound/effects/explosion_distant.ogg', volume = 50)
 	qdel(src)
 
 /obj/structure/destructible/clockwork/massive/celestial_gateway/proc/make_glow()

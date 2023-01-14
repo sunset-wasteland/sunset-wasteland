@@ -3,6 +3,7 @@
 		RegisterSignal(parent, COMSIG_MOB_LOGIN, .proc/create_mob_button)
 
 /datum/component/personal_crafting/proc/create_mob_button(mob/user)
+	SIGNAL_HANDLER
 	var/datum/hud/H = user.hud_used
 	var/obj/screen/craft/C = new()
 	C.icon = H.ui_style
@@ -341,6 +342,7 @@
 		qdel(DL)
 
 /datum/component/personal_crafting/proc/component_ui_interact(obj/screen/craft/image, location, control, params, user)
+	SIGNAL_HANDLER
 	if(user == parent)
 		ui_interact(user)
 
@@ -358,7 +360,7 @@
 		else
 			cur_subcategory = CAT_NONE
 		ui = new(user, src, "PersonalCrafting")
-		ui.open()
+		INVOKE_ASYNC(ui, /datum/tgui/proc/open)
 
 /datum/component/personal_crafting/ui_data(mob/user)
 	var/list/data = list()

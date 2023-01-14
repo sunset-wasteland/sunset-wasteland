@@ -27,6 +27,7 @@
 	return ..()
 
 /datum/element/art/proc/apply_moodlet(atom/source, mob/M, impress)
+	SIGNAL_HANDLER
 	M.visible_message("<span class='notice'>[M] stops and looks intently at [source].</span>", \
 						"<span class='notice'>You stop to take in [source].</span>")
 	switch(impress)
@@ -40,14 +41,20 @@
 			SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "artgreat", /datum/mood_event/artgreat)
 
 /datum/element/art/proc/on_other_examine(atom/source, mob/M)
+	SIGNAL_HANDLER
 	apply_moodlet(source, M, impressiveness)
 
 /datum/element/art/proc/on_obj_examine(atom/source, mob/M)
+	SIGNAL_HANDLER
 	var/obj/O = source
 	apply_moodlet(source, M, impressiveness *(O.obj_integrity/O.max_integrity))
 
 /datum/element/art/proc/on_attack_hand(atom/source, mob/M)
+	SIGNAL_HANDLER
 	to_chat(M, "<span class='notice'>You start examining [source]...</span>")
+	INVOKE_ASYNC(src, .proc/do_delayed_examine, source, M)
+
+/datum/element/art/proc/do_delayed_examine(atom/source, mob/M)
 	if(!do_after(M, 20, target = source))
 		return
 	on_obj_examine(source, M)

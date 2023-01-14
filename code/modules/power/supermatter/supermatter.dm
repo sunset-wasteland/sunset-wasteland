@@ -343,6 +343,7 @@ GLOBAL_DATUM(main_supermatter_engine, /obj/machinery/power/supermatter_crystal)
 
 //this is here to eat arguments
 /obj/machinery/power/supermatter_crystal/proc/call_explode()
+	SIGNAL_HANDLER
 	explode()
 
 /obj/machinery/power/supermatter_crystal/process_atmos()

@@ -3,6 +3,7 @@
 /client/verb/keyDown(_key as text)
 	set instant = TRUE
 	set hidden = TRUE
+	SHOULD_NOT_SLEEP(TRUE)
 
 	client_keysend_amount += 1
 

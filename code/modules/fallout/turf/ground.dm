@@ -200,6 +200,7 @@
 	RegisterSignal(turfPlant, COMSIG_PARENT_QDELETING, .proc/clear_turfplant)
 
 /turf/open/indestructible/ground/outside/desert/proc/clear_turfplant()
+	SIGNAL_HANDLER
 	UnregisterSignal(turfPlant, COMSIG_PARENT_QDELETING)
 	turfPlant = null
 

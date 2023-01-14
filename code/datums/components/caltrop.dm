@@ -28,6 +28,7 @@
 		qdel(GetComponent(/datum/component/connect_loc_behalf))
 
 /datum/component/caltrop/proc/on_entered(datum/source, atom/movable/AM)
+	SIGNAL_HANDLER
 	var/atom/A = parent
 	if(!A.has_gravity())
 		return

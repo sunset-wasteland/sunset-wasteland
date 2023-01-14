@@ -30,9 +30,11 @@ Contents:
 	RegisterSignal(affecting, COMSIG_MOVABLE_BUMP, .proc/bumping_stealth)
 
 /obj/item/clothing/suit/space/space_ninja/proc/reduce_stealth(datum/source)
+	SIGNAL_HANDLER
 	affecting.alpha = min(affecting.alpha + 40, 100)
 
 /obj/item/clothing/suit/space/space_ninja/proc/bumping_stealth(datum/source, atom/A)
+	SIGNAL_HANDLER
 	if(isliving(A))
 		affecting.alpha = min(affecting.alpha + 20, 100)
 

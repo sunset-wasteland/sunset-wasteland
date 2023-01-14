@@ -611,16 +611,8 @@
 		if(user != owner)
 			to_chat(user, "<span class='warning'>You need to claim the brahmin with a bridle before you can rename it!</span>")
 			return
-
-		name = input("Choose a new name for your brahmin!","Name", name)
-
-		if(!name)
-			return
-
-		collar = TRUE
-		to_chat(user, "<span class='notice'>You add [I] to [src]...</span>")
-		message_admins("<span class='notice'>[ADMIN_LOOKUPFLW(user)] renamed a brahmin to [name].</span>") //So people don't name their brahmin the N-Word without notice
-		qdel(I)
+		
+		INVOKE_ASYNC(src, .proc/name_brahmin)
 		return
 
 	if(istype(I,/obj/item/brahminbridle))
@@ -661,14 +653,35 @@
 		return
 
 	if(istype(I,/obj/item/brahminbrand))
+		if(stat == DEAD)
+			to_chat(user, span_warning("You cannot brand a dead brahmin!"))
+			return
 		if(brand)
-			to_chat(user, "<span class='warning'>This brahmin already has a brand!</span>")
+			to_chat(user, span_warning("This brahmin already has a brand!"))
 			return
+		INVOKE_ASYNC(brand_brahmin(I, user))
+		return
 
-		brand = input("What would you like to brand on your brahmin?","Brand", brand)
+/mob/living/simple_animal/cow/brahmin/proc/brand_brahmin(obj/item/I, mob/user)
+	var/new_brand = input("What would you like to brand on your brahmin?", "Brahmin Branding")
+	if(!brand)
+		return
+	
+	brand = new_brand
+	user.visible_message(span_notice("[user] brands [src] with \the [I]."), span_notice("You brand [src] with \the [I]."))
+	message_admins(span_notice("[ADMIN_LOOKUPFLW(user)] branded a brahmin with '[brand]'.")) //So people don't brand their brahmin slurs without admins noticing.
 
-		if(!brand)
-			return
+/mob/living/simple_animal/cow/brahmin/proc/name_brahmin(obj/item/I, mob/user)
+	var/new_name = input("Choose a new name for your brahmin!","Brahmin Naming", name)
+
+	if(!new_name)
+		return
+
+	collar = TRUE
+	name = new_name
+	user.visible_message(span_notice("[user] places \the [I] around \the [src]'s neck."), span_notice("You place \the [I] around \the [src]'s neck."))
+	message_admins("<span class='notice'>[ADMIN_LOOKUPFLW(user)] renamed a brahmin to [name].</span>") //So people don't name their brahmin the N-Word without notice
+	qdel(I)
 
 /mob/living/simple_animal/cow/brahmin/death(gibbed)
 	. = ..()

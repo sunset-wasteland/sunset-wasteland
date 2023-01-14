@@ -124,6 +124,7 @@
 	..()
 
 /obj/machinery/computer/camera_advanced/xenobio/proc/on_contents_del(atom/deleted)
+	SIGNAL_HANDLER
 	if(current_potion == deleted)
 		current_potion = null
 	if(deleted in stored_slimes)
@@ -388,6 +389,7 @@
 
 // Scans slime
 /obj/machinery/computer/camera_advanced/xenobio/proc/XenoSlimeClickCtrl(mob/living/user, mob/living/simple_animal/slime/S)
+	SIGNAL_HANDLER
 	if(!GLOB.cameranet.checkTurfVis(S.loc))
 		to_chat(user, "<span class='warning'>Target is not near a camera. Cannot proceed.</span>")
 		return
@@ -399,6 +401,7 @@
 
 //Feeds a potion to slime
 /obj/machinery/computer/camera_advanced/xenobio/proc/XenoSlimeClickAlt(mob/living/user, mob/living/simple_animal/slime/S)
+	SIGNAL_HANDLER
 	if(!(upgradetier & XENOBIO_UPGRADE_SLIMEADV)) //CIT CHANGE - makes slime-related actions require XENOBIO_UPGRADE_SLIMEADV
 		to_chat(user, "<span class='warning'>This console does not have the advanced slime upgrade.</span>")
 		return
@@ -413,10 +416,11 @@
 		to_chat(C, "<span class='warning'>No potion loaded.</span>")
 		return
 	if(mobarea.name == E.allowed_area || mobarea.xenobiology_compatible)
-		X.current_potion.attack(S, C)
+		INVOKE_ASYNC(X.current_potion, /obj/item/proc/attack, S, C)
 
 //Picks up slime
 /obj/machinery/computer/camera_advanced/xenobio/proc/XenoSlimeClickShift(mob/living/user, mob/living/simple_animal/slime/S)
+	SIGNAL_HANDLER
 	if(!(upgradetier & XENOBIO_UPGRADE_SLIMEBASIC)) //CIT CHANGE - makes slime-related actions require XENOBIO_UPGRADE_SLIMEBASIC
 		to_chat(user, "<span class='warning'>This console does not have the basic slime upgrade.</span>")
 		return
@@ -442,6 +446,7 @@
 
 //Place slimes
 /obj/machinery/computer/camera_advanced/xenobio/proc/XenoTurfClickShift(mob/living/user, turf/open/T)
+	SIGNAL_HANDLER
 	if(!(upgradetier & XENOBIO_UPGRADE_SLIMEBASIC)) //CIT CHANGE - makes slime-related actions require XENOBIO_UPGRADE_SLIMEBASIC
 		to_chat(user, "<span class='warning'>This console does not have the basic slime upgrade.</span>")
 		return
@@ -460,6 +465,7 @@
 
 //Place monkey
 /obj/machinery/computer/camera_advanced/xenobio/proc/XenoTurfClickCtrl(mob/living/user, turf/open/T)
+	SIGNAL_HANDLER
 	if(!(upgradetier & XENOBIO_UPGRADE_MONKEYS)) // CIT CHANGE - makes monkey-related actions require XENOBIO_UPGRADE_MONKEYS
 		to_chat(user, "<span class='warning'>This console does not have the monkey upgrade.</span>")
 		return
@@ -483,6 +489,7 @@
 
 //Pick up monkey
 /obj/machinery/computer/camera_advanced/xenobio/proc/XenoMonkeyClickCtrl(mob/living/user, mob/living/carbon/monkey/M)
+	SIGNAL_HANDLER
 	if(!(upgradetier & XENOBIO_UPGRADE_MONKEYS)) // CIT CHANGE - makes monkey-related actions require XENOBIO_UPGRADE_MONKEYS
 		to_chat(user, "<span class='warning'>This console does not have the monkey upgrade.</span>")
 		return

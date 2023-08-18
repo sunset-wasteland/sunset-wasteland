@@ -1,11 +1,10 @@
-## Sunset Wasteland
-Based and maintained from Citadel Station by way of Desert Rose, Fortuna and The Wasteland.
+## Fallout: HEREMUS
+Based and maintained from Sunset Wasteland by way of Citadel Station, Desert Rose, Fortuna and The Wasteland.
 
-[![CI Suite](https://isitmaintained.com/project/sunset-wasteland/sunset-wasteland/actions/workflows/ci_suite.yml/badge.svg?branch=master&event=push)](https://isitmaintained.com/project/sunset-wasteland/sunset-wasteland/actions/workflows/ci_suite.yml)
-[![Percentage of issues still open](http://isitmaintained.com/badge/open/sunset-wasteland/sunset-wasteland.svg)](https://isitmaintained.com/project/sunset-wasteland/sunset-wasteland "Percentage of issues still open")
-[![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/sunset-wasteland/sunset-wasteland.svg)](https://isitmaintained.com/project/sunset-wasteland/sunset-wasteland "Average time to resolve an issue")
-
-[![forthebadge](http://forthebadge.com/images/badges/60-percent-of-the-time-works-every-time.svg)](https://forthebadge.com) [![forthebadge](http://forthebadge.com/images/badges/pretty-risque.svg)](https://forthebadge.com) [![forthebadge](http://forthebadge.com/images/badges/you-didnt-ask-for-this.svg)](http://forthebadge.com) [![forinfinityandbyond](https://user-images.githubusercontent.com/5211576/29499758-4efff304-85e6-11e7-8267-62919c3688a9.gif)](https://www.reddit.com/r/SS13/comments/5oplxp/what_is_the_main_problem_with_byond_as_an_engine/dclbu1a)
+**Fallout: HEREMUS Information**
+* **Code:** <https://github.com/Draganfrukts/fallout-heremus>
+* **Wiki:** IDK.
+* **Discord:** <https://discord.gg/NdsfDc93h>
 
 **Sunset Wasteland Information**
 * **Code:** <https://github.com/sunset-wasteland/sunset-wasteland>
@@ -27,7 +26,6 @@ All relevant forum content takes place on the Discord!
 * **Code:** <https://github.com/Citadel-Station-13/Citadel-Station-13>
 * **Wiki:** <https://citadel-station.net/wiki/index.php?title=Main_Page>
 * **Forums:** <http://citadel-station.net/forum>
-* **Ban Appeals:** <http://citadel-station.net/forum/forumdisplay.php?fid=8>
 * **Discord:**  <https://discord.gg/E6SQuhz>
 
 **/tg/station Information**  
@@ -37,7 +35,6 @@ All relevant forum content takes place on the Discord!
 * **Codedocs:** <https://codedocs.tgstation13.org>
 * **/tg/station Discord:** <https://tgstation13.org/phpBB/viewforum.php?f=60>
 * **Coderbus Discord:** <https://discord.gg/Vh8TJp9>
-* ~~**IRC:** <irc://irc.rizon.net/coderbus>~~ (dead)  
   
 ## DOWNLOADING
 
@@ -45,12 +42,12 @@ There are a number of ways to download the source code. Some are described here,
 
 Option 1:
 Follow this: http://www.tgstation13.org/wiki/Setting_up_git. Make sure to do
-this for Sunset Wasteland instead of TG, i.e. replace the URL for TG's
-repository with `https://github.com/sunset-wasteland/sunset-wasteland.git`
-and go to the Sunset Wasteland repo when it mentions TG's repo.
+this for HEREMUS instead of TG, i.e. replace the URL for TG's
+repository with `https://github.com/Draganfrukts/fallout-heremus.git`
+and go to the HEREMUS repo when it mentions TG's repo.
 
 Option 2: Download the source code as a zip by clicking the ZIP button in the
-code tab of https://github.com/sunset-wasteland/sunset-wasteland
+code tab of the repository
 (note: this will use a lot of bandwidth if you wish to update and is a lot of
 hassle if you want to make any changes at all, so it's not recommended.)
 

@@ -14,12 +14,6 @@
 	path = /obj/item/storage/belt/holster/ranger45
 	geargroupID = list("DONORTEST") //This is a list mainly for the sake of testing, but geargroupID works just fine with ordinary strings
 
-/datum/gear/donator/monke1818
-	name = "CIA Badge"
-	slot = SLOT_IN_BACKPACK
-	path = /obj/item/clothing/accessory/cia_badge
-	ckeywhitelist = list("monke1818")
-
 /////////////////////
 ///Loadout Boxes///// See kits.dm, use this model for loadouts that have more than one item per character.
 /////////////////////

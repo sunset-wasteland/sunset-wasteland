@@ -83,15 +83,13 @@ Elder
 	suit =	/obj/item/clothing/suit/f13/elder
 	glasses =	/obj/item/clothing/glasses/night
 	accessory =	/obj/item/clothing/accessory/bos/elder
-	suit_store =	/obj/item/gun/energy/laser/laer
+	suit_store =	/obj/item/gun/energy/laser/pistol
 	neck =	/obj/item/clothing/neck/mantle/bos/right
 	ears = /obj/item/radio/headset/headset_bos/command
 	backpack_contents = list(
 		/obj/item/melee/onehanded/knife/hunting = 1,
-		/obj/item/gun/energy/laser/wattz/recharger/Walker = 1,
-		/obj/item/stock_parts/cell/ammo/mfc = 3,
-		/obj/item/gun/ballistic/automatic/pistol/n99 = 1,
-		/obj/item/ammo_box/magazine/m10mm_adv/simple = 2,
+		/obj/item/stock_parts/cell/ammo/ec = 2,
+		
 	)
 
 /*
@@ -173,7 +171,14 @@ Head Paladin
 		/obj/item/stock_parts/cell/ammo/mfc = 3,
 	)
 
-
+/datum/outfit/loadout/sentmelee
+	name = "Melee Head Paladin"
+	suit = /obj/item/clothing/suit/armor/f13/power_armor/midwest/hardened
+	head = /obj/item/clothing/head/helmet/f13/power_armor/midwest/hardened
+	backpack_contents = list(
+		/obj/item/gun/ballistic/automatic/pistol/pistol14 
+		/obj/item/ammo_box/magazine/m14mm = 4,
+		/obj/item/twohanded/inquis_spear
 /*
 Head Scribe
 */

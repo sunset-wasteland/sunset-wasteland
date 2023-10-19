@@ -64,7 +64,6 @@
 	loadout_options = list(
 		/datum/outfit/loadout/lt_ballistics, // G11 and Plasma Glock
 		/datum/outfit/loadout/lt_plasma, // Plasma Rifle and 14mm
-		/datum/outfit/loadout/lt_rhino, //Gold Sniper Rifle with slowdown and .44 Rhino
 		)
 
 
@@ -113,16 +112,6 @@
 		/obj/item/grenade/f13/plasma = 2,
 		)
 
-/datum/outfit/loadout/lt_rhino
-	name = "Golden Hand"
-	suit_store = /obj/item/gun/ballistic/automatic/marksman/sniper/america
-	backpack_contents = list(
-		/obj/item/ammo_box/magazine/w308 = 2,
-		/obj/item/ammo_box/m44box = 1,
-		/obj/item/gun/ballistic/revolver/m29/rhino_america = 2,
-		/obj/item/grenade/f13/plasma = 2,
-		)
-
 /datum/outfit/job/enclave/peacekeeper/enclavelt/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
@@ -151,7 +140,7 @@
 
 	loadout_options = list(
 		/datum/outfit/loadout/gysgt_ballistics, // Vindicator
-		/datum/outfit/loadout/gysgt_gatlas, // L30
+		/datum/outfit/loadout/gysgt_gatlas, // Lasminigun
 		/datum/outfit/loadout/gysgt_laser, // Multiplas
 		)
 
@@ -196,8 +185,8 @@
 	name = "Armored Rifleman Kit"
 	suit_store = /obj/item/gun/energy/laser/plasma/scatter
 	backpack_contents = list(
-		/obj/item/stock_parts/cell/ammo/mfc = 4,
-		/obj/item/grenade/f13/plasma = 2,
+		/obj/item/stock_parts/cell/ammo/mfc = 2,
+		/obj/item/grenade/f13/plasma = 1,
 		)
 
 /datum/outfit/job/enclave/peacekeeper/f13gysergeant/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -256,7 +245,6 @@
 	suit_store = /obj/item/gun/ballistic/automatic/g11
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/m473 = 3,
-		/obj/item/grenade/f13/plasma = 2,
 		)
 
 /datum/outfit/loadout/sgt_laser
@@ -264,7 +252,7 @@
 	suit_store = /obj/item/gun/energy/laser/plasma
 	backpack_contents = list(
 		/obj/item/stock_parts/cell/ammo/mfc = 3,
-		/obj/item/grenade/f13/plasma = 2,
+		/obj/item/grenade/f13/plasma = 1,
 		)
 
 /datum/outfit/job/enclave/peacekeeper/enclavesgt/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -292,7 +280,7 @@
 
 	loadout_options = list(
 		/datum/outfit/loadout/combatmedic, // Medical Equipment
-		/datum/outfit/loadout/combatengie, // Grenade Launcher
+		/datum/outfit/loadout/combatengie, // TBD
 		)
 
 /datum/outfit/job/enclave/peacekeeper/f13specialist
@@ -383,7 +371,6 @@
 	..()
 	if(visualsOnly)
 		return
-	ADD_TRAIT(H, TRAIT_PA_WEAR, src)
 	ADD_TRAIT(H, TRAIT_ENCLAVE_CODES, src)
 	H.grant_language(/datum/language/codespeak, TRUE, TRUE, LANGUAGE_MIND)
 
@@ -400,7 +387,7 @@
 	outfit = /datum/outfit/job/enclave/noncombat/enclavesci
 	exp_requirements = 1000
 	roleplay_exclusive_notify = 1
-	access = list(ACCESS_ENCLAVE, ACCESS_ENCLAVE_COMMAND, ACCESS_SECURITY, ACCESS_AI_UPLOAD)
+	access = list(ACCESS_ENCLAVE, ACCESS_SECURITY, ACCESS_AI_UPLOAD)
 
 /datum/outfit/job/enclave/noncombat/enclavesci
 	name = "Enclave Scientist"
@@ -437,7 +424,6 @@
 	ADD_TRAIT(H, TRAIT_CHEMWHIZ, src)
 	ADD_TRAIT(H, TRAIT_RESEARCHER, src)
 	ADD_TRAIT(H, TRAIT_UNETHICAL_PRACTITIONER, src) // Brainwashing
-	ADD_TRAIT(H, TRAIT_PA_WEAR, src)
 	ADD_TRAIT(H, TRAIT_ENCLAVE_CODES, src)
 //	ADD_TRAIT(H, TRAIT_POOR_AIM, src)
 	H.grant_language(/datum/language/codespeak, TRUE, TRUE, LANGUAGE_MIND)
@@ -593,7 +579,6 @@
 	loadout_options = list(
 		/datum/outfit/loadout/is_twolt,
 		/datum/outfit/loadout/is_lt,
-		/datum/outfit/loadout/is_cap,
 		)
 
 /datum/outfit/job/enclave/noncombat/enc_is
@@ -604,10 +589,8 @@
 	uniform = /obj/item/clothing/under/f13/enclave/officer
 	head = /obj/item/clothing/head/f13/enclave
 	suit = /obj/item/clothing/suit/armor/f13/enclavetrenchcoat
-	suit_store = /obj/item/gun/energy/laser/plasma
 
 	backpack_contents = list(
-		/obj/item/stock_parts/cell/ammo/mfc = 3,
 		/obj/item/stock_parts/cell/ammo/ec = 2,
 		/obj/item/restraints/handcuffs = 1,
 		/obj/item/melee/classic_baton = 1,
@@ -641,12 +624,6 @@
 		/obj/item/clothing/accessory/enclave/first_lieutenant = 1,
 		)
 
-/datum/outfit/loadout/is_cap
-	name = "Captain"
-	backpack_contents = list(
-		/obj/item/clothing/accessory/cia_badge = 1,
-		/obj/item/clothing/accessory/enclave/captain = 1
-		)
 
 // Enclave Citizen
 // Really only used for ID console

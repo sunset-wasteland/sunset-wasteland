@@ -219,13 +219,11 @@ Head Scribe
 	ADD_TRAIT(H, TRAIT_CHEMWHIZ, src)
 	ADD_TRAIT(H, TRAIT_SURGERY_HIGH, src)
 	ADD_TRAIT(H, TRAIT_RESEARCHER, src)
-	ADD_TRAIT(H, TRAIT_PA_WEAR, src)
 //	ADD_TRAIT(H, TRAIT_POOR_AIM, src)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/AER9)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/AEP7)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/dks)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/R93)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/medx)
 
 /datum/outfit/job/bos/f13headscribe
 	name = "Head Scribe"
@@ -278,7 +276,7 @@ Head Knight
 	loadout_options = list(
 	/datum/outfit/loadout/capstand, //Wattz 2k
 	/datum/outfit/loadout/capsap, //Marksman
-	/datum/outfit/loadout/capalt //Neostead with buck because they don't know slugs are better
+	/datum/outfit/loadout/capalt //Neostead 
 	)
 
 	outfit = /datum/outfit/job/bos/f13knightcap
@@ -371,8 +369,7 @@ Star Paladin
 
 	loadout_options = list(
 		/datum/outfit/loadout/spaladinb, //Combat Rifle + Powerfist
-		/datum/outfit/loadout/spaladinc,  //AER14, no powerfist given strength of rifle.
-		/datum/outfit/loadout/spaladind, //Sledge + Powerfist
+		/datum/outfit/loadout/spaladinc,  //AER12
 		)
 
 	outfit = /datum/outfit/job/bos/f13seniorpaladin
@@ -419,30 +416,23 @@ Star Paladin
 	backpack_contents = list(
 		/obj/item/melee/powerfist/f13 = 1,
 		/obj/item/gun/ballistic/automatic/combat = 1,
-		/obj/item/ammo_box/magazine/tommygunm45/stick = 5,
+		/obj/item/ammo_box/magazine/tommygunm45/stick = 3,
 		/obj/item/gun/energy/laser/pistol=1,
-		/obj/item/stock_parts/cell/ammo/ec=2,
+		/obj/item/stock_parts/cell/ammo/ec=1,
 		/obj/item/clothing/accessory/bos/paladin=1,
 		)
 
 /datum/outfit/loadout/spaladinc
 	name = "Senior Frontline Paladin"
 	backpack_contents = list(
-		/obj/item/gun/energy/laser/aer14 = 1,
+		/obj/item/gun/energy/laser/aer12 = 1,
 		/obj/item/gun/energy/laser/pistol=1,
-		/obj/item/stock_parts/cell/ammo/mfc = 3,
-		/obj/item/stock_parts/cell/ammo/ec=2,
+		/obj/item/stock_parts/cell/ammo/mfc = 2,
+		/obj/item/stock_parts/cell/ammo/ec=1,
 		/obj/item/clothing/accessory/bos/paladin=1,
 		)
 
-/datum/outfit/loadout/spaladind
-	name = "Senior Melee Specialist Paladin"
-	backpack_contents = list(
-		/obj/item/melee/powerfist/f13 = 1,
-		/obj/item/twohanded/sledgehammer/supersledge =1,
-		/obj/item/gun/energy/laser/pistol=1,
-		/obj/item/stock_parts/cell/ammo/ec=2,
-		/obj/item/clothing/accessory/bos/paladin=1,
+
 		)
 
 
@@ -463,9 +453,8 @@ Paladin
 	exp_requirements = 1200
 
 	loadout_options = list(
-	/datum/outfit/loadout/paladinb, //Combat Rifle + Power Fist
-	/datum/outfit/loadout/paladinc, //AER12 no power fist.
-	/datum/outfit/loadout/paladind, //Sledge + Power Fist
+	/datum/outfit/loadout/paladinb, //Combat Rifle
+	/datum/outfit/loadout/paladinc, //AER9
 	)
 
 	outfit = /datum/outfit/job/bos/f13paladin
@@ -510,11 +499,10 @@ Paladin
 /datum/outfit/loadout/paladinb
 	name = "Tactical Paladin"
 	backpack_contents = list(
-		/obj/item/melee/powerfist/f13 = 1,
 		/obj/item/gun/ballistic/automatic/combat = 1,
-		/obj/item/ammo_box/magazine/tommygunm45/stick = 5,
+		/obj/item/ammo_box/magazine/tommygunm45/stick = 3,
 		/obj/item/gun/energy/laser/pistol=1,
-		/obj/item/stock_parts/cell/ammo/ec=2,
+		/obj/item/stock_parts/cell/ammo/ec=1,
 		/obj/item/clothing/accessory/bos/paladin = 1,
 		/obj/item/clothing/accessory/bos/juniorpaladin = 1,
 		)
@@ -522,23 +510,14 @@ Paladin
 /datum/outfit/loadout/paladinc
 	name = "Frontline Paladin"
 	backpack_contents = list(
-		/obj/item/gun/energy/laser/aer12 = 1,
+		/obj/item/gun/energy/laser/aer9 = 1,
 		/obj/item/gun/energy/laser/pistol=1,
 		/obj/item/stock_parts/cell/ammo/mfc = 2,
-		/obj/item/stock_parts/cell/ammo/ec=2,
+		/obj/item/stock_parts/cell/ammo/ec=1,
 		/obj/item/clothing/accessory/bos/paladin = 1,
 		/obj/item/clothing/accessory/bos/juniorpaladin = 1,
 		)
 
-/datum/outfit/loadout/paladind
-	name = "Melee Specialist Paladin"
-	backpack_contents = list(
-		/obj/item/melee/powerfist/f13 = 1,
-		/obj/item/twohanded/sledgehammer/supersledge =1,
-		/obj/item/gun/energy/laser/pistol=1,
-		/obj/item/stock_parts/cell/ammo/ec=2,
-		/obj/item/clothing/accessory/bos/paladin = 1,
-		/obj/item/clothing/accessory/bos/juniorpaladin = 1,
 		)
 
 /*
@@ -588,7 +567,6 @@ Senior Scribe
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/AEP7)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/dks)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/R93)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/medx)
 
 /datum/outfit/job/bos/f13seniorscribe
 	name =	"Senior Scribe"
@@ -680,7 +658,6 @@ Scribe
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/AEP7)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/dks)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/R93)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/medx)
 
 /datum/outfit/loadout/scribea
 	name = "Junior Scribe"
@@ -711,10 +688,9 @@ Senior Knight
 	exp_requirements = 900
 
 	loadout_options = list(
-	/datum/outfit/loadout/sknighta, //AER9
+	/datum/outfit/loadout/sknighta, //AER12
 	/datum/outfit/loadout/sknightb, //Police Shotgun
 	/datum/outfit/loadout/sknightc, //R93 PDW
-	/datum/outfit/loadout/sknightd,
 	)
 
 	outfit = /datum/outfit/job/bos/f13seniorknight
@@ -769,7 +745,7 @@ Senior Knight
 /datum/outfit/loadout/sknighta
 	name = "Footknight"
 	backpack_contents = list(
-		/obj/item/gun/energy/laser/aer9=1,
+		/obj/item/gun/energy/laser/aer12=1,
 		/obj/item/stock_parts/cell/ammo/mfc=2,
 		/obj/item/attachments/scope = 1,
 		/obj/item/gun/ballistic/automatic/pistol/mk23 = 1,
@@ -782,7 +758,7 @@ Senior Knight
 		/obj/item/gun/ballistic/shotgun/police=1,
 		/obj/item/ammo_box/shotgun/buck=2,
 		/obj/item/gun/energy/laser/pistol=1,
-		/obj/item/stock_parts/cell/ammo/ec=2,
+		/obj/item/stock_parts/cell/ammo/ec=1,
 		)
 
 /datum/outfit/loadout/sknightc
@@ -791,16 +767,9 @@ Senior Knight
 		/obj/item/gun/ballistic/automatic/r93=1,
 		/obj/item/ammo_box/magazine/m556/rifle=2,
 		/obj/item/gun/energy/laser/pistol=1,
-		/obj/item/stock_parts/cell/ammo/ec=2,
+		/obj/item/stock_parts/cell/ammo/ec=1,
 		)
 
-/datum/outfit/loadout/sknightd
-	name = "Senior Knight-Cavalry"
-	backpack_contents = list(
-		/obj/item/clothing/accessory/bos/juniorknight=1,
-		/obj/item/melee/powered/ripper/prewar=1,
-		/obj/item/gun/energy/laser/pistol=1,
-		/obj/item/stock_parts/cell/ammo/ec=2,
 		)
 
 /*
@@ -893,25 +862,13 @@ Knight
 	name = "Junior Knight-Defender"
 	backpack_contents = list(
 		/obj/item/clothing/accessory/bos/juniorknight=1,
-		/obj/item/gun/ballistic/automatic/r93=1,
+		/obj/item/gun/ballistic/automatic/marksman=1,
 		/obj/item/ammo_box/magazine/m556/rifle=2,
 		/obj/item/gun/energy/laser/pistol=1,
 		/obj/item/stock_parts/cell/ammo/ec=2,
 		/obj/item/clothing/accessory/bos/KnightC=1,
 		/obj/item/clothing/accessory/bos/KnightT=1,
 		)
-
-/datum/outfit/loadout/knightc
-	name = "Junior Knight-Cavalry"
-	backpack_contents = list(
-		/obj/item/clothing/accessory/bos/juniorknight=1,
-		/obj/item/melee/powered/ripper=1,
-		/obj/item/gun/energy/laser/pistol=1,
-		/obj/item/stock_parts/cell/ammo/ec=2,
-		/obj/item/clothing/accessory/bos/KnightC=1,
-		/obj/item/clothing/accessory/bos/KnightT=1,
-		)
-
 
 /datum/outfit/loadout/knightd
 	name = "Footknight"
@@ -932,18 +889,7 @@ Knight
 		/obj/item/gun/ballistic/automatic/smg/mp5=1,
 		/obj/item/ammo_box/magazine/uzim9mm=2,
 		/obj/item/gun/energy/laser/pistol=1,
-		/obj/item/stock_parts/cell/ammo/ec=2,
-		/obj/item/clothing/accessory/bos/KnightC=1,
-		/obj/item/clothing/accessory/bos/KnightT=1,
-		)
-
-/datum/outfit/loadout/knightf
-	name = "Knight-Cavalry"
-	backpack_contents = list(
-		/obj/item/clothing/accessory/bos/knight=1,
-		/obj/item/melee/powered/ripper=1,
-		/obj/item/gun/energy/laser/pistol=1,
-		/obj/item/stock_parts/cell/ammo/ec=2,
+		/obj/item/stock_parts/cell/ammo/ec=1,
 		/obj/item/clothing/accessory/bos/KnightC=1,
 		/obj/item/clothing/accessory/bos/KnightT=1,
 		)
@@ -955,8 +901,8 @@ Initiate
 /datum/job/bos/f13initiate
 	title = "Initiate"
 	flag = F13INITIATE
-	total_positions = 3
-	spawn_positions = 3
+	total_positions = 2
+	spawn_positions = 2
 	description = "Either recently inducted or born into the Brotherhood, you have since proven yourself worthy of assignment to the Chapter. You are to assist your superiors and receive training how they deem fit. You are NEVER allowed to leave the bunker without the direct supervision of a superior; doing so may result in exile or transferrence back the Valley."
 	forbids = "The Brotherhood of Steel Forbids: Unethical human experimentation. Violence beyond what is needed to accomplish Brotherhood goals."
 	enforces = "The Brotherhood of Steel Expects: Obeying the Chain That - Binds your direct superior. Collection and safeguarding of technology from the wasteland. Experimentation and research."
@@ -1031,7 +977,7 @@ Off-Duty
 /datum/job/bos/f13offdutybos
 	title = "BoS Off-Duty"
 	flag = F13OFFDUTYBOS
-	total_positions = 6//Likely far too many, but this stops you know what. :)
+	total_positions = 6
 	spawn_positions = 6
 	description = "While off-duty, you are relieved of both your duties and your authority. You are not required to participate in any routine duties of the bunker, and you may spend your time doing whatever you please, within reason."
 	supervisors = "your superior rank."
@@ -1059,63 +1005,4 @@ Off-Duty
 		/obj/item/melee/onehanded/knife/survival=1
 		)
 
-/*
-Inquisitorial Goons
-They get an absurd number of traits, a 'unique' proton axe, berserker rights and are overall very dangerous.
-They're intended to be some manner of IC police similar to how I've done IS, for Enclave. - Carl
-*/
-/datum/job/bos/acolyte
-	title = "Inquisitorial Acolyte"
-	flag = F13INQUIS
-	total_positions = 2
-	spawn_positions = 2
-	description = "<b>YOU HAVE NO TIES TO THE BUNKER. YOU'RE AN OUTSIDER IN EVERYTHING BUT POSITION.</b> <br> \
-	You're a member of the feared Inquisition, sent by the Inquisitor as their eyes and ears within this chapter. <br> \
-	As most of the equipment used here is on loan from the Midwest, it only makes sense that they'd want their interests maintained. <br> \
-	Punish blatant violations of the Codex how you see fit, but beware the wrath of the Inquisitor, should you overstep."
-	supervisors = "the Inquisitor exclusively"
-	selection_color = "#95a5a6"
-	roleplay_exclusive_notify = 1
-	req_admin_notify = 1
-	exp_requirements = 6000//Absurd for good reason.
-	outfit = /datum/outfit/job/bos/acolyte
-	access = list(ACCESS_BROTHERHOOD_COMMAND, ACCESS_ROBOTICS, ACCESS_BOS, ACCESS_ENGINE_EQUIP, ACCESS_ENGINE, ACCESS_HYDROPONICS, ACCESS_MINERAL_STOREROOM, ACCESS_KITCHEN, ACCESS_BAR, ACCESS_SEC_DOORS, ACCESS_CHANGE_IDS)
-	minimal_access = list(ACCESS_BROTHERHOOD_COMMAND, ACCESS_ROBOTICS, ACCESS_BOS, ACCESS_ENGINE_EQUIP, ACCESS_ENGINE, ACCESS_HYDROPONICS, ACCESS_MINERAL_STOREROOM, ACCESS_KITCHEN, ACCESS_BAR, ACCESS_SEC_DOORS, ACCESS_CHANGE_IDS)
 
-/datum/outfit/job/bos/acolyte/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	..()
-	if(visualsOnly)
-		return
-	ADD_TRAIT(H, TRAIT_PA_WEAR, src)
-	ADD_TRAIT(H, TRAIT_FEARLESS, src)
-	ADD_TRAIT(H, TRAIT_BIG_LEAGUES, src)
-	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
-	ADD_TRAIT(H, TRAIT_LIFEGIVER, src)
-	ADD_TRAIT(H, TRAIT_IRONFIST, src)
-	H.AddSpell(new /obj/effect/proc_holder/spell/terrifying_presence)
-	var/datum/martial_art/berserker/BT = new
-	BT.teach(H)
-
-/datum/outfit/job/bos/acolyte
-	name = "Inquisitorial Acolyte"
-	jobtype =		/datum/job/bos/acolyte
-	neck =			/obj/item/clothing/neck/mantle/bos/inquis
-	suit =			/obj/item/clothing/suit/armor/f13/power_armor/midwest_inquis
-	head =			/obj/item/clothing/head/helmet/f13/power_armor/midwest_inquis
-	ears =			/obj/item/radio/headset/headset_bos/command
-	uniform =		/obj/item/clothing/under/f13/recon
-	belt = 			/obj/item/storage/belt/military/army
-	shoes = 		/obj/item/clothing/shoes/combat
-	gloves = 		/obj/item/clothing/gloves/combat
-	suit_store = 	/obj/item/gun/energy/laser/plasma/inquis
-
-	backpack_contents = list(
-		/obj/item/stock_parts/cell/ammo/ecp = 1,
-		/obj/item/stock_parts/cell/ammo/ec = 3,
-		/obj/item/restraints/handcuffs = 1,
-		/obj/item/melee/classic_baton = 1,
-		/obj/item/gun/energy/laser/complianceregulator = 1,
-		/obj/item/melee/onehanded/knife/survival = 1,
-		/obj/item/storage/belt/holster = 1,
-		/obj/item/clothing/accessory/bos/inquis_acol = 1,
-		)

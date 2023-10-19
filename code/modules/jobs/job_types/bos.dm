@@ -111,8 +111,9 @@ Head Paladin
 	exp_requirements = 2400
 
 	loadout_options = list(
-	/datum/outfit/loadout/sentheavy, //Gauss + Hardened T-51
-	/datum/outfit/loadout/sentlaser //Wattz laser + Hardened T-51
+	/datum/outfit/loadout/sentheavy, //Gauss
+	/datum/outfit/loadout/sentlaser //Wattz laser
+	/datum/outfit/loadout/sentmelee //Inquis spear+14mm, REPLACE WITH RIPPER WHEN SPRITES FOR IT COME
 	)
 
 	outfit = /datum/outfit/job/bos/f13sentinel

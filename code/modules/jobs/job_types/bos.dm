@@ -177,9 +177,9 @@ Head Paladin
 	suit = /obj/item/clothing/suit/armor/f13/power_armor/midwest/hardened
 	head = /obj/item/clothing/head/helmet/f13/power_armor/midwest/hardened
 	backpack_contents = list(
-		/obj/item/gun/ballistic/automatic/pistol/pistol14 
+		/obj/item/gun/ballistic/automatic/pistol/pistol14 = 1, 
 		/obj/item/ammo_box/magazine/m14mm = 4,
-		/obj/item/twohanded/inquis_spear
+		/obj/item/twohanded/inquis_spear = 1,
 /*
 Head Scribe
 */

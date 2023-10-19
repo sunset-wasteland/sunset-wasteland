@@ -112,8 +112,8 @@ Head Paladin
 
 	loadout_options = list(
 	/datum/outfit/loadout/sentheavy, //Gauss
-	/datum/outfit/loadout/sentlaser //Wattz laser
-	/datum/outfit/loadout/sentmelee //Inquis spear+14mm, REPLACE WITH RIPPER WHEN SPRITES FOR IT COME
+	/datum/outfit/loadout/sentlaser, //Wattz laser
+	/datum/outfit/loadout/sentmelee, //Inquis spear+14mm, REPLACE WITH RIPPER WHEN SPRITES FOR IT COME
 	)
 
 	outfit = /datum/outfit/job/bos/f13sentinel

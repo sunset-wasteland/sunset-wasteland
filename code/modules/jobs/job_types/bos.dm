@@ -434,9 +434,6 @@ Star Paladin
 		)
 
 
-		)
-
-
 /*
 Paladin
 */

@@ -183,6 +183,7 @@
 	head = /obj/item/clothing/head/helmet/f13/khan/bandana
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/m556/rifle = 3,
+	)
 
 //CHEMIST =================================================================
 
@@ -193,7 +194,8 @@
 	backpack_contents = list(
 		/obj/item/book/granter/trait/chemistry = 1,
 		/obj/item/book/granter/trait/lowsurgery =1,
-		/obj/item/reagent_containers/hypospray/medipen/stimpak = 3)
+		/obj/item/reagent_containers/hypospray/medipen/stimpak = 3,
+)
 
 /datum/outfit/loadout/quack
 	name = "Quack Chemist"
@@ -203,7 +205,8 @@
 	backpack_contents = list(
 		/obj/item/book/granter/trait/chemistry = 1,
 		/obj/item/book/granter/trait/explosives =1,
-		/obj/item/reagent_containers/hypospray/medipen/stimpak = 2)
+		/obj/item/reagent_containers/hypospray/medipen/stimpak = 2,
+)
 
 //SENIOR =================================================================
 
@@ -217,7 +220,8 @@
 		/obj/item/ammo_box/clip/shotgun/loaded/flechette = 3,
 		/obj/item/storage/box/medicine/stimpaks/stimpaks5 = 1,
 		/obj/item/melee/onehanded/machete/scrapsabre/khan = 1,
-		/obj/item/stack/f13Cash/caps/onezerozerozero = 1)
+		/obj/item/stack/f13Cash/caps/onezerozerozero = 1,
+)
 
 /datum/outfit/job/khan/senior_enforcer/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
@@ -244,7 +248,7 @@
 		/obj/item/stack/sheet/cloth/thirty = 1,
 		/obj/item/stack/sheet/prewar/twenty = 1,
 		/obj/item/book/granter/trait/explosives = 1,
-		/obj/item/book/granter/trait/explosives_advanced = 1
+		/obj/item/book/granter/trait/explosives_advanced = 1,
 		)
 
 /datum/outfit/job/khan/smith/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)

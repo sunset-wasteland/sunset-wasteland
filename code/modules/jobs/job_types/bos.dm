@@ -516,8 +516,6 @@ Paladin
 		/obj/item/clothing/accessory/bos/juniorpaladin = 1,
 		)
 
-		)
-
 /*
 Senior Scribe
 */
@@ -766,8 +764,6 @@ Senior Knight
 		/obj/item/ammo_box/magazine/m556/rifle=2,
 		/obj/item/gun/energy/laser/pistol=1,
 		/obj/item/stock_parts/cell/ammo/ec=1,
-		)
-
 		)
 
 /*

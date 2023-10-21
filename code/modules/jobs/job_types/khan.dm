@@ -174,6 +174,7 @@
 	head = /obj/item/clothing/head/helmet/f13/khan
 	backpack_contents = list(
 		/obj/item/reagent_containers/hypospray/medipen/stimpak = 1,
+	)
 
 /datum/outfit/loadout/soldierb
 	name = "Light Enforcer"

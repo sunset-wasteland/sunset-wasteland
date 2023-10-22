@@ -177,7 +177,6 @@ Discuss balance and documentation changes with Dragonfruits#1913 or forward them
 	name = "Orator"
 	suit = /obj/item/clothing/suit/armor/f13/legion/orator
 	head = /obj/item/clothing/head/helmet/f13/legion/orator
-	suit_store = /obj/item/gun/ballistic/automatic/pistol/pistol14/orator
 	shoes = /obj/item/clothing/shoes/f13/military/plated
 	backpack_contents = list(
 		/obj/item/book/granter/trait/iron_fist = 1,
@@ -193,7 +192,6 @@ Discuss balance and documentation changes with Dragonfruits#1913 or forward them
 	head = /obj/item/clothing/head/helmet/f13/legion/orator
 	shoes = /obj/item/clothing/shoes/roman
 	backpack_contents = list(
-		/obj/item/gun/ballistic/automatic/pistol/pistol14/orator = 1,
 		/obj/item/book/granter/trait/midsurgery = 1,
 		/obj/item/book/granter/trait/chemistry = 1,
 		/obj/item/book/granter/trait/legionalchemy = 1,
@@ -225,9 +223,9 @@ Discuss balance and documentation changes with Dragonfruits#1913 or forward them
 	minimal_access = list(ACCESS_LEGION, ACCESS_CHANGE_IDS, ACCESS_LEGION_COMMAND, ACCESS_LEGION_SLAVE)
 
 	loadout_options = list(
-		/datum/outfit/loadout/palacent,		// 10mm SMG, Goliath, CQC
+		/datum/outfit/loadout/palacent,		//Goliath, CQC, Throwing stars
 		/datum/outfit/loadout/rangerhunter,	// Hunting Revolver, AMR, Spatha
-		/datum/outfit/loadout/centurion,	// M1919, Hunting Revolver
+		/datum/outfit/loadout/centurion,	// M1919
 		/datum/outfit/loadout/berserkercenturion,	// Love Tap, Berserker Martial Art
 		)
 
@@ -281,7 +279,7 @@ Discuss balance and documentation changes with Dragonfruits#1913 or forward them
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/amr = 2,
 		/obj/item/ammo_box/c4570 = 3,
-		/obj/item/gun/ballistic/revolver/sequoia = 1,
+		/obj/item/gun/ballistic/revolver/hunting = 1,
 		/obj/item/melee/onehanded/machete/spatha = 1,
 		)
 
@@ -292,7 +290,7 @@ Discuss balance and documentation changes with Dragonfruits#1913 or forward them
 	backpack_contents = list(
 		/obj/item/melee/powerfist/f13/goliath = 1,
 		/obj/item/book/granter/martial/cqc = 1,
-		/obj/item/throwing_star/ninja = 3
+		/obj/item/throwing_star/ninja = 2
 		)
 
 /datum/outfit/loadout/berserkercenturion
@@ -327,7 +325,7 @@ Discuss balance and documentation changes with Dragonfruits#1913 or forward them
 		/datum/outfit/loadout/decvetwolf,	// Thermic lance, Carl Gustaf, Extra Bitter
 		/datum/outfit/loadout/decvetsnake, // Brush gun, Ripper, Extra Bitters
 		/datum/outfit/loadout/decvetbrave, // trench shotgun, 44 revolver, ballistic fist
-		/datum/outfit/loadout/decvetspecialist, // USP, power fist, legion cape holster
+		/datum/outfit/loadout/decvetspecialist, // USP, Moleminer, legion cape holster
 		)
 
 
@@ -366,8 +364,8 @@ Discuss balance and documentation changes with Dragonfruits#1913 or forward them
 	head = /obj/item/clothing/head/helmet/f13/legion/heavy
 	suit_store = /obj/item/twohanded/sledgehammer/supersledge
 	backpack_contents = list(
-		/obj/item/gun/ballistic/automatic/smg/cg45 = 1,
-		/obj/item/ammo_box/magazine/cg45 = 2,
+		/obj/item/gun/ballistic/automatic/smg/smg10mm = 1,
+		/obj/item/ammo_box/magazine/m10mm_adv = 2,
 		/obj/item/grenade/smokebomb = 1,
 		)
 
@@ -376,10 +374,9 @@ Discuss balance and documentation changes with Dragonfruits#1913 or forward them
 	head = /obj/item/clothing/head/helmet/f13/legion/vet/decan
 	suit_store = /obj/item/twohanded/thermic_lance
 	backpack_contents = list(
-		/obj/item/melee/onehanded/machete/spatha = 1,
 		/obj/item/gun/ballistic/automatic/smg/cg45 = 1,
 		/obj/item/ammo_box/magazine/cg45 = 2,
-		/obj/item/reagent_containers/pill/patch/bitterdrink = 2,
+		/obj/item/reagent_containers/pill/patch/bitterdrink = 1,
 		)
 
 /datum/outfit/loadout/decvetsnake
@@ -408,7 +405,7 @@ Discuss balance and documentation changes with Dragonfruits#1913 or forward them
 	head = /obj/item/clothing/head/helmet/f13/legion/vet/decan
 	suit_store = /obj/item/gun/ballistic/automatic/pistol/mk23
 	backpack_contents = list(
-		/obj/item/melee/powerfist/f13 = 1,
+		/obj/item/melee/powerfist/f13/moleminer = 1,
 		/obj/item/ammo_box/magazine/m45exp = 2,
 		/obj/item/suppressor = 1,
 		/obj/item/clothing/neck/mantle/legion = 1,
@@ -501,7 +498,7 @@ Discuss balance and documentation changes with Dragonfruits#1913 or forward them
 	backpack_contents = list(
 		/obj/item/gun/ballistic/revolver/m29 = 1,
 		/obj/item/ammo_box/m44 = 3,
-		/obj/item/grenade/f13/he_grenade = 3,
+		/obj/item/grenade/f13/he_grenade = 2,
 		)
 
 
@@ -567,7 +564,6 @@ Discuss balance and documentation changes with Dragonfruits#1913 or forward them
 		/obj/item/restraints/legcuffs/bola = 1,
 		/obj/item/gun/ballistic/automatic/smg/mini_uzi = 1,
 		/obj/item/ammo_box/magazine/uzim9mm = 3,
-		/obj/item/stack/crafting/armor_plate = 5,
 		)
 
 /datum/outfit/loadout/recdectribal
@@ -603,9 +599,9 @@ Discuss balance and documentation changes with Dragonfruits#1913 or forward them
 	exp_requirements = 360
 
 	loadout_options = list(
-		/datum/outfit/loadout/vexbear,	//	Classic FO13 Vex with his ripper: .223 pistol, Ripper
-		/datum/outfit/loadout/vexfox,	//	Classic New Vegas Vex with his 10mm SMG: 14mm SMG, Spartha
-		/datum/outfit/loadout/vexnight, //  Classic and Iconic long range vex with a trail carbine
+		/datum/outfit/loadout/vexbear,	//	Lever shotgun, Ripper
+		/datum/outfit/loadout/vexfox,	//	14mm SMG, Spartha
+		/datum/outfit/loadout/vexnight, //  Trailcarbine, Gladius
 		)
 
 	matchmaking_allowed = list(
@@ -650,7 +646,6 @@ Discuss balance and documentation changes with Dragonfruits#1913 or forward them
 	head = /obj/item/clothing/head/helmet/f13/legion/vet/combvexil
 	suit_store = /obj/item/gun/ballistic/shotgun/automatic/combat/shotgunlever
 	backpack_contents = list(
-		/obj/item/melee/unarmed/tigerclaw = 1,
 		/obj/item/reagent_containers/pill/patch/healingpowder/berserker = 2,
 		/obj/item/melee/powered/ripper = 1,
 		/obj/item/book/granter/martial/berserker = 1,
@@ -689,7 +684,7 @@ Discuss balance and documentation changes with Dragonfruits#1913 or forward them
 	exp_requirements = 150
 
 	loadout_options = list(	// ALL: .45 Revolver, Machete
-		/datum/outfit/loadout/expambusher,	// lever-action shotgun, Bottlecap mine, MP5
+		/datum/outfit/loadout/expambusher,	// lever-action shotgun, Bottlecap mine
 		/datum/outfit/loadout/expsniper,	// SKS, Smokebomb
 		)
 
@@ -732,11 +727,9 @@ Discuss balance and documentation changes with Dragonfruits#1913 or forward them
 
 /datum/outfit/loadout/expambusher
 	name = "Ambusher"
-	suit_store = /obj/item/gun/ballistic/automatic/smg/mp5
+	suit_store = /obj/item/gun/ballistic/shotgun/automatic/combat/shotgunlever
 	glasses = /obj/item/clothing/glasses/sunglasses/big
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/uzim9mm = 2,
-		/obj/item/gun/ballistic/shotgun/automatic/combat/shotgunlever = 1,
 		/obj/item/bottlecap_mine = 1,
 		/obj/item/grenade/smokebomb = 1,
 		/obj/item/restraints/legcuffs/bola/tactical = 1,
@@ -773,8 +766,8 @@ Discuss balance and documentation changes with Dragonfruits#1913 or forward them
 	exp_requirements = 300
 
 	loadout_options = list(	//ALL: Gladius
-		/datum/outfit/loadout/vetaxe,	// AXE AND FISTS AND NOTHING FUCKING ELSE
-		/datum/outfit/loadout/vetsmg, 		// Carl Gustaf, .357 Revolver
+		/datum/outfit/loadout/vetaxe,	// Tclaw, Axe
+		/datum/outfit/loadout/vetsmg,	// Carl Gustaf, Lance
 		/datum/outfit/loadout/vetberserker,	// Lever shotgun, Bola, Legion Lance
 		/datum/outfit/loadout/vetrifle,		// Trail gun, .357 Revolver
 		)
@@ -840,7 +833,6 @@ Discuss balance and documentation changes with Dragonfruits#1913 or forward them
 	name = "Berserker"
 	suit_store = /obj/item/gun/ballistic/shotgun/automatic/combat/shotgunlever
 	backpack_contents = list(
-		/obj/item/ammo_box/shotgun/slug = 1,
 		/obj/item/ammo_box/shotgun/buck = 2,
 		/obj/item/twohanded/spear/lance = 1,
 		/obj/item/melee/onehanded/knife/bayonet = 1,
@@ -856,7 +848,6 @@ Discuss balance and documentation changes with Dragonfruits#1913 or forward them
 		/obj/item/ammo_box/a357 = 1,
 		/obj/item/melee/onehanded/knife/throwing = 2,
 		/obj/item/reagent_containers/pill/patch/bitterdrink = 1,
-		/obj/item/restraints/legcuffs/beartrap = 1,
 		)
 
 // PRIME
@@ -1098,16 +1089,13 @@ Discuss balance and documentation changes with Dragonfruits#1913 or forward them
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/legionshield)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/lever_action)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/grease_gun)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/brush)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/huntingshotgun)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/legionlance)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/concussion)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/strongrocket)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/empgrenade)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/tribalwar/xbow)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/tribalwar/cheaparrow)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/shotgunammoflechette)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/shotgunammomagnum)
 
 
 

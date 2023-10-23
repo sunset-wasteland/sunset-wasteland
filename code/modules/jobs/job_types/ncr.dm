@@ -353,7 +353,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	suit_store = /obj/item/gun/ballistic/automatic/service/carbine
 	head = /obj/item/clothing/head/f13/ncr
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/m556/rifle = 2,
+		/obj/item/ammo_box/magazine/m556/rifle = 3,
 		/obj/item/storage/box/ration/menu_eight = 1,
 		/obj/item/attachments/scope = 1,
 		/obj/item/book/granter/trait/trekking = 1,
@@ -389,9 +389,9 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	exp_requirements = 1000
 
 	loadout_options = list( // ALL: Bayonet
-		/datum/outfit/loadout/seatechnical,
-		/datum/outfit/loadout/seacommand,
-		/datum/outfit/loadout/seastaff,
+		/datum/outfit/loadout/seatechnical, //Worn carbine
+		/datum/outfit/loadout/seacommand, //45 revolver
+		/datum/outfit/loadout/seastaff, //9mm pistol
 		)
 
 	matchmaking_allowed = list(
@@ -469,9 +469,9 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	exp_requirements = 750
 
 	loadout_options = list(
-		/datum/outfit/loadout/repbrahminbaron,
-		/datum/outfit/loadout/repambassador,
-		/datum/outfit/loadout/repexecutive
+		/datum/outfit/loadout/repbrahminbaron, //
+		/datum/outfit/loadout/repambassador, //
+		/datum/outfit/loadout/repexecutive //
 		)
 
 	matchmaking_allowed = list(
@@ -557,7 +557,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 
 	loadout_options = list( // ALL: Binoculars, Bowie knife
 		/datum/outfit/loadout/vrclassic, // AMR, Sequoia
-		/datum/outfit/loadout/vrlite, // Brush, Sequoia
+		/datum/outfit/loadout/vrlite, // Medicine stick, Sequoia
 		/datum/outfit/loadout/vrshotgunner, // Winchester City-Killer, Sequoia
 		/datum/outfit/loadout/vrcqc // 2 x .45 Long colt revolvers
 		)
@@ -612,8 +612,8 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	name = "Rifler Veteran Ranger"
 	suit_store = /obj/item/gun/ballistic/rifle/repeater/brush/medistick
 	backpack_contents = list(
-		/obj/item/ammo_box/m44box = 2,
-		/obj/item/gun/ballistic/revolver/revolver44 = 1,
+		/obj/item/ammo_box/c4570box/ = 1,
+		/obj/item/gun/ballistic/revolver/sequoia = 1,
 		/obj/item/book/granter/trait/rifleman = 1,
 		)
 
@@ -621,7 +621,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	name = "Veteran Ranger Shotgunner"
 	suit_store = /obj/item/gun/ballistic/shotgun/automatic/combat/citykiller
 	backpack_contents = list(
-		/obj/item/ammo_box/shotgun/buck = 3,
+		/obj/item/ammo_box/shotgun/buck = 2,
 		/obj/item/gun/ballistic/revolver/sequoia = 1,
 		/obj/item/ammo_box/c4570box/knockback = 1,
 		)
@@ -811,7 +811,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 		/obj/item/gun/ballistic/automatic/r84 = 1,
 		/obj/item/book/granter/trait/trekking = 1,
 		/obj/item/ammo_box/magazine/lmg = 2,
-		/obj/item/melee/onehanded/knife/bowie = 1,
+		/obj/item/melee/onehanded/knife/trench = 1,
 		)
 
 // COMBAT ENGINEER
@@ -832,7 +832,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	loadout_options = list( // ALL: Trench tool, Limited blueprints
 		/datum/outfit/loadout/combatengineerbuilder, // R82, X4 explosive, Extra materials
 		/datum/outfit/loadout/combatengineertrapper, // 10mm SMG, Minelaying, Explosive Crafting
-		/datum/outfit/loadout/combatengineerflamethrower, // Flamer, R82
+		/datum/outfit/loadout/combatengineerflamethrower, // Flamer, Service Rifle
 		)
 
 	matchmaking_allowed = list(
@@ -908,7 +908,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	name = "Combat Sapper"
 	belt = /obj/item/storage/belt/military/assault/ncr
 	glasses	= /obj/item/clothing/glasses/sunglasses
-	suit_store =  /obj/item/gun/ballistic/automatic/service/r82
+	suit_store =  /obj/item/gun/ballistic/automatic/service
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/m556/rifle = 2,
 		/obj/item/m2flamethrowertank = 1,
@@ -1033,7 +1033,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	loadout_options = list(
 		/datum/outfit/loadout/corporaldesignatedmarksman,	 // Marksman Carbine, 9mm sidearm
 		/datum/outfit/loadout/corporalrifleman,				 // R82, trekking
-		/datum/outfit/loadout/corporalcommand,				 // Intel and backline support
+		/datum/outfit/loadout/corporalcommand,				 // M1 garand, Intel and backline support
 		)
 
 	matchmaking_allowed = list(
@@ -1071,7 +1071,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 		/obj/item/storage/box/ration/menu_two = 1,
 		)
 
-/datum/outfit/loadout/corporalrifleman		//Name changed for better flavor
+/datum/outfit/loadout/corporalrifleman		
 	name = "Master Corporal"
 	head = /obj/item/clothing/head/f13/ncr
 	suit = /obj/item/clothing/suit/armor/f13/ncrarmor/mantle
@@ -1079,12 +1079,11 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/m556/rifle = 2,
 		/obj/item/storage/box/ration/menu_one = 1,
-		/obj/item/clothing/accessory/ncr/MCPL = 1, //Same rank, mostly for flavor and RP. - Kitsunemitsu
+		/obj/item/clothing/accessory/ncr/MCPL = 1, 
 		/obj/item/book/granter/trait/trekking = 1,
 		)
 
-/datum/outfit/loadout/corporalcommand	//Has a fold out gun. It serves it's purpose in being a support role but it is primarily for RP.
-	name = "Squad Pathfinder"
+/datum/outfit/loadout/corporalcommand	
 	suit = /obj/item/clothing/suit/armor/f13/ncrarmor/mantle
 	suit_store = /obj/item/gun/ballistic/automatic/m1carbine/compact
 	neck = /obj/item/storage/belt/holster/legholster

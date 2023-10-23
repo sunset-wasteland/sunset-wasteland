@@ -218,7 +218,6 @@
 	backpack_contents = list(
 		/obj/item/gun/energy/laser/pistol=1,
 		/obj/item/stock_parts/cell/ammo/ec = 2,
-		/obj/item/grenade/f13/frag = 2,
 		)
 
 /datum/outfit/loadout/ncr_exile

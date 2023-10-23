@@ -524,7 +524,7 @@
 	. = ..()
 	AddComponent(/datum/component/two_handed, require_twohands=TRUE)
 	AddElement(/datum/element/update_icon_updates_onmob)
-/*
+
 // Inquisitorial axe			Keywords: Damage 6/32, AP 0.9, SPEAR REACH, BACK SLOT ENABLED
 /obj/item/twohanded/inquis_spear
 	name = "Inquisitorial polearm"
@@ -567,7 +567,7 @@
 	AddComponent(/datum/component/two_handed, force_unwielded=6, force_wielded=32, icon_wielded="[item_state]2")
 	AddElement(/datum/element/update_icon_updates_onmob)
 	AddElement(/datum/element/sword_point)
-*/
+
 // Super Sledge			Keywords: Damage 25/60
 /obj/item/twohanded/sledgehammer/supersledge
 	name = "super sledge"

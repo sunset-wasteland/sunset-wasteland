@@ -62,8 +62,8 @@
 	title = "Khan Enforcer"
 	flag = F13KHAN
 	faction = FACTION_KHAN
-	total_positions = 6
-	spawn_positions = 6
+	total_positions = 4
+	spawn_positions = 4
 	description = "You are a Khan, a member of the local band that the Chief has sent to scout these lands. Listen to the Chemist and Senior Enforcer. Assure you've a steady supply of caps for the Chief."
 	supervisors = "the Senior Enforcer"
 	selection_color = "#ff915e"
@@ -121,8 +121,8 @@
 	title = "Khan Courtesan"
 	flag = F13KHANCOURT
 	faction = FACTION_KHAN
-	total_positions = 3
-	spawn_positions = 3
+	total_positions = 2
+	spawn_positions = 2
 	description = "You are, to put it simply, a hooker. Paid company, placed into this position either by want or force. The tramp-stamp you have supports such."
 	enforces = "You staff Heaven's Night, maintaining some modicum of decency and entertaining guests. Earn your keep."
 	supervisors = "the Senior Enforcer"
@@ -173,8 +173,8 @@
 	suit = /obj/item/clothing/suit/toggle/labcoat/f13/khan_jacket/armored
 	head = /obj/item/clothing/head/helmet/f13/khan
 	backpack_contents = list(
-		/obj/item/reagent_containers/hypospray/medipen/stimpak = 3,
-		/obj/item/book/granter/trait/bigleagues = 1)
+		/obj/item/reagent_containers/hypospray/medipen/stimpak = 1,
+	)
 
 /datum/outfit/loadout/soldierb
 	name = "Light Enforcer"
@@ -184,7 +184,7 @@
 	head = /obj/item/clothing/head/helmet/f13/khan/bandana
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/m556/rifle = 3,
-		/obj/item/book/granter/trait/trekking = 1)
+	)
 
 //CHEMIST =================================================================
 
@@ -195,7 +195,8 @@
 	backpack_contents = list(
 		/obj/item/book/granter/trait/chemistry = 1,
 		/obj/item/book/granter/trait/lowsurgery =1,
-		/obj/item/reagent_containers/hypospray/medipen/stimpak = 3)
+		/obj/item/reagent_containers/hypospray/medipen/stimpak = 3,
+)
 
 /datum/outfit/loadout/quack
 	name = "Quack Chemist"
@@ -205,7 +206,8 @@
 	backpack_contents = list(
 		/obj/item/book/granter/trait/chemistry = 1,
 		/obj/item/book/granter/trait/explosives =1,
-		/obj/item/reagent_containers/hypospray/medipen/stimpak = 3)
+		/obj/item/reagent_containers/hypospray/medipen/stimpak = 2,
+)
 
 //SENIOR =================================================================
 
@@ -219,7 +221,8 @@
 		/obj/item/ammo_box/clip/shotgun/loaded/flechette = 3,
 		/obj/item/storage/box/medicine/stimpaks/stimpaks5 = 1,
 		/obj/item/melee/onehanded/machete/scrapsabre/khan = 1,
-		/obj/item/stack/f13Cash/caps/onezerozerozero = 3)//LOTS of caps.
+		/obj/item/stack/f13Cash/caps/onezerozerozero = 1,
+)
 
 /datum/outfit/job/khan/senior_enforcer/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
@@ -246,7 +249,7 @@
 		/obj/item/stack/sheet/cloth/thirty = 1,
 		/obj/item/stack/sheet/prewar/twenty = 1,
 		/obj/item/book/granter/trait/explosives = 1,
-		/obj/item/book/granter/trait/explosives_advanced = 1
+		/obj/item/book/granter/trait/explosives_advanced = 1,
 		)
 
 /datum/outfit/job/khan/smith/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -255,12 +258,9 @@
 		return
 	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/dks)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/gladius)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/spatha)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/lance)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/lever_action)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/grease_gun)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/brush)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/huntingshotgun)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/concussion)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/strongrocket)
@@ -268,7 +268,6 @@
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/tribalwar/xbow)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/tribalwar/cheaparrow)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/shotgunammoflechette)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/shotgunammomagnum)
 
 //COURTESAN =================================================================
 
